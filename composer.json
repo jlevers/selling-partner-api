@@ -2,17 +2,18 @@
     "name": "jlevers/selling-partner-api",
     "description": "",
     "keywords": [
-        "swagger",
         "php",
         "sdk",
-        "api"
+        "api",
+        "selling-partner-api",
+        "amazon"
     ],
-    "homepage": "http://swagger.io",
     "license": "proprietary",
+    "type": "library",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "Jesse Evers",
+            "homepage": "https://jesseevers.com"
         }
     ],
     "require": {

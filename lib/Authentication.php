@@ -17,8 +17,7 @@ class Authentication
     private $awsCredentials = null;
 
     public function __construct() {
-        $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . "/../..");
-        $dotenv->load();
+        loadDotenv();
 
         $this->client = new Client();
         $this->newToken();

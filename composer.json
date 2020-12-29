@@ -29,7 +29,8 @@
         "squizlabs/php_codesniffer": "~2.6"
     },
     "autoload": {
-        "psr-4": { "Evers\\SellingPartnerApi\\" : "lib/" }
+        "psr-4": { "Evers\\SellingPartnerApi\\" : "lib/" },
+        "files": [ "lib/functions_include.php" ]
     },
     "autoload-dev": {
         "psr-4": { "Evers\\SellingPartnerApi\\" : "test/" }

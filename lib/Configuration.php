@@ -387,8 +387,7 @@ class Configuration
             $config = new Configuration();
             $auth = self::getDefaultAuthentication();
 
-            $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . "/../..");
-            $dotenv->load();
+            loadDotenv();
 
             $config->setHost($_ENV["SPAPI_ENDPOINT"]);
             self::$defaultConfiguration = $config;

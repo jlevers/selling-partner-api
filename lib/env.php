@@ -17,6 +17,20 @@ function loadDotenv() {
         if (file_exists($path . "/.env")) {
             $dotenv = \Dotenv\Dotenv::createImmutable($path);
             $dotenv->load();
+
+            // Validate environment variables
+            $dotenv->required("AWS_REGION")->allowedValues(["us-east-1", "us-west-2", "eu-west-1"]);
+            $dotenv->required("AWS_ACCESS_KEY")->notEmpty();
+            $dotenv->required("AWS_SECRET_KEY")->notEmpty();
+            $dotenv->required("LWA_CLIENT_ID")->notEmpty();
+            $dotenv->required("LWA_CLIENT_SECRET")->notEmpty();
+            $dotenv->required("LWA_REFRESH_TOKEN")->notEmpty();
+            $dotenv->required("SPAPI_ENDPOINT")->allowedValues([
+                "https://sellingpartnerapi-na.amazon.com",
+                "https://sellingpartnerapi-eu.amazon.com",
+                "https://sellingpartnerapi-fe.amazon.com",
+            ]);
+
             return;
         }
     }

@@ -13,14 +13,37 @@ class Authentication
     private const SERVICE_NAME = "execute-api";
     private const TERMINATION_STR = "aws4_request";
 
+    private $refreshToken;
+
     private $client = null;
     private $awsCredentials = null;
 
-    public function __construct() {
+    public function __construct(
+        ?string $refreshToken = null,
+        ?string $accessToken = null,
+        ?int $accessTokenExpiration = null
+    ) {
+        $this->client = new Client();
         loadDotenv();
 
-        $this->client = new Client();
-        $this->newToken();
+        if ($refreshToken !== null) {
+            $this->refreshToken = $refreshToken;
+        } else {
+            $this->refreshToken = $_ENV["LWA_REFRESH_TOKEN"];
+        }
+
+        if (
+            $accessToken === null && $accessTokenExpiration !== null
+            || $accessToken !== null && $accessTokenExpiration === null
+        ) {
+            throw new Exception('If one of `$accessToken` or `$accessTokenExpiration` is provided, the other must be provided as well');
+        }
+
+        if ($accessToken !== null && $accessTokenExpiration !== null) {
+            $this->populateAWSCredentials($accessToken, $accessTokenExpiration->getTimestamp());
+        } else {
+            $this->newToken();
+        }
     }
 
     public function getAuthToken() {
@@ -31,7 +54,7 @@ class Authentication
         $res = $this->client->post("https://api.amazon.com/auth/o2/token", [
             \GuzzleHttp\RequestOptions::JSON => [
                 "grant_type" => "refresh_token",
-                "refresh_token" => $_ENV["LWA_REFRESH_TOKEN"],
+                "refresh_token" => $this->refreshToken,
                 "client_id" => $_ENV["LWA_CLIENT_ID"],
                 "client_secret" => $_ENV["LWA_CLIENT_SECRET"],
             ]

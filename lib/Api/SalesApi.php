@@ -44,8 +44,6 @@ use Evers\SellingPartnerApi\ObjectSerializer;
  *
  * @category Class
  * @package  Evers\SellingPartnerApi
- * @author   Swagger Codegen team
- * @link     https://github.com/swagger-api/swagger-codegen
  */
 class SalesApi
 {
@@ -65,17 +63,17 @@ class SalesApi
     protected $headerSelector;
 
     /**
-     * @param ClientInterface $client
      * @param Configuration   $config
+     * @param ClientInterface $client
      * @param HeaderSelector  $selector
      */
     public function __construct(
-        ClientInterface $client = null,
         Configuration $config = null,
+        ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
+        $this->client = $client ?: new Client();
         $this->headerSelector = $selector ?: new HeaderSelector($this->config);
     }
 

@@ -45,41 +45,6 @@ class Configuration
     private static $defaultAuthentication;
 
     /**
-     * Associate array to store API key(s)
-     *
-     * @var string[]
-     */
-    protected $apiKeys = [];
-
-    /**
-     * Associate array to store API prefix (e.g. Bearer)
-     *
-     * @var string[]
-     */
-    protected $apiKeyPrefixes = [];
-
-    /**
-     * Access token for OAuth
-     *
-     * @var string
-     */
-    protected $accessToken = '';
-
-    /**
-     * Username for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $username = '';
-
-    /**
-     * Password for HTTP basic authentication
-     *
-     * @var string
-     */
-    protected $password = '';
-
-    /**
      * The host
      *
      * @var string
@@ -117,131 +82,10 @@ class Configuration
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct(?array $lwaAuthInfo = null)
     {
+        $this->lwaAuthInfo = $lwaAuthInfo;
         $this->tempFolderPath = sys_get_temp_dir();
-    }
-
-    /**
-     * Sets API key
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key              API key or token
-     *
-     * @return $this
-     */
-    public function setApiKey($apiKeyIdentifier, $key)
-    {
-        $this->apiKeys[$apiKeyIdentifier] = $key;
-        return $this;
-    }
-
-    /**
-     * Gets API key
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return string API key or token
-     */
-    public function getApiKey($apiKeyIdentifier)
-    {
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
-    }
-
-    /**
-     * Sets the prefix for API key (e.g. Bearer)
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix           API key prefix, e.g. Bearer
-     *
-     * @return $this
-     */
-    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
-    {
-        $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
-        return $this;
-    }
-
-    /**
-     * Gets API key prefix
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return string
-     */
-    public function getApiKeyPrefix($apiKeyIdentifier)
-    {
-        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
-    }
-
-    /**
-     * Sets the access token for OAuth
-     *
-     * @param string $accessToken Token for OAuth
-     *
-     * @return $this
-     */
-    public function setAccessToken($accessToken)
-    {
-        $this->accessToken = $accessToken;
-        return $this;
-    }
-
-    /**
-     * Gets the access token for OAuth
-     *
-     * @return string Access token for OAuth
-     */
-    public function getAccessToken()
-    {
-        $auth = self::getDefaultAuthentication();
-        return $auth->getAuthToken();
-    }
-
-    /**
-     * Sets the username for HTTP basic authentication
-     *
-     * @param string $username Username for HTTP basic authentication
-     *
-     * @return $this
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-        return $this;
-    }
-
-    /**
-     * Gets the username for HTTP basic authentication
-     *
-     * @return string Username for HTTP basic authentication
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * Sets the password for HTTP basic authentication
-     *
-     * @param string $password Password for HTTP basic authentication
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-        return $this;
-    }
-
-    /**
-     * Gets the password for HTTP basic authentication
-     *
-     * @return string Password for HTTP basic authentication
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     /**
@@ -416,7 +260,7 @@ class Configuration
     public static function getDefaultAuthentication()
     {
         if (self::$defaultAuthentication === null) {
-            self::$defaultAuthentication = new Authentication();
+            self::setDefaultAuthentication();
         }
         return self::$defaultAuthentication;
     }
@@ -433,7 +277,14 @@ class Configuration
         if ($auth !== null) {
             self::$defaultAuthentication = $auth;
         } else if (self::$defaultAuthentication === null) {
-            self::$defaultAuthentication = new Authentication();
+            $auth = new Authentication();
+            if ($this->lwaAuthInfo !== null) {
+                $refreshToken = $this->lwaAuthInfo["refreshToken"] ?? null;
+                $accessToken = $this->lwaAuthInfo["accessToken"] ?? null;
+                $accessTokenExpiration = $this->lwaAuthInfo["accessTokenExpiration"] ?? null;
+                $auth = new Authentication($refreshToken, $accessToken, $accessTokenExpiration);
+            }
+            self::$defaultAuthentication = $auth;
         }
         return self::$defaultAuthentication;
     }

@@ -45,6 +45,20 @@ class Configuration
     private static $defaultAuthentication;
 
     /**
+     * Auth object for the SP API
+     *
+     * @var Authentication
+     */
+    protected $auth = null;
+
+    /**
+     * Access token for OAuth
+     *
+     * @var string
+     */
+    protected $accessToken = '';
+
+    /**
      * The host
      *
      * @var string
@@ -52,7 +66,7 @@ class Configuration
     protected $host = 'https://sellingpartnerapi-na.amazon.com';
 
     /**
-     * User agent of the HTTP request, set to "PHP-Swagger" by default
+     * User agent of the HTTP request
      *
      * @var string
      */
@@ -86,6 +100,38 @@ class Configuration
     {
         $this->lwaAuthInfo = $lwaAuthInfo;
         $this->tempFolderPath = sys_get_temp_dir();
+
+        if ($this->lwaAuthInfo !== null) {
+            $refreshToken = $this->lwaAuthInfo["refreshToken"] ?? null;
+            $accessToken = $this->lwaAuthInfo["accessToken"] ?? null;
+            $accessTokenExpiration = $this->lwaAuthInfo["accessTokenExpiration"] ?? null;
+            $this->auth = new Authentication($refreshToken, $accessToken, $accessTokenExpiration);
+        } else {
+            $this->auth = self::getDefaultAuthentication();
+        }
+    }
+
+    /**
+     * Sets the access token for OAuth
+     *
+     * @param string $accessToken Token for OAuth
+     *
+     * @return $this
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+        return $this;
+    }
+
+    /**
+     * Gets the access token for OAuth
+     *
+     * @return string Access token for OAuth
+     */
+    public function getAccessToken()
+    {
+        return $this->auth->getAuthToken();
     }
 
     /**
@@ -277,14 +323,7 @@ class Configuration
         if ($auth !== null) {
             self::$defaultAuthentication = $auth;
         } else if (self::$defaultAuthentication === null) {
-            $auth = new Authentication();
-            if ($this->lwaAuthInfo !== null) {
-                $refreshToken = $this->lwaAuthInfo["refreshToken"] ?? null;
-                $accessToken = $this->lwaAuthInfo["accessToken"] ?? null;
-                $accessTokenExpiration = $this->lwaAuthInfo["accessTokenExpiration"] ?? null;
-                $auth = new Authentication($refreshToken, $accessToken, $accessTokenExpiration);
-            }
-            self::$defaultAuthentication = $auth;
+            self::$defaultAuthentication = new Authentication();
         }
         return self::$defaultAuthentication;
     }

@@ -9,8 +9,8 @@ use \Exception;
 // be sensible. If this package is being used with Composer, then this file would
 // likely be in <project>/vendor/jlevers/selling-partner-api/lib/. That is, the
 // root directory of the project that this package is being used in would be 4
-// directories above this one.
-const ENV_PATHS = [__DIR__ . "/..", __DIR__ . "/../../../.."];
+// directories above this one. The third directory option is just used for testing.
+const ENV_PATHS = [__DIR__ . "/..", __DIR__ . "/../../../..", __DIR__ . "/../.."];
 
 function loadDotenv() {
     foreach(ENV_PATHS as $path) {

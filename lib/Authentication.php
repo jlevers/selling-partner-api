@@ -227,7 +227,7 @@ class Authentication
         [$accessToken, $expirationTimestamp] = $this->requestLWAToken();
         $this->populateAWSCredentials($accessToken, $expirationTimestamp);
         if ($this->onUpdateCreds !== null) {
-            $this->onUpdateCreds($this->awsCredentials);
+            call_user_func($this->onUpdateCreds, $this->awsCredentials);
         }
     }
 

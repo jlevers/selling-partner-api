@@ -36,11 +36,11 @@ class Authentication
             $accessToken === null && $accessTokenExpiration !== null
             || $accessToken !== null && $accessTokenExpiration === null
         ) {
-            throw new Exception('If one of `$accessToken` or `$accessTokenExpiration` is provided, the other must be provided as well');
+            throw new \Exception('If one of `$accessToken` or `$accessTokenExpiration` is provided, the other must be provided as well');
         }
 
         if ($accessToken !== null && $accessTokenExpiration !== null) {
-            $this->populateAWSCredentials($accessToken, $accessTokenExpiration->getTimestamp());
+            $this->populateAWSCredentials($accessToken, $accessTokenExpiration);
         } else {
             $this->newToken();
         }

@@ -14,6 +14,7 @@ class Authentication
     private const TERMINATION_STR = "aws4_request";
 
     private $refreshToken;
+    private $onUpdateCreds;
 
     private $client = null;
     private $awsCredentials = null;
@@ -21,16 +22,14 @@ class Authentication
     public function __construct(
         ?string $refreshToken = null,
         ?string $accessToken = null,
-        ?int $accessTokenExpiration = null
+        ?int $accessTokenExpiration = null,
+        ?callable $onUpdateCreds = null
     ) {
         $this->client = new Client();
         loadDotenv();
 
-        if ($refreshToken !== null) {
-            $this->refreshToken = $refreshToken;
-        } else {
-            $this->refreshToken = $_ENV["LWA_REFRESH_TOKEN"];
-        }
+        $this->refreshToken = $refreshToken ?? $_ENV["LWA_REFRESH_TOKEN"];
+        $this->onUpdateCreds = $onUpdateCreds;
 
         if (
             $accessToken === null && $accessTokenExpiration !== null
@@ -41,6 +40,9 @@ class Authentication
 
         if ($accessToken !== null && $accessTokenExpiration !== null) {
             $this->populateAWSCredentials($accessToken, $accessTokenExpiration);
+            if ($this->awsCredentials->expiresSoon()) {
+                $this->newToken();
+            }
         } else {
             $this->newToken();
         }
@@ -224,6 +226,9 @@ class Authentication
     private function newToken() : void {
         [$accessToken, $expirationTimestamp] = $this->requestLWAToken();
         $this->populateAWSCredentials($accessToken, $expirationTimestamp);
+        if ($this->onUpdateCreds !== null) {
+            $this->onUpdateCreds($this->awsCredentials);
+        }
     }
 
     public function datetimeForApi() : \DateTime {

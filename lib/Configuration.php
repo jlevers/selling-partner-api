@@ -102,10 +102,12 @@ class Configuration
         $this->tempFolderPath = sys_get_temp_dir();
 
         if ($this->lwaAuthInfo !== null) {
-            $refreshToken = $this->lwaAuthInfo["refreshToken"] ?? null;
-            $accessToken = $this->lwaAuthInfo["accessToken"] ?? null;
-            $accessTokenExpiration = $this->lwaAuthInfo["accessTokenExpiration"] ?? null;
-            $this->auth = new Authentication($refreshToken, $accessToken, $accessTokenExpiration);
+            $this->auth = new Authentication(
+                $this->lwaAuthInfo["refreshToken"] ?? null,
+                $this->lwaAuthInfo["accessToken"] ?? null,
+                $this->lwaAuthInfo["accessTokenExpiration"] ?? null,
+                $this->lwaAuthInfo["onUpdateCreds"] ?? null
+            );
         } else {
             $this->auth = self::getDefaultAuthentication();
         }

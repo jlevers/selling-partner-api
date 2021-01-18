@@ -449,7 +449,7 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateSubscriptionResponse';
         $request = $this->createSubscriptionRequest($body, $notification_type);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest($request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -710,8 +710,7 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
-                "sellingpartnerapi::notifications"
+                ['application/json']
             );
         }
 
@@ -2156,7 +2155,7 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSubscriptionResponse';
         $request = $this->getSubscriptionRequest($notification_type);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest($request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2397,8 +2396,7 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
-                "sellingpartnerapi::notifications"
+                ['application/json']
             );
         }
 

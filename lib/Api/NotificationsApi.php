@@ -357,7 +357,8 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -709,7 +710,8 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -1047,7 +1049,8 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -1404,7 +1407,8 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -1742,7 +1746,8 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -2061,7 +2066,8 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -2391,7 +2397,8 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -2748,7 +2755,8 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::notifications"
             );
         }
 

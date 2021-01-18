@@ -18,6 +18,7 @@ class Authentication
 
     private $client = null;
     private $awsCredentials = null;
+    private $grantlessAwsCredentials = null;
 
     public function __construct(
         ?string $refreshToken = null,
@@ -39,7 +40,7 @@ class Authentication
         }
 
         if ($accessToken !== null && $accessTokenExpiration !== null) {
-            $this->populateAWSCredentials($accessToken, $accessTokenExpiration);
+            $this->populateCredentials($accessToken, $accessTokenExpiration);
             if ($this->awsCredentials->expiresSoon()) {
                 $this->newToken();
             }
@@ -48,18 +49,33 @@ class Authentication
         }
     }
 
-    public function getAuthToken() {
+    public function getAuthToken(?string $scope = null) {
+        if ($scope !== null) {
+            if ($this->grantlessAwsCredentials === null) {
+                $this->newToken($scope);
+            }
+            return $this->grantlessAwsCredentials->getSecurityToken();
+        }
         return $this->awsCredentials->getSecurityToken();
     }
 
-    public function requestLWAToken() : array {
+    public function requestLWAToken(?string $scope = null) : array {
+        $jsonData = [
+            "grant_type" => $scope === null ? "refresh_token" : "client_credentials",
+            "client_id" => $_ENV["LWA_CLIENT_ID"],
+            "client_secret" => $_ENV["LWA_CLIENT_SECRET"],
+        ];
+
+        // Only pass one of `scope` and `refresh_token`
+        // https://github.com/amzn/selling-partner-api-docs/blob/main/guides/developer-guide/SellingPartnerApiDeveloperGuide.md#step-1-request-a-login-with-amazon-access-token
+        if ($scope !== null) {
+            $jsonData["scope"] = $scope;
+        } else {
+            $jsonData["refresh_token"] = $this->refreshToken;
+        }
+
         $res = $this->client->post("https://api.amazon.com/auth/o2/token", [
-            \GuzzleHttp\RequestOptions::JSON => [
-                "grant_type" => "refresh_token",
-                "refresh_token" => $this->refreshToken,
-                "client_id" => $_ENV["LWA_CLIENT_ID"],
-                "client_secret" => $_ENV["LWA_CLIENT_SECRET"],
-            ]
+            \GuzzleHttp\RequestOptions::JSON => $jsonData,
         ]);
 
         $body = json_decode($res->getBody(), true);
@@ -69,28 +85,40 @@ class Authentication
         return [$accessToken, $expirationDate->getTimestamp()];
     }
 
-    public function populateAWSCredentials(?string $token = null, ?int $expires = null) : void {
+    public function populateCredentials(?string $token = null, ?int $expires = null, bool $grantless = false) : void {
         $key = $_ENV["AWS_ACCESS_KEY"];
         $secret = $_ENV["AWS_SECRET_KEY"];
+        $creds = null;
         if ($token !== null && $expires !== null) {
-            $this->awsCredentials = new Credentials($key, $secret, $token, $expires);
+            $creds = new Credentials($key, $secret, $token, $expires);
         } else {
-            $this->awsCredentials = new Credentials($key, $secret);
+            $creds = new Credentials($key, $secret);
+        }
+
+        if ($grantless) {
+            $this->grantlessAwsCredentials = $creds;
+        } else {
+            $this->awsCredentials = $creds;
         }
     }
 
-    public function signRequest(Psr7\Request $request) : Psr7\Request {
-        if ($this->awsCredentials->expiresSoon()) {
-            $this->newToken();
+    public function signRequest(Psr7\Request $request, ?string $scope = null) : Psr7\Request {
+        // Check if the relevant AWS creds haven't been fetched or are expiring soon
+        $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
+        if ($relevantCreds === null || $relevantCreds->expiresSoon()) {
+            $this->newToken($scope);
+            // Reassign $relevantCreds to the correct set of credentials, since that set of creds has been updated
+            $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         }
 
+        $request->withHeader("content-type", "application/json");
         $canonicalRequest = $this->createCanonicalRequest($request);
         $signingString = $this->createSigningString($canonicalRequest);
-        $signature = $this->createSignature($signingString, $this->awsCredentials->getSecretKey());
+        $signature = $this->createSignature($signingString, $relevantCreds->getSecretKey());
 
         [, $signedHeaders] = $this->createCanonicalizedHeaders($request->getHeaders());
         $credentialScope = $this->createCredentialScope();
-        $credsForHeader = "Credential={$this->awsCredentials->getAccessKeyId()}/{$credentialScope}";
+        $credsForHeader = "Credential={$relevantCreds->getAccessKeyId()}/{$credentialScope}";
         $headersForHeader = "SignedHeaders={$signedHeaders}";
         $sigForHeader = "Signature={$signature}";
         $authHeaderVal = static::SIGNING_ALGO . " " . implode([$credsForHeader, $headersForHeader, $sigForHeader], ", ");
@@ -223,10 +251,10 @@ class Authentication
         return $signature;
     }
 
-    private function newToken() : void {
-        [$accessToken, $expirationTimestamp] = $this->requestLWAToken();
-        $this->populateAWSCredentials($accessToken, $expirationTimestamp);
-        if ($this->onUpdateCreds !== null) {
+    private function newToken(?string $scope = null) : void {
+        [$accessToken, $expirationTimestamp] = $this->requestLWAToken($scope);
+        $this->populateCredentials($accessToken, $expirationTimestamp, $scope !== null);
+        if ($scope === null && $this->onUpdateCreds !== null) {
             call_user_func($this->onUpdateCreds, $this->awsCredentials);
         }
     }

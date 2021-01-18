@@ -384,7 +384,8 @@ class AuthorizationApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['application/json'],
+                "sellingpartnerapi::migration"
             );
         }
 

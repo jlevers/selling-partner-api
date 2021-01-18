@@ -129,11 +129,13 @@ class Configuration
     /**
      * Gets the access token for OAuth
      *
+     * @param string $scope The authentication scope, if any
+     *
      * @return string Access token for OAuth
      */
-    public function getAccessToken()
+    public function getAccessToken($scope = null)
     {
-        return $this->auth->getAuthToken();
+        return $this->auth->getAuthToken($scope);
     }
 
     /**
@@ -346,13 +348,14 @@ class Configuration
      * Sign a request to the Selling Partner API using the AWS Signature V4 protocol.
      *
      * @param \GuzzleHttp\Psr7\Request $request The request to sign
+     * @param string $scope The scope of the request, if it's grantless
      *
      * @return \GuzzleHttp\Psr7\Request The signed request
      */
-    public function signRequest($request)
+    public function signRequest($request, $scope = null)
     {
         $auth = self::getDefaultAuthentication();
-        return $auth->signRequest($request);
+        return $auth->signRequest($request, $scope);
     }
 
     /**

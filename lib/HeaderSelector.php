@@ -56,7 +56,7 @@ class HeaderSelector
      * @param string[] $contentTypes
      * @return array
      */
-    public function selectHeaders($accept, $contentTypes)
+    public function selectHeaders($accept, $contentTypes, $scope = null)
     {
         $headers = [];
 
@@ -67,7 +67,7 @@ class HeaderSelector
 
         $headers['Content-Type'] = $this->selectContentTypeHeader($contentTypes);
         $headers['Host'] = $this->configuration->getBareHost();
-        $headers['x-amz-access-token'] = $this->configuration->getAccessToken();
+        $headers['x-amz-access-token'] = $this->configuration->getAccessToken($scope);
         $headers['x-amz-date'] = $this->configuration->getDateTimeForApi()->format(Authentication::DATETIME_FMT);
         return $headers;
     }

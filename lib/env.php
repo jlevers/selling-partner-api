@@ -24,7 +24,6 @@ function loadDotenv() {
             $dotenv->required("AWS_SECRET_KEY")->notEmpty();
             $dotenv->required("LWA_CLIENT_ID")->notEmpty();
             $dotenv->required("LWA_CLIENT_SECRET")->notEmpty();
-            $dotenv->required("LWA_REFRESH_TOKEN")->notEmpty();
             $dotenv->required("SPAPI_ENDPOINT")->allowedValues([
                 "https://sellingpartnerapi-na.amazon.com",
                 "https://sellingpartnerapi-eu.amazon.com",

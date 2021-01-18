@@ -36,7 +36,7 @@ use \Evers\SellingPartnerApi\ObjectSerializer;
  * AmazonOrderId Class Doc Comment
  *
  * @category Class
- * @description An Amazon-defined order identifier, in 3-7-7 format.
+ * @description An Amazon-defined order identifier, in 3-7-7 format. &lt;br&gt;**Pattern** : &#x60;[0-9A-Z]{3}-[0-9]{7}-[0-9]{7}&#x60;.
  * @package  Evers\SellingPartnerApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

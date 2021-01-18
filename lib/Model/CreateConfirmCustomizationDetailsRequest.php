@@ -232,7 +232,7 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, ArrayA
     /**
      * Sets text
      *
-     * @param string $text The text to be sent to the buyer. Only links related to customization details are allowed. Do not include HTML or email addresses.
+     * @param string $text The text to be sent to the buyer. Only links related to customization details are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
      *
      * @return $this
      */

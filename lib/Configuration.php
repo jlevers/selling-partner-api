@@ -333,15 +333,13 @@ class Configuration
     }
 
     /**
-     * Get a \DateTime object representing the current time, in the correct timezone for use
-     * with the Selling Partner API.
+     * Get the datetime string that was used to sign the most recently signed Selling Partner API request
      *
      * @return \DateTime The current time
      */
-    public function getDateTimeForApi()
+    public function getRequestDatetime()
     {
-        $auth = self::getDefaultAuthentication();
-        return $auth->datetimeForApi();
+        return $this->auth->formattedRequestTime();
     }
 
     /**

@@ -19,6 +19,8 @@ class Authentication
     private $client = null;
     private $awsCredentials = null;
     private $grantlessAwsCredentials = null;
+    private $grantlessCredentialsScope = null;
+    private $requestTime;
 
     public function __construct(
         ?string $refreshToken = null,
@@ -51,7 +53,10 @@ class Authentication
 
     public function getAuthToken(?string $scope = null) {
         if ($scope !== null) {
-            if ($this->grantlessAwsCredentials === null) {
+            // If the scope for this grantless request doesn't match $this->grantlessCredentialsScope, we
+            // need a new set of grantless credentials that provide access to the new scope
+            if ($this->grantlessAwsCredentials === null || $this->grantlessCredentialsScope !== $scope) {
+                $this->setRequestTime();
                 $this->newToken($scope);
             }
             return $this->grantlessAwsCredentials->getSecurityToken();
@@ -59,7 +64,7 @@ class Authentication
         return $this->awsCredentials->getSecurityToken();
     }
 
-    public function requestLWAToken(?string $scope = null) : array {
+    public function requestLWAToken(?string $scope = null): array {
         $jsonData = [
             "grant_type" => $scope === null ? "refresh_token" : "client_credentials",
             "client_id" => $_ENV["LWA_CLIENT_ID"],
@@ -80,14 +85,14 @@ class Authentication
 
         $body = json_decode($res->getBody(), true);
         $accessToken = $body["access_token"];
-        $expirationDate = $this->datetimeForApi();
+        $expirationDate = new \DateTime("now", new \DateTimeZone("UTC"));
         $expirationDate->add(new \DateInterval("PT" . strval($body["expires_in"]) . "S"));
         return [$accessToken, $expirationDate->getTimestamp()];
     }
 
-    public function populateCredentials(?string $token = null, ?int $expires = null, bool $grantless = false) : void {
-        $key = $_ENV["AWS_ACCESS_KEY"];
-        $secret = $_ENV["AWS_SECRET_KEY"];
+    public function populateCredentials(?string $token = null, ?int $expires = null, bool $grantless = false): void {
+        $key = $_ENV["AWS_ACCESS_KEY_ID"];
+        $secret = $_ENV["AWS_SECRET_ACCESS_KEY"];
         $creds = null;
         if ($token !== null && $expires !== null) {
             $creds = new Credentials($key, $secret, $token, $expires);
@@ -102,7 +107,7 @@ class Authentication
         }
     }
 
-    public function signRequest(Psr7\Request $request, ?string $scope = null) : Psr7\Request {
+    public function signRequest(Psr7\Request $request, ?string $scope = null): Psr7\Request {
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
         $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         if ($relevantCreds === null || $relevantCreds->expiresSoon()) {
@@ -110,6 +115,9 @@ class Authentication
             // Reassign $relevantCreds to the correct set of credentials, since that set of creds has been updated
             $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         }
+
+        // Make sure every request signature is generated with the current time
+        $this->setRequestTime();
 
         $request->withHeader("content-type", "application/json");
         $canonicalRequest = $this->createCanonicalRequest($request);
@@ -126,7 +134,7 @@ class Authentication
         return $request->withHeader("Authorization", $authHeaderVal);
     }
 
-    private function createCanonicalRequest(Psr7\Request $request) : string {
+    private function createCanonicalRequest(Psr7\Request $request): string {
         $method = $request->getMethod();
         $uri = $request->getUri();
         $path = $this->createCanonicalizedPath($uri->getPath());
@@ -138,7 +146,7 @@ class Authentication
         return $canonicalRequest;
     }
 
-    private function createCanonicalizedPath(string $path) : string {
+    private function createCanonicalizedPath(string $path): string {
         // Remove leading slash
         $trimmed = ltrim($path, "/");
         // URL encode an already URL-encoded path
@@ -147,7 +155,7 @@ class Authentication
         return "/" . str_replace("%2F", "/", $doubleEncoded);
     }
 
-    private function createCanonicalizedQuery(string $query) : string {
+    private function createCanonicalizedQuery(string $query): string {
         if (strlen($query) === 0) return "";
 
         // Parse query string
@@ -194,7 +202,7 @@ class Authentication
         return $canonicalized;
     }
 
-    private function createCanonicalizedHeaders(array $headers) : array {
+    private function createCanonicalizedHeaders(array $headers): array {
         // Convert all header names to lowercase
         foreach ($headers as $key => $values) {
             $headers[strtolower($key)] = $values;
@@ -224,25 +232,20 @@ class Authentication
         ];
     }
 
-    private function createSigningString(string $canonicalRequest) : string {
-        $dt = $this->datetimeForApi();
-        $datetime = $dt->format(static::DATETIME_FMT);
-        $credentialScope = $this->createCredentialScope($dt);
+    private function createSigningString(string $canonicalRequest): string {
+        $credentialScope = $this->createCredentialScope();
         $canonHashed = hash("sha256", $canonicalRequest);
-        return static::SIGNING_ALGO . "\n{$datetime}\n{$credentialScope}\n{$canonHashed}";
+        return static::SIGNING_ALGO . "\n{$this->formattedRequestTime()}\n{$credentialScope}\n{$canonHashed}";
     }
 
-    private function createCredentialScope() : string {
-        $dt = $this->datetimeForApi();
-        $date = $dt->format(static::DATE_FMT);
+    private function createCredentialScope(): string {
         $region = $_ENV["AWS_REGION"];
         $terminator = static::TERMINATION_STR;
-        return "{$date}/{$region}/" . static::SERVICE_NAME . "/{$terminator}";
+        return "{$this->formattedRequestTime(false)}/{$region}/" . static::SERVICE_NAME . "/{$terminator}";
     }
 
-    private function createSignature(string $signingString, string $secretKey) : string {
-        $dt = $this->datetimeForApi();
-        $kDate = hash_hmac("sha256", $dt->format(static::DATE_FMT), "AWS4{$secretKey}", true);
+    private function createSignature(string $signingString, string $secretKey): string {
+        $kDate = hash_hmac("sha256", $this->formattedRequestTime(false), "AWS4{$secretKey}", true);
         $kRegion = hash_hmac("sha256", $_ENV["AWS_REGION"], $kDate, true);
         $kService = hash_hmac("sha256", self::SERVICE_NAME, $kRegion, true);
         $kSigning = hash_hmac("sha256", static::TERMINATION_STR, $kService, true);
@@ -251,7 +254,7 @@ class Authentication
         return $signature;
     }
 
-    private function newToken(?string $scope = null) : void {
+    private function newToken(?string $scope = null): void {
         [$accessToken, $expirationTimestamp] = $this->requestLWAToken($scope);
         $this->populateCredentials($accessToken, $expirationTimestamp, $scope !== null);
         if ($scope === null && $this->onUpdateCreds !== null) {
@@ -259,8 +262,19 @@ class Authentication
         }
     }
 
-    public function datetimeForApi() : \DateTime {
-        return new \DateTime("now", new \DateTimeZone("UTC"));
+    public function setRequestTime(): void {
+        $this->requestTime = new \DateTime("now", new \DateTimeZone("UTC"));
+    }
+
+    public function formattedRequestTime(?bool $withTime = true): ?string {
+        if ($this->requestTime === null) {
+            // We need to use the same exact DateTime throughout the signing process *and* in the
+            // x-amz-date header (see HeaderSelector.php), because Amazon will reject any request
+            // where all times do not match down to the second
+            $this->setRequestTime();
+        }
+        $fmt = $withTime ? static::DATETIME_FMT : static::DATE_FMT;
+        return $this->requestTime->format($fmt);
     }
 }
 

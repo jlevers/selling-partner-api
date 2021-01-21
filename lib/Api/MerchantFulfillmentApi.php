@@ -72,9 +72,9 @@ class MerchantFulfillmentApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -112,8 +112,10 @@ class MerchantFulfillmentApi
     public function cancelShipmentWithHttpInfo($shipment_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelShipmentResponse';
+        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -263,8 +265,10 @@ class MerchantFulfillmentApi
     public function cancelShipmentAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelShipmentResponse';
+        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -439,8 +443,10 @@ class MerchantFulfillmentApi
     public function cancelShipmentOldWithHttpInfo($shipment_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelShipmentResponse';
+        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentOldRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -590,8 +596,10 @@ class MerchantFulfillmentApi
     public function cancelShipmentOldAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelShipmentResponse';
+        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentOldRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -766,8 +774,10 @@ class MerchantFulfillmentApi
     public function createShipmentWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateShipmentResponse';
+        $this->config->startRequestGeneration();
         $request = $this->createShipmentRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -917,8 +927,10 @@ class MerchantFulfillmentApi
     public function createShipmentAsyncWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateShipmentResponse';
+        $this->config->startRequestGeneration();
         $request = $this->createShipmentRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1084,8 +1096,10 @@ class MerchantFulfillmentApi
     public function getAdditionalSellerInputsWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getAdditionalSellerInputsRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1235,8 +1249,10 @@ class MerchantFulfillmentApi
     public function getAdditionalSellerInputsAsyncWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getAdditionalSellerInputsRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1402,8 +1418,10 @@ class MerchantFulfillmentApi
     public function getAdditionalSellerInputsOldWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getAdditionalSellerInputsOldRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1553,8 +1571,10 @@ class MerchantFulfillmentApi
     public function getAdditionalSellerInputsOldAsyncWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getAdditionalSellerInputsOldRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1720,8 +1740,10 @@ class MerchantFulfillmentApi
     public function getEligibleShipmentServicesWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getEligibleShipmentServicesRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1871,8 +1893,10 @@ class MerchantFulfillmentApi
     public function getEligibleShipmentServicesAsyncWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getEligibleShipmentServicesRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2038,8 +2062,10 @@ class MerchantFulfillmentApi
     public function getEligibleShipmentServicesOldWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getEligibleShipmentServicesOldRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2189,8 +2215,10 @@ class MerchantFulfillmentApi
     public function getEligibleShipmentServicesOldAsyncWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getEligibleShipmentServicesOldRequest($body);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2356,8 +2384,10 @@ class MerchantFulfillmentApi
     public function getShipmentWithHttpInfo($shipment_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2507,8 +2537,10 @@ class MerchantFulfillmentApi
     public function getShipmentAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

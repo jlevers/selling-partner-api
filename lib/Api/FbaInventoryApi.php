@@ -72,9 +72,9 @@ class FbaInventoryApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -124,8 +124,10 @@ class FbaInventoryApi
     public function getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetInventorySummariesResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -279,8 +281,10 @@ class FbaInventoryApi
     public function getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetInventorySummariesResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

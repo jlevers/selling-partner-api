@@ -72,9 +72,9 @@ class FbaInboundEligibilityApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -116,8 +116,10 @@ class FbaInboundEligibilityApi
     public function getItemEligibilityPreviewWithHttpInfo($asin, $program, $marketplace_ids = null)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetItemEligibilityPreviewResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getItemEligibilityPreviewRequest($asin, $program, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -271,8 +273,10 @@ class FbaInboundEligibilityApi
     public function getItemEligibilityPreviewAsyncWithHttpInfo($asin, $program, $marketplace_ids = null)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetItemEligibilityPreviewResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getItemEligibilityPreviewRequest($asin, $program, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

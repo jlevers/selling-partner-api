@@ -72,9 +72,9 @@ class NotificationsApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -112,8 +112,10 @@ class NotificationsApi
     public function createDestinationWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateDestinationResponse';
+        $this->config->startRequestGeneration();
         $request = $this->createDestinationRequest($body);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -279,8 +281,10 @@ class NotificationsApi
     public function createDestinationAsyncWithHttpInfo($body)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateDestinationResponse';
+        $this->config->startRequestGeneration();
         $request = $this->createDestinationRequest($body);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -449,8 +453,10 @@ class NotificationsApi
     public function createSubscriptionWithHttpInfo($body, $notification_type)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateSubscriptionResponse';
+        $this->config->startRequestGeneration();
         $request = $this->createSubscriptionRequest($body, $notification_type);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -618,8 +624,10 @@ class NotificationsApi
     public function createSubscriptionAsyncWithHttpInfo($body, $notification_type)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateSubscriptionResponse';
+        $this->config->startRequestGeneration();
         $request = $this->createSubscriptionRequest($body, $notification_type);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -800,8 +808,10 @@ class NotificationsApi
     public function deleteDestinationWithHttpInfo($destination_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\DeleteDestinationResponse';
+        $this->config->startRequestGeneration();
         $request = $this->deleteDestinationRequest($destination_id);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -967,8 +977,10 @@ class NotificationsApi
     public function deleteDestinationAsyncWithHttpInfo($destination_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\DeleteDestinationResponse';
+        $this->config->startRequestGeneration();
         $request = $this->deleteDestinationRequest($destination_id);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1142,8 +1154,10 @@ class NotificationsApi
     public function deleteSubscriptionByIdWithHttpInfo($subscription_id, $notification_type)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\DeleteSubscriptionByIdResponse';
+        $this->config->startRequestGeneration();
         $request = $this->deleteSubscriptionByIdRequest($subscription_id, $notification_type);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1311,8 +1325,10 @@ class NotificationsApi
     public function deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\DeleteSubscriptionByIdResponse';
+        $this->config->startRequestGeneration();
         $request = $this->deleteSubscriptionByIdRequest($subscription_id, $notification_type);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1499,8 +1515,10 @@ class NotificationsApi
     public function getDestinationWithHttpInfo($destination_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetDestinationResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getDestinationRequest($destination_id);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1666,8 +1684,10 @@ class NotificationsApi
     public function getDestinationAsyncWithHttpInfo($destination_id)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetDestinationResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getDestinationRequest($destination_id);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1837,8 +1857,10 @@ class NotificationsApi
     public function getDestinationsWithHttpInfo()
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetDestinationsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getDestinationsRequest();
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2002,8 +2024,10 @@ class NotificationsApi
     public function getDestinationsAsyncWithHttpInfo()
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetDestinationsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getDestinationsRequest();
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2160,8 +2184,10 @@ class NotificationsApi
     public function getSubscriptionWithHttpInfo($notification_type)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSubscriptionResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getSubscriptionRequest($notification_type);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2319,8 +2345,10 @@ class NotificationsApi
     public function getSubscriptionAsyncWithHttpInfo($notification_type)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSubscriptionResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getSubscriptionRequest($notification_type);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2493,8 +2521,10 @@ class NotificationsApi
     public function getSubscriptionByIdWithHttpInfo($subscription_id, $notification_type)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSubscriptionByIdResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getSubscriptionByIdRequest($subscription_id, $notification_type);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2662,8 +2692,10 @@ class NotificationsApi
     public function getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSubscriptionByIdResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getSubscriptionByIdRequest($subscription_id, $notification_type);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

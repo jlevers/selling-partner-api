@@ -72,9 +72,9 @@ class SalesApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -128,8 +128,10 @@ class SalesApi
     public function getOrderMetricsWithHttpInfo($marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = 'All', $fulfillment_network = null, $first_day_of_week = 'Monday', $asin = null, $sku = null)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getOrderMetricsRequest($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -303,8 +305,10 @@ class SalesApi
     public function getOrderMetricsAsyncWithHttpInfo($marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = 'All', $fulfillment_network = null, $first_day_of_week = 'Monday', $asin = null, $sku = null)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getOrderMetricsRequest($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

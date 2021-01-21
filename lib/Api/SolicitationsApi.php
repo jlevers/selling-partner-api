@@ -72,9 +72,9 @@ class SolicitationsApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -114,8 +114,10 @@ class SolicitationsApi
     public function createProductReviewAndSellerFeedbackSolicitationWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateProductReviewAndSellerFeedbackSolicitationResponse';
+        $this->config->startRequestGeneration();
         $request = $this->createProductReviewAndSellerFeedbackSolicitationRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -275,8 +277,10 @@ class SolicitationsApi
     public function createProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateProductReviewAndSellerFeedbackSolicitationResponse';
+        $this->config->startRequestGeneration();
         $request = $this->createProductReviewAndSellerFeedbackSolicitationRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -467,8 +471,10 @@ class SolicitationsApi
     public function getSolicitationActionsForOrderWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSolicitationActionsForOrderResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getSolicitationActionsForOrderRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -628,8 +634,10 @@ class SolicitationsApi
     public function getSolicitationActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSolicitationActionsForOrderResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getSolicitationActionsForOrderRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

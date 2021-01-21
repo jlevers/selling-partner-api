@@ -51,12 +51,22 @@ class Authentication
         }
     }
 
+    public function startRequestGeneration(): void {
+        // We need to use the same exact DateTime throughout the signing process *and* in the
+        // x-amz-date header (see HeaderSelector.php), because Amazon will reject any request
+        // where all times do not match down to the second
+        $this->setRequestTime();
+    }
+
+    public function endRequestGeneration(): void {
+        $this->requestTime = null;
+    }
+
     public function getAuthToken(?string $scope = null) {
         if ($scope !== null) {
             // If the scope for this grantless request doesn't match $this->grantlessCredentialsScope, we
             // need a new set of grantless credentials that provide access to the new scope
             if ($this->grantlessAwsCredentials === null || $this->grantlessCredentialsScope !== $scope) {
-                $this->setRequestTime();
                 $this->newToken($scope);
             }
             return $this->grantlessAwsCredentials->getSecurityToken();
@@ -115,9 +125,6 @@ class Authentication
             // Reassign $relevantCreds to the correct set of credentials, since that set of creds has been updated
             $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         }
-
-        // Make sure every request signature is generated with the current time
-        $this->setRequestTime();
 
         $request->withHeader("content-type", "application/json");
         $canonicalRequest = $this->createCanonicalRequest($request);
@@ -262,21 +269,12 @@ class Authentication
         }
     }
 
-    public function setRequestTime(): void {
+    private function setRequestTime(): void {
         $this->requestTime = new \DateTime("now", new \DateTimeZone("UTC"));
     }
 
     public function formattedRequestTime(?bool $withTime = true): ?string {
-        if ($this->requestTime === null) {
-            // We need to use the same exact DateTime throughout the signing process *and* in the
-            // x-amz-date header (see HeaderSelector.php), because Amazon will reject any request
-            // where all times do not match down to the second
-            $this->setRequestTime();
-        }
         $fmt = $withTime ? static::DATETIME_FMT : static::DATE_FMT;
         return $this->requestTime->format($fmt);
     }
 }
-
-// $auth = new Authentication();
-// $auth->request("/sellers/v1/marketplaceParticipations");

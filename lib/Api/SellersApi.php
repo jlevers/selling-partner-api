@@ -72,9 +72,9 @@ class SellersApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -110,8 +110,10 @@ class SellersApi
     public function getMarketplaceParticipationsWithHttpInfo()
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMarketplaceParticipationsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getMarketplaceParticipationsRequest();
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -267,8 +269,10 @@ class SellersApi
     public function getMarketplaceParticipationsAsyncWithHttpInfo()
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMarketplaceParticipationsResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getMarketplaceParticipationsRequest();
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

@@ -271,6 +271,24 @@ class Configuration
     }
 
     /**
+     * Delegator method. Performs any necessary operations to prepare the
+     * Authentication class to start generating a signed request
+     *
+     * @return void
+     */
+    public function startRequestGeneration() {
+        $this->auth->startRequestGeneration();
+    }
+
+    /**
+     * Delegator method. Performs any necessary operations to tell the Authentication
+     * class that we're done generating a signed request
+     */
+    public function endRequestGeneration() {
+        $this->auth->endRequestGeneration();
+    }
+
+    /**
      * Gets the default configuration instance
      *
      * @return Configuration
@@ -352,8 +370,7 @@ class Configuration
      */
     public function signRequest($request, $scope = null)
     {
-        $auth = self::getDefaultAuthentication();
-        return $auth->signRequest($request, $scope);
+        return $this->auth->signRequest($request, $scope);
     }
 
     /**

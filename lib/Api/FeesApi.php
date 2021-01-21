@@ -72,9 +72,9 @@ class FeesApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -114,8 +114,10 @@ class FeesApi
     public function getMyFeesEstimateForASINWithHttpInfo($body, $asin)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForASINRequest($body, $asin);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -267,8 +269,10 @@ class FeesApi
     public function getMyFeesEstimateForASINAsyncWithHttpInfo($body, $asin)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForASINRequest($body, $asin);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -451,8 +455,10 @@ class FeesApi
     public function getMyFeesEstimateForSKUWithHttpInfo($body, $seller_sku)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForSKURequest($body, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -604,8 +610,10 @@ class FeesApi
     public function getMyFeesEstimateForSKUAsyncWithHttpInfo($body, $seller_sku)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForSKURequest($body, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

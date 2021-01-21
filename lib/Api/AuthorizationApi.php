@@ -72,9 +72,9 @@ class AuthorizationApi
         ClientInterface $client = null,
         HeaderSelector $selector = null
     ) {
-        $this->config = $config ?: new Configuration();
-        $this->client = $client ?: new Client();
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
+        $this->config = $config ?? new Configuration();
+        $this->client = $client ?? new Client();
+        $this->headerSelector = $selector ?? new HeaderSelector($this->config);
     }
 
     /**
@@ -120,8 +120,10 @@ class AuthorizationApi
     public function getAuthorizationCodeWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getAuthorizationCodeRequest($selling_partner_id, $developer_id, $mws_auth_token);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::migration");
+        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -283,8 +285,10 @@ class AuthorizationApi
     public function getAuthorizationCodeAsyncWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token)
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse';
+        $this->config->startRequestGeneration();
         $request = $this->getAuthorizationCodeRequest($selling_partner_id, $developer_id, $mws_auth_token);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::migration");
+        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

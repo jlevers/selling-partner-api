@@ -19,7 +19,7 @@ function loadDotenv() {
             $dotenv->load();
 
             // Validate environment variables
-            $dotenv->required("AWS_REGION")->allowedValues(["us-east-1", "us-west-2", "eu-west-1"]);
+            $dotenv->required("SPAPI_AWS_REGION")->allowedValues(["us-east-1", "us-west-2", "eu-west-1"]);
             $dotenv->required("AWS_ACCESS_KEY_ID")->notEmpty();
             $dotenv->required("AWS_SECRET_ACCESS_KEY")->notEmpty();
             $dotenv->required("LWA_CLIENT_ID")->notEmpty();

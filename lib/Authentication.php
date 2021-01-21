@@ -246,14 +246,14 @@ class Authentication
     }
 
     private function createCredentialScope(): string {
-        $region = $_ENV["AWS_REGION"];
+        $region = $_ENV["SPAPI_AWS_REGION"];
         $terminator = static::TERMINATION_STR;
         return "{$this->formattedRequestTime(false)}/{$region}/" . static::SERVICE_NAME . "/{$terminator}";
     }
 
     private function createSignature(string $signingString, string $secretKey): string {
         $kDate = hash_hmac("sha256", $this->formattedRequestTime(false), "AWS4{$secretKey}", true);
-        $kRegion = hash_hmac("sha256", $_ENV["AWS_REGION"], $kDate, true);
+        $kRegion = hash_hmac("sha256", $_ENV["SPAPI_AWS_REGION"], $kDate, true);
         $kService = hash_hmac("sha256", self::SERVICE_NAME, $kRegion, true);
         $kSigning = hash_hmac("sha256", static::TERMINATION_STR, $kService, true);
 

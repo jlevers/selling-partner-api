@@ -264,9 +264,10 @@ class MerchantFulfillmentApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelShipmentResponse';
         $request = $this->cancelShipmentRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -590,9 +591,10 @@ class MerchantFulfillmentApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelShipmentResponse';
         $request = $this->cancelShipmentOldRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -916,9 +918,10 @@ class MerchantFulfillmentApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateShipmentResponse';
         $request = $this->createShipmentRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1233,9 +1236,10 @@ class MerchantFulfillmentApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse';
         $request = $this->getAdditionalSellerInputsRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1550,9 +1554,10 @@ class MerchantFulfillmentApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse';
         $request = $this->getAdditionalSellerInputsOldRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1867,9 +1872,10 @@ class MerchantFulfillmentApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse';
         $request = $this->getEligibleShipmentServicesRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2184,9 +2190,10 @@ class MerchantFulfillmentApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse';
         $request = $this->getEligibleShipmentServicesOldRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2501,9 +2508,10 @@ class MerchantFulfillmentApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentResponse';
         $request = $this->getShipmentRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

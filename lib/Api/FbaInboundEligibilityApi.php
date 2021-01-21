@@ -272,9 +272,10 @@ class FbaInboundEligibilityApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetItemEligibilityPreviewResponse';
         $request = $this->getItemEligibilityPreviewRequest($asin, $program, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

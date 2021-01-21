@@ -284,9 +284,10 @@ class ServiceApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\SetAppointmentResponse';
         $request = $this->addAppointmentForServiceJobByServiceJobIdRequest($service_job_id, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -643,9 +644,10 @@ class ServiceApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelServiceJobByServiceJobIdResponse';
         $request = $this->cancelServiceJobByServiceJobIdRequest($service_job_id, $cancellation_reason_code);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1009,9 +1011,10 @@ class ServiceApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CompleteServiceJobByServiceJobIdResponse';
         $request = $this->completeServiceJobByServiceJobIdRequest($service_job_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1354,9 +1357,10 @@ class ServiceApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetServiceJobByServiceJobIdResponse';
         $request = $this->getServiceJobByServiceJobIdRequest($service_job_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1739,9 +1743,10 @@ class ServiceApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetServiceJobsResponse';
         $request = $this->getServiceJobsRequest($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2168,9 +2173,10 @@ class ServiceApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\SetAppointmentResponse';
         $request = $this->rescheduleAppointmentForServiceJobByServiceJobIdRequest($service_job_id, $appointment_id, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

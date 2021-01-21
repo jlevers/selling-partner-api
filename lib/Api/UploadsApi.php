@@ -284,9 +284,10 @@ class UploadsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateUploadDestinationResponse';
         $request = $this->createUploadDestinationForResourceRequest($marketplace_ids, $content_md5, $resource, $content_type);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

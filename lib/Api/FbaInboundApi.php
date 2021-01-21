@@ -272,9 +272,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse';
         $request = $this->confirmPreorderRequest($shipment_id, $need_by_date, $marketplace_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -616,9 +617,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse';
         $request = $this->confirmTransportRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -942,9 +944,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\InboundShipmentResponse';
         $request = $this->createInboundShipmentRequest($body, $shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1274,9 +1277,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse';
         $request = $this->createInboundShipmentPlanRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1591,9 +1595,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\EstimateTransportResponse';
         $request = $this->estimateTransportRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1913,9 +1918,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse';
         $request = $this->getBillOfLadingRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2243,9 +2249,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse';
         $request = $this->getInboundGuidanceRequest($marketplace_id, $seller_sku_list, $asin_list);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2605,9 +2612,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetLabelsResponse';
         $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2975,9 +2983,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse';
         $request = $this->getPreorderInfoRequest($shipment_id, $marketplace_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -3316,9 +3325,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse';
         $request = $this->getPrepInstructionsRequest($ship_to_country_code, $seller_sku_list, $asin_list);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -3674,9 +3684,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse';
         $request = $this->getShipmentItemsRequest($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -4022,9 +4033,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse';
         $request = $this->getShipmentItemsByShipmentIdRequest($shipment_id, $marketplace_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -4379,9 +4391,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentsResponse';
         $request = $this->getShipmentsRequest($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -4739,9 +4752,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse';
         $request = $this->getTransportDetailsRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -5065,9 +5079,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse';
         $request = $this->putTransportDetailsRequest($shipment_id, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -5401,9 +5416,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\InboundShipmentResponse';
         $request = $this->updateInboundShipmentRequest($body, $shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -5733,9 +5749,10 @@ class FbaInboundApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\VoidTransportResponse';
         $request = $this->voidTransportRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

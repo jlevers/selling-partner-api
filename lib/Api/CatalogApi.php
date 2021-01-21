@@ -268,9 +268,10 @@ class CatalogApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse';
         $request = $this->getCatalogItemRequest($marketplace_id, $asin);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -609,9 +610,10 @@ class CatalogApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse';
         $request = $this->listCatalogCategoriesRequest($marketplace_id, $asin, $seller_sku);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -965,9 +967,10 @@ class CatalogApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse';
         $request = $this->listCatalogItemsRequest($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

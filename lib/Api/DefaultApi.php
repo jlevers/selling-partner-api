@@ -268,9 +268,10 @@ class DefaultApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\ListFinancialEventGroupsResponse';
         $request = $this->listFinancialEventGroupsRequest($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -606,9 +607,10 @@ class DefaultApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse';
         $request = $this->listFinancialEventsRequest($max_results_per_page, $posted_after, $posted_before, $next_token);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -940,9 +942,10 @@ class DefaultApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse';
         $request = $this->listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page, $next_token);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1279,9 +1282,10 @@ class DefaultApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse';
         $request = $this->listFinancialEventsByOrderIdRequest($order_id, $max_results_per_page, $next_token);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

@@ -280,9 +280,10 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateDestinationResponse';
         $request = $this->createDestinationRequest($body);
+        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -618,9 +619,10 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateSubscriptionResponse';
         $request = $this->createSubscriptionRequest($body, $notification_type);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -966,9 +968,10 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\DeleteDestinationResponse';
         $request = $this->deleteDestinationRequest($destination_id);
+        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1309,9 +1312,10 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\DeleteSubscriptionByIdResponse';
         $request = $this->deleteSubscriptionByIdRequest($subscription_id, $notification_type);
+        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1663,9 +1667,10 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetDestinationResponse';
         $request = $this->getDestinationRequest($destination_id);
+        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1998,9 +2003,10 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetDestinationsResponse';
         $request = $this->getDestinationsRequest();
+        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2314,9 +2320,10 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSubscriptionResponse';
         $request = $this->getSubscriptionRequest($notification_type);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2656,9 +2663,10 @@ class NotificationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSubscriptionByIdResponse';
         $request = $this->getSubscriptionByIdRequest($subscription_id, $notification_type);
+        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

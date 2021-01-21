@@ -253,9 +253,10 @@ class SmallAndLightApi
     {
         $returnType = '';
         $request = $this->deleteSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
@@ -591,9 +592,10 @@ class SmallAndLightApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\SmallAndLightEligibility';
         $request = $this->getSmallAndLightEligibilityBySellerSKURequest($seller_sku, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -943,9 +945,10 @@ class SmallAndLightApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\SmallAndLightEnrollment';
         $request = $this->getSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1283,9 +1286,10 @@ class SmallAndLightApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\SmallAndLightFeePreviews';
         $request = $this->getSmallAndLightFeePreviewRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1612,9 +1616,10 @@ class SmallAndLightApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\SmallAndLightEnrollment';
         $request = $this->putSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

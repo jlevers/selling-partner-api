@@ -284,9 +284,10 @@ class AuthorizationApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse';
         $request = $this->getAuthorizationCodeRequest($selling_partner_id, $developer_id, $mws_auth_token);
+        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::migration");
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

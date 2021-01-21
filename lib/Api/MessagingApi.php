@@ -280,9 +280,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateConfirmCustomizationDetailsResponse';
         $request = $this->confirmCustomizationDetailsRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -646,9 +647,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateAmazonMotorsResponse';
         $request = $this->createAmazonMotorsRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1012,9 +1014,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateConfirmDeliveryDetailsResponse';
         $request = $this->createConfirmDeliveryDetailsRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1378,9 +1381,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateConfirmOrderDetailsResponse';
         $request = $this->createConfirmOrderDetailsRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1744,9 +1748,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateConfirmServiceDetailsResponse';
         $request = $this->createConfirmServiceDetailsRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2110,9 +2115,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateDigitalAccessKeyResponse';
         $request = $this->createDigitalAccessKeyRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2476,9 +2482,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateLegalDisclosureResponse';
         $request = $this->createLegalDisclosureRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2838,9 +2845,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateNegativeFeedbackRemovalResponse';
         $request = $this->createNegativeFeedbackRemovalRequest($amazon_order_id, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -3194,9 +3202,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateUnexpectedProblemResponse';
         $request = $this->createUnexpectedProblemRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -3560,9 +3569,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateWarrantyResponse';
         $request = $this->createWarrantyRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -3922,9 +3932,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAttributesResponse';
         $request = $this->getAttributesRequest($amazon_order_id, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -4274,9 +4285,10 @@ class MessagingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMessagingActionsForOrderResponse';
         $request = $this->getMessagingActionsForOrderRequest($amazon_order_id, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

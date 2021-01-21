@@ -276,9 +276,10 @@ class SolicitationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateProductReviewAndSellerFeedbackSolicitationResponse';
         $request = $this->createProductReviewAndSellerFeedbackSolicitationRequest($amazon_order_id, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -628,9 +629,10 @@ class SolicitationsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetSolicitationActionsForOrderResponse';
         $request = $this->getSolicitationActionsForOrderRequest($amazon_order_id, $marketplace_ids);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

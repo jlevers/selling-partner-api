@@ -264,9 +264,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelShipmentResponse';
         $request = $this->cancelShipmentRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -586,9 +587,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateShipmentResponse';
         $request = $this->createShipmentRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -899,9 +901,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetAccountResponse';
         $request = $this->getAccountRequest();
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1206,9 +1209,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetRatesResponse';
         $request = $this->getRatesRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1523,9 +1527,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentResponse';
         $request = $this->getShipmentRequest($shipment_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1845,9 +1850,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetTrackingInformationResponse';
         $request = $this->getTrackingInformationRequest($tracking_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2171,9 +2177,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\PurchaseLabelsResponse';
         $request = $this->purchaseLabelsRequest($shipment_id, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2503,9 +2510,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\PurchaseShipmentResponse';
         $request = $this->purchaseShipmentRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2828,9 +2836,10 @@ class ShippingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\RetrieveShippingLabelResponse';
         $request = $this->retrieveShippingLabelRequest($shipment_id, $tracking_id, $body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

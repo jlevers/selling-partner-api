@@ -268,9 +268,10 @@ class SellersApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMarketplaceParticipationsResponse';
         $request = $this->getMarketplaceParticipationsRequest();
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

@@ -272,9 +272,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelReportResponse';
         $request = $this->cancelReportRequest($report_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -602,9 +603,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelReportScheduleResponse';
         $request = $this->cancelReportScheduleRequest($report_schedule_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -932,9 +934,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateReportResponse';
         $request = $this->createReportRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1257,9 +1260,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateReportScheduleResponse';
         $request = $this->createReportScheduleRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1582,9 +1586,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetReportResponse';
         $request = $this->getReportRequest($report_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1912,9 +1917,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetReportDocumentResponse';
         $request = $this->getReportDocumentRequest($report_document_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2242,9 +2248,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetReportScheduleResponse';
         $request = $this->getReportScheduleRequest($report_schedule_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2572,9 +2579,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetReportSchedulesResponse';
         $request = $this->getReportSchedulesRequest($report_types);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -2932,9 +2940,10 @@ class ReportsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetReportsResponse';
         $request = $this->getReportsRequest($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

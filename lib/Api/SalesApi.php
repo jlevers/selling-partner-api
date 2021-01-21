@@ -304,9 +304,10 @@ class SalesApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse';
         $request = $this->getOrderMetricsRequest($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

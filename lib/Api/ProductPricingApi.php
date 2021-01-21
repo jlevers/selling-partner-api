@@ -276,9 +276,10 @@ class ProductPricingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetPricingResponse';
         $request = $this->getCompetitivePricingRequest($marketplace_id, $item_type, $asins, $skus);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -637,9 +638,10 @@ class ProductPricingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetOffersResponse';
         $request = $this->getItemOffersRequest($marketplace_id, $item_condition, $asin);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -989,9 +991,10 @@ class ProductPricingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetOffersResponse';
         $request = $this->getListingOffersRequest($marketplace_id, $item_condition, $seller_sku);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1349,9 +1352,10 @@ class ProductPricingApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetPricingResponse';
         $request = $this->getPricingRequest($marketplace_id, $item_type, $asins, $skus, $item_condition);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

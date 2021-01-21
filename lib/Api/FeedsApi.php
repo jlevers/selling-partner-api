@@ -272,9 +272,10 @@ class FeedsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CancelFeedResponse';
         $request = $this->cancelFeedRequest($feed_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -602,9 +603,10 @@ class FeedsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateFeedResponse';
         $request = $this->createFeedRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -927,9 +929,10 @@ class FeedsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\CreateFeedDocumentResponse';
         $request = $this->createFeedDocumentRequest($body);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1252,9 +1255,10 @@ class FeedsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetFeedResponse';
         $request = $this->getFeedRequest($feed_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1582,9 +1586,10 @@ class FeedsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetFeedDocumentResponse';
         $request = $this->getFeedDocumentRequest($feed_document_id);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -1936,9 +1941,10 @@ class FeedsApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetFeedsResponse';
         $request = $this->getFeedsRequest($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

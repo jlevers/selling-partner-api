@@ -268,9 +268,10 @@ class FeesApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
         $request = $this->getMyFeesEstimateForASINRequest($body, $asin);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();
@@ -604,9 +605,10 @@ class FeesApi
     {
         $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
         $request = $this->getMyFeesEstimateForSKURequest($body, $seller_sku);
+        $signedRequest = $this->config->signRequest($request);
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $responseBody = $response->getBody();

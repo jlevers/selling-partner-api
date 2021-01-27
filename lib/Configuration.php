@@ -96,18 +96,17 @@ class Configuration
     /**
      * Constructor
      */
-    public function __construct(?array $lwaAuthInfo = null)
+    public function __construct(?array $lwaAuthInfo = null, ?string $host = null)
     {
         $this->lwaAuthInfo = $lwaAuthInfo;
         $this->tempFolderPath = sys_get_temp_dir();
 
+        if ($host !== null) {
+            $this->host = $host;
+        }
+
         if ($this->lwaAuthInfo !== null) {
-            $this->auth = new Authentication(
-                $this->lwaAuthInfo["refreshToken"] ?? null,
-                $this->lwaAuthInfo["accessToken"] ?? null,
-                $this->lwaAuthInfo["accessTokenExpiration"] ?? null,
-                $this->lwaAuthInfo["onUpdateCreds"] ?? null
-            );
+            $this->auth = new Authentication($this->lwaAuthInfo);
         } else {
             $this->auth = self::getDefaultAuthentication();
         }

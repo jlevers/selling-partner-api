@@ -15,6 +15,9 @@ class Authentication
 
     private $refreshToken;
     private $onUpdateCreds;
+    private $lwaClientId;
+    private $lwaClientSecret;
+    private $region;
 
     private $client = null;
     private $awsCredentials = null;
@@ -22,17 +25,18 @@ class Authentication
     private $grantlessCredentialsScope = null;
     private $requestTime;
 
-    public function __construct(
-        ?string $refreshToken = null,
-        ?string $accessToken = null,
-        ?int $accessTokenExpiration = null,
-        ?callable $onUpdateCreds = null
-    ) {
+    public function __construct(?array $options = []) {
         $this->client = new Client();
         loadDotenv();
 
-        $this->refreshToken = $refreshToken ?? $_ENV["LWA_REFRESH_TOKEN"];
-        $this->onUpdateCreds = $onUpdateCreds;
+        $this->refreshToken = $options["refreshToken"] ?? $_ENV["LWA_REFRESH_TOKEN"];
+        $this->onUpdateCreds = $options["onUpdateCreds"] ?? null;
+        $this->lwaClientId = $options["lwaClientId"] ?? $_ENV["LWA_CLIENT_ID"];
+        $this->lwaClientSecret = $options["lwaClientSecret"] ?? $_ENV["LWA_CLIENT_SECRET"];
+        $this->region = $options["region"] ?? $_ENV["SPAPI_AWS_REGION"];
+
+        $accessToken = $options["accessToken"] ?? null;
+        $accessTokenExpiration = $options["accessTokenExpiration"] ?? null;
 
         if (
             $accessToken === null && $accessTokenExpiration !== null
@@ -77,8 +81,8 @@ class Authentication
     public function requestLWAToken(?string $scope = null): array {
         $jsonData = [
             "grant_type" => $scope === null ? "refresh_token" : "client_credentials",
-            "client_id" => $_ENV["LWA_CLIENT_ID"],
-            "client_secret" => $_ENV["LWA_CLIENT_SECRET"],
+            "client_id" => $this->lwaClientId,
+            "client_secret" => $this->lwaClientSecret,
         ];
 
         // Only pass one of `scope` and `refresh_token`
@@ -246,14 +250,13 @@ class Authentication
     }
 
     private function createCredentialScope(): string {
-        $region = $_ENV["SPAPI_AWS_REGION"];
         $terminator = static::TERMINATION_STR;
-        return "{$this->formattedRequestTime(false)}/{$region}/" . static::SERVICE_NAME . "/{$terminator}";
+        return "{$this->formattedRequestTime(false)}/{$this->region}/" . static::SERVICE_NAME . "/{$terminator}";
     }
 
     private function createSignature(string $signingString, string $secretKey): string {
         $kDate = hash_hmac("sha256", $this->formattedRequestTime(false), "AWS4{$secretKey}", true);
-        $kRegion = hash_hmac("sha256", $_ENV["SPAPI_AWS_REGION"], $kDate, true);
+        $kRegion = hash_hmac("sha256", $this->region, $kDate, true);
         $kService = hash_hmac("sha256", self::SERVICE_NAME, $kRegion, true);
         $kSigning = hash_hmac("sha256", static::TERMINATION_STR, $kService, true);
 

@@ -4,6 +4,7 @@ namespace Evers\SellingPartnerApi;
 
 use Cyberdummy\GzStream;
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7;
 use GuzzleHttp\RequestOptions;
 use Jsq\EncryptionStreams;
 
@@ -64,7 +65,7 @@ class Document
             }
         }
 
-        return stream_get_contents($stream->detach());
+        return $stream->getContents();
     }
 
     public function upload(): void {
@@ -80,8 +81,9 @@ class Document
         // Write the data to an in-memory feed to make it easier to encrypt chunks of it at a time.
         // Amazon requires their data to be encrypted at rest, which prevents us from writing the data
         // to a file and encrypting it from there
-        fwrite($stream, $data);
-        rewind($stream);
+        $stream = Psr7\Utils::streamFor($stream);
+        $stream->write($data);
+        $stream->rewind();
 
         $cipherMethod = new EncryptionStreams\Cbc($this->iv);
         $stream = new EncryptionStreams\AesEncryptingStream($stream, $this->key, $cipherMethod);
@@ -95,7 +97,7 @@ class Document
             RequestOptions::BODY => $stream,
         ]);
 
-        fclose($stream);
+        $stream->close();
 
         if ($response->getStatusCode() >= 300) {
             throw new \Exception("Upload failed ({$response->getStatusCode()}): {$response->getBody()}");

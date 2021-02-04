@@ -64,7 +64,7 @@ class Document
             }
         }
 
-        return stream_get_contents($stream);
+        return stream_get_contents($stream->detach());
     }
 
     public function upload(): void {

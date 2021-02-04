@@ -47,12 +47,6 @@ class Document
         $this->contentType = $contentType;
     }
 
-    public function __destruct() {
-        if ($this->stream !== null) {
-            $this->stream->close();
-        }
-    }
-
     public function download(): string {
         $client = new Client();
         $stream = $client->get($this->url, [RequestOptions::STREAM => true])->getBody();

@@ -64,7 +64,6 @@ class Document
             }
         }
 
-        $stream->rewind();
         return stream_get_contents($stream);
     }
 

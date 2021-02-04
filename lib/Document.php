@@ -17,7 +17,6 @@ class Document
     private $key;
     private $url;
     private $compressionAlgo;
-    private $downloadStream = null;
     private $contentType = null;
 
     /**
@@ -54,7 +53,7 @@ class Document
         }
     }
 
-    public function download(): void {
+    public function download(): string {
         $client = new Client();
         $stream = $client->get($this->url, [RequestOptions::STREAM => true])->getBody();
 
@@ -71,7 +70,8 @@ class Document
             }
         }
 
-        $this->downloadStream = $stream;
+        $stream->rewind();
+        return stream_get_contents($stream);
     }
 
     public function upload(): void {

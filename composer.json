@@ -2,13 +2,13 @@
     "name": "jlevers/selling-partner-api",
     "description": "",
     "keywords": [
-        "php",
-        "sdk",
         "api",
         "selling-partner-api",
-        "amazon"
+        "amazon",
+        "ecommerce",
+        "spapi"
     ],
-    "license": "proprietary",
+    "license": "BSD-3-Clause",
     "type": "library",
     "authors": [
         {
@@ -33,8 +33,5 @@
     "autoload": {
         "psr-4": { "Evers\\SellingPartnerApi\\" : "lib/" },
         "files": [ "lib/functions_include.php" ]
-    },
-    "autoload-dev": {
-        "psr-4": { "Evers\\SellingPartnerApi\\" : "test/" }
     }
 }

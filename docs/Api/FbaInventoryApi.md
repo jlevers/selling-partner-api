@@ -20,9 +20,6 @@ Returns a list of inventory summaries. The summaries returned depend on the pres
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInventoryApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $granularity_type = "granularity_type_example"; // string | The granularity type for the inventory aggregation level.
 $granularity_id = "granularity_id_example"; // string | The granularity ID for the inventory aggregation level.
@@ -57,14 +54,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetInventorySummariesResponse**](../Model/GetInventorySummariesResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

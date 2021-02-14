@@ -23,9 +23,6 @@ Returns competitive pricing information for a seller's offer listings based on s
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ProductPricingApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace for which prices are returned.
 $item_type = "item_type_example"; // string | Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
@@ -54,16 +51,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetPricingResponse**](../Model/GetPricingResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getItemOffers**
 > \Evers\SellingPartnerApi\Model\GetOffersResponse getItemOffers($marketplace_id, $item_condition, $asin)
@@ -78,9 +71,6 @@ Returns the lowest priced offers for a single item based on ASIN.  **Usage Plan:
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ProductPricingApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace for which prices are returned.
 $item_condition = "item_condition_example"; // string | Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
@@ -107,16 +97,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetOffersResponse**](../Model/GetOffersResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getListingOffers**
 > \Evers\SellingPartnerApi\Model\GetOffersResponse getListingOffers($marketplace_id, $item_condition, $seller_sku)
@@ -131,9 +117,6 @@ Returns the lowest priced offers for a single SKU listing.  **Usage Plan:**  | R
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ProductPricingApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace for which prices are returned.
 $item_condition = "item_condition_example"; // string | Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
@@ -160,16 +143,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetOffersResponse**](../Model/GetOffersResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getPricing**
 > \Evers\SellingPartnerApi\Model\GetPricingResponse getPricing($marketplace_id, $item_type, $asins, $skus, $item_condition)
@@ -184,9 +163,6 @@ Returns pricing information for a seller's offer listings based on seller SKU or
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ProductPricingApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace for which prices are returned.
 $item_type = "item_type_example"; // string | Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
@@ -217,14 +193,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetPricingResponse**](../Model/GetPricingResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

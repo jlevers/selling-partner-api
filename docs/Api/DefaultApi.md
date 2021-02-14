@@ -23,9 +23,6 @@ Returns financial event groups for a given date range.  **Usage Plan:**  | Rate 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $max_results_per_page = 100; // int | The maximum number of results to return per page.
 $financial_event_group_started_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned.
@@ -54,16 +51,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ListFinancialEventGroupsResponse**](../Model/ListFinancialEventGroupsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **listFinancialEvents**
 > \Evers\SellingPartnerApi\Model\ListFinancialEventsResponse listFinancialEvents($max_results_per_page, $posted_after, $posted_before, $next_token)
@@ -78,9 +71,6 @@ Returns financial events for the specified data range.  **Usage Plan:**  | Rate 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $max_results_per_page = 100; // int | The maximum number of results to return per page.
 $posted_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format.
@@ -109,16 +99,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **listFinancialEventsByGroupId**
 > \Evers\SellingPartnerApi\Model\ListFinancialEventsResponse listFinancialEventsByGroupId($event_group_id, $max_results_per_page, $next_token)
@@ -133,9 +119,6 @@ Returns all financial events for the specified financial event group.  **Usage P
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $event_group_id = "event_group_id_example"; // string | The identifier of the financial event group to which the events belong.
 $max_results_per_page = 100; // int | The maximum number of results to return per page.
@@ -162,16 +145,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **listFinancialEventsByOrderId**
 > \Evers\SellingPartnerApi\Model\ListFinancialEventsResponse listFinancialEventsByOrderId($order_id, $max_results_per_page, $next_token)
@@ -186,9 +165,6 @@ Returns all financial events for the specified order.  **Usage Plan:**  | Rate (
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $order_id = "order_id_example"; // string | An Amazon-defined order identifier, in 3-7-7 format.
 $max_results_per_page = 100; // int | The maximum number of results to return per page.
@@ -215,14 +191,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

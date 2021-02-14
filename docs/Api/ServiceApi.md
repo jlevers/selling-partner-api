@@ -25,9 +25,6 @@ Adds an appointment to the service job indicated by the service job identifier y
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $service_job_id = "service_job_id_example"; // string | An Amazon defined service job identifier.
 $body = new \Evers\SellingPartnerApi\Model\AddAppointmentRequest(); // \Evers\SellingPartnerApi\Model\AddAppointmentRequest | Add appointment operation input details.
@@ -52,16 +49,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\SetAppointmentResponse**](../Model/SetAppointmentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **cancelServiceJobByServiceJobId**
 > \Evers\SellingPartnerApi\Model\CancelServiceJobByServiceJobIdResponse cancelServiceJobByServiceJobId($service_job_id, $cancellation_reason_code)
@@ -76,9 +69,6 @@ Cancels the service job indicated by the service job identifier you specify.  **
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $service_job_id = "service_job_id_example"; // string | An Amazon defined service job identifier.
 $cancellation_reason_code = "cancellation_reason_code_example"; // string | A cancel reason code that specifies the reason for cancelling a service job.
@@ -103,16 +93,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CancelServiceJobByServiceJobIdResponse**](../Model/CancelServiceJobByServiceJobIdResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **completeServiceJobByServiceJobId**
 > \Evers\SellingPartnerApi\Model\CompleteServiceJobByServiceJobIdResponse completeServiceJobByServiceJobId($service_job_id)
@@ -127,9 +113,6 @@ Completes the service job indicated by the service job identifier you specify.  
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $service_job_id = "service_job_id_example"; // string | An Amazon defined service job identifier.
 
@@ -152,16 +135,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CompleteServiceJobByServiceJobIdResponse**](../Model/CompleteServiceJobByServiceJobIdResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getServiceJobByServiceJobId**
 > \Evers\SellingPartnerApi\Model\GetServiceJobByServiceJobIdResponse getServiceJobByServiceJobId($service_job_id)
@@ -176,9 +155,6 @@ Gets service job details for the service job indicated by the service job identi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $service_job_id = "service_job_id_example"; // string | A service job identifier.
 
@@ -201,16 +177,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetServiceJobByServiceJobIdResponse**](../Model/GetServiceJobByServiceJobIdResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getServiceJobs**
 > \Evers\SellingPartnerApi\Model\GetServiceJobsResponse getServiceJobs($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date)
@@ -225,9 +197,6 @@ Gets service job details for the specified filter query.  **Usage Plan:**  | Rat
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_ids = array("marketplace_ids_example"); // string[] | Used to select jobs that were placed in the specified marketplaces.
 $service_order_ids = array("service_order_ids_example"); // string[] | List of service order ids for the query you want to perform.Max values supported 20.
@@ -274,16 +243,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetServiceJobsResponse**](../Model/GetServiceJobsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **rescheduleAppointmentForServiceJobByServiceJobId**
 > \Evers\SellingPartnerApi\Model\SetAppointmentResponse rescheduleAppointmentForServiceJobByServiceJobId($service_job_id, $appointment_id, $body)
@@ -298,9 +263,6 @@ Reschedules an appointment for the service job indicated by the service job iden
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $service_job_id = "service_job_id_example"; // string | An Amazon defined service job identifier.
 $appointment_id = "appointment_id_example"; // string | An existing appointment identifier for the Service Job.
@@ -327,14 +289,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\SetAppointmentResponse**](../Model/SetAppointmentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

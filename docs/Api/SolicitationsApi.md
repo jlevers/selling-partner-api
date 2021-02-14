@@ -21,9 +21,6 @@ Sends a solicitation to a buyer asking for seller feedback and a product review 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\SolicitationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $amazon_order_id = "amazon_order_id_example"; // string | An Amazon order identifier. This specifies the order for which a solicitation is sent.
 $marketplace_ids = array("marketplace_ids_example"); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
@@ -48,16 +45,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateProductReviewAndSellerFeedbackSolicitationResponse**](../Model/CreateProductReviewAndSellerFeedbackSolicitationResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/hal+json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getSolicitationActionsForOrder**
 > \Evers\SellingPartnerApi\Model\GetSolicitationActionsForOrderResponse getSolicitationActionsForOrder($amazon_order_id, $marketplace_ids)
@@ -72,9 +65,6 @@ Returns a list of solicitation types that are available for an order that you sp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\SolicitationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $amazon_order_id = "amazon_order_id_example"; // string | An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
 $marketplace_ids = array("marketplace_ids_example"); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
@@ -99,14 +89,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetSolicitationActionsForOrderResponse**](../Model/GetSolicitationActionsForOrderResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/hal+json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

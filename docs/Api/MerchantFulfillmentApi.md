@@ -27,9 +27,6 @@ Cancel the shipment indicated by the specified shipment identifier.  **Usage Pla
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | The Amazon-defined shipment identifier for the shipment to cancel.
 
@@ -52,16 +49,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **cancelShipmentOld**
 > \Evers\SellingPartnerApi\Model\CancelShipmentResponse cancelShipmentOld($shipment_id)
@@ -76,9 +69,6 @@ Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | The Amazon-defined shipment identifier for the shipment to cancel.
 
@@ -101,16 +91,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **createShipment**
 > \Evers\SellingPartnerApi\Model\CreateShipmentResponse createShipment($body)
@@ -125,9 +111,6 @@ Create a shipment with the information provided.  **Usage Plan:**  | Rate (reque
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\CreateShipmentRequest(); // \Evers\SellingPartnerApi\Model\CreateShipmentRequest | 
 
@@ -150,16 +133,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateShipmentResponse**](../Model/CreateShipmentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getAdditionalSellerInputs**
 > \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse getAdditionalSellerInputs($body)
@@ -174,9 +153,6 @@ Gets a list of additional seller inputs required for a ship method. This is gene
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest(); // \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest | 
 
@@ -199,16 +175,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse**](../Model/GetAdditionalSellerInputsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getAdditionalSellerInputsOld**
 > \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse getAdditionalSellerInputsOld($body)
@@ -223,9 +195,6 @@ Get a list of additional seller inputs required for a ship method. This is gener
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest(); // \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest | 
 
@@ -248,16 +217,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse**](../Model/GetAdditionalSellerInputsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getEligibleShipmentServices**
 > \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse getEligibleShipmentServices($body)
@@ -272,9 +237,6 @@ Returns a list of shipping service offers that satisfy the specified shipment re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest(); // \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest | 
 
@@ -297,16 +259,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse**](../Model/GetEligibleShipmentServicesResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getEligibleShipmentServicesOld**
 > \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse getEligibleShipmentServicesOld($body)
@@ -321,9 +279,6 @@ Returns a list of shipping service offers that satisfy the specified shipment re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest(); // \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest | 
 
@@ -346,16 +301,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse**](../Model/GetEligibleShipmentServicesResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getShipment**
 > \Evers\SellingPartnerApi\Model\GetShipmentResponse getShipment($shipment_id)
@@ -370,9 +321,6 @@ Returns the shipment information for an existing shipment.  **Usage Plan:**  | R
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | The Amazon-defined shipment identifier for the shipment.
 
@@ -395,14 +343,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetShipmentResponse**](../Model/GetShipmentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

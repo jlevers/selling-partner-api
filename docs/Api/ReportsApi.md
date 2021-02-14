@@ -28,9 +28,6 @@ Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $report_id = "report_id_example"; // string | The identifier for the report. This identifier is unique only in combination with a seller ID.
 
@@ -53,16 +50,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CancelReportResponse**](../Model/CancelReportResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **cancelReportSchedule**
 > \Evers\SellingPartnerApi\Model\CancelReportScheduleResponse cancelReportSchedule($report_schedule_id)
@@ -77,9 +70,6 @@ Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $report_schedule_id = "report_schedule_id_example"; // string | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
 
@@ -102,16 +92,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CancelReportScheduleResponse**](../Model/CancelReportScheduleResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **createReport**
 > \Evers\SellingPartnerApi\Model\CreateReportResponse createReport($body)
@@ -126,9 +112,6 @@ Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\CreateReportSpecification(); // \Evers\SellingPartnerApi\Model\CreateReportSpecification | 
 
@@ -151,16 +134,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateReportResponse**](../Model/CreateReportResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **createReportSchedule**
 > \Evers\SellingPartnerApi\Model\CreateReportScheduleResponse createReportSchedule($body)
@@ -175,9 +154,6 @@ Creates a report schedule. If a report schedule with the same report type and ma
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\CreateReportScheduleSpecification(); // \Evers\SellingPartnerApi\Model\CreateReportScheduleSpecification | 
 
@@ -200,16 +176,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateReportScheduleResponse**](../Model/CreateReportScheduleResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getReport**
 > \Evers\SellingPartnerApi\Model\GetReportResponse getReport($report_id)
@@ -224,9 +196,6 @@ Returns report details (including the reportDocumentId, if available) for the re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $report_id = "report_id_example"; // string | The identifier for the report. This identifier is unique only in combination with a seller ID.
 
@@ -249,16 +218,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetReportResponse**](../Model/GetReportResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getReportDocument**
 > \Evers\SellingPartnerApi\Model\GetReportDocumentResponse getReportDocument($report_document_id)
@@ -273,9 +238,6 @@ Returns the information required for retrieving a report document's contents. Th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $report_document_id = "report_document_id_example"; // string | The identifier for the report document.
 
@@ -298,16 +260,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetReportDocumentResponse**](../Model/GetReportDocumentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getReportSchedule**
 > \Evers\SellingPartnerApi\Model\GetReportScheduleResponse getReportSchedule($report_schedule_id)
@@ -322,9 +280,6 @@ Returns report schedule details for the report schedule that you specify.  **Usa
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $report_schedule_id = "report_schedule_id_example"; // string | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
 
@@ -347,16 +302,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetReportScheduleResponse**](../Model/GetReportScheduleResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getReportSchedules**
 > \Evers\SellingPartnerApi\Model\GetReportSchedulesResponse getReportSchedules($report_types)
@@ -371,9 +322,6 @@ Returns report schedule details that match the filters that you specify.  **Usag
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $report_types = array("report_types_example"); // string[] | A list of report types used to filter report schedules.
 
@@ -396,16 +344,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetReportSchedulesResponse**](../Model/GetReportSchedulesResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getReports**
 > \Evers\SellingPartnerApi\Model\GetReportsResponse getReports($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token)
@@ -420,9 +364,6 @@ Returns report details for the reports that match the filters that you specify. 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $report_types = array("report_types_example"); // string[] | A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
 $processing_statuses = array("processing_statuses_example"); // string[] | A list of processing statuses used to filter reports.
@@ -457,14 +398,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetReportsResponse**](../Model/GetReportsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

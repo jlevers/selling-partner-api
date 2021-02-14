@@ -25,9 +25,6 @@ Returns the order indicated by the specified order ID.  **Usage Plan:**  | Rate 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\OrdersV0Api(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $order_id = "order_id_example"; // string | An Amazon-defined order identifier, in 3-7-7 format.
 
@@ -50,16 +47,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetOrderResponse**](../Model/GetOrderResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getOrderAddress**
 > \Evers\SellingPartnerApi\Model\GetOrderAddressResponse getOrderAddress($order_id)
@@ -74,9 +67,6 @@ Returns the shipping address for the order indicated by the specified order ID. 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\OrdersV0Api(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $order_id = "order_id_example"; // string | An orderId is an Amazon-defined order identifier, in 3-7-7 format.
 
@@ -99,16 +89,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetOrderAddressResponse**](../Model/GetOrderAddressResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getOrderBuyerInfo**
 > \Evers\SellingPartnerApi\Model\GetOrderBuyerInfoResponse getOrderBuyerInfo($order_id)
@@ -123,9 +109,6 @@ Returns buyer information for the order indicated by the specified order ID.  **
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\OrdersV0Api(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $order_id = "order_id_example"; // string | An orderId is an Amazon-defined order identifier, in 3-7-7 format.
 
@@ -148,16 +131,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetOrderBuyerInfoResponse**](../Model/GetOrderBuyerInfoResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getOrderItems**
 > \Evers\SellingPartnerApi\Model\GetOrderItemsResponse getOrderItems($order_id, $next_token)
@@ -172,9 +151,6 @@ Returns detailed order item information for the order indicated by the specified
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\OrdersV0Api(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $order_id = "order_id_example"; // string | An Amazon-defined order identifier, in 3-7-7 format.
 $next_token = "next_token_example"; // string | A string token returned in the response of your previous request.
@@ -199,16 +175,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetOrderItemsResponse**](../Model/GetOrderItemsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getOrderItemsBuyerInfo**
 > \Evers\SellingPartnerApi\Model\GetOrderItemsBuyerInfoResponse getOrderItemsBuyerInfo($order_id, $next_token)
@@ -223,9 +195,6 @@ Returns buyer information in the order items of the order indicated by the speci
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\OrdersV0Api(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $order_id = "order_id_example"; // string | An Amazon-defined order identifier, in 3-7-7 format.
 $next_token = "next_token_example"; // string | A string token returned in the response of your previous request.
@@ -250,16 +219,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetOrderItemsBuyerInfoResponse**](../Model/GetOrderItemsBuyerInfoResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getOrders**
 > \Evers\SellingPartnerApi\Model\GetOrdersResponse getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids)
@@ -274,9 +239,6 @@ Returns orders created or updated during the time frame indicated by the specifi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\OrdersV0Api(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_ids = array("marketplace_ids_example"); // string[] | A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
 $created_after = "created_after_example"; // string | A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
@@ -325,14 +287,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetOrdersResponse**](../Model/GetOrdersResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

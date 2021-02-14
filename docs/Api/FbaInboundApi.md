@@ -36,9 +36,6 @@ Returns information needed to confirm a shipment for pre-order. Call this operat
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 $need_by_date = new \DateTime("2013-10-20"); // \DateTime | Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value.
@@ -65,16 +62,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse**](../Model/ConfirmPreorderResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **confirmTransport**
 > \Evers\SellingPartnerApi\Model\ConfirmTransportResponse confirmTransport($shipment_id)
@@ -89,9 +82,6 @@ Confirms that the seller accepts the Amazon-partnered shipping estimate, agrees 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
@@ -114,16 +104,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ConfirmTransportResponse**](../Model/ConfirmTransportResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **createInboundShipment**
 > \Evers\SellingPartnerApi\Model\InboundShipmentResponse createInboundShipment($body, $shipment_id)
@@ -138,9 +124,6 @@ Returns a new inbound shipment based on the specified shipmentId that was return
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\InboundShipmentRequest(); // \Evers\SellingPartnerApi\Model\InboundShipmentRequest | 
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
@@ -165,16 +148,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\InboundShipmentResponse**](../Model/InboundShipmentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **createInboundShipmentPlan**
 > \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse createInboundShipmentPlan($body)
@@ -189,9 +168,6 @@ Returns one or more inbound shipment plans, which provide the information you ne
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest(); // \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest | 
 
@@ -214,16 +190,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse**](../Model/CreateInboundShipmentPlanResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **estimateTransport**
 > \Evers\SellingPartnerApi\Model\EstimateTransportResponse estimateTransport($shipment_id)
@@ -238,9 +210,6 @@ Initiates the process of estimating the shipping cost for an inbound shipment by
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
@@ -263,16 +232,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\EstimateTransportResponse**](../Model/EstimateTransportResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getBillOfLading**
 > \Evers\SellingPartnerApi\Model\GetBillOfLadingResponse getBillOfLading($shipment_id)
@@ -287,9 +252,6 @@ Returns a bill of lading for a Less Than Truckload/Full Truckload (LTL/FTL) ship
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
@@ -312,16 +274,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse**](../Model/GetBillOfLadingResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getInboundGuidance**
 > \Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse getInboundGuidance($marketplace_id, $seller_sku_list, $asin_list)
@@ -336,9 +294,6 @@ Returns information that lets a seller know if Amazon recommends sending an item
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace where the product would be stored.
 $seller_sku_list = array("seller_sku_list_example"); // string[] | A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon's fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold.
@@ -365,16 +320,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse**](../Model/GetInboundGuidanceResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getLabels**
 > \Evers\SellingPartnerApi\Model\GetLabelsResponse getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets)
@@ -389,9 +340,6 @@ Returns package/pallet labels for faster and more accurate shipment processing a
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 $page_type = "page_type_example"; // string | The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
@@ -424,16 +372,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetLabelsResponse**](../Model/GetLabelsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getPreorderInfo**
 > \Evers\SellingPartnerApi\Model\GetPreorderInfoResponse getPreorderInfo($shipment_id, $marketplace_id)
@@ -448,9 +392,6 @@ Returns pre-order information, including dates, that a seller needs before confi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace the shipment is tied to.
@@ -475,16 +416,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse**](../Model/GetPreorderInfoResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getPrepInstructions**
 > \Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse getPrepInstructions($ship_to_country_code, $seller_sku_list, $asin_list)
@@ -499,9 +436,6 @@ Returns labeling requirements and item preparation instructions to help prepare 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $ship_to_country_code = "ship_to_country_code_example"; // string | The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country.
 $seller_sku_list = array("seller_sku_list_example"); // string[] | A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon's fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon's retail website. If you include a seller SKU that you have never used to list an item on Amazon's retail website, the seller SKU is returned in the InvalidSKUList property in the response.
@@ -528,16 +462,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse**](../Model/GetPrepInstructionsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getShipmentItems**
 > \Evers\SellingPartnerApi\Model\GetShipmentItemsResponse getShipmentItems($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token)
@@ -552,9 +482,6 @@ Returns a list of items in a specified inbound shipment, or a list of items that
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $query_type = "query_type_example"; // string | Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace where the product would be stored.
@@ -585,16 +512,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse**](../Model/GetShipmentItemsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getShipmentItemsByShipmentId**
 > \Evers\SellingPartnerApi\Model\GetShipmentItemsResponse getShipmentItemsByShipmentId($shipment_id, $marketplace_id)
@@ -609,9 +532,6 @@ Returns a list of items in a specified inbound shipment.  **Usage Plan:**  | Rat
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier used for selecting items in a specific inbound shipment.
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace where the product would be stored.
@@ -636,16 +556,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse**](../Model/GetShipmentItemsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getShipments**
 > \Evers\SellingPartnerApi\Model\GetShipmentsResponse getShipments($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token)
@@ -660,9 +576,6 @@ Returns a list of inbound shipments based on criteria that you specify.  **Usage
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $query_type = "query_type_example"; // string | Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace where the product would be stored.
@@ -697,16 +610,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetShipmentsResponse**](../Model/GetShipmentsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getTransportDetails**
 > \Evers\SellingPartnerApi\Model\GetTransportDetailsResponse getTransportDetails($shipment_id)
@@ -721,9 +630,6 @@ Returns current transportation information about an inbound shipment.  **Usage P
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
@@ -746,16 +652,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse**](../Model/GetTransportDetailsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **putTransportDetails**
 > \Evers\SellingPartnerApi\Model\PutTransportDetailsResponse putTransportDetails($shipment_id, $body)
@@ -770,9 +672,6 @@ Sends transportation information to Amazon about an inbound shipment.  **Usage P
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 $body = new \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest(); // \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest | 
@@ -797,16 +696,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse**](../Model/PutTransportDetailsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **updateInboundShipment**
 > \Evers\SellingPartnerApi\Model\InboundShipmentResponse updateInboundShipment($body, $shipment_id)
@@ -821,9 +716,6 @@ Adds, updates, or removes items from the inbound shipment identified by the spec
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\InboundShipmentRequest(); // \Evers\SellingPartnerApi\Model\InboundShipmentRequest | 
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
@@ -848,16 +740,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\InboundShipmentResponse**](../Model/InboundShipmentResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **voidTransport**
 > \Evers\SellingPartnerApi\Model\VoidTransportResponse voidTransport($shipment_id)
@@ -872,9 +760,6 @@ Cancels a previously-confirmed request to ship an inbound shipment using an Amaz
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $shipment_id = "shipment_id_example"; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
@@ -897,14 +782,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\VoidTransportResponse**](../Model/VoidTransportResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

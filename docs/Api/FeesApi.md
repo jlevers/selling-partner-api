@@ -21,9 +21,6 @@ Returns the estimated fees for the item indicated by the specified Asin in the m
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FeesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest(); // \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest | 
 $asin = "asin_example"; // string | The Amazon Standard Identification Number (ASIN) of the item.
@@ -48,16 +45,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse**](../Model/GetMyFeesEstimateResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getMyFeesEstimateForSKU**
 > \Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse getMyFeesEstimateForSKU($body, $seller_sku)
@@ -72,9 +65,6 @@ Returns the estimated fees for the item indicated by the specified seller SKU in
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FeesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest(); // \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest | 
 $seller_sku = "seller_sku_example"; // string | Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
@@ -99,14 +89,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse**](../Model/GetMyFeesEstimateResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

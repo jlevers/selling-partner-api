@@ -27,9 +27,6 @@ Creates a destination resource to receive notifications. The createDestination A
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\CreateDestinationRequest(); // \Evers\SellingPartnerApi\Model\CreateDestinationRequest | 
 
@@ -52,16 +49,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateDestinationResponse**](../Model/CreateDestinationResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **createSubscription**
 > \Evers\SellingPartnerApi\Model\CreateSubscriptionResponse createSubscription($body, $notification_type)
@@ -76,9 +69,6 @@ Creates a subscription for the specified notification type to be delivered to th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\CreateSubscriptionRequest(); // \Evers\SellingPartnerApi\Model\CreateSubscriptionRequest | 
 $notification_type = "notification_type_example"; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
@@ -103,16 +93,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateSubscriptionResponse**](../Model/CreateSubscriptionResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **deleteDestination**
 > \Evers\SellingPartnerApi\Model\DeleteDestinationResponse deleteDestination($destination_id)
@@ -127,9 +113,6 @@ Deletes the destination that you specify. The deleteDestination API is grantless
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $destination_id = "destination_id_example"; // string | The identifier for the destination that you want to delete.
 
@@ -152,16 +135,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\DeleteDestinationResponse**](../Model/DeleteDestinationResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **deleteSubscriptionById**
 > \Evers\SellingPartnerApi\Model\DeleteSubscriptionByIdResponse deleteSubscriptionById($subscription_id, $notification_type)
@@ -176,9 +155,6 @@ Deletes the subscription indicated by the subscription identifier and notificati
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $subscription_id = "subscription_id_example"; // string | The identifier for the subscription that you want to delete.
 $notification_type = "notification_type_example"; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
@@ -203,16 +179,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\DeleteSubscriptionByIdResponse**](../Model/DeleteSubscriptionByIdResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getDestination**
 > \Evers\SellingPartnerApi\Model\GetDestinationResponse getDestination($destination_id)
@@ -227,9 +199,6 @@ Returns information about the destination that you specify. The getDestination A
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $destination_id = "destination_id_example"; // string | The identifier generated when you created the destination.
 
@@ -252,16 +221,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetDestinationResponse**](../Model/GetDestinationResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getDestinations**
 > \Evers\SellingPartnerApi\Model\GetDestinationsResponse getDestinations()
@@ -276,9 +241,6 @@ Returns information about all destinations. The getDestinations API is grantless
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 
 try {
@@ -297,16 +259,12 @@ This endpoint does not need any parameter.
 
 [**\Evers\SellingPartnerApi\Model\GetDestinationsResponse**](../Model/GetDestinationsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getSubscription**
 > \Evers\SellingPartnerApi\Model\GetSubscriptionResponse getSubscription($notification_type)
@@ -321,9 +279,6 @@ Returns information about subscriptions of the specified notification type. You 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $notification_type = "notification_type_example"; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
 
@@ -346,16 +301,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetSubscriptionResponse**](../Model/GetSubscriptionResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getSubscriptionById**
 > \Evers\SellingPartnerApi\Model\GetSubscriptionByIdResponse getSubscriptionById($subscription_id, $notification_type)
@@ -370,9 +321,6 @@ Returns information about a subscription for the specified notification type. Th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $subscription_id = "subscription_id_example"; // string | The identifier for the subscription that you want to get.
 $notification_type = "notification_type_example"; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
@@ -397,14 +345,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetSubscriptionByIdResponse**](../Model/GetSubscriptionByIdResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

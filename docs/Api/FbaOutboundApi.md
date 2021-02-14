@@ -31,9 +31,6 @@ Requests that Amazon stop attempting to fulfill the fulfillment order indicated 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $seller_fulfillment_order_id = "seller_fulfillment_order_id_example"; // string | The identifier assigned to the item by the seller when the fulfillment order was created.
 
@@ -56,16 +53,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CancelFulfillmentOrderResponse**](../Model/CancelFulfillmentOrderResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **createFulfillmentOrder**
 > \Evers\SellingPartnerApi\Model\CreateFulfillmentOrderResponse createFulfillmentOrder($body)
@@ -80,9 +73,6 @@ Requests that Amazon ship items from the seller's inventory in Amazon's fulfillm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\CreateFulfillmentOrderRequest(); // \Evers\SellingPartnerApi\Model\CreateFulfillmentOrderRequest | 
 
@@ -105,16 +95,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateFulfillmentOrderResponse**](../Model/CreateFulfillmentOrderResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **createFulfillmentReturn**
 > \Evers\SellingPartnerApi\Model\CreateFulfillmentReturnResponse createFulfillmentReturn($body, $seller_fulfillment_order_id)
@@ -129,9 +115,6 @@ Creates a fulfillment return.   **Usage Plan:**  | Rate (requests per second) | 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\CreateFulfillmentReturnRequest(); // \Evers\SellingPartnerApi\Model\CreateFulfillmentReturnRequest | 
 $seller_fulfillment_order_id = "seller_fulfillment_order_id_example"; // string | An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
@@ -156,16 +139,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\CreateFulfillmentReturnResponse**](../Model/CreateFulfillmentReturnResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getFeatureInventory**
 > \Evers\SellingPartnerApi\Model\GetFeatureInventoryResponse getFeatureInventory($marketplace_id, $feature_name, $next_token)
@@ -180,9 +159,6 @@ Returns a list of inventory items that are eligible for the fulfillment feature 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | The marketplace for which to return a list of the inventory that is eligible for the specified feature.
 $feature_name = "feature_name_example"; // string | The name of the feature for which to return a list of eligible inventory.
@@ -209,16 +185,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetFeatureInventoryResponse**](../Model/GetFeatureInventoryResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getFeatureSKU**
 > \Evers\SellingPartnerApi\Model\GetFeatureSkuResponse getFeatureSKU($marketplace_id, $feature_name, $seller_sku)
@@ -233,9 +205,6 @@ Returns the number of items with the sellerSKU you specify that can have orders 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | The marketplace for which to return the count.
 $feature_name = "feature_name_example"; // string | The name of the feature.
@@ -262,16 +231,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetFeatureSkuResponse**](../Model/GetFeatureSkuResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getFeatures**
 > \Evers\SellingPartnerApi\Model\GetFeaturesResponse getFeatures($marketplace_id)
@@ -286,9 +251,6 @@ Returns a list of features available for Multi-Channel Fulfillment orders in the
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | The marketplace for which to return the list of features.
 
@@ -311,16 +273,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetFeaturesResponse**](../Model/GetFeaturesResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getFulfillmentOrder**
 > \Evers\SellingPartnerApi\Model\GetFulfillmentOrderResponse getFulfillmentOrder($seller_fulfillment_order_id)
@@ -335,9 +293,6 @@ Returns the fulfillment order indicated by the specified order identifier.  **Us
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $seller_fulfillment_order_id = "seller_fulfillment_order_id_example"; // string | The identifier assigned to the item by the seller when the fulfillment order was created.
 
@@ -360,16 +315,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetFulfillmentOrderResponse**](../Model/GetFulfillmentOrderResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getFulfillmentPreview**
 > \Evers\SellingPartnerApi\Model\GetFulfillmentPreviewResponse getFulfillmentPreview($body)
@@ -384,9 +335,6 @@ Returns a list of fulfillment order previews based on shipping criteria that you
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\GetFulfillmentPreviewRequest(); // \Evers\SellingPartnerApi\Model\GetFulfillmentPreviewRequest | 
 
@@ -409,16 +357,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetFulfillmentPreviewResponse**](../Model/GetFulfillmentPreviewResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getPackageTrackingDetails**
 > \Evers\SellingPartnerApi\Model\GetPackageTrackingDetailsResponse getPackageTrackingDetails($package_number)
@@ -433,9 +377,6 @@ Returns delivery tracking information for a package in an outbound shipment for 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $package_number = 56; // int | The unencrypted package identifier returned by the getFulfillmentOrder operation.
 
@@ -458,16 +399,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetPackageTrackingDetailsResponse**](../Model/GetPackageTrackingDetailsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **listAllFulfillmentOrders**
 > \Evers\SellingPartnerApi\Model\ListAllFulfillmentOrdersResponse listAllFulfillmentOrders($query_start_date, $next_token)
@@ -482,9 +419,6 @@ Returns a list of fulfillment orders fulfilled after (or at) a specified date-ti
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $query_start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
 $next_token = "next_token_example"; // string | A string token returned in the response to your previous request.
@@ -509,16 +443,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ListAllFulfillmentOrdersResponse**](../Model/ListAllFulfillmentOrdersResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **listReturnReasonCodes**
 > \Evers\SellingPartnerApi\Model\ListReturnReasonCodesResponse listReturnReasonCodes($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id)
@@ -533,9 +463,6 @@ Returns a list of return reason codes for a seller SKU in a given marketplace.  
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $seller_sku = "seller_sku_example"; // string | The seller SKU for which return reason codes are required.
 $language = "language_example"; // string | The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
@@ -564,16 +491,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ListReturnReasonCodesResponse**](../Model/ListReturnReasonCodesResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **updateFulfillmentOrder**
 > \Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderResponse updateFulfillmentOrder($body, $seller_fulfillment_order_id)
@@ -588,9 +511,6 @@ Updates and/or requests shipment for a fulfillment order with an order hold on i
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderRequest(); // \Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderRequest | 
 $seller_fulfillment_order_id = "seller_fulfillment_order_id_example"; // string | The identifier assigned to the item by the seller when the fulfillment order was created.
@@ -615,14 +535,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderResponse**](../Model/UpdateFulfillmentOrderResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

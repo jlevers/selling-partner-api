@@ -24,9 +24,6 @@ Removes the item indicated by the specified seller SKU from the Small and Light 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $seller_sku = "seller_sku_example"; // string | The seller SKU that identifies the item.
 $marketplace_ids = array("marketplace_ids_example"); // string[] | The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
@@ -50,16 +47,12 @@ Name | Type | Description  | Notes
 
 void (empty response body)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getSmallAndLightEligibilityBySellerSKU**
 > \Evers\SellingPartnerApi\Model\SmallAndLightEligibility getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids)
@@ -74,9 +67,6 @@ Returns the Small and Light program eligibility status of the item indicated by 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $seller_sku = "seller_sku_example"; // string | The seller SKU that identifies the item.
 $marketplace_ids = array("marketplace_ids_example"); // string[] | The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only.
@@ -101,16 +91,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\SmallAndLightEligibility**](../Model/SmallAndLightEligibility.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getSmallAndLightEnrollmentBySellerSKU**
 > \Evers\SellingPartnerApi\Model\SmallAndLightEnrollment getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
@@ -125,9 +111,6 @@ Returns the Small and Light enrollment status for the item indicated by the spec
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $seller_sku = "seller_sku_example"; // string | The seller SKU that identifies the item.
 $marketplace_ids = array("marketplace_ids_example"); // string[] | The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
@@ -152,16 +135,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\SmallAndLightEnrollment**](../Model/SmallAndLightEnrollment.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **getSmallAndLightFeePreview**
 > \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviews getSmallAndLightFeePreview($body)
@@ -176,9 +155,6 @@ Returns the Small and Light fee estimates for the specified items. You must incl
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $body = new \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest(); // \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest | 
 
@@ -201,16 +177,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\SmallAndLightFeePreviews**](../Model/SmallAndLightFeePreviews.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **putSmallAndLightEnrollmentBySellerSKU**
 > \Evers\SellingPartnerApi\Model\SmallAndLightEnrollment putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
@@ -225,9 +197,6 @@ Enrolls the item indicated by the specified seller SKU in the Small and Light pr
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $seller_sku = "seller_sku_example"; // string | The seller SKU that identifies the item.
 $marketplace_ids = array("marketplace_ids_example"); // string[] | The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
@@ -252,14 +221,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\SmallAndLightEnrollment**](../Model/SmallAndLightEnrollment.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

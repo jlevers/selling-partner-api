@@ -22,9 +22,6 @@ Returns a specified item and its attributes.  **Usage Plan:**  | Rate (requests 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\CatalogApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace for the item.
 $asin = "asin_example"; // string | The Amazon Standard Identification Number (ASIN) of the item.
@@ -49,16 +46,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\GetCatalogItemResponse**](../Model/GetCatalogItemResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **listCatalogCategories**
 > \Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse listCatalogCategories($marketplace_id, $asin, $seller_sku)
@@ -73,9 +66,6 @@ Returns the parent categories to which an item belongs, based on the specified A
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\CatalogApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace for the item.
 $asin = "asin_example"; // string | The Amazon Standard Identification Number (ASIN) of the item.
@@ -102,16 +92,12 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse**](../Model/ListCatalogCategoriesResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 
 # **listCatalogItems**
 > \Evers\SellingPartnerApi\Model\ListCatalogItemsResponse listCatalogItems($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan)
@@ -126,9 +112,6 @@ Returns a list of items and their attributes, based on a search query or item id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\CatalogApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
 );
 $marketplace_id = "marketplace_id_example"; // string | A marketplace identifier. Specifies the marketplace for which items are returned.
 $query = "query_example"; // string | Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'.
@@ -165,14 +148,10 @@ Name | Type | Description  | Notes
 
 [**\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse**](../Model/ListCatalogItemsResponse.md)
 
-### Authorization
-
-No authorization required
-
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
 

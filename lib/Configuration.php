@@ -98,11 +98,15 @@ class Configuration
      */
     public function __construct(?array $lwaAuthInfo = null, ?string $host = null)
     {
+        loadDotenv();
+
         $this->lwaAuthInfo = $lwaAuthInfo;
         $this->tempFolderPath = sys_get_temp_dir();
 
         if ($host !== null) {
             $this->host = $host;
+        } else {
+            $this->host = $_ENV["SPAPI_ENDPOINT"];
         }
 
         if ($this->lwaAuthInfo !== null) {

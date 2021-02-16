@@ -23,6 +23,13 @@ You need a few things to get started:
 
 If you're looking for more information on how to set those things up, check out [this blog post](https://jesseevers.com/selling-partner-api-access/). It provides a detailed walkthrough of the whole setup process.
 
+
+### Configuration
+
+Copy the sample configuration file to the root of your project: `cp vendor/jlevers/selling-partner-api/.env.example .env`
+
+Then, fill in the environment variables in `.env` with your IAM user credentials and the LWA credentials from your application. For more information on where to get those credentials, check out [this blog post](https://jesseevers.com/spapi-php-library/#installation-and-configuration).
+
 ### Basic Usage
 
 This example assumes you have access to the `Seller Insights` Selling Partner API role, but the general format applies to any Selling Partner API request.

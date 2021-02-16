@@ -140,7 +140,7 @@ class Authentication
         $credsForHeader = "Credential={$relevantCreds->getAccessKeyId()}/{$credentialScope}";
         $headersForHeader = "SignedHeaders={$signedHeaders}";
         $sigForHeader = "Signature={$signature}";
-        $authHeaderVal = static::SIGNING_ALGO . " " . implode([$credsForHeader, $headersForHeader, $sigForHeader], ", ");
+        $authHeaderVal = static::SIGNING_ALGO . " " . implode(", ", [$credsForHeader, $headersForHeader, $sigForHeader]);
 
         return $request->withHeader("Authorization", $authHeaderVal);
     }
@@ -209,7 +209,7 @@ class Authentication
             }
         }
 
-        $canonicalized = implode($sortedEncoded, "&");
+        $canonicalized = implode("&", $sortedEncoded);
         return $canonicalized;
     }
 
@@ -232,7 +232,7 @@ class Authentication
                 return $reduced;
             }, $values);
 
-            $valuesStr = implode($parsedValues, ",");
+            $valuesStr = implode(",", $parsedValues);
             $canonicalizedHeaders .= "{$key}:{$valuesStr}\n";
             $canonicalizedHeaderNames .= "{$key};";
         }

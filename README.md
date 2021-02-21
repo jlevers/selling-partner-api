@@ -119,7 +119,7 @@ All array items are optional, but `lwaClientId` and `lwaClientSecret` must alway
 
 ### Example
 ``` php
-$config = new Evers\SellingPartnerApi\Config([
+$config = new Evers\SellingPartnerApi\Configuration([
     "refreshToken" => "Aztr|WeBxxx....xxx",
     "onUpdateCreds" => function(Evers\SellingPartnerApi\Credentials $creds) {
         print_r($creds);

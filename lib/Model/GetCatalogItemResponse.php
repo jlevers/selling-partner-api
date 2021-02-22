@@ -57,7 +57,7 @@ class GetCatalogItemResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Item',
+        'payload' => '\Evers\SellingPartnerApi\Model\CatalogItem',
         'errors' => '\Evers\SellingPartnerApi\Model\ErrorList'
     ];
 
@@ -213,7 +213,7 @@ class GetCatalogItemResponse implements ModelInterface, ArrayAccess
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Item
+     * @return \Evers\SellingPartnerApi\Model\CatalogItem
      */
     public function getPayload()
     {
@@ -223,7 +223,7 @@ class GetCatalogItemResponse implements ModelInterface, ArrayAccess
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Item $payload The payload for the getCatalogItem operation.
+     * @param \Evers\SellingPartnerApi\Model\CatalogItem $payload The payload for the getCatalogItem operation.
      *
      * @return $this
      */

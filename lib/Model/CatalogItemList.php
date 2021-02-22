@@ -1,6 +1,6 @@
 <?php
 /**
- * ListMatchingItemsResponse
+ * CatalogItemList
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \Evers\SellingPartnerApi\ObjectSerializer;
 
 /**
- * ListMatchingItemsResponse Class Doc Comment
+ * CatalogItemList Class Doc Comment
  *
  * @category Class
+ * @description A list of items.
  * @package  Evers\SellingPartnerApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
+class CatalogItemList implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ListMatchingItemsResponse';
+    protected static $swaggerModelName = 'CatalogItemList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +58,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'items' => '\Evers\SellingPartnerApi\Model\CatalogItemList'
+        
     ];
 
     /**
@@ -66,7 +67,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'items' => null
+        
     ];
 
     /**
@@ -96,7 +97,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'items' => 'Items'
+        
     ];
 
     /**
@@ -105,7 +106,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'items' => 'setItems'
+        
     ];
 
     /**
@@ -114,7 +115,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'items' => 'getItems'
+        
     ];
 
     /**
@@ -177,7 +178,6 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
     }
 
     /**
@@ -187,7 +187,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -203,30 +203,6 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets items
-     *
-     * @return \Evers\SellingPartnerApi\Model\CatalogItemList
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \Evers\SellingPartnerApi\Model\CatalogItemList $items items
-     *
-     * @return $this
-     */
-    public function setItems($items)
-    {
-        $this->container['items'] = $items;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

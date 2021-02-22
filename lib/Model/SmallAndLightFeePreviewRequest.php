@@ -59,7 +59,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'marketplace_id' => '\Evers\SellingPartnerApi\Model\MarketplaceId',
-        'items' => '\Evers\SellingPartnerApi\Model\Item[]'
+        'items' => '\Evers\SellingPartnerApi\Model\FBAItem[]'
     ];
 
     /**
@@ -244,7 +244,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess
     /**
      * Gets items
      *
-     * @return \Evers\SellingPartnerApi\Model\Item[]
+     * @return \Evers\SellingPartnerApi\Model\FBAItem[]
      */
     public function getItems()
     {
@@ -254,7 +254,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess
     /**
      * Sets items
      *
-     * @param \Evers\SellingPartnerApi\Model\Item[] $items A list of items for which to retrieve fee estimates (limit: 25).
+     * @param \Evers\SellingPartnerApi\Model\FBAItem[] $items A list of items for which to retrieve fee estimates (limit: 25).
      *
      * @return $this
      */

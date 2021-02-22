@@ -64,7 +64,8 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
         'id_value' => 'string',
         'is_amazon_fulfilled' => 'bool',
         'price_to_estimate_fees' => '\Evers\SellingPartnerApi\Model\PriceToEstimateFees',
-        'seller_input_identifier' => 'string'
+        'seller_input_identifier' => 'string',
+        'optional_fulfillment_program' => '\Evers\SellingPartnerApi\Model\OptionalFulfillmentProgram'
     ];
 
     /**
@@ -79,7 +80,8 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
         'id_value' => null,
         'is_amazon_fulfilled' => null,
         'price_to_estimate_fees' => null,
-        'seller_input_identifier' => null
+        'seller_input_identifier' => null,
+        'optional_fulfillment_program' => null
     ];
 
     /**
@@ -115,7 +117,8 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
         'id_value' => 'IdValue',
         'is_amazon_fulfilled' => 'IsAmazonFulfilled',
         'price_to_estimate_fees' => 'PriceToEstimateFees',
-        'seller_input_identifier' => 'SellerInputIdentifier'
+        'seller_input_identifier' => 'SellerInputIdentifier',
+        'optional_fulfillment_program' => 'OptionalFulfillmentProgram'
     ];
 
     /**
@@ -130,7 +133,8 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
         'id_value' => 'setIdValue',
         'is_amazon_fulfilled' => 'setIsAmazonFulfilled',
         'price_to_estimate_fees' => 'setPriceToEstimateFees',
-        'seller_input_identifier' => 'setSellerInputIdentifier'
+        'seller_input_identifier' => 'setSellerInputIdentifier',
+        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram'
     ];
 
     /**
@@ -145,7 +149,8 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
         'id_value' => 'getIdValue',
         'is_amazon_fulfilled' => 'getIsAmazonFulfilled',
         'price_to_estimate_fees' => 'getPriceToEstimateFees',
-        'seller_input_identifier' => 'getSellerInputIdentifier'
+        'seller_input_identifier' => 'getSellerInputIdentifier',
+        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram'
     ];
 
     /**
@@ -215,6 +220,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
         $this->container['is_amazon_fulfilled'] = isset($data['is_amazon_fulfilled']) ? $data['is_amazon_fulfilled'] : null;
         $this->container['price_to_estimate_fees'] = isset($data['price_to_estimate_fees']) ? $data['price_to_estimate_fees'] : null;
         $this->container['seller_input_identifier'] = isset($data['seller_input_identifier']) ? $data['seller_input_identifier'] : null;
+        $this->container['optional_fulfillment_program'] = isset($data['optional_fulfillment_program']) ? $data['optional_fulfillment_program'] : null;
     }
 
     /**
@@ -405,6 +411,30 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess
     public function setSellerInputIdentifier($seller_input_identifier)
     {
         $this->container['seller_input_identifier'] = $seller_input_identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets optional_fulfillment_program
+     *
+     * @return \Evers\SellingPartnerApi\Model\OptionalFulfillmentProgram
+     */
+    public function getOptionalFulfillmentProgram()
+    {
+        return $this->container['optional_fulfillment_program'];
+    }
+
+    /**
+     * Sets optional_fulfillment_program
+     *
+     * @param \Evers\SellingPartnerApi\Model\OptionalFulfillmentProgram $optional_fulfillment_program optional_fulfillment_program
+     *
+     * @return $this
+     */
+    public function setOptionalFulfillmentProgram($optional_fulfillment_program)
+    {
+        $this->container['optional_fulfillment_program'] = $optional_fulfillment_program;
 
         return $this;
     }

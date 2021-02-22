@@ -233,7 +233,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess
     /**
      * Sets time_of_fees_estimation
      *
-     * @param \DateTime $time_of_fees_estimation The time for which the fees were estimated. This defaults to the time the request is made.
+     * @param \DateTime $time_of_fees_estimation The time at which the fees were estimated. This defaults to the time the request is made.
      *
      * @return $this
      */

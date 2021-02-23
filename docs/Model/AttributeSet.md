@@ -1,4 +1,4 @@
-# AttributeSetListType
+# AttributeSet
 
 ## Properties
 Name | Type | Description | Notes

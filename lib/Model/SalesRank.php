@@ -1,6 +1,6 @@
 <?php
 /**
- * SalesRankType
+ * SalesRank
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Evers\SellingPartnerApi\ObjectSerializer;
 
 /**
- * SalesRankType Class Doc Comment
+ * SalesRank Class Doc Comment
  *
  * @category Class
  * @package  Evers\SellingPartnerApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SalesRankType implements ModelInterface, ArrayAccess
+class SalesRank implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SalesRankType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SalesRankType';
+    protected static $swaggerModelName = 'SalesRank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

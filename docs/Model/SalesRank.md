@@ -1,4 +1,4 @@
-# SalesRankType
+# SalesRank
 
 ## Properties
 Name | Type | Description | Notes

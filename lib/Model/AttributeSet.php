@@ -1,6 +1,6 @@
 <?php
 /**
- * AttributeSetListType
+ * AttributeSet
  *
  * PHP version 5
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Evers\SellingPartnerApi\ObjectSerializer;
 
 /**
- * AttributeSetListType Class Doc Comment
+ * AttributeSet Class Doc Comment
  *
  * @category Class
  * @description The attributes of the item.
@@ -41,7 +41,7 @@ use \Evers\SellingPartnerApi\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AttributeSetListType implements ModelInterface, ArrayAccess
+class AttributeSet implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AttributeSetListType';
+    protected static $swaggerModelName = 'AttributeSet';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -197,19 +197,19 @@ class Authentication
             }
         }
 
-        // Generate encoded list of query params
-        $sortedEncoded = [];
+        // Generate list of query params
+        $sorted = [];
         foreach ($paramsMap as $key => $value) {
             if (is_array($value)) {
                 foreach ($value as $paramVal) {
-                    $sortedEncoded[] = rawurlencode("{$key}") . "=" . rawurlencode("{$paramVal}");
+                    $sorted[] = "{$key}={$paramVal}";
                 }
             } else {
-                $sortedEncoded[] = rawurlencode("{$key}") . "=" . rawurlencode("{$value}");
+                $sorted[] = "{$key}={$value}";
             }
         }
 
-        $canonicalized = implode("&", $sortedEncoded);
+        $canonicalized = implode("&", $sorted);
         return $canonicalized;
     }
 

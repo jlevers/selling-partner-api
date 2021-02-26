@@ -1,6 +1,6 @@
 <?php
 /**
- * DefaultApiTest
+ * FinancesApiTest
  * PHP version 7.2
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Evers\SellingPartnerApi\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DefaultApiTest Class Doc Comment
+ * FinancesApiTest Class Doc Comment
  *
  * @category Class
  * @package  Evers\SellingPartnerApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class DefaultApiTest extends TestCase
+class FinancesApiTest extends TestCase
 {
 
     /**

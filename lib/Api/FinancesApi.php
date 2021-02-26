@@ -1,6 +1,6 @@
 <?php
 /**
- * DefaultApi
+ * FinancesApi
  * PHP version 7.2
  *
  * @category Class
@@ -38,12 +38,12 @@ use Evers\SellingPartnerApi\HeaderSelector;
 use Evers\SellingPartnerApi\ObjectSerializer;
 
 /**
- * DefaultApi Class Doc Comment
+ * FinancesApi Class Doc Comment
  *
  * @category Class
  * @package  Evers\SellingPartnerApi
  */
-class DefaultApi
+class FinancesApi
 {
     /**
      * @var ClientInterface
@@ -433,10 +433,10 @@ class DefaultApi
     public function listFinancialEventGroupsRequest($max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null)
     {
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
-            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventGroups, must be smaller than or equal to 100.');
+            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling FinancesApi.listFinancialEventGroups, must be smaller than or equal to 100.');
         }
         if ($max_results_per_page !== null && $max_results_per_page < 1) {
-            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventGroups, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling FinancesApi.listFinancialEventGroups, must be bigger than or equal to 1.');
         }
 
 
@@ -858,10 +858,10 @@ class DefaultApi
     public function listFinancialEventsRequest($max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null)
     {
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
-            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEvents, must be smaller than or equal to 100.');
+            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling FinancesApi.listFinancialEvents, must be smaller than or equal to 100.');
         }
         if ($max_results_per_page !== null && $max_results_per_page < 1) {
-            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEvents, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling FinancesApi.listFinancialEvents, must be bigger than or equal to 1.');
         }
 
 
@@ -1284,10 +1284,10 @@ class DefaultApi
             );
         }
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
-            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventsByGroupId, must be smaller than or equal to 100.');
+            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling FinancesApi.listFinancialEventsByGroupId, must be smaller than or equal to 100.');
         }
         if ($max_results_per_page !== null && $max_results_per_page < 1) {
-            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventsByGroupId, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling FinancesApi.listFinancialEventsByGroupId, must be bigger than or equal to 1.');
         }
 
 
@@ -1704,10 +1704,10 @@ class DefaultApi
             );
         }
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
-            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventsByOrderId, must be smaller than or equal to 100.');
+            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling FinancesApi.listFinancialEventsByOrderId, must be smaller than or equal to 100.');
         }
         if ($max_results_per_page !== null && $max_results_per_page < 1) {
-            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventsByOrderId, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$max_results_per_page" when calling FinancesApi.listFinancialEventsByOrderId, must be bigger than or equal to 1.');
         }
 
 

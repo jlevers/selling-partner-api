@@ -1,6 +1,6 @@
 <?php
 /**
- * OrdersV0Api
+ * OrdersApi
  * PHP version 7.2
  *
  * @category Class
@@ -38,12 +38,12 @@ use Evers\SellingPartnerApi\HeaderSelector;
 use Evers\SellingPartnerApi\ObjectSerializer;
 
 /**
- * OrdersV0Api Class Doc Comment
+ * OrdersApi Class Doc Comment
  *
  * @category Class
  * @package  Evers\SellingPartnerApi
  */
-class OrdersV0Api
+class OrdersApi
 {
     /**
      * @var ClientInterface
@@ -2458,11 +2458,11 @@ class OrdersV0Api
             );
         }
         if (count($marketplace_ids) > 50) {
-            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling OrdersApi.getOrders, number of items must be less than or equal to 50.');
         }
 
         if ($amazon_order_ids !== null && count($amazon_order_ids) > 50) {
-            throw new \InvalidArgumentException('invalid value for "$amazon_order_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
+            throw new \InvalidArgumentException('invalid value for "$amazon_order_ids" when calling OrdersApi.getOrders, number of items must be less than or equal to 50.');
         }
 
 

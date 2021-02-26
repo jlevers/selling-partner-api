@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `cancelShipment()`
 
 ```php
-cancelShipment($shipment_id): \Evers\SellingPartnerApi\Model\CancelShipmentResponse
+cancelShipment($shipment_id): \Evers\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse
 ```
 
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 ## `cancelShipmentOld()`
 
 ```php
-cancelShipmentOld($shipment_id): \Evers\SellingPartnerApi\Model\CancelShipmentResponse
+cancelShipmentOld($shipment_id): \Evers\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse
 ```
 
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 ## `createShipment()`
 
 ```php
-createShipment($body): \Evers\SellingPartnerApi\Model\CreateShipmentResponse
+createShipment($body): \Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentResponse
 ```
 
 
@@ -123,7 +123,7 @@ Create a shipment with the information provided.  **Usage Plan:**  | Rate (reque
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi();
-$body = new \Evers\SellingPartnerApi\Model\CreateShipmentRequest(); // \Evers\SellingPartnerApi\Model\CreateShipmentRequest
+$body = new \Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest(); // \Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest
 
 try {
     $result = $apiInstance->createShipment($body);
@@ -137,11 +137,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateShipmentResponse**](../Model/CreateShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentResponse**](../Model/CreateShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 ## `getAdditionalSellerInputs()`
 
 ```php
-getAdditionalSellerInputs($body): \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse
+getAdditionalSellerInputs($body): \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
 ```
 
 
@@ -169,7 +169,7 @@ Gets a list of additional seller inputs required for a ship method. This is gene
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi();
-$body = new \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest(); // \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest
+$body = new \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest(); // \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest
 
 try {
     $result = $apiInstance->getAdditionalSellerInputs($body);
@@ -183,11 +183,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse**](../Model/GetAdditionalSellerInputsResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse**](../Model/GetAdditionalSellerInputsResponse.md)
 
 ### HTTP request headers
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 ## `getAdditionalSellerInputsOld()`
 
 ```php
-getAdditionalSellerInputsOld($body): \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse
+getAdditionalSellerInputsOld($body): \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
 ```
 
 
@@ -215,7 +215,7 @@ Get a list of additional seller inputs required for a ship method. This is gener
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi();
-$body = new \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest(); // \Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest
+$body = new \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest(); // \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest
 
 try {
     $result = $apiInstance->getAdditionalSellerInputsOld($body);
@@ -229,11 +229,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetAdditionalSellerInputsResponse**](../Model/GetAdditionalSellerInputsResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse**](../Model/GetAdditionalSellerInputsResponse.md)
 
 ### HTTP request headers
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 ## `getEligibleShipmentServices()`
 
 ```php
-getEligibleShipmentServices($body): \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse
+getEligibleShipmentServices($body): \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
 ```
 
 
@@ -261,7 +261,7 @@ Returns a list of shipping service offers that satisfy the specified shipment re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi();
-$body = new \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest(); // \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest
+$body = new \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest(); // \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest
 
 try {
     $result = $apiInstance->getEligibleShipmentServices($body);
@@ -275,11 +275,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse**](../Model/GetEligibleShipmentServicesResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse**](../Model/GetEligibleShipmentServicesResponse.md)
 
 ### HTTP request headers
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 ## `getEligibleShipmentServicesOld()`
 
 ```php
-getEligibleShipmentServicesOld($body): \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse
+getEligibleShipmentServicesOld($body): \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
 ```
 
 
@@ -307,7 +307,7 @@ Returns a list of shipping service offers that satisfy the specified shipment re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\MerchantFulfillmentApi();
-$body = new \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest(); // \Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest
+$body = new \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest(); // \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest
 
 try {
     $result = $apiInstance->getEligibleShipmentServicesOld($body);
@@ -321,11 +321,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetEligibleShipmentServicesResponse**](../Model/GetEligibleShipmentServicesResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse**](../Model/GetEligibleShipmentServicesResponse.md)
 
 ### HTTP request headers
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 ## `getShipment()`
 
 ```php
-getShipment($shipment_id): \Evers\SellingPartnerApi\Model\GetShipmentResponse
+getShipment($shipment_id): \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetShipmentResponse
 ```
 
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetShipmentResponse**](../Model/GetShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetShipmentResponse**](../Model/GetShipmentResponse.md)
 
 ### HTTP request headers
 

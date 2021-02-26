@@ -19,7 +19,7 @@ Method | HTTP request | Description
 ## `createContentDocument()`
 
 ```php
-createContentDocument($marketplace_id, $post_content_document_request): \Evers\SellingPartnerApi\Model\PostContentDocumentResponse
+createContentDocument($marketplace_id, $post_content_document_request): \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse
 ```
 
 
@@ -34,7 +34,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\AplusContentApi();
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
-$post_content_document_request = new \Evers\SellingPartnerApi\Model\PostContentDocumentRequest(); // \Evers\SellingPartnerApi\Model\PostContentDocumentRequest | The content document request details.
+$post_content_document_request = new \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest(); // \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest | The content document request details.
 
 try {
     $result = $apiInstance->createContentDocument($marketplace_id, $post_content_document_request);
@@ -49,11 +49,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
+ **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\PostContentDocumentResponse**](../Model/PostContentDocumentResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse**](../Model/PostContentDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ## `getContentDocument()`
 
 ```php
-getContentDocument($content_reference_key, $marketplace_id, $included_data_set): \Evers\SellingPartnerApi\Model\GetContentDocumentResponse
+getContentDocument($content_reference_key, $marketplace_id, $included_data_set): \Evers\SellingPartnerApi\Model\AplusContent\GetContentDocumentResponse
 ```
 
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetContentDocumentResponse**](../Model/GetContentDocumentResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\GetContentDocumentResponse**](../Model/GetContentDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 ## `listContentDocumentAsinRelations()`
 
 ```php
-listContentDocumentAsinRelations($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token): \Evers\SellingPartnerApi\Model\ListContentDocumentAsinRelationsResponse
+listContentDocumentAsinRelations($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token): \Evers\SellingPartnerApi\Model\AplusContent\ListContentDocumentAsinRelationsResponse
 ```
 
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListContentDocumentAsinRelationsResponse**](../Model/ListContentDocumentAsinRelationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\ListContentDocumentAsinRelationsResponse**](../Model/ListContentDocumentAsinRelationsResponse.md)
 
 ### HTTP request headers
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 ## `postContentDocumentApprovalSubmission()`
 
 ```php
-postContentDocumentApprovalSubmission($content_reference_key, $marketplace_id): \Evers\SellingPartnerApi\Model\PostContentDocumentApprovalSubmissionResponse
+postContentDocumentApprovalSubmission($content_reference_key, $marketplace_id): \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentApprovalSubmissionResponse
 ```
 
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\PostContentDocumentApprovalSubmissionResponse**](../Model/PostContentDocumentApprovalSubmissionResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentApprovalSubmissionResponse**](../Model/PostContentDocumentApprovalSubmissionResponse.md)
 
 ### HTTP request headers
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 ## `postContentDocumentAsinRelations()`
 
 ```php
-postContentDocumentAsinRelations($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request): \Evers\SellingPartnerApi\Model\PostContentDocumentAsinRelationsResponse
+postContentDocumentAsinRelations($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request): \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsResponse
 ```
 
 
@@ -235,7 +235,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\AplusContentApi();
 $content_reference_key = 'content_reference_key_example'; // string | The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
-$post_content_document_asin_relations_request = new \Evers\SellingPartnerApi\Model\PostContentDocumentAsinRelationsRequest(); // \Evers\SellingPartnerApi\Model\PostContentDocumentAsinRelationsRequest | The content document ASIN relations request details.
+$post_content_document_asin_relations_request = new \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest(); // \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest | The content document ASIN relations request details.
 
 try {
     $result = $apiInstance->postContentDocumentAsinRelations($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
@@ -251,11 +251,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_asin_relations_request** | [**\Evers\SellingPartnerApi\Model\PostContentDocumentAsinRelationsRequest**](../Model/PostContentDocumentAsinRelationsRequest.md)| The content document ASIN relations request details. |
+ **post_content_document_asin_relations_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest**](../Model/PostContentDocumentAsinRelationsRequest.md)| The content document ASIN relations request details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\PostContentDocumentAsinRelationsResponse**](../Model/PostContentDocumentAsinRelationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsResponse**](../Model/PostContentDocumentAsinRelationsResponse.md)
 
 ### HTTP request headers
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 ## `postContentDocumentSuspendSubmission()`
 
 ```php
-postContentDocumentSuspendSubmission($content_reference_key, $marketplace_id): \Evers\SellingPartnerApi\Model\PostContentDocumentSuspendSubmissionResponse
+postContentDocumentSuspendSubmission($content_reference_key, $marketplace_id): \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentSuspendSubmissionResponse
 ```
 
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\PostContentDocumentSuspendSubmissionResponse**](../Model/PostContentDocumentSuspendSubmissionResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentSuspendSubmissionResponse**](../Model/PostContentDocumentSuspendSubmissionResponse.md)
 
 ### HTTP request headers
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 ## `searchContentDocuments()`
 
 ```php
-searchContentDocuments($marketplace_id, $page_token): \Evers\SellingPartnerApi\Model\SearchContentDocumentsResponse
+searchContentDocuments($marketplace_id, $page_token): \Evers\SellingPartnerApi\Model\AplusContent\SearchContentDocumentsResponse
 ```
 
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SearchContentDocumentsResponse**](../Model/SearchContentDocumentsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\SearchContentDocumentsResponse**](../Model/SearchContentDocumentsResponse.md)
 
 ### HTTP request headers
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 ## `searchContentPublishRecords()`
 
 ```php
-searchContentPublishRecords($marketplace_id, $asin, $page_token): \Evers\SellingPartnerApi\Model\SearchContentPublishRecordsResponse
+searchContentPublishRecords($marketplace_id, $asin, $page_token): \Evers\SellingPartnerApi\Model\AplusContent\SearchContentPublishRecordsResponse
 ```
 
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SearchContentPublishRecordsResponse**](../Model/SearchContentPublishRecordsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\SearchContentPublishRecordsResponse**](../Model/SearchContentPublishRecordsResponse.md)
 
 ### HTTP request headers
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 ## `updateContentDocument()`
 
 ```php
-updateContentDocument($content_reference_key, $marketplace_id, $post_content_document_request): \Evers\SellingPartnerApi\Model\PostContentDocumentResponse
+updateContentDocument($content_reference_key, $marketplace_id, $post_content_document_request): \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse
 ```
 
 
@@ -431,7 +431,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\AplusContentApi();
 $content_reference_key = 'content_reference_key_example'; // string | The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
-$post_content_document_request = new \Evers\SellingPartnerApi\Model\PostContentDocumentRequest(); // \Evers\SellingPartnerApi\Model\PostContentDocumentRequest | The content document request details.
+$post_content_document_request = new \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest(); // \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest | The content document request details.
 
 try {
     $result = $apiInstance->updateContentDocument($content_reference_key, $marketplace_id, $post_content_document_request);
@@ -447,11 +447,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
+ **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\PostContentDocumentResponse**](../Model/PostContentDocumentResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse**](../Model/PostContentDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 ## `validateContentDocumentAsinRelations()`
 
 ```php
-validateContentDocumentAsinRelations($marketplace_id, $post_content_document_request, $asin_set): \Evers\SellingPartnerApi\Model\ValidateContentDocumentAsinRelationsResponse
+validateContentDocumentAsinRelations($marketplace_id, $post_content_document_request, $asin_set): \Evers\SellingPartnerApi\Model\AplusContent\ValidateContentDocumentAsinRelationsResponse
 ```
 
 
@@ -480,7 +480,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\AplusContentApi();
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
-$post_content_document_request = new \Evers\SellingPartnerApi\Model\PostContentDocumentRequest(); // \Evers\SellingPartnerApi\Model\PostContentDocumentRequest | The content document request details.
+$post_content_document_request = new \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest(); // \Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest | The content document request details.
 $asin_set = array('asin_set_example'); // string[] | The set of ASINs.
 
 try {
@@ -496,12 +496,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
+ **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
  **asin_set** | [**string[]**](../Model/string.md)| The set of ASINs. | [optional]
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ValidateContentDocumentAsinRelationsResponse**](../Model/ValidateContentDocumentAsinRelationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\ValidateContentDocumentAsinRelationsResponse**](../Model/ValidateContentDocumentAsinRelationsResponse.md)
 
 ### HTTP request headers
 

@@ -126,7 +126,7 @@ class SalesApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse
+     * @return \Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse
      */
     public function getOrderMetrics($marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = null, $fulfillment_network = null, $first_day_of_week = null, $asin = null, $sku = null)
     {
@@ -149,7 +149,7 @@ class SalesApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse|\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderMetricsWithHttpInfo($marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = null, $fulfillment_network = null, $first_day_of_week = null, $asin = null, $sku = null)
     {
@@ -189,116 +189,116 @@ class SalesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -317,7 +317,7 @@ class SalesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -325,7 +325,7 @@ class SalesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -333,7 +333,7 @@ class SalesApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -341,7 +341,7 @@ class SalesApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -349,7 +349,7 @@ class SalesApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -357,7 +357,7 @@ class SalesApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -365,7 +365,7 @@ class SalesApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -373,7 +373,7 @@ class SalesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -381,7 +381,7 @@ class SalesApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse',
+                        '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -439,7 +439,7 @@ class SalesApi
      */
     public function getOrderMetricsAsyncWithHttpInfo($marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = null, $fulfillment_network = null, $first_day_of_week = null, $asin = null, $sku = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getOrderMetricsRequest($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku);
         $signedRequest = $this->config->signRequest($request);

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getMyFeesEstimateForASIN()`
 
 ```php
-getMyFeesEstimateForASIN($asin, $body): \Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse
+getMyFeesEstimateForASIN($asin, $body): \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse
 ```
 
 
@@ -26,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FeesApi();
 $asin = 'asin_example'; // string | The Amazon Standard Identification Number (ASIN) of the item.
-$body = new \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest(); // \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest
+$body = new \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest(); // \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest
 
 try {
     $result = $apiInstance->getMyFeesEstimateForASIN($asin, $body);
@@ -41,11 +41,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asin** | **string**| The Amazon Standard Identification Number (ASIN) of the item. |
- **body** | [**\Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest**](../Model/GetMyFeesEstimateRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/GetMyFeesEstimateRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse**](../Model/GetMyFeesEstimateResponse.md)
+[**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse**](../Model/GetMyFeesEstimateResponse.md)
 
 ### HTTP request headers
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 ## `getMyFeesEstimateForSKU()`
 
 ```php
-getMyFeesEstimateForSKU($seller_sku, $body): \Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse
+getMyFeesEstimateForSKU($seller_sku, $body): \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse
 ```
 
 
@@ -74,7 +74,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FeesApi();
 $seller_sku = 'seller_sku_example'; // string | Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-$body = new \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest(); // \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest
+$body = new \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest(); // \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest
 
 try {
     $result = $apiInstance->getMyFeesEstimateForSKU($seller_sku, $body);
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_sku** | **string**| Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. |
- **body** | [**\Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest**](../Model/GetMyFeesEstimateRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/GetMyFeesEstimateRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse**](../Model/GetMyFeesEstimateResponse.md)
+[**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse**](../Model/GetMyFeesEstimateResponse.md)
 
 ### HTTP request headers
 

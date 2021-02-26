@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createDestination()`
 
 ```php
-createDestination($body): \Evers\SellingPartnerApi\Model\CreateDestinationResponse
+createDestination($body): \Evers\SellingPartnerApi\Model\Notifications\CreateDestinationResponse
 ```
 
 
@@ -31,7 +31,7 @@ Creates a destination resource to receive notifications. The createDestination A
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
-$body = new \Evers\SellingPartnerApi\Model\CreateDestinationRequest(); // \Evers\SellingPartnerApi\Model\CreateDestinationRequest
+$body = new \Evers\SellingPartnerApi\Model\Notifications\CreateDestinationRequest(); // \Evers\SellingPartnerApi\Model\Notifications\CreateDestinationRequest
 
 try {
     $result = $apiInstance->createDestination($body);
@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\CreateDestinationRequest**](../Model/CreateDestinationRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Notifications\CreateDestinationRequest**](../Model/CreateDestinationRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateDestinationResponse**](../Model/CreateDestinationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\CreateDestinationResponse**](../Model/CreateDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 ## `createSubscription()`
 
 ```php
-createSubscription($notification_type, $body): \Evers\SellingPartnerApi\Model\CreateSubscriptionResponse
+createSubscription($notification_type, $body): \Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse
 ```
 
 
@@ -78,7 +78,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
-$body = new \Evers\SellingPartnerApi\Model\CreateSubscriptionRequest(); // \Evers\SellingPartnerApi\Model\CreateSubscriptionRequest
+$body = new \Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest(); // \Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest
 
 try {
     $result = $apiInstance->createSubscription($notification_type, $body);
@@ -93,11 +93,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notification_type** | **string**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateSubscriptionResponse**](../Model/CreateSubscriptionResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse**](../Model/CreateSubscriptionResponse.md)
 
 ### HTTP request headers
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 ## `deleteDestination()`
 
 ```php
-deleteDestination($destination_id): \Evers\SellingPartnerApi\Model\DeleteDestinationResponse
+deleteDestination($destination_id): \Evers\SellingPartnerApi\Model\Notifications\DeleteDestinationResponse
 ```
 
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\DeleteDestinationResponse**](../Model/DeleteDestinationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\DeleteDestinationResponse**](../Model/DeleteDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 ## `deleteSubscriptionById()`
 
 ```php
-deleteSubscriptionById($subscription_id, $notification_type): \Evers\SellingPartnerApi\Model\DeleteSubscriptionByIdResponse
+deleteSubscriptionById($subscription_id, $notification_type): \Evers\SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse
 ```
 
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\DeleteSubscriptionByIdResponse**](../Model/DeleteSubscriptionByIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse**](../Model/DeleteSubscriptionByIdResponse.md)
 
 ### HTTP request headers
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 ## `getDestination()`
 
 ```php
-getDestination($destination_id): \Evers\SellingPartnerApi\Model\GetDestinationResponse
+getDestination($destination_id): \Evers\SellingPartnerApi\Model\Notifications\GetDestinationResponse
 ```
 
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetDestinationResponse**](../Model/GetDestinationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\GetDestinationResponse**](../Model/GetDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ## `getDestinations()`
 
 ```php
-getDestinations(): \Evers\SellingPartnerApi\Model\GetDestinationsResponse
+getDestinations(): \Evers\SellingPartnerApi\Model\Notifications\GetDestinationsResponse
 ```
 
 
@@ -280,7 +280,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetDestinationsResponse**](../Model/GetDestinationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\GetDestinationsResponse**](../Model/GetDestinationsResponse.md)
 
 ### HTTP request headers
 
@@ -294,7 +294,7 @@ This endpoint does not need any parameter.
 ## `getSubscription()`
 
 ```php
-getSubscription($notification_type): \Evers\SellingPartnerApi\Model\GetSubscriptionResponse
+getSubscription($notification_type): \Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionResponse
 ```
 
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetSubscriptionResponse**](../Model/GetSubscriptionResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionResponse**](../Model/GetSubscriptionResponse.md)
 
 ### HTTP request headers
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 ## `getSubscriptionById()`
 
 ```php
-getSubscriptionById($subscription_id, $notification_type): \Evers\SellingPartnerApi\Model\GetSubscriptionByIdResponse
+getSubscriptionById($subscription_id, $notification_type): \Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse
 ```
 
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetSubscriptionByIdResponse**](../Model/GetSubscriptionByIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse**](../Model/GetSubscriptionByIdResponse.md)
 
 ### HTTP request headers
 

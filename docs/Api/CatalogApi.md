@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getCatalogItem()`
 
 ```php
-getCatalogItem($marketplace_id, $asin): \Evers\SellingPartnerApi\Model\GetCatalogItemResponse
+getCatalogItem($marketplace_id, $asin): \Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse
 ```
 
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetCatalogItemResponse**](../Model/GetCatalogItemResponse.md)
+[**\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse**](../Model/GetCatalogItemResponse.md)
 
 ### HTTP request headers
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 ## `listCatalogCategories()`
 
 ```php
-listCatalogCategories($marketplace_id, $asin, $seller_sku): \Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse
+listCatalogCategories($marketplace_id, $asin, $seller_sku): \Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse
 ```
 
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse**](../Model/ListCatalogCategoriesResponse.md)
+[**\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse**](../Model/ListCatalogCategoriesResponse.md)
 
 ### HTTP request headers
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ## `listCatalogItems()`
 
 ```php
-listCatalogItems($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan): \Evers\SellingPartnerApi\Model\ListCatalogItemsResponse
+listCatalogItems($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan): \Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse
 ```
 
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse**](../Model/ListCatalogItemsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse**](../Model/ListCatalogItemsResponse.md)
 
 ### HTTP request headers
 

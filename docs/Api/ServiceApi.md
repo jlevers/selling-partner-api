@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `addAppointmentForServiceJobByServiceJobId()`
 
 ```php
-addAppointmentForServiceJobByServiceJobId($service_job_id, $body): \Evers\SellingPartnerApi\Model\SetAppointmentResponse
+addAppointmentForServiceJobByServiceJobId($service_job_id, $body): \Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse
 ```
 
 
@@ -30,7 +30,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi();
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
-$body = new \Evers\SellingPartnerApi\Model\AddAppointmentRequest(); // \Evers\SellingPartnerApi\Model\AddAppointmentRequest | Add appointment operation input details.
+$body = new \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest(); // \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest | Add appointment operation input details.
 
 try {
     $result = $apiInstance->addAppointmentForServiceJobByServiceJobId($service_job_id, $body);
@@ -45,11 +45,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| An Amazon defined service job identifier. |
- **body** | [**\Evers\SellingPartnerApi\Model\AddAppointmentRequest**](../Model/AddAppointmentRequest.md)| Add appointment operation input details. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest**](../Model/AddAppointmentRequest.md)| Add appointment operation input details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SetAppointmentResponse**](../Model/SetAppointmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/SetAppointmentResponse.md)
 
 ### HTTP request headers
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 ## `cancelServiceJobByServiceJobId()`
 
 ```php
-cancelServiceJobByServiceJobId($service_job_id, $cancellation_reason_code): \Evers\SellingPartnerApi\Model\CancelServiceJobByServiceJobIdResponse
+cancelServiceJobByServiceJobId($service_job_id, $cancellation_reason_code): \Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse
 ```
 
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CancelServiceJobByServiceJobIdResponse**](../Model/CancelServiceJobByServiceJobIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse**](../Model/CancelServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 ## `completeServiceJobByServiceJobId()`
 
 ```php
-completeServiceJobByServiceJobId($service_job_id): \Evers\SellingPartnerApi\Model\CompleteServiceJobByServiceJobIdResponse
+completeServiceJobByServiceJobId($service_job_id): \Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse
 ```
 
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CompleteServiceJobByServiceJobIdResponse**](../Model/CompleteServiceJobByServiceJobIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse**](../Model/CompleteServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 ## `getServiceJobByServiceJobId()`
 
 ```php
-getServiceJobByServiceJobId($service_job_id): \Evers\SellingPartnerApi\Model\GetServiceJobByServiceJobIdResponse
+getServiceJobByServiceJobId($service_job_id): \Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse
 ```
 
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetServiceJobByServiceJobIdResponse**](../Model/GetServiceJobByServiceJobIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse**](../Model/GetServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `getServiceJobs()`
 
 ```php
-getServiceJobs($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date): \Evers\SellingPartnerApi\Model\GetServiceJobsResponse
+getServiceJobs($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date): \Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse
 ```
 
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetServiceJobsResponse**](../Model/GetServiceJobsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse**](../Model/GetServiceJobsResponse.md)
 
 ### HTTP request headers
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 ## `rescheduleAppointmentForServiceJobByServiceJobId()`
 
 ```php
-rescheduleAppointmentForServiceJobByServiceJobId($service_job_id, $appointment_id, $body): \Evers\SellingPartnerApi\Model\SetAppointmentResponse
+rescheduleAppointmentForServiceJobByServiceJobId($service_job_id, $appointment_id, $body): \Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse
 ```
 
 
@@ -289,7 +289,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi();
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
 $appointment_id = 'appointment_id_example'; // string | An existing appointment identifier for the Service Job.
-$body = new \Evers\SellingPartnerApi\Model\RescheduleAppointmentRequest(); // \Evers\SellingPartnerApi\Model\RescheduleAppointmentRequest | Reschedule appointment operation input details.
+$body = new \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest(); // \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest | Reschedule appointment operation input details.
 
 try {
     $result = $apiInstance->rescheduleAppointmentForServiceJobByServiceJobId($service_job_id, $appointment_id, $body);
@@ -305,11 +305,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| An Amazon defined service job identifier. |
  **appointment_id** | **string**| An existing appointment identifier for the Service Job. |
- **body** | [**\Evers\SellingPartnerApi\Model\RescheduleAppointmentRequest**](../Model/RescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest**](../Model/RescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SetAppointmentResponse**](../Model/SetAppointmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/SetAppointmentResponse.md)
 
 ### HTTP request headers
 

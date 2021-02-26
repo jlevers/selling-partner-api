@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `createProductReviewAndSellerFeedbackSolicitation()`
 
 ```php
-createProductReviewAndSellerFeedbackSolicitation($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\CreateProductReviewAndSellerFeedbackSolicitationResponse
+createProductReviewAndSellerFeedbackSolicitation($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse
 ```
 
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateProductReviewAndSellerFeedbackSolicitationResponse**](../Model/CreateProductReviewAndSellerFeedbackSolicitationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse**](../Model/CreateProductReviewAndSellerFeedbackSolicitationResponse.md)
 
 ### HTTP request headers
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 ## `getSolicitationActionsForOrder()`
 
 ```php
-getSolicitationActionsForOrder($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\GetSolicitationActionsForOrderResponse
+getSolicitationActionsForOrder($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse
 ```
 
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetSolicitationActionsForOrderResponse**](../Model/GetSolicitationActionsForOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse**](../Model/GetSolicitationActionsForOrderResponse.md)
 
 ### HTTP request headers
 

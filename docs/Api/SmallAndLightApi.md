@@ -61,7 +61,7 @@ void (empty response body)
 ## `getSmallAndLightEligibilityBySellerSKU()`
 
 ```php
-getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLightEligibility
+getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility
 ```
 
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLightEligibility**](../Model/SmallAndLightEligibility.md)
+[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility**](../Model/SmallAndLightEligibility.md)
 
 ### HTTP request headers
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 ## `getSmallAndLightEnrollmentBySellerSKU()`
 
 ```php
-getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLightEnrollment
+getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment
 ```
 
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLightEnrollment**](../Model/SmallAndLightEnrollment.md)
+[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLightEnrollment.md)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 ## `getSmallAndLightFeePreview()`
 
 ```php
-getSmallAndLightFeePreview($body): \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviews
+getSmallAndLightFeePreview($body): \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews
 ```
 
 
@@ -171,7 +171,7 @@ Returns the Small and Light fee estimates for the specified items. You must incl
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
-$body = new \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest(); // \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest
+$body = new \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest(); // \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest
 
 try {
     $result = $apiInstance->getSmallAndLightFeePreview($body);
@@ -185,11 +185,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest**](../Model/SmallAndLightFeePreviewRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest**](../Model/SmallAndLightFeePreviewRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLightFeePreviews**](../Model/SmallAndLightFeePreviews.md)
+[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews**](../Model/SmallAndLightFeePreviews.md)
 
 ### HTTP request headers
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `putSmallAndLightEnrollmentBySellerSKU()`
 
 ```php
-putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLightEnrollment
+putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment
 ```
 
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLightEnrollment**](../Model/SmallAndLightEnrollment.md)
+[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLightEnrollment.md)
 
 ### HTTP request headers
 

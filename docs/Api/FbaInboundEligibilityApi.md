@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getItemEligibilityPreview()`
 
 ```php
-getItemEligibilityPreview($asin, $program, $marketplace_ids): \Evers\SellingPartnerApi\Model\GetItemEligibilityPreviewResponse
+getItemEligibilityPreview($asin, $program, $marketplace_ids): \Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse
 ```
 
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetItemEligibilityPreviewResponse**](../Model/GetItemEligibilityPreviewResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse**](../Model/GetItemEligibilityPreviewResponse.md)
 
 ### HTTP request headers
 

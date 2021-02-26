@@ -1,7 +1,7 @@
 {
     "name": "jlevers/selling-partner-api",
     "version": "1.2.0",
-    "description": "This library provides a PHP interface for interacting with Amazon's Selling Partner API.",
+    "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",
         "selling-partner-api",

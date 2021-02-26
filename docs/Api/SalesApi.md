@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getOrderMetrics()`
 
 ```php
-getOrderMetrics($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku): \Evers\SellingPartnerApi\Model\GetOrderMetricsResponse
+getOrderMetrics($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku): \Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse
 ```
 
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOrderMetricsResponse**](../Model/GetOrderMetricsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse**](../Model/GetOrderMetricsResponse.md)
 
 ### HTTP request headers
 

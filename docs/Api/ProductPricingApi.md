@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `getCompetitivePricing()`
 
 ```php
-getCompetitivePricing($marketplace_id, $item_type, $asins, $skus): \Evers\SellingPartnerApi\Model\GetPricingResponse
+getCompetitivePricing($marketplace_id, $item_type, $asins, $skus): \Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse
 ```
 
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetPricingResponse**](../Model/GetPricingResponse.md)
+[**\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse**](../Model/GetPricingResponse.md)
 
 ### HTTP request headers
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 ## `getItemOffers()`
 
 ```php
-getItemOffers($marketplace_id, $item_condition, $asin): \Evers\SellingPartnerApi\Model\GetOffersResponse
+getItemOffers($marketplace_id, $item_condition, $asin): \Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse
 ```
 
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOffersResponse**](../Model/GetOffersResponse.md)
+[**\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse**](../Model/GetOffersResponse.md)
 
 ### HTTP request headers
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 ## `getListingOffers()`
 
 ```php
-getListingOffers($marketplace_id, $item_condition, $seller_sku): \Evers\SellingPartnerApi\Model\GetOffersResponse
+getListingOffers($marketplace_id, $item_condition, $seller_sku): \Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse
 ```
 
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOffersResponse**](../Model/GetOffersResponse.md)
+[**\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse**](../Model/GetOffersResponse.md)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 ## `getPricing()`
 
 ```php
-getPricing($marketplace_id, $item_type, $asins, $skus, $item_condition): \Evers\SellingPartnerApi\Model\GetPricingResponse
+getPricing($marketplace_id, $item_type, $asins, $skus, $item_condition): \Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse
 ```
 
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetPricingResponse**](../Model/GetPricingResponse.md)
+[**\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse**](../Model/GetPricingResponse.md)
 
 ### HTTP request headers
 

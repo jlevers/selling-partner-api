@@ -120,7 +120,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse
      */
     public function confirmPreorder($shipment_id, $need_by_date, $marketplace_id)
     {
@@ -137,7 +137,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse|\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function confirmPreorderWithHttpInfo($shipment_id, $need_by_date, $marketplace_id)
     {
@@ -177,104 +177,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -293,7 +293,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -301,7 +301,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -309,7 +309,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -317,7 +317,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -325,7 +325,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -333,7 +333,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -341,7 +341,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -349,7 +349,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -395,7 +395,7 @@ class FbaInboundApi
      */
     public function confirmPreorderAsyncWithHttpInfo($shipment_id, $need_by_date, $marketplace_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse';
         $this->config->startRequestGeneration();
         $request = $this->confirmPreorderRequest($shipment_id, $need_by_date, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
@@ -563,7 +563,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse
      */
     public function confirmTransport($shipment_id)
     {
@@ -578,7 +578,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse|\Evers\SellingPartnerApi\Model\ConfirmTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function confirmTransportWithHttpInfo($shipment_id)
     {
@@ -618,104 +618,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\ConfirmTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -734,7 +734,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -742,7 +742,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -750,7 +750,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -758,7 +758,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -766,7 +766,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -774,7 +774,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -782,7 +782,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -790,7 +790,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -832,7 +832,7 @@ class FbaInboundApi
      */
     public function confirmTransportAsyncWithHttpInfo($shipment_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\ConfirmTransportResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse';
         $this->config->startRequestGeneration();
         $request = $this->confirmTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
@@ -969,11 +969,11 @@ class FbaInboundApi
      * Operation createInboundShipment
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse
      */
     public function createInboundShipment($shipment_id, $body)
     {
@@ -985,11 +985,11 @@ class FbaInboundApi
      * Operation createInboundShipmentWithHttpInfo
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInboundShipmentWithHttpInfo($shipment_id, $body)
     {
@@ -1029,104 +1029,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\InboundShipmentResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1145,7 +1145,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1153,7 +1153,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1161,7 +1161,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1169,7 +1169,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1177,7 +1177,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1185,7 +1185,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1193,7 +1193,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1201,7 +1201,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1217,7 +1217,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1238,14 +1238,14 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInboundShipmentAsyncWithHttpInfo($shipment_id, $body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\InboundShipmentResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse';
         $this->config->startRequestGeneration();
         $request = $this->createInboundShipmentRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
@@ -1289,7 +1289,7 @@ class FbaInboundApi
      * Create request for operation 'createInboundShipment'
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1394,11 +1394,11 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentPlan
      *
-     * @param  \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest $body body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest $body body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse
      */
     public function createInboundShipmentPlan($body)
     {
@@ -1409,11 +1409,11 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentPlanWithHttpInfo
      *
-     * @param  \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest $body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse|\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createInboundShipmentPlanWithHttpInfo($body)
     {
@@ -1453,104 +1453,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1569,7 +1569,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1577,7 +1577,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1585,7 +1585,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1593,7 +1593,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1601,7 +1601,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1609,7 +1609,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1617,7 +1617,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1625,7 +1625,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1640,7 +1640,7 @@ class FbaInboundApi
      *
      * 
      *
-     * @param  \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1660,14 +1660,14 @@ class FbaInboundApi
      *
      * 
      *
-     * @param  \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInboundShipmentPlanAsyncWithHttpInfo($body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse';
         $this->config->startRequestGeneration();
         $request = $this->createInboundShipmentPlanRequest($body);
         $signedRequest = $this->config->signRequest($request);
@@ -1710,7 +1710,7 @@ class FbaInboundApi
     /**
      * Create request for operation 'createInboundShipmentPlan'
      *
-     * @param  \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1805,7 +1805,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse
      */
     public function estimateTransport($shipment_id)
     {
@@ -1820,7 +1820,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse|\Evers\SellingPartnerApi\Model\EstimateTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function estimateTransportWithHttpInfo($shipment_id)
     {
@@ -1860,104 +1860,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\EstimateTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\EstimateTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\EstimateTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\EstimateTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\EstimateTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\EstimateTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\EstimateTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\EstimateTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\EstimateTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\EstimateTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\EstimateTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\EstimateTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\EstimateTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\EstimateTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\EstimateTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\EstimateTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\EstimateTransportResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1976,7 +1976,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\EstimateTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1984,7 +1984,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\EstimateTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1992,7 +1992,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\EstimateTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2000,7 +2000,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\EstimateTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2008,7 +2008,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\EstimateTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2016,7 +2016,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\EstimateTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2024,7 +2024,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\EstimateTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2032,7 +2032,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\EstimateTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2074,7 +2074,7 @@ class FbaInboundApi
      */
     public function estimateTransportAsyncWithHttpInfo($shipment_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\EstimateTransportResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse';
         $this->config->startRequestGeneration();
         $request = $this->estimateTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
@@ -2214,7 +2214,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse
      */
     public function getBillOfLading($shipment_id)
     {
@@ -2229,7 +2229,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse|\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBillOfLadingWithHttpInfo($shipment_id)
     {
@@ -2269,104 +2269,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2385,7 +2385,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2393,7 +2393,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2401,7 +2401,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2409,7 +2409,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2417,7 +2417,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2425,7 +2425,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2433,7 +2433,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2441,7 +2441,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2483,7 +2483,7 @@ class FbaInboundApi
      */
     public function getBillOfLadingAsyncWithHttpInfo($shipment_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse';
         $this->config->startRequestGeneration();
         $request = $this->getBillOfLadingRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
@@ -2625,7 +2625,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse
      */
     public function getInboundGuidance($marketplace_id, $seller_sku_list = null, $asin_list = null)
     {
@@ -2642,7 +2642,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse|\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInboundGuidanceWithHttpInfo($marketplace_id, $seller_sku_list = null, $asin_list = null)
     {
@@ -2682,104 +2682,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2798,7 +2798,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2806,7 +2806,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2814,7 +2814,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2822,7 +2822,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2830,7 +2830,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2838,7 +2838,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2846,7 +2846,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2854,7 +2854,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2900,7 +2900,7 @@ class FbaInboundApi
      */
     public function getInboundGuidanceAsyncWithHttpInfo($marketplace_id, $seller_sku_list = null, $asin_list = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse';
         $this->config->startRequestGeneration();
         $request = $this->getInboundGuidanceRequest($marketplace_id, $seller_sku_list, $asin_list);
         $signedRequest = $this->config->signRequest($request);
@@ -3068,7 +3068,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse
      */
     public function getLabels($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
     {
@@ -3088,7 +3088,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse|\Evers\SellingPartnerApi\Model\GetLabelsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
     {
@@ -3128,104 +3128,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetLabelsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetLabelsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetLabelsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetLabelsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetLabelsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetLabelsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetLabelsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetLabelsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetLabelsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetLabelsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetLabelsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetLabelsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetLabelsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetLabelsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetLabelsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetLabelsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetLabelsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -3244,7 +3244,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetLabelsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3252,7 +3252,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetLabelsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3260,7 +3260,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetLabelsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3268,7 +3268,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetLabelsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3276,7 +3276,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetLabelsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3284,7 +3284,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetLabelsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3292,7 +3292,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetLabelsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3300,7 +3300,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetLabelsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3352,7 +3352,7 @@ class FbaInboundApi
      */
     public function getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetLabelsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
         $signedRequest = $this->config->signRequest($request);
@@ -3549,7 +3549,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse
      */
     public function getPreorderInfo($shipment_id, $marketplace_id)
     {
@@ -3565,7 +3565,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse|\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPreorderInfoWithHttpInfo($shipment_id, $marketplace_id)
     {
@@ -3605,104 +3605,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -3721,7 +3721,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3729,7 +3729,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3737,7 +3737,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3745,7 +3745,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3753,7 +3753,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3761,7 +3761,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3769,7 +3769,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3777,7 +3777,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3821,7 +3821,7 @@ class FbaInboundApi
      */
     public function getPreorderInfoAsyncWithHttpInfo($shipment_id, $marketplace_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse';
         $this->config->startRequestGeneration();
         $request = $this->getPreorderInfoRequest($shipment_id, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
@@ -3977,7 +3977,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse
      */
     public function getPrepInstructions($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
     {
@@ -3994,7 +3994,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse|\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPrepInstructionsWithHttpInfo($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
     {
@@ -4034,104 +4034,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -4150,7 +4150,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4158,7 +4158,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4166,7 +4166,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4174,7 +4174,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4182,7 +4182,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4190,7 +4190,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4198,7 +4198,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4206,7 +4206,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4252,7 +4252,7 @@ class FbaInboundApi
      */
     public function getPrepInstructionsAsyncWithHttpInfo($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getPrepInstructionsRequest($ship_to_country_code, $seller_sku_list, $asin_list);
         $signedRequest = $this->config->signRequest($request);
@@ -4419,7 +4419,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse
      */
     public function getShipmentItems($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
@@ -4438,7 +4438,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getShipmentItemsWithHttpInfo($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
@@ -4478,104 +4478,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -4594,7 +4594,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4602,7 +4602,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4610,7 +4610,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4618,7 +4618,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4626,7 +4626,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4634,7 +4634,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4642,7 +4642,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4650,7 +4650,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4700,7 +4700,7 @@ class FbaInboundApi
      */
     public function getShipmentItemsAsyncWithHttpInfo($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getShipmentItemsRequest($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
         $signedRequest = $this->config->signRequest($request);
@@ -4878,7 +4878,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse
      */
     public function getShipmentItemsByShipmentId($shipment_id, $marketplace_id)
     {
@@ -4894,7 +4894,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse|\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getShipmentItemsByShipmentIdWithHttpInfo($shipment_id, $marketplace_id)
     {
@@ -4934,104 +4934,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -5050,7 +5050,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5058,7 +5058,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5066,7 +5066,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5074,7 +5074,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5082,7 +5082,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5090,7 +5090,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5098,7 +5098,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5106,7 +5106,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5150,7 +5150,7 @@ class FbaInboundApi
      */
     public function getShipmentItemsByShipmentIdAsyncWithHttpInfo($shipment_id, $marketplace_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getShipmentItemsByShipmentIdRequest($shipment_id, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
@@ -5310,7 +5310,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse
      */
     public function getShipments($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
@@ -5331,7 +5331,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse|\Evers\SellingPartnerApi\Model\GetShipmentsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getShipmentsWithHttpInfo($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
@@ -5371,104 +5371,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetShipmentsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetShipmentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -5487,7 +5487,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5495,7 +5495,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5503,7 +5503,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5511,7 +5511,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5519,7 +5519,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5527,7 +5527,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5535,7 +5535,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5543,7 +5543,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetShipmentsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5597,7 +5597,7 @@ class FbaInboundApi
      */
     public function getShipmentsAsyncWithHttpInfo($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetShipmentsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getShipmentsRequest($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
         $signedRequest = $this->config->signRequest($request);
@@ -5790,7 +5790,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse
      */
     public function getTransportDetails($shipment_id)
     {
@@ -5805,7 +5805,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse|\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransportDetailsWithHttpInfo($shipment_id)
     {
@@ -5845,104 +5845,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -5961,7 +5961,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5969,7 +5969,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5977,7 +5977,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5985,7 +5985,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5993,7 +5993,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6001,7 +6001,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6009,7 +6009,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6017,7 +6017,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6059,7 +6059,7 @@ class FbaInboundApi
      */
     public function getTransportDetailsAsyncWithHttpInfo($shipment_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getTransportDetailsRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
@@ -6196,11 +6196,11 @@ class FbaInboundApi
      * Operation putTransportDetails
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest $body body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest $body body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse
      */
     public function putTransportDetails($shipment_id, $body)
     {
@@ -6212,11 +6212,11 @@ class FbaInboundApi
      * Operation putTransportDetailsWithHttpInfo
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest $body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse|\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function putTransportDetailsWithHttpInfo($shipment_id, $body)
     {
@@ -6256,104 +6256,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -6372,7 +6372,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6380,7 +6380,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6388,7 +6388,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6396,7 +6396,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6404,7 +6404,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6412,7 +6412,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6420,7 +6420,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6428,7 +6428,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6444,7 +6444,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6465,14 +6465,14 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function putTransportDetailsAsyncWithHttpInfo($shipment_id, $body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse';
         $this->config->startRequestGeneration();
         $request = $this->putTransportDetailsRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
@@ -6516,7 +6516,7 @@ class FbaInboundApi
      * Create request for operation 'putTransportDetails'
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6622,11 +6622,11 @@ class FbaInboundApi
      * Operation updateInboundShipment
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse
      */
     public function updateInboundShipment($shipment_id, $body)
     {
@@ -6638,11 +6638,11 @@ class FbaInboundApi
      * Operation updateInboundShipmentWithHttpInfo
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse|\Evers\SellingPartnerApi\Model\InboundShipmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateInboundShipmentWithHttpInfo($shipment_id, $body)
     {
@@ -6682,104 +6682,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\InboundShipmentResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\InboundShipmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\InboundShipmentResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -6798,7 +6798,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6806,7 +6806,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6814,7 +6814,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6822,7 +6822,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6830,7 +6830,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6838,7 +6838,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6846,7 +6846,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6854,7 +6854,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\InboundShipmentResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6870,7 +6870,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6891,14 +6891,14 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateInboundShipmentAsyncWithHttpInfo($shipment_id, $body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\InboundShipmentResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse';
         $this->config->startRequestGeneration();
         $request = $this->updateInboundShipmentRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
@@ -6942,7 +6942,7 @@ class FbaInboundApi
      * Create request for operation 'updateInboundShipment'
      *
      * @param  string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Evers\SellingPartnerApi\Model\InboundShipmentRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7051,7 +7051,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse
+     * @return \Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse
      */
     public function voidTransport($shipment_id)
     {
@@ -7066,7 +7066,7 @@ class FbaInboundApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse|\Evers\SellingPartnerApi\Model\VoidTransportResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function voidTransportWithHttpInfo($shipment_id)
     {
@@ -7106,104 +7106,104 @@ class FbaInboundApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\VoidTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\VoidTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\VoidTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\VoidTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\VoidTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\VoidTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\VoidTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\VoidTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\VoidTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\VoidTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\VoidTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\VoidTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\VoidTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\VoidTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\VoidTransportResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\VoidTransportResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\VoidTransportResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -7222,7 +7222,7 @@ class FbaInboundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\VoidTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7230,7 +7230,7 @@ class FbaInboundApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\VoidTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7238,7 +7238,7 @@ class FbaInboundApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\VoidTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7246,7 +7246,7 @@ class FbaInboundApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\VoidTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7254,7 +7254,7 @@ class FbaInboundApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\VoidTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7262,7 +7262,7 @@ class FbaInboundApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\VoidTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7270,7 +7270,7 @@ class FbaInboundApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\VoidTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7278,7 +7278,7 @@ class FbaInboundApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\VoidTransportResponse',
+                        '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7320,7 +7320,7 @@ class FbaInboundApi
      */
     public function voidTransportAsyncWithHttpInfo($shipment_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\VoidTransportResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse';
         $this->config->startRequestGeneration();
         $request = $this->voidTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);

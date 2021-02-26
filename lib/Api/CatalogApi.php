@@ -119,7 +119,7 @@ class CatalogApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse
+     * @return \Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse
      */
     public function getCatalogItem($marketplace_id, $asin)
     {
@@ -135,7 +135,7 @@ class CatalogApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse|\Evers\SellingPartnerApi\Model\GetCatalogItemResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCatalogItemWithHttpInfo($marketplace_id, $asin)
     {
@@ -175,104 +175,104 @@ class CatalogApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetCatalogItemResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetCatalogItemResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetCatalogItemResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetCatalogItemResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetCatalogItemResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetCatalogItemResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetCatalogItemResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetCatalogItemResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -291,7 +291,7 @@ class CatalogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -299,7 +299,7 @@ class CatalogApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -307,7 +307,7 @@ class CatalogApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -315,7 +315,7 @@ class CatalogApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -323,7 +323,7 @@ class CatalogApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -331,7 +331,7 @@ class CatalogApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -339,7 +339,7 @@ class CatalogApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -347,7 +347,7 @@ class CatalogApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -391,7 +391,7 @@ class CatalogApi
      */
     public function getCatalogItemAsyncWithHttpInfo($marketplace_id, $asin)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetCatalogItemResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse';
         $this->config->startRequestGeneration();
         $request = $this->getCatalogItemRequest($marketplace_id, $asin);
         $signedRequest = $this->config->signRequest($request);
@@ -547,7 +547,7 @@ class CatalogApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse
+     * @return \Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse
      */
     public function listCatalogCategories($marketplace_id, $asin = null, $seller_sku = null)
     {
@@ -564,7 +564,7 @@ class CatalogApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse|\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCatalogCategoriesWithHttpInfo($marketplace_id, $asin = null, $seller_sku = null)
     {
@@ -604,104 +604,104 @@ class CatalogApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -720,7 +720,7 @@ class CatalogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -728,7 +728,7 @@ class CatalogApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -736,7 +736,7 @@ class CatalogApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -744,7 +744,7 @@ class CatalogApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -752,7 +752,7 @@ class CatalogApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -760,7 +760,7 @@ class CatalogApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -768,7 +768,7 @@ class CatalogApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -776,7 +776,7 @@ class CatalogApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -822,7 +822,7 @@ class CatalogApi
      */
     public function listCatalogCategoriesAsyncWithHttpInfo($marketplace_id, $asin = null, $seller_sku = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\ListCatalogCategoriesResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse';
         $this->config->startRequestGeneration();
         $request = $this->listCatalogCategoriesRequest($marketplace_id, $asin, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
@@ -984,7 +984,7 @@ class CatalogApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse
+     * @return \Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse
      */
     public function listCatalogItems($marketplace_id, $query = null, $query_context_id = null, $seller_sku = null, $upc = null, $ean = null, $isbn = null, $jan = null)
     {
@@ -1006,7 +1006,7 @@ class CatalogApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse|\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCatalogItemsWithHttpInfo($marketplace_id, $query = null, $query_context_id = null, $seller_sku = null, $upc = null, $ean = null, $isbn = null, $jan = null)
     {
@@ -1046,104 +1046,104 @@ class CatalogApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1162,7 +1162,7 @@ class CatalogApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1170,7 +1170,7 @@ class CatalogApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1178,7 +1178,7 @@ class CatalogApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1186,7 +1186,7 @@ class CatalogApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1194,7 +1194,7 @@ class CatalogApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1202,7 +1202,7 @@ class CatalogApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1210,7 +1210,7 @@ class CatalogApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1218,7 +1218,7 @@ class CatalogApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse',
+                        '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1274,7 +1274,7 @@ class CatalogApi
      */
     public function listCatalogItemsAsyncWithHttpInfo($marketplace_id, $query = null, $query_context_id = null, $seller_sku = null, $upc = null, $ean = null, $isbn = null, $jan = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\ListCatalogItemsResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse';
         $this->config->startRequestGeneration();
         $request = $this->listCatalogItemsRequest($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
         $signedRequest = $this->config->signRequest($request);

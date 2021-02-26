@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `getOrder()`
 
 ```php
-getOrder($order_id): \Evers\SellingPartnerApi\Model\GetOrderResponse
+getOrder($order_id): \Evers\SellingPartnerApi\Model\Orders\GetOrderResponse
 ```
 
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOrderResponse**](../Model/GetOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
 
 ### HTTP request headers
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ## `getOrderAddress()`
 
 ```php
-getOrderAddress($order_id): \Evers\SellingPartnerApi\Model\GetOrderAddressResponse
+getOrderAddress($order_id): \Evers\SellingPartnerApi\Model\Orders\GetOrderAddressResponse
 ```
 
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOrderAddressResponse**](../Model/GetOrderAddressResponse.md)
+[**\Evers\SellingPartnerApi\Model\Orders\GetOrderAddressResponse**](../Model/GetOrderAddressResponse.md)
 
 ### HTTP request headers
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 ## `getOrderBuyerInfo()`
 
 ```php
-getOrderBuyerInfo($order_id): \Evers\SellingPartnerApi\Model\GetOrderBuyerInfoResponse
+getOrderBuyerInfo($order_id): \Evers\SellingPartnerApi\Model\Orders\GetOrderBuyerInfoResponse
 ```
 
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOrderBuyerInfoResponse**](../Model/GetOrderBuyerInfoResponse.md)
+[**\Evers\SellingPartnerApi\Model\Orders\GetOrderBuyerInfoResponse**](../Model/GetOrderBuyerInfoResponse.md)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 ## `getOrderItems()`
 
 ```php
-getOrderItems($order_id, $next_token): \Evers\SellingPartnerApi\Model\GetOrderItemsResponse
+getOrderItems($order_id, $next_token): \Evers\SellingPartnerApi\Model\Orders\GetOrderItemsResponse
 ```
 
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOrderItemsResponse**](../Model/GetOrderItemsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Orders\GetOrderItemsResponse**](../Model/GetOrderItemsResponse.md)
 
 ### HTTP request headers
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 ## `getOrderItemsBuyerInfo()`
 
 ```php
-getOrderItemsBuyerInfo($order_id, $next_token): \Evers\SellingPartnerApi\Model\GetOrderItemsBuyerInfoResponse
+getOrderItemsBuyerInfo($order_id, $next_token): \Evers\SellingPartnerApi\Model\Orders\GetOrderItemsBuyerInfoResponse
 ```
 
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOrderItemsBuyerInfoResponse**](../Model/GetOrderItemsBuyerInfoResponse.md)
+[**\Evers\SellingPartnerApi\Model\Orders\GetOrderItemsBuyerInfoResponse**](../Model/GetOrderItemsBuyerInfoResponse.md)
 
 ### HTTP request headers
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 ## `getOrders()`
 
 ```php
-getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids): \Evers\SellingPartnerApi\Model\GetOrdersResponse
+getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids): \Evers\SellingPartnerApi\Model\Orders\GetOrdersResponse
 ```
 
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetOrdersResponse**](../Model/GetOrdersResponse.md)
+[**\Evers\SellingPartnerApi\Model\Orders\GetOrdersResponse**](../Model/GetOrdersResponse.md)
 
 ### HTTP request headers
 

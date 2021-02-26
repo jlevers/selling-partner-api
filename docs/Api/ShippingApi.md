@@ -18,7 +18,7 @@ Method | HTTP request | Description
 ## `cancelShipment()`
 
 ```php
-cancelShipment($shipment_id): \Evers\SellingPartnerApi\Model\CancelShipmentResponse
+cancelShipment($shipment_id): \Evers\SellingPartnerApi\Model\Shipping\CancelShipmentResponse
 ```
 
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ## `createShipment()`
 
 ```php
-createShipment($body): \Evers\SellingPartnerApi\Model\CreateShipmentResponse
+createShipment($body): \Evers\SellingPartnerApi\Model\Shipping\CreateShipmentResponse
 ```
 
 
@@ -78,7 +78,7 @@ Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
-$body = new \Evers\SellingPartnerApi\Model\CreateShipmentRequest(); // \Evers\SellingPartnerApi\Model\CreateShipmentRequest
+$body = new \Evers\SellingPartnerApi\Model\Shipping\CreateShipmentRequest(); // \Evers\SellingPartnerApi\Model\Shipping\CreateShipmentRequest
 
 try {
     $result = $apiInstance->createShipment($body);
@@ -92,11 +92,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateShipmentResponse**](../Model/CreateShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\CreateShipmentResponse**](../Model/CreateShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ## `getAccount()`
 
 ```php
-getAccount(): \Evers\SellingPartnerApi\Model\GetAccountResponse
+getAccount(): \Evers\SellingPartnerApi\Model\Shipping\GetAccountResponse
 ```
 
 
@@ -139,7 +139,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetAccountResponse**](../Model/GetAccountResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\GetAccountResponse**](../Model/GetAccountResponse.md)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ This endpoint does not need any parameter.
 ## `getRates()`
 
 ```php
-getRates($body): \Evers\SellingPartnerApi\Model\GetRatesResponse
+getRates($body): \Evers\SellingPartnerApi\Model\Shipping\GetRatesResponse
 ```
 
 
@@ -167,7 +167,7 @@ Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | --
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
-$body = new \Evers\SellingPartnerApi\Model\GetRatesRequest(); // \Evers\SellingPartnerApi\Model\GetRatesRequest
+$body = new \Evers\SellingPartnerApi\Model\Shipping\GetRatesRequest(); // \Evers\SellingPartnerApi\Model\Shipping\GetRatesRequest
 
 try {
     $result = $apiInstance->getRates($body);
@@ -181,11 +181,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\GetRatesRequest**](../Model/GetRatesRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\GetRatesRequest**](../Model/GetRatesRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetRatesResponse**](../Model/GetRatesResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\GetRatesResponse**](../Model/GetRatesResponse.md)
 
 ### HTTP request headers
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 ## `getShipment()`
 
 ```php
-getShipment($shipment_id): \Evers\SellingPartnerApi\Model\GetShipmentResponse
+getShipment($shipment_id): \Evers\SellingPartnerApi\Model\Shipping\GetShipmentResponse
 ```
 
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetShipmentResponse**](../Model/GetShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\GetShipmentResponse**](../Model/GetShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 ## `getTrackingInformation()`
 
 ```php
-getTrackingInformation($tracking_id): \Evers\SellingPartnerApi\Model\GetTrackingInformationResponse
+getTrackingInformation($tracking_id): \Evers\SellingPartnerApi\Model\Shipping\GetTrackingInformationResponse
 ```
 
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetTrackingInformationResponse**](../Model/GetTrackingInformationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\GetTrackingInformationResponse**](../Model/GetTrackingInformationResponse.md)
 
 ### HTTP request headers
 
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 ## `purchaseLabels()`
 
 ```php
-purchaseLabels($shipment_id, $body): \Evers\SellingPartnerApi\Model\PurchaseLabelsResponse
+purchaseLabels($shipment_id, $body): \Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsResponse
 ```
 
 
@@ -306,7 +306,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
 $shipment_id = 'shipment_id_example'; // string
-$body = new \Evers\SellingPartnerApi\Model\PurchaseLabelsRequest(); // \Evers\SellingPartnerApi\Model\PurchaseLabelsRequest
+$body = new \Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest(); // \Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest
 
 try {
     $result = $apiInstance->purchaseLabels($shipment_id, $body);
@@ -321,11 +321,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**|  |
- **body** | [**\Evers\SellingPartnerApi\Model\PurchaseLabelsRequest**](../Model/PurchaseLabelsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest**](../Model/PurchaseLabelsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\PurchaseLabelsResponse**](../Model/PurchaseLabelsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsResponse**](../Model/PurchaseLabelsResponse.md)
 
 ### HTTP request headers
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 ## `purchaseShipment()`
 
 ```php
-purchaseShipment($body): \Evers\SellingPartnerApi\Model\PurchaseShipmentResponse
+purchaseShipment($body): \Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentResponse
 ```
 
 
@@ -353,7 +353,7 @@ Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
-$body = new \Evers\SellingPartnerApi\Model\PurchaseShipmentRequest(); // \Evers\SellingPartnerApi\Model\PurchaseShipmentRequest
+$body = new \Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest(); // \Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest
 
 try {
     $result = $apiInstance->purchaseShipment($body);
@@ -367,11 +367,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\PurchaseShipmentRequest**](../Model/PurchaseShipmentRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest**](../Model/PurchaseShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\PurchaseShipmentResponse**](../Model/PurchaseShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentResponse**](../Model/PurchaseShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 ## `retrieveShippingLabel()`
 
 ```php
-retrieveShippingLabel($shipment_id, $tracking_id, $body): \Evers\SellingPartnerApi\Model\RetrieveShippingLabelResponse
+retrieveShippingLabel($shipment_id, $tracking_id, $body): \Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelResponse
 ```
 
 
@@ -401,7 +401,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
 $shipment_id = 'shipment_id_example'; // string
 $tracking_id = 'tracking_id_example'; // string
-$body = new \Evers\SellingPartnerApi\Model\RetrieveShippingLabelRequest(); // \Evers\SellingPartnerApi\Model\RetrieveShippingLabelRequest
+$body = new \Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest(); // \Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest
 
 try {
     $result = $apiInstance->retrieveShippingLabel($shipment_id, $tracking_id, $body);
@@ -417,11 +417,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**|  |
  **tracking_id** | **string**|  |
- **body** | [**\Evers\SellingPartnerApi\Model\RetrieveShippingLabelRequest**](../Model/RetrieveShippingLabelRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest**](../Model/RetrieveShippingLabelRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\RetrieveShippingLabelResponse**](../Model/RetrieveShippingLabelResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelResponse**](../Model/RetrieveShippingLabelResponse.md)
 
 ### HTTP request headers
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `listFinancialEventGroups()`
 
 ```php
-listFinancialEventGroups($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token): \Evers\SellingPartnerApi\Model\ListFinancialEventGroupsResponse
+listFinancialEventGroups($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token): \Evers\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse
 ```
 
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListFinancialEventGroupsResponse**](../Model/ListFinancialEventGroupsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse**](../Model/ListFinancialEventGroupsResponse.md)
 
 ### HTTP request headers
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 ## `listFinancialEvents()`
 
 ```php
-listFinancialEvents($max_results_per_page, $posted_after, $posted_before, $next_token): \Evers\SellingPartnerApi\Model\ListFinancialEventsResponse
+listFinancialEvents($max_results_per_page, $posted_after, $posted_before, $next_token): \Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse
 ```
 
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
 
 ### HTTP request headers
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 ## `listFinancialEventsByGroupId()`
 
 ```php
-listFinancialEventsByGroupId($event_group_id, $max_results_per_page, $next_token): \Evers\SellingPartnerApi\Model\ListFinancialEventsResponse
+listFinancialEventsByGroupId($event_group_id, $max_results_per_page, $next_token): \Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse
 ```
 
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
 
 ### HTTP request headers
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 ## `listFinancialEventsByOrderId()`
 
 ```php
-listFinancialEventsByOrderId($order_id, $max_results_per_page, $next_token): \Evers\SellingPartnerApi\Model\ListFinancialEventsResponse
+listFinancialEventsByOrderId($order_id, $max_results_per_page, $next_token): \Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse
 ```
 
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
 
 ### HTTP request headers
 

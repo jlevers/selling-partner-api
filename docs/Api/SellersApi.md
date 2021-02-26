@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getMarketplaceParticipations()`
 
 ```php
-getMarketplaceParticipations(): \Evers\SellingPartnerApi\Model\GetMarketplaceParticipationsResponse
+getMarketplaceParticipations(): \Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse
 ```
 
 
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetMarketplaceParticipationsResponse**](../Model/GetMarketplaceParticipationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse**](../Model/GetMarketplaceParticipationsResponse.md)
 
 ### HTTP request headers
 

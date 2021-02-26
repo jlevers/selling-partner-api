@@ -115,11 +115,11 @@ class FeesApi
      * Operation getMyFeesEstimateForASIN
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse
+     * @return \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse
      */
     public function getMyFeesEstimateForASIN($asin, $body)
     {
@@ -131,11 +131,11 @@ class FeesApi
      * Operation getMyFeesEstimateForASINWithHttpInfo
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMyFeesEstimateForASINWithHttpInfo($asin, $body)
     {
@@ -175,104 +175,104 @@ class FeesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -291,7 +291,7 @@ class FeesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -299,7 +299,7 @@ class FeesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -307,7 +307,7 @@ class FeesApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -315,7 +315,7 @@ class FeesApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -323,7 +323,7 @@ class FeesApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -331,7 +331,7 @@ class FeesApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -339,7 +339,7 @@ class FeesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -347,7 +347,7 @@ class FeesApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -363,7 +363,7 @@ class FeesApi
      * 
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -384,14 +384,14 @@ class FeesApi
      * 
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMyFeesEstimateForASINAsyncWithHttpInfo($asin, $body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse';
         $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForASINRequest($asin, $body);
         $signedRequest = $this->config->signRequest($request);
@@ -435,7 +435,7 @@ class FeesApi
      * Create request for operation 'getMyFeesEstimateForASIN'
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -541,11 +541,11 @@ class FeesApi
      * Operation getMyFeesEstimateForSKU
      *
      * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse
+     * @return \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse
      */
     public function getMyFeesEstimateForSKU($seller_sku, $body)
     {
@@ -557,11 +557,11 @@ class FeesApi
      * Operation getMyFeesEstimateForSKUWithHttpInfo
      *
      * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse|\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMyFeesEstimateForSKUWithHttpInfo($seller_sku, $body)
     {
@@ -601,104 +601,104 @@ class FeesApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -717,7 +717,7 @@ class FeesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -725,7 +725,7 @@ class FeesApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -733,7 +733,7 @@ class FeesApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -741,7 +741,7 @@ class FeesApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -749,7 +749,7 @@ class FeesApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -757,7 +757,7 @@ class FeesApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -765,7 +765,7 @@ class FeesApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -773,7 +773,7 @@ class FeesApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse',
+                        '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -789,7 +789,7 @@ class FeesApi
      * 
      *
      * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -810,14 +810,14 @@ class FeesApi
      * 
      *
      * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getMyFeesEstimateForSKUAsyncWithHttpInfo($seller_sku, $body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetMyFeesEstimateResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse';
         $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForSKURequest($seller_sku, $body);
         $signedRequest = $this->config->signRequest($request);
@@ -861,7 +861,7 @@ class FeesApi
      * Create request for operation 'getMyFeesEstimateForSKU'
      *
      * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Evers\SellingPartnerApi\Model\GetMyFeesEstimateRequest $body (required)
+     * @param  \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

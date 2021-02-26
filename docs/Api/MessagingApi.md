@@ -21,7 +21,7 @@ Method | HTTP request | Description
 ## `confirmCustomizationDetails()`
 
 ```php
-confirmCustomizationDetails($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateConfirmCustomizationDetailsResponse
+confirmCustomizationDetails($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse
 ```
 
 
@@ -37,7 +37,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateConfirmCustomizationDetailsRequest(); // \Evers\SellingPartnerApi\Model\CreateConfirmCustomizationDetailsRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsRequest
 
 try {
     $result = $apiInstance->confirmCustomizationDetails($amazon_order_id, $marketplace_ids, $body);
@@ -53,11 +53,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateConfirmCustomizationDetailsRequest**](../Model/CreateConfirmCustomizationDetailsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsRequest**](../Model/CreateConfirmCustomizationDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateConfirmCustomizationDetailsResponse**](../Model/CreateConfirmCustomizationDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse**](../Model/CreateConfirmCustomizationDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 ## `createAmazonMotors()`
 
 ```php
-createAmazonMotors($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateAmazonMotorsResponse
+createAmazonMotors($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse
 ```
 
 
@@ -87,7 +87,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateAmazonMotorsRequest(); // \Evers\SellingPartnerApi\Model\CreateAmazonMotorsRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsRequest
 
 try {
     $result = $apiInstance->createAmazonMotors($amazon_order_id, $marketplace_ids, $body);
@@ -103,11 +103,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateAmazonMotorsRequest**](../Model/CreateAmazonMotorsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsRequest**](../Model/CreateAmazonMotorsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateAmazonMotorsResponse**](../Model/CreateAmazonMotorsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse**](../Model/CreateAmazonMotorsResponse.md)
 
 ### HTTP request headers
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 ## `createConfirmDeliveryDetails()`
 
 ```php
-createConfirmDeliveryDetails($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateConfirmDeliveryDetailsResponse
+createConfirmDeliveryDetails($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse
 ```
 
 
@@ -137,7 +137,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateConfirmDeliveryDetailsRequest(); // \Evers\SellingPartnerApi\Model\CreateConfirmDeliveryDetailsRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsRequest
 
 try {
     $result = $apiInstance->createConfirmDeliveryDetails($amazon_order_id, $marketplace_ids, $body);
@@ -153,11 +153,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateConfirmDeliveryDetailsRequest**](../Model/CreateConfirmDeliveryDetailsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsRequest**](../Model/CreateConfirmDeliveryDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateConfirmDeliveryDetailsResponse**](../Model/CreateConfirmDeliveryDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse**](../Model/CreateConfirmDeliveryDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 ## `createConfirmOrderDetails()`
 
 ```php
-createConfirmOrderDetails($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateConfirmOrderDetailsResponse
+createConfirmOrderDetails($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse
 ```
 
 
@@ -187,7 +187,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateConfirmOrderDetailsRequest(); // \Evers\SellingPartnerApi\Model\CreateConfirmOrderDetailsRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsRequest
 
 try {
     $result = $apiInstance->createConfirmOrderDetails($amazon_order_id, $marketplace_ids, $body);
@@ -203,11 +203,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateConfirmOrderDetailsRequest**](../Model/CreateConfirmOrderDetailsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsRequest**](../Model/CreateConfirmOrderDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateConfirmOrderDetailsResponse**](../Model/CreateConfirmOrderDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse**](../Model/CreateConfirmOrderDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 ## `createConfirmServiceDetails()`
 
 ```php
-createConfirmServiceDetails($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateConfirmServiceDetailsResponse
+createConfirmServiceDetails($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse
 ```
 
 
@@ -237,7 +237,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateConfirmServiceDetailsRequest(); // \Evers\SellingPartnerApi\Model\CreateConfirmServiceDetailsRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsRequest
 
 try {
     $result = $apiInstance->createConfirmServiceDetails($amazon_order_id, $marketplace_ids, $body);
@@ -253,11 +253,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateConfirmServiceDetailsRequest**](../Model/CreateConfirmServiceDetailsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsRequest**](../Model/CreateConfirmServiceDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateConfirmServiceDetailsResponse**](../Model/CreateConfirmServiceDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse**](../Model/CreateConfirmServiceDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 ## `createDigitalAccessKey()`
 
 ```php
-createDigitalAccessKey($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateDigitalAccessKeyResponse
+createDigitalAccessKey($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse
 ```
 
 
@@ -287,7 +287,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateDigitalAccessKeyRequest(); // \Evers\SellingPartnerApi\Model\CreateDigitalAccessKeyRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyRequest
 
 try {
     $result = $apiInstance->createDigitalAccessKey($amazon_order_id, $marketplace_ids, $body);
@@ -303,11 +303,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateDigitalAccessKeyRequest**](../Model/CreateDigitalAccessKeyRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyRequest**](../Model/CreateDigitalAccessKeyRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateDigitalAccessKeyResponse**](../Model/CreateDigitalAccessKeyResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse**](../Model/CreateDigitalAccessKeyResponse.md)
 
 ### HTTP request headers
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 ## `createLegalDisclosure()`
 
 ```php
-createLegalDisclosure($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateLegalDisclosureResponse
+createLegalDisclosure($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse
 ```
 
 
@@ -337,7 +337,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateLegalDisclosureRequest(); // \Evers\SellingPartnerApi\Model\CreateLegalDisclosureRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureRequest
 
 try {
     $result = $apiInstance->createLegalDisclosure($amazon_order_id, $marketplace_ids, $body);
@@ -353,11 +353,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateLegalDisclosureRequest**](../Model/CreateLegalDisclosureRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureRequest**](../Model/CreateLegalDisclosureRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateLegalDisclosureResponse**](../Model/CreateLegalDisclosureResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse**](../Model/CreateLegalDisclosureResponse.md)
 
 ### HTTP request headers
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 ## `createNegativeFeedbackRemoval()`
 
 ```php
-createNegativeFeedbackRemoval($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\CreateNegativeFeedbackRemovalResponse
+createNegativeFeedbackRemoval($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse
 ```
 
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateNegativeFeedbackRemovalResponse**](../Model/CreateNegativeFeedbackRemovalResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse**](../Model/CreateNegativeFeedbackRemovalResponse.md)
 
 ### HTTP request headers
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 ## `createUnexpectedProblem()`
 
 ```php
-createUnexpectedProblem($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateUnexpectedProblemResponse
+createUnexpectedProblem($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse
 ```
 
 
@@ -435,7 +435,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateUnexpectedProblemRequest(); // \Evers\SellingPartnerApi\Model\CreateUnexpectedProblemRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemRequest
 
 try {
     $result = $apiInstance->createUnexpectedProblem($amazon_order_id, $marketplace_ids, $body);
@@ -451,11 +451,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateUnexpectedProblemRequest**](../Model/CreateUnexpectedProblemRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemRequest**](../Model/CreateUnexpectedProblemRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateUnexpectedProblemResponse**](../Model/CreateUnexpectedProblemResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse**](../Model/CreateUnexpectedProblemResponse.md)
 
 ### HTTP request headers
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 ## `createWarranty()`
 
 ```php
-createWarranty($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\CreateWarrantyResponse
+createWarranty($amazon_order_id, $marketplace_ids, $body): \Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse
 ```
 
 
@@ -485,7 +485,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new Evers\SellingPartnerApi\Api\MessagingApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
-$body = new \Evers\SellingPartnerApi\Model\CreateWarrantyRequest(); // \Evers\SellingPartnerApi\Model\CreateWarrantyRequest
+$body = new \Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyRequest(); // \Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyRequest
 
 try {
     $result = $apiInstance->createWarranty($amazon_order_id, $marketplace_ids, $body);
@@ -501,11 +501,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
  **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateWarrantyRequest**](../Model/CreateWarrantyRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyRequest**](../Model/CreateWarrantyRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateWarrantyResponse**](../Model/CreateWarrantyResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse**](../Model/CreateWarrantyResponse.md)
 
 ### HTTP request headers
 
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 ## `getAttributes()`
 
 ```php
-getAttributes($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\GetAttributesResponse
+getAttributes($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\Messaging\GetAttributesResponse
 ```
 
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetAttributesResponse**](../Model/GetAttributesResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\GetAttributesResponse**](../Model/GetAttributesResponse.md)
 
 ### HTTP request headers
 
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 ## `getMessagingActionsForOrder()`
 
 ```php
-getMessagingActionsForOrder($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\GetMessagingActionsForOrderResponse
+getMessagingActionsForOrder($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse
 ```
 
 
@@ -601,7 +601,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetMessagingActionsForOrderResponse**](../Model/GetMessagingActionsForOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse**](../Model/GetMessagingActionsForOrderResponse.md)
 
 ### HTTP request headers
 

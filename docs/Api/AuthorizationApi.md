@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getAuthorizationCode()`
 
 ```php
-getAuthorizationCode($selling_partner_id, $developer_id, $mws_auth_token): \Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse
+getAuthorizationCode($selling_partner_id, $developer_id, $mws_auth_token): \Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse
 ```
 
 Returns the Login with Amazon (LWA) authorization code for an existing Amazon MWS authorization.
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse**](../Model/GetAuthorizationCodeResponse.md)
+[**\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse**](../Model/GetAuthorizationCodeResponse.md)
 
 ### HTTP request headers
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getInventorySummaries()`
 
 ```php
-getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $detail, $start_date_time, $seller_skus, $next_token): \Evers\SellingPartnerApi\Model\GetInventorySummariesResponse
+getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $detail, $start_date_time, $seller_skus, $next_token): \Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse
 ```
 
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetInventorySummariesResponse**](../Model/GetInventorySummariesResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse**](../Model/GetInventorySummariesResponse.md)
 
 ### HTTP request headers
 

@@ -122,7 +122,7 @@ class AuthorizationApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse
+     * @return \Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse
      */
     public function getAuthorizationCode($selling_partner_id, $developer_id, $mws_auth_token)
     {
@@ -141,7 +141,7 @@ class AuthorizationApi
      *
      * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse|\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAuthorizationCodeWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token)
     {
@@ -181,116 +181,116 @@ class AuthorizationApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse' === '\SplFileObject') {
+                    if ('\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse';
+            $returnType = '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -309,7 +309,7 @@ class AuthorizationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -317,7 +317,7 @@ class AuthorizationApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -325,7 +325,7 @@ class AuthorizationApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -333,7 +333,7 @@ class AuthorizationApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -341,7 +341,7 @@ class AuthorizationApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -349,7 +349,7 @@ class AuthorizationApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -357,7 +357,7 @@ class AuthorizationApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -365,7 +365,7 @@ class AuthorizationApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -373,7 +373,7 @@ class AuthorizationApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse',
+                        '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -419,7 +419,7 @@ class AuthorizationApi
      */
     public function getAuthorizationCodeAsyncWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\GetAuthorizationCodeResponse';
+        $returnType = '\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse';
         $this->config->startRequestGeneration();
         $request = $this->getAuthorizationCodeRequest($selling_partner_id, $developer_id, $mws_auth_token);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::migration");

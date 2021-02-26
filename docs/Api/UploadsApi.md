@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `createUploadDestinationForResource()`
 
 ```php
-createUploadDestinationForResource($marketplace_ids, $content_md5, $resource, $content_type): \Evers\SellingPartnerApi\Model\CreateUploadDestinationResponse
+createUploadDestinationForResource($marketplace_ids, $content_md5, $resource, $content_type): \Evers\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse
 ```
 
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateUploadDestinationResponse**](../Model/CreateUploadDestinationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse**](../Model/CreateUploadDestinationResponse.md)
 
 ### HTTP request headers
 

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 ## `cancelReport()`
 
 ```php
-cancelReport($report_id): \Evers\SellingPartnerApi\Model\CancelReportResponse
+cancelReport($report_id): \Evers\SellingPartnerApi\Model\Reports\CancelReportResponse
 ```
 
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CancelReportResponse**](../Model/CancelReportResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\CancelReportResponse**](../Model/CancelReportResponse.md)
 
 ### HTTP request headers
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ## `cancelReportSchedule()`
 
 ```php
-cancelReportSchedule($report_schedule_id): \Evers\SellingPartnerApi\Model\CancelReportScheduleResponse
+cancelReportSchedule($report_schedule_id): \Evers\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse
 ```
 
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CancelReportScheduleResponse**](../Model/CancelReportScheduleResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse**](../Model/CancelReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ## `createReport()`
 
 ```php
-createReport($body): \Evers\SellingPartnerApi\Model\CreateReportResponse
+createReport($body): \Evers\SellingPartnerApi\Model\Reports\CreateReportResponse
 ```
 
 
@@ -124,7 +124,7 @@ Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
-$body = new \Evers\SellingPartnerApi\Model\CreateReportSpecification(); // \Evers\SellingPartnerApi\Model\CreateReportSpecification
+$body = new \Evers\SellingPartnerApi\Model\Reports\CreateReportSpecification(); // \Evers\SellingPartnerApi\Model\Reports\CreateReportSpecification
 
 try {
     $result = $apiInstance->createReport($body);
@@ -138,11 +138,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\CreateReportSpecification**](../Model/CreateReportSpecification.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Reports\CreateReportSpecification**](../Model/CreateReportSpecification.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateReportResponse**](../Model/CreateReportResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\CreateReportResponse**](../Model/CreateReportResponse.md)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 ## `createReportSchedule()`
 
 ```php
-createReportSchedule($body): \Evers\SellingPartnerApi\Model\CreateReportScheduleResponse
+createReportSchedule($body): \Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse
 ```
 
 
@@ -170,7 +170,7 @@ Creates a report schedule. If a report schedule with the same report type and ma
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
-$body = new \Evers\SellingPartnerApi\Model\CreateReportScheduleSpecification(); // \Evers\SellingPartnerApi\Model\CreateReportScheduleSpecification
+$body = new \Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification(); // \Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification
 
 try {
     $result = $apiInstance->createReportSchedule($body);
@@ -184,11 +184,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\CreateReportScheduleSpecification**](../Model/CreateReportScheduleSpecification.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification**](../Model/CreateReportScheduleSpecification.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateReportScheduleResponse**](../Model/CreateReportScheduleResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse**](../Model/CreateReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 ## `getReport()`
 
 ```php
-getReport($report_id): \Evers\SellingPartnerApi\Model\GetReportResponse
+getReport($report_id): \Evers\SellingPartnerApi\Model\Reports\GetReportResponse
 ```
 
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetReportResponse**](../Model/GetReportResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportResponse**](../Model/GetReportResponse.md)
 
 ### HTTP request headers
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 ## `getReportDocument()`
 
 ```php
-getReportDocument($report_document_id): \Evers\SellingPartnerApi\Model\GetReportDocumentResponse
+getReportDocument($report_document_id): \Evers\SellingPartnerApi\Model\Reports\GetReportDocumentResponse
 ```
 
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetReportDocumentResponse**](../Model/GetReportDocumentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportDocumentResponse**](../Model/GetReportDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 ## `getReportSchedule()`
 
 ```php
-getReportSchedule($report_schedule_id): \Evers\SellingPartnerApi\Model\GetReportScheduleResponse
+getReportSchedule($report_schedule_id): \Evers\SellingPartnerApi\Model\Reports\GetReportScheduleResponse
 ```
 
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetReportScheduleResponse**](../Model/GetReportScheduleResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportScheduleResponse**](../Model/GetReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 ## `getReportSchedules()`
 
 ```php
-getReportSchedules($report_types): \Evers\SellingPartnerApi\Model\GetReportSchedulesResponse
+getReportSchedules($report_types): \Evers\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse
 ```
 
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetReportSchedulesResponse**](../Model/GetReportSchedulesResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse**](../Model/GetReportSchedulesResponse.md)
 
 ### HTTP request headers
 
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 ## `getReports()`
 
 ```php
-getReports($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token): \Evers\SellingPartnerApi\Model\GetReportsResponse
+getReports($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token): \Evers\SellingPartnerApi\Model\Reports\GetReportsResponse
 ```
 
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetReportsResponse**](../Model/GetReportsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportsResponse**](../Model/GetReportsResponse.md)
 
 ### HTTP request headers
 

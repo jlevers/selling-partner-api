@@ -26,7 +26,7 @@ Method | HTTP request | Description
 ## `confirmPreorder()`
 
 ```php
-confirmPreorder($shipment_id, $need_by_date, $marketplace_id): \Evers\SellingPartnerApi\Model\ConfirmPreorderResponse
+confirmPreorder($shipment_id, $need_by_date, $marketplace_id): \Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse
 ```
 
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ConfirmPreorderResponse**](../Model/ConfirmPreorderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse**](../Model/ConfirmPreorderResponse.md)
 
 ### HTTP request headers
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 ## `confirmTransport()`
 
 ```php
-confirmTransport($shipment_id): \Evers\SellingPartnerApi\Model\ConfirmTransportResponse
+confirmTransport($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse
 ```
 
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ConfirmTransportResponse**](../Model/ConfirmTransportResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse**](../Model/ConfirmTransportResponse.md)
 
 ### HTTP request headers
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 ## `createInboundShipment()`
 
 ```php
-createInboundShipment($shipment_id, $body): \Evers\SellingPartnerApi\Model\InboundShipmentResponse
+createInboundShipment($shipment_id, $body): \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse
 ```
 
 
@@ -137,7 +137,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
-$body = new \Evers\SellingPartnerApi\Model\InboundShipmentRequest(); // \Evers\SellingPartnerApi\Model\InboundShipmentRequest
+$body = new \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest(); // \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest
 
 try {
     $result = $apiInstance->createInboundShipment($shipment_id, $body);
@@ -152,11 +152,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\Evers\SellingPartnerApi\Model\InboundShipmentRequest**](../Model/InboundShipmentRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/InboundShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\InboundShipmentResponse**](../Model/InboundShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse**](../Model/InboundShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 ## `createInboundShipmentPlan()`
 
 ```php
-createInboundShipmentPlan($body): \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse
+createInboundShipmentPlan($body): \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse
 ```
 
 
@@ -184,7 +184,7 @@ Returns one or more inbound shipment plans, which provide the information you ne
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
-$body = new \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest(); // \Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest
+$body = new \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest(); // \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest
 
 try {
     $result = $apiInstance->createInboundShipmentPlan($body);
@@ -198,11 +198,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanRequest**](../Model/CreateInboundShipmentPlanRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest**](../Model/CreateInboundShipmentPlanRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateInboundShipmentPlanResponse**](../Model/CreateInboundShipmentPlanResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse**](../Model/CreateInboundShipmentPlanResponse.md)
 
 ### HTTP request headers
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 ## `estimateTransport()`
 
 ```php
-estimateTransport($shipment_id): \Evers\SellingPartnerApi\Model\EstimateTransportResponse
+estimateTransport($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse
 ```
 
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\EstimateTransportResponse**](../Model/EstimateTransportResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse**](../Model/EstimateTransportResponse.md)
 
 ### HTTP request headers
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 ## `getBillOfLading()`
 
 ```php
-getBillOfLading($shipment_id): \Evers\SellingPartnerApi\Model\GetBillOfLadingResponse
+getBillOfLading($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse
 ```
 
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetBillOfLadingResponse**](../Model/GetBillOfLadingResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse**](../Model/GetBillOfLadingResponse.md)
 
 ### HTTP request headers
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 ## `getInboundGuidance()`
 
 ```php
-getInboundGuidance($marketplace_id, $seller_sku_list, $asin_list): \Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse
+getInboundGuidance($marketplace_id, $seller_sku_list, $asin_list): \Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse
 ```
 
 
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetInboundGuidanceResponse**](../Model/GetInboundGuidanceResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse**](../Model/GetInboundGuidanceResponse.md)
 
 ### HTTP request headers
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 ## `getLabels()`
 
 ```php
-getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets): \Evers\SellingPartnerApi\Model\GetLabelsResponse
+getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets): \Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse
 ```
 
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetLabelsResponse**](../Model/GetLabelsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse**](../Model/GetLabelsResponse.md)
 
 ### HTTP request headers
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 ## `getPreorderInfo()`
 
 ```php
-getPreorderInfo($shipment_id, $marketplace_id): \Evers\SellingPartnerApi\Model\GetPreorderInfoResponse
+getPreorderInfo($shipment_id, $marketplace_id): \Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse
 ```
 
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetPreorderInfoResponse**](../Model/GetPreorderInfoResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse**](../Model/GetPreorderInfoResponse.md)
 
 ### HTTP request headers
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 ## `getPrepInstructions()`
 
 ```php
-getPrepInstructions($ship_to_country_code, $seller_sku_list, $asin_list): \Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse
+getPrepInstructions($ship_to_country_code, $seller_sku_list, $asin_list): \Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse
 ```
 
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetPrepInstructionsResponse**](../Model/GetPrepInstructionsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse**](../Model/GetPrepInstructionsResponse.md)
 
 ### HTTP request headers
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 ## `getShipmentItems()`
 
 ```php
-getShipmentItems($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token): \Evers\SellingPartnerApi\Model\GetShipmentItemsResponse
+getShipmentItems($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token): \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse
 ```
 
 
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse**](../Model/GetShipmentItemsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse**](../Model/GetShipmentItemsResponse.md)
 
 ### HTTP request headers
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 ## `getShipmentItemsByShipmentId()`
 
 ```php
-getShipmentItemsByShipmentId($shipment_id, $marketplace_id): \Evers\SellingPartnerApi\Model\GetShipmentItemsResponse
+getShipmentItemsByShipmentId($shipment_id, $marketplace_id): \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse
 ```
 
 
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetShipmentItemsResponse**](../Model/GetShipmentItemsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse**](../Model/GetShipmentItemsResponse.md)
 
 ### HTTP request headers
 
@@ -614,7 +614,7 @@ Name | Type | Description  | Notes
 ## `getShipments()`
 
 ```php
-getShipments($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token): \Evers\SellingPartnerApi\Model\GetShipmentsResponse
+getShipments($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token): \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse
 ```
 
 
@@ -658,7 +658,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetShipmentsResponse**](../Model/GetShipmentsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse**](../Model/GetShipmentsResponse.md)
 
 ### HTTP request headers
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 ## `getTransportDetails()`
 
 ```php
-getTransportDetails($shipment_id): \Evers\SellingPartnerApi\Model\GetTransportDetailsResponse
+getTransportDetails($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse
 ```
 
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetTransportDetailsResponse**](../Model/GetTransportDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse**](../Model/GetTransportDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 ## `putTransportDetails()`
 
 ```php
-putTransportDetails($shipment_id, $body): \Evers\SellingPartnerApi\Model\PutTransportDetailsResponse
+putTransportDetails($shipment_id, $body): \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse
 ```
 
 
@@ -733,7 +733,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
-$body = new \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest(); // \Evers\SellingPartnerApi\Model\PutTransportDetailsRequest
+$body = new \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest(); // \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest
 
 try {
     $result = $apiInstance->putTransportDetails($shipment_id, $body);
@@ -748,11 +748,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\Evers\SellingPartnerApi\Model\PutTransportDetailsRequest**](../Model/PutTransportDetailsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest**](../Model/PutTransportDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\PutTransportDetailsResponse**](../Model/PutTransportDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse**](../Model/PutTransportDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 ## `updateInboundShipment()`
 
 ```php
-updateInboundShipment($shipment_id, $body): \Evers\SellingPartnerApi\Model\InboundShipmentResponse
+updateInboundShipment($shipment_id, $body): \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse
 ```
 
 
@@ -781,7 +781,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
-$body = new \Evers\SellingPartnerApi\Model\InboundShipmentRequest(); // \Evers\SellingPartnerApi\Model\InboundShipmentRequest
+$body = new \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest(); // \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest
 
 try {
     $result = $apiInstance->updateInboundShipment($shipment_id, $body);
@@ -796,11 +796,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\Evers\SellingPartnerApi\Model\InboundShipmentRequest**](../Model/InboundShipmentRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/InboundShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\InboundShipmentResponse**](../Model/InboundShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse**](../Model/InboundShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 ## `voidTransport()`
 
 ```php
-voidTransport($shipment_id): \Evers\SellingPartnerApi\Model\VoidTransportResponse
+voidTransport($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse
 ```
 
 
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\VoidTransportResponse**](../Model/VoidTransportResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse**](../Model/VoidTransportResponse.md)
 
 ### HTTP request headers
 

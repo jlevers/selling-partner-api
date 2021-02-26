@@ -21,7 +21,7 @@ Method | HTTP request | Description
 ## `cancelFulfillmentOrder()`
 
 ```php
-cancelFulfillmentOrder($seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\CancelFulfillmentOrderResponse
+cancelFulfillmentOrder($seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse
 ```
 
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CancelFulfillmentOrderResponse**](../Model/CancelFulfillmentOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse**](../Model/CancelFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ## `createFulfillmentOrder()`
 
 ```php
-createFulfillmentOrder($body): \Evers\SellingPartnerApi\Model\CreateFulfillmentOrderResponse
+createFulfillmentOrder($body): \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse
 ```
 
 
@@ -81,7 +81,7 @@ Requests that Amazon ship items from the seller's inventory in Amazon's fulfillm
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
-$body = new \Evers\SellingPartnerApi\Model\CreateFulfillmentOrderRequest(); // \Evers\SellingPartnerApi\Model\CreateFulfillmentOrderRequest
+$body = new \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest(); // \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest
 
 try {
     $result = $apiInstance->createFulfillmentOrder($body);
@@ -95,11 +95,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\CreateFulfillmentOrderRequest**](../Model/CreateFulfillmentOrderRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest**](../Model/CreateFulfillmentOrderRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateFulfillmentOrderResponse**](../Model/CreateFulfillmentOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse**](../Model/CreateFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 ## `createFulfillmentReturn()`
 
 ```php
-createFulfillmentReturn($seller_fulfillment_order_id, $body): \Evers\SellingPartnerApi\Model\CreateFulfillmentReturnResponse
+createFulfillmentReturn($seller_fulfillment_order_id, $body): \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse
 ```
 
 
@@ -128,7 +128,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
 $seller_fulfillment_order_id = 'seller_fulfillment_order_id_example'; // string | An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
-$body = new \Evers\SellingPartnerApi\Model\CreateFulfillmentReturnRequest(); // \Evers\SellingPartnerApi\Model\CreateFulfillmentReturnRequest
+$body = new \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest(); // \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest
 
 try {
     $result = $apiInstance->createFulfillmentReturn($seller_fulfillment_order_id, $body);
@@ -143,11 +143,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_fulfillment_order_id** | **string**| An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. |
- **body** | [**\Evers\SellingPartnerApi\Model\CreateFulfillmentReturnRequest**](../Model/CreateFulfillmentReturnRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest**](../Model/CreateFulfillmentReturnRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\CreateFulfillmentReturnResponse**](../Model/CreateFulfillmentReturnResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse**](../Model/CreateFulfillmentReturnResponse.md)
 
 ### HTTP request headers
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 ## `getFeatureInventory()`
 
 ```php
-getFeatureInventory($marketplace_id, $feature_name, $next_token): \Evers\SellingPartnerApi\Model\GetFeatureInventoryResponse
+getFeatureInventory($marketplace_id, $feature_name, $next_token): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse
 ```
 
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetFeatureInventoryResponse**](../Model/GetFeatureInventoryResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse**](../Model/GetFeatureInventoryResponse.md)
 
 ### HTTP request headers
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 ## `getFeatureSKU()`
 
 ```php
-getFeatureSKU($marketplace_id, $feature_name, $seller_sku): \Evers\SellingPartnerApi\Model\GetFeatureSkuResponse
+getFeatureSKU($marketplace_id, $feature_name, $seller_sku): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse
 ```
 
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetFeatureSkuResponse**](../Model/GetFeatureSkuResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse**](../Model/GetFeatureSkuResponse.md)
 
 ### HTTP request headers
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 ## `getFeatures()`
 
 ```php
-getFeatures($marketplace_id): \Evers\SellingPartnerApi\Model\GetFeaturesResponse
+getFeatures($marketplace_id): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse
 ```
 
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetFeaturesResponse**](../Model/GetFeaturesResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse**](../Model/GetFeaturesResponse.md)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 ## `getFulfillmentOrder()`
 
 ```php
-getFulfillmentOrder($seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\GetFulfillmentOrderResponse
+getFulfillmentOrder($seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse
 ```
 
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetFulfillmentOrderResponse**](../Model/GetFulfillmentOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse**](../Model/GetFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 ## `getFulfillmentPreview()`
 
 ```php
-getFulfillmentPreview($body): \Evers\SellingPartnerApi\Model\GetFulfillmentPreviewResponse
+getFulfillmentPreview($body): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse
 ```
 
 
@@ -367,7 +367,7 @@ Returns a list of fulfillment order previews based on shipping criteria that you
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
-$body = new \Evers\SellingPartnerApi\Model\GetFulfillmentPreviewRequest(); // \Evers\SellingPartnerApi\Model\GetFulfillmentPreviewRequest
+$body = new \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest(); // \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest
 
 try {
     $result = $apiInstance->getFulfillmentPreview($body);
@@ -381,11 +381,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\GetFulfillmentPreviewRequest**](../Model/GetFulfillmentPreviewRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest**](../Model/GetFulfillmentPreviewRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetFulfillmentPreviewResponse**](../Model/GetFulfillmentPreviewResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse**](../Model/GetFulfillmentPreviewResponse.md)
 
 ### HTTP request headers
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 ## `getPackageTrackingDetails()`
 
 ```php
-getPackageTrackingDetails($package_number): \Evers\SellingPartnerApi\Model\GetPackageTrackingDetailsResponse
+getPackageTrackingDetails($package_number): \Evers\SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse
 ```
 
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\GetPackageTrackingDetailsResponse**](../Model/GetPackageTrackingDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse**](../Model/GetPackageTrackingDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 ## `listAllFulfillmentOrders()`
 
 ```php
-listAllFulfillmentOrders($query_start_date, $next_token): \Evers\SellingPartnerApi\Model\ListAllFulfillmentOrdersResponse
+listAllFulfillmentOrders($query_start_date, $next_token): \Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse
 ```
 
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListAllFulfillmentOrdersResponse**](../Model/ListAllFulfillmentOrdersResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse**](../Model/ListAllFulfillmentOrdersResponse.md)
 
 ### HTTP request headers
 
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 ## `listReturnReasonCodes()`
 
 ```php
-listReturnReasonCodes($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\ListReturnReasonCodesResponse
+listReturnReasonCodes($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse
 ```
 
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ListReturnReasonCodesResponse**](../Model/ListReturnReasonCodesResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse**](../Model/ListReturnReasonCodesResponse.md)
 
 ### HTTP request headers
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 ## `updateFulfillmentOrder()`
 
 ```php
-updateFulfillmentOrder($seller_fulfillment_order_id, $body): \Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderResponse
+updateFulfillmentOrder($seller_fulfillment_order_id, $body): \Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse
 ```
 
 
@@ -560,7 +560,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
 $seller_fulfillment_order_id = 'seller_fulfillment_order_id_example'; // string | The identifier assigned to the item by the seller when the fulfillment order was created.
-$body = new \Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderRequest(); // \Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderRequest
+$body = new \Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest(); // \Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest
 
 try {
     $result = $apiInstance->updateFulfillmentOrder($seller_fulfillment_order_id, $body);
@@ -575,11 +575,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_fulfillment_order_id** | **string**| The identifier assigned to the item by the seller when the fulfillment order was created. |
- **body** | [**\Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderRequest**](../Model/UpdateFulfillmentOrderRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest**](../Model/UpdateFulfillmentOrderRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\UpdateFulfillmentOrderResponse**](../Model/UpdateFulfillmentOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse**](../Model/UpdateFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 

@@ -6,8 +6,6 @@
  *
  * @category Class
  * @package  Evers\SellingPartnerApi
- * @author   OpenAPI Generator team
- * @link     https://openapi-generator.tech
  */
 
 /**
@@ -36,8 +34,6 @@ use Evers\SellingPartnerApi\Model\ModelInterface;
  *
  * @category Class
  * @package  Evers\SellingPartnerApi
- * @author   OpenAPI Generator team
- * @link     https://openapi-generator.tech
  */
 class ObjectSerializer
 {

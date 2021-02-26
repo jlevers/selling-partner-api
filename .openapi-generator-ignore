@@ -1,5 +1,6 @@
-git_push.sh
+/git_push.sh
 /.openapi-generator/
+/phpunit.xml.dist
 
 lib/Authentication.php
 lib/Credentials.php

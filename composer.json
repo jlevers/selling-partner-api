@@ -1,6 +1,7 @@
 {
     "name": "jlevers/selling-partner-api",
     "version": "1.1.4",
+    "description": "This library provides a PHP interface for interacting with Amazon's Selling Partner API.",
     "keywords": [
         "api",
         "selling-partner-api",
@@ -36,6 +37,6 @@
     },
     "autoload": {
         "psr-4": { "Evers\\SellingPartnerApi\\" : "lib/" },
-	"files": [ "lib/functions_include.php" ]
+        "files": [ "lib/functions_include.php" ]
     }
 }

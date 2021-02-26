@@ -1,4 +1,7 @@
-# OpenAPI Generator Ignore
+git_push.sh
+/.openapi-generator/
 
 lib/Authentication.php
 lib/Credentials.php
+lib/env.php
+lib/functions_include.php

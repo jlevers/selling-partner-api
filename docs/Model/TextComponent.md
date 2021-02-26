@@ -1,11 +1,10 @@
-# TextComponent
+# # TextComponent
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **string** | The actual plain text. | 
-**decorator_set** | [**\Evers\SellingPartnerApi\Model\DecoratorSet**](DecoratorSet.md) |  | [optional] 
+**value** | **string** | The actual plain text. |
+**decorator_set** | [**\Evers\SellingPartnerApi\Model\Decorator[]**](Decorator.md) | A set of content decorators. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

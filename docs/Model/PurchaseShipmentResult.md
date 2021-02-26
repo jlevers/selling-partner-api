@@ -1,12 +1,11 @@
-# PurchaseShipmentResult
+# # PurchaseShipmentResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shipment_id** | [**\Evers\SellingPartnerApi\Model\ShipmentId**](ShipmentId.md) |  | 
-**service_rate** | [**\Evers\SellingPartnerApi\Model\ServiceRate**](ServiceRate.md) |  | 
-**label_results** | [**\Evers\SellingPartnerApi\Model\LabelResultList**](LabelResultList.md) |  | 
+**shipment_id** | **string** | The unique shipment identifier. |
+**service_rate** | [**\Evers\SellingPartnerApi\Model\ServiceRate**](ServiceRate.md) |  |
+**label_results** | [**\Evers\SellingPartnerApi\Model\LabelResult[]**](LabelResult.md) | A list of label results |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

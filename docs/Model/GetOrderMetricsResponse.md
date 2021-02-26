@@ -1,11 +1,10 @@
-# GetOrderMetricsResponse
+# # GetOrderMetricsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**\Evers\SellingPartnerApi\Model\OrderMetricsList**](OrderMetricsList.md) | The payload for the getOrderMetrics operation. | [optional] 
-**errors** | [**\Evers\SellingPartnerApi\Model\ErrorList**](ErrorList.md) | Encountered errors for the getOrderMetrics operation. | [optional] 
+**payload** | [**\Evers\SellingPartnerApi\Model\OrderMetricsInterval[]**](OrderMetricsInterval.md) | A set of order metrics, each scoped to a particular time interval. | [optional]
+**errors** | [**\Evers\SellingPartnerApi\Model\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,10 +1,9 @@
-# GetFulfillmentPreviewResult
+# # GetFulfillmentPreviewResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fulfillment_previews** | [**\Evers\SellingPartnerApi\Model\FulfillmentPreviewList**](FulfillmentPreviewList.md) |  | [optional] 
+**fulfillment_previews** | [**\Evers\SellingPartnerApi\Model\FulfillmentPreview[]**](FulfillmentPreview.md) | An array of fulfillment preview information. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

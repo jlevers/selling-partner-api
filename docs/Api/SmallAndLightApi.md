@@ -1,39 +1,41 @@
 # Evers\SellingPartnerApi\SmallAndLightApi
 
-All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
+All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#deleteSmallAndLightEnrollmentBySellerSKU) | **DELETE** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
-[**getSmallAndLightEligibilityBySellerSKU**](SmallAndLightApi.md#getSmallAndLightEligibilityBySellerSKU) | **GET** /fba/smallAndLight/v1/eligibilities/{sellerSKU} | 
-[**getSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#getSmallAndLightEnrollmentBySellerSKU) | **GET** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
-[**getSmallAndLightFeePreview**](SmallAndLightApi.md#getSmallAndLightFeePreview) | **POST** /fba/smallAndLight/v1/feePreviews | 
-[**putSmallAndLightEnrollmentBySellerSKU**](SmallAndLightApi.md#putSmallAndLightEnrollmentBySellerSKU) | **PUT** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
+[**deleteSmallAndLightEnrollmentBySellerSKU()**](SmallAndLightApi.md#deleteSmallAndLightEnrollmentBySellerSKU) | **DELETE** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
+[**getSmallAndLightEligibilityBySellerSKU()**](SmallAndLightApi.md#getSmallAndLightEligibilityBySellerSKU) | **GET** /fba/smallAndLight/v1/eligibilities/{sellerSKU} | 
+[**getSmallAndLightEnrollmentBySellerSKU()**](SmallAndLightApi.md#getSmallAndLightEnrollmentBySellerSKU) | **GET** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
+[**getSmallAndLightFeePreview()**](SmallAndLightApi.md#getSmallAndLightFeePreview) | **POST** /fba/smallAndLight/v1/feePreviews | 
+[**putSmallAndLightEnrollmentBySellerSKU()**](SmallAndLightApi.md#putSmallAndLightEnrollmentBySellerSKU) | **PUT** /fba/smallAndLight/v1/enrollments/{sellerSKU} | 
 
 
-# **deleteSmallAndLightEnrollmentBySellerSKU**
-> deleteSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
+## `deleteSmallAndLightEnrollmentBySellerSKU()`
+
+```php
+deleteSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
+```
 
 
 
 Removes the item indicated by the specified seller SKU from the Small and Light program in the specified marketplace. If the item is not eligible for disenrollment, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-);
-$seller_sku = "seller_sku_example"; // string | The seller SKU that identifies the item.
-$marketplace_ids = array("marketplace_ids_example"); // string[] | The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
+$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$seller_sku = 'seller_sku_example'; // string | The seller SKU that identifies the item.
+$marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
 
 try {
     $apiInstance->deleteSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids);
 } catch (Exception $e) {
     echo 'Exception when calling SmallAndLightApi->deleteSmallAndLightEnrollmentBySellerSKU: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -49,27 +51,32 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **getSmallAndLightEligibilityBySellerSKU**
-> \Evers\SellingPartnerApi\Model\SmallAndLightEligibility getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids)
+## `getSmallAndLightEligibilityBySellerSKU()`
+
+```php
+getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLightEligibility
+```
 
 
 
 Returns the Small and Light program eligibility status of the item indicated by the specified seller SKU in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-);
-$seller_sku = "seller_sku_example"; // string | The seller SKU that identifies the item.
-$marketplace_ids = array("marketplace_ids_example"); // string[] | The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only.
+$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$seller_sku = 'seller_sku_example'; // string | The seller SKU that identifies the item.
+$marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only.
 
 try {
     $result = $apiInstance->getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids);
@@ -77,7 +84,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SmallAndLightApi->getSmallAndLightEligibilityBySellerSKU: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -93,27 +99,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **getSmallAndLightEnrollmentBySellerSKU**
-> \Evers\SellingPartnerApi\Model\SmallAndLightEnrollment getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
+## `getSmallAndLightEnrollmentBySellerSKU()`
+
+```php
+getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLightEnrollment
+```
 
 
 
 Returns the Small and Light enrollment status for the item indicated by the specified seller SKU in the specified marketplace.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-);
-$seller_sku = "seller_sku_example"; // string | The seller SKU that identifies the item.
-$marketplace_ids = array("marketplace_ids_example"); // string[] | The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
+$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$seller_sku = 'seller_sku_example'; // string | The seller SKU that identifies the item.
+$marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
 
 try {
     $result = $apiInstance->getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids);
@@ -121,7 +132,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SmallAndLightApi->getSmallAndLightEnrollmentBySellerSKU: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -137,26 +147,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **getSmallAndLightFeePreview**
-> \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviews getSmallAndLightFeePreview($body)
+## `getSmallAndLightFeePreview()`
+
+```php
+getSmallAndLightFeePreview($body): \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviews
+```
 
 
 
 Returns the Small and Light fee estimates for the specified items. You must include a marketplaceId parameter to retrieve the proper fee estimates for items to be sold in that marketplace. The ordering of items in the response will mirror the order of the items in the request. Duplicate ASIN/price combinations are removed.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 3 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-);
-$body = new \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest(); // \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest | 
+$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$body = new \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest(); // \Evers\SellingPartnerApi\Model\SmallAndLightFeePreviewRequest
 
 try {
     $result = $apiInstance->getSmallAndLightFeePreview($body);
@@ -164,7 +179,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SmallAndLightApi->getSmallAndLightFeePreview: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -179,27 +193,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **putSmallAndLightEnrollmentBySellerSKU**
-> \Evers\SellingPartnerApi\Model\SmallAndLightEnrollment putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
+## `putSmallAndLightEnrollmentBySellerSKU()`
+
+```php
+putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLightEnrollment
+```
 
 
 
 Enrolls the item indicated by the specified seller SKU in the Small and Light program in the specified marketplace. If the item is not eligible, the ineligibility reasons are returned.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi(
-);
-$seller_sku = "seller_sku_example"; // string | The seller SKU that identifies the item.
-$marketplace_ids = array("marketplace_ids_example"); // string[] | The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
+$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$seller_sku = 'seller_sku_example'; // string | The seller SKU that identifies the item.
+$marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
 
 try {
     $result = $apiInstance->putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids);
@@ -207,7 +226,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling SmallAndLightApi->putSmallAndLightEnrollmentBySellerSKU: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -223,8 +241,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
-
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)

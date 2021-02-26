@@ -1,16 +1,15 @@
-# Shipment
+# # Shipment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shipment_id** | [**\Evers\SellingPartnerApi\Model\ShipmentId**](ShipmentId.md) |  | 
-**client_reference_id** | [**\Evers\SellingPartnerApi\Model\ClientReferenceId**](ClientReferenceId.md) |  | 
-**ship_from** | [**\Evers\SellingPartnerApi\Model\Address**](Address.md) |  | 
-**ship_to** | [**\Evers\SellingPartnerApi\Model\Address**](Address.md) |  | 
-**accepted_rate** | [**\Evers\SellingPartnerApi\Model\AcceptedRate**](AcceptedRate.md) |  | [optional] 
-**shipper** | [**\Evers\SellingPartnerApi\Model\Party**](Party.md) |  | [optional] 
-**containers** | [**\Evers\SellingPartnerApi\Model\ContainerList**](ContainerList.md) |  | 
+**shipment_id** | **string** | The unique shipment identifier. |
+**client_reference_id** | **string** | Client reference id. |
+**ship_from** | [**\Evers\SellingPartnerApi\Model\Address**](Address.md) |  |
+**ship_to** | [**\Evers\SellingPartnerApi\Model\Address**](Address.md) |  |
+**accepted_rate** | [**\Evers\SellingPartnerApi\Model\AcceptedRate**](AcceptedRate.md) |  | [optional]
+**shipper** | [**\Evers\SellingPartnerApi\Model\Party**](Party.md) |  | [optional]
+**containers** | [**\Evers\SellingPartnerApi\Model\Container[]**](Container.md) | A list of container. |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

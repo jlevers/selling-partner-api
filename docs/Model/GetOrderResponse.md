@@ -1,11 +1,10 @@
-# GetOrderResponse
+# # GetOrderResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**\Evers\SellingPartnerApi\Model\Order**](Order.md) | The payload for the getOrder operation. | [optional] 
-**errors** | [**\Evers\SellingPartnerApi\Model\ErrorList**](ErrorList.md) | One or more unexpected errors occurred during the getOrder operation. | [optional] 
+**payload** | [**\Evers\SellingPartnerApi\Model\Order**](Order.md) |  | [optional]
+**errors** | [**\Evers\SellingPartnerApi\Model\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

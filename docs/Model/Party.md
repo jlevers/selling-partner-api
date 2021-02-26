@@ -1,10 +1,9 @@
-# Party
+# # Party
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | [**\Evers\SellingPartnerApi\Model\AccountId**](AccountId.md) |  | [optional] 
+**account_id** | **string** | This is the Amazon Shipping account id generated during the Amazon Shipping onboarding process. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,11 +1,10 @@
-# GetPackageTrackingDetailsResponse
+# # GetPackageTrackingDetailsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**\Evers\SellingPartnerApi\Model\PackageTrackingDetails**](PackageTrackingDetails.md) | The payload for the getPackageTrackingDetails operation. | [optional] 
-**errors** | [**\Evers\SellingPartnerApi\Model\ErrorList**](ErrorList.md) | One or more unexpected errors occurred during the getPackageTrackingDetails operation. | [optional] 
+**payload** | [**\Evers\SellingPartnerApi\Model\PackageTrackingDetails**](PackageTrackingDetails.md) |  | [optional]
+**errors** | [**\Evers\SellingPartnerApi\Model\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

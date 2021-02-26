@@ -1,35 +1,38 @@
 # Evers\SellingPartnerApi\ShippingApi
 
-All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
+All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelShipment**](ShippingApi.md#cancelShipment) | **POST** /shipping/v1/shipments/{shipmentId}/cancel | 
-[**createShipment**](ShippingApi.md#createShipment) | **POST** /shipping/v1/shipments | 
-[**getAccount**](ShippingApi.md#getAccount) | **GET** /shipping/v1/account | 
-[**getRates**](ShippingApi.md#getRates) | **POST** /shipping/v1/rates | 
-[**getShipment**](ShippingApi.md#getShipment) | **GET** /shipping/v1/shipments/{shipmentId} | 
-[**getTrackingInformation**](ShippingApi.md#getTrackingInformation) | **GET** /shipping/v1/tracking/{trackingId} | 
-[**purchaseLabels**](ShippingApi.md#purchaseLabels) | **POST** /shipping/v1/shipments/{shipmentId}/purchaseLabels | 
-[**purchaseShipment**](ShippingApi.md#purchaseShipment) | **POST** /shipping/v1/purchaseShipment | 
-[**retrieveShippingLabel**](ShippingApi.md#retrieveShippingLabel) | **POST** /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label | 
+[**cancelShipment()**](ShippingApi.md#cancelShipment) | **POST** /shipping/v1/shipments/{shipmentId}/cancel | 
+[**createShipment()**](ShippingApi.md#createShipment) | **POST** /shipping/v1/shipments | 
+[**getAccount()**](ShippingApi.md#getAccount) | **GET** /shipping/v1/account | 
+[**getRates()**](ShippingApi.md#getRates) | **POST** /shipping/v1/rates | 
+[**getShipment()**](ShippingApi.md#getShipment) | **GET** /shipping/v1/shipments/{shipmentId} | 
+[**getTrackingInformation()**](ShippingApi.md#getTrackingInformation) | **GET** /shipping/v1/tracking/{trackingId} | 
+[**purchaseLabels()**](ShippingApi.md#purchaseLabels) | **POST** /shipping/v1/shipments/{shipmentId}/purchaseLabels | 
+[**purchaseShipment()**](ShippingApi.md#purchaseShipment) | **POST** /shipping/v1/purchaseShipment | 
+[**retrieveShippingLabel()**](ShippingApi.md#retrieveShippingLabel) | **POST** /shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label | 
 
 
-# **cancelShipment**
-> \Evers\SellingPartnerApi\Model\CancelShipmentResponse cancelShipment($shipment_id)
+## `cancelShipment()`
+
+```php
+cancelShipment($shipment_id): \Evers\SellingPartnerApi\Model\CancelShipmentResponse
+```
 
 
 
 Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
-$shipment_id = "shipment_id_example"; // string | 
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
+$shipment_id = 'shipment_id_example'; // string
 
 try {
     $result = $apiInstance->cancelShipment($shipment_id);
@@ -37,7 +40,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->cancelShipment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -52,26 +54,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **createShipment**
-> \Evers\SellingPartnerApi\Model\CreateShipmentResponse createShipment($body)
+## `createShipment()`
+
+```php
+createShipment($body): \Evers\SellingPartnerApi\Model\CreateShipmentResponse
+```
 
 
 
 Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
-$body = new \Evers\SellingPartnerApi\Model\CreateShipmentRequest(); // \Evers\SellingPartnerApi\Model\CreateShipmentRequest | 
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
+$body = new \Evers\SellingPartnerApi\Model\CreateShipmentRequest(); // \Evers\SellingPartnerApi\Model\CreateShipmentRequest
 
 try {
     $result = $apiInstance->createShipment($body);
@@ -79,7 +86,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->createShipment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -94,25 +100,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **getAccount**
-> \Evers\SellingPartnerApi\Model\GetAccountResponse getAccount()
+## `getAccount()`
+
+```php
+getAccount(): \Evers\SellingPartnerApi\Model\GetAccountResponse
+```
 
 
 
 Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
 
 try {
     $result = $apiInstance->getAccount();
@@ -120,10 +131,10 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->getAccount: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -132,26 +143,31 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **getRates**
-> \Evers\SellingPartnerApi\Model\GetRatesResponse getRates($body)
+## `getRates()`
+
+```php
+getRates($body): \Evers\SellingPartnerApi\Model\GetRatesResponse
+```
 
 
 
 Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
-$body = new \Evers\SellingPartnerApi\Model\GetRatesRequest(); // \Evers\SellingPartnerApi\Model\GetRatesRequest | 
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
+$body = new \Evers\SellingPartnerApi\Model\GetRatesRequest(); // \Evers\SellingPartnerApi\Model\GetRatesRequest
 
 try {
     $result = $apiInstance->getRates($body);
@@ -159,7 +175,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->getRates: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -174,26 +189,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **getShipment**
-> \Evers\SellingPartnerApi\Model\GetShipmentResponse getShipment($shipment_id)
+## `getShipment()`
+
+```php
+getShipment($shipment_id): \Evers\SellingPartnerApi\Model\GetShipmentResponse
+```
 
 
 
 Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
-$shipment_id = "shipment_id_example"; // string | 
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
+$shipment_id = 'shipment_id_example'; // string
 
 try {
     $result = $apiInstance->getShipment($shipment_id);
@@ -201,7 +221,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->getShipment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -216,26 +235,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **getTrackingInformation**
-> \Evers\SellingPartnerApi\Model\GetTrackingInformationResponse getTrackingInformation($tracking_id)
+## `getTrackingInformation()`
+
+```php
+getTrackingInformation($tracking_id): \Evers\SellingPartnerApi\Model\GetTrackingInformationResponse
+```
 
 
 
 Return the tracking information of a shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
-$tracking_id = "tracking_id_example"; // string | 
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
+$tracking_id = 'tracking_id_example'; // string
 
 try {
     $result = $apiInstance->getTrackingInformation($tracking_id);
@@ -243,7 +267,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->getTrackingInformation: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -258,27 +281,32 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **purchaseLabels**
-> \Evers\SellingPartnerApi\Model\PurchaseLabelsResponse purchaseLabels($shipment_id, $body)
+## `purchaseLabels()`
+
+```php
+purchaseLabels($shipment_id, $body): \Evers\SellingPartnerApi\Model\PurchaseLabelsResponse
+```
 
 
 
 Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
-$shipment_id = "shipment_id_example"; // string | 
-$body = new \Evers\SellingPartnerApi\Model\PurchaseLabelsRequest(); // \Evers\SellingPartnerApi\Model\PurchaseLabelsRequest | 
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
+$shipment_id = 'shipment_id_example'; // string
+$body = new \Evers\SellingPartnerApi\Model\PurchaseLabelsRequest(); // \Evers\SellingPartnerApi\Model\PurchaseLabelsRequest
 
 try {
     $result = $apiInstance->purchaseLabels($shipment_id, $body);
@@ -286,7 +314,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->purchaseLabels: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -302,26 +329,31 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **purchaseShipment**
-> \Evers\SellingPartnerApi\Model\PurchaseShipmentResponse purchaseShipment($body)
+## `purchaseShipment()`
+
+```php
+purchaseShipment($body): \Evers\SellingPartnerApi\Model\PurchaseShipmentResponse
+```
 
 
 
 Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
-$body = new \Evers\SellingPartnerApi\Model\PurchaseShipmentRequest(); // \Evers\SellingPartnerApi\Model\PurchaseShipmentRequest | 
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
+$body = new \Evers\SellingPartnerApi\Model\PurchaseShipmentRequest(); // \Evers\SellingPartnerApi\Model\PurchaseShipmentRequest
 
 try {
     $result = $apiInstance->purchaseShipment($body);
@@ -329,7 +361,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->purchaseShipment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -344,28 +375,33 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)
 
-# **retrieveShippingLabel**
-> \Evers\SellingPartnerApi\Model\RetrieveShippingLabelResponse retrieveShippingLabel($shipment_id, $tracking_id, $body)
+## `retrieveShippingLabel()`
+
+```php
+retrieveShippingLabel($shipment_id, $tracking_id, $body): \Evers\SellingPartnerApi\Model\RetrieveShippingLabelResponse
+```
 
 
 
 Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi(
-);
-$shipment_id = "shipment_id_example"; // string | 
-$tracking_id = "tracking_id_example"; // string | 
-$body = new \Evers\SellingPartnerApi\Model\RetrieveShippingLabelRequest(); // \Evers\SellingPartnerApi\Model\RetrieveShippingLabelRequest | 
+$apiInstance = new Evers\SellingPartnerApi\Api\ShippingApi();
+$shipment_id = 'shipment_id_example'; // string
+$tracking_id = 'tracking_id_example'; // string
+$body = new \Evers\SellingPartnerApi\Model\RetrieveShippingLabelRequest(); // \Evers\SellingPartnerApi\Model\RetrieveShippingLabelRequest
 
 try {
     $result = $apiInstance->retrieveShippingLabel($shipment_id, $tracking_id, $body);
@@ -373,7 +409,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ShippingApi->retrieveShippingLabel: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
@@ -390,8 +425,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Top]](#) [[API list]](../) [[Model list]](../Model) [[README]](../../README.md)
-
+[[Top]](#) [[API list]](../)
+[[Model list]](../Models)
+[[README]](../../README.md)

@@ -1,11 +1,10 @@
-# GetMarketplaceParticipationsResponse
+# # GetMarketplaceParticipationsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**\Evers\SellingPartnerApi\Model\MarketplaceParticipationList**](MarketplaceParticipationList.md) | The payload for the getMarketplaceParticipations operation. | [optional] 
-**errors** | [**\Evers\SellingPartnerApi\Model\ErrorList**](ErrorList.md) | Encountered errors for the getMarketplaceParticipations operation. | [optional] 
+**payload** | [**\Evers\SellingPartnerApi\Model\MarketplaceParticipation[]**](MarketplaceParticipation.md) | List of marketplace participations. | [optional]
+**errors** | [**\Evers\SellingPartnerApi\Model\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

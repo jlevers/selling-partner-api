@@ -1,0 +1,4 @@
+# OpenAPI Generator Ignore
+
+lib/Authentication.php
+lib/Credentials.php

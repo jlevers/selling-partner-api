@@ -1,8 +1,14 @@
-.DS_Store
-.idea
-*.log
-tmp/
+# ref: https://github.com/github/gitignore/blob/master/Composer.gitignore
+
+composer.phar
+/git_push.sh
+/vendor/
+/.openapi-generator/
 
 composer.lock
-git_push.sh
-vendor/
+
+# php-cs-fixer cache
+.php_cs.cache
+
+# PHPUnit cache
+.phpunit.result.cache

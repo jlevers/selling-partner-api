@@ -1,6 +1,6 @@
 {
     "name": "jlevers/selling-partner-api",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "keywords": [
         "api",
         "selling-partner-api",
@@ -35,6 +35,7 @@
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": { "Evers\\SellingPartnerApi\\" : "lib/" }
+        "psr-4": { "Evers\\SellingPartnerApi\\" : "lib/" },
+	"files": [ "lib/functions_include.php" ]
     }
 }

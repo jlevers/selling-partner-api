@@ -1,6 +1,6 @@
 <?php
 
-namespace Evers\SellingPartnerApi;
+namespace SellingPartnerApi;
 
 use Cyberdummy\GzStream;
 use GuzzleHttp\Client;
@@ -8,7 +8,7 @@ use GuzzleHttp\Psr7;
 use GuzzleHttp\RequestOptions;
 use Jsq\EncryptionStreams;
 
-use Evers\SellingPartnerApi\Model;
+use SellingPartnerApi\Model;
 
 class Document
 {

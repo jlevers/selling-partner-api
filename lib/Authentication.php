@@ -1,6 +1,6 @@
 <?php
 
-namespace Evers\SellingPartnerApi;
+namespace SellingPartnerApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;

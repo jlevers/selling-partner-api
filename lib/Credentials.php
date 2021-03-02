@@ -1,5 +1,5 @@
 <?php
-namespace Evers\SellingPartnerApi;
+namespace SellingPartnerApi;
 
 /**
  * This class is derived from the AWS PHP SDK's Credentials\Credentials class. See

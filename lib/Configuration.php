@@ -62,7 +62,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'SellingPartnerAPI/1.2.0 (Language=PHP)';
+    protected $userAgent = 'SellingPartnerAPI/2.0.0 (Language=PHP)';
 
     /**
      * Debug switch (default set to false)
@@ -379,7 +379,7 @@ nnn     *
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2020-11-01' . PHP_EOL;
-        $report .= '    SDK Package Version: 1.2.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 2.0.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

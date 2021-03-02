@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PackageTrackingDetails Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -66,12 +66,12 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'carrier_url' => 'string',
         'ship_date' => '\DateTime',
         'estimated_arrival_date' => '\DateTime',
-        'ship_to_address' => '\Evers\SellingPartnerApi\Model\FbaOutbound\TrackingAddress',
-        'current_status' => '\Evers\SellingPartnerApi\Model\FbaOutbound\CurrentStatus',
+        'ship_to_address' => '\SellingPartnerApi\Model\FbaOutbound\TrackingAddress',
+        'current_status' => '\SellingPartnerApi\Model\FbaOutbound\CurrentStatus',
         'current_status_description' => 'string',
         'signed_for_by' => 'string',
-        'additional_location_info' => '\Evers\SellingPartnerApi\Model\FbaOutbound\AdditionalLocationInfo',
-        'tracking_events' => '\Evers\SellingPartnerApi\Model\FbaOutbound\TrackingEvent[]'
+        'additional_location_info' => '\SellingPartnerApi\Model\FbaOutbound\AdditionalLocationInfo',
+        'tracking_events' => '\SellingPartnerApi\Model\FbaOutbound\TrackingEvent[]'
     ];
 
     /**
@@ -483,7 +483,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets ship_to_address
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\TrackingAddress|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\TrackingAddress|null
      */
     public function getShipToAddress()
     {
@@ -493,7 +493,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets ship_to_address
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\TrackingAddress|null $ship_to_address ship_to_address
+     * @param \SellingPartnerApi\Model\FbaOutbound\TrackingAddress|null $ship_to_address ship_to_address
      *
      * @return self
      */
@@ -507,7 +507,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets current_status
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\CurrentStatus|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\CurrentStatus|null
      */
     public function getCurrentStatus()
     {
@@ -517,7 +517,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets current_status
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\CurrentStatus|null $current_status current_status
+     * @param \SellingPartnerApi\Model\FbaOutbound\CurrentStatus|null $current_status current_status
      *
      * @return self
      */
@@ -579,7 +579,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets additional_location_info
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\AdditionalLocationInfo|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\AdditionalLocationInfo|null
      */
     public function getAdditionalLocationInfo()
     {
@@ -589,7 +589,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets additional_location_info
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\AdditionalLocationInfo|null $additional_location_info additional_location_info
+     * @param \SellingPartnerApi\Model\FbaOutbound\AdditionalLocationInfo|null $additional_location_info additional_location_info
      *
      * @return self
      */
@@ -603,7 +603,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets tracking_events
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\TrackingEvent[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\TrackingEvent[]|null
      */
     public function getTrackingEvents()
     {
@@ -613,7 +613,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets tracking_events
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\TrackingEvent[]|null $tracking_events An array of tracking event information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\TrackingEvent[]|null $tracking_events An array of tracking event information.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TransportHeader Class Doc Comment
  *
  * @category Class
  * @description The shipping identifier, information about whether the shipment is by an Amazon-partnered carrier, and information about whether the shipment is Small Parcel or Less Than Truckload/Full Truckload (LTL/FTL).
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_id' => 'string',
         'shipment_id' => 'string',
         'is_partnered' => 'bool',
-        'shipment_type' => '\Evers\SellingPartnerApi\Model\FbaInbound\ShipmentType'
+        'shipment_type' => '\SellingPartnerApi\Model\FbaInbound\ShipmentType'
     ];
 
     /**
@@ -313,7 +313,7 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipment_type
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\ShipmentType
+     * @return \SellingPartnerApi\Model\FbaInbound\ShipmentType
      */
     public function getShipmentType()
     {
@@ -323,7 +323,7 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_type
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\ShipmentType $shipment_type shipment_type
+     * @param \SellingPartnerApi\Model\FbaInbound\ShipmentType $shipment_type shipment_type
      *
      * @return self
      */

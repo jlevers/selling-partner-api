@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * BuyerTaxInfo Class Doc Comment
  *
  * @category Class
  * @description Tax information about the buyer.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'company_legal_name' => 'string',
         'taxing_region' => 'string',
-        'tax_classifications' => '\Evers\SellingPartnerApi\Model\Orders\TaxClassification[]'
+        'tax_classifications' => '\SellingPartnerApi\Model\Orders\TaxClassification[]'
     ];
 
     /**
@@ -271,7 +271,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tax_classifications
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\TaxClassification[]|null
+     * @return \SellingPartnerApi\Model\Orders\TaxClassification[]|null
      */
     public function getTaxClassifications()
     {
@@ -281,7 +281,7 @@ class BuyerTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tax_classifications
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\TaxClassification[]|null $tax_classifications A list of tax classifications that apply to the order.
+     * @param \SellingPartnerApi\Model\Orders\TaxClassification[]|null $tax_classifications A list of tax classifications that apply to the order.
      *
      * @return self
      */

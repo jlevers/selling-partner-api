@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateShipmentRequest Class Doc Comment
  *
  * @category Class
  * @description Request schema.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,12 +59,12 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shipment_request_details' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails',
+        'shipment_request_details' => '\SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails',
         'shipping_service_id' => 'string',
         'shipping_service_offer_id' => 'string',
-        'hazmat_type' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\HazmatType',
-        'label_format_option' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOptionRequest',
-        'shipment_level_seller_inputs_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]'
+        'hazmat_type' => '\SellingPartnerApi\Model\MerchantFulfillment\HazmatType',
+        'label_format_option' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOptionRequest',
+        'shipment_level_seller_inputs_list' => '\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]'
     ];
 
     /**
@@ -247,7 +247,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets shipment_request_details
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails
      */
     public function getShipmentRequestDetails()
     {
@@ -257,7 +257,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets shipment_request_details
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
      *
      * @return self
      */
@@ -319,7 +319,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets hazmat_type
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\HazmatType|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\HazmatType|null
      */
     public function getHazmatType()
     {
@@ -329,7 +329,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets hazmat_type
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\HazmatType|null $hazmat_type hazmat_type
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\HazmatType|null $hazmat_type hazmat_type
      *
      * @return self
      */
@@ -343,7 +343,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets label_format_option
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOptionRequest|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOptionRequest|null
      */
     public function getLabelFormatOption()
     {
@@ -353,7 +353,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets label_format_option
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOptionRequest|null $label_format_option label_format_option
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOptionRequest|null $label_format_option label_format_option
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets shipment_level_seller_inputs_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]|null
      */
     public function getShipmentLevelSellerInputsList()
     {
@@ -377,7 +377,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets shipment_level_seller_inputs_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]|null $shipment_level_seller_inputs_list A list of additional seller input pairs required to purchase shipping.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]|null $shipment_level_seller_inputs_list A list of additional seller input pairs required to purchase shipping.
      *
      * @return self
      */

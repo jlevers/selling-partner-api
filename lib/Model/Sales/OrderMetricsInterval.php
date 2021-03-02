@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Sales;
+namespace SellingPartnerApi\Model\Sales;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrderMetricsInterval Class Doc Comment
  *
  * @category Class
  * @description Contains order metrics.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,8 +63,8 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
         'unit_count' => 'int',
         'order_item_count' => 'int',
         'order_count' => 'int',
-        'average_unit_price' => '\Evers\SellingPartnerApi\Model\Sales\Money',
-        'total_sales' => '\Evers\SellingPartnerApi\Model\Sales\Money'
+        'average_unit_price' => '\SellingPartnerApi\Model\Sales\Money',
+        'total_sales' => '\SellingPartnerApi\Model\Sales\Money'
     ];
 
     /**
@@ -355,7 +355,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets average_unit_price
      *
-     * @return \Evers\SellingPartnerApi\Model\Sales\Money
+     * @return \SellingPartnerApi\Model\Sales\Money
      */
     public function getAverageUnitPrice()
     {
@@ -365,7 +365,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets average_unit_price
      *
-     * @param \Evers\SellingPartnerApi\Model\Sales\Money $average_unit_price average_unit_price
+     * @param \SellingPartnerApi\Model\Sales\Money $average_unit_price average_unit_price
      *
      * @return self
      */
@@ -379,7 +379,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets total_sales
      *
-     * @return \Evers\SellingPartnerApi\Model\Sales\Money
+     * @return \SellingPartnerApi\Model\Sales\Money
      */
     public function getTotalSales()
     {
@@ -389,7 +389,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets total_sales
      *
-     * @param \Evers\SellingPartnerApi\Model\Sales\Money $total_sales total_sales
+     * @param \SellingPartnerApi\Model\Sales\Money $total_sales total_sales
      *
      * @return self
      */

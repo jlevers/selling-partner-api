@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FulfillmentPreview Class Doc Comment
  *
  * @category Class
  * @description Information about a fulfillment order preview, including delivery and fee information based on shipping method.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,17 +59,17 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shipping_speed_category' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
-        'scheduled_delivery_info' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ScheduledDeliveryInfo',
+        'shipping_speed_category' => '\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
+        'scheduled_delivery_info' => '\SellingPartnerApi\Model\FbaOutbound\ScheduledDeliveryInfo',
         'is_fulfillable' => 'bool',
         'is_cod_capable' => 'bool',
-        'estimated_shipping_weight' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Weight',
-        'estimated_fees' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Fee[]',
-        'fulfillment_preview_shipments' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewShipment[]',
-        'unfulfillable_preview_items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\UnfulfillablePreviewItem[]',
+        'estimated_shipping_weight' => '\SellingPartnerApi\Model\FbaOutbound\Weight',
+        'estimated_fees' => '\SellingPartnerApi\Model\FbaOutbound\Fee[]',
+        'fulfillment_preview_shipments' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewShipment[]',
+        'unfulfillable_preview_items' => '\SellingPartnerApi\Model\FbaOutbound\UnfulfillablePreviewItem[]',
         'order_unfulfillable_reasons' => 'string[]',
         'marketplace_id' => 'string',
-        'feature_constraints' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]'
+        'feature_constraints' => '\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]'
     ];
 
     /**
@@ -283,7 +283,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets shipping_speed_category
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory
+     * @return \SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory()
     {
@@ -293,7 +293,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets shipping_speed_category
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory $shipping_speed_category shipping_speed_category
+     * @param \SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory $shipping_speed_category shipping_speed_category
      *
      * @return self
      */
@@ -307,7 +307,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets scheduled_delivery_info
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ScheduledDeliveryInfo|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\ScheduledDeliveryInfo|null
      */
     public function getScheduledDeliveryInfo()
     {
@@ -317,7 +317,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets scheduled_delivery_info
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ScheduledDeliveryInfo|null $scheduled_delivery_info scheduled_delivery_info
+     * @param \SellingPartnerApi\Model\FbaOutbound\ScheduledDeliveryInfo|null $scheduled_delivery_info scheduled_delivery_info
      *
      * @return self
      */
@@ -379,7 +379,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets estimated_shipping_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Weight|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Weight|null
      */
     public function getEstimatedShippingWeight()
     {
@@ -389,7 +389,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets estimated_shipping_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Weight|null $estimated_shipping_weight estimated_shipping_weight
+     * @param \SellingPartnerApi\Model\FbaOutbound\Weight|null $estimated_shipping_weight estimated_shipping_weight
      *
      * @return self
      */
@@ -403,7 +403,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets estimated_fees
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Fee[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Fee[]|null
      */
     public function getEstimatedFees()
     {
@@ -413,7 +413,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets estimated_fees
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Fee[]|null $estimated_fees An array of fee type and cost pairs.
+     * @param \SellingPartnerApi\Model\FbaOutbound\Fee[]|null $estimated_fees An array of fee type and cost pairs.
      *
      * @return self
      */
@@ -427,7 +427,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets fulfillment_preview_shipments
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewShipment[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewShipment[]|null
      */
     public function getFulfillmentPreviewShipments()
     {
@@ -437,7 +437,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fulfillment_preview_shipments
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewShipment[]|null $fulfillment_preview_shipments An array of fulfillment preview shipment information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewShipment[]|null $fulfillment_preview_shipments An array of fulfillment preview shipment information.
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets unfulfillable_preview_items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\UnfulfillablePreviewItem[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\UnfulfillablePreviewItem[]|null
      */
     public function getUnfulfillablePreviewItems()
     {
@@ -461,7 +461,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets unfulfillable_preview_items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\UnfulfillablePreviewItem[]|null $unfulfillable_preview_items An array of unfulfillable preview item information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\UnfulfillablePreviewItem[]|null $unfulfillable_preview_items An array of unfulfillable preview item information.
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets feature_constraints
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null
      */
     public function getFeatureConstraints()
     {
@@ -533,7 +533,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets feature_constraints
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null $feature_constraints A list of features and their fulfillment policies to apply to the order.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null $feature_constraints A list of features and their fulfillment policies to apply to the order.
      *
      * @return self
      */

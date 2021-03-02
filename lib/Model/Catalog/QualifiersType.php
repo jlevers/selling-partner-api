@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Catalog;
+namespace SellingPartnerApi\Model\Catalog;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * QualifiersType Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class QualifiersType implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_subcondition' => 'string',
         'fulfillment_channel' => 'string',
         'ships_domestically' => 'string',
-        'shipping_time' => '\Evers\SellingPartnerApi\Model\Catalog\ShippingTimeType',
+        'shipping_time' => '\SellingPartnerApi\Model\Catalog\ShippingTimeType',
         'seller_positive_feedback_rating' => 'string'
     ];
 
@@ -354,7 +354,7 @@ class QualifiersType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_time
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\ShippingTimeType
+     * @return \SellingPartnerApi\Model\Catalog\ShippingTimeType
      */
     public function getShippingTime()
     {
@@ -364,7 +364,7 @@ class QualifiersType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_time
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\ShippingTimeType $shipping_time shipping_time
+     * @param \SellingPartnerApi\Model\Catalog\ShippingTimeType $shipping_time shipping_time
      *
      * @return self
      */

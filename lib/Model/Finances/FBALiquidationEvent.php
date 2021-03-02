@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FBALiquidationEvent Class Doc Comment
  *
  * @category Class
  * @description A payment event for Fulfillment by Amazon (FBA) inventory liquidation. This event is used only in the US marketplace.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,8 +61,8 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'original_removal_order_id' => 'string',
-        'liquidation_proceeds_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'liquidation_fee_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'liquidation_proceeds_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'liquidation_fee_amount' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -277,7 +277,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets liquidation_proceeds_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getLiquidationProceedsAmount()
     {
@@ -287,7 +287,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets liquidation_proceeds_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $liquidation_proceeds_amount liquidation_proceeds_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $liquidation_proceeds_amount liquidation_proceeds_amount
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets liquidation_fee_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getLiquidationFeeAmount()
     {
@@ -311,7 +311,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets liquidation_fee_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $liquidation_fee_amount liquidation_fee_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $liquidation_fee_amount liquidation_fee_amount
      *
      * @return self
      */

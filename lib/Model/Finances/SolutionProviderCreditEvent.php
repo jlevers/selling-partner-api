@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SolutionProviderCreditEvent Class Doc Comment
  *
  * @category Class
  * @description A credit given to a solution provider.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -67,7 +67,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
         'seller_store_name' => 'string',
         'provider_id' => 'string',
         'provider_store_name' => 'string',
-        'transaction_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
+        'transaction_amount' => '\SellingPartnerApi\Model\Finances\Currency',
         'transaction_creation_date' => '\DateTime'
     ];
 
@@ -457,7 +457,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets transaction_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTransactionAmount()
     {
@@ -467,7 +467,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets transaction_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $transaction_amount transaction_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $transaction_amount transaction_amount
      *
      * @return self
      */

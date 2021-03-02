@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeesEstimateResult Class Doc Comment
  *
  * @category Class
  * @description An item identifier and the estimated fees for the item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,9 +60,9 @@ class FeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'status' => 'string',
-        'fees_estimate_identifier' => '\Evers\SellingPartnerApi\Model\Fees\FeesEstimateIdentifier',
-        'fees_estimate' => '\Evers\SellingPartnerApi\Model\Fees\FeesEstimate',
-        'error' => '\Evers\SellingPartnerApi\Model\Fees\FeesEstimateError'
+        'fees_estimate_identifier' => '\SellingPartnerApi\Model\Fees\FeesEstimateIdentifier',
+        'fees_estimate' => '\SellingPartnerApi\Model\Fees\FeesEstimate',
+        'error' => '\SellingPartnerApi\Model\Fees\FeesEstimateError'
     ];
 
     /**
@@ -253,7 +253,7 @@ class FeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets fees_estimate_identifier
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\FeesEstimateIdentifier|null
+     * @return \SellingPartnerApi\Model\Fees\FeesEstimateIdentifier|null
      */
     public function getFeesEstimateIdentifier()
     {
@@ -263,7 +263,7 @@ class FeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fees_estimate_identifier
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\FeesEstimateIdentifier|null $fees_estimate_identifier fees_estimate_identifier
+     * @param \SellingPartnerApi\Model\Fees\FeesEstimateIdentifier|null $fees_estimate_identifier fees_estimate_identifier
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class FeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets fees_estimate
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\FeesEstimate|null
+     * @return \SellingPartnerApi\Model\Fees\FeesEstimate|null
      */
     public function getFeesEstimate()
     {
@@ -287,7 +287,7 @@ class FeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fees_estimate
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\FeesEstimate|null $fees_estimate fees_estimate
+     * @param \SellingPartnerApi\Model\Fees\FeesEstimate|null $fees_estimate fees_estimate
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class FeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets error
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\FeesEstimateError|null
+     * @return \SellingPartnerApi\Model\Fees\FeesEstimateError|null
      */
     public function getError()
     {
@@ -311,7 +311,7 @@ class FeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets error
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\FeesEstimateError|null $error error
+     * @param \SellingPartnerApi\Model\Fees\FeesEstimateError|null $error error
      *
      * @return self
      */

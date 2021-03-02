@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\UploadsApi
+# SellingPartnerApi\UploadsApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `createUploadDestinationForResource()`
 
 ```php
-createUploadDestinationForResource($marketplace_ids, $content_md5, $resource, $content_type): \Evers\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse
+createUploadDestinationForResource($marketplace_ids, $content_md5, $resource, $content_type): \SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse
 ```
 
 
@@ -23,7 +23,7 @@ Creates an upload destination for a resource that you specify and returns the in
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\UploadsApi();
+$apiInstance = new SellingPartnerApi\Api\UploadsApi();
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified.
 $content_md5 = 'content_md5_example'; // string | An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
 $resource = 'resource_example'; // string | The URL of the resource for the upload destination that you are creating. For example, to create an upload destination for a Buyer-Seller Messaging message, the {resource} would be /messaging and the path would be  /uploads/v1/uploadDestinations/messaging
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse**](../Model/Uploads/CreateUploadDestinationResponse.md)
+[**\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse**](../Model/Uploads/CreateUploadDestinationResponse.md)
 
 ### HTTP request headers
 

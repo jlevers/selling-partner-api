@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardTextListBlock Class Doc Comment
  *
  * @category Class
  * @description The A+ Content standard fixed length list of text, usually presented as bullet points.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class StandardTextListBlock implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'text_list' => '\Evers\SellingPartnerApi\Model\AplusContent\TextItem[]'
+        'text_list' => '\SellingPartnerApi\Model\AplusContent\TextItem[]'
     ];
 
     /**
@@ -222,7 +222,7 @@ class StandardTextListBlock implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets text_list
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextItem[]
+     * @return \SellingPartnerApi\Model\AplusContent\TextItem[]
      */
     public function getTextList()
     {
@@ -232,7 +232,7 @@ class StandardTextListBlock implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets text_list
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextItem[] $text_list text_list
+     * @param \SellingPartnerApi\Model\AplusContent\TextItem[] $text_list text_list
      *
      * @return self
      */

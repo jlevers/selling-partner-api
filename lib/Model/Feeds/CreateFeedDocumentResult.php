@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Feeds;
+namespace SellingPartnerApi\Model\Feeds;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateFeedDocumentResult Class Doc Comment
  *
  * @category Class
  * @description Information required to encrypt and upload a feed document&#39;s contents.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'feed_document_id' => 'string',
         'url' => 'string',
-        'encryption_details' => '\Evers\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails'
+        'encryption_details' => '\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails'
     ];
 
     /**
@@ -280,7 +280,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets encryption_details
      *
-     * @return \Evers\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails
+     * @return \SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails
      */
     public function getEncryptionDetails()
     {
@@ -290,7 +290,7 @@ class CreateFeedDocumentResult implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets encryption_details
      *
-     * @param \Evers\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails $encryption_details encryption_details
+     * @param \SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails $encryption_details encryption_details
      *
      * @return self
      */

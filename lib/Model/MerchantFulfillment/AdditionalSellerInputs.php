@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AdditionalSellerInputs Class Doc Comment
  *
  * @category Class
  * @description An additional set of seller inputs required to purchase shipping.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'additional_input_field_name' => 'string',
-        'additional_seller_input' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput'
+        'additional_seller_input' => '\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput'
     ];
 
     /**
@@ -247,7 +247,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets additional_seller_input
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput
      */
     public function getAdditionalSellerInput()
     {
@@ -257,7 +257,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets additional_seller_input
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput $additional_seller_input additional_seller_input
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput $additional_seller_input additional_seller_input
      *
      * @return self
      */

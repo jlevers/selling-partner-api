@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TransportContent Class Doc Comment
  *
  * @category Class
  * @description Inbound shipment information, including carrier details, shipment status, and the workflow status for a request for shipment with an Amazon-partnered carrier.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,9 +59,9 @@ class TransportContent implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transport_header' => '\Evers\SellingPartnerApi\Model\FbaInbound\TransportHeader',
-        'transport_details' => '\Evers\SellingPartnerApi\Model\FbaInbound\TransportDetailOutput',
-        'transport_result' => '\Evers\SellingPartnerApi\Model\FbaInbound\TransportResult'
+        'transport_header' => '\SellingPartnerApi\Model\FbaInbound\TransportHeader',
+        'transport_details' => '\SellingPartnerApi\Model\FbaInbound\TransportDetailOutput',
+        'transport_result' => '\SellingPartnerApi\Model\FbaInbound\TransportResult'
     ];
 
     /**
@@ -232,7 +232,7 @@ class TransportContent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transport_header
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\TransportHeader
+     * @return \SellingPartnerApi\Model\FbaInbound\TransportHeader
      */
     public function getTransportHeader()
     {
@@ -242,7 +242,7 @@ class TransportContent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transport_header
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\TransportHeader $transport_header transport_header
+     * @param \SellingPartnerApi\Model\FbaInbound\TransportHeader $transport_header transport_header
      *
      * @return self
      */
@@ -256,7 +256,7 @@ class TransportContent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transport_details
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\TransportDetailOutput
+     * @return \SellingPartnerApi\Model\FbaInbound\TransportDetailOutput
      */
     public function getTransportDetails()
     {
@@ -266,7 +266,7 @@ class TransportContent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transport_details
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\TransportDetailOutput $transport_details transport_details
+     * @param \SellingPartnerApi\Model\FbaInbound\TransportDetailOutput $transport_details transport_details
      *
      * @return self
      */
@@ -280,7 +280,7 @@ class TransportContent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transport_result
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\TransportResult
+     * @return \SellingPartnerApi\Model\FbaInbound\TransportResult
      */
     public function getTransportResult()
     {
@@ -290,7 +290,7 @@ class TransportContent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transport_result
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\TransportResult $transport_result transport_result
+     * @param \SellingPartnerApi\Model\FbaInbound\TransportResult $transport_result transport_result
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetAccountResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getAccount operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetAccountResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Shipping\Account',
-        'errors' => '\Evers\SellingPartnerApi\Model\Shipping\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Shipping\Account',
+        'errors' => '\SellingPartnerApi\Model\Shipping\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetAccountResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Account|null
+     * @return \SellingPartnerApi\Model\Shipping\Account|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetAccountResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Account|null $payload payload
+     * @param \SellingPartnerApi\Model\Shipping\Account|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetAccountResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Error[]|null
+     * @return \SellingPartnerApi\Model\Shipping\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetAccountResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Shipping\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

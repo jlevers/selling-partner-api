@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **unfulfillable_quantity** | **int** | The item quantity. |
 **estimated_ship_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 **estimated_arrival_date** | [**\DateTime**](\DateTime.md) |  | [optional]
-**per_unit_price** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
-**per_unit_tax** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
-**per_unit_declared_value** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
+**per_unit_price** | [**\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
+**per_unit_tax** | [**\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
+**per_unit_declared_value** | [**\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
 
 [[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

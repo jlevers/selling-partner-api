@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PartneredSmallParcelDataInput Class Doc Comment
  *
  * @category Class
  * @description Information that is required by an Amazon-partnered carrier to ship a Small Parcel inbound shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class PartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'package_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageInput[]',
+        'package_list' => '\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageInput[]',
         'carrier_name' => 'string'
     ];
 
@@ -217,7 +217,7 @@ class PartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets package_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageInput[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageInput[]|null
      */
     public function getPackageList()
     {
@@ -227,7 +227,7 @@ class PartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets package_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageInput[]|null $package_list A list of dimensions and weight information for packages.
+     * @param \SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageInput[]|null $package_list A list of dimensions and weight information for packages.
      *
      * @return self
      */

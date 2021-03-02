@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PostContentDocumentAsinRelationsResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'warnings' => '\Evers\SellingPartnerApi\Model\AplusContent\Error[]'
+        'warnings' => '\SellingPartnerApi\Model\AplusContent\Error[]'
     ];
 
     /**
@@ -210,7 +210,7 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     /**
      * Gets warnings
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\Error[]|null
      */
     public function getWarnings()
     {
@@ -220,7 +220,7 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     /**
      * Sets warnings
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
+     * @param \SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
      *
      * @return self
      */

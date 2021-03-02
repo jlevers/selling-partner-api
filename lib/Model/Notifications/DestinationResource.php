@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Notifications;
+namespace SellingPartnerApi\Model\Notifications;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * DestinationResource Class Doc Comment
  *
  * @category Class
  * @description The destination resource types.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sqs' => '\Evers\SellingPartnerApi\Model\Notifications\SqsResource',
-        'event_bridge' => '\Evers\SellingPartnerApi\Model\Notifications\EventBridgeResource'
+        'sqs' => '\SellingPartnerApi\Model\Notifications\SqsResource',
+        'event_bridge' => '\SellingPartnerApi\Model\Notifications\EventBridgeResource'
     ];
 
     /**
@@ -217,7 +217,7 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets sqs
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\SqsResource|null
+     * @return \SellingPartnerApi\Model\Notifications\SqsResource|null
      */
     public function getSqs()
     {
@@ -227,7 +227,7 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sqs
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\SqsResource|null $sqs sqs
+     * @param \SellingPartnerApi\Model\Notifications\SqsResource|null $sqs sqs
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets event_bridge
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\EventBridgeResource|null
+     * @return \SellingPartnerApi\Model\Notifications\EventBridgeResource|null
      */
     public function getEventBridge()
     {
@@ -251,7 +251,7 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets event_bridge
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\EventBridgeResource|null $event_bridge event_bridge
+     * @param \SellingPartnerApi\Model\Notifications\EventBridgeResource|null $event_bridge event_bridge
      *
      * @return self
      */

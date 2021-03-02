@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ContainerItem Class Doc Comment
  *
  * @category Class
  * @description Item in the container.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'quantity' => 'float',
-        'unit_price' => '\Evers\SellingPartnerApi\Model\Shipping\Currency',
-        'unit_weight' => '\Evers\SellingPartnerApi\Model\Shipping\Weight',
+        'unit_price' => '\SellingPartnerApi\Model\Shipping\Currency',
+        'unit_weight' => '\SellingPartnerApi\Model\Shipping\Weight',
         'title' => 'string'
     ];
 
@@ -269,7 +269,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets unit_price
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Currency
+     * @return \SellingPartnerApi\Model\Shipping\Currency
      */
     public function getUnitPrice()
     {
@@ -279,7 +279,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unit_price
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Currency $unit_price unit_price
+     * @param \SellingPartnerApi\Model\Shipping\Currency $unit_price unit_price
      *
      * @return self
      */
@@ -293,7 +293,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets unit_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Weight
+     * @return \SellingPartnerApi\Model\Shipping\Weight
      */
     public function getUnitWeight()
     {
@@ -303,7 +303,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unit_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Weight $unit_weight unit_weight
+     * @param \SellingPartnerApi\Model\Shipping\Weight $unit_weight unit_weight
      *
      * @return self
      */

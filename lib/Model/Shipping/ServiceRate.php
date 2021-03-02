@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ServiceRate Class Doc Comment
  *
  * @category Class
  * @description The specific rate for a shipping service, or null if no service available.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total_charge' => '\Evers\SellingPartnerApi\Model\Shipping\Currency',
-        'billable_weight' => '\Evers\SellingPartnerApi\Model\Shipping\Weight',
-        'service_type' => '\Evers\SellingPartnerApi\Model\Shipping\ServiceType',
-        'promise' => '\Evers\SellingPartnerApi\Model\Shipping\ShippingPromiseSet'
+        'total_charge' => '\SellingPartnerApi\Model\Shipping\Currency',
+        'billable_weight' => '\SellingPartnerApi\Model\Shipping\Weight',
+        'service_type' => '\SellingPartnerApi\Model\Shipping\ServiceType',
+        'promise' => '\SellingPartnerApi\Model\Shipping\ShippingPromiseSet'
     ];
 
     /**
@@ -241,7 +241,7 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_charge
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Currency
+     * @return \SellingPartnerApi\Model\Shipping\Currency
      */
     public function getTotalCharge()
     {
@@ -251,7 +251,7 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_charge
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Currency $total_charge total_charge
+     * @param \SellingPartnerApi\Model\Shipping\Currency $total_charge total_charge
      *
      * @return self
      */
@@ -265,7 +265,7 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets billable_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Weight
+     * @return \SellingPartnerApi\Model\Shipping\Weight
      */
     public function getBillableWeight()
     {
@@ -275,7 +275,7 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets billable_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Weight $billable_weight billable_weight
+     * @param \SellingPartnerApi\Model\Shipping\Weight $billable_weight billable_weight
      *
      * @return self
      */
@@ -289,7 +289,7 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_type
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ServiceType
+     * @return \SellingPartnerApi\Model\Shipping\ServiceType
      */
     public function getServiceType()
     {
@@ -299,7 +299,7 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_type
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ServiceType $service_type service_type
+     * @param \SellingPartnerApi\Model\Shipping\ServiceType $service_type service_type
      *
      * @return self
      */
@@ -313,7 +313,7 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promise
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ShippingPromiseSet
+     * @return \SellingPartnerApi\Model\Shipping\ShippingPromiseSet
      */
     public function getPromise()
     {
@@ -323,7 +323,7 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promise
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ShippingPromiseSet $promise promise
+     * @param \SellingPartnerApi\Model\Shipping\ShippingPromiseSet $promise promise
      *
      * @return self
      */

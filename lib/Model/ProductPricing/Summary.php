@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Summary Class Doc Comment
  *
  * @category Class
  * @description Contains price information about the product, including the LowestPrices and BuyBoxPrices, the ListPrice, the SuggestedLowerPricePlusShipping, and NumberOfOffers and NumberOfBuyBoxEligibleOffers.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,12 +60,12 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'total_offer_count' => 'int',
-        'number_of_offers' => '\Evers\SellingPartnerApi\Model\ProductPricing\OfferCountType[]',
-        'lowest_prices' => '\Evers\SellingPartnerApi\Model\ProductPricing\LowestPriceType[]',
-        'buy_box_prices' => '\Evers\SellingPartnerApi\Model\ProductPricing\BuyBoxPriceType[]',
-        'list_price' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType',
-        'suggested_lower_price_plus_shipping' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType',
-        'buy_box_eligible_offers' => '\Evers\SellingPartnerApi\Model\ProductPricing\OfferCountType[]',
+        'number_of_offers' => '\SellingPartnerApi\Model\ProductPricing\OfferCountType[]',
+        'lowest_prices' => '\SellingPartnerApi\Model\ProductPricing\LowestPriceType[]',
+        'buy_box_prices' => '\SellingPartnerApi\Model\ProductPricing\BuyBoxPriceType[]',
+        'list_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'suggested_lower_price_plus_shipping' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'buy_box_eligible_offers' => '\SellingPartnerApi\Model\ProductPricing\OfferCountType[]',
         'offers_available_time' => '\DateTime'
     ];
 
@@ -280,7 +280,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets number_of_offers
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\OfferCountType[]|null
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferCountType[]|null
      */
     public function getNumberOfOffers()
     {
@@ -290,7 +290,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets number_of_offers
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\OfferCountType[]|null $number_of_offers number_of_offers
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferCountType[]|null $number_of_offers number_of_offers
      *
      * @return self
      */
@@ -304,7 +304,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets lowest_prices
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\LowestPriceType[]|null
+     * @return \SellingPartnerApi\Model\ProductPricing\LowestPriceType[]|null
      */
     public function getLowestPrices()
     {
@@ -314,7 +314,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lowest_prices
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\LowestPriceType[]|null $lowest_prices lowest_prices
+     * @param \SellingPartnerApi\Model\ProductPricing\LowestPriceType[]|null $lowest_prices lowest_prices
      *
      * @return self
      */
@@ -328,7 +328,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buy_box_prices
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\BuyBoxPriceType[]|null
+     * @return \SellingPartnerApi\Model\ProductPricing\BuyBoxPriceType[]|null
      */
     public function getBuyBoxPrices()
     {
@@ -338,7 +338,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buy_box_prices
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\BuyBoxPriceType[]|null $buy_box_prices buy_box_prices
+     * @param \SellingPartnerApi\Model\ProductPricing\BuyBoxPriceType[]|null $buy_box_prices buy_box_prices
      *
      * @return self
      */
@@ -352,7 +352,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets list_price
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType|null
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType|null
      */
     public function getListPrice()
     {
@@ -362,7 +362,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets list_price
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType|null $list_price list_price
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType|null $list_price list_price
      *
      * @return self
      */
@@ -376,7 +376,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets suggested_lower_price_plus_shipping
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType|null
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType|null
      */
     public function getSuggestedLowerPricePlusShipping()
     {
@@ -386,7 +386,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets suggested_lower_price_plus_shipping
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType|null $suggested_lower_price_plus_shipping suggested_lower_price_plus_shipping
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType|null $suggested_lower_price_plus_shipping suggested_lower_price_plus_shipping
      *
      * @return self
      */
@@ -400,7 +400,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buy_box_eligible_offers
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\OfferCountType[]|null
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferCountType[]|null
      */
     public function getBuyBoxEligibleOffers()
     {
@@ -410,7 +410,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buy_box_eligible_offers
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\OfferCountType[]|null $buy_box_eligible_offers buy_box_eligible_offers
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferCountType[]|null $buy_box_eligible_offers buy_box_eligible_offers
      *
      * @return self
      */

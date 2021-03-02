@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInventory;
+namespace SellingPartnerApi\Model\FbaInventory;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InventoryDetails Class Doc Comment
  *
  * @category Class
  * @description Summarized inventory details. This object will not appear if the details parameter in the request is false.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,9 +63,9 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'inbound_working_quantity' => 'int',
         'inbound_shipped_quantity' => 'int',
         'inbound_receiving_quantity' => 'int',
-        'reserved_quantity' => '\Evers\SellingPartnerApi\Model\FbaInventory\ReservedQuantity',
-        'researching_quantity' => '\Evers\SellingPartnerApi\Model\FbaInventory\ResearchingQuantity',
-        'unfulfillable_quantity' => '\Evers\SellingPartnerApi\Model\FbaInventory\UnfulfillableQuantity'
+        'reserved_quantity' => '\SellingPartnerApi\Model\FbaInventory\ReservedQuantity',
+        'researching_quantity' => '\SellingPartnerApi\Model\FbaInventory\ResearchingQuantity',
+        'unfulfillable_quantity' => '\SellingPartnerApi\Model\FbaInventory\UnfulfillableQuantity'
     ];
 
     /**
@@ -343,7 +343,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets reserved_quantity
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\ReservedQuantity|null
+     * @return \SellingPartnerApi\Model\FbaInventory\ReservedQuantity|null
      */
     public function getReservedQuantity()
     {
@@ -353,7 +353,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reserved_quantity
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\ReservedQuantity|null $reserved_quantity reserved_quantity
+     * @param \SellingPartnerApi\Model\FbaInventory\ReservedQuantity|null $reserved_quantity reserved_quantity
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets researching_quantity
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\ResearchingQuantity|null
+     * @return \SellingPartnerApi\Model\FbaInventory\ResearchingQuantity|null
      */
     public function getResearchingQuantity()
     {
@@ -377,7 +377,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets researching_quantity
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\ResearchingQuantity|null $researching_quantity researching_quantity
+     * @param \SellingPartnerApi\Model\FbaInventory\ResearchingQuantity|null $researching_quantity researching_quantity
      *
      * @return self
      */
@@ -391,7 +391,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets unfulfillable_quantity
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\UnfulfillableQuantity|null
+     * @return \SellingPartnerApi\Model\FbaInventory\UnfulfillableQuantity|null
      */
     public function getUnfulfillableQuantity()
     {
@@ -401,7 +401,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unfulfillable_quantity
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\UnfulfillableQuantity|null $unfulfillable_quantity unfulfillable_quantity
+     * @param \SellingPartnerApi\Model\FbaInventory\UnfulfillableQuantity|null $unfulfillable_quantity unfulfillable_quantity
      *
      * @return self
      */

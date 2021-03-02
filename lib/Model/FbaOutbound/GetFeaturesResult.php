@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFeaturesResult Class Doc Comment
  *
  * @category Class
  * @description The payload for the getFeatures operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class GetFeaturesResult implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'features' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Feature[]'
+        'features' => '\SellingPartnerApi\Model\FbaOutbound\Feature[]'
     ];
 
     /**
@@ -214,7 +214,7 @@ class GetFeaturesResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets features
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Feature[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\Feature[]
      */
     public function getFeatures()
     {
@@ -224,7 +224,7 @@ class GetFeaturesResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets features
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Feature[] $features An array of features.
+     * @param \SellingPartnerApi\Model\FbaOutbound\Feature[] $features An array of features.
      *
      * @return self
      */

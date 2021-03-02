@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,16 +25,16 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+namespace SellingPartnerApi\Model\FbaInbound;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GuidanceReason Class Doc Comment
  *
  * @category Class
  * @description A reason for the current inbound guidance for an item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  */
 class GuidanceReason

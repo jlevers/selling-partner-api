@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Catalog;
+namespace SellingPartnerApi\Model\Catalog;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * RelationshipType Class Doc Comment
  *
  * @category Class
  * @description Specific variations of the item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -76,11 +76,11 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
         'scent' => 'string',
         'size' => 'string',
         'size_per_pearl' => 'string',
-        'golf_club_loft' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'total_diamond_weight' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'total_gem_weight' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'golf_club_loft' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'total_diamond_weight' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'total_gem_weight' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'package_quantity' => 'int',
-        'item_dimensions' => '\Evers\SellingPartnerApi\Model\Catalog\DimensionType'
+        'item_dimensions' => '\SellingPartnerApi\Model\Catalog\DimensionType'
     ];
 
     /**
@@ -745,7 +745,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets golf_club_loft
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getGolfClubLoft()
     {
@@ -755,7 +755,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets golf_club_loft
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $golf_club_loft golf_club_loft
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $golf_club_loft golf_club_loft
      *
      * @return self
      */
@@ -769,7 +769,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_diamond_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getTotalDiamondWeight()
     {
@@ -779,7 +779,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_diamond_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $total_diamond_weight total_diamond_weight
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $total_diamond_weight total_diamond_weight
      *
      * @return self
      */
@@ -793,7 +793,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_gem_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getTotalGemWeight()
     {
@@ -803,7 +803,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_gem_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $total_gem_weight total_gem_weight
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $total_gem_weight total_gem_weight
      *
      * @return self
      */
@@ -841,7 +841,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DimensionType|null
+     * @return \SellingPartnerApi\Model\Catalog\DimensionType|null
      */
     public function getItemDimensions()
     {
@@ -851,7 +851,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DimensionType|null $item_dimensions item_dimensions
+     * @param \SellingPartnerApi\Model\Catalog\DimensionType|null $item_dimensions item_dimensions
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Shipment Class Doc Comment
  *
  * @category Class
  * @description The shipment related data.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,11 +61,11 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'shipment_id' => 'string',
         'client_reference_id' => 'string',
-        'ship_from' => '\Evers\SellingPartnerApi\Model\Shipping\Address',
-        'ship_to' => '\Evers\SellingPartnerApi\Model\Shipping\Address',
-        'accepted_rate' => '\Evers\SellingPartnerApi\Model\Shipping\AcceptedRate',
-        'shipper' => '\Evers\SellingPartnerApi\Model\Shipping\Party',
-        'containers' => '\Evers\SellingPartnerApi\Model\Shipping\Container[]'
+        'ship_from' => '\SellingPartnerApi\Model\Shipping\Address',
+        'ship_to' => '\SellingPartnerApi\Model\Shipping\Address',
+        'accepted_rate' => '\SellingPartnerApi\Model\Shipping\AcceptedRate',
+        'shipper' => '\SellingPartnerApi\Model\Shipping\Party',
+        'containers' => '\SellingPartnerApi\Model\Shipping\Container[]'
     ];
 
     /**
@@ -318,7 +318,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ship_from
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Address
+     * @return \SellingPartnerApi\Model\Shipping\Address
      */
     public function getShipFrom()
     {
@@ -328,7 +328,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ship_from
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Address $ship_from ship_from
+     * @param \SellingPartnerApi\Model\Shipping\Address $ship_from ship_from
      *
      * @return self
      */
@@ -342,7 +342,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ship_to
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Address
+     * @return \SellingPartnerApi\Model\Shipping\Address
      */
     public function getShipTo()
     {
@@ -352,7 +352,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ship_to
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Address $ship_to ship_to
+     * @param \SellingPartnerApi\Model\Shipping\Address $ship_to ship_to
      *
      * @return self
      */
@@ -366,7 +366,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets accepted_rate
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\AcceptedRate|null
+     * @return \SellingPartnerApi\Model\Shipping\AcceptedRate|null
      */
     public function getAcceptedRate()
     {
@@ -376,7 +376,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accepted_rate
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\AcceptedRate|null $accepted_rate accepted_rate
+     * @param \SellingPartnerApi\Model\Shipping\AcceptedRate|null $accepted_rate accepted_rate
      *
      * @return self
      */
@@ -390,7 +390,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipper
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Party|null
+     * @return \SellingPartnerApi\Model\Shipping\Party|null
      */
     public function getShipper()
     {
@@ -400,7 +400,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipper
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Party|null $shipper shipper
+     * @param \SellingPartnerApi\Model\Shipping\Party|null $shipper shipper
      *
      * @return self
      */
@@ -414,7 +414,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets containers
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Container[]
+     * @return \SellingPartnerApi\Model\Shipping\Container[]
      */
     public function getContainers()
     {
@@ -424,7 +424,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets containers
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Container[] $containers A list of container.
+     * @param \SellingPartnerApi\Model\Shipping\Container[] $containers A list of container.
      *
      * @return self
      */

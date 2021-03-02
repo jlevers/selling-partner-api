@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Amount Class Doc Comment
  *
  * @category Class
  * @description The monetary value.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class Amount implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'currency_code' => '\Evers\SellingPartnerApi\Model\FbaInbound\CurrencyCode',
+        'currency_code' => '\SellingPartnerApi\Model\FbaInbound\CurrencyCode',
         'value' => 'double'
     ];
 
@@ -223,7 +223,7 @@ class Amount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets currency_code
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\CurrencyCode
+     * @return \SellingPartnerApi\Model\FbaInbound\CurrencyCode
      */
     public function getCurrencyCode()
     {
@@ -233,7 +233,7 @@ class Amount implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency_code
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\CurrencyCode $currency_code currency_code
+     * @param \SellingPartnerApi\Model\FbaInbound\CurrencyCode $currency_code currency_code
      *
      * @return self
      */

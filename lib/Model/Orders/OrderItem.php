@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrderItem Class Doc Comment
  *
  * @category Class
  * @description A single order item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -65,19 +65,19 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => 'string',
         'quantity_ordered' => 'int',
         'quantity_shipped' => 'int',
-        'product_info' => '\Evers\SellingPartnerApi\Model\Orders\ProductInfoDetail',
-        'points_granted' => '\Evers\SellingPartnerApi\Model\Orders\PointsGrantedDetail',
-        'item_price' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'shipping_price' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'item_tax' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'shipping_tax' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'shipping_discount' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'shipping_discount_tax' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'promotion_discount' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'promotion_discount_tax' => '\Evers\SellingPartnerApi\Model\Orders\Money',
+        'product_info' => '\SellingPartnerApi\Model\Orders\ProductInfoDetail',
+        'points_granted' => '\SellingPartnerApi\Model\Orders\PointsGrantedDetail',
+        'item_price' => '\SellingPartnerApi\Model\Orders\Money',
+        'shipping_price' => '\SellingPartnerApi\Model\Orders\Money',
+        'item_tax' => '\SellingPartnerApi\Model\Orders\Money',
+        'shipping_tax' => '\SellingPartnerApi\Model\Orders\Money',
+        'shipping_discount' => '\SellingPartnerApi\Model\Orders\Money',
+        'shipping_discount_tax' => '\SellingPartnerApi\Model\Orders\Money',
+        'promotion_discount' => '\SellingPartnerApi\Model\Orders\Money',
+        'promotion_discount_tax' => '\SellingPartnerApi\Model\Orders\Money',
         'promotion_ids' => 'string[]',
-        'cod_fee' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'cod_fee_discount' => '\Evers\SellingPartnerApi\Model\Orders\Money',
+        'cod_fee' => '\SellingPartnerApi\Model\Orders\Money',
+        'cod_fee_discount' => '\SellingPartnerApi\Model\Orders\Money',
         'is_gift' => 'bool',
         'condition_note' => 'string',
         'condition_id' => 'string',
@@ -85,7 +85,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'scheduled_delivery_start_date' => 'string',
         'scheduled_delivery_end_date' => 'string',
         'price_designation' => 'string',
-        'tax_collection' => '\Evers\SellingPartnerApi\Model\Orders\TaxCollection',
+        'tax_collection' => '\SellingPartnerApi\Model\Orders\TaxCollection',
         'serial_number_required' => 'bool',
         'is_transparency' => 'bool',
         'ioss_number' => 'string',
@@ -568,7 +568,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product_info
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\ProductInfoDetail|null
+     * @return \SellingPartnerApi\Model\Orders\ProductInfoDetail|null
      */
     public function getProductInfo()
     {
@@ -578,7 +578,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product_info
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\ProductInfoDetail|null $product_info product_info
+     * @param \SellingPartnerApi\Model\Orders\ProductInfoDetail|null $product_info product_info
      *
      * @return self
      */
@@ -592,7 +592,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets points_granted
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\PointsGrantedDetail|null
+     * @return \SellingPartnerApi\Model\Orders\PointsGrantedDetail|null
      */
     public function getPointsGranted()
     {
@@ -602,7 +602,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets points_granted
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\PointsGrantedDetail|null $points_granted points_granted
+     * @param \SellingPartnerApi\Model\Orders\PointsGrantedDetail|null $points_granted points_granted
      *
      * @return self
      */
@@ -616,7 +616,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_price
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getItemPrice()
     {
@@ -626,7 +626,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_price
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $item_price item_price
+     * @param \SellingPartnerApi\Model\Orders\Money|null $item_price item_price
      *
      * @return self
      */
@@ -640,7 +640,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_price
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getShippingPrice()
     {
@@ -650,7 +650,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_price
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $shipping_price shipping_price
+     * @param \SellingPartnerApi\Model\Orders\Money|null $shipping_price shipping_price
      *
      * @return self
      */
@@ -664,7 +664,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_tax
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getItemTax()
     {
@@ -674,7 +674,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_tax
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $item_tax item_tax
+     * @param \SellingPartnerApi\Model\Orders\Money|null $item_tax item_tax
      *
      * @return self
      */
@@ -688,7 +688,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_tax
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getShippingTax()
     {
@@ -698,7 +698,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_tax
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $shipping_tax shipping_tax
+     * @param \SellingPartnerApi\Model\Orders\Money|null $shipping_tax shipping_tax
      *
      * @return self
      */
@@ -712,7 +712,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_discount
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getShippingDiscount()
     {
@@ -722,7 +722,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_discount
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $shipping_discount shipping_discount
+     * @param \SellingPartnerApi\Model\Orders\Money|null $shipping_discount shipping_discount
      *
      * @return self
      */
@@ -736,7 +736,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_discount_tax
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getShippingDiscountTax()
     {
@@ -746,7 +746,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_discount_tax
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $shipping_discount_tax shipping_discount_tax
+     * @param \SellingPartnerApi\Model\Orders\Money|null $shipping_discount_tax shipping_discount_tax
      *
      * @return self
      */
@@ -760,7 +760,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promotion_discount
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getPromotionDiscount()
     {
@@ -770,7 +770,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotion_discount
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $promotion_discount promotion_discount
+     * @param \SellingPartnerApi\Model\Orders\Money|null $promotion_discount promotion_discount
      *
      * @return self
      */
@@ -784,7 +784,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promotion_discount_tax
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getPromotionDiscountTax()
     {
@@ -794,7 +794,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotion_discount_tax
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $promotion_discount_tax promotion_discount_tax
+     * @param \SellingPartnerApi\Model\Orders\Money|null $promotion_discount_tax promotion_discount_tax
      *
      * @return self
      */
@@ -832,7 +832,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cod_fee
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getCodFee()
     {
@@ -842,7 +842,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cod_fee
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $cod_fee cod_fee
+     * @param \SellingPartnerApi\Model\Orders\Money|null $cod_fee cod_fee
      *
      * @return self
      */
@@ -856,7 +856,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cod_fee_discount
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getCodFeeDiscount()
     {
@@ -866,7 +866,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cod_fee_discount
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $cod_fee_discount cod_fee_discount
+     * @param \SellingPartnerApi\Model\Orders\Money|null $cod_fee_discount cod_fee_discount
      *
      * @return self
      */
@@ -1048,7 +1048,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tax_collection
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\TaxCollection|null
+     * @return \SellingPartnerApi\Model\Orders\TaxCollection|null
      */
     public function getTaxCollection()
     {
@@ -1058,7 +1058,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tax_collection
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\TaxCollection|null $tax_collection tax_collection
+     * @param \SellingPartnerApi\Model\Orders\TaxCollection|null $tax_collection tax_collection
      *
      * @return self
      */

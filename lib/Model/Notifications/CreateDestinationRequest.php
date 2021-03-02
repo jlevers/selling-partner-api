@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Notifications;
+namespace SellingPartnerApi\Model\Notifications;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateDestinationRequest Class Doc Comment
  *
  * @category Class
  * @description The request schema for the createDestination operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CreateDestinationRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'resource_specification' => '\Evers\SellingPartnerApi\Model\Notifications\DestinationResourceSpecification',
+        'resource_specification' => '\SellingPartnerApi\Model\Notifications\DestinationResourceSpecification',
         'name' => 'string'
     ];
 
@@ -223,7 +223,7 @@ class CreateDestinationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets resource_specification
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\DestinationResourceSpecification
+     * @return \SellingPartnerApi\Model\Notifications\DestinationResourceSpecification
      */
     public function getResourceSpecification()
     {
@@ -233,7 +233,7 @@ class CreateDestinationRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets resource_specification
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\DestinationResourceSpecification $resource_specification resource_specification
+     * @param \SellingPartnerApi\Model\Notifications\DestinationResourceSpecification $resource_specification resource_specification
      *
      * @return self
      */

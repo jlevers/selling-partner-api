@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Solicitations;
+namespace SellingPartnerApi\Model\Solicitations;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetSolicitationActionResponseEmbedded Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class GetSolicitationActionResponseEmbedded implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'schema' => '\Evers\SellingPartnerApi\Model\Solicitations\GetSchemaResponse'
+        'schema' => '\SellingPartnerApi\Model\Solicitations\GetSchemaResponse'
     ];
 
     /**
@@ -210,7 +210,7 @@ class GetSolicitationActionResponseEmbedded implements ModelInterface, ArrayAcce
     /**
      * Gets schema
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\GetSchemaResponse|null
+     * @return \SellingPartnerApi\Model\Solicitations\GetSchemaResponse|null
      */
     public function getSchema()
     {
@@ -220,7 +220,7 @@ class GetSolicitationActionResponseEmbedded implements ModelInterface, ArrayAcce
     /**
      * Sets schema
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\GetSchemaResponse|null $schema schema
+     * @param \SellingPartnerApi\Model\Solicitations\GetSchemaResponse|null $schema schema
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShippingService Class Doc Comment
  *
  * @category Class
  * @description A shipping service offer made by a carrier.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -66,11 +66,11 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_date' => '\DateTime',
         'earliest_estimated_delivery_date' => '\DateTime',
         'latest_estimated_delivery_date' => '\DateTime',
-        'rate' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount',
-        'shipping_service_options' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions',
-        'available_shipping_service_options' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\AvailableShippingServiceOptions',
-        'available_label_formats' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat[]',
-        'available_format_options_for_label' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOption[]',
+        'rate' => '\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount',
+        'shipping_service_options' => '\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions',
+        'available_shipping_service_options' => '\SellingPartnerApi\Model\MerchantFulfillment\AvailableShippingServiceOptions',
+        'available_label_formats' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat[]',
+        'available_format_options_for_label' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOption[]',
         'requires_additional_seller_inputs' => 'bool'
     ];
 
@@ -475,7 +475,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets rate
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getRate()
     {
@@ -485,7 +485,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets rate
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount $rate rate
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount $rate rate
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_service_options
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions
      */
     public function getShippingServiceOptions()
     {
@@ -509,7 +509,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_service_options
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions $shipping_service_options shipping_service_options
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions $shipping_service_options shipping_service_options
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets available_shipping_service_options
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\AvailableShippingServiceOptions|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\AvailableShippingServiceOptions|null
      */
     public function getAvailableShippingServiceOptions()
     {
@@ -533,7 +533,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets available_shipping_service_options
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\AvailableShippingServiceOptions|null $available_shipping_service_options available_shipping_service_options
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\AvailableShippingServiceOptions|null $available_shipping_service_options available_shipping_service_options
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets available_label_formats
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\LabelFormat[]|null
      */
     public function getAvailableLabelFormats()
     {
@@ -557,7 +557,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets available_label_formats
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat[]|null $available_label_formats List of label formats.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\LabelFormat[]|null $available_label_formats List of label formats.
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets available_format_options_for_label
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOption[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOption[]|null
      */
     public function getAvailableFormatOptionsForLabel()
     {
@@ -581,7 +581,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets available_format_options_for_label
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOption[]|null $available_format_options_for_label The available label formats.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOption[]|null $available_format_options_for_label The available label formats.
      *
      * @return self
      */

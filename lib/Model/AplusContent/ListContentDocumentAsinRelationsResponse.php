@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListContentDocumentAsinRelationsResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,9 +58,9 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'warnings' => '\Evers\SellingPartnerApi\Model\AplusContent\Error[]',
+        'warnings' => '\SellingPartnerApi\Model\AplusContent\Error[]',
         'next_page_token' => 'string',
-        'asin_metadata_set' => '\Evers\SellingPartnerApi\Model\AplusContent\AsinMetadata[]'
+        'asin_metadata_set' => '\SellingPartnerApi\Model\AplusContent\AsinMetadata[]'
     ];
 
     /**
@@ -229,7 +229,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     /**
      * Gets warnings
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\Error[]|null
      */
     public function getWarnings()
     {
@@ -239,7 +239,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     /**
      * Sets warnings
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
+     * @param \SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
      *
      * @return self
      */
@@ -284,7 +284,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     /**
      * Gets asin_metadata_set
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\AsinMetadata[]
+     * @return \SellingPartnerApi\Model\AplusContent\AsinMetadata[]
      */
     public function getAsinMetadataSet()
     {
@@ -294,7 +294,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     /**
      * Sets asin_metadata_set
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\AsinMetadata[] $asin_metadata_set The set of ASIN metadata.
+     * @param \SellingPartnerApi\Model\AplusContent\AsinMetadata[] $asin_metadata_set The set of ASIN metadata.
      *
      * @return self
      */

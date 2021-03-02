@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SellerInputDefinition Class Doc Comment
  *
  * @category Class
  * @description Specifies characteristics that apply to a seller input.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,10 +61,10 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'is_required' => 'bool',
         'data_type' => 'string',
-        'constraints' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Constraint[]',
+        'constraints' => '\SellingPartnerApi\Model\MerchantFulfillment\Constraint[]',
         'input_display_text' => 'string',
-        'input_target' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\InputTargetType',
-        'stored_value' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput',
+        'input_target' => '\SellingPartnerApi\Model\MerchantFulfillment\InputTargetType',
+        'stored_value' => '\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput',
         'restricted_set_values' => 'string[]'
     ];
 
@@ -310,7 +310,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets constraints
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Constraint[]
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Constraint[]
      */
     public function getConstraints()
     {
@@ -320,7 +320,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets constraints
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Constraint[] $constraints List of constraints.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Constraint[] $constraints List of constraints.
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets input_target
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\InputTargetType|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\InputTargetType|null
      */
     public function getInputTarget()
     {
@@ -368,7 +368,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets input_target
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\InputTargetType|null $input_target input_target
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\InputTargetType|null $input_target input_target
      *
      * @return self
      */
@@ -382,7 +382,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets stored_value
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput
      */
     public function getStoredValue()
     {
@@ -392,7 +392,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets stored_value
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput $stored_value stored_value
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput $stored_value stored_value
      *
      * @return self
      */

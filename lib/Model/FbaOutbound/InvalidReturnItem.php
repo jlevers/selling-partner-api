@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InvalidReturnItem Class Doc Comment
  *
  * @category Class
  * @description An item that is invalid for return.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'seller_return_item_id' => 'string',
         'seller_fulfillment_order_item_id' => 'string',
-        'invalid_item_reason' => '\Evers\SellingPartnerApi\Model\FbaOutbound\InvalidItemReason'
+        'invalid_item_reason' => '\SellingPartnerApi\Model\FbaOutbound\InvalidItemReason'
     ];
 
     /**
@@ -280,7 +280,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets invalid_item_reason
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\InvalidItemReason
+     * @return \SellingPartnerApi\Model\FbaOutbound\InvalidItemReason
      */
     public function getInvalidItemReason()
     {
@@ -290,7 +290,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets invalid_item_reason
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\InvalidItemReason $invalid_item_reason invalid_item_reason
+     * @param \SellingPartnerApi\Model\FbaOutbound\InvalidItemReason $invalid_item_reason invalid_item_reason
      *
      * @return self
      */

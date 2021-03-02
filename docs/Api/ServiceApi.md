@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\ServiceApi
+# SellingPartnerApi\ServiceApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `addAppointmentForServiceJobByServiceJobId()`
 
 ```php
-addAppointmentForServiceJobByServiceJobId($service_job_id, $body): \Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse
+addAppointmentForServiceJobByServiceJobId($service_job_id, $body): \SellingPartnerApi\Model\Service\SetAppointmentResponse
 ```
 
 
@@ -28,9 +28,9 @@ Adds an appointment to the service job indicated by the service job identifier y
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi();
+$apiInstance = new SellingPartnerApi\Api\ServiceApi();
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
-$body = new \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest(); // \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest | Add appointment operation input details.
+$body = new \SellingPartnerApi\Model\Service\AddAppointmentRequest(); // \SellingPartnerApi\Model\Service\AddAppointmentRequest | Add appointment operation input details.
 
 try {
     $result = $apiInstance->addAppointmentForServiceJobByServiceJobId($service_job_id, $body);
@@ -45,11 +45,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| An Amazon defined service job identifier. |
- **body** | [**\Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest**](../Model/ServiceAddAppointmentRequest.md)| Add appointment operation input details. |
+ **body** | [**\SellingPartnerApi\Model\Service\AddAppointmentRequest**](../Model/ServiceAddAppointmentRequest.md)| Add appointment operation input details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/Service/SetAppointmentResponse.md)
+[**\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/Service/SetAppointmentResponse.md)
 
 ### HTTP request headers
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 ## `cancelServiceJobByServiceJobId()`
 
 ```php
-cancelServiceJobByServiceJobId($service_job_id, $cancellation_reason_code): \Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse
+cancelServiceJobByServiceJobId($service_job_id, $cancellation_reason_code): \SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse
 ```
 
 
@@ -76,7 +76,7 @@ Cancels the service job indicated by the service job identifier you specify.  **
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi();
+$apiInstance = new SellingPartnerApi\Api\ServiceApi();
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
 $cancellation_reason_code = 'cancellation_reason_code_example'; // string | A cancel reason code that specifies the reason for cancelling a service job.
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse**](../Model/Service/CancelServiceJobByServiceJobIdResponse.md)
+[**\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse**](../Model/Service/CancelServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 ## `completeServiceJobByServiceJobId()`
 
 ```php
-completeServiceJobByServiceJobId($service_job_id): \Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse
+completeServiceJobByServiceJobId($service_job_id): \SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse
 ```
 
 
@@ -124,7 +124,7 @@ Completes the service job indicated by the service job identifier you specify.  
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi();
+$apiInstance = new SellingPartnerApi\Api\ServiceApi();
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
 
 try {
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse**](../Model/Service/CompleteServiceJobByServiceJobIdResponse.md)
+[**\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse**](../Model/Service/CompleteServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 ## `getServiceJobByServiceJobId()`
 
 ```php
-getServiceJobByServiceJobId($service_job_id): \Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse
+getServiceJobByServiceJobId($service_job_id): \SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse
 ```
 
 
@@ -170,7 +170,7 @@ Gets service job details for the service job indicated by the service job identi
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi();
+$apiInstance = new SellingPartnerApi\Api\ServiceApi();
 $service_job_id = 'service_job_id_example'; // string | A service job identifier.
 
 try {
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse**](../Model/Service/GetServiceJobByServiceJobIdResponse.md)
+[**\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse**](../Model/Service/GetServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `getServiceJobs()`
 
 ```php
-getServiceJobs($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date): \Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse
+getServiceJobs($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date): \SellingPartnerApi\Model\Service\GetServiceJobsResponse
 ```
 
 
@@ -216,7 +216,7 @@ Gets service job details for the specified filter query.  **Usage Plan:**  | Rat
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi();
+$apiInstance = new SellingPartnerApi\Api\ServiceApi();
 $marketplace_ids = array('marketplace_ids_example'); // string[] | Used to select jobs that were placed in the specified marketplaces.
 $service_order_ids = array('service_order_ids_example'); // string[] | List of service order ids for the query you want to perform.Max values supported 20.
 $service_job_status = array('service_job_status_example'); // string[] | A list of one or more job status by which to filter the list of jobs.
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse**](../Model/Service/GetServiceJobsResponse.md)
+[**\SellingPartnerApi\Model\Service\GetServiceJobsResponse**](../Model/Service/GetServiceJobsResponse.md)
 
 ### HTTP request headers
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 ## `rescheduleAppointmentForServiceJobByServiceJobId()`
 
 ```php
-rescheduleAppointmentForServiceJobByServiceJobId($service_job_id, $appointment_id, $body): \Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse
+rescheduleAppointmentForServiceJobByServiceJobId($service_job_id, $appointment_id, $body): \SellingPartnerApi\Model\Service\SetAppointmentResponse
 ```
 
 
@@ -286,10 +286,10 @@ Reschedules an appointment for the service job indicated by the service job iden
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ServiceApi();
+$apiInstance = new SellingPartnerApi\Api\ServiceApi();
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
 $appointment_id = 'appointment_id_example'; // string | An existing appointment identifier for the Service Job.
-$body = new \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest(); // \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest | Reschedule appointment operation input details.
+$body = new \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest(); // \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest | Reschedule appointment operation input details.
 
 try {
     $result = $apiInstance->rescheduleAppointmentForServiceJobByServiceJobId($service_job_id, $appointment_id, $body);
@@ -305,11 +305,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| An Amazon defined service job identifier. |
  **appointment_id** | **string**| An existing appointment identifier for the Service Job. |
- **body** | [**\Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest**](../Model/ServiceRescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
+ **body** | [**\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest**](../Model/ServiceRescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/Service/SetAppointmentResponse.md)
+[**\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/Service/SetAppointmentResponse.md)
 
 ### HTTP request headers
 

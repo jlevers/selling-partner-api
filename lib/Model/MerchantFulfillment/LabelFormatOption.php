@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * LabelFormatOption Class Doc Comment
  *
  * @category Class
  * @description The label format details and whether to include a packing slip.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'include_packing_slip_with_label' => 'bool',
-        'label_format' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat'
+        'label_format' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat'
     ];
 
     /**
@@ -241,7 +241,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets label_format
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null
      */
     public function getLabelFormat()
     {
@@ -251,7 +251,7 @@ class LabelFormatOption implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets label_format
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null $label_format label_format
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null $label_format label_format
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Feeds;
+namespace SellingPartnerApi\Model\Feeds;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFeedResponse Class Doc Comment
  *
  * @category Class
  * @description Response schema.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Feeds\Feed',
-        'errors' => '\Evers\SellingPartnerApi\Model\Feeds\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Feeds\Feed',
+        'errors' => '\SellingPartnerApi\Model\Feeds\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Feeds\Feed|null
+     * @return \SellingPartnerApi\Model\Feeds\Feed|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Feeds\Feed|null $payload payload
+     * @param \SellingPartnerApi\Model\Feeds\Feed|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Feeds\Error[]|null
+     * @return \SellingPartnerApi\Model\Feeds\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Feeds\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Feeds\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **id_type** | **string** | The type of item identifier specified. | [optional]
 **id_value** | **string** | The item identifier. | [optional]
 **is_amazon_fulfilled** | **bool** | When true, the offer is fulfilled by Amazon. | [optional]
-**price_to_estimate_fees** | [**\Evers\SellingPartnerApi\Model\Fees\PriceToEstimateFees**](PriceToEstimateFees.md) |  | [optional]
+**price_to_estimate_fees** | [**\SellingPartnerApi\Model\Fees\PriceToEstimateFees**](PriceToEstimateFees.md) |  | [optional]
 **seller_input_identifier** | **string** | A unique identifier provided by the caller to track this request. | [optional]
-**optional_fulfillment_program** | [**\Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram**](OptionalFulfillmentProgram.md) |  | [optional]
+**optional_fulfillment_program** | [**\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram**](OptionalFulfillmentProgram.md) |  | [optional]
 
 [[Fees Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

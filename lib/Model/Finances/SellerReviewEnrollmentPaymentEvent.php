@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SellerReviewEnrollmentPaymentEvent Class Doc Comment
  *
  * @category Class
  * @description A fee payment event for the Early Reviewer Program.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,9 +62,9 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
         'posted_date' => '\DateTime',
         'enrollment_id' => 'string',
         'parent_asin' => 'string',
-        'fee_component' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent',
-        'charge_component' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent',
-        'total_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'fee_component' => '\SellingPartnerApi\Model\Finances\FeeComponent',
+        'charge_component' => '\SellingPartnerApi\Model\Finances\ChargeComponent',
+        'total_amount' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -313,7 +313,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     /**
      * Gets fee_component
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent|null
      */
     public function getFeeComponent()
     {
@@ -323,7 +323,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     /**
      * Sets fee_component
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent|null $fee_component fee_component
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent|null $fee_component fee_component
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     /**
      * Gets charge_component
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent|null
      */
     public function getChargeComponent()
     {
@@ -347,7 +347,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     /**
      * Sets charge_component
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent|null $charge_component charge_component
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent|null $charge_component charge_component
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     /**
      * Gets total_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTotalAmount()
     {
@@ -371,7 +371,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     /**
      * Sets total_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $total_amount total_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $total_amount total_amount
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetTransportDetailsResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transport_content' => '\Evers\SellingPartnerApi\Model\FbaInbound\TransportContent'
+        'transport_content' => '\SellingPartnerApi\Model\FbaInbound\TransportContent'
     ];
 
     /**
@@ -210,7 +210,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets transport_content
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\TransportContent|null
+     * @return \SellingPartnerApi\Model\FbaInbound\TransportContent|null
      */
     public function getTransportContent()
     {
@@ -220,7 +220,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets transport_content
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\TransportContent|null $transport_content transport_content
+     * @param \SellingPartnerApi\Model\FbaInbound\TransportContent|null $transport_content transport_content
      *
      * @return self
      */

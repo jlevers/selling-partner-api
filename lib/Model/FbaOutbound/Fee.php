@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Fee Class Doc Comment
  *
  * @category Class
  * @description Fee type and cost.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'amount' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money'
+        'amount' => '\SellingPartnerApi\Model\FbaOutbound\Money'
     ];
 
     /**
@@ -285,7 +285,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets amount
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money
      */
     public function getAmount()
     {
@@ -295,7 +295,7 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amount
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money $amount amount
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money $amount amount
      *
      * @return self
      */

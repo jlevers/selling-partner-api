@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AffordabilityExpenseEvent Class Doc Comment
  *
  * @category Class
  * @description An expense related to an affordability promotion.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,11 +63,11 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
         'posted_date' => '\DateTime',
         'marketplace_id' => 'string',
         'transaction_type' => 'string',
-        'base_expense' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'tax_type_cgst' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'tax_type_sgst' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'tax_type_igst' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'total_expense' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'base_expense' => '\SellingPartnerApi\Model\Finances\Currency',
+        'tax_type_cgst' => '\SellingPartnerApi\Model\Finances\Currency',
+        'tax_type_sgst' => '\SellingPartnerApi\Model\Finances\Currency',
+        'tax_type_igst' => '\SellingPartnerApi\Model\Finances\Currency',
+        'total_expense' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -364,7 +364,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets base_expense
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getBaseExpense()
     {
@@ -374,7 +374,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets base_expense
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $base_expense base_expense
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $base_expense base_expense
      *
      * @return self
      */
@@ -388,7 +388,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets tax_type_cgst
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency
+     * @return \SellingPartnerApi\Model\Finances\Currency
      */
     public function getTaxTypeCgst()
     {
@@ -398,7 +398,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets tax_type_cgst
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency $tax_type_cgst tax_type_cgst
+     * @param \SellingPartnerApi\Model\Finances\Currency $tax_type_cgst tax_type_cgst
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets tax_type_sgst
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency
+     * @return \SellingPartnerApi\Model\Finances\Currency
      */
     public function getTaxTypeSgst()
     {
@@ -422,7 +422,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets tax_type_sgst
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency $tax_type_sgst tax_type_sgst
+     * @param \SellingPartnerApi\Model\Finances\Currency $tax_type_sgst tax_type_sgst
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets tax_type_igst
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency
+     * @return \SellingPartnerApi\Model\Finances\Currency
      */
     public function getTaxTypeIgst()
     {
@@ -446,7 +446,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets tax_type_igst
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency $tax_type_igst tax_type_igst
+     * @param \SellingPartnerApi\Model\Finances\Currency $tax_type_igst tax_type_igst
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets total_expense
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTotalExpense()
     {
@@ -470,7 +470,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets total_expense
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $total_expense total_expense
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $total_expense total_expense
      *
      * @return self
      */

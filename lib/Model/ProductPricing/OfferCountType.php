@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OfferCountType Class Doc Comment
  *
  * @category Class
  * @description The total number of offers for the specified condition and fulfillment channel.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class OfferCountType implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'condition' => 'string',
-        'fulfillment_channel' => '\Evers\SellingPartnerApi\Model\ProductPricing\FulfillmentChannelType',
+        'fulfillment_channel' => '\SellingPartnerApi\Model\ProductPricing\FulfillmentChannelType',
         'offer_count' => 'int'
     ];
 
@@ -247,7 +247,7 @@ class OfferCountType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fulfillment_channel
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\FulfillmentChannelType|null
+     * @return \SellingPartnerApi\Model\ProductPricing\FulfillmentChannelType|null
      */
     public function getFulfillmentChannel()
     {
@@ -257,7 +257,7 @@ class OfferCountType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_channel
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\FulfillmentChannelType|null $fulfillment_channel fulfillment_channel
+     * @param \SellingPartnerApi\Model\ProductPricing\FulfillmentChannelType|null $fulfillment_channel fulfillment_channel
      *
      * @return self
      */

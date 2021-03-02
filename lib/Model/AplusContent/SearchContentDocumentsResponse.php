@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SearchContentDocumentsResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,9 +58,9 @@ class SearchContentDocumentsResponse implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'warnings' => '\Evers\SellingPartnerApi\Model\AplusContent\Error[]',
+        'warnings' => '\SellingPartnerApi\Model\AplusContent\Error[]',
         'next_page_token' => 'string',
-        'content_metadata_records' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[]'
+        'content_metadata_records' => '\SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[]'
     ];
 
     /**
@@ -229,7 +229,7 @@ class SearchContentDocumentsResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets warnings
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\Error[]|null
      */
     public function getWarnings()
     {
@@ -239,7 +239,7 @@ class SearchContentDocumentsResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets warnings
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
+     * @param \SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
      *
      * @return self
      */
@@ -284,7 +284,7 @@ class SearchContentDocumentsResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets content_metadata_records
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[]
+     * @return \SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[]
      */
     public function getContentMetadataRecords()
     {
@@ -294,7 +294,7 @@ class SearchContentDocumentsResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets content_metadata_records
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[] $content_metadata_records A list of A+ Content metadata records.
+     * @param \SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[] $content_metadata_records A list of A+ Content metadata records.
      *
      * @return self
      */

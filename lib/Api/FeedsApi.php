@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Api;
+namespace SellingPartnerApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Evers\SellingPartnerApi\ApiException;
-use Evers\SellingPartnerApi\Configuration;
-use Evers\SellingPartnerApi\HeaderSelector;
-use Evers\SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\ApiException;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\HeaderSelector;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * FeedsApi Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class FeedsApi
 {
@@ -116,9 +116,9 @@ class FeedsApi
      *
      * @param  string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse
+     * @return \SellingPartnerApi\Model\Feeds\CancelFeedResponse
      */
     public function cancelFeed($feed_id)
     {
@@ -131,9 +131,9 @@ class FeedsApi
      *
      * @param  string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Feeds\CancelFeedResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelFeedWithHttpInfo($feed_id)
     {
@@ -173,116 +173,116 @@ class FeedsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CancelFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CancelFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse';
+            $returnType = '\SellingPartnerApi\Model\Feeds\CancelFeedResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -301,7 +301,7 @@ class FeedsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -309,7 +309,7 @@ class FeedsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -317,7 +317,7 @@ class FeedsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -325,7 +325,7 @@ class FeedsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -333,7 +333,7 @@ class FeedsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -341,7 +341,7 @@ class FeedsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -349,7 +349,7 @@ class FeedsApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -357,7 +357,7 @@ class FeedsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -365,7 +365,7 @@ class FeedsApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CancelFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -407,7 +407,7 @@ class FeedsApi
      */
     public function cancelFeedAsyncWithHttpInfo($feed_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse';
+        $returnType = '\SellingPartnerApi\Model\Feeds\CancelFeedResponse';
         $this->config->startRequestGeneration();
         $request = $this->cancelFeedRequest($feed_id);
         $signedRequest = $this->config->signRequest($request);
@@ -543,11 +543,11 @@ class FeedsApi
     /**
      * Operation createFeed
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body body (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse
+     * @return \SellingPartnerApi\Model\Feeds\CreateFeedResponse
      */
     public function createFeed($body)
     {
@@ -558,11 +558,11 @@ class FeedsApi
     /**
      * Operation createFeedWithHttpInfo
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Feeds\CreateFeedResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFeedWithHttpInfo($body)
     {
@@ -602,116 +602,116 @@ class FeedsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 202:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse';
+            $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -730,7 +730,7 @@ class FeedsApi
                 case 202:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -738,7 +738,7 @@ class FeedsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -746,7 +746,7 @@ class FeedsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -754,7 +754,7 @@ class FeedsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -762,7 +762,7 @@ class FeedsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -770,7 +770,7 @@ class FeedsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -778,7 +778,7 @@ class FeedsApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -786,7 +786,7 @@ class FeedsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -794,7 +794,7 @@ class FeedsApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -809,7 +809,7 @@ class FeedsApi
      *
      * 
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -829,14 +829,14 @@ class FeedsApi
      *
      * 
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFeedAsyncWithHttpInfo($body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse';
+        $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedResponse';
         $this->config->startRequestGeneration();
         $request = $this->createFeedRequest($body);
         $signedRequest = $this->config->signRequest($request);
@@ -879,7 +879,7 @@ class FeedsApi
     /**
      * Create request for operation 'createFeed'
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedSpecification $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -970,11 +970,11 @@ class FeedsApi
     /**
      * Operation createFeedDocument
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body body (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse
+     * @return \SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse
      */
     public function createFeedDocument($body)
     {
@@ -985,11 +985,11 @@ class FeedsApi
     /**
      * Operation createFeedDocumentWithHttpInfo
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFeedDocumentWithHttpInfo($body)
     {
@@ -1029,116 +1029,116 @@ class FeedsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse';
+            $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1157,7 +1157,7 @@ class FeedsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1165,7 +1165,7 @@ class FeedsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1173,7 +1173,7 @@ class FeedsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1181,7 +1181,7 @@ class FeedsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1189,7 +1189,7 @@ class FeedsApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1197,7 +1197,7 @@ class FeedsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1205,7 +1205,7 @@ class FeedsApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1213,7 +1213,7 @@ class FeedsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1221,7 +1221,7 @@ class FeedsApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1236,7 +1236,7 @@ class FeedsApi
      *
      * 
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1256,14 +1256,14 @@ class FeedsApi
      *
      * 
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFeedDocumentAsyncWithHttpInfo($body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse';
+        $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse';
         $this->config->startRequestGeneration();
         $request = $this->createFeedDocumentRequest($body);
         $signedRequest = $this->config->signRequest($request);
@@ -1306,7 +1306,7 @@ class FeedsApi
     /**
      * Create request for operation 'createFeedDocument'
      *
-     * @param  \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param  \SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1399,9 +1399,9 @@ class FeedsApi
      *
      * @param  string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse
+     * @return \SellingPartnerApi\Model\Feeds\GetFeedResponse
      */
     public function getFeed($feed_id)
     {
@@ -1414,9 +1414,9 @@ class FeedsApi
      *
      * @param  string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Feeds\GetFeedResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFeedWithHttpInfo($feed_id)
     {
@@ -1456,116 +1456,116 @@ class FeedsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse';
+            $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1584,7 +1584,7 @@ class FeedsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1592,7 +1592,7 @@ class FeedsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1600,7 +1600,7 @@ class FeedsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1608,7 +1608,7 @@ class FeedsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1616,7 +1616,7 @@ class FeedsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1624,7 +1624,7 @@ class FeedsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1632,7 +1632,7 @@ class FeedsApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1640,7 +1640,7 @@ class FeedsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1648,7 +1648,7 @@ class FeedsApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1690,7 +1690,7 @@ class FeedsApi
      */
     public function getFeedAsyncWithHttpInfo($feed_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse';
+        $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedResponse';
         $this->config->startRequestGeneration();
         $request = $this->getFeedRequest($feed_id);
         $signedRequest = $this->config->signRequest($request);
@@ -1828,9 +1828,9 @@ class FeedsApi
      *
      * @param  string $feed_document_id The identifier of the feed document. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse
+     * @return \SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse
      */
     public function getFeedDocument($feed_document_id)
     {
@@ -1843,9 +1843,9 @@ class FeedsApi
      *
      * @param  string $feed_document_id The identifier of the feed document. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFeedDocumentWithHttpInfo($feed_document_id)
     {
@@ -1885,116 +1885,116 @@ class FeedsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse';
+            $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2013,7 +2013,7 @@ class FeedsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2021,7 +2021,7 @@ class FeedsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2029,7 +2029,7 @@ class FeedsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2037,7 +2037,7 @@ class FeedsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2045,7 +2045,7 @@ class FeedsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2053,7 +2053,7 @@ class FeedsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2061,7 +2061,7 @@ class FeedsApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2069,7 +2069,7 @@ class FeedsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2077,7 +2077,7 @@ class FeedsApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2119,7 +2119,7 @@ class FeedsApi
      */
     public function getFeedDocumentAsyncWithHttpInfo($feed_document_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse';
+        $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse';
         $this->config->startRequestGeneration();
         $request = $this->getFeedDocumentRequest($feed_document_id);
         $signedRequest = $this->config->signRequest($request);
@@ -2263,9 +2263,9 @@ class FeedsApi
      * @param  \DateTime $created_until The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse
+     * @return \SellingPartnerApi\Model\Feeds\GetFeedsResponse
      */
     public function getFeeds($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
@@ -2284,9 +2284,9 @@ class FeedsApi
      * @param  \DateTime $created_until The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Feeds\GetFeedsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFeedsWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
@@ -2326,116 +2326,116 @@ class FeedsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Feeds\GetFeedsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse';
+            $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2454,7 +2454,7 @@ class FeedsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2462,7 +2462,7 @@ class FeedsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2470,7 +2470,7 @@ class FeedsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2478,7 +2478,7 @@ class FeedsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2486,7 +2486,7 @@ class FeedsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2494,7 +2494,7 @@ class FeedsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2502,7 +2502,7 @@ class FeedsApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2510,7 +2510,7 @@ class FeedsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2518,7 +2518,7 @@ class FeedsApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
+                        '\SellingPartnerApi\Model\Feeds\GetFeedsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2572,7 +2572,7 @@ class FeedsApi
      */
     public function getFeedsAsyncWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse';
+        $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getFeedsRequest($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
         $signedRequest = $this->config->signRequest($request);

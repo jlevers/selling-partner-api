@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListFinancialEventsResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the listFinancialEvents operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class ListFinancialEventsResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsPayload',
-        'errors' => '\Evers\SellingPartnerApi\Model\Finances\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Finances\ListFinancialEventsPayload',
+        'errors' => '\SellingPartnerApi\Model\Finances\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class ListFinancialEventsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsPayload|null
+     * @return \SellingPartnerApi\Model\Finances\ListFinancialEventsPayload|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class ListFinancialEventsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsPayload|null $payload payload
+     * @param \SellingPartnerApi\Model\Finances\ListFinancialEventsPayload|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class ListFinancialEventsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Error[]|null
+     * @return \SellingPartnerApi\Model\Finances\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class ListFinancialEventsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Finances\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

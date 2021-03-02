@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Pallet Class Doc Comment
  *
  * @category Class
  * @description Pallet information.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dimensions' => '\Evers\SellingPartnerApi\Model\FbaInbound\Dimensions',
-        'weight' => '\Evers\SellingPartnerApi\Model\FbaInbound\Weight',
+        'dimensions' => '\SellingPartnerApi\Model\FbaInbound\Dimensions',
+        'weight' => '\SellingPartnerApi\Model\FbaInbound\Weight',
         'is_stacked' => 'bool'
     ];
 
@@ -229,7 +229,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Dimensions
+     * @return \SellingPartnerApi\Model\FbaInbound\Dimensions
      */
     public function getDimensions()
     {
@@ -239,7 +239,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Dimensions $dimensions dimensions
+     * @param \SellingPartnerApi\Model\FbaInbound\Dimensions $dimensions dimensions
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets weight
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Weight|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Weight|null
      */
     public function getWeight()
     {
@@ -263,7 +263,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets weight
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Weight|null $weight weight
+     * @param \SellingPartnerApi\Model\FbaInbound\Weight|null $weight weight
      *
      * @return self
      */

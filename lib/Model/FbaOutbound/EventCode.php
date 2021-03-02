@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,16 +25,16 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+namespace SellingPartnerApi\Model\FbaOutbound;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * EventCode Class Doc Comment
  *
  * @category Class
  * @description The event code for the delivery event.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  */
 class EventCode

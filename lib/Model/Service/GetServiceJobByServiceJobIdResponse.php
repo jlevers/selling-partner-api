@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetServiceJobByServiceJobIdResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the GetServiceJobByServiceJobId operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Service\ServiceJob',
-        'errors' => '\Evers\SellingPartnerApi\Model\Service\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Service\ServiceJob',
+        'errors' => '\SellingPartnerApi\Model\Service\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAccess
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\ServiceJob|null
+     * @return \SellingPartnerApi\Model\Service\ServiceJob|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAccess
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\ServiceJob|null $payload payload
+     * @param \SellingPartnerApi\Model\Service\ServiceJob|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Error[]|null
+     * @return \SellingPartnerApi\Model\Service\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Service\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

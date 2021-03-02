@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Reports;
+namespace SellingPartnerApi\Model\Reports;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CancelReportScheduleResponse Class Doc Comment
  *
  * @category Class
  * @description The response for the cancelReportSchedule operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CancelReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Evers\SellingPartnerApi\Model\Reports\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Reports\Error[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CancelReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Reports\Error[]|null
+     * @return \SellingPartnerApi\Model\Reports\Error[]|null
      */
     public function getErrors()
     {
@@ -221,7 +221,7 @@ class CancelReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Reports\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Reports\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

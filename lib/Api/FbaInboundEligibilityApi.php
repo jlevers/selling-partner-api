@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Api;
+namespace SellingPartnerApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Evers\SellingPartnerApi\ApiException;
-use Evers\SellingPartnerApi\Configuration;
-use Evers\SellingPartnerApi\HeaderSelector;
-use Evers\SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\ApiException;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\HeaderSelector;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * FbaInboundEligibilityApi Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class FbaInboundEligibilityApi
 {
@@ -118,9 +118,9 @@ class FbaInboundEligibilityApi
      * @param  string $program The program that you want to check eligibility against. (required)
      * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse
+     * @return \SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse
      */
     public function getItemEligibilityPreview($asin, $program, $marketplace_ids = null)
     {
@@ -135,9 +135,9 @@ class FbaInboundEligibilityApi
      * @param  string $program The program that you want to check eligibility against. (required)
      * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getItemEligibilityPreviewWithHttpInfo($asin, $program, $marketplace_ids = null)
     {
@@ -177,104 +177,104 @@ class FbaInboundEligibilityApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse';
+            $returnType = '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -293,7 +293,7 @@ class FbaInboundEligibilityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
+                        '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -301,7 +301,7 @@ class FbaInboundEligibilityApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
+                        '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -309,7 +309,7 @@ class FbaInboundEligibilityApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
+                        '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -317,7 +317,7 @@ class FbaInboundEligibilityApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
+                        '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -325,7 +325,7 @@ class FbaInboundEligibilityApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
+                        '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -333,7 +333,7 @@ class FbaInboundEligibilityApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
+                        '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -341,7 +341,7 @@ class FbaInboundEligibilityApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
+                        '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -349,7 +349,7 @@ class FbaInboundEligibilityApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
+                        '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -395,7 +395,7 @@ class FbaInboundEligibilityApi
      */
     public function getItemEligibilityPreviewAsyncWithHttpInfo($asin, $program, $marketplace_ids = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse';
+        $returnType = '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse';
         $this->config->startRequestGeneration();
         $request = $this->getItemEligibilityPreviewRequest($asin, $program, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);

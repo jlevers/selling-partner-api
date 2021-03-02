@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Messaging;
+namespace SellingPartnerApi\Model\Messaging;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetMessagingActionResponse Class Doc Comment
  *
  * @category Class
  * @description Describes a messaging action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        '_links' => '\Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionResponseLinks',
-        '_embedded' => '\Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionResponseEmbedded',
-        'payload' => '\Evers\SellingPartnerApi\Model\Messaging\MessagingAction',
-        'errors' => '\Evers\SellingPartnerApi\Model\Messaging\Error[]'
+        '_links' => '\SellingPartnerApi\Model\Messaging\GetMessagingActionResponseLinks',
+        '_embedded' => '\SellingPartnerApi\Model\Messaging\GetMessagingActionResponseEmbedded',
+        'payload' => '\SellingPartnerApi\Model\Messaging\MessagingAction',
+        'errors' => '\SellingPartnerApi\Model\Messaging\Error[]'
     ];
 
     /**
@@ -229,7 +229,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets _links
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionResponseLinks|null
+     * @return \SellingPartnerApi\Model\Messaging\GetMessagingActionResponseLinks|null
      */
     public function getLinks()
     {
@@ -239,7 +239,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets _links
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionResponseLinks|null $_links _links
+     * @param \SellingPartnerApi\Model\Messaging\GetMessagingActionResponseLinks|null $_links _links
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets _embedded
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionResponseEmbedded|null
+     * @return \SellingPartnerApi\Model\Messaging\GetMessagingActionResponseEmbedded|null
      */
     public function getEmbedded()
     {
@@ -263,7 +263,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets _embedded
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionResponseEmbedded|null $_embedded _embedded
+     * @param \SellingPartnerApi\Model\Messaging\GetMessagingActionResponseEmbedded|null $_embedded _embedded
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\MessagingAction|null
+     * @return \SellingPartnerApi\Model\Messaging\MessagingAction|null
      */
     public function getPayload()
     {
@@ -287,7 +287,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\MessagingAction|null $payload payload
+     * @param \SellingPartnerApi\Model\Messaging\MessagingAction|null $payload payload
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\Error[]|null
+     * @return \SellingPartnerApi\Model\Messaging\Error[]|null
      */
     public function getErrors()
     {
@@ -311,7 +311,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Messaging\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

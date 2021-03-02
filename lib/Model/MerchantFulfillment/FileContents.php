@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FileContents Class Doc Comment
  *
  * @category Class
  * @description The document data and checksum.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class FileContents implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'contents' => 'string',
-        'file_type' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\FileType',
+        'file_type' => '\SellingPartnerApi\Model\MerchantFulfillment\FileType',
         'checksum' => 'string'
     ];
 
@@ -256,7 +256,7 @@ class FileContents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets file_type
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\FileType
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\FileType
      */
     public function getFileType()
     {
@@ -266,7 +266,7 @@ class FileContents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets file_type
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\FileType $file_type file_type
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\FileType $file_type file_type
      *
      * @return self
      */

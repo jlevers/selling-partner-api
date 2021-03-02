@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetAdditionalSellerInputsRequest Class Doc Comment
  *
  * @category Class
  * @description Request schema.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'shipping_service_id' => 'string',
-        'ship_from_address' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Address',
+        'ship_from_address' => '\SellingPartnerApi\Model\MerchantFulfillment\Address',
         'order_id' => 'string'
     ];
 
@@ -256,7 +256,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
     /**
      * Gets ship_from_address
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress()
     {
@@ -266,7 +266,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
     /**
      * Sets ship_from_address
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address $ship_from_address ship_from_address
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Address $ship_from_address ship_from_address
      *
      * @return self
      */

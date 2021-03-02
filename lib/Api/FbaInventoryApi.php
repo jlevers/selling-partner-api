@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Api;
+namespace SellingPartnerApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Evers\SellingPartnerApi\ApiException;
-use Evers\SellingPartnerApi\Configuration;
-use Evers\SellingPartnerApi\HeaderSelector;
-use Evers\SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\ApiException;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\HeaderSelector;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * FbaInventoryApi Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class FbaInventoryApi
 {
@@ -122,9 +122,9 @@ class FbaInventoryApi
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
      * @param  string $next_token String token returned in the response of your previous request. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse
+     * @return \SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse
      */
     public function getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $detail = false, $start_date_time = null, $seller_skus = null, $next_token = null)
     {
@@ -143,9 +143,9 @@ class FbaInventoryApi
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
      * @param  string $next_token String token returned in the response of your previous request. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $detail = false, $start_date_time = null, $seller_skus = null, $next_token = null)
     {
@@ -185,92 +185,92 @@ class FbaInventoryApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse';
+            $returnType = '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -289,7 +289,7 @@ class FbaInventoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
+                        '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -297,7 +297,7 @@ class FbaInventoryApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
+                        '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -305,7 +305,7 @@ class FbaInventoryApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
+                        '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -313,7 +313,7 @@ class FbaInventoryApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
+                        '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -321,7 +321,7 @@ class FbaInventoryApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
+                        '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -329,7 +329,7 @@ class FbaInventoryApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
+                        '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -337,7 +337,7 @@ class FbaInventoryApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
+                        '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -391,7 +391,7 @@ class FbaInventoryApi
      */
     public function getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $detail = false, $start_date_time = null, $seller_skus = null, $next_token = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse';
+        $returnType = '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse';
         $this->config->startRequestGeneration();
         $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $detail, $start_date_time, $seller_skus, $next_token);
         $signedRequest = $this->config->signRequest($request);

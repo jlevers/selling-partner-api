@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\SmallAndLight;
+namespace SellingPartnerApi\Model\SmallAndLight;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SmallAndLightFeePreviewRequest Class Doc Comment
  *
  * @category Class
  * @description Request schema for submitting items for which to retrieve fee estimates.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'marketplace_id' => 'string',
-        'items' => '\Evers\SellingPartnerApi\Model\SmallAndLight\FBAItem[]'
+        'items' => '\SellingPartnerApi\Model\SmallAndLight\FBAItem[]'
     ];
 
     /**
@@ -251,7 +251,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets items
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\FBAItem[]
+     * @return \SellingPartnerApi\Model\SmallAndLight\FBAItem[]
      */
     public function getItems()
     {
@@ -261,7 +261,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets items
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\FBAItem[] $items A list of items for which to retrieve fee estimates (limit: 25).
+     * @param \SellingPartnerApi\Model\SmallAndLight\FBAItem[] $items A list of items for which to retrieve fee estimates (limit: 25).
      *
      * @return self
      */

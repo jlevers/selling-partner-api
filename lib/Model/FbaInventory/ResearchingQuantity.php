@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInventory;
+namespace SellingPartnerApi\Model\FbaInventory;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ResearchingQuantity Class Doc Comment
  *
  * @category Class
  * @description The number of misplaced or warehouse damaged units that are actively being confirmed at our fulfillment centers.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class ResearchingQuantity implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'total_researching_quantity' => 'int',
-        'researching_quantity_breakdown' => '\Evers\SellingPartnerApi\Model\FbaInventory\ResearchingQuantityEntry[]'
+        'researching_quantity_breakdown' => '\SellingPartnerApi\Model\FbaInventory\ResearchingQuantityEntry[]'
     ];
 
     /**
@@ -241,7 +241,7 @@ class ResearchingQuantity implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets researching_quantity_breakdown
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\ResearchingQuantityEntry[]|null
+     * @return \SellingPartnerApi\Model\FbaInventory\ResearchingQuantityEntry[]|null
      */
     public function getResearchingQuantityBreakdown()
     {
@@ -251,7 +251,7 @@ class ResearchingQuantity implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets researching_quantity_breakdown
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\ResearchingQuantityEntry[]|null $researching_quantity_breakdown A list of quantity details for items currently being researched.
+     * @param \SellingPartnerApi\Model\FbaInventory\ResearchingQuantityEntry[]|null $researching_quantity_breakdown A list of quantity details for items currently being researched.
      *
      * @return self
      */

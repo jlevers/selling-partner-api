@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * UpdateFulfillmentOrderRequest Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,14 +62,14 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
         'displayable_order_id' => 'string',
         'displayable_order_date' => '\DateTime',
         'displayable_order_comment' => 'string',
-        'shipping_speed_category' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
-        'destination_address' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Address',
-        'fulfillment_action' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction',
-        'fulfillment_policy' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy',
+        'shipping_speed_category' => '\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
+        'destination_address' => '\SellingPartnerApi\Model\FbaOutbound\Address',
+        'fulfillment_action' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction',
+        'fulfillment_policy' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy',
         'ship_from_country_code' => 'string',
         'notification_emails' => 'string[]',
-        'feature_constraints' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]',
-        'items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderItem[]'
+        'feature_constraints' => '\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]',
+        'items' => '\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderItem[]'
     ];
 
     /**
@@ -388,7 +388,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets shipping_speed_category
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory|null
      */
     public function getShippingSpeedCategory()
     {
@@ -398,7 +398,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets shipping_speed_category
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory|null $shipping_speed_category shipping_speed_category
+     * @param \SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory|null $shipping_speed_category shipping_speed_category
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets destination_address
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Address|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Address|null
      */
     public function getDestinationAddress()
     {
@@ -422,7 +422,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets destination_address
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Address|null $destination_address destination_address
+     * @param \SellingPartnerApi\Model\FbaOutbound\Address|null $destination_address destination_address
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets fulfillment_action
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentAction|null
      */
     public function getFulfillmentAction()
     {
@@ -446,7 +446,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets fulfillment_action
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction|null $fulfillment_action fulfillment_action
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentAction|null $fulfillment_action fulfillment_action
      *
      * @return self
      */
@@ -460,7 +460,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets fulfillment_policy
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy|null
      */
     public function getFulfillmentPolicy()
     {
@@ -470,7 +470,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets fulfillment_policy
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy|null $fulfillment_policy fulfillment_policy
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy|null $fulfillment_policy fulfillment_policy
      *
      * @return self
      */
@@ -532,7 +532,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets feature_constraints
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null
      */
     public function getFeatureConstraints()
     {
@@ -542,7 +542,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets feature_constraints
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null $feature_constraints A list of features and their fulfillment policies to apply to the order.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null $feature_constraints A list of features and their fulfillment policies to apply to the order.
      *
      * @return self
      */
@@ -556,7 +556,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderItem[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderItem[]|null
      */
     public function getItems()
     {
@@ -566,7 +566,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderItem[]|null $items An array of fulfillment order item information for updating a fulfillment order.
+     * @param \SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderItem[]|null $items An array of fulfillment order item information for updating a fulfillment order.
      *
      * @return self
      */

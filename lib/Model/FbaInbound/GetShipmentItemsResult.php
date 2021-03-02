@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetShipmentItemsResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'item_data' => '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]',
+        'item_data' => '\SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]',
         'next_token' => 'string'
     ];
 
@@ -216,7 +216,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets item_data
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]|null
      */
     public function getItemData()
     {
@@ -226,7 +226,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets item_data
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]|null $item_data A list of inbound shipment item information.
+     * @param \SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]|null $item_data A list of inbound shipment item information.
      *
      * @return self
      */

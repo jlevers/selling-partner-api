@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ProductAdsPaymentEvent Class Doc Comment
  *
  * @category Class
  * @description A Sponsored Products payment event.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,9 +62,9 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'posted_date' => '\DateTime',
         'transaction_type' => 'string',
         'invoice_id' => 'string',
-        'base_value' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'tax_value' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'transaction_value' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'base_value' => '\SellingPartnerApi\Model\Finances\Currency',
+        'tax_value' => '\SellingPartnerApi\Model\Finances\Currency',
+        'transaction_value' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -313,7 +313,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets base_value
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getBaseValue()
     {
@@ -323,7 +323,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets base_value
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $base_value base_value
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $base_value base_value
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets tax_value
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTaxValue()
     {
@@ -347,7 +347,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets tax_value
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $tax_value tax_value
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $tax_value tax_value
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets transaction_value
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTransactionValue()
     {
@@ -371,7 +371,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets transaction_value
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $transaction_value transaction_value
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $transaction_value transaction_value
      *
      * @return self
      */

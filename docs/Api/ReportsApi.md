@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\ReportsApi
+# SellingPartnerApi\ReportsApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 ## `cancelReport()`
 
 ```php
-cancelReport($report_id): \Evers\SellingPartnerApi\Model\Reports\CancelReportResponse
+cancelReport($report_id): \SellingPartnerApi\Model\Reports\CancelReportResponse
 ```
 
 
@@ -31,7 +31,7 @@ Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
 $report_id = 'report_id_example'; // string | The identifier for the report. This identifier is unique only in combination with a seller ID.
 
 try {
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\CancelReportResponse**](../Model/Reports/CancelReportResponse.md)
+[**\SellingPartnerApi\Model\Reports\CancelReportResponse**](../Model/Reports/CancelReportResponse.md)
 
 ### HTTP request headers
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ## `cancelReportSchedule()`
 
 ```php
-cancelReportSchedule($report_schedule_id): \Evers\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse
+cancelReportSchedule($report_schedule_id): \SellingPartnerApi\Model\Reports\CancelReportScheduleResponse
 ```
 
 
@@ -77,7 +77,7 @@ Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
 $report_schedule_id = 'report_schedule_id_example'; // string | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
 
 try {
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse**](../Model/Reports/CancelReportScheduleResponse.md)
+[**\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse**](../Model/Reports/CancelReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ## `createReport()`
 
 ```php
-createReport($body): \Evers\SellingPartnerApi\Model\Reports\CreateReportResponse
+createReport($body): \SellingPartnerApi\Model\Reports\CreateReportResponse
 ```
 
 
@@ -123,8 +123,8 @@ Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
-$body = new \Evers\SellingPartnerApi\Model\Reports\CreateReportSpecification(); // \Evers\SellingPartnerApi\Model\Reports\CreateReportSpecification
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
+$body = new \SellingPartnerApi\Model\Reports\CreateReportSpecification(); // \SellingPartnerApi\Model\Reports\CreateReportSpecification
 
 try {
     $result = $apiInstance->createReport($body);
@@ -138,11 +138,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Reports\CreateReportSpecification**](../Model/ReportsCreateReportSpecification.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Reports\CreateReportSpecification**](../Model/ReportsCreateReportSpecification.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\CreateReportResponse**](../Model/Reports/CreateReportResponse.md)
+[**\SellingPartnerApi\Model\Reports\CreateReportResponse**](../Model/Reports/CreateReportResponse.md)
 
 ### HTTP request headers
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 ## `createReportSchedule()`
 
 ```php
-createReportSchedule($body): \Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse
+createReportSchedule($body): \SellingPartnerApi\Model\Reports\CreateReportScheduleResponse
 ```
 
 
@@ -169,8 +169,8 @@ Creates a report schedule. If a report schedule with the same report type and ma
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
-$body = new \Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification(); // \Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
+$body = new \SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification(); // \SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification
 
 try {
     $result = $apiInstance->createReportSchedule($body);
@@ -184,11 +184,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification**](../Model/ReportsCreateReportScheduleSpecification.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification**](../Model/ReportsCreateReportScheduleSpecification.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse**](../Model/Reports/CreateReportScheduleResponse.md)
+[**\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse**](../Model/Reports/CreateReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 ## `getReport()`
 
 ```php
-getReport($report_id): \Evers\SellingPartnerApi\Model\Reports\GetReportResponse
+getReport($report_id): \SellingPartnerApi\Model\Reports\GetReportResponse
 ```
 
 
@@ -215,7 +215,7 @@ Returns report details (including the reportDocumentId, if available) for the re
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
 $report_id = 'report_id_example'; // string | The identifier for the report. This identifier is unique only in combination with a seller ID.
 
 try {
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportResponse**](../Model/Reports/GetReportResponse.md)
+[**\SellingPartnerApi\Model\Reports\GetReportResponse**](../Model/Reports/GetReportResponse.md)
 
 ### HTTP request headers
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 ## `getReportDocument()`
 
 ```php
-getReportDocument($report_document_id): \Evers\SellingPartnerApi\Model\Reports\GetReportDocumentResponse
+getReportDocument($report_document_id): \SellingPartnerApi\Model\Reports\GetReportDocumentResponse
 ```
 
 
@@ -261,7 +261,7 @@ Returns the information required for retrieving a report document's contents. Th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
 $report_document_id = 'report_document_id_example'; // string | The identifier for the report document.
 
 try {
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportDocumentResponse**](../Model/Reports/GetReportDocumentResponse.md)
+[**\SellingPartnerApi\Model\Reports\GetReportDocumentResponse**](../Model/Reports/GetReportDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 ## `getReportSchedule()`
 
 ```php
-getReportSchedule($report_schedule_id): \Evers\SellingPartnerApi\Model\Reports\GetReportScheduleResponse
+getReportSchedule($report_schedule_id): \SellingPartnerApi\Model\Reports\GetReportScheduleResponse
 ```
 
 
@@ -307,7 +307,7 @@ Returns report schedule details for the report schedule that you specify.  **Usa
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
 $report_schedule_id = 'report_schedule_id_example'; // string | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
 
 try {
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportScheduleResponse**](../Model/Reports/GetReportScheduleResponse.md)
+[**\SellingPartnerApi\Model\Reports\GetReportScheduleResponse**](../Model/Reports/GetReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 ## `getReportSchedules()`
 
 ```php
-getReportSchedules($report_types): \Evers\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse
+getReportSchedules($report_types): \SellingPartnerApi\Model\Reports\GetReportSchedulesResponse
 ```
 
 
@@ -353,7 +353,7 @@ Returns report schedule details that match the filters that you specify.  **Usag
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
 $report_types = array('report_types_example'); // string[] | A list of report types used to filter report schedules.
 
 try {
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse**](../Model/Reports/GetReportSchedulesResponse.md)
+[**\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse**](../Model/Reports/GetReportSchedulesResponse.md)
 
 ### HTTP request headers
 
@@ -386,7 +386,7 @@ Name | Type | Description  | Notes
 ## `getReports()`
 
 ```php
-getReports($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token): \Evers\SellingPartnerApi\Model\Reports\GetReportsResponse
+getReports($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token): \SellingPartnerApi\Model\Reports\GetReportsResponse
 ```
 
 
@@ -399,7 +399,7 @@ Returns report details for the reports that match the filters that you specify. 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\ReportsApi();
+$apiInstance = new SellingPartnerApi\Api\ReportsApi();
 $report_types = array('report_types_example'); // string[] | A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
 $processing_statuses = array('processing_statuses_example'); // string[] | A list of processing statuses used to filter reports.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportsResponse**](../Model/Reports/GetReportsResponse.md)
+[**\SellingPartnerApi\Model\Reports\GetReportsResponse**](../Model/Reports/GetReportsResponse.md)
 
 ### HTTP request headers
 

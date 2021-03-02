@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ReturnItem Class Doc Comment
  *
  * @category Class
  * @description An item that Amazon accepted for return.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -65,10 +65,10 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_return_reason_code' => 'string',
         'return_comment' => 'string',
         'amazon_return_reason_code' => 'string',
-        'status' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentReturnItemStatus',
+        'status' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentReturnItemStatus',
         'status_changed_date' => '\DateTime',
         'return_authorization_id' => 'string',
-        'return_received_condition' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItemDisposition',
+        'return_received_condition' => '\SellingPartnerApi\Model\FbaOutbound\ReturnItemDisposition',
         'fulfillment_center_id' => 'string'
     ];
 
@@ -433,7 +433,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentReturnItemStatus
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentReturnItemStatus
      */
     public function getStatus()
     {
@@ -443,7 +443,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentReturnItemStatus $status status
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentReturnItemStatus $status status
      *
      * @return self
      */
@@ -505,7 +505,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets return_received_condition
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItemDisposition|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\ReturnItemDisposition|null
      */
     public function getReturnReceivedCondition()
     {
@@ -515,7 +515,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets return_received_condition
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItemDisposition|null $return_received_condition return_received_condition
+     * @param \SellingPartnerApi\Model\FbaOutbound\ReturnItemDisposition|null $return_received_condition return_received_condition
      *
      * @return self
      */

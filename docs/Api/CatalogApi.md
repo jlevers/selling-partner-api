@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\CatalogApi
+# SellingPartnerApi\CatalogApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 ## `getCatalogItem()`
 
 ```php
-getCatalogItem($marketplace_id, $asin): \Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse
+getCatalogItem($marketplace_id, $asin): \SellingPartnerApi\Model\Catalog\GetCatalogItemResponse
 ```
 
 
@@ -25,7 +25,7 @@ Returns a specified item and its attributes.  **Usage Plan:**  | Rate (requests 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\CatalogApi();
+$apiInstance = new SellingPartnerApi\Api\CatalogApi();
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace for the item.
 $asin = 'asin_example'; // string | The Amazon Standard Identification Number (ASIN) of the item.
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse**](../Model/Catalog/GetCatalogItemResponse.md)
+[**\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse**](../Model/Catalog/GetCatalogItemResponse.md)
 
 ### HTTP request headers
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 ## `listCatalogCategories()`
 
 ```php
-listCatalogCategories($marketplace_id, $asin, $seller_sku): \Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse
+listCatalogCategories($marketplace_id, $asin, $seller_sku): \SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse
 ```
 
 
@@ -73,7 +73,7 @@ Returns the parent categories to which an item belongs, based on the specified A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\CatalogApi();
+$apiInstance = new SellingPartnerApi\Api\CatalogApi();
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace for the item.
 $asin = 'asin_example'; // string | The Amazon Standard Identification Number (ASIN) of the item.
 $seller_sku = 'seller_sku_example'; // string | Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse**](../Model/Catalog/ListCatalogCategoriesResponse.md)
+[**\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse**](../Model/Catalog/ListCatalogCategoriesResponse.md)
 
 ### HTTP request headers
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 ## `listCatalogItems()`
 
 ```php
-listCatalogItems($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan): \Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse
+listCatalogItems($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan): \SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse
 ```
 
 
@@ -123,7 +123,7 @@ Returns a list of items and their attributes, based on a search query or item id
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\CatalogApi();
+$apiInstance = new SellingPartnerApi\Api\CatalogApi();
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace for which items are returned.
 $query = 'query_example'; // string | Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'.
 $query_context_id = 'query_context_id_example'; // string | An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items.
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse**](../Model/Catalog/ListCatalogItemsResponse.md)
+[**\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse**](../Model/Catalog/ListCatalogItemsResponse.md)
 
 ### HTTP request headers
 

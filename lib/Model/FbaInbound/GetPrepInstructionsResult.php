@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetPrepInstructionsResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,10 +58,10 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sku_prep_instructions_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\SKUPrepInstructions[]',
-        'invalid_sku_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\InvalidSKU[]',
-        'asin_prep_instructions_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\ASINPrepInstructions[]',
-        'invalid_asin_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\InvalidASIN[]'
+        'sku_prep_instructions_list' => '\SellingPartnerApi\Model\FbaInbound\SKUPrepInstructions[]',
+        'invalid_sku_list' => '\SellingPartnerApi\Model\FbaInbound\InvalidSKU[]',
+        'asin_prep_instructions_list' => '\SellingPartnerApi\Model\FbaInbound\ASINPrepInstructions[]',
+        'invalid_asin_list' => '\SellingPartnerApi\Model\FbaInbound\InvalidASIN[]'
     ];
 
     /**
@@ -228,7 +228,7 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets sku_prep_instructions_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\SKUPrepInstructions[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\SKUPrepInstructions[]|null
      */
     public function getSkuPrepInstructionsList()
     {
@@ -238,7 +238,7 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets sku_prep_instructions_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\SKUPrepInstructions[]|null $sku_prep_instructions_list A list of SKU labeling requirements and item preparation instructions.
+     * @param \SellingPartnerApi\Model\FbaInbound\SKUPrepInstructions[]|null $sku_prep_instructions_list A list of SKU labeling requirements and item preparation instructions.
      *
      * @return self
      */
@@ -252,7 +252,7 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets invalid_sku_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InvalidSKU[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\InvalidSKU[]|null
      */
     public function getInvalidSkuList()
     {
@@ -262,7 +262,7 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets invalid_sku_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\InvalidSKU[]|null $invalid_sku_list A list of invalid SKU values and the reason they are invalid.
+     * @param \SellingPartnerApi\Model\FbaInbound\InvalidSKU[]|null $invalid_sku_list A list of invalid SKU values and the reason they are invalid.
      *
      * @return self
      */
@@ -276,7 +276,7 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets asin_prep_instructions_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\ASINPrepInstructions[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\ASINPrepInstructions[]|null
      */
     public function getAsinPrepInstructionsList()
     {
@@ -286,7 +286,7 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets asin_prep_instructions_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\ASINPrepInstructions[]|null $asin_prep_instructions_list A list of item preparation instructions.
+     * @param \SellingPartnerApi\Model\FbaInbound\ASINPrepInstructions[]|null $asin_prep_instructions_list A list of item preparation instructions.
      *
      * @return self
      */
@@ -300,7 +300,7 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets invalid_asin_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InvalidASIN[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\InvalidASIN[]|null
      */
     public function getInvalidAsinList()
     {
@@ -310,7 +310,7 @@ class GetPrepInstructionsResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets invalid_asin_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\InvalidASIN[]|null $invalid_asin_list A list of invalid ASIN values and the reasons they are invalid.
+     * @param \SellingPartnerApi\Model\FbaInbound\InvalidASIN[]|null $invalid_asin_list A list of invalid ASIN values and the reasons they are invalid.
      *
      * @return self
      */

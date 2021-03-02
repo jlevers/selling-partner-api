@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SearchContentDocumentsResponseAllOf Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class SearchContentDocumentsResponseAllOf implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content_metadata_records' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[]'
+        'content_metadata_records' => '\SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class SearchContentDocumentsResponseAllOf implements ModelInterface, ArrayAccess
     /**
      * Gets content_metadata_records
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[]
+     * @return \SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[]
      */
     public function getContentMetadataRecords()
     {
@@ -223,7 +223,7 @@ class SearchContentDocumentsResponseAllOf implements ModelInterface, ArrayAccess
     /**
      * Sets content_metadata_records
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[] $content_metadata_records A list of A+ Content metadata records.
+     * @param \SellingPartnerApi\Model\AplusContent\ContentMetadataRecord[] $content_metadata_records A list of A+ Content metadata records.
      *
      * @return self
      */

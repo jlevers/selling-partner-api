@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateShipmentResult Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the createShipment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'shipment_id' => 'string',
-        'eligible_rates' => '\Evers\SellingPartnerApi\Model\Shipping\Rate[]'
+        'eligible_rates' => '\SellingPartnerApi\Model\Shipping\Rate[]'
     ];
 
     /**
@@ -247,7 +247,7 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets eligible_rates
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Rate[]
+     * @return \SellingPartnerApi\Model\Shipping\Rate[]
      */
     public function getEligibleRates()
     {
@@ -257,7 +257,7 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets eligible_rates
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Rate[] $eligible_rates A list of all the available rates that can be used to send the shipment.
+     * @param \SellingPartnerApi\Model\Shipping\Rate[] $eligible_rates A list of all the available rates that can be used to send the shipment.
      *
      * @return self
      */

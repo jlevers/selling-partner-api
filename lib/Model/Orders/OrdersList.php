@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrdersList Class Doc Comment
  *
  * @category Class
  * @description A list of orders along with additional information to make subsequent API calls.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class OrdersList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'orders' => '\Evers\SellingPartnerApi\Model\Orders\Order[]',
+        'orders' => '\SellingPartnerApi\Model\Orders\Order[]',
         'next_token' => 'string',
         'last_updated_before' => 'string',
         'created_before' => 'string'
@@ -232,7 +232,7 @@ class OrdersList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets orders
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Order[]
+     * @return \SellingPartnerApi\Model\Orders\Order[]
      */
     public function getOrders()
     {
@@ -242,7 +242,7 @@ class OrdersList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orders
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Order[] $orders A list of orders.
+     * @param \SellingPartnerApi\Model\Orders\Order[] $orders A list of orders.
      *
      * @return self
      */

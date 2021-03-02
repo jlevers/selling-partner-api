@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FulfillmentPreviewShipment Class Doc Comment
  *
  * @category Class
  * @description Delivery and item information for a shipment in a fulfillment order preview.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -64,7 +64,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
         'earliest_arrival_date' => '\DateTime',
         'latest_arrival_date' => '\DateTime',
         'shipping_notes' => 'string[]',
-        'fulfillment_preview_items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewItem[]'
+        'fulfillment_preview_items' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewItem[]'
     ];
 
     /**
@@ -364,7 +364,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets fulfillment_preview_items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewItem[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewItem[]
      */
     public function getFulfillmentPreviewItems()
     {
@@ -374,7 +374,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets fulfillment_preview_items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewItem[] $fulfillment_preview_items An array of fulfillment preview item information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewItem[] $fulfillment_preview_items An array of fulfillment preview item information.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * BuyBoxPriceType Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'condition' => 'string',
-        'landed_price' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType',
-        'listing_price' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType',
-        'shipping' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType',
-        'points' => '\Evers\SellingPartnerApi\Model\ProductPricing\Points'
+        'landed_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'listing_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'shipping' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'points' => '\SellingPartnerApi\Model\ProductPricing\Points'
     ];
 
     /**
@@ -270,7 +270,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets landed_price
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType
      */
     public function getLandedPrice()
     {
@@ -280,7 +280,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets landed_price
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType $landed_price landed_price
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType $landed_price landed_price
      *
      * @return self
      */
@@ -294,7 +294,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets listing_price
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType
      */
     public function getListingPrice()
     {
@@ -304,7 +304,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets listing_price
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType $listing_price listing_price
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType $listing_price listing_price
      *
      * @return self
      */
@@ -318,7 +318,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType
      */
     public function getShipping()
     {
@@ -328,7 +328,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType $shipping shipping
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType $shipping shipping
      *
      * @return self
      */
@@ -342,7 +342,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets points
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\Points|null
+     * @return \SellingPartnerApi\Model\ProductPricing\Points|null
      */
     public function getPoints()
     {
@@ -352,7 +352,7 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets points
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\Points|null $points points
+     * @param \SellingPartnerApi\Model\ProductPricing\Points|null $points points
      *
      * @return self
      */

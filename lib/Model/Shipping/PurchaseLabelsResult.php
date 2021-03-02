@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PurchaseLabelsResult Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the purchaseLabels operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,8 +61,8 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'shipment_id' => 'string',
         'client_reference_id' => 'string',
-        'accepted_rate' => '\Evers\SellingPartnerApi\Model\Shipping\AcceptedRate',
-        'label_results' => '\Evers\SellingPartnerApi\Model\Shipping\LabelResult[]'
+        'accepted_rate' => '\SellingPartnerApi\Model\Shipping\AcceptedRate',
+        'label_results' => '\SellingPartnerApi\Model\Shipping\LabelResult[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets accepted_rate
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\AcceptedRate
+     * @return \SellingPartnerApi\Model\Shipping\AcceptedRate
      */
     public function getAcceptedRate()
     {
@@ -304,7 +304,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets accepted_rate
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\AcceptedRate $accepted_rate accepted_rate
+     * @param \SellingPartnerApi\Model\Shipping\AcceptedRate $accepted_rate accepted_rate
      *
      * @return self
      */
@@ -318,7 +318,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets label_results
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\LabelResult[]
+     * @return \SellingPartnerApi\Model\Shipping\LabelResult[]
      */
     public function getLabelResults()
     {
@@ -328,7 +328,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets label_results
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\LabelResult[] $label_results A list of label results
+     * @param \SellingPartnerApi\Model\Shipping\LabelResult[] $label_results A list of label results
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FulfillmentShipment Class Doc Comment
  *
  * @category Class
  * @description Delivery and item information for a shipment in a fulfillment order.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -65,8 +65,8 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
         'shipping_date' => '\DateTime',
         'estimated_arrival_date' => '\DateTime',
         'shipping_notes' => 'string[]',
-        'fulfillment_shipment_item' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[]',
-        'fulfillment_shipment_package' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]'
+        'fulfillment_shipment_item' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[]',
+        'fulfillment_shipment_package' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]'
     ];
 
     /**
@@ -447,7 +447,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets fulfillment_shipment_item
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[]
      */
     public function getFulfillmentShipmentItem()
     {
@@ -457,7 +457,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets fulfillment_shipment_item
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[] $fulfillment_shipment_item An array of fulfillment shipment item information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[] $fulfillment_shipment_item An array of fulfillment shipment item information.
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets fulfillment_shipment_package
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]|null
      */
     public function getFulfillmentShipmentPackage()
     {
@@ -481,7 +481,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets fulfillment_shipment_package
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]|null $fulfillment_shipment_package An array of fulfillment shipment package information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]|null $fulfillment_shipment_package An array of fulfillment shipment package information.
      *
      * @return self
      */

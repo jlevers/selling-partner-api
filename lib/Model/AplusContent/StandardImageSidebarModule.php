@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardImageSidebarModule Class Doc Comment
  *
  * @category Class
  * @description Two images, two paragraphs, and two bulleted lists. One image is smaller and displayed in the sidebar.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,12 +59,12 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'image_caption_block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageCaptionBlock',
-        'description_text_block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock',
-        'description_list_block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock',
-        'sidebar_image_text_block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'sidebar_list_block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock'
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'image_caption_block' => '\SellingPartnerApi\Model\AplusContent\StandardImageCaptionBlock',
+        'description_text_block' => '\SellingPartnerApi\Model\AplusContent\StandardTextBlock',
+        'description_list_block' => '\SellingPartnerApi\Model\AplusContent\StandardTextListBlock',
+        'sidebar_image_text_block' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'sidebar_list_block' => '\SellingPartnerApi\Model\AplusContent\StandardTextListBlock'
     ];
 
     /**
@@ -241,7 +241,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -251,7 +251,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -265,7 +265,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets image_caption_block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageCaptionBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageCaptionBlock|null
      */
     public function getImageCaptionBlock()
     {
@@ -275,7 +275,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets image_caption_block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageCaptionBlock|null $image_caption_block image_caption_block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageCaptionBlock|null $image_caption_block image_caption_block
      *
      * @return self
      */
@@ -289,7 +289,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets description_text_block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextBlock|null
      */
     public function getDescriptionTextBlock()
     {
@@ -299,7 +299,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets description_text_block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock|null $description_text_block description_text_block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextBlock|null $description_text_block description_text_block
      *
      * @return self
      */
@@ -313,7 +313,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets description_list_block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null
      */
     public function getDescriptionListBlock()
     {
@@ -323,7 +323,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets description_list_block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null $description_list_block description_list_block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null $description_list_block description_list_block
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets sidebar_image_text_block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getSidebarImageTextBlock()
     {
@@ -347,7 +347,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets sidebar_image_text_block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $sidebar_image_text_block sidebar_image_text_block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $sidebar_image_text_block sidebar_image_text_block
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets sidebar_list_block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null
      */
     public function getSidebarListBlock()
     {
@@ -371,7 +371,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets sidebar_list_block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null $sidebar_list_block sidebar_list_block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null $sidebar_list_block sidebar_list_block
      *
      * @return self
      */

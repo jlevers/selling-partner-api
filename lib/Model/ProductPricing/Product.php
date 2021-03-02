@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Product Class Doc Comment
  *
  * @category Class
  * @description An item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,12 +59,12 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'identifiers' => '\Evers\SellingPartnerApi\Model\ProductPricing\IdentifierType',
+        'identifiers' => '\SellingPartnerApi\Model\ProductPricing\IdentifierType',
         'attribute_sets' => 'object[]',
         'relationships' => 'object[]',
-        'competitive_pricing' => '\Evers\SellingPartnerApi\Model\ProductPricing\CompetitivePricingType',
-        'sales_rankings' => '\Evers\SellingPartnerApi\Model\ProductPricing\SalesRank[]',
-        'offers' => '\Evers\SellingPartnerApi\Model\ProductPricing\OfferType[]'
+        'competitive_pricing' => '\SellingPartnerApi\Model\ProductPricing\CompetitivePricingType',
+        'sales_rankings' => '\SellingPartnerApi\Model\ProductPricing\SalesRank[]',
+        'offers' => '\SellingPartnerApi\Model\ProductPricing\OfferType[]'
     ];
 
     /**
@@ -244,7 +244,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identifiers
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\IdentifierType
+     * @return \SellingPartnerApi\Model\ProductPricing\IdentifierType
      */
     public function getIdentifiers()
     {
@@ -254,7 +254,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identifiers
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\IdentifierType $identifiers identifiers
+     * @param \SellingPartnerApi\Model\ProductPricing\IdentifierType $identifiers identifiers
      *
      * @return self
      */
@@ -316,7 +316,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets competitive_pricing
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\CompetitivePricingType|null
+     * @return \SellingPartnerApi\Model\ProductPricing\CompetitivePricingType|null
      */
     public function getCompetitivePricing()
     {
@@ -326,7 +326,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets competitive_pricing
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\CompetitivePricingType|null $competitive_pricing competitive_pricing
+     * @param \SellingPartnerApi\Model\ProductPricing\CompetitivePricingType|null $competitive_pricing competitive_pricing
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sales_rankings
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\SalesRank[]|null
+     * @return \SellingPartnerApi\Model\ProductPricing\SalesRank[]|null
      */
     public function getSalesRankings()
     {
@@ -350,7 +350,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sales_rankings
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\SalesRank[]|null $sales_rankings A list of sales rank information for the item, by category.
+     * @param \SellingPartnerApi\Model\ProductPricing\SalesRank[]|null $sales_rankings A list of sales rank information for the item, by category.
      *
      * @return self
      */
@@ -364,7 +364,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offers
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\OfferType[]|null
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferType[]|null
      */
     public function getOffers()
     {
@@ -374,7 +374,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets offers
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\OfferType[]|null $offers A list of offers.
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferType[]|null $offers A list of offers.
      *
      * @return self
      */

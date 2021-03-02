@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetEligibleShipmentServicesResponse Class Doc Comment
  *
  * @category Class
  * @description Response schema.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetEligibleShipmentServicesResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResult',
-        'errors' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Error[]'
+        'payload' => '\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResult',
+        'errors' => '\SellingPartnerApi\Model\MerchantFulfillment\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetEligibleShipmentServicesResponse implements ModelInterface, ArrayAccess
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResult|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResult|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetEligibleShipmentServicesResponse implements ModelInterface, ArrayAccess
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResult|null $payload payload
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResult|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetEligibleShipmentServicesResponse implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Error[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetEligibleShipmentServicesResponse implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

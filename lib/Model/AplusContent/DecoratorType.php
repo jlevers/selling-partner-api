@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,16 +25,16 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+namespace SellingPartnerApi\Model\AplusContent;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * DecoratorType Class Doc Comment
  *
  * @category Class
  * @description The type of rich text decorator.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  */
 class DecoratorType

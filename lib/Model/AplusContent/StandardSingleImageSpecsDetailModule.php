@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardSingleImageSpecsDetailModule Class Doc Comment
  *
  * @category Class
  * @description A standard image with paragraphs and a bulleted list, and extra space for technical details.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,14 +59,14 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'image' => '\Evers\SellingPartnerApi\Model\AplusContent\ImageComponent',
-        'description_headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'description_block1' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock',
-        'description_block2' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock',
-        'specification_headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'specification_list_block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardHeaderTextListBlock',
-        'specification_text_block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock'
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'image' => '\SellingPartnerApi\Model\AplusContent\ImageComponent',
+        'description_headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'description_block1' => '\SellingPartnerApi\Model\AplusContent\StandardTextBlock',
+        'description_block2' => '\SellingPartnerApi\Model\AplusContent\StandardTextBlock',
+        'specification_headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'specification_list_block' => '\SellingPartnerApi\Model\AplusContent\StandardHeaderTextListBlock',
+        'specification_text_block' => '\SellingPartnerApi\Model\AplusContent\StandardTextBlock'
     ];
 
     /**
@@ -253,7 +253,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -263,7 +263,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Gets image
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\ImageComponent|null
      */
     public function getImage()
     {
@@ -287,7 +287,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Sets image
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent|null $image image
+     * @param \SellingPartnerApi\Model\AplusContent\ImageComponent|null $image image
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Gets description_headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getDescriptionHeadline()
     {
@@ -311,7 +311,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Sets description_headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $description_headline description_headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $description_headline description_headline
      *
      * @return self
      */
@@ -325,7 +325,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Gets description_block1
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextBlock|null
      */
     public function getDescriptionBlock1()
     {
@@ -335,7 +335,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Sets description_block1
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock|null $description_block1 description_block1
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextBlock|null $description_block1 description_block1
      *
      * @return self
      */
@@ -349,7 +349,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Gets description_block2
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextBlock|null
      */
     public function getDescriptionBlock2()
     {
@@ -359,7 +359,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Sets description_block2
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock|null $description_block2 description_block2
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextBlock|null $description_block2 description_block2
      *
      * @return self
      */
@@ -373,7 +373,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Gets specification_headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getSpecificationHeadline()
     {
@@ -383,7 +383,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Sets specification_headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $specification_headline specification_headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $specification_headline specification_headline
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Gets specification_list_block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardHeaderTextListBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardHeaderTextListBlock|null
      */
     public function getSpecificationListBlock()
     {
@@ -407,7 +407,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Sets specification_list_block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardHeaderTextListBlock|null $specification_list_block specification_list_block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardHeaderTextListBlock|null $specification_list_block specification_list_block
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Gets specification_text_block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextBlock|null
      */
     public function getSpecificationTextBlock()
     {
@@ -431,7 +431,7 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     /**
      * Sets specification_text_block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock|null $specification_text_block specification_text_block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextBlock|null $specification_text_block specification_text_block
      *
      * @return self
      */

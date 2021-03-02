@@ -21,10 +21,10 @@ Name | Type | Description | Notes
 **scent** | **string** | The scent variation of an item. | [optional]
 **size** | **string** | The size variation of an item. | [optional]
 **size_per_pearl** | **string** | The size per pearl variation of an item. | [optional]
-**golf_club_loft** | [**\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
-**total_diamond_weight** | [**\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
-**total_gem_weight** | [**\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
+**golf_club_loft** | [**\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
+**total_diamond_weight** | [**\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
+**total_gem_weight** | [**\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
 **package_quantity** | **int** | The package quantity variation of an item. | [optional]
-**item_dimensions** | [**\Evers\SellingPartnerApi\Model\Catalog\DimensionType**](DimensionType.md) |  | [optional]
+**item_dimensions** | [**\SellingPartnerApi\Model\Catalog\DimensionType**](DimensionType.md) |  | [optional]
 
 [[Catalog Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

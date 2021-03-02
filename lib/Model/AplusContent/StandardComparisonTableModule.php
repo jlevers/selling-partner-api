@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardComparisonTableModule Class Doc Comment
  *
  * @category Class
  * @description The standard product comparison table.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'product_columns' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardComparisonProductBlock[]',
-        'metric_row_labels' => '\Evers\SellingPartnerApi\Model\AplusContent\PlainTextItem[]'
+        'product_columns' => '\SellingPartnerApi\Model\AplusContent\StandardComparisonProductBlock[]',
+        'metric_row_labels' => '\SellingPartnerApi\Model\AplusContent\PlainTextItem[]'
     ];
 
     /**
@@ -233,7 +233,7 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets product_columns
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardComparisonProductBlock[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardComparisonProductBlock[]|null
      */
     public function getProductColumns()
     {
@@ -243,7 +243,7 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets product_columns
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardComparisonProductBlock[]|null $product_columns product_columns
+     * @param \SellingPartnerApi\Model\AplusContent\StandardComparisonProductBlock[]|null $product_columns product_columns
      *
      * @return self
      */
@@ -264,7 +264,7 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets metric_row_labels
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\PlainTextItem[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\PlainTextItem[]|null
      */
     public function getMetricRowLabels()
     {
@@ -274,7 +274,7 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets metric_row_labels
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\PlainTextItem[]|null $metric_row_labels metric_row_labels
+     * @param \SellingPartnerApi\Model\AplusContent\PlainTextItem[]|null $metric_row_labels metric_row_labels
      *
      * @return self
      */

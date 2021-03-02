@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PrepDetails Class Doc Comment
  *
  * @category Class
  * @description Preparation instructions and who is responsible for the preparation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class PrepDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'prep_instruction' => '\Evers\SellingPartnerApi\Model\FbaInbound\PrepInstruction',
-        'prep_owner' => '\Evers\SellingPartnerApi\Model\FbaInbound\PrepOwner'
+        'prep_instruction' => '\SellingPartnerApi\Model\FbaInbound\PrepInstruction',
+        'prep_owner' => '\SellingPartnerApi\Model\FbaInbound\PrepOwner'
     ];
 
     /**
@@ -223,7 +223,7 @@ class PrepDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets prep_instruction
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PrepInstruction
+     * @return \SellingPartnerApi\Model\FbaInbound\PrepInstruction
      */
     public function getPrepInstruction()
     {
@@ -233,7 +233,7 @@ class PrepDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets prep_instruction
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PrepInstruction $prep_instruction prep_instruction
+     * @param \SellingPartnerApi\Model\FbaInbound\PrepInstruction $prep_instruction prep_instruction
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class PrepDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets prep_owner
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PrepOwner
+     * @return \SellingPartnerApi\Model\FbaInbound\PrepOwner
      */
     public function getPrepOwner()
     {
@@ -257,7 +257,7 @@ class PrepDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets prep_owner
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PrepOwner $prep_owner prep_owner
+     * @param \SellingPartnerApi\Model\FbaInbound\PrepOwner $prep_owner prep_owner
      *
      * @return self
      */

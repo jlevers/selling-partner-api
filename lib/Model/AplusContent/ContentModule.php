@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ContentModule Class Doc Comment
  *
  * @category Class
  * @description An A+ Content module. An A+ Content document is composed of content modules. The contentModuleType property selects which content module types to use.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,22 +59,22 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content_module_type' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentModuleType',
-        'standard_company_logo' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardCompanyLogoModule',
-        'standard_comparison_table' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardComparisonTableModule',
-        'standard_four_image_text' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardFourImageTextModule',
-        'standard_four_image_text_quadrant' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardFourImageTextQuadrantModule',
-        'standard_header_image_text' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardHeaderImageTextModule',
-        'standard_image_sidebar' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageSidebarModule',
-        'standard_image_text_overlay' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextOverlayModule',
-        'standard_multiple_image_text' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardMultipleImageTextModule',
-        'standard_product_description' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardProductDescriptionModule',
-        'standard_single_image_highlights' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardSingleImageHighlightsModule',
-        'standard_single_image_specs_detail' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardSingleImageSpecsDetailModule',
-        'standard_single_side_image' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardSingleSideImageModule',
-        'standard_tech_specs' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTechSpecsModule',
-        'standard_text' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextModule',
-        'standard_three_image_text' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardThreeImageTextModule'
+        'content_module_type' => '\SellingPartnerApi\Model\AplusContent\ContentModuleType',
+        'standard_company_logo' => '\SellingPartnerApi\Model\AplusContent\StandardCompanyLogoModule',
+        'standard_comparison_table' => '\SellingPartnerApi\Model\AplusContent\StandardComparisonTableModule',
+        'standard_four_image_text' => '\SellingPartnerApi\Model\AplusContent\StandardFourImageTextModule',
+        'standard_four_image_text_quadrant' => '\SellingPartnerApi\Model\AplusContent\StandardFourImageTextQuadrantModule',
+        'standard_header_image_text' => '\SellingPartnerApi\Model\AplusContent\StandardHeaderImageTextModule',
+        'standard_image_sidebar' => '\SellingPartnerApi\Model\AplusContent\StandardImageSidebarModule',
+        'standard_image_text_overlay' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextOverlayModule',
+        'standard_multiple_image_text' => '\SellingPartnerApi\Model\AplusContent\StandardMultipleImageTextModule',
+        'standard_product_description' => '\SellingPartnerApi\Model\AplusContent\StandardProductDescriptionModule',
+        'standard_single_image_highlights' => '\SellingPartnerApi\Model\AplusContent\StandardSingleImageHighlightsModule',
+        'standard_single_image_specs_detail' => '\SellingPartnerApi\Model\AplusContent\StandardSingleImageSpecsDetailModule',
+        'standard_single_side_image' => '\SellingPartnerApi\Model\AplusContent\StandardSingleSideImageModule',
+        'standard_tech_specs' => '\SellingPartnerApi\Model\AplusContent\StandardTechSpecsModule',
+        'standard_text' => '\SellingPartnerApi\Model\AplusContent\StandardTextModule',
+        'standard_three_image_text' => '\SellingPartnerApi\Model\AplusContent\StandardThreeImageTextModule'
     ];
 
     /**
@@ -304,7 +304,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content_module_type
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentModuleType
+     * @return \SellingPartnerApi\Model\AplusContent\ContentModuleType
      */
     public function getContentModuleType()
     {
@@ -314,7 +314,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content_module_type
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentModuleType $content_module_type content_module_type
+     * @param \SellingPartnerApi\Model\AplusContent\ContentModuleType $content_module_type content_module_type
      *
      * @return self
      */
@@ -328,7 +328,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_company_logo
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardCompanyLogoModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardCompanyLogoModule|null
      */
     public function getStandardCompanyLogo()
     {
@@ -338,7 +338,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_company_logo
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardCompanyLogoModule|null $standard_company_logo standard_company_logo
+     * @param \SellingPartnerApi\Model\AplusContent\StandardCompanyLogoModule|null $standard_company_logo standard_company_logo
      *
      * @return self
      */
@@ -352,7 +352,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_comparison_table
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardComparisonTableModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardComparisonTableModule|null
      */
     public function getStandardComparisonTable()
     {
@@ -362,7 +362,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_comparison_table
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardComparisonTableModule|null $standard_comparison_table standard_comparison_table
+     * @param \SellingPartnerApi\Model\AplusContent\StandardComparisonTableModule|null $standard_comparison_table standard_comparison_table
      *
      * @return self
      */
@@ -376,7 +376,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_four_image_text
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardFourImageTextModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardFourImageTextModule|null
      */
     public function getStandardFourImageText()
     {
@@ -386,7 +386,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_four_image_text
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardFourImageTextModule|null $standard_four_image_text standard_four_image_text
+     * @param \SellingPartnerApi\Model\AplusContent\StandardFourImageTextModule|null $standard_four_image_text standard_four_image_text
      *
      * @return self
      */
@@ -400,7 +400,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_four_image_text_quadrant
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardFourImageTextQuadrantModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardFourImageTextQuadrantModule|null
      */
     public function getStandardFourImageTextQuadrant()
     {
@@ -410,7 +410,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_four_image_text_quadrant
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardFourImageTextQuadrantModule|null $standard_four_image_text_quadrant standard_four_image_text_quadrant
+     * @param \SellingPartnerApi\Model\AplusContent\StandardFourImageTextQuadrantModule|null $standard_four_image_text_quadrant standard_four_image_text_quadrant
      *
      * @return self
      */
@@ -424,7 +424,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_header_image_text
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardHeaderImageTextModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardHeaderImageTextModule|null
      */
     public function getStandardHeaderImageText()
     {
@@ -434,7 +434,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_header_image_text
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardHeaderImageTextModule|null $standard_header_image_text standard_header_image_text
+     * @param \SellingPartnerApi\Model\AplusContent\StandardHeaderImageTextModule|null $standard_header_image_text standard_header_image_text
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_image_sidebar
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageSidebarModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageSidebarModule|null
      */
     public function getStandardImageSidebar()
     {
@@ -458,7 +458,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_image_sidebar
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageSidebarModule|null $standard_image_sidebar standard_image_sidebar
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageSidebarModule|null $standard_image_sidebar standard_image_sidebar
      *
      * @return self
      */
@@ -472,7 +472,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_image_text_overlay
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextOverlayModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextOverlayModule|null
      */
     public function getStandardImageTextOverlay()
     {
@@ -482,7 +482,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_image_text_overlay
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextOverlayModule|null $standard_image_text_overlay standard_image_text_overlay
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextOverlayModule|null $standard_image_text_overlay standard_image_text_overlay
      *
      * @return self
      */
@@ -496,7 +496,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_multiple_image_text
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardMultipleImageTextModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardMultipleImageTextModule|null
      */
     public function getStandardMultipleImageText()
     {
@@ -506,7 +506,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_multiple_image_text
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardMultipleImageTextModule|null $standard_multiple_image_text standard_multiple_image_text
+     * @param \SellingPartnerApi\Model\AplusContent\StandardMultipleImageTextModule|null $standard_multiple_image_text standard_multiple_image_text
      *
      * @return self
      */
@@ -520,7 +520,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_product_description
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardProductDescriptionModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardProductDescriptionModule|null
      */
     public function getStandardProductDescription()
     {
@@ -530,7 +530,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_product_description
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardProductDescriptionModule|null $standard_product_description standard_product_description
+     * @param \SellingPartnerApi\Model\AplusContent\StandardProductDescriptionModule|null $standard_product_description standard_product_description
      *
      * @return self
      */
@@ -544,7 +544,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_single_image_highlights
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardSingleImageHighlightsModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardSingleImageHighlightsModule|null
      */
     public function getStandardSingleImageHighlights()
     {
@@ -554,7 +554,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_single_image_highlights
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardSingleImageHighlightsModule|null $standard_single_image_highlights standard_single_image_highlights
+     * @param \SellingPartnerApi\Model\AplusContent\StandardSingleImageHighlightsModule|null $standard_single_image_highlights standard_single_image_highlights
      *
      * @return self
      */
@@ -568,7 +568,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_single_image_specs_detail
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardSingleImageSpecsDetailModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardSingleImageSpecsDetailModule|null
      */
     public function getStandardSingleImageSpecsDetail()
     {
@@ -578,7 +578,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_single_image_specs_detail
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardSingleImageSpecsDetailModule|null $standard_single_image_specs_detail standard_single_image_specs_detail
+     * @param \SellingPartnerApi\Model\AplusContent\StandardSingleImageSpecsDetailModule|null $standard_single_image_specs_detail standard_single_image_specs_detail
      *
      * @return self
      */
@@ -592,7 +592,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_single_side_image
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardSingleSideImageModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardSingleSideImageModule|null
      */
     public function getStandardSingleSideImage()
     {
@@ -602,7 +602,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_single_side_image
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardSingleSideImageModule|null $standard_single_side_image standard_single_side_image
+     * @param \SellingPartnerApi\Model\AplusContent\StandardSingleSideImageModule|null $standard_single_side_image standard_single_side_image
      *
      * @return self
      */
@@ -616,7 +616,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_tech_specs
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTechSpecsModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTechSpecsModule|null
      */
     public function getStandardTechSpecs()
     {
@@ -626,7 +626,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_tech_specs
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTechSpecsModule|null $standard_tech_specs standard_tech_specs
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTechSpecsModule|null $standard_tech_specs standard_tech_specs
      *
      * @return self
      */
@@ -640,7 +640,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_text
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextModule|null
      */
     public function getStandardText()
     {
@@ -650,7 +650,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_text
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextModule|null $standard_text standard_text
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextModule|null $standard_text standard_text
      *
      * @return self
      */
@@ -664,7 +664,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_three_image_text
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardThreeImageTextModule|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardThreeImageTextModule|null
      */
     public function getStandardThreeImageText()
     {
@@ -674,7 +674,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_three_image_text
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardThreeImageTextModule|null $standard_three_image_text standard_three_image_text
+     * @param \SellingPartnerApi\Model\AplusContent\StandardThreeImageTextModule|null $standard_three_image_text standard_three_image_text
      *
      * @return self
      */

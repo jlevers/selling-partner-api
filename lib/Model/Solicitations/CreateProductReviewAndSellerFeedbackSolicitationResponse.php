@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Solicitations;
+namespace SellingPartnerApi\Model\Solicitations;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateProductReviewAndSellerFeedbackSolicitationResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the createProductReviewAndSellerFeedbackSolicitation operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CreateProductReviewAndSellerFeedbackSolicitationResponse implements ModelI
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Evers\SellingPartnerApi\Model\Solicitations\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Solicitations\Error[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CreateProductReviewAndSellerFeedbackSolicitationResponse implements ModelI
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\Error[]|null
+     * @return \SellingPartnerApi\Model\Solicitations\Error[]|null
      */
     public function getErrors()
     {
@@ -221,7 +221,7 @@ class CreateProductReviewAndSellerFeedbackSolicitationResponse implements ModelI
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Solicitations\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

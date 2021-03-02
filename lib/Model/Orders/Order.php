@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Order Class Doc Comment
  *
  * @category Class
  * @description Order information.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -68,10 +68,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'sales_channel' => 'string',
         'order_channel' => 'string',
         'ship_service_level' => 'string',
-        'order_total' => '\Evers\SellingPartnerApi\Model\Orders\Money',
+        'order_total' => '\SellingPartnerApi\Model\Orders\Money',
         'number_of_items_shipped' => 'int',
         'number_of_items_unshipped' => 'int',
-        'payment_execution_detail' => '\Evers\SellingPartnerApi\Model\Orders\PaymentExecutionDetailItem[]',
+        'payment_execution_detail' => '\SellingPartnerApi\Model\Orders\PaymentExecutionDetailItem[]',
         'payment_method' => 'string',
         'payment_method_details' => 'string[]',
         'marketplace_id' => 'string',
@@ -92,8 +92,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'string',
         'is_estimated_ship_date_set' => 'bool',
         'is_sold_by_ab' => 'bool',
-        'assigned_ship_from_location_address' => '\Evers\SellingPartnerApi\Model\Orders\Address',
-        'fulfillment_instruction' => '\Evers\SellingPartnerApi\Model\Orders\FulfillmentInstruction'
+        'assigned_ship_from_location_address' => '\SellingPartnerApi\Model\Orders\Address',
+        'fulfillment_instruction' => '\SellingPartnerApi\Model\Orders\FulfillmentInstruction'
     ];
 
     /**
@@ -779,7 +779,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_total
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getOrderTotal()
     {
@@ -789,7 +789,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_total
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $order_total order_total
+     * @param \SellingPartnerApi\Model\Orders\Money|null $order_total order_total
      *
      * @return self
      */
@@ -851,7 +851,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets payment_execution_detail
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\PaymentExecutionDetailItem[]|null
+     * @return \SellingPartnerApi\Model\Orders\PaymentExecutionDetailItem[]|null
      */
     public function getPaymentExecutionDetail()
     {
@@ -861,7 +861,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payment_execution_detail
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\PaymentExecutionDetailItem[]|null $payment_execution_detail A list of payment execution detail items.
+     * @param \SellingPartnerApi\Model\Orders\PaymentExecutionDetailItem[]|null $payment_execution_detail A list of payment execution detail items.
      *
      * @return self
      */
@@ -1375,7 +1375,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets assigned_ship_from_location_address
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Address|null
+     * @return \SellingPartnerApi\Model\Orders\Address|null
      */
     public function getAssignedShipFromLocationAddress()
     {
@@ -1385,7 +1385,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets assigned_ship_from_location_address
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Address|null $assigned_ship_from_location_address assigned_ship_from_location_address
+     * @param \SellingPartnerApi\Model\Orders\Address|null $assigned_ship_from_location_address assigned_ship_from_location_address
      *
      * @return self
      */
@@ -1399,7 +1399,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fulfillment_instruction
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\FulfillmentInstruction|null
+     * @return \SellingPartnerApi\Model\Orders\FulfillmentInstruction|null
      */
     public function getFulfillmentInstruction()
     {
@@ -1409,7 +1409,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_instruction
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\FulfillmentInstruction|null $fulfillment_instruction fulfillment_instruction
+     * @param \SellingPartnerApi\Model\Orders\FulfillmentInstruction|null $fulfillment_instruction fulfillment_instruction
      *
      * @return self
      */

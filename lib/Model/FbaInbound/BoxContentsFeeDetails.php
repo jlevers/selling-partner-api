@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * BoxContentsFeeDetails Class Doc Comment
  *
  * @category Class
  * @description The manual processing fee per unit and total fee for a shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'total_units' => 'int',
-        'fee_per_unit' => '\Evers\SellingPartnerApi\Model\FbaInbound\Amount',
-        'total_fee' => '\Evers\SellingPartnerApi\Model\FbaInbound\Amount'
+        'fee_per_unit' => '\SellingPartnerApi\Model\FbaInbound\Amount',
+        'total_fee' => '\SellingPartnerApi\Model\FbaInbound\Amount'
     ];
 
     /**
@@ -247,7 +247,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets fee_per_unit
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Amount|null
      */
     public function getFeePerUnit()
     {
@@ -257,7 +257,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets fee_per_unit
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null $fee_per_unit fee_per_unit
+     * @param \SellingPartnerApi\Model\FbaInbound\Amount|null $fee_per_unit fee_per_unit
      *
      * @return self
      */
@@ -271,7 +271,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets total_fee
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Amount|null
      */
     public function getTotalFee()
     {
@@ -281,7 +281,7 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets total_fee
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null $total_fee total_fee
+     * @param \SellingPartnerApi\Model\FbaInbound\Amount|null $total_fee total_fee
      *
      * @return self
      */

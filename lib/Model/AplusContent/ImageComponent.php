@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ImageComponent Class Doc Comment
  *
  * @category Class
  * @description A reference to an image, hosted in the A+ Content media library.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class ImageComponent implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'upload_destination_id' => 'string',
-        'image_crop_specification' => '\Evers\SellingPartnerApi\Model\AplusContent\ImageCropSpecification',
+        'image_crop_specification' => '\SellingPartnerApi\Model\AplusContent\ImageCropSpecification',
         'alt_text' => 'string'
     ];
 
@@ -273,7 +273,7 @@ class ImageComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets image_crop_specification
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ImageCropSpecification
+     * @return \SellingPartnerApi\Model\AplusContent\ImageCropSpecification
      */
     public function getImageCropSpecification()
     {
@@ -283,7 +283,7 @@ class ImageComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets image_crop_specification
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ImageCropSpecification $image_crop_specification image_crop_specification
+     * @param \SellingPartnerApi\Model\AplusContent\ImageCropSpecification $image_crop_specification image_crop_specification
      *
      * @return self
      */

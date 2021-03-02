@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardProductDescriptionModule Class Doc Comment
  *
  * @category Class
  * @description Standard product description text.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class StandardProductDescriptionModule implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'body' => '\Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent'
+        'body' => '\SellingPartnerApi\Model\AplusContent\ParagraphComponent'
     ];
 
     /**
@@ -214,7 +214,7 @@ class StandardProductDescriptionModule implements ModelInterface, ArrayAccess, \
     /**
      * Gets body
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent
+     * @return \SellingPartnerApi\Model\AplusContent\ParagraphComponent
      */
     public function getBody()
     {
@@ -224,7 +224,7 @@ class StandardProductDescriptionModule implements ModelInterface, ArrayAccess, \
     /**
      * Sets body
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent $body body
+     * @param \SellingPartnerApi\Model\AplusContent\ParagraphComponent $body body
      *
      * @return self
      */

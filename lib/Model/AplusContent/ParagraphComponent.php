@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ParagraphComponent Class Doc Comment
  *
  * @category Class
  * @description A list of rich text content, usually presented in a text box.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class ParagraphComponent implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'text_list' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent[]'
+        'text_list' => '\SellingPartnerApi\Model\AplusContent\TextComponent[]'
     ];
 
     /**
@@ -222,7 +222,7 @@ class ParagraphComponent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets text_list
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent[]
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent[]
      */
     public function getTextList()
     {
@@ -232,7 +232,7 @@ class ParagraphComponent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets text_list
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent[] $text_list text_list
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent[] $text_list text_list
      *
      * @return self
      */

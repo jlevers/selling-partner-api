@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * NonPartneredSmallParcelDataInput Class Doc Comment
  *
  * @category Class
  * @description Information that you provide to Amazon about a Small Parcel shipment shipped by a carrier that has not partnered with Amazon.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class NonPartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'carrier_name' => 'string',
-        'package_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageInput[]'
+        'package_list' => '\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageInput[]'
     ];
 
     /**
@@ -247,7 +247,7 @@ class NonPartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \
     /**
      * Gets package_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageInput[]
+     * @return \SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageInput[]
      */
     public function getPackageList()
     {
@@ -257,7 +257,7 @@ class NonPartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \
     /**
      * Sets package_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageInput[] $package_list A list of package tracking information.
+     * @param \SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageInput[] $package_list A list of package tracking information.
      *
      * @return self
      */

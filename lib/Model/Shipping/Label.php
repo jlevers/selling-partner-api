@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Label Class Doc Comment
  *
  * @category Class
  * @description The label details of the container.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'label_stream' => 'string',
-        'label_specification' => '\Evers\SellingPartnerApi\Model\Shipping\LabelSpecification'
+        'label_specification' => '\SellingPartnerApi\Model\Shipping\LabelSpecification'
     ];
 
     /**
@@ -241,7 +241,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets label_specification
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\LabelSpecification|null
+     * @return \SellingPartnerApi\Model\Shipping\LabelSpecification|null
      */
     public function getLabelSpecification()
     {
@@ -251,7 +251,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets label_specification
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\LabelSpecification|null $label_specification label_specification
+     * @param \SellingPartnerApi\Model\Shipping\LabelSpecification|null $label_specification label_specification
      *
      * @return self
      */

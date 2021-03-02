@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CompetitivePricingType Class Doc Comment
  *
  * @category Class
  * @description Competitive pricing information for the item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,9 +59,9 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'competitive_prices' => '\Evers\SellingPartnerApi\Model\ProductPricing\CompetitivePriceType[]',
-        'number_of_offer_listings' => '\Evers\SellingPartnerApi\Model\ProductPricing\OfferListingCountType[]',
-        'trade_in_value' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType'
+        'competitive_prices' => '\SellingPartnerApi\Model\ProductPricing\CompetitivePriceType[]',
+        'number_of_offer_listings' => '\SellingPartnerApi\Model\ProductPricing\OfferListingCountType[]',
+        'trade_in_value' => '\SellingPartnerApi\Model\ProductPricing\MoneyType'
     ];
 
     /**
@@ -229,7 +229,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets competitive_prices
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\CompetitivePriceType[]
+     * @return \SellingPartnerApi\Model\ProductPricing\CompetitivePriceType[]
      */
     public function getCompetitivePrices()
     {
@@ -239,7 +239,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets competitive_prices
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\CompetitivePriceType[] $competitive_prices A list of competitive pricing information.
+     * @param \SellingPartnerApi\Model\ProductPricing\CompetitivePriceType[] $competitive_prices A list of competitive pricing information.
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets number_of_offer_listings
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\OfferListingCountType[]
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferListingCountType[]
      */
     public function getNumberOfOfferListings()
     {
@@ -263,7 +263,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets number_of_offer_listings
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\OfferListingCountType[] $number_of_offer_listings The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferListingCountType[] $number_of_offer_listings The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets trade_in_value
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType|null
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType|null
      */
     public function getTradeInValue()
     {
@@ -287,7 +287,7 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets trade_in_value
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType|null $trade_in_value trade_in_value
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType|null $trade_in_value trade_in_value
      *
      * @return self
      */

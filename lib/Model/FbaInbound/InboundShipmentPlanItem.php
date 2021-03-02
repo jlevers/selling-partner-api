@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InboundShipmentPlanItem Class Doc Comment
  *
  * @category Class
  * @description Item information used to create an inbound shipment. Returned by the createInboundShipmentPlan operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
         'seller_sku' => 'string',
         'fulfillment_network_sku' => 'string',
         'quantity' => 'int',
-        'prep_details_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]'
+        'prep_details_list' => '\SellingPartnerApi\Model\FbaInbound\PrepDetails[]'
     ];
 
     /**
@@ -310,7 +310,7 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets prep_details_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null
      */
     public function getPrepDetailsList()
     {
@@ -320,7 +320,7 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets prep_details_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null $prep_details_list A list of preparation instructions and who is responsible for that preparation.
+     * @param \SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null $prep_details_list A list of preparation instructions and who is responsible for that preparation.
      *
      * @return self
      */

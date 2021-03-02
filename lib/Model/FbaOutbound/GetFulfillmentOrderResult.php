@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFulfillmentOrderResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,11 +58,11 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fulfillment_order' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder',
-        'fulfillment_order_items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderItem[]',
-        'fulfillment_shipments' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipment[]',
-        'return_items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItem[]',
-        'return_authorizations' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]'
+        'fulfillment_order' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder',
+        'fulfillment_order_items' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderItem[]',
+        'fulfillment_shipments' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipment[]',
+        'return_items' => '\SellingPartnerApi\Model\FbaOutbound\ReturnItem[]',
+        'return_authorizations' => '\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]'
     ];
 
     /**
@@ -246,7 +246,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets fulfillment_order
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder
      */
     public function getFulfillmentOrder()
     {
@@ -256,7 +256,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets fulfillment_order
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder $fulfillment_order fulfillment_order
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder $fulfillment_order fulfillment_order
      *
      * @return self
      */
@@ -270,7 +270,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets fulfillment_order_items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderItem[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderItem[]
      */
     public function getFulfillmentOrderItems()
     {
@@ -280,7 +280,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets fulfillment_order_items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderItem[] $fulfillment_order_items An array of fulfillment order item information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderItem[] $fulfillment_order_items An array of fulfillment order item information.
      *
      * @return self
      */
@@ -294,7 +294,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets fulfillment_shipments
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipment[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentShipment[]|null
      */
     public function getFulfillmentShipments()
     {
@@ -304,7 +304,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets fulfillment_shipments
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipment[]|null $fulfillment_shipments An array of fulfillment shipment information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentShipment[]|null $fulfillment_shipments An array of fulfillment shipment information.
      *
      * @return self
      */
@@ -318,7 +318,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets return_items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItem[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\ReturnItem[]
      */
     public function getReturnItems()
     {
@@ -328,7 +328,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets return_items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItem[] $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
+     * @param \SellingPartnerApi\Model\FbaOutbound\ReturnItem[] $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
      *
      * @return self
      */
@@ -342,7 +342,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets return_authorizations
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]
      */
     public function getReturnAuthorizations()
     {
@@ -352,7 +352,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets return_authorizations
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[] $return_authorizations An array of return authorization information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[] $return_authorizations An array of return authorization information.
      *
      * @return self
      */

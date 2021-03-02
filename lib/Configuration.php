@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -13,16 +13,16 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi;
+namespace SellingPartnerApi;
 
-use Evers\SellingPartnerApi\Authentication;
+use SellingPartnerApi\Authentication;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class Configuration
 {
@@ -375,7 +375,7 @@ nnn     *
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Evers\SellingPartnerApi) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (SellingPartnerApi) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2020-11-01' . PHP_EOL;

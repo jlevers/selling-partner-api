@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,16 +25,16 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+namespace SellingPartnerApi\Model\FbaInbound;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TransportStatus Class Doc Comment
  *
  * @category Class
  * @description Indicates the status of the Amazon-partnered carrier shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  */
 class TransportStatus

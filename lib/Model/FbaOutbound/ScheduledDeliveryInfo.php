@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ScheduledDeliveryInfo Class Doc Comment
  *
  * @category Class
  * @description Delivery information for a scheduled delivery.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'delivery_time_zone' => 'string',
-        'delivery_windows' => '\Evers\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow[]'
+        'delivery_windows' => '\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow[]'
     ];
 
     /**
@@ -247,7 +247,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets delivery_windows
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\DeliveryWindow[]
      */
     public function getDeliveryWindows()
     {
@@ -257,7 +257,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets delivery_windows
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow[] $delivery_windows An array of delivery windows.
+     * @param \SellingPartnerApi\Model\FbaOutbound\DeliveryWindow[] $delivery_windows An array of delivery windows.
      *
      * @return self
      */

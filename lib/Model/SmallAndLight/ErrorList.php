@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\SmallAndLight;
+namespace SellingPartnerApi\Model\SmallAndLight;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ErrorList Class Doc Comment
  *
  * @category Class
  * @description A list of error responses returned when a request is unsuccessful.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class ErrorList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Evers\SellingPartnerApi\Model\SmallAndLight\Error[]'
+        'errors' => '\SellingPartnerApi\Model\SmallAndLight\Error[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class ErrorList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\Error[]|null
+     * @return \SellingPartnerApi\Model\SmallAndLight\Error[]|null
      */
     public function getErrors()
     {
@@ -221,7 +221,7 @@ class ErrorList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\Error[]|null $errors errors
+     * @param \SellingPartnerApi\Model\SmallAndLight\Error[]|null $errors errors
      *
      * @return self
      */

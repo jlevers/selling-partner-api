@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * IdentifierType Class Doc Comment
  *
  * @category Class
  * @description Specifies the identifiers used to uniquely identify an item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class IdentifierType implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'marketplace_asin' => '\Evers\SellingPartnerApi\Model\ProductPricing\ASINIdentifier',
-        'sku_identifier' => '\Evers\SellingPartnerApi\Model\ProductPricing\SellerSKUIdentifier'
+        'marketplace_asin' => '\SellingPartnerApi\Model\ProductPricing\ASINIdentifier',
+        'sku_identifier' => '\SellingPartnerApi\Model\ProductPricing\SellerSKUIdentifier'
     ];
 
     /**
@@ -220,7 +220,7 @@ class IdentifierType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets marketplace_asin
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\ASINIdentifier
+     * @return \SellingPartnerApi\Model\ProductPricing\ASINIdentifier
      */
     public function getMarketplaceAsin()
     {
@@ -230,7 +230,7 @@ class IdentifierType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets marketplace_asin
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\ASINIdentifier $marketplace_asin marketplace_asin
+     * @param \SellingPartnerApi\Model\ProductPricing\ASINIdentifier $marketplace_asin marketplace_asin
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class IdentifierType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sku_identifier
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\SellerSKUIdentifier|null
+     * @return \SellingPartnerApi\Model\ProductPricing\SellerSKUIdentifier|null
      */
     public function getSkuIdentifier()
     {
@@ -254,7 +254,7 @@ class IdentifierType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sku_identifier
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\SellerSKUIdentifier|null $sku_identifier sku_identifier
+     * @param \SellingPartnerApi\Model\ProductPricing\SellerSKUIdentifier|null $sku_identifier sku_identifier
      *
      * @return self
      */

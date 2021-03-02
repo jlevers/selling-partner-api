@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Solicitations;
+namespace SellingPartnerApi\Model\Solicitations;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetSolicitationActionResponseLinks Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,8 +58,8 @@ class GetSolicitationActionResponseLinks implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'self' => '\Evers\SellingPartnerApi\Model\Solicitations\LinkObject',
-        'schema' => '\Evers\SellingPartnerApi\Model\Solicitations\LinkObject'
+        'self' => '\SellingPartnerApi\Model\Solicitations\LinkObject',
+        'schema' => '\SellingPartnerApi\Model\Solicitations\LinkObject'
     ];
 
     /**
@@ -222,7 +222,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, ArrayAccess,
     /**
      * Gets self
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\LinkObject
+     * @return \SellingPartnerApi\Model\Solicitations\LinkObject
      */
     public function getSelf()
     {
@@ -232,7 +232,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, ArrayAccess,
     /**
      * Sets self
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\LinkObject $self self
+     * @param \SellingPartnerApi\Model\Solicitations\LinkObject $self self
      *
      * @return self
      */
@@ -246,7 +246,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, ArrayAccess,
     /**
      * Gets schema
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\LinkObject
+     * @return \SellingPartnerApi\Model\Solicitations\LinkObject
      */
     public function getSchema()
     {
@@ -256,7 +256,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, ArrayAccess,
     /**
      * Sets schema
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\LinkObject $schema schema
+     * @param \SellingPartnerApi\Model\Solicitations\LinkObject $schema schema
      *
      * @return self
      */

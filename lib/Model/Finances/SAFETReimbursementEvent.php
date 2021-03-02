@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SAFETReimbursementEvent Class Doc Comment
  *
  * @category Class
  * @description A SAFE-T claim reimbursement on the seller&#39;s account.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,9 +61,9 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'safet_claim_id' => 'string',
-        'reimbursed_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
+        'reimbursed_amount' => '\SellingPartnerApi\Model\Finances\Currency',
         'reason_code' => 'string',
-        'safet_reimbursement_item_list' => '\Evers\SellingPartnerApi\Model\Finances\SAFETReimbursementItem[]'
+        'safet_reimbursement_item_list' => '\SellingPartnerApi\Model\Finances\SAFETReimbursementItem[]'
     ];
 
     /**
@@ -283,7 +283,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets reimbursed_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getReimbursedAmount()
     {
@@ -293,7 +293,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets reimbursed_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $reimbursed_amount reimbursed_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $reimbursed_amount reimbursed_amount
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets safet_reimbursement_item_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\SAFETReimbursementItem[]|null
+     * @return \SellingPartnerApi\Model\Finances\SAFETReimbursementItem[]|null
      */
     public function getSafetReimbursementItemList()
     {
@@ -341,7 +341,7 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets safet_reimbursement_item_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\SAFETReimbursementItem[]|null $safet_reimbursement_item_list A list of SAFETReimbursementItems.
+     * @param \SellingPartnerApi\Model\Finances\SAFETReimbursementItem[]|null $safet_reimbursement_item_list A list of SAFETReimbursementItems.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardTextPairBlock Class Doc Comment
  *
  * @category Class
  * @description The A+ Content standard label and description block, comprised of a pair of text components.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardTextPairBlock implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'label' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'description' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent'
+        'label' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'description' => '\SellingPartnerApi\Model\AplusContent\TextComponent'
     ];
 
     /**
@@ -217,7 +217,7 @@ class StandardTextPairBlock implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets label
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getLabel()
     {
@@ -227,7 +227,7 @@ class StandardTextPairBlock implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets label
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $label label
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $label label
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class StandardTextPairBlock implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets description
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getDescription()
     {
@@ -251,7 +251,7 @@ class StandardTextPairBlock implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets description
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $description description
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $description description
      *
      * @return self
      */

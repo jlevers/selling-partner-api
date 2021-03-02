@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi;
+namespace SellingPartnerApi;
 
 use \Exception;
 
@@ -21,7 +21,7 @@ use \Exception;
  * ApiException Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class ApiException extends Exception
 {

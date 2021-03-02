@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Decorator Class Doc Comment
  *
  * @category Class
  * @description A decorator applied to a content string value in order to create rich text.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class Decorator implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => '\Evers\SellingPartnerApi\Model\AplusContent\DecoratorType',
+        'type' => '\SellingPartnerApi\Model\AplusContent\DecoratorType',
         'offset' => 'int',
         'length' => 'int',
         'depth' => 'int'
@@ -253,7 +253,7 @@ class Decorator implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets type
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\DecoratorType|null
+     * @return \SellingPartnerApi\Model\AplusContent\DecoratorType|null
      */
     public function getType()
     {
@@ -263,7 +263,7 @@ class Decorator implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets type
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\DecoratorType|null $type type
+     * @param \SellingPartnerApi\Model\AplusContent\DecoratorType|null $type type
      *
      * @return self
      */

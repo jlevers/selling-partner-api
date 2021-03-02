@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * DebtRecoveryItem Class Doc Comment
  *
  * @category Class
  * @description An item of a debt payment or debt adjustment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'recovery_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'original_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
+        'recovery_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'original_amount' => '\SellingPartnerApi\Model\Finances\Currency',
         'group_begin_date' => '\DateTime',
         'group_end_date' => '\DateTime'
     ];
@@ -229,7 +229,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets recovery_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getRecoveryAmount()
     {
@@ -239,7 +239,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets recovery_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $recovery_amount recovery_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $recovery_amount recovery_amount
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets original_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getOriginalAmount()
     {
@@ -263,7 +263,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets original_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $original_amount original_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $original_amount original_amount
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeeComponent Class Doc Comment
  *
  * @category Class
  * @description A fee associated with the event.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class FeeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'fee_type' => 'string',
-        'fee_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'fee_amount' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -241,7 +241,7 @@ class FeeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fee_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getFeeAmount()
     {
@@ -251,7 +251,7 @@ class FeeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $fee_amount fee_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $fee_amount fee_amount
      *
      * @return self
      */

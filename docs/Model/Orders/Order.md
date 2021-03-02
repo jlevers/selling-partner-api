@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **sales_channel** | **string** | The sales channel of the first item in the order. | [optional]
 **order_channel** | **string** | The order channel of the first item in the order. | [optional]
 **ship_service_level** | **string** | The shipment service level of the order. | [optional]
-**order_total** | [**\Evers\SellingPartnerApi\Model\Orders\Money**](Money.md) |  | [optional]
+**order_total** | [**\SellingPartnerApi\Model\Orders\Money**](Money.md) |  | [optional]
 **number_of_items_shipped** | **int** | The number of items shipped. | [optional]
 **number_of_items_unshipped** | **int** | The number of items unshipped. | [optional]
-**payment_execution_detail** | [**\Evers\SellingPartnerApi\Model\Orders\PaymentExecutionDetailItem[]**](PaymentExecutionDetailItem.md) | A list of payment execution detail items. | [optional]
+**payment_execution_detail** | [**\SellingPartnerApi\Model\Orders\PaymentExecutionDetailItem[]**](PaymentExecutionDetailItem.md) | A list of payment execution detail items. | [optional]
 **payment_method** | **string** | The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information. | [optional]
 **payment_method_details** | **string[]** | A list of payment method detail items. | [optional]
 **marketplace_id** | **string** | The identifier for the marketplace where the order was placed. | [optional]
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **promise_response_due_date** | **string** | Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders. | [optional]
 **is_estimated_ship_date_set** | **bool** | When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders. | [optional]
 **is_sold_by_ab** | **bool** | When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller. | [optional]
-**assigned_ship_from_location_address** | [**\Evers\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
-**fulfillment_instruction** | [**\Evers\SellingPartnerApi\Model\Orders\FulfillmentInstruction**](FulfillmentInstruction.md) |  | [optional]
+**assigned_ship_from_location_address** | [**\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
+**fulfillment_instruction** | [**\SellingPartnerApi\Model\Orders\FulfillmentInstruction**](FulfillmentInstruction.md) |  | [optional]
 
 [[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

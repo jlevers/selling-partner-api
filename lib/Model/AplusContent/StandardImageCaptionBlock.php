@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardImageCaptionBlock Class Doc Comment
  *
  * @category Class
  * @description The A+ Content standard image and caption block.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardImageCaptionBlock implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'image' => '\Evers\SellingPartnerApi\Model\AplusContent\ImageComponent',
-        'caption' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent'
+        'image' => '\SellingPartnerApi\Model\AplusContent\ImageComponent',
+        'caption' => '\SellingPartnerApi\Model\AplusContent\TextComponent'
     ];
 
     /**
@@ -217,7 +217,7 @@ class StandardImageCaptionBlock implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets image
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\ImageComponent|null
      */
     public function getImage()
     {
@@ -227,7 +227,7 @@ class StandardImageCaptionBlock implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets image
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent|null $image image
+     * @param \SellingPartnerApi\Model\AplusContent\ImageComponent|null $image image
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class StandardImageCaptionBlock implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets caption
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getCaption()
     {
@@ -251,7 +251,7 @@ class StandardImageCaptionBlock implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets caption
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $caption caption
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $caption caption
      *
      * @return self
      */

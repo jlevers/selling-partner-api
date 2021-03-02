@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InboundShipmentPlan Class Doc Comment
  *
  * @category Class
  * @description Inbound shipment information used to create an inbound shipment. Returned by the createInboundShipmentPlan operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,10 +61,10 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'shipment_id' => 'string',
         'destination_fulfillment_center_id' => 'string',
-        'ship_to_address' => '\Evers\SellingPartnerApi\Model\FbaInbound\Address',
-        'label_prep_type' => '\Evers\SellingPartnerApi\Model\FbaInbound\LabelPrepType',
-        'items' => '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlanItem[]',
-        'estimated_box_contents_fee' => '\Evers\SellingPartnerApi\Model\FbaInbound\BoxContentsFeeDetails'
+        'ship_to_address' => '\SellingPartnerApi\Model\FbaInbound\Address',
+        'label_prep_type' => '\SellingPartnerApi\Model\FbaInbound\LabelPrepType',
+        'items' => '\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlanItem[]',
+        'estimated_box_contents_fee' => '\SellingPartnerApi\Model\FbaInbound\BoxContentsFeeDetails'
     ];
 
     /**
@@ -304,7 +304,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets ship_to_address
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Address
+     * @return \SellingPartnerApi\Model\FbaInbound\Address
      */
     public function getShipToAddress()
     {
@@ -314,7 +314,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets ship_to_address
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Address $ship_to_address ship_to_address
+     * @param \SellingPartnerApi\Model\FbaInbound\Address $ship_to_address ship_to_address
      *
      * @return self
      */
@@ -328,7 +328,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets label_prep_type
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\LabelPrepType
+     * @return \SellingPartnerApi\Model\FbaInbound\LabelPrepType
      */
     public function getLabelPrepType()
     {
@@ -338,7 +338,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets label_prep_type
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\LabelPrepType $label_prep_type label_prep_type
+     * @param \SellingPartnerApi\Model\FbaInbound\LabelPrepType $label_prep_type label_prep_type
      *
      * @return self
      */
@@ -352,7 +352,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlanItem[]
+     * @return \SellingPartnerApi\Model\FbaInbound\InboundShipmentPlanItem[]
      */
     public function getItems()
     {
@@ -362,7 +362,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlanItem[] $items A list of inbound shipment plan item information.
+     * @param \SellingPartnerApi\Model\FbaInbound\InboundShipmentPlanItem[] $items A list of inbound shipment plan item information.
      *
      * @return self
      */
@@ -376,7 +376,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets estimated_box_contents_fee
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\BoxContentsFeeDetails|null
+     * @return \SellingPartnerApi\Model\FbaInbound\BoxContentsFeeDetails|null
      */
     public function getEstimatedBoxContentsFee()
     {
@@ -386,7 +386,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets estimated_box_contents_fee
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\BoxContentsFeeDetails|null $estimated_box_contents_fee estimated_box_contents_fee
+     * @param \SellingPartnerApi\Model\FbaInbound\BoxContentsFeeDetails|null $estimated_box_contents_fee estimated_box_contents_fee
      *
      * @return self
      */

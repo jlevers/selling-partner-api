@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Shipment Class Doc Comment
  *
  * @category Class
  * @description The details of a shipment, including the shipment status.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,15 +62,15 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_id' => 'string',
         'amazon_order_id' => 'string',
         'seller_order_id' => 'string',
-        'item_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]',
-        'ship_from_address' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Address',
-        'ship_to_address' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Address',
-        'package_dimensions' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions',
-        'weight' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight',
-        'insurance' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount',
-        'shipping_service' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingService',
-        'label' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Label',
-        'status' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentStatus',
+        'item_list' => '\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]',
+        'ship_from_address' => '\SellingPartnerApi\Model\MerchantFulfillment\Address',
+        'ship_to_address' => '\SellingPartnerApi\Model\MerchantFulfillment\Address',
+        'package_dimensions' => '\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions',
+        'weight' => '\SellingPartnerApi\Model\MerchantFulfillment\Weight',
+        'insurance' => '\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount',
+        'shipping_service' => '\SellingPartnerApi\Model\MerchantFulfillment\ShippingService',
+        'label' => '\SellingPartnerApi\Model\MerchantFulfillment\Label',
+        'status' => '\SellingPartnerApi\Model\MerchantFulfillment\ShipmentStatus',
         'tracking_id' => 'string',
         'created_date' => '\DateTime',
         'last_updated_date' => '\DateTime'
@@ -411,7 +411,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]
      */
     public function getItemList()
     {
@@ -421,7 +421,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[] $item_list The list of items to be included in a shipment.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\FBMItem[] $item_list The list of items to be included in a shipment.
      *
      * @return self
      */
@@ -435,7 +435,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ship_from_address
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress()
     {
@@ -445,7 +445,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ship_from_address
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address $ship_from_address ship_from_address
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Address $ship_from_address ship_from_address
      *
      * @return self
      */
@@ -459,7 +459,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ship_to_address
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Address
      */
     public function getShipToAddress()
     {
@@ -469,7 +469,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ship_to_address
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address $ship_to_address ship_to_address
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Address $ship_to_address ship_to_address
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets package_dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions
      */
     public function getPackageDimensions()
     {
@@ -493,7 +493,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets package_dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions $package_dimensions package_dimensions
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions $package_dimensions package_dimensions
      *
      * @return self
      */
@@ -507,7 +507,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets weight
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Weight
      */
     public function getWeight()
     {
@@ -517,7 +517,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets weight
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight $weight weight
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Weight $weight weight
      *
      * @return self
      */
@@ -531,7 +531,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets insurance
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getInsurance()
     {
@@ -541,7 +541,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets insurance
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount $insurance insurance
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount $insurance insurance
      *
      * @return self
      */
@@ -555,7 +555,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_service
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingService
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ShippingService
      */
     public function getShippingService()
     {
@@ -565,7 +565,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_service
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingService $shipping_service shipping_service
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ShippingService $shipping_service shipping_service
      *
      * @return self
      */
@@ -579,7 +579,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets label
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Label
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Label
      */
     public function getLabel()
     {
@@ -589,7 +589,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets label
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Label $label label
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Label $label label
      *
      * @return self
      */
@@ -603,7 +603,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentStatus
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ShipmentStatus
      */
     public function getStatus()
     {
@@ -613,7 +613,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentStatus $status status
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ShipmentStatus $status status
      *
      * @return self
      */

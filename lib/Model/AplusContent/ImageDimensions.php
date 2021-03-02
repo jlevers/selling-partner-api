@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ImageDimensions Class Doc Comment
  *
  * @category Class
  * @description The dimensions extending from the top left corner of the cropped image, or the top left corner of the original image if there is no cropping. Only &#x60;pixels&#x60; is allowed as the units value for ImageDimensions.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class ImageDimensions implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'width' => '\Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits',
-        'height' => '\Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits'
+        'width' => '\SellingPartnerApi\Model\AplusContent\IntegerWithUnits',
+        'height' => '\SellingPartnerApi\Model\AplusContent\IntegerWithUnits'
     ];
 
     /**
@@ -223,7 +223,7 @@ class ImageDimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets width
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits
+     * @return \SellingPartnerApi\Model\AplusContent\IntegerWithUnits
      */
     public function getWidth()
     {
@@ -233,7 +233,7 @@ class ImageDimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets width
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits $width width
+     * @param \SellingPartnerApi\Model\AplusContent\IntegerWithUnits $width width
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class ImageDimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets height
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits
+     * @return \SellingPartnerApi\Model\AplusContent\IntegerWithUnits
      */
     public function getHeight()
     {
@@ -257,7 +257,7 @@ class ImageDimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets height
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits $height height
+     * @param \SellingPartnerApi\Model\AplusContent\IntegerWithUnits $height height
      *
      * @return self
      */

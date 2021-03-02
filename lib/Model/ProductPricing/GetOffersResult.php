@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetOffersResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,11 +61,11 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_id' => 'string',
         'asin' => 'string',
         'sku' => 'string',
-        'item_condition' => '\Evers\SellingPartnerApi\Model\ProductPricing\ConditionType',
+        'item_condition' => '\SellingPartnerApi\Model\ProductPricing\ConditionType',
         'status' => 'string',
-        'identifier' => '\Evers\SellingPartnerApi\Model\ProductPricing\ItemIdentifier',
-        'summary' => '\Evers\SellingPartnerApi\Model\ProductPricing\Summary',
-        'offers' => '\Evers\SellingPartnerApi\Model\ProductPricing\OfferDetail[]'
+        'identifier' => '\SellingPartnerApi\Model\ProductPricing\ItemIdentifier',
+        'summary' => '\SellingPartnerApi\Model\ProductPricing\Summary',
+        'offers' => '\SellingPartnerApi\Model\ProductPricing\OfferDetail[]'
     ];
 
     /**
@@ -346,7 +346,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_condition
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\ConditionType
+     * @return \SellingPartnerApi\Model\ProductPricing\ConditionType
      */
     public function getItemCondition()
     {
@@ -356,7 +356,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_condition
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\ConditionType $item_condition item_condition
+     * @param \SellingPartnerApi\Model\ProductPricing\ConditionType $item_condition item_condition
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identifier
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\ItemIdentifier
+     * @return \SellingPartnerApi\Model\ProductPricing\ItemIdentifier
      */
     public function getIdentifier()
     {
@@ -404,7 +404,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identifier
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\ItemIdentifier $identifier identifier
+     * @param \SellingPartnerApi\Model\ProductPricing\ItemIdentifier $identifier identifier
      *
      * @return self
      */
@@ -418,7 +418,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets summary
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\Summary
+     * @return \SellingPartnerApi\Model\ProductPricing\Summary
      */
     public function getSummary()
     {
@@ -428,7 +428,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets summary
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\Summary $summary summary
+     * @param \SellingPartnerApi\Model\ProductPricing\Summary $summary summary
      *
      * @return self
      */
@@ -442,7 +442,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offers
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\OfferDetail[]
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferDetail[]
      */
     public function getOffers()
     {
@@ -452,7 +452,7 @@ class GetOffersResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets offers
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\OfferDetail[] $offers offers
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferDetail[] $offers offers
      *
      * @return self
      */

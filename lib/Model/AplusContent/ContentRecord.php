@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ContentRecord Class Doc Comment
  *
  * @category Class
  * @description A content document with additional information for content management.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'content_reference_key' => 'string',
-        'content_metadata' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentMetadata',
-        'content_document' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentDocument'
+        'content_metadata' => '\SellingPartnerApi\Model\AplusContent\ContentMetadata',
+        'content_document' => '\SellingPartnerApi\Model\AplusContent\ContentDocument'
     ];
 
     /**
@@ -259,7 +259,7 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content_metadata
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentMetadata|null
+     * @return \SellingPartnerApi\Model\AplusContent\ContentMetadata|null
      */
     public function getContentMetadata()
     {
@@ -269,7 +269,7 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content_metadata
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentMetadata|null $content_metadata content_metadata
+     * @param \SellingPartnerApi\Model\AplusContent\ContentMetadata|null $content_metadata content_metadata
      *
      * @return self
      */
@@ -283,7 +283,7 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content_document
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentDocument|null
+     * @return \SellingPartnerApi\Model\AplusContent\ContentDocument|null
      */
     public function getContentDocument()
     {
@@ -293,7 +293,7 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content_document
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentDocument|null $content_document content_document
+     * @param \SellingPartnerApi\Model\AplusContent\ContentDocument|null $content_document content_document
      *
      * @return self
      */

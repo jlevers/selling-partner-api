@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\OrdersApi
+# SellingPartnerApi\OrdersApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `getOrder()`
 
 ```php
-getOrder($order_id): \Evers\SellingPartnerApi\Model\Orders\GetOrderResponse
+getOrder($order_id): \SellingPartnerApi\Model\Orders\GetOrderResponse
 ```
 
 
@@ -28,7 +28,7 @@ Returns the order indicated by the specified order ID.  **Usage Plan:**  | Rate 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\OrdersApi();
+$apiInstance = new SellingPartnerApi\Api\OrdersApi();
 $order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
 
 try {
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Orders\GetOrderResponse**](../Model/Orders/GetOrderResponse.md)
+[**\SellingPartnerApi\Model\Orders\GetOrderResponse**](../Model/Orders/GetOrderResponse.md)
 
 ### HTTP request headers
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ## `getOrderAddress()`
 
 ```php
-getOrderAddress($order_id): \Evers\SellingPartnerApi\Model\Orders\GetOrderAddressResponse
+getOrderAddress($order_id): \SellingPartnerApi\Model\Orders\GetOrderAddressResponse
 ```
 
 
@@ -74,7 +74,7 @@ Returns the shipping address for the order indicated by the specified order ID. 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\OrdersApi();
+$apiInstance = new SellingPartnerApi\Api\OrdersApi();
 $order_id = 'order_id_example'; // string | An orderId is an Amazon-defined order identifier, in 3-7-7 format.
 
 try {
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Orders\GetOrderAddressResponse**](../Model/Orders/GetOrderAddressResponse.md)
+[**\SellingPartnerApi\Model\Orders\GetOrderAddressResponse**](../Model/Orders/GetOrderAddressResponse.md)
 
 ### HTTP request headers
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 ## `getOrderBuyerInfo()`
 
 ```php
-getOrderBuyerInfo($order_id): \Evers\SellingPartnerApi\Model\Orders\GetOrderBuyerInfoResponse
+getOrderBuyerInfo($order_id): \SellingPartnerApi\Model\Orders\GetOrderBuyerInfoResponse
 ```
 
 
@@ -120,7 +120,7 @@ Returns buyer information for the order indicated by the specified order ID.  **
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\OrdersApi();
+$apiInstance = new SellingPartnerApi\Api\OrdersApi();
 $order_id = 'order_id_example'; // string | An orderId is an Amazon-defined order identifier, in 3-7-7 format.
 
 try {
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Orders\GetOrderBuyerInfoResponse**](../Model/Orders/GetOrderBuyerInfoResponse.md)
+[**\SellingPartnerApi\Model\Orders\GetOrderBuyerInfoResponse**](../Model/Orders/GetOrderBuyerInfoResponse.md)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 ## `getOrderItems()`
 
 ```php
-getOrderItems($order_id, $next_token): \Evers\SellingPartnerApi\Model\Orders\GetOrderItemsResponse
+getOrderItems($order_id, $next_token): \SellingPartnerApi\Model\Orders\GetOrderItemsResponse
 ```
 
 
@@ -166,7 +166,7 @@ Returns detailed order item information for the order indicated by the specified
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\OrdersApi();
+$apiInstance = new SellingPartnerApi\Api\OrdersApi();
 $order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
 $next_token = 'next_token_example'; // string | A string token returned in the response of your previous request.
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Orders\GetOrderItemsResponse**](../Model/Orders/GetOrderItemsResponse.md)
+[**\SellingPartnerApi\Model\Orders\GetOrderItemsResponse**](../Model/Orders/GetOrderItemsResponse.md)
 
 ### HTTP request headers
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 ## `getOrderItemsBuyerInfo()`
 
 ```php
-getOrderItemsBuyerInfo($order_id, $next_token): \Evers\SellingPartnerApi\Model\Orders\GetOrderItemsBuyerInfoResponse
+getOrderItemsBuyerInfo($order_id, $next_token): \SellingPartnerApi\Model\Orders\GetOrderItemsBuyerInfoResponse
 ```
 
 
@@ -214,7 +214,7 @@ Returns buyer information in the order items of the order indicated by the speci
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\OrdersApi();
+$apiInstance = new SellingPartnerApi\Api\OrdersApi();
 $order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
 $next_token = 'next_token_example'; // string | A string token returned in the response of your previous request.
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Orders\GetOrderItemsBuyerInfoResponse**](../Model/Orders/GetOrderItemsBuyerInfoResponse.md)
+[**\SellingPartnerApi\Model\Orders\GetOrderItemsBuyerInfoResponse**](../Model/Orders/GetOrderItemsBuyerInfoResponse.md)
 
 ### HTTP request headers
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 ## `getOrders()`
 
 ```php
-getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids): \Evers\SellingPartnerApi\Model\Orders\GetOrdersResponse
+getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids): \SellingPartnerApi\Model\Orders\GetOrdersResponse
 ```
 
 
@@ -262,7 +262,7 @@ Returns orders created or updated during the time frame indicated by the specifi
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\OrdersApi();
+$apiInstance = new SellingPartnerApi\Api\OrdersApi();
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
 $created_after = 'created_after_example'; // string | A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
 $created_before = 'created_before_example'; // string | A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Orders\GetOrdersResponse**](../Model/Orders/GetOrdersResponse.md)
+[**\SellingPartnerApi\Model\Orders\GetOrdersResponse**](../Model/Orders/GetOrdersResponse.md)
 
 ### HTTP request headers
 

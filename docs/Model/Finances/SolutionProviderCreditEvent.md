@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **seller_store_name** | **string** | The store name where the payment event occurred. | [optional]
 **provider_id** | **string** | The Amazon-defined identifier of the solution provider. | [optional]
 **provider_store_name** | **string** | The store name where the payment event occurred. | [optional]
-**transaction_amount** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
+**transaction_amount** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **transaction_creation_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 
 [[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

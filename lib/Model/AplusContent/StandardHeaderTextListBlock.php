@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardHeaderTextListBlock Class Doc Comment
  *
  * @category Class
  * @description The A+ standard fixed-length list of text, with a related headline.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardHeaderTextListBlock implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock'
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'block' => '\SellingPartnerApi\Model\AplusContent\StandardTextListBlock'
     ];
 
     /**
@@ -217,7 +217,7 @@ class StandardHeaderTextListBlock implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -227,7 +227,7 @@ class StandardHeaderTextListBlock implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class StandardHeaderTextListBlock implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null
      */
     public function getBlock()
     {
@@ -251,7 +251,7 @@ class StandardHeaderTextListBlock implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null $block block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextListBlock|null $block block
      *
      * @return self
      */

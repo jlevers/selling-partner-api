@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateInboundShipmentPlanResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class CreateInboundShipmentPlanResult implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'inbound_shipment_plans' => '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlan[]'
+        'inbound_shipment_plans' => '\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlan[]'
     ];
 
     /**
@@ -210,7 +210,7 @@ class CreateInboundShipmentPlanResult implements ModelInterface, ArrayAccess, \J
     /**
      * Gets inbound_shipment_plans
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlan[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\InboundShipmentPlan[]|null
      */
     public function getInboundShipmentPlans()
     {
@@ -220,7 +220,7 @@ class CreateInboundShipmentPlanResult implements ModelInterface, ArrayAccess, \J
     /**
      * Sets inbound_shipment_plans
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlan[]|null $inbound_shipment_plans A list of inbound shipment plan information
+     * @param \SellingPartnerApi\Model\FbaInbound\InboundShipmentPlan[]|null $inbound_shipment_plans A list of inbound shipment plan information
      *
      * @return self
      */

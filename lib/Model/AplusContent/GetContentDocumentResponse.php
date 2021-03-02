@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetContentDocumentResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,8 +58,8 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'warnings' => '\Evers\SellingPartnerApi\Model\AplusContent\Error[]',
-        'content_record' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentRecord'
+        'warnings' => '\SellingPartnerApi\Model\AplusContent\Error[]',
+        'content_record' => '\SellingPartnerApi\Model\AplusContent\ContentRecord'
     ];
 
     /**
@@ -219,7 +219,7 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets warnings
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\Error[]|null
      */
     public function getWarnings()
     {
@@ -229,7 +229,7 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets warnings
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
+     * @param \SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
      *
      * @return self
      */
@@ -245,7 +245,7 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets content_record
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentRecord
+     * @return \SellingPartnerApi\Model\AplusContent\ContentRecord
      */
     public function getContentRecord()
     {
@@ -255,7 +255,7 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets content_record
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentRecord $content_record content_record
+     * @param \SellingPartnerApi\Model\AplusContent\ContentRecord $content_record content_record
      *
      * @return self
      */

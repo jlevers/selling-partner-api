@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\AuthorizationApi
+# SellingPartnerApi\AuthorizationApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getAuthorizationCode()`
 
 ```php
-getAuthorizationCode($selling_partner_id, $developer_id, $mws_auth_token): \Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse
+getAuthorizationCode($selling_partner_id, $developer_id, $mws_auth_token): \SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse
 ```
 
 Returns the Login with Amazon (LWA) authorization code for an existing Amazon MWS authorization.
@@ -23,7 +23,7 @@ With the getAuthorizationCode operation, you can request a Login With Amazon (LW
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\AuthorizationApi();
+$apiInstance = new SellingPartnerApi\Api\AuthorizationApi();
 $selling_partner_id = 'selling_partner_id_example'; // string | The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore.
 $developer_id = 'developer_id_example'; // string | Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central.
 $mws_auth_token = 'mws_auth_token_example'; // string | The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore.
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse**](../Model/Authorization/GetAuthorizationCodeResponse.md)
+[**\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse**](../Model/Authorization/GetAuthorizationCodeResponse.md)
 
 ### HTTP request headers
 

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardThreeImageTextModule Class Doc Comment
  *
  * @category Class
  * @description Three standard images with text, presented across a single row.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'block1' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'block2' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'block3' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'block1' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'block2' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'block3' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
     ];
 
     /**
@@ -229,7 +229,7 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -239,7 +239,7 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets block1
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock1()
     {
@@ -263,7 +263,7 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets block1
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block1 block1
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block1 block1
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets block2
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock2()
     {
@@ -287,7 +287,7 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets block2
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block2 block2
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block2 block2
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets block3
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock3()
     {
@@ -311,7 +311,7 @@ class StandardThreeImageTextModule implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets block3
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block3 block3
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block3 block3
      *
      * @return self
      */

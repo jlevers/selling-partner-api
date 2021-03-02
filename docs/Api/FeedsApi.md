@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\FeedsApi
+# SellingPartnerApi\FeedsApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `cancelFeed()`
 
 ```php
-cancelFeed($feed_id): \Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse
+cancelFeed($feed_id): \SellingPartnerApi\Model\Feeds\CancelFeedResponse
 ```
 
 
@@ -28,7 +28,7 @@ Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FeedsApi();
+$apiInstance = new SellingPartnerApi\Api\FeedsApi();
 $feed_id = 'feed_id_example'; // string | The identifier for the feed. This identifier is unique only in combination with a seller ID.
 
 try {
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Feeds\CancelFeedResponse**](../Model/Feeds/CancelFeedResponse.md)
+[**\SellingPartnerApi\Model\Feeds\CancelFeedResponse**](../Model/Feeds/CancelFeedResponse.md)
 
 ### HTTP request headers
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ## `createFeed()`
 
 ```php
-createFeed($body): \Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse
+createFeed($body): \SellingPartnerApi\Model\Feeds\CreateFeedResponse
 ```
 
 
@@ -74,8 +74,8 @@ Creates a feed. Encrypt and upload the contents of the feed document before call
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FeedsApi();
-$body = new \Evers\SellingPartnerApi\Model\Feeds\CreateFeedSpecification(); // \Evers\SellingPartnerApi\Model\Feeds\CreateFeedSpecification
+$apiInstance = new SellingPartnerApi\Api\FeedsApi();
+$body = new \SellingPartnerApi\Model\Feeds\CreateFeedSpecification(); // \SellingPartnerApi\Model\Feeds\CreateFeedSpecification
 
 try {
     $result = $apiInstance->createFeed($body);
@@ -89,11 +89,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Feeds\CreateFeedSpecification**](../Model/FeedsCreateFeedSpecification.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Feeds\CreateFeedSpecification**](../Model/FeedsCreateFeedSpecification.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Feeds\CreateFeedResponse**](../Model/Feeds/CreateFeedResponse.md)
+[**\SellingPartnerApi\Model\Feeds\CreateFeedResponse**](../Model/Feeds/CreateFeedResponse.md)
 
 ### HTTP request headers
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 ## `createFeedDocument()`
 
 ```php
-createFeedDocument($body): \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse
+createFeedDocument($body): \SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse
 ```
 
 
@@ -120,8 +120,8 @@ Creates a feed document for the feed type that you specify. This operation retur
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FeedsApi();
-$body = new \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification(); // \Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification
+$apiInstance = new SellingPartnerApi\Api\FeedsApi();
+$body = new \SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification(); // \SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification
 
 try {
     $result = $apiInstance->createFeedDocument($body);
@@ -135,11 +135,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification**](../Model/FeedsCreateFeedDocumentSpecification.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification**](../Model/FeedsCreateFeedDocumentSpecification.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse**](../Model/Feeds/CreateFeedDocumentResponse.md)
+[**\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse**](../Model/Feeds/CreateFeedDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 ## `getFeed()`
 
 ```php
-getFeed($feed_id): \Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse
+getFeed($feed_id): \SellingPartnerApi\Model\Feeds\GetFeedResponse
 ```
 
 
@@ -166,7 +166,7 @@ Returns feed details (including the resultDocumentId, if available) for the feed
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FeedsApi();
+$apiInstance = new SellingPartnerApi\Api\FeedsApi();
 $feed_id = 'feed_id_example'; // string | The identifier for the feed. This identifier is unique only in combination with a seller ID.
 
 try {
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Feeds\GetFeedResponse**](../Model/Feeds/GetFeedResponse.md)
+[**\SellingPartnerApi\Model\Feeds\GetFeedResponse**](../Model/Feeds/GetFeedResponse.md)
 
 ### HTTP request headers
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 ## `getFeedDocument()`
 
 ```php
-getFeedDocument($feed_document_id): \Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse
+getFeedDocument($feed_document_id): \SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse
 ```
 
 
@@ -212,7 +212,7 @@ Returns the information required for retrieving a feed document's contents. This
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FeedsApi();
+$apiInstance = new SellingPartnerApi\Api\FeedsApi();
 $feed_document_id = 'feed_document_id_example'; // string | The identifier of the feed document.
 
 try {
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse**](../Model/Feeds/GetFeedDocumentResponse.md)
+[**\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse**](../Model/Feeds/GetFeedDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 ## `getFeeds()`
 
 ```php
-getFeeds($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token): \Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse
+getFeeds($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token): \SellingPartnerApi\Model\Feeds\GetFeedsResponse
 ```
 
 
@@ -258,7 +258,7 @@ Returns feed details for the feeds that match the filters that you specify.  **U
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FeedsApi();
+$apiInstance = new SellingPartnerApi\Api\FeedsApi();
 $feed_types = array('feed_types_example'); // string[] | A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
 $page_size = 10; // int | The maximum number of feeds to return in a single call.
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Feeds\GetFeedsResponse**](../Model/Feeds/GetFeedsResponse.md)
+[**\SellingPartnerApi\Model\Feeds\GetFeedsResponse**](../Model/Feeds/GetFeedsResponse.md)
 
 ### HTTP request headers
 

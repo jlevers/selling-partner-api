@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TrackingInformation Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the getTrackingInformation operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,9 +60,9 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'tracking_id' => 'string',
-        'summary' => '\Evers\SellingPartnerApi\Model\Shipping\TrackingSummary',
+        'summary' => '\SellingPartnerApi\Model\Shipping\TrackingSummary',
         'promised_delivery_date' => '\DateTime',
-        'event_history' => '\Evers\SellingPartnerApi\Model\Shipping\Event[]'
+        'event_history' => '\SellingPartnerApi\Model\Shipping\Event[]'
     ];
 
     /**
@@ -280,7 +280,7 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets summary
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\TrackingSummary
+     * @return \SellingPartnerApi\Model\Shipping\TrackingSummary
      */
     public function getSummary()
     {
@@ -290,7 +290,7 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets summary
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\TrackingSummary $summary summary
+     * @param \SellingPartnerApi\Model\Shipping\TrackingSummary $summary summary
      *
      * @return self
      */
@@ -328,7 +328,7 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets event_history
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Event[]
+     * @return \SellingPartnerApi\Model\Shipping\Event[]
      */
     public function getEventHistory()
     {
@@ -338,7 +338,7 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets event_history
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Event[] $event_history A list of events of a shipment.
+     * @param \SellingPartnerApi\Model\Shipping\Event[] $event_history A list of events of a shipment.
      *
      * @return self
      */

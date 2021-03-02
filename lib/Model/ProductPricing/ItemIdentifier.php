@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ItemIdentifier Class Doc Comment
  *
  * @category Class
  * @description Information that identifies an item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_id' => 'string',
         'asin' => 'string',
         'seller_sku' => 'string',
-        'item_condition' => '\Evers\SellingPartnerApi\Model\ProductPricing\ConditionType'
+        'item_condition' => '\SellingPartnerApi\Model\ProductPricing\ConditionType'
     ];
 
     /**
@@ -307,7 +307,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_condition
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\ConditionType
+     * @return \SellingPartnerApi\Model\ProductPricing\ConditionType
      */
     public function getItemCondition()
     {
@@ -317,7 +317,7 @@ class ItemIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_condition
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\ConditionType $item_condition item_condition
+     * @param \SellingPartnerApi\Model\ProductPricing\ConditionType $item_condition item_condition
      *
      * @return self
      */

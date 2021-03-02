@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -13,16 +13,16 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi;
+namespace SellingPartnerApi;
 
-use Evers\SellingPartnerApi\Authentication;
+use SellingPartnerApi\Authentication;
 use \Exception;
 
 /**
  * ApiException Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class HeaderSelector
 {

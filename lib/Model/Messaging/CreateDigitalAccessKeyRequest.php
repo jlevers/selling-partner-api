@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Messaging;
+namespace SellingPartnerApi\Model\Messaging;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateDigitalAccessKeyRequest Class Doc Comment
  *
  * @category Class
  * @description The request schema for the createDigitalAccessKey operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class CreateDigitalAccessKeyRequest implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'text' => 'string',
-        'attachments' => '\Evers\SellingPartnerApi\Model\Messaging\Attachment[]'
+        'attachments' => '\SellingPartnerApi\Model\Messaging\Attachment[]'
     ];
 
     /**
@@ -256,7 +256,7 @@ class CreateDigitalAccessKeyRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets attachments
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\Attachment[]|null
+     * @return \SellingPartnerApi\Model\Messaging\Attachment[]|null
      */
     public function getAttachments()
     {
@@ -266,7 +266,7 @@ class CreateDigitalAccessKeyRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets attachments
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\Attachment[]|null $attachments Attachments to include in the message to the buyer.
+     * @param \SellingPartnerApi\Model\Messaging\Attachment[]|null $attachments Attachments to include in the message to the buyer.
      *
      * @return self
      */

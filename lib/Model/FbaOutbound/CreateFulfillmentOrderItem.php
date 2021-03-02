@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateFulfillmentOrderItem Class Doc Comment
  *
  * @category Class
  * @description Item information for creating a fulfillment order.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -65,9 +65,9 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
         'gift_message' => 'string',
         'displayable_comment' => 'string',
         'fulfillment_network_sku' => 'string',
-        'per_unit_declared_value' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money',
-        'per_unit_price' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money',
-        'per_unit_tax' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money'
+        'per_unit_declared_value' => '\SellingPartnerApi\Model\FbaOutbound\Money',
+        'per_unit_price' => '\SellingPartnerApi\Model\FbaOutbound\Money',
+        'per_unit_tax' => '\SellingPartnerApi\Model\FbaOutbound\Money'
     ];
 
     /**
@@ -444,7 +444,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets per_unit_declared_value
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money|null
      */
     public function getPerUnitDeclaredValue()
     {
@@ -454,7 +454,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets per_unit_declared_value
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null $per_unit_declared_value per_unit_declared_value
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money|null $per_unit_declared_value per_unit_declared_value
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets per_unit_price
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money|null
      */
     public function getPerUnitPrice()
     {
@@ -478,7 +478,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets per_unit_price
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null $per_unit_price per_unit_price
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money|null $per_unit_price per_unit_price
      *
      * @return self
      */
@@ -492,7 +492,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets per_unit_tax
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money|null
      */
     public function getPerUnitTax()
     {
@@ -502,7 +502,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets per_unit_tax
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null $per_unit_tax per_unit_tax
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money|null $per_unit_tax per_unit_tax
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardTechSpecsModule Class Doc Comment
  *
  * @category Class
  * @description The standard table of technical feature names and definitions.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'specification_list' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardTextPairBlock[]',
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'specification_list' => '\SellingPartnerApi\Model\AplusContent\StandardTextPairBlock[]',
         'table_count' => 'int'
     ];
 
@@ -242,7 +242,7 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -252,7 +252,7 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -266,7 +266,7 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets specification_list
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardTextPairBlock[]
+     * @return \SellingPartnerApi\Model\AplusContent\StandardTextPairBlock[]
      */
     public function getSpecificationList()
     {
@@ -276,7 +276,7 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets specification_list
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardTextPairBlock[] $specification_list The specification list.
+     * @param \SellingPartnerApi\Model\AplusContent\StandardTextPairBlock[] $specification_list The specification list.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InvalidASIN Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'asin' => 'string',
-        'error_reason' => '\Evers\SellingPartnerApi\Model\FbaInbound\ErrorReason'
+        'error_reason' => '\SellingPartnerApi\Model\FbaInbound\ErrorReason'
     ];
 
     /**
@@ -240,7 +240,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets error_reason
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\ErrorReason|null
+     * @return \SellingPartnerApi\Model\FbaInbound\ErrorReason|null
      */
     public function getErrorReason()
     {
@@ -250,7 +250,7 @@ class InvalidASIN implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets error_reason
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\ErrorReason|null $error_reason error_reason
+     * @param \SellingPartnerApi\Model\FbaInbound\ErrorReason|null $error_reason error_reason
      *
      * @return self
      */

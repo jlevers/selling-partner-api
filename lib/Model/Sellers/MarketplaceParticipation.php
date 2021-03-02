@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Sellers;
+namespace SellingPartnerApi\Model\Sellers;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * MarketplaceParticipation Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,8 +58,8 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'marketplace' => '\Evers\SellingPartnerApi\Model\Sellers\Marketplace',
-        'participation' => '\Evers\SellingPartnerApi\Model\Sellers\Participation'
+        'marketplace' => '\SellingPartnerApi\Model\Sellers\Marketplace',
+        'participation' => '\SellingPartnerApi\Model\Sellers\Participation'
     ];
 
     /**
@@ -222,7 +222,7 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets marketplace
      *
-     * @return \Evers\SellingPartnerApi\Model\Sellers\Marketplace
+     * @return \SellingPartnerApi\Model\Sellers\Marketplace
      */
     public function getMarketplace()
     {
@@ -232,7 +232,7 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets marketplace
      *
-     * @param \Evers\SellingPartnerApi\Model\Sellers\Marketplace $marketplace marketplace
+     * @param \SellingPartnerApi\Model\Sellers\Marketplace $marketplace marketplace
      *
      * @return self
      */
@@ -246,7 +246,7 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets participation
      *
-     * @return \Evers\SellingPartnerApi\Model\Sellers\Participation
+     * @return \SellingPartnerApi\Model\Sellers\Participation
      */
     public function getParticipation()
     {
@@ -256,7 +256,7 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets participation
      *
-     * @param \Evers\SellingPartnerApi\Model\Sellers\Participation $participation participation
+     * @param \SellingPartnerApi\Model\Sellers\Participation $participation participation
      *
      * @return self
      */

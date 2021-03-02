@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PartneredSmallParcelPackageOutput Class Doc Comment
  *
  * @category Class
  * @description Dimension, weight, and shipping information for the package.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,11 +59,11 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dimensions' => '\Evers\SellingPartnerApi\Model\FbaInbound\Dimensions',
-        'weight' => '\Evers\SellingPartnerApi\Model\FbaInbound\Weight',
+        'dimensions' => '\SellingPartnerApi\Model\FbaInbound\Dimensions',
+        'weight' => '\SellingPartnerApi\Model\FbaInbound\Weight',
         'carrier_name' => 'string',
         'tracking_id' => 'string',
-        'package_status' => '\Evers\SellingPartnerApi\Model\FbaInbound\PackageStatus'
+        'package_status' => '\SellingPartnerApi\Model\FbaInbound\PackageStatus'
     ];
 
     /**
@@ -250,7 +250,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
     /**
      * Gets dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Dimensions
+     * @return \SellingPartnerApi\Model\FbaInbound\Dimensions
      */
     public function getDimensions()
     {
@@ -260,7 +260,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
     /**
      * Sets dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Dimensions $dimensions dimensions
+     * @param \SellingPartnerApi\Model\FbaInbound\Dimensions $dimensions dimensions
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
     /**
      * Gets weight
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Weight
+     * @return \SellingPartnerApi\Model\FbaInbound\Weight
      */
     public function getWeight()
     {
@@ -284,7 +284,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
     /**
      * Sets weight
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Weight $weight weight
+     * @param \SellingPartnerApi\Model\FbaInbound\Weight $weight weight
      *
      * @return self
      */
@@ -346,7 +346,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
     /**
      * Gets package_status
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PackageStatus
+     * @return \SellingPartnerApi\Model\FbaInbound\PackageStatus
      */
     public function getPackageStatus()
     {
@@ -356,7 +356,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
     /**
      * Sets package_status
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PackageStatus $package_status package_status
+     * @param \SellingPartnerApi\Model\FbaInbound\PackageStatus $package_status package_status
      *
      * @return self
      */

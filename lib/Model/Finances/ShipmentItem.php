@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShipmentItem Class Doc Comment
  *
  * @category Class
  * @description An item of a shipment, refund, guarantee claim, or chargeback.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,15 +63,15 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_item_id' => 'string',
         'order_adjustment_item_id' => 'string',
         'quantity_shipped' => 'int',
-        'item_charge_list' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]',
-        'item_charge_adjustment_list' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]',
-        'item_fee_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
-        'item_fee_adjustment_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
-        'item_tax_withheld_list' => '\Evers\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]',
-        'promotion_list' => '\Evers\SellingPartnerApi\Model\Finances\Promotion[]',
-        'promotion_adjustment_list' => '\Evers\SellingPartnerApi\Model\Finances\Promotion[]',
-        'cost_of_points_granted' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'cost_of_points_returned' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'item_charge_list' => '\SellingPartnerApi\Model\Finances\ChargeComponent[]',
+        'item_charge_adjustment_list' => '\SellingPartnerApi\Model\Finances\ChargeComponent[]',
+        'item_fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'item_fee_adjustment_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'item_tax_withheld_list' => '\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]',
+        'promotion_list' => '\SellingPartnerApi\Model\Finances\Promotion[]',
+        'promotion_adjustment_list' => '\SellingPartnerApi\Model\Finances\Promotion[]',
+        'cost_of_points_granted' => '\SellingPartnerApi\Model\Finances\Currency',
+        'cost_of_points_returned' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -379,7 +379,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_charge_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent[]|null
      */
     public function getItemChargeList()
     {
@@ -389,7 +389,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_charge_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null $item_charge_list A list of charge information on the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent[]|null $item_charge_list A list of charge information on the seller's account.
      *
      * @return self
      */
@@ -403,7 +403,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_charge_adjustment_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent[]|null
      */
     public function getItemChargeAdjustmentList()
     {
@@ -413,7 +413,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_charge_adjustment_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null $item_charge_adjustment_list A list of charge information on the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent[]|null $item_charge_adjustment_list A list of charge information on the seller's account.
      *
      * @return self
      */
@@ -427,7 +427,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_fee_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getItemFeeList()
     {
@@ -437,7 +437,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_fee_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $item_fee_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $item_fee_list A list of fee component information.
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_fee_adjustment_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getItemFeeAdjustmentList()
     {
@@ -461,7 +461,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_fee_adjustment_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $item_fee_adjustment_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $item_fee_adjustment_list A list of fee component information.
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_tax_withheld_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\TaxWithheldComponent[]|null
      */
     public function getItemTaxWithheldList()
     {
@@ -485,7 +485,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_tax_withheld_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]|null $item_tax_withheld_list A list of information about taxes withheld.
+     * @param \SellingPartnerApi\Model\Finances\TaxWithheldComponent[]|null $item_tax_withheld_list A list of information about taxes withheld.
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promotion_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Promotion[]|null
+     * @return \SellingPartnerApi\Model\Finances\Promotion[]|null
      */
     public function getPromotionList()
     {
@@ -509,7 +509,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotion_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Promotion[]|null $promotion_list A list of promotions.
+     * @param \SellingPartnerApi\Model\Finances\Promotion[]|null $promotion_list A list of promotions.
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promotion_adjustment_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Promotion[]|null
+     * @return \SellingPartnerApi\Model\Finances\Promotion[]|null
      */
     public function getPromotionAdjustmentList()
     {
@@ -533,7 +533,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promotion_adjustment_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Promotion[]|null $promotion_adjustment_list A list of promotions.
+     * @param \SellingPartnerApi\Model\Finances\Promotion[]|null $promotion_adjustment_list A list of promotions.
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cost_of_points_granted
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getCostOfPointsGranted()
     {
@@ -557,7 +557,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cost_of_points_granted
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $cost_of_points_granted cost_of_points_granted
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $cost_of_points_granted cost_of_points_granted
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cost_of_points_returned
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getCostOfPointsReturned()
     {
@@ -581,7 +581,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cost_of_points_returned
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $cost_of_points_returned cost_of_points_returned
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $cost_of_points_returned cost_of_points_returned
      *
      * @return self
      */

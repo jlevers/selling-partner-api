@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetEligibleShipmentServicesResult Class Doc Comment
  *
  * @category Class
  * @description The payload for the getEligibleShipmentServices operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shipping_service_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingService[]',
-        'rejected_shipping_service_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\RejectedShippingService[]',
-        'temporarily_unavailable_carrier_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[]',
-        'terms_and_conditions_not_accepted_carrier_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[]'
+        'shipping_service_list' => '\SellingPartnerApi\Model\MerchantFulfillment\ShippingService[]',
+        'rejected_shipping_service_list' => '\SellingPartnerApi\Model\MerchantFulfillment\RejectedShippingService[]',
+        'temporarily_unavailable_carrier_list' => '\SellingPartnerApi\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[]',
+        'terms_and_conditions_not_accepted_carrier_list' => '\SellingPartnerApi\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[]'
     ];
 
     /**
@@ -232,7 +232,7 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     /**
      * Gets shipping_service_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingService[]
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ShippingService[]
      */
     public function getShippingServiceList()
     {
@@ -242,7 +242,7 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     /**
      * Sets shipping_service_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingService[] $shipping_service_list A list of shipping services offers.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ShippingService[] $shipping_service_list A list of shipping services offers.
      *
      * @return self
      */
@@ -256,7 +256,7 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     /**
      * Gets rejected_shipping_service_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\RejectedShippingService[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\RejectedShippingService[]|null
      */
     public function getRejectedShippingServiceList()
     {
@@ -266,7 +266,7 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     /**
      * Sets rejected_shipping_service_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\RejectedShippingService[]|null $rejected_shipping_service_list List of services that were for some reason unavailable for this request
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\RejectedShippingService[]|null $rejected_shipping_service_list List of services that were for some reason unavailable for this request
      *
      * @return self
      */
@@ -280,7 +280,7 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     /**
      * Gets temporarily_unavailable_carrier_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[]|null
      */
     public function getTemporarilyUnavailableCarrierList()
     {
@@ -290,7 +290,7 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     /**
      * Sets temporarily_unavailable_carrier_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[]|null $temporarily_unavailable_carrier_list A list of temporarily unavailable carriers.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[]|null $temporarily_unavailable_carrier_list A list of temporarily unavailable carriers.
      *
      * @return self
      */
@@ -304,7 +304,7 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     /**
      * Gets terms_and_conditions_not_accepted_carrier_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[]|null
      */
     public function getTermsAndConditionsNotAcceptedCarrierList()
     {
@@ -314,7 +314,7 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     /**
      * Sets terms_and_conditions_not_accepted_carrier_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[]|null $terms_and_conditions_not_accepted_carrier_list List of carriers whose terms and conditions were not accepted by the seller.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[]|null $terms_and_conditions_not_accepted_carrier_list List of carriers whose terms and conditions were not accepted by the seller.
      *
      * @return self
      */

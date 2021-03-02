@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateFulfillmentReturnResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,9 +58,9 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'return_items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItem[]',
-        'invalid_return_items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\InvalidReturnItem[]',
-        'return_authorizations' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]'
+        'return_items' => '\SellingPartnerApi\Model\FbaOutbound\ReturnItem[]',
+        'invalid_return_items' => '\SellingPartnerApi\Model\FbaOutbound\InvalidReturnItem[]',
+        'return_authorizations' => '\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]'
     ];
 
     /**
@@ -222,7 +222,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets return_items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItem[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\ReturnItem[]|null
      */
     public function getReturnItems()
     {
@@ -232,7 +232,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets return_items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItem[]|null $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
+     * @param \SellingPartnerApi\Model\FbaOutbound\ReturnItem[]|null $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
      *
      * @return self
      */
@@ -246,7 +246,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets invalid_return_items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\InvalidReturnItem[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\InvalidReturnItem[]|null
      */
     public function getInvalidReturnItems()
     {
@@ -256,7 +256,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets invalid_return_items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\InvalidReturnItem[]|null $invalid_return_items An array of invalid return item information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\InvalidReturnItem[]|null $invalid_return_items An array of invalid return item information.
      *
      * @return self
      */
@@ -270,7 +270,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets return_authorizations
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]|null
      */
     public function getReturnAuthorizations()
     {
@@ -280,7 +280,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets return_authorizations
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]|null $return_authorizations An array of return authorization information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]|null $return_authorizations An array of return authorization information.
      *
      * @return self
      */

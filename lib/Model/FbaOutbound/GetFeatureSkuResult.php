@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFeatureSkuResult Class Doc Comment
  *
  * @category Class
  * @description The payload for the getFeatureSKU operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,7 +63,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
         'feature_name' => 'string',
         'is_eligible' => 'bool',
         'ineligible_reasons' => 'string[]',
-        'sku_info' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSku'
+        'sku_info' => '\SellingPartnerApi\Model\FbaOutbound\FeatureSku'
     ];
 
     /**
@@ -340,7 +340,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets sku_info
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSku|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FeatureSku|null
      */
     public function getSkuInfo()
     {
@@ -350,7 +350,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets sku_info
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSku|null $sku_info sku_info
+     * @param \SellingPartnerApi\Model\FbaOutbound\FeatureSku|null $sku_info sku_info
      *
      * @return self
      */

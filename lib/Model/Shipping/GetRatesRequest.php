@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetRatesRequest Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the getRates operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,11 +59,11 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'ship_to' => '\Evers\SellingPartnerApi\Model\Shipping\Address',
-        'ship_from' => '\Evers\SellingPartnerApi\Model\Shipping\Address',
-        'service_types' => '\Evers\SellingPartnerApi\Model\Shipping\ServiceType[]',
+        'ship_to' => '\SellingPartnerApi\Model\Shipping\Address',
+        'ship_from' => '\SellingPartnerApi\Model\Shipping\Address',
+        'service_types' => '\SellingPartnerApi\Model\Shipping\ServiceType[]',
         'ship_date' => '\DateTime',
-        'container_specifications' => '\Evers\SellingPartnerApi\Model\Shipping\ContainerSpecification[]'
+        'container_specifications' => '\SellingPartnerApi\Model\Shipping\ContainerSpecification[]'
     ];
 
     /**
@@ -247,7 +247,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ship_to
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Address
+     * @return \SellingPartnerApi\Model\Shipping\Address
      */
     public function getShipTo()
     {
@@ -257,7 +257,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ship_to
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Address $ship_to ship_to
+     * @param \SellingPartnerApi\Model\Shipping\Address $ship_to ship_to
      *
      * @return self
      */
@@ -271,7 +271,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ship_from
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Address
+     * @return \SellingPartnerApi\Model\Shipping\Address
      */
     public function getShipFrom()
     {
@@ -281,7 +281,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ship_from
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Address $ship_from ship_from
+     * @param \SellingPartnerApi\Model\Shipping\Address $ship_from ship_from
      *
      * @return self
      */
@@ -295,7 +295,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_types
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ServiceType[]
+     * @return \SellingPartnerApi\Model\Shipping\ServiceType[]
      */
     public function getServiceTypes()
     {
@@ -305,7 +305,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_types
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ServiceType[] $service_types A list of service types that can be used to send the shipment.
+     * @param \SellingPartnerApi\Model\Shipping\ServiceType[] $service_types A list of service types that can be used to send the shipment.
      *
      * @return self
      */
@@ -343,7 +343,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets container_specifications
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ContainerSpecification[]
+     * @return \SellingPartnerApi\Model\Shipping\ContainerSpecification[]
      */
     public function getContainerSpecifications()
     {
@@ -353,7 +353,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets container_specifications
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ContainerSpecification[] $container_specifications A list of container specifications.
+     * @param \SellingPartnerApi\Model\Shipping\ContainerSpecification[] $container_specifications A list of container specifications.
      *
      * @return self
      */

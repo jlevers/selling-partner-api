@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ImageOffsets Class Doc Comment
  *
  * @category Class
  * @description The top left corner of the cropped image, specified in the original image&#39;s coordinate space.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class ImageOffsets implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'x' => '\Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits',
-        'y' => '\Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits'
+        'x' => '\SellingPartnerApi\Model\AplusContent\IntegerWithUnits',
+        'y' => '\SellingPartnerApi\Model\AplusContent\IntegerWithUnits'
     ];
 
     /**
@@ -223,7 +223,7 @@ class ImageOffsets implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets x
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits
+     * @return \SellingPartnerApi\Model\AplusContent\IntegerWithUnits
      */
     public function getX()
     {
@@ -233,7 +233,7 @@ class ImageOffsets implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets x
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits $x x
+     * @param \SellingPartnerApi\Model\AplusContent\IntegerWithUnits $x x
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class ImageOffsets implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets y
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits
+     * @return \SellingPartnerApi\Model\AplusContent\IntegerWithUnits
      */
     public function getY()
     {
@@ -257,7 +257,7 @@ class ImageOffsets implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets y
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\IntegerWithUnits $y y
+     * @param \SellingPartnerApi\Model\AplusContent\IntegerWithUnits $y y
      *
      * @return self
      */

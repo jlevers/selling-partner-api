@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeesEstimateRequest Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,9 +60,9 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'is_amazon_fulfilled' => 'bool',
-        'price_to_estimate_fees' => '\Evers\SellingPartnerApi\Model\Fees\PriceToEstimateFees',
+        'price_to_estimate_fees' => '\SellingPartnerApi\Model\Fees\PriceToEstimateFees',
         'identifier' => 'string',
-        'optional_fulfillment_program' => '\Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram'
+        'optional_fulfillment_program' => '\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram'
     ];
 
     /**
@@ -291,7 +291,7 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets price_to_estimate_fees
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\PriceToEstimateFees
+     * @return \SellingPartnerApi\Model\Fees\PriceToEstimateFees
      */
     public function getPriceToEstimateFees()
     {
@@ -301,7 +301,7 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets price_to_estimate_fees
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
+     * @param \SellingPartnerApi\Model\Fees\PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
      *
      * @return self
      */
@@ -339,7 +339,7 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets optional_fulfillment_program
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram|null
+     * @return \SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram|null
      */
     public function getOptionalFulfillmentProgram()
     {
@@ -349,7 +349,7 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets optional_fulfillment_program
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram|null $optional_fulfillment_program optional_fulfillment_program
+     * @param \SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram|null $optional_fulfillment_program optional_fulfillment_program
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PurchaseLabelsRequest Class Doc Comment
  *
  * @category Class
  * @description The request schema for the purchaseLabels operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class PurchaseLabelsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'rate_id' => 'string',
-        'label_specification' => '\Evers\SellingPartnerApi\Model\Shipping\LabelSpecification'
+        'label_specification' => '\SellingPartnerApi\Model\Shipping\LabelSpecification'
     ];
 
     /**
@@ -247,7 +247,7 @@ class PurchaseLabelsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets label_specification
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\LabelSpecification
+     * @return \SellingPartnerApi\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification()
     {
@@ -257,7 +257,7 @@ class PurchaseLabelsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets label_specification
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\LabelSpecification $label_specification label_specification
+     * @param \SellingPartnerApi\Model\Shipping\LabelSpecification $label_specification label_specification
      *
      * @return self
      */

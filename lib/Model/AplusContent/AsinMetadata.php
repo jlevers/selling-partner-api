@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AsinMetadata Class Doc Comment
  *
  * @category Class
  * @description The A+ Content ASIN with additional metadata for content management. If you don&#39;t include the &#x60;includedDataSet&#x60; parameter in a call to the listContentDocumentAsinRelations operation, the related ASINs are returned without metadata.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'asin' => 'string',
-        'badge_set' => '\Evers\SellingPartnerApi\Model\AplusContent\AsinBadge[]',
+        'badge_set' => '\SellingPartnerApi\Model\AplusContent\AsinBadge[]',
         'parent' => 'string',
         'title' => 'string',
         'image_url' => 'string',
@@ -289,7 +289,7 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets badge_set
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\AsinBadge[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\AsinBadge[]|null
      */
     public function getBadgeSet()
     {
@@ -299,7 +299,7 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets badge_set
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\AsinBadge[]|null $badge_set The set of ASIN badges.
+     * @param \SellingPartnerApi\Model\AplusContent\AsinBadge[]|null $badge_set The set of ASIN badges.
      *
      * @return self
      */

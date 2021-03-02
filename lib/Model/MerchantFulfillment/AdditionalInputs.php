@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AdditionalInputs Class Doc Comment
  *
  * @category Class
  * @description Maps the additional seller input to the definition. The key to the map is the field name.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class AdditionalInputs implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'additional_input_field_name' => 'string',
-        'seller_input_definition' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\SellerInputDefinition'
+        'seller_input_definition' => '\SellingPartnerApi\Model\MerchantFulfillment\SellerInputDefinition'
     ];
 
     /**
@@ -241,7 +241,7 @@ class AdditionalInputs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets seller_input_definition
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\SellerInputDefinition|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\SellerInputDefinition|null
      */
     public function getSellerInputDefinition()
     {
@@ -251,7 +251,7 @@ class AdditionalInputs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller_input_definition
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\SellerInputDefinition|null $seller_input_definition seller_input_definition
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\SellerInputDefinition|null $seller_input_definition seller_input_definition
      *
      * @return self
      */

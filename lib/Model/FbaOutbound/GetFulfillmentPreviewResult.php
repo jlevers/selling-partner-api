@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFulfillmentPreviewResult Class Doc Comment
  *
  * @category Class
  * @description A list of fulfillment order previews, including estimated shipping weights, estimated shipping fees, and estimated ship dates and arrival dates.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class GetFulfillmentPreviewResult implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fulfillment_previews' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreview[]'
+        'fulfillment_previews' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreview[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class GetFulfillmentPreviewResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets fulfillment_previews
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreview[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentPreview[]|null
      */
     public function getFulfillmentPreviews()
     {
@@ -221,7 +221,7 @@ class GetFulfillmentPreviewResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets fulfillment_previews
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreview[]|null $fulfillment_previews An array of fulfillment preview information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentPreview[]|null $fulfillment_previews An array of fulfillment preview information.
      *
      * @return self
      */

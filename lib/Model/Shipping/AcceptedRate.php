@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AcceptedRate Class Doc Comment
  *
  * @category Class
  * @description The specific rate purchased for the shipment, or null if unpurchased.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total_charge' => '\Evers\SellingPartnerApi\Model\Shipping\Currency',
-        'billed_weight' => '\Evers\SellingPartnerApi\Model\Shipping\Weight',
-        'service_type' => '\Evers\SellingPartnerApi\Model\Shipping\ServiceType',
-        'promise' => '\Evers\SellingPartnerApi\Model\Shipping\ShippingPromiseSet'
+        'total_charge' => '\SellingPartnerApi\Model\Shipping\Currency',
+        'billed_weight' => '\SellingPartnerApi\Model\Shipping\Weight',
+        'service_type' => '\SellingPartnerApi\Model\Shipping\ServiceType',
+        'promise' => '\SellingPartnerApi\Model\Shipping\ShippingPromiseSet'
     ];
 
     /**
@@ -229,7 +229,7 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_charge
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Currency|null
+     * @return \SellingPartnerApi\Model\Shipping\Currency|null
      */
     public function getTotalCharge()
     {
@@ -239,7 +239,7 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_charge
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Currency|null $total_charge total_charge
+     * @param \SellingPartnerApi\Model\Shipping\Currency|null $total_charge total_charge
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets billed_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Weight|null
+     * @return \SellingPartnerApi\Model\Shipping\Weight|null
      */
     public function getBilledWeight()
     {
@@ -263,7 +263,7 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets billed_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Weight|null $billed_weight billed_weight
+     * @param \SellingPartnerApi\Model\Shipping\Weight|null $billed_weight billed_weight
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_type
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ServiceType|null
+     * @return \SellingPartnerApi\Model\Shipping\ServiceType|null
      */
     public function getServiceType()
     {
@@ -287,7 +287,7 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_type
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ServiceType|null $service_type service_type
+     * @param \SellingPartnerApi\Model\Shipping\ServiceType|null $service_type service_type
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promise
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ShippingPromiseSet|null
+     * @return \SellingPartnerApi\Model\Shipping\ShippingPromiseSet|null
      */
     public function getPromise()
     {
@@ -311,7 +311,7 @@ class AcceptedRate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promise
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ShippingPromiseSet|null $promise promise
+     * @param \SellingPartnerApi\Model\Shipping\ShippingPromiseSet|null $promise promise
      *
      * @return self
      */

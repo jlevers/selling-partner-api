@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrderItemBuyerInfo Class Doc Comment
  *
  * @category Class
  * @description A single order item&#39;s buyer information.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,9 +60,9 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'order_item_id' => 'string',
-        'buyer_customized_info' => '\Evers\SellingPartnerApi\Model\Orders\BuyerCustomizedInfoDetail',
-        'gift_wrap_price' => '\Evers\SellingPartnerApi\Model\Orders\Money',
-        'gift_wrap_tax' => '\Evers\SellingPartnerApi\Model\Orders\Money',
+        'buyer_customized_info' => '\SellingPartnerApi\Model\Orders\BuyerCustomizedInfoDetail',
+        'gift_wrap_price' => '\SellingPartnerApi\Model\Orders\Money',
+        'gift_wrap_tax' => '\SellingPartnerApi\Model\Orders\Money',
         'gift_message_text' => 'string',
         'gift_wrap_level' => 'string'
     ];
@@ -268,7 +268,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets buyer_customized_info
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\BuyerCustomizedInfoDetail|null
+     * @return \SellingPartnerApi\Model\Orders\BuyerCustomizedInfoDetail|null
      */
     public function getBuyerCustomizedInfo()
     {
@@ -278,7 +278,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets buyer_customized_info
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\BuyerCustomizedInfoDetail|null $buyer_customized_info buyer_customized_info
+     * @param \SellingPartnerApi\Model\Orders\BuyerCustomizedInfoDetail|null $buyer_customized_info buyer_customized_info
      *
      * @return self
      */
@@ -292,7 +292,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets gift_wrap_price
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getGiftWrapPrice()
     {
@@ -302,7 +302,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets gift_wrap_price
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $gift_wrap_price gift_wrap_price
+     * @param \SellingPartnerApi\Model\Orders\Money|null $gift_wrap_price gift_wrap_price
      *
      * @return self
      */
@@ -316,7 +316,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets gift_wrap_tax
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getGiftWrapTax()
     {
@@ -326,7 +326,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets gift_wrap_tax
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $gift_wrap_tax gift_wrap_tax
+     * @param \SellingPartnerApi\Model\Orders\Money|null $gift_wrap_tax gift_wrap_tax
      *
      * @return self
      */

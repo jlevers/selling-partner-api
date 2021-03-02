@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TrialShipmentEvent Class Doc Comment
  *
  * @category Class
  * @description An event related to a trial shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,7 +63,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'financial_event_group_id' => 'string',
         'posted_date' => '\DateTime',
         'sku' => 'string',
-        'fee_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]'
+        'fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]'
     ];
 
     /**
@@ -331,7 +331,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets fee_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getFeeList()
     {
@@ -341,7 +341,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fee_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $fee_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $fee_list A list of fee component information.
      *
      * @return self
      */

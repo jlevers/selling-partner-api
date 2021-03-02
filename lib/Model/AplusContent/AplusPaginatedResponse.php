@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AplusPaginatedResponse Class Doc Comment
  *
  * @category Class
  * @description The base response data for paginated A+ Content operations. Individual operations may extend this with additional data. If nextPageToken is not returned, there are no more pages to return.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'warnings' => '\Evers\SellingPartnerApi\Model\AplusContent\Error[]',
+        'warnings' => '\SellingPartnerApi\Model\AplusContent\Error[]',
         'next_page_token' => 'string'
     ];
 
@@ -221,7 +221,7 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets warnings
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\Error[]|null
      */
     public function getWarnings()
     {
@@ -231,7 +231,7 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets warnings
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
+     * @param \SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CompleteServiceJobByServiceJobIdResponse Class Doc Comment
  *
  * @category Class
  * @description Response schema for CompleteServiceJobByServiceJobId operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CompleteServiceJobByServiceJobIdResponse implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Evers\SellingPartnerApi\Model\Service\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Service\Error[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CompleteServiceJobByServiceJobIdResponse implements ModelInterface, ArrayA
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Error[]|null
+     * @return \SellingPartnerApi\Model\Service\Error[]|null
      */
     public function getErrors()
     {
@@ -221,7 +221,7 @@ class CompleteServiceJobByServiceJobIdResponse implements ModelInterface, ArrayA
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Service\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

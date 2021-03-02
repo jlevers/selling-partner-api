@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ImageCropSpecification Class Doc Comment
  *
  * @category Class
  * @description The instructions for optionally cropping an image. If no cropping is desired, set the dimensions to the original image size. If the image is cropped and no offset values are provided, then the coordinates of the top left corner of the cropped image, relative to the original image, are defaulted to (0,0).
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class ImageCropSpecification implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'size' => '\Evers\SellingPartnerApi\Model\AplusContent\ImageDimensions',
-        'offset' => '\Evers\SellingPartnerApi\Model\AplusContent\ImageOffsets'
+        'size' => '\SellingPartnerApi\Model\AplusContent\ImageDimensions',
+        'offset' => '\SellingPartnerApi\Model\AplusContent\ImageOffsets'
     ];
 
     /**
@@ -220,7 +220,7 @@ class ImageCropSpecification implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets size
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ImageDimensions
+     * @return \SellingPartnerApi\Model\AplusContent\ImageDimensions
      */
     public function getSize()
     {
@@ -230,7 +230,7 @@ class ImageCropSpecification implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets size
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ImageDimensions $size size
+     * @param \SellingPartnerApi\Model\AplusContent\ImageDimensions $size size
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class ImageCropSpecification implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets offset
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ImageOffsets|null
+     * @return \SellingPartnerApi\Model\AplusContent\ImageOffsets|null
      */
     public function getOffset()
     {
@@ -254,7 +254,7 @@ class ImageCropSpecification implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets offset
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ImageOffsets|null $offset offset
+     * @param \SellingPartnerApi\Model\AplusContent\ImageOffsets|null $offset offset
      *
      * @return self
      */

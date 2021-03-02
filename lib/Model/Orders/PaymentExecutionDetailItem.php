@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PaymentExecutionDetailItem Class Doc Comment
  *
  * @category Class
  * @description Information about a sub-payment method used to pay for a COD order.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment' => '\Evers\SellingPartnerApi\Model\Orders\Money',
+        'payment' => '\SellingPartnerApi\Model\Orders\Money',
         'payment_method' => 'string'
     ];
 
@@ -223,7 +223,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets payment
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money
+     * @return \SellingPartnerApi\Model\Orders\Money
      */
     public function getPayment()
     {
@@ -233,7 +233,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets payment
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money $payment payment
+     * @param \SellingPartnerApi\Model\Orders\Money $payment payment
      *
      * @return self
      */

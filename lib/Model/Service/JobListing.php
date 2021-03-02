@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * JobListing Class Doc Comment
  *
  * @category Class
  * @description The payload for the GetJobs operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class JobListing implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_result_size' => 'int',
         'next_page_token' => 'string',
         'previous_page_token' => 'string',
-        'jobs' => '\Evers\SellingPartnerApi\Model\Service\ServiceJob[]'
+        'jobs' => '\SellingPartnerApi\Model\Service\ServiceJob[]'
     ];
 
     /**
@@ -301,7 +301,7 @@ class JobListing implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets jobs
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\ServiceJob[]|null
+     * @return \SellingPartnerApi\Model\Service\ServiceJob[]|null
      */
     public function getJobs()
     {
@@ -311,7 +311,7 @@ class JobListing implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets jobs
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\ServiceJob[]|null $jobs List of job details for the given input.
+     * @param \SellingPartnerApi\Model\Service\ServiceJob[]|null $jobs List of job details for the given input.
      *
      * @return self
      */

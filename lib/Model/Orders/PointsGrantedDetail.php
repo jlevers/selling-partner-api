@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PointsGrantedDetail Class Doc Comment
  *
  * @category Class
  * @description The number of Amazon Points offered with the purchase of an item, and their monetary value.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'points_number' => 'int',
-        'points_monetary_value' => '\Evers\SellingPartnerApi\Model\Orders\Money'
+        'points_monetary_value' => '\SellingPartnerApi\Model\Orders\Money'
     ];
 
     /**
@@ -241,7 +241,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets points_monetary_value
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Money|null
+     * @return \SellingPartnerApi\Model\Orders\Money|null
      */
     public function getPointsMonetaryValue()
     {
@@ -251,7 +251,7 @@ class PointsGrantedDetail implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets points_monetary_value
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Money|null $points_monetary_value points_monetary_value
+     * @param \SellingPartnerApi\Model\Orders\Money|null $points_monetary_value points_monetary_value
      *
      * @return self
      */

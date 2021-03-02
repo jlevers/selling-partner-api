@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Messaging;
+namespace SellingPartnerApi\Model\Messaging;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetMessagingActionsForOrderResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getMessagingActionsForOrder operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,9 +59,9 @@ class GetMessagingActionsForOrderResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        '_links' => '\Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseLinks',
-        '_embedded' => '\Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded',
-        'errors' => '\Evers\SellingPartnerApi\Model\Messaging\Error[]'
+        '_links' => '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseLinks',
+        '_embedded' => '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded',
+        'errors' => '\SellingPartnerApi\Model\Messaging\Error[]'
     ];
 
     /**
@@ -223,7 +223,7 @@ class GetMessagingActionsForOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets _links
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseLinks|null
+     * @return \SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseLinks|null
      */
     public function getLinks()
     {
@@ -233,7 +233,7 @@ class GetMessagingActionsForOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets _links
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseLinks|null $_links _links
+     * @param \SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseLinks|null $_links _links
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class GetMessagingActionsForOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets _embedded
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded|null
+     * @return \SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded|null
      */
     public function getEmbedded()
     {
@@ -257,7 +257,7 @@ class GetMessagingActionsForOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets _embedded
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded|null $_embedded _embedded
+     * @param \SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded|null $_embedded _embedded
      *
      * @return self
      */
@@ -271,7 +271,7 @@ class GetMessagingActionsForOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\Error[]|null
+     * @return \SellingPartnerApi\Model\Messaging\Error[]|null
      */
     public function getErrors()
     {
@@ -281,7 +281,7 @@ class GetMessagingActionsForOrderResponse implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Messaging\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

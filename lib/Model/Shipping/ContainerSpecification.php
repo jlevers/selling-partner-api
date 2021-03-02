@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ContainerSpecification Class Doc Comment
  *
  * @category Class
  * @description Container specification for checking the service rate.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class ContainerSpecification implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dimensions' => '\Evers\SellingPartnerApi\Model\Shipping\Dimensions',
-        'weight' => '\Evers\SellingPartnerApi\Model\Shipping\Weight'
+        'dimensions' => '\SellingPartnerApi\Model\Shipping\Dimensions',
+        'weight' => '\SellingPartnerApi\Model\Shipping\Weight'
     ];
 
     /**
@@ -223,7 +223,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Dimensions
+     * @return \SellingPartnerApi\Model\Shipping\Dimensions
      */
     public function getDimensions()
     {
@@ -233,7 +233,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Dimensions $dimensions dimensions
+     * @param \SellingPartnerApi\Model\Shipping\Dimensions $dimensions dimensions
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Weight
+     * @return \SellingPartnerApi\Model\Shipping\Weight
      */
     public function getWeight()
     {
@@ -257,7 +257,7 @@ class ContainerSpecification implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Weight $weight weight
+     * @param \SellingPartnerApi\Model\Shipping\Weight $weight weight
      *
      * @return self
      */

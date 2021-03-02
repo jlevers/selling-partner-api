@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\SmallAndLight;
+namespace SellingPartnerApi\Model\SmallAndLight;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeeLineItem Class Doc Comment
  *
  * @category Class
  * @description Fee details for a specific fee.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'fee_type' => 'string',
-        'fee_charge' => '\Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType'
+        'fee_charge' => '\SellingPartnerApi\Model\SmallAndLight\MoneyType'
     ];
 
     /**
@@ -285,7 +285,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fee_charge
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType
+     * @return \SellingPartnerApi\Model\SmallAndLight\MoneyType
      */
     public function getFeeCharge()
     {
@@ -295,7 +295,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_charge
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType $fee_charge fee_charge
+     * @param \SellingPartnerApi\Model\SmallAndLight\MoneyType $fee_charge fee_charge
      *
      * @return self
      */

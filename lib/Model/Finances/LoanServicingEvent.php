@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * LoanServicingEvent Class Doc Comment
  *
  * @category Class
  * @description A loan advance, loan payment, or loan refund.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'loan_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
+        'loan_amount' => '\SellingPartnerApi\Model\Finances\Currency',
         'source_business_event_type' => 'string'
     ];
 
@@ -217,7 +217,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets loan_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getLoanAmount()
     {
@@ -227,7 +227,7 @@ class LoanServicingEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets loan_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $loan_amount loan_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $loan_amount loan_amount
      *
      * @return self
      */

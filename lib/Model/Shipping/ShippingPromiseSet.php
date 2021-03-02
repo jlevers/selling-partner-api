@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShippingPromiseSet Class Doc Comment
  *
  * @category Class
  * @description The promised delivery time and pickup time.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class ShippingPromiseSet implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'delivery_window' => '\Evers\SellingPartnerApi\Model\Shipping\TimeRange',
-        'receive_window' => '\Evers\SellingPartnerApi\Model\Shipping\TimeRange'
+        'delivery_window' => '\SellingPartnerApi\Model\Shipping\TimeRange',
+        'receive_window' => '\SellingPartnerApi\Model\Shipping\TimeRange'
     ];
 
     /**
@@ -217,7 +217,7 @@ class ShippingPromiseSet implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets delivery_window
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\TimeRange|null
+     * @return \SellingPartnerApi\Model\Shipping\TimeRange|null
      */
     public function getDeliveryWindow()
     {
@@ -227,7 +227,7 @@ class ShippingPromiseSet implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets delivery_window
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\TimeRange|null $delivery_window delivery_window
+     * @param \SellingPartnerApi\Model\Shipping\TimeRange|null $delivery_window delivery_window
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class ShippingPromiseSet implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets receive_window
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\TimeRange|null
+     * @return \SellingPartnerApi\Model\Shipping\TimeRange|null
      */
     public function getReceiveWindow()
     {
@@ -251,7 +251,7 @@ class ShippingPromiseSet implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets receive_window
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\TimeRange|null $receive_window receive_window
+     * @param \SellingPartnerApi\Model\Shipping\TimeRange|null $receive_window receive_window
      *
      * @return self
      */

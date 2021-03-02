@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SearchContentPublishRecordsResponseAllOf Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class SearchContentPublishRecordsResponseAllOf implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'publish_record_list' => '\Evers\SellingPartnerApi\Model\AplusContent\PublishRecord[]'
+        'publish_record_list' => '\SellingPartnerApi\Model\AplusContent\PublishRecord[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class SearchContentPublishRecordsResponseAllOf implements ModelInterface, ArrayA
     /**
      * Gets publish_record_list
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\PublishRecord[]
+     * @return \SellingPartnerApi\Model\AplusContent\PublishRecord[]
      */
     public function getPublishRecordList()
     {
@@ -223,7 +223,7 @@ class SearchContentPublishRecordsResponseAllOf implements ModelInterface, ArrayA
     /**
      * Sets publish_record_list
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\PublishRecord[] $publish_record_list A list of A+ Content publishing records.
+     * @param \SellingPartnerApi\Model\AplusContent\PublishRecord[] $publish_record_list A list of A+ Content publishing records.
      *
      * @return self
      */

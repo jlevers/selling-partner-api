@@ -36,7 +36,7 @@
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": { "Evers\\SellingPartnerApi\\" : "lib/" },
+        "psr-4": { "SellingPartnerApi\\" : "lib/" },
         "files": [ "lib/functions_include.php" ]
     }
 }

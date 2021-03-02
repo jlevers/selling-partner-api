@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Notifications;
+namespace SellingPartnerApi\Model\Notifications;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * DeleteSubscriptionByIdResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the deleteSubscriptionById operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class DeleteSubscriptionByIdResponse implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Evers\SellingPartnerApi\Model\Notifications\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Notifications\Error[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class DeleteSubscriptionByIdResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\Error[]|null
+     * @return \SellingPartnerApi\Model\Notifications\Error[]|null
      */
     public function getErrors()
     {
@@ -221,7 +221,7 @@ class DeleteSubscriptionByIdResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Notifications\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

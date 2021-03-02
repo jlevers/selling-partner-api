@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardImageTextOverlayModule Class Doc Comment
  *
  * @category Class
  * @description A standard background image with a floating text box.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'overlay_color_type' => '\Evers\SellingPartnerApi\Model\AplusContent\ColorType',
-        'block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
+        'overlay_color_type' => '\SellingPartnerApi\Model\AplusContent\ColorType',
+        'block' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
     ];
 
     /**
@@ -220,7 +220,7 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets overlay_color_type
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ColorType
+     * @return \SellingPartnerApi\Model\AplusContent\ColorType
      */
     public function getOverlayColorType()
     {
@@ -230,7 +230,7 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets overlay_color_type
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ColorType $overlay_color_type overlay_color_type
+     * @param \SellingPartnerApi\Model\AplusContent\ColorType $overlay_color_type overlay_color_type
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock()
     {
@@ -254,7 +254,7 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block block
      *
      * @return self
      */

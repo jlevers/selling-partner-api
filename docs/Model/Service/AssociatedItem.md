@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **order_id** | **string** | The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format. | [optional]
 **item_status** | **string** | The status of the item. | [optional]
 **brand_name** | **string** | The brand name of the item. | [optional]
-**item_delivery** | [**\Evers\SellingPartnerApi\Model\Service\ItemDelivery**](ItemDelivery.md) |  | [optional]
+**item_delivery** | [**\SellingPartnerApi\Model\Service\ItemDelivery**](ItemDelivery.md) |  | [optional]
 
 [[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetEligibleShipmentServicesRequest Class Doc Comment
  *
  * @category Class
  * @description Request schema.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shipment_request_details' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails',
-        'shipping_offering_filter' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingOfferingFilter'
+        'shipment_request_details' => '\SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails',
+        'shipping_offering_filter' => '\SellingPartnerApi\Model\MerchantFulfillment\ShippingOfferingFilter'
     ];
 
     /**
@@ -220,7 +220,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess,
     /**
      * Gets shipment_request_details
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails
      */
     public function getShipmentRequestDetails()
     {
@@ -230,7 +230,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets shipment_request_details
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess,
     /**
      * Gets shipping_offering_filter
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingOfferingFilter|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ShippingOfferingFilter|null
      */
     public function getShippingOfferingFilter()
     {
@@ -254,7 +254,7 @@ class GetEligibleShipmentServicesRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets shipping_offering_filter
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingOfferingFilter|null $shipping_offering_filter shipping_offering_filter
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ShippingOfferingFilter|null $shipping_offering_filter shipping_offering_filter
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Dimensions Class Doc Comment
  *
  * @category Class
  * @description The dimension values and unit of measurement.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
         'length' => 'double',
         'width' => 'double',
         'height' => 'double',
-        'unit' => '\Evers\SellingPartnerApi\Model\FbaInbound\UnitOfMeasurement'
+        'unit' => '\SellingPartnerApi\Model\FbaInbound\UnitOfMeasurement'
     ];
 
     /**
@@ -313,7 +313,7 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets unit
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\UnitOfMeasurement
+     * @return \SellingPartnerApi\Model\FbaInbound\UnitOfMeasurement
      */
     public function getUnit()
     {
@@ -323,7 +323,7 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unit
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\UnitOfMeasurement $unit unit
+     * @param \SellingPartnerApi\Model\FbaInbound\UnitOfMeasurement $unit unit
      *
      * @return self
      */

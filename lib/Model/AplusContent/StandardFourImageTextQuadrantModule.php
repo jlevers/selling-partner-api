@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardFourImageTextQuadrantModule Class Doc Comment
  *
  * @category Class
  * @description Four standard images with text, presented on a grid of four quadrants.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'block1' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'block2' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'block3' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'block4' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
+        'block1' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'block2' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'block3' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'block4' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
     ];
 
     /**
@@ -241,7 +241,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
     /**
      * Gets block1
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock
      */
     public function getBlock1()
     {
@@ -251,7 +251,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
     /**
      * Sets block1
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock $block1 block1
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock $block1 block1
      *
      * @return self
      */
@@ -265,7 +265,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
     /**
      * Gets block2
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock
      */
     public function getBlock2()
     {
@@ -275,7 +275,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
     /**
      * Sets block2
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock $block2 block2
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock $block2 block2
      *
      * @return self
      */
@@ -289,7 +289,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
     /**
      * Gets block3
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock
      */
     public function getBlock3()
     {
@@ -299,7 +299,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
     /**
      * Sets block3
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock $block3 block3
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock $block3 block3
      *
      * @return self
      */
@@ -313,7 +313,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
     /**
      * Gets block4
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock
      */
     public function getBlock4()
     {
@@ -323,7 +323,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, ArrayAccess
     /**
      * Sets block4
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock $block4 block4
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock $block4 block4
      *
      * @return self
      */

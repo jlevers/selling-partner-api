@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PurchaseShipmentResult Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the purchaseShipment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class PurchaseShipmentResult implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'shipment_id' => 'string',
-        'service_rate' => '\Evers\SellingPartnerApi\Model\Shipping\ServiceRate',
-        'label_results' => '\Evers\SellingPartnerApi\Model\Shipping\LabelResult[]'
+        'service_rate' => '\SellingPartnerApi\Model\Shipping\ServiceRate',
+        'label_results' => '\SellingPartnerApi\Model\Shipping\LabelResult[]'
     ];
 
     /**
@@ -256,7 +256,7 @@ class PurchaseShipmentResult implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets service_rate
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ServiceRate
+     * @return \SellingPartnerApi\Model\Shipping\ServiceRate
      */
     public function getServiceRate()
     {
@@ -266,7 +266,7 @@ class PurchaseShipmentResult implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets service_rate
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ServiceRate $service_rate service_rate
+     * @param \SellingPartnerApi\Model\Shipping\ServiceRate $service_rate service_rate
      *
      * @return self
      */
@@ -280,7 +280,7 @@ class PurchaseShipmentResult implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets label_results
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\LabelResult[]
+     * @return \SellingPartnerApi\Model\Shipping\LabelResult[]
      */
     public function getLabelResults()
     {
@@ -290,7 +290,7 @@ class PurchaseShipmentResult implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets label_results
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\LabelResult[] $label_results A list of label results
+     * @param \SellingPartnerApi\Model\Shipping\LabelResult[] $label_results A list of label results
      *
      * @return self
      */

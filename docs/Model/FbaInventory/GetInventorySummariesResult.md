@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**granularity** | [**\Evers\SellingPartnerApi\Model\FbaInventory\Granularity**](Granularity.md) |  |
-**inventory_summaries** | [**\Evers\SellingPartnerApi\Model\FbaInventory\InventorySummary[]**](InventorySummary.md) | A list of inventory summaries. |
+**granularity** | [**\SellingPartnerApi\Model\FbaInventory\Granularity**](Granularity.md) |  |
+**inventory_summaries** | [**\SellingPartnerApi\Model\FbaInventory\InventorySummary[]**](InventorySummary.md) | A list of inventory summaries. |
 
 [[FbaInventory Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

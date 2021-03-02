@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AvailableCarrierWillPickUpOption Class Doc Comment
  *
  * @category Class
  * @description Indicates whether the carrier will pick up the package, and what fee is charged, if any.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'carrier_will_pick_up_option' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption',
-        'charge' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount'
+        'carrier_will_pick_up_option' => '\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption',
+        'charge' => '\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount'
     ];
 
     /**
@@ -223,7 +223,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess, \
     /**
      * Gets carrier_will_pick_up_option
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption
      */
     public function getCarrierWillPickUpOption()
     {
@@ -233,7 +233,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess, \
     /**
      * Sets carrier_will_pick_up_option
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption $carrier_will_pick_up_option carrier_will_pick_up_option
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption $carrier_will_pick_up_option carrier_will_pick_up_option
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess, \
     /**
      * Gets charge
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getCharge()
     {
@@ -257,7 +257,7 @@ class AvailableCarrierWillPickUpOption implements ModelInterface, ArrayAccess, \
     /**
      * Sets charge
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount $charge charge
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount $charge charge
      *
      * @return self
      */

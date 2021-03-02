@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Catalog;
+namespace SellingPartnerApi\Model\Catalog;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListMatchingItemsResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Evers\SellingPartnerApi\Model\Catalog\CatalogItem[]'
+        'items' => '\SellingPartnerApi\Model\Catalog\CatalogItem[]'
     ];
 
     /**
@@ -210,7 +210,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets items
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\CatalogItem[]|null
+     * @return \SellingPartnerApi\Model\Catalog\CatalogItem[]|null
      */
     public function getItems()
     {
@@ -220,7 +220,7 @@ class ListMatchingItemsResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets items
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\CatalogItem[]|null $items A list of items.
+     * @param \SellingPartnerApi\Model\Catalog\CatalogItem[]|null $items A list of items.
      *
      * @return self
      */

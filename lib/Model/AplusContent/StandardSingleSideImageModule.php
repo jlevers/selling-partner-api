@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardSingleSideImageModule Class Doc Comment
  *
  * @category Class
  * @description A standard headline and body text with an image on the side.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardSingleSideImageModule implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'image_position_type' => '\Evers\SellingPartnerApi\Model\AplusContent\PositionType',
-        'block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
+        'image_position_type' => '\SellingPartnerApi\Model\AplusContent\PositionType',
+        'block' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
     ];
 
     /**
@@ -220,7 +220,7 @@ class StandardSingleSideImageModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets image_position_type
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\PositionType
+     * @return \SellingPartnerApi\Model\AplusContent\PositionType
      */
     public function getImagePositionType()
     {
@@ -230,7 +230,7 @@ class StandardSingleSideImageModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets image_position_type
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\PositionType $image_position_type image_position_type
+     * @param \SellingPartnerApi\Model\AplusContent\PositionType $image_position_type image_position_type
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class StandardSingleSideImageModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock()
     {
@@ -254,7 +254,7 @@ class StandardSingleSideImageModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block block
      *
      * @return self
      */

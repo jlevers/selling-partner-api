@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -14,15 +14,15 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi;
+namespace SellingPartnerApi;
 
-use Evers\SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class ObjectSerializer
 {
@@ -350,7 +350,7 @@ class ObjectSerializer
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\Evers\SellingPartnerApi\Model\\' . $data->{$discriminator};
+                $subclass = '\SellingPartnerApi\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PartneredLtlDataOutput Class Doc Comment
  *
  * @category Class
  * @description Information returned by Amazon about a Less Than Truckload/Full Truckload (LTL/FTL) shipment by an Amazon-partnered carrier.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,20 +59,20 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'contact' => '\Evers\SellingPartnerApi\Model\FbaInbound\Contact',
+        'contact' => '\SellingPartnerApi\Model\FbaInbound\Contact',
         'box_count' => 'int',
-        'seller_freight_class' => '\Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
+        'seller_freight_class' => '\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
         'freight_ready_date' => '\DateTime',
-        'pallet_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\Pallet[]',
-        'total_weight' => '\Evers\SellingPartnerApi\Model\FbaInbound\Weight',
-        'seller_declared_value' => '\Evers\SellingPartnerApi\Model\FbaInbound\Amount',
-        'amazon_calculated_value' => '\Evers\SellingPartnerApi\Model\FbaInbound\Amount',
+        'pallet_list' => '\SellingPartnerApi\Model\FbaInbound\Pallet[]',
+        'total_weight' => '\SellingPartnerApi\Model\FbaInbound\Weight',
+        'seller_declared_value' => '\SellingPartnerApi\Model\FbaInbound\Amount',
+        'amazon_calculated_value' => '\SellingPartnerApi\Model\FbaInbound\Amount',
         'preview_pickup_date' => '\DateTime',
         'preview_delivery_date' => '\DateTime',
-        'preview_freight_class' => '\Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
+        'preview_freight_class' => '\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
         'amazon_reference_id' => 'string',
         'is_bill_of_lading_available' => 'bool',
-        'partnered_estimate' => '\Evers\SellingPartnerApi\Model\FbaInbound\PartneredEstimate',
+        'partnered_estimate' => '\SellingPartnerApi\Model\FbaInbound\PartneredEstimate',
         'carrier_name' => 'string'
     ];
 
@@ -328,7 +328,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets contact
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Contact
+     * @return \SellingPartnerApi\Model\FbaInbound\Contact
      */
     public function getContact()
     {
@@ -338,7 +338,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets contact
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Contact $contact contact
+     * @param \SellingPartnerApi\Model\FbaInbound\Contact $contact contact
      *
      * @return self
      */
@@ -376,7 +376,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets seller_freight_class
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null
+     * @return \SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null
      */
     public function getSellerFreightClass()
     {
@@ -386,7 +386,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets seller_freight_class
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null $seller_freight_class seller_freight_class
+     * @param \SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null $seller_freight_class seller_freight_class
      *
      * @return self
      */
@@ -424,7 +424,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets pallet_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Pallet[]
+     * @return \SellingPartnerApi\Model\FbaInbound\Pallet[]
      */
     public function getPalletList()
     {
@@ -434,7 +434,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets pallet_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Pallet[] $pallet_list A list of pallet information.
+     * @param \SellingPartnerApi\Model\FbaInbound\Pallet[] $pallet_list A list of pallet information.
      *
      * @return self
      */
@@ -448,7 +448,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets total_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Weight
+     * @return \SellingPartnerApi\Model\FbaInbound\Weight
      */
     public function getTotalWeight()
     {
@@ -458,7 +458,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets total_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Weight $total_weight total_weight
+     * @param \SellingPartnerApi\Model\FbaInbound\Weight $total_weight total_weight
      *
      * @return self
      */
@@ -472,7 +472,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets seller_declared_value
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Amount|null
      */
     public function getSellerDeclaredValue()
     {
@@ -482,7 +482,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets seller_declared_value
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null $seller_declared_value seller_declared_value
+     * @param \SellingPartnerApi\Model\FbaInbound\Amount|null $seller_declared_value seller_declared_value
      *
      * @return self
      */
@@ -496,7 +496,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets amazon_calculated_value
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Amount|null
      */
     public function getAmazonCalculatedValue()
     {
@@ -506,7 +506,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets amazon_calculated_value
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null $amazon_calculated_value amazon_calculated_value
+     * @param \SellingPartnerApi\Model\FbaInbound\Amount|null $amazon_calculated_value amazon_calculated_value
      *
      * @return self
      */
@@ -568,7 +568,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets preview_freight_class
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass
+     * @return \SellingPartnerApi\Model\FbaInbound\SellerFreightClass
      */
     public function getPreviewFreightClass()
     {
@@ -578,7 +578,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets preview_freight_class
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass $preview_freight_class preview_freight_class
+     * @param \SellingPartnerApi\Model\FbaInbound\SellerFreightClass $preview_freight_class preview_freight_class
      *
      * @return self
      */
@@ -640,7 +640,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets partnered_estimate
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PartneredEstimate|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PartneredEstimate|null
      */
     public function getPartneredEstimate()
     {
@@ -650,7 +650,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets partnered_estimate
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PartneredEstimate|null $partnered_estimate partnered_estimate
+     * @param \SellingPartnerApi\Model\FbaInbound\PartneredEstimate|null $partnered_estimate partnered_estimate
      *
      * @return self
      */

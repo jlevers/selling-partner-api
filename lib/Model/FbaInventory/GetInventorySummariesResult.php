@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInventory;
+namespace SellingPartnerApi\Model\FbaInventory;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetInventorySummariesResult Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the getInventorySummaries operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetInventorySummariesResult implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'granularity' => '\Evers\SellingPartnerApi\Model\FbaInventory\Granularity',
-        'inventory_summaries' => '\Evers\SellingPartnerApi\Model\FbaInventory\InventorySummary[]'
+        'granularity' => '\SellingPartnerApi\Model\FbaInventory\Granularity',
+        'inventory_summaries' => '\SellingPartnerApi\Model\FbaInventory\InventorySummary[]'
     ];
 
     /**
@@ -223,7 +223,7 @@ class GetInventorySummariesResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets granularity
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\Granularity
+     * @return \SellingPartnerApi\Model\FbaInventory\Granularity
      */
     public function getGranularity()
     {
@@ -233,7 +233,7 @@ class GetInventorySummariesResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets granularity
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\Granularity $granularity granularity
+     * @param \SellingPartnerApi\Model\FbaInventory\Granularity $granularity granularity
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class GetInventorySummariesResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets inventory_summaries
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\InventorySummary[]
+     * @return \SellingPartnerApi\Model\FbaInventory\InventorySummary[]
      */
     public function getInventorySummaries()
     {
@@ -257,7 +257,7 @@ class GetInventorySummariesResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets inventory_summaries
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\InventorySummary[] $inventory_summaries A list of inventory summaries.
+     * @param \SellingPartnerApi\Model\FbaInventory\InventorySummary[] $inventory_summaries A list of inventory summaries.
      *
      * @return self
      */

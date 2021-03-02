@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FinancialEvents Class Doc Comment
  *
  * @category Class
  * @description Contains all information related to a financial event.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,28 +59,28 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shipment_event_list' => '\Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
-        'refund_event_list' => '\Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
-        'guarantee_claim_event_list' => '\Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
-        'chargeback_event_list' => '\Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
-        'pay_with_amazon_event_list' => '\Evers\SellingPartnerApi\Model\Finances\PayWithAmazonEvent[]',
-        'service_provider_credit_event_list' => '\Evers\SellingPartnerApi\Model\Finances\SolutionProviderCreditEvent[]',
-        'retrocharge_event_list' => '\Evers\SellingPartnerApi\Model\Finances\RetrochargeEvent[]',
-        'rental_transaction_event_list' => '\Evers\SellingPartnerApi\Model\Finances\RentalTransactionEvent[]',
-        'product_ads_payment_event_list' => '\Evers\SellingPartnerApi\Model\Finances\ProductAdsPaymentEvent[]',
-        'service_fee_event_list' => '\Evers\SellingPartnerApi\Model\Finances\ServiceFeeEvent[]',
-        'seller_deal_payment_event_list' => '\Evers\SellingPartnerApi\Model\Finances\SellerDealPaymentEvent[]',
-        'debt_recovery_event_list' => '\Evers\SellingPartnerApi\Model\Finances\DebtRecoveryEvent[]',
-        'loan_servicing_event_list' => '\Evers\SellingPartnerApi\Model\Finances\LoanServicingEvent[]',
-        'adjustment_event_list' => '\Evers\SellingPartnerApi\Model\Finances\AdjustmentEvent[]',
-        'safet_reimbursement_event_list' => '\Evers\SellingPartnerApi\Model\Finances\SAFETReimbursementEvent[]',
-        'seller_review_enrollment_payment_event_list' => '\Evers\SellingPartnerApi\Model\Finances\SellerReviewEnrollmentPaymentEvent[]',
-        'fba_liquidation_event_list' => '\Evers\SellingPartnerApi\Model\Finances\FBALiquidationEvent[]',
-        'coupon_payment_event_list' => '\Evers\SellingPartnerApi\Model\Finances\CouponPaymentEvent[]',
-        'imaging_services_fee_event_list' => '\Evers\SellingPartnerApi\Model\Finances\ImagingServicesFeeEvent[]',
-        'network_commingling_transaction_event_list' => '\Evers\SellingPartnerApi\Model\Finances\NetworkComminglingTransactionEvent[]',
-        'affordability_expense_event_list' => '\Evers\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]',
-        'affordability_expense_reversal_event_list' => '\Evers\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]'
+        'shipment_event_list' => '\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
+        'refund_event_list' => '\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
+        'guarantee_claim_event_list' => '\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
+        'chargeback_event_list' => '\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
+        'pay_with_amazon_event_list' => '\SellingPartnerApi\Model\Finances\PayWithAmazonEvent[]',
+        'service_provider_credit_event_list' => '\SellingPartnerApi\Model\Finances\SolutionProviderCreditEvent[]',
+        'retrocharge_event_list' => '\SellingPartnerApi\Model\Finances\RetrochargeEvent[]',
+        'rental_transaction_event_list' => '\SellingPartnerApi\Model\Finances\RentalTransactionEvent[]',
+        'product_ads_payment_event_list' => '\SellingPartnerApi\Model\Finances\ProductAdsPaymentEvent[]',
+        'service_fee_event_list' => '\SellingPartnerApi\Model\Finances\ServiceFeeEvent[]',
+        'seller_deal_payment_event_list' => '\SellingPartnerApi\Model\Finances\SellerDealPaymentEvent[]',
+        'debt_recovery_event_list' => '\SellingPartnerApi\Model\Finances\DebtRecoveryEvent[]',
+        'loan_servicing_event_list' => '\SellingPartnerApi\Model\Finances\LoanServicingEvent[]',
+        'adjustment_event_list' => '\SellingPartnerApi\Model\Finances\AdjustmentEvent[]',
+        'safet_reimbursement_event_list' => '\SellingPartnerApi\Model\Finances\SAFETReimbursementEvent[]',
+        'seller_review_enrollment_payment_event_list' => '\SellingPartnerApi\Model\Finances\SellerReviewEnrollmentPaymentEvent[]',
+        'fba_liquidation_event_list' => '\SellingPartnerApi\Model\Finances\FBALiquidationEvent[]',
+        'coupon_payment_event_list' => '\SellingPartnerApi\Model\Finances\CouponPaymentEvent[]',
+        'imaging_services_fee_event_list' => '\SellingPartnerApi\Model\Finances\ImagingServicesFeeEvent[]',
+        'network_commingling_transaction_event_list' => '\SellingPartnerApi\Model\Finances\NetworkComminglingTransactionEvent[]',
+        'affordability_expense_event_list' => '\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]',
+        'affordability_expense_reversal_event_list' => '\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]'
     ];
 
     /**
@@ -337,7 +337,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipment_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
      */
     public function getShipmentEventList()
     {
@@ -347,7 +347,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $shipment_event_list A list of shipment event information.
+     * @param \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $shipment_event_list A list of shipment event information.
      *
      * @return self
      */
@@ -361,7 +361,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets refund_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
      */
     public function getRefundEventList()
     {
@@ -371,7 +371,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets refund_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $refund_event_list A list of shipment event information.
+     * @param \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $refund_event_list A list of shipment event information.
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets guarantee_claim_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
      */
     public function getGuaranteeClaimEventList()
     {
@@ -395,7 +395,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets guarantee_claim_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $guarantee_claim_event_list A list of shipment event information.
+     * @param \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $guarantee_claim_event_list A list of shipment event information.
      *
      * @return self
      */
@@ -409,7 +409,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets chargeback_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
      */
     public function getChargebackEventList()
     {
@@ -419,7 +419,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets chargeback_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $chargeback_event_list A list of shipment event information.
+     * @param \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $chargeback_event_list A list of shipment event information.
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets pay_with_amazon_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\PayWithAmazonEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\PayWithAmazonEvent[]|null
      */
     public function getPayWithAmazonEventList()
     {
@@ -443,7 +443,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pay_with_amazon_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\PayWithAmazonEvent[]|null $pay_with_amazon_event_list A list of events related to the seller's Pay with Amazon account.
+     * @param \SellingPartnerApi\Model\Finances\PayWithAmazonEvent[]|null $pay_with_amazon_event_list A list of events related to the seller's Pay with Amazon account.
      *
      * @return self
      */
@@ -457,7 +457,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_provider_credit_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\SolutionProviderCreditEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\SolutionProviderCreditEvent[]|null
      */
     public function getServiceProviderCreditEventList()
     {
@@ -467,7 +467,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_provider_credit_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\SolutionProviderCreditEvent[]|null $service_provider_credit_event_list A list of information about solution provider credits.
+     * @param \SellingPartnerApi\Model\Finances\SolutionProviderCreditEvent[]|null $service_provider_credit_event_list A list of information about solution provider credits.
      *
      * @return self
      */
@@ -481,7 +481,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets retrocharge_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\RetrochargeEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\RetrochargeEvent[]|null
      */
     public function getRetrochargeEventList()
     {
@@ -491,7 +491,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets retrocharge_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\RetrochargeEvent[]|null $retrocharge_event_list A list of information about Retrocharge or RetrochargeReversal events.
+     * @param \SellingPartnerApi\Model\Finances\RetrochargeEvent[]|null $retrocharge_event_list A list of information about Retrocharge or RetrochargeReversal events.
      *
      * @return self
      */
@@ -505,7 +505,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets rental_transaction_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\RentalTransactionEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\RentalTransactionEvent[]|null
      */
     public function getRentalTransactionEventList()
     {
@@ -515,7 +515,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets rental_transaction_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\RentalTransactionEvent[]|null $rental_transaction_event_list A list of rental transaction event information.
+     * @param \SellingPartnerApi\Model\Finances\RentalTransactionEvent[]|null $rental_transaction_event_list A list of rental transaction event information.
      *
      * @return self
      */
@@ -529,7 +529,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product_ads_payment_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ProductAdsPaymentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ProductAdsPaymentEvent[]|null
      */
     public function getProductAdsPaymentEventList()
     {
@@ -539,7 +539,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product_ads_payment_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ProductAdsPaymentEvent[]|null $product_ads_payment_event_list A list of sponsored products payment events.
+     * @param \SellingPartnerApi\Model\Finances\ProductAdsPaymentEvent[]|null $product_ads_payment_event_list A list of sponsored products payment events.
      *
      * @return self
      */
@@ -553,7 +553,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_fee_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ServiceFeeEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ServiceFeeEvent[]|null
      */
     public function getServiceFeeEventList()
     {
@@ -563,7 +563,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_fee_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ServiceFeeEvent[]|null $service_fee_event_list A list of information about service fee events.
+     * @param \SellingPartnerApi\Model\Finances\ServiceFeeEvent[]|null $service_fee_event_list A list of information about service fee events.
      *
      * @return self
      */
@@ -577,7 +577,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets seller_deal_payment_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\SellerDealPaymentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\SellerDealPaymentEvent[]|null
      */
     public function getSellerDealPaymentEventList()
     {
@@ -587,7 +587,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller_deal_payment_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\SellerDealPaymentEvent[]|null $seller_deal_payment_event_list A list of payment events for deal-related fees.
+     * @param \SellingPartnerApi\Model\Finances\SellerDealPaymentEvent[]|null $seller_deal_payment_event_list A list of payment events for deal-related fees.
      *
      * @return self
      */
@@ -601,7 +601,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets debt_recovery_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\DebtRecoveryEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\DebtRecoveryEvent[]|null
      */
     public function getDebtRecoveryEventList()
     {
@@ -611,7 +611,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets debt_recovery_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\DebtRecoveryEvent[]|null $debt_recovery_event_list A list of debt recovery event information.
+     * @param \SellingPartnerApi\Model\Finances\DebtRecoveryEvent[]|null $debt_recovery_event_list A list of debt recovery event information.
      *
      * @return self
      */
@@ -625,7 +625,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets loan_servicing_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\LoanServicingEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\LoanServicingEvent[]|null
      */
     public function getLoanServicingEventList()
     {
@@ -635,7 +635,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets loan_servicing_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\LoanServicingEvent[]|null $loan_servicing_event_list A list of loan servicing events.
+     * @param \SellingPartnerApi\Model\Finances\LoanServicingEvent[]|null $loan_servicing_event_list A list of loan servicing events.
      *
      * @return self
      */
@@ -649,7 +649,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets adjustment_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\AdjustmentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\AdjustmentEvent[]|null
      */
     public function getAdjustmentEventList()
     {
@@ -659,7 +659,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets adjustment_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\AdjustmentEvent[]|null $adjustment_event_list A list of adjustment event information for the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\AdjustmentEvent[]|null $adjustment_event_list A list of adjustment event information for the seller's account.
      *
      * @return self
      */
@@ -673,7 +673,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets safet_reimbursement_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\SAFETReimbursementEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\SAFETReimbursementEvent[]|null
      */
     public function getSafetReimbursementEventList()
     {
@@ -683,7 +683,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets safet_reimbursement_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\SAFETReimbursementEvent[]|null $safet_reimbursement_event_list A list of SAFETReimbursementEvents.
+     * @param \SellingPartnerApi\Model\Finances\SAFETReimbursementEvent[]|null $safet_reimbursement_event_list A list of SAFETReimbursementEvents.
      *
      * @return self
      */
@@ -697,7 +697,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets seller_review_enrollment_payment_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\SellerReviewEnrollmentPaymentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\SellerReviewEnrollmentPaymentEvent[]|null
      */
     public function getSellerReviewEnrollmentPaymentEventList()
     {
@@ -707,7 +707,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller_review_enrollment_payment_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\SellerReviewEnrollmentPaymentEvent[]|null $seller_review_enrollment_payment_event_list A list of information about fee events for the Early Reviewer Program.
+     * @param \SellingPartnerApi\Model\Finances\SellerReviewEnrollmentPaymentEvent[]|null $seller_review_enrollment_payment_event_list A list of information about fee events for the Early Reviewer Program.
      *
      * @return self
      */
@@ -721,7 +721,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fba_liquidation_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FBALiquidationEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FBALiquidationEvent[]|null
      */
     public function getFbaLiquidationEventList()
     {
@@ -731,7 +731,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fba_liquidation_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FBALiquidationEvent[]|null $fba_liquidation_event_list A list of FBA inventory liquidation payment events.
+     * @param \SellingPartnerApi\Model\Finances\FBALiquidationEvent[]|null $fba_liquidation_event_list A list of FBA inventory liquidation payment events.
      *
      * @return self
      */
@@ -745,7 +745,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets coupon_payment_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\CouponPaymentEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\CouponPaymentEvent[]|null
      */
     public function getCouponPaymentEventList()
     {
@@ -755,7 +755,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets coupon_payment_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\CouponPaymentEvent[]|null $coupon_payment_event_list A list of coupon payment event information.
+     * @param \SellingPartnerApi\Model\Finances\CouponPaymentEvent[]|null $coupon_payment_event_list A list of coupon payment event information.
      *
      * @return self
      */
@@ -769,7 +769,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets imaging_services_fee_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ImagingServicesFeeEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ImagingServicesFeeEvent[]|null
      */
     public function getImagingServicesFeeEventList()
     {
@@ -779,7 +779,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets imaging_services_fee_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ImagingServicesFeeEvent[]|null $imaging_services_fee_event_list A list of fee events related to Amazon Imaging services.
+     * @param \SellingPartnerApi\Model\Finances\ImagingServicesFeeEvent[]|null $imaging_services_fee_event_list A list of fee events related to Amazon Imaging services.
      *
      * @return self
      */
@@ -793,7 +793,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets network_commingling_transaction_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\NetworkComminglingTransactionEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\NetworkComminglingTransactionEvent[]|null
      */
     public function getNetworkComminglingTransactionEventList()
     {
@@ -803,7 +803,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets network_commingling_transaction_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\NetworkComminglingTransactionEvent[]|null $network_commingling_transaction_event_list A list of network commingling transaction events.
+     * @param \SellingPartnerApi\Model\Finances\NetworkComminglingTransactionEvent[]|null $network_commingling_transaction_event_list A list of network commingling transaction events.
      *
      * @return self
      */
@@ -817,7 +817,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affordability_expense_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]|null
      */
     public function getAffordabilityExpenseEventList()
     {
@@ -827,7 +827,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affordability_expense_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]|null $affordability_expense_event_list A list of expense information related to an affordability promotion.
+     * @param \SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]|null $affordability_expense_event_list A list of expense information related to an affordability promotion.
      *
      * @return self
      */
@@ -841,7 +841,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets affordability_expense_reversal_event_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]|null
+     * @return \SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]|null
      */
     public function getAffordabilityExpenseReversalEventList()
     {
@@ -851,7 +851,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets affordability_expense_reversal_event_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]|null $affordability_expense_reversal_event_list A list of expense information related to an affordability promotion.
+     * @param \SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]|null $affordability_expense_reversal_event_list A list of expense information related to an affordability promotion.
      *
      * @return self
      */

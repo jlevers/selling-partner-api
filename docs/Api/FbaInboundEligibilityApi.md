@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\FbaInboundEligibilityApi
+# SellingPartnerApi\FbaInboundEligibilityApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getItemEligibilityPreview()`
 
 ```php
-getItemEligibilityPreview($asin, $program, $marketplace_ids): \Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse
+getItemEligibilityPreview($asin, $program, $marketplace_ids): \SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse
 ```
 
 
@@ -23,7 +23,7 @@ This operation gets an eligibility preview for an item that you specify. You can
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundEligibilityApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundEligibilityApi();
 $asin = 'asin_example'; // string | The ASIN of the item for which you want an eligibility preview.
 $program = 'program_example'; // string | The program that you want to check eligibility against.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | The identifier for the marketplace in which you want to determine eligibility. Required only when program=INBOUND.
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse**](../Model/FbaInboundEligibility/GetItemEligibilityPreviewResponse.md)
+[**\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse**](../Model/FbaInboundEligibility/GetItemEligibilityPreviewResponse.md)
 
 ### HTTP request headers
 

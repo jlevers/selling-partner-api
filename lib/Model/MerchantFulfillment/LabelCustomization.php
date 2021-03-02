@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * LabelCustomization Class Doc Comment
  *
  * @category Class
  * @description Custom text for shipping labels.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'custom_text_for_label' => 'string',
-        'standard_id_for_label' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel'
+        'standard_id_for_label' => '\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel'
     ];
 
     /**
@@ -249,7 +249,7 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets standard_id_for_label
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel|null
      */
     public function getStandardIdForLabel()
     {
@@ -259,7 +259,7 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets standard_id_for_label
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel|null $standard_id_for_label standard_id_for_label
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel|null $standard_id_for_label standard_id_for_label
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * RescheduleAppointmentRequest Class Doc Comment
  *
  * @category Class
  * @description Input for rescheduled appointment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class RescheduleAppointmentRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'appointment_time' => '\Evers\SellingPartnerApi\Model\Service\AppointmentTimeInput',
+        'appointment_time' => '\SellingPartnerApi\Model\Service\AppointmentTimeInput',
         'reschedule_reason_code' => 'string'
     ];
 
@@ -223,7 +223,7 @@ class RescheduleAppointmentRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets appointment_time
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\AppointmentTimeInput
+     * @return \SellingPartnerApi\Model\Service\AppointmentTimeInput
      */
     public function getAppointmentTime()
     {
@@ -233,7 +233,7 @@ class RescheduleAppointmentRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets appointment_time
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\AppointmentTimeInput $appointment_time appointment_time
+     * @param \SellingPartnerApi\Model\Service\AppointmentTimeInput $appointment_time appointment_time
      *
      * @return self
      */

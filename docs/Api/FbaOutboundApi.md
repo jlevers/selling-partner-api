@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\FbaOutboundApi
+# SellingPartnerApi\FbaOutboundApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 ## `cancelFulfillmentOrder()`
 
 ```php
-cancelFulfillmentOrder($seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse
+cancelFulfillmentOrder($seller_fulfillment_order_id): \SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse
 ```
 
 
@@ -34,7 +34,7 @@ Requests that Amazon stop attempting to fulfill the fulfillment order indicated 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $seller_fulfillment_order_id = 'seller_fulfillment_order_id_example'; // string | The identifier assigned to the item by the seller when the fulfillment order was created.
 
 try {
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse**](../Model/FbaOutbound/CancelFulfillmentOrderResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse**](../Model/FbaOutbound/CancelFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ## `createFulfillmentOrder()`
 
 ```php
-createFulfillmentOrder($body): \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse
+createFulfillmentOrder($body): \SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse
 ```
 
 
@@ -80,8 +80,8 @@ Requests that Amazon ship items from the seller's inventory in Amazon's fulfillm
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
-$body = new \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest(); // \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
+$body = new \SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest(); // \SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest
 
 try {
     $result = $apiInstance->createFulfillmentOrder($body);
@@ -95,11 +95,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest**](../Model/FbaOutboundCreateFulfillmentOrderRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest**](../Model/FbaOutboundCreateFulfillmentOrderRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse**](../Model/FbaOutbound/CreateFulfillmentOrderResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse**](../Model/FbaOutbound/CreateFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 ## `createFulfillmentReturn()`
 
 ```php
-createFulfillmentReturn($seller_fulfillment_order_id, $body): \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse
+createFulfillmentReturn($seller_fulfillment_order_id, $body): \SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse
 ```
 
 
@@ -126,9 +126,9 @@ Creates a fulfillment return.   **Usage Plan:**  | Rate (requests per second) | 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $seller_fulfillment_order_id = 'seller_fulfillment_order_id_example'; // string | An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
-$body = new \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest(); // \Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest
+$body = new \SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest(); // \SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest
 
 try {
     $result = $apiInstance->createFulfillmentReturn($seller_fulfillment_order_id, $body);
@@ -143,11 +143,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_fulfillment_order_id** | **string**| An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. |
- **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest**](../Model/FbaOutboundCreateFulfillmentReturnRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest**](../Model/FbaOutboundCreateFulfillmentReturnRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse**](../Model/FbaOutbound/CreateFulfillmentReturnResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse**](../Model/FbaOutbound/CreateFulfillmentReturnResponse.md)
 
 ### HTTP request headers
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 ## `getFeatureInventory()`
 
 ```php
-getFeatureInventory($marketplace_id, $feature_name, $next_token): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse
+getFeatureInventory($marketplace_id, $feature_name, $next_token): \SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse
 ```
 
 
@@ -174,7 +174,7 @@ Returns a list of inventory items that are eligible for the fulfillment feature 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $marketplace_id = 'marketplace_id_example'; // string | The marketplace for which to return a list of the inventory that is eligible for the specified feature.
 $feature_name = 'feature_name_example'; // string | The name of the feature for which to return a list of eligible inventory.
 $next_token = 'next_token_example'; // string | A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse**](../Model/FbaOutbound/GetFeatureInventoryResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse**](../Model/FbaOutbound/GetFeatureInventoryResponse.md)
 
 ### HTTP request headers
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 ## `getFeatureSKU()`
 
 ```php
-getFeatureSKU($marketplace_id, $feature_name, $seller_sku): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse
+getFeatureSKU($marketplace_id, $feature_name, $seller_sku): \SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse
 ```
 
 
@@ -224,7 +224,7 @@ Returns the number of items with the sellerSKU you specify that can have orders 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $marketplace_id = 'marketplace_id_example'; // string | The marketplace for which to return the count.
 $feature_name = 'feature_name_example'; // string | The name of the feature.
 $seller_sku = 'seller_sku_example'; // string | Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse**](../Model/FbaOutbound/GetFeatureSkuResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse**](../Model/FbaOutbound/GetFeatureSkuResponse.md)
 
 ### HTTP request headers
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 ## `getFeatures()`
 
 ```php
-getFeatures($marketplace_id): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse
+getFeatures($marketplace_id): \SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse
 ```
 
 
@@ -274,7 +274,7 @@ Returns a list of features available for Multi-Channel Fulfillment orders in the
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $marketplace_id = 'marketplace_id_example'; // string | The marketplace for which to return the list of features.
 
 try {
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse**](../Model/FbaOutbound/GetFeaturesResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse**](../Model/FbaOutbound/GetFeaturesResponse.md)
 
 ### HTTP request headers
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 ## `getFulfillmentOrder()`
 
 ```php
-getFulfillmentOrder($seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse
+getFulfillmentOrder($seller_fulfillment_order_id): \SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse
 ```
 
 
@@ -320,7 +320,7 @@ Returns the fulfillment order indicated by the specified order identifier.  **Us
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $seller_fulfillment_order_id = 'seller_fulfillment_order_id_example'; // string | The identifier assigned to the item by the seller when the fulfillment order was created.
 
 try {
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse**](../Model/FbaOutbound/GetFulfillmentOrderResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse**](../Model/FbaOutbound/GetFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 ## `getFulfillmentPreview()`
 
 ```php
-getFulfillmentPreview($body): \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse
+getFulfillmentPreview($body): \SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse
 ```
 
 
@@ -366,8 +366,8 @@ Returns a list of fulfillment order previews based on shipping criteria that you
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
-$body = new \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest(); // \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
+$body = new \SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest(); // \SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest
 
 try {
     $result = $apiInstance->getFulfillmentPreview($body);
@@ -381,11 +381,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest**](../Model/FbaOutboundGetFulfillmentPreviewRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest**](../Model/FbaOutboundGetFulfillmentPreviewRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse**](../Model/FbaOutbound/GetFulfillmentPreviewResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse**](../Model/FbaOutbound/GetFulfillmentPreviewResponse.md)
 
 ### HTTP request headers
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 ## `getPackageTrackingDetails()`
 
 ```php
-getPackageTrackingDetails($package_number): \Evers\SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse
+getPackageTrackingDetails($package_number): \SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse
 ```
 
 
@@ -412,7 +412,7 @@ Returns delivery tracking information for a package in an outbound shipment for 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $package_number = 56; // int | The unencrypted package identifier returned by the getFulfillmentOrder operation.
 
 try {
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse**](../Model/FbaOutbound/GetPackageTrackingDetailsResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse**](../Model/FbaOutbound/GetPackageTrackingDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 ## `listAllFulfillmentOrders()`
 
 ```php
-listAllFulfillmentOrders($query_start_date, $next_token): \Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse
+listAllFulfillmentOrders($query_start_date, $next_token): \SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse
 ```
 
 
@@ -458,7 +458,7 @@ Returns a list of fulfillment orders fulfilled after (or at) a specified date-ti
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $query_start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
 $next_token = 'next_token_example'; // string | A string token returned in the response to your previous request.
 
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse**](../Model/FbaOutbound/ListAllFulfillmentOrdersResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse**](../Model/FbaOutbound/ListAllFulfillmentOrdersResponse.md)
 
 ### HTTP request headers
 
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 ## `listReturnReasonCodes()`
 
 ```php
-listReturnReasonCodes($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id): \Evers\SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse
+listReturnReasonCodes($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id): \SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse
 ```
 
 
@@ -506,7 +506,7 @@ Returns a list of return reason codes for a seller SKU in a given marketplace.  
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $seller_sku = 'seller_sku_example'; // string | The seller SKU for which return reason codes are required.
 $language = 'language_example'; // string | The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
 $marketplace_id = 'marketplace_id_example'; // string | The marketplace for which the seller wants return reason codes.
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse**](../Model/FbaOutbound/ListReturnReasonCodesResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse**](../Model/FbaOutbound/ListReturnReasonCodesResponse.md)
 
 ### HTTP request headers
 
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 ## `updateFulfillmentOrder()`
 
 ```php
-updateFulfillmentOrder($seller_fulfillment_order_id, $body): \Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse
+updateFulfillmentOrder($seller_fulfillment_order_id, $body): \SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse
 ```
 
 
@@ -558,9 +558,9 @@ Updates and/or requests shipment for a fulfillment order with an order hold on i
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaOutboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundApi();
 $seller_fulfillment_order_id = 'seller_fulfillment_order_id_example'; // string | The identifier assigned to the item by the seller when the fulfillment order was created.
-$body = new \Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest(); // \Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest
+$body = new \SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest(); // \SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest
 
 try {
     $result = $apiInstance->updateFulfillmentOrder($seller_fulfillment_order_id, $body);
@@ -575,11 +575,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_fulfillment_order_id** | **string**| The identifier assigned to the item by the seller when the fulfillment order was created. |
- **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest**](../Model/FbaOutboundUpdateFulfillmentOrderRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest**](../Model/FbaOutboundUpdateFulfillmentOrderRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse**](../Model/FbaOutbound/UpdateFulfillmentOrderResponse.md)
+[**\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse**](../Model/FbaOutbound/UpdateFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 

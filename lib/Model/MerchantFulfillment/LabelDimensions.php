@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * LabelDimensions Class Doc Comment
  *
  * @category Class
  * @description Dimensions for printing a shipping label.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class LabelDimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'length' => 'float',
         'width' => 'float',
-        'unit' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength'
+        'unit' => '\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength'
     ];
 
     /**
@@ -280,7 +280,7 @@ class LabelDimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets unit
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength
      */
     public function getUnit()
     {
@@ -290,7 +290,7 @@ class LabelDimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unit
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength $unit unit
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength $unit unit
      *
      * @return self
      */

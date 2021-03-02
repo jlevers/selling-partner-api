@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Catalog;
+namespace SellingPartnerApi\Model\Catalog;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Image Class Doc Comment
  *
  * @category Class
  * @description The image attribute of the item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class Image implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'url' => 'string',
-        'height' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'width' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits'
+        'height' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'width' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits'
     ];
 
     /**
@@ -247,7 +247,7 @@ class Image implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets height
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getHeight()
     {
@@ -257,7 +257,7 @@ class Image implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets height
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $height height
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $height height
      *
      * @return self
      */
@@ -271,7 +271,7 @@ class Image implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets width
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getWidth()
     {
@@ -281,7 +281,7 @@ class Image implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets width
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $width width
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $width width
      *
      * @return self
      */

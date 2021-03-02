@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Solicitations;
+namespace SellingPartnerApi\Model\Solicitations;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetSolicitationActionsForOrderResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getSolicitationActionsForOrder operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,9 +59,9 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        '_links' => '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks',
-        '_embedded' => '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded',
-        'errors' => '\Evers\SellingPartnerApi\Model\Solicitations\Error[]'
+        '_links' => '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks',
+        '_embedded' => '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded',
+        'errors' => '\SellingPartnerApi\Model\Solicitations\Error[]'
     ];
 
     /**
@@ -223,7 +223,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     /**
      * Gets _links
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks|null
+     * @return \SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks|null
      */
     public function getLinks()
     {
@@ -233,7 +233,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     /**
      * Sets _links
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks|null $_links _links
+     * @param \SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks|null $_links _links
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     /**
      * Gets _embedded
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded|null
+     * @return \SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded|null
      */
     public function getEmbedded()
     {
@@ -257,7 +257,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     /**
      * Sets _embedded
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded|null $_embedded _embedded
+     * @param \SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded|null $_embedded _embedded
      *
      * @return self
      */
@@ -271,7 +271,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\Error[]|null
+     * @return \SellingPartnerApi\Model\Solicitations\Error[]|null
      */
     public function getErrors()
     {
@@ -281,7 +281,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Solicitations\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

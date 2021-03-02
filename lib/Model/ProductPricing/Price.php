@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Price Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class Price implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'string',
         'seller_sku' => 'string',
         'asin' => 'string',
-        'product' => '\Evers\SellingPartnerApi\Model\ProductPricing\Product'
+        'product' => '\SellingPartnerApi\Model\ProductPricing\Product'
     ];
 
     /**
@@ -303,7 +303,7 @@ class Price implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets product
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\Product|null
+     * @return \SellingPartnerApi\Model\ProductPricing\Product|null
      */
     public function getProduct()
     {
@@ -313,7 +313,7 @@ class Price implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets product
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\Product|null $product product
+     * @param \SellingPartnerApi\Model\ProductPricing\Product|null $product product
      *
      * @return self
      */

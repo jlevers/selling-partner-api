@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFulfillmentPreviewItem Class Doc Comment
  *
  * @category Class
  * @description Item information for a fulfillment order preview.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'seller_sku' => 'string',
         'quantity' => 'int',
-        'per_unit_declared_value' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money',
+        'per_unit_declared_value' => '\SellingPartnerApi\Model\FbaOutbound\Money',
         'seller_fulfillment_order_item_id' => 'string'
     ];
 
@@ -298,7 +298,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets per_unit_declared_value
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money|null
      */
     public function getPerUnitDeclaredValue()
     {
@@ -308,7 +308,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets per_unit_declared_value
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null $per_unit_declared_value per_unit_declared_value
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money|null $per_unit_declared_value per_unit_declared_value
      *
      * @return self
      */

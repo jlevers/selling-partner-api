@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardTextModule Class Doc Comment
  *
  * @category Class
  * @description A standard headline and body text.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'body' => '\Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent'
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'body' => '\SellingPartnerApi\Model\AplusContent\ParagraphComponent'
     ];
 
     /**
@@ -220,7 +220,7 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -230,7 +230,7 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets body
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent
+     * @return \SellingPartnerApi\Model\AplusContent\ParagraphComponent
      */
     public function getBody()
     {
@@ -254,7 +254,7 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets body
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent $body body
+     * @param \SellingPartnerApi\Model\AplusContent\ParagraphComponent $body body
      *
      * @return self
      */

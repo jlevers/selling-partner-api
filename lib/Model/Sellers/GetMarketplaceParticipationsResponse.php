@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Sellers;
+namespace SellingPartnerApi\Model\Sellers;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetMarketplaceParticipationsResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getMarketplaceParticipations operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetMarketplaceParticipationsResponse implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Sellers\MarketplaceParticipation[]',
-        'errors' => '\Evers\SellingPartnerApi\Model\Sellers\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Sellers\MarketplaceParticipation[]',
+        'errors' => '\SellingPartnerApi\Model\Sellers\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetMarketplaceParticipationsResponse implements ModelInterface, ArrayAcces
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Sellers\MarketplaceParticipation[]|null
+     * @return \SellingPartnerApi\Model\Sellers\MarketplaceParticipation[]|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetMarketplaceParticipationsResponse implements ModelInterface, ArrayAcces
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Sellers\MarketplaceParticipation[]|null $payload List of marketplace participations.
+     * @param \SellingPartnerApi\Model\Sellers\MarketplaceParticipation[]|null $payload List of marketplace participations.
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetMarketplaceParticipationsResponse implements ModelInterface, ArrayAcces
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Sellers\Error[]|null
+     * @return \SellingPartnerApi\Model\Sellers\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetMarketplaceParticipationsResponse implements ModelInterface, ArrayAcces
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Sellers\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Sellers\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

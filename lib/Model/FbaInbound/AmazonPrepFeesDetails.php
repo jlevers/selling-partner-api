@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AmazonPrepFeesDetails Class Doc Comment
  *
  * @category Class
  * @description The fees for Amazon to prep goods for shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'prep_instruction' => '\Evers\SellingPartnerApi\Model\FbaInbound\PrepInstruction',
-        'fee_per_unit' => '\Evers\SellingPartnerApi\Model\FbaInbound\Amount'
+        'prep_instruction' => '\SellingPartnerApi\Model\FbaInbound\PrepInstruction',
+        'fee_per_unit' => '\SellingPartnerApi\Model\FbaInbound\Amount'
     ];
 
     /**
@@ -217,7 +217,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets prep_instruction
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PrepInstruction|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PrepInstruction|null
      */
     public function getPrepInstruction()
     {
@@ -227,7 +227,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets prep_instruction
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PrepInstruction|null $prep_instruction prep_instruction
+     * @param \SellingPartnerApi\Model\FbaInbound\PrepInstruction|null $prep_instruction prep_instruction
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets fee_per_unit
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Amount|null
      */
     public function getFeePerUnit()
     {
@@ -251,7 +251,7 @@ class AmazonPrepFeesDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets fee_per_unit
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null $fee_per_unit fee_per_unit
+     * @param \SellingPartnerApi\Model\FbaInbound\Amount|null $fee_per_unit fee_per_unit
      *
      * @return self
      */

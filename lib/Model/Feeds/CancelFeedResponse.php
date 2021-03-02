@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Feeds;
+namespace SellingPartnerApi\Model\Feeds;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CancelFeedResponse Class Doc Comment
  *
  * @category Class
  * @description Response schema.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CancelFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Evers\SellingPartnerApi\Model\Feeds\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Feeds\Error[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CancelFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Feeds\Error[]|null
+     * @return \SellingPartnerApi\Model\Feeds\Error[]|null
      */
     public function getErrors()
     {
@@ -221,7 +221,7 @@ class CancelFeedResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Feeds\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Feeds\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Container Class Doc Comment
  *
  * @category Class
  * @description Container in the shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,10 +61,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'container_type' => 'string',
         'container_reference_id' => 'string',
-        'value' => '\Evers\SellingPartnerApi\Model\Shipping\Currency',
-        'dimensions' => '\Evers\SellingPartnerApi\Model\Shipping\Dimensions',
-        'items' => '\Evers\SellingPartnerApi\Model\Shipping\ContainerItem[]',
-        'weight' => '\Evers\SellingPartnerApi\Model\Shipping\Weight'
+        'value' => '\SellingPartnerApi\Model\Shipping\Currency',
+        'dimensions' => '\SellingPartnerApi\Model\Shipping\Dimensions',
+        'items' => '\SellingPartnerApi\Model\Shipping\ContainerItem[]',
+        'weight' => '\SellingPartnerApi\Model\Shipping\Weight'
     ];
 
     /**
@@ -344,7 +344,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets value
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Currency
+     * @return \SellingPartnerApi\Model\Shipping\Currency
      */
     public function getValue()
     {
@@ -354,7 +354,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Currency $value value
+     * @param \SellingPartnerApi\Model\Shipping\Currency $value value
      *
      * @return self
      */
@@ -368,7 +368,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Dimensions
+     * @return \SellingPartnerApi\Model\Shipping\Dimensions
      */
     public function getDimensions()
     {
@@ -378,7 +378,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Dimensions $dimensions dimensions
+     * @param \SellingPartnerApi\Model\Shipping\Dimensions $dimensions dimensions
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ContainerItem[]
+     * @return \SellingPartnerApi\Model\Shipping\ContainerItem[]
      */
     public function getItems()
     {
@@ -402,7 +402,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ContainerItem[] $items A list of the items in the container.
+     * @param \SellingPartnerApi\Model\Shipping\ContainerItem[] $items A list of the items in the container.
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Weight
+     * @return \SellingPartnerApi\Model\Shipping\Weight
      */
     public function getWeight()
     {
@@ -426,7 +426,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Weight $weight weight
+     * @param \SellingPartnerApi\Model\Shipping\Weight $weight weight
      *
      * @return self
      */

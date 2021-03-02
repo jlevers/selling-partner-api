@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Api;
+namespace SellingPartnerApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Evers\SellingPartnerApi\ApiException;
-use Evers\SellingPartnerApi\Configuration;
-use Evers\SellingPartnerApi\HeaderSelector;
-use Evers\SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\ApiException;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\HeaderSelector;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * SellersApi Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class SellersApi
 {
@@ -115,9 +115,9 @@ class SellersApi
      * Operation getMarketplaceParticipations
      *
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse
+     * @return \SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse
      */
     public function getMarketplaceParticipations()
     {
@@ -129,9 +129,9 @@ class SellersApi
      * Operation getMarketplaceParticipationsWithHttpInfo
      *
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMarketplaceParticipationsWithHttpInfo()
     {
@@ -171,116 +171,116 @@ class SellersApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse';
+            $returnType = '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -299,7 +299,7 @@ class SellersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -307,7 +307,7 @@ class SellersApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -315,7 +315,7 @@ class SellersApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -323,7 +323,7 @@ class SellersApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -331,7 +331,7 @@ class SellersApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -339,7 +339,7 @@ class SellersApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -347,7 +347,7 @@ class SellersApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -355,7 +355,7 @@ class SellersApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -363,7 +363,7 @@ class SellersApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
+                        '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -403,7 +403,7 @@ class SellersApi
      */
     public function getMarketplaceParticipationsAsyncWithHttpInfo()
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse';
+        $returnType = '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getMarketplaceParticipationsRequest();
         $signedRequest = $this->config->signRequest($request);

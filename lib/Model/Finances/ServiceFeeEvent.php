@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ServiceFeeEvent Class Doc Comment
  *
  * @category Class
  * @description A service fee on the seller&#39;s account.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'fee_reason' => 'string',
-        'fee_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
         'seller_sku' => 'string',
         'fn_sku' => 'string',
         'fee_description' => 'string',
@@ -295,7 +295,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fee_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getFeeList()
     {
@@ -305,7 +305,7 @@ class ServiceFeeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $fee_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $fee_list A list of fee component information.
      *
      * @return self
      */

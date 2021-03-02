@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Weight Class Doc Comment
  *
  * @category Class
  * @description The weight.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class Weight implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'value' => 'double',
-        'unit' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfWeight'
+        'unit' => '\SellingPartnerApi\Model\MerchantFulfillment\UnitOfWeight'
     ];
 
     /**
@@ -247,7 +247,7 @@ class Weight implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets unit
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfWeight
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\UnitOfWeight
      */
     public function getUnit()
     {
@@ -257,7 +257,7 @@ class Weight implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unit
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfWeight $unit unit
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\UnitOfWeight $unit unit
      *
      * @return self
      */

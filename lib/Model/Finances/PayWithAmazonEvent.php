@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PayWithAmazonEvent Class Doc Comment
  *
  * @category Class
  * @description An event related to the seller&#39;s Pay with Amazon account.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,8 +63,8 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'transaction_posted_date' => '\DateTime',
         'business_object_type' => 'string',
         'sales_channel' => 'string',
-        'charge' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent',
-        'fee_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'charge' => '\SellingPartnerApi\Model\Finances\ChargeComponent',
+        'fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
         'payment_amount_type' => 'string',
         'amount_description' => 'string',
         'fulfillment_channel' => 'string',
@@ -361,7 +361,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets charge
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent|null
      */
     public function getCharge()
     {
@@ -371,7 +371,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets charge
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent|null $charge charge
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent|null $charge charge
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets fee_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getFeeList()
     {
@@ -395,7 +395,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fee_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $fee_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $fee_list A list of fee component information.
      *
      * @return self
      */

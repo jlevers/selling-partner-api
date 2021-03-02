@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ImagingServicesFeeEvent Class Doc Comment
  *
  * @category Class
  * @description A fee event related to Amazon Imaging services.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess, \JsonSeria
         'imaging_request_billing_item_id' => 'string',
         'asin' => 'string',
         'posted_date' => '\DateTime',
-        'fee_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]'
+        'fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]'
     ];
 
     /**
@@ -301,7 +301,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets fee_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getFeeList()
     {
@@ -311,7 +311,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets fee_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $fee_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $fee_list A list of fee component information.
      *
      * @return self
      */

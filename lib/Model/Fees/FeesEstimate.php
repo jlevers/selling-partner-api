@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeesEstimate Class Doc Comment
  *
  * @category Class
  * @description The total estimated fees for an item and a list of details.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'time_of_fees_estimation' => '\DateTime',
-        'total_fees_estimate' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'fee_detail_list' => '\Evers\SellingPartnerApi\Model\Fees\FeeDetail[]'
+        'total_fees_estimate' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'fee_detail_list' => '\SellingPartnerApi\Model\Fees\FeeDetail[]'
     ];
 
     /**
@@ -250,7 +250,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_fees_estimate
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType|null
+     * @return \SellingPartnerApi\Model\Fees\MoneyType|null
      */
     public function getTotalFeesEstimate()
     {
@@ -260,7 +260,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_fees_estimate
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType|null $total_fees_estimate total_fees_estimate
+     * @param \SellingPartnerApi\Model\Fees\MoneyType|null $total_fees_estimate total_fees_estimate
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fee_detail_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\FeeDetail[]|null
+     * @return \SellingPartnerApi\Model\Fees\FeeDetail[]|null
      */
     public function getFeeDetailList()
     {
@@ -284,7 +284,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_detail_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\FeeDetail[]|null $fee_detail_list A list of other fees that contribute to a given fee.
+     * @param \SellingPartnerApi\Model\Fees\FeeDetail[]|null $fee_detail_list A list of other fees that contribute to a given fee.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrderBuyerInfo Class Doc Comment
  *
  * @category Class
  * @description Buyer information for an order.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,7 +63,7 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_email' => 'string',
         'buyer_name' => 'string',
         'buyer_county' => 'string',
-        'buyer_tax_info' => '\Evers\SellingPartnerApi\Model\Orders\BuyerTaxInfo',
+        'buyer_tax_info' => '\SellingPartnerApi\Model\Orders\BuyerTaxInfo',
         'purchase_order_number' => 'string'
     ];
 
@@ -340,7 +340,7 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyer_tax_info
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\BuyerTaxInfo|null
+     * @return \SellingPartnerApi\Model\Orders\BuyerTaxInfo|null
      */
     public function getBuyerTaxInfo()
     {
@@ -350,7 +350,7 @@ class OrderBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer_tax_info
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\BuyerTaxInfo|null $buyer_tax_info buyer_tax_info
+     * @param \SellingPartnerApi\Model\Orders\BuyerTaxInfo|null $buyer_tax_info buyer_tax_info
      *
      * @return self
      */

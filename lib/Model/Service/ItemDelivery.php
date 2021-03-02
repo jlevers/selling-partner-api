@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ItemDelivery Class Doc Comment
  *
  * @category Class
  * @description Delivery information for the item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'estimated_delivery_date' => '\DateTime',
-        'item_delivery_promise' => '\Evers\SellingPartnerApi\Model\Service\ItemDeliveryPromise'
+        'item_delivery_promise' => '\SellingPartnerApi\Model\Service\ItemDeliveryPromise'
     ];
 
     /**
@@ -241,7 +241,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_delivery_promise
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\ItemDeliveryPromise|null
+     * @return \SellingPartnerApi\Model\Service\ItemDeliveryPromise|null
      */
     public function getItemDeliveryPromise()
     {
@@ -251,7 +251,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_delivery_promise
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\ItemDeliveryPromise|null $item_delivery_promise item_delivery_promise
+     * @param \SellingPartnerApi\Model\Service\ItemDeliveryPromise|null $item_delivery_promise item_delivery_promise
      *
      * @return self
      */

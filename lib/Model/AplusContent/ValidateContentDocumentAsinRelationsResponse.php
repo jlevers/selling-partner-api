@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ValidateContentDocumentAsinRelationsResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,8 +58,8 @@ class ValidateContentDocumentAsinRelationsResponse implements ModelInterface, Ar
       * @var string[]
       */
     protected static $openAPITypes = [
-        'warnings' => '\Evers\SellingPartnerApi\Model\AplusContent\Error[]',
-        'errors' => '\Evers\SellingPartnerApi\Model\AplusContent\Error[]'
+        'warnings' => '\SellingPartnerApi\Model\AplusContent\Error[]',
+        'errors' => '\SellingPartnerApi\Model\AplusContent\Error[]'
     ];
 
     /**
@@ -219,7 +219,7 @@ class ValidateContentDocumentAsinRelationsResponse implements ModelInterface, Ar
     /**
      * Gets warnings
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\Error[]|null
      */
     public function getWarnings()
     {
@@ -229,7 +229,7 @@ class ValidateContentDocumentAsinRelationsResponse implements ModelInterface, Ar
     /**
      * Sets warnings
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
+     * @param \SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
      *
      * @return self
      */
@@ -245,7 +245,7 @@ class ValidateContentDocumentAsinRelationsResponse implements ModelInterface, Ar
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Error[]
+     * @return \SellingPartnerApi\Model\AplusContent\Error[]
      */
     public function getErrors()
     {
@@ -255,7 +255,7 @@ class ValidateContentDocumentAsinRelationsResponse implements ModelInterface, Ar
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Error[] $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\AplusContent\Error[] $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

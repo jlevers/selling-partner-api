@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Messaging;
+namespace SellingPartnerApi\Model\Messaging;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetSchemaResponseLinks Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class GetSchemaResponseLinks implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'self' => '\Evers\SellingPartnerApi\Model\Messaging\LinkObject'
+        'self' => '\SellingPartnerApi\Model\Messaging\LinkObject'
     ];
 
     /**
@@ -213,7 +213,7 @@ class GetSchemaResponseLinks implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets self
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\LinkObject
+     * @return \SellingPartnerApi\Model\Messaging\LinkObject
      */
     public function getSelf()
     {
@@ -223,7 +223,7 @@ class GetSchemaResponseLinks implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets self
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\LinkObject $self self
+     * @param \SellingPartnerApi\Model\Messaging\LinkObject $self self
      *
      * @return self
      */

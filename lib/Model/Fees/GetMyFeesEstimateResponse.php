@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetMyFeesEstimateResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,8 +58,8 @@ class GetMyFeesEstimateResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResult',
-        'errors' => '\Evers\SellingPartnerApi\Model\Fees\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResult',
+        'errors' => '\SellingPartnerApi\Model\Fees\Error[]'
     ];
 
     /**
@@ -216,7 +216,7 @@ class GetMyFeesEstimateResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResult|null
+     * @return \SellingPartnerApi\Model\Fees\GetMyFeesEstimateResult|null
      */
     public function getPayload()
     {
@@ -226,7 +226,7 @@ class GetMyFeesEstimateResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResult|null $payload payload
+     * @param \SellingPartnerApi\Model\Fees\GetMyFeesEstimateResult|null $payload payload
      *
      * @return self
      */
@@ -240,7 +240,7 @@ class GetMyFeesEstimateResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\Error[]|null
+     * @return \SellingPartnerApi\Model\Fees\Error[]|null
      */
     public function getErrors()
     {
@@ -250,7 +250,7 @@ class GetMyFeesEstimateResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Fees\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

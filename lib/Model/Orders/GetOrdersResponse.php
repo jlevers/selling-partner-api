@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetOrdersResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getOrders operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Orders\OrdersList',
-        'errors' => '\Evers\SellingPartnerApi\Model\Orders\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Orders\OrdersList',
+        'errors' => '\SellingPartnerApi\Model\Orders\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\OrdersList|null
+     * @return \SellingPartnerApi\Model\Orders\OrdersList|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\OrdersList|null $payload payload
+     * @param \SellingPartnerApi\Model\Orders\OrdersList|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Error[]|null
+     * @return \SellingPartnerApi\Model\Orders\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

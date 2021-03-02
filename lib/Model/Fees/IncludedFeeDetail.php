@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * IncludedFeeDetail Class Doc Comment
  *
  * @category Class
  * @description The type of fee, fee amount, and other details.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,10 +60,10 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'fee_type' => 'string',
-        'fee_amount' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'fee_promotion' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'tax_amount' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'final_fee' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType'
+        'fee_amount' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'fee_promotion' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'tax_amount' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'final_fee' => '\SellingPartnerApi\Model\Fees\MoneyType'
     ];
 
     /**
@@ -268,7 +268,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets fee_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType
+     * @return \SellingPartnerApi\Model\Fees\MoneyType
      */
     public function getFeeAmount()
     {
@@ -278,7 +278,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets fee_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType $fee_amount fee_amount
+     * @param \SellingPartnerApi\Model\Fees\MoneyType $fee_amount fee_amount
      *
      * @return self
      */
@@ -292,7 +292,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets fee_promotion
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType|null
+     * @return \SellingPartnerApi\Model\Fees\MoneyType|null
      */
     public function getFeePromotion()
     {
@@ -302,7 +302,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets fee_promotion
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType|null $fee_promotion fee_promotion
+     * @param \SellingPartnerApi\Model\Fees\MoneyType|null $fee_promotion fee_promotion
      *
      * @return self
      */
@@ -316,7 +316,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets tax_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType|null
+     * @return \SellingPartnerApi\Model\Fees\MoneyType|null
      */
     public function getTaxAmount()
     {
@@ -326,7 +326,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets tax_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType|null $tax_amount tax_amount
+     * @param \SellingPartnerApi\Model\Fees\MoneyType|null $tax_amount tax_amount
      *
      * @return self
      */
@@ -340,7 +340,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets final_fee
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType
+     * @return \SellingPartnerApi\Model\Fees\MoneyType
      */
     public function getFinalFee()
     {
@@ -350,7 +350,7 @@ class IncludedFeeDetail implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets final_fee
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType $final_fee final_fee
+     * @param \SellingPartnerApi\Model\Fees\MoneyType $final_fee final_fee
      *
      * @return self
      */

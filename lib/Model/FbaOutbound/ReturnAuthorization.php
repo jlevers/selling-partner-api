@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ReturnAuthorization Class Doc Comment
  *
  * @category Class
  * @description Return authorization information for items accepted for return.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'return_authorization_id' => 'string',
         'fulfillment_center_id' => 'string',
-        'return_to_address' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Address',
+        'return_to_address' => '\SellingPartnerApi\Model\FbaOutbound\Address',
         'amazon_rma_id' => 'string',
         'rma_page_url' => 'string'
     ];
@@ -298,7 +298,7 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets return_to_address
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Address
+     * @return \SellingPartnerApi\Model\FbaOutbound\Address
      */
     public function getReturnToAddress()
     {
@@ -308,7 +308,7 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets return_to_address
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Address $return_to_address return_to_address
+     * @param \SellingPartnerApi\Model\FbaOutbound\Address $return_to_address return_to_address
      *
      * @return self
      */

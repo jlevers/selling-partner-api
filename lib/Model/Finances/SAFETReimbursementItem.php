@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SAFETReimbursementItem Class Doc Comment
  *
  * @category Class
  * @description An item from a SAFE-T claim reimbursement.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'item_charge_list' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]',
+        'item_charge_list' => '\SellingPartnerApi\Model\Finances\ChargeComponent[]',
         'product_description' => 'string',
         'quantity' => 'string'
     ];
@@ -223,7 +223,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets item_charge_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent[]|null
      */
     public function getItemChargeList()
     {
@@ -233,7 +233,7 @@ class SAFETReimbursementItem implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets item_charge_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null $item_charge_list A list of charge information on the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent[]|null $item_charge_list A list of charge information on the seller's account.
      *
      * @return self
      */

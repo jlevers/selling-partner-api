@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SellerDealPaymentEvent Class Doc Comment
  *
  * @category Class
  * @description An event linked to the payment of a fee related to the specified deal.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -64,9 +64,9 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'deal_description' => 'string',
         'event_type' => 'string',
         'fee_type' => 'string',
-        'fee_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'tax_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'total_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'fee_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'tax_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'total_amount' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -373,7 +373,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets fee_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getFeeAmount()
     {
@@ -383,7 +383,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets fee_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $fee_amount fee_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $fee_amount fee_amount
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets tax_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTaxAmount()
     {
@@ -407,7 +407,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets tax_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $tax_amount tax_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $tax_amount tax_amount
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets total_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTotalAmount()
     {
@@ -431,7 +431,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets total_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $total_amount total_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $total_amount total_amount
      *
      * @return self
      */

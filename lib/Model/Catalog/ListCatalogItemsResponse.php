@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Catalog;
+namespace SellingPartnerApi\Model\Catalog;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListCatalogItemsResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,8 +58,8 @@ class ListCatalogItemsResponse implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Catalog\ListMatchingItemsResponse',
-        'errors' => '\Evers\SellingPartnerApi\Model\Catalog\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Catalog\ListMatchingItemsResponse',
+        'errors' => '\SellingPartnerApi\Model\Catalog\Error[]'
     ];
 
     /**
@@ -216,7 +216,7 @@ class ListCatalogItemsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\ListMatchingItemsResponse|null
+     * @return \SellingPartnerApi\Model\Catalog\ListMatchingItemsResponse|null
      */
     public function getPayload()
     {
@@ -226,7 +226,7 @@ class ListCatalogItemsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\ListMatchingItemsResponse|null $payload payload
+     * @param \SellingPartnerApi\Model\Catalog\ListMatchingItemsResponse|null $payload payload
      *
      * @return self
      */
@@ -240,7 +240,7 @@ class ListCatalogItemsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\Error[]|null
+     * @return \SellingPartnerApi\Model\Catalog\Error[]|null
      */
     public function getErrors()
     {
@@ -250,7 +250,7 @@ class ListCatalogItemsResponse implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Catalog\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

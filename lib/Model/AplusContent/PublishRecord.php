@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PublishRecord Class Doc Comment
  *
  * @category Class
  * @description The full context for an A+ Content publishing event.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_id' => 'string',
         'locale' => 'string',
         'asin' => 'string',
-        'content_type' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentType',
+        'content_type' => '\SellingPartnerApi\Model\AplusContent\ContentType',
         'content_sub_type' => 'string',
         'content_reference_key' => 'string'
     ];
@@ -363,7 +363,7 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content_type
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentType
+     * @return \SellingPartnerApi\Model\AplusContent\ContentType
      */
     public function getContentType()
     {
@@ -373,7 +373,7 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content_type
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentType $content_type content_type
+     * @param \SellingPartnerApi\Model\AplusContent\ContentType $content_type content_type
      *
      * @return self
      */

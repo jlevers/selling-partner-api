@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recovery_amount** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
-**original_amount** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
+**recovery_amount** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
+**original_amount** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **group_begin_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 **group_end_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 

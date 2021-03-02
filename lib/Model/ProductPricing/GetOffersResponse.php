@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetOffersResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getListingOffers and getItemOffers operations.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetOffersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResult',
-        'errors' => '\Evers\SellingPartnerApi\Model\ProductPricing\Error[]'
+        'payload' => '\SellingPartnerApi\Model\ProductPricing\GetOffersResult',
+        'errors' => '\SellingPartnerApi\Model\ProductPricing\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetOffersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResult|null
+     * @return \SellingPartnerApi\Model\ProductPricing\GetOffersResult|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetOffersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResult|null $payload payload
+     * @param \SellingPartnerApi\Model\ProductPricing\GetOffersResult|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetOffersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\Error[]|null
+     * @return \SellingPartnerApi\Model\ProductPricing\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetOffersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\ProductPricing\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

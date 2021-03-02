@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\SmallAndLight;
+namespace SellingPartnerApi\Model\SmallAndLight;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeePreview Class Doc Comment
  *
  * @category Class
  * @description The fee estimate for a specific item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,10 +60,10 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'asin' => 'string',
-        'price' => '\Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType',
-        'fee_breakdown' => '\Evers\SellingPartnerApi\Model\SmallAndLight\FeeLineItem[]',
-        'total_fees' => '\Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType',
-        'errors' => '\Evers\SellingPartnerApi\Model\SmallAndLight\ErrorList'
+        'price' => '\SellingPartnerApi\Model\SmallAndLight\MoneyType',
+        'fee_breakdown' => '\SellingPartnerApi\Model\SmallAndLight\FeeLineItem[]',
+        'total_fees' => '\SellingPartnerApi\Model\SmallAndLight\MoneyType',
+        'errors' => '\SellingPartnerApi\Model\SmallAndLight\ErrorList'
     ];
 
     /**
@@ -259,7 +259,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets price
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType|null
+     * @return \SellingPartnerApi\Model\SmallAndLight\MoneyType|null
      */
     public function getPrice()
     {
@@ -269,7 +269,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType|null $price price
+     * @param \SellingPartnerApi\Model\SmallAndLight\MoneyType|null $price price
      *
      * @return self
      */
@@ -283,7 +283,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fee_breakdown
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\FeeLineItem[]|null
+     * @return \SellingPartnerApi\Model\SmallAndLight\FeeLineItem[]|null
      */
     public function getFeeBreakdown()
     {
@@ -293,7 +293,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_breakdown
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\FeeLineItem[]|null $fee_breakdown A list of the Small and Light fees for the item.
+     * @param \SellingPartnerApi\Model\SmallAndLight\FeeLineItem[]|null $fee_breakdown A list of the Small and Light fees for the item.
      *
      * @return self
      */
@@ -307,7 +307,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_fees
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType|null
+     * @return \SellingPartnerApi\Model\SmallAndLight\MoneyType|null
      */
     public function getTotalFees()
     {
@@ -317,7 +317,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_fees
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType|null $total_fees total_fees
+     * @param \SellingPartnerApi\Model\SmallAndLight\MoneyType|null $total_fees total_fees
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\ErrorList|null
+     * @return \SellingPartnerApi\Model\SmallAndLight\ErrorList|null
      */
     public function getErrors()
     {
@@ -341,7 +341,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\ErrorList|null $errors errors
+     * @param \SellingPartnerApi\Model\SmallAndLight\ErrorList|null $errors errors
      *
      * @return self
      */

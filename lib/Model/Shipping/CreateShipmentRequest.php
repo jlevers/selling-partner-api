@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateShipmentRequest Class Doc Comment
  *
  * @category Class
  * @description The request schema for the createShipment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,9 +60,9 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'client_reference_id' => 'string',
-        'ship_to' => '\Evers\SellingPartnerApi\Model\Shipping\Address',
-        'ship_from' => '\Evers\SellingPartnerApi\Model\Shipping\Address',
-        'containers' => '\Evers\SellingPartnerApi\Model\Shipping\Container[]'
+        'ship_to' => '\SellingPartnerApi\Model\Shipping\Address',
+        'ship_from' => '\SellingPartnerApi\Model\Shipping\Address',
+        'containers' => '\SellingPartnerApi\Model\Shipping\Container[]'
     ];
 
     /**
@@ -273,7 +273,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets ship_to
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Address
+     * @return \SellingPartnerApi\Model\Shipping\Address
      */
     public function getShipTo()
     {
@@ -283,7 +283,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets ship_to
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Address $ship_to ship_to
+     * @param \SellingPartnerApi\Model\Shipping\Address $ship_to ship_to
      *
      * @return self
      */
@@ -297,7 +297,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets ship_from
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Address
+     * @return \SellingPartnerApi\Model\Shipping\Address
      */
     public function getShipFrom()
     {
@@ -307,7 +307,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets ship_from
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Address $ship_from ship_from
+     * @param \SellingPartnerApi\Model\Shipping\Address $ship_from ship_from
      *
      * @return self
      */
@@ -321,7 +321,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets containers
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Container[]
+     * @return \SellingPartnerApi\Model\Shipping\Container[]
      */
     public function getContainers()
     {
@@ -331,7 +331,7 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets containers
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Container[] $containers A list of container.
+     * @param \SellingPartnerApi\Model\Shipping\Container[] $containers A list of container.
      *
      * @return self
      */

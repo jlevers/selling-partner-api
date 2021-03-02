@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetOrderItemsBuyerInfoResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getOrderItemsBuyerInfo operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetOrderItemsBuyerInfoResponse implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Orders\OrderItemsBuyerInfoList',
-        'errors' => '\Evers\SellingPartnerApi\Model\Orders\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Orders\OrderItemsBuyerInfoList',
+        'errors' => '\SellingPartnerApi\Model\Orders\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetOrderItemsBuyerInfoResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\OrderItemsBuyerInfoList|null
+     * @return \SellingPartnerApi\Model\Orders\OrderItemsBuyerInfoList|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetOrderItemsBuyerInfoResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\OrderItemsBuyerInfoList|null $payload payload
+     * @param \SellingPartnerApi\Model\Orders\OrderItemsBuyerInfoList|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetOrderItemsBuyerInfoResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Error[]|null
+     * @return \SellingPartnerApi\Model\Orders\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetOrderItemsBuyerInfoResponse implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Orders\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

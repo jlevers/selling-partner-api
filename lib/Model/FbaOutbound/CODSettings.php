@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CODSettings Class Doc Comment
  *
  * @category Class
  * @description The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,10 +60,10 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'is_cod_required' => 'bool',
-        'cod_charge' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money',
-        'cod_charge_tax' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money',
-        'shipping_charge' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money',
-        'shipping_charge_tax' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Money'
+        'cod_charge' => '\SellingPartnerApi\Model\FbaOutbound\Money',
+        'cod_charge_tax' => '\SellingPartnerApi\Model\FbaOutbound\Money',
+        'shipping_charge' => '\SellingPartnerApi\Model\FbaOutbound\Money',
+        'shipping_charge_tax' => '\SellingPartnerApi\Model\FbaOutbound\Money'
     ];
 
     /**
@@ -262,7 +262,7 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cod_charge
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money|null
      */
     public function getCodCharge()
     {
@@ -272,7 +272,7 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cod_charge
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null $cod_charge cod_charge
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money|null $cod_charge cod_charge
      *
      * @return self
      */
@@ -286,7 +286,7 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cod_charge_tax
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money|null
      */
     public function getCodChargeTax()
     {
@@ -296,7 +296,7 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cod_charge_tax
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null $cod_charge_tax cod_charge_tax
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money|null $cod_charge_tax cod_charge_tax
      *
      * @return self
      */
@@ -310,7 +310,7 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_charge
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money|null
      */
     public function getShippingCharge()
     {
@@ -320,7 +320,7 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_charge
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null $shipping_charge shipping_charge
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money|null $shipping_charge shipping_charge
      *
      * @return self
      */
@@ -334,7 +334,7 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_charge_tax
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Money|null
      */
     public function getShippingChargeTax()
     {
@@ -344,7 +344,7 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_charge_tax
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Money|null $shipping_charge_tax shipping_charge_tax
+     * @param \SellingPartnerApi\Model\FbaOutbound\Money|null $shipping_charge_tax shipping_charge_tax
      *
      * @return self
      */

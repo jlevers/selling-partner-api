@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * NetworkComminglingTransactionEvent Class Doc Comment
  *
  * @category Class
  * @description A network commingling transaction event.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -65,8 +65,8 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
         'swap_reason' => 'string',
         'asin' => 'string',
         'marketplace_id' => 'string',
-        'tax_exclusive_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'tax_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'tax_exclusive_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'tax_amount' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -397,7 +397,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
     /**
      * Gets tax_exclusive_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTaxExclusiveAmount()
     {
@@ -407,7 +407,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
     /**
      * Sets tax_exclusive_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $tax_exclusive_amount tax_exclusive_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $tax_exclusive_amount tax_exclusive_amount
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
     /**
      * Gets tax_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTaxAmount()
     {
@@ -431,7 +431,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
     /**
      * Sets tax_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $tax_amount tax_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $tax_amount tax_amount
      *
      * @return self
      */

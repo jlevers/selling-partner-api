@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CouponPaymentEvent Class Doc Comment
  *
  * @category Class
  * @description An event related to coupon payments.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -64,9 +64,9 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'seller_coupon_description' => 'string',
         'clip_or_redemption_count' => 'int',
         'payment_event_id' => 'string',
-        'fee_component' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent',
-        'charge_component' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent',
-        'total_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'fee_component' => '\SellingPartnerApi\Model\Finances\FeeComponent',
+        'charge_component' => '\SellingPartnerApi\Model\Finances\ChargeComponent',
+        'total_amount' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -373,7 +373,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets fee_component
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent|null
      */
     public function getFeeComponent()
     {
@@ -383,7 +383,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fee_component
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent|null $fee_component fee_component
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent|null $fee_component fee_component
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets charge_component
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent|null
      */
     public function getChargeComponent()
     {
@@ -407,7 +407,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets charge_component
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent|null $charge_component charge_component
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent|null $charge_component charge_component
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets total_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTotalAmount()
     {
@@ -431,7 +431,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets total_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $total_amount total_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $total_amount total_amount
      *
      * @return self
      */

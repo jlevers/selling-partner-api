@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Solicitations;
+namespace SellingPartnerApi\Model\Solicitations;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetSolicitationActionResponse Class Doc Comment
  *
  * @category Class
  * @description Describes a solicitation action that can be taken for an order. Provides a JSON Hypertext Application Language (HAL) link to the JSON schema document that describes the expected input.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        '_links' => '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseLinks',
-        '_embedded' => '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseEmbedded',
-        'payload' => '\Evers\SellingPartnerApi\Model\Solicitations\SolicitationsAction',
-        'errors' => '\Evers\SellingPartnerApi\Model\Solicitations\Error[]'
+        '_links' => '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseLinks',
+        '_embedded' => '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseEmbedded',
+        'payload' => '\SellingPartnerApi\Model\Solicitations\SolicitationsAction',
+        'errors' => '\SellingPartnerApi\Model\Solicitations\Error[]'
     ];
 
     /**
@@ -229,7 +229,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets _links
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseLinks|null
+     * @return \SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseLinks|null
      */
     public function getLinks()
     {
@@ -239,7 +239,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets _links
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseLinks|null $_links _links
+     * @param \SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseLinks|null $_links _links
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets _embedded
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseEmbedded|null
+     * @return \SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseEmbedded|null
      */
     public function getEmbedded()
     {
@@ -263,7 +263,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets _embedded
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseEmbedded|null $_embedded _embedded
+     * @param \SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponseEmbedded|null $_embedded _embedded
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\SolicitationsAction|null
+     * @return \SellingPartnerApi\Model\Solicitations\SolicitationsAction|null
      */
     public function getPayload()
     {
@@ -287,7 +287,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\SolicitationsAction|null $payload payload
+     * @param \SellingPartnerApi\Model\Solicitations\SolicitationsAction|null $payload payload
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\Error[]|null
+     * @return \SellingPartnerApi\Model\Solicitations\Error[]|null
      */
     public function getErrors()
     {
@@ -311,7 +311,7 @@ class GetSolicitationActionResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Solicitations\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

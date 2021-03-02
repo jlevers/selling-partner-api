@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Solicitations;
+namespace SellingPartnerApi\Model\Solicitations;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetSchemaResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,9 +58,9 @@ class GetSchemaResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        '_links' => '\Evers\SellingPartnerApi\Model\Solicitations\GetSchemaResponseLinks',
+        '_links' => '\SellingPartnerApi\Model\Solicitations\GetSchemaResponseLinks',
         'payload' => 'object',
-        'errors' => '\Evers\SellingPartnerApi\Model\Solicitations\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Solicitations\Error[]'
     ];
 
     /**
@@ -222,7 +222,7 @@ class GetSchemaResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets _links
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\GetSchemaResponseLinks|null
+     * @return \SellingPartnerApi\Model\Solicitations\GetSchemaResponseLinks|null
      */
     public function getLinks()
     {
@@ -232,7 +232,7 @@ class GetSchemaResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets _links
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\GetSchemaResponseLinks|null $_links _links
+     * @param \SellingPartnerApi\Model\Solicitations\GetSchemaResponseLinks|null $_links _links
      *
      * @return self
      */
@@ -270,7 +270,7 @@ class GetSchemaResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\Error[]|null
+     * @return \SellingPartnerApi\Model\Solicitations\Error[]|null
      */
     public function getErrors()
     {
@@ -280,7 +280,7 @@ class GetSchemaResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Solicitations\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

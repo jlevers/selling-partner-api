@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InvalidItemReason Class Doc Comment
  *
  * @category Class
  * @description The reason that the item is invalid for return.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'invalid_item_reason_code' => '\Evers\SellingPartnerApi\Model\FbaOutbound\InvalidItemReasonCode',
+        'invalid_item_reason_code' => '\SellingPartnerApi\Model\FbaOutbound\InvalidItemReasonCode',
         'description' => 'string'
     ];
 
@@ -223,7 +223,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets invalid_item_reason_code
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\InvalidItemReasonCode
+     * @return \SellingPartnerApi\Model\FbaOutbound\InvalidItemReasonCode
      */
     public function getInvalidItemReasonCode()
     {
@@ -233,7 +233,7 @@ class InvalidItemReason implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets invalid_item_reason_code
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\InvalidItemReasonCode $invalid_item_reason_code invalid_item_reason_code
+     * @param \SellingPartnerApi\Model\FbaOutbound\InvalidItemReasonCode $invalid_item_reason_code invalid_item_reason_code
      *
      * @return self
      */

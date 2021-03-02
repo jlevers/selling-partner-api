@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\NotificationsApi
+# SellingPartnerApi\NotificationsApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `createDestination()`
 
 ```php
-createDestination($body): \Evers\SellingPartnerApi\Model\Notifications\CreateDestinationResponse
+createDestination($body): \SellingPartnerApi\Model\Notifications\CreateDestinationResponse
 ```
 
 
@@ -30,8 +30,8 @@ Creates a destination resource to receive notifications. The createDestination A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
-$body = new \Evers\SellingPartnerApi\Model\Notifications\CreateDestinationRequest(); // \Evers\SellingPartnerApi\Model\Notifications\CreateDestinationRequest
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+$body = new \SellingPartnerApi\Model\Notifications\CreateDestinationRequest(); // \SellingPartnerApi\Model\Notifications\CreateDestinationRequest
 
 try {
     $result = $apiInstance->createDestination($body);
@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Notifications\CreateDestinationRequest**](../Model/NotificationsCreateDestinationRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Notifications\CreateDestinationRequest**](../Model/NotificationsCreateDestinationRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\CreateDestinationResponse**](../Model/Notifications/CreateDestinationResponse.md)
+[**\SellingPartnerApi\Model\Notifications\CreateDestinationResponse**](../Model/Notifications/CreateDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 ## `createSubscription()`
 
 ```php
-createSubscription($notification_type, $body): \Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse
+createSubscription($notification_type, $body): \SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse
 ```
 
 
@@ -76,9 +76,9 @@ Creates a subscription for the specified notification type to be delivered to th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
-$body = new \Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest(); // \Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest
+$body = new \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest(); // \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest
 
 try {
     $result = $apiInstance->createSubscription($notification_type, $body);
@@ -93,11 +93,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notification_type** | **string**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. |
- **body** | [**\Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/NotificationsCreateSubscriptionRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/NotificationsCreateSubscriptionRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse**](../Model/Notifications/CreateSubscriptionResponse.md)
+[**\SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse**](../Model/Notifications/CreateSubscriptionResponse.md)
 
 ### HTTP request headers
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 ## `deleteDestination()`
 
 ```php
-deleteDestination($destination_id): \Evers\SellingPartnerApi\Model\Notifications\DeleteDestinationResponse
+deleteDestination($destination_id): \SellingPartnerApi\Model\Notifications\DeleteDestinationResponse
 ```
 
 
@@ -124,7 +124,7 @@ Deletes the destination that you specify. The deleteDestination API is grantless
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
 $destination_id = 'destination_id_example'; // string | The identifier for the destination that you want to delete.
 
 try {
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\DeleteDestinationResponse**](../Model/Notifications/DeleteDestinationResponse.md)
+[**\SellingPartnerApi\Model\Notifications\DeleteDestinationResponse**](../Model/Notifications/DeleteDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 ## `deleteSubscriptionById()`
 
 ```php
-deleteSubscriptionById($subscription_id, $notification_type): \Evers\SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse
+deleteSubscriptionById($subscription_id, $notification_type): \SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse
 ```
 
 
@@ -170,7 +170,7 @@ Deletes the subscription indicated by the subscription identifier and notificati
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
 $subscription_id = 'subscription_id_example'; // string | The identifier for the subscription that you want to delete.
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse**](../Model/Notifications/DeleteSubscriptionByIdResponse.md)
+[**\SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse**](../Model/Notifications/DeleteSubscriptionByIdResponse.md)
 
 ### HTTP request headers
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 ## `getDestination()`
 
 ```php
-getDestination($destination_id): \Evers\SellingPartnerApi\Model\Notifications\GetDestinationResponse
+getDestination($destination_id): \SellingPartnerApi\Model\Notifications\GetDestinationResponse
 ```
 
 
@@ -218,7 +218,7 @@ Returns information about the destination that you specify. The getDestination A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
 $destination_id = 'destination_id_example'; // string | The identifier generated when you created the destination.
 
 try {
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\GetDestinationResponse**](../Model/Notifications/GetDestinationResponse.md)
+[**\SellingPartnerApi\Model\Notifications\GetDestinationResponse**](../Model/Notifications/GetDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ## `getDestinations()`
 
 ```php
-getDestinations(): \Evers\SellingPartnerApi\Model\Notifications\GetDestinationsResponse
+getDestinations(): \SellingPartnerApi\Model\Notifications\GetDestinationsResponse
 ```
 
 
@@ -264,7 +264,7 @@ Returns information about all destinations. The getDestinations API is grantless
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
 
 try {
     $result = $apiInstance->getDestinations();
@@ -280,7 +280,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\GetDestinationsResponse**](../Model/Notifications/GetDestinationsResponse.md)
+[**\SellingPartnerApi\Model\Notifications\GetDestinationsResponse**](../Model/Notifications/GetDestinationsResponse.md)
 
 ### HTTP request headers
 
@@ -294,7 +294,7 @@ This endpoint does not need any parameter.
 ## `getSubscription()`
 
 ```php
-getSubscription($notification_type): \Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionResponse
+getSubscription($notification_type): \SellingPartnerApi\Model\Notifications\GetSubscriptionResponse
 ```
 
 
@@ -307,7 +307,7 @@ Returns information about subscriptions of the specified notification type. You 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
 
 try {
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionResponse**](../Model/Notifications/GetSubscriptionResponse.md)
+[**\SellingPartnerApi\Model\Notifications\GetSubscriptionResponse**](../Model/Notifications/GetSubscriptionResponse.md)
 
 ### HTTP request headers
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 ## `getSubscriptionById()`
 
 ```php
-getSubscriptionById($subscription_id, $notification_type): \Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse
+getSubscriptionById($subscription_id, $notification_type): \SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse
 ```
 
 
@@ -353,7 +353,7 @@ Returns information about a subscription for the specified notification type. Th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\NotificationsApi();
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
 $subscription_id = 'subscription_id_example'; // string | The identifier for the subscription that you want to get.
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse**](../Model/Notifications/GetSubscriptionByIdResponse.md)
+[**\SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse**](../Model/Notifications/GetSubscriptionByIdResponse.md)
 
 ### HTTP request headers
 

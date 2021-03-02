@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InboundShipmentRequest Class Doc Comment
  *
  * @category Class
  * @description The request schema for an inbound shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'inbound_shipment_header' => '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentHeader',
-        'inbound_shipment_items' => '\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]',
+        'inbound_shipment_header' => '\SellingPartnerApi\Model\FbaInbound\InboundShipmentHeader',
+        'inbound_shipment_items' => '\SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]',
         'marketplace_id' => 'string'
     ];
 
@@ -232,7 +232,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets inbound_shipment_header
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentHeader
+     * @return \SellingPartnerApi\Model\FbaInbound\InboundShipmentHeader
      */
     public function getInboundShipmentHeader()
     {
@@ -242,7 +242,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets inbound_shipment_header
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentHeader $inbound_shipment_header inbound_shipment_header
+     * @param \SellingPartnerApi\Model\FbaInbound\InboundShipmentHeader $inbound_shipment_header inbound_shipment_header
      *
      * @return self
      */
@@ -256,7 +256,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets inbound_shipment_items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]
+     * @return \SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[]
      */
     public function getInboundShipmentItems()
     {
@@ -266,7 +266,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets inbound_shipment_items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[] $inbound_shipment_items A list of inbound shipment item information.
+     * @param \SellingPartnerApi\Model\FbaInbound\InboundShipmentItem[] $inbound_shipment_items A list of inbound shipment item information.
      *
      * @return self
      */

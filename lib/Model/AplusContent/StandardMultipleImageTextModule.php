@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardMultipleImageTextModule Class Doc Comment
  *
  * @category Class
  * @description Standard images with text, presented one at a time. The user clicks on thumbnails to view each block.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class StandardMultipleImageTextModule implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'blocks' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextCaptionBlock[]'
+        'blocks' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextCaptionBlock[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class StandardMultipleImageTextModule implements ModelInterface, ArrayAccess, \J
     /**
      * Gets blocks
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextCaptionBlock[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextCaptionBlock[]|null
      */
     public function getBlocks()
     {
@@ -221,7 +221,7 @@ class StandardMultipleImageTextModule implements ModelInterface, ArrayAccess, \J
     /**
      * Sets blocks
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextCaptionBlock[]|null $blocks blocks
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextCaptionBlock[]|null $blocks blocks
      *
      * @return self
      */

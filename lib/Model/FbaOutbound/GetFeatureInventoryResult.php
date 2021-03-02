@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFeatureInventoryResult Class Doc Comment
  *
  * @category Class
  * @description The payload for the getEligibileInventory operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess, \JsonSer
         'marketplace_id' => 'string',
         'feature_name' => 'string',
         'next_token' => 'string',
-        'feature_skus' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSku[]'
+        'feature_skus' => '\SellingPartnerApi\Model\FbaOutbound\FeatureSku[]'
     ];
 
     /**
@@ -307,7 +307,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets feature_skus
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSku[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FeatureSku[]|null
      */
     public function getFeatureSkus()
     {
@@ -317,7 +317,7 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets feature_skus
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSku[]|null $feature_skus An array of SKUs eligible for this feature and the quantity available.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FeatureSku[]|null $feature_skus An array of SKUs eligible for this feature and the quantity available.
      *
      * @return self
      */

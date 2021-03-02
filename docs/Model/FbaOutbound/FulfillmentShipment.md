@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **shipping_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 **estimated_arrival_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 **shipping_notes** | **string[]** | Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available. | [optional]
-**fulfillment_shipment_item** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[]**](FulfillmentShipmentItem.md) | An array of fulfillment shipment item information. |
-**fulfillment_shipment_package** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]**](FulfillmentShipmentPackage.md) | An array of fulfillment shipment package information. | [optional]
+**fulfillment_shipment_item** | [**\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[]**](FulfillmentShipmentItem.md) | An array of fulfillment shipment item information. |
+**fulfillment_shipment_package** | [**\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]**](FulfillmentShipmentPackage.md) | An array of fulfillment shipment package information. | [optional]
 
 [[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

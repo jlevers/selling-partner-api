@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PostContentDocumentRequest Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class PostContentDocumentRequest implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'content_document' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentDocument'
+        'content_document' => '\SellingPartnerApi\Model\AplusContent\ContentDocument'
     ];
 
     /**
@@ -213,7 +213,7 @@ class PostContentDocumentRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets content_document
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentDocument
+     * @return \SellingPartnerApi\Model\AplusContent\ContentDocument
      */
     public function getContentDocument()
     {
@@ -223,7 +223,7 @@ class PostContentDocumentRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets content_document
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentDocument $content_document content_document
+     * @param \SellingPartnerApi\Model\AplusContent\ContentDocument $content_document content_document
      *
      * @return self
      */

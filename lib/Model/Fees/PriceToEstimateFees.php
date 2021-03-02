@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PriceToEstimateFees Class Doc Comment
  *
  * @category Class
  * @description Price information for an item, used to estimate fees.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,9 +59,9 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'listing_price' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'shipping' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'points' => '\Evers\SellingPartnerApi\Model\Fees\Points'
+        'listing_price' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'shipping' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'points' => '\SellingPartnerApi\Model\Fees\Points'
     ];
 
     /**
@@ -226,7 +226,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets listing_price
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType
+     * @return \SellingPartnerApi\Model\Fees\MoneyType
      */
     public function getListingPrice()
     {
@@ -236,7 +236,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets listing_price
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType $listing_price listing_price
+     * @param \SellingPartnerApi\Model\Fees\MoneyType $listing_price listing_price
      *
      * @return self
      */
@@ -250,7 +250,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets shipping
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType|null
+     * @return \SellingPartnerApi\Model\Fees\MoneyType|null
      */
     public function getShipping()
     {
@@ -260,7 +260,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets shipping
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType|null $shipping shipping
+     * @param \SellingPartnerApi\Model\Fees\MoneyType|null $shipping shipping
      *
      * @return self
      */
@@ -274,7 +274,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets points
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\Points|null
+     * @return \SellingPartnerApi\Model\Fees\Points|null
      */
     public function getPoints()
     {
@@ -284,7 +284,7 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets points
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\Points|null $points points
+     * @param \SellingPartnerApi\Model\Fees\Points|null $points points
      *
      * @return self
      */

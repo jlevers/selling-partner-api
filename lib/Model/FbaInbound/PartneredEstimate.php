@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PartneredEstimate Class Doc Comment
  *
  * @category Class
  * @description The estimated shipping cost for a shipment using an Amazon-partnered carrier.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amount' => '\Evers\SellingPartnerApi\Model\FbaInbound\Amount',
+        'amount' => '\SellingPartnerApi\Model\FbaInbound\Amount',
         'confirm_deadline' => '\DateTime',
         'void_deadline' => '\DateTime'
     ];
@@ -226,7 +226,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets amount
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Amount
+     * @return \SellingPartnerApi\Model\FbaInbound\Amount
      */
     public function getAmount()
     {
@@ -236,7 +236,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets amount
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Amount $amount amount
+     * @param \SellingPartnerApi\Model\FbaInbound\Amount $amount amount
      *
      * @return self
      */

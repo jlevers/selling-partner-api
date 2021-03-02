@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FulfillmentOrder Class Doc Comment
  *
  * @category Class
  * @description General information about a fulfillment order, including its status.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -64,17 +64,17 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'displayable_order_id' => 'string',
         'displayable_order_date' => '\DateTime',
         'displayable_order_comment' => 'string',
-        'shipping_speed_category' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
-        'delivery_window' => '\Evers\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow',
-        'destination_address' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Address',
-        'fulfillment_action' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction',
-        'fulfillment_policy' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy',
-        'cod_settings' => '\Evers\SellingPartnerApi\Model\FbaOutbound\CODSettings',
+        'shipping_speed_category' => '\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
+        'delivery_window' => '\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow',
+        'destination_address' => '\SellingPartnerApi\Model\FbaOutbound\Address',
+        'fulfillment_action' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction',
+        'fulfillment_policy' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy',
+        'cod_settings' => '\SellingPartnerApi\Model\FbaOutbound\CODSettings',
         'received_date' => '\DateTime',
-        'fulfillment_order_status' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderStatus',
+        'fulfillment_order_status' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderStatus',
         'status_updated_date' => '\DateTime',
         'notification_emails' => 'string[]',
-        'feature_constraints' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]'
+        'feature_constraints' => '\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]'
     ];
 
     /**
@@ -451,7 +451,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_speed_category
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory
+     * @return \SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory()
     {
@@ -461,7 +461,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_speed_category
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory $shipping_speed_category shipping_speed_category
+     * @param \SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory $shipping_speed_category shipping_speed_category
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets delivery_window
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\DeliveryWindow|null
      */
     public function getDeliveryWindow()
     {
@@ -485,7 +485,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets delivery_window
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow|null $delivery_window delivery_window
+     * @param \SellingPartnerApi\Model\FbaOutbound\DeliveryWindow|null $delivery_window delivery_window
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets destination_address
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Address
+     * @return \SellingPartnerApi\Model\FbaOutbound\Address
      */
     public function getDestinationAddress()
     {
@@ -509,7 +509,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets destination_address
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Address $destination_address destination_address
+     * @param \SellingPartnerApi\Model\FbaOutbound\Address $destination_address destination_address
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fulfillment_action
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentAction|null
      */
     public function getFulfillmentAction()
     {
@@ -533,7 +533,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_action
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction|null $fulfillment_action fulfillment_action
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentAction|null $fulfillment_action fulfillment_action
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fulfillment_policy
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy|null
      */
     public function getFulfillmentPolicy()
     {
@@ -557,7 +557,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_policy
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy|null $fulfillment_policy fulfillment_policy
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy|null $fulfillment_policy fulfillment_policy
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cod_settings
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\CODSettings|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\CODSettings|null
      */
     public function getCodSettings()
     {
@@ -581,7 +581,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cod_settings
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\CODSettings|null $cod_settings cod_settings
+     * @param \SellingPartnerApi\Model\FbaOutbound\CODSettings|null $cod_settings cod_settings
      *
      * @return self
      */
@@ -619,7 +619,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fulfillment_order_status
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderStatus
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderStatus
      */
     public function getFulfillmentOrderStatus()
     {
@@ -629,7 +629,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_order_status
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderStatus $fulfillment_order_status fulfillment_order_status
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderStatus $fulfillment_order_status fulfillment_order_status
      *
      * @return self
      */
@@ -691,7 +691,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets feature_constraints
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null
      */
     public function getFeatureConstraints()
     {
@@ -701,7 +701,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets feature_constraints
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null $feature_constraints A list of features and their fulfillment policies to apply to the order.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null $feature_constraints A list of features and their fulfillment policies to apply to the order.
      *
      * @return self
      */

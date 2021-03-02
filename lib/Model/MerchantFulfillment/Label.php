@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Label Class Doc Comment
  *
  * @category Class
  * @description Data for creating a shipping label and dimensions for printing the label.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,10 +60,10 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'custom_text_for_label' => 'string',
-        'dimensions' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelDimensions',
-        'file_contents' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\FileContents',
-        'label_format' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat',
-        'standard_id_for_label' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel'
+        'dimensions' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelDimensions',
+        'file_contents' => '\SellingPartnerApi\Model\MerchantFulfillment\FileContents',
+        'label_format' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat',
+        'standard_id_for_label' => '\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel'
     ];
 
     /**
@@ -273,7 +273,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelDimensions
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\LabelDimensions
      */
     public function getDimensions()
     {
@@ -283,7 +283,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelDimensions $dimensions dimensions
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\LabelDimensions $dimensions dimensions
      *
      * @return self
      */
@@ -297,7 +297,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets file_contents
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\FileContents
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\FileContents
      */
     public function getFileContents()
     {
@@ -307,7 +307,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets file_contents
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\FileContents $file_contents file_contents
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\FileContents $file_contents file_contents
      *
      * @return self
      */
@@ -321,7 +321,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets label_format
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null
      */
     public function getLabelFormat()
     {
@@ -331,7 +331,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets label_format
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null $label_format label_format
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null $label_format label_format
      *
      * @return self
      */
@@ -345,7 +345,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets standard_id_for_label
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel|null
      */
     public function getStandardIdForLabel()
     {
@@ -355,7 +355,7 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets standard_id_for_label
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel|null $standard_id_for_label standard_id_for_label
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel|null $standard_id_for_label standard_id_for_label
      *
      * @return self
      */

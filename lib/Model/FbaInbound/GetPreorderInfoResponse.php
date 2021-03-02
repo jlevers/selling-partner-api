@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetPreorderInfoResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getPreorderInfo operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetPreorderInfoResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResult',
-        'errors' => '\Evers\SellingPartnerApi\Model\FbaInbound\Error[]'
+        'payload' => '\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResult',
+        'errors' => '\SellingPartnerApi\Model\FbaInbound\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetPreorderInfoResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResult|null
+     * @return \SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResult|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetPreorderInfoResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResult|null $payload payload
+     * @param \SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResult|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetPreorderInfoResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Error[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetPreorderInfoResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\FbaInbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

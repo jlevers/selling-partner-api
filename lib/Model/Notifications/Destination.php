@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Notifications;
+namespace SellingPartnerApi\Model\Notifications;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Destination Class Doc Comment
  *
  * @category Class
  * @description Represents a destination created when you call the createDestination operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class Destination implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name' => 'string',
         'destination_id' => 'string',
-        'resource' => '\Evers\SellingPartnerApi\Model\Notifications\DestinationResource'
+        'resource' => '\SellingPartnerApi\Model\Notifications\DestinationResource'
     ];
 
     /**
@@ -288,7 +288,7 @@ class Destination implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets resource
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\DestinationResource
+     * @return \SellingPartnerApi\Model\Notifications\DestinationResource
      */
     public function getResource()
     {
@@ -298,7 +298,7 @@ class Destination implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets resource
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\DestinationResource $resource resource
+     * @param \SellingPartnerApi\Model\Notifications\DestinationResource $resource resource
      *
      * @return self
      */

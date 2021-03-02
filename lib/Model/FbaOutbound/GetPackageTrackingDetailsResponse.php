@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetPackageTrackingDetailsResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getPackageTrackingDetails operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetPackageTrackingDetailsResponse implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\FbaOutbound\PackageTrackingDetails',
-        'errors' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Error[]'
+        'payload' => '\SellingPartnerApi\Model\FbaOutbound\PackageTrackingDetails',
+        'errors' => '\SellingPartnerApi\Model\FbaOutbound\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetPackageTrackingDetailsResponse implements ModelInterface, ArrayAccess, 
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\PackageTrackingDetails|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\PackageTrackingDetails|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetPackageTrackingDetailsResponse implements ModelInterface, ArrayAccess, 
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\PackageTrackingDetails|null $payload payload
+     * @param \SellingPartnerApi\Model\FbaOutbound\PackageTrackingDetails|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetPackageTrackingDetailsResponse implements ModelInterface, ArrayAccess, 
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Error[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetPackageTrackingDetailsResponse implements ModelInterface, ArrayAccess, 
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\FbaOutbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

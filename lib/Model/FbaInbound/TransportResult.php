@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TransportResult Class Doc Comment
  *
  * @category Class
  * @description The workflow status for a shipment with an Amazon-partnered carrier.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class TransportResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transport_status' => '\Evers\SellingPartnerApi\Model\FbaInbound\TransportStatus',
+        'transport_status' => '\SellingPartnerApi\Model\FbaInbound\TransportStatus',
         'error_code' => 'string',
         'error_description' => 'string'
     ];
@@ -226,7 +226,7 @@ class TransportResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets transport_status
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\TransportStatus
+     * @return \SellingPartnerApi\Model\FbaInbound\TransportStatus
      */
     public function getTransportStatus()
     {
@@ -236,7 +236,7 @@ class TransportResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transport_status
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\TransportStatus $transport_status transport_status
+     * @param \SellingPartnerApi\Model\FbaInbound\TransportStatus $transport_status transport_status
      *
      * @return self
      */

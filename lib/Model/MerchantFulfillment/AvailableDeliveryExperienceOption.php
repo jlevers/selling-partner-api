@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AvailableDeliveryExperienceOption Class Doc Comment
  *
  * @category Class
  * @description The available delivery confirmation options, and the fee charged, if any.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'delivery_experience_option' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption',
-        'charge' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount'
+        'delivery_experience_option' => '\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption',
+        'charge' => '\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount'
     ];
 
     /**
@@ -223,7 +223,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
     /**
      * Gets delivery_experience_option
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption
      */
     public function getDeliveryExperienceOption()
     {
@@ -233,7 +233,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
     /**
      * Sets delivery_experience_option
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption $delivery_experience_option delivery_experience_option
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption $delivery_experience_option delivery_experience_option
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
     /**
      * Gets charge
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getCharge()
     {
@@ -257,7 +257,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
     /**
      * Sets charge
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount $charge charge
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount $charge charge
      *
      * @return self
      */

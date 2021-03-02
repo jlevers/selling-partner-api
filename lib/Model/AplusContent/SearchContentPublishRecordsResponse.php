@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SearchContentPublishRecordsResponse Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,9 +58,9 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'warnings' => '\Evers\SellingPartnerApi\Model\AplusContent\Error[]',
+        'warnings' => '\SellingPartnerApi\Model\AplusContent\Error[]',
         'next_page_token' => 'string',
-        'publish_record_list' => '\Evers\SellingPartnerApi\Model\AplusContent\PublishRecord[]'
+        'publish_record_list' => '\SellingPartnerApi\Model\AplusContent\PublishRecord[]'
     ];
 
     /**
@@ -229,7 +229,7 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets warnings
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\Error[]|null
      */
     public function getWarnings()
     {
@@ -239,7 +239,7 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets warnings
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
+     * @param \SellingPartnerApi\Model\AplusContent\Error[]|null $warnings A set of messages to the user, such as warnings or comments.
      *
      * @return self
      */
@@ -284,7 +284,7 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
     /**
      * Gets publish_record_list
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\PublishRecord[]
+     * @return \SellingPartnerApi\Model\AplusContent\PublishRecord[]
      */
     public function getPublishRecordList()
     {
@@ -294,7 +294,7 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
     /**
      * Sets publish_record_list
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\PublishRecord[] $publish_record_list A list of A+ Content publishing records.
+     * @param \SellingPartnerApi\Model\AplusContent\PublishRecord[] $publish_record_list A list of A+ Content publishing records.
      *
      * @return self
      */

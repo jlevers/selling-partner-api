@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ASINInboundGuidance Class Doc Comment
  *
  * @category Class
  * @description Reasons why a given ASIN is not recommended for shipment to Amazon&#39;s fulfillment network.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'asin' => 'string',
-        'inbound_guidance' => '\Evers\SellingPartnerApi\Model\FbaInbound\InboundGuidance',
-        'guidance_reason_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\GuidanceReason[]'
+        'inbound_guidance' => '\SellingPartnerApi\Model\FbaInbound\InboundGuidance',
+        'guidance_reason_list' => '\SellingPartnerApi\Model\FbaInbound\GuidanceReason[]'
     ];
 
     /**
@@ -253,7 +253,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets inbound_guidance
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\InboundGuidance
+     * @return \SellingPartnerApi\Model\FbaInbound\InboundGuidance
      */
     public function getInboundGuidance()
     {
@@ -263,7 +263,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets inbound_guidance
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\InboundGuidance $inbound_guidance inbound_guidance
+     * @param \SellingPartnerApi\Model\FbaInbound\InboundGuidance $inbound_guidance inbound_guidance
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets guidance_reason_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\GuidanceReason[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\GuidanceReason[]|null
      */
     public function getGuidanceReasonList()
     {
@@ -287,7 +287,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets guidance_reason_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\GuidanceReason[]|null $guidance_reason_list A list of inbound guidance reason information.
+     * @param \SellingPartnerApi\Model\FbaInbound\GuidanceReason[]|null $guidance_reason_list A list of inbound guidance reason information.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\SmallAndLight;
+namespace SellingPartnerApi\Model\SmallAndLight;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SmallAndLightFeePreviews Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Evers\SellingPartnerApi\Model\SmallAndLight\FeePreview[]'
+        'data' => '\SellingPartnerApi\Model\SmallAndLight\FeePreview[]'
     ];
 
     /**
@@ -210,7 +210,7 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets data
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\FeePreview[]|null
+     * @return \SellingPartnerApi\Model\SmallAndLight\FeePreview[]|null
      */
     public function getData()
     {
@@ -220,7 +220,7 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets data
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\FeePreview[]|null $data A list of fee estimates for the requested items. The order of the fee estimates will follow the same order as the items in the request, with duplicates removed.
+     * @param \SellingPartnerApi\Model\SmallAndLight\FeePreview[]|null $data A list of fee estimates for the requested items. The order of the fee estimates will follow the same order as the items in the request, with duplicates removed.
      *
      * @return self
      */

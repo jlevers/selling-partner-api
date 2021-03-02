@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Reports;
+namespace SellingPartnerApi\Model\Reports;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetReportSchedulesResponse Class Doc Comment
  *
  * @category Class
  * @description The response for the getReportSchedules operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetReportSchedulesResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Reports\ReportSchedule[]',
-        'errors' => '\Evers\SellingPartnerApi\Model\Reports\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Reports\ReportSchedule[]',
+        'errors' => '\SellingPartnerApi\Model\Reports\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetReportSchedulesResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Reports\ReportSchedule[]|null
+     * @return \SellingPartnerApi\Model\Reports\ReportSchedule[]|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetReportSchedulesResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Reports\ReportSchedule[]|null $payload payload
+     * @param \SellingPartnerApi\Model\Reports\ReportSchedule[]|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetReportSchedulesResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Reports\Error[]|null
+     * @return \SellingPartnerApi\Model\Reports\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetReportSchedulesResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Reports\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Reports\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

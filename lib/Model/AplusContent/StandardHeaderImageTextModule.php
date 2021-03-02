@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardHeaderImageTextModule Class Doc Comment
  *
  * @category Class
  * @description Standard headline text, an image, and body text.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'block' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
     ];
 
     /**
@@ -217,7 +217,7 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -227,7 +227,7 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock()
     {
@@ -251,7 +251,7 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block block
      *
      * @return self
      */

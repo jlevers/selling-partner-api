@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\SalesApi
+# SellingPartnerApi\SalesApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getOrderMetrics()`
 
 ```php
-getOrderMetrics($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku): \Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse
+getOrderMetrics($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku): \SellingPartnerApi\Model\Sales\GetOrderMetricsResponse
 ```
 
 
@@ -23,7 +23,7 @@ Returns aggregated order metrics for given interval, broken down by granularity,
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SalesApi();
+$apiInstance = new SellingPartnerApi\Api\SalesApi();
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of marketplace identifiers. Example: ATVPDKIKX0DER indicates the US marketplace.
 $interval = 'interval_example'; // string | A time interval used for selecting order metrics. This takes the form of two dates separated by two hyphens (first date is inclusive; second date is exclusive). Dates are in ISO8601 format and must represent absolute time (either Z notation or offset notation). Example: 2018-09-01T00:00:00-07:00--2018-09-04T00:00:00-07:00 requests order metrics for Sept 1st, 2nd and 3rd in the -07:00 zone.
 $granularity = 'granularity_example'; // string | The granularity of the grouping of order metrics, based on a unit of time. Specifying granularity=Hour results in a successful request only if the interval specified is less than or equal to 30 days from now. For all other granularities, the interval specified must be less or equal to 2 years from now. Specifying granularity=Total results in order metrics that are aggregated over the entire interval that you specify. If the interval start and end date don’t align with the specified granularity, the head and tail end of the response interval will contain partial data. Example: Day to get a daily breakdown of the request interval, where the day boundary is defined by the granularityTimeZone.
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse**](../Model/Sales/GetOrderMetricsResponse.md)
+[**\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse**](../Model/Sales/GetOrderMetricsResponse.md)
 
 ### HTTP request headers
 

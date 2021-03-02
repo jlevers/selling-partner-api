@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\SellersApi
+# SellingPartnerApi\SellersApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getMarketplaceParticipations()`
 
 ```php
-getMarketplaceParticipations(): \Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse
+getMarketplaceParticipations(): \SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse
 ```
 
 
@@ -23,7 +23,7 @@ Returns a list of marketplaces that the seller submitting the request can sell i
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SellersApi();
+$apiInstance = new SellingPartnerApi\Api\SellersApi();
 
 try {
     $result = $apiInstance->getMarketplaceParticipations();
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse**](../Model/Sellers/GetMarketplaceParticipationsResponse.md)
+[**\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse**](../Model/Sellers/GetMarketplaceParticipationsResponse.md)
 
 ### HTTP request headers
 

@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\SmallAndLightApi
+# SellingPartnerApi\SmallAndLightApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -27,7 +27,7 @@ Removes the item indicated by the specified seller SKU from the Small and Light 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$apiInstance = new SellingPartnerApi\Api\SmallAndLightApi();
 $seller_sku = 'seller_sku_example'; // string | The seller SKU that identifies the item.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
 
@@ -61,7 +61,7 @@ void (empty response body)
 ## `getSmallAndLightEligibilityBySellerSKU()`
 
 ```php
-getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility
+getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids): \SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility
 ```
 
 
@@ -74,7 +74,7 @@ Returns the Small and Light program eligibility status of the item indicated by 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$apiInstance = new SellingPartnerApi\Api\SmallAndLightApi();
 $seller_sku = 'seller_sku_example'; // string | The seller SKU that identifies the item.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only.
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility**](../Model/SmallAndLight/SmallAndLightEligibility.md)
+[**\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility**](../Model/SmallAndLight/SmallAndLightEligibility.md)
 
 ### HTTP request headers
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 ## `getSmallAndLightEnrollmentBySellerSKU()`
 
 ```php
-getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment
+getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment
 ```
 
 
@@ -122,7 +122,7 @@ Returns the Small and Light enrollment status for the item indicated by the spec
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$apiInstance = new SellingPartnerApi\Api\SmallAndLightApi();
 $seller_sku = 'seller_sku_example'; // string | The seller SKU that identifies the item.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLight/SmallAndLightEnrollment.md)
+[**\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLight/SmallAndLightEnrollment.md)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 ## `getSmallAndLightFeePreview()`
 
 ```php
-getSmallAndLightFeePreview($body): \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews
+getSmallAndLightFeePreview($body): \SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews
 ```
 
 
@@ -170,8 +170,8 @@ Returns the Small and Light fee estimates for the specified items. You must incl
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
-$body = new \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest(); // \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest
+$apiInstance = new SellingPartnerApi\Api\SmallAndLightApi();
+$body = new \SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest(); // \SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest
 
 try {
     $result = $apiInstance->getSmallAndLightFeePreview($body);
@@ -185,11 +185,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest**](../Model/SmallAndLightSmallAndLightFeePreviewRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest**](../Model/SmallAndLightSmallAndLightFeePreviewRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews**](../Model/SmallAndLight/SmallAndLightFeePreviews.md)
+[**\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews**](../Model/SmallAndLight/SmallAndLightFeePreviews.md)
 
 ### HTTP request headers
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `putSmallAndLightEnrollmentBySellerSKU()`
 
 ```php
-putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment
+putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids): \SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment
 ```
 
 
@@ -216,7 +216,7 @@ Enrolls the item indicated by the specified seller SKU in the Small and Light pr
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SmallAndLightApi();
+$apiInstance = new SellingPartnerApi\Api\SmallAndLightApi();
 $seller_sku = 'seller_sku_example'; // string | The seller SKU that identifies the item.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLight/SmallAndLightEnrollment.md)
+[**\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLight/SmallAndLightEnrollment.md)
 
 ### HTTP request headers
 

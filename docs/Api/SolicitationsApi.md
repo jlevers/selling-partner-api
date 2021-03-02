@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\SolicitationsApi
+# SellingPartnerApi\SolicitationsApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `createProductReviewAndSellerFeedbackSolicitation()`
 
 ```php
-createProductReviewAndSellerFeedbackSolicitation($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse
+createProductReviewAndSellerFeedbackSolicitation($amazon_order_id, $marketplace_ids): \SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse
 ```
 
 
@@ -24,7 +24,7 @@ Sends a solicitation to a buyer asking for seller feedback and a product review 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SolicitationsApi();
+$apiInstance = new SellingPartnerApi\Api\SolicitationsApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a solicitation is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse**](../Model/Solicitations/CreateProductReviewAndSellerFeedbackSolicitationResponse.md)
+[**\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse**](../Model/Solicitations/CreateProductReviewAndSellerFeedbackSolicitationResponse.md)
 
 ### HTTP request headers
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 ## `getSolicitationActionsForOrder()`
 
 ```php
-getSolicitationActionsForOrder($amazon_order_id, $marketplace_ids): \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse
+getSolicitationActionsForOrder($amazon_order_id, $marketplace_ids): \SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse
 ```
 
 
@@ -72,7 +72,7 @@ Returns a list of solicitation types that are available for an order that you sp
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\SolicitationsApi();
+$apiInstance = new SellingPartnerApi\Api\SolicitationsApi();
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse**](../Model/Solicitations/GetSolicitationActionsForOrderResponse.md)
+[**\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse**](../Model/Solicitations/GetSolicitationActionsForOrderResponse.md)
 
 ### HTTP request headers
 

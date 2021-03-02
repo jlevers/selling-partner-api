@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PurchaseLabelsResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the purchaseLabels operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class PurchaseLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsResult',
-        'errors' => '\Evers\SellingPartnerApi\Model\Shipping\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Shipping\PurchaseLabelsResult',
+        'errors' => '\SellingPartnerApi\Model\Shipping\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class PurchaseLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsResult|null
+     * @return \SellingPartnerApi\Model\Shipping\PurchaseLabelsResult|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class PurchaseLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsResult|null $payload payload
+     * @param \SellingPartnerApi\Model\Shipping\PurchaseLabelsResult|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class PurchaseLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Error[]|null
+     * @return \SellingPartnerApi\Model\Shipping\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class PurchaseLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Shipping\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListAllFulfillmentOrdersResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'next_token' => 'string',
-        'fulfillment_orders' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder[]'
+        'fulfillment_orders' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder[]'
     ];
 
     /**
@@ -240,7 +240,7 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets fulfillment_orders
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder[]|null
      */
     public function getFulfillmentOrders()
     {
@@ -250,7 +250,7 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets fulfillment_orders
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder[]|null $fulfillment_orders An array of fulfillment order information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FulfillmentOrder[]|null $fulfillment_orders An array of fulfillment order information.
      *
      * @return self
      */

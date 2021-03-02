@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInventory;
+namespace SellingPartnerApi\Model\FbaInventory;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InventorySummary Class Doc Comment
  *
  * @category Class
  * @description Inventory summary for a specific item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,7 +63,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
         'fn_sku' => 'string',
         'seller_sku' => 'string',
         'condition' => 'string',
-        'inventory_details' => '\Evers\SellingPartnerApi\Model\FbaInventory\InventoryDetails',
+        'inventory_details' => '\SellingPartnerApi\Model\FbaInventory\InventoryDetails',
         'last_updated_time' => '\DateTime',
         'product_name' => 'string',
         'total_quantity' => 'int'
@@ -349,7 +349,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets inventory_details
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\InventoryDetails|null
+     * @return \SellingPartnerApi\Model\FbaInventory\InventoryDetails|null
      */
     public function getInventoryDetails()
     {
@@ -359,7 +359,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets inventory_details
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\InventoryDetails|null $inventory_details inventory_details
+     * @param \SellingPartnerApi\Model\FbaInventory\InventoryDetails|null $inventory_details inventory_details
      *
      * @return self
      */

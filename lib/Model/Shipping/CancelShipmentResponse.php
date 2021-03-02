@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CancelShipmentResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the cancelShipment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Evers\SellingPartnerApi\Model\Shipping\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Shipping\Error[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Error[]|null
+     * @return \SellingPartnerApi\Model\Shipping\Error[]|null
      */
     public function getErrors()
     {
@@ -221,7 +221,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Shipping\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

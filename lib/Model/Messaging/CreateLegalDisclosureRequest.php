@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Messaging;
+namespace SellingPartnerApi\Model\Messaging;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateLegalDisclosureRequest Class Doc Comment
  *
  * @category Class
  * @description The request schema for the createLegalDisclosure operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CreateLegalDisclosureRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'attachments' => '\Evers\SellingPartnerApi\Model\Messaging\Attachment[]'
+        'attachments' => '\SellingPartnerApi\Model\Messaging\Attachment[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CreateLegalDisclosureRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets attachments
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\Attachment[]|null
+     * @return \SellingPartnerApi\Model\Messaging\Attachment[]|null
      */
     public function getAttachments()
     {
@@ -221,7 +221,7 @@ class CreateLegalDisclosureRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets attachments
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\Attachment[]|null $attachments Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
+     * @param \SellingPartnerApi\Model\Messaging\Attachment[]|null $attachments Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
      *
      * @return self
      */

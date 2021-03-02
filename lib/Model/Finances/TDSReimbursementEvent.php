@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TDSReimbursementEvent Class Doc Comment
  *
  * @category Class
  * @description A tax deduction at source (TDS) claim reimbursement event on the seller&#39;s account.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'tds_order_id' => 'string',
-        'reimbursed_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'reimbursed_amount' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -271,7 +271,7 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets reimbursed_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getReimbursedAmount()
     {
@@ -281,7 +281,7 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets reimbursed_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $reimbursed_amount reimbursed_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $reimbursed_amount reimbursed_amount
      *
      * @return self
      */

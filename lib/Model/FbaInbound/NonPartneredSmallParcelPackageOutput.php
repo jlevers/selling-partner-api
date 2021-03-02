@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * NonPartneredSmallParcelPackageOutput Class Doc Comment
  *
  * @category Class
  * @description Carrier, tracking number, and status information for the package.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class NonPartneredSmallParcelPackageOutput implements ModelInterface, ArrayAcces
     protected static $openAPITypes = [
         'carrier_name' => 'string',
         'tracking_id' => 'string',
-        'package_status' => '\Evers\SellingPartnerApi\Model\FbaInbound\PackageStatus'
+        'package_status' => '\SellingPartnerApi\Model\FbaInbound\PackageStatus'
     ];
 
     /**
@@ -280,7 +280,7 @@ class NonPartneredSmallParcelPackageOutput implements ModelInterface, ArrayAcces
     /**
      * Gets package_status
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PackageStatus
+     * @return \SellingPartnerApi\Model\FbaInbound\PackageStatus
      */
     public function getPackageStatus()
     {
@@ -290,7 +290,7 @@ class NonPartneredSmallParcelPackageOutput implements ModelInterface, ArrayAcces
     /**
      * Sets package_status
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PackageStatus $package_status package_status
+     * @param \SellingPartnerApi\Model\FbaInbound\PackageStatus $package_status package_status
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrderItemsList Class Doc Comment
  *
  * @category Class
  * @description The order items list along with the order ID.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class OrderItemsList implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'order_items' => '\Evers\SellingPartnerApi\Model\Orders\OrderItem[]',
+        'order_items' => '\SellingPartnerApi\Model\Orders\OrderItem[]',
         'next_token' => 'string',
         'amazon_order_id' => 'string'
     ];
@@ -229,7 +229,7 @@ class OrderItemsList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_items
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\OrderItem[]
+     * @return \SellingPartnerApi\Model\Orders\OrderItem[]
      */
     public function getOrderItems()
     {
@@ -239,7 +239,7 @@ class OrderItemsList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_items
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\OrderItem[] $order_items A list of order items.
+     * @param \SellingPartnerApi\Model\Orders\OrderItem[] $order_items A list of order items.
      *
      * @return self
      */

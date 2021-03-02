@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ServiceJob Class Doc Comment
  *
  * @category Class
  * @description The job details of a service.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,16 +62,16 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'create_time' => '\DateTime',
         'service_job_id' => 'string',
         'service_job_status' => 'string',
-        'scope_of_work' => '\Evers\SellingPartnerApi\Model\Service\ScopeOfWork',
-        'seller' => '\Evers\SellingPartnerApi\Model\Service\Seller',
-        'service_job_provider' => '\Evers\SellingPartnerApi\Model\Service\ServiceJobProvider',
-        'preferred_appointment_times' => '\Evers\SellingPartnerApi\Model\Service\AppointmentTime[]',
-        'appointments' => '\Evers\SellingPartnerApi\Model\Service\Appointment[]',
+        'scope_of_work' => '\SellingPartnerApi\Model\Service\ScopeOfWork',
+        'seller' => '\SellingPartnerApi\Model\Service\Seller',
+        'service_job_provider' => '\SellingPartnerApi\Model\Service\ServiceJobProvider',
+        'preferred_appointment_times' => '\SellingPartnerApi\Model\Service\AppointmentTime[]',
+        'appointments' => '\SellingPartnerApi\Model\Service\Appointment[]',
         'service_order_id' => 'string',
         'marketplace_id' => 'string',
-        'buyer' => '\Evers\SellingPartnerApi\Model\Service\Buyer',
-        'associated_items' => '\Evers\SellingPartnerApi\Model\Service\AssociatedItem[]',
-        'service_location' => '\Evers\SellingPartnerApi\Model\Service\ServiceLocation'
+        'buyer' => '\SellingPartnerApi\Model\Service\Buyer',
+        'associated_items' => '\SellingPartnerApi\Model\Service\AssociatedItem[]',
+        'service_location' => '\SellingPartnerApi\Model\Service\ServiceLocation'
     ];
 
     /**
@@ -426,7 +426,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets scope_of_work
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\ScopeOfWork|null
+     * @return \SellingPartnerApi\Model\Service\ScopeOfWork|null
      */
     public function getScopeOfWork()
     {
@@ -436,7 +436,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets scope_of_work
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\ScopeOfWork|null $scope_of_work scope_of_work
+     * @param \SellingPartnerApi\Model\Service\ScopeOfWork|null $scope_of_work scope_of_work
      *
      * @return self
      */
@@ -450,7 +450,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets seller
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Seller|null
+     * @return \SellingPartnerApi\Model\Service\Seller|null
      */
     public function getSeller()
     {
@@ -460,7 +460,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Seller|null $seller seller
+     * @param \SellingPartnerApi\Model\Service\Seller|null $seller seller
      *
      * @return self
      */
@@ -474,7 +474,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_job_provider
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\ServiceJobProvider|null
+     * @return \SellingPartnerApi\Model\Service\ServiceJobProvider|null
      */
     public function getServiceJobProvider()
     {
@@ -484,7 +484,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_job_provider
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\ServiceJobProvider|null $service_job_provider service_job_provider
+     * @param \SellingPartnerApi\Model\Service\ServiceJobProvider|null $service_job_provider service_job_provider
      *
      * @return self
      */
@@ -498,7 +498,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets preferred_appointment_times
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\AppointmentTime[]|null
+     * @return \SellingPartnerApi\Model\Service\AppointmentTime[]|null
      */
     public function getPreferredAppointmentTimes()
     {
@@ -508,7 +508,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets preferred_appointment_times
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\AppointmentTime[]|null $preferred_appointment_times A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
+     * @param \SellingPartnerApi\Model\Service\AppointmentTime[]|null $preferred_appointment_times A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
      *
      * @return self
      */
@@ -522,7 +522,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets appointments
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Appointment[]|null
+     * @return \SellingPartnerApi\Model\Service\Appointment[]|null
      */
     public function getAppointments()
     {
@@ -532,7 +532,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets appointments
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Appointment[]|null $appointments A list of appointments.
+     * @param \SellingPartnerApi\Model\Service\Appointment[]|null $appointments A list of appointments.
      *
      * @return self
      */
@@ -606,7 +606,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buyer
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Buyer|null
+     * @return \SellingPartnerApi\Model\Service\Buyer|null
      */
     public function getBuyer()
     {
@@ -616,7 +616,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Buyer|null $buyer buyer
+     * @param \SellingPartnerApi\Model\Service\Buyer|null $buyer buyer
      *
      * @return self
      */
@@ -630,7 +630,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets associated_items
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\AssociatedItem[]|null
+     * @return \SellingPartnerApi\Model\Service\AssociatedItem[]|null
      */
     public function getAssociatedItems()
     {
@@ -640,7 +640,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets associated_items
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\AssociatedItem[]|null $associated_items A list of items associated with the service job.
+     * @param \SellingPartnerApi\Model\Service\AssociatedItem[]|null $associated_items A list of items associated with the service job.
      *
      * @return self
      */
@@ -654,7 +654,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_location
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\ServiceLocation|null
+     * @return \SellingPartnerApi\Model\Service\ServiceLocation|null
      */
     public function getServiceLocation()
     {
@@ -664,7 +664,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_location
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\ServiceLocation|null $service_location service_location
+     * @param \SellingPartnerApi\Model\Service\ServiceLocation|null $service_location service_location
      *
      * @return self
      */

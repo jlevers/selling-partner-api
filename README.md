@@ -38,7 +38,7 @@ This example assumes you have access to the `Seller Insights` Selling Partner AP
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api = new Evers\SellingPartnerApi\Api\SellersApi();
+$api = new SellingPartnerApi\Api\SellersApi();
 try {
     $result = $api->getMarketplaceParticipations();
     print_r($result);
@@ -66,7 +66,7 @@ Each endpoint has one or more models associated with it. These models are classe
 The `Buyer` model has four attributes: `buyer_id`, `name`, `phone`, and `is_prime_member`. (If you're wondering how you would figure out which attributes the model has on your own, check out the `docs` link above.) To create an instance of the `Buyer` model with all those attributes set:
 
 ```php
-$buyer = new Evers\SellingPartnerApi\Model\Service\Buyer([
+$buyer = new SellingPartnerApi\Model\Service\Buyer([
     "buyer_id" => "ABCDEFGHIJKLMNOPQRSTU0123456",
     "name" => "Jane Doe",
     "phone" => "+12345678901",
@@ -77,7 +77,7 @@ $buyer = new Evers\SellingPartnerApi\Model\Service\Buyer([
 Alternatively, you can create an instance of the `Buyer` model and then populate its fields:
 
 ``` php
-$buyer = new Evers\SellingPartnerApi\Model\Service\Buyer();
+$buyer = new SellingPartnerApi\Model\Service\Buyer();
 $buyer->setBuyerId("ABCDEFGHIJKLMNOPQRSTU0123456");
 $buyer->setName("Jane Doe");
 $buyer->setPhone("+12345678901");
@@ -96,7 +96,7 @@ $buyer->getIsPrimeMember();  // -> true
 Models can (and usually do) have other models as attributes:
 
 ``` php
-$serviceJob = new Evers\SellingPartnerApi\Model\Service\Buyer([
+$serviceJob = new SellingPartnerApi\Model\Service\Buyer([
     // ...
     "buyer" => $buyer,
     // ...
@@ -119,25 +119,25 @@ All array items are optional, but `lwaClientId` and `lwaClientSecret` must alway
 
 ### Example
 ``` php
-$config = new Evers\SellingPartnerApi\Configuration([
+$config = new SellingPartnerApi\Configuration([
     "refreshToken" => "Aztr|WeBxxx....xxx",
-    "onUpdateCreds" => function(Evers\SellingPartnerApi\Credentials $creds) {
+    "onUpdateCreds" => function(SellingPartnerApi\Credentials $creds) {
         print_r($creds);
     },
     "lwaClientId" => "AKIAxxxxxxxxxxxxxxxxx",
     "lwaClientSecret" => "a8e5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe46c"
 ]);
-$api = new Evers\SellingPartnerApi\Api\SellersApi($config);
+$api = new SellingPartnerApi\Api\SellersApi($config);
 // Now you can make calls using $api, which will use the credentials specified in $config
 ```
 
 ## Uploading and downloading documents
-The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `Evers\SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\Reports\ReportDocument`, `Model\Feeds\FeedDocument`, or `Model\Feeds\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsApi.md#getReportDocument), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#createFeedDocument) endpoints, respectively.
+The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\Reports\ReportDocument`, `Model\Feeds\FeedDocument`, or `Model\Feeds\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsApi.md#getReportDocument), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#createFeedDocument) endpoints, respectively.
 
 ### Downloading a report document
 
 ``` php
-use Evers\SellingPartnerApi;
+use SellingPartnerApi;
 
 // Assume we've already fetched a report document ID
 $documentId = "foo.1234";
@@ -152,7 +152,7 @@ $contents = $docToDownload->download();
 ### Uploading a feed document
 
 ``` php
-use Evers\SellingPartnerApi;
+use SellingPartnerApi;
 
 const CONTENT_TYPE = "text/xml";  // This will be different depending on your feed type
 $feedsApi = new Api\FeedsApi();

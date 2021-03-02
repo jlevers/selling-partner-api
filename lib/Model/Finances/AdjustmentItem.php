@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AdjustmentItem Class Doc Comment
  *
  * @category Class
  * @description An item in an adjustment to the seller&#39;s account.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'quantity' => 'string',
-        'per_unit_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'total_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
+        'per_unit_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'total_amount' => '\SellingPartnerApi\Model\Finances\Currency',
         'seller_sku' => 'string',
         'fn_sku' => 'string',
         'product_description' => 'string',
@@ -271,7 +271,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets per_unit_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getPerUnitAmount()
     {
@@ -281,7 +281,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets per_unit_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $per_unit_amount per_unit_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $per_unit_amount per_unit_amount
      *
      * @return self
      */
@@ -295,7 +295,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTotalAmount()
     {
@@ -305,7 +305,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $total_amount total_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $total_amount total_amount
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AdjustmentEvent Class Doc Comment
  *
  * @category Class
  * @description An adjustment to the seller&#39;s account.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,8 +61,8 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'adjustment_type' => 'string',
         'posted_date' => '\DateTime',
-        'adjustment_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'adjustment_item_list' => '\Evers\SellingPartnerApi\Model\Finances\AdjustmentItem[]'
+        'adjustment_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'adjustment_item_list' => '\SellingPartnerApi\Model\Finances\AdjustmentItem[]'
     ];
 
     /**
@@ -277,7 +277,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets adjustment_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getAdjustmentAmount()
     {
@@ -287,7 +287,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets adjustment_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $adjustment_amount adjustment_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $adjustment_amount adjustment_amount
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets adjustment_item_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\AdjustmentItem[]|null
+     * @return \SellingPartnerApi\Model\Finances\AdjustmentItem[]|null
      */
     public function getAdjustmentItemList()
     {
@@ -311,7 +311,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets adjustment_item_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\AdjustmentItem[]|null $adjustment_item_list A list of information about items in an adjustment to the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\AdjustmentItem[]|null $adjustment_item_list A list of information about items in an adjustment to the seller's account.
      *
      * @return self
      */

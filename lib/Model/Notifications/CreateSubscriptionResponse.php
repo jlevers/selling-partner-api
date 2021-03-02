@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Notifications;
+namespace SellingPartnerApi\Model\Notifications;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateSubscriptionResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the createSubscription operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class CreateSubscriptionResponse implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Notifications\Subscription',
-        'errors' => '\Evers\SellingPartnerApi\Model\Notifications\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Notifications\Subscription',
+        'errors' => '\SellingPartnerApi\Model\Notifications\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class CreateSubscriptionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\Subscription|null
+     * @return \SellingPartnerApi\Model\Notifications\Subscription|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class CreateSubscriptionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\Subscription|null $payload payload
+     * @param \SellingPartnerApi\Model\Notifications\Subscription|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class CreateSubscriptionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\Error[]|null
+     * @return \SellingPartnerApi\Model\Notifications\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class CreateSubscriptionResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Notifications\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

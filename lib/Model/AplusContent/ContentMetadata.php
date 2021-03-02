@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ContentMetadata Class Doc Comment
  *
  * @category Class
  * @description The metadata of an A+ Content document.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,8 +61,8 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name' => 'string',
         'marketplace_id' => 'string',
-        'status' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentStatus',
-        'badge_set' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentBadge[]',
+        'status' => '\SellingPartnerApi\Model\AplusContent\ContentStatus',
+        'badge_set' => '\SellingPartnerApi\Model\AplusContent\ContentBadge[]',
         'update_time' => '\DateTime'
     ];
 
@@ -322,7 +322,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentStatus
+     * @return \SellingPartnerApi\Model\AplusContent\ContentStatus
      */
     public function getStatus()
     {
@@ -332,7 +332,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentStatus $status status
+     * @param \SellingPartnerApi\Model\AplusContent\ContentStatus $status status
      *
      * @return self
      */
@@ -346,7 +346,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets badge_set
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentBadge[]
+     * @return \SellingPartnerApi\Model\AplusContent\ContentBadge[]
      */
     public function getBadgeSet()
     {
@@ -356,7 +356,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets badge_set
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentBadge[] $badge_set The set of content badges.
+     * @param \SellingPartnerApi\Model\AplusContent\ContentBadge[] $badge_set The set of content badges.
      *
      * @return self
      */

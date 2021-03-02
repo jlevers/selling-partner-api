@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetMyFeesEstimateRequest Class Doc Comment
  *
  * @category Class
  * @description Request schema.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class GetMyFeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'fees_estimate_request' => '\Evers\SellingPartnerApi\Model\Fees\FeesEstimateRequest'
+        'fees_estimate_request' => '\SellingPartnerApi\Model\Fees\FeesEstimateRequest'
     ];
 
     /**
@@ -211,7 +211,7 @@ class GetMyFeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets fees_estimate_request
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\FeesEstimateRequest|null
+     * @return \SellingPartnerApi\Model\Fees\FeesEstimateRequest|null
      */
     public function getFeesEstimateRequest()
     {
@@ -221,7 +221,7 @@ class GetMyFeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets fees_estimate_request
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\FeesEstimateRequest|null $fees_estimate_request fees_estimate_request
+     * @param \SellingPartnerApi\Model\Fees\FeesEstimateRequest|null $fees_estimate_request fees_estimate_request
      *
      * @return self
      */

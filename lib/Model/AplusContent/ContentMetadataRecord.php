@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ContentMetadataRecord Class Doc Comment
  *
  * @category Class
  * @description The metadata for an A+ Content document, with additional information for content management.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class ContentMetadataRecord implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'content_reference_key' => 'string',
-        'content_metadata' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentMetadata'
+        'content_metadata' => '\SellingPartnerApi\Model\AplusContent\ContentMetadata'
     ];
 
     /**
@@ -256,7 +256,7 @@ class ContentMetadataRecord implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets content_metadata
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentMetadata
+     * @return \SellingPartnerApi\Model\AplusContent\ContentMetadata
      */
     public function getContentMetadata()
     {
@@ -266,7 +266,7 @@ class ContentMetadataRecord implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets content_metadata
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentMetadata $content_metadata content_metadata
+     * @param \SellingPartnerApi\Model\AplusContent\ContentMetadata $content_metadata content_metadata
      *
      * @return self
      */

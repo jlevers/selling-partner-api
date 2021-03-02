@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * RetrieveShippingLabelResult Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the retrieveShippingLabel operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class RetrieveShippingLabelResult implements ModelInterface, ArrayAccess, \JsonS
       */
     protected static $openAPITypes = [
         'label_stream' => 'string',
-        'label_specification' => '\Evers\SellingPartnerApi\Model\Shipping\LabelSpecification'
+        'label_specification' => '\SellingPartnerApi\Model\Shipping\LabelSpecification'
     ];
 
     /**
@@ -247,7 +247,7 @@ class RetrieveShippingLabelResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets label_specification
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\LabelSpecification
+     * @return \SellingPartnerApi\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification()
     {
@@ -257,7 +257,7 @@ class RetrieveShippingLabelResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets label_specification
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\LabelSpecification $label_specification label_specification
+     * @param \SellingPartnerApi\Model\Shipping\LabelSpecification $label_specification label_specification
      *
      * @return self
      */

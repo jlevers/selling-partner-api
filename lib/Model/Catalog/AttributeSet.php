@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Catalog;
+namespace SellingPartnerApi\Model\Catalog;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AttributeSet Class Doc Comment
  *
  * @category Class
  * @description The attributes of the item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -74,12 +74,12 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
         'clasp_type' => 'string',
         'color' => 'string',
         'cpu_manufacturer' => 'string',
-        'cpu_speed' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'cpu_speed' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'cpu_type' => 'string',
-        'creator' => '\Evers\SellingPartnerApi\Model\Catalog\CreatorType[]',
+        'creator' => '\SellingPartnerApi\Model\Catalog\CreatorType[]',
         'department' => 'string',
         'director' => 'string[]',
-        'display_size' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'display_size' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'edition' => 'string',
         'episode_sequence' => 'string',
         'esrb_age_rating' => 'string',
@@ -89,13 +89,13 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
         'gem_type' => 'string[]',
         'genre' => 'string',
         'golf_club_flex' => 'string',
-        'golf_club_loft' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'golf_club_loft' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'hand_orientation' => 'string',
         'hard_disk_interface' => 'string',
-        'hard_disk_size' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'hard_disk_size' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'hardware_platform' => 'string',
         'hazardous_material_type' => 'string',
-        'item_dimensions' => '\Evers\SellingPartnerApi\Model\Catalog\DimensionType',
+        'item_dimensions' => '\SellingPartnerApi\Model\Catalog\DimensionType',
         'is_adult_product' => 'bool',
         'is_autographed' => 'bool',
         'is_eligible_for_trade_in' => 'bool',
@@ -103,15 +103,15 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
         'issues_per_year' => 'string',
         'item_part_number' => 'string',
         'label' => 'string',
-        'languages' => '\Evers\SellingPartnerApi\Model\Catalog\LanguageType[]',
+        'languages' => '\SellingPartnerApi\Model\Catalog\LanguageType[]',
         'legal_disclaimer' => 'string',
-        'list_price' => '\Evers\SellingPartnerApi\Model\Catalog\Price',
+        'list_price' => '\SellingPartnerApi\Model\Catalog\Price',
         'manufacturer' => 'string',
-        'manufacturer_maximum_age' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'manufacturer_minimum_age' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'manufacturer_maximum_age' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'manufacturer_minimum_age' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'manufacturer_parts_warranty_description' => 'string',
         'material_type' => 'string[]',
-        'maximum_resolution' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'maximum_resolution' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'media_type' => 'string[]',
         'metal_stamp' => 'string',
         'metal_type' => 'string',
@@ -122,8 +122,8 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
         'number_of_pages' => 'int',
         'number_of_tracks' => 'int',
         'operating_system' => 'string[]',
-        'optical_zoom' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'package_dimensions' => '\Evers\SellingPartnerApi\Model\Catalog\DimensionType',
+        'optical_zoom' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'package_dimensions' => '\SellingPartnerApi\Model\Catalog\DimensionType',
         'package_quantity' => 'int',
         'part_number' => 'string',
         'pegi_rating' => 'string',
@@ -137,24 +137,24 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
         'region_code' => 'string',
         'release_date' => 'string',
         'ring_size' => 'string',
-        'running_time' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'running_time' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'shaft_material' => 'string',
         'scent' => 'string',
         'season_sequence' => 'string',
         'seikodo_product_code' => 'string',
         'size' => 'string',
         'size_per_pearl' => 'string',
-        'small_image' => '\Evers\SellingPartnerApi\Model\Catalog\Image',
+        'small_image' => '\SellingPartnerApi\Model\Catalog\Image',
         'studio' => 'string',
-        'subscription_length' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'system_memory_size' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'subscription_length' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'system_memory_size' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'system_memory_type' => 'string',
         'theatrical_release_date' => 'string',
         'title' => 'string',
-        'total_diamond_weight' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'total_gem_weight' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'total_diamond_weight' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'total_gem_weight' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
         'warranty' => 'string',
-        'weee_tax_value' => '\Evers\SellingPartnerApi\Model\Catalog\Price'
+        'weee_tax_value' => '\SellingPartnerApi\Model\Catalog\Price'
     ];
 
     /**
@@ -1141,7 +1141,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets cpu_speed
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getCpuSpeed()
     {
@@ -1151,7 +1151,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cpu_speed
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $cpu_speed cpu_speed
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $cpu_speed cpu_speed
      *
      * @return self
      */
@@ -1189,7 +1189,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets creator
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\CreatorType[]|null
+     * @return \SellingPartnerApi\Model\Catalog\CreatorType[]|null
      */
     public function getCreator()
     {
@@ -1199,7 +1199,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets creator
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\CreatorType[]|null $creator The creator attributes of the item.
+     * @param \SellingPartnerApi\Model\Catalog\CreatorType[]|null $creator The creator attributes of the item.
      *
      * @return self
      */
@@ -1261,7 +1261,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets display_size
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getDisplaySize()
     {
@@ -1271,7 +1271,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets display_size
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $display_size display_size
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $display_size display_size
      *
      * @return self
      */
@@ -1501,7 +1501,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets golf_club_loft
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getGolfClubLoft()
     {
@@ -1511,7 +1511,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets golf_club_loft
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $golf_club_loft golf_club_loft
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $golf_club_loft golf_club_loft
      *
      * @return self
      */
@@ -1573,7 +1573,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets hard_disk_size
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getHardDiskSize()
     {
@@ -1583,7 +1583,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hard_disk_size
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $hard_disk_size hard_disk_size
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $hard_disk_size hard_disk_size
      *
      * @return self
      */
@@ -1645,7 +1645,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DimensionType|null
+     * @return \SellingPartnerApi\Model\Catalog\DimensionType|null
      */
     public function getItemDimensions()
     {
@@ -1655,7 +1655,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DimensionType|null $item_dimensions item_dimensions
+     * @param \SellingPartnerApi\Model\Catalog\DimensionType|null $item_dimensions item_dimensions
      *
      * @return self
      */
@@ -1837,7 +1837,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets languages
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\LanguageType[]|null
+     * @return \SellingPartnerApi\Model\Catalog\LanguageType[]|null
      */
     public function getLanguages()
     {
@@ -1847,7 +1847,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets languages
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\LanguageType[]|null $languages The languages attribute of the item.
+     * @param \SellingPartnerApi\Model\Catalog\LanguageType[]|null $languages The languages attribute of the item.
      *
      * @return self
      */
@@ -1885,7 +1885,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets list_price
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\Price|null
+     * @return \SellingPartnerApi\Model\Catalog\Price|null
      */
     public function getListPrice()
     {
@@ -1895,7 +1895,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets list_price
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\Price|null $list_price list_price
+     * @param \SellingPartnerApi\Model\Catalog\Price|null $list_price list_price
      *
      * @return self
      */
@@ -1933,7 +1933,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets manufacturer_maximum_age
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getManufacturerMaximumAge()
     {
@@ -1943,7 +1943,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets manufacturer_maximum_age
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $manufacturer_maximum_age manufacturer_maximum_age
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $manufacturer_maximum_age manufacturer_maximum_age
      *
      * @return self
      */
@@ -1957,7 +1957,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets manufacturer_minimum_age
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getManufacturerMinimumAge()
     {
@@ -1967,7 +1967,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets manufacturer_minimum_age
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $manufacturer_minimum_age manufacturer_minimum_age
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $manufacturer_minimum_age manufacturer_minimum_age
      *
      * @return self
      */
@@ -2029,7 +2029,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets maximum_resolution
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getMaximumResolution()
     {
@@ -2039,7 +2039,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets maximum_resolution
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $maximum_resolution maximum_resolution
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $maximum_resolution maximum_resolution
      *
      * @return self
      */
@@ -2293,7 +2293,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets optical_zoom
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getOpticalZoom()
     {
@@ -2303,7 +2303,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets optical_zoom
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $optical_zoom optical_zoom
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $optical_zoom optical_zoom
      *
      * @return self
      */
@@ -2317,7 +2317,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets package_dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DimensionType|null
+     * @return \SellingPartnerApi\Model\Catalog\DimensionType|null
      */
     public function getPackageDimensions()
     {
@@ -2327,7 +2327,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets package_dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DimensionType|null $package_dimensions package_dimensions
+     * @param \SellingPartnerApi\Model\Catalog\DimensionType|null $package_dimensions package_dimensions
      *
      * @return self
      */
@@ -2653,7 +2653,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets running_time
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getRunningTime()
     {
@@ -2663,7 +2663,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets running_time
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $running_time running_time
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $running_time running_time
      *
      * @return self
      */
@@ -2821,7 +2821,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets small_image
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\Image|null
+     * @return \SellingPartnerApi\Model\Catalog\Image|null
      */
     public function getSmallImage()
     {
@@ -2831,7 +2831,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets small_image
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\Image|null $small_image small_image
+     * @param \SellingPartnerApi\Model\Catalog\Image|null $small_image small_image
      *
      * @return self
      */
@@ -2869,7 +2869,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets subscription_length
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getSubscriptionLength()
     {
@@ -2879,7 +2879,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subscription_length
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $subscription_length subscription_length
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $subscription_length subscription_length
      *
      * @return self
      */
@@ -2893,7 +2893,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets system_memory_size
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getSystemMemorySize()
     {
@@ -2903,7 +2903,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets system_memory_size
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $system_memory_size system_memory_size
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $system_memory_size system_memory_size
      *
      * @return self
      */
@@ -2989,7 +2989,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_diamond_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getTotalDiamondWeight()
     {
@@ -2999,7 +2999,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_diamond_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $total_diamond_weight total_diamond_weight
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $total_diamond_weight total_diamond_weight
      *
      * @return self
      */
@@ -3013,7 +3013,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets total_gem_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getTotalGemWeight()
     {
@@ -3023,7 +3023,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets total_gem_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $total_gem_weight total_gem_weight
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $total_gem_weight total_gem_weight
      *
      * @return self
      */
@@ -3061,7 +3061,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets weee_tax_value
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\Price|null
+     * @return \SellingPartnerApi\Model\Catalog\Price|null
      */
     public function getWeeeTaxValue()
     {
@@ -3071,7 +3071,7 @@ class AttributeSet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets weee_tax_value
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\Price|null $weee_tax_value weee_tax_value
+     * @param \SellingPartnerApi\Model\Catalog\Price|null $weee_tax_value weee_tax_value
      *
      * @return self
      */

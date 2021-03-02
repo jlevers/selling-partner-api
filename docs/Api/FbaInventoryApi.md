@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\FbaInventoryApi
+# SellingPartnerApi\FbaInventoryApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `getInventorySummaries()`
 
 ```php
-getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $detail, $start_date_time, $seller_skus, $next_token): \Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse
+getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $detail, $start_date_time, $seller_skus, $next_token): \SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse
 ```
 
 
@@ -23,7 +23,7 @@ Returns a list of inventory summaries. The summaries returned depend on the pres
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInventoryApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInventoryApi();
 $granularity_type = 'granularity_type_example'; // string | The granularity type for the inventory aggregation level.
 $granularity_id = 'granularity_id_example'; // string | The granularity ID for the inventory aggregation level.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace ID for the marketplace for which to return inventory summaries.
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse**](../Model/FbaInventory/GetInventorySummariesResponse.md)
+[**\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse**](../Model/FbaInventory/GetInventorySummariesResponse.md)
 
 ### HTTP request headers
 

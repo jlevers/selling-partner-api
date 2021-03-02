@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PartneredSmallParcelDataOutput Class Doc Comment
  *
  * @category Class
  * @description Information returned by Amazon about a Small Parcel shipment by an Amazon-partnered carrier.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'package_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageOutput[]',
-        'partnered_estimate' => '\Evers\SellingPartnerApi\Model\FbaInbound\PartneredEstimate'
+        'package_list' => '\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageOutput[]',
+        'partnered_estimate' => '\SellingPartnerApi\Model\FbaInbound\PartneredEstimate'
     ];
 
     /**
@@ -220,7 +220,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets package_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageOutput[]
+     * @return \SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageOutput[]
      */
     public function getPackageList()
     {
@@ -230,7 +230,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets package_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageOutput[] $package_list A list of packages, including shipping information from the Amazon-partnered carrier.
+     * @param \SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelPackageOutput[] $package_list A list of packages, including shipping information from the Amazon-partnered carrier.
      *
      * @return self
      */
@@ -244,7 +244,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets partnered_estimate
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PartneredEstimate|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PartneredEstimate|null
      */
     public function getPartneredEstimate()
     {
@@ -254,7 +254,7 @@ class PartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets partnered_estimate
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PartneredEstimate|null $partnered_estimate partnered_estimate
+     * @param \SellingPartnerApi\Model\FbaInbound\PartneredEstimate|null $partnered_estimate partnered_estimate
      *
      * @return self
      */

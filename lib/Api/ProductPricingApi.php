@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Api;
+namespace SellingPartnerApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Evers\SellingPartnerApi\ApiException;
-use Evers\SellingPartnerApi\Configuration;
-use Evers\SellingPartnerApi\HeaderSelector;
-use Evers\SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\ApiException;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\HeaderSelector;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ProductPricingApi Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class ProductPricingApi
 {
@@ -119,9 +119,9 @@ class ProductPricingApi
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse
+     * @return \SellingPartnerApi\Model\ProductPricing\GetPricingResponse
      */
     public function getCompetitivePricing($marketplace_id, $item_type, $asins = null, $skus = null)
     {
@@ -137,9 +137,9 @@ class ProductPricingApi
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\ProductPricing\GetPricingResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCompetitivePricingWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null)
     {
@@ -179,104 +179,104 @@ class ProductPricingApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
+            $returnType = '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -295,7 +295,7 @@ class ProductPricingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -303,7 +303,7 @@ class ProductPricingApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -311,7 +311,7 @@ class ProductPricingApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -319,7 +319,7 @@ class ProductPricingApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -327,7 +327,7 @@ class ProductPricingApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -335,7 +335,7 @@ class ProductPricingApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -343,7 +343,7 @@ class ProductPricingApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -351,7 +351,7 @@ class ProductPricingApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -399,7 +399,7 @@ class ProductPricingApi
      */
     public function getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
+        $returnType = '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
         $this->config->startRequestGeneration();
         $request = $this->getCompetitivePricingRequest($marketplace_id, $item_type, $asins, $skus);
         $signedRequest = $this->config->signRequest($request);
@@ -576,9 +576,9 @@ class ProductPricingApi
      * @param  string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse
+     * @return \SellingPartnerApi\Model\ProductPricing\GetOffersResponse
      */
     public function getItemOffers($marketplace_id, $item_condition, $asin)
     {
@@ -593,9 +593,9 @@ class ProductPricingApi
      * @param  string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\ProductPricing\GetOffersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getItemOffersWithHttpInfo($marketplace_id, $item_condition, $asin)
     {
@@ -635,104 +635,104 @@ class ProductPricingApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
+            $returnType = '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -751,7 +751,7 @@ class ProductPricingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -759,7 +759,7 @@ class ProductPricingApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -767,7 +767,7 @@ class ProductPricingApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -775,7 +775,7 @@ class ProductPricingApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -783,7 +783,7 @@ class ProductPricingApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -791,7 +791,7 @@ class ProductPricingApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -799,7 +799,7 @@ class ProductPricingApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -807,7 +807,7 @@ class ProductPricingApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -853,7 +853,7 @@ class ProductPricingApi
      */
     public function getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
+        $returnType = '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
         $this->config->startRequestGeneration();
         $request = $this->getItemOffersRequest($marketplace_id, $item_condition, $asin);
         $signedRequest = $this->config->signRequest($request);
@@ -1021,9 +1021,9 @@ class ProductPricingApi
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse
+     * @return \SellingPartnerApi\Model\ProductPricing\GetOffersResponse
      */
     public function getListingOffers($marketplace_id, $item_condition, $seller_sku)
     {
@@ -1038,9 +1038,9 @@ class ProductPricingApi
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\ProductPricing\GetOffersResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getListingOffersWithHttpInfo($marketplace_id, $item_condition, $seller_sku)
     {
@@ -1080,104 +1080,104 @@ class ProductPricingApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetOffersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
+            $returnType = '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1196,7 +1196,7 @@ class ProductPricingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1204,7 +1204,7 @@ class ProductPricingApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1212,7 +1212,7 @@ class ProductPricingApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1220,7 +1220,7 @@ class ProductPricingApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1228,7 +1228,7 @@ class ProductPricingApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1236,7 +1236,7 @@ class ProductPricingApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1244,7 +1244,7 @@ class ProductPricingApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1252,7 +1252,7 @@ class ProductPricingApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1298,7 +1298,7 @@ class ProductPricingApi
      */
     public function getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
+        $returnType = '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
         $this->config->startRequestGeneration();
         $request = $this->getListingOffersRequest($marketplace_id, $item_condition, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
@@ -1468,9 +1468,9 @@ class ProductPricingApi
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse
+     * @return \SellingPartnerApi\Model\ProductPricing\GetPricingResponse
      */
     public function getPricing($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
     {
@@ -1487,9 +1487,9 @@ class ProductPricingApi
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\ProductPricing\GetPricingResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPricingWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
     {
@@ -1529,104 +1529,104 @@ class ProductPricingApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\ProductPricing\GetPricingResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
+            $returnType = '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1645,7 +1645,7 @@ class ProductPricingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1653,7 +1653,7 @@ class ProductPricingApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1661,7 +1661,7 @@ class ProductPricingApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1669,7 +1669,7 @@ class ProductPricingApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1677,7 +1677,7 @@ class ProductPricingApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1685,7 +1685,7 @@ class ProductPricingApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1693,7 +1693,7 @@ class ProductPricingApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1701,7 +1701,7 @@ class ProductPricingApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
+                        '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1751,7 +1751,7 @@ class ProductPricingApi
      */
     public function getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
+        $returnType = '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
         $this->config->startRequestGeneration();
         $request = $this->getPricingRequest($marketplace_id, $item_type, $asins, $skus, $item_condition);
         $signedRequest = $this->config->signRequest($request);

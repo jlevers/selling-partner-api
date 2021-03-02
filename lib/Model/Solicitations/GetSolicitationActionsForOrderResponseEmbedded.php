@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Solicitations;
+namespace SellingPartnerApi\Model\Solicitations;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetSolicitationActionsForOrderResponseEmbedded Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class GetSolicitationActionsForOrderResponseEmbedded implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'actions' => '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponse[]'
+        'actions' => '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponse[]'
     ];
 
     /**
@@ -213,7 +213,7 @@ class GetSolicitationActionsForOrderResponseEmbedded implements ModelInterface, 
     /**
      * Gets actions
      *
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponse[]
+     * @return \SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponse[]
      */
     public function getActions()
     {
@@ -223,7 +223,7 @@ class GetSolicitationActionsForOrderResponseEmbedded implements ModelInterface, 
     /**
      * Sets actions
      *
-     * @param \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponse[] $actions actions
+     * @param \SellingPartnerApi\Model\Solicitations\GetSolicitationActionResponse[] $actions actions
      *
      * @return self
      */

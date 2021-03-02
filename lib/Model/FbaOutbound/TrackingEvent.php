@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TrackingEvent Class Doc Comment
  *
  * @category Class
  * @description Information for tracking package deliveries.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'event_date' => '\DateTime',
-        'event_address' => '\Evers\SellingPartnerApi\Model\FbaOutbound\TrackingAddress',
-        'event_code' => '\Evers\SellingPartnerApi\Model\FbaOutbound\EventCode',
+        'event_address' => '\SellingPartnerApi\Model\FbaOutbound\TrackingAddress',
+        'event_code' => '\SellingPartnerApi\Model\FbaOutbound\EventCode',
         'event_description' => 'string'
     ];
 
@@ -265,7 +265,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets event_address
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\TrackingAddress
+     * @return \SellingPartnerApi\Model\FbaOutbound\TrackingAddress
      */
     public function getEventAddress()
     {
@@ -275,7 +275,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets event_address
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\TrackingAddress $event_address event_address
+     * @param \SellingPartnerApi\Model\FbaOutbound\TrackingAddress $event_address event_address
      *
      * @return self
      */
@@ -289,7 +289,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets event_code
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\EventCode
+     * @return \SellingPartnerApi\Model\FbaOutbound\EventCode
      */
     public function getEventCode()
     {
@@ -299,7 +299,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets event_code
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\EventCode $event_code event_code
+     * @param \SellingPartnerApi\Model\FbaOutbound\EventCode $event_code event_code
      *
      * @return self
      */

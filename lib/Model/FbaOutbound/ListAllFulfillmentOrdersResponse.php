@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListAllFulfillmentOrdersResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the listAllFulfillmentOrders operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class ListAllFulfillmentOrdersResponse implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResult',
-        'errors' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Error[]'
+        'payload' => '\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResult',
+        'errors' => '\SellingPartnerApi\Model\FbaOutbound\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class ListAllFulfillmentOrdersResponse implements ModelInterface, ArrayAccess, \
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResult|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResult|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class ListAllFulfillmentOrdersResponse implements ModelInterface, ArrayAccess, \
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResult|null $payload payload
+     * @param \SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResult|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class ListAllFulfillmentOrdersResponse implements ModelInterface, ArrayAccess, \
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Error[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class ListAllFulfillmentOrdersResponse implements ModelInterface, ArrayAccess, \
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\FbaOutbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

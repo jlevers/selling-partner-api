@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Points Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class Points implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'points_number' => 'int',
-        'points_monetary_value' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType'
+        'points_monetary_value' => '\SellingPartnerApi\Model\Fees\MoneyType'
     ];
 
     /**
@@ -240,7 +240,7 @@ class Points implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets points_monetary_value
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType|null
+     * @return \SellingPartnerApi\Model\Fees\MoneyType|null
      */
     public function getPointsMonetaryValue()
     {
@@ -250,7 +250,7 @@ class Points implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets points_monetary_value
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType|null $points_monetary_value points_monetary_value
+     * @param \SellingPartnerApi\Model\Fees\MoneyType|null $points_monetary_value points_monetary_value
      *
      * @return self
      */

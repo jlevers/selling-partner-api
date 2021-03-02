@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InboundShipmentHeader Class Doc Comment
  *
  * @category Class
  * @description Inbound shipment information used to create and update inbound shipments.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,12 +60,12 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'shipment_name' => 'string',
-        'ship_from_address' => '\Evers\SellingPartnerApi\Model\FbaInbound\Address',
+        'ship_from_address' => '\SellingPartnerApi\Model\FbaInbound\Address',
         'destination_fulfillment_center_id' => 'string',
         'are_cases_required' => 'bool',
-        'shipment_status' => '\Evers\SellingPartnerApi\Model\FbaInbound\ShipmentStatus',
-        'label_prep_preference' => '\Evers\SellingPartnerApi\Model\FbaInbound\LabelPrepPreference',
-        'intended_box_contents_source' => '\Evers\SellingPartnerApi\Model\FbaInbound\IntendedBoxContentsSource'
+        'shipment_status' => '\SellingPartnerApi\Model\FbaInbound\ShipmentStatus',
+        'label_prep_preference' => '\SellingPartnerApi\Model\FbaInbound\LabelPrepPreference',
+        'intended_box_contents_source' => '\SellingPartnerApi\Model\FbaInbound\IntendedBoxContentsSource'
     ];
 
     /**
@@ -286,7 +286,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets ship_from_address
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Address
+     * @return \SellingPartnerApi\Model\FbaInbound\Address
      */
     public function getShipFromAddress()
     {
@@ -296,7 +296,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets ship_from_address
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Address $ship_from_address ship_from_address
+     * @param \SellingPartnerApi\Model\FbaInbound\Address $ship_from_address ship_from_address
      *
      * @return self
      */
@@ -358,7 +358,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets shipment_status
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\ShipmentStatus
+     * @return \SellingPartnerApi\Model\FbaInbound\ShipmentStatus
      */
     public function getShipmentStatus()
     {
@@ -368,7 +368,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets shipment_status
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\ShipmentStatus $shipment_status shipment_status
+     * @param \SellingPartnerApi\Model\FbaInbound\ShipmentStatus $shipment_status shipment_status
      *
      * @return self
      */
@@ -382,7 +382,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets label_prep_preference
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\LabelPrepPreference
+     * @return \SellingPartnerApi\Model\FbaInbound\LabelPrepPreference
      */
     public function getLabelPrepPreference()
     {
@@ -392,7 +392,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets label_prep_preference
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\LabelPrepPreference $label_prep_preference label_prep_preference
+     * @param \SellingPartnerApi\Model\FbaInbound\LabelPrepPreference $label_prep_preference label_prep_preference
      *
      * @return self
      */
@@ -406,7 +406,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets intended_box_contents_source
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\IntendedBoxContentsSource|null
+     * @return \SellingPartnerApi\Model\FbaInbound\IntendedBoxContentsSource|null
      */
     public function getIntendedBoxContentsSource()
     {
@@ -416,7 +416,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets intended_box_contents_source
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\IntendedBoxContentsSource|null $intended_box_contents_source intended_box_contents_source
+     * @param \SellingPartnerApi\Model\FbaInbound\IntendedBoxContentsSource|null $intended_box_contents_source intended_box_contents_source
      *
      * @return self
      */

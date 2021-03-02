@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardImageTextCaptionBlock Class Doc Comment
  *
  * @category Class
  * @description The A+ Content standard image and text block, with a related caption. The caption may not display on all devices.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardImageTextCaptionBlock implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'block' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'caption' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent'
+        'block' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'caption' => '\SellingPartnerApi\Model\AplusContent\TextComponent'
     ];
 
     /**
@@ -217,7 +217,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets block
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock()
     {
@@ -227,7 +227,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets block
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block block
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block block
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets caption
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getCaption()
     {
@@ -251,7 +251,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets caption
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $caption caption
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $caption caption
      *
      * @return self
      */

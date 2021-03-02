@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardFourImageTextModule Class Doc Comment
  *
  * @category Class
  * @description Four standard images with text, presented across a single row.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,11 +59,11 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'block1' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'block2' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'block3' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
-        'block4' => '\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'block1' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'block2' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'block3' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock',
+        'block4' => '\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock'
     ];
 
     /**
@@ -235,7 +235,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -245,7 +245,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -259,7 +259,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets block1
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock1()
     {
@@ -269,7 +269,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets block1
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block1 block1
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block1 block1
      *
      * @return self
      */
@@ -283,7 +283,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets block2
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock2()
     {
@@ -293,7 +293,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets block2
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block2 block2
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block2 block2
      *
      * @return self
      */
@@ -307,7 +307,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets block3
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock3()
     {
@@ -317,7 +317,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets block3
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block3 block3
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block3 block3
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets block4
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
+     * @return \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null
      */
     public function getBlock4()
     {
@@ -341,7 +341,7 @@ class StandardFourImageTextModule implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets block4
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block4 block4
+     * @param \SellingPartnerApi\Model\AplusContent\StandardImageTextBlock|null $block4 block4
      *
      * @return self
      */

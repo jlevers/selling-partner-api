@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PackageDimensions Class Doc Comment
  *
  * @category Class
  * @description The dimensions of a package contained in a shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,8 +62,8 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
         'length' => 'double',
         'width' => 'double',
         'height' => 'double',
-        'unit' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength',
-        'predefined_package_dimensions' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\PredefinedPackageDimensions'
+        'unit' => '\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength',
+        'predefined_package_dimensions' => '\SellingPartnerApi\Model\MerchantFulfillment\PredefinedPackageDimensions'
     ];
 
     /**
@@ -307,7 +307,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets unit
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength|null
      */
     public function getUnit()
     {
@@ -317,7 +317,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets unit
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength|null $unit unit
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength|null $unit unit
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets predefined_package_dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\PredefinedPackageDimensions|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\PredefinedPackageDimensions|null
      */
     public function getPredefinedPackageDimensions()
     {
@@ -341,7 +341,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets predefined_package_dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\PredefinedPackageDimensions|null $predefined_package_dimensions predefined_package_dimensions
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\PredefinedPackageDimensions|null $predefined_package_dimensions predefined_package_dimensions
      *
      * @return self
      */

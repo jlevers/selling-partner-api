@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\SmallAndLight;
+namespace SellingPartnerApi\Model\SmallAndLight;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SmallAndLightEligibility Class Doc Comment
  *
  * @category Class
  * @description The Small and Light eligibility status of the item indicated by the specified seller SKU.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'seller_sku' => 'string',
-        'status' => '\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibilityStatus'
+        'status' => '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibilityStatus'
     ];
 
     /**
@@ -280,7 +280,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets status
      *
-     * @return \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibilityStatus
+     * @return \SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibilityStatus
      */
     public function getStatus()
     {
@@ -290,7 +290,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets status
      *
-     * @param \Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibilityStatus $status status
+     * @param \SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibilityStatus $status status
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Messaging;
+namespace SellingPartnerApi\Model\Messaging;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetMessagingActionResponseEmbedded Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class GetMessagingActionResponseEmbedded implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'schema' => '\Evers\SellingPartnerApi\Model\Messaging\GetSchemaResponse'
+        'schema' => '\SellingPartnerApi\Model\Messaging\GetSchemaResponse'
     ];
 
     /**
@@ -210,7 +210,7 @@ class GetMessagingActionResponseEmbedded implements ModelInterface, ArrayAccess,
     /**
      * Gets schema
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\GetSchemaResponse|null
+     * @return \SellingPartnerApi\Model\Messaging\GetSchemaResponse|null
      */
     public function getSchema()
     {
@@ -220,7 +220,7 @@ class GetMessagingActionResponseEmbedded implements ModelInterface, ArrayAccess,
     /**
      * Sets schema
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\GetSchemaResponse|null $schema schema
+     * @param \SellingPartnerApi\Model\Messaging\GetSchemaResponse|null $schema schema
      *
      * @return self
      */

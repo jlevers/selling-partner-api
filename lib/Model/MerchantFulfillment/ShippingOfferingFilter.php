@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShippingOfferingFilter Class Doc Comment
  *
  * @category Class
  * @description Filter for use when requesting eligible shipping services.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,8 +61,8 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'include_packing_slip_with_label' => 'bool',
         'include_complex_shipping_options' => 'bool',
-        'carrier_will_pick_up' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption',
-        'delivery_experience' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption'
+        'carrier_will_pick_up' => '\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption',
+        'delivery_experience' => '\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption'
     ];
 
     /**
@@ -277,7 +277,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets carrier_will_pick_up
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption|null
      */
     public function getCarrierWillPickUp()
     {
@@ -287,7 +287,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets carrier_will_pick_up
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption|null $carrier_will_pick_up carrier_will_pick_up
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption|null $carrier_will_pick_up carrier_will_pick_up
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets delivery_experience
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption|null
      */
     public function getDeliveryExperience()
     {
@@ -311,7 +311,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets delivery_experience
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption|null $delivery_experience delivery_experience
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption|null $delivery_experience delivery_experience
      *
      * @return self
      */

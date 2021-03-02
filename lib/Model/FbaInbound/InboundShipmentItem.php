@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InboundShipmentItem Class Doc Comment
  *
  * @category Class
  * @description Item information for an inbound shipment. Submitted with a call to the createInboundShipment or updateInboundShipment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -66,7 +66,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity_received' => 'int',
         'quantity_in_case' => 'int',
         'release_date' => '\DateTime',
-        'prep_details_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]'
+        'prep_details_list' => '\SellingPartnerApi\Model\FbaInbound\PrepDetails[]'
     ];
 
     /**
@@ -427,7 +427,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets prep_details_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null
      */
     public function getPrepDetailsList()
     {
@@ -437,7 +437,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets prep_details_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null $prep_details_list A list of preparation instructions and who is responsible for that preparation.
+     * @param \SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null $prep_details_list A list of preparation instructions and who is responsible for that preparation.
      *
      * @return self
      */

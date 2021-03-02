@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PurchaseShipmentRequest Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the purchaseShipment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,12 +60,12 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
       */
     protected static $openAPITypes = [
         'client_reference_id' => 'string',
-        'ship_to' => '\Evers\SellingPartnerApi\Model\Shipping\Address',
-        'ship_from' => '\Evers\SellingPartnerApi\Model\Shipping\Address',
+        'ship_to' => '\SellingPartnerApi\Model\Shipping\Address',
+        'ship_from' => '\SellingPartnerApi\Model\Shipping\Address',
         'ship_date' => '\DateTime',
-        'service_type' => '\Evers\SellingPartnerApi\Model\Shipping\ServiceType',
-        'containers' => '\Evers\SellingPartnerApi\Model\Shipping\Container[]',
-        'label_specification' => '\Evers\SellingPartnerApi\Model\Shipping\LabelSpecification'
+        'service_type' => '\SellingPartnerApi\Model\Shipping\ServiceType',
+        'containers' => '\SellingPartnerApi\Model\Shipping\Container[]',
+        'label_specification' => '\SellingPartnerApi\Model\Shipping\LabelSpecification'
     ];
 
     /**
@@ -297,7 +297,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ship_to
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Address
+     * @return \SellingPartnerApi\Model\Shipping\Address
      */
     public function getShipTo()
     {
@@ -307,7 +307,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ship_to
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Address $ship_to ship_to
+     * @param \SellingPartnerApi\Model\Shipping\Address $ship_to ship_to
      *
      * @return self
      */
@@ -321,7 +321,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ship_from
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Address
+     * @return \SellingPartnerApi\Model\Shipping\Address
      */
     public function getShipFrom()
     {
@@ -331,7 +331,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ship_from
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Address $ship_from ship_from
+     * @param \SellingPartnerApi\Model\Shipping\Address $ship_from ship_from
      *
      * @return self
      */
@@ -369,7 +369,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets service_type
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ServiceType
+     * @return \SellingPartnerApi\Model\Shipping\ServiceType
      */
     public function getServiceType()
     {
@@ -379,7 +379,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets service_type
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ServiceType $service_type service_type
+     * @param \SellingPartnerApi\Model\Shipping\ServiceType $service_type service_type
      *
      * @return self
      */
@@ -393,7 +393,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets containers
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Container[]
+     * @return \SellingPartnerApi\Model\Shipping\Container[]
      */
     public function getContainers()
     {
@@ -403,7 +403,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets containers
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Container[] $containers A list of container.
+     * @param \SellingPartnerApi\Model\Shipping\Container[] $containers A list of container.
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets label_specification
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\LabelSpecification
+     * @return \SellingPartnerApi\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification()
     {
@@ -427,7 +427,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets label_specification
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\LabelSpecification $label_specification label_specification
+     * @param \SellingPartnerApi\Model\Shipping\LabelSpecification $label_specification label_specification
      *
      * @return self
      */

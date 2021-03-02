@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListFinancialEventsPayload Class Doc Comment
  *
  * @category Class
  * @description The payload for the listFinancialEvents operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'next_token' => 'string',
-        'financial_events' => '\Evers\SellingPartnerApi\Model\Finances\FinancialEvents'
+        'financial_events' => '\SellingPartnerApi\Model\Finances\FinancialEvents'
     ];
 
     /**
@@ -241,7 +241,7 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets financial_events
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FinancialEvents|null
+     * @return \SellingPartnerApi\Model\Finances\FinancialEvents|null
      */
     public function getFinancialEvents()
     {
@@ -251,7 +251,7 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets financial_events
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FinancialEvents|null $financial_events financial_events
+     * @param \SellingPartnerApi\Model\Finances\FinancialEvents|null $financial_events financial_events
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TextComponent Class Doc Comment
  *
  * @category Class
  * @description Rich text content.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class TextComponent implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'value' => 'string',
-        'decorator_set' => '\Evers\SellingPartnerApi\Model\AplusContent\Decorator[]'
+        'decorator_set' => '\SellingPartnerApi\Model\AplusContent\Decorator[]'
     ];
 
     /**
@@ -259,7 +259,7 @@ class TextComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets decorator_set
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\Decorator[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\Decorator[]|null
      */
     public function getDecoratorSet()
     {
@@ -269,7 +269,7 @@ class TextComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets decorator_set
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\Decorator[]|null $decorator_set A set of content decorators.
+     * @param \SellingPartnerApi\Model\AplusContent\Decorator[]|null $decorator_set A set of content decorators.
      *
      * @return self
      */

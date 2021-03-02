@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeesEstimateIdentifier Class Doc Comment
  *
  * @category Class
  * @description An item identifier, marketplace, time of request, and other details that identify an estimate.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -64,9 +64,9 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
         'id_type' => 'string',
         'id_value' => 'string',
         'is_amazon_fulfilled' => 'bool',
-        'price_to_estimate_fees' => '\Evers\SellingPartnerApi\Model\Fees\PriceToEstimateFees',
+        'price_to_estimate_fees' => '\SellingPartnerApi\Model\Fees\PriceToEstimateFees',
         'seller_input_identifier' => 'string',
-        'optional_fulfillment_program' => '\Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram'
+        'optional_fulfillment_program' => '\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram'
     ];
 
     /**
@@ -373,7 +373,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets price_to_estimate_fees
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\PriceToEstimateFees|null
+     * @return \SellingPartnerApi\Model\Fees\PriceToEstimateFees|null
      */
     public function getPriceToEstimateFees()
     {
@@ -383,7 +383,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets price_to_estimate_fees
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\PriceToEstimateFees|null $price_to_estimate_fees price_to_estimate_fees
+     * @param \SellingPartnerApi\Model\Fees\PriceToEstimateFees|null $price_to_estimate_fees price_to_estimate_fees
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets optional_fulfillment_program
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram|null
+     * @return \SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram|null
      */
     public function getOptionalFulfillmentProgram()
     {
@@ -431,7 +431,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets optional_fulfillment_program
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram|null $optional_fulfillment_program optional_fulfillment_program
+     * @param \SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram|null $optional_fulfillment_program optional_fulfillment_program
      *
      * @return self
      */

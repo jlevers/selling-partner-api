@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FinancialEventGroup Class Doc Comment
  *
  * @category Class
  * @description Information related to a financial event group.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,12 +62,12 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
         'financial_event_group_id' => 'string',
         'processing_status' => 'string',
         'fund_transfer_status' => 'string',
-        'original_total' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'converted_total' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
+        'original_total' => '\SellingPartnerApi\Model\Finances\Currency',
+        'converted_total' => '\SellingPartnerApi\Model\Finances\Currency',
         'fund_transfer_date' => '\DateTime',
         'trace_id' => 'string',
         'account_tail' => 'string',
-        'beginning_balance' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
+        'beginning_balance' => '\SellingPartnerApi\Model\Finances\Currency',
         'financial_event_group_start' => '\DateTime',
         'financial_event_group_end' => '\DateTime'
     ];
@@ -343,7 +343,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets original_total
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getOriginalTotal()
     {
@@ -353,7 +353,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets original_total
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $original_total original_total
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $original_total original_total
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets converted_total
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getConvertedTotal()
     {
@@ -377,7 +377,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets converted_total
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $converted_total converted_total
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $converted_total converted_total
      *
      * @return self
      */
@@ -463,7 +463,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets beginning_balance
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getBeginningBalance()
     {
@@ -473,7 +473,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets beginning_balance
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $beginning_balance beginning_balance
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $beginning_balance beginning_balance
      *
      * @return self
      */

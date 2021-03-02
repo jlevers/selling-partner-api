@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Feeds;
+namespace SellingPartnerApi\Model\Feeds;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeedDocument Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class FeedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'feed_document_id' => 'string',
         'url' => 'string',
-        'encryption_details' => '\Evers\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails',
+        'encryption_details' => '\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails',
         'compression_algorithm' => 'string'
     ];
 
@@ -307,7 +307,7 @@ class FeedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets encryption_details
      *
-     * @return \Evers\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails
+     * @return \SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails
      */
     public function getEncryptionDetails()
     {
@@ -317,7 +317,7 @@ class FeedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets encryption_details
      *
-     * @param \Evers\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails $encryption_details encryption_details
+     * @param \SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails $encryption_details encryption_details
      *
      * @return self
      */

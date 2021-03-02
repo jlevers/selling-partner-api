@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFeaturesResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getFeatures operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetFeaturesResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResult',
-        'errors' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Error[]'
+        'payload' => '\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResult',
+        'errors' => '\SellingPartnerApi\Model\FbaOutbound\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetFeaturesResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResult|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\GetFeaturesResult|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetFeaturesResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResult|null $payload payload
+     * @param \SellingPartnerApi\Model\FbaOutbound\GetFeaturesResult|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetFeaturesResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Error[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetFeaturesResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\FbaOutbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

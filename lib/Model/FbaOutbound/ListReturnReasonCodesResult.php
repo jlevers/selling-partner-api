@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListReturnReasonCodesResult Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,7 +58,7 @@ class ListReturnReasonCodesResult implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'reason_code_details' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ReasonCodeDetails[]'
+        'reason_code_details' => '\SellingPartnerApi\Model\FbaOutbound\ReasonCodeDetails[]'
     ];
 
     /**
@@ -210,7 +210,7 @@ class ListReturnReasonCodesResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets reason_code_details
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ReasonCodeDetails[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\ReasonCodeDetails[]|null
      */
     public function getReasonCodeDetails()
     {
@@ -220,7 +220,7 @@ class ListReturnReasonCodesResult implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets reason_code_details
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ReasonCodeDetails[]|null $reason_code_details An array of return reason code details.
+     * @param \SellingPartnerApi\Model\FbaOutbound\ReasonCodeDetails[]|null $reason_code_details An array of return reason code details.
      *
      * @return self
      */

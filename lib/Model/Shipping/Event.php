@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Event Class Doc Comment
  *
  * @category Class
  * @description An event of a shipment
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,7 +61,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'event_code' => 'string',
         'event_time' => '\DateTime',
-        'location' => '\Evers\SellingPartnerApi\Model\Shipping\Location'
+        'location' => '\SellingPartnerApi\Model\Shipping\Location'
     ];
 
     /**
@@ -292,7 +292,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets location
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Location|null
+     * @return \SellingPartnerApi\Model\Shipping\Location|null
      */
     public function getLocation()
     {
@@ -302,7 +302,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets location
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Location|null $location location
+     * @param \SellingPartnerApi\Model\Shipping\Location|null $location location
      *
      * @return self
      */

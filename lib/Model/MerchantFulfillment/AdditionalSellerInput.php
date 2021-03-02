@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AdditionalSellerInput Class Doc Comment
  *
  * @category Class
  * @description Additional information required to purchase shipping.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -64,10 +64,10 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
         'value_as_boolean' => 'bool',
         'value_as_integer' => 'int',
         'value_as_timestamp' => '\DateTime',
-        'value_as_address' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Address',
-        'value_as_weight' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight',
-        'value_as_dimension' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Length',
-        'value_as_currency' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount'
+        'value_as_address' => '\SellingPartnerApi\Model\MerchantFulfillment\Address',
+        'value_as_weight' => '\SellingPartnerApi\Model\MerchantFulfillment\Weight',
+        'value_as_dimension' => '\SellingPartnerApi\Model\MerchantFulfillment\Length',
+        'value_as_currency' => '\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount'
     ];
 
     /**
@@ -379,7 +379,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets value_as_address
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Address|null
      */
     public function getValueAsAddress()
     {
@@ -389,7 +389,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value_as_address
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address|null $value_as_address value_as_address
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Address|null $value_as_address value_as_address
      *
      * @return self
      */
@@ -403,7 +403,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets value_as_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Weight|null
      */
     public function getValueAsWeight()
     {
@@ -413,7 +413,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value_as_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight|null $value_as_weight value_as_weight
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Weight|null $value_as_weight value_as_weight
      *
      * @return self
      */
@@ -427,7 +427,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets value_as_dimension
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Length|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Length|null
      */
     public function getValueAsDimension()
     {
@@ -437,7 +437,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value_as_dimension
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Length|null $value_as_dimension value_as_dimension
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Length|null $value_as_dimension value_as_dimension
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets value_as_currency
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount|null
      */
     public function getValueAsCurrency()
     {
@@ -461,7 +461,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value_as_currency
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount|null $value_as_currency value_as_currency
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount|null $value_as_currency value_as_currency
      *
      * @return self
      */

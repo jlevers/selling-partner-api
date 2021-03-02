@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Api;
+namespace SellingPartnerApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Evers\SellingPartnerApi\ApiException;
-use Evers\SellingPartnerApi\Configuration;
-use Evers\SellingPartnerApi\HeaderSelector;
-use Evers\SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\ApiException;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\HeaderSelector;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * SolicitationsApi Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class SolicitationsApi
 {
@@ -117,9 +117,9 @@ class SolicitationsApi
      * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a solicitation is sent. (required)
      * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse
+     * @return \SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse
      */
     public function createProductReviewAndSellerFeedbackSolicitation($amazon_order_id, $marketplace_ids)
     {
@@ -133,9 +133,9 @@ class SolicitationsApi
      * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a solicitation is sent. (required)
      * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createProductReviewAndSellerFeedbackSolicitationWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
@@ -175,116 +175,116 @@ class SolicitationsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 201:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse';
+            $returnType = '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -303,7 +303,7 @@ class SolicitationsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -311,7 +311,7 @@ class SolicitationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -319,7 +319,7 @@ class SolicitationsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -327,7 +327,7 @@ class SolicitationsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -335,7 +335,7 @@ class SolicitationsApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -343,7 +343,7 @@ class SolicitationsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -351,7 +351,7 @@ class SolicitationsApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -359,7 +359,7 @@ class SolicitationsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -367,7 +367,7 @@ class SolicitationsApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
+                        '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -411,7 +411,7 @@ class SolicitationsApi
      */
     public function createProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse';
+        $returnType = '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse';
         $this->config->startRequestGeneration();
         $request = $this->createProductReviewAndSellerFeedbackSolicitationRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
@@ -568,9 +568,9 @@ class SolicitationsApi
      * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. (required)
      * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse
+     * @return \SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse
      */
     public function getSolicitationActionsForOrder($amazon_order_id, $marketplace_ids)
     {
@@ -584,9 +584,9 @@ class SolicitationsApi
      * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. (required)
      * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSolicitationActionsForOrderWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
@@ -626,116 +626,116 @@ class SolicitationsApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse';
+            $returnType = '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -754,7 +754,7 @@ class SolicitationsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -762,7 +762,7 @@ class SolicitationsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -770,7 +770,7 @@ class SolicitationsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -778,7 +778,7 @@ class SolicitationsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -786,7 +786,7 @@ class SolicitationsApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -794,7 +794,7 @@ class SolicitationsApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -802,7 +802,7 @@ class SolicitationsApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -810,7 +810,7 @@ class SolicitationsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -818,7 +818,7 @@ class SolicitationsApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
+                        '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -862,7 +862,7 @@ class SolicitationsApi
      */
     public function getSolicitationActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse';
+        $returnType = '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse';
         $this->config->startRequestGeneration();
         $request = $this->getSolicitationActionsForOrderRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);

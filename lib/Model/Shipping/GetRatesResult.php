@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetRatesResult Class Doc Comment
  *
  * @category Class
  * @description The payload schema for the getRates operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class GetRatesResult implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'service_rates' => '\Evers\SellingPartnerApi\Model\Shipping\ServiceRate[]'
+        'service_rates' => '\SellingPartnerApi\Model\Shipping\ServiceRate[]'
     ];
 
     /**
@@ -214,7 +214,7 @@ class GetRatesResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets service_rates
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\ServiceRate[]
+     * @return \SellingPartnerApi\Model\Shipping\ServiceRate[]
      */
     public function getServiceRates()
     {
@@ -224,7 +224,7 @@ class GetRatesResult implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets service_rates
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\ServiceRate[] $service_rates A list of service rates.
+     * @param \SellingPartnerApi\Model\Shipping\ServiceRate[] $service_rates A list of service rates.
      *
      * @return self
      */

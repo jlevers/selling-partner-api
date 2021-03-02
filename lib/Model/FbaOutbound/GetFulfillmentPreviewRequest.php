@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetFulfillmentPreviewRequest Class Doc Comment
  *
  * @category Class
  * @description The request body schema for the getFulfillmentPreview operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,12 +60,12 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'marketplace_id' => 'string',
-        'address' => '\Evers\SellingPartnerApi\Model\FbaOutbound\Address',
-        'items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewItem[]',
-        'shipping_speed_categories' => '\Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory[]',
+        'address' => '\SellingPartnerApi\Model\FbaOutbound\Address',
+        'items' => '\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewItem[]',
+        'shipping_speed_categories' => '\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory[]',
         'include_cod_fulfillment_preview' => 'bool',
         'include_delivery_windows' => 'bool',
-        'feature_constraints' => '\Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]'
+        'feature_constraints' => '\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]'
     ];
 
     /**
@@ -277,7 +277,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets address
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\Address
+     * @return \SellingPartnerApi\Model\FbaOutbound\Address
      */
     public function getAddress()
     {
@@ -287,7 +287,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets address
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\Address $address address
+     * @param \SellingPartnerApi\Model\FbaOutbound\Address $address address
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewItem[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewItem[]
      */
     public function getItems()
     {
@@ -311,7 +311,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewItem[] $items An array of fulfillment preview item information.
+     * @param \SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewItem[] $items An array of fulfillment preview item information.
      *
      * @return self
      */
@@ -325,7 +325,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets shipping_speed_categories
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory[]|null
      */
     public function getShippingSpeedCategories()
     {
@@ -335,7 +335,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets shipping_speed_categories
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory[]|null $shipping_speed_categories shipping_speed_categories
+     * @param \SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory[]|null $shipping_speed_categories shipping_speed_categories
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets feature_constraints
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null
+     * @return \SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null
      */
     public function getFeatureConstraints()
     {
@@ -407,7 +407,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets feature_constraints
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null $feature_constraints A list of features and their fulfillment policies to apply to the order.
+     * @param \SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]|null $feature_constraints A list of features and their fulfillment policies to apply to the order.
      *
      * @return self
      */

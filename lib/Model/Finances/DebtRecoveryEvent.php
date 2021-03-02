@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * DebtRecoveryEvent Class Doc Comment
  *
  * @category Class
  * @description A debt payment or debt adjustment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,10 +60,10 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'debt_recovery_type' => 'string',
-        'recovery_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'over_payment_credit' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'debt_recovery_item_list' => '\Evers\SellingPartnerApi\Model\Finances\DebtRecoveryItem[]',
-        'charge_instrument_list' => '\Evers\SellingPartnerApi\Model\Finances\ChargeInstrument[]'
+        'recovery_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'over_payment_credit' => '\SellingPartnerApi\Model\Finances\Currency',
+        'debt_recovery_item_list' => '\SellingPartnerApi\Model\Finances\DebtRecoveryItem[]',
+        'charge_instrument_list' => '\SellingPartnerApi\Model\Finances\ChargeInstrument[]'
     ];
 
     /**
@@ -259,7 +259,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets recovery_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getRecoveryAmount()
     {
@@ -269,7 +269,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets recovery_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $recovery_amount recovery_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $recovery_amount recovery_amount
      *
      * @return self
      */
@@ -283,7 +283,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets over_payment_credit
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getOverPaymentCredit()
     {
@@ -293,7 +293,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets over_payment_credit
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $over_payment_credit over_payment_credit
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $over_payment_credit over_payment_credit
      *
      * @return self
      */
@@ -307,7 +307,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets debt_recovery_item_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\DebtRecoveryItem[]|null
+     * @return \SellingPartnerApi\Model\Finances\DebtRecoveryItem[]|null
      */
     public function getDebtRecoveryItemList()
     {
@@ -317,7 +317,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets debt_recovery_item_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\DebtRecoveryItem[]|null $debt_recovery_item_list A list of debt recovery item information.
+     * @param \SellingPartnerApi\Model\Finances\DebtRecoveryItem[]|null $debt_recovery_item_list A list of debt recovery item information.
      *
      * @return self
      */
@@ -331,7 +331,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets charge_instrument_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeInstrument[]|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeInstrument[]|null
      */
     public function getChargeInstrumentList()
     {
@@ -341,7 +341,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets charge_instrument_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeInstrument[]|null $charge_instrument_list A list of payment instruments.
+     * @param \SellingPartnerApi\Model\Finances\ChargeInstrument[]|null $charge_instrument_list A list of payment instruments.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TransportDetailInput Class Doc Comment
  *
  * @category Class
  * @description Information required to create an Amazon-partnered carrier shipping estimate, or to alert the Amazon fulfillment center to the arrival of an inbound shipment by a non-Amazon-partnered carrier.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'partnered_small_parcel_data' => '\Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelDataInput',
-        'non_partnered_small_parcel_data' => '\Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelDataInput',
-        'partnered_ltl_data' => '\Evers\SellingPartnerApi\Model\FbaInbound\PartneredLtlDataInput',
-        'non_partnered_ltl_data' => '\Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredLtlDataInput'
+        'partnered_small_parcel_data' => '\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelDataInput',
+        'non_partnered_small_parcel_data' => '\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelDataInput',
+        'partnered_ltl_data' => '\SellingPartnerApi\Model\FbaInbound\PartneredLtlDataInput',
+        'non_partnered_ltl_data' => '\SellingPartnerApi\Model\FbaInbound\NonPartneredLtlDataInput'
     ];
 
     /**
@@ -229,7 +229,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets partnered_small_parcel_data
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelDataInput|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelDataInput|null
      */
     public function getPartneredSmallParcelData()
     {
@@ -239,7 +239,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets partnered_small_parcel_data
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelDataInput|null $partnered_small_parcel_data partnered_small_parcel_data
+     * @param \SellingPartnerApi\Model\FbaInbound\PartneredSmallParcelDataInput|null $partnered_small_parcel_data partnered_small_parcel_data
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets non_partnered_small_parcel_data
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelDataInput|null
+     * @return \SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelDataInput|null
      */
     public function getNonPartneredSmallParcelData()
     {
@@ -263,7 +263,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets non_partnered_small_parcel_data
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelDataInput|null $non_partnered_small_parcel_data non_partnered_small_parcel_data
+     * @param \SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelDataInput|null $non_partnered_small_parcel_data non_partnered_small_parcel_data
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets partnered_ltl_data
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PartneredLtlDataInput|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PartneredLtlDataInput|null
      */
     public function getPartneredLtlData()
     {
@@ -287,7 +287,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets partnered_ltl_data
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PartneredLtlDataInput|null $partnered_ltl_data partnered_ltl_data
+     * @param \SellingPartnerApi\Model\FbaInbound\PartneredLtlDataInput|null $partnered_ltl_data partnered_ltl_data
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets non_partnered_ltl_data
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredLtlDataInput|null
+     * @return \SellingPartnerApi\Model\FbaInbound\NonPartneredLtlDataInput|null
      */
     public function getNonPartneredLtlData()
     {
@@ -311,7 +311,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets non_partnered_ltl_data
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredLtlDataInput|null $non_partnered_ltl_data non_partnered_ltl_data
+     * @param \SellingPartnerApi\Model\FbaInbound\NonPartneredLtlDataInput|null $non_partnered_ltl_data non_partnered_ltl_data
      *
      * @return self
      */

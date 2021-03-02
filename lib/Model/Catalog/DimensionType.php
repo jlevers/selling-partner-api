@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Catalog;
+namespace SellingPartnerApi\Model\Catalog;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * DimensionType Class Doc Comment
  *
  * @category Class
  * @description The dimension type attribute of an item.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'height' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'length' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'width' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
-        'weight' => '\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits'
+        'height' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'length' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'width' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits',
+        'weight' => '\SellingPartnerApi\Model\Catalog\DecimalWithUnits'
     ];
 
     /**
@@ -229,7 +229,7 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets height
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getHeight()
     {
@@ -239,7 +239,7 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets height
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $height height
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $height height
      *
      * @return self
      */
@@ -253,7 +253,7 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets length
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getLength()
     {
@@ -263,7 +263,7 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets length
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $length length
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $length length
      *
      * @return self
      */
@@ -277,7 +277,7 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets width
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getWidth()
     {
@@ -287,7 +287,7 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets width
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $width width
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $width width
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets weight
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
+     * @return \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null
      */
     public function getWeight()
     {
@@ -311,7 +311,7 @@ class DimensionType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets weight
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $weight weight
+     * @param \SellingPartnerApi\Model\Catalog\DecimalWithUnits|null $weight weight
      *
      * @return self
      */

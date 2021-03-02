@@ -1,4 +1,4 @@
-# Evers\SellingPartnerApi\FbaInboundApi
+# SellingPartnerApi\FbaInboundApi
 
 All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 ## `confirmPreorder()`
 
 ```php
-confirmPreorder($shipment_id, $need_by_date, $marketplace_id): \Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse
+confirmPreorder($shipment_id, $need_by_date, $marketplace_id): \SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse
 ```
 
 
@@ -39,7 +39,7 @@ Returns information needed to confirm a shipment for pre-order. Call this operat
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 $need_by_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value.
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace the shipment is tied to.
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse**](../Model/FbaInbound/ConfirmPreorderResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse**](../Model/FbaInbound/ConfirmPreorderResponse.md)
 
 ### HTTP request headers
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 ## `confirmTransport()`
 
 ```php
-confirmTransport($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse
+confirmTransport($shipment_id): \SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse
 ```
 
 
@@ -89,7 +89,7 @@ Confirms that the seller accepts the Amazon-partnered shipping estimate, agrees 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
 try {
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse**](../Model/FbaInbound/ConfirmTransportResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse**](../Model/FbaInbound/ConfirmTransportResponse.md)
 
 ### HTTP request headers
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 ## `createInboundShipment()`
 
 ```php
-createInboundShipment($shipment_id, $body): \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse
+createInboundShipment($shipment_id, $body): \SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse
 ```
 
 
@@ -135,9 +135,9 @@ Returns a new inbound shipment based on the specified shipmentId that was return
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
-$body = new \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest(); // \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest
+$body = new \SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest(); // \SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest
 
 try {
     $result = $apiInstance->createInboundShipment($shipment_id, $body);
@@ -152,11 +152,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/FbaInboundInboundShipmentRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/FbaInboundInboundShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse**](../Model/FbaInbound/InboundShipmentResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse**](../Model/FbaInbound/InboundShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 ## `createInboundShipmentPlan()`
 
 ```php
-createInboundShipmentPlan($body): \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse
+createInboundShipmentPlan($body): \SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse
 ```
 
 
@@ -183,8 +183,8 @@ Returns one or more inbound shipment plans, which provide the information you ne
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
-$body = new \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest(); // \Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
+$body = new \SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest(); // \SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest
 
 try {
     $result = $apiInstance->createInboundShipmentPlan($body);
@@ -198,11 +198,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest**](../Model/FbaInboundCreateInboundShipmentPlanRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest**](../Model/FbaInboundCreateInboundShipmentPlanRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse**](../Model/FbaInbound/CreateInboundShipmentPlanResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse**](../Model/FbaInbound/CreateInboundShipmentPlanResponse.md)
 
 ### HTTP request headers
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 ## `estimateTransport()`
 
 ```php
-estimateTransport($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse
+estimateTransport($shipment_id): \SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse
 ```
 
 
@@ -229,7 +229,7 @@ Initiates the process of estimating the shipping cost for an inbound shipment by
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
 try {
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse**](../Model/FbaInbound/EstimateTransportResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse**](../Model/FbaInbound/EstimateTransportResponse.md)
 
 ### HTTP request headers
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 ## `getBillOfLading()`
 
 ```php
-getBillOfLading($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse
+getBillOfLading($shipment_id): \SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse
 ```
 
 
@@ -275,7 +275,7 @@ Returns a bill of lading for a Less Than Truckload/Full Truckload (LTL/FTL) ship
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
 try {
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse**](../Model/FbaInbound/GetBillOfLadingResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse**](../Model/FbaInbound/GetBillOfLadingResponse.md)
 
 ### HTTP request headers
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 ## `getInboundGuidance()`
 
 ```php
-getInboundGuidance($marketplace_id, $seller_sku_list, $asin_list): \Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse
+getInboundGuidance($marketplace_id, $seller_sku_list, $asin_list): \SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse
 ```
 
 
@@ -321,7 +321,7 @@ Returns information that lets a seller know if Amazon recommends sending an item
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace where the product would be stored.
 $seller_sku_list = array('seller_sku_list_example'); // string[] | A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon's fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold.
 $asin_list = array('asin_list_example'); // string[] | A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon's fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold.
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse**](../Model/FbaInbound/GetInboundGuidanceResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse**](../Model/FbaInbound/GetInboundGuidanceResponse.md)
 
 ### HTTP request headers
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 ## `getLabels()`
 
 ```php
-getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets): \Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse
+getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets): \SellingPartnerApi\Model\FbaInbound\GetLabelsResponse
 ```
 
 
@@ -371,7 +371,7 @@ Returns package/pallet labels for faster and more accurate shipment processing a
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 $page_type = 'page_type_example'; // string | The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error.
 $label_type = 'label_type_example'; // string | The type of labels requested.
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse**](../Model/FbaInbound/GetLabelsResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse**](../Model/FbaInbound/GetLabelsResponse.md)
 
 ### HTTP request headers
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 ## `getPreorderInfo()`
 
 ```php
-getPreorderInfo($shipment_id, $marketplace_id): \Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse
+getPreorderInfo($shipment_id, $marketplace_id): \SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse
 ```
 
 
@@ -427,7 +427,7 @@ Returns pre-order information, including dates, that a seller needs before confi
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace the shipment is tied to.
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse**](../Model/FbaInbound/GetPreorderInfoResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse**](../Model/FbaInbound/GetPreorderInfoResponse.md)
 
 ### HTTP request headers
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 ## `getPrepInstructions()`
 
 ```php
-getPrepInstructions($ship_to_country_code, $seller_sku_list, $asin_list): \Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse
+getPrepInstructions($ship_to_country_code, $seller_sku_list, $asin_list): \SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse
 ```
 
 
@@ -475,7 +475,7 @@ Returns labeling requirements and item preparation instructions to help prepare 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $ship_to_country_code = 'ship_to_country_code_example'; // string | The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country.
 $seller_sku_list = array('seller_sku_list_example'); // string[] | A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon's fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon's retail website. If you include a seller SKU that you have never used to list an item on Amazon's retail website, the seller SKU is returned in the InvalidSKUList property in the response.
 $asin_list = array('asin_list_example'); // string[] | A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers.
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse**](../Model/FbaInbound/GetPrepInstructionsResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse**](../Model/FbaInbound/GetPrepInstructionsResponse.md)
 
 ### HTTP request headers
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 ## `getShipmentItems()`
 
 ```php
-getShipmentItems($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token): \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse
+getShipmentItems($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token): \SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse
 ```
 
 
@@ -525,7 +525,7 @@ Returns a list of items in a specified inbound shipment, or a list of items that
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $query_type = 'query_type_example'; // string | Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request.
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace where the product would be stored.
 $last_updated_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse**](../Model/FbaInbound/GetShipmentItemsResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse**](../Model/FbaInbound/GetShipmentItemsResponse.md)
 
 ### HTTP request headers
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 ## `getShipmentItemsByShipmentId()`
 
 ```php
-getShipmentItemsByShipmentId($shipment_id, $marketplace_id): \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse
+getShipmentItemsByShipmentId($shipment_id, $marketplace_id): \SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse
 ```
 
 
@@ -579,7 +579,7 @@ Returns a list of items in a specified inbound shipment.  **Usage Plan:**  | Rat
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier used for selecting items in a specific inbound shipment.
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace where the product would be stored.
 
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse**](../Model/FbaInbound/GetShipmentItemsResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse**](../Model/FbaInbound/GetShipmentItemsResponse.md)
 
 ### HTTP request headers
 
@@ -614,7 +614,7 @@ Name | Type | Description  | Notes
 ## `getShipments()`
 
 ```php
-getShipments($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token): \Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse
+getShipments($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token): \SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse
 ```
 
 
@@ -627,7 +627,7 @@ Returns a list of inbound shipments based on criteria that you specify.  **Usage
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $query_type = 'query_type_example'; // string | Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request.
 $marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace where the product would be stored.
 $shipment_status_list = array('shipment_status_list_example'); // string[] | A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
@@ -658,7 +658,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse**](../Model/FbaInbound/GetShipmentsResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse**](../Model/FbaInbound/GetShipmentsResponse.md)
 
 ### HTTP request headers
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 ## `getTransportDetails()`
 
 ```php
-getTransportDetails($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse
+getTransportDetails($shipment_id): \SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse
 ```
 
 
@@ -685,7 +685,7 @@ Returns current transportation information about an inbound shipment.  **Usage P
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
 try {
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse**](../Model/FbaInbound/GetTransportDetailsResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse**](../Model/FbaInbound/GetTransportDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 ## `putTransportDetails()`
 
 ```php
-putTransportDetails($shipment_id, $body): \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse
+putTransportDetails($shipment_id, $body): \SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse
 ```
 
 
@@ -731,9 +731,9 @@ Sends transportation information to Amazon about an inbound shipment.  **Usage P
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
-$body = new \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest(); // \Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest
+$body = new \SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest(); // \SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest
 
 try {
     $result = $apiInstance->putTransportDetails($shipment_id, $body);
@@ -748,11 +748,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest**](../Model/FbaInboundPutTransportDetailsRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest**](../Model/FbaInboundPutTransportDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse**](../Model/FbaInbound/PutTransportDetailsResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse**](../Model/FbaInbound/PutTransportDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 ## `updateInboundShipment()`
 
 ```php
-updateInboundShipment($shipment_id, $body): \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse
+updateInboundShipment($shipment_id, $body): \SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse
 ```
 
 
@@ -779,9 +779,9 @@ Adds, updates, or removes items from the inbound shipment identified by the spec
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
-$body = new \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest(); // \Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest
+$body = new \SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest(); // \SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest
 
 try {
     $result = $apiInstance->updateInboundShipment($shipment_id, $body);
@@ -796,11 +796,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/FbaInboundInboundShipmentRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/FbaInboundInboundShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse**](../Model/FbaInbound/InboundShipmentResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse**](../Model/FbaInbound/InboundShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -814,7 +814,7 @@ Name | Type | Description  | Notes
 ## `voidTransport()`
 
 ```php
-voidTransport($shipment_id): \Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse
+voidTransport($shipment_id): \SellingPartnerApi\Model\FbaInbound\VoidTransportResponse
 ```
 
 
@@ -827,7 +827,7 @@ Cancels a previously-confirmed request to ship an inbound shipment using an Amaz
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Evers\SellingPartnerApi\Api\FbaInboundApi();
+$apiInstance = new SellingPartnerApi\Api\FbaInboundApi();
 $shipment_id = 'shipment_id_example'; // string | A shipment identifier originally returned by the createInboundShipmentPlan operation.
 
 try {
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse**](../Model/FbaInbound/VoidTransportResponse.md)
+[**\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse**](../Model/FbaInbound/VoidTransportResponse.md)
 
 ### HTTP request headers
 

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CompetitivePriceType Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'competitive_price_id' => 'string',
-        'price' => '\Evers\SellingPartnerApi\Model\ProductPricing\PriceType',
+        'price' => '\SellingPartnerApi\Model\ProductPricing\PriceType',
         'condition' => 'string',
         'subcondition' => 'string',
         'belongs_to_requester' => 'bool'
@@ -264,7 +264,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets price
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\PriceType
+     * @return \SellingPartnerApi\Model\ProductPricing\PriceType
      */
     public function getPrice()
     {
@@ -274,7 +274,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets price
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\PriceType $price price
+     * @param \SellingPartnerApi\Model\ProductPricing\PriceType $price price
      *
      * @return self
      */

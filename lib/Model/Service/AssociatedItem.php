@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AssociatedItem Class Doc Comment
  *
  * @category Class
  * @description Information about an item associated with the service job.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -65,7 +65,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_id' => 'string',
         'item_status' => 'string',
         'brand_name' => 'string',
-        'item_delivery' => '\Evers\SellingPartnerApi\Model\Service\ItemDelivery'
+        'item_delivery' => '\SellingPartnerApi\Model\Service\ItemDelivery'
     ];
 
     /**
@@ -444,7 +444,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_delivery
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\ItemDelivery|null
+     * @return \SellingPartnerApi\Model\Service\ItemDelivery|null
      */
     public function getItemDelivery()
     {
@@ -454,7 +454,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_delivery
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\ItemDelivery|null $item_delivery item_delivery
+     * @param \SellingPartnerApi\Model\Service\ItemDelivery|null $item_delivery item_delivery
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FBMItem Class Doc Comment
  *
  * @category Class
  * @description An Amazon order item identifier and a quantity.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,10 +61,10 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'order_item_id' => 'string',
         'quantity' => 'int',
-        'item_weight' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight',
+        'item_weight' => '\SellingPartnerApi\Model\MerchantFulfillment\Weight',
         'item_description' => 'string',
         'transparency_code_list' => 'string[]',
-        'item_level_seller_inputs_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]'
+        'item_level_seller_inputs_list' => '\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Weight|null
      */
     public function getItemWeight()
     {
@@ -305,7 +305,7 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight|null $item_weight item_weight
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Weight|null $item_weight item_weight
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_level_seller_inputs_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]|null
      */
     public function getItemLevelSellerInputsList()
     {
@@ -377,7 +377,7 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_level_seller_inputs_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]|null $item_level_seller_inputs_list A list of additional seller input pairs required to purchase shipping.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]|null $item_level_seller_inputs_list A list of additional seller input pairs required to purchase shipping.
      *
      * @return self
      */

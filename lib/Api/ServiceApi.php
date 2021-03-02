@@ -4,7 +4,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -24,7 +24,7 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Api;
+namespace SellingPartnerApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -32,16 +32,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Evers\SellingPartnerApi\ApiException;
-use Evers\SellingPartnerApi\Configuration;
-use Evers\SellingPartnerApi\HeaderSelector;
-use Evers\SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\ApiException;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\HeaderSelector;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ServiceApi Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 class ServiceApi
 {
@@ -115,11 +115,11 @@ class ServiceApi
      * Operation addAppointmentForServiceJobByServiceJobId
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse
+     * @return \SellingPartnerApi\Model\Service\SetAppointmentResponse
      */
     public function addAppointmentForServiceJobByServiceJobId($service_job_id, $body)
     {
@@ -131,11 +131,11 @@ class ServiceApi
      * Operation addAppointmentForServiceJobByServiceJobIdWithHttpInfo
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Service\SetAppointmentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function addAppointmentForServiceJobByServiceJobIdWithHttpInfo($service_job_id, $body)
     {
@@ -175,128 +175,128 @@ class ServiceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 422:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse';
+            $returnType = '\SellingPartnerApi\Model\Service\SetAppointmentResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -315,7 +315,7 @@ class ServiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -323,7 +323,7 @@ class ServiceApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -331,7 +331,7 @@ class ServiceApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -339,7 +339,7 @@ class ServiceApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -347,7 +347,7 @@ class ServiceApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -355,7 +355,7 @@ class ServiceApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -363,7 +363,7 @@ class ServiceApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -371,7 +371,7 @@ class ServiceApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -379,7 +379,7 @@ class ServiceApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -387,7 +387,7 @@ class ServiceApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -403,7 +403,7 @@ class ServiceApi
      * 
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -424,14 +424,14 @@ class ServiceApi
      * 
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function addAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse';
+        $returnType = '\SellingPartnerApi\Model\Service\SetAppointmentResponse';
         $this->config->startRequestGeneration();
         $request = $this->addAppointmentForServiceJobByServiceJobIdRequest($service_job_id, $body);
         $signedRequest = $this->config->signRequest($request);
@@ -475,7 +475,7 @@ class ServiceApi
      * Create request for operation 'addAppointmentForServiceJobByServiceJobId'
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -590,9 +590,9 @@ class ServiceApi
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      * @param  string $cancellation_reason_code A cancel reason code that specifies the reason for cancelling a service job. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse
+     * @return \SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse
      */
     public function cancelServiceJobByServiceJobId($service_job_id, $cancellation_reason_code)
     {
@@ -606,9 +606,9 @@ class ServiceApi
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      * @param  string $cancellation_reason_code A cancel reason code that specifies the reason for cancelling a service job. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelServiceJobByServiceJobIdWithHttpInfo($service_job_id, $cancellation_reason_code)
     {
@@ -648,128 +648,128 @@ class ServiceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 422:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse';
+            $returnType = '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -788,7 +788,7 @@ class ServiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -796,7 +796,7 @@ class ServiceApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -804,7 +804,7 @@ class ServiceApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -812,7 +812,7 @@ class ServiceApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -820,7 +820,7 @@ class ServiceApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -828,7 +828,7 @@ class ServiceApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -836,7 +836,7 @@ class ServiceApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -844,7 +844,7 @@ class ServiceApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -852,7 +852,7 @@ class ServiceApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -860,7 +860,7 @@ class ServiceApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -904,7 +904,7 @@ class ServiceApi
      */
     public function cancelServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $cancellation_reason_code)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse';
+        $returnType = '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse';
         $this->config->startRequestGeneration();
         $request = $this->cancelServiceJobByServiceJobIdRequest($service_job_id, $cancellation_reason_code);
         $signedRequest = $this->config->signRequest($request);
@@ -1073,9 +1073,9 @@ class ServiceApi
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse
+     * @return \SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse
      */
     public function completeServiceJobByServiceJobId($service_job_id)
     {
@@ -1088,9 +1088,9 @@ class ServiceApi
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function completeServiceJobByServiceJobIdWithHttpInfo($service_job_id)
     {
@@ -1130,128 +1130,128 @@ class ServiceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 422:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse';
+            $returnType = '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1270,7 +1270,7 @@ class ServiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1278,7 +1278,7 @@ class ServiceApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1286,7 +1286,7 @@ class ServiceApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1294,7 +1294,7 @@ class ServiceApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1302,7 +1302,7 @@ class ServiceApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1310,7 +1310,7 @@ class ServiceApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1318,7 +1318,7 @@ class ServiceApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1326,7 +1326,7 @@ class ServiceApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1334,7 +1334,7 @@ class ServiceApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1342,7 +1342,7 @@ class ServiceApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1384,7 +1384,7 @@ class ServiceApi
      */
     public function completeServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse';
+        $returnType = '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse';
         $this->config->startRequestGeneration();
         $request = $this->completeServiceJobByServiceJobIdRequest($service_job_id);
         $signedRequest = $this->config->signRequest($request);
@@ -1529,9 +1529,9 @@ class ServiceApi
      *
      * @param  string $service_job_id A service job identifier. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse
+     * @return \SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse
      */
     public function getServiceJobByServiceJobId($service_job_id)
     {
@@ -1544,9 +1544,9 @@ class ServiceApi
      *
      * @param  string $service_job_id A service job identifier. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServiceJobByServiceJobIdWithHttpInfo($service_job_id)
     {
@@ -1586,128 +1586,128 @@ class ServiceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 422:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse';
+            $returnType = '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1726,7 +1726,7 @@ class ServiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1734,7 +1734,7 @@ class ServiceApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1742,7 +1742,7 @@ class ServiceApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1750,7 +1750,7 @@ class ServiceApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1758,7 +1758,7 @@ class ServiceApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1766,7 +1766,7 @@ class ServiceApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1774,7 +1774,7 @@ class ServiceApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1782,7 +1782,7 @@ class ServiceApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1790,7 +1790,7 @@ class ServiceApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1798,7 +1798,7 @@ class ServiceApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1840,7 +1840,7 @@ class ServiceApi
      */
     public function getServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse';
+        $returnType = '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse';
         $this->config->startRequestGeneration();
         $request = $this->getServiceJobByServiceJobIdRequest($service_job_id);
         $signedRequest = $this->config->signRequest($request);
@@ -1997,9 +1997,9 @@ class ServiceApi
      * @param  string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
      * @param  string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse
+     * @return \SellingPartnerApi\Model\Service\GetServiceJobsResponse
      */
     public function getServiceJobs($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
     {
@@ -2024,9 +2024,9 @@ class ServiceApi
      * @param  string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
      * @param  string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Service\GetServiceJobsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getServiceJobsWithHttpInfo($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
     {
@@ -2066,116 +2066,116 @@ class ServiceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\GetServiceJobsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\GetServiceJobsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse';
+            $returnType = '\SellingPartnerApi\Model\Service\GetServiceJobsResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2194,7 +2194,7 @@ class ServiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2202,7 +2202,7 @@ class ServiceApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2210,7 +2210,7 @@ class ServiceApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2218,7 +2218,7 @@ class ServiceApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2226,7 +2226,7 @@ class ServiceApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2234,7 +2234,7 @@ class ServiceApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2242,7 +2242,7 @@ class ServiceApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2250,7 +2250,7 @@ class ServiceApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2258,7 +2258,7 @@ class ServiceApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
+                        '\SellingPartnerApi\Model\Service\GetServiceJobsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2324,7 +2324,7 @@ class ServiceApi
      */
     public function getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse';
+        $returnType = '\SellingPartnerApi\Model\Service\GetServiceJobsResponse';
         $this->config->startRequestGeneration();
         $request = $this->getServiceJobsRequest($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);
         $signedRequest = $this->config->signRequest($request);
@@ -2575,11 +2575,11 @@ class ServiceApi
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      * @param  string $appointment_id An existing appointment identifier for the Service Job. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse
+     * @return \SellingPartnerApi\Model\Service\SetAppointmentResponse
      */
     public function rescheduleAppointmentForServiceJobByServiceJobId($service_job_id, $appointment_id, $body)
     {
@@ -2592,11 +2592,11 @@ class ServiceApi
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      * @param  string $appointment_id An existing appointment identifier for the Service Job. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
-     * @throws \Evers\SellingPartnerApi\ApiException on non-2xx response
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SellingPartnerApi\Model\Service\SetAppointmentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function rescheduleAppointmentForServiceJobByServiceJobIdWithHttpInfo($service_job_id, $appointment_id, $body)
     {
@@ -2636,128 +2636,128 @@ class ServiceApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 404:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 413:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 415:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 422:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 429:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 500:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
+                    if ('\SellingPartnerApi\Model\Service\SetAppointmentResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
+                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Service\SetAppointmentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse';
+            $returnType = '\SellingPartnerApi\Model\Service\SetAppointmentResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -2776,7 +2776,7 @@ class ServiceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2784,7 +2784,7 @@ class ServiceApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2792,7 +2792,7 @@ class ServiceApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2800,7 +2800,7 @@ class ServiceApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2808,7 +2808,7 @@ class ServiceApi
                 case 413:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2816,7 +2816,7 @@ class ServiceApi
                 case 415:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2824,7 +2824,7 @@ class ServiceApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2832,7 +2832,7 @@ class ServiceApi
                 case 429:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2840,7 +2840,7 @@ class ServiceApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2848,7 +2848,7 @@ class ServiceApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse',
+                        '\SellingPartnerApi\Model\Service\SetAppointmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2865,7 +2865,7 @@ class ServiceApi
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      * @param  string $appointment_id An existing appointment identifier for the Service Job. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2887,14 +2887,14 @@ class ServiceApi
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      * @param  string $appointment_id An existing appointment identifier for the Service Job. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function rescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $appointment_id, $body)
     {
-        $returnType = '\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse';
+        $returnType = '\SellingPartnerApi\Model\Service\SetAppointmentResponse';
         $this->config->startRequestGeneration();
         $request = $this->rescheduleAppointmentForServiceJobByServiceJobIdRequest($service_job_id, $appointment_id, $body);
         $signedRequest = $this->config->signRequest($request);
@@ -2939,7 +2939,7 @@ class ServiceApi
      *
      * @param  string $service_job_id An Amazon defined service job identifier. (required)
      * @param  string $appointment_id An existing appointment identifier for the Service Job. (required)
-     * @param  \Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
+     * @param  \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * NonPartneredSmallParcelDataOutput Class Doc Comment
  *
  * @category Class
  * @description Information returned by Amazon about a Small Parcel shipment by a carrier that has not partnered with Amazon.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class NonPartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'package_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageOutput[]'
+        'package_list' => '\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageOutput[]'
     ];
 
     /**
@@ -214,7 +214,7 @@ class NonPartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess, 
     /**
      * Gets package_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageOutput[]
+     * @return \SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageOutput[]
      */
     public function getPackageList()
     {
@@ -224,7 +224,7 @@ class NonPartneredSmallParcelDataOutput implements ModelInterface, ArrayAccess, 
     /**
      * Sets package_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageOutput[] $package_list A list of packages, including carrier, tracking number, and status information for each package.
+     * @param \SellingPartnerApi\Model\FbaInbound\NonPartneredSmallParcelPackageOutput[] $package_list A list of packages, including carrier, tracking number, and status information for each package.
      *
      * @return self
      */

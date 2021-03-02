@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * SetAppointmentResponse Class Doc Comment
  *
  * @category Class
  * @description Response schema for add or reschedule appointment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'appointment_id' => 'string',
-        'warnings' => '\Evers\SellingPartnerApi\Model\Service\Warning[]',
-        'errors' => '\Evers\SellingPartnerApi\Model\Service\Error[]'
+        'warnings' => '\SellingPartnerApi\Model\Service\Warning[]',
+        'errors' => '\SellingPartnerApi\Model\Service\Error[]'
     ];
 
     /**
@@ -262,7 +262,7 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets warnings
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Warning[]|null
+     * @return \SellingPartnerApi\Model\Service\Warning[]|null
      */
     public function getWarnings()
     {
@@ -272,7 +272,7 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets warnings
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Warning[]|null $warnings A list of warnings returned in the sucessful execution response of an API request.
+     * @param \SellingPartnerApi\Model\Service\Warning[]|null $warnings A list of warnings returned in the sucessful execution response of an API request.
      *
      * @return self
      */
@@ -286,7 +286,7 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Error[]|null
+     * @return \SellingPartnerApi\Model\Service\Error[]|null
      */
     public function getErrors()
     {
@@ -296,7 +296,7 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Service\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

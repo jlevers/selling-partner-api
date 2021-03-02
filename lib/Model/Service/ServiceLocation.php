@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ServiceLocation Class Doc Comment
  *
  * @category Class
  * @description Information about the location of the service job.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'service_location_type' => 'string',
-        'address' => '\Evers\SellingPartnerApi\Model\Service\Address'
+        'address' => '\SellingPartnerApi\Model\Service\Address'
     ];
 
     /**
@@ -277,7 +277,7 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets address
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Address|null
+     * @return \SellingPartnerApi\Model\Service\Address|null
      */
     public function getAddress()
     {
@@ -287,7 +287,7 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets address
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Address|null $address address
+     * @param \SellingPartnerApi\Model\Service\Address|null $address address
      *
      * @return self
      */

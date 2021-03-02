@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Appointment Class Doc Comment
  *
  * @category Class
  * @description The details of an appointment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,10 +61,10 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'appointment_id' => 'string',
         'appointment_status' => 'string',
-        'appointment_time' => '\Evers\SellingPartnerApi\Model\Service\AppointmentTime',
-        'assigned_technicians' => '\Evers\SellingPartnerApi\Model\Service\Technician[]',
+        'appointment_time' => '\SellingPartnerApi\Model\Service\AppointmentTime',
+        'assigned_technicians' => '\SellingPartnerApi\Model\Service\Technician[]',
         'rescheduled_appointment_id' => 'string',
-        'poa' => '\Evers\SellingPartnerApi\Model\Service\Poa'
+        'poa' => '\SellingPartnerApi\Model\Service\Poa'
     ];
 
     /**
@@ -352,7 +352,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets appointment_time
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\AppointmentTime|null
+     * @return \SellingPartnerApi\Model\Service\AppointmentTime|null
      */
     public function getAppointmentTime()
     {
@@ -362,7 +362,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets appointment_time
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\AppointmentTime|null $appointment_time appointment_time
+     * @param \SellingPartnerApi\Model\Service\AppointmentTime|null $appointment_time appointment_time
      *
      * @return self
      */
@@ -376,7 +376,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets assigned_technicians
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Technician[]|null
+     * @return \SellingPartnerApi\Model\Service\Technician[]|null
      */
     public function getAssignedTechnicians()
     {
@@ -386,7 +386,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets assigned_technicians
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Technician[]|null $assigned_technicians A list of technicians assigned to the service job.
+     * @param \SellingPartnerApi\Model\Service\Technician[]|null $assigned_technicians A list of technicians assigned to the service job.
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets poa
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Poa|null
+     * @return \SellingPartnerApi\Model\Service\Poa|null
      */
     public function getPoa()
     {
@@ -446,7 +446,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets poa
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Poa|null $poa poa
+     * @param \SellingPartnerApi\Model\Service\Poa|null $poa poa
      *
      * @return self
      */

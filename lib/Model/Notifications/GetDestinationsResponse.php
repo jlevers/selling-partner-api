@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Notifications;
+namespace SellingPartnerApi\Model\Notifications;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetDestinationsResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getDestinations operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetDestinationsResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Notifications\Destination[]',
-        'errors' => '\Evers\SellingPartnerApi\Model\Notifications\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Notifications\Destination[]',
+        'errors' => '\SellingPartnerApi\Model\Notifications\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetDestinationsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\Destination[]|null
+     * @return \SellingPartnerApi\Model\Notifications\Destination[]|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetDestinationsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\Destination[]|null $payload A list of destinations.
+     * @param \SellingPartnerApi\Model\Notifications\Destination[]|null $payload A list of destinations.
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetDestinationsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\Error[]|null
+     * @return \SellingPartnerApi\Model\Notifications\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetDestinationsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Notifications\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

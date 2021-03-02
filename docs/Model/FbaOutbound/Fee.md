@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | The type of fee. |
-**amount** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  |
+**amount** | [**\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  |
 
 [[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

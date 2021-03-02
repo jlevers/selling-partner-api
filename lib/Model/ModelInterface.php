@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi\Model
+ * @package  SellingPartnerApi\Model
  */
 
 /**
@@ -14,12 +14,12 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model;
+namespace SellingPartnerApi\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Evers\SellingPartnerApi\Model
+ * @package SellingPartnerApi\Model
  */
 interface ModelInterface
 {

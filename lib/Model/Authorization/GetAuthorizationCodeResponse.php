@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Authorization;
+namespace SellingPartnerApi\Model\Authorization;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetAuthorizationCodeResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the GetAuthorizationCode operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetAuthorizationCodeResponse implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Authorization\AuthorizationCode',
-        'errors' => '\Evers\SellingPartnerApi\Model\Authorization\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Authorization\AuthorizationCode',
+        'errors' => '\SellingPartnerApi\Model\Authorization\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetAuthorizationCodeResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Authorization\AuthorizationCode|null
+     * @return \SellingPartnerApi\Model\Authorization\AuthorizationCode|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetAuthorizationCodeResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Authorization\AuthorizationCode|null $payload payload
+     * @param \SellingPartnerApi\Model\Authorization\AuthorizationCode|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetAuthorizationCodeResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Authorization\Error[]|null
+     * @return \SellingPartnerApi\Model\Authorization\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetAuthorizationCodeResponse implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Authorization\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Authorization\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * RentalTransactionEvent Class Doc Comment
  *
  * @category Class
  * @description An event related to a rental transaction.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,12 +63,12 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'rental_event_type' => 'string',
         'extension_length' => 'int',
         'posted_date' => '\DateTime',
-        'rental_charge_list' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]',
-        'rental_fee_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'rental_charge_list' => '\SellingPartnerApi\Model\Finances\ChargeComponent[]',
+        'rental_fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
         'marketplace_name' => 'string',
-        'rental_initial_value' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'rental_reimbursement' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'rental_tax_withheld_list' => '\Evers\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]'
+        'rental_initial_value' => '\SellingPartnerApi\Model\Finances\Currency',
+        'rental_reimbursement' => '\SellingPartnerApi\Model\Finances\Currency',
+        'rental_tax_withheld_list' => '\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]'
     ];
 
     /**
@@ -361,7 +361,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets rental_charge_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent[]|null
      */
     public function getRentalChargeList()
     {
@@ -371,7 +371,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets rental_charge_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null $rental_charge_list A list of charge information on the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent[]|null $rental_charge_list A list of charge information on the seller's account.
      *
      * @return self
      */
@@ -385,7 +385,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets rental_fee_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getRentalFeeList()
     {
@@ -395,7 +395,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets rental_fee_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $rental_fee_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $rental_fee_list A list of fee component information.
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets rental_initial_value
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getRentalInitialValue()
     {
@@ -443,7 +443,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets rental_initial_value
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $rental_initial_value rental_initial_value
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $rental_initial_value rental_initial_value
      *
      * @return self
      */
@@ -457,7 +457,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets rental_reimbursement
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getRentalReimbursement()
     {
@@ -467,7 +467,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets rental_reimbursement
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $rental_reimbursement rental_reimbursement
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $rental_reimbursement rental_reimbursement
      *
      * @return self
      */
@@ -481,7 +481,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets rental_tax_withheld_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\TaxWithheldComponent[]|null
      */
     public function getRentalTaxWithheldList()
     {
@@ -491,7 +491,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets rental_tax_withheld_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]|null $rental_tax_withheld_list A list of information about taxes withheld.
+     * @param \SellingPartnerApi\Model\Finances\TaxWithheldComponent[]|null $rental_tax_withheld_list A list of information about taxes withheld.
      *
      * @return self
      */

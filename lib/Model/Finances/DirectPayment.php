@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * DirectPayment Class Doc Comment
  *
  * @category Class
  * @description A payment made directly to a seller.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'direct_payment_type' => 'string',
-        'direct_payment_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'direct_payment_amount' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -241,7 +241,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets direct_payment_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getDirectPaymentAmount()
     {
@@ -251,7 +251,7 @@ class DirectPayment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets direct_payment_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $direct_payment_amount direct_payment_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $direct_payment_amount direct_payment_amount
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * RemovalShipmentEvent Class Doc Comment
  *
  * @category Class
  * @description A removal shipment event for a removal order.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,7 +62,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
         'posted_date' => '\DateTime',
         'order_id' => 'string',
         'transaction_type' => 'string',
-        'removal_shipment_item_list' => '\Evers\SellingPartnerApi\Model\Finances\RemovalShipmentItem[]'
+        'removal_shipment_item_list' => '\SellingPartnerApi\Model\Finances\RemovalShipmentItem[]'
     ];
 
     /**
@@ -301,7 +301,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets removal_shipment_item_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\RemovalShipmentItem[]|null
+     * @return \SellingPartnerApi\Model\Finances\RemovalShipmentItem[]|null
      */
     public function getRemovalShipmentItemList()
     {
@@ -311,7 +311,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets removal_shipment_item_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\RemovalShipmentItem[]|null $removal_shipment_item_list A list of information about removal shipment items.
+     * @param \SellingPartnerApi\Model\Finances\RemovalShipmentItem[]|null $removal_shipment_item_list A list of information about removal shipment items.
      *
      * @return self
      */

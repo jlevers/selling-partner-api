@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Shipping;
+namespace SellingPartnerApi\Model\Shipping;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetRatesResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getRates operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetRatesResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Shipping\GetRatesResult',
-        'errors' => '\Evers\SellingPartnerApi\Model\Shipping\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Shipping\GetRatesResult',
+        'errors' => '\SellingPartnerApi\Model\Shipping\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetRatesResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\GetRatesResult|null
+     * @return \SellingPartnerApi\Model\Shipping\GetRatesResult|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetRatesResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\GetRatesResult|null $payload payload
+     * @param \SellingPartnerApi\Model\Shipping\GetRatesResult|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetRatesResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Shipping\Error[]|null
+     * @return \SellingPartnerApi\Model\Shipping\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetRatesResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Shipping\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Shipping\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

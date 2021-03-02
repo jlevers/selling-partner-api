@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Orders;
+namespace SellingPartnerApi\Model\Orders;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrderAddress Class Doc Comment
  *
  * @category Class
  * @description The shipping address for the order.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class OrderAddress implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'amazon_order_id' => 'string',
-        'shipping_address' => '\Evers\SellingPartnerApi\Model\Orders\Address'
+        'shipping_address' => '\SellingPartnerApi\Model\Orders\Address'
     ];
 
     /**
@@ -244,7 +244,7 @@ class OrderAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_address
      *
-     * @return \Evers\SellingPartnerApi\Model\Orders\Address|null
+     * @return \SellingPartnerApi\Model\Orders\Address|null
      */
     public function getShippingAddress()
     {
@@ -254,7 +254,7 @@ class OrderAddress implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_address
      *
-     * @param \Evers\SellingPartnerApi\Model\Orders\Address|null $shipping_address shipping_address
+     * @param \SellingPartnerApi\Model\Orders\Address|null $shipping_address shipping_address
      *
      * @return self
      */

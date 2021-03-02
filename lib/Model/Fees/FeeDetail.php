@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Fees;
+namespace SellingPartnerApi\Model\Fees;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeeDetail Class Doc Comment
  *
  * @category Class
  * @description The type of fee, fee amount, and other details.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,11 +60,11 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'fee_type' => 'string',
-        'fee_amount' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'fee_promotion' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'tax_amount' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'final_fee' => '\Evers\SellingPartnerApi\Model\Fees\MoneyType',
-        'included_fee_detail_list' => '\Evers\SellingPartnerApi\Model\Fees\IncludedFeeDetail[]'
+        'fee_amount' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'fee_promotion' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'tax_amount' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'final_fee' => '\SellingPartnerApi\Model\Fees\MoneyType',
+        'included_fee_detail_list' => '\SellingPartnerApi\Model\Fees\IncludedFeeDetail[]'
     ];
 
     /**
@@ -274,7 +274,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fee_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType
+     * @return \SellingPartnerApi\Model\Fees\MoneyType
      */
     public function getFeeAmount()
     {
@@ -284,7 +284,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType $fee_amount fee_amount
+     * @param \SellingPartnerApi\Model\Fees\MoneyType $fee_amount fee_amount
      *
      * @return self
      */
@@ -298,7 +298,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fee_promotion
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType|null
+     * @return \SellingPartnerApi\Model\Fees\MoneyType|null
      */
     public function getFeePromotion()
     {
@@ -308,7 +308,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fee_promotion
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType|null $fee_promotion fee_promotion
+     * @param \SellingPartnerApi\Model\Fees\MoneyType|null $fee_promotion fee_promotion
      *
      * @return self
      */
@@ -322,7 +322,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tax_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType|null
+     * @return \SellingPartnerApi\Model\Fees\MoneyType|null
      */
     public function getTaxAmount()
     {
@@ -332,7 +332,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tax_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType|null $tax_amount tax_amount
+     * @param \SellingPartnerApi\Model\Fees\MoneyType|null $tax_amount tax_amount
      *
      * @return self
      */
@@ -346,7 +346,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets final_fee
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\MoneyType
+     * @return \SellingPartnerApi\Model\Fees\MoneyType
      */
     public function getFinalFee()
     {
@@ -356,7 +356,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets final_fee
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\MoneyType $final_fee final_fee
+     * @param \SellingPartnerApi\Model\Fees\MoneyType $final_fee final_fee
      *
      * @return self
      */
@@ -370,7 +370,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets included_fee_detail_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Fees\IncludedFeeDetail[]|null
+     * @return \SellingPartnerApi\Model\Fees\IncludedFeeDetail[]|null
      */
     public function getIncludedFeeDetailList()
     {
@@ -380,7 +380,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets included_fee_detail_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Fees\IncludedFeeDetail[]|null $included_fee_detail_list A list of other fees that contribute to a given fee.
+     * @param \SellingPartnerApi\Model\Fees\IncludedFeeDetail[]|null $included_fee_detail_list A list of other fees that contribute to a given fee.
      *
      * @return self
      */

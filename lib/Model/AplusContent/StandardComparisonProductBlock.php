@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardComparisonProductBlock Class Doc Comment
  *
  * @category Class
  * @description The A+ Content standard comparison product block.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,11 +60,11 @@ class StandardComparisonProductBlock implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'position' => 'int',
-        'image' => '\Evers\SellingPartnerApi\Model\AplusContent\ImageComponent',
+        'image' => '\SellingPartnerApi\Model\AplusContent\ImageComponent',
         'title' => 'string',
         'asin' => 'string',
         'highlight' => 'bool',
-        'metrics' => '\Evers\SellingPartnerApi\Model\AplusContent\PlainTextItem[]'
+        'metrics' => '\SellingPartnerApi\Model\AplusContent\PlainTextItem[]'
     ];
 
     /**
@@ -304,7 +304,7 @@ class StandardComparisonProductBlock implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets image
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\ImageComponent|null
      */
     public function getImage()
     {
@@ -314,7 +314,7 @@ class StandardComparisonProductBlock implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets image
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent|null $image image
+     * @param \SellingPartnerApi\Model\AplusContent\ImageComponent|null $image image
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class StandardComparisonProductBlock implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets metrics
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\PlainTextItem[]|null
+     * @return \SellingPartnerApi\Model\AplusContent\PlainTextItem[]|null
      */
     public function getMetrics()
     {
@@ -422,7 +422,7 @@ class StandardComparisonProductBlock implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets metrics
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\PlainTextItem[]|null $metrics Comparison metrics for the product.
+     * @param \SellingPartnerApi\Model\AplusContent\PlainTextItem[]|null $metrics Comparison metrics for the product.
      *
      * @return self
      */

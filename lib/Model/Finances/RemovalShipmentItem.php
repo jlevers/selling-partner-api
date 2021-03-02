@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * RemovalShipmentItem Class Doc Comment
  *
  * @category Class
  * @description Item-level information for a removal shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -63,10 +63,10 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'tax_collection_model' => 'string',
         'fulfillment_network_sku' => 'string',
         'quantity' => 'int',
-        'revenue' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'fee_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'tax_amount' => '\Evers\SellingPartnerApi\Model\Finances\Currency',
-        'tax_withheld' => '\Evers\SellingPartnerApi\Model\Finances\Currency'
+        'revenue' => '\SellingPartnerApi\Model\Finances\Currency',
+        'fee_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'tax_amount' => '\SellingPartnerApi\Model\Finances\Currency',
+        'tax_withheld' => '\SellingPartnerApi\Model\Finances\Currency'
     ];
 
     /**
@@ -349,7 +349,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets revenue
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getRevenue()
     {
@@ -359,7 +359,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets revenue
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $revenue revenue
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $revenue revenue
      *
      * @return self
      */
@@ -373,7 +373,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets fee_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getFeeAmount()
     {
@@ -383,7 +383,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets fee_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $fee_amount fee_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $fee_amount fee_amount
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tax_amount
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTaxAmount()
     {
@@ -407,7 +407,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tax_amount
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $tax_amount tax_amount
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $tax_amount tax_amount
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tax_withheld
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\Currency|null
+     * @return \SellingPartnerApi\Model\Finances\Currency|null
      */
     public function getTaxWithheld()
     {
@@ -431,7 +431,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tax_withheld
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\Currency|null $tax_withheld tax_withheld
+     * @param \SellingPartnerApi\Model\Finances\Currency|null $tax_withheld tax_withheld
      *
      * @return self
      */

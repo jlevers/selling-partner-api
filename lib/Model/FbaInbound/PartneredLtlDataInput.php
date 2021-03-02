@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PartneredLtlDataInput Class Doc Comment
  *
  * @category Class
  * @description Information that is required by an Amazon-partnered carrier to ship a Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,13 +59,13 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'contact' => '\Evers\SellingPartnerApi\Model\FbaInbound\Contact',
+        'contact' => '\SellingPartnerApi\Model\FbaInbound\Contact',
         'box_count' => 'int',
-        'seller_freight_class' => '\Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
+        'seller_freight_class' => '\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
         'freight_ready_date' => '\DateTime',
-        'pallet_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\Pallet[]',
-        'total_weight' => '\Evers\SellingPartnerApi\Model\FbaInbound\Weight',
-        'seller_declared_value' => '\Evers\SellingPartnerApi\Model\FbaInbound\Amount'
+        'pallet_list' => '\SellingPartnerApi\Model\FbaInbound\Pallet[]',
+        'total_weight' => '\SellingPartnerApi\Model\FbaInbound\Weight',
+        'seller_declared_value' => '\SellingPartnerApi\Model\FbaInbound\Amount'
     ];
 
     /**
@@ -247,7 +247,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets contact
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Contact|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Contact|null
      */
     public function getContact()
     {
@@ -257,7 +257,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets contact
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Contact|null $contact contact
+     * @param \SellingPartnerApi\Model\FbaInbound\Contact|null $contact contact
      *
      * @return self
      */
@@ -295,7 +295,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets seller_freight_class
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null
+     * @return \SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null
      */
     public function getSellerFreightClass()
     {
@@ -305,7 +305,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets seller_freight_class
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null $seller_freight_class seller_freight_class
+     * @param \SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null $seller_freight_class seller_freight_class
      *
      * @return self
      */
@@ -343,7 +343,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets pallet_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Pallet[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Pallet[]|null
      */
     public function getPalletList()
     {
@@ -353,7 +353,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets pallet_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Pallet[]|null $pallet_list A list of pallet information.
+     * @param \SellingPartnerApi\Model\FbaInbound\Pallet[]|null $pallet_list A list of pallet information.
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets total_weight
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Weight|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Weight|null
      */
     public function getTotalWeight()
     {
@@ -377,7 +377,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets total_weight
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Weight|null $total_weight total_weight
+     * @param \SellingPartnerApi\Model\FbaInbound\Weight|null $total_weight total_weight
      *
      * @return self
      */
@@ -391,7 +391,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets seller_declared_value
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Amount|null
      */
     public function getSellerDeclaredValue()
     {
@@ -401,7 +401,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets seller_declared_value
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Amount|null $seller_declared_value seller_declared_value
+     * @param \SellingPartnerApi\Model\FbaInbound\Amount|null $seller_declared_value seller_declared_value
      *
      * @return self
      */

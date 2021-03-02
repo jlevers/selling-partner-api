@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShipmentEvent Class Doc Comment
  *
  * @category Class
  * @description A shipment, refund, guarantee claim, or chargeback.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -62,16 +62,16 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_order_id' => 'string',
         'seller_order_id' => 'string',
         'marketplace_name' => 'string',
-        'order_charge_list' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]',
-        'order_charge_adjustment_list' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]',
-        'shipment_fee_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
-        'shipment_fee_adjustment_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
-        'order_fee_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
-        'order_fee_adjustment_list' => '\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]',
-        'direct_payment_list' => '\Evers\SellingPartnerApi\Model\Finances\DirectPayment[]',
+        'order_charge_list' => '\SellingPartnerApi\Model\Finances\ChargeComponent[]',
+        'order_charge_adjustment_list' => '\SellingPartnerApi\Model\Finances\ChargeComponent[]',
+        'shipment_fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'shipment_fee_adjustment_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'order_fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'order_fee_adjustment_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
+        'direct_payment_list' => '\SellingPartnerApi\Model\Finances\DirectPayment[]',
         'posted_date' => '\DateTime',
-        'shipment_item_list' => '\Evers\SellingPartnerApi\Model\Finances\ShipmentItem[]',
-        'shipment_item_adjustment_list' => '\Evers\SellingPartnerApi\Model\Finances\ShipmentItem[]'
+        'shipment_item_list' => '\SellingPartnerApi\Model\Finances\ShipmentItem[]',
+        'shipment_item_adjustment_list' => '\SellingPartnerApi\Model\Finances\ShipmentItem[]'
     ];
 
     /**
@@ -355,7 +355,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_charge_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent[]|null
      */
     public function getOrderChargeList()
     {
@@ -365,7 +365,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_charge_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null $order_charge_list A list of charge information on the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent[]|null $order_charge_list A list of charge information on the seller's account.
      *
      * @return self
      */
@@ -379,7 +379,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_charge_adjustment_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent[]|null
      */
     public function getOrderChargeAdjustmentList()
     {
@@ -389,7 +389,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_charge_adjustment_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null $order_charge_adjustment_list A list of charge information on the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent[]|null $order_charge_adjustment_list A list of charge information on the seller's account.
      *
      * @return self
      */
@@ -403,7 +403,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipment_fee_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getShipmentFeeList()
     {
@@ -413,7 +413,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_fee_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $shipment_fee_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $shipment_fee_list A list of fee component information.
      *
      * @return self
      */
@@ -427,7 +427,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipment_fee_adjustment_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getShipmentFeeAdjustmentList()
     {
@@ -437,7 +437,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_fee_adjustment_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $shipment_fee_adjustment_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $shipment_fee_adjustment_list A list of fee component information.
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_fee_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getOrderFeeList()
     {
@@ -461,7 +461,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_fee_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $order_fee_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $order_fee_list A list of fee component information.
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_fee_adjustment_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\FeeComponent[]|null
      */
     public function getOrderFeeAdjustmentList()
     {
@@ -485,7 +485,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_fee_adjustment_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FeeComponent[]|null $order_fee_adjustment_list A list of fee component information.
+     * @param \SellingPartnerApi\Model\Finances\FeeComponent[]|null $order_fee_adjustment_list A list of fee component information.
      *
      * @return self
      */
@@ -499,7 +499,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets direct_payment_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\DirectPayment[]|null
+     * @return \SellingPartnerApi\Model\Finances\DirectPayment[]|null
      */
     public function getDirectPaymentList()
     {
@@ -509,7 +509,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets direct_payment_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\DirectPayment[]|null $direct_payment_list A list of direct payment information.
+     * @param \SellingPartnerApi\Model\Finances\DirectPayment[]|null $direct_payment_list A list of direct payment information.
      *
      * @return self
      */
@@ -547,7 +547,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipment_item_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ShipmentItem[]|null
+     * @return \SellingPartnerApi\Model\Finances\ShipmentItem[]|null
      */
     public function getShipmentItemList()
     {
@@ -557,7 +557,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_item_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ShipmentItem[]|null $shipment_item_list A list of shipment items.
+     * @param \SellingPartnerApi\Model\Finances\ShipmentItem[]|null $shipment_item_list A list of shipment items.
      *
      * @return self
      */
@@ -571,7 +571,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipment_item_adjustment_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ShipmentItem[]|null
+     * @return \SellingPartnerApi\Model\Finances\ShipmentItem[]|null
      */
     public function getShipmentItemAdjustmentList()
     {
@@ -581,7 +581,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_item_adjustment_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ShipmentItem[]|null $shipment_item_adjustment_list A list of shipment items.
+     * @param \SellingPartnerApi\Model\Finances\ShipmentItem[]|null $shipment_item_adjustment_list A list of shipment items.
      *
      * @return self
      */

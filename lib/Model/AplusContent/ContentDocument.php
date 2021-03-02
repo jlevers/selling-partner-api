@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ContentDocument Class Doc Comment
  *
  * @category Class
  * @description The A+ Content document. This is the enhanced content that is published to product detail pages.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,10 +60,10 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'content_type' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentType',
+        'content_type' => '\SellingPartnerApi\Model\AplusContent\ContentType',
         'content_sub_type' => 'string',
         'locale' => 'string',
-        'content_module_list' => '\Evers\SellingPartnerApi\Model\AplusContent\ContentModule[]'
+        'content_module_list' => '\SellingPartnerApi\Model\AplusContent\ContentModule[]'
     ];
 
     /**
@@ -302,7 +302,7 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content_type
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentType
+     * @return \SellingPartnerApi\Model\AplusContent\ContentType
      */
     public function getContentType()
     {
@@ -312,7 +312,7 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content_type
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentType $content_type content_type
+     * @param \SellingPartnerApi\Model\AplusContent\ContentType $content_type content_type
      *
      * @return self
      */
@@ -384,7 +384,7 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content_module_list
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ContentModule[]
+     * @return \SellingPartnerApi\Model\AplusContent\ContentModule[]
      */
     public function getContentModuleList()
     {
@@ -394,7 +394,7 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content_module_list
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ContentModule[] $content_module_list A list of A+ Content modules.
+     * @param \SellingPartnerApi\Model\AplusContent\ContentModule[] $content_module_list A list of A+ Content modules.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Messaging;
+namespace SellingPartnerApi\Model\Messaging;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateNegativeFeedbackRemovalResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the createNegativeFeedbackRemoval operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CreateNegativeFeedbackRemovalResponse implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\Evers\SellingPartnerApi\Model\Messaging\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Messaging\Error[]'
     ];
 
     /**
@@ -211,7 +211,7 @@ class CreateNegativeFeedbackRemovalResponse implements ModelInterface, ArrayAcce
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\Error[]|null
+     * @return \SellingPartnerApi\Model\Messaging\Error[]|null
      */
     public function getErrors()
     {
@@ -221,7 +221,7 @@ class CreateNegativeFeedbackRemovalResponse implements ModelInterface, ArrayAcce
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Messaging\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * AddAppointmentRequest Class Doc Comment
  *
  * @category Class
  * @description Input for add appointment operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'appointment_time' => '\Evers\SellingPartnerApi\Model\Service\AppointmentTimeInput'
+        'appointment_time' => '\SellingPartnerApi\Model\Service\AppointmentTimeInput'
     ];
 
     /**
@@ -214,7 +214,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets appointment_time
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\AppointmentTimeInput
+     * @return \SellingPartnerApi\Model\Service\AppointmentTimeInput
      */
     public function getAppointmentTime()
     {
@@ -224,7 +224,7 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets appointment_time
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\AppointmentTimeInput $appointment_time appointment_time
+     * @param \SellingPartnerApi\Model\Service\AppointmentTimeInput $appointment_time appointment_time
      *
      * @return self
      */

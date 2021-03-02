@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ListFinancialEventGroupsPayload Class Doc Comment
  *
  * @category Class
  * @description The payload for the listFinancialEventGroups operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess, \J
       */
     protected static $openAPITypes = [
         'next_token' => 'string',
-        'financial_event_group_list' => '\Evers\SellingPartnerApi\Model\Finances\FinancialEventGroup[]'
+        'financial_event_group_list' => '\SellingPartnerApi\Model\Finances\FinancialEventGroup[]'
     ];
 
     /**
@@ -241,7 +241,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess, \J
     /**
      * Gets financial_event_group_list
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\FinancialEventGroup[]|null
+     * @return \SellingPartnerApi\Model\Finances\FinancialEventGroup[]|null
      */
     public function getFinancialEventGroupList()
     {
@@ -251,7 +251,7 @@ class ListFinancialEventGroupsPayload implements ModelInterface, ArrayAccess, \J
     /**
      * Sets financial_event_group_list
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\FinancialEventGroup[]|null $financial_event_group_list A list of financial event group information.
+     * @param \SellingPartnerApi\Model\Finances\FinancialEventGroup[]|null $financial_event_group_list A list of financial event group information.
      *
      * @return self
      */

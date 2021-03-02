@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OfferType Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,8 +58,8 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'buying_price' => '\Evers\SellingPartnerApi\Model\ProductPricing\PriceType',
-        'regular_price' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'buying_price' => '\SellingPartnerApi\Model\ProductPricing\PriceType',
+        'regular_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
         'fulfillment_channel' => 'string',
         'item_condition' => 'string',
         'item_sub_condition' => 'string',
@@ -258,7 +258,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets buying_price
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\PriceType
+     * @return \SellingPartnerApi\Model\ProductPricing\PriceType
      */
     public function getBuyingPrice()
     {
@@ -268,7 +268,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buying_price
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\PriceType $buying_price buying_price
+     * @param \SellingPartnerApi\Model\ProductPricing\PriceType $buying_price buying_price
      *
      * @return self
      */
@@ -282,7 +282,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets regular_price
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType
      */
     public function getRegularPrice()
     {
@@ -292,7 +292,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets regular_price
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType $regular_price regular_price
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType $regular_price regular_price
      *
      * @return self
      */

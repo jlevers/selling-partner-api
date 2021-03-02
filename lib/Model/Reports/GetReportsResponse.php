@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Reports;
+namespace SellingPartnerApi\Model\Reports;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetReportsResponse Class Doc Comment
  *
  * @category Class
  * @description The response for the getReports operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,9 +59,9 @@ class GetReportsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Reports\Report[]',
+        'payload' => '\SellingPartnerApi\Model\Reports\Report[]',
         'next_token' => 'string',
-        'errors' => '\Evers\SellingPartnerApi\Model\Reports\Error[]'
+        'errors' => '\SellingPartnerApi\Model\Reports\Error[]'
     ];
 
     /**
@@ -223,7 +223,7 @@ class GetReportsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Reports\Report[]|null
+     * @return \SellingPartnerApi\Model\Reports\Report[]|null
      */
     public function getPayload()
     {
@@ -233,7 +233,7 @@ class GetReportsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Reports\Report[]|null $payload payload
+     * @param \SellingPartnerApi\Model\Reports\Report[]|null $payload payload
      *
      * @return self
      */
@@ -271,7 +271,7 @@ class GetReportsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Reports\Error[]|null
+     * @return \SellingPartnerApi\Model\Reports\Error[]|null
      */
     public function getErrors()
     {
@@ -281,7 +281,7 @@ class GetReportsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Reports\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Reports\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

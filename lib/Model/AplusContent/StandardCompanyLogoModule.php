@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardCompanyLogoModule Class Doc Comment
  *
  * @category Class
  * @description The standard company logo image.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class StandardCompanyLogoModule implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'company_logo' => '\Evers\SellingPartnerApi\Model\AplusContent\ImageComponent'
+        'company_logo' => '\SellingPartnerApi\Model\AplusContent\ImageComponent'
     ];
 
     /**
@@ -214,7 +214,7 @@ class StandardCompanyLogoModule implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets company_logo
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent
+     * @return \SellingPartnerApi\Model\AplusContent\ImageComponent
      */
     public function getCompanyLogo()
     {
@@ -224,7 +224,7 @@ class StandardCompanyLogoModule implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets company_logo
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent $company_logo company_logo
+     * @param \SellingPartnerApi\Model\AplusContent\ImageComponent $company_logo company_logo
      *
      * @return self
      */

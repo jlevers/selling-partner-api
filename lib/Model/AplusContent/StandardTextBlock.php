@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardTextBlock Class Doc Comment
  *
  * @category Class
  * @description The A+ Content standard text box block, comprised of a paragraph with a headline.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class StandardTextBlock implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'body' => '\Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent'
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'body' => '\SellingPartnerApi\Model\AplusContent\ParagraphComponent'
     ];
 
     /**
@@ -217,7 +217,7 @@ class StandardTextBlock implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -227,7 +227,7 @@ class StandardTextBlock implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class StandardTextBlock implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets body
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\ParagraphComponent|null
      */
     public function getBody()
     {
@@ -251,7 +251,7 @@ class StandardTextBlock implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets body
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent|null $body body
+     * @param \SellingPartnerApi\Model\AplusContent\ParagraphComponent|null $body body
      *
      * @return self
      */

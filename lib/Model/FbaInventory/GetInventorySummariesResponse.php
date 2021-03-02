@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInventory;
+namespace SellingPartnerApi\Model\FbaInventory;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetInventorySummariesResponse Class Doc Comment
  *
  * @category Class
  * @description The Response schema.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,9 +59,9 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResult',
-        'pagination' => '\Evers\SellingPartnerApi\Model\FbaInventory\Pagination',
-        'errors' => '\Evers\SellingPartnerApi\Model\FbaInventory\Error[]'
+        'payload' => '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResult',
+        'pagination' => '\SellingPartnerApi\Model\FbaInventory\Pagination',
+        'errors' => '\SellingPartnerApi\Model\FbaInventory\Error[]'
     ];
 
     /**
@@ -223,7 +223,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResult|null
+     * @return \SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResult|null
      */
     public function getPayload()
     {
@@ -233,7 +233,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResult|null $payload payload
+     * @param \SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResult|null $payload payload
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets pagination
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\Pagination|null
+     * @return \SellingPartnerApi\Model\FbaInventory\Pagination|null
      */
     public function getPagination()
     {
@@ -257,7 +257,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pagination
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\Pagination|null $pagination pagination
+     * @param \SellingPartnerApi\Model\FbaInventory\Pagination|null $pagination pagination
      *
      * @return self
      */
@@ -271,7 +271,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInventory\Error[]|null
+     * @return \SellingPartnerApi\Model\FbaInventory\Error[]|null
      */
     public function getErrors()
     {
@@ -281,7 +281,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInventory\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\FbaInventory\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

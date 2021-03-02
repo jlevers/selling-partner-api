@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetLabelsResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the getLabels operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\FbaInbound\LabelDownloadURL',
-        'errors' => '\Evers\SellingPartnerApi\Model\FbaInbound\Error[]'
+        'payload' => '\SellingPartnerApi\Model\FbaInbound\LabelDownloadURL',
+        'errors' => '\SellingPartnerApi\Model\FbaInbound\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\LabelDownloadURL|null
+     * @return \SellingPartnerApi\Model\FbaInbound\LabelDownloadURL|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class GetLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\LabelDownloadURL|null $payload payload
+     * @param \SellingPartnerApi\Model\FbaInbound\LabelDownloadURL|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Error[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class GetLabelsResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\FbaInbound\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

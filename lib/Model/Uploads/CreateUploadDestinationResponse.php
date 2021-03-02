@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Uploads;
+namespace SellingPartnerApi\Model\Uploads;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateUploadDestinationResponse Class Doc Comment
  *
  * @category Class
  * @description The response schema for the createUploadDestination operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class CreateUploadDestinationResponse implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\Evers\SellingPartnerApi\Model\Uploads\UploadDestination',
-        'errors' => '\Evers\SellingPartnerApi\Model\Uploads\Error[]'
+        'payload' => '\SellingPartnerApi\Model\Uploads\UploadDestination',
+        'errors' => '\SellingPartnerApi\Model\Uploads\Error[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class CreateUploadDestinationResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Gets payload
      *
-     * @return \Evers\SellingPartnerApi\Model\Uploads\UploadDestination|null
+     * @return \SellingPartnerApi\Model\Uploads\UploadDestination|null
      */
     public function getPayload()
     {
@@ -227,7 +227,7 @@ class CreateUploadDestinationResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Sets payload
      *
-     * @param \Evers\SellingPartnerApi\Model\Uploads\UploadDestination|null $payload payload
+     * @param \SellingPartnerApi\Model\Uploads\UploadDestination|null $payload payload
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class CreateUploadDestinationResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Gets errors
      *
-     * @return \Evers\SellingPartnerApi\Model\Uploads\Error[]|null
+     * @return \SellingPartnerApi\Model\Uploads\Error[]|null
      */
     public function getErrors()
     {
@@ -251,7 +251,7 @@ class CreateUploadDestinationResponse implements ModelInterface, ArrayAccess, \J
     /**
      * Sets errors
      *
-     * @param \Evers\SellingPartnerApi\Model\Uploads\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SellingPartnerApi\Model\Uploads\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

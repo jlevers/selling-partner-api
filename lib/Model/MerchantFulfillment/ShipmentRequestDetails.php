@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShipmentRequestDetails Class Doc Comment
  *
  * @category Class
  * @description Shipment information required for requesting shipping service offers or for creating a shipment.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,14 +61,14 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'seller_order_id' => 'string',
-        'item_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]',
-        'ship_from_address' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Address',
-        'package_dimensions' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions',
-        'weight' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight',
+        'item_list' => '\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]',
+        'ship_from_address' => '\SellingPartnerApi\Model\MerchantFulfillment\Address',
+        'package_dimensions' => '\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions',
+        'weight' => '\SellingPartnerApi\Model\MerchantFulfillment\Weight',
         'must_arrive_by_date' => '\DateTime',
         'ship_date' => '\DateTime',
-        'shipping_service_options' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions',
-        'label_customization' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization'
+        'shipping_service_options' => '\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions',
+        'label_customization' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization'
     ];
 
     /**
@@ -339,7 +339,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets item_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]
      */
     public function getItemList()
     {
@@ -349,7 +349,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets item_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[] $item_list The list of items to be included in a shipment.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\FBMItem[] $item_list The list of items to be included in a shipment.
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets ship_from_address
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress()
     {
@@ -373,7 +373,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets ship_from_address
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Address $ship_from_address ship_from_address
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Address $ship_from_address ship_from_address
      *
      * @return self
      */
@@ -387,7 +387,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets package_dimensions
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions
      */
     public function getPackageDimensions()
     {
@@ -397,7 +397,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets package_dimensions
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions $package_dimensions package_dimensions
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions $package_dimensions package_dimensions
      *
      * @return self
      */
@@ -411,7 +411,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets weight
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\Weight
      */
     public function getWeight()
     {
@@ -421,7 +421,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets weight
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\Weight $weight weight
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\Weight $weight weight
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets shipping_service_options
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions
      */
     public function getShippingServiceOptions()
     {
@@ -493,7 +493,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets shipping_service_options
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions $shipping_service_options shipping_service_options
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions $shipping_service_options shipping_service_options
      *
      * @return self
      */
@@ -507,7 +507,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets label_customization
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization|null
      */
     public function getLabelCustomization()
     {
@@ -517,7 +517,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets label_customization
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization|null $label_customization label_customization
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization|null $label_customization label_customization
      *
      * @return self
      */

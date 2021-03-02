@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asin** | **string** | The Amazon Standard Identification Number (ASIN) value used to identify the item. |
-**price** | [**\Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType**](MoneyType.md) |  |
+**price** | [**\SellingPartnerApi\Model\SmallAndLight\MoneyType**](MoneyType.md) |  |
 
 [[SmallAndLight Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

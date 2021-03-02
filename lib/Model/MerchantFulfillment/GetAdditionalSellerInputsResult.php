@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetAdditionalSellerInputsResult Class Doc Comment
  *
  * @category Class
  * @description The payload for the getAdditionalSellerInputs operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'shipment_level_fields' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalInputs[]',
-        'item_level_fields_list' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\ItemLevelFields[]'
+        'shipment_level_fields' => '\SellingPartnerApi\Model\MerchantFulfillment\AdditionalInputs[]',
+        'item_level_fields_list' => '\SellingPartnerApi\Model\MerchantFulfillment\ItemLevelFields[]'
     ];
 
     /**
@@ -217,7 +217,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess, \J
     /**
      * Gets shipment_level_fields
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalInputs[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\AdditionalInputs[]|null
      */
     public function getShipmentLevelFields()
     {
@@ -227,7 +227,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess, \J
     /**
      * Sets shipment_level_fields
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalInputs[]|null $shipment_level_fields A list of additional inputs.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\AdditionalInputs[]|null $shipment_level_fields A list of additional inputs.
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess, \J
     /**
      * Gets item_level_fields_list
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\ItemLevelFields[]|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\ItemLevelFields[]|null
      */
     public function getItemLevelFieldsList()
     {
@@ -251,7 +251,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, ArrayAccess, \J
     /**
      * Sets item_level_fields_list
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\ItemLevelFields[]|null $item_level_fields_list A list of item level fields.
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\ItemLevelFields[]|null $item_level_fields_list A list of item level fields.
      *
      * @return self
      */

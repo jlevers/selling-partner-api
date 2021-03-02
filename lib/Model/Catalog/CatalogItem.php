@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Catalog;
+namespace SellingPartnerApi\Model\Catalog;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CatalogItem Class Doc Comment
  *
  * @category Class
  * @description An item in the Amazon catalog.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,10 +59,10 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'identifiers' => '\Evers\SellingPartnerApi\Model\Catalog\IdentifierType',
-        'attribute_sets' => '\Evers\SellingPartnerApi\Model\Catalog\AttributeSet[]',
-        'relationships' => '\Evers\SellingPartnerApi\Model\Catalog\RelationshipType[]',
-        'sales_rankings' => '\Evers\SellingPartnerApi\Model\Catalog\SalesRank[]'
+        'identifiers' => '\SellingPartnerApi\Model\Catalog\IdentifierType',
+        'attribute_sets' => '\SellingPartnerApi\Model\Catalog\AttributeSet[]',
+        'relationships' => '\SellingPartnerApi\Model\Catalog\RelationshipType[]',
+        'sales_rankings' => '\SellingPartnerApi\Model\Catalog\SalesRank[]'
     ];
 
     /**
@@ -232,7 +232,7 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets identifiers
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\IdentifierType
+     * @return \SellingPartnerApi\Model\Catalog\IdentifierType
      */
     public function getIdentifiers()
     {
@@ -242,7 +242,7 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets identifiers
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\IdentifierType $identifiers identifiers
+     * @param \SellingPartnerApi\Model\Catalog\IdentifierType $identifiers identifiers
      *
      * @return self
      */
@@ -256,7 +256,7 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attribute_sets
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\AttributeSet[]|null
+     * @return \SellingPartnerApi\Model\Catalog\AttributeSet[]|null
      */
     public function getAttributeSets()
     {
@@ -266,7 +266,7 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attribute_sets
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\AttributeSet[]|null $attribute_sets A list of attributes for the item.
+     * @param \SellingPartnerApi\Model\Catalog\AttributeSet[]|null $attribute_sets A list of attributes for the item.
      *
      * @return self
      */
@@ -280,7 +280,7 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets relationships
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\RelationshipType[]|null
+     * @return \SellingPartnerApi\Model\Catalog\RelationshipType[]|null
      */
     public function getRelationships()
     {
@@ -290,7 +290,7 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets relationships
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\RelationshipType[]|null $relationships A list of variation relationship information, if applicable for the item.
+     * @param \SellingPartnerApi\Model\Catalog\RelationshipType[]|null $relationships A list of variation relationship information, if applicable for the item.
      *
      * @return self
      */
@@ -304,7 +304,7 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sales_rankings
      *
-     * @return \Evers\SellingPartnerApi\Model\Catalog\SalesRank[]|null
+     * @return \SellingPartnerApi\Model\Catalog\SalesRank[]|null
      */
     public function getSalesRankings()
     {
@@ -314,7 +314,7 @@ class CatalogItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sales_rankings
      *
-     * @param \Evers\SellingPartnerApi\Model\Catalog\SalesRank[]|null $sales_rankings A list of sales rank information for the item by category.
+     * @param \SellingPartnerApi\Model\Catalog\SalesRank[]|null $sales_rankings A list of sales rank information for the item by category.
      *
      * @return self
      */

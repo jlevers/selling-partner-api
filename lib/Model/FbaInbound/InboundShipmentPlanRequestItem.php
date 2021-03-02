@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * InboundShipmentPlanRequestItem Class Doc Comment
  *
  * @category Class
  * @description Item information for creating an inbound shipment plan. Submitted with a call to the createInboundShipmentPlan operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -61,10 +61,10 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
     protected static $openAPITypes = [
         'seller_sku' => 'string',
         'asin' => 'string',
-        'condition' => '\Evers\SellingPartnerApi\Model\FbaInbound\Condition',
+        'condition' => '\SellingPartnerApi\Model\FbaInbound\Condition',
         'quantity' => 'int',
         'quantity_in_case' => 'int',
-        'prep_details_list' => '\Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]'
+        'prep_details_list' => '\SellingPartnerApi\Model\FbaInbound\PrepDetails[]'
     ];
 
     /**
@@ -301,7 +301,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets condition
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\Condition
+     * @return \SellingPartnerApi\Model\FbaInbound\Condition
      */
     public function getCondition()
     {
@@ -311,7 +311,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets condition
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\Condition $condition condition
+     * @param \SellingPartnerApi\Model\FbaInbound\Condition $condition condition
      *
      * @return self
      */
@@ -373,7 +373,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets prep_details_list
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null
+     * @return \SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null
      */
     public function getPrepDetailsList()
     {
@@ -383,7 +383,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets prep_details_list
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null $prep_details_list A list of preparation instructions and who is responsible for that preparation.
+     * @param \SellingPartnerApi\Model\FbaInbound\PrepDetails[]|null $prep_details_list A list of preparation instructions and who is responsible for that preparation.
      *
      * @return self
      */

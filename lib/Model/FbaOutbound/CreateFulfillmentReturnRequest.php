@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaOutbound;
+namespace SellingPartnerApi\Model\FbaOutbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateFulfillmentReturnRequest Class Doc Comment
  *
  * @category Class
  * @description The createFulfillmentReturn operation creates a fulfillment return for items that were fulfilled using the createFulfillmentOrder operation. For calls to createFulfillmentReturn, you must include ReturnReasonCode values returned by a previous call to the listReturnReasonCodes operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,7 +59,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'items' => '\Evers\SellingPartnerApi\Model\FbaOutbound\CreateReturnItem[]'
+        'items' => '\SellingPartnerApi\Model\FbaOutbound\CreateReturnItem[]'
     ];
 
     /**
@@ -214,7 +214,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets items
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaOutbound\CreateReturnItem[]
+     * @return \SellingPartnerApi\Model\FbaOutbound\CreateReturnItem[]
      */
     public function getItems()
     {
@@ -224,7 +224,7 @@ class CreateFulfillmentReturnRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets items
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaOutbound\CreateReturnItem[] $items An array of items to be returned.
+     * @param \SellingPartnerApi\Model\FbaOutbound\CreateReturnItem[] $items An array of items to be returned.
      *
      * @return self
      */

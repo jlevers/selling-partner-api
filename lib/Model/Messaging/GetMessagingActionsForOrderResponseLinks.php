@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Messaging;
+namespace SellingPartnerApi\Model\Messaging;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * GetMessagingActionsForOrderResponseLinks Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -58,8 +58,8 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'self' => '\Evers\SellingPartnerApi\Model\Messaging\LinkObject',
-        'actions' => '\Evers\SellingPartnerApi\Model\Messaging\LinkObject[]'
+        'self' => '\SellingPartnerApi\Model\Messaging\LinkObject',
+        'actions' => '\SellingPartnerApi\Model\Messaging\LinkObject[]'
     ];
 
     /**
@@ -222,7 +222,7 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
     /**
      * Gets self
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\LinkObject
+     * @return \SellingPartnerApi\Model\Messaging\LinkObject
      */
     public function getSelf()
     {
@@ -232,7 +232,7 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
     /**
      * Sets self
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\LinkObject $self self
+     * @param \SellingPartnerApi\Model\Messaging\LinkObject $self self
      *
      * @return self
      */
@@ -246,7 +246,7 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
     /**
      * Gets actions
      *
-     * @return \Evers\SellingPartnerApi\Model\Messaging\LinkObject[]
+     * @return \SellingPartnerApi\Model\Messaging\LinkObject[]
      */
     public function getActions()
     {
@@ -256,7 +256,7 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
     /**
      * Sets actions
      *
-     * @param \Evers\SellingPartnerApi\Model\Messaging\LinkObject[] $actions Eligible actions for the specified amazonOrderId.
+     * @param \SellingPartnerApi\Model\Messaging\LinkObject[] $actions Eligible actions for the specified amazonOrderId.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Notifications;
+namespace SellingPartnerApi\Model\Notifications;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * DestinationResourceSpecification Class Doc Comment
  *
  * @category Class
  * @description The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class DestinationResourceSpecification implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sqs' => '\Evers\SellingPartnerApi\Model\Notifications\SqsResource',
-        'event_bridge' => '\Evers\SellingPartnerApi\Model\Notifications\EventBridgeResourceSpecification'
+        'sqs' => '\SellingPartnerApi\Model\Notifications\SqsResource',
+        'event_bridge' => '\SellingPartnerApi\Model\Notifications\EventBridgeResourceSpecification'
     ];
 
     /**
@@ -217,7 +217,7 @@ class DestinationResourceSpecification implements ModelInterface, ArrayAccess, \
     /**
      * Gets sqs
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\SqsResource|null
+     * @return \SellingPartnerApi\Model\Notifications\SqsResource|null
      */
     public function getSqs()
     {
@@ -227,7 +227,7 @@ class DestinationResourceSpecification implements ModelInterface, ArrayAccess, \
     /**
      * Sets sqs
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\SqsResource|null $sqs sqs
+     * @param \SellingPartnerApi\Model\Notifications\SqsResource|null $sqs sqs
      *
      * @return self
      */
@@ -241,7 +241,7 @@ class DestinationResourceSpecification implements ModelInterface, ArrayAccess, \
     /**
      * Gets event_bridge
      *
-     * @return \Evers\SellingPartnerApi\Model\Notifications\EventBridgeResourceSpecification|null
+     * @return \SellingPartnerApi\Model\Notifications\EventBridgeResourceSpecification|null
      */
     public function getEventBridge()
     {
@@ -251,7 +251,7 @@ class DestinationResourceSpecification implements ModelInterface, ArrayAccess, \
     /**
      * Sets event_bridge
      *
-     * @param \Evers\SellingPartnerApi\Model\Notifications\EventBridgeResourceSpecification|null $event_bridge event_bridge
+     * @param \SellingPartnerApi\Model\Notifications\EventBridgeResourceSpecification|null $event_bridge event_bridge
      *
      * @return self
      */

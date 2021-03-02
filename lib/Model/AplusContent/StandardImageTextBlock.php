@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\AplusContent;
+namespace SellingPartnerApi\Model\AplusContent;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * StandardImageTextBlock Class Doc Comment
  *
  * @category Class
  * @description The A+ Content standard image and text box block.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,9 +59,9 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'image' => '\Evers\SellingPartnerApi\Model\AplusContent\ImageComponent',
-        'headline' => '\Evers\SellingPartnerApi\Model\AplusContent\TextComponent',
-        'body' => '\Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent'
+        'image' => '\SellingPartnerApi\Model\AplusContent\ImageComponent',
+        'headline' => '\SellingPartnerApi\Model\AplusContent\TextComponent',
+        'body' => '\SellingPartnerApi\Model\AplusContent\ParagraphComponent'
     ];
 
     /**
@@ -223,7 +223,7 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets image
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\ImageComponent|null
      */
     public function getImage()
     {
@@ -233,7 +233,7 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets image
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ImageComponent|null $image image
+     * @param \SellingPartnerApi\Model\AplusContent\ImageComponent|null $image image
      *
      * @return self
      */
@@ -247,7 +247,7 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets headline
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\TextComponent|null
      */
     public function getHeadline()
     {
@@ -257,7 +257,7 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets headline
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
+     * @param \SellingPartnerApi\Model\AplusContent\TextComponent|null $headline headline
      *
      * @return self
      */
@@ -271,7 +271,7 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets body
      *
-     * @return \Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent|null
+     * @return \SellingPartnerApi\Model\AplusContent\ParagraphComponent|null
      */
     public function getBody()
     {
@@ -281,7 +281,7 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets body
      *
-     * @param \Evers\SellingPartnerApi\Model\AplusContent\ParagraphComponent|null $body body
+     * @param \SellingPartnerApi\Model\AplusContent\ParagraphComponent|null $body body
      *
      * @return self
      */

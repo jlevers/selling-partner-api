@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,17 +25,17 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\ProductPricing;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OfferDetail Class Doc Comment
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,12 +60,12 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'my_offer' => 'bool',
         'sub_condition' => 'string',
-        'seller_feedback_rating' => '\Evers\SellingPartnerApi\Model\ProductPricing\SellerFeedbackType',
-        'shipping_time' => '\Evers\SellingPartnerApi\Model\ProductPricing\DetailedShippingTimeType',
-        'listing_price' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType',
-        'points' => '\Evers\SellingPartnerApi\Model\ProductPricing\Points',
-        'shipping' => '\Evers\SellingPartnerApi\Model\ProductPricing\MoneyType',
-        'ships_from' => '\Evers\SellingPartnerApi\Model\ProductPricing\ShipsFromType',
+        'seller_feedback_rating' => '\SellingPartnerApi\Model\ProductPricing\SellerFeedbackType',
+        'shipping_time' => '\SellingPartnerApi\Model\ProductPricing\DetailedShippingTimeType',
+        'listing_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'points' => '\SellingPartnerApi\Model\ProductPricing\Points',
+        'shipping' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'ships_from' => '\SellingPartnerApi\Model\ProductPricing\ShipsFromType',
         'is_fulfilled_by_amazon' => 'bool',
         'is_buy_box_winner' => 'bool',
         'is_featured_merchant' => 'bool'
@@ -333,7 +333,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets seller_feedback_rating
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\SellerFeedbackType|null
+     * @return \SellingPartnerApi\Model\ProductPricing\SellerFeedbackType|null
      */
     public function getSellerFeedbackRating()
     {
@@ -343,7 +343,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller_feedback_rating
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\SellerFeedbackType|null $seller_feedback_rating seller_feedback_rating
+     * @param \SellingPartnerApi\Model\ProductPricing\SellerFeedbackType|null $seller_feedback_rating seller_feedback_rating
      *
      * @return self
      */
@@ -357,7 +357,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping_time
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\DetailedShippingTimeType
+     * @return \SellingPartnerApi\Model\ProductPricing\DetailedShippingTimeType
      */
     public function getShippingTime()
     {
@@ -367,7 +367,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping_time
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\DetailedShippingTimeType $shipping_time shipping_time
+     * @param \SellingPartnerApi\Model\ProductPricing\DetailedShippingTimeType $shipping_time shipping_time
      *
      * @return self
      */
@@ -381,7 +381,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets listing_price
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType
      */
     public function getListingPrice()
     {
@@ -391,7 +391,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets listing_price
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType $listing_price listing_price
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType $listing_price listing_price
      *
      * @return self
      */
@@ -405,7 +405,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets points
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\Points|null
+     * @return \SellingPartnerApi\Model\ProductPricing\Points|null
      */
     public function getPoints()
     {
@@ -415,7 +415,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets points
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\Points|null $points points
+     * @param \SellingPartnerApi\Model\ProductPricing\Points|null $points points
      *
      * @return self
      */
@@ -429,7 +429,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipping
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType
      */
     public function getShipping()
     {
@@ -439,7 +439,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipping
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\MoneyType $shipping shipping
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType $shipping shipping
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ships_from
      *
-     * @return \Evers\SellingPartnerApi\Model\ProductPricing\ShipsFromType|null
+     * @return \SellingPartnerApi\Model\ProductPricing\ShipsFromType|null
      */
     public function getShipsFrom()
     {
@@ -463,7 +463,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ships_from
      *
-     * @param \Evers\SellingPartnerApi\Model\ProductPricing\ShipsFromType|null $ships_from ships_from
+     * @param \SellingPartnerApi\Model\ProductPricing\ShipsFromType|null $ships_from ships_from
      *
      * @return self
      */

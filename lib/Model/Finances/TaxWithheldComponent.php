@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\Finances;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * TaxWithheldComponent Class Doc Comment
  *
  * @category Class
  * @description Information about the taxes withheld.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,7 +60,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'tax_collection_model' => 'string',
-        'taxes_withheld' => '\Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]'
+        'taxes_withheld' => '\SellingPartnerApi\Model\Finances\ChargeComponent[]'
     ];
 
     /**
@@ -241,7 +241,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets taxes_withheld
      *
-     * @return \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null
+     * @return \SellingPartnerApi\Model\Finances\ChargeComponent[]|null
      */
     public function getTaxesWithheld()
     {
@@ -251,7 +251,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets taxes_withheld
      *
-     * @param \Evers\SellingPartnerApi\Model\Finances\ChargeComponent[]|null $taxes_withheld A list of charge information on the seller's account.
+     * @param \SellingPartnerApi\Model\Finances\ChargeComponent[]|null $taxes_withheld A list of charge information on the seller's account.
      *
      * @return self
      */

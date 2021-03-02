@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\MerchantFulfillment;
+namespace SellingPartnerApi\Model\MerchantFulfillment;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShippingServiceOptions Class Doc Comment
  *
  * @category Class
  * @description Extra services provided by a carrier.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,11 +59,11 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'delivery_experience' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceType',
-        'declared_value' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount',
+        'delivery_experience' => '\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceType',
+        'declared_value' => '\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount',
         'carrier_will_pick_up' => 'bool',
-        'carrier_will_pick_up_option' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption',
-        'label_format' => '\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat'
+        'carrier_will_pick_up_option' => '\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption',
+        'label_format' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat'
     ];
 
     /**
@@ -241,7 +241,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets delivery_experience
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceType
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceType
      */
     public function getDeliveryExperience()
     {
@@ -251,7 +251,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets delivery_experience
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceType $delivery_experience delivery_experience
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceType $delivery_experience delivery_experience
      *
      * @return self
      */
@@ -265,7 +265,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets declared_value
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount|null
      */
     public function getDeclaredValue()
     {
@@ -275,7 +275,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets declared_value
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount|null $declared_value declared_value
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount|null $declared_value declared_value
      *
      * @return self
      */
@@ -313,7 +313,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets carrier_will_pick_up_option
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption|null
      */
     public function getCarrierWillPickUpOption()
     {
@@ -323,7 +323,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets carrier_will_pick_up_option
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption|null $carrier_will_pick_up_option carrier_will_pick_up_option
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption|null $carrier_will_pick_up_option carrier_will_pick_up_option
      *
      * @return self
      */
@@ -337,7 +337,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets label_format
      *
-     * @return \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null
+     * @return \SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null
      */
     public function getLabelFormat()
     {
@@ -347,7 +347,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets label_format
      *
-     * @param \Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null $label_format label_format
+     * @param \SellingPartnerApi\Model\MerchantFulfillment\LabelFormat|null $label_format label_format
      *
      * @return self
      */

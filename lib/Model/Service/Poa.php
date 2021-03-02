@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\Service;
+namespace SellingPartnerApi\Model\Service;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Poa Class Doc Comment
  *
  * @category Class
  * @description Proof of Appointment (POA) details.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -59,8 +59,8 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'appointment_time' => '\Evers\SellingPartnerApi\Model\Service\AppointmentTime',
-        'technicians' => '\Evers\SellingPartnerApi\Model\Service\Technician[]',
+        'appointment_time' => '\SellingPartnerApi\Model\Service\AppointmentTime',
+        'technicians' => '\SellingPartnerApi\Model\Service\Technician[]',
         'uploading_technician' => 'string',
         'upload_time' => '\DateTime',
         'poa_type' => 'string'
@@ -271,7 +271,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets appointment_time
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\AppointmentTime|null
+     * @return \SellingPartnerApi\Model\Service\AppointmentTime|null
      */
     public function getAppointmentTime()
     {
@@ -281,7 +281,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets appointment_time
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\AppointmentTime|null $appointment_time appointment_time
+     * @param \SellingPartnerApi\Model\Service\AppointmentTime|null $appointment_time appointment_time
      *
      * @return self
      */
@@ -295,7 +295,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets technicians
      *
-     * @return \Evers\SellingPartnerApi\Model\Service\Technician[]|null
+     * @return \SellingPartnerApi\Model\Service\Technician[]|null
      */
     public function getTechnicians()
     {
@@ -305,7 +305,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets technicians
      *
-     * @param \Evers\SellingPartnerApi\Model\Service\Technician[]|null $technicians A list of technicians.
+     * @param \SellingPartnerApi\Model\Service\Technician[]|null $technicians A list of technicians.
      *
      * @return self
      */

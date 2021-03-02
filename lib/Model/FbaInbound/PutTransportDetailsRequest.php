@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  */
 
 /**
@@ -25,18 +25,18 @@
  * Do not edit the class manually.
  */
 
-namespace Evers\SellingPartnerApi\Model\FbaInbound;
+namespace SellingPartnerApi\Model\FbaInbound;
 
 use \ArrayAccess;
-use \Evers\SellingPartnerApi\ObjectSerializer;
-use \Evers\SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
+use \SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PutTransportDetailsRequest Class Doc Comment
  *
  * @category Class
  * @description The request schema for a putTransportDetails operation.
- * @package  Evers\SellingPartnerApi
+ * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
@@ -60,8 +60,8 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'is_partnered' => 'bool',
-        'shipment_type' => '\Evers\SellingPartnerApi\Model\FbaInbound\ShipmentType',
-        'transport_details' => '\Evers\SellingPartnerApi\Model\FbaInbound\TransportDetailInput'
+        'shipment_type' => '\SellingPartnerApi\Model\FbaInbound\ShipmentType',
+        'transport_details' => '\SellingPartnerApi\Model\FbaInbound\TransportDetailInput'
     ];
 
     /**
@@ -256,7 +256,7 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets shipment_type
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\ShipmentType
+     * @return \SellingPartnerApi\Model\FbaInbound\ShipmentType
      */
     public function getShipmentType()
     {
@@ -266,7 +266,7 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets shipment_type
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\ShipmentType $shipment_type shipment_type
+     * @param \SellingPartnerApi\Model\FbaInbound\ShipmentType $shipment_type shipment_type
      *
      * @return self
      */
@@ -280,7 +280,7 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets transport_details
      *
-     * @return \Evers\SellingPartnerApi\Model\FbaInbound\TransportDetailInput
+     * @return \SellingPartnerApi\Model\FbaInbound\TransportDetailInput
      */
     public function getTransportDetails()
     {
@@ -290,7 +290,7 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets transport_details
      *
-     * @param \Evers\SellingPartnerApi\Model\FbaInbound\TransportDetailInput $transport_details transport_details
+     * @param \SellingPartnerApi\Model\FbaInbound\TransportDetailInput $transport_details transport_details
      *
      * @return self
      */

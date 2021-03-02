@@ -1,4 +1,4 @@
-# # CreateReturnItem
+## CreateReturnItem
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **return_reason_code** | **string** | The return reason code assigned to the return item by the seller. |
 **return_comment** | **string** | An optional comment about the return item. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # PartneredLtlDataOutput
+## PartneredLtlDataOutput
 
 ## Properties
 
@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **partnered_estimate** | [**\Evers\SellingPartnerApi\Model\FbaInbound\PartneredEstimate**](PartneredEstimate.md) |  | [optional]
 **carrier_name** | **string** | The carrier for the inbound shipment. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # StandardThreeImageTextModule
+## StandardThreeImageTextModule
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **block2** | [**\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock**](StandardImageTextBlock.md) |  | [optional]
 **block3** | [**\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock**](StandardImageTextBlock.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

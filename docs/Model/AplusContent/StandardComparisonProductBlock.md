@@ -1,4 +1,4 @@
-# # StandardComparisonProductBlock
+## StandardComparisonProductBlock
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **highlight** | **bool** | Determines whether this block of content is visually highlighted. | [optional]
 **metrics** | [**\Evers\SellingPartnerApi\Model\AplusContent\PlainTextItem[]**](PlainTextItem.md) | Comparison metrics for the product. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

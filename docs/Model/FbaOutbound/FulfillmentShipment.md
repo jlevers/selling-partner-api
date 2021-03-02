@@ -1,4 +1,4 @@
-# # FulfillmentShipment
+## FulfillmentShipment
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **fulfillment_shipment_item** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[]**](FulfillmentShipmentItem.md) | An array of fulfillment shipment item information. |
 **fulfillment_shipment_package** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]**](FulfillmentShipmentPackage.md) | An array of fulfillment shipment package information. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

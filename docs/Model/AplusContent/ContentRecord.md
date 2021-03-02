@@ -1,4 +1,4 @@
-# # ContentRecord
+## ContentRecord
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **content_metadata** | [**\Evers\SellingPartnerApi\Model\AplusContent\ContentMetadata**](ContentMetadata.md) |  | [optional]
 **content_document** | [**\Evers\SellingPartnerApi\Model\AplusContent\ContentDocument**](ContentDocument.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

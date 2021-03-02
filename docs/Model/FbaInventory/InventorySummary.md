@@ -1,4 +1,4 @@
-# # InventorySummary
+## InventorySummary
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **product_name** | **string** | The localized language product title of the item within the specific marketplace. | [optional]
 **total_quantity** | **int** | The total number of units in an inbound shipment or in Amazon fulfillment centers. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInventory Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

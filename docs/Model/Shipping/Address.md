@@ -1,4 +1,4 @@
-# # Address
+## Address
 
 ## Properties
 
@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **copy_emails** | **string[]** | The email cc addresses of the contact associated with the address. | [optional]
 **phone_number** | **string** | The phone number of the person, business or institution located at that address. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Shipping Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

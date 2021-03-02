@@ -1,4 +1,4 @@
-# # TransportResult
+## TransportResult
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **error_code** | **string** | An error code that identifies the type of error that occured. | [optional]
 **error_description** | **string** | A message that describes the error condition. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # GetItemEligibilityPreviewResponse
+## GetItemEligibilityPreviewResponse
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **payload** | [**\Evers\SellingPartnerApi\Model\FbaInboundEligibility\ItemEligibilityPreview**](ItemEligibilityPreview.md) |  | [optional]
 **errors** | [**\Evers\SellingPartnerApi\Model\FbaInboundEligibility\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInboundEligibility Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

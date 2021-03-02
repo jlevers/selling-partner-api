@@ -1,4 +1,4 @@
-# # Address
+## Address
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **country_code** | **string** | The country code in two-character ISO 3166-1 alpha-2 format. |
 **postal_code** | **string** | The postal code.  If postal codes are used in your marketplace, we recommended that you include one with your request. This helps Amazon select the most appropriate Amazon fulfillment center for the inbound shipment plan. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

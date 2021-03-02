@@ -1,4 +1,4 @@
-# # ReturnItem
+## ReturnItem
 
 ## Properties
 
@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **return_received_condition** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItemDisposition**](ReturnItemDisposition.md) |  | [optional]
 **fulfillment_center_id** | **string** | The identifier for the Amazon fulfillment center that processed the return item. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

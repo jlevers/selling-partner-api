@@ -1,4 +1,4 @@
-# # AsinMetadata
+## AsinMetadata
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **image_url** | **string** | The default image for the ASIN in the Amazon catalog. | [optional]
 **content_reference_key_set** | **string[]** | A set of content reference keys. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

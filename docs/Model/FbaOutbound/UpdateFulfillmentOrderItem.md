@@ -1,4 +1,4 @@
-# # UpdateFulfillmentOrderItem
+## UpdateFulfillmentOrderItem
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **per_unit_price** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
 **per_unit_tax** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # ContentMetadata
+## ContentMetadata
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **badge_set** | [**\Evers\SellingPartnerApi\Model\AplusContent\ContentBadge[]**](ContentBadge.md) | The set of content badges. |
 **update_time** | [**\DateTime**](\DateTime.md) | The approximate age of the A+ Content document and metadata. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

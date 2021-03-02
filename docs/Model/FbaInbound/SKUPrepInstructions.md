@@ -1,4 +1,4 @@
-# # SKUPrepInstructions
+## SKUPrepInstructions
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **prep_instruction_list** | [**\Evers\SellingPartnerApi\Model\FbaInbound\PrepInstruction[]**](PrepInstruction.md) | A list of preparation instructions to help with item sourcing decisions. | [optional]
 **amazon_prep_fees_details_list** | [**\Evers\SellingPartnerApi\Model\FbaInbound\AmazonPrepFeesDetails[]**](AmazonPrepFeesDetails.md) | A list of preparation instructions and fees for Amazon to prep goods for shipment. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # TrackingInformation
+## TrackingInformation
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **promised_delivery_date** | [**\DateTime**](\DateTime.md) | The promised delivery date and time of a shipment. |
 **event_history** | [**\Evers\SellingPartnerApi\Model\Shipping\Event[]**](Event.md) | A list of events of a shipment. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Shipping Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

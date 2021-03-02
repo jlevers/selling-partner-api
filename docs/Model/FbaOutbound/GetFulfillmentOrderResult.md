@@ -1,4 +1,4 @@
-# # GetFulfillmentOrderResult
+## GetFulfillmentOrderResult
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **return_items** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnItem[]**](ReturnItem.md) | An array of items that Amazon accepted for return. Returns empty if no items were accepted for return. |
 **return_authorizations** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]**](ReturnAuthorization.md) | An array of return authorization information. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

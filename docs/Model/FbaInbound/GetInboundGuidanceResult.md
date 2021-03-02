@@ -1,4 +1,4 @@
-# # GetInboundGuidanceResult
+## GetInboundGuidanceResult
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **asin_inbound_guidance_list** | [**\Evers\SellingPartnerApi\Model\FbaInbound\ASINInboundGuidance[]**](ASINInboundGuidance.md) | A list of ASINs and their associated inbound guidance. | [optional]
 **invalid_asin_list** | [**\Evers\SellingPartnerApi\Model\FbaInbound\InvalidASIN[]**](InvalidASIN.md) | A list of invalid ASIN values and the reasons they are invalid. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

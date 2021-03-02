@@ -1,4 +1,4 @@
-# # FulfillmentPreview
+## FulfillmentPreview
 
 ## Properties
 
@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **marketplace_id** | **string** | The marketplace the fulfillment order is placed against. |
 **feature_constraints** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]**](FeatureSettings.md) | A list of features and their fulfillment policies to apply to the order. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # DimensionType
+## DimensionType
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **width** | [**\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
 **weight** | [**\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Catalog Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -41,11 +41,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asin** | **string**| The Amazon Standard Identification Number (ASIN) of the item. |
- **body** | [**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/GetMyFeesEstimateRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/FeesGetMyFeesEstimateRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse**](../Model/GetMyFeesEstimateResponse.md)
+[**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse**](../Model/Fees/GetMyFeesEstimateResponse.md)
 
 ### HTTP request headers
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Fees Model list]](../Model/Fees)
 [[README]](../../README.md)
 
 ## `getMyFeesEstimateForSKU()`
@@ -89,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_sku** | **string**| Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. |
- **body** | [**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/GetMyFeesEstimateRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/FeesGetMyFeesEstimateRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse**](../Model/GetMyFeesEstimateResponse.md)
+[**\Evers\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse**](../Model/Fees/GetMyFeesEstimateResponse.md)
 
 ### HTTP request headers
 
@@ -101,5 +101,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Fees Model list]](../Model/Fees)
 [[README]](../../README.md)

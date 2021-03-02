@@ -1,4 +1,4 @@
-# # OrderBuyerInfo
+## OrderBuyerInfo
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **buyer_tax_info** | [**\Evers\SellingPartnerApi\Model\Orders\BuyerTaxInfo**](BuyerTaxInfo.md) |  | [optional]
 **purchase_order_number** | **string** | The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

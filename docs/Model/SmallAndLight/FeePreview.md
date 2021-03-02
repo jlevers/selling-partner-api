@@ -1,4 +1,4 @@
-# # FeePreview
+## FeePreview
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **total_fees** | [**\Evers\SellingPartnerApi\Model\SmallAndLight\MoneyType**](MoneyType.md) |  | [optional]
 **errors** | [**\Evers\SellingPartnerApi\Model\SmallAndLight\ErrorList**](ErrorList.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[SmallAndLight Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

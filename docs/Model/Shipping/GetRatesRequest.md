@@ -1,4 +1,4 @@
-# # GetRatesRequest
+## GetRatesRequest
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **ship_date** | [**\DateTime**](\DateTime.md) | The start date and time. This defaults to the current date and time. | [optional]
 **container_specifications** | [**\Evers\SellingPartnerApi\Model\Shipping\ContainerSpecification[]**](ContainerSpecification.md) | A list of container specifications. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Shipping Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

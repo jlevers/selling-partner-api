@@ -1,4 +1,4 @@
-# # ShippingService
+## ShippingService
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **available_format_options_for_label** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormatOption[]**](LabelFormatOption.md) | The available label formats. | [optional]
 **requires_additional_seller_inputs** | **bool** | When true, additional seller inputs are required. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # InboundShipmentPlanRequestItem
+## InboundShipmentPlanRequestItem
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **quantity_in_case** | **int** | The item quantity. | [optional]
 **prep_details_list** | [**\Evers\SellingPartnerApi\Model\FbaInbound\PrepDetails[]**](PrepDetails.md) | A list of preparation instructions and who is responsible for that preparation. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

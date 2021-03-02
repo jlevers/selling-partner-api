@@ -52,12 +52,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsRequest**](../Model/CreateConfirmCustomizationDetailsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsRequest**](../Model/MessagingCreateConfirmCustomizationDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse**](../Model/CreateConfirmCustomizationDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse**](../Model/Messaging/CreateConfirmCustomizationDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createAmazonMotors()`
@@ -102,12 +102,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsRequest**](../Model/CreateAmazonMotorsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsRequest**](../Model/MessagingCreateAmazonMotorsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse**](../Model/CreateAmazonMotorsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse**](../Model/Messaging/CreateAmazonMotorsResponse.md)
 
 ### HTTP request headers
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createConfirmDeliveryDetails()`
@@ -152,12 +152,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsRequest**](../Model/CreateConfirmDeliveryDetailsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsRequest**](../Model/MessagingCreateConfirmDeliveryDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse**](../Model/CreateConfirmDeliveryDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse**](../Model/Messaging/CreateConfirmDeliveryDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createConfirmOrderDetails()`
@@ -202,12 +202,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsRequest**](../Model/CreateConfirmOrderDetailsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsRequest**](../Model/MessagingCreateConfirmOrderDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse**](../Model/CreateConfirmOrderDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse**](../Model/Messaging/CreateConfirmOrderDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createConfirmServiceDetails()`
@@ -252,12 +252,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsRequest**](../Model/CreateConfirmServiceDetailsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsRequest**](../Model/MessagingCreateConfirmServiceDetailsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse**](../Model/CreateConfirmServiceDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse**](../Model/Messaging/CreateConfirmServiceDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createDigitalAccessKey()`
@@ -302,12 +302,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyRequest**](../Model/CreateDigitalAccessKeyRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyRequest**](../Model/MessagingCreateDigitalAccessKeyRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse**](../Model/CreateDigitalAccessKeyResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse**](../Model/Messaging/CreateDigitalAccessKeyResponse.md)
 
 ### HTTP request headers
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createLegalDisclosure()`
@@ -352,12 +352,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureRequest**](../Model/CreateLegalDisclosureRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureRequest**](../Model/MessagingCreateLegalDisclosureRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse**](../Model/CreateLegalDisclosureResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse**](../Model/Messaging/CreateLegalDisclosureResponse.md)
 
 ### HTTP request headers
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createNegativeFeedbackRemoval()`
@@ -401,11 +401,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse**](../Model/CreateNegativeFeedbackRemovalResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse**](../Model/Messaging/CreateNegativeFeedbackRemovalResponse.md)
 
 ### HTTP request headers
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createUnexpectedProblem()`
@@ -450,12 +450,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemRequest**](../Model/CreateUnexpectedProblemRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemRequest**](../Model/MessagingCreateUnexpectedProblemRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse**](../Model/CreateUnexpectedProblemResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse**](../Model/Messaging/CreateUnexpectedProblemResponse.md)
 
 ### HTTP request headers
 
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `createWarranty()`
@@ -500,12 +500,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyRequest**](../Model/CreateWarrantyRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyRequest**](../Model/MessagingCreateWarrantyRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse**](../Model/CreateWarrantyResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse**](../Model/Messaging/CreateWarrantyResponse.md)
 
 ### HTTP request headers
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `getAttributes()`
@@ -549,11 +549,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\GetAttributesResponse**](../Model/GetAttributesResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\GetAttributesResponse**](../Model/Messaging/GetAttributesResponse.md)
 
 ### HTTP request headers
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)
 
 ## `getMessagingActionsForOrder()`
@@ -597,11 +597,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which you want a list of available message types. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse**](../Model/GetMessagingActionsForOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse**](../Model/Messaging/GetMessagingActionsForOrderResponse.md)
 
 ### HTTP request headers
 
@@ -609,5 +609,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Messaging Model list]](../Model/Messaging)
 [[README]](../../README.md)

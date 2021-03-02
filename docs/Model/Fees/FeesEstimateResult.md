@@ -1,4 +1,4 @@
-# # FeesEstimateResult
+## FeesEstimateResult
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **fees_estimate** | [**\Evers\SellingPartnerApi\Model\Fees\FeesEstimate**](FeesEstimate.md) |  | [optional]
 **error** | [**\Evers\SellingPartnerApi\Model\Fees\FeesEstimateError**](FeesEstimateError.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Fees Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

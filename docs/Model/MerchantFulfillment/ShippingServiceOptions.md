@@ -1,4 +1,4 @@
-# # ShippingServiceOptions
+## ShippingServiceOptions
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **carrier_will_pick_up_option** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption**](CarrierWillPickUpOption.md) |  | [optional]
 **label_format** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat**](LabelFormat.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

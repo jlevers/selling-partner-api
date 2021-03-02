@@ -1,4 +1,4 @@
-# # ShipmentRequestDetails
+## ShipmentRequestDetails
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **shipping_service_options** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions**](ShippingServiceOptions.md) |  |
 **label_customization** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization**](LabelCustomization.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

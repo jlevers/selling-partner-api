@@ -1,4 +1,4 @@
-# # RejectedShippingService
+## RejectedShippingService
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **rejection_reason_code** | **string** | A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX |
 **rejection_reason_message** | **string** | A localized human readable description of the rejected reason. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\CancelShipmentResponse**](../Model/Shipping/CancelShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)
 
 ## `createShipment()`
@@ -92,11 +92,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Shipping\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\CreateShipmentRequest**](../Model/ShippingCreateShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\CreateShipmentResponse**](../Model/CreateShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\CreateShipmentResponse**](../Model/Shipping/CreateShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)
 
 ## `getAccount()`
@@ -139,7 +139,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\GetAccountResponse**](../Model/GetAccountResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\GetAccountResponse**](../Model/Shipping/GetAccountResponse.md)
 
 ### HTTP request headers
 
@@ -147,7 +147,7 @@ This endpoint does not need any parameter.
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)
 
 ## `getRates()`
@@ -181,11 +181,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Shipping\GetRatesRequest**](../Model/GetRatesRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\GetRatesRequest**](../Model/ShippingGetRatesRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\GetRatesResponse**](../Model/GetRatesResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\GetRatesResponse**](../Model/Shipping/GetRatesResponse.md)
 
 ### HTTP request headers
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)
 
 ## `getShipment()`
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\GetShipmentResponse**](../Model/GetShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\GetShipmentResponse**](../Model/Shipping/GetShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)
 
 ## `getTrackingInformation()`
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\GetTrackingInformationResponse**](../Model/GetTrackingInformationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\GetTrackingInformationResponse**](../Model/Shipping/GetTrackingInformationResponse.md)
 
 ### HTTP request headers
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)
 
 ## `purchaseLabels()`
@@ -321,11 +321,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**|  |
- **body** | [**\Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest**](../Model/PurchaseLabelsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest**](../Model/ShippingPurchaseLabelsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsResponse**](../Model/PurchaseLabelsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\PurchaseLabelsResponse**](../Model/Shipping/PurchaseLabelsResponse.md)
 
 ### HTTP request headers
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)
 
 ## `purchaseShipment()`
@@ -367,11 +367,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest**](../Model/PurchaseShipmentRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest**](../Model/ShippingPurchaseShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentResponse**](../Model/PurchaseShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\PurchaseShipmentResponse**](../Model/Shipping/PurchaseShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)
 
 ## `retrieveShippingLabel()`
@@ -417,11 +417,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**|  |
  **tracking_id** | **string**|  |
- **body** | [**\Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest**](../Model/RetrieveShippingLabelRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest**](../Model/ShippingRetrieveShippingLabelRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelResponse**](../Model/RetrieveShippingLabelResponse.md)
+[**\Evers\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelResponse**](../Model/Shipping/RetrieveShippingLabelResponse.md)
 
 ### HTTP request headers
 
@@ -429,5 +429,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Shipping Model list]](../Model/Shipping)
 [[README]](../../README.md)

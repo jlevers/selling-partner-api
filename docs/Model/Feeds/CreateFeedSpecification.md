@@ -1,4 +1,4 @@
-# # CreateFeedSpecification
+## CreateFeedSpecification
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **input_feed_document_id** | **string** | The document identifier returned by the createFeedDocument operation. Encrypt and upload the feed document contents before calling the createFeed operation. |
 **feed_options** | **map[string,string]** | Additional options to control the feed. These vary by feed type. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Feeds Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

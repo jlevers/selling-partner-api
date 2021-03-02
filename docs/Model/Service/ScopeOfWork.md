@@ -1,4 +1,4 @@
-# # ScopeOfWork
+## ScopeOfWork
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **quantity** | **int** | The number of service jobs. | [optional]
 **required_skills** | **string[]** | A list of skills required to perform the job. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

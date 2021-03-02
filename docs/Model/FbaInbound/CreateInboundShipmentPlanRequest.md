@@ -1,4 +1,4 @@
-# # CreateInboundShipmentPlanRequest
+## CreateInboundShipmentPlanRequest
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **ship_to_country_subdivision_code** | **string** | The two-character country code, followed by a dash and then up to three characters that represent the subdivision of the country where the inbound shipment is to be sent. For example, \&quot;IN-MH\&quot;. In full ISO 3166-2 format.  Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error. | [optional]
 **inbound_shipment_plan_request_items** | [**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlanRequestItem[]**](InboundShipmentPlanRequestItem.md) |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

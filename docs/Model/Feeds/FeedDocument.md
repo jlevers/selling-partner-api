@@ -1,4 +1,4 @@
-# # FeedDocument
+## FeedDocument
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **encryption_details** | [**\Evers\SellingPartnerApi\Model\Feeds\FeedDocumentEncryptionDetails**](FeedDocumentEncryptionDetails.md) |  |
 **compression_algorithm** | **string** | If present, the feed document contents are compressed using the indicated algorithm. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Feeds Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

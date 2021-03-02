@@ -1,4 +1,4 @@
-# # SellerInputDefinition
+## SellerInputDefinition
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **stored_value** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInput**](AdditionalSellerInput.md) |  |
 **restricted_set_values** | **string[]** | The set of fixed values in an additional seller input. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

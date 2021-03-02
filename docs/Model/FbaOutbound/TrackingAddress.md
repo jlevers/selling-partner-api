@@ -1,4 +1,4 @@
-# # TrackingAddress
+## TrackingAddress
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **state** | **string** | The state. |
 **country** | **string** | The country. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

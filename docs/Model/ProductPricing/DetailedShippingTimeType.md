@@ -1,4 +1,4 @@
-# # DetailedShippingTimeType
+## DetailedShippingTimeType
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **available_date** | **float** | The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping. | [optional]
 **availability_type** | **string** | Indicates whether the item is available for shipping now, or on a known or an unknown date in the future. If known, the availableDate property indicates the date that the item will be available for shipping. Possible values: NOW, FUTURE_WITHOUT_DATE, FUTURE_WITH_DATE. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[ProductPricing Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # Address
+## Address
 
 ## Properties
 
@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **country_code** | **string** | The two digit country code, in ISO 3166-1 alpha-2 format. | [optional]
 **phone** | **string** | The phone number. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # OfferType
+## OfferType
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **item_sub_condition** | **string** | The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other. |
 **seller_sku** | **string** | The seller stock keeping unit (SKU) of the item. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[ProductPricing Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse**](../Model/MerchantFulfillment/CancelShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[MerchantFulfillment Model list]](../Model/MerchantFulfillment)
 [[README]](../../README.md)
 
 ## `cancelShipmentOld()`
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse**](../Model/CancelShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse**](../Model/MerchantFulfillment/CancelShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[MerchantFulfillment Model list]](../Model/MerchantFulfillment)
 [[README]](../../README.md)
 
 ## `createShipment()`
@@ -137,11 +137,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest**](../Model/MerchantFulfillmentCreateShipmentRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentResponse**](../Model/CreateShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentResponse**](../Model/MerchantFulfillment/CreateShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[MerchantFulfillment Model list]](../Model/MerchantFulfillment)
 [[README]](../../README.md)
 
 ## `getAdditionalSellerInputs()`
@@ -183,11 +183,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/MerchantFulfillmentGetAdditionalSellerInputsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse**](../Model/GetAdditionalSellerInputsResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse**](../Model/MerchantFulfillment/GetAdditionalSellerInputsResponse.md)
 
 ### HTTP request headers
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[MerchantFulfillment Model list]](../Model/MerchantFulfillment)
 [[README]](../../README.md)
 
 ## `getAdditionalSellerInputsOld()`
@@ -229,11 +229,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/GetAdditionalSellerInputsRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/MerchantFulfillmentGetAdditionalSellerInputsRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse**](../Model/GetAdditionalSellerInputsResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse**](../Model/MerchantFulfillment/GetAdditionalSellerInputsResponse.md)
 
 ### HTTP request headers
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[MerchantFulfillment Model list]](../Model/MerchantFulfillment)
 [[README]](../../README.md)
 
 ## `getEligibleShipmentServices()`
@@ -275,11 +275,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/MerchantFulfillmentGetEligibleShipmentServicesRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse**](../Model/GetEligibleShipmentServicesResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse**](../Model/MerchantFulfillment/GetEligibleShipmentServicesResponse.md)
 
 ### HTTP request headers
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[MerchantFulfillment Model list]](../Model/MerchantFulfillment)
 [[README]](../../README.md)
 
 ## `getEligibleShipmentServicesOld()`
@@ -321,11 +321,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/GetEligibleShipmentServicesRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/MerchantFulfillmentGetEligibleShipmentServicesRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse**](../Model/GetEligibleShipmentServicesResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse**](../Model/MerchantFulfillment/GetEligibleShipmentServicesResponse.md)
 
 ### HTTP request headers
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[MerchantFulfillment Model list]](../Model/MerchantFulfillment)
 [[README]](../../README.md)
 
 ## `getShipment()`
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetShipmentResponse**](../Model/GetShipmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\MerchantFulfillment\GetShipmentResponse**](../Model/MerchantFulfillment/GetShipmentResponse.md)
 
 ### HTTP request headers
 
@@ -379,5 +379,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[MerchantFulfillment Model list]](../Model/MerchantFulfillment)
 [[README]](../../README.md)

@@ -1,4 +1,4 @@
-# # Event
+## Event
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **event_time** | [**\DateTime**](\DateTime.md) | The date and time of an event for a shipment. |
 **location** | [**\Evers\SellingPartnerApi\Model\Shipping\Location**](Location.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Shipping Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

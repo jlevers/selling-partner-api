@@ -49,11 +49,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
+ **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContentPostContentDocumentRequest.md)| The content document request details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse**](../Model/PostContentDocumentResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse**](../Model/AplusContent/PostContentDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `getContentDocument()`
@@ -99,11 +99,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **included_data_set** | [**string[]**](../Model/string.md)| The set of A+ Content data types to include in the response. |
+ **included_data_set** | [**string[]**](../Model/AplusContentstring.md)| The set of A+ Content data types to include in the response. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\GetContentDocumentResponse**](../Model/GetContentDocumentResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\GetContentDocumentResponse**](../Model/AplusContent/GetContentDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `listContentDocumentAsinRelations()`
@@ -151,13 +151,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **included_data_set** | [**string[]**](../Model/string.md)| The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. | [optional]
- **asin_set** | [**string[]**](../Model/string.md)| The set of ASINs. | [optional]
+ **included_data_set** | [**string[]**](../Model/AplusContentstring.md)| The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. | [optional]
+ **asin_set** | [**string[]**](../Model/AplusContentstring.md)| The set of ASINs. | [optional]
  **page_token** | **string**| A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. | [optional]
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\ListContentDocumentAsinRelationsResponse**](../Model/ListContentDocumentAsinRelationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\ListContentDocumentAsinRelationsResponse**](../Model/AplusContent/ListContentDocumentAsinRelationsResponse.md)
 
 ### HTTP request headers
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `postContentDocumentApprovalSubmission()`
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentApprovalSubmissionResponse**](../Model/PostContentDocumentApprovalSubmissionResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentApprovalSubmissionResponse**](../Model/AplusContent/PostContentDocumentApprovalSubmissionResponse.md)
 
 ### HTTP request headers
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `postContentDocumentAsinRelations()`
@@ -251,11 +251,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_asin_relations_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest**](../Model/PostContentDocumentAsinRelationsRequest.md)| The content document ASIN relations request details. |
+ **post_content_document_asin_relations_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest**](../Model/AplusContentPostContentDocumentAsinRelationsRequest.md)| The content document ASIN relations request details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsResponse**](../Model/PostContentDocumentAsinRelationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsResponse**](../Model/AplusContent/PostContentDocumentAsinRelationsResponse.md)
 
 ### HTTP request headers
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `postContentDocumentSuspendSubmission()`
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentSuspendSubmissionResponse**](../Model/PostContentDocumentSuspendSubmissionResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentSuspendSubmissionResponse**](../Model/AplusContent/PostContentDocumentSuspendSubmissionResponse.md)
 
 ### HTTP request headers
 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `searchContentDocuments()`
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\SearchContentDocumentsResponse**](../Model/SearchContentDocumentsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\SearchContentDocumentsResponse**](../Model/AplusContent/SearchContentDocumentsResponse.md)
 
 ### HTTP request headers
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `searchContentPublishRecords()`
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\SearchContentPublishRecordsResponse**](../Model/SearchContentPublishRecordsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\SearchContentPublishRecordsResponse**](../Model/AplusContent/SearchContentPublishRecordsResponse.md)
 
 ### HTTP request headers
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `updateContentDocument()`
@@ -447,11 +447,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
+ **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContentPostContentDocumentRequest.md)| The content document request details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse**](../Model/PostContentDocumentResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse**](../Model/AplusContent/PostContentDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)
 
 ## `validateContentDocumentAsinRelations()`
@@ -496,12 +496,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/PostContentDocumentRequest.md)| The content document request details. |
- **asin_set** | [**string[]**](../Model/string.md)| The set of ASINs. | [optional]
+ **post_content_document_request** | [**\Evers\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContentPostContentDocumentRequest.md)| The content document request details. |
+ **asin_set** | [**string[]**](../Model/AplusContentstring.md)| The set of ASINs. | [optional]
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\AplusContent\ValidateContentDocumentAsinRelationsResponse**](../Model/ValidateContentDocumentAsinRelationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\AplusContent\ValidateContentDocumentAsinRelationsResponse**](../Model/AplusContent/ValidateContentDocumentAsinRelationsResponse.md)
 
 ### HTTP request headers
 
@@ -509,5 +509,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[AplusContent Model list]](../Model/AplusContent)
 [[README]](../../README.md)

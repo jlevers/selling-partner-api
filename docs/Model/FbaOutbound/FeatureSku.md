@@ -1,4 +1,4 @@
-# # FeatureSku
+## FeatureSku
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **sku_count** | **float** | The number of SKUs available for this service. | [optional]
 **overlapping_skus** | **string[]** | Other seller SKUs that are shared across the same inventory. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

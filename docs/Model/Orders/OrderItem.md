@@ -1,4 +1,4 @@
-# # OrderItem
+## OrderItem
 
 ## Properties
 
@@ -36,4 +36,4 @@ Name | Type | Description | Notes
 **ioss_number** | **string** | The IOSS number of the seller. Sellers selling in the EU will be assigned a unique IOSS number that must be listed on all packages sent to the EU. | [optional]
 **deemed_reseller_category** | **string** | The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # Product
+## Product
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **sales_rankings** | [**\Evers\SellingPartnerApi\Model\ProductPricing\SalesRank[]**](SalesRank.md) | A list of sales rank information for the item, by category. | [optional]
 **offers** | [**\Evers\SellingPartnerApi\Model\ProductPricing\OfferType[]**](OfferType.md) | A list of offers. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[ProductPricing Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

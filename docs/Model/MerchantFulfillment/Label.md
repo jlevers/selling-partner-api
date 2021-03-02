@@ -1,4 +1,4 @@
-# # Label
+## Label
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **label_format** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\LabelFormat**](LabelFormat.md) |  | [optional]
 **standard_id_for_label** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\StandardIdForLabel**](StandardIdForLabel.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

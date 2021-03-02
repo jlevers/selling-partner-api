@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse**](../Model/GetCatalogItemResponse.md)
+[**\Evers\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse**](../Model/Catalog/GetCatalogItemResponse.md)
 
 ### HTTP request headers
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Catalog Model list]](../Model/Catalog)
 [[README]](../../README.md)
 
 ## `listCatalogCategories()`
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse**](../Model/ListCatalogCategoriesResponse.md)
+[**\Evers\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse**](../Model/Catalog/ListCatalogCategoriesResponse.md)
 
 ### HTTP request headers
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Catalog Model list]](../Model/Catalog)
 [[README]](../../README.md)
 
 ## `listCatalogItems()`
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse**](../Model/ListCatalogItemsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse**](../Model/Catalog/ListCatalogItemsResponse.md)
 
 ### HTTP request headers
 
@@ -164,5 +164,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Catalog Model list]](../Model/Catalog)
 [[README]](../../README.md)

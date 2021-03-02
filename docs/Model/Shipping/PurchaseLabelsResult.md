@@ -1,4 +1,4 @@
-# # PurchaseLabelsResult
+## PurchaseLabelsResult
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **accepted_rate** | [**\Evers\SellingPartnerApi\Model\Shipping\AcceptedRate**](AcceptedRate.md) |  |
 **label_results** | [**\Evers\SellingPartnerApi\Model\Shipping\LabelResult[]**](LabelResult.md) | A list of label results |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Shipping Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

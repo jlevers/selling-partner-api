@@ -1,4 +1,4 @@
-# # SKUInboundGuidance
+## SKUInboundGuidance
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **inbound_guidance** | [**\Evers\SellingPartnerApi\Model\FbaInbound\InboundGuidance**](InboundGuidance.md) |  |
 **guidance_reason_list** | [**\Evers\SellingPartnerApi\Model\FbaInbound\GuidanceReason[]**](GuidanceReason.md) | A list of inbound guidance reason information. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

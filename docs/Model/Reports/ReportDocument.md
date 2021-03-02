@@ -1,4 +1,4 @@
-# # ReportDocument
+## ReportDocument
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **encryption_details** | [**\Evers\SellingPartnerApi\Model\Reports\ReportDocumentEncryptionDetails**](ReportDocumentEncryptionDetails.md) |  |
 **compression_algorithm** | **string** | If present, the report document contents have been compressed with the provided algorithm. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Reports Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

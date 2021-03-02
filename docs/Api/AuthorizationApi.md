@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse**](../Model/GetAuthorizationCodeResponse.md)
+[**\Evers\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse**](../Model/Authorization/GetAuthorizationCodeResponse.md)
 
 ### HTTP request headers
 
@@ -54,5 +54,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`, `errors`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Authorization Model list]](../Model/Authorization)
 [[README]](../../README.md)

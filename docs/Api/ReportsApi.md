@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\CancelReportResponse**](../Model/CancelReportResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\CancelReportResponse**](../Model/Reports/CancelReportResponse.md)
 
 ### HTTP request headers
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)
 
 ## `cancelReportSchedule()`
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse**](../Model/CancelReportScheduleResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse**](../Model/Reports/CancelReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)
 
 ## `createReport()`
@@ -138,11 +138,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Reports\CreateReportSpecification**](../Model/CreateReportSpecification.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Reports\CreateReportSpecification**](../Model/ReportsCreateReportSpecification.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\CreateReportResponse**](../Model/CreateReportResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\CreateReportResponse**](../Model/Reports/CreateReportResponse.md)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)
 
 ## `createReportSchedule()`
@@ -184,11 +184,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification**](../Model/CreateReportScheduleSpecification.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification**](../Model/ReportsCreateReportScheduleSpecification.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse**](../Model/CreateReportScheduleResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse**](../Model/Reports/CreateReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)
 
 ## `getReport()`
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportResponse**](../Model/GetReportResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportResponse**](../Model/Reports/GetReportResponse.md)
 
 ### HTTP request headers
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)
 
 ## `getReportDocument()`
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportDocumentResponse**](../Model/GetReportDocumentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportDocumentResponse**](../Model/Reports/GetReportDocumentResponse.md)
 
 ### HTTP request headers
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)
 
 ## `getReportSchedule()`
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportScheduleResponse**](../Model/GetReportScheduleResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportScheduleResponse**](../Model/Reports/GetReportScheduleResponse.md)
 
 ### HTTP request headers
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)
 
 ## `getReportSchedules()`
@@ -368,11 +368,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_types** | [**string[]**](../Model/string.md)| A list of report types used to filter report schedules. |
+ **report_types** | [**string[]**](../Model/Reportsstring.md)| A list of report types used to filter report schedules. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse**](../Model/GetReportSchedulesResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse**](../Model/Reports/GetReportSchedulesResponse.md)
 
 ### HTTP request headers
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)
 
 ## `getReports()`
@@ -420,9 +420,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_types** | [**string[]**](../Model/string.md)| A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. | [optional]
- **processing_statuses** | [**string[]**](../Model/string.md)| A list of processing statuses used to filter reports. | [optional]
- **marketplace_ids** | [**string[]**](../Model/string.md)| A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. | [optional]
+ **report_types** | [**string[]**](../Model/Reportsstring.md)| A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. | [optional]
+ **processing_statuses** | [**string[]**](../Model/Reportsstring.md)| A list of processing statuses used to filter reports. | [optional]
+ **marketplace_ids** | [**string[]**](../Model/Reportsstring.md)| A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. | [optional]
  **page_size** | **int**| The maximum number of reports to return in a single call. | [optional] [default to 10]
  **created_since** | **\DateTime**| The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. | [optional]
  **created_until** | **\DateTime**| The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. | [optional]
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Reports\GetReportsResponse**](../Model/GetReportsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Reports\GetReportsResponse**](../Model/Reports/GetReportsResponse.md)
 
 ### HTTP request headers
 
@@ -438,5 +438,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Reports Model list]](../Model/Reports)
 [[README]](../../README.md)

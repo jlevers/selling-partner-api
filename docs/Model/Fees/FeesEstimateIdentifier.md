@@ -1,4 +1,4 @@
-# # FeesEstimateIdentifier
+## FeesEstimateIdentifier
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **seller_input_identifier** | **string** | A unique identifier provided by the caller to track this request. | [optional]
 **optional_fulfillment_program** | [**\Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram**](OptionalFulfillmentProgram.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Fees Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

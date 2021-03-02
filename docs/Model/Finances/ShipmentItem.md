@@ -1,4 +1,4 @@
-# # ShipmentItem
+## ShipmentItem
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **cost_of_points_granted** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **cost_of_points_returned** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

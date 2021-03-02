@@ -1,4 +1,4 @@
-# # Amount
+## Amount
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **currency_code** | [**\Evers\SellingPartnerApi\Model\FbaInbound\CurrencyCode**](CurrencyCode.md) |  |
 **value** | **double** |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

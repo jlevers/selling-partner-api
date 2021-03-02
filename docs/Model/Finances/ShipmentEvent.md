@@ -1,4 +1,4 @@
-# # ShipmentEvent
+## ShipmentEvent
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **shipment_item_list** | [**\Evers\SellingPartnerApi\Model\Finances\ShipmentItem[]**](ShipmentItem.md) | A list of shipment items. | [optional]
 **shipment_item_adjustment_list** | [**\Evers\SellingPartnerApi\Model\Finances\ShipmentItem[]**](ShipmentItem.md) | A list of shipment items. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

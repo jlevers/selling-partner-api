@@ -1,4 +1,4 @@
-# # InboundShipmentPlan
+## InboundShipmentPlan
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **items** | [**\Evers\SellingPartnerApi\Model\FbaInbound\InboundShipmentPlanItem[]**](InboundShipmentPlanItem.md) | A list of inbound shipment plan item information. |
 **estimated_box_contents_fee** | [**\Evers\SellingPartnerApi\Model\FbaInbound\BoxContentsFeeDetails**](BoxContentsFeeDetails.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # FeesEstimateRequest
+## FeesEstimateRequest
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **identifier** | **string** | A unique identifier provided by the caller to track this request. |
 **optional_fulfillment_program** | [**\Evers\SellingPartnerApi\Model\Fees\OptionalFulfillmentProgram**](OptionalFulfillmentProgram.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Fees Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

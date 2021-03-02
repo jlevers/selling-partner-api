@@ -46,12 +46,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
  **item_type** | **string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. |
- **asins** | [**string[]**](../Model/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
- **skus** | [**string[]**](../Model/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
+ **asins** | [**string[]**](../Model/ProductPricingstring.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
+ **skus** | [**string[]**](../Model/ProductPricingstring.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse**](../Model/GetPricingResponse.md)
+[**\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse**](../Model/ProductPricing/GetPricingResponse.md)
 
 ### HTTP request headers
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[ProductPricing Model list]](../Model/ProductPricing)
 [[README]](../../README.md)
 
 ## `getItemOffers()`
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse**](../Model/GetOffersResponse.md)
+[**\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse**](../Model/ProductPricing/GetOffersResponse.md)
 
 ### HTTP request headers
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[ProductPricing Model list]](../Model/ProductPricing)
 [[README]](../../README.md)
 
 ## `getListingOffers()`
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse**](../Model/GetOffersResponse.md)
+[**\Evers\SellingPartnerApi\Model\ProductPricing\GetOffersResponse**](../Model/ProductPricing/GetOffersResponse.md)
 
 ### HTTP request headers
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[ProductPricing Model list]](../Model/ProductPricing)
 [[README]](../../README.md)
 
 ## `getPricing()`
@@ -199,13 +199,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
  **item_type** | **string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. |
- **asins** | [**string[]**](../Model/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
- **skus** | [**string[]**](../Model/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
+ **asins** | [**string[]**](../Model/ProductPricingstring.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
+ **skus** | [**string[]**](../Model/ProductPricingstring.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
  **item_condition** | **string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. | [optional]
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse**](../Model/GetPricingResponse.md)
+[**\Evers\SellingPartnerApi\Model\ProductPricing\GetPricingResponse**](../Model/ProductPricing/GetPricingResponse.md)
 
 ### HTTP request headers
 
@@ -213,5 +213,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[ProductPricing Model list]](../Model/ProductPricing)
 [[README]](../../README.md)

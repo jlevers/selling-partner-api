@@ -43,7 +43,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_sku** | **string**| The seller SKU that identifies the item. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. |
+ **marketplace_ids** | [**string[]**](../Model/SmallAndLightstring.md)| The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. |
 
 ### Return type
 
@@ -55,7 +55,7 @@ void (empty response body)
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[SmallAndLight Model list]](../Model/SmallAndLight)
 [[README]](../../README.md)
 
 ## `getSmallAndLightEligibilityBySellerSKU()`
@@ -91,11 +91,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_sku** | **string**| The seller SKU that identifies the item. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. |
+ **marketplace_ids** | [**string[]**](../Model/SmallAndLightstring.md)| The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility**](../Model/SmallAndLightEligibility.md)
+[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility**](../Model/SmallAndLight/SmallAndLightEligibility.md)
 
 ### HTTP request headers
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[SmallAndLight Model list]](../Model/SmallAndLight)
 [[README]](../../README.md)
 
 ## `getSmallAndLightEnrollmentBySellerSKU()`
@@ -139,11 +139,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_sku** | **string**| The seller SKU that identifies the item. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. |
+ **marketplace_ids** | [**string[]**](../Model/SmallAndLightstring.md)| The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLightEnrollment.md)
+[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLight/SmallAndLightEnrollment.md)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[SmallAndLight Model list]](../Model/SmallAndLight)
 [[README]](../../README.md)
 
 ## `getSmallAndLightFeePreview()`
@@ -185,11 +185,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest**](../Model/SmallAndLightFeePreviewRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviewRequest**](../Model/SmallAndLightSmallAndLightFeePreviewRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews**](../Model/SmallAndLightFeePreviews.md)
+[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews**](../Model/SmallAndLight/SmallAndLightFeePreviews.md)
 
 ### HTTP request headers
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[SmallAndLight Model list]](../Model/SmallAndLight)
 [[README]](../../README.md)
 
 ## `putSmallAndLightEnrollmentBySellerSKU()`
@@ -233,11 +233,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_sku** | **string**| The seller SKU that identifies the item. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The marketplace in which to enroll the item. Note: Accepts a single marketplace only. |
+ **marketplace_ids** | [**string[]**](../Model/SmallAndLightstring.md)| The marketplace in which to enroll the item. Note: Accepts a single marketplace only. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLightEnrollment.md)
+[**\Evers\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment**](../Model/SmallAndLight/SmallAndLightEnrollment.md)
 
 ### HTTP request headers
 
@@ -245,5 +245,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[SmallAndLight Model list]](../Model/SmallAndLight)
 [[README]](../../README.md)

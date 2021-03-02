@@ -1,4 +1,4 @@
-# # Image
+## Image
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **height** | [**\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
 **width** | [**\Evers\SellingPartnerApi\Model\Catalog\DecimalWithUnits**](DecimalWithUnits.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Catalog Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

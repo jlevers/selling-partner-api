@@ -1,4 +1,4 @@
-# # InboundShipmentHeader
+## InboundShipmentHeader
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **label_prep_preference** | [**\Evers\SellingPartnerApi\Model\FbaInbound\LabelPrepPreference**](LabelPrepPreference.md) |  |
 **intended_box_contents_source** | [**\Evers\SellingPartnerApi\Model\FbaInbound\IntendedBoxContentsSource**](IntendedBoxContentsSource.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

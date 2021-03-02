@@ -1,4 +1,4 @@
-# # QualifiersType
+## QualifiersType
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **shipping_time** | [**\Evers\SellingPartnerApi\Model\Catalog\ShippingTimeType**](ShippingTimeType.md) |  |
 **seller_positive_feedback_rating** | **string** | (98-100%, 95-97%, 90-94%, 80-89%, 70-79%, Less than 70%, or Just launched ) – Indicates the percentage of feedback ratings that were positive over the past 12 months. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Catalog Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -45,11 +45,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| An Amazon defined service job identifier. |
- **body** | [**\Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest**](../Model/AddAppointmentRequest.md)| Add appointment operation input details. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Service\AddAppointmentRequest**](../Model/ServiceAddAppointmentRequest.md)| Add appointment operation input details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/SetAppointmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/Service/SetAppointmentResponse.md)
 
 ### HTTP request headers
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Service Model list]](../Model/Service)
 [[README]](../../README.md)
 
 ## `cancelServiceJobByServiceJobId()`
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse**](../Model/CancelServiceJobByServiceJobIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse**](../Model/Service/CancelServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Service Model list]](../Model/Service)
 [[README]](../../README.md)
 
 ## `completeServiceJobByServiceJobId()`
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse**](../Model/CompleteServiceJobByServiceJobIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse**](../Model/Service/CompleteServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Service Model list]](../Model/Service)
 [[README]](../../README.md)
 
 ## `getServiceJobByServiceJobId()`
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse**](../Model/GetServiceJobByServiceJobIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse**](../Model/Service/GetServiceJobByServiceJobIdResponse.md)
 
 ### HTTP request headers
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Service Model list]](../Model/Service)
 [[README]](../../README.md)
 
 ## `getServiceJobs()`
@@ -243,9 +243,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_ids** | [**string[]**](../Model/string.md)| Used to select jobs that were placed in the specified marketplaces. |
- **service_order_ids** | [**string[]**](../Model/string.md)| List of service order ids for the query you want to perform.Max values supported 20. | [optional]
- **service_job_status** | [**string[]**](../Model/string.md)| A list of one or more job status by which to filter the list of jobs. | [optional]
+ **marketplace_ids** | [**string[]**](../Model/Servicestring.md)| Used to select jobs that were placed in the specified marketplaces. |
+ **service_order_ids** | [**string[]**](../Model/Servicestring.md)| List of service order ids for the query you want to perform.Max values supported 20. | [optional]
+ **service_job_status** | [**string[]**](../Model/Servicestring.md)| A list of one or more job status by which to filter the list of jobs. | [optional]
  **page_token** | **string**| String returned in the response of your previous request. | [optional]
  **page_size** | **int**| A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. | [optional] [default to 20]
  **sort_field** | **string**| Sort fields on which you want to sort the output. | [optional]
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse**](../Model/GetServiceJobsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\GetServiceJobsResponse**](../Model/Service/GetServiceJobsResponse.md)
 
 ### HTTP request headers
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Service Model list]](../Model/Service)
 [[README]](../../README.md)
 
 ## `rescheduleAppointmentForServiceJobByServiceJobId()`
@@ -305,11 +305,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| An Amazon defined service job identifier. |
  **appointment_id** | **string**| An existing appointment identifier for the Service Job. |
- **body** | [**\Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest**](../Model/RescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
+ **body** | [**\Evers\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest**](../Model/ServiceRescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/SetAppointmentResponse.md)
+[**\Evers\SellingPartnerApi\Model\Service\SetAppointmentResponse**](../Model/Service/SetAppointmentResponse.md)
 
 ### HTTP request headers
 
@@ -317,5 +317,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Service Model list]](../Model/Service)
 [[README]](../../README.md)

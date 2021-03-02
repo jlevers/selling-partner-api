@@ -1,4 +1,4 @@
-# # FeeDetail
+## FeeDetail
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **final_fee** | [**\Evers\SellingPartnerApi\Model\Fees\MoneyType**](MoneyType.md) |  |
 **included_fee_detail_list** | [**\Evers\SellingPartnerApi\Model\Fees\IncludedFeeDetail[]**](IncludedFeeDetail.md) | A list of other fees that contribute to a given fee. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Fees Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

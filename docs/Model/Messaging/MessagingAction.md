@@ -1,4 +1,4 @@
-# # MessagingAction
+## MessagingAction
 
 ## Properties
 
@@ -6,4 +6,4 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Messaging Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

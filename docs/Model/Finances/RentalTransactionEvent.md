@@ -1,4 +1,4 @@
-# # RentalTransactionEvent
+## RentalTransactionEvent
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **rental_reimbursement** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **rental_tax_withheld_list** | [**\Evers\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]**](TaxWithheldComponent.md) | A list of information about taxes withheld. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

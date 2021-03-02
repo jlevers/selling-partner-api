@@ -1,4 +1,4 @@
-# # AttributeSet
+## AttributeSet
 
 ## Properties
 
@@ -101,4 +101,4 @@ Name | Type | Description | Notes
 **warranty** | **string** | The warranty attribute of the item. | [optional]
 **weee_tax_value** | [**\Evers\SellingPartnerApi\Model\Catalog\Price**](Price.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Catalog Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

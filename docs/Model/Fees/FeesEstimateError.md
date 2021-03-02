@@ -1,4 +1,4 @@
-# # FeesEstimateError
+## FeesEstimateError
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **message** | **string** | A message that describes the error condition. |
 **detail** | **object[]** | Additional information that can help the caller understand or fix the issue. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Fees Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

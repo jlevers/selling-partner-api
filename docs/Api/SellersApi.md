@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse**](../Model/GetMarketplaceParticipationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse**](../Model/Sellers/GetMarketplaceParticipationsResponse.md)
 
 ### HTTP request headers
 
@@ -47,5 +47,5 @@ This endpoint does not need any parameter.
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Sellers Model list]](../Model/Sellers)
 [[README]](../../README.md)

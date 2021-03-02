@@ -41,14 +41,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_ids** | [**string[]**](../Model/string.md)| A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Uploadsstring.md)| A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified. |
  **content_md5** | **string**| An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit. |
  **resource** | **string**| The URL of the resource for the upload destination that you are creating. For example, to create an upload destination for a Buyer-Seller Messaging message, the {resource} would be /messaging and the path would be  /uploads/v1/uploadDestinations/messaging |
  **content_type** | **string**| The content type of the file to be uploaded. | [optional]
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse**](../Model/CreateUploadDestinationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse**](../Model/Uploads/CreateUploadDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -56,5 +56,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Uploads Model list]](../Model/Uploads)
 [[README]](../../README.md)

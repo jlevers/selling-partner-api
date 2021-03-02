@@ -1,4 +1,4 @@
-# # TransportHeader
+## TransportHeader
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **is_partnered** | **bool** | Indicates whether a putTransportDetails request is for a partnered carrier.  Possible values:  * true – Request is for an Amazon-partnered carrier.  * false – Request is for a non-Amazon-partnered carrier. |
 **shipment_type** | [**\Evers\SellingPartnerApi\Model\FbaInbound\ShipmentType**](ShipmentType.md) |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # AdjustmentItem
+## AdjustmentItem
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **product_description** | **string** | A short description of the item. | [optional]
 **asin** | **string** | The Amazon Standard Identification Number (ASIN) of the item. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

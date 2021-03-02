@@ -1,4 +1,4 @@
-# # StandardImageCaptionBlock
+## StandardImageCaptionBlock
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **image** | [**\Evers\SellingPartnerApi\Model\AplusContent\ImageComponent**](ImageComponent.md) |  | [optional]
 **caption** | [**\Evers\SellingPartnerApi\Model\AplusContent\TextComponent**](TextComponent.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

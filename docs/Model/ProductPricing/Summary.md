@@ -1,4 +1,4 @@
-# # Summary
+## Summary
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **buy_box_eligible_offers** | [**\Evers\SellingPartnerApi\Model\ProductPricing\OfferCountType[]**](OfferCountType.md) |  | [optional]
 **offers_available_time** | [**\DateTime**](\DateTime.md) | When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[ProductPricing Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

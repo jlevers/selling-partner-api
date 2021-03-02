@@ -1,4 +1,4 @@
-# # GetOffersResult
+## GetOffersResult
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **summary** | [**\Evers\SellingPartnerApi\Model\ProductPricing\Summary**](Summary.md) |  |
 **offers** | [**\Evers\SellingPartnerApi\Model\ProductPricing\OfferDetail[]**](OfferDetail.md) |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[ProductPricing Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

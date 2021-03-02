@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse**](../Model/CancelFulfillmentOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse**](../Model/FbaOutbound/CancelFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `createFulfillmentOrder()`
@@ -95,11 +95,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest**](../Model/CreateFulfillmentOrderRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest**](../Model/FbaOutboundCreateFulfillmentOrderRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse**](../Model/CreateFulfillmentOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse**](../Model/FbaOutbound/CreateFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `createFulfillmentReturn()`
@@ -143,11 +143,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_fulfillment_order_id** | **string**| An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. |
- **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest**](../Model/CreateFulfillmentReturnRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest**](../Model/FbaOutboundCreateFulfillmentReturnRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse**](../Model/CreateFulfillmentReturnResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse**](../Model/FbaOutbound/CreateFulfillmentReturnResponse.md)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `getFeatureInventory()`
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse**](../Model/GetFeatureInventoryResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse**](../Model/FbaOutbound/GetFeatureInventoryResponse.md)
 
 ### HTTP request headers
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `getFeatureSKU()`
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse**](../Model/GetFeatureSkuResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse**](../Model/FbaOutbound/GetFeatureSkuResponse.md)
 
 ### HTTP request headers
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `getFeatures()`
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse**](../Model/GetFeaturesResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse**](../Model/FbaOutbound/GetFeaturesResponse.md)
 
 ### HTTP request headers
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `getFulfillmentOrder()`
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse**](../Model/GetFulfillmentOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse**](../Model/FbaOutbound/GetFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `getFulfillmentPreview()`
@@ -381,11 +381,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest**](../Model/GetFulfillmentPreviewRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest**](../Model/FbaOutboundGetFulfillmentPreviewRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse**](../Model/GetFulfillmentPreviewResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse**](../Model/FbaOutbound/GetFulfillmentPreviewResponse.md)
 
 ### HTTP request headers
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `getPackageTrackingDetails()`
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse**](../Model/GetPackageTrackingDetailsResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse**](../Model/FbaOutbound/GetPackageTrackingDetailsResponse.md)
 
 ### HTTP request headers
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `listAllFulfillmentOrders()`
@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse**](../Model/ListAllFulfillmentOrdersResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse**](../Model/FbaOutbound/ListAllFulfillmentOrdersResponse.md)
 
 ### HTTP request headers
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `listReturnReasonCodes()`
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse**](../Model/ListReturnReasonCodesResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse**](../Model/FbaOutbound/ListReturnReasonCodesResponse.md)
 
 ### HTTP request headers
 
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)
 
 ## `updateFulfillmentOrder()`
@@ -575,11 +575,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_fulfillment_order_id** | **string**| The identifier assigned to the item by the seller when the fulfillment order was created. |
- **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest**](../Model/UpdateFulfillmentOrderRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest**](../Model/FbaOutboundUpdateFulfillmentOrderRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse**](../Model/UpdateFulfillmentOrderResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse**](../Model/FbaOutbound/UpdateFulfillmentOrderResponse.md)
 
 ### HTTP request headers
 
@@ -587,5 +587,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaOutbound Model list]](../Model/FbaOutbound)
 [[README]](../../README.md)

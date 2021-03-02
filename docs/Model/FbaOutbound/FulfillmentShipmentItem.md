@@ -1,4 +1,4 @@
-# # FulfillmentShipmentItem
+## FulfillmentShipmentItem
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **package_number** | **int** | An identifier for the package that contains the item quantity. | [optional]
 **serial_number** | **string** | The serial number of the shipped item. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

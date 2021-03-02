@@ -1,4 +1,4 @@
-# # FBMItem
+## FBMItem
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **transparency_code_list** | **string[]** | A list of transparency codes. | [optional]
 **item_level_seller_inputs_list** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\AdditionalSellerInputs[]**](AdditionalSellerInputs.md) | A list of additional seller input pairs required to purchase shipping. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

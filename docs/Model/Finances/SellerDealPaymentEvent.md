@@ -1,4 +1,4 @@
-# # SellerDealPaymentEvent
+## SellerDealPaymentEvent
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **tax_amount** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **total_amount** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

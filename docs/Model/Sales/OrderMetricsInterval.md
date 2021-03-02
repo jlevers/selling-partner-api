@@ -1,4 +1,4 @@
-# # OrderMetricsInterval
+## OrderMetricsInterval
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **average_unit_price** | [**\Evers\SellingPartnerApi\Model\Sales\Money**](Money.md) |  |
 **total_sales** | [**\Evers\SellingPartnerApi\Model\Sales\Money**](Money.md) |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Sales Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

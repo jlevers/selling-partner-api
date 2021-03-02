@@ -1,4 +1,4 @@
-# # PackageTrackingDetails
+## PackageTrackingDetails
 
 ## Properties
 
@@ -19,4 +19,4 @@ Name | Type | Description | Notes
 **additional_location_info** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\AdditionalLocationInfo**](AdditionalLocationInfo.md) |  | [optional]
 **tracking_events** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\TrackingEvent[]**](TrackingEvent.md) | An array of tracking event information. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

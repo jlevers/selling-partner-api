@@ -1,4 +1,4 @@
-# # CODSettings
+## CODSettings
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **shipping_charge** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
 **shipping_charge_tax** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

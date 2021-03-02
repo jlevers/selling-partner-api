@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse**](../Model/ListFinancialEventGroupsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse**](../Model/Finances/ListFinancialEventGroupsResponse.md)
 
 ### HTTP request headers
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Finances Model list]](../Model/Finances)
 [[README]](../../README.md)
 
 ## `listFinancialEvents()`
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/Finances/ListFinancialEventsResponse.md)
 
 ### HTTP request headers
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Finances Model list]](../Model/Finances)
 [[README]](../../README.md)
 
 ## `listFinancialEventsByGroupId()`
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/Finances/ListFinancialEventsResponse.md)
 
 ### HTTP request headers
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Finances Model list]](../Model/Finances)
 [[README]](../../README.md)
 
 ## `listFinancialEventsByOrderId()`
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/ListFinancialEventsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse**](../Model/Finances/ListFinancialEventsResponse.md)
 
 ### HTTP request headers
 
@@ -211,5 +211,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Finances Model list]](../Model/Finances)
 [[README]](../../README.md)

@@ -1,4 +1,4 @@
-# # DebtRecoveryItem
+## DebtRecoveryItem
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **group_begin_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 **group_end_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # PriceToEstimateFees
+## PriceToEstimateFees
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **shipping** | [**\Evers\SellingPartnerApi\Model\Fees\MoneyType**](MoneyType.md) |  | [optional]
 **points** | [**\Evers\SellingPartnerApi\Model\Fees\Points**](Points.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Fees Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

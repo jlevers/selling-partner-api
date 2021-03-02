@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Evers\SellingPartnerApi\Model\Notifications\CreateDestinationRequest**](../Model/CreateDestinationRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Notifications\CreateDestinationRequest**](../Model/NotificationsCreateDestinationRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\CreateDestinationResponse**](../Model/CreateDestinationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\CreateDestinationResponse**](../Model/Notifications/CreateDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `Successful Response`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Notifications Model list]](../Model/Notifications)
 [[README]](../../README.md)
 
 ## `createSubscription()`
@@ -93,11 +93,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notification_type** | **string**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. |
- **body** | [**\Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)|  |
+ **body** | [**\Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/NotificationsCreateSubscriptionRequest.md)|  |
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse**](../Model/CreateSubscriptionResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse**](../Model/Notifications/CreateSubscriptionResponse.md)
 
 ### HTTP request headers
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `Successful Response`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Notifications Model list]](../Model/Notifications)
 [[README]](../../README.md)
 
 ## `deleteDestination()`
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\DeleteDestinationResponse**](../Model/DeleteDestinationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\DeleteDestinationResponse**](../Model/Notifications/DeleteDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `Successful Response`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Notifications Model list]](../Model/Notifications)
 [[README]](../../README.md)
 
 ## `deleteSubscriptionById()`
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse**](../Model/DeleteSubscriptionByIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse**](../Model/Notifications/DeleteSubscriptionByIdResponse.md)
 
 ### HTTP request headers
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `Successful Operation Response`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Notifications Model list]](../Model/Notifications)
 [[README]](../../README.md)
 
 ## `getDestination()`
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\GetDestinationResponse**](../Model/GetDestinationResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\GetDestinationResponse**](../Model/Notifications/GetDestinationResponse.md)
 
 ### HTTP request headers
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `Successful Response`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Notifications Model list]](../Model/Notifications)
 [[README]](../../README.md)
 
 ## `getDestinations()`
@@ -280,7 +280,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\GetDestinationsResponse**](../Model/GetDestinationsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\GetDestinationsResponse**](../Model/Notifications/GetDestinationsResponse.md)
 
 ### HTTP request headers
 
@@ -288,7 +288,7 @@ This endpoint does not need any parameter.
 - **Accept**: `application/json`, `Successful Response`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Notifications Model list]](../Model/Notifications)
 [[README]](../../README.md)
 
 ## `getSubscription()`
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionResponse**](../Model/GetSubscriptionResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionResponse**](../Model/Notifications/GetSubscriptionResponse.md)
 
 ### HTTP request headers
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `Successful Response`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Notifications Model list]](../Model/Notifications)
 [[README]](../../README.md)
 
 ## `getSubscriptionById()`
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse**](../Model/GetSubscriptionByIdResponse.md)
+[**\Evers\SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse**](../Model/Notifications/GetSubscriptionByIdResponse.md)
 
 ### HTTP request headers
 
@@ -382,5 +382,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `Successful Response`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Notifications Model list]](../Model/Notifications)
 [[README]](../../README.md)

@@ -1,4 +1,4 @@
-# # StandardSingleImageSpecsDetailModule
+## StandardSingleImageSpecsDetailModule
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **specification_list_block** | [**\Evers\SellingPartnerApi\Model\AplusContent\StandardHeaderTextListBlock**](StandardHeaderTextListBlock.md) |  | [optional]
 **specification_text_block** | [**\Evers\SellingPartnerApi\Model\AplusContent\StandardTextBlock**](StandardTextBlock.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

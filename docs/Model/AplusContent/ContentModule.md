@@ -1,4 +1,4 @@
-# # ContentModule
+## ContentModule
 
 ## Properties
 
@@ -21,4 +21,4 @@ Name | Type | Description | Notes
 **standard_text** | [**\Evers\SellingPartnerApi\Model\AplusContent\StandardTextModule**](StandardTextModule.md) |  | [optional]
 **standard_three_image_text** | [**\Evers\SellingPartnerApi\Model\AplusContent\StandardThreeImageTextModule**](StandardThreeImageTextModule.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

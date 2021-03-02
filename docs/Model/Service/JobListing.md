@@ -1,4 +1,4 @@
-# # JobListing
+## JobListing
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **previous_page_token** | **string** | A generated string used to pass information to your next request.If previousPageToken is returned, pass the value of previousPageToken to the pageToken to get previous page results. | [optional]
 **jobs** | [**\Evers\SellingPartnerApi\Model\Service\ServiceJob[]**](ServiceJob.md) | List of job details for the given input. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

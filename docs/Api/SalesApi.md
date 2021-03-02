@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_ids** | [**string[]**](../Model/string.md)| A list of marketplace identifiers. Example: ATVPDKIKX0DER indicates the US marketplace. |
+ **marketplace_ids** | [**string[]**](../Model/Salesstring.md)| A list of marketplace identifiers. Example: ATVPDKIKX0DER indicates the US marketplace. |
  **interval** | **string**| A time interval used for selecting order metrics. This takes the form of two dates separated by two hyphens (first date is inclusive; second date is exclusive). Dates are in ISO8601 format and must represent absolute time (either Z notation or offset notation). Example: 2018-09-01T00:00:00-07:00--2018-09-04T00:00:00-07:00 requests order metrics for Sept 1st, 2nd and 3rd in the -07:00 zone. |
  **granularity** | **string**| The granularity of the grouping of order metrics, based on a unit of time. Specifying granularity&#x3D;Hour results in a successful request only if the interval specified is less than or equal to 30 days from now. For all other granularities, the interval specified must be less or equal to 2 years from now. Specifying granularity&#x3D;Total results in order metrics that are aggregated over the entire interval that you specify. If the interval start and end date don’t align with the specified granularity, the head and tail end of the response interval will contain partial data. Example: Day to get a daily breakdown of the request interval, where the day boundary is defined by the granularityTimeZone. |
  **granularity_time_zone** | **string**| An IANA-compatible time zone for determining the day boundary. Required when specifying a granularity value greater than Hour. The granularityTimeZone value must align with the offset of the specified interval value. For example, if the interval value uses Z notation, then granularityTimeZone must be UTC. If the interval value uses an offset, then granularityTimeZone must be an IANA-compatible time zone that matches the offset. Example: US/Pacific to compute day boundaries, accounting for daylight time savings, for US/Pacific zone. | [optional]
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse**](../Model/GetOrderMetricsResponse.md)
+[**\Evers\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse**](../Model/Sales/GetOrderMetricsResponse.md)
 
 ### HTTP request headers
 
@@ -66,5 +66,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `payload`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[Sales Model list]](../Model/Sales)
 [[README]](../../README.md)

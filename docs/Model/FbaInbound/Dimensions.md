@@ -1,4 +1,4 @@
-# # Dimensions
+## Dimensions
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **height** | **double** |  |
 **unit** | [**\Evers\SellingPartnerApi\Model\FbaInbound\UnitOfMeasurement**](UnitOfMeasurement.md) |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

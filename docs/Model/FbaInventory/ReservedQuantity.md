@@ -1,4 +1,4 @@
-# # ReservedQuantity
+## ReservedQuantity
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **pending_transshipment_quantity** | **int** | The number of units being transferred from one fulfillment center to another. | [optional]
 **fc_processing_quantity** | **int** | The number of units that have been sidelined at the fulfillment center for additional processing. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInventory Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

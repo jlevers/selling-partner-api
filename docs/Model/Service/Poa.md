@@ -1,4 +1,4 @@
-# # Poa
+## Poa
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **upload_time** | [**\DateTime**](\DateTime.md) | The date and time when the POA was uploaded, in ISO 8601 format. | [optional]
 **poa_type** | **string** | The type of POA uploaded. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

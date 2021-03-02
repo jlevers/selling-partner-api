@@ -1,4 +1,4 @@
-# # StandardImageSidebarModule
+## StandardImageSidebarModule
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **sidebar_image_text_block** | [**\Evers\SellingPartnerApi\Model\AplusContent\StandardImageTextBlock**](StandardImageTextBlock.md) |  | [optional]
 **sidebar_list_block** | [**\Evers\SellingPartnerApi\Model\AplusContent\StandardTextListBlock**](StandardTextListBlock.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

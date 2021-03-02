@@ -1,4 +1,4 @@
-# # RelationshipType
+## RelationshipType
 
 ## Properties
 
@@ -27,4 +27,4 @@ Name | Type | Description | Notes
 **package_quantity** | **int** | The package quantity variation of an item. | [optional]
 **item_dimensions** | [**\Evers\SellingPartnerApi\Model\Catalog\DimensionType**](DimensionType.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Catalog Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

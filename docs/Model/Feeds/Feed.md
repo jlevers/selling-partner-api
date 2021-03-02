@@ -1,4 +1,4 @@
-# # Feed
+## Feed
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **processing_end_time** | [**\DateTime**](\DateTime.md) | The date and time when feed processing completed, in ISO 8601 date time format. | [optional]
 **result_feed_document_id** | **string** | The identifier for the feed document. This identifier is unique only in combination with a seller ID. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Feeds Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

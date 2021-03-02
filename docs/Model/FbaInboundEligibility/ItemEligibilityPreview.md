@@ -1,4 +1,4 @@
-# # ItemEligibilityPreview
+## ItemEligibilityPreview
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **is_eligible_for_program** | **bool** | Indicates if the item is eligible for the program. |
 **ineligibility_reason_list** | **string[]** | Potential Ineligibility Reason Codes. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInboundEligibility Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

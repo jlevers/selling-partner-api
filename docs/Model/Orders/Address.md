@@ -1,4 +1,4 @@
-# # Address
+## Address
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **phone** | **string** | The phone number. Not returned for Fulfillment by Amazon (FBA) orders. | [optional]
 **address_type** | **string** | The address type of the shipping address. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

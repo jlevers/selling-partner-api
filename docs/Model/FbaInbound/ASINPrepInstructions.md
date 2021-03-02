@@ -1,4 +1,4 @@
-# # ASINPrepInstructions
+## ASINPrepInstructions
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **prep_guidance** | [**\Evers\SellingPartnerApi\Model\FbaInbound\PrepGuidance**](PrepGuidance.md) |  | [optional]
 **prep_instruction_list** | [**\Evers\SellingPartnerApi\Model\FbaInbound\PrepInstruction[]**](PrepInstruction.md) | A list of preparation instructions to help with item sourcing decisions. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

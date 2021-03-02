@@ -1,4 +1,4 @@
-# # Appointment
+## Appointment
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **rescheduled_appointment_id** | **string** | The appointment identifier. | [optional]
 **poa** | [**\Evers\SellingPartnerApi\Model\Service\Poa**](Poa.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

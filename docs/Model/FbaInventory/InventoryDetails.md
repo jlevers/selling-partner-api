@@ -1,4 +1,4 @@
-# # InventoryDetails
+## InventoryDetails
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **researching_quantity** | [**\Evers\SellingPartnerApi\Model\FbaInventory\ResearchingQuantity**](ResearchingQuantity.md) |  | [optional]
 **unfulfillable_quantity** | [**\Evers\SellingPartnerApi\Model\FbaInventory\UnfulfillableQuantity**](UnfulfillableQuantity.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInventory Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

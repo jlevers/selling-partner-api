@@ -1,4 +1,4 @@
-# # AdjustmentEvent
+## AdjustmentEvent
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **adjustment_amount** | [**\Evers\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **adjustment_item_list** | [**\Evers\SellingPartnerApi\Model\Finances\AdjustmentItem[]**](AdjustmentItem.md) | A list of information about items in an adjustment to the seller&#39;s account. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # GetFulfillmentPreviewItem
+## GetFulfillmentPreviewItem
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **per_unit_declared_value** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
 **seller_fulfillment_order_item_id** | **string** | A fulfillment order item identifier that the seller creates to track items in the fulfillment preview. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

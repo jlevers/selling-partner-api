@@ -1,4 +1,4 @@
-# # PayWithAmazonEvent
+## PayWithAmazonEvent
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **fulfillment_channel** | **string** | The fulfillment channel.  Possible values:  * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)  * MFN - Merchant Fulfillment Network (self-fulfilled) | [optional]
 **store_name** | **string** | The store name where the event occurred. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

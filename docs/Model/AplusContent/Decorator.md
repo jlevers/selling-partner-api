@@ -1,4 +1,4 @@
-# # Decorator
+## Decorator
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **length** | **int** | The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters. | [optional]
 **depth** | **int** | The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[AplusContent Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

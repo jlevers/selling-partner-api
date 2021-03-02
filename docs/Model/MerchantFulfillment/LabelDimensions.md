@@ -1,4 +1,4 @@
-# # LabelDimensions
+## LabelDimensions
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **width** | **float** | A label dimension. |
 **unit** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\UnitOfLength**](UnitOfLength.md) |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

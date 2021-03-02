@@ -1,4 +1,4 @@
-# # ReportSchedule
+## ReportSchedule
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **period** | **string** | An ISO 8601 period value that indicates how often a report should be created. |
 **next_report_creation_time** | [**\DateTime**](\DateTime.md) | The date and time when the schedule will create its next report, in ISO 8601 date time format. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Reports Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

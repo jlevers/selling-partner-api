@@ -1,4 +1,4 @@
-# # AdditionalSellerInput
+## AdditionalSellerInput
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **value_as_dimension** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\Length**](Length.md) |  | [optional]
 **value_as_currency** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount**](CurrencyAmount.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # Report
+## Report
 
 ## Properties
 
@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **processing_end_time** | [**\DateTime**](\DateTime.md) | The date and time when the report processing completed, in ISO 8601 date time format. | [optional]
 **report_document_id** | **string** | The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve and decrypt the report document&#39;s contents. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Reports Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # Contact
+## Contact
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **email** | **string** | The email address of the contact person. |
 **fax** | **string** | The fax number of the contact person. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

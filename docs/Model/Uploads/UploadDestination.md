@@ -1,4 +1,4 @@
-# # UploadDestination
+## UploadDestination
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **url** | **string** | The URL for the upload destination. | [optional]
 **headers** | **object** | The headers to include in the upload request. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Uploads Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

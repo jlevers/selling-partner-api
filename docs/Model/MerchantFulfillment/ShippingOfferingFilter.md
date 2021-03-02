@@ -1,4 +1,4 @@
-# # ShippingOfferingFilter
+## ShippingOfferingFilter
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **carrier_will_pick_up** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\CarrierWillPickUpOption**](CarrierWillPickUpOption.md) |  | [optional]
 **delivery_experience** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\DeliveryExperienceOption**](DeliveryExperienceOption.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # FulfillmentPreviewItem
+## FulfillmentPreviewItem
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **estimated_shipping_weight** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\Weight**](Weight.md) |  | [optional]
 **shipping_weight_calculation_method** | **string** | The method used to calculate the estimated shipping weight. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -42,11 +42,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asin** | **string**| The ASIN of the item for which you want an eligibility preview. |
  **program** | **string**| The program that you want to check eligibility against. |
- **marketplace_ids** | [**string[]**](../Model/string.md)| The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. | [optional]
+ **marketplace_ids** | [**string[]**](../Model/FbaInboundEligibilitystring.md)| The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. | [optional]
 
 ### Return type
 
-[**\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse**](../Model/GetItemEligibilityPreviewResponse.md)
+[**\Evers\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse**](../Model/FbaInboundEligibility/GetItemEligibilityPreviewResponse.md)
 
 ### HTTP request headers
 
@@ -54,5 +54,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`, `ItemEligibilityPreview`
 
 [[Top]](#) [[API list]](../)
-[[Model list]](../Models)
+[[FbaInboundEligibility Model list]](../Model/FbaInboundEligibility)
 [[README]](../../README.md)

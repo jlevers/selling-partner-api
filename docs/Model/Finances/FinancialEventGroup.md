@@ -1,4 +1,4 @@
-# # FinancialEventGroup
+## FinancialEventGroup
 
 ## Properties
 
@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **financial_event_group_start** | [**\DateTime**](\DateTime.md) |  | [optional]
 **financial_event_group_end** | [**\DateTime**](\DateTime.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

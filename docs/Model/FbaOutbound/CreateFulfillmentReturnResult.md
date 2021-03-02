@@ -1,4 +1,4 @@
-# # CreateFulfillmentReturnResult
+## CreateFulfillmentReturnResult
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **invalid_return_items** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\InvalidReturnItem[]**](InvalidReturnItem.md) | An array of invalid return item information. | [optional]
 **return_authorizations** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\ReturnAuthorization[]**](ReturnAuthorization.md) | An array of return authorization information. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

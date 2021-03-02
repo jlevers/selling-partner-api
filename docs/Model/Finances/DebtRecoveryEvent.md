@@ -1,4 +1,4 @@
-# # DebtRecoveryEvent
+## DebtRecoveryEvent
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **debt_recovery_item_list** | [**\Evers\SellingPartnerApi\Model\Finances\DebtRecoveryItem[]**](DebtRecoveryItem.md) | A list of debt recovery item information. | [optional]
 **charge_instrument_list** | [**\Evers\SellingPartnerApi\Model\Finances\ChargeInstrument[]**](ChargeInstrument.md) | A list of payment instruments. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # FileContents
+## FileContents
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **file_type** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\FileType**](FileType.md) |  |
 **checksum** | **string** | An MD5 hash to validate the PDF document data, in the form of a Base64-encoded string. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

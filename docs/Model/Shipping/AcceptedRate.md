@@ -1,4 +1,4 @@
-# # AcceptedRate
+## AcceptedRate
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **service_type** | [**\Evers\SellingPartnerApi\Model\Shipping\ServiceType**](ServiceType.md) |  | [optional]
 **promise** | [**\Evers\SellingPartnerApi\Model\Shipping\ShippingPromiseSet**](ShippingPromiseSet.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Shipping Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # FinancialEvents
+## FinancialEvents
 
 ## Properties
 
@@ -27,4 +27,4 @@ Name | Type | Description | Notes
 **affordability_expense_event_list** | [**\Evers\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]**](AffordabilityExpenseEvent.md) | A list of expense information related to an affordability promotion. | [optional]
 **affordability_expense_reversal_event_list** | [**\Evers\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]**](AffordabilityExpenseEvent.md) | A list of expense information related to an affordability promotion. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

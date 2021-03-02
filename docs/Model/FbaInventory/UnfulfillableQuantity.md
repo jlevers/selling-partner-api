@@ -1,4 +1,4 @@
-# # UnfulfillableQuantity
+## UnfulfillableQuantity
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **defective_quantity** | **int** | The number of units in defective disposition. | [optional]
 **expired_quantity** | **int** | The number of units in expired disposition. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaInventory Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

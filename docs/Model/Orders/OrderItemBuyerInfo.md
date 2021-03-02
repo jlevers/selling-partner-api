@@ -1,4 +1,4 @@
-# # OrderItemBuyerInfo
+## OrderItemBuyerInfo
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **gift_message_text** | **string** | A gift message provided by the buyer. | [optional]
 **gift_wrap_level** | **string** | The gift wrap level specified by the buyer. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

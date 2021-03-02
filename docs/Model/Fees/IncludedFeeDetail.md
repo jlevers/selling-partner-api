@@ -1,4 +1,4 @@
-# # IncludedFeeDetail
+## IncludedFeeDetail
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **tax_amount** | [**\Evers\SellingPartnerApi\Model\Fees\MoneyType**](MoneyType.md) |  | [optional]
 **final_fee** | [**\Evers\SellingPartnerApi\Model\Fees\MoneyType**](MoneyType.md) |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Fees Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

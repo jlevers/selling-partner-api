@@ -1,4 +1,4 @@
-# # Error
+## Error
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **details** | **string** | Additional details that can help the caller understand or fix the issue. | [optional]
 **error_level** | **string** | The type of error. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

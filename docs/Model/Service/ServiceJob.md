@@ -1,4 +1,4 @@
-# # ServiceJob
+## ServiceJob
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **associated_items** | [**\Evers\SellingPartnerApi\Model\Service\AssociatedItem[]**](AssociatedItem.md) | A list of items associated with the service job. | [optional]
 **service_location** | [**\Evers\SellingPartnerApi\Model\Service\ServiceLocation**](ServiceLocation.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

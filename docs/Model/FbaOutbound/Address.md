@@ -1,4 +1,4 @@
-# # Address
+## Address
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **country_code** | **string** | The two digit country code. In ISO 3166-1 alpha-2 format. |
 **phone** | **string** | The phone number of the person, business, or institution located at the address. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # RetrochargeEvent
+## RetrochargeEvent
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **marketplace_name** | **string** | The name of the marketplace where the retrocharge event occurred. | [optional]
 **retrocharge_tax_withheld_list** | [**\Evers\SellingPartnerApi\Model\Finances\TaxWithheldComponent[]**](TaxWithheldComponent.md) | A list of information about taxes withheld. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

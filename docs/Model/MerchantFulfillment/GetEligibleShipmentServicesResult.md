@@ -1,4 +1,4 @@
-# # GetEligibleShipmentServicesResult
+## GetEligibleShipmentServicesResult
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **temporarily_unavailable_carrier_list** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[]**](TemporarilyUnavailableCarrier.md) | A list of temporarily unavailable carriers. | [optional]
 **terms_and_conditions_not_accepted_carrier_list** | [**\Evers\SellingPartnerApi\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[]**](TermsAndConditionsNotAcceptedCarrier.md) | List of carriers whose terms and conditions were not accepted by the seller. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

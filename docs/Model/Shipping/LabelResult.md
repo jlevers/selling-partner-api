@@ -1,4 +1,4 @@
-# # LabelResult
+## LabelResult
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **tracking_id** | **string** | The tracking identifier assigned to the container. | [optional]
 **label** | [**\Evers\SellingPartnerApi\Model\Shipping\Label**](Label.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Shipping Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

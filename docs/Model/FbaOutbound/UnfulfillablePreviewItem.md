@@ -1,4 +1,4 @@
-# # UnfulfillablePreviewItem
+## UnfulfillablePreviewItem
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **seller_fulfillment_order_item_id** | **string** | A fulfillment order item identifier created with a call to the getFulfillmentPreview operation. |
 **item_unfulfillable_reasons** | **string[]** |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -55,18 +55,18 @@ All endpoint URIs are relative to the `SPAPI_ENDPOINT` value you specify in your
     
 The [`docs/Api/`](https://github.com/jlevers/selling-partner-api/tree/main/docs/Api) directory contains the documentation for interacting each distinct section of the Selling Partner API. Those sections are referred to as **APIs** throughout the documentation---you can think of the Selling Partner API as having many sub-APIs, where each sub-API has a number of endpoints that provide closely related functionality.
 
-Endpoint methods that perform `POST`, `PUT`, and `DELETE` requests typically take some model as a parameter, and nearly all endpoint methods return a model with result information. For instance, [`ShippingApi::createShipment()`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingApi.md#createShipment) takes an instance of the [`CreateShipmentRequest`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/CreateShipmentRequest.md) model as its only argument, and returns an instance of the [`CreateShipmentResponse`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/CreateShipmentResponse.md) model.
+Endpoint methods that perform `POST`, `PUT`, and `DELETE` requests typically take some model as a parameter, and nearly all endpoint methods return a model with result information. For instance, [`ShippingApi::createShipment()`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingApi.md#createShipment) takes an instance of the [`CreateShipmentRequest`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/Shipping/CreateShipmentRequest.md) model as its only argument, and returns an instance of the [`CreateShipmentResponse`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/Shipping/CreateShipmentResponse.md) model.
 
 See the `Models` section below for more information about models.
 
 ## Models
 
-Each endpoint has one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or use setter methods to set each attribute after the fact. Here's an example using the `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/Buyer.php)).
+Each endpoint has one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or use setter methods to set each attribute after the fact. Here's an example using the Service API's `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/Service/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/Service/Buyer.php)).
 
 The `Buyer` model has four attributes: `buyer_id`, `name`, `phone`, and `is_prime_member`. (If you're wondering how you would figure out which attributes the model has on your own, check out the `docs` link above.) To create an instance of the `Buyer` model with all those attributes set:
 
 ```php
-$buyer = new Evers\SellingPartnerApi\Model\Buyer([
+$buyer = new Evers\SellingPartnerApi\Model\Service\Buyer([
     "buyer_id" => "ABCDEFGHIJKLMNOPQRSTU0123456",
     "name" => "Jane Doe",
     "phone" => "+12345678901",
@@ -77,7 +77,7 @@ $buyer = new Evers\SellingPartnerApi\Model\Buyer([
 Alternatively, you can create an instance of the `Buyer` model and then populate its fields:
 
 ``` php
-$buyer = new Evers\SellingPartnerApi\Model\Buyer();
+$buyer = new Evers\SellingPartnerApi\Model\Service\Buyer();
 $buyer->setBuyerId("ABCDEFGHIJKLMNOPQRSTU0123456");
 $buyer->setName("Jane Doe");
 $buyer->setPhone("+12345678901");
@@ -96,7 +96,7 @@ $buyer->getIsPrimeMember();  // -> true
 Models can (and usually do) have other models as attributes:
 
 ``` php
-$serviceJob = new Evers\SellingPartnerApi\Model\Buyer([
+$serviceJob = new Evers\SellingPartnerApi\Model\Service\Buyer([
     // ...
     "buyer" => $buyer,
     // ...
@@ -132,7 +132,7 @@ $api = new Evers\SellingPartnerApi\Api\SellersApi($config);
 ```
 
 ## Uploading and downloading documents
-The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `Evers\SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\ReportDocument`, `Model\FeedDocument`, or `Model\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/ReportDocument.md), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#createFeedDocument) endpoints, respectively.
+The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `Evers\SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\Reports\ReportDocument`, `Model\Feeds\FeedDocument`, or `Model\Feeds\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsApi.md#getReportDocument), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#createFeedDocument) endpoints, respectively.
 
 ### Downloading a report document
 
@@ -156,7 +156,7 @@ use Evers\SellingPartnerApi;
 
 const CONTENT_TYPE = "text/xml";  // This will be different depending on your feed type
 $feedsApi = new Api\FeedsApi();
-$createFeedDocSpec = new Model\CreateFeedDocumentSpecification(["content_type" => CONTENT_TYPE]);
+$createFeedDocSpec = new Model\Feeds\CreateFeedDocumentSpecification(["content_type" => CONTENT_TYPE]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
 
 $docToUpload = new Document($feedDocumentInfo->getPayload(), CONTENT_TYPE)

@@ -1,4 +1,4 @@
-# # Marketplace
+## Marketplace
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **default_language_code** | **string** | The ISO 639-1 format language code of the marketplace. |
 **domain_name** | **string** | The domain name of the marketplace. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Sellers Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

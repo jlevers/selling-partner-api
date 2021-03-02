@@ -1,4 +1,4 @@
-# # ContainerItem
+## ContainerItem
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **unit_weight** | [**\Evers\SellingPartnerApi\Model\Shipping\Weight**](Weight.md) |  |
 **title** | **string** | A descriptive title of the item. |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Shipping Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

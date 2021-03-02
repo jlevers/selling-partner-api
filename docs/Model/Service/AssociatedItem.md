@@ -1,4 +1,4 @@
-# # AssociatedItem
+## AssociatedItem
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **brand_name** | **string** | The brand name of the item. | [optional]
 **item_delivery** | [**\Evers\SellingPartnerApi\Model\Service\ItemDelivery**](ItemDelivery.md) |  | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Service Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

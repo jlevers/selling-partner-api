@@ -1,4 +1,4 @@
-# # ImagingServicesFeeEvent
+## ImagingServicesFeeEvent
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
 **fee_list** | [**\Evers\SellingPartnerApi\Model\Finances\FeeComponent[]**](FeeComponent.md) | A list of fee component information. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,4 +1,4 @@
-# # SAFETReimbursementEvent
+## SAFETReimbursementEvent
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **reason_code** | **string** | Indicates why the seller was reimbursed. | [optional]
 **safet_reimbursement_item_list** | [**\Evers\SellingPartnerApi\Model\Finances\SAFETReimbursementItem[]**](SAFETReimbursementItem.md) | A list of SAFETReimbursementItems. | [optional]
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

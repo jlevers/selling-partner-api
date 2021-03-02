@@ -1,4 +1,4 @@
-# # InvalidReturnItem
+## InvalidReturnItem
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **seller_fulfillment_order_item_id** | **string** | The identifier assigned to the item by the seller when the fulfillment order was created. |
 **invalid_item_reason** | [**\Evers\SellingPartnerApi\Model\FbaOutbound\InvalidItemReason**](InvalidItemReason.md) |  |
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
+[[FbaOutbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

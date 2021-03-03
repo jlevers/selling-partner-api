@@ -15,7 +15,7 @@ const ENV_PATHS = [__DIR__ . "/..", __DIR__ . "/../../../..", __DIR__ . "/../.."
 function loadDotenv() {
     foreach(ENV_PATHS as $path) {
         if (file_exists($path . "/.env")) {
-            $dotenv = \Dotenv\Dotenv::createImmutable($path);
+            $dotenv = \Dotenv\Dotenv::create($path);
             $dotenv->load();
 
             // Validate environment variables

@@ -21,16 +21,16 @@ class Document
     private $contentType = null;
 
     /**
-     * @param Model\(ReportDocument|FeedDocument|CreateFeedDocumentResult) $documentInfo
+     * @param Model\(Report\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
      * @param ?string $contentType The content type of the document. Only required when
      *      uploading a document.
      */
     public function __construct(object $documentInfo, ?string $contentType = null) {
         if (
-            !($documentInfo instanceof Model\ReportDocument)
-            && !($documentInfo instanceof Model\FeedDocument)
-            && !($documentInfo instanceof Model\CreateFeedDocumentResult)
+            !($documentInfo instanceof Model\Reports\ReportDocument)
+            && !($documentInfo instanceof Model\Feeds\FeedDocument)
+            && !($documentInfo instanceof Model\Feeds\CreateFeedDocumentResult)
         ) {
             $msg = '$documentInfo must be one of the following types: ReportDocument, FeedDocument, CreateFeedDocumentResult';
             throw new \Exception($msg);

@@ -12,18 +12,27 @@ use \Exception;
 // directories above this one. The third directory option is just used for testing.
 const ENV_PATHS = [__DIR__ . "/..", __DIR__ . "/../../../..", __DIR__ . "/../.."];
 
-function loadDotenv() {
+const REQUIRED_ENVVARS = [
+    "SPAPI_AWS_REGION",
+    "AWS_ACCESS_KEY_ID",
+    "AWS_SECRET_ACCESS_KEY",
+    "LWA_CLIENT_ID",
+    "LWA_CLIENT_SECRET",
+    "SPAPI_ENDPOINT",
+];
+
+function loadDotenv(): void {
     foreach(ENV_PATHS as $path) {
         if (file_exists($path . "/.env")) {
             $dotenv = \Dotenv\Dotenv::create($path);
             $dotenv->load();
 
+            foreach (REQUIRED_ENVVARS as $var) {
+                $dotenv->required($var)->notEmpty();
+            }
+
             // Validate environment variables
             $dotenv->required("SPAPI_AWS_REGION")->allowedValues(["us-east-1", "us-west-2", "eu-west-1"]);
-            $dotenv->required("AWS_ACCESS_KEY_ID")->notEmpty();
-            $dotenv->required("AWS_SECRET_ACCESS_KEY")->notEmpty();
-            $dotenv->required("LWA_CLIENT_ID")->notEmpty();
-            $dotenv->required("LWA_CLIENT_SECRET")->notEmpty();
             $dotenv->required("SPAPI_ENDPOINT")->allowedValues([
                 "https://sellingpartnerapi-na.amazon.com",
                 "https://sellingpartnerapi-eu.amazon.com",
@@ -35,4 +44,13 @@ function loadDotenv() {
     }
 
     throw new Exception("No .env file found.");
+}
+
+function allVarsLoaded(): bool {
+    foreach (REQUIRED_ENVVARS as $var) {
+        if (!isset($_ENV[$var])) {
+            return false;
+        }
+    }
+    return true;
 }

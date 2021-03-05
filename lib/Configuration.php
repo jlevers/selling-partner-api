@@ -62,7 +62,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'SellingPartnerAPI/2.0.0 (Language=PHP)';
+    protected $userAgent = 'SellingPartnerAPI/2.0.1 (Language=PHP)';
 
     /**
      * Debug switch (default set to false)
@@ -90,7 +90,9 @@ nnn     *
      */
     public function __construct(?array $lwaAuthInfo = null, ?string $host = null)
     {
-        loadDotenv();
+        if (!allVarsLoaded()) {
+            loadDotenv();
+        }
 
         $this->lwaAuthInfo = $lwaAuthInfo;
         $this->tempFolderPath = sys_get_temp_dir();
@@ -294,7 +296,9 @@ nnn     *
             $config = new Configuration();
             $auth = self::getDefaultAuthentication();
 
-            loadDotenv();
+            if (!allVarsLoaded()) {
+                loadDotenv();
+            }
 
             $config->setHost($_ENV["SPAPI_ENDPOINT"]);
             self::$defaultConfiguration = $config;
@@ -379,7 +383,7 @@ nnn     *
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2020-11-01' . PHP_EOL;
-        $report .= '    SDK Package Version: 2.0.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 2.0.1' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

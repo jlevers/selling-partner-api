@@ -29,11 +29,11 @@ class Authentication
         $this->client = new Client();
         loadDotenv();
 
-        $this->refreshToken = $options["refreshToken"] ?? $_ENV["LWA_REFRESH_TOKEN"];
+        $this->refreshToken = $options["refreshToken"] ?? env("LWA_REFRESH_TOKEN");
         $this->onUpdateCreds = $options["onUpdateCreds"] ?? null;
-        $this->lwaClientId = $options["lwaClientId"] ?? $_ENV["LWA_CLIENT_ID"];
-        $this->lwaClientSecret = $options["lwaClientSecret"] ?? $_ENV["LWA_CLIENT_SECRET"];
-        $this->region = $options["region"] ?? $_ENV["SPAPI_AWS_REGION"];
+        $this->lwaClientId = $options["lwaClientId"] ?? env("LWA_CLIENT_ID");
+        $this->lwaClientSecret = $options["lwaClientSecret"] ?? env("LWA_CLIENT_SECRET");
+        $this->region = $options["region"] ?? env("SPAPI_AWS_REGION");
 
         $accessToken = $options["accessToken"] ?? null;
         $accessTokenExpiration = $options["accessTokenExpiration"] ?? null;
@@ -105,8 +105,8 @@ class Authentication
     }
 
     public function populateCredentials(?string $token = null, ?int $expires = null, bool $grantless = false): void {
-        $key = $_ENV["AWS_ACCESS_KEY_ID"];
-        $secret = $_ENV["AWS_SECRET_ACCESS_KEY"];
+        $key = env("AWS_ACCESS_KEY_ID");
+        $secret = env("AWS_SECRET_ACCESS_KEY");
         $creds = null;
         if ($token !== null && $expires !== null) {
             $creds = new Credentials($key, $secret, $token, $expires);

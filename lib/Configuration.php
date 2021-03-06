@@ -100,7 +100,7 @@ nnn     *
         if ($host !== null) {
             $this->host = $host;
         } else {
-            $this->host = $_ENV["SPAPI_ENDPOINT"];
+            $this->host = env("SPAPI_ENDPOINT");
         }
 
         if ($this->lwaAuthInfo !== null) {
@@ -300,7 +300,7 @@ nnn     *
                 loadDotenv();
             }
 
-            $config->setHost($_ENV["SPAPI_ENDPOINT"]);
+            $config->setHost(env("SPAPI_ENDPOINT"));
             self::$defaultConfiguration = $config;
         }
 

@@ -144,8 +144,12 @@ $documentId = "foo.1234";
 $reportsApi = new Api\ReportsApi();
 $reportDocumentInfo = $reportsApi->getReportDocument($documentId);
 
-$docToDownload = new Document($reportDocumentInfo->getPayload());
-$contents = $docToDownload->download();
+// Pass the content type of the report you're fetching
+$docToDownload = new Document($reportDocumentInfo->getPayload(), "text/tab-separated-values");
+$contents = $docToDownload->download();  // The raw report text
+// A SimpleXML object if the content type is text/xml, or an array of associative arrays, each
+// sub array corresponding to a row of the report
+$data = $docToDownload->getData();
 // ... do something with report contents
 ```
 

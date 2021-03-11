@@ -146,10 +146,10 @@ class SellersApi
                 $response = $this->client->send($signedRequest, $options);
             } catch (RequestException $e) {
                 throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
+                    "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                    $e->getResponse() ? (string) $e->getResponse()->getBody()->getContents() : null
                 );
             }
 
@@ -164,7 +164,7 @@ class SellersApi
                     ),
                     $statusCode,
                     $response->getHeaders(),
-                    $response->getBody()
+                    $response->getBody()->getContents()
                 );
             }
 
@@ -437,7 +437,7 @@ class SellersApi
                         ),
                         $statusCode,
                         $response->getHeaders(),
-                        $response->getBody()
+                        $response->getBody()->getContents()
                     );
                 }
             );

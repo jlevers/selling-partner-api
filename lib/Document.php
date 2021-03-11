@@ -13,27 +13,32 @@ use SellingPartnerApi\Model;
 class Document
 {
     public const ENCRYPTION_SCHEME = "AES-256-CBC";
+    public const VALID_CONTENT_TYPES = ["text/xml", "text/tab-separated-values", "text/csv"];
 
     private $iv;
     private $key;
     private $url;
     private $compressionAlgo;
-    private $contentType = null;
+    private $contentType;
+    private $data;
 
     /**
      * @param Model\(Report\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
-     * @param ?string $contentType The content type of the document. Only required when
-     *      uploading a document.
+     * @param ?string $contentType The content type of the document. Defaults to text/xml.
      */
-    public function __construct(object $documentInfo, ?string $contentType = null) {
+    public function __construct(object $documentInfo, ?string $contentType = "text/xml") {
         if (
             !($documentInfo instanceof Model\Reports\ReportDocument)
             && !($documentInfo instanceof Model\Feeds\FeedDocument)
             && !($documentInfo instanceof Model\Feeds\CreateFeedDocumentResult)
         ) {
-            $msg = '$documentInfo must be one of the following types: ReportDocument, FeedDocument, CreateFeedDocumentResult';
+            $msg = "documentInfo must be one of the following types: ReportDocument, FeedDocument, CreateFeedDocumentResult";
             throw new \Exception($msg);
+        }
+
+        if (!in_array($contentType, static::VALID_CONTENT_TYPES)) {
+            throw new \InvalidArgumentException("valid contentType values are: " . implode(", ", static::VALID_CONTENT_TYPES));
         }
 
         $this->url = $documentInfo->getUrl();
@@ -65,14 +70,43 @@ class Document
             }
         }
 
-        return $stream->getContents();
-    }
+        $contents = $stream->getContents();
+        if ($this->contentType === "text/xml") {
+            $this->data = simplexml_load_string($contents);
+        } else if ($this->contentType === "text/tab-separated-values" || $this->contentType === "text/csv") {
+            $sep = "\t";
+            if ($this->contentType === "text/csv") {
+                $sep = ",";
+            }
 
-    public function upload(): void {
-        if ($this->contentType === null) {
-            throw new \Exception("Can't call upload() on a Document without a contentType");
+            $bareStream = fopen("php://memory", "rw");
+            fwrite($bareStream, $contents);
+            rewind($bareStream);
+
+            $data = [];
+            $header = fgetcsv($bareStream, 0, $sep);
+            while (($line = fgetcsv($bareStream, 0, $sep)) !== false) {
+                $row = [];
+                foreach ($line as $idx => $val) {
+                    $row[$header[$idx]] = $val;
+                }
+                $data[] = $row;
+            }
+            $this->data = $data;
+            fclose($bareStream);
         }
 
+        return $contents;
+    }
+
+    /**
+     * Uploads data to the document specified in the constructor.
+     *
+     * @param string $feedData The contents of the feed to be uploaded
+     *
+     * @return void
+     */
+    public function upload(string $feedData): void {
         $stream = fopen("php://memory", "r+");
         if (!$stream) {
             throw new \Exception("Error creating input stream (php://memory)\n");
@@ -82,7 +116,7 @@ class Document
         // Amazon requires their data to be encrypted at rest, which prevents us from writing the data
         // to a file and encrypting it from there
         $stream = Psr7\Utils::streamFor($stream);
-        $stream->write($data);
+        $stream->write($feedData);
         $stream->rewind();
 
         $cipherMethod = new EncryptionStreams\Cbc($this->iv);
@@ -91,7 +125,7 @@ class Document
 
         $response = $client->post($this->url, [
             RequestOptions::HEADERS => [
-                "content-type" => $this->contentType,
+                "content-type" => $this->contentType . "; charset=ISO_8859_1",
                 "host" => parse_url($this->url, PHP_URL_HOST),
             ],
             RequestOptions::BODY => $stream,
@@ -102,5 +136,12 @@ class Document
         if ($response->getStatusCode() >= 300) {
             throw new \Exception("Upload failed ({$response->getStatusCode()}): {$response->getBody()}");
         }
+    }
+
+    public function getData() {
+        if(isset($this->data)) {
+            return $this->data;
+        }
+        return false;
     }
 }

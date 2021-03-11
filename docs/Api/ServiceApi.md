@@ -45,7 +45,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| An Amazon defined service job identifier. |
- **body** | [**\SellingPartnerApi\Model\Service\AddAppointmentRequest**](../Model/ServiceAddAppointmentRequest.md)| Add appointment operation input details. |
+ **body** | [**\SellingPartnerApi\Model\Service\AddAppointmentRequest**](../Model/Service/AddAppointmentRequest.md)| Add appointment operation input details. |
 
 ### Return type
 
@@ -243,9 +243,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_ids** | [**string[]**](../Model/Servicestring.md)| Used to select jobs that were placed in the specified marketplaces. |
- **service_order_ids** | [**string[]**](../Model/Servicestring.md)| List of service order ids for the query you want to perform.Max values supported 20. | [optional]
- **service_job_status** | [**string[]**](../Model/Servicestring.md)| A list of one or more job status by which to filter the list of jobs. | [optional]
+ **marketplace_ids** | [**string[]**](../Model/Service/string.md)| Used to select jobs that were placed in the specified marketplaces. |
+ **service_order_ids** | [**string[]**](../Model/Service/string.md)| List of service order ids for the query you want to perform.Max values supported 20. | [optional]
+ **service_job_status** | [**string[]**](../Model/Service/string.md)| A list of one or more job status by which to filter the list of jobs. | [optional]
  **page_token** | **string**| String returned in the response of your previous request. | [optional]
  **page_size** | **int**| A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. | [optional] [default to 20]
  **sort_field** | **string**| Sort fields on which you want to sort the output. | [optional]
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| An Amazon defined service job identifier. |
  **appointment_id** | **string**| An existing appointment identifier for the Service Job. |
- **body** | [**\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest**](../Model/ServiceRescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
+ **body** | [**\SellingPartnerApi\Model\Service\RescheduleAppointmentRequest**](../Model/Service/RescheduleAppointmentRequest.md)| Reschedule appointment operation input details. |
 
 ### Return type
 

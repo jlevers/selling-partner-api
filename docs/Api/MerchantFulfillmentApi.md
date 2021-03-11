@@ -137,7 +137,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest**](../Model/MerchantFulfillmentCreateShipmentRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest**](../Model/MerchantFulfillment/CreateShipmentRequest.md)|  |
 
 ### Return type
 
@@ -183,7 +183,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/MerchantFulfillmentGetAdditionalSellerInputsRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/MerchantFulfillment/GetAdditionalSellerInputsRequest.md)|  |
 
 ### Return type
 
@@ -229,7 +229,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/MerchantFulfillmentGetAdditionalSellerInputsRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest**](../Model/MerchantFulfillment/GetAdditionalSellerInputsRequest.md)|  |
 
 ### Return type
 
@@ -275,7 +275,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/MerchantFulfillmentGetEligibleShipmentServicesRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/MerchantFulfillment/GetEligibleShipmentServicesRequest.md)|  |
 
 ### Return type
 
@@ -321,7 +321,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/MerchantFulfillmentGetEligibleShipmentServicesRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest**](../Model/MerchantFulfillment/GetEligibleShipmentServicesRequest.md)|  |
 
 ### Return type
 

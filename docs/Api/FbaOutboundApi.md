@@ -95,7 +95,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest**](../Model/FbaOutboundCreateFulfillmentOrderRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderRequest**](../Model/FbaOutbound/CreateFulfillmentOrderRequest.md)|  |
 
 ### Return type
 
@@ -143,7 +143,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_fulfillment_order_id** | **string**| An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. |
- **body** | [**\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest**](../Model/FbaOutboundCreateFulfillmentReturnRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnRequest**](../Model/FbaOutbound/CreateFulfillmentReturnRequest.md)|  |
 
 ### Return type
 
@@ -381,7 +381,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest**](../Model/FbaOutboundGetFulfillmentPreviewRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewRequest**](../Model/FbaOutbound/GetFulfillmentPreviewRequest.md)|  |
 
 ### Return type
 
@@ -575,7 +575,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_fulfillment_order_id** | **string**| The identifier assigned to the item by the seller when the fulfillment order was created. |
- **body** | [**\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest**](../Model/FbaOutboundUpdateFulfillmentOrderRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderRequest**](../Model/FbaOutbound/UpdateFulfillmentOrderRequest.md)|  |
 
 ### Return type
 

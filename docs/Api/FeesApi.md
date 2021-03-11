@@ -41,7 +41,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asin** | **string**| The Amazon Standard Identification Number (ASIN) of the item. |
- **body** | [**\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/FeesGetMyFeesEstimateRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/Fees/GetMyFeesEstimateRequest.md)|  |
 
 ### Return type
 
@@ -89,7 +89,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_sku** | **string**| Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. |
- **body** | [**\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/FeesGetMyFeesEstimateRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest**](../Model/Fees/GetMyFeesEstimateRequest.md)|  |
 
 ### Return type
 

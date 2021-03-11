@@ -45,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\Notifications\CreateDestinationRequest**](../Model/NotificationsCreateDestinationRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Notifications\CreateDestinationRequest**](../Model/Notifications/CreateDestinationRequest.md)|  |
 
 ### Return type
 
@@ -93,7 +93,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notification_type** | **string**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. |
- **body** | [**\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/NotificationsCreateSubscriptionRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/Notifications/CreateSubscriptionRequest.md)|  |
 
 ### Return type
 

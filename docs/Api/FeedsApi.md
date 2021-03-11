@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\Feeds\CreateFeedSpecification**](../Model/FeedsCreateFeedSpecification.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Feeds\CreateFeedSpecification**](../Model/Feeds/CreateFeedSpecification.md)|  |
 
 ### Return type
 
@@ -135,7 +135,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification**](../Model/FeedsCreateFeedDocumentSpecification.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Feeds\CreateFeedDocumentSpecification**](../Model/Feeds/CreateFeedDocumentSpecification.md)|  |
 
 ### Return type
 
@@ -279,10 +279,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feed_types** | [**string[]**](../Model/Feedsstring.md)| A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. | [optional]
- **marketplace_ids** | [**string[]**](../Model/Feedsstring.md)| A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. | [optional]
+ **feed_types** | [**string[]**](../Model/Feeds/string.md)| A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. | [optional]
+ **marketplace_ids** | [**string[]**](../Model/Feeds/string.md)| A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. | [optional]
  **page_size** | **int**| The maximum number of feeds to return in a single call. | [optional] [default to 10]
- **processing_statuses** | [**string[]**](../Model/Feedsstring.md)| A list of processing statuses used to filter feeds. | [optional]
+ **processing_statuses** | [**string[]**](../Model/Feeds/string.md)| A list of processing statuses used to filter feeds. | [optional]
  **created_since** | **\DateTime**| The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. | [optional]
  **created_until** | **\DateTime**| The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. | [optional]
  **next_token** | **string**| A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. | [optional]

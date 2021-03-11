@@ -41,7 +41,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a solicitation is sent. |
- **marketplace_ids** | [**string[]**](../Model/Solicitationsstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Solicitations/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 
@@ -89,7 +89,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. |
- **marketplace_ids** | [**string[]**](../Model/Solicitationsstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Solicitations/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 

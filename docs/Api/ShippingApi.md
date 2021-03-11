@@ -92,7 +92,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\Shipping\CreateShipmentRequest**](../Model/ShippingCreateShipmentRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Shipping\CreateShipmentRequest**](../Model/Shipping/CreateShipmentRequest.md)|  |
 
 ### Return type
 
@@ -181,7 +181,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\Shipping\GetRatesRequest**](../Model/ShippingGetRatesRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Shipping\GetRatesRequest**](../Model/Shipping/GetRatesRequest.md)|  |
 
 ### Return type
 
@@ -321,7 +321,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**|  |
- **body** | [**\SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest**](../Model/ShippingPurchaseLabelsRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest**](../Model/Shipping/PurchaseLabelsRequest.md)|  |
 
 ### Return type
 
@@ -367,7 +367,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest**](../Model/ShippingPurchaseShipmentRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest**](../Model/Shipping/PurchaseShipmentRequest.md)|  |
 
 ### Return type
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**|  |
  **tracking_id** | **string**|  |
- **body** | [**\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest**](../Model/ShippingRetrieveShippingLabelRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest**](../Model/Shipping/RetrieveShippingLabelRequest.md)|  |
 
 ### Return type
 

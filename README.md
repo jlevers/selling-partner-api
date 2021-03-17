@@ -110,10 +110,12 @@ $serviceJob->getBuyer()->getName();  // -> "Jane Doe"
 If you are writing an app for the Marketplace Appstore, you will need to connect to the Selling Partner API with an arbitrary number of different sets of credentials. There's an easy way to do that: just specify a custom [`Configuration`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Configuration.php) instance when you create an API object.
 
 The `Configuration` constructor takes an array of options:
-* `refreshToken (string)`: An SP API refresh token
+* `refreshToken (string)`: An SP API refresh token.
 * `onUpdateCreds (callable)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
-* `lwaClientId (string)`: The LWA client ID of the SP API application to use to execute API requests
-* `lwaClientSecret (string)`: The LWA client secret of the SP API application to use to execute API requests
+* `accessToken (string)`: An access token generated from the refresh token.
+* `accessTokenExpiration (int)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
+* `lwaClientId (string)`: The LWA client ID of the SP API application to use to execute API requests.
+* `lwaClientSecret (string)`: The LWA client secret of the SP API application to use to execute API requests.
 
 All array items are optional, but `lwaClientId` and `lwaClientSecret` must always be given together. If only one of those two options is provided, the `Configuration` constructor will throw an exception. 
 
@@ -124,6 +126,8 @@ $config = new SellingPartnerApi\Configuration([
     "onUpdateCreds" => function(SellingPartnerApi\Credentials $creds) {
         print_r($creds);
     },
+    "accessToken" => "Azta|WeBxxx....xxx",
+    "accessTokenExpiration" => 1616016220,
     "lwaClientId" => "AKIAxxxxxxxxxxxxxxxxx",
     "lwaClientSecret" => "a8e5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe46c"
 ]);

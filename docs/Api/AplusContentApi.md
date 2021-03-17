@@ -49,7 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContentPostContentDocumentRequest.md)| The content document request details. |
+ **post_content_document_request** | [**\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContent/PostContentDocumentRequest.md)| The content document request details. |
 
 ### Return type
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **included_data_set** | [**string[]**](../Model/AplusContentstring.md)| The set of A+ Content data types to include in the response. |
+ **included_data_set** | [**string[]**](../Model/AplusContent/string.md)| The set of A+ Content data types to include in the response. |
 
 ### Return type
 
@@ -151,8 +151,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **included_data_set** | [**string[]**](../Model/AplusContentstring.md)| The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. | [optional]
- **asin_set** | [**string[]**](../Model/AplusContentstring.md)| The set of ASINs. | [optional]
+ **included_data_set** | [**string[]**](../Model/AplusContent/string.md)| The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. | [optional]
+ **asin_set** | [**string[]**](../Model/AplusContent/string.md)| The set of ASINs. | [optional]
  **page_token** | **string**| A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. | [optional]
 
 ### Return type
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_asin_relations_request** | [**\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest**](../Model/AplusContentPostContentDocumentAsinRelationsRequest.md)| The content document ASIN relations request details. |
+ **post_content_document_asin_relations_request** | [**\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest**](../Model/AplusContent/PostContentDocumentAsinRelationsRequest.md)| The content document ASIN relations request details. |
 
 ### Return type
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_reference_key** | **string**| The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. |
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContentPostContentDocumentRequest.md)| The content document request details. |
+ **post_content_document_request** | [**\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContent/PostContentDocumentRequest.md)| The content document request details. |
 
 ### Return type
 
@@ -496,8 +496,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| The identifier for the marketplace where the A+ Content is published. |
- **post_content_document_request** | [**\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContentPostContentDocumentRequest.md)| The content document request details. |
- **asin_set** | [**string[]**](../Model/AplusContentstring.md)| The set of ASINs. | [optional]
+ **post_content_document_request** | [**\SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest**](../Model/AplusContent/PostContentDocumentRequest.md)| The content document request details. |
+ **asin_set** | [**string[]**](../Model/AplusContent/string.md)| The set of ASINs. | [optional]
 
 ### Return type
 

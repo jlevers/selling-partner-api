@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asin** | **string**| The ASIN of the item for which you want an eligibility preview. |
  **program** | **string**| The program that you want to check eligibility against. |
- **marketplace_ids** | [**string[]**](../Model/FbaInboundEligibilitystring.md)| The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. | [optional]
+ **marketplace_ids** | [**string[]**](../Model/FbaInboundEligibility/string.md)| The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. | [optional]
 
 ### Return type
 

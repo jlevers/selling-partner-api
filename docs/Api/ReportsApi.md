@@ -138,7 +138,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\Reports\CreateReportSpecification**](../Model/ReportsCreateReportSpecification.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Reports\CreateReportSpecification**](../Model/Reports/CreateReportSpecification.md)|  |
 
 ### Return type
 
@@ -184,7 +184,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification**](../Model/ReportsCreateReportScheduleSpecification.md)|  |
+ **body** | [**\SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification**](../Model/Reports/CreateReportScheduleSpecification.md)|  |
 
 ### Return type
 
@@ -368,7 +368,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_types** | [**string[]**](../Model/Reportsstring.md)| A list of report types used to filter report schedules. |
+ **report_types** | [**string[]**](../Model/Reports/string.md)| A list of report types used to filter report schedules. |
 
 ### Return type
 
@@ -420,9 +420,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_types** | [**string[]**](../Model/Reportsstring.md)| A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. | [optional]
- **processing_statuses** | [**string[]**](../Model/Reportsstring.md)| A list of processing statuses used to filter reports. | [optional]
- **marketplace_ids** | [**string[]**](../Model/Reportsstring.md)| A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. | [optional]
+ **report_types** | [**string[]**](../Model/Reports/string.md)| A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. | [optional]
+ **processing_statuses** | [**string[]**](../Model/Reports/string.md)| A list of processing statuses used to filter reports. | [optional]
+ **marketplace_ids** | [**string[]**](../Model/Reports/string.md)| A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. | [optional]
  **page_size** | **int**| The maximum number of reports to return in a single call. | [optional] [default to 10]
  **created_since** | **\DateTime**| The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. | [optional]
  **created_until** | **\DateTime**| The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. | [optional]

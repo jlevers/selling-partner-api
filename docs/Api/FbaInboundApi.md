@@ -152,7 +152,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/FbaInboundInboundShipmentRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/FbaInbound/InboundShipmentRequest.md)|  |
 
 ### Return type
 
@@ -198,7 +198,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest**](../Model/FbaInboundCreateInboundShipmentPlanRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanRequest**](../Model/FbaInbound/CreateInboundShipmentPlanRequest.md)|  |
 
 ### Return type
 
@@ -339,8 +339,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace where the product would be stored. |
- **seller_sku_list** | [**string[]**](../Model/FbaInboundstring.md)| A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. | [optional]
- **asin_list** | [**string[]**](../Model/FbaInboundstring.md)| A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. | [optional]
+ **seller_sku_list** | [**string[]**](../Model/FbaInbound/string.md)| A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. | [optional]
+ **asin_list** | [**string[]**](../Model/FbaInbound/string.md)| A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. | [optional]
 
 ### Return type
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
  **page_type** | **string**| The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. |
  **label_type** | **string**| The type of labels requested. |
  **number_of_packages** | **int**| The number of packages in the shipment. | [optional]
- **package_labels_to_print** | [**string[]**](../Model/FbaInboundstring.md)| A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. | [optional]
+ **package_labels_to_print** | [**string[]**](../Model/FbaInbound/string.md)| A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. | [optional]
  **number_of_pallets** | **int**| The number of pallets in the shipment. This returns four identical labels for each pallet. | [optional]
 
 ### Return type
@@ -493,8 +493,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ship_to_country_code** | **string**| The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. |
- **seller_sku_list** | [**string[]**](../Model/FbaInboundstring.md)| A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#39;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#39;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#39;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. | [optional]
- **asin_list** | [**string[]**](../Model/FbaInboundstring.md)| A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. | [optional]
+ **seller_sku_list** | [**string[]**](../Model/FbaInbound/string.md)| A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#39;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#39;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#39;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. | [optional]
+ **asin_list** | [**string[]**](../Model/FbaInbound/string.md)| A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. | [optional]
 
 ### Return type
 
@@ -650,8 +650,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query_type** | **string**| Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. |
  **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace where the product would be stored. |
- **shipment_status_list** | [**string[]**](../Model/FbaInboundstring.md)| A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. | [optional]
- **shipment_id_list** | [**string[]**](../Model/FbaInboundstring.md)| A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. | [optional]
+ **shipment_status_list** | [**string[]**](../Model/FbaInbound/string.md)| A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. | [optional]
+ **shipment_id_list** | [**string[]**](../Model/FbaInbound/string.md)| A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. | [optional]
  **last_updated_after** | **\DateTime**| A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. | [optional]
  **last_updated_before** | **\DateTime**| A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. | [optional]
  **next_token** | **string**| A string token returned in the response to your previous request. | [optional]
@@ -748,7 +748,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest**](../Model/FbaInboundPutTransportDetailsRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsRequest**](../Model/FbaInbound/PutTransportDetailsRequest.md)|  |
 
 ### Return type
 
@@ -796,7 +796,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment_id** | **string**| A shipment identifier originally returned by the createInboundShipmentPlan operation. |
- **body** | [**\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/FbaInboundInboundShipmentRequest.md)|  |
+ **body** | [**\SellingPartnerApi\Model\FbaInbound\InboundShipmentRequest**](../Model/FbaInbound/InboundShipmentRequest.md)|  |
 
 ### Return type
 

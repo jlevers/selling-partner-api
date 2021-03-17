@@ -52,8 +52,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsRequest**](../Model/MessagingCreateConfirmCustomizationDetailsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsRequest**](../Model/Messaging/CreateConfirmCustomizationDetailsRequest.md)|  |
 
 ### Return type
 
@@ -102,8 +102,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsRequest**](../Model/MessagingCreateAmazonMotorsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsRequest**](../Model/Messaging/CreateAmazonMotorsRequest.md)|  |
 
 ### Return type
 
@@ -152,8 +152,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsRequest**](../Model/MessagingCreateConfirmDeliveryDetailsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsRequest**](../Model/Messaging/CreateConfirmDeliveryDetailsRequest.md)|  |
 
 ### Return type
 
@@ -202,8 +202,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsRequest**](../Model/MessagingCreateConfirmOrderDetailsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsRequest**](../Model/Messaging/CreateConfirmOrderDetailsRequest.md)|  |
 
 ### Return type
 
@@ -252,8 +252,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsRequest**](../Model/MessagingCreateConfirmServiceDetailsRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsRequest**](../Model/Messaging/CreateConfirmServiceDetailsRequest.md)|  |
 
 ### Return type
 
@@ -302,8 +302,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyRequest**](../Model/MessagingCreateDigitalAccessKeyRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyRequest**](../Model/Messaging/CreateDigitalAccessKeyRequest.md)|  |
 
 ### Return type
 
@@ -352,8 +352,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureRequest**](../Model/MessagingCreateLegalDisclosureRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureRequest**](../Model/Messaging/CreateLegalDisclosureRequest.md)|  |
 
 ### Return type
 
@@ -401,7 +401,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 
@@ -450,8 +450,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemRequest**](../Model/MessagingCreateUnexpectedProblemRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemRequest**](../Model/Messaging/CreateUnexpectedProblemRequest.md)|  |
 
 ### Return type
 
@@ -500,8 +500,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
- **body** | [**\SellingPartnerApi\Model\Messaging\CreateWarrantyRequest**](../Model/MessagingCreateWarrantyRequest.md)|  |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\Messaging\CreateWarrantyRequest**](../Model/Messaging/CreateWarrantyRequest.md)|  |
 
 ### Return type
 
@@ -549,7 +549,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 
@@ -597,7 +597,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which you want a list of available message types. |
- **marketplace_ids** | [**string[]**](../Model/Messagingstring.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **marketplace_ids** | [**string[]**](../Model/Messaging/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
 
 ### Return type
 

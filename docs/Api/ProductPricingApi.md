@@ -46,8 +46,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
  **item_type** | **string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. |
- **asins** | [**string[]**](../Model/ProductPricingstring.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
- **skus** | [**string[]**](../Model/ProductPricingstring.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
+ **asins** | [**string[]**](../Model/ProductPricing/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
+ **skus** | [**string[]**](../Model/ProductPricing/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
 
 ### Return type
 
@@ -199,8 +199,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
  **item_type** | **string**| Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. |
- **asins** | [**string[]**](../Model/ProductPricingstring.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
- **skus** | [**string[]**](../Model/ProductPricingstring.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
+ **asins** | [**string[]**](../Model/ProductPricing/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
+ **skus** | [**string[]**](../Model/ProductPricing/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
  **item_condition** | **string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. | [optional]
 
 ### Return type

@@ -48,7 +48,7 @@ class PrepInstruction
     const BLACK_SHRINK_WRAPPING = 'BlackShrinkWrapping';
     const LABELING = 'Labeling';
     const HANG_GARMENT = 'HangGarment';
-    const POLYBAGGING_SET_CREATION = 'Polybagging Set creation';
+    const POLYBAGGING_SET_CREATION = 'SetCreation';
     
     /**
      * Gets allowable values of the enum

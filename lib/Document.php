@@ -70,7 +70,8 @@ class Document
             }
         }
 
-        $contents = $stream->getContents();
+        // Documents are ISO-8859-1 encoded
+        $contents = utf8_encode($stream->getContents());
         if ($this->contentType === "text/xml") {
             $this->data = simplexml_load_string($contents);
         } else if ($this->contentType === "text/tab-separated-values" || $this->contentType === "text/csv") {

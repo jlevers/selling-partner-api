@@ -37,7 +37,6 @@ function loadDotenv(): void {
                 "https://sellingpartnerapi-na.amazon.com",
                 "https://sellingpartnerapi-eu.amazon.com",
                 "https://sellingpartnerapi-fe.amazon.com",
-                "https://sellercentral-europe.amazon.com"
             ]);
 
             return;

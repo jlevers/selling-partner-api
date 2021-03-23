@@ -32,12 +32,11 @@ function loadDotenv(): void {
             }
 
             // Validate environment variables
-            $dotenv->required("SPAPI_AWS_REGION")->allowedValues(["us-east-1", "us-west-2", "eu-west-1", "eu-central-1"]);
+            $dotenv->required("SPAPI_AWS_REGION")->allowedValues(["us-east-1", "us-west-2", "eu-west-1"]);
             $dotenv->required("SPAPI_ENDPOINT")->allowedValues([
                 "https://sellingpartnerapi-na.amazon.com",
                 "https://sellingpartnerapi-eu.amazon.com",
                 "https://sellingpartnerapi-fe.amazon.com",
-                "https://sellercentral-europe.amazon.com"
             ]);
 
             return;

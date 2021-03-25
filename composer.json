@@ -27,7 +27,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^7.2",
-        "vlucas/phpdotenv": "^5.2",
+        "vlucas/phpdotenv": "^4.0 || ^5.2",
         "cyberdummy/gzstream": "^0.0.2",
         "jsq/psr7-stream-encryption": "^0.4.0"
     },

@@ -47,11 +47,6 @@ class Authentication
 
         if ($accessToken !== null && $accessTokenExpiration !== null) {
             $this->populateCredentials($accessToken, $accessTokenExpiration);
-            if ($this->awsCredentials->expiresSoon()) {
-                $this->newToken();
-            }
-        } else {
-            $this->newToken();
         }
     }
 
@@ -74,6 +69,10 @@ class Authentication
                 $this->newToken($scope);
             }
             return $this->grantlessAwsCredentials->getSecurityToken();
+        }
+
+        if ($this->awsCredentials === null || $this->awsCredentials->getSecurityToken() === null) {
+            $this->newToken();
         }
         return $this->awsCredentials->getSecurityToken();
     }
@@ -124,7 +123,7 @@ class Authentication
     public function signRequest(Psr7\Request $request, ?string $scope = null): Psr7\Request {
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
         $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
-        if ($relevantCreds === null || $relevantCreds->expiresSoon()) {
+        if ($relevantCreds === null || $relevantCreds->getSecurityToken() === null || $relevantCreds->expiresSoon()) {
             $this->newToken($scope);
             // Reassign $relevantCreds to the correct set of credentials, since that set of creds has been updated
             $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;

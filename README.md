@@ -63,7 +63,7 @@ try {
 ## Endpoints
 
 All endpoint URIs are relative to the `SPAPI_ENDPOINT` value you specify in your `.env` file (the default is https://sellingpartnerapi-na.amazon.com). For instance, the `SellersApi::getMarketplaceParticipations()` endpoint, `/sellers/v1/marketplaceParticipations`, is expanded to `https://sellingpartnerapi-na.amazon.com/sellers/v1/marketplaceParticipations`.
-    
+
 The [`docs/Api/`](https://github.com/jlevers/selling-partner-api/tree/main/docs/Api) directory contains the documentation for interacting each distinct section of the Selling Partner API. Those sections are referred to as **APIs** throughout the documentation---you can think of the Selling Partner API as having many sub-APIs, where each sub-API has a number of endpoints that provide closely related functionality.
 
 Endpoint methods that perform `POST`, `PUT`, and `DELETE` requests typically take some model as a parameter, and nearly all endpoint methods return a model with result information. For instance, [`ShippingApi::createShipment()`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingApi.md#createShipment) takes an instance of the [`CreateShipmentRequest`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/Shipping/CreateShipmentRequest.md) model as its only argument, and returns an instance of the [`CreateShipmentResponse`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/Shipping/CreateShipmentResponse.md) model.
@@ -152,15 +152,15 @@ The Feeds and Reports APIs include operations that involve uploading and downloa
 ### Downloading a report document
 
 ``` php
-use SellingPartnerApi;
+use SellingPartnerApi\Api\ReportsApi;
 
 // Assume we've already fetched a report document ID
 $documentId = "foo.1234";
-$reportsApi = new Api\ReportsApi();
+$reportsApi = new ReportsApi();
 $reportDocumentInfo = $reportsApi->getReportDocument($documentId);
 
 // Pass the content type of the report you're fetching
-$docToDownload = new Document($reportDocumentInfo->getPayload(), "text/tab-separated-values");
+$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo->getPayload(), "text/tab-separated-values");
 $contents = $docToDownload->download();  // The raw report text
 // A SimpleXML object if the content type is text/xml, or an array of associative arrays, each
 // sub array corresponding to a row of the report
@@ -171,13 +171,16 @@ $data = $docToDownload->getData();
 ### Uploading a feed document
 
 ``` php
-use SellingPartnerApi;
+use SellingPartnerApi\Api\FeedsApi;
+use SellingPartnerApi\Model\Feeds;
 
 const CONTENT_TYPE = "text/xml";  // This will be different depending on your feed type
-$feedsApi = new Api\FeedsApi();
-$createFeedDocSpec = new Model\Feeds\CreateFeedDocumentSpecification(["content_type" => CONTENT_TYPE]);
+$feedsApi = new FeedsApi();
+$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(["content_type" => CONTENT_TYPE]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
 
-$docToUpload = new Document($feedDocumentInfo->getPayload(), CONTENT_TYPE)
-$docToUpload->upload();
+$documentContents = file_get_contents("<your/feed/file.xml>");
+
+$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload(), CONTENT_TYPE);
+$docToUpload->upload($documentContents);
 ```

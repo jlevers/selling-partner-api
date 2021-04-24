@@ -523,7 +523,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -991,7 +991,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -1459,7 +1459,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -1927,7 +1927,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -2395,7 +2395,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -2863,7 +2863,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -3331,7 +3331,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -3788,7 +3788,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                [],
+                []
             );
         }
 
@@ -4250,7 +4250,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -4718,7 +4718,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -5175,7 +5175,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                [],
+                []
             );
         }
 
@@ -5626,7 +5626,7 @@ class MessagingApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                [],
+                []
             );
         }
 

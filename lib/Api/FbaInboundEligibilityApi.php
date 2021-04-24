@@ -503,7 +503,7 @@ class FbaInboundEligibilityApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'ItemEligibilityPreview'],
-                [],
+                []
             );
         }
 

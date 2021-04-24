@@ -541,7 +541,7 @@ class FbaInventoryApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 

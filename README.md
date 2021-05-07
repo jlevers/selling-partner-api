@@ -140,8 +140,9 @@ $config = new SellingPartnerApi\Configuration([
     "accessToken" => "Azta|WeBxxx....xxx",
     "accessTokenExpiration" => 1616016220,
     "lwaClientId" => "AKIAxxxxxxxxxxxxxxxxx",
-    "lwaClientSecret" => "a8e5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe46c"
-]);
+    "lwaClientSecret" => "a8e5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe46c",
+    "region" => "us-east-1"
+], "https://sellingpartnerapi-na.amazon.com");
 $api = new SellingPartnerApi\Api\SellersApi($config);
 // Now you can make calls using $api, which will use the credentials specified in $config
 ```

@@ -450,7 +450,7 @@ class OrdersApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -839,7 +839,7 @@ class OrdersApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -1228,7 +1228,7 @@ class OrdersApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -1629,7 +1629,7 @@ class OrdersApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -2030,7 +2030,7 @@ class OrdersApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -2582,7 +2582,7 @@ class OrdersApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 

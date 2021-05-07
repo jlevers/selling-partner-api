@@ -530,7 +530,7 @@ class AuthorizationApi
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload', 'errors'],
                 [],
-                "sellingpartnerapi::migration",
+                "sellingpartnerapi::migration"
             );
         }
 

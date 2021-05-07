@@ -486,7 +486,7 @@ class FinancesApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -911,7 +911,7 @@ class FinancesApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -1331,7 +1331,7 @@ class FinancesApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -1751,7 +1751,7 @@ class FinancesApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 

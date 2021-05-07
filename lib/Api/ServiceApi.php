@@ -528,7 +528,7 @@ class ServiceApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -1018,7 +1018,7 @@ class ServiceApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -1474,7 +1474,7 @@ class ServiceApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -1930,7 +1930,7 @@ class ServiceApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -2520,7 +2520,7 @@ class ServiceApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -3013,7 +3013,7 @@ class ServiceApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 

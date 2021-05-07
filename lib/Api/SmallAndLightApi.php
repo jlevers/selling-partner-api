@@ -368,7 +368,7 @@ class SmallAndLightApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -819,7 +819,7 @@ class SmallAndLightApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -1270,7 +1270,7 @@ class SmallAndLightApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -1671,7 +1671,7 @@ class SmallAndLightApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -2128,7 +2128,7 @@ class SmallAndLightApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 

@@ -471,7 +471,7 @@ class SellersApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                [],
+                []
             );
         }
 

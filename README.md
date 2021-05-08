@@ -127,22 +127,28 @@ The `Configuration` constructor takes an array of options:
 * `accessTokenExpiration (int)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
 * `lwaClientId (string)`: The LWA client ID of the SP API application to use to execute API requests.
 * `lwaClientSecret (string)`: The LWA client secret of the SP API application to use to execute API requests.
+* `region (string)`: The AWS region associated with the SP API endpoint you're using. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.
 
 All array items are optional, but `lwaClientId` and `lwaClientSecret` must always be given together. If only one of those two options is provided, the `Configuration` constructor will throw an exception. 
 
+The `Configuration` constructor also (optionally) takes the SP API endpoint you'd like to use as the second parameter. If this parameter is not given, the endpoint must be passed via the `SPAPI_ENDPOINT` environment variable.
+
 ### Example
 ``` php
-$config = new SellingPartnerApi\Configuration([
-    "refreshToken" => "Aztr|WeBxxx....xxx",
-    "onUpdateCreds" => function(SellingPartnerApi\Credentials $creds) {
-        print_r($creds);
-    },
-    "accessToken" => "Azta|WeBxxx....xxx",
-    "accessTokenExpiration" => 1616016220,
-    "lwaClientId" => "AKIAxxxxxxxxxxxxxxxxx",
-    "lwaClientSecret" => "a8e5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe46c",
-    "region" => "us-east-1"
-], "https://sellingpartnerapi-na.amazon.com");
+$config = new SellingPartnerApi\Configuration(
+    [
+        "refreshToken" => "Aztr|WeBxxx....xxx",
+        "onUpdateCreds" => function(SellingPartnerApi\Credentials $creds) {
+            print_r($creds);
+        },
+        "accessToken" => "Azta|WeBxxx....xxx",
+        "accessTokenExpiration" => 1616016220,
+        "lwaClientId" => "AKIAxxxxxxxxxxxxxxxxx",
+        "lwaClientSecret" => "a8e5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe46c",
+        "region" => "us-east-1"
+    ],
+    "https://sellingpartnerapi-na.amazon.com"
+);
 $api = new SellingPartnerApi\Api\SellersApi($config);
 // Now you can make calls using $api, which will use the credentials specified in $config
 ```

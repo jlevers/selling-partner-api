@@ -2,8 +2,10 @@
 
 namespace SellingPartnerApi;
 
+use Closure;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
+use RuntimeException;
 
 class Authentication
 {
@@ -14,6 +16,7 @@ class Authentication
     private const TERMINATION_STR = "aws4_request";
 
     private $refreshToken;
+    /** @var Closure|null $onUpdateCreds */
     private $onUpdateCreds;
     private $lwaClientId;
     private $lwaClientSecret;
@@ -25,43 +28,68 @@ class Authentication
     private $grantlessCredentialsScope = null;
     private $requestTime;
 
-    public function __construct(?array $options = []) {
+//    public function __construct(?array $options = []) {
+
+    /**
+     * Authentication constructor.
+     * @param ConfigurationOptions|null $configurationOptions
+     * @throws RuntimeException
+     */
+    public function __construct(?ConfigurationOptions $configurationOptions = null)
+    {
         $this->client = new Client();
-        loadDotenv();
 
-        $this->refreshToken = $options["refreshToken"] ?? $_ENV["LWA_REFRESH_TOKEN"];
-        $this->onUpdateCreds = $options["onUpdateCreds"] ?? null;
-        $this->lwaClientId = $options["lwaClientId"] ?? $_ENV["LWA_CLIENT_ID"];
-        $this->lwaClientSecret = $options["lwaClientSecret"] ?? $_ENV["LWA_CLIENT_SECRET"];
-        $this->region = $options["region"] ?? $_ENV["SPAPI_AWS_REGION"];
+        $accessToken = null;
+        $accessTokenExpiration = null;
 
-        $accessToken = $options["accessToken"] ?? null;
-        $accessTokenExpiration = $options["accessTokenExpiration"] ?? null;
+        if ($configurationOptions !== null) {
+            $this->refreshToken = $configurationOptions->getLwaRefreshToken();
+            $this->onUpdateCreds = $configurationOptions->getOnUpdateCredentials();
+            $this->lwaClientSecret = $configurationOptions->getLwaClientSecret();
+            $this->region = $configurationOptions->getSpapiAwsRegion();
 
-        if (
-            $accessToken === null && $accessTokenExpiration !== null
-            || $accessToken !== null && $accessTokenExpiration === null
-        ) {
-            throw new \Exception('If one of `$accessToken` or `$accessTokenExpiration` is provided, the other must be provided as well');
+            $accessToken = $configurationOptions->getAccessToken();
+            $accessTokenExpiration = $configurationOptions->getAccessTokenExpiration();
+
+            $key = $configurationOptions->getAwsAccessKey();
+            $secret = $configurationOptions->getAwsAccessSecret();
+        } else {
+            loadDotenv();
+
+            $this->refreshToken = $_ENV["LWA_REFRESH_TOKEN"];
+            $this->onUpdateCreds = null;
+            $this->lwaClientId = $_ENV["LWA_CLIENT_ID"];
+            $this->lwaClientSecret = $_ENV["LWA_CLIENT_SECRET"];
+            $this->region = $_ENV["SPAPI_AWS_REGION"];
+            $key = $_ENV["AWS_ACCESS_KEY_ID"];
+            $secret = $_ENV["AWS_SECRET_ACCESS_KEY"];
+        }
+
+        if (($accessToken === null && $accessTokenExpiration !== null)
+            || ($accessToken !== null && $accessTokenExpiration === null)) {
+            throw new RuntimeException('If one of `$accessToken` or `$accessTokenExpiration` is provided, the other must be provided as well');
         }
 
         if ($accessToken !== null && $accessTokenExpiration !== null) {
-            $this->populateCredentials($accessToken, $accessTokenExpiration);
+            $this->populateCredentials($key, $secret, $accessToken, $accessTokenExpiration);
         }
     }
 
-    public function startRequestGeneration(): void {
+    public function startRequestGeneration(): void
+    {
         // We need to use the same exact DateTime throughout the signing process *and* in the
         // x-amz-date header (see HeaderSelector.php), because Amazon will reject any request
         // where all times do not match down to the second
         $this->setRequestTime();
     }
 
-    public function endRequestGeneration(): void {
+    public function endRequestGeneration(): void
+    {
         $this->requestTime = null;
     }
 
-    public function getAuthToken(?string $scope = null) {
+    public function getAuthToken(?string $scope = null)
+    {
         if ($scope !== null) {
             // If the scope for this grantless request doesn't match $this->grantlessCredentialsScope, we
             // need a new set of grantless credentials that provide access to the new scope
@@ -77,7 +105,13 @@ class Authentication
         return $this->awsCredentials->getSecurityToken();
     }
 
-    public function requestLWAToken(?string $scope = null): array {
+    /**
+     * @param string|null $scope
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function requestLWAToken(?string $scope = null): array
+    {
         $jsonData = [
             "grant_type" => $scope === null ? "refresh_token" : "client_credentials",
             "client_id" => $this->lwaClientId,
@@ -103,9 +137,8 @@ class Authentication
         return [$accessToken, $expirationDate->getTimestamp()];
     }
 
-    public function populateCredentials(?string $token = null, ?int $expires = null, bool $grantless = false): void {
-        $key = $_ENV["AWS_ACCESS_KEY_ID"];
-        $secret = $_ENV["AWS_SECRET_ACCESS_KEY"];
+    public function populateCredentials($key, $secret, ?string $token = null, ?int $expires = null, bool $grantless = false): void
+    {
         $creds = null;
         if ($token !== null && $expires !== null) {
             $creds = new Credentials($key, $secret, $token, $expires);
@@ -120,7 +153,8 @@ class Authentication
         }
     }
 
-    public function signRequest(Psr7\Request $request, ?string $scope = null): Psr7\Request {
+    public function signRequest(Psr7\Request $request, ?string $scope = null): Psr7\Request
+    {
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
         $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         if ($relevantCreds === null || $relevantCreds->getSecurityToken() === null || $relevantCreds->expiresSoon()) {
@@ -144,7 +178,8 @@ class Authentication
         return $request->withHeader("Authorization", $authHeaderVal);
     }
 
-    private function createCanonicalRequest(Psr7\Request $request): string {
+    private function createCanonicalRequest(Psr7\Request $request): string
+    {
         $method = $request->getMethod();
         $uri = $request->getUri();
         $path = $this->createCanonicalizedPath($uri->getPath());
@@ -156,7 +191,8 @@ class Authentication
         return $canonicalRequest;
     }
 
-    private function createCanonicalizedPath(string $path): string {
+    private function createCanonicalizedPath(string $path): string
+    {
         // Remove leading slash
         $trimmed = ltrim($path, "/");
         // URL encode an already URL-encoded path
@@ -165,7 +201,8 @@ class Authentication
         return "/" . str_replace("%2F", "/", $doubleEncoded);
     }
 
-    private function createCanonicalizedQuery(string $query): string {
+    private function createCanonicalizedQuery(string $query): string
+    {
         if (strlen($query) === 0) return "";
 
         // Parse query string
@@ -212,7 +249,8 @@ class Authentication
         return $canonicalized;
     }
 
-    private function createCanonicalizedHeaders(array $headers): array {
+    private function createCanonicalizedHeaders(array $headers): array
+    {
         // Convert all header names to lowercase
         foreach ($headers as $key => $values) {
             $headers[strtolower($key)] = $values;
@@ -223,9 +261,9 @@ class Authentication
         ksort($headers, SORT_STRING);
 
         $canonicalizedHeaders = "";
-        $canonicalizedHeaderNames="";
+        $canonicalizedHeaderNames = "";
         foreach ($headers as $key => $values) {
-            $parsedValues = array_map(function($val) {
+            $parsedValues = array_map(function ($val) {
                 $trimmed = trim($val);
                 $reduced = preg_replace("/(\s+)/", " ", $trimmed);
                 return $reduced;
@@ -242,18 +280,21 @@ class Authentication
         ];
     }
 
-    private function createSigningString(string $canonicalRequest): string {
+    private function createSigningString(string $canonicalRequest): string
+    {
         $credentialScope = $this->createCredentialScope();
         $canonHashed = hash("sha256", $canonicalRequest);
         return static::SIGNING_ALGO . "\n{$this->formattedRequestTime()}\n{$credentialScope}\n{$canonHashed}";
     }
 
-    private function createCredentialScope(): string {
+    private function createCredentialScope(): string
+    {
         $terminator = static::TERMINATION_STR;
         return "{$this->formattedRequestTime(false)}/{$this->region}/" . static::SERVICE_NAME . "/{$terminator}";
     }
 
-    private function createSignature(string $signingString, string $secretKey): string {
+    private function createSignature(string $signingString, string $secretKey): string
+    {
         $kDate = hash_hmac("sha256", $this->formattedRequestTime(false), "AWS4{$secretKey}", true);
         $kRegion = hash_hmac("sha256", $this->region, $kDate, true);
         $kService = hash_hmac("sha256", self::SERVICE_NAME, $kRegion, true);
@@ -263,7 +304,8 @@ class Authentication
         return $signature;
     }
 
-    private function newToken(?string $scope = null): void {
+    private function newToken(?string $scope = null): void
+    {
         [$accessToken, $expirationTimestamp] = $this->requestLWAToken($scope);
         $this->populateCredentials($accessToken, $expirationTimestamp, $scope !== null);
         if ($scope === null && $this->onUpdateCreds !== null) {
@@ -271,11 +313,17 @@ class Authentication
         }
     }
 
-    private function setRequestTime(): void {
+    private function setRequestTime(): void
+    {
         $this->requestTime = new \DateTime("now", new \DateTimeZone("UTC"));
     }
 
-    public function formattedRequestTime(?bool $withTime = true): ?string {
+    /**
+     * @param bool|null $withTime
+     * @return string|null
+     */
+    public function formattedRequestTime(?bool $withTime = true): ?string
+    {
         $fmt = $withTime ? static::DATETIME_FMT : static::DATE_FMT;
         return $this->requestTime->format($fmt);
     }

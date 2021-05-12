@@ -556,7 +556,7 @@ class SolicitationsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getSpapiEndpoint() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
@@ -1007,7 +1007,7 @@ class SolicitationsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $this->config->getSpapiEndpoint() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );

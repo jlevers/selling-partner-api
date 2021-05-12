@@ -15,4 +15,4 @@ composer.lock
 .phpunit.result.cache
 
 # JetBrain IDE Files
-./.idea
+/.idea

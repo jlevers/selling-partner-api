@@ -33,11 +33,24 @@ class ConfigurationOptions
     /** @var Closure|null $onUpdateCredentials */
     protected $onUpdateCredentials;
 
+    /**
+     * ConfigurationOptions constructor.
+     * @param string $lwaClientId
+     * @param string $lwaClientSecret
+     * @param string $awsAccessKey
+     * @param string $awsAccessSecret
+     * @param string $lwaRefreshToken
+     * @param string $spapiAwsRegion
+     * @param string $spapiEndpoint
+     * @param string|null $accessToken
+     * @param string|null $accessTokenExpiration
+     * @param Closure|null $onUpdateCredentials
+     */
     public function __construct(
-        string $awsAccessKey,
-        string $awsAccessSecret,
         string $lwaClientId,
         string $lwaClientSecret,
+        string $awsAccessKey,
+        string $awsAccessSecret,
         string $lwaRefreshToken,
         string $spapiAwsRegion,
         string $spapiEndpoint,
@@ -45,10 +58,10 @@ class ConfigurationOptions
         ?string $accessTokenExpiration = null,
         ?Closure $onUpdateCredentials = null
     ) {
-        $this->awsAccessKey = $awsAccessKey;
-        $this->awsAccessSecret = $awsAccessSecret;
         $this->lwaClientId = $lwaClientId;
         $this->lwaClientSecret = $lwaClientSecret;
+        $this->awsAccessKey = $awsAccessKey;
+        $this->awsAccessSecret = $awsAccessSecret;
         $this->lwaRefreshToken = $lwaRefreshToken;
         $this->spapiAwsRegion = $spapiAwsRegion;
         $this->spapiEndpoint = $spapiEndpoint;

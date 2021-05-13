@@ -164,7 +164,7 @@ class Configuration
      *
      * @return string Host
      */
-    public function getSpapiEndpoint()
+    public function getHost()
     {
         return $this->spapiEndpoint;
     }
@@ -176,7 +176,7 @@ class Configuration
      */
     public function getBareHost()
     {
-        $host = $this->getSpapiEndpoint();
+        $host = $this->getHost();
         $noProtocol = preg_replace("/.+\:\/\//", " ", $host);
         return trim($noProtocol, "/");
     }

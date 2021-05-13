@@ -16,3 +16,6 @@ composer.lock
 
 # JetBrain IDE Files
 /.idea
+
+#.env
+.env

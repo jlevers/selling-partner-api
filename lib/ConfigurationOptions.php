@@ -30,7 +30,7 @@ class ConfigurationOptions
     /** @var string $spapiEndpoint */
     protected $spapiEndpoint;
 
-    /** @var Closure $onUpdateCredentials */
+    /** @var Closure|null $onUpdateCredentials */
     protected $onUpdateCredentials;
 
     public function __construct(
@@ -202,9 +202,9 @@ class ConfigurationOptions
     }
 
     /**
-     * @return Closure
+     * @return null|Closure
      */
-    public function getOnUpdateCredentials(): Closure
+    public function getOnUpdateCredentials(): ?Closure
     {
         return $this->onUpdateCredentials;
     }

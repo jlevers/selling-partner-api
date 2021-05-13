@@ -98,10 +98,8 @@ class Configuration
      * @param string|null $spapiEndpoint Note: This will override the ConfigurationOptions and ENV spapiEndpoint
      * @throws Exception
      */
-//    public function __construct(?array $lwaAuthInfo = null, ?string $host = null)
     public function __construct(?ConfigurationOptions $configurationOptions = null, ?string $spapiEndpoint = null)
     {
-//        $this->lwaAuthInfo = $lwaAuthInfo;
         $this->tempFolderPath = sys_get_temp_dir();
 
         if ($spapiEndpoint !== null) {
@@ -109,6 +107,8 @@ class Configuration
         } else if ($configurationOptions !== null) {
             $this->spapiEndpoint = $configurationOptions->getSpapiEndpoint();
         } else {
+            //If we arrive at this case, we are assuming .env is being used.
+            loadDotenv();
             $this->spapiEndpoint = $_ENV["SPAPI_ENDPOINT"];
         }
 
@@ -118,7 +118,6 @@ class Configuration
             $this->auth = new Authentication($this->configurationOptions);
         } else {
             $this->auth = self::getDefaultAuthentication();
-
         }
     }
 
@@ -129,7 +128,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setAccessToken($accessToken): self
+    public function setAccessToken($accessToken)
     {
         $this->accessToken = $accessToken;
         return $this;
@@ -142,7 +141,7 @@ class Configuration
      *
      * @return string Access token for OAuth
      */
-    public function getAccessToken($scope = null): string
+    public function getAccessToken($scope = null)
     {
         return $this->auth->getAuthToken($scope);
     }
@@ -154,7 +153,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setSpapiEndpoint($spapiEndpoint): self
+    public function setSpapiEndpoint($spapiEndpoint)
     {
         $this->spapiEndpoint = $spapiEndpoint;
         return $this;
@@ -165,7 +164,7 @@ class Configuration
      *
      * @return string Host
      */
-    public function getSpapiEndpoint(): string
+    public function getSpapiEndpoint()
     {
         return $this->spapiEndpoint;
     }
@@ -175,7 +174,7 @@ class Configuration
      *
      * @return string Host
      */
-    public function getBareHost(): string
+    public function getBareHost()
     {
         $host = $this->getSpapiEndpoint();
         $noProtocol = preg_replace("/.+\:\/\//", " ", $host);
@@ -190,7 +189,7 @@ class Configuration
      * @throws InvalidArgumentException
      * @return $this
      */
-    public function setUserAgent($userAgent): self
+    public function setUserAgent($userAgent)
     {
         if (!is_string($userAgent)) {
             throw new InvalidArgumentException('User-agent must be a string.');
@@ -240,7 +239,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setDebugFile($debugFile): self
+    public function setDebugFile($debugFile)
     {
         $this->debugFile = $debugFile;
         return $this;
@@ -251,7 +250,7 @@ class Configuration
      *
      * @return string
      */
-    public function getDebugFile(): string
+    public function getDebugFile()
     {
         return $this->debugFile;
     }
@@ -263,7 +262,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setTempFolderPath($tempFolderPath): self
+    public function setTempFolderPath($tempFolderPath)
     {
         $this->tempFolderPath = $tempFolderPath;
         return $this;
@@ -274,7 +273,7 @@ class Configuration
      *
      * @return string Temp folder path
      */
-    public function getTempFolderPath(): string
+    public function getTempFolderPath()
     {
         return $this->tempFolderPath;
     }
@@ -285,7 +284,7 @@ class Configuration
      *
      * @return void
      */
-    public function startRequestGeneration(): void
+    public function startRequestGeneration()
     {
         $this->auth->startRequestGeneration();
     }
@@ -294,7 +293,7 @@ class Configuration
      * Delegator method. Performs any necessary operations to tell the Authentication
      * class that we're done generating a signed request
      */
-    public function endRequestGeneration(): void
+    public function endRequestGeneration()
     {
         $this->auth->endRequestGeneration();
     }
@@ -304,7 +303,7 @@ class Configuration
      *
      * @return Configuration
      */
-    public static function getDefaultConfiguration(): Configuration
+    public static function getDefaultConfiguration()
     {
         if (self::$defaultConfiguration === null) {
             $config = new Configuration();
@@ -328,7 +327,7 @@ class Configuration
      *
      * @return void
      */
-    public static function setDefaultConfiguration(Configuration $config): void
+    public static function setDefaultConfiguration(Configuration $config)
     {
         self::$defaultConfiguration = $config;
     }
@@ -338,7 +337,7 @@ class Configuration
      *
      * @return Authentication
      */
-    public static function getDefaultAuthentication(): Authentication
+    public static function getDefaultAuthentication()
     {
         if (self::$defaultAuthentication === null) {
             self::setDefaultAuthentication();
@@ -353,7 +352,7 @@ class Configuration
      *
      * @return void
      */
-    public static function setDefaultAuthentication($auth = null): void
+    public static function setDefaultAuthentication($auth = null)
     {
         if ($auth !== null) {
             self::$defaultAuthentication = $auth;
@@ -380,7 +379,7 @@ class Configuration
      *
      * @return Request The signed request
      */
-    public function signRequest($request, $scope = null): Request
+    public function signRequest($request, $scope = null)
     {
         return $this->auth->signRequest($request, $scope);
     }
@@ -391,7 +390,7 @@ class Configuration
      * @param string|null $tempFolderPath The path to the temp folder.
      * @return string The report for debugging
      */
-    public static function toDebugReport(?string $tempFolderPath = null): string
+    public static function toDebugReport(?string $tempFolderPath = null)
     {
         if ($tempFolderPath === null) {
             $tempFolderPath = self::getDefaultConfiguration()->getTempFolderPath();
@@ -413,7 +412,7 @@ class Configuration
      *
      * @return null|string API key with the prefix
      */
-    public function getApiKeyWithPrefix($apiKeyIdentifier): ?string
+    public function getApiKeyWithPrefix($apiKeyIdentifier)
     {
         $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
         $apiKey = $this->getApiKey($apiKeyIdentifier);
@@ -436,7 +435,7 @@ class Configuration
      *
      * @return array an array of host settings
      */
-    public function getHostSettings(): array
+    public function getHostSettings()
     {
         return [
             [
@@ -453,7 +452,7 @@ class Configuration
      * @param array|null $variables hash of variable and the corresponding value (optional)
      * @return string URL based on host settings
      */
-    public function getHostFromSettings($index, $variables = null): string
+    public function getHostFromSettings($index, $variables = null)
     {
         if (null === $variables) {
             $variables = [];
@@ -489,7 +488,7 @@ class Configuration
     /**
      * @return ConfigurationOptions|null
      */
-    public function getConfigurationOptions(): ?ConfigurationOptions
+    public function getConfigurationOptions()
     {
         return $this->configurationOptions;
     }
@@ -497,7 +496,7 @@ class Configuration
     /**
      * @param ConfigurationOptions|null $configurationOptions
      */
-    public function setConfigurationOptions(?ConfigurationOptions $configurationOptions): void
+    public function setConfigurationOptions(?ConfigurationOptions $configurationOptions)
     {
         $this->configurationOptions = $configurationOptions;
     }

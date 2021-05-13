@@ -29,6 +29,14 @@ class Authentication
     private $requestTime;
 
 //    public function __construct(?array $options = []) {
+    /**
+     * @var mixed|string
+     */
+    private $awsKey;
+    /**
+     * @var string
+     */
+    private $awsSecret;
 
     /**
      * Authentication constructor.
@@ -45,14 +53,15 @@ class Authentication
         if ($configurationOptions !== null) {
             $this->refreshToken = $configurationOptions->getLwaRefreshToken();
             $this->onUpdateCreds = $configurationOptions->getOnUpdateCredentials();
+            $this->lwaClientId = $configurationOptions->getLwaClientId();
             $this->lwaClientSecret = $configurationOptions->getLwaClientSecret();
             $this->region = $configurationOptions->getSpapiAwsRegion();
 
             $accessToken = $configurationOptions->getAccessToken();
             $accessTokenExpiration = $configurationOptions->getAccessTokenExpiration();
 
-            $key = $configurationOptions->getAwsAccessKey();
-            $secret = $configurationOptions->getAwsAccessSecret();
+            $this->awsKey = $configurationOptions->getAwsAccessKey();
+            $this->awsSecret = $configurationOptions->getAwsAccessSecret();
         } else {
             loadDotenv();
 
@@ -61,8 +70,8 @@ class Authentication
             $this->lwaClientId = $_ENV["LWA_CLIENT_ID"];
             $this->lwaClientSecret = $_ENV["LWA_CLIENT_SECRET"];
             $this->region = $_ENV["SPAPI_AWS_REGION"];
-            $key = $_ENV["AWS_ACCESS_KEY_ID"];
-            $secret = $_ENV["AWS_SECRET_ACCESS_KEY"];
+            $this->awsKey = $_ENV["AWS_ACCESS_KEY_ID"];
+            $this->awsSecret = $_ENV["AWS_SECRET_ACCESS_KEY"];
         }
 
         if (($accessToken === null && $accessTokenExpiration !== null)
@@ -71,7 +80,7 @@ class Authentication
         }
 
         if ($accessToken !== null && $accessTokenExpiration !== null) {
-            $this->populateCredentials($key, $secret, $accessToken, $accessTokenExpiration);
+            $this->populateCredentials($this->awsKey, $this->awsSecret, $accessToken, $accessTokenExpiration);
         }
     }
 
@@ -300,14 +309,13 @@ class Authentication
         $kService = hash_hmac("sha256", self::SERVICE_NAME, $kRegion, true);
         $kSigning = hash_hmac("sha256", static::TERMINATION_STR, $kService, true);
 
-        $signature = hash_hmac("sha256", $signingString, $kSigning);
-        return $signature;
+        return hash_hmac("sha256", $signingString, $kSigning);
     }
 
     private function newToken(?string $scope = null): void
     {
         [$accessToken, $expirationTimestamp] = $this->requestLWAToken($scope);
-        $this->populateCredentials($accessToken, $expirationTimestamp, $scope !== null);
+        $this->populateCredentials($this->awsKey, $this->awsSecret, $accessToken, $expirationTimestamp, $scope !== null);
         if ($scope === null && $this->onUpdateCreds !== null) {
             call_user_func($this->onUpdateCreds, $this->awsCredentials);
         }

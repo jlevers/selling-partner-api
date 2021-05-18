@@ -2,7 +2,9 @@
 
 namespace SellingPartnerApi;
 
+use Dotenv\Dotenv;
 use \Exception;
+use RuntimeException;
 
 // Check the parent directory, and then 4 directories up. If this package is being
 // used standalone, then a .env file in its root directory (__DIR__ . "/..") would
@@ -22,7 +24,7 @@ const REQUIRED_ENVVARS = [
 function loadDotenv(): void {
     foreach(ENV_PATHS as $path) {
         if (file_exists($path . "/.env")) {
-            $dotenv = \Dotenv\Dotenv::createImmutable($path);
+            $dotenv = Dotenv::createImmutable($path);
             $dotenv->load();
 
             foreach (REQUIRED_ENVVARS as $var) {
@@ -33,7 +35,7 @@ function loadDotenv(): void {
         }
     }
 
-    throw new Exception("No .env file found.");
+    throw new RuntimeException("No .env file found.");
 }
 
 function allVarsLoaded(): bool {

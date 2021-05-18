@@ -13,3 +13,9 @@ composer.lock
 
 # PHPUnit cache
 .phpunit.result.cache
+
+# JetBrain IDE Files
+/.idea
+
+#.env
+.env

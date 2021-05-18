@@ -512,7 +512,7 @@ class SolicitationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                [],
+                []
             );
         }
 
@@ -963,7 +963,7 @@ class SolicitationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/hal+json'],
-                [],
+                []
             );
         }
 

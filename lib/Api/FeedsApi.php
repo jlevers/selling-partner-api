@@ -490,7 +490,7 @@ class FeedsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -911,7 +911,7 @@ class FeedsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -1338,7 +1338,7 @@ class FeedsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -1773,7 +1773,7 @@ class FeedsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -2202,7 +2202,7 @@ class FeedsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -2721,7 +2721,7 @@ class FeedsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 

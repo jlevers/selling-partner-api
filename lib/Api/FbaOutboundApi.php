@@ -474,7 +474,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                [],
+                []
             );
         }
 
@@ -875,7 +875,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -1301,7 +1301,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -1746,7 +1746,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                [],
+                []
             );
         }
 
@@ -2192,7 +2192,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                [],
+                []
             );
         }
 
@@ -2600,7 +2600,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                [],
+                []
             );
         }
 
@@ -3013,7 +3013,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                [],
+                []
             );
         }
 
@@ -3414,7 +3414,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -3828,7 +3828,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                [],
+                []
             );
         }
 
@@ -4242,7 +4242,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                [],
+                []
             );
         }
 
@@ -4692,7 +4692,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'payload'],
-                [],
+                []
             );
         }
 
@@ -5116,7 +5116,7 @@ class FbaOutboundApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json'],
+                ['application/json']
             );
         }
 

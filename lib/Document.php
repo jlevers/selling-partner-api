@@ -124,9 +124,9 @@ class Document
         $stream = new EncryptionStreams\AesEncryptingStream($stream, $this->key, $cipherMethod);
         $client = new Client();
 
-        $response = $client->post($this->url, [
+        $response = $client->put($this->url, [
             RequestOptions::HEADERS => [
-                "content-type" => $this->contentType . "; charset=ISO_8859_1",
+                "content-type" => $this->contentType,
                 "host" => parse_url($this->url, PHP_URL_HOST),
             ],
             RequestOptions::BODY => $stream,

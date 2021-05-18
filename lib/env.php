@@ -13,12 +13,10 @@ use \Exception;
 const ENV_PATHS = [__DIR__ . "/..", __DIR__ . "/../../../..", __DIR__ . "/../.."];
 
 const REQUIRED_ENVVARS = [
-    "SPAPI_AWS_REGION",
     "AWS_ACCESS_KEY_ID",
     "AWS_SECRET_ACCESS_KEY",
     "LWA_CLIENT_ID",
     "LWA_CLIENT_SECRET",
-    "SPAPI_ENDPOINT",
 ];
 
 function loadDotenv(): void {
@@ -30,14 +28,6 @@ function loadDotenv(): void {
             foreach (REQUIRED_ENVVARS as $var) {
                 $dotenv->required($var)->notEmpty();
             }
-
-            // Validate environment variables
-            $dotenv->required("SPAPI_AWS_REGION")->allowedValues(["us-east-1", "us-west-2", "eu-west-1"]);
-            $dotenv->required("SPAPI_ENDPOINT")->allowedValues([
-                "https://sellingpartnerapi-na.amazon.com",
-                "https://sellingpartnerapi-eu.amazon.com",
-                "https://sellingpartnerapi-fe.amazon.com",
-            ]);
 
             return;
         }

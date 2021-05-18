@@ -503,7 +503,7 @@ class NotificationsApi
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'Successful Response'],
                 ['application/json'],
-                "sellingpartnerapi::notifications",
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -969,7 +969,7 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'Successful Response'],
-                ['application/json'],
+                ['application/json']
             );
         }
 
@@ -1425,7 +1425,7 @@ class NotificationsApi
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'Successful Response'],
                 [],
-                "sellingpartnerapi::notifications",
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -1894,7 +1894,7 @@ class NotificationsApi
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'Successful Operation Response'],
                 [],
-                "sellingpartnerapi::notifications",
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -2344,7 +2344,7 @@ class NotificationsApi
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'Successful Response'],
                 [],
-                "sellingpartnerapi::notifications",
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -2775,7 +2775,7 @@ class NotificationsApi
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'Successful Response'],
                 [],
-                "sellingpartnerapi::notifications",
+                "sellingpartnerapi::notifications"
             );
         }
 
@@ -3204,7 +3204,7 @@ class NotificationsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'Successful Response'],
-                [],
+                []
             );
         }
 
@@ -3673,7 +3673,7 @@ class NotificationsApi
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'Successful Response'],
                 [],
-                "sellingpartnerapi::notifications",
+                "sellingpartnerapi::notifications"
             );
         }
 

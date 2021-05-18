@@ -43,7 +43,7 @@ class ConfigurationOptions
      * @param string $spapiAwsRegion
      * @param string $spapiEndpoint
      * @param string|null $accessToken
-     * @param string|null $accessTokenExpiration
+     * @param int|null $accessTokenExpiration
      * @param Closure|null $onUpdateCredentials
      */
     public function __construct(
@@ -175,9 +175,9 @@ class ConfigurationOptions
     }
 
     /**
-     * @param string|null $accessTokenExpiration
+     * @param int|null $accessTokenExpiration
      */
-    public function setAccessTokenExpiration(?string $accessTokenExpiration): void
+    public function setAccessTokenExpiration(?int $accessTokenExpiration): void
     {
         $this->accessTokenExpiration = $accessTokenExpiration;
     }

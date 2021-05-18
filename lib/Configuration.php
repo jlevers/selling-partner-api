@@ -102,18 +102,20 @@ class Configuration
     {
         $this->tempFolderPath = sys_get_temp_dir();
 
-        if ($spapiEndpoint !== null) {
-            $this->spapiEndpoint = $spapiEndpoint;
-        } else if ($configurationOptions !== null) {
-            $this->spapiEndpoint = $configurationOptions->getSpapiEndpoint();
-        } else {
-            //If we arrive at this case, we are assuming .env is being used.
-            loadDotenv();
-            $this->spapiEndpoint = $_ENV["SPAPI_ENDPOINT"];
-        }
-
         $this->configurationOptions = $configurationOptions;
 
+        if ($this->configurationOptions === null) {
+            loadDotenv();
+        }
+
+        if ($spapiEndpoint !== null) {
+            $this->spapiEndpoint = $spapiEndpoint;
+        } else if ($this->configurationOptions !== null) {
+            $this->spapiEndpoint = $this->configurationOptions->getSpapiEndpoint();
+        } else {
+            $this->spapiEndpoint = $_ENV["SPAPI_ENDPOINT"];
+        }
+        
         if ($this->configurationOptions !== null) {
             $this->auth = new Authentication($this->configurationOptions);
         } else {

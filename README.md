@@ -35,21 +35,91 @@ You need a few things to get started:
 If you're looking for more information on how to set those things up, check out [this blog post](https://jesseevers.com/selling-partner-api-access/). It provides a detailed walkthrough of the whole setup process.
 
 
-### Configuration
+### Setup
+
+#### Using the Configuration and ConfigurationOptions classes
+
+TL;DR: pass a `ConfigurationOptions` instance to the `Configuration` constructor, and pass the `Configuration` instance to the `SellingPartnerApi\Api\*Api` constructor.
+
+The [`ConfigurationOptions`](https://github.com/jlevers/selling-partner-api/blob/main/lib/ConfigurationOptions.php) constructor takes all the configuration information that's needed to connect to the Selling Partner API:
+
+```php
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "<LWA client ID>",
+    "<LWA client secret>",
+    "<AWS access key ID>",
+    "<AWS secret access key>",
+    "<LWA refresh token>",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+```
+
+That object gets passed to the [`Configuration`](https://github.com/jlevers/selling-partner-api/blob/main/lib/ConfigurationOptions.php) constructor:
+
+```php
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+```
+
+`$config` can then be passed into the constructor of any `SellingPartnerApi\Api\*Api` class. See the `Example` section for a complete example.
+
+##### ConfigurationOptions
+
+The `ConfigurationOptions` constructor takes the following parameters:
+
+* `lwaClientId (string)`: The LWA client ID of the SP API application to use to execute API requests.
+* `lwaClientSecret (string)`: The LWA client secret of the SP API application to use to execute API requests.
+* `awsAccessKey (string)`: AWS IAM user Access Key ID with SP API ExecuteAPI permissions.
+* `awsAccessSecret (string)`: AWS IAM user Secret Access Key with SP API ExecuteAPI permissions.
+* `lwaRefreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests.
+* `spapiAwsRegion (string)`: The AWS region associated with the SP API endpoint you're using. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.
+* `spapiEndpoint (string)`: The SP API endpoint you want to make calls to (i.e. https://sellingpartnerapi-na.amazon.com).
+* `accessToken (string|null)`: An access token generated from the refresh token.
+* `accessTokenExpiration (int|null)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
+* `$onUpdateCredentials (callable|Closure|null)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`SellingPartnerApi\Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
+
+##### Configuration
+
+The `Configuration` constructor takes the following parameters:
+* `configInfo (ConfigurationOptions|array)`: A `ConfigurationOptions` instance, or an array of configuration options for backwards compatibility.
+* `spapiEndpoint (string|null)`: A Selling Partner endpoint. This parameter exists for backwards compatibility, but is deprecated and will be removed in the next major version.
+
+(I know this configuration system is somewhat clunky, but it's necessary for backwards compatibility. In v3.0.0, the `ConfigurationOptions` object will be removed, and all configuration parameters will be passed directly to `Configuration`).
+
+#### Using .env (deprecated)
+
+**Note:** `.env`-based configuration is deprecated and will be removed in the next major release (v3.0.0).
 
 Copy the sample configuration file to the root of your project: `cp vendor/jlevers/selling-partner-api/.env.example .env`
 
 Then, fill in the environment variables in `.env` with your IAM user credentials and the LWA credentials from your application. For more information on where to get those credentials, check out [this blog post](https://jesseevers.com/spapi-php-library/#installation-and-configuration).
 
-### Basic Usage
+
+### Example
 
 This example assumes you have access to the `Seller Insights` Selling Partner API role, but the general format applies to any Selling Partner API request.
+
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api = new SellingPartnerApi\Api\SellersApi();
+use SellingPartnerApi\ConfigurationOptions;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\Api;
+
+$configurationOptions = new ConfigurationOptions(
+    "<LWA client ID>",
+    "<LWA client secret>",
+    "<AWS access key ID>",
+    "<AWS secret access key>",
+    "<LWA refresh token>",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new Configuration($configurationOptions);
+
+$api = new Api\SellersApi();
 try {
     $result = $api->getMarketplaceParticipations();
     print_r($result);
@@ -117,43 +187,8 @@ $serviceJob->getBuyer();             // -> [Buyer instance]
 $serviceJob->getBuyer()->getName();  // -> "Jane Doe"
 ```
 
-## Dynamic credentials
-If you are writing an app for the Marketplace Appstore, you will need to connect to the Selling Partner API with an arbitrary number of different sets of credentials. There's an easy way to do that: just specify a custom [`Configuration`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Configuration.php) instance when you create an API object.
-
-The `Configuration` constructor takes an array of options:
-* `refreshToken (string)`: An SP API refresh token.
-* `onUpdateCreds (callable)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
-* `accessToken (string)`: An access token generated from the refresh token.
-* `accessTokenExpiration (int)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
-* `lwaClientId (string)`: The LWA client ID of the SP API application to use to execute API requests.
-* `lwaClientSecret (string)`: The LWA client secret of the SP API application to use to execute API requests.
-* `region (string)`: The AWS region associated with the SP API endpoint you're using. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.
-
-All array items are optional, but `lwaClientId` and `lwaClientSecret` must always be given together. If only one of those two options is provided, the `Configuration` constructor will throw an exception. 
-
-The `Configuration` constructor also (optionally) takes the SP API endpoint you'd like to use as the second parameter. If this parameter is not given, the endpoint must be passed via the `SPAPI_ENDPOINT` environment variable.
-
-### Example
-``` php
-$config = new SellingPartnerApi\Configuration(
-    [
-        "refreshToken" => "Aztr|WeBxxx....xxx",
-        "onUpdateCreds" => function(SellingPartnerApi\Credentials $creds) {
-            print_r($creds);
-        },
-        "accessToken" => "Azta|WeBxxx....xxx",
-        "accessTokenExpiration" => 1616016220,
-        "lwaClientId" => "AKIAxxxxxxxxxxxxxxxxx",
-        "lwaClientSecret" => "a8e5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxe46c",
-        "region" => "us-east-1"
-    ],
-    "https://sellingpartnerapi-na.amazon.com"
-);
-$api = new SellingPartnerApi\Api\SellersApi($config);
-// Now you can make calls using $api, which will use the credentials specified in $config
-```
-
 ## Uploading and downloading documents
+
 The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\Reports\ReportDocument`, `Model\Feeds\FeedDocument`, or `Model\Feeds\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsApi.md#getReportDocument), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#createFeedDocument) endpoints, respectively.
 
 ### Downloading a report document

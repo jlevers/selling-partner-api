@@ -114,7 +114,7 @@ class Configuration
         } else if ($this->configurationOptions !== null) {
             $this->spapiEndpoint = $this->configurationOptions->getSpapiEndpoint();
         }
-        
+
         if ($this->configurationOptions !== null) {
             $this->auth = new Authentication($this->configurationOptions);
         } else {

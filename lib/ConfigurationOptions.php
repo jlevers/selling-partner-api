@@ -43,7 +43,7 @@ class ConfigurationOptions
      * @param string $spapiAwsRegion
      * @param string $spapiEndpoint
      * @param string|null $accessToken
-     * @param string|null $accessTokenExpiration
+     * @param int|null $accessTokenExpiration
      * @param Closure|null $onUpdateCredentials
      */
     public function __construct(
@@ -55,7 +55,7 @@ class ConfigurationOptions
         string $spapiAwsRegion,
         string $spapiEndpoint,
         ?string $accessToken = null,
-        ?string $accessTokenExpiration = null,
+        ?int $accessTokenExpiration = null,
         ?Closure $onUpdateCredentials = null
     ) {
         $this->lwaClientId = $lwaClientId;
@@ -167,17 +167,17 @@ class ConfigurationOptions
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getAccessTokenExpiration(): ?string
+    public function getAccessTokenExpiration(): ?int
     {
         return $this->accessTokenExpiration;
     }
 
     /**
-     * @param string|null $accessTokenExpiration
+     * @param int|null $accessTokenExpiration
      */
-    public function setAccessTokenExpiration(?string $accessTokenExpiration): void
+    public function setAccessTokenExpiration(?int $accessTokenExpiration): void
     {
         $this->accessTokenExpiration = $accessTokenExpiration;
     }

@@ -106,14 +106,13 @@ class Configuration
 
         if ($this->configurationOptions === null) {
             loadDotenv();
+            $this->spapiEndpoint = $_ENV["SPAPI_ENDPOINT"];
         }
 
         if ($spapiEndpoint !== null) {
             $this->spapiEndpoint = $spapiEndpoint;
         } else if ($this->configurationOptions !== null) {
             $this->spapiEndpoint = $this->configurationOptions->getSpapiEndpoint();
-        } else {
-            $this->spapiEndpoint = $_ENV["SPAPI_ENDPOINT"];
         }
         
         if ($this->configurationOptions !== null) {

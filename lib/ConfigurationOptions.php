@@ -55,7 +55,7 @@ class ConfigurationOptions
         string $spapiAwsRegion,
         string $spapiEndpoint,
         ?string $accessToken = null,
-        ?string $accessTokenExpiration = null,
+        ?int $accessTokenExpiration = null,
         ?Closure $onUpdateCredentials = null
     ) {
         $this->lwaClientId = $lwaClientId;
@@ -167,9 +167,9 @@ class ConfigurationOptions
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getAccessTokenExpiration(): ?string
+    public function getAccessTokenExpiration(): ?int
     {
         return $this->accessTokenExpiration;
     }

@@ -37,9 +37,9 @@ class ConfigurationOptions
      * ConfigurationOptions constructor.
      * @param string $lwaClientId
      * @param string $lwaClientSecret
+     * @param string $lwaRefreshToken
      * @param string $awsAccessKey
      * @param string $awsAccessSecret
-     * @param string $lwaRefreshToken
      * @param string $spapiAwsRegion
      * @param string $spapiEndpoint
      * @param string|null $accessToken
@@ -49,9 +49,9 @@ class ConfigurationOptions
     public function __construct(
         string $lwaClientId,
         string $lwaClientSecret,
+        string $lwaRefreshToken,
         string $awsAccessKey,
         string $awsAccessSecret,
-        string $lwaRefreshToken,
         string $spapiAwsRegion,
         string $spapiEndpoint,
         ?string $accessToken = null,

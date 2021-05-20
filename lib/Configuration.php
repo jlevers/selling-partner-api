@@ -18,6 +18,7 @@ namespace SellingPartnerApi;
 use Exception;
 use GuzzleHttp\Psr7\Request;
 use InvalidArgumentException;
+use RuntimeException;
 
 /**
  * Configuration Class Doc Comment
@@ -94,13 +95,50 @@ class Configuration
 
     /**
      * Constructor
-     * @param ConfigurationOptions|null $configurationOptions
+     * @param ConfigurationOptions|array|null $configurationOptions
      * @param string|null $spapiEndpoint Note: This will override the ConfigurationOptions and ENV spapiEndpoint
      * @throws Exception
      */
-    public function __construct(?ConfigurationOptions $configurationOptions = null, ?string $spapiEndpoint = null)
+    public function __construct($configurationOptions = null, ?string $spapiEndpoint = null)
     {
         $this->tempFolderPath = sys_get_temp_dir();
+
+        //If an array is passed in, we will initialize a ConfigurationOptions using the values passed.
+        if ($configurationOptions !== null && is_array($configurationOptions)) {
+            //Validate the passed array has at least the minimum requirements.
+            //Required values.
+
+            $template = [
+                'lwaClientId',
+                'lwaClientSecret',
+                'lwaRefreshToken',
+                'awsAccessKey',
+                'awsAccessSecret',
+                'spapiAwsRegion',
+                'spapiEndpoint'
+            ];
+
+            foreach ($template as $value) {
+                //If one of any of the required values isn't in the passed array, we're going to throw an exception.
+                if (!array_key_exists($value, $configurationOptions)) {
+                    throw new RuntimeException("Missing required " . $value . " in configuration array.");
+                }
+            }
+
+            //Construct a new ConfigurationInstance
+            $configurationOptions = new ConfigurationOptions(
+                $configurationOptions["lwaClientId"],
+                $configurationOptions["lwaClientSecret"],
+                $configurationOptions["lwaRefreshToken"],
+                $configurationOptions["awsAccessKey"],
+                $configurationOptions["awsAccessSecret"],
+                $configurationOptions["spapiAwsRegion"],
+                $configurationOptions["spapiEndpoint"],
+                $configurationOptions['accessToken'] ?? null,
+                $configurationOptions['accessTokenExpiration'] ?? null,
+                $configurationOptions['onUpdateCredentials'] ?? null
+            );
+        }
 
         $this->configurationOptions = $configurationOptions;
 

@@ -139,10 +139,8 @@ class SolicitationsApi
      */
     public function createProductReviewAndSellerFeedbackSolicitationWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createProductReviewAndSellerFeedbackSolicitationRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -412,10 +410,8 @@ class SolicitationsApi
     public function createProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\SellingPartnerApi\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createProductReviewAndSellerFeedbackSolicitationRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -590,10 +586,8 @@ class SolicitationsApi
      */
     public function getSolicitationActionsForOrderWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getSolicitationActionsForOrderRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -863,10 +857,8 @@ class SolicitationsApi
     public function getSolicitationActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\SellingPartnerApi\Model\Solicitations\GetSolicitationActionsForOrderResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getSolicitationActionsForOrderRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

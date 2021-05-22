@@ -137,10 +137,8 @@ class FeedsApi
      */
     public function cancelFeedWithHttpInfo($feed_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->cancelFeedRequest($feed_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -408,10 +406,8 @@ class FeedsApi
     public function cancelFeedAsyncWithHttpInfo($feed_id)
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\CancelFeedResponse';
-        $this->config->startRequestGeneration();
         $request = $this->cancelFeedRequest($feed_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -566,10 +562,8 @@ class FeedsApi
      */
     public function createFeedWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createFeedRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -837,10 +831,8 @@ class FeedsApi
     public function createFeedAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createFeedRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -993,10 +985,8 @@ class FeedsApi
      */
     public function createFeedDocumentWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createFeedDocumentRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1264,10 +1254,8 @@ class FeedsApi
     public function createFeedDocumentAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createFeedDocumentRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1420,10 +1408,8 @@ class FeedsApi
      */
     public function getFeedWithHttpInfo($feed_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getFeedRequest($feed_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1691,10 +1677,8 @@ class FeedsApi
     public function getFeedAsyncWithHttpInfo($feed_id)
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getFeedRequest($feed_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1849,10 +1833,8 @@ class FeedsApi
      */
     public function getFeedDocumentWithHttpInfo($feed_document_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getFeedDocumentRequest($feed_document_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2120,10 +2102,8 @@ class FeedsApi
     public function getFeedDocumentAsyncWithHttpInfo($feed_document_id)
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getFeedDocumentRequest($feed_document_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2290,10 +2270,8 @@ class FeedsApi
      */
     public function getFeedsWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getFeedsRequest($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2573,10 +2551,8 @@ class FeedsApi
     public function getFeedsAsyncWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getFeedsRequest($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

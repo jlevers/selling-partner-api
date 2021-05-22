@@ -137,10 +137,8 @@ class OrdersApi
      */
     public function getOrderWithHttpInfo($order_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getOrderRequest($order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -368,10 +366,8 @@ class OrdersApi
     public function getOrderAsyncWithHttpInfo($order_id)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getOrderRequest($order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -526,10 +522,8 @@ class OrdersApi
      */
     public function getOrderAddressWithHttpInfo($order_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getOrderAddressRequest($order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -757,10 +751,8 @@ class OrdersApi
     public function getOrderAddressAsyncWithHttpInfo($order_id)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderAddressResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getOrderAddressRequest($order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -915,10 +907,8 @@ class OrdersApi
      */
     public function getOrderBuyerInfoWithHttpInfo($order_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getOrderBuyerInfoRequest($order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1146,10 +1136,8 @@ class OrdersApi
     public function getOrderBuyerInfoAsyncWithHttpInfo($order_id)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderBuyerInfoResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getOrderBuyerInfoRequest($order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1306,10 +1294,8 @@ class OrdersApi
      */
     public function getOrderItemsWithHttpInfo($order_id, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getOrderItemsRequest($order_id, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1539,10 +1525,8 @@ class OrdersApi
     public function getOrderItemsAsyncWithHttpInfo($order_id, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderItemsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getOrderItemsRequest($order_id, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1707,10 +1691,8 @@ class OrdersApi
      */
     public function getOrderItemsBuyerInfoWithHttpInfo($order_id, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getOrderItemsBuyerInfoRequest($order_id, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1940,10 +1922,8 @@ class OrdersApi
     public function getOrderItemsBuyerInfoAsyncWithHttpInfo($order_id, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderItemsBuyerInfoResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getOrderItemsBuyerInfoRequest($order_id, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2132,10 +2112,8 @@ class OrdersApi
      */
     public function getOrdersWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2389,10 +2367,8 @@ class OrdersApi
     public function getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrdersResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

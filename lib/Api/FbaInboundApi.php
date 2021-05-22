@@ -141,10 +141,8 @@ class FbaInboundApi
      */
     public function confirmPreorderWithHttpInfo($shipment_id, $need_by_date, $marketplace_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->confirmPreorderRequest($shipment_id, $need_by_date, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -396,10 +394,8 @@ class FbaInboundApi
     public function confirmPreorderAsyncWithHttpInfo($shipment_id, $need_by_date, $marketplace_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\ConfirmPreorderResponse';
-        $this->config->startRequestGeneration();
         $request = $this->confirmPreorderRequest($shipment_id, $need_by_date, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -582,10 +578,8 @@ class FbaInboundApi
      */
     public function confirmTransportWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->confirmTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -833,10 +827,8 @@ class FbaInboundApi
     public function confirmTransportAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\ConfirmTransportResponse';
-        $this->config->startRequestGeneration();
         $request = $this->confirmTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -993,10 +985,8 @@ class FbaInboundApi
      */
     public function createInboundShipmentWithHttpInfo($shipment_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createInboundShipmentRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1246,10 +1236,8 @@ class FbaInboundApi
     public function createInboundShipmentAsyncWithHttpInfo($shipment_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createInboundShipmentRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1417,10 +1405,8 @@ class FbaInboundApi
      */
     public function createInboundShipmentPlanWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createInboundShipmentPlanRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1668,10 +1654,8 @@ class FbaInboundApi
     public function createInboundShipmentPlanAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\CreateInboundShipmentPlanResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createInboundShipmentPlanRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1824,10 +1808,8 @@ class FbaInboundApi
      */
     public function estimateTransportWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->estimateTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2075,10 +2057,8 @@ class FbaInboundApi
     public function estimateTransportAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\EstimateTransportResponse';
-        $this->config->startRequestGeneration();
         $request = $this->estimateTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2233,10 +2213,8 @@ class FbaInboundApi
      */
     public function getBillOfLadingWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getBillOfLadingRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2484,10 +2462,8 @@ class FbaInboundApi
     public function getBillOfLadingAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetBillOfLadingResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getBillOfLadingRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2646,10 +2622,8 @@ class FbaInboundApi
      */
     public function getInboundGuidanceWithHttpInfo($marketplace_id, $seller_sku_list = null, $asin_list = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getInboundGuidanceRequest($marketplace_id, $seller_sku_list, $asin_list);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2901,10 +2875,8 @@ class FbaInboundApi
     public function getInboundGuidanceAsyncWithHttpInfo($marketplace_id, $seller_sku_list = null, $asin_list = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetInboundGuidanceResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getInboundGuidanceRequest($marketplace_id, $seller_sku_list, $asin_list);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3092,10 +3064,8 @@ class FbaInboundApi
      */
     public function getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3353,10 +3323,8 @@ class FbaInboundApi
     public function getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3569,10 +3537,8 @@ class FbaInboundApi
      */
     public function getPreorderInfoWithHttpInfo($shipment_id, $marketplace_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getPreorderInfoRequest($shipment_id, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3822,10 +3788,8 @@ class FbaInboundApi
     public function getPreorderInfoAsyncWithHttpInfo($shipment_id, $marketplace_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetPreorderInfoResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getPreorderInfoRequest($shipment_id, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3998,10 +3962,8 @@ class FbaInboundApi
      */
     public function getPrepInstructionsWithHttpInfo($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getPrepInstructionsRequest($ship_to_country_code, $seller_sku_list, $asin_list);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -4253,10 +4215,8 @@ class FbaInboundApi
     public function getPrepInstructionsAsyncWithHttpInfo($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetPrepInstructionsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getPrepInstructionsRequest($ship_to_country_code, $seller_sku_list, $asin_list);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -4442,10 +4402,8 @@ class FbaInboundApi
      */
     public function getShipmentItemsWithHttpInfo($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentItemsRequest($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -4701,10 +4659,8 @@ class FbaInboundApi
     public function getShipmentItemsAsyncWithHttpInfo($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentItemsRequest($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -4898,10 +4854,8 @@ class FbaInboundApi
      */
     public function getShipmentItemsByShipmentIdWithHttpInfo($shipment_id, $marketplace_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentItemsByShipmentIdRequest($shipment_id, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -5151,10 +5105,8 @@ class FbaInboundApi
     public function getShipmentItemsByShipmentIdAsyncWithHttpInfo($shipment_id, $marketplace_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetShipmentItemsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentItemsByShipmentIdRequest($shipment_id, $marketplace_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -5335,10 +5287,8 @@ class FbaInboundApi
      */
     public function getShipmentsWithHttpInfo($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentsRequest($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -5598,10 +5548,8 @@ class FbaInboundApi
     public function getShipmentsAsyncWithHttpInfo($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetShipmentsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentsRequest($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -5809,10 +5757,8 @@ class FbaInboundApi
      */
     public function getTransportDetailsWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getTransportDetailsRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -6060,10 +6006,8 @@ class FbaInboundApi
     public function getTransportDetailsAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetTransportDetailsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getTransportDetailsRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -6220,10 +6164,8 @@ class FbaInboundApi
      */
     public function putTransportDetailsWithHttpInfo($shipment_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->putTransportDetailsRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -6473,10 +6415,8 @@ class FbaInboundApi
     public function putTransportDetailsAsyncWithHttpInfo($shipment_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\PutTransportDetailsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->putTransportDetailsRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -6646,10 +6586,8 @@ class FbaInboundApi
      */
     public function updateInboundShipmentWithHttpInfo($shipment_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->updateInboundShipmentRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -6899,10 +6837,8 @@ class FbaInboundApi
     public function updateInboundShipmentAsyncWithHttpInfo($shipment_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\InboundShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->updateInboundShipmentRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -7070,10 +7006,8 @@ class FbaInboundApi
      */
     public function voidTransportWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->voidTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -7321,10 +7255,8 @@ class FbaInboundApi
     public function voidTransportAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\VoidTransportResponse';
-        $this->config->startRequestGeneration();
         $request = $this->voidTransportRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

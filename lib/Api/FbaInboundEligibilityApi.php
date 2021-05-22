@@ -141,10 +141,8 @@ class FbaInboundEligibilityApi
      */
     public function getItemEligibilityPreviewWithHttpInfo($asin, $program, $marketplace_ids = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getItemEligibilityPreviewRequest($asin, $program, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -396,10 +394,8 @@ class FbaInboundEligibilityApi
     public function getItemEligibilityPreviewAsyncWithHttpInfo($asin, $program, $marketplace_ids = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInboundEligibility\GetItemEligibilityPreviewResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getItemEligibilityPreviewRequest($asin, $program, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

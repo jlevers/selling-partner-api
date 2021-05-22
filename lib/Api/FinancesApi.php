@@ -143,10 +143,8 @@ class FinancesApi
      */
     public function listFinancialEventGroupsWithHttpInfo($max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->listFinancialEventGroupsRequest($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -380,10 +378,8 @@ class FinancesApi
     public function listFinancialEventGroupsAsyncWithHttpInfo($max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->listFinancialEventGroupsRequest($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -568,10 +564,8 @@ class FinancesApi
      */
     public function listFinancialEventsWithHttpInfo($max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->listFinancialEventsRequest($max_results_per_page, $posted_after, $posted_before, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -805,10 +799,8 @@ class FinancesApi
     public function listFinancialEventsAsyncWithHttpInfo($max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->listFinancialEventsRequest($max_results_per_page, $posted_after, $posted_before, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -991,10 +983,8 @@ class FinancesApi
      */
     public function listFinancialEventsByGroupIdWithHttpInfo($event_group_id, $max_results_per_page = 100, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1226,10 +1216,8 @@ class FinancesApi
     public function listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page = 100, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1411,10 +1399,8 @@ class FinancesApi
      */
     public function listFinancialEventsByOrderIdWithHttpInfo($order_id, $max_results_per_page = 100, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->listFinancialEventsByOrderIdRequest($order_id, $max_results_per_page, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1646,10 +1632,8 @@ class FinancesApi
     public function listFinancialEventsByOrderIdAsyncWithHttpInfo($order_id, $max_results_per_page = 100, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->listFinancialEventsByOrderIdRequest($order_id, $max_results_per_page, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

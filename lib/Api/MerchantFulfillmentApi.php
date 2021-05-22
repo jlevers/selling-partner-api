@@ -137,10 +137,8 @@ class MerchantFulfillmentApi
      */
     public function cancelShipmentWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -388,10 +386,8 @@ class MerchantFulfillmentApi
     public function cancelShipmentAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -550,10 +546,8 @@ class MerchantFulfillmentApi
      */
     public function cancelShipmentOldWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentOldRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -801,10 +795,8 @@ class MerchantFulfillmentApi
     public function cancelShipmentOldAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\MerchantFulfillment\CancelShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentOldRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -963,10 +955,8 @@ class MerchantFulfillmentApi
      */
     public function createShipmentWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createShipmentRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1214,10 +1204,8 @@ class MerchantFulfillmentApi
     public function createShipmentAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createShipmentRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1370,10 +1358,8 @@ class MerchantFulfillmentApi
      */
     public function getAdditionalSellerInputsWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getAdditionalSellerInputsRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1621,10 +1607,8 @@ class MerchantFulfillmentApi
     public function getAdditionalSellerInputsAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getAdditionalSellerInputsRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1777,10 +1761,8 @@ class MerchantFulfillmentApi
      */
     public function getAdditionalSellerInputsOldWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getAdditionalSellerInputsOldRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2028,10 +2010,8 @@ class MerchantFulfillmentApi
     public function getAdditionalSellerInputsOldAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getAdditionalSellerInputsOldRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2184,10 +2164,8 @@ class MerchantFulfillmentApi
      */
     public function getEligibleShipmentServicesWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getEligibleShipmentServicesRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2435,10 +2413,8 @@ class MerchantFulfillmentApi
     public function getEligibleShipmentServicesAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getEligibleShipmentServicesRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2591,10 +2567,8 @@ class MerchantFulfillmentApi
      */
     public function getEligibleShipmentServicesOldWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getEligibleShipmentServicesOldRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2842,10 +2816,8 @@ class MerchantFulfillmentApi
     public function getEligibleShipmentServicesOldAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getEligibleShipmentServicesOldRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2998,10 +2970,8 @@ class MerchantFulfillmentApi
      */
     public function getShipmentWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3249,10 +3219,8 @@ class MerchantFulfillmentApi
     public function getShipmentAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\MerchantFulfillment\GetShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

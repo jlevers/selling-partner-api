@@ -137,10 +137,8 @@ class ShippingApi
      */
     public function cancelShipmentWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -388,10 +386,8 @@ class ShippingApi
     public function cancelShipmentAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\CancelShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->cancelShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -546,10 +542,8 @@ class ShippingApi
      */
     public function createShipmentWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createShipmentRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -797,10 +791,8 @@ class ShippingApi
     public function createShipmentAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\CreateShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createShipmentRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -951,10 +943,8 @@ class ShippingApi
      */
     public function getAccountWithHttpInfo()
     {
-        $this->config->startRequestGeneration();
         $request = $this->getAccountRequest();
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1200,10 +1190,8 @@ class ShippingApi
     public function getAccountAsyncWithHttpInfo()
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\GetAccountResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getAccountRequest();
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1343,10 +1331,8 @@ class ShippingApi
      */
     public function getRatesWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getRatesRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1594,10 +1580,8 @@ class ShippingApi
     public function getRatesAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\GetRatesResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getRatesRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1750,10 +1734,8 @@ class ShippingApi
      */
     public function getShipmentWithHttpInfo($shipment_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2001,10 +1983,8 @@ class ShippingApi
     public function getShipmentAsyncWithHttpInfo($shipment_id)
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\GetShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getShipmentRequest($shipment_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2159,10 +2139,8 @@ class ShippingApi
      */
     public function getTrackingInformationWithHttpInfo($tracking_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getTrackingInformationRequest($tracking_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2410,10 +2388,8 @@ class ShippingApi
     public function getTrackingInformationAsyncWithHttpInfo($tracking_id)
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\GetTrackingInformationResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getTrackingInformationRequest($tracking_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2570,10 +2546,8 @@ class ShippingApi
      */
     public function purchaseLabelsWithHttpInfo($shipment_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->purchaseLabelsRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2823,10 +2797,8 @@ class ShippingApi
     public function purchaseLabelsAsyncWithHttpInfo($shipment_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\PurchaseLabelsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->purchaseLabelsRequest($shipment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2994,10 +2966,8 @@ class ShippingApi
      */
     public function purchaseShipmentWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->purchaseShipmentRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3245,10 +3215,8 @@ class ShippingApi
     public function purchaseShipmentAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\PurchaseShipmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->purchaseShipmentRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3405,10 +3373,8 @@ class ShippingApi
      */
     public function retrieveShippingLabelWithHttpInfo($shipment_id, $tracking_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->retrieveShippingLabelRequest($shipment_id, $tracking_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3660,10 +3626,8 @@ class ShippingApi
     public function retrieveShippingLabelAsyncWithHttpInfo($shipment_id, $tracking_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Shipping\RetrieveShippingLabelResponse';
-        $this->config->startRequestGeneration();
         $request = $this->retrieveShippingLabelRequest($shipment_id, $tracking_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

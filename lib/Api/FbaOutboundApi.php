@@ -137,10 +137,8 @@ class FbaOutboundApi
      */
     public function cancelFulfillmentOrderWithHttpInfo($seller_fulfillment_order_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->cancelFulfillmentOrderRequest($seller_fulfillment_order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -388,10 +386,8 @@ class FbaOutboundApi
     public function cancelFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\CancelFulfillmentOrderResponse';
-        $this->config->startRequestGeneration();
         $request = $this->cancelFulfillmentOrderRequest($seller_fulfillment_order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -550,10 +546,8 @@ class FbaOutboundApi
      */
     public function createFulfillmentOrderWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createFulfillmentOrderRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -801,10 +795,8 @@ class FbaOutboundApi
     public function createFulfillmentOrderAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentOrderResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createFulfillmentOrderRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -959,10 +951,8 @@ class FbaOutboundApi
      */
     public function createFulfillmentReturnWithHttpInfo($seller_fulfillment_order_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createFulfillmentReturnRequest($seller_fulfillment_order_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1212,10 +1202,8 @@ class FbaOutboundApi
     public function createFulfillmentReturnAsyncWithHttpInfo($seller_fulfillment_order_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\CreateFulfillmentReturnResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createFulfillmentReturnRequest($seller_fulfillment_order_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1387,10 +1375,8 @@ class FbaOutboundApi
      */
     public function getFeatureInventoryWithHttpInfo($marketplace_id, $feature_name, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getFeatureInventoryRequest($marketplace_id, $feature_name, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1642,10 +1628,8 @@ class FbaOutboundApi
     public function getFeatureInventoryAsyncWithHttpInfo($marketplace_id, $feature_name, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\GetFeatureInventoryResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getFeatureInventoryRequest($marketplace_id, $feature_name, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1826,10 +1810,8 @@ class FbaOutboundApi
      */
     public function getFeatureSKUWithHttpInfo($marketplace_id, $feature_name, $seller_sku)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getFeatureSKURequest($marketplace_id, $feature_name, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2081,10 +2063,8 @@ class FbaOutboundApi
     public function getFeatureSKUAsyncWithHttpInfo($marketplace_id, $feature_name, $seller_sku)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\GetFeatureSkuResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getFeatureSKURequest($marketplace_id, $feature_name, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2268,10 +2248,8 @@ class FbaOutboundApi
      */
     public function getFeaturesWithHttpInfo($marketplace_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getFeaturesRequest($marketplace_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2519,10 +2497,8 @@ class FbaOutboundApi
     public function getFeaturesAsyncWithHttpInfo($marketplace_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\GetFeaturesResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getFeaturesRequest($marketplace_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2676,10 +2652,8 @@ class FbaOutboundApi
      */
     public function getFulfillmentOrderWithHttpInfo($seller_fulfillment_order_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getFulfillmentOrderRequest($seller_fulfillment_order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2927,10 +2901,8 @@ class FbaOutboundApi
     public function getFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentOrderResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getFulfillmentOrderRequest($seller_fulfillment_order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3089,10 +3061,8 @@ class FbaOutboundApi
      */
     public function getFulfillmentPreviewWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getFulfillmentPreviewRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3340,10 +3310,8 @@ class FbaOutboundApi
     public function getFulfillmentPreviewAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\GetFulfillmentPreviewResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getFulfillmentPreviewRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3496,10 +3464,8 @@ class FbaOutboundApi
      */
     public function getPackageTrackingDetailsWithHttpInfo($package_number)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getPackageTrackingDetailsRequest($package_number);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3747,10 +3713,8 @@ class FbaOutboundApi
     public function getPackageTrackingDetailsAsyncWithHttpInfo($package_number)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\GetPackageTrackingDetailsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getPackageTrackingDetailsRequest($package_number);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3906,10 +3870,8 @@ class FbaOutboundApi
      */
     public function listAllFulfillmentOrdersWithHttpInfo($query_start_date = null, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->listAllFulfillmentOrdersRequest($query_start_date, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -4159,10 +4121,8 @@ class FbaOutboundApi
     public function listAllFulfillmentOrdersAsyncWithHttpInfo($query_start_date = null, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\ListAllFulfillmentOrdersResponse';
-        $this->config->startRequestGeneration();
         $request = $this->listAllFulfillmentOrdersRequest($query_start_date, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -4324,10 +4284,8 @@ class FbaOutboundApi
      */
     public function listReturnReasonCodesWithHttpInfo($seller_sku, $language, $marketplace_id = null, $seller_fulfillment_order_id = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->listReturnReasonCodesRequest($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -4581,10 +4539,8 @@ class FbaOutboundApi
     public function listReturnReasonCodesAsyncWithHttpInfo($seller_sku, $language, $marketplace_id = null, $seller_fulfillment_order_id = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\ListReturnReasonCodesResponse';
-        $this->config->startRequestGeneration();
         $request = $this->listReturnReasonCodesRequest($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -4770,10 +4726,8 @@ class FbaOutboundApi
      */
     public function updateFulfillmentOrderWithHttpInfo($seller_fulfillment_order_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->updateFulfillmentOrderRequest($seller_fulfillment_order_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -5023,10 +4977,8 @@ class FbaOutboundApi
     public function updateFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\FbaOutbound\UpdateFulfillmentOrderResponse';
-        $this->config->startRequestGeneration();
         $request = $this->updateFulfillmentOrderRequest($seller_fulfillment_order_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

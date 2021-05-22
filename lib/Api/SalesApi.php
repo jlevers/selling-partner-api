@@ -153,10 +153,8 @@ class SalesApi
      */
     public function getOrderMetricsWithHttpInfo($marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = null, $fulfillment_network = null, $first_day_of_week = null, $asin = null, $sku = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getOrderMetricsRequest($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -440,10 +438,8 @@ class SalesApi
     public function getOrderMetricsAsyncWithHttpInfo($marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = null, $fulfillment_network = null, $first_day_of_week = null, $asin = null, $sku = null)
     {
         $returnType = '\SellingPartnerApi\Model\Sales\GetOrderMetricsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getOrderMetricsRequest($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

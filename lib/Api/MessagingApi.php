@@ -141,10 +141,8 @@ class MessagingApi
      */
     public function confirmCustomizationDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->confirmCustomizationDetailsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -416,10 +414,8 @@ class MessagingApi
     public function confirmCustomizationDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->confirmCustomizationDetailsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -609,10 +605,8 @@ class MessagingApi
      */
     public function createAmazonMotorsWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createAmazonMotorsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -884,10 +878,8 @@ class MessagingApi
     public function createAmazonMotorsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createAmazonMotorsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1077,10 +1069,8 @@ class MessagingApi
      */
     public function createConfirmDeliveryDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createConfirmDeliveryDetailsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1352,10 +1342,8 @@ class MessagingApi
     public function createConfirmDeliveryDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createConfirmDeliveryDetailsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1545,10 +1533,8 @@ class MessagingApi
      */
     public function createConfirmOrderDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createConfirmOrderDetailsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1820,10 +1806,8 @@ class MessagingApi
     public function createConfirmOrderDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createConfirmOrderDetailsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2013,10 +1997,8 @@ class MessagingApi
      */
     public function createConfirmServiceDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createConfirmServiceDetailsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2288,10 +2270,8 @@ class MessagingApi
     public function createConfirmServiceDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createConfirmServiceDetailsRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2481,10 +2461,8 @@ class MessagingApi
      */
     public function createDigitalAccessKeyWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createDigitalAccessKeyRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2756,10 +2734,8 @@ class MessagingApi
     public function createDigitalAccessKeyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createDigitalAccessKeyRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2949,10 +2925,8 @@ class MessagingApi
      */
     public function createLegalDisclosureWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createLegalDisclosureRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3224,10 +3198,8 @@ class MessagingApi
     public function createLegalDisclosureAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createLegalDisclosureRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3415,10 +3387,8 @@ class MessagingApi
      */
     public function createNegativeFeedbackRemovalWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createNegativeFeedbackRemovalRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3688,10 +3658,8 @@ class MessagingApi
     public function createNegativeFeedbackRemovalAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createNegativeFeedbackRemovalRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3868,10 +3836,8 @@ class MessagingApi
      */
     public function createUnexpectedProblemWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createUnexpectedProblemRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -4143,10 +4109,8 @@ class MessagingApi
     public function createUnexpectedProblemAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createUnexpectedProblemRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -4336,10 +4300,8 @@ class MessagingApi
      */
     public function createWarrantyWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createWarrantyRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -4611,10 +4573,8 @@ class MessagingApi
     public function createWarrantyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createWarrantyRequest($amazon_order_id, $marketplace_ids, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -4802,10 +4762,8 @@ class MessagingApi
      */
     public function getAttributesWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getAttributesRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -5075,10 +5033,8 @@ class MessagingApi
     public function getAttributesAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\GetAttributesResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getAttributesRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -5253,10 +5209,8 @@ class MessagingApi
      */
     public function getMessagingActionsForOrderWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getMessagingActionsForOrderRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -5526,10 +5480,8 @@ class MessagingApi
     public function getMessagingActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
     {
         $returnType = '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getMessagingActionsForOrderRequest($amazon_order_id, $marketplace_ids);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

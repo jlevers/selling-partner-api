@@ -137,10 +137,8 @@ class ReportsApi
      */
     public function cancelReportWithHttpInfo($report_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->cancelReportRequest($report_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -408,10 +406,8 @@ class ReportsApi
     public function cancelReportAsyncWithHttpInfo($report_id)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\CancelReportResponse';
-        $this->config->startRequestGeneration();
         $request = $this->cancelReportRequest($report_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -566,10 +562,8 @@ class ReportsApi
      */
     public function cancelReportScheduleWithHttpInfo($report_schedule_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->cancelReportScheduleRequest($report_schedule_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -837,10 +831,8 @@ class ReportsApi
     public function cancelReportScheduleAsyncWithHttpInfo($report_schedule_id)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse';
-        $this->config->startRequestGeneration();
         $request = $this->cancelReportScheduleRequest($report_schedule_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -995,10 +987,8 @@ class ReportsApi
      */
     public function createReportWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createReportRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1266,10 +1256,8 @@ class ReportsApi
     public function createReportAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\CreateReportResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createReportRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1422,10 +1410,8 @@ class ReportsApi
      */
     public function createReportScheduleWithHttpInfo($body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->createReportScheduleRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1693,10 +1679,8 @@ class ReportsApi
     public function createReportScheduleAsyncWithHttpInfo($body)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse';
-        $this->config->startRequestGeneration();
         $request = $this->createReportScheduleRequest($body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1849,10 +1833,8 @@ class ReportsApi
      */
     public function getReportWithHttpInfo($report_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getReportRequest($report_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2120,10 +2102,8 @@ class ReportsApi
     public function getReportAsyncWithHttpInfo($report_id)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getReportRequest($report_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2278,10 +2258,8 @@ class ReportsApi
      */
     public function getReportDocumentWithHttpInfo($report_document_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getReportDocumentRequest($report_document_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2549,10 +2527,8 @@ class ReportsApi
     public function getReportDocumentAsyncWithHttpInfo($report_document_id)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportDocumentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getReportDocumentRequest($report_document_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2707,10 +2683,8 @@ class ReportsApi
      */
     public function getReportScheduleWithHttpInfo($report_schedule_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getReportScheduleRequest($report_schedule_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2978,10 +2952,8 @@ class ReportsApi
     public function getReportScheduleAsyncWithHttpInfo($report_schedule_id)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportScheduleResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getReportScheduleRequest($report_schedule_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3136,10 +3108,8 @@ class ReportsApi
      */
     public function getReportSchedulesWithHttpInfo($report_types)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getReportSchedulesRequest($report_types);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3407,10 +3377,8 @@ class ReportsApi
     public function getReportSchedulesAsyncWithHttpInfo($report_types)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getReportSchedulesRequest($report_types);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3583,10 +3551,8 @@ class ReportsApi
      */
     public function getReportsWithHttpInfo($report_types = null, $processing_statuses = null, $marketplace_ids = null, $page_size = 10, $created_since = null, $created_until = null, $next_token = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getReportsRequest($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -3866,10 +3832,8 @@ class ReportsApi
     public function getReportsAsyncWithHttpInfo($report_types = null, $processing_statuses = null, $marketplace_ids = null, $page_size = 10, $created_since = null, $created_until = null, $next_token = null)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getReportsRequest($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

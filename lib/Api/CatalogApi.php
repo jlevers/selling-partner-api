@@ -139,10 +139,8 @@ class CatalogApi
      */
     public function getCatalogItemWithHttpInfo($marketplace_id, $asin)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getCatalogItemRequest($marketplace_id, $asin);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -392,10 +390,8 @@ class CatalogApi
     public function getCatalogItemAsyncWithHttpInfo($marketplace_id, $asin)
     {
         $returnType = '\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getCatalogItemRequest($marketplace_id, $asin);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -568,10 +564,8 @@ class CatalogApi
      */
     public function listCatalogCategoriesWithHttpInfo($marketplace_id, $asin = null, $seller_sku = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->listCatalogCategoriesRequest($marketplace_id, $asin, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -823,10 +817,8 @@ class CatalogApi
     public function listCatalogCategoriesAsyncWithHttpInfo($marketplace_id, $asin = null, $seller_sku = null)
     {
         $returnType = '\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse';
-        $this->config->startRequestGeneration();
         $request = $this->listCatalogCategoriesRequest($marketplace_id, $asin, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1010,10 +1002,8 @@ class CatalogApi
      */
     public function listCatalogItemsWithHttpInfo($marketplace_id, $query = null, $query_context_id = null, $seller_sku = null, $upc = null, $ean = null, $isbn = null, $jan = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->listCatalogItemsRequest($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1275,10 +1265,8 @@ class CatalogApi
     public function listCatalogItemsAsyncWithHttpInfo($marketplace_id, $query = null, $query_context_id = null, $seller_sku = null, $upc = null, $ean = null, $isbn = null, $jan = null)
     {
         $returnType = '\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->listCatalogItemsRequest($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

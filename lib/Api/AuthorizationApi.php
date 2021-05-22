@@ -145,10 +145,8 @@ class AuthorizationApi
      */
     public function getAuthorizationCodeWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getAuthorizationCodeRequest($selling_partner_id, $developer_id, $mws_auth_token);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::migration");
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -420,10 +418,8 @@ class AuthorizationApi
     public function getAuthorizationCodeAsyncWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token)
     {
         $returnType = '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getAuthorizationCodeRequest($selling_partner_id, $developer_id, $mws_auth_token);
         $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::migration");
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

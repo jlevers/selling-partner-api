@@ -139,10 +139,8 @@ class ServiceApi
      */
     public function addAppointmentForServiceJobByServiceJobIdWithHttpInfo($service_job_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->addAppointmentForServiceJobByServiceJobIdRequest($service_job_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -432,10 +430,8 @@ class ServiceApi
     public function addAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Service\SetAppointmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->addAppointmentForServiceJobByServiceJobIdRequest($service_job_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -612,10 +608,8 @@ class ServiceApi
      */
     public function cancelServiceJobByServiceJobIdWithHttpInfo($service_job_id, $cancellation_reason_code)
     {
-        $this->config->startRequestGeneration();
         $request = $this->cancelServiceJobByServiceJobIdRequest($service_job_id, $cancellation_reason_code);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -905,10 +899,8 @@ class ServiceApi
     public function cancelServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $cancellation_reason_code)
     {
         $returnType = '\SellingPartnerApi\Model\Service\CancelServiceJobByServiceJobIdResponse';
-        $this->config->startRequestGeneration();
         $request = $this->cancelServiceJobByServiceJobIdRequest($service_job_id, $cancellation_reason_code);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1094,10 +1086,8 @@ class ServiceApi
      */
     public function completeServiceJobByServiceJobIdWithHttpInfo($service_job_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->completeServiceJobByServiceJobIdRequest($service_job_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1385,10 +1375,8 @@ class ServiceApi
     public function completeServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id)
     {
         $returnType = '\SellingPartnerApi\Model\Service\CompleteServiceJobByServiceJobIdResponse';
-        $this->config->startRequestGeneration();
         $request = $this->completeServiceJobByServiceJobIdRequest($service_job_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1550,10 +1538,8 @@ class ServiceApi
      */
     public function getServiceJobByServiceJobIdWithHttpInfo($service_job_id)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getServiceJobByServiceJobIdRequest($service_job_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1841,10 +1827,8 @@ class ServiceApi
     public function getServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id)
     {
         $returnType = '\SellingPartnerApi\Model\Service\GetServiceJobByServiceJobIdResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getServiceJobByServiceJobIdRequest($service_job_id);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2030,10 +2014,8 @@ class ServiceApi
      */
     public function getServiceJobsWithHttpInfo($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getServiceJobsRequest($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2325,10 +2307,8 @@ class ServiceApi
     public function getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
     {
         $returnType = '\SellingPartnerApi\Model\Service\GetServiceJobsResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getServiceJobsRequest($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2600,10 +2580,8 @@ class ServiceApi
      */
     public function rescheduleAppointmentForServiceJobByServiceJobIdWithHttpInfo($service_job_id, $appointment_id, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->rescheduleAppointmentForServiceJobByServiceJobIdRequest($service_job_id, $appointment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2895,10 +2873,8 @@ class ServiceApi
     public function rescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $appointment_id, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Service\SetAppointmentResponse';
-        $this->config->startRequestGeneration();
         $request = $this->rescheduleAppointmentForServiceJobByServiceJobIdRequest($service_job_id, $appointment_id, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

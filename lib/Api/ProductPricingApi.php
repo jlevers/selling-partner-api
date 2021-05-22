@@ -143,10 +143,8 @@ class ProductPricingApi
      */
     public function getCompetitivePricingWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getCompetitivePricingRequest($marketplace_id, $item_type, $asins, $skus);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -400,10 +398,8 @@ class ProductPricingApi
     public function getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null)
     {
         $returnType = '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getCompetitivePricingRequest($marketplace_id, $item_type, $asins, $skus);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -599,10 +595,8 @@ class ProductPricingApi
      */
     public function getItemOffersWithHttpInfo($marketplace_id, $item_condition, $asin)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getItemOffersRequest($marketplace_id, $item_condition, $asin);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -854,10 +848,8 @@ class ProductPricingApi
     public function getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin)
     {
         $returnType = '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getItemOffersRequest($marketplace_id, $item_condition, $asin);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1044,10 +1036,8 @@ class ProductPricingApi
      */
     public function getListingOffersWithHttpInfo($marketplace_id, $item_condition, $seller_sku)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getListingOffersRequest($marketplace_id, $item_condition, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1299,10 +1289,8 @@ class ProductPricingApi
     public function getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku)
     {
         $returnType = '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getListingOffersRequest($marketplace_id, $item_condition, $seller_sku);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1493,10 +1481,8 @@ class ProductPricingApi
      */
     public function getPricingWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getPricingRequest($marketplace_id, $item_type, $asins, $skus, $item_condition);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1752,10 +1738,8 @@ class ProductPricingApi
     public function getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
     {
         $returnType = '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getPricingRequest($marketplace_id, $item_type, $asins, $skus, $item_condition);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

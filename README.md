@@ -69,9 +69,9 @@ The `ConfigurationOptions` constructor takes the following parameters:
 
 * `lwaClientId (string)`: The LWA client ID of the SP API application to use to execute API requests.
 * `lwaClientSecret (string)`: The LWA client secret of the SP API application to use to execute API requests.
+* `lwaRefreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests.
 * `awsAccessKey (string)`: AWS IAM user Access Key ID with SP API ExecuteAPI permissions.
 * `awsAccessSecret (string)`: AWS IAM user Secret Access Key with SP API ExecuteAPI permissions.
-* `lwaRefreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests.
 * `spapiAwsRegion (string)`: The AWS region associated with the SP API endpoint you're using. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.
 * `spapiEndpoint (string)`: The SP API endpoint you want to make calls to (i.e. https://sellingpartnerapi-na.amazon.com).
 * `accessToken (string|null)`: An access token generated from the refresh token.
@@ -111,9 +111,9 @@ use SellingPartnerApi\Api;
 $configurationOptions = new ConfigurationOptions(
     "<LWA client ID>",
     "<LWA client secret>",
+    "<LWA refresh token>",
     "<AWS access key ID>",
     "<AWS secret access key>",
-    "<LWA refresh token>",
     "us-east-1",
     "https://sellingpartnerapi-na.amazon.com",
 );

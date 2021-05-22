@@ -84,36 +84,6 @@ class Authentication
         }
     }
 
-    public function startRequestGeneration(): void
-    {
-        // We need to use the same exact DateTime throughout the signing process *and* in the
-        // x-amz-date header (see HeaderSelector.php), because Amazon will reject any request
-        // where all times do not match down to the second
-        $this->setRequestTime();
-    }
-
-    public function endRequestGeneration(): void
-    {
-        $this->requestTime = null;
-    }
-
-    public function getAuthToken(?string $scope = null)
-    {
-        if ($scope !== null) {
-            // If the scope for this grantless request doesn't match $this->grantlessCredentialsScope, we
-            // need a new set of grantless credentials that provide access to the new scope
-            if ($this->grantlessAwsCredentials === null || $this->grantlessCredentialsScope !== $scope) {
-                $this->newToken($scope);
-            }
-            return $this->grantlessAwsCredentials->getSecurityToken();
-        }
-
-        if ($this->awsCredentials === null || $this->awsCredentials->getSecurityToken() === null) {
-            $this->newToken();
-        }
-        return $this->awsCredentials->getSecurityToken();
-    }
-
     /**
      * @param string|null $scope
      * @return array
@@ -164,6 +134,7 @@ class Authentication
 
     public function signRequest(Psr7\Request $request, ?string $scope = null): Psr7\Request
     {
+        $this->setRequestTime();
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
         $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         if ($relevantCreds === null || $relevantCreds->getSecurityToken() === null || $relevantCreds->expiresSoon()) {
@@ -184,7 +155,9 @@ class Authentication
         $sigForHeader = "Signature={$signature}";
         $authHeaderVal = static::SIGNING_ALGO . " " . implode(", ", [$credsForHeader, $headersForHeader, $sigForHeader]);
 
-        return $request->withHeader("Authorization", $authHeaderVal);
+        return $request->withHeader("Authorization", $authHeaderVal)
+                       ->withHeader("x-amz-access-token", $relevantCreds->getSecurityToken())
+                       ->withHeader("x-amz-date", $this->formattedRequestTime());
     }
 
     private function createCanonicalRequest(Psr7\Request $request): string

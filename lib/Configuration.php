@@ -161,31 +161,6 @@ class Configuration
     }
 
     /**
-     * Sets the access token for OAuth
-     *
-     * @param string $accessToken Token for OAuth
-     *
-     * @return $this
-     */
-    public function setAccessToken($accessToken)
-    {
-        $this->accessToken = $accessToken;
-        return $this;
-    }
-
-    /**
-     * Gets the access token for OAuth
-     *
-     * @param string $scope The authentication scope, if any
-     *
-     * @return string Access token for OAuth
-     */
-    public function getAccessToken($scope = null)
-    {
-        return $this->auth->getAuthToken($scope);
-    }
-
-    /**
      * Sets the host
      *
      * @param string $spapiEndpoint Host
@@ -315,26 +290,6 @@ class Configuration
     public function getTempFolderPath()
     {
         return $this->tempFolderPath;
-    }
-
-    /**
-     * Delegator method. Performs any necessary operations to prepare the
-     * Authentication class to start generating a signed request
-     *
-     * @return void
-     */
-    public function startRequestGeneration()
-    {
-        $this->auth->startRequestGeneration();
-    }
-
-    /**
-     * Delegator method. Performs any necessary operations to tell the Authentication
-     * class that we're done generating a signed request
-     */
-    public function endRequestGeneration()
-    {
-        $this->auth->endRequestGeneration();
     }
 
     /**

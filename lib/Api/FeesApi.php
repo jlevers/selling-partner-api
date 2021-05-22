@@ -139,10 +139,8 @@ class FeesApi
      */
     public function getMyFeesEstimateForASINWithHttpInfo($asin, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForASINRequest($asin, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -392,10 +390,8 @@ class FeesApi
     public function getMyFeesEstimateForASINAsyncWithHttpInfo($asin, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForASINRequest($asin, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -565,10 +561,8 @@ class FeesApi
      */
     public function getMyFeesEstimateForSKUWithHttpInfo($seller_sku, $body)
     {
-        $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForSKURequest($seller_sku, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         try {
             $options = $this->createHttpClientOption();
@@ -818,10 +812,8 @@ class FeesApi
     public function getMyFeesEstimateForSKUAsyncWithHttpInfo($seller_sku, $body)
     {
         $returnType = '\SellingPartnerApi\Model\Fees\GetMyFeesEstimateResponse';
-        $this->config->startRequestGeneration();
         $request = $this->getMyFeesEstimateForSKURequest($seller_sku, $body);
         $signedRequest = $this->config->signRequest($request);
-        $this->config->endRequestGeneration();
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

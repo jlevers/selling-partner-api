@@ -15,7 +15,10 @@
 
 namespace SellingPartnerApi;
 
-use SellingPartnerApi\Authentication;
+use Exception;
+use GuzzleHttp\Psr7\Request;
+use InvalidArgumentException;
+use RuntimeException;
 
 /**
  * Configuration Class Doc Comment
@@ -41,7 +44,7 @@ class Configuration
      *
      * @var Authentication
      */
-    protected $auth = null;
+    protected $auth;
 
     /**
      * Access token for OAuth
@@ -55,7 +58,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://sellingpartnerapi-na.amazon.com';
+    protected $spapiEndpoint = 'https://sellingpartnerapi-na.amazon.com';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -80,31 +83,78 @@ class Configuration
 
     /**
      * Debug file location (log to STDOUT by default)
-nnn     *
+     *
      * @var string
      */
     protected $tempFolderPath;
 
     /**
-     * Constructor
+     * @var ConfigurationOptions|null
      */
-    public function __construct(?array $lwaAuthInfo = null, ?string $host = null)
-    {
-        if (!allVarsLoaded()) {
-            loadDotenv();
-        }
+    protected $configurationOptions;
 
-        $this->lwaAuthInfo = $lwaAuthInfo;
+    /**
+     * Constructor
+     * @param ConfigurationOptions|array|null $configurationOptions
+     * @param string|null $spapiEndpoint Note: This will override the ConfigurationOptions and ENV spapiEndpoint
+     * @throws Exception
+     */
+    public function __construct($configurationOptions = null, ?string $spapiEndpoint = null)
+    {
         $this->tempFolderPath = sys_get_temp_dir();
 
-        if ($host !== null) {
-            $this->host = $host;
-        } else {
-            $this->host = $_ENV["SPAPI_ENDPOINT"];
+        //If an array is passed in, we will initialize a ConfigurationOptions using the values passed.
+        if ($configurationOptions !== null && is_array($configurationOptions)) {
+            //Validate the passed array has at least the minimum requirements.
+            //Required values.
+
+            $template = [
+                'lwaClientId',
+                'lwaClientSecret',
+                'lwaRefreshToken',
+                'awsAccessKey',
+                'awsAccessSecret',
+                'spapiAwsRegion',
+                'spapiEndpoint'
+            ];
+
+            foreach ($template as $value) {
+                //If one of any of the required values isn't in the passed array, we're going to throw an exception.
+                if (!array_key_exists($value, $configurationOptions)) {
+                    throw new RuntimeException("Missing required " . $value . " in configuration array.");
+                }
+            }
+
+            //Construct a new ConfigurationInstance
+            $configurationOptions = new ConfigurationOptions(
+                $configurationOptions["lwaClientId"],
+                $configurationOptions["lwaClientSecret"],
+                $configurationOptions["lwaRefreshToken"],
+                $configurationOptions["awsAccessKey"],
+                $configurationOptions["awsAccessSecret"],
+                $configurationOptions["spapiAwsRegion"],
+                $configurationOptions["spapiEndpoint"],
+                $configurationOptions['accessToken'] ?? null,
+                $configurationOptions['accessTokenExpiration'] ?? null,
+                $configurationOptions['onUpdateCredentials'] ?? null
+            );
         }
 
-        if ($this->lwaAuthInfo !== null) {
-            $this->auth = new Authentication($this->lwaAuthInfo);
+        $this->configurationOptions = $configurationOptions;
+
+        if ($this->configurationOptions === null) {
+            loadDotenv();
+            $this->spapiEndpoint = $_ENV["SPAPI_ENDPOINT"];
+        }
+
+        if ($spapiEndpoint !== null) {
+            $this->spapiEndpoint = $spapiEndpoint;
+        } else if ($this->configurationOptions !== null) {
+            $this->spapiEndpoint = $this->configurationOptions->getSpapiEndpoint();
+        }
+
+        if ($this->configurationOptions !== null) {
+            $this->auth = new Authentication($this->configurationOptions);
         } else {
             $this->auth = self::getDefaultAuthentication();
         }
@@ -138,13 +188,13 @@ nnn     *
     /**
      * Sets the host
      *
-     * @param string $host Host
+     * @param string $spapiEndpoint Host
      *
      * @return $this
      */
-    public function setHost($host)
+    public function setSpapiEndpoint($spapiEndpoint)
     {
-        $this->host = $host;
+        $this->spapiEndpoint = $spapiEndpoint;
         return $this;
     }
 
@@ -155,7 +205,7 @@ nnn     *
      */
     public function getHost()
     {
-        return $this->host;
+        return $this->spapiEndpoint;
     }
 
     /**
@@ -175,13 +225,13 @@ nnn     *
      *
      * @param string $userAgent the user agent of the api client
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return $this
      */
     public function setUserAgent($userAgent)
     {
         if (!is_string($userAgent)) {
-            throw new \InvalidArgumentException('User-agent must be a string.');
+            throw new InvalidArgumentException('User-agent must be a string.');
         }
 
         $this->userAgent = $userAgent;
@@ -273,7 +323,8 @@ nnn     *
      *
      * @return void
      */
-    public function startRequestGeneration() {
+    public function startRequestGeneration()
+    {
         $this->auth->startRequestGeneration();
     }
 
@@ -281,7 +332,8 @@ nnn     *
      * Delegator method. Performs any necessary operations to tell the Authentication
      * class that we're done generating a signed request
      */
-    public function endRequestGeneration() {
+    public function endRequestGeneration()
+    {
         $this->auth->endRequestGeneration();
     }
 
@@ -294,13 +346,13 @@ nnn     *
     {
         if (self::$defaultConfiguration === null) {
             $config = new Configuration();
-            $auth = self::getDefaultAuthentication();
+            self::getDefaultAuthentication();
 
             if (!allVarsLoaded()) {
                 loadDotenv();
             }
 
-            $config->setHost($_ENV["SPAPI_ENDPOINT"]);
+            $config->setSpapiEndpoint($_ENV["SPAPI_ENDPOINT"]);
             self::$defaultConfiguration = $config;
         }
 
@@ -308,7 +360,7 @@ nnn     *
     }
 
     /**
-     * Sets the detault configuration instance
+     * Sets the default configuration instance
      *
      * @param Configuration $config An instance of the Configuration Object
      *
@@ -346,7 +398,6 @@ nnn     *
         } else if (self::$defaultAuthentication === null) {
             self::$defaultAuthentication = new Authentication();
         }
-        return self::$defaultAuthentication;
     }
 
     /**
@@ -362,10 +413,10 @@ nnn     *
     /**
      * Sign a request to the Selling Partner API using the AWS Signature V4 protocol.
      *
-     * @param \GuzzleHttp\Psr7\Request $request The request to sign
+     * @param Request $request The request to sign
      * @param string $scope The scope of the request, if it's grantless
      *
-     * @return \GuzzleHttp\Psr7\Request The signed request
+     * @return Request The signed request
      */
     public function signRequest($request, $scope = null)
     {
@@ -375,16 +426,20 @@ nnn     *
     /**
      * Gets the essential information for debugging
      *
+     * @param string|null $tempFolderPath The path to the temp folder.
      * @return string The report for debugging
      */
-    public static function toDebugReport()
+    public static function toDebugReport(?string $tempFolderPath = null)
     {
+        if ($tempFolderPath === null) {
+            $tempFolderPath = self::getDefaultConfiguration()->getTempFolderPath();
+        }
         $report  = 'PHP SDK (SellingPartnerApi) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2020-11-01' . PHP_EOL;
         $report .= '    SDK Package Version: 2.0.9' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
+        $report .= '    Temp Folder Path: ' . $tempFolderPath . PHP_EOL;
 
         return $report;
     }
@@ -445,8 +500,8 @@ nnn     *
         $hosts = $this->getHostSettings();
 
         // check array index out of bound
-        if ($index < 0 || $index >= sizeof($hosts)) {
-            throw new \InvalidArgumentException("Invalid index $index when selecting the host. Must be less than ".sizeof($hosts));
+        if ($index < 0 || $index >= count($hosts)) {
+            throw new InvalidArgumentException("Invalid index $index when selecting the host. Must be less than ".count($hosts));
         }
 
         $host = $hosts[$index];
@@ -458,7 +513,7 @@ nnn     *
                 if (in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
                     $url = str_replace("{".$name."}", $variables[$name], $url);
                 } else {
-                    throw new \InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".join(',', $variable["enum_values"]).".");
+                    throw new InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".implode(',', $variable["enum_values"]).".");
                 }
             } else {
                 // use default value
@@ -467,5 +522,21 @@ nnn     *
         }
 
         return $url;
+    }
+
+    /**
+     * @return ConfigurationOptions|null
+     */
+    public function getConfigurationOptions()
+    {
+        return $this->configurationOptions;
+    }
+
+    /**
+     * @param ConfigurationOptions|null $configurationOptions
+     */
+    public function setConfigurationOptions(?ConfigurationOptions $configurationOptions)
+    {
+        $this->configurationOptions = $configurationOptions;
     }
 }

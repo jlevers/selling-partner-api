@@ -47,9 +47,9 @@ The [`ConfigurationOptions`](https://github.com/jlevers/selling-partner-api/blob
 $configurationOptions = new SellingPartnerApi\ConfigurationOptions(
     "<LWA client ID>",
     "<LWA client secret>",
+    "<LWA refresh token>",
     "<AWS access key ID>",
     "<AWS secret access key>",
-    "<LWA refresh token>",
     "us-east-1",
     "https://sellingpartnerapi-na.amazon.com",
 );

@@ -108,35 +108,19 @@ class Configuration
             //Validate the passed array has at least the minimum requirements.
             //Required values.
 
-            $template = [
-                'lwaClientId',
-                'lwaClientSecret',
-                'lwaRefreshToken',
-                'awsAccessKey',
-                'awsAccessSecret',
-                'spapiAwsRegion',
-                'spapiEndpoint'
-            ];
-
-            foreach ($template as $value) {
-                //If one of any of the required values isn't in the passed array, we're going to throw an exception.
-                if (!array_key_exists($value, $configurationOptions)) {
-                    throw new RuntimeException("Missing required " . $value . " in configuration array.");
-                }
-            }
-
             //Construct a new ConfigurationInstance
             $configurationOptions = new ConfigurationOptions(
-                $configurationOptions["lwaClientId"],
-                $configurationOptions["lwaClientSecret"],
-                $configurationOptions["lwaRefreshToken"],
-                $configurationOptions["awsAccessKey"],
-                $configurationOptions["awsAccessSecret"],
-                $configurationOptions["spapiAwsRegion"],
-                $configurationOptions["spapiEndpoint"],
+                $configurationOptions["lwaClientId"] ?? $_ENV['LWA_CLIENT_ID'],
+                $configurationOptions["lwaClientSecret"] ?? $_ENV['LWA_CLIENT_SECRET'],
+                $configurationOptions["refreshToken"] ?? $_ENV['LWA_REFRESH_TOKEN'],
+                $configurationOptions["awsAccessKey"] ?? $_ENV['AWS_ACCESS_KEY_ID'],
+                $configurationOptions["awsSecretKey"] ?? $_ENV['AWS_SECRET_ACCESS_KEY'],
+                $configurationOptions["spapiAwsRegion"] ?? $_ENV['SPAPI_AWS_REGION'],
+                $configurationOptions["spapiEndpoint"] ?? $_ENV['SPAPI_ENDPOINT'],
                 $configurationOptions['accessToken'] ?? null,
                 $configurationOptions['accessTokenExpiration'] ?? null,
-                $configurationOptions['onUpdateCredentials'] ?? null
+                $configurationOptions['onUpdateCredentials'] ?? null,
+                $configurationOptions['roleArn'] ?? null,
             );
         }
 

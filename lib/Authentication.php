@@ -2,6 +2,7 @@
 
 namespace SellingPartnerApi;
 
+use Aws\Sts\StsClient;
 use Closure;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
@@ -21,14 +22,16 @@ class Authentication
     private $lwaClientId;
     private $lwaClientSecret;
     private $region;
+    private $roleArn = null;
+
+    private $requestTime;
 
     private $client = null;
     private $awsCredentials = null;
     private $grantlessAwsCredentials = null;
     private $grantlessCredentialsScope = null;
-    private $requestTime;
+    private $roleCredentials = null;
 
-//    public function __construct(?array $options = []) {
     /**
      * @var mixed|string
      */
@@ -62,6 +65,8 @@ class Authentication
 
             $this->awsKey = $configurationOptions->getAwsAccessKey();
             $this->awsSecret = $configurationOptions->getAwsAccessSecret();
+
+            $this->roleArn = $configurationOptions->getRoleArn();
         } else {
             loadDotenv();
 
@@ -136,11 +141,40 @@ class Authentication
     {
         $this->setRequestTime();
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
-        $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
-        if ($relevantCreds === null || $relevantCreds->getSecurityToken() === null || $relevantCreds->expiresSoon()) {
+        $credsForAccessToken = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
+        if ($credsForAccessToken === null || $credsForAccessToken->getSecurityToken() === null || $credsForAccessToken->expiresSoon()) {
             $this->newToken($scope);
             // Reassign $relevantCreds to the correct set of credentials, since that set of creds has been updated
-            $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
+            $credsForAccessToken = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
+        }
+        $accessToken = $credsForAccessToken->getSecurityToken();
+
+        $relevantCreds = $this->awsCredentials;
+        if ($this->roleArn !== null) {
+            if ($this->roleCredentials === null || $this->roleCredentials->expiresSoon()) {
+                $client = new StsClient([
+                    'sts_regional_endpoints' => 'regional',
+                    'region' => $this->region,
+                    'version' => '2011-06-15',
+                    'credentials' => [
+                        'key' => $relevantCreds->getAccessKeyId(),
+                        'secret' => $relevantCreds->getSecretKey(),
+                    ],
+                ]);
+                $assumeTime = time();
+                $assumed = $client->AssumeRole([
+                    'RoleArn' => $this->roleArn,
+                    'RoleSessionName' => "spapi-assumerole-{$assumeTime}",
+                ]);
+                $credentials = $assumed['Credentials'];
+                $this->roleCredentials = new Credentials(
+                    $credentials['AccessKeyId'],
+                    $credentials['SecretAccessKey'],
+                    $credentials['SessionToken'],
+                    $credentials['Expiration']->getTimestamp(),
+                );
+            }
+            $relevantCreds = $this->roleCredentials;
         }
 
         $request->withHeader("content-type", "application/json");
@@ -155,9 +189,17 @@ class Authentication
         $sigForHeader = "Signature={$signature}";
         $authHeaderVal = static::SIGNING_ALGO . " " . implode(", ", [$credsForHeader, $headersForHeader, $sigForHeader]);
 
-        return $request->withHeader("Authorization", $authHeaderVal)
-                       ->withHeader("x-amz-access-token", $relevantCreds->getSecurityToken())
+        $signedRequest = $request->withHeader("Authorization", $authHeaderVal);
+
+        if ($this->roleArn) {
+            $signedRequest = $signedRequest->withHeader("x-amz-security-token", $relevantCreds->getSecurityToken());
+        }
+
+        $signedRequest = $signedRequest
+                       ->withHeader("x-amz-access-token", $accessToken)
                        ->withHeader("x-amz-date", $this->formattedRequestTime());
+
+        return $signedRequest;
     }
 
     private function createCanonicalRequest(Psr7\Request $request): string

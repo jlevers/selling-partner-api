@@ -21,7 +21,7 @@ class ConfigurationOptions
 
     /** @var string|null $accessToken */
     protected $accessToken;
-    /** @var string|null $accessTokenExpiration */
+    /** @var int|null $accessTokenExpiration */
     protected $accessTokenExpiration;
 
     /** @var string $spapiAwsRegion */
@@ -32,6 +32,9 @@ class ConfigurationOptions
 
     /** @var Closure|null $onUpdateCredentials */
     protected $onUpdateCredentials;
+
+    /** @var string|null $roleArn */
+    protected $roleArn;
 
     /**
      * ConfigurationOptions constructor.
@@ -45,6 +48,7 @@ class ConfigurationOptions
      * @param string|null $accessToken
      * @param int|null $accessTokenExpiration
      * @param Closure|null $onUpdateCredentials
+     * @param string|null $roleArn
      */
     public function __construct(
         string $lwaClientId,
@@ -56,7 +60,8 @@ class ConfigurationOptions
         string $spapiEndpoint,
         ?string $accessToken = null,
         ?int $accessTokenExpiration = null,
-        ?Closure $onUpdateCredentials = null
+        ?Closure $onUpdateCredentials = null,
+        ?string $roleArn = null
     ) {
         $this->lwaClientId = $lwaClientId;
         $this->lwaClientSecret = $lwaClientSecret;
@@ -68,6 +73,7 @@ class ConfigurationOptions
         $this->accessToken = $accessToken;
         $this->accessTokenExpiration = $accessTokenExpiration;
         $this->onUpdateCredentials = $onUpdateCredentials;
+        $this->roleArn = $roleArn;
     }
 
     /**
@@ -228,5 +234,22 @@ class ConfigurationOptions
     public function setOnUpdateCredentials(Closure $onUpdateCredentials): void
     {
         $this->onUpdateCredentials = $onUpdateCredentials;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRoleArn(): ?string
+    {
+        return $this->roleArn;
+    }
+
+    /**
+     * @param string $roleArn
+     * @return void
+     */
+    public function setRoleArn(string $roleArn): void
+    {
+        $this->roleArn = $roleArn;
     }
 }

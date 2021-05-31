@@ -29,8 +29,8 @@ To install the bindings via [Composer](http://getcomposer.org/), run `composer r
 
 You need a few things to get started:
 * A Selling Partner API developer account
-* An AWS IAM user configured for use with the Selling Partner API
-* A fresh Selling Partner API application
+* An AWS IAM user or role configured for use with the Selling Partner API
+* A Selling Partner API application
 
 If you're looking for more information on how to set those things up, check out [this blog post](https://jesseevers.com/selling-partner-api-access/). It provides a detailed walkthrough of the whole setup process.
 
@@ -50,8 +50,26 @@ $configurationOptions = new SellingPartnerApi\ConfigurationOptions(
     "<LWA refresh token>",
     "<AWS access key ID>",
     "<AWS secret access key>",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
+    "<SP API AWS region>",
+    "<SP API endpoint>",
+);
+```
+
+If you created your Selling Partner API application using an IAM role ARN instead of a user ARN, pass that role ARN to the `ConfigurationOptions` constructor:
+
+```php
+    $configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "<LWA client ID>",
+    "<LWA client secret>",
+    "<LWA refresh token>",
+    "<AWS access key ID>",
+    "<AWS secret access key>",
+    "<SP API AWS region>",
+    "<SP API endpoint>",
+    null,  //
+    null,  // More about these parameters in the `ConfigurationOptions` section below
+    null,  //
+    "<Role ARN>"
 );
 ```
 
@@ -77,6 +95,7 @@ The `ConfigurationOptions` constructor takes the following parameters:
 * `accessToken (string|null)`: An access token generated from the refresh token.
 * `accessTokenExpiration (int|null)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
 * `$onUpdateCredentials (callable|Closure|null)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`SellingPartnerApi\Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
+* `$roleArn (string|null)`: If you set up your SP API application with an AWS IAM role ARN instead of a user ARN, pass that ARN here.
 
 ##### Configuration
 
@@ -109,11 +128,11 @@ use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Api;
 
 $configurationOptions = new ConfigurationOptions(
-    "<LWA client ID>",
-    "<LWA client secret>",
-    "<LWA refresh token>",
-    "<AWS access key ID>",
-    "<AWS secret access key>",
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
     "us-east-1",
     "https://sellingpartnerapi-na.amazon.com",
 );

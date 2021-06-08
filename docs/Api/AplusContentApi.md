@@ -32,7 +32,19 @@ Creates a new A+ Content document.  **Usage Plans:**  | Plan type | Rate (reques
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 $post_content_document_request = new \SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest(); // \SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest | The content document request details.
 
@@ -80,7 +92,19 @@ Returns an A+ Content document, if available.  **Usage Plans:**  | Plan type | R
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $content_reference_key = 'content_reference_key_example'; // string | The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 $included_data_set = array('included_data_set_example'); // string[] | The set of A+ Content data types to include in the response.
@@ -130,7 +154,19 @@ Returns a list of ASINs related to the specified A+ Content document, if availab
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $content_reference_key = 'content_reference_key_example'; // string | The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 $included_data_set = array('included_data_set_example'); // string[] | The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
@@ -184,7 +220,19 @@ Submits an A+ Content document for review, approval, and publishing.  **Usage Pl
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $content_reference_key = 'content_reference_key_example'; // string | The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 
@@ -232,7 +280,19 @@ Replaces all ASINs related to the specified A+ Content document, if available. T
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $content_reference_key = 'content_reference_key_example'; // string | The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 $post_content_document_asin_relations_request = new \SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest(); // \SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsRequest | The content document ASIN relations request details.
@@ -282,7 +342,19 @@ Submits a request to suspend visible A+ Content. This neither deletes the conten
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $content_reference_key = 'content_reference_key_example'; // string | The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 
@@ -330,7 +402,19 @@ Returns a list of all A+ Content documents assigned to a selling partner. This o
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 $page_token = 'page_token_example'; // string | A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
 
@@ -378,7 +462,19 @@ Searches for A+ Content publishing records, if available.  **Usage Plans:**  | P
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 $asin = 'asin_example'; // string | The Amazon Standard Identification Number (ASIN).
 $page_token = 'page_token_example'; // string | A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
@@ -428,7 +524,19 @@ Updates an existing A+ Content document.  **Usage Plans:**  | Plan type | Rate (
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $content_reference_key = 'content_reference_key_example'; // string | The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 $post_content_document_request = new \SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest(); // \SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest | The content document request details.
@@ -478,7 +586,19 @@ Checks if the A+ Content document is valid for use on a set of ASINs.  **Usage P
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AplusContentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AplusContentApi($config);
 $marketplace_id = 'marketplace_id_example'; // string | The identifier for the marketplace where the A+ Content is published.
 $post_content_document_request = new \SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest(); // \SellingPartnerApi\Model\AplusContent\PostContentDocumentRequest | The content document request details.
 $asin_set = array('asin_set_example'); // string[] | The set of ASINs.

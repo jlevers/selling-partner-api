@@ -30,7 +30,19 @@ Creates a destination resource to receive notifications. The createDestination A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $body = new \SellingPartnerApi\Model\Notifications\CreateDestinationRequest(); // \SellingPartnerApi\Model\Notifications\CreateDestinationRequest
 
 try {
@@ -76,7 +88,19 @@ Creates a subscription for the specified notification type to be delivered to th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
 $body = new \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest(); // \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest
 
@@ -124,7 +148,19 @@ Deletes the destination that you specify. The deleteDestination API is grantless
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $destination_id = 'destination_id_example'; // string | The identifier for the destination that you want to delete.
 
 try {
@@ -170,7 +206,19 @@ Deletes the subscription indicated by the subscription identifier and notificati
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $subscription_id = 'subscription_id_example'; // string | The identifier for the subscription that you want to delete.
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
 
@@ -218,7 +266,19 @@ Returns information about the destination that you specify. The getDestination A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $destination_id = 'destination_id_example'; // string | The identifier generated when you created the destination.
 
 try {
@@ -264,7 +324,19 @@ Returns information about all destinations. The getDestinations API is grantless
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 
 try {
     $result = $apiInstance->getDestinations();
@@ -307,7 +379,19 @@ Returns information about subscriptions of the specified notification type. You 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
 
 try {
@@ -353,7 +437,19 @@ Returns information about a subscription for the specified notification type. Th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\NotificationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $subscription_id = 'subscription_id_example'; // string | The identifier for the subscription that you want to get.
 $notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
 

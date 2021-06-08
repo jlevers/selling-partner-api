@@ -23,7 +23,19 @@ With the getAuthorizationCode operation, you can request a Login With Amazon (LW
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\AuthorizationApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\AuthorizationApi($config);
 $selling_partner_id = 'selling_partner_id_example'; // string | The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore.
 $developer_id = 'developer_id_example'; // string | Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central.
 $mws_auth_token = 'mws_auth_token_example'; // string | The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore.

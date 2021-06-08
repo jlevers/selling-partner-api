@@ -24,7 +24,19 @@ Sends a solicitation to a buyer asking for seller feedback and a product review 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\SolicitationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\SolicitationsApi($config);
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a solicitation is sent.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
 
@@ -72,7 +84,19 @@ Returns a list of solicitation types that are available for an order that you sp
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\SolicitationsApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\SolicitationsApi($config);
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
 

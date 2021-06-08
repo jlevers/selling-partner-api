@@ -28,7 +28,19 @@ Returns the order indicated by the specified order ID.  **Usage Plan:**  | Rate 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\OrdersApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
 
 try {
@@ -74,7 +86,19 @@ Returns the shipping address for the order indicated by the specified order ID. 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\OrdersApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $order_id = 'order_id_example'; // string | An orderId is an Amazon-defined order identifier, in 3-7-7 format.
 
 try {
@@ -120,7 +144,19 @@ Returns buyer information for the order indicated by the specified order ID.  **
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\OrdersApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $order_id = 'order_id_example'; // string | An orderId is an Amazon-defined order identifier, in 3-7-7 format.
 
 try {
@@ -166,7 +202,19 @@ Returns detailed order item information for the order indicated by the specified
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\OrdersApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
 $next_token = 'next_token_example'; // string | A string token returned in the response of your previous request.
 
@@ -214,7 +262,19 @@ Returns buyer information in the order items of the order indicated by the speci
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\OrdersApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
 $next_token = 'next_token_example'; // string | A string token returned in the response of your previous request.
 
@@ -262,7 +322,19 @@ Returns orders created or updated during the time frame indicated by the specifi
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\OrdersApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
 $created_after = 'created_after_example'; // string | A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
 $created_before = 'created_before_example'; // string | A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.

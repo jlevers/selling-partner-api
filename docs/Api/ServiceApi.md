@@ -28,7 +28,19 @@ Adds an appointment to the service job indicated by the service job identifier y
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ServiceApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ServiceApi($config);
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
 $body = new \SellingPartnerApi\Model\Service\AddAppointmentRequest(); // \SellingPartnerApi\Model\Service\AddAppointmentRequest | Add appointment operation input details.
 
@@ -76,7 +88,19 @@ Cancels the service job indicated by the service job identifier you specify.  **
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ServiceApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ServiceApi($config);
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
 $cancellation_reason_code = 'cancellation_reason_code_example'; // string | A cancel reason code that specifies the reason for cancelling a service job.
 
@@ -124,7 +148,19 @@ Completes the service job indicated by the service job identifier you specify.  
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ServiceApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ServiceApi($config);
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
 
 try {
@@ -170,7 +206,19 @@ Gets service job details for the service job indicated by the service job identi
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ServiceApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ServiceApi($config);
 $service_job_id = 'service_job_id_example'; // string | A service job identifier.
 
 try {
@@ -216,7 +264,19 @@ Gets service job details for the specified filter query.  **Usage Plan:**  | Rat
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ServiceApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ServiceApi($config);
 $marketplace_ids = array('marketplace_ids_example'); // string[] | Used to select jobs that were placed in the specified marketplaces.
 $service_order_ids = array('service_order_ids_example'); // string[] | List of service order ids for the query you want to perform.Max values supported 20.
 $service_job_status = array('service_job_status_example'); // string[] | A list of one or more job status by which to filter the list of jobs.
@@ -286,7 +346,19 @@ Reschedules an appointment for the service job indicated by the service job iden
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ServiceApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ServiceApi($config);
 $service_job_id = 'service_job_id_example'; // string | An Amazon defined service job identifier.
 $appointment_id = 'appointment_id_example'; // string | An existing appointment identifier for the Service Job.
 $body = new \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest(); // \SellingPartnerApi\Model\Service\RescheduleAppointmentRequest | Reschedule appointment operation input details.

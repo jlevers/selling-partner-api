@@ -24,7 +24,19 @@ Returns the estimated fees for the item indicated by the specified Asin in the m
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\FeesApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\FeesApi($config);
 $asin = 'asin_example'; // string | The Amazon Standard Identification Number (ASIN) of the item.
 $body = new \SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest(); // \SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest
 
@@ -72,7 +84,19 @@ Returns the estimated fees for the item indicated by the specified seller SKU in
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\FeesApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\FeesApi($config);
 $seller_sku = 'seller_sku_example'; // string | Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
 $body = new \SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest(); // \SellingPartnerApi\Model\Fees\GetMyFeesEstimateRequest
 

@@ -30,7 +30,19 @@ Cancel the shipment indicated by the specified shipment identifier.  **Usage Pla
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi($config);
 $shipment_id = 'shipment_id_example'; // string | The Amazon-defined shipment identifier for the shipment to cancel.
 
 try {
@@ -76,7 +88,19 @@ Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi($config);
 $shipment_id = 'shipment_id_example'; // string | The Amazon-defined shipment identifier for the shipment to cancel.
 
 try {
@@ -122,7 +146,19 @@ Create a shipment with the information provided.  **Usage Plan:**  | Rate (reque
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi($config);
 $body = new \SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest(); // \SellingPartnerApi\Model\MerchantFulfillment\CreateShipmentRequest
 
 try {
@@ -168,7 +204,19 @@ Gets a list of additional seller inputs required for a ship method. This is gene
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi($config);
 $body = new \SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest(); // \SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest
 
 try {
@@ -214,7 +262,19 @@ Get a list of additional seller inputs required for a ship method. This is gener
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi($config);
 $body = new \SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest(); // \SellingPartnerApi\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest
 
 try {
@@ -260,7 +320,19 @@ Returns a list of shipping service offers that satisfy the specified shipment re
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi($config);
 $body = new \SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest(); // \SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest
 
 try {
@@ -306,7 +378,19 @@ Returns a list of shipping service offers that satisfy the specified shipment re
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi($config);
 $body = new \SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest(); // \SellingPartnerApi\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest
 
 try {
@@ -352,7 +436,19 @@ Returns the shipment information for an existing shipment.  **Usage Plan:**  | R
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\MerchantFulfillmentApi($config);
 $shipment_id = 'shipment_id_example'; // string | The Amazon-defined shipment identifier for the shipment.
 
 try {

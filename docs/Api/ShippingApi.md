@@ -31,7 +31,19 @@ Cancel a shipment by the given shipmentId.  **Usage Plan:**  | Rate (requests pe
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 $shipment_id = 'shipment_id_example'; // string
 
 try {
@@ -77,7 +89,19 @@ Create a new shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 $body = new \SellingPartnerApi\Model\Shipping\CreateShipmentRequest(); // \SellingPartnerApi\Model\Shipping\CreateShipmentRequest
 
 try {
@@ -123,7 +147,19 @@ Verify if the current account is valid.  **Usage Plan:**  | Rate (requests per s
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 
 try {
     $result = $apiInstance->getAccount();
@@ -166,7 +202,19 @@ Get service rates.  **Usage Plan:**  | Rate (requests per second) | Burst | | --
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 $body = new \SellingPartnerApi\Model\Shipping\GetRatesRequest(); // \SellingPartnerApi\Model\Shipping\GetRatesRequest
 
 try {
@@ -212,7 +260,19 @@ Return the entire shipment object for the shipmentId.  **Usage Plan:**  | Rate (
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 $shipment_id = 'shipment_id_example'; // string
 
 try {
@@ -258,7 +318,19 @@ Return the tracking information of a shipment.  **Usage Plan:**  | Rate (request
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 $tracking_id = 'tracking_id_example'; // string
 
 try {
@@ -304,7 +376,19 @@ Purchase shipping labels based on a given rate.  **Usage Plan:**  | Rate (reques
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 $shipment_id = 'shipment_id_example'; // string
 $body = new \SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest(); // \SellingPartnerApi\Model\Shipping\PurchaseLabelsRequest
 
@@ -352,7 +436,19 @@ Purchase shipping labels.  **Usage Plan:**  | Rate (requests per second) | Burst
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 $body = new \SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest(); // \SellingPartnerApi\Model\Shipping\PurchaseShipmentRequest
 
 try {
@@ -398,7 +494,19 @@ Retrieve shipping label based on the shipment id and tracking id.  **Usage Plan:
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\ShippingApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ShippingApi($config);
 $shipment_id = 'shipment_id_example'; // string
 $tracking_id = 'tracking_id_example'; // string
 $body = new \SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest(); // \SellingPartnerApi\Model\Shipping\RetrieveShippingLabelRequest

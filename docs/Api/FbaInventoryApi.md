@@ -23,7 +23,19 @@ Returns a list of inventory summaries. The summaries returned depend on the pres
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new SellingPartnerApi\Api\FbaInventoryApi();
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\FbaInventoryApi($config);
 $granularity_type = 'granularity_type_example'; // string | The granularity type for the inventory aggregation level.
 $granularity_id = 'granularity_id_example'; // string | The granularity ID for the inventory aggregation level.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | The marketplace ID for the marketplace for which to return inventory summaries.

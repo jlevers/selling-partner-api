@@ -37,7 +37,11 @@ class Document
             throw new \Exception($msg);
         }
 
-        if (!in_array($contentType, static::VALID_CONTENT_TYPES)) {
+        // Not defining a charset on the contentType throws an 400 - Invalid Input error from SP-API.
+        // That's why we must only check the first part of the contentType.
+        // Example: "text/tab-separated-values; charset=UTF-8"
+        $arrContentTypeParts = explode(";", $contentType);
+        if (!in_array(trim($arrContentTypeParts[0]), static::VALID_CONTENT_TYPES)) {
             throw new \InvalidArgumentException("valid contentType values are: " . implode(", ", static::VALID_CONTENT_TYPES));
         }
 

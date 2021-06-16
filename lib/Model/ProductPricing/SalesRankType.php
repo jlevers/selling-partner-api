@@ -1,6 +1,6 @@
 <?php
 /**
- * Product
+ * SalesRankType
  *
  * PHP version 7.2
  *
@@ -32,17 +32,16 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Product Class Doc Comment
+ * SalesRankType Class Doc Comment
  *
  * @category Class
- * @description An item.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Product implements ModelInterface, ArrayAccess, \JsonSerializable
+class SalesRankType implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Product';
+    protected static $openAPIModelName = 'SalesRankType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +58,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'identifiers' => '\SellingPartnerApi\Model\ProductPricing\IdentifierType',
-        'attribute_sets' => 'object[]',
-        'relationships' => 'object[]',
-        'competitive_pricing' => '\SellingPartnerApi\Model\ProductPricing\CompetitivePricingType',
-        'sales_rankings' => '\SellingPartnerApi\Model\ProductPricing\SalesRankType[]',
-        'offers' => '\SellingPartnerApi\Model\ProductPricing\OfferType[]'
+        'product_category_id' => 'string',
+        'rank' => 'int'
     ];
 
     /**
@@ -75,12 +70,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'identifiers' => null,
-        'attribute_sets' => null,
-        'relationships' => null,
-        'competitive_pricing' => null,
-        'sales_rankings' => null,
-        'offers' => null
+        'product_category_id' => null,
+        'rank' => 'int32'
     ];
 
     /**
@@ -110,12 +101,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'identifiers' => 'Identifiers',
-        'attribute_sets' => 'AttributeSets',
-        'relationships' => 'Relationships',
-        'competitive_pricing' => 'CompetitivePricing',
-        'sales_rankings' => 'SalesRankings',
-        'offers' => 'Offers'
+        'product_category_id' => 'ProductCategoryId',
+        'rank' => 'Rank'
     ];
 
     /**
@@ -124,12 +111,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'identifiers' => 'setIdentifiers',
-        'attribute_sets' => 'setAttributeSets',
-        'relationships' => 'setRelationships',
-        'competitive_pricing' => 'setCompetitivePricing',
-        'sales_rankings' => 'setSalesRankings',
-        'offers' => 'setOffers'
+        'product_category_id' => 'setProductCategoryId',
+        'rank' => 'setRank'
     ];
 
     /**
@@ -138,12 +121,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'identifiers' => 'getIdentifiers',
-        'attribute_sets' => 'getAttributeSets',
-        'relationships' => 'getRelationships',
-        'competitive_pricing' => 'getCompetitivePricing',
-        'sales_rankings' => 'getSalesRankings',
-        'offers' => 'getOffers'
+        'product_category_id' => 'getProductCategoryId',
+        'rank' => 'getRank'
     ];
 
     /**
@@ -206,12 +185,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['identifiers'] = $data['identifiers'] ?? null;
-        $this->container['attribute_sets'] = $data['attribute_sets'] ?? null;
-        $this->container['relationships'] = $data['relationships'] ?? null;
-        $this->container['competitive_pricing'] = $data['competitive_pricing'] ?? null;
-        $this->container['sales_rankings'] = $data['sales_rankings'] ?? null;
-        $this->container['offers'] = $data['offers'] ?? null;
+        $this->container['product_category_id'] = $data['product_category_id'] ?? null;
+        $this->container['rank'] = $data['rank'] ?? null;
     }
 
     /**
@@ -223,8 +198,11 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['identifiers'] === null) {
-            $invalidProperties[] = "'identifiers' can't be null";
+        if ($this->container['product_category_id'] === null) {
+            $invalidProperties[] = "'product_category_id' can't be null";
+        }
+        if ($this->container['rank'] === null) {
+            $invalidProperties[] = "'rank' can't be null";
         }
         return $invalidProperties;
     }
@@ -242,145 +220,49 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets identifiers
+     * Gets product_category_id
      *
-     * @return \SellingPartnerApi\Model\ProductPricing\IdentifierType
+     * @return string
      */
-    public function getIdentifiers()
+    public function getProductCategoryId()
     {
-        return $this->container['identifiers'];
+        return $this->container['product_category_id'];
     }
 
     /**
-     * Sets identifiers
+     * Sets product_category_id
      *
-     * @param \SellingPartnerApi\Model\ProductPricing\IdentifierType $identifiers identifiers
+     * @param string $product_category_id Identifies the item category from which the sales rank is taken.
      *
      * @return self
      */
-    public function setIdentifiers($identifiers)
+    public function setProductCategoryId($product_category_id)
     {
-        $this->container['identifiers'] = $identifiers;
+        $this->container['product_category_id'] = $product_category_id;
 
         return $this;
     }
 
     /**
-     * Gets attribute_sets
+     * Gets rank
      *
-     * @return object[]|null
+     * @return int
      */
-    public function getAttributeSets()
+    public function getRank()
     {
-        return $this->container['attribute_sets'];
+        return $this->container['rank'];
     }
 
     /**
-     * Sets attribute_sets
+     * Sets rank
      *
-     * @param object[]|null $attribute_sets A list of product attributes if they are applicable to the product that is returned.
+     * @param int $rank The sales rank of the item within the item category.
      *
      * @return self
      */
-    public function setAttributeSets($attribute_sets)
+    public function setRank($rank)
     {
-        $this->container['attribute_sets'] = $attribute_sets;
-
-        return $this;
-    }
-
-    /**
-     * Gets relationships
-     *
-     * @return object[]|null
-     */
-    public function getRelationships()
-    {
-        return $this->container['relationships'];
-    }
-
-    /**
-     * Sets relationships
-     *
-     * @param object[]|null $relationships A list that contains product variation information, if applicable.
-     *
-     * @return self
-     */
-    public function setRelationships($relationships)
-    {
-        $this->container['relationships'] = $relationships;
-
-        return $this;
-    }
-
-    /**
-     * Gets competitive_pricing
-     *
-     * @return \SellingPartnerApi\Model\ProductPricing\CompetitivePricingType|null
-     */
-    public function getCompetitivePricing()
-    {
-        return $this->container['competitive_pricing'];
-    }
-
-    /**
-     * Sets competitive_pricing
-     *
-     * @param \SellingPartnerApi\Model\ProductPricing\CompetitivePricingType|null $competitive_pricing competitive_pricing
-     *
-     * @return self
-     */
-    public function setCompetitivePricing($competitive_pricing)
-    {
-        $this->container['competitive_pricing'] = $competitive_pricing;
-
-        return $this;
-    }
-
-    /**
-     * Gets sales_rankings
-     *
-     * @return \SellingPartnerApi\Model\ProductPricing\SalesRankType[]|null
-     */
-    public function getSalesRankings()
-    {
-        return $this->container['sales_rankings'];
-    }
-
-    /**
-     * Sets sales_rankings
-     *
-     * @param \SellingPartnerApi\Model\ProductPricing\SalesRankType[]|null $sales_rankings A list of sales rank information for the item, by category.
-     *
-     * @return self
-     */
-    public function setSalesRankings($sales_rankings)
-    {
-        $this->container['sales_rankings'] = $sales_rankings;
-
-        return $this;
-    }
-
-    /**
-     * Gets offers
-     *
-     * @return \SellingPartnerApi\Model\ProductPricing\OfferType[]|null
-     */
-    public function getOffers()
-    {
-        return $this->container['offers'];
-    }
-
-    /**
-     * Sets offers
-     *
-     * @param \SellingPartnerApi\Model\ProductPricing\OfferType[]|null $offers A list of offers.
-     *
-     * @return self
-     */
-    public function setOffers($offers)
-    {
-        $this->container['offers'] = $offers;
+        $this->container['rank'] = $rank;
 
         return $this;
     }

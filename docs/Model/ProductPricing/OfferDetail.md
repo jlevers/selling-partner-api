@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**seller_id** | **string** | The seller identifier for the offer. | [optional]
 **my_offer** | **bool** | When true, this is the seller&#39;s offer. | [optional]
+**offer_type** | [**\SellingPartnerApi\Model\ProductPricing\OfferCustomerType**](OfferCustomerType.md) |  | [optional]
 **sub_condition** | **string** | The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other. |
 **seller_feedback_rating** | [**\SellingPartnerApi\Model\ProductPricing\SellerFeedbackType**](SellerFeedbackType.md) |  | [optional]
 **shipping_time** | [**\SellingPartnerApi\Model\ProductPricing\DetailedShippingTimeType**](DetailedShippingTimeType.md) |  |
 **listing_price** | [**\SellingPartnerApi\Model\ProductPricing\MoneyType**](MoneyType.md) |  |
+**quantity_discount_prices** | [**\SellingPartnerApi\Model\ProductPricing\QuantityDiscountPriceType[]**](QuantityDiscountPriceType.md) |  | [optional]
 **points** | [**\SellingPartnerApi\Model\ProductPricing\Points**](Points.md) |  | [optional]
 **shipping** | [**\SellingPartnerApi\Model\ProductPricing\MoneyType**](MoneyType.md) |  |
 **ships_from** | [**\SellingPartnerApi\Model\ProductPricing\ShipsFromType**](ShipsFromType.md) |  | [optional]

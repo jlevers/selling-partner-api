@@ -62,6 +62,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => '\SellingPartnerApi\Model\ProductPricing\PriceType',
         'condition' => 'string',
         'subcondition' => 'string',
+        'offer_type' => '\SellingPartnerApi\Model\ProductPricing\OfferCustomerType',
+        'quantity_tier' => 'int',
+        'quantity_discount_type' => '\SellingPartnerApi\Model\ProductPricing\QuantityDiscountType',
+        'seller_id' => 'string',
         'belongs_to_requester' => 'bool'
     ];
 
@@ -77,6 +81,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => null,
         'condition' => null,
         'subcondition' => null,
+        'offer_type' => null,
+        'quantity_tier' => 'int32',
+        'quantity_discount_type' => null,
+        'seller_id' => null,
         'belongs_to_requester' => null
     ];
 
@@ -111,6 +119,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => 'Price',
         'condition' => 'condition',
         'subcondition' => 'subcondition',
+        'offer_type' => 'offerType',
+        'quantity_tier' => 'quantityTier',
+        'quantity_discount_type' => 'quantityDiscountType',
+        'seller_id' => 'sellerId',
         'belongs_to_requester' => 'belongsToRequester'
     ];
 
@@ -124,6 +136,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => 'setPrice',
         'condition' => 'setCondition',
         'subcondition' => 'setSubcondition',
+        'offer_type' => 'setOfferType',
+        'quantity_tier' => 'setQuantityTier',
+        'quantity_discount_type' => 'setQuantityDiscountType',
+        'seller_id' => 'setSellerId',
         'belongs_to_requester' => 'setBelongsToRequester'
     ];
 
@@ -137,6 +153,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         'price' => 'getPrice',
         'condition' => 'getCondition',
         'subcondition' => 'getSubcondition',
+        'offer_type' => 'getOfferType',
+        'quantity_tier' => 'getQuantityTier',
+        'quantity_discount_type' => 'getQuantityDiscountType',
+        'seller_id' => 'getSellerId',
         'belongs_to_requester' => 'getBelongsToRequester'
     ];
 
@@ -204,6 +224,10 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['price'] = $data['price'] ?? null;
         $this->container['condition'] = $data['condition'] ?? null;
         $this->container['subcondition'] = $data['subcondition'] ?? null;
+        $this->container['offer_type'] = $data['offer_type'] ?? null;
+        $this->container['quantity_tier'] = $data['quantity_tier'] ?? null;
+        $this->container['quantity_discount_type'] = $data['quantity_discount_type'] ?? null;
+        $this->container['seller_id'] = $data['seller_id'] ?? null;
         $this->container['belongs_to_requester'] = $data['belongs_to_requester'] ?? null;
     }
 
@@ -329,6 +353,102 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setSubcondition($subcondition)
     {
         $this->container['subcondition'] = $subcondition;
+
+        return $this;
+    }
+
+    /**
+     * Gets offer_type
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferCustomerType|null
+     */
+    public function getOfferType()
+    {
+        return $this->container['offer_type'];
+    }
+
+    /**
+     * Sets offer_type
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferCustomerType|null $offer_type offer_type
+     *
+     * @return self
+     */
+    public function setOfferType($offer_type)
+    {
+        $this->container['offer_type'] = $offer_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_tier
+     *
+     * @return int|null
+     */
+    public function getQuantityTier()
+    {
+        return $this->container['quantity_tier'];
+    }
+
+    /**
+     * Sets quantity_tier
+     *
+     * @param int|null $quantity_tier Indicates at what quantity this price becomes active.
+     *
+     * @return self
+     */
+    public function setQuantityTier($quantity_tier)
+    {
+        $this->container['quantity_tier'] = $quantity_tier;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_discount_type
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\QuantityDiscountType|null
+     */
+    public function getQuantityDiscountType()
+    {
+        return $this->container['quantity_discount_type'];
+    }
+
+    /**
+     * Sets quantity_discount_type
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\QuantityDiscountType|null $quantity_discount_type quantity_discount_type
+     *
+     * @return self
+     */
+    public function setQuantityDiscountType($quantity_discount_type)
+    {
+        $this->container['quantity_discount_type'] = $quantity_discount_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets seller_id
+     *
+     * @return string|null
+     */
+    public function getSellerId()
+    {
+        return $this->container['seller_id'];
+    }
+
+    /**
+     * Sets seller_id
+     *
+     * @param string|null $seller_id The seller identifier for the offer.
+     *
+     * @return self
+     */
+    public function setSellerId($seller_id)
+    {
+        $this->container['seller_id'] = $seller_id;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * Pagination
  *
  * PHP version 7.2
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Error Class Doc Comment
+ * Pagination Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description When a request produces a response that exceeds the pageSize, pagination occurs. This means the response is divided into individual pages. To retrieve the next page or the previous page, you must pass the nextToken value or the previousToken value as the pageToken parameter in the next request. When you receive the last page, there will be no nextToken key in the pagination object.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class Pagination implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'Pagination';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'next_token' => 'string',
+        'previous_token' => 'string'
     ];
 
     /**
@@ -72,9 +71,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'next_token' => null,
+        'previous_token' => null
     ];
 
     /**
@@ -104,9 +102,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'next_token' => 'nextToken',
+        'previous_token' => 'previousToken'
     ];
 
     /**
@@ -115,9 +112,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'next_token' => 'setNextToken',
+        'previous_token' => 'setPreviousToken'
     ];
 
     /**
@@ -126,9 +122,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'next_token' => 'getNextToken',
+        'previous_token' => 'getPreviousToken'
     ];
 
     /**
@@ -191,9 +186,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['next_token'] = $data['next_token'] ?? null;
+        $this->container['previous_token'] = $data['previous_token'] ?? null;
     }
 
     /**
@@ -205,12 +199,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -227,73 +215,49 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
-     *
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->container['code'];
-    }
-
-    /**
-     * Sets code
-     *
-     * @param string $code An error code that identifies the type of error that occurred.
-     *
-     * @return self
-     */
-    public function setCode($code)
-    {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message A message that describes the error condition.
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
+     * Gets next_token
      *
      * @return string|null
      */
-    public function getDetails()
+    public function getNextToken()
     {
-        return $this->container['details'];
+        return $this->container['next_token'];
     }
 
     /**
-     * Sets details
+     * Sets next_token
      *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
+     * @param string|null $next_token A token that can be used to fetch the next page.
      *
      * @return self
      */
-    public function setDetails($details)
+    public function setNextToken($next_token)
     {
-        $this->container['details'] = $details;
+        $this->container['next_token'] = $next_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets previous_token
+     *
+     * @return string|null
+     */
+    public function getPreviousToken()
+    {
+        return $this->container['previous_token'];
+    }
+
+    /**
+     * Sets previous_token
+     *
+     * @param string|null $previous_token A token that can be used to fetch the previous page.
+     *
+     * @return self
+     */
+    public function setPreviousToken($previous_token)
+    {
+        $this->container['previous_token'] = $previous_token;
 
         return $this;
     }

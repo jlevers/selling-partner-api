@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * ItemSalesRank
  *
  * PHP version 7.2
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Error Class Doc Comment
+ * ItemSalesRank Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description Sales rank of an Amazon catalog item.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'ItemSalesRank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'title' => 'string',
+        'link' => 'string',
+        'rank' => 'int'
     ];
 
     /**
@@ -72,9 +72,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'title' => null,
+        'link' => null,
+        'rank' => null
     ];
 
     /**
@@ -104,9 +104,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'title' => 'title',
+        'link' => 'link',
+        'rank' => 'rank'
     ];
 
     /**
@@ -115,9 +115,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'title' => 'setTitle',
+        'link' => 'setLink',
+        'rank' => 'setRank'
     ];
 
     /**
@@ -126,9 +126,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'title' => 'getTitle',
+        'link' => 'getLink',
+        'rank' => 'getRank'
     ];
 
     /**
@@ -191,9 +191,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['link'] = $data['link'] ?? null;
+        $this->container['rank'] = $data['rank'] ?? null;
     }
 
     /**
@@ -205,11 +205,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
         }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['rank'] === null) {
+            $invalidProperties[] = "'rank' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +227,73 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets title
      *
      * @return string
      */
-    public function getCode()
+    public function getTitle()
     {
-        return $this->container['code'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets code
+     * Sets title
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param string $title Title, or name, of the sales rank.
      *
      * @return self
      */
-    public function setCode($code)
+    public function setTitle($title)
     {
-        $this->container['code'] = $code;
+        $this->container['title'] = $title;
 
         return $this;
     }
 
     /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message A message that describes the error condition.
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
+     * Gets link
      *
      * @return string|null
      */
-    public function getDetails()
+    public function getLink()
     {
-        return $this->container['details'];
+        return $this->container['link'];
     }
 
     /**
-     * Sets details
+     * Sets link
      *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
+     * @param string|null $link Corresponding Amazon retail website link, or URL, for the sales rank.
      *
      * @return self
      */
-    public function setDetails($details)
+    public function setLink($link)
     {
-        $this->container['details'] = $details;
+        $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets rank
+     *
+     * @return int
+     */
+    public function getRank()
+    {
+        return $this->container['rank'];
+    }
+
+    /**
+     * Sets rank
+     *
+     * @param int $rank Sales rank value.
+     *
+     * @return self
+     */
+    public function setRank($rank)
+    {
+        $this->container['rank'] = $rank;
 
         return $this;
     }

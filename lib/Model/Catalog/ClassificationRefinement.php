@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * ClassificationRefinement
  *
  * PHP version 7.2
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Error Class Doc Comment
+ * ClassificationRefinement Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description Description of a classification that can be used to get more fine-grained search results.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class ClassificationRefinement implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'ClassificationRefinement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'number_of_results' => 'int',
+        'display_name' => 'string',
+        'classification_id' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'number_of_results' => null,
+        'display_name' => null,
+        'classification_id' => null
     ];
 
     /**
@@ -104,9 +104,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'number_of_results' => 'numberOfResults',
+        'display_name' => 'displayName',
+        'classification_id' => 'classificationId'
     ];
 
     /**
@@ -115,9 +115,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'number_of_results' => 'setNumberOfResults',
+        'display_name' => 'setDisplayName',
+        'classification_id' => 'setClassificationId'
     ];
 
     /**
@@ -126,9 +126,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'number_of_results' => 'getNumberOfResults',
+        'display_name' => 'getDisplayName',
+        'classification_id' => 'getClassificationId'
     ];
 
     /**
@@ -191,9 +191,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['number_of_results'] = $data['number_of_results'] ?? null;
+        $this->container['display_name'] = $data['display_name'] ?? null;
+        $this->container['classification_id'] = $data['classification_id'] ?? null;
     }
 
     /**
@@ -205,11 +205,14 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['number_of_results'] === null) {
+            $invalidProperties[] = "'number_of_results' can't be null";
         }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['display_name'] === null) {
+            $invalidProperties[] = "'display_name' can't be null";
+        }
+        if ($this->container['classification_id'] === null) {
+            $invalidProperties[] = "'classification_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +230,73 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets number_of_results
      *
-     * @return string
+     * @return int
      */
-    public function getCode()
+    public function getNumberOfResults()
     {
-        return $this->container['code'];
+        return $this->container['number_of_results'];
     }
 
     /**
-     * Sets code
+     * Sets number_of_results
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param int $number_of_results The estimated number of results that would still be returned if refinement key applied.
      *
      * @return self
      */
-    public function setCode($code)
+    public function setNumberOfResults($number_of_results)
     {
-        $this->container['code'] = $code;
+        $this->container['number_of_results'] = $number_of_results;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets display_name
      *
      * @return string
      */
-    public function getMessage()
+    public function getDisplayName()
     {
-        return $this->container['message'];
+        return $this->container['display_name'];
     }
 
     /**
-     * Sets message
+     * Sets display_name
      *
-     * @param string $message A message that describes the error condition.
+     * @param string $display_name Display name for the classification.
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setDisplayName($display_name)
     {
-        $this->container['message'] = $message;
+        $this->container['display_name'] = $display_name;
 
         return $this;
     }
 
     /**
-     * Gets details
+     * Gets classification_id
      *
-     * @return string|null
+     * @return string
      */
-    public function getDetails()
+    public function getClassificationId()
     {
-        return $this->container['details'];
+        return $this->container['classification_id'];
     }
 
     /**
-     * Sets details
+     * Sets classification_id
      *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
+     * @param string $classification_id Identifier for the classification that can be used for search refinement purposes.
      *
      * @return self
      */
-    public function setDetails($details)
+    public function setClassificationId($classification_id)
     {
-        $this->container['details'] = $details;
+        $this->container['classification_id'] = $classification_id;
 
         return $this;
     }

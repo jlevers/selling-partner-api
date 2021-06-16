@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * ErrorList
  *
  * PHP version 7.2
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Error Class Doc Comment
+ * ErrorList Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description A list of error responses returned when a request is unsuccessful.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class ErrorList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'ErrorList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'errors' => '\SellingPartnerApi\Model\Catalog\Error[]'
     ];
 
     /**
@@ -72,9 +70,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'errors' => null
     ];
 
     /**
@@ -104,9 +100,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'errors' => 'errors'
     ];
 
     /**
@@ -115,9 +109,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -126,9 +118,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -191,9 +181,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -205,11 +193,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['errors'] === null) {
+            $invalidProperties[] = "'errors' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +212,25 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets errors
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\Catalog\Error[]
      */
-    public function getCode()
+    public function getErrors()
     {
-        return $this->container['code'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets code
+     * Sets errors
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param \SellingPartnerApi\Model\Catalog\Error[] $errors errors
      *
      * @return self
      */
-    public function setCode($code)
+    public function setErrors($errors)
     {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message A message that describes the error condition.
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     *
-     * @return string|null
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * ItemImage
  *
  * PHP version 7.2
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Error Class Doc Comment
+ * ItemImage Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description Image for an item in the Amazon catalog.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'ItemImage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'variant' => 'string',
+        'link' => 'string',
+        'height' => 'int',
+        'width' => 'int'
     ];
 
     /**
@@ -72,9 +73,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'variant' => null,
+        'link' => null,
+        'height' => null,
+        'width' => null
     ];
 
     /**
@@ -104,9 +106,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'variant' => 'variant',
+        'link' => 'link',
+        'height' => 'height',
+        'width' => 'width'
     ];
 
     /**
@@ -115,9 +118,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'variant' => 'setVariant',
+        'link' => 'setLink',
+        'height' => 'setHeight',
+        'width' => 'setWidth'
     ];
 
     /**
@@ -126,9 +130,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'variant' => 'getVariant',
+        'link' => 'getLink',
+        'height' => 'getHeight',
+        'width' => 'getWidth'
     ];
 
     /**
@@ -172,8 +177,39 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const VARIANT_MAIN = 'MAIN';
+    const VARIANT_PT01 = 'PT01';
+    const VARIANT_PT02 = 'PT02';
+    const VARIANT_PT03 = 'PT03';
+    const VARIANT_PT04 = 'PT04';
+    const VARIANT_PT05 = 'PT05';
+    const VARIANT_PT06 = 'PT06';
+    const VARIANT_PT07 = 'PT07';
+    const VARIANT_PT08 = 'PT08';
+    const VARIANT_SWCH = 'SWCH';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getVariantAllowableValues()
+    {
+        return [
+            self::VARIANT_MAIN,
+            self::VARIANT_PT01,
+            self::VARIANT_PT02,
+            self::VARIANT_PT03,
+            self::VARIANT_PT04,
+            self::VARIANT_PT05,
+            self::VARIANT_PT06,
+            self::VARIANT_PT07,
+            self::VARIANT_PT08,
+            self::VARIANT_SWCH,
+        ];
+    }
     
 
     /**
@@ -191,9 +227,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['variant'] = $data['variant'] ?? null;
+        $this->container['link'] = $data['link'] ?? null;
+        $this->container['height'] = $data['height'] ?? null;
+        $this->container['width'] = $data['width'] ?? null;
     }
 
     /**
@@ -205,11 +242,26 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['variant'] === null) {
+            $invalidProperties[] = "'variant' can't be null";
         }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        $allowedValues = $this->getVariantAllowableValues();
+        if (!is_null($this->container['variant']) && !in_array($this->container['variant'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'variant', must be one of '%s'",
+                $this->container['variant'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['link'] === null) {
+            $invalidProperties[] = "'link' can't be null";
+        }
+        if ($this->container['height'] === null) {
+            $invalidProperties[] = "'height' can't be null";
+        }
+        if ($this->container['width'] === null) {
+            $invalidProperties[] = "'width' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +279,107 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets variant
      *
      * @return string
      */
-    public function getCode()
+    public function getVariant()
     {
-        return $this->container['code'];
+        return $this->container['variant'];
     }
 
     /**
-     * Sets code
+     * Sets variant
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param string $variant Variant of the image, such as MAIN or PT01.
      *
      * @return self
      */
-    public function setCode($code)
+    public function setVariant($variant)
     {
-        $this->container['code'] = $code;
+        $allowedValues = $this->getVariantAllowableValues();
+        if (!in_array($variant, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'variant', must be one of '%s'",
+                    $variant,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['variant'] = $variant;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets link
      *
      * @return string
      */
-    public function getMessage()
+    public function getLink()
     {
-        return $this->container['message'];
+        return $this->container['link'];
     }
 
     /**
-     * Sets message
+     * Sets link
      *
-     * @param string $message A message that describes the error condition.
+     * @param string $link Link, or URL, for the image.
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setLink($link)
     {
-        $this->container['message'] = $message;
+        $this->container['link'] = $link;
 
         return $this;
     }
 
     /**
-     * Gets details
+     * Gets height
      *
-     * @return string|null
+     * @return int
      */
-    public function getDetails()
+    public function getHeight()
     {
-        return $this->container['details'];
+        return $this->container['height'];
     }
 
     /**
-     * Sets details
+     * Sets height
      *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
+     * @param int $height Height of the image in pixels.
      *
      * @return self
      */
-    public function setDetails($details)
+    public function setHeight($height)
     {
-        $this->container['details'] = $details;
+        $this->container['height'] = $height;
+
+        return $this;
+    }
+
+    /**
+     * Gets width
+     *
+     * @return int
+     */
+    public function getWidth()
+    {
+        return $this->container['width'];
+    }
+
+    /**
+     * Sets width
+     *
+     * @param int $width Width of the image in pixels.
+     *
+     * @return self
+     */
+    public function setWidth($width)
+    {
+        $this->container['width'] = $width;
 
         return $this;
     }

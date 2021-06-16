@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * ItemVariationsByMarketplace
  *
  * PHP version 7.2
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Error Class Doc Comment
+ * ItemVariationsByMarketplace Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description Variation details for the Amazon catalog item for the indicated Amazon marketplace.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'ItemVariationsByMarketplace';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'marketplace_id' => 'string',
+        'asins' => 'string[]',
+        'variation_type' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'marketplace_id' => null,
+        'asins' => null,
+        'variation_type' => null
     ];
 
     /**
@@ -104,9 +104,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'marketplace_id' => 'marketplaceId',
+        'asins' => 'asins',
+        'variation_type' => 'variationType'
     ];
 
     /**
@@ -115,9 +115,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'marketplace_id' => 'setMarketplaceId',
+        'asins' => 'setAsins',
+        'variation_type' => 'setVariationType'
     ];
 
     /**
@@ -126,9 +126,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'marketplace_id' => 'getMarketplaceId',
+        'asins' => 'getAsins',
+        'variation_type' => 'getVariationType'
     ];
 
     /**
@@ -172,8 +172,23 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const VARIATION_TYPE_PARENT = 'PARENT';
+    const VARIATION_TYPE_CHILD = 'CHILD';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getVariationTypeAllowableValues()
+    {
+        return [
+            self::VARIATION_TYPE_PARENT,
+            self::VARIATION_TYPE_CHILD,
+        ];
+    }
     
 
     /**
@@ -191,9 +206,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['asins'] = $data['asins'] ?? null;
+        $this->container['variation_type'] = $data['variation_type'] ?? null;
     }
 
     /**
@@ -205,12 +220,24 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['marketplace_id'] === null) {
+            $invalidProperties[] = "'marketplace_id' can't be null";
         }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['asins'] === null) {
+            $invalidProperties[] = "'asins' can't be null";
         }
+        if ($this->container['variation_type'] === null) {
+            $invalidProperties[] = "'variation_type' can't be null";
+        }
+        $allowedValues = $this->getVariationTypeAllowableValues();
+        if (!is_null($this->container['variation_type']) && !in_array($this->container['variation_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'variation_type', must be one of '%s'",
+                $this->container['variation_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -227,73 +254,83 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets marketplace_id
      *
      * @return string
      */
-    public function getCode()
+    public function getMarketplaceId()
     {
-        return $this->container['code'];
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets code
+     * Sets marketplace_id
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param string $marketplace_id Amazon marketplace identifier.
      *
      * @return self
      */
-    public function setCode($code)
+    public function setMarketplaceId($marketplace_id)
     {
-        $this->container['code'] = $code;
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets asins
      *
-     * @return string
+     * @return string[]
      */
-    public function getMessage()
+    public function getAsins()
     {
-        return $this->container['message'];
+        return $this->container['asins'];
     }
 
     /**
-     * Sets message
+     * Sets asins
      *
-     * @param string $message A message that describes the error condition.
+     * @param string[] $asins Identifiers (ASINs) of the related items.
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setAsins($asins)
     {
-        $this->container['message'] = $message;
+        $this->container['asins'] = $asins;
 
         return $this;
     }
 
     /**
-     * Gets details
+     * Gets variation_type
      *
-     * @return string|null
+     * @return string
      */
-    public function getDetails()
+    public function getVariationType()
     {
-        return $this->container['details'];
+        return $this->container['variation_type'];
     }
 
     /**
-     * Sets details
+     * Sets variation_type
      *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
+     * @param string $variation_type Type of variation relationship of the Amazon catalog item in the request to the related item(s): \"PARENT\" or \"CHILD\".
      *
      * @return self
      */
-    public function setDetails($details)
+    public function setVariationType($variation_type)
     {
-        $this->container['details'] = $details;
+        $allowedValues = $this->getVariationTypeAllowableValues();
+        if (!in_array($variation_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'variation_type', must be one of '%s'",
+                    $variation_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['variation_type'] = $variation_type;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * ItemImagesByMarketplace
  *
  * PHP version 7.2
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Error Class Doc Comment
+ * ItemImagesByMarketplace Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description Images for an item in the Amazon catalog for the indicated Amazon marketplace.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'ItemImagesByMarketplace';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'marketplace_id' => 'string',
+        'images' => '\SellingPartnerApi\Model\Catalog\ItemImage[]'
     ];
 
     /**
@@ -72,9 +71,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'marketplace_id' => null,
+        'images' => null
     ];
 
     /**
@@ -104,9 +102,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'marketplace_id' => 'marketplaceId',
+        'images' => 'images'
     ];
 
     /**
@@ -115,9 +112,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+        'marketplace_id' => 'setMarketplaceId',
+        'images' => 'setImages'
     ];
 
     /**
@@ -126,9 +122,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'marketplace_id' => 'getMarketplaceId',
+        'images' => 'getImages'
     ];
 
     /**
@@ -191,9 +186,8 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['images'] = $data['images'] ?? null;
     }
 
     /**
@@ -205,11 +199,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['marketplace_id'] === null) {
+            $invalidProperties[] = "'marketplace_id' can't be null";
         }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+        if ($this->container['images'] === null) {
+            $invalidProperties[] = "'images' can't be null";
         }
         return $invalidProperties;
     }
@@ -227,73 +221,49 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets marketplace_id
      *
      * @return string
      */
-    public function getCode()
+    public function getMarketplaceId()
     {
-        return $this->container['code'];
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets code
+     * Sets marketplace_id
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param string $marketplace_id Amazon marketplace identifier.
      *
      * @return self
      */
-    public function setCode($code)
+    public function setMarketplaceId($marketplace_id)
     {
-        $this->container['code'] = $code;
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets images
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\Catalog\ItemImage[]
      */
-    public function getMessage()
+    public function getImages()
     {
-        return $this->container['message'];
+        return $this->container['images'];
     }
 
     /**
-     * Sets message
+     * Sets images
      *
-     * @param string $message A message that describes the error condition.
+     * @param \SellingPartnerApi\Model\Catalog\ItemImage[] $images Images for an item in the Amazon catalog for the indicated Amazon marketplace.
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setImages($images)
     {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets details
-     *
-     * @return string|null
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
+        $this->container['images'] = $images;
 
         return $this;
     }

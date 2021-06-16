@@ -149,7 +149,7 @@ class Authentication
         }
         $accessToken = $credsForAccessToken->getSecurityToken();
 
-        $relevantCreds = $this->awsCredentials;
+        $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         if ($this->roleArn !== null) {
             if ($this->roleCredentials === null || $this->roleCredentials->expiresSoon()) {
                 $client = new StsClient([
@@ -157,8 +157,8 @@ class Authentication
                     'region' => $this->region,
                     'version' => '2011-06-15',
                     'credentials' => [
-                      'key' => $relevantCreds ? $relevantCreds->getAccessKeyId() : $this->awsKey,
-                      'secret' => $relevantCreds ? $relevantCreds->getSecretKey() : $this->awsSecret,
+                      'key' => $this->awsKey,
+                      'secret' => $this->awsSecret,
                     ],
                 ]);
                 $assumeTime = time();

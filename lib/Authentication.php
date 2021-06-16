@@ -144,7 +144,7 @@ class Authentication
         $credsForAccessToken = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         if ($credsForAccessToken === null || $credsForAccessToken->getSecurityToken() === null || $credsForAccessToken->expiresSoon()) {
             $this->newToken($scope);
-            // Reassign $relevantCreds to the correct set of credentials, since that set of creds has been updated
+            // Reassign $credsForAccessToken to the correct set of credentials, since that set of creds has been updated
             $credsForAccessToken = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         }
         $accessToken = $credsForAccessToken->getSecurityToken();

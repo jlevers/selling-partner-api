@@ -157,8 +157,8 @@ class Authentication
                     'region' => $this->region,
                     'version' => '2011-06-15',
                     'credentials' => [
-                        'key' => $this->awsKey,
-                        'secret' => $this->awsSecret,
+                        'key' => $relevantCreds->getAccessKeyId(),
+                        'secret' => $relevantCreds->getSecretKey(),
                     ],
                 ]);
                 $assumeTime = time();

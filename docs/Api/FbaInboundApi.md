@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 ## `getLabels()`
 
 ```php
-getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets): \SellingPartnerApi\Model\FbaInbound\GetLabelsResponse
+getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index): \SellingPartnerApi\Model\FbaInbound\GetLabelsResponse
 ```
 
 
@@ -474,9 +474,11 @@ $label_type = 'label_type_example'; // string | The type of labels requested.
 $number_of_packages = 56; // int | The number of packages in the shipment.
 $package_labels_to_print = array('package_labels_to_print_example'); // string[] | A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code.
 $number_of_pallets = 56; // int | The number of pallets in the shipment. This returns four identical labels for each pallet.
+$page_size = 56; // int | The page size for paginating through the total packages' labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000.
+$page_start_index = 56; // int | The page start index for paginating through the total packages' labels. This is a required parameter for Non-Partnered LTL Shipments.
 
 try {
-    $result = $apiInstance->getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
+    $result = $apiInstance->getLabels($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FbaInboundApi->getLabels: ', $e->getMessage(), PHP_EOL;
@@ -493,6 +495,8 @@ Name | Type | Description  | Notes
  **number_of_packages** | **int**| The number of packages in the shipment. | [optional]
  **package_labels_to_print** | [**string[]**](../Model/FbaInbound/string.md)| A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. | [optional]
  **number_of_pallets** | **int**| The number of pallets in the shipment. This returns four identical labels for each pallet. | [optional]
+ **page_size** | **int**| The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. | [optional]
+ **page_start_index** | **int**| The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. | [optional]
 
 ### Return type
 
@@ -951,7 +955,7 @@ updateInboundShipment($shipment_id, $body): \SellingPartnerApi\Model\FbaInbound\
 
 
 
-Adds, updates, or removes items from the inbound shipment identified by the specified shipment identifier.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Updates or removes items from the inbound shipment identified by the specified shipment identifier. Adding new items is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 

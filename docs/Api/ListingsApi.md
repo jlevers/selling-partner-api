@@ -1,0 +1,206 @@
+# SellingPartnerApi\ListingsApi
+
+All URIs are relative to https://sellingpartnerapi-na.amazon.com.
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**deleteListingsItem()**](ListingsApi.md#deleteListingsItem) | **DELETE** /listings/2020-09-01/items/{sellerId}/{sku} | 
+[**patchListingsItem()**](ListingsApi.md#patchListingsItem) | **PATCH** /listings/2020-09-01/items/{sellerId}/{sku} | 
+[**putListingsItem()**](ListingsApi.md#putListingsItem) | **PUT** /listings/2020-09-01/items/{sellerId}/{sku} | 
+
+
+## `deleteListingsItem()`
+
+```php
+deleteListingsItem($seller_id, $sku, $marketplace_ids, $issue_locale): \SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse
+```
+
+
+
+Delete a listings item for a selling partner.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ListingsApi($config);
+$seller_id = 'seller_id_example'; // string | A selling partner identifier, such as a merchant account or vendor code.
+$sku = 'sku_example'; // string | A selling partner provided identifier for an Amazon listing.
+$marketplace_ids = ATVPDKIKX0DER; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
+$issue_locale = en_US; // string | A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale.
+
+try {
+    $result = $apiInstance->deleteListingsItem($seller_id, $sku, $marketplace_ids, $issue_locale);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ListingsApi->deleteListingsItem: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **seller_id** | **string**| A selling partner identifier, such as a merchant account or vendor code. |
+ **sku** | **string**| A selling partner provided identifier for an Amazon listing. |
+ **marketplace_ids** | [**string[]**](../Model/Listings/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
+ **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. | [optional]
+
+### Return type
+
+[**\SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse**](../Model/Listings/ListingsItemSubmissionResponse.md)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Top]](#) [[API list]](../)
+[[Listings Model list]](../Model/Listings)
+[[README]](../../README.md)
+
+## `patchListingsItem()`
+
+```php
+patchListingsItem($seller_id, $sku, $marketplace_ids, $body, $issue_locale): \SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse
+```
+
+
+
+Partially update (patch) a listings item for a selling partner. Only top-level listings item attributes can be patched. Patching nested attributes is not supported.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ListingsApi($config);
+$seller_id = 'seller_id_example'; // string | A selling partner identifier, such as a merchant account or vendor code.
+$sku = 'sku_example'; // string | A selling partner provided identifier for an Amazon listing.
+$marketplace_ids = ATVPDKIKX0DER; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
+$body = new \SellingPartnerApi\Model\Listings\ListingsItemPatchRequest(); // \SellingPartnerApi\Model\Listings\ListingsItemPatchRequest | The request body schema for the patchListingsItem operation.
+$issue_locale = en_US; // string | A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale.
+
+try {
+    $result = $apiInstance->patchListingsItem($seller_id, $sku, $marketplace_ids, $body, $issue_locale);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ListingsApi->patchListingsItem: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **seller_id** | **string**| A selling partner identifier, such as a merchant account or vendor code. |
+ **sku** | **string**| A selling partner provided identifier for an Amazon listing. |
+ **marketplace_ids** | [**string[]**](../Model/Listings/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
+ **body** | [**\SellingPartnerApi\Model\Listings\ListingsItemPatchRequest**](../Model/Listings/ListingsItemPatchRequest.md)| The request body schema for the patchListingsItem operation. |
+ **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. | [optional]
+
+### Return type
+
+[**\SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse**](../Model/Listings/ListingsItemSubmissionResponse.md)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Top]](#) [[API list]](../)
+[[Listings Model list]](../Model/Listings)
+[[README]](../../README.md)
+
+## `putListingsItem()`
+
+```php
+putListingsItem($seller_id, $sku, $marketplace_ids, $body, $issue_locale): \SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse
+```
+
+
+
+Creates a new or fully-updates an existing listings item for a selling partner.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 5 | 10 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the ConfigurationOptions object
+$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
+    "amzn1.application-oa2-client.....",
+    "abcd....",
+    "Aztr|IwEBI....",
+    "AKIA....",
+    "ABCD....",
+    "us-east-1",
+    "https://sellingpartnerapi-na.amazon.com",
+);
+$config = new SellingPartnerApi\Configuration($configurationOptions);
+
+$apiInstance = new SellingPartnerApi\Api\ListingsApi($config);
+$seller_id = 'seller_id_example'; // string | A selling partner identifier, such as a merchant account or vendor code.
+$sku = 'sku_example'; // string | A selling partner provided identifier for an Amazon listing.
+$marketplace_ids = ATVPDKIKX0DER; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
+$body = new \SellingPartnerApi\Model\Listings\ListingsItemPutRequest(); // \SellingPartnerApi\Model\Listings\ListingsItemPutRequest | The request body schema for the putListingsItem operation.
+$issue_locale = en_US; // string | A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale.
+
+try {
+    $result = $apiInstance->putListingsItem($seller_id, $sku, $marketplace_ids, $body, $issue_locale);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ListingsApi->putListingsItem: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **seller_id** | **string**| A selling partner identifier, such as a merchant account or vendor code. |
+ **sku** | **string**| A selling partner provided identifier for an Amazon listing. |
+ **marketplace_ids** | [**string[]**](../Model/Listings/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
+ **body** | [**\SellingPartnerApi\Model\Listings\ListingsItemPutRequest**](../Model/Listings/ListingsItemPutRequest.md)| The request body schema for the putListingsItem operation. |
+ **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. | [optional]
+
+### Return type
+
+[**\SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse**](../Model/Listings/ListingsItemSubmissionResponse.md)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Top]](#) [[API list]](../)
+[[Listings Model list]](../Model/Listings)
+[[README]](../../README.md)

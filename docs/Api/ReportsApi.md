@@ -4,21 +4,21 @@ All URIs are relative to https://sellingpartnerapi-na.amazon.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelReport()**](ReportsApi.md#cancelReport) | **DELETE** /reports/2020-09-04/reports/{reportId} | 
-[**cancelReportSchedule()**](ReportsApi.md#cancelReportSchedule) | **DELETE** /reports/2020-09-04/schedules/{reportScheduleId} | 
-[**createReport()**](ReportsApi.md#createReport) | **POST** /reports/2020-09-04/reports | 
-[**createReportSchedule()**](ReportsApi.md#createReportSchedule) | **POST** /reports/2020-09-04/schedules | 
-[**getReport()**](ReportsApi.md#getReport) | **GET** /reports/2020-09-04/reports/{reportId} | 
-[**getReportDocument()**](ReportsApi.md#getReportDocument) | **GET** /reports/2020-09-04/documents/{reportDocumentId} | 
-[**getReportSchedule()**](ReportsApi.md#getReportSchedule) | **GET** /reports/2020-09-04/schedules/{reportScheduleId} | 
-[**getReportSchedules()**](ReportsApi.md#getReportSchedules) | **GET** /reports/2020-09-04/schedules | 
-[**getReports()**](ReportsApi.md#getReports) | **GET** /reports/2020-09-04/reports | 
+[**cancelReport()**](ReportsApi.md#cancelReport) | **DELETE** /reports/2021-06-30/reports/{reportId} | 
+[**cancelReportSchedule()**](ReportsApi.md#cancelReportSchedule) | **DELETE** /reports/2021-06-30/schedules/{reportScheduleId} | 
+[**createReport()**](ReportsApi.md#createReport) | **POST** /reports/2021-06-30/reports | 
+[**createReportSchedule()**](ReportsApi.md#createReportSchedule) | **POST** /reports/2021-06-30/schedules | 
+[**getReport()**](ReportsApi.md#getReport) | **GET** /reports/2021-06-30/reports/{reportId} | 
+[**getReportDocument()**](ReportsApi.md#getReportDocument) | **GET** /reports/2021-06-30/documents/{reportDocumentId} | 
+[**getReportSchedule()**](ReportsApi.md#getReportSchedule) | **GET** /reports/2021-06-30/schedules/{reportScheduleId} | 
+[**getReportSchedules()**](ReportsApi.md#getReportSchedules) | **GET** /reports/2021-06-30/schedules | 
+[**getReports()**](ReportsApi.md#getReports) | **GET** /reports/2021-06-30/reports | 
 
 
 ## `cancelReport()`
 
 ```php
-cancelReport($report_id): \SellingPartnerApi\Model\Reports\CancelReportResponse
+cancelReport($report_id)
 ```
 
 
@@ -47,8 +47,7 @@ $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_id = 'report_id_example'; // string | The identifier for the report. This identifier is unique only in combination with a seller ID.
 
 try {
-    $result = $apiInstance->cancelReport($report_id);
-    print_r($result);
+    $apiInstance->cancelReport($report_id);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->cancelReport: ', $e->getMessage(), PHP_EOL;
 }
@@ -62,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Reports\CancelReportResponse**](../Model/Reports/CancelReportResponse.md)
+void (empty response body)
 
 ### HTTP request headers
 
@@ -76,7 +75,7 @@ Name | Type | Description  | Notes
 ## `cancelReportSchedule()`
 
 ```php
-cancelReportSchedule($report_schedule_id): \SellingPartnerApi\Model\Reports\CancelReportScheduleResponse
+cancelReportSchedule($report_schedule_id)
 ```
 
 
@@ -105,8 +104,7 @@ $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_schedule_id = 'report_schedule_id_example'; // string | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
 
 try {
-    $result = $apiInstance->cancelReportSchedule($report_schedule_id);
-    print_r($result);
+    $apiInstance->cancelReportSchedule($report_schedule_id);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->cancelReportSchedule: ', $e->getMessage(), PHP_EOL;
 }
@@ -120,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse**](../Model/Reports/CancelReportScheduleResponse.md)
+void (empty response body)
 
 ### HTTP request headers
 
@@ -250,7 +248,7 @@ Name | Type | Description  | Notes
 ## `getReport()`
 
 ```php
-getReport($report_id): \SellingPartnerApi\Model\Reports\GetReportResponse
+getReport($report_id): \SellingPartnerApi\Model\Reports\Report
 ```
 
 
@@ -294,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Reports\GetReportResponse**](../Model/Reports/GetReportResponse.md)
+[**\SellingPartnerApi\Model\Reports\Report**](../Model/Reports/Report.md)
 
 ### HTTP request headers
 
@@ -308,12 +306,12 @@ Name | Type | Description  | Notes
 ## `getReportDocument()`
 
 ```php
-getReportDocument($report_document_id): \SellingPartnerApi\Model\Reports\GetReportDocumentResponse
+getReportDocument($report_document_id): \SellingPartnerApi\Model\Reports\ReportDocument
 ```
 
 
 
-Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns the information required for retrieving a report document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -352,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Reports\GetReportDocumentResponse**](../Model/Reports/GetReportDocumentResponse.md)
+[**\SellingPartnerApi\Model\Reports\ReportDocument**](../Model/Reports/ReportDocument.md)
 
 ### HTTP request headers
 
@@ -366,7 +364,7 @@ Name | Type | Description  | Notes
 ## `getReportSchedule()`
 
 ```php
-getReportSchedule($report_schedule_id): \SellingPartnerApi\Model\Reports\GetReportScheduleResponse
+getReportSchedule($report_schedule_id): \SellingPartnerApi\Model\Reports\ReportSchedule
 ```
 
 
@@ -410,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Reports\GetReportScheduleResponse**](../Model/Reports/GetReportScheduleResponse.md)
+[**\SellingPartnerApi\Model\Reports\ReportSchedule**](../Model/Reports/ReportSchedule.md)
 
 ### HTTP request headers
 
@@ -424,7 +422,7 @@ Name | Type | Description  | Notes
 ## `getReportSchedules()`
 
 ```php
-getReportSchedules($report_types): \SellingPartnerApi\Model\Reports\GetReportSchedulesResponse
+getReportSchedules($report_types): \SellingPartnerApi\Model\Reports\ReportScheduleList
 ```
 
 
@@ -468,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse**](../Model/Reports/GetReportSchedulesResponse.md)
+[**\SellingPartnerApi\Model\Reports\ReportScheduleList**](../Model/Reports/ReportScheduleList.md)
 
 ### HTTP request headers
 

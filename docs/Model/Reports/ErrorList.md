@@ -1,9 +1,9 @@
-## CreateReportResponse
+## ErrorList
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**report_id** | **string** | The identifier for the report. This identifier is unique only in combination with a seller ID. |
+**errors** | [**\SellingPartnerApi\Model\Reports\Error[]**](Error.md) |  |
 
 [[Reports Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportDocument
+ * ReportScheduleList
  *
  * PHP version 7.2
  *
@@ -32,7 +32,7 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * ReportDocument Class Doc Comment
+ * ReportScheduleList Class Doc Comment
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -41,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
+class ReportScheduleList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ReportDocument';
+    protected static $openAPIModelName = 'ReportScheduleList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,7 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'report_document_id' => 'string',
-        'url' => 'string',
-        'compression_algorithm' => 'string'
+        'report_schedules' => '\SellingPartnerApi\Model\Reports\ReportSchedule[]'
     ];
 
     /**
@@ -71,9 +69,7 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'report_document_id' => null,
-        'url' => null,
-        'compression_algorithm' => null
+        'report_schedules' => null
     ];
 
     /**
@@ -103,9 +99,7 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'report_document_id' => 'reportDocumentId',
-        'url' => 'url',
-        'compression_algorithm' => 'compressionAlgorithm'
+        'report_schedules' => 'reportSchedules'
     ];
 
     /**
@@ -114,9 +108,7 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'report_document_id' => 'setReportDocumentId',
-        'url' => 'setUrl',
-        'compression_algorithm' => 'setCompressionAlgorithm'
+        'report_schedules' => 'setReportSchedules'
     ];
 
     /**
@@ -125,9 +117,7 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'report_document_id' => 'getReportDocumentId',
-        'url' => 'getUrl',
-        'compression_algorithm' => 'getCompressionAlgorithm'
+        'report_schedules' => 'getReportSchedules'
     ];
 
     /**
@@ -171,21 +161,8 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const COMPRESSION_ALGORITHM_GZIP = 'GZIP';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getCompressionAlgorithmAllowableValues()
-    {
-        return [
-            self::COMPRESSION_ALGORITHM_GZIP,
-        ];
-    }
     
 
     /**
@@ -203,9 +180,7 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['report_document_id'] = $data['report_document_id'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
-        $this->container['compression_algorithm'] = $data['compression_algorithm'] ?? null;
+        $this->container['report_schedules'] = $data['report_schedules'] ?? null;
     }
 
     /**
@@ -217,21 +192,9 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['report_document_id'] === null) {
-            $invalidProperties[] = "'report_document_id' can't be null";
+        if ($this->container['report_schedules'] === null) {
+            $invalidProperties[] = "'report_schedules' can't be null";
         }
-        if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
-        }
-        $allowedValues = $this->getCompressionAlgorithmAllowableValues();
-        if (!is_null($this->container['compression_algorithm']) && !in_array($this->container['compression_algorithm'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'compression_algorithm', must be one of '%s'",
-                $this->container['compression_algorithm'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -248,83 +211,25 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets report_document_id
+     * Gets report_schedules
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\Reports\ReportSchedule[]
      */
-    public function getReportDocumentId()
+    public function getReportSchedules()
     {
-        return $this->container['report_document_id'];
+        return $this->container['report_schedules'];
     }
 
     /**
-     * Sets report_document_id
+     * Sets report_schedules
      *
-     * @param string $report_document_id The identifier for the report document. This identifier is unique only in combination with a seller ID.
+     * @param \SellingPartnerApi\Model\Reports\ReportSchedule[] $report_schedules report_schedules
      *
      * @return self
      */
-    public function setReportDocumentId($report_document_id)
+    public function setReportSchedules($report_schedules)
     {
-        $this->container['report_document_id'] = $report_document_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string $url A presigned URL for the report document. This URL expires after 5 minutes.
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets compression_algorithm
-     *
-     * @return string|null
-     */
-    public function getCompressionAlgorithm()
-    {
-        return $this->container['compression_algorithm'];
-    }
-
-    /**
-     * Sets compression_algorithm
-     *
-     * @param string|null $compression_algorithm If present, the report document contents have been compressed with the provided algorithm.
-     *
-     * @return self
-     */
-    public function setCompressionAlgorithm($compression_algorithm)
-    {
-        $allowedValues = $this->getCompressionAlgorithmAllowableValues();
-        if (!is_null($compression_algorithm) && !in_array($compression_algorithm, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'compression_algorithm', must be one of '%s'",
-                    $compression_algorithm,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['compression_algorithm'] = $compression_algorithm;
+        $this->container['report_schedules'] = $report_schedules;
 
         return $this;
     }

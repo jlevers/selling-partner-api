@@ -37,7 +37,8 @@ Name | Type | Description | Notes
 **promise_response_due_date** | **string** | Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders. | [optional]
 **is_estimated_ship_date_set** | **bool** | When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders. | [optional]
 **is_sold_by_ab** | **bool** | When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller. | [optional]
-**assigned_ship_from_location_address** | [**\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
+**default_ship_from_location_address** | [**\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
 **fulfillment_instruction** | [**\SellingPartnerApi\Model\Orders\FulfillmentInstruction**](FulfillmentInstruction.md) |  | [optional]
+**is_ispu** | **bool** | When true, this order is marked to be picked up from a store rather than delivered. | [optional]
 
 [[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

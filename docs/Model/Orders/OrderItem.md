@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **serial_number_required** | **bool** | When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders. | [optional]
 **is_transparency** | **bool** | When true, transparency codes are required. | [optional]
 **ioss_number** | **string** | The IOSS number of the seller. Sellers selling in the EU will be assigned a unique IOSS number that must be listed on all packages sent to the EU. | [optional]
+**store_chain_store_id** | **string** | The store chain store identifier. Linked to a specific store in a store chain. | [optional]
 **deemed_reseller_category** | **string** | The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK. | [optional]
 
 [[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

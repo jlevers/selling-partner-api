@@ -92,8 +92,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'string',
         'is_estimated_ship_date_set' => 'bool',
         'is_sold_by_ab' => 'bool',
-        'assigned_ship_from_location_address' => '\SellingPartnerApi\Model\Orders\Address',
-        'fulfillment_instruction' => '\SellingPartnerApi\Model\Orders\FulfillmentInstruction'
+        'default_ship_from_location_address' => '\SellingPartnerApi\Model\Orders\Address',
+        'fulfillment_instruction' => '\SellingPartnerApi\Model\Orders\FulfillmentInstruction',
+        'is_ispu' => 'bool'
     ];
 
     /**
@@ -137,8 +138,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => null,
         'is_estimated_ship_date_set' => null,
         'is_sold_by_ab' => null,
-        'assigned_ship_from_location_address' => null,
-        'fulfillment_instruction' => null
+        'default_ship_from_location_address' => null,
+        'fulfillment_instruction' => null,
+        'is_ispu' => null
     ];
 
     /**
@@ -201,8 +203,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'PromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'IsEstimatedShipDateSet',
         'is_sold_by_ab' => 'IsSoldByAB',
-        'assigned_ship_from_location_address' => 'AssignedShipFromLocationAddress',
-        'fulfillment_instruction' => 'FulfillmentInstruction'
+        'default_ship_from_location_address' => 'DefaultShipFromLocationAddress',
+        'fulfillment_instruction' => 'FulfillmentInstruction',
+        'is_ispu' => 'IsISPU'
     ];
 
     /**
@@ -244,8 +247,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'setPromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'setIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'setIsSoldByAb',
-        'assigned_ship_from_location_address' => 'setAssignedShipFromLocationAddress',
-        'fulfillment_instruction' => 'setFulfillmentInstruction'
+        'default_ship_from_location_address' => 'setDefaultShipFromLocationAddress',
+        'fulfillment_instruction' => 'setFulfillmentInstruction',
+        'is_ispu' => 'setIsIspu'
     ];
 
     /**
@@ -287,8 +291,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'getPromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'getIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'getIsSoldByAb',
-        'assigned_ship_from_location_address' => 'getAssignedShipFromLocationAddress',
-        'fulfillment_instruction' => 'getFulfillmentInstruction'
+        'default_ship_from_location_address' => 'getDefaultShipFromLocationAddress',
+        'fulfillment_instruction' => 'getFulfillmentInstruction',
+        'is_ispu' => 'getIsIspu'
     ];
 
     /**
@@ -464,8 +469,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['promise_response_due_date'] = $data['promise_response_due_date'] ?? null;
         $this->container['is_estimated_ship_date_set'] = $data['is_estimated_ship_date_set'] ?? null;
         $this->container['is_sold_by_ab'] = $data['is_sold_by_ab'] ?? null;
-        $this->container['assigned_ship_from_location_address'] = $data['assigned_ship_from_location_address'] ?? null;
+        $this->container['default_ship_from_location_address'] = $data['default_ship_from_location_address'] ?? null;
         $this->container['fulfillment_instruction'] = $data['fulfillment_instruction'] ?? null;
+        $this->container['is_ispu'] = $data['is_ispu'] ?? null;
     }
 
     /**
@@ -1373,25 +1379,25 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets assigned_ship_from_location_address
+     * Gets default_ship_from_location_address
      *
      * @return \SellingPartnerApi\Model\Orders\Address|null
      */
-    public function getAssignedShipFromLocationAddress()
+    public function getDefaultShipFromLocationAddress()
     {
-        return $this->container['assigned_ship_from_location_address'];
+        return $this->container['default_ship_from_location_address'];
     }
 
     /**
-     * Sets assigned_ship_from_location_address
+     * Sets default_ship_from_location_address
      *
-     * @param \SellingPartnerApi\Model\Orders\Address|null $assigned_ship_from_location_address assigned_ship_from_location_address
+     * @param \SellingPartnerApi\Model\Orders\Address|null $default_ship_from_location_address default_ship_from_location_address
      *
      * @return self
      */
-    public function setAssignedShipFromLocationAddress($assigned_ship_from_location_address)
+    public function setDefaultShipFromLocationAddress($default_ship_from_location_address)
     {
-        $this->container['assigned_ship_from_location_address'] = $assigned_ship_from_location_address;
+        $this->container['default_ship_from_location_address'] = $default_ship_from_location_address;
 
         return $this;
     }
@@ -1416,6 +1422,30 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFulfillmentInstruction($fulfillment_instruction)
     {
         $this->container['fulfillment_instruction'] = $fulfillment_instruction;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_ispu
+     *
+     * @return bool|null
+     */
+    public function getIsIspu()
+    {
+        return $this->container['is_ispu'];
+    }
+
+    /**
+     * Sets is_ispu
+     *
+     * @param bool|null $is_ispu When true, this order is marked to be picked up from a store rather than delivered.
+     *
+     * @return self
+     */
+    public function setIsIspu($is_ispu)
+    {
+        $this->container['is_ispu'] = $is_ispu;
 
         return $this;
     }

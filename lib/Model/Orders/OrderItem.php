@@ -89,6 +89,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'serial_number_required' => 'bool',
         'is_transparency' => 'bool',
         'ioss_number' => 'string',
+        'store_chain_store_id' => 'string',
         'deemed_reseller_category' => 'string'
     ];
 
@@ -130,6 +131,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'serial_number_required' => null,
         'is_transparency' => null,
         'ioss_number' => null,
+        'store_chain_store_id' => null,
         'deemed_reseller_category' => null
     ];
 
@@ -190,6 +192,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'serial_number_required' => 'SerialNumberRequired',
         'is_transparency' => 'IsTransparency',
         'ioss_number' => 'IossNumber',
+        'store_chain_store_id' => 'StoreChainStoreId',
         'deemed_reseller_category' => 'DeemedResellerCategory'
     ];
 
@@ -229,6 +232,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'serial_number_required' => 'setSerialNumberRequired',
         'is_transparency' => 'setIsTransparency',
         'ioss_number' => 'setIossNumber',
+        'store_chain_store_id' => 'setStoreChainStoreId',
         'deemed_reseller_category' => 'setDeemedResellerCategory'
     ];
 
@@ -268,6 +272,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'serial_number_required' => 'getSerialNumberRequired',
         'is_transparency' => 'getIsTransparency',
         'ioss_number' => 'getIossNumber',
+        'store_chain_store_id' => 'getStoreChainStoreId',
         'deemed_reseller_category' => 'getDeemedResellerCategory'
     ];
 
@@ -376,6 +381,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['serial_number_required'] = $data['serial_number_required'] ?? null;
         $this->container['is_transparency'] = $data['is_transparency'] ?? null;
         $this->container['ioss_number'] = $data['ioss_number'] ?? null;
+        $this->container['store_chain_store_id'] = $data['store_chain_store_id'] ?? null;
         $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
     }
 
@@ -1137,6 +1143,30 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIossNumber($ioss_number)
     {
         $this->container['ioss_number'] = $ioss_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_chain_store_id
+     *
+     * @return string|null
+     */
+    public function getStoreChainStoreId()
+    {
+        return $this->container['store_chain_store_id'];
+    }
+
+    /**
+     * Sets store_chain_store_id
+     *
+     * @param string|null $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain.
+     *
+     * @return self
+     */
+    public function setStoreChainStoreId($store_chain_store_id)
+    {
+        $this->container['store_chain_store_id'] = $store_chain_store_id;
 
         return $this;
     }

@@ -3037,14 +3037,16 @@ class FbaInboundApi
      * @param  int $number_of_packages The number of packages in the shipment. (optional)
      * @param  string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
      * @param  int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param  int $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
+     * @param  int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\FbaInbound\GetLabelsResponse
      */
-    public function getLabels($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
+    public function getLabels($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null)
     {
-        list($response) = $this->getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
+        list($response) = $this->getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index);
         return $response;
     }
 
@@ -3057,14 +3059,16 @@ class FbaInboundApi
      * @param  int $number_of_packages The number of packages in the shipment. (optional)
      * @param  string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
      * @param  int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param  int $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
+     * @param  int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\FbaInbound\GetLabelsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
+    public function getLabelsWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null)
     {
-        $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
+        $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index);
         $signedRequest = $this->config->signRequest($request);
 
         try {
@@ -3291,13 +3295,15 @@ class FbaInboundApi
      * @param  int $number_of_packages The number of packages in the shipment. (optional)
      * @param  string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
      * @param  int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param  int $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
+     * @param  int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLabelsAsync($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
+    public function getLabelsAsync($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null)
     {
-        return $this->getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets)
+        return $this->getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3316,14 +3322,16 @@ class FbaInboundApi
      * @param  int $number_of_packages The number of packages in the shipment. (optional)
      * @param  string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
      * @param  int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param  int $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
+     * @param  int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
+    public function getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInbound\GetLabelsResponse';
-        $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets);
+        $request = $this->getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index);
         $signedRequest = $this->config->signRequest($request);
 
         return $this->client
@@ -3369,11 +3377,13 @@ class FbaInboundApi
      * @param  int $number_of_packages The number of packages in the shipment. (optional)
      * @param  string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
      * @param  int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param  int $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
+     * @param  int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null)
+    public function getLabelsRequest($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null)
     {
         // verify the required parameter 'shipment_id' is set
         if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
@@ -3439,6 +3449,20 @@ class FbaInboundApi
         }
         if ($number_of_pallets !== null) {
             $queryParams['NumberOfPallets'] = $number_of_pallets;
+        }
+        // query params
+        if (is_array($page_size)) {
+            $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
+        }
+        if ($page_size !== null) {
+            $queryParams['PageSize'] = $page_size;
+        }
+        // query params
+        if (is_array($page_start_index)) {
+            $page_start_index = ObjectSerializer::serializeCollection($page_start_index, '', true);
+        }
+        if ($page_start_index !== null) {
+            $queryParams['PageStartIndex'] = $page_start_index;
         }
 
 

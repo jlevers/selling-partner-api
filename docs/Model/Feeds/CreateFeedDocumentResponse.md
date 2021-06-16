@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResult**](CreateFeedDocumentResult.md) |  | [optional]
-**errors** | [**\SellingPartnerApi\Model\Feeds\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
+**feed_document_id** | **string** | The identifier of the feed document. |
+**url** | **string** | The presigned URL for uploading the feed contents. This URL expires after 5 minutes. |
 
 [[Feeds Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

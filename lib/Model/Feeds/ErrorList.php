@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateFeedSpecification
+ * ErrorList
  *
  * PHP version 7.2
  *
@@ -32,16 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CreateFeedSpecification Class Doc Comment
+ * ErrorList Class Doc Comment
  *
  * @category Class
+ * @description A list of error responses returned when a request is unsuccessful.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSerializable
+class ErrorList implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateFeedSpecification';
+    protected static $openAPIModelName = 'ErrorList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +59,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'feed_type' => 'string',
-        'marketplace_ids' => 'string[]',
-        'input_feed_document_id' => 'string',
-        'feed_options' => 'map[string,string]'
+        'errors' => '\SellingPartnerApi\Model\Feeds\Error[]'
     ];
 
     /**
@@ -72,10 +70,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'feed_type' => null,
-        'marketplace_ids' => null,
-        'input_feed_document_id' => null,
-        'feed_options' => null
+        'errors' => null
     ];
 
     /**
@@ -105,10 +100,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'feed_type' => 'feedType',
-        'marketplace_ids' => 'marketplaceIds',
-        'input_feed_document_id' => 'inputFeedDocumentId',
-        'feed_options' => 'feedOptions'
+        'errors' => 'errors'
     ];
 
     /**
@@ -117,10 +109,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'feed_type' => 'setFeedType',
-        'marketplace_ids' => 'setMarketplaceIds',
-        'input_feed_document_id' => 'setInputFeedDocumentId',
-        'feed_options' => 'setFeedOptions'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -129,10 +118,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'feed_type' => 'getFeedType',
-        'marketplace_ids' => 'getMarketplaceIds',
-        'input_feed_document_id' => 'getInputFeedDocumentId',
-        'feed_options' => 'getFeedOptions'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -195,10 +181,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['feed_type'] = $data['feed_type'] ?? null;
-        $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
-        $this->container['input_feed_document_id'] = $data['input_feed_document_id'] ?? null;
-        $this->container['feed_options'] = $data['feed_options'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -210,22 +193,8 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['feed_type'] === null) {
-            $invalidProperties[] = "'feed_type' can't be null";
-        }
-        if ($this->container['marketplace_ids'] === null) {
-            $invalidProperties[] = "'marketplace_ids' can't be null";
-        }
-        if ((count($this->container['marketplace_ids']) > 25)) {
-            $invalidProperties[] = "invalid value for 'marketplace_ids', number of items must be less than or equal to 25.";
-        }
-
-        if ((count($this->container['marketplace_ids']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplace_ids', number of items must be greater than or equal to 1.";
-        }
-
-        if ($this->container['input_feed_document_id'] === null) {
-            $invalidProperties[] = "'input_feed_document_id' can't be null";
+        if ($this->container['errors'] === null) {
+            $invalidProperties[] = "'errors' can't be null";
         }
         return $invalidProperties;
     }
@@ -243,104 +212,25 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
-     * Gets feed_type
+     * Gets errors
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\Feeds\Error[]
      */
-    public function getFeedType()
+    public function getErrors()
     {
-        return $this->container['feed_type'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets feed_type
+     * Sets errors
      *
-     * @param string $feed_type The feed type.
+     * @param \SellingPartnerApi\Model\Feeds\Error[] $errors errors
      *
      * @return self
      */
-    public function setFeedType($feed_type)
+    public function setErrors($errors)
     {
-        $this->container['feed_type'] = $feed_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets marketplace_ids
-     *
-     * @return string[]
-     */
-    public function getMarketplaceIds()
-    {
-        return $this->container['marketplace_ids'];
-    }
-
-    /**
-     * Sets marketplace_ids
-     *
-     * @param string[] $marketplace_ids A list of identifiers for marketplaces that you want the feed to be applied to.
-     *
-     * @return self
-     */
-    public function setMarketplaceIds($marketplace_ids)
-    {
-
-        if ((count($marketplace_ids) > 25)) {
-            throw new \InvalidArgumentException('invalid value for $marketplace_ids when calling CreateFeedSpecification., number of items must be less than or equal to 25.');
-        }
-        if ((count($marketplace_ids) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_ids when calling CreateFeedSpecification., number of items must be greater than or equal to 1.');
-        }
-        $this->container['marketplace_ids'] = $marketplace_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets input_feed_document_id
-     *
-     * @return string
-     */
-    public function getInputFeedDocumentId()
-    {
-        return $this->container['input_feed_document_id'];
-    }
-
-    /**
-     * Sets input_feed_document_id
-     *
-     * @param string $input_feed_document_id The document identifier returned by the createFeedDocument operation. Upload the feed document contents before calling the createFeed operation.
-     *
-     * @return self
-     */
-    public function setInputFeedDocumentId($input_feed_document_id)
-    {
-        $this->container['input_feed_document_id'] = $input_feed_document_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets feed_options
-     *
-     * @return map[string,string]|null
-     */
-    public function getFeedOptions()
-    {
-        return $this->container['feed_options'];
-    }
-
-    /**
-     * Sets feed_options
-     *
-     * @param map[string,string]|null $feed_options Additional options to control the feed. These vary by feed type.
-     *
-     * @return self
-     */
-    public function setFeedOptions($feed_options)
-    {
-        $this->container['feed_options'] = $feed_options;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

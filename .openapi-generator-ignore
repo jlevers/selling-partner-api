@@ -4,5 +4,3 @@
 
 lib/Authentication.php
 lib/Credentials.php
-lib/env.php
-lib/functions_include.php

@@ -37,16 +37,6 @@ class Configuration
     ];
 
     /**
-     * @var Configuration
-     */
-    private static $defaultConfiguration;
-
-    /**
-     * @var Authentication
-     */
-    private static $defaultAuthentication;
-
-    /**
      * Auth object for the SP API
      *
      * @var Authentication
@@ -306,31 +296,6 @@ class Configuration
         $report .= '    Temp Folder Path: ' . $tempFolderPath . PHP_EOL;
 
         return $report;
-    }
-
-    /**
-     * Get API key (with prefix if set)
-     *
-     * @param  string $apiKeyIdentifier name of apikey
-     *
-     * @return null|string API key with the prefix
-     */
-    public function getApiKeyWithPrefix($apiKeyIdentifier)
-    {
-        $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
-        $apiKey = $this->getApiKey($apiKeyIdentifier);
-
-        if ($apiKey === null) {
-            return null;
-        }
-
-        if ($prefix === null) {
-            $keyWithPrefix = $apiKey;
-        } else {
-            $keyWithPrefix = $prefix . ' ' . $apiKey;
-        }
-
-        return $keyWithPrefix;
     }
 
     /**

@@ -27,7 +27,6 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^7.2",
-        "vlucas/phpdotenv": "^4.0 || ^5.2",
         "cyberdummy/gzstream": "^0.0.2",
         "jsq/psr7-stream-encryption": "^0.4.0"
     },
@@ -36,7 +35,6 @@
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": { "SellingPartnerApi\\" : "lib/" },
-        "files": [ "lib/functions_include.php" ]
+        "psr-4": { "SellingPartnerApi\\" : "lib/" }
     }
 }

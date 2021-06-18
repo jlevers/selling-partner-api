@@ -16,13 +16,13 @@ class Authentication
     private const SERVICE_NAME = "execute-api";
     private const TERMINATION_STR = "aws4_request";
 
-    private $refreshToken;
-    /** @var Closure|null $onUpdateCreds */
-    private $onUpdateCreds;
     private $lwaClientId;
     private $lwaClientSecret;
-    private $region;
-    private $roleArn = null;
+    private $refreshToken;
+    private $endpoint;
+
+    private $onUpdateCreds;
+    private $roleArn;
 
     private $requestTime;
 
@@ -33,59 +33,46 @@ class Authentication
     private $roleCredentials = null;
 
     /**
-     * @var mixed|string
+     * @var string
      */
-    private $awsKey;
+    private $awsAccessKeyId;
     /**
      * @var string
      */
-    private $awsSecret;
+    private $awsSecretAccessKey;
 
     /**
      * Authentication constructor.
-     * @param ConfigurationOptions|null $configurationOptions
+     * @param array $configurationOptions
      * @throws RuntimeException
      */
-    public function __construct(?ConfigurationOptions $configurationOptions = null)
+    public function __construct(array $configurationOptions)
     {
         $this->client = new Client();
 
-        $accessToken = null;
-        $accessTokenExpiration = null;
+        $this->refreshToken = $configurationOptions['lwaRefreshToken'];
+        $this->onUpdateCreds = $configurationOptions['onUpdateCredentials'];
+        $this->lwaClientId = $configurationOptions['lwaClientId'];
+        $this->lwaClientSecret = $configurationOptions['lwaClientSecret'];
+        $this->endpoint = $configurationOptions['endpoint'];
 
-        if ($configurationOptions !== null) {
-            $this->refreshToken = $configurationOptions->getLwaRefreshToken();
-            $this->onUpdateCreds = $configurationOptions->getOnUpdateCredentials();
-            $this->lwaClientId = $configurationOptions->getLwaClientId();
-            $this->lwaClientSecret = $configurationOptions->getLwaClientSecret();
-            $this->region = $configurationOptions->getSpapiAwsRegion();
+        $accessToken = $configurationOptions['accessToken'];
+        $accessTokenExpiration = $configurationOptions['accessTokenExpiration'];
 
-            $accessToken = $configurationOptions->getAccessToken();
-            $accessTokenExpiration = $configurationOptions->getAccessTokenExpiration();
+        $this->awsAccessKeyId = $configurationOptions['awsAccessKeyId'];
+        $this->awsSecretAccessKey = $configurationOptions['awsSecretAccessKey'];
 
-            $this->awsKey = $configurationOptions->getAwsAccessKey();
-            $this->awsSecret = $configurationOptions->getAwsAccessSecret();
+        $this->roleArn = $configurationOptions['roleArn'];
 
-            $this->roleArn = $configurationOptions->getRoleArn();
-        } else {
-            loadDotenv();
-
-            $this->refreshToken = $_ENV["LWA_REFRESH_TOKEN"];
-            $this->onUpdateCreds = null;
-            $this->lwaClientId = $_ENV["LWA_CLIENT_ID"];
-            $this->lwaClientSecret = $_ENV["LWA_CLIENT_SECRET"];
-            $this->region = $_ENV["SPAPI_AWS_REGION"];
-            $this->awsKey = $_ENV["AWS_ACCESS_KEY_ID"];
-            $this->awsSecret = $_ENV["AWS_SECRET_ACCESS_KEY"];
-        }
-
-        if (($accessToken === null && $accessTokenExpiration !== null)
-            || ($accessToken !== null && $accessTokenExpiration === null)) {
-            throw new RuntimeException('If one of `$accessToken` or `$accessTokenExpiration` is provided, the other must be provided as well');
+        if (
+            ($accessToken === null && $accessTokenExpiration !== null) ||
+            ($accessToken !== null && $accessTokenExpiration === null)
+        ) {
+            throw new RuntimeException('If one of the `accessToken` or `accessTokenExpiration` configuration options is provided, the other must be provided as well');
         }
 
         if ($accessToken !== null && $accessTokenExpiration !== null) {
-            $this->populateCredentials($this->awsKey, $this->awsSecret, $accessToken, $accessTokenExpiration);
+            $this->populateCredentials($this->awsAccessKeyId, $this->awsSecretAccessKey, $accessToken, $accessTokenExpiration);
         }
     }
 
@@ -154,7 +141,7 @@ class Authentication
             if ($this->roleCredentials === null || $this->roleCredentials->expiresSoon()) {
                 $client = new StsClient([
                     'sts_regional_endpoints' => 'regional',
-                    'region' => $this->region,
+                    'region' => $this->endpoint['region'],
                     'version' => '2011-06-15',
                     'credentials' => [
                         'key' => $relevantCreds->getAccessKeyId(),
@@ -314,13 +301,13 @@ class Authentication
     private function createCredentialScope(): string
     {
         $terminator = static::TERMINATION_STR;
-        return "{$this->formattedRequestTime(false)}/{$this->region}/" . static::SERVICE_NAME . "/{$terminator}";
+        return "{$this->formattedRequestTime(false)}/{$this->endpoint['region']}/" . static::SERVICE_NAME . "/{$terminator}";
     }
 
     private function createSignature(string $signingString, string $secretKey): string
     {
         $kDate = hash_hmac("sha256", $this->formattedRequestTime(false), "AWS4{$secretKey}", true);
-        $kRegion = hash_hmac("sha256", $this->region, $kDate, true);
+        $kRegion = hash_hmac("sha256", $this->endpoint['region'], $kDate, true);
         $kService = hash_hmac("sha256", self::SERVICE_NAME, $kRegion, true);
         $kSigning = hash_hmac("sha256", static::TERMINATION_STR, $kService, true);
 
@@ -330,7 +317,7 @@ class Authentication
     private function newToken(?string $scope = null): void
     {
         [$accessToken, $expirationTimestamp] = $this->requestLWAToken($scope);
-        $this->populateCredentials($this->awsKey, $this->awsSecret, $accessToken, $expirationTimestamp, $scope !== null);
+        $this->populateCredentials($this->awsAccessKeyId, $this->awsSecretAccessKey, $accessToken, $expirationTimestamp, $scope !== null);
         if ($scope === null && $this->onUpdateCreds !== null) {
             call_user_func($this->onUpdateCreds, $this->awsCredentials);
         }

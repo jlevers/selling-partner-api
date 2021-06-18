@@ -30,6 +30,13 @@ use RuntimeException;
 class Configuration
 {
     /**
+     * @const array[string]
+     */
+    public const REQUIRED_CONFIG_KEYS = [
+        "lwaClientId", "lwaClientSecret", "lwaRefreshToken", "awsAccessKeyId", "awsSecretAccessKey", "endpoint"
+    ];
+
+    /**
      * @var Configuration
      */
     private static $defaultConfiguration;
@@ -54,11 +61,11 @@ class Configuration
     protected $accessToken = '';
 
     /**
-     * The host
+     * The SP API endpoint. One of the constant values from the Endpoint class.
      *
-     * @var string
+     * @var array
      */
-    protected $spapiEndpoint = 'https://sellingpartnerapi-na.amazon.com';
+    protected $endpoint = Endpoint::NA;
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -86,74 +93,50 @@ class Configuration
      *
      * @var string
      */
-    protected $tempFolderPath;
-
-    /**
-     * @var ConfigurationOptions|null
-     */
-    protected $configurationOptions;
+    protected static $tempFolderPath = null;
 
     /**
      * Constructor
-     * @param ConfigurationOptions|array|null $configurationOptions
-     * @param string|null $spapiEndpoint Note: This will override the ConfigurationOptions and ENV spapiEndpoint
+     * @param array $configurationOptions
      * @throws Exception
      */
-    public function __construct($configurationOptions = null, ?string $spapiEndpoint = null)
+    public function __construct(array $configurationOptions)
     {
-        $this->tempFolderPath = sys_get_temp_dir();
-
-        //If an array is passed in, we will initialize a ConfigurationOptions using the values passed.
-        if ($configurationOptions !== null && is_array($configurationOptions)) {
-            //Validate the passed array has at least the minimum requirements.
-            //Required values.
-
-            //Construct a new ConfigurationInstance
-            $configurationOptions = new ConfigurationOptions(
-                $configurationOptions["lwaClientId"] ?? $_ENV['LWA_CLIENT_ID'],
-                $configurationOptions["lwaClientSecret"] ?? $_ENV['LWA_CLIENT_SECRET'],
-                $configurationOptions["refreshToken"] ?? $_ENV['LWA_REFRESH_TOKEN'],
-                $configurationOptions["awsAccessKey"] ?? $_ENV['AWS_ACCESS_KEY_ID'],
-                $configurationOptions["awsSecretKey"] ?? $_ENV['AWS_SECRET_ACCESS_KEY'],
-                $configurationOptions["spapiAwsRegion"] ?? $_ENV['SPAPI_AWS_REGION'],
-                $configurationOptions["spapiEndpoint"] ?? $_ENV['SPAPI_ENDPOINT'],
-                $configurationOptions['accessToken'] ?? null,
-                $configurationOptions['accessTokenExpiration'] ?? null,
-                $configurationOptions['onUpdateCredentials'] ?? null,
-                $configurationOptions['roleArn'] ?? null,
-            );
+        // Make sure all required configuration options are present
+        $missingKeys = [];
+        foreach (static::REQUIRED_CONFIG_KEYS as $key) {
+            if (!isset($configurationOptions[$key])) {
+                $missingKeys[] = $key;
+            }
+        }
+        if (count($missingKeys) > 0) {
+            throw new RuntimeException("Required configuration values were missing: " . implode(", ", $missingKeys));
         }
 
-        $this->configurationOptions = $configurationOptions;
+        $options = array_merge(
+            $configurationOptions,
+            [
+                "accessToken" => $configurationOptions["accessToken"] ?? null,
+                "accessTokenExpiration" => $configurationOptions["accessTokenExpiration"] ?? null,
+                "onUpdateCredentials" => $configurationOptions["onUpdateCredentials"] ?? null,
+                "roleArn" => $configurationOptions["roleArn"] ?? null,
+            ]
+        );
 
-        if ($this->configurationOptions === null) {
-            loadDotenv();
-            $this->spapiEndpoint = $_ENV["SPAPI_ENDPOINT"];
-        }
-
-        if ($spapiEndpoint !== null) {
-            $this->spapiEndpoint = $spapiEndpoint;
-        } else if ($this->configurationOptions !== null) {
-            $this->spapiEndpoint = $this->configurationOptions->getSpapiEndpoint();
-        }
-
-        if ($this->configurationOptions !== null) {
-            $this->auth = new Authentication($this->configurationOptions);
-        } else {
-            $this->auth = self::getDefaultAuthentication();
-        }
+        $this->endpoint = $options["endpoint"];
+        $this->auth = new Authentication($options);
     }
 
     /**
-     * Sets the host
+     * Sets the host. $endpoint should be one of the constants in the static Endpoint class.
      *
-     * @param string $spapiEndpoint Host
+     * @param array $endpoint Host
      *
      * @return $this
      */
-    public function setSpapiEndpoint($spapiEndpoint)
+    public function setEndpoint(array $endpoint)
     {
-        $this->spapiEndpoint = $spapiEndpoint;
+        $this->endpoint = $endpoint;
         return $this;
     }
 
@@ -164,7 +147,7 @@ class Configuration
      */
     public function getHost()
     {
-        return $this->spapiEndpoint;
+        return $this->endpoint["url"];
     }
 
     /**
@@ -190,7 +173,7 @@ class Configuration
     public function setUserAgent($userAgent)
     {
         if (!is_string($userAgent)) {
-            throw new InvalidArgumentException('User-agent must be a string.');
+            throw new InvalidArgumentException("User-agent must be a string.");
         }
 
         $this->userAgent = $userAgent;
@@ -256,14 +239,16 @@ class Configuration
     /**
      * Sets the temp folder path
      *
-     * @param string $tempFolderPath Temp folder path
-     *
-     * @return $this
+     * @param ?string $tempFolderPath Temp folder path
+     * @return void
      */
-    public function setTempFolderPath($tempFolderPath)
+    public static function setTempFolderPath(?string $tempFolderPath = null): void
     {
-        $this->tempFolderPath = $tempFolderPath;
-        return $this;
+        if ($tempFolderPath === null) {
+            static::$tempFolderPath = sys_get_temp_dir();
+        } else {
+            static::$tempFolderPath = $tempFolderPath;
+        }
     }
 
     /**
@@ -271,72 +256,12 @@ class Configuration
      *
      * @return string Temp folder path
      */
-    public function getTempFolderPath()
+    public static function getTempFolderPath()
     {
-        return $this->tempFolderPath;
-    }
-
-    /**
-     * Gets the default configuration instance
-     *
-     * @return Configuration
-     */
-    public static function getDefaultConfiguration()
-    {
-        if (self::$defaultConfiguration === null) {
-            $config = new Configuration();
-            self::getDefaultAuthentication();
-
-            if (!allVarsLoaded()) {
-                loadDotenv();
-            }
-
-            $config->setSpapiEndpoint($_ENV["SPAPI_ENDPOINT"]);
-            self::$defaultConfiguration = $config;
+        if (isset(static::$tempFolderPath) || static::$tempFolderPath === null) {
+            static::setTempFolderPath();
         }
-
-        return self::$defaultConfiguration;
-    }
-
-    /**
-     * Sets the default configuration instance
-     *
-     * @param Configuration $config An instance of the Configuration Object
-     *
-     * @return void
-     */
-    public static function setDefaultConfiguration(Configuration $config)
-    {
-        self::$defaultConfiguration = $config;
-    }
-
-    /**
-     * Gets the default authentication instance
-     *
-     * @return Authentication
-     */
-    public static function getDefaultAuthentication()
-    {
-        if (self::$defaultAuthentication === null) {
-            self::setDefaultAuthentication();
-        }
-        return self::$defaultAuthentication;
-    }
-
-    /**
-     * Sets the default authentication instance
-     *
-     * @param Authentication $auth An instance of the Authentication class
-     *
-     * @return void
-     */
-    public static function setDefaultAuthentication($auth = null)
-    {
-        if ($auth !== null) {
-            self::$defaultAuthentication = $auth;
-        } else if (self::$defaultAuthentication === null) {
-            self::$defaultAuthentication = new Authentication();
-        }
+        return static::$tempFolderPath;
     }
 
     /**
@@ -371,7 +296,7 @@ class Configuration
     public static function toDebugReport(?string $tempFolderPath = null)
     {
         if ($tempFolderPath === null) {
-            $tempFolderPath = self::getDefaultConfiguration()->getTempFolderPath();
+            $tempFolderPath = static::getTempFolderPath();
         }
         $report  = 'PHP SDK (SellingPartnerApi) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
@@ -461,21 +386,5 @@ class Configuration
         }
 
         return $url;
-    }
-
-    /**
-     * @return ConfigurationOptions|null
-     */
-    public function getConfigurationOptions()
-    {
-        return $this->configurationOptions;
-    }
-
-    /**
-     * @param ConfigurationOptions|null $configurationOptions
-     */
-    public function setConfigurationOptions(?ConfigurationOptions $configurationOptions)
-    {
-        $this->configurationOptions = $configurationOptions;
     }
 }

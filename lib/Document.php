@@ -13,7 +13,7 @@ use SellingPartnerApi\Model;
 class Document
 {
     public const ENCRYPTION_SCHEME = "AES-256-CBC";
-    public const VALID_CONTENT_TYPES = ["text/xml", "text/tab-separated-values", "text/csv"];
+    public const VALID_CONTENT_TYPES = ["text/xml", "text/tab-separated-values", "text/csv", "application/pdf"];
 
     private $iv;
     private $key;

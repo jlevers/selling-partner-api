@@ -29,7 +29,8 @@
         "guzzlehttp/guzzle": "^7.2",
         "vlucas/phpdotenv": "^4.0 || ^5.2",
         "cyberdummy/gzstream": "^0.0.2",
-        "jsq/psr7-stream-encryption": "^0.4.0"
+        "jsq/psr7-stream-encryption": "^0.4.0",
+        "phpoffice/phpspreadsheet": "^1.18"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",

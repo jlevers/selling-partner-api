@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**feed_id** | **string** | The identifier for the feed. This identifier is unique only in combination with a seller ID. |
+**payload** | [**\SellingPartnerApi\Model\Feeds\CreateFeedResult**](CreateFeedResult.md) |  | [optional]
+**errors** | [**\SellingPartnerApi\Model\Feeds\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
 
 [[Feeds Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**feeds** | [**\SellingPartnerApi\Model\Feeds\Feed[]**](Feed.md) |  |
+**payload** | [**\SellingPartnerApi\Model\Feeds\Feed[]**](Feed.md) |  | [optional]
 **next_token** | **string** | Returned when the number of results exceeds pageSize. To get the next page of results, call the getFeeds operation with this token as the only parameter. | [optional]
+**errors** | [**\SellingPartnerApi\Model\Feeds\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
 
 [[Feeds Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

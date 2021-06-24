@@ -38,82 +38,49 @@ If you're looking for more information on how to set those things up, check out 
 
 ### Setup
 
-#### Using the Configuration and ConfigurationOptions classes
-
-TL;DR: pass a `ConfigurationOptions` instance to the `Configuration` constructor, and pass the `Configuration` instance to the `SellingPartnerApi\Api\*Api` constructor.
-
-The [`ConfigurationOptions`](https://github.com/jlevers/selling-partner-api/blob/main/lib/ConfigurationOptions.php) constructor takes all the configuration information that's needed to connect to the Selling Partner API:
+The [`Configuration`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Configuration.php) constructor takes a single argument: an associative array with all the configuration information that's needed to connect to the Selling Partner API:
 
 ```php
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "<LWA client ID>",
-    "<LWA client secret>",
-    "<LWA refresh token>",
-    "<AWS access key ID>",
-    "<AWS secret access key>",
-    "<SP API AWS region>",
-    "<SP API endpoint>",
-);
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 ```
 
-If you created your Selling Partner API application using an IAM role ARN instead of a user ARN, pass that role ARN to the `ConfigurationOptions` constructor:
+If you created your Selling Partner API application using an IAM role ARN instead of a user ARN, pass that role ARN in the configuration array:
 
 ```php
-    $configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "<LWA client ID>",
-    "<LWA client secret>",
-    "<LWA refresh token>",
-    "<AWS access key ID>",
-    "<AWS secret access key>",
-    "<SP API AWS region>",
-    "<SP API endpoint>",
-    null,  //
-    null,  // More about these parameters in the `ConfigurationOptions` section below
-    null,  //
-    "<Role ARN>"
-);
-```
-
-That object gets passed to the [`Configuration`](https://github.com/jlevers/selling-partner-api/blob/main/lib/ConfigurationOptions.php) constructor:
-
-```php
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA,  // or another endpoint from lib/Endpoints.php
+    "roleArn" => "<Role ARN>"
+]);
 ```
 
 `$config` can then be passed into the constructor of any `SellingPartnerApi\Api\*Api` class. See the `Example` section for a complete example.
 
-##### ConfigurationOptions
+##### Configuration options
 
-The `ConfigurationOptions` constructor takes the following parameters:
+The array passed to the `Configuration` constructor accepts the following keys:
 
-* `lwaClientId (string)`: The LWA client ID of the SP API application to use to execute API requests.
-* `lwaClientSecret (string)`: The LWA client secret of the SP API application to use to execute API requests.
-* `lwaRefreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests.
-* `awsAccessKey (string)`: AWS IAM user Access Key ID with SP API ExecuteAPI permissions.
-* `awsAccessSecret (string)`: AWS IAM user Secret Access Key with SP API ExecuteAPI permissions.
-* `spapiAwsRegion (string)`: The AWS region associated with the SP API endpoint you're using. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.
-* `spapiEndpoint (string)`: The SP API endpoint you want to make calls to (i.e. https://sellingpartnerapi-na.amazon.com).
-* `accessToken (string|null)`: An access token generated from the refresh token.
-* `accessTokenExpiration (int|null)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
-* `$onUpdateCredentials (callable|Closure|null)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`SellingPartnerApi\Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
-* `$roleArn (string|null)`: If you set up your SP API application with an AWS IAM role ARN instead of a user ARN, pass that ARN here.
-
-##### Configuration
-
-The `Configuration` constructor takes the following parameters:
-* `configInfo (ConfigurationOptions|array)`: A `ConfigurationOptions` instance, or an array of configuration options for backwards compatibility.
-* `spapiEndpoint (string|null)`: A Selling Partner endpoint. This parameter exists for backwards compatibility, but is deprecated and will be removed in the next major version.
-
-(I know this configuration system is somewhat clunky, but it's necessary for backwards compatibility. In v3.0.0, the `ConfigurationOptions` object will be removed, and all configuration parameters will be passed directly to `Configuration`).
-
-#### Using .env (deprecated)
-
-**Note:** `.env`-based configuration is deprecated and will be removed in the next major release (v3.0.0).
-
-Copy the sample configuration file to the root of your project: `cp vendor/jlevers/selling-partner-api/.env.example .env`
-
-Then, fill in the environment variables in `.env` with your IAM user credentials and the LWA credentials from your application. For more information on where to get those credentials, check out [this blog post](https://jesseevers.com/spapi-php-library/#installation-and-configuration).
-
+* `lwaClientId (string)`: Required. The LWA client ID of the SP API application to use to execute API requests.
+* `lwaClientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
+* `lwaRefreshToken (string)`: Required. The LWA refresh token of the SP API application to use to execute API requests.
+* `awsAccessKeyId (string)`: Required. AWS IAM user Access Key ID with SP API ExecuteAPI permissions.
+* `awsSecretAccessKey (string)`: Required. AWS IAM user Secret Access Key with SP API ExecuteAPI permissions.
+* `endpoint (array)`: Required. An array containing a `url` key (the endpoint URL) and a `region` key (the AWS region). There are predefined constants for these arrays in [`lib/Endpoint.php`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Endpoint.php): (`NA`, `EU`, `FE`, and `NA_SANDBOX`, `EU_SANDBOX`, and `FE_SANDBOX`. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.
+* `accessToken (string)`: An access token generated from the refresh token.
+* `accessTokenExpiration (int)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
+* `$onUpdateCredentials (callable|Closure)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`SellingPartnerApi\Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
+* `$roleArn (string)`: If you set up your SP API application with an AWS IAM role ARN instead of a user ARN, pass that ARN here.
 
 ### Example
 
@@ -124,20 +91,18 @@ This example assumes you have access to the `Seller Insights` Selling Partner AP
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\ConfigurationOptions;
-use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Api;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\Endpoint;
 
-$configurationOptions = new ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new Configuration($configurationOptions);
+$config = new Configuration([
+    "lwaClientId" => "amzn1.application-oa2-client.....",
+    "lwaClientSecret" => "abcd....",
+    "lwaRefreshToken" => "Aztr|IwEBI....",
+    "awsAccessKeyId" => "AKIA....",
+    "awsSecretAccessKey" => "ABCD....",
+    "endpoint" => Endpoint::NA
+]);
 
 $api = new Api\SellersApi($config);
 try {

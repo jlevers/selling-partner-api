@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**report_schedule_id** | **string** | The identifier for the report schedule. This identifier is unique only in combination with a seller ID. |
+**payload** | [**\SellingPartnerApi\Model\Reports\CreateReportScheduleResult**](CreateReportScheduleResult.md) |  | [optional]
+**errors** | [**\SellingPartnerApi\Model\Reports\Error[]**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional]
 
 [[Reports Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\RequestOptions;
 use Jsq\EncryptionStreams;
-use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 use SellingPartnerApi\Model;
 
@@ -109,14 +109,12 @@ class Document
             $this->data = $data;
             fclose($bareStream);
         } else if ($this->contentType === ContentType::XLSX) {
-            $reader = new Xlsx();
-
             $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
             $tempFile = fopen($this->tmpFilename, "r+");
             fwrite($tempFile, $contents);
             fclose($tempFile);
 
-            $spreadsheet = $reader->load($this->tmpFilename);
+            $spreadsheet = IOFactory::load($this->tmpFilename);
             $this->data = $spreadsheet;
         }
 

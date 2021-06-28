@@ -116,6 +116,8 @@ class Document
 
             $spreadsheet = IOFactory::load($this->tmpFilename);
             $this->data = $spreadsheet;
+        } else if ($this->contentType === ContentType::TXT) {
+            $this->data = $contents;
         }
 
         return $contents;

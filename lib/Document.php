@@ -7,13 +7,13 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\RequestOptions;
 use Jsq\EncryptionStreams;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 use SellingPartnerApi\Model;
 
 class Document
 {
     public const ENCRYPTION_SCHEME = "AES-256-CBC";
-    public const VALID_CONTENT_TYPES = ["text/xml", "text/tab-separated-values", "text/csv", "application/pdf", "text/plain"];
 
     private $iv;
     private $key;
@@ -21,13 +21,14 @@ class Document
     private $compressionAlgo;
     private $contentType;
     private $data;
+    private $tmpFilename;
 
     /**
      * @param Model\(Report\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
-     * @param ?string $contentType The content type of the document. Defaults to text/xml.
+     * @param ?string $contentType The content type of the document. Defaults to ContentType::XML.
      */
-    public function __construct(object $documentInfo, ?string $contentType = "text/xml") {
+    public function __construct(object $documentInfo, ?string $contentType = ContentType::XML) {
         if (
             !($documentInfo instanceof Model\Reports\ReportDocument)
             && !($documentInfo instanceof Model\Feeds\FeedDocument)
@@ -37,8 +38,14 @@ class Document
             throw new \Exception($msg);
         }
 
-        if (!in_array($contentType, static::VALID_CONTENT_TYPES)) {
-            throw new \InvalidArgumentException("valid contentType values are: " . implode(", ", static::VALID_CONTENT_TYPES));
+
+        $validContentTypes = ContentType::getContentTypes();
+        if (!in_array($contentType, array_values($validContentTypes))) {
+            $readableContentTypes = [];
+            foreach ($validContentTypes as $name => $value) {
+                $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
+            }
+            throw new \InvalidArgumentException("Valid content types are: " . implode(", ", $readableContentTypes));
         }
 
         $this->url = $documentInfo->getUrl();
@@ -70,13 +77,19 @@ class Document
             }
         }
 
-        // Documents are ISO-8859-1 encoded
-        $contents = utf8_encode($stream->getContents());
-        if ($this->contentType === "text/xml") {
+        // Documents are ISO-8859-1 encoded, which messes up the data when we read it directly
+        // via SimpleXML or fgetcsv, but the original encoding is required to parse XLSX reports
+        if ($this->contentType !== ContentType::XLSX) {
+            $contents = utf8_encode($stream->getContents());
+        } else {
+            $contents = $stream->getContents();
+        }
+
+        if ($this->contentType === ContentType::XML) {
             $this->data = simplexml_load_string($contents);
-        } else if ($this->contentType === "text/tab-separated-values" || $this->contentType === "text/csv") {
+        } else if ($this->contentType === ContentType::TAB || $this->contentType === ContentType::CSV) {
             $sep = "\t";
-            if ($this->contentType === "text/csv") {
+            if ($this->contentType === ContentType::CSV) {
                 $sep = ",";
             }
 
@@ -95,8 +108,14 @@ class Document
             }
             $this->data = $data;
             fclose($bareStream);
-        } else if ($this->contentType === "application/pdf" || $this->contentType === "text/plain") {
-            $data = $contents;
+        } else if ($this->contentType === ContentType::XLSX) {
+            $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
+            $tempFile = fopen($this->tmpFilename, "r+");
+            fwrite($tempFile, $contents);
+            fclose($tempFile);
+
+            $spreadsheet = IOFactory::load($this->tmpFilename);
+            $this->data = $spreadsheet;
         }
 
         return $contents;
@@ -146,5 +165,11 @@ class Document
             return $this->data;
         }
         return false;
+    }
+
+    public function __destruct() {
+        if (isset($this->tempFilename)) {
+            unlink($this->tempFilename);
+        }
     }
 }

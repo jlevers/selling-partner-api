@@ -14,6 +14,7 @@ class ContentType {
     public const TAB = 'text/tab-separated-values';
     public const XLSX = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
     public const XML = 'text/xml';
+    public const TXT = 'text/plain';
 
     public static function getContentTypes(): array
     {

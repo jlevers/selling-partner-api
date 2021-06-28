@@ -13,7 +13,7 @@ use SellingPartnerApi\Model;
 class Document
 {
     public const ENCRYPTION_SCHEME = "AES-256-CBC";
-    public const VALID_CONTENT_TYPES = ["text/xml", "text/tab-separated-values", "text/csv", "application/pdf"];
+    public const VALID_CONTENT_TYPES = ["text/xml", "text/tab-separated-values", "text/csv", "application/pdf", "text/plain"];
 
     private $iv;
     private $key;
@@ -95,6 +95,8 @@ class Document
             }
             $this->data = $data;
             fclose($bareStream);
+        } else if ($this->contentType === "application/pdf" || $this->contentType === "text/plain") {
+            $data = $contents;
         }
 
         return $contents;

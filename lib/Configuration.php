@@ -120,7 +120,7 @@ class Configuration
                 $configurationOptions['accessToken'] ?? null,
                 $configurationOptions['accessTokenExpiration'] ?? null,
                 $configurationOptions['onUpdateCredentials'] ?? null,
-                $configurationOptions['roleArn'] ?? null,
+                $configurationOptions['roleArn'] ?? null
             );
         }
 

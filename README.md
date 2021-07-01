@@ -186,11 +186,11 @@ $documentId = "foo.1234";
 $reportsApi = new ReportsApi($config);
 $reportDocumentInfo = $reportsApi->getReportDocument($documentId);
 
-// Pass the content type of the report you're fetching
-$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo->getPayload(), "text/tab-separated-values");
+// Pass the content type of the report you're fetching. See lib/ContentType.php for all supported content types.
+$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo->getPayload(), SellingPartnerApi\ContentType::TAB);
 $contents = $docToDownload->download();  // The raw report text
-// A SimpleXML object if the content type is text/xml, or an array of associative arrays, each
-// sub array corresponding to a row of the report
+// A SimpleXML object if the content type is ContenType::XML, a PHPOffice Spreadsheet object if the content type is ContentType::XLSX,
+// or an array of associative arrays, with each sub array corresponding to a row of the report if the content type is ContentType::TAB or ContentType::CSV
 $data = $docToDownload->getData();
 // ... do something with report contents
 ```
@@ -201,13 +201,13 @@ $data = $docToDownload->getData();
 use SellingPartnerApi\Api\FeedsApi;
 use SellingPartnerApi\Model\Feeds;
 
-const CONTENT_TYPE = "text/xml";  // This will be different depending on your feed type
+$contentType = SellingPartnerApi\ContentType::XML;  // This will be different depending on your feed type
 $feedsApi = new FeedsApi($config);
-$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(["content_type" => CONTENT_TYPE]);
+$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(["content_type" => $contentType]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
 
 $documentContents = file_get_contents("<your/feed/file.xml>");
 
-$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload(), CONTENT_TYPE);
+$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload(), $contentType);
 $docToUpload->upload($documentContents);
 ```

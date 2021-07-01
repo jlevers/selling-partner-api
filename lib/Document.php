@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\RequestOptions;
 use Jsq\EncryptionStreams;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 use RuntimeException;
 
 use SellingPartnerApi\Model\Feeds\CreateFeedDocumentResult;
@@ -22,6 +23,7 @@ class Document
     private $compressionAlgo;
     private $contentType;
     private $data;
+    private $tmpFilename;
 
     /**
      * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
@@ -50,6 +52,15 @@ class Document
                 throw new RuntimeException('$documentType must be passed when $documentInfo is of type FeedDocument or ReportDocument');
             }
             $this->contentType = $documentType['contentType'];
+            
+            $validContentTypes = ContentType::getContentTypes();
+            if (!in_array($this->contentType, array_values($validContentTypes))) {
+                $readableContentTypes = [];
+                foreach ($validContentTypes as $name => $value) {
+                    $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
+                }
+                throw new \InvalidArgumentException("Valid content types are: " . implode(", ", $readableContentTypes));
+            }
         }
 
         $this->url = $documentInfo->getUrl();
@@ -75,31 +86,52 @@ class Document
             $contents = $maybeZippedContents;
         }
 
-        // Documents are ISO-8859-1 encoded
-        $contents = utf8_encode($contents);
-        if ($this->contentType === "text/xml") {
-            $this->data = simplexml_load_string($contents);
-        } else if ($this->contentType === "text/tab-separated-values" || $this->contentType === "text/csv") {
-            $sep = "\t";
-            if ($this->contentType === "text/csv") {
-                $sep = ",";
-            }
+        // Documents are ISO-8859-1 encoded, which messes up the data when we read it directly
+        // via SimpleXML or fgetcsv, but the original encoding is required to parse XLSX and PDF reports
+        if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
+            $contents = utf8_encode($contents);
+        }
 
-            $bareStream = fopen("php://memory", "rw");
-            fwrite($bareStream, $contents);
-            rewind($bareStream);
+        switch ($this->contentType) {
+            case ContentType::CSV:
+            case ContentType::TAB:
+                $sep = $this->contentType === ContentType::CSV ? "," : "\t";
+    
+                $bareStream = fopen("php://memory", "rw");
+                fwrite($bareStream, $contents);
+                rewind($bareStream);
 
-            $data = [];
-            $header = fgetcsv($bareStream, 0, $sep);
-            while (($line = fgetcsv($bareStream, 0, $sep)) !== false) {
-                $row = [];
-                foreach ($line as $idx => $val) {
-                    $row[$header[$idx]] = $val;
+                $data = [];
+                $header = fgetcsv($bareStream, 0, $sep);
+                while (($line = fgetcsv($bareStream, 0, $sep)) !== false) {
+                    $row = [];
+                    foreach ($line as $idx => $val) {
+                        $row[$header[$idx]] = $val;
+                    }
+                    $data[] = $row;
                 }
-                $data[] = $row;
-            }
-            $this->data = $data;
-            fclose($bareStream);
+                $this->data = $data;
+                fclose($bareStream);
+                break;
+            case ContentType::JSON:
+                $this->data = json_decode($contents);
+                break;
+            case ContentType::PDF:
+            case ContentType::PLAIN:
+                $this->data = $contents;
+                break;
+            case ContentType::XLSX:
+                $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
+                $tempFile = fopen($this->tmpFilename, "r+");
+                fwrite($tempFile, $contents);
+                fclose($tempFile);
+    
+                $spreadsheet = IOFactory::load($this->tmpFilename);
+                $this->data = $spreadsheet;
+                break;
+            case ContentType::XML:
+                $this->data = simplexml_load_string($contents);
+                break;               
         }
 
         return $contents;
@@ -146,5 +178,11 @@ class Document
 
     public function getData() {
         return isset($this->data) ? $this->data : false;
+    }
+
+    public function __destruct() {
+        if (isset($this->tempFilename)) {
+            unlink($this->tempFilename);
+        }
     }
 }

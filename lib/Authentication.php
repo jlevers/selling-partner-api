@@ -136,7 +136,7 @@ class Authentication
         }
         $accessToken = $credsForAccessToken->getSecurityToken();
 
-        $relevantCreds = $this->awsCredentials;
+        $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
         if ($this->roleArn !== null) {
             if ($this->roleCredentials === null || $this->roleCredentials->expiresSoon()) {
                 $client = new StsClient([

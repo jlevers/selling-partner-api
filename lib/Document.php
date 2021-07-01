@@ -2,18 +2,19 @@
 
 namespace SellingPartnerApi;
 
-use Cyberdummy\GzStream;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\RequestOptions;
 use Jsq\EncryptionStreams;
+use RuntimeException;
 
-use SellingPartnerApi\Model;
+use SellingPartnerApi\Model\Feeds\CreateFeedDocumentResult;
+use SellingPartnerApi\Model\Feeds\FeedDocument;
+use SellingPartnerApi\Model\Reports\ReportDocument;
 
 class Document
 {
     public const ENCRYPTION_SCHEME = "AES-256-CBC";
-    public const VALID_CONTENT_TYPES = ["text/xml", "text/tab-separated-values", "text/csv"];
 
     private $iv;
     private $key;
@@ -23,22 +24,32 @@ class Document
     private $data;
 
     /**
-     * @param Model\(Report\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
+     * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
-     * @param ?string $contentType The content type of the document. Defaults to text/xml.
+     * @param ?array['contentType' => string, 'name' => string] $documentType
+     *      Not required if $documentInfo is of type CreateFeedDocumentResult. Otherwise, should be one
+     *      of the constants defined in ReportType or FeedType.
      */
-    public function __construct(object $documentInfo, ?string $contentType = "text/xml") {
-        if (
-            !($documentInfo instanceof Model\Reports\ReportDocument)
-            && !($documentInfo instanceof Model\Feeds\FeedDocument)
-            && !($documentInfo instanceof Model\Feeds\CreateFeedDocumentResult)
-        ) {
-            $msg = "documentInfo must be one of the following types: ReportDocument, FeedDocument, CreateFeedDocumentResult";
-            throw new \Exception($msg);
+    public function __construct(object $documentInfo, ?array $documentType = null) {
+        // Make sure $documentInfo is a valid type
+        if (!(
+            $documentInfo instanceof ReportDocument ||
+            $documentInfo instanceof FeedDocument ||
+            $documentInfo instanceof CreateFeedDocumentResult
+        )) {
+            $msg = "documentInfo must be one of the following types: Model\Feeds\CreateFeedDocumentResult, Model\Feeds\FeedDocument, Model\Reports\ReportDocument";
+            throw new RuntimeException($msg);
         }
 
-        if (!in_array($contentType, static::VALID_CONTENT_TYPES)) {
-            throw new \InvalidArgumentException("valid contentType values are: " . implode(", ", static::VALID_CONTENT_TYPES));
+        // All feed result documents are tab separated values files
+        if ($documentInfo instanceof CreateFeedDocumentResult) {
+            $documentType = ReportType::__FEED_RESULT_REPORT;
+            $this->contentType = $documentType['contentType'];
+        } else {
+            if ($documentType === null) {
+                throw new RuntimeException('$documentType must be passed when $documentInfo is of type FeedDocument or ReportDocument');
+            }
+            $this->contentType = $documentType['contentType'];
         }
 
         $this->url = $documentInfo->getUrl();
@@ -49,29 +60,23 @@ class Document
         if (method_exists($documentInfo, "getCompressionAlgorithm")) {
             $this->compressionAlgo = $documentInfo->getCompressionAlgorithm() ?? null;
         }
-
-        $this->contentType = $contentType;
     }
 
     public function download(): string {
-        $client = new Client();
-        $stream = $client->get($this->url, [RequestOptions::STREAM => true])->getBody();
+        $rawContents = file_get_contents($this->url);
+        $maybeZippedContents = openssl_decrypt($rawContents, static::ENCRYPTION_SCHEME, $this->key, OPENSSL_RAW_DATA, $this->iv);
 
-        if (!$stream->isReadable()) {
-            throw new \Exception("Download file stream is unreadable.");
-        }
-
-        $cipherMethod = new EncryptionStreams\Cbc($this->iv);
-        $stream = new EncryptionStreams\AesDecryptingStream($stream, $this->key, $cipherMethod);
-
+        $contents = null;
         if ($this->compressionAlgo !== null) {
             if ($this->compressionAlgo === "GZIP") {
-                $stream = new GzStream\GzStreamGuzzle($stream);
+                $contents = gzdecode($maybeZippedContents);
             }
+        } else {
+            $contents = $maybeZippedContents;
         }
 
         // Documents are ISO-8859-1 encoded
-        $contents = utf8_encode($stream->getContents());
+        $contents = utf8_encode($contents);
         if ($this->contentType === "text/xml") {
             $this->data = simplexml_load_string($contents);
         } else if ($this->contentType === "text/tab-separated-values" || $this->contentType === "text/csv") {
@@ -110,10 +115,10 @@ class Document
     public function upload(string $feedData): void {
         $stream = fopen("php://memory", "r+");
         if (!$stream) {
-            throw new \Exception("Error creating input stream (php://memory)\n");
+            throw new RuntimeException("Error creating input stream (php://memory)\n");
         }
 
-        // Write the data to an in-memory feed to make it easier to encrypt chunks of it at a time.
+        // Write the data to an in-memory stream to make it easier to encrypt chunks of it at a time.
         // Amazon requires their data to be encrypted at rest, which prevents us from writing the data
         // to a file and encrypting it from there
         $stream = Psr7\Utils::streamFor($stream);
@@ -135,14 +140,11 @@ class Document
         $stream->close();
 
         if ($response->getStatusCode() >= 300) {
-            throw new \Exception("Upload failed ({$response->getStatusCode()}): {$response->getBody()}");
+            throw new RuntimeException("Upload failed ({$response->getStatusCode()}): {$response->getBody()}");
         }
     }
 
     public function getData() {
-        if(isset($this->data)) {
-            return $this->data;
-        }
-        return false;
+        return isset($this->data) ? $this->data : false;
     }
 }

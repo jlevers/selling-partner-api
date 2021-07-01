@@ -99,7 +99,6 @@ class Configuration
                 $missingKeys[] = $key;
             }
         }
-
         if (count($missingKeys) > 0) {
             throw new RuntimeException("Required configuration values were missing: " . implode(", ", $missingKeys));
         }

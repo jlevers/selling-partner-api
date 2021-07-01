@@ -17,7 +17,7 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 
 ## Requirements
 
-* PHP 7.2 or later
+* PHP 7.3 or later
 * Composer
 
 ## Installation
@@ -79,8 +79,8 @@ The array passed to the `Configuration` constructor accepts the following keys:
 * `endpoint (array)`: Required. An array containing a `url` key (the endpoint URL) and a `region` key (the AWS region). There are predefined constants for these arrays in [`lib/Endpoint.php`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Endpoint.php): (`NA`, `EU`, `FE`, and `NA_SANDBOX`, `EU_SANDBOX`, and `FE_SANDBOX`. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.
 * `accessToken (string)`: An access token generated from the refresh token.
 * `accessTokenExpiration (int)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
-* `$onUpdateCredentials (callable|Closure)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`SellingPartnerApi\Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
-* `$roleArn (string)`: If you set up your SP API application with an AWS IAM role ARN instead of a user ARN, pass that ARN here.
+* `onUpdateCredentials (callable|Closure)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`SellingPartnerApi\Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
+* `roleArn (string)`: If you set up your SP API application with an AWS IAM role ARN instead of a user ARN, pass that ARN here.
 
 ### Example
 
@@ -180,34 +180,42 @@ The Feeds and Reports APIs include operations that involve uploading and downloa
 
 ``` php
 use SellingPartnerApi\Api\ReportsApi;
+use SellingPartnerApi\ReportType;
 
 // Assume we've already fetched a report document ID, and that a $config object was defined above
 $documentId = "foo.1234";
 $reportsApi = new ReportsApi($config);
 $reportDocumentInfo = $reportsApi->getReportDocument($documentId);
 
-// Pass the content type of the report you're fetching. See lib/ContentType.php for all supported content types.
-$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo->getPayload(), SellingPartnerApi\ContentType::TAB);
+$reportType = ReportType::GET_FLAT_FILE_OPEN_LISTINGS_DATA;
+
+$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo->getPayload(), $reportType);
 $contents = $docToDownload->download();  // The raw report text
-// A SimpleXML object if the content type is ContenType::XML, a PHPOffice Spreadsheet object if the content type is ContentType::XLSX,
-// or an array of associative arrays, with each sub array corresponding to a row of the report if the content type is ContentType::TAB or ContentType::CSV
+/*
+ * - Array of associative arrays, (each sub array corresponds to a row of the report) if content type is ContentType::TAB or ContentType::CSV
+ * - A nested associative array (from json_decode) if content type is ContentType::JSON
+ * - The raw report data if content type is ContentType::PLAIN or ContentType::PDF
+ * - PHPOffice Spreadsheet object if content type is ContentType::XLSX
+ * - SimpleXML object if the content type is ContentType::XML
+ */
 $data = $docToDownload->getData();
-// ... do something with report contents
+// ... do something with report data
 ```
 
 ### Uploading a feed document
 
 ``` php
 use SellingPartnerApi\Api\FeedsApi;
+use SellingPartnerApi\FeedType;
 use SellingPartnerApi\Model\Feeds;
 
-$contentType = SellingPartnerApi\ContentType::XML;  // This will be different depending on your feed type
+$feedType = FeedType::POST_PRODUCT_PRICING_DATA;
 $feedsApi = new FeedsApi($config);
-$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(["content_type" => $contentType]);
+$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(["content_type" => $feedType['contentType']]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
 
 $documentContents = file_get_contents("<your/feed/file.xml>");
 
-$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload(), $contentType);
+$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload(), $feedType);
 $docToUpload->upload($documentContents);
 ```

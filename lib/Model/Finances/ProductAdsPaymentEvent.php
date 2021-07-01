@@ -275,7 +275,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets transaction_type
      *
-     * @param string|null $transaction_type Indicates if the transaction is for a charge or a refund.  Possible values:  * charge - Charge  * refund - Refund
+     * @param string|null $transaction_type Indicates if the transaction is for a charge or a refund. Possible values: * charge - Charge * refund - Refund
      *
      * @return self
      */

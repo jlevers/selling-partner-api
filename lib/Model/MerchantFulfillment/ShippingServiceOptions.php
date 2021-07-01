@@ -299,7 +299,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets carrier_will_pick_up
      *
-     * @param bool $carrier_will_pick_up When true, the carrier will pick up the package.  Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
+     * @param bool $carrier_will_pick_up When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
      *
      * @return self
      */

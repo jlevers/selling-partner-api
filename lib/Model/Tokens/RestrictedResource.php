@@ -295,7 +295,7 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets path
      *
-     * @param string $path The path from a restricted operation. This could be:  - A specific path containing a seller's order ID, for example ```/orders/v0/orders/902-3159896-1390916/address```.  - A generic path that does not contain a seller's order ID, for example```/orders/v0/orders/{orderId}/address```).
+     * @param string $path The path from a restricted operation. This could be: - A specific path containing a seller's order ID, for example ```/orders/v0/orders/902-3159896-1390916/address```. - A generic path that does not contain a seller's order ID, for example```/orders/v0/orders/{orderId}/address```).
      *
      * @return self
      */

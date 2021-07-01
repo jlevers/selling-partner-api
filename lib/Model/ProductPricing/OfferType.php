@@ -406,7 +406,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_channel
      *
-     * @param string $fulfillment_channel The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
+     * @param string $fulfillment_channel The fulfillment channel for the offer listing. Possible values: * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
      *
      * @return self
      */

@@ -140,7 +140,9 @@ class AplusContentApi
     public function createContentDocumentWithHttpInfo($marketplace_id, $post_content_document_request)
     {
         $request = $this->createContentDocumentRequest($marketplace_id, $post_content_document_request);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -391,7 +393,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse';
         $request = $this->createContentDocumentRequest($marketplace_id, $post_content_document_request);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -567,7 +571,9 @@ class AplusContentApi
     public function getContentDocumentWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set)
     {
         $request = $this->getContentDocumentRequest($content_reference_key, $marketplace_id, $included_data_set);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -840,7 +846,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\GetContentDocumentResponse';
         $request = $this->getContentDocumentRequest($content_reference_key, $marketplace_id, $included_data_set);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1044,7 +1052,9 @@ class AplusContentApi
     public function listContentDocumentAsinRelationsWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set = null, $asin_set = null, $page_token = null)
     {
         $request = $this->listContentDocumentAsinRelationsRequest($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1321,7 +1331,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\ListContentDocumentAsinRelationsResponse';
         $request = $this->listContentDocumentAsinRelationsRequest($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1534,7 +1546,9 @@ class AplusContentApi
     public function postContentDocumentApprovalSubmissionWithHttpInfo($content_reference_key, $marketplace_id)
     {
         $request = $this->postContentDocumentApprovalSubmissionRequest($content_reference_key, $marketplace_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1805,7 +1819,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentApprovalSubmissionResponse';
         $request = $this->postContentDocumentApprovalSubmissionRequest($content_reference_key, $marketplace_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1987,7 +2003,9 @@ class AplusContentApi
     public function postContentDocumentAsinRelationsWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request)
     {
         $request = $this->postContentDocumentAsinRelationsRequest($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2260,7 +2278,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsResponse';
         $request = $this->postContentDocumentAsinRelationsRequest($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2453,7 +2473,9 @@ class AplusContentApi
     public function postContentDocumentSuspendSubmissionWithHttpInfo($content_reference_key, $marketplace_id)
     {
         $request = $this->postContentDocumentSuspendSubmissionRequest($content_reference_key, $marketplace_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2724,7 +2746,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentSuspendSubmissionResponse';
         $request = $this->postContentDocumentSuspendSubmissionRequest($content_reference_key, $marketplace_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2904,7 +2928,9 @@ class AplusContentApi
     public function searchContentDocumentsWithHttpInfo($marketplace_id, $page_token = null)
     {
         $request = $this->searchContentDocumentsRequest($marketplace_id, $page_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3175,7 +3201,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\SearchContentDocumentsResponse';
         $request = $this->searchContentDocumentsRequest($marketplace_id, $page_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3350,7 +3378,9 @@ class AplusContentApi
     public function searchContentPublishRecordsWithHttpInfo($marketplace_id, $asin, $page_token = null)
     {
         $request = $this->searchContentPublishRecordsRequest($marketplace_id, $asin, $page_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3603,7 +3633,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\SearchContentPublishRecordsResponse';
         $request = $this->searchContentPublishRecordsRequest($marketplace_id, $asin, $page_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3796,7 +3828,9 @@ class AplusContentApi
     public function updateContentDocumentWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_request)
     {
         $request = $this->updateContentDocumentRequest($content_reference_key, $marketplace_id, $post_content_document_request);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -4069,7 +4103,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse';
         $request = $this->updateContentDocumentRequest($content_reference_key, $marketplace_id, $post_content_document_request);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -4264,7 +4300,9 @@ class AplusContentApi
     public function validateContentDocumentAsinRelationsWithHttpInfo($marketplace_id, $post_content_document_request, $asin_set = null)
     {
         $request = $this->validateContentDocumentAsinRelationsRequest($marketplace_id, $post_content_document_request, $asin_set);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -4517,7 +4555,9 @@ class AplusContentApi
     {
         $returnType = '\SellingPartnerApi\Model\AplusContent\ValidateContentDocumentAsinRelationsResponse';
         $request = $this->validateContentDocumentAsinRelationsRequest($marketplace_id, $post_content_document_request, $asin_set);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

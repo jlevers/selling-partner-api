@@ -138,7 +138,9 @@ class ShipmentInvoicingApi
     public function getInvoiceStatusWithHttpInfo($shipment_id)
     {
         $request = $this->getInvoiceStatusRequest($shipment_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class ShipmentInvoicingApi
     {
         $returnType = '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse';
         $request = $this->getInvoiceStatusRequest($shipment_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -563,7 +567,12 @@ class ShipmentInvoicingApi
     public function getShipmentDetailsWithHttpInfo($shipment_id)
     {
         $request = $this->getShipmentDetailsRequest($shipment_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/fba/outbound/brazil/v0/shipments/{shipmentId}",
+            "getShipmentDetails"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -832,7 +841,12 @@ class ShipmentInvoicingApi
     {
         $returnType = '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse';
         $request = $this->getShipmentDetailsRequest($shipment_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/fba/outbound/brazil/v0/shipments/{shipmentId}",
+            "getShipmentDetails"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -990,7 +1004,9 @@ class ShipmentInvoicingApi
     public function submitInvoiceWithHttpInfo($shipment_id, $body)
     {
         $request = $this->submitInvoiceRequest($shipment_id, $body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1261,7 +1277,9 @@ class ShipmentInvoicingApi
     {
         $returnType = '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse';
         $request = $this->submitInvoiceRequest($shipment_id, $body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

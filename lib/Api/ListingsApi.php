@@ -144,7 +144,9 @@ class ListingsApi
     public function deleteListingsItemWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale = null)
     {
         $request = $this->deleteListingsItemRequest($seller_id, $sku, $marketplace_ids, $issue_locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -399,7 +401,9 @@ class ListingsApi
     {
         $returnType = '\SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse';
         $request = $this->deleteListingsItemRequest($seller_id, $sku, $marketplace_ids, $issue_locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -600,7 +604,9 @@ class ListingsApi
     public function patchListingsItemWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale = null)
     {
         $request = $this->patchListingsItemRequest($seller_id, $sku, $marketplace_ids, $body, $issue_locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -857,7 +863,9 @@ class ListingsApi
     {
         $returnType = '\SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse';
         $request = $this->patchListingsItemRequest($seller_id, $sku, $marketplace_ids, $body, $issue_locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1071,7 +1079,9 @@ class ListingsApi
     public function putListingsItemWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale = null)
     {
         $request = $this->putListingsItemRequest($seller_id, $sku, $marketplace_ids, $body, $issue_locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1328,7 +1338,9 @@ class ListingsApi
     {
         $returnType = '\SellingPartnerApi\Model\Listings\ListingsItemSubmissionResponse';
         $request = $this->putListingsItemRequest($seller_id, $sku, $marketplace_ids, $body, $issue_locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

@@ -139,7 +139,9 @@ class SmallAndLightApi
     public function deleteSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids)
     {
         $request = $this->deleteSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -278,7 +280,9 @@ class SmallAndLightApi
     {
         $returnType = '';
         $request = $this->deleteSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -443,7 +447,9 @@ class SmallAndLightApi
     public function getSmallAndLightEligibilityBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids)
     {
         $request = $this->getSmallAndLightEligibilityBySellerSKURequest($seller_sku, $marketplace_ids);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -714,7 +720,9 @@ class SmallAndLightApi
     {
         $returnType = '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility';
         $request = $this->getSmallAndLightEligibilityBySellerSKURequest($seller_sku, $marketplace_ids);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -890,7 +898,9 @@ class SmallAndLightApi
     public function getSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids)
     {
         $request = $this->getSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1161,7 +1171,9 @@ class SmallAndLightApi
     {
         $returnType = '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment';
         $request = $this->getSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1335,7 +1347,9 @@ class SmallAndLightApi
     public function getSmallAndLightFeePreviewWithHttpInfo($body)
     {
         $request = $this->getSmallAndLightFeePreviewRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1584,7 +1598,9 @@ class SmallAndLightApi
     {
         $returnType = '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews';
         $request = $this->getSmallAndLightFeePreviewRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1740,7 +1756,9 @@ class SmallAndLightApi
     public function putSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids)
     {
         $request = $this->putSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2011,7 +2029,9 @@ class SmallAndLightApi
     {
         $returnType = '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment';
         $request = $this->putSmallAndLightEnrollmentBySellerSKURequest($seller_sku, $marketplace_ids);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

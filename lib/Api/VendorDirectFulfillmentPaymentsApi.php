@@ -138,7 +138,9 @@ class VendorDirectFulfillmentPaymentsApi
     public function submitInvoiceWithHttpInfo($body)
     {
         $request = $this->submitInvoiceRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class VendorDirectFulfillmentPaymentsApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentPayments\SubmitInvoiceResponse';
         $request = $this->submitInvoiceRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

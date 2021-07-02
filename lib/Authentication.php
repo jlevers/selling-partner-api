@@ -3,7 +3,6 @@
 namespace SellingPartnerApi;
 
 use Aws\Sts\StsClient;
-use Closure;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use RuntimeException;
@@ -31,6 +30,7 @@ class Authentication
     private $grantlessAwsCredentials = null;
     private $grantlessCredentialsScope = null;
     private $roleCredentials = null;
+    private $restrictedDataTokens = [];
 
     /**
      * @var string
@@ -124,44 +124,54 @@ class Authentication
         }
     }
 
-    public function signRequest(Psr7\Request $request, ?string $scope = null): Psr7\Request
+    /**
+     * Signs the given request using Amazon Signature V4.
+     *
+     * @param \Guzzle\Psr7\Request $request The request to sign
+     * @param ?string $scope If the request is to a grantless operation endpoint, the scope for the grantless token
+     * @param ?string $restrictedPath The absolute (generic) path for the endpoint that the request is using if it's an endpoint that requires
+     *      a restricted data token
+     * @return \Guzzle\Psr7\Request The signed request
+     */
+    public function signRequest(Psr7\Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Psr7\Request
     {
         $this->setRequestTime();
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
-        $credsForAccessToken = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
-        if ($credsForAccessToken === null || $credsForAccessToken->getSecurityToken() === null || $credsForAccessToken->expiresSoon()) {
-            $this->newToken($scope);
-            // Reassign $credsForAccessToken to the correct set of credentials, since that set of creds has been updated
-            $credsForAccessToken = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
-        }
-        $accessToken = $credsForAccessToken->getSecurityToken();
+        $relevantCreds = null;
+        if ($scope === null && $restrictedPath === null) {
+            $relevantCreds = $this->getAwsCredentials();
+        } else if ($scope !== null) {  // There is no overlap between grantless and restricted operations
+            $relevantCreds = $this->getGrantlessAwsCredentials($scope);
+        } else if ($restrictedPath !== null) {
+            $needRdt = true;
 
-        $relevantCreds = $scope === null ? $this->awsCredentials : $this->grantlessAwsCredentials;
-        if ($this->roleArn !== null) {
-            if ($this->roleCredentials === null || $this->roleCredentials->expiresSoon()) {
-                $client = new StsClient([
-                    'sts_regional_endpoints' => 'regional',
-                    'region' => $this->endpoint['region'],
-                    'version' => '2011-06-15',
-                    'credentials' => [
-                        'key' => $relevantCreds->getAccessKeyId(),
-                        'secret' => $relevantCreds->getSecretKey(),
-                    ],
-                ]);
-                $assumeTime = time();
-                $assumed = $client->AssumeRole([
-                    'RoleArn' => $this->roleArn,
-                    'RoleSessionName' => "spapi-assumerole-{$assumeTime}",
-                ]);
-                $credentials = $assumed['Credentials'];
-                $this->roleCredentials = new Credentials(
-                    $credentials['AccessKeyId'],
-                    $credentials['SecretAccessKey'],
-                    $credentials['SessionToken'],
-                    $credentials['Expiration']->getTimestamp(),
-                );
+            // Not all getReportDocument calls need an RDT
+            if ($operation === 'getReportDocument') {
+                // We added a reportType query parameter that isn't in the official models, so that we can
+                // determine if the getReportDocument call requires an RDT
+                $params = [];
+                parse_str($request->getUri()->getQuery(), $params);
+                $constantPath = isset($params['reportType']) ? 'SellingPartnerApi\ReportType::' . $params['reportType'] : null;
+
+                if ($constantPath === null || !defined($constantPath) || !constant($constantPath)['restricted']) {
+                    $needRdt = false;
+                    $relevantCreds = $this->getAwsCredentials();
+                }
+
+                // Remove the extra parameter
+                $newUri = Psr7\Uri::withoutQueryValue($request->getUri(), 'reportType');
+                $request = $request->withUri($newUri);
             }
-            $relevantCreds = $this->roleCredentials;
+
+            if ($needRdt) {
+                $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod());
+            }
+        }
+
+        $accessToken = $relevantCreds->getSecurityToken();
+
+        if ($this->roleArn !== null) {
+            $relevantCreds = $this->getRoleCredentials();
         }
 
         $request->withHeader("content-type", "application/json");
@@ -187,6 +197,146 @@ class Authentication
                        ->withHeader("x-amz-date", $this->formattedRequestTime());
 
         return $signedRequest;
+    }
+
+    /**
+     * Get credentials for standard API operations.
+     *
+     * @return \SellingPartnerApi\Credentials A set of access credentials for making calls to the SP API
+     */
+    public function getAwsCredentials(): Credentials
+    {
+        if ($this->needNewCredentials($this->awsCredentials)) {
+            $this->newToken();
+        }
+        return $this->awsCredentials;
+    }
+
+    /**
+     * Get credentials for grantless operations with the given scope.
+     *
+     * @param string $scope The grantless operation scope to get credentials for
+     * @return \SellingPartnerApi\Credentials The grantless credentials
+     */
+    public function getGrantlessAwsCredentials(string $scope): Credentials
+    {
+        if ($this->needNewCredentials($this->grantlessAwsCredentials) || $scope !== $this->grantlessCredentialsScope) {
+            $this->newToken($scope);
+            $this->grantlessCredentialsScope = $scope;
+        }
+        return $this->grantlessAwsCredentials;
+    }
+
+    /**
+     * Get a security token using a role ARN.
+     *
+     * @return \SellingPartnerApi\Credentials A set of STS credentials
+     */
+    public function getRoleCredentials(): Credentials
+    {
+        $originalCreds = $this->getAwsCredentials();
+        if ($this->needNewCredentials($this->roleCredentials)) {
+            $client = new StsClient([
+                'sts_regional_endpoints' => 'regional',
+                'region' => $this->endpoint['region'],
+                'version' => '2011-06-15',
+                'credentials' => [
+                    'key' => $originalCreds->getAccessKeyId(),
+                    'secret' => $originalCreds->getSecretKey(),
+                ],
+            ]);
+            $assumeTime = time();
+            $assumed = $client->AssumeRole([
+                'RoleArn' => $this->roleArn,
+                'RoleSessionName' => "spapi-assumerole-{$assumeTime}",
+            ]);
+            $credentials = $assumed['Credentials'];
+            $this->roleCredentials = new Credentials(
+                $credentials['AccessKeyId'],
+                $credentials['SecretAccessKey'],
+                $credentials['SessionToken'],
+                $credentials['Expiration']->getTimestamp(),
+            );
+        }
+
+        return $this->roleCredentials;
+    }
+
+    /**
+     * Get a restricted data token for the operation corresponding to $path and $method.
+     *
+     * @param string $path The generic or specific path for the restricted operation
+     * @param string $method The HTTP method of the restricted operation
+     * @param ?bool $generic Whether or not $path is a generic URL or a specific one. Default true
+     * @return \SellingPartnerApi\Credentials A Credentials object holding the RDT
+     */
+    public function getRestrictedDataToken(string $path, string $method, ?bool $generic = true): Credentials
+    {
+        // Grab any pre-existing RDT for this operation
+        $existingCreds = null;
+        if (
+            $generic &&  // Don't try to find a pre-existing token for a non-generic restricted path
+            isset($this->restrictedDataTokens[$path]) &&
+            strtoupper($this->restrictedDataTokens[$path]['method']) === strtoupper($method)
+        ) {
+            $existingCreds = $this->restrictedDataTokens[$path]['credentials'];
+        }
+
+        $rdtCreds = $existingCreds;
+        // Create a new RDT if no matching one exists or if the matching one is expired
+        if ($this->needNewCredentials($existingCreds)) {
+            $standardCredentials = $this->getAwsCredentials();
+            $config = new Configuration([
+                "lwaClientId" => $this->lwaClientId,
+                "lwaClientSecret" => $this->lwaClientSecret,
+                "lwaRefreshToken" => $this->refreshToken,
+                "awsAccessKeyId" => $this->awsAccessKeyId,
+                "awsSecretAccessKey" => $this->awsSecretAccessKey,
+                "accessToken" => $standardCredentials->getSecurityToken(),
+                "accessTokenExpiration" => $standardCredentials->getExpiration(),
+                "roleArn" => $this->roleArn,
+                "endpoint" => $this->endpoint,
+            ]);
+            $tokensApi = new Api\TokensApi($config);
+
+            $body = new Model\Tokens\CreateRestrictedDataTokenRequest([
+                "restricted_resources" => [
+                    new Model\Tokens\RestrictedResource([
+                        "method" => $method,
+                        "path" => $path,
+                    ]),
+                ],
+            ]);
+            $rdtData = $tokensApi->createRestrictedDataToken($body);
+
+            $rdtCreds = new Credentials(
+                $this->awsAccessKeyId,
+                $this->awsSecretAccessKey,
+                $rdtData->getRestrictedDataToken(),
+                time() + intval($rdtData->getExpiresIn())
+            );
+
+            // Save new RDT, if it's generic
+            if ($generic) {
+                $this->restrictedDataTokens[$path] = [
+                    "method" => $method,
+                    "credentials" => $rdtCreds,
+                ];
+            }
+        }
+
+        return $rdtCreds;
+    }
+
+    /**
+     * Check if the given credentials need to be created/renewed.
+     *
+     * @param ?\SellingPartnerApi\Credentials $creds The credentials to check
+     * @return bool True if the credentials need to be updated, false otherwise
+     */
+    private function needNewCredentials(?Credentials $creds = null): bool
+    {
+        return $creds === null || $creds->getSecurityToken() === null || $creds->expiresSoon();
     }
 
     private function createCanonicalRequest(Psr7\Request $request): string

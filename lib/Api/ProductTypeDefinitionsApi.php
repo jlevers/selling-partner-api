@@ -150,7 +150,9 @@ class ProductTypeDefinitionsApi
     public function getDefinitionsProductTypeWithHttpInfo($product_type, $marketplace_ids, $seller_id = null, $product_type_version = 'LATEST', $requirements = 'LISTING', $requirements_enforced = 'ENFORCED', $locale = 'DEFAULT')
     {
         $request = $this->getDefinitionsProductTypeRequest($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -431,7 +433,9 @@ class ProductTypeDefinitionsApi
     {
         $returnType = '\SellingPartnerApi\Model\ProductTypeDefinitions\ProductTypeDefinition';
         $request = $this->getDefinitionsProductTypeRequest($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -643,7 +647,9 @@ class ProductTypeDefinitionsApi
     public function searchDefinitionsProductTypesWithHttpInfo($marketplace_ids, $keywords = null)
     {
         $request = $this->searchDefinitionsProductTypesRequest($marketplace_ids, $keywords);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -914,7 +920,9 @@ class ProductTypeDefinitionsApi
     {
         $returnType = '\SellingPartnerApi\Model\ProductTypeDefinitions\ProductTypeList';
         $request = $this->searchDefinitionsProductTypesRequest($marketplace_ids, $keywords);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

@@ -138,7 +138,9 @@ class VendorInvoicesApi
     public function submitInvoicesWithHttpInfo($body)
     {
         $request = $this->submitInvoicesRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class VendorInvoicesApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorInvoices\SubmitInvoicesResponse';
         $request = $this->submitInvoicesRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

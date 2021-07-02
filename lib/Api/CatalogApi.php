@@ -144,7 +144,9 @@ class CatalogApi
     public function getCatalogItemWithHttpInfo($asin, $marketplace_ids, $included_data = null, $locale = null)
     {
         $request = $this->getCatalogItemRequest($asin, $marketplace_ids, $included_data, $locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -419,7 +421,9 @@ class CatalogApi
     {
         $returnType = '\SellingPartnerApi\Model\Catalog\Item';
         $request = $this->getCatalogItemRequest($asin, $marketplace_ids, $included_data, $locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -621,7 +625,9 @@ class CatalogApi
     public function searchCatalogItemsWithHttpInfo($keywords, $marketplace_ids, $included_data = null, $brand_names = null, $classification_ids = null, $page_size = 10, $page_token = null, $keywords_locale = null, $locale = null)
     {
         $request = $this->searchCatalogItemsRequest($keywords, $marketplace_ids, $included_data, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale, $locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -906,7 +912,9 @@ class CatalogApi
     {
         $returnType = '\SellingPartnerApi\Model\Catalog\ItemSearchResults';
         $request = $this->searchCatalogItemsRequest($keywords, $marketplace_ids, $included_data, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale, $locale);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

@@ -138,7 +138,9 @@ class VendorTransactionStatusApi
     public function getTransactionWithHttpInfo($transaction_id)
     {
         $request = $this->getTransactionRequest($transaction_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class VendorTransactionStatusApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorTransactionStatus\GetTransactionResponse';
         $request = $this->getTransactionRequest($transaction_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

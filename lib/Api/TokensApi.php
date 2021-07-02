@@ -138,7 +138,9 @@ class TokensApi
     public function createRestrictedDataTokenWithHttpInfo($body)
     {
         $request = $this->createRestrictedDataTokenRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class TokensApi
     {
         $returnType = '\SellingPartnerApi\Model\Tokens\CreateRestrictedDataTokenResponse';
         $request = $this->createRestrictedDataTokenRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

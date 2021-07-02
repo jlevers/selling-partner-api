@@ -138,7 +138,9 @@ class VendorDirectFulfillmentShippingApi
     public function getCustomerInvoiceWithHttpInfo($purchase_order_number)
     {
         $request = $this->getCustomerInvoiceRequest($purchase_order_number);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse';
         $request = $this->getCustomerInvoiceRequest($purchase_order_number);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -577,7 +581,12 @@ class VendorDirectFulfillmentShippingApi
     public function getCustomerInvoicesWithHttpInfo($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = null, $next_token = null)
     {
         $request = $this->getCustomerInvoicesRequest($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/vendor/directFulfillment/shipping/v1/customerInvoices",
+            "getCustomerInvoices"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -836,7 +845,12 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoicesResponse';
         $request = $this->getCustomerInvoicesRequest($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/vendor/directFulfillment/shipping/v1/customerInvoices",
+            "getCustomerInvoices"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1044,7 +1058,9 @@ class VendorDirectFulfillmentShippingApi
     public function getPackingSlipWithHttpInfo($purchase_order_number)
     {
         $request = $this->getPackingSlipRequest($purchase_order_number);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1313,7 +1329,9 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse';
         $request = $this->getPackingSlipRequest($purchase_order_number);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1483,7 +1501,12 @@ class VendorDirectFulfillmentShippingApi
     public function getPackingSlipsWithHttpInfo($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = 'ASC', $next_token = null)
     {
         $request = $this->getPackingSlipsRequest($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/vendor/directFulfillment/shipping/v1/packingSlips",
+            "getPackingSlips"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1762,7 +1785,12 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse';
         $request = $this->getPackingSlipsRequest($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/vendor/directFulfillment/shipping/v1/packingSlips",
+            "getPackingSlips"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1970,7 +1998,9 @@ class VendorDirectFulfillmentShippingApi
     public function getShippingLabelWithHttpInfo($purchase_order_number)
     {
         $request = $this->getShippingLabelRequest($purchase_order_number);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2239,7 +2269,9 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse';
         $request = $this->getShippingLabelRequest($purchase_order_number);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2409,7 +2441,12 @@ class VendorDirectFulfillmentShippingApi
     public function getShippingLabelsWithHttpInfo($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = 'ASC', $next_token = null)
     {
         $request = $this->getShippingLabelsRequest($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/vendor/directFulfillment/shipping/v1/shippingLabels",
+            "getShippingLabels"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2668,7 +2705,12 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse';
         $request = $this->getShippingLabelsRequest($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/vendor/directFulfillment/shipping/v1/shippingLabels",
+            "getShippingLabels"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2876,7 +2918,9 @@ class VendorDirectFulfillmentShippingApi
     public function submitShipmentConfirmationsWithHttpInfo($body)
     {
         $request = $this->submitShipmentConfirmationsRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3145,7 +3189,9 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse';
         $request = $this->submitShipmentConfirmationsRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3299,7 +3345,9 @@ class VendorDirectFulfillmentShippingApi
     public function submitShipmentStatusUpdatesWithHttpInfo($body)
     {
         $request = $this->submitShipmentStatusUpdatesRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3568,7 +3616,9 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse';
         $request = $this->submitShipmentStatusUpdatesRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3722,7 +3772,9 @@ class VendorDirectFulfillmentShippingApi
     public function submitShippingLabelRequestWithHttpInfo($body)
     {
         $request = $this->submitShippingLabelRequestRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3991,7 +4043,9 @@ class VendorDirectFulfillmentShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse';
         $request = $this->submitShippingLabelRequestRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

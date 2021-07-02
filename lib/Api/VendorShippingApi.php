@@ -138,7 +138,9 @@ class VendorShippingApi
     public function submitShipmentConfirmationsWithHttpInfo($body)
     {
         $request = $this->submitShipmentConfirmationsRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class VendorShippingApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorShipping\SubmitShipmentConfirmationsResponse';
         $request = $this->submitShipmentConfirmationsRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

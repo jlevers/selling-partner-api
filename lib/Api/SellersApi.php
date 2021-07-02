@@ -136,7 +136,9 @@ class SellersApi
     public function getMarketplaceParticipationsWithHttpInfo()
     {
         $request = $this->getMarketplaceParticipationsRequest();
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -403,7 +405,9 @@ class SellersApi
     {
         $returnType = '\SellingPartnerApi\Model\Sellers\GetMarketplaceParticipationsResponse';
         $request = $this->getMarketplaceParticipationsRequest();
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

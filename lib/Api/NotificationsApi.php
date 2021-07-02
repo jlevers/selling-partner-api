@@ -138,7 +138,10 @@ class NotificationsApi
     public function createDestinationWithHttpInfo($body)
     {
         $request = $this->createDestinationRequest($body);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -427,7 +430,10 @@ class NotificationsApi
     {
         $returnType = '\SellingPartnerApi\Model\Notifications\CreateDestinationResponse';
         $request = $this->createDestinationRequest($body);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -584,7 +590,9 @@ class NotificationsApi
     public function createSubscriptionWithHttpInfo($notification_type, $body)
     {
         $request = $this->createSubscriptionRequest($notification_type, $body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -875,7 +883,9 @@ class NotificationsApi
     {
         $returnType = '\SellingPartnerApi\Model\Notifications\CreateSubscriptionResponse';
         $request = $this->createSubscriptionRequest($notification_type, $body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1044,7 +1054,10 @@ class NotificationsApi
     public function deleteDestinationWithHttpInfo($destination_id)
     {
         $request = $this->deleteDestinationRequest($destination_id);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1333,7 +1346,10 @@ class NotificationsApi
     {
         $returnType = '\SellingPartnerApi\Model\Notifications\DeleteDestinationResponse';
         $request = $this->deleteDestinationRequest($destination_id);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1492,7 +1508,10 @@ class NotificationsApi
     public function deleteSubscriptionByIdWithHttpInfo($subscription_id, $notification_type)
     {
         $request = $this->deleteSubscriptionByIdRequest($subscription_id, $notification_type);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1783,7 +1802,10 @@ class NotificationsApi
     {
         $returnType = '\SellingPartnerApi\Model\Notifications\DeleteSubscriptionByIdResponse';
         $request = $this->deleteSubscriptionByIdRequest($subscription_id, $notification_type);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1955,7 +1977,10 @@ class NotificationsApi
     public function getDestinationWithHttpInfo($destination_id)
     {
         $request = $this->getDestinationRequest($destination_id);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2244,7 +2269,10 @@ class NotificationsApi
     {
         $returnType = '\SellingPartnerApi\Model\Notifications\GetDestinationResponse';
         $request = $this->getDestinationRequest($destination_id);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2399,7 +2427,10 @@ class NotificationsApi
     public function getDestinationsWithHttpInfo()
     {
         $request = $this->getDestinationsRequest();
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2686,7 +2717,10 @@ class NotificationsApi
     {
         $returnType = '\SellingPartnerApi\Model\Notifications\GetDestinationsResponse';
         $request = $this->getDestinationsRequest();
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2828,7 +2862,9 @@ class NotificationsApi
     public function getSubscriptionWithHttpInfo($notification_type)
     {
         $request = $this->getSubscriptionRequest($notification_type);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3097,7 +3133,9 @@ class NotificationsApi
     {
         $returnType = '\SellingPartnerApi\Model\Notifications\GetSubscriptionResponse';
         $request = $this->getSubscriptionRequest($notification_type);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3255,7 +3293,10 @@ class NotificationsApi
     public function getSubscriptionByIdWithHttpInfo($subscription_id, $notification_type)
     {
         $request = $this->getSubscriptionByIdRequest($subscription_id, $notification_type);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3546,7 +3587,10 @@ class NotificationsApi
     {
         $returnType = '\SellingPartnerApi\Model\Notifications\GetSubscriptionByIdResponse';
         $request = $this->getSubscriptionByIdRequest($subscription_id, $notification_type);
-        $signedRequest = $this->config->signRequest($request, "sellingpartnerapi::notifications");
+        $signedRequest = $this->config->signRequest(
+            $request,
+            "sellingpartnerapi::notifications"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

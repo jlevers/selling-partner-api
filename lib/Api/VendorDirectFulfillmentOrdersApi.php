@@ -138,7 +138,9 @@ class VendorDirectFulfillmentOrdersApi
     public function getOrderWithHttpInfo($purchase_order_number)
     {
         $request = $this->getOrderRequest($purchase_order_number);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class VendorDirectFulfillmentOrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\GetOrderResponse';
         $request = $this->getOrderRequest($purchase_order_number);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -577,7 +581,9 @@ class VendorDirectFulfillmentOrdersApi
     public function getOrdersWithHttpInfo($created_after, $created_before, $ship_from_party_id = null, $status = null, $limit = null, $sort_order = null, $next_token = null, $include_details = 'true')
     {
         $request = $this->getOrdersRequest($created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -840,7 +846,9 @@ class VendorDirectFulfillmentOrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\GetOrdersResponse';
         $request = $this->getOrdersRequest($created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1064,7 +1072,9 @@ class VendorDirectFulfillmentOrdersApi
     public function submitAcknowledgementWithHttpInfo($body)
     {
         $request = $this->submitAcknowledgementRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1333,7 +1343,9 @@ class VendorDirectFulfillmentOrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementResponse';
         $request = $this->submitAcknowledgementRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

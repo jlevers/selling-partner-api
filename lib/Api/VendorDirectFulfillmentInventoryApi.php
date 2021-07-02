@@ -140,7 +140,9 @@ class VendorDirectFulfillmentInventoryApi
     public function submitInventoryUpdateWithHttpInfo($warehouse_id, $body)
     {
         $request = $this->submitInventoryUpdateRequest($warehouse_id, $body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -411,7 +413,9 @@ class VendorDirectFulfillmentInventoryApi
     {
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse';
         $request = $this->submitInventoryUpdateRequest($warehouse_id, $body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

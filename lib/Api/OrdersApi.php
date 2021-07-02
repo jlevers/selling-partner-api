@@ -138,7 +138,9 @@ class OrdersApi
     public function getOrderWithHttpInfo($order_id)
     {
         $request = $this->getOrderRequest($order_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -367,7 +369,9 @@ class OrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderResponse';
         $request = $this->getOrderRequest($order_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -523,7 +527,12 @@ class OrdersApi
     public function getOrderAddressWithHttpInfo($order_id)
     {
         $request = $this->getOrderAddressRequest($order_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/address",
+            "getOrderAddress"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -752,7 +761,12 @@ class OrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderAddressResponse';
         $request = $this->getOrderAddressRequest($order_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/address",
+            "getOrderAddress"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -908,7 +922,12 @@ class OrdersApi
     public function getOrderBuyerInfoWithHttpInfo($order_id)
     {
         $request = $this->getOrderBuyerInfoRequest($order_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/buyerInfo",
+            "getOrderBuyerInfo"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1137,7 +1156,12 @@ class OrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderBuyerInfoResponse';
         $request = $this->getOrderBuyerInfoRequest($order_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/buyerInfo",
+            "getOrderBuyerInfo"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1295,7 +1319,9 @@ class OrdersApi
     public function getOrderItemsWithHttpInfo($order_id, $next_token = null)
     {
         $request = $this->getOrderItemsRequest($order_id, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1526,7 +1552,9 @@ class OrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderItemsResponse';
         $request = $this->getOrderItemsRequest($order_id, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1692,7 +1720,12 @@ class OrdersApi
     public function getOrderItemsBuyerInfoWithHttpInfo($order_id, $next_token = null)
     {
         $request = $this->getOrderItemsBuyerInfoRequest($order_id, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/orderItems/buyerInfo",
+            "getOrderItemsBuyerInfo"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1923,7 +1956,12 @@ class OrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderItemsBuyerInfoResponse';
         $request = $this->getOrderItemsBuyerInfoRequest($order_id, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/orderItems/buyerInfo",
+            "getOrderItemsBuyerInfo"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2119,7 +2157,12 @@ class OrdersApi
     public function getOrdersWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null)
     {
         $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/orders/v0/orders",
+            "getOrders"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2380,7 +2423,12 @@ class OrdersApi
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrdersResponse';
         $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            "/orders/v0/orders",
+            "getOrders"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

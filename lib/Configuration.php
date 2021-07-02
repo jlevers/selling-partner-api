@@ -272,9 +272,9 @@ class Configuration
      *
      * @return Request The signed request
      */
-    public function signRequest($request, $scope = null)
+    public function signRequest($request, $scope = null, $restrictedPath = null, $operation = null)
     {
-        return $this->auth->signRequest($request, $scope);
+        return $this->auth->signRequest($request, $scope, $restrictedPath, $operation);
     }
 
     /**

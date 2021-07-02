@@ -138,7 +138,9 @@ class ReportsApi
     public function cancelReportWithHttpInfo($report_id)
     {
         $request = $this->cancelReportRequest($report_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class ReportsApi
     {
         $returnType = '\SellingPartnerApi\Model\Reports\CancelReportResponse';
         $request = $this->cancelReportRequest($report_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -563,7 +567,9 @@ class ReportsApi
     public function cancelReportScheduleWithHttpInfo($report_schedule_id)
     {
         $request = $this->cancelReportScheduleRequest($report_schedule_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -832,7 +838,9 @@ class ReportsApi
     {
         $returnType = '\SellingPartnerApi\Model\Reports\CancelReportScheduleResponse';
         $request = $this->cancelReportScheduleRequest($report_schedule_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -988,7 +996,9 @@ class ReportsApi
     public function createReportWithHttpInfo($body)
     {
         $request = $this->createReportRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1257,7 +1267,9 @@ class ReportsApi
     {
         $returnType = '\SellingPartnerApi\Model\Reports\CreateReportResponse';
         $request = $this->createReportRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1411,7 +1423,9 @@ class ReportsApi
     public function createReportScheduleWithHttpInfo($body)
     {
         $request = $this->createReportScheduleRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1680,7 +1694,9 @@ class ReportsApi
     {
         $returnType = '\SellingPartnerApi\Model\Reports\CreateReportScheduleResponse';
         $request = $this->createReportScheduleRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1834,7 +1850,9 @@ class ReportsApi
     public function getReportWithHttpInfo($report_id)
     {
         $request = $this->getReportRequest($report_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2103,7 +2121,9 @@ class ReportsApi
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportResponse';
         $request = $this->getReportRequest($report_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2236,14 +2256,15 @@ class ReportsApi
      * Operation getReportDocument
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\Reports\GetReportDocumentResponse
      */
-    public function getReportDocument($report_document_id)
+    public function getReportDocument($report_document_id, $report_type = null)
     {
-        list($response) = $this->getReportDocumentWithHttpInfo($report_document_id);
+        list($response) = $this->getReportDocumentWithHttpInfo($report_document_id, $report_type);
         return $response;
     }
 
@@ -2251,15 +2272,21 @@ class ReportsApi
      * Operation getReportDocumentWithHttpInfo
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\Reports\GetReportDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getReportDocumentWithHttpInfo($report_document_id)
+    public function getReportDocumentWithHttpInfo($report_document_id, $report_type = null)
     {
-        $request = $this->getReportDocumentRequest($report_document_id);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getReportDocumentRequest($report_document_id, $report_type);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            $request->getUri()->getPath(),
+            "getReportDocument"
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2500,13 +2527,14 @@ class ReportsApi
      * 
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReportDocumentAsync($report_document_id)
+    public function getReportDocumentAsync($report_document_id, $report_type = null)
     {
-        return $this->getReportDocumentAsyncWithHttpInfo($report_document_id)
+        return $this->getReportDocumentAsyncWithHttpInfo($report_document_id, $report_type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2520,15 +2548,21 @@ class ReportsApi
      * 
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReportDocumentAsyncWithHttpInfo($report_document_id)
+    public function getReportDocumentAsyncWithHttpInfo($report_document_id, $report_type = null)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportDocumentResponse';
-        $request = $this->getReportDocumentRequest($report_document_id);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getReportDocumentRequest($report_document_id, $report_type);
+        $signedRequest = $this->config->signRequest(
+            $request,
+            null,
+            $request->getUri()->getPath(),
+            "getReportDocument"
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2568,11 +2602,12 @@ class ReportsApi
      * Create request for operation 'getReportDocument'
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getReportDocumentRequest($report_document_id)
+    public function getReportDocumentRequest($report_document_id, $report_type = null)
     {
         // verify the required parameter 'report_document_id' is set
         if ($report_document_id === null || (is_array($report_document_id) && count($report_document_id) === 0)) {
@@ -2588,6 +2623,13 @@ class ReportsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if (is_array($report_type)) {
+            $report_type = ObjectSerializer::serializeCollection($report_type, '', true);
+        }
+        if ($report_type !== null) {
+            $queryParams['reportType'] = $report_type;
+        }
 
 
         // path params
@@ -2684,7 +2726,9 @@ class ReportsApi
     public function getReportScheduleWithHttpInfo($report_schedule_id)
     {
         $request = $this->getReportScheduleRequest($report_schedule_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2953,7 +2997,9 @@ class ReportsApi
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportScheduleResponse';
         $request = $this->getReportScheduleRequest($report_schedule_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3109,7 +3155,9 @@ class ReportsApi
     public function getReportSchedulesWithHttpInfo($report_types)
     {
         $request = $this->getReportSchedulesRequest($report_types);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3378,7 +3426,9 @@ class ReportsApi
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportSchedulesResponse';
         $request = $this->getReportSchedulesRequest($report_types);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3552,7 +3602,9 @@ class ReportsApi
     public function getReportsWithHttpInfo($report_types = null, $processing_statuses = null, $marketplace_ids = null, $page_size = 10, $created_since = null, $created_until = null, $next_token = null)
     {
         $request = $this->getReportsRequest($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -3833,7 +3885,9 @@ class ReportsApi
     {
         $returnType = '\SellingPartnerApi\Model\Reports\GetReportsResponse';
         $request = $this->getReportsRequest($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

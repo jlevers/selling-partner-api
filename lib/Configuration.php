@@ -103,6 +103,13 @@ class Configuration
             throw new RuntimeException("Required configuration values were missing: " . implode(", ", $missingKeys));
         }
 
+        if (
+            (isset($configurationOptions["accessToken"]) && !isset($configurationOptions["accessTokenExpiration"])) ||
+            (!isset($configurationOptions["accessToken"]) && isset($configurationOptions["accessTokenExpiration"]))
+        ) {
+            throw new RuntimeException('If one of the `accessToken` or `accessTokenExpiration` configuration options is provided, the other must be provided as well');
+        }
+
         $options = array_merge(
             $configurationOptions,
             [

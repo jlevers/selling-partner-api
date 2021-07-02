@@ -64,13 +64,6 @@ class Authentication
 
         $this->roleArn = $configurationOptions['roleArn'];
 
-        if (
-            ($accessToken === null && $accessTokenExpiration !== null) ||
-            ($accessToken !== null && $accessTokenExpiration === null)
-        ) {
-            throw new RuntimeException('If one of the `accessToken` or `accessTokenExpiration` configuration options is provided, the other must be provided as well');
-        }
-
         if ($accessToken !== null && $accessTokenExpiration !== null) {
             $this->populateCredentials($this->awsAccessKeyId, $this->awsSecretAccessKey, $accessToken, $accessTokenExpiration);
         }

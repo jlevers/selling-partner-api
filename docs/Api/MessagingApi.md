@@ -1,7 +1,5 @@
 # SellingPartnerApi\MessagingApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**confirmCustomizationDetails()**](MessagingApi.md#confirmCustomizationDetails) | **POST** /messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails | 

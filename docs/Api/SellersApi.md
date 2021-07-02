@@ -1,7 +1,5 @@
 # SellingPartnerApi\SellersApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getMarketplaceParticipations()**](SellersApi.md#getMarketplaceParticipations) | **GET** /sellers/v1/marketplaceParticipations | 

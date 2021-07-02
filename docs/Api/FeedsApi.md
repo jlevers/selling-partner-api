@@ -1,7 +1,5 @@
 # SellingPartnerApi\FeedsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelFeed()**](FeedsApi.md#cancelFeed) | **DELETE** /feeds/2020-09-04/feeds/{feedId} | 

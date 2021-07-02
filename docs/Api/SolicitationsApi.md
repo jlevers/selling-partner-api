@@ -1,7 +1,5 @@
 # SellingPartnerApi\SolicitationsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createProductReviewAndSellerFeedbackSolicitation()**](SolicitationsApi.md#createProductReviewAndSellerFeedbackSolicitation) | **POST** /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback | 

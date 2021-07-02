@@ -1,7 +1,5 @@
 # SellingPartnerApi\VendorDirectFulfillmentShippingApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCustomerInvoice()**](VendorDirectFulfillmentShippingApi.md#getCustomerInvoice) | **GET** /vendor/directFulfillment/shipping/v1/customerInvoices/{purchaseOrderNumber} | 

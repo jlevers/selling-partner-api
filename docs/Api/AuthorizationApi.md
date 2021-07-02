@@ -1,7 +1,5 @@
 # SellingPartnerApi\AuthorizationApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAuthorizationCode()**](AuthorizationApi.md#getAuthorizationCode) | **GET** /authorization/v1/authorizationCode | Returns the Login with Amazon (LWA) authorization code for an existing Amazon MWS authorization.

@@ -1,7 +1,5 @@
 # SellingPartnerApi\OrdersApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getOrder()**](OrdersApi.md#getOrder) | **GET** /orders/v0/orders/{orderId} | 

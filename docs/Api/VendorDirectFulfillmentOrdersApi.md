@@ -1,7 +1,5 @@
 # SellingPartnerApi\VendorDirectFulfillmentOrdersApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getOrder()**](VendorDirectFulfillmentOrdersApi.md#getOrder) | **GET** /vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber} | 

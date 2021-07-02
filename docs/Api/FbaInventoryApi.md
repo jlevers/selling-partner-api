@@ -1,7 +1,5 @@
 # SellingPartnerApi\FbaInventoryApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getInventorySummaries()**](FbaInventoryApi.md#getInventorySummaries) | **GET** /fba/inventory/v1/summaries | 

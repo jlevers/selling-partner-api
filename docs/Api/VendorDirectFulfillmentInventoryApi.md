@@ -1,7 +1,5 @@
 # SellingPartnerApi\VendorDirectFulfillmentInventoryApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**submitInventoryUpdate()**](VendorDirectFulfillmentInventoryApi.md#submitInventoryUpdate) | **POST** /vendor/directFulfillment/inventory/v1/warehouses/{warehouseId}/items | 

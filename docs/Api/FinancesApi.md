@@ -1,7 +1,5 @@
 # SellingPartnerApi\FinancesApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**listFinancialEventGroups()**](FinancesApi.md#listFinancialEventGroups) | **GET** /finances/v0/financialEventGroups | 

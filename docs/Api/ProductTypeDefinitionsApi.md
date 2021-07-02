@@ -1,7 +1,5 @@
 # SellingPartnerApi\ProductTypeDefinitionsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getDefinitionsProductType()**](ProductTypeDefinitionsApi.md#getDefinitionsProductType) | **GET** /definitions/2020-09-01/productTypes/{productType} | 

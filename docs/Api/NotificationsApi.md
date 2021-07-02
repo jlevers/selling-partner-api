@@ -1,7 +1,5 @@
 # SellingPartnerApi\NotificationsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createDestination()**](NotificationsApi.md#createDestination) | **POST** /notifications/v1/destinations | 

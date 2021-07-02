@@ -1,7 +1,5 @@
 # SellingPartnerApi\CatalogApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCatalogItem()**](CatalogApi.md#getCatalogItem) | **GET** /catalog/2020-12-01/items/{asin} | 

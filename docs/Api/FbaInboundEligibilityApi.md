@@ -1,7 +1,5 @@
 # SellingPartnerApi\FbaInboundEligibilityApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getItemEligibilityPreview()**](FbaInboundEligibilityApi.md#getItemEligibilityPreview) | **GET** /fba/inbound/v1/eligibility/itemPreview | 

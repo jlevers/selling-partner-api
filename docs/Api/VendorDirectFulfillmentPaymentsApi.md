@@ -1,7 +1,5 @@
 # SellingPartnerApi\VendorDirectFulfillmentPaymentsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**submitInvoice()**](VendorDirectFulfillmentPaymentsApi.md#submitInvoice) | **POST** /vendor/directFulfillment/payments/v1/invoices | 

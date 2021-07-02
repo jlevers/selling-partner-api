@@ -1,7 +1,5 @@
 # SellingPartnerApi\ShipmentInvoicingApi
 
-All URIs are relative to http://localhost.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getInvoiceStatus()**](ShipmentInvoicingApi.md#getInvoiceStatus) | **GET** /fba/outbound/brazil/v0/shipments/{shipmentId}/invoice/status | 

@@ -1,7 +1,5 @@
 # SellingPartnerApi\VendorDirectFulfillmentTransactionsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getTransactionStatus()**](VendorDirectFulfillmentTransactionsApi.md#getTransactionStatus) | **GET** /vendor/directFulfillment/transactions/v1/transactions/{transactionId} | 

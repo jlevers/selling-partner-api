@@ -18,7 +18,7 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 
 * Supports all Selling Partner API operations (for Sellers and Vendors) as of 7/2/2021 ([see here](#supported-api-segments) for links to documentation for all calls)
 * Supports applications made with both IAM user and IAM role ARNs ([docs](#setup))
-* Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API neededs
+* Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
 
 
@@ -50,7 +50,7 @@ $config = new SellingPartnerApi\Configuration([
     "lwaRefreshToken" => "<LWA refresh token>",
     "awsAccessKeyId" => "<AWS access key ID>",
     "awsSecretAccessKey" => "<AWS secret access key>",
-    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoint.php
 ]);
 ```
 

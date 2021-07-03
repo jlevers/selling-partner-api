@@ -1,7 +1,5 @@
 # SellingPartnerApi\FbaInventoryApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getInventorySummaries()**](FbaInventoryApi.md#getInventorySummaries) | **GET** /fba/inventory/v1/summaries | 
@@ -15,7 +13,19 @@ getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $det
 
 
 
-Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime and sellerSkus parameters:  - All inventory summaries with available details are returned when the startDateTime and sellerSkus parameters are omitted. - When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus parameter is ignored. - When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 90 | 150 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns a list of inventory summaries. The summaries returned depend on the presence or absence of the startDateTime and sellerSkus parameters:
+
+- All inventory summaries with available details are returned when the startDateTime and sellerSkus parameters are omitted.
+- When startDateTime is provided, the operation returns inventory summaries that have had changes after the date and time specified. The sellerSkus parameter is ignored.
+- When the sellerSkus parameter is provided, the operation returns inventory summaries for only the specified sellerSkus.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 90 | 150 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -23,17 +33,15 @@ Returns a list of inventory summaries. The summaries returned depend on the pres
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\FbaInventoryApi($config);
 $granularity_type = 'granularity_type_example'; // string | The granularity type for the inventory aggregation level.

@@ -1,7 +1,5 @@
 # SellingPartnerApi\SolicitationsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createProductReviewAndSellerFeedbackSolicitation()**](SolicitationsApi.md#createProductReviewAndSellerFeedbackSolicitation) | **POST** /solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback | 
@@ -16,7 +14,15 @@ createProductReviewAndSellerFeedbackSolicitation($amazon_order_id, $marketplace_
 
 
 
-Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Sends a solicitation to a buyer asking for seller feedback and a product review for the specified order. Send only one productReviewAndSellerFeedback or free form proactive message per order.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -24,17 +30,15 @@ Sends a solicitation to a buyer asking for seller feedback and a product review 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\SolicitationsApi($config);
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a solicitation is sent.
@@ -76,7 +80,15 @@ getSolicitationActionsForOrder($amazon_order_id, $marketplace_ids): \SellingPart
 
 
 
-Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns a list of solicitation types that are available for an order that you specify. A solicitation type is represented by an actions object, which contains a path and query parameter(s). You can use the path and parameter(s) to call an operation that sends a solicitation. Currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -84,17 +96,15 @@ Returns a list of solicitation types that are available for an order that you sp
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\SolicitationsApi($config);
 $amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.

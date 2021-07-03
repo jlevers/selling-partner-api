@@ -58,8 +58,11 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'offer_type' => '\SellingPartnerApi\Model\ProductPricing\OfferCustomerType',
         'buying_price' => '\SellingPartnerApi\Model\ProductPricing\PriceType',
         'regular_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'business_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'quantity_discount_prices' => '\SellingPartnerApi\Model\ProductPricing\QuantityDiscountPriceType[]',
         'fulfillment_channel' => 'string',
         'item_condition' => 'string',
         'item_sub_condition' => 'string',
@@ -74,8 +77,11 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'offer_type' => null,
         'buying_price' => null,
         'regular_price' => null,
+        'business_price' => null,
+        'quantity_discount_prices' => null,
         'fulfillment_channel' => null,
         'item_condition' => null,
         'item_sub_condition' => null,
@@ -109,8 +115,11 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'offer_type' => 'offerType',
         'buying_price' => 'BuyingPrice',
         'regular_price' => 'RegularPrice',
+        'business_price' => 'businessPrice',
+        'quantity_discount_prices' => 'quantityDiscountPrices',
         'fulfillment_channel' => 'FulfillmentChannel',
         'item_condition' => 'ItemCondition',
         'item_sub_condition' => 'ItemSubCondition',
@@ -123,8 +132,11 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'offer_type' => 'setOfferType',
         'buying_price' => 'setBuyingPrice',
         'regular_price' => 'setRegularPrice',
+        'business_price' => 'setBusinessPrice',
+        'quantity_discount_prices' => 'setQuantityDiscountPrices',
         'fulfillment_channel' => 'setFulfillmentChannel',
         'item_condition' => 'setItemCondition',
         'item_sub_condition' => 'setItemSubCondition',
@@ -137,8 +149,11 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'offer_type' => 'getOfferType',
         'buying_price' => 'getBuyingPrice',
         'regular_price' => 'getRegularPrice',
+        'business_price' => 'getBusinessPrice',
+        'quantity_discount_prices' => 'getQuantityDiscountPrices',
         'fulfillment_channel' => 'getFulfillmentChannel',
         'item_condition' => 'getItemCondition',
         'item_sub_condition' => 'getItemSubCondition',
@@ -205,8 +220,11 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['offer_type'] = $data['offer_type'] ?? null;
         $this->container['buying_price'] = $data['buying_price'] ?? null;
         $this->container['regular_price'] = $data['regular_price'] ?? null;
+        $this->container['business_price'] = $data['business_price'] ?? null;
+        $this->container['quantity_discount_prices'] = $data['quantity_discount_prices'] ?? null;
         $this->container['fulfillment_channel'] = $data['fulfillment_channel'] ?? null;
         $this->container['item_condition'] = $data['item_condition'] ?? null;
         $this->container['item_sub_condition'] = $data['item_sub_condition'] ?? null;
@@ -254,6 +272,30 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets offer_type
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferCustomerType|null
+     */
+    public function getOfferType()
+    {
+        return $this->container['offer_type'];
+    }
+
+    /**
+     * Sets offer_type
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferCustomerType|null $offer_type offer_type
+     *
+     * @return self
+     */
+    public function setOfferType($offer_type)
+    {
+        $this->container['offer_type'] = $offer_type;
+
+        return $this;
+    }
 
     /**
      * Gets buying_price
@@ -304,6 +346,54 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets business_price
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType|null
+     */
+    public function getBusinessPrice()
+    {
+        return $this->container['business_price'];
+    }
+
+    /**
+     * Sets business_price
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType|null $business_price business_price
+     *
+     * @return self
+     */
+    public function setBusinessPrice($business_price)
+    {
+        $this->container['business_price'] = $business_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_discount_prices
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\QuantityDiscountPriceType[]|null
+     */
+    public function getQuantityDiscountPrices()
+    {
+        return $this->container['quantity_discount_prices'];
+    }
+
+    /**
+     * Sets quantity_discount_prices
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\QuantityDiscountPriceType[]|null $quantity_discount_prices quantity_discount_prices
+     *
+     * @return self
+     */
+    public function setQuantityDiscountPrices($quantity_discount_prices)
+    {
+        $this->container['quantity_discount_prices'] = $quantity_discount_prices;
+
+        return $this;
+    }
+
+    /**
      * Gets fulfillment_channel
      *
      * @return string
@@ -316,7 +406,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_channel
      *
-     * @param string $fulfillment_channel The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
+     * @param string $fulfillment_channel The fulfillment channel for the offer listing. Possible values: * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
      *
      * @return self
      */

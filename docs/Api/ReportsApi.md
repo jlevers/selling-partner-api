@@ -1,7 +1,5 @@
 # SellingPartnerApi\ReportsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelReport()**](ReportsApi.md#cancelReport) | **DELETE** /reports/2020-09-04/reports/{reportId} | 
@@ -23,7 +21,15 @@ cancelReport($report_id): \SellingPartnerApi\Model\Reports\CancelReportResponse
 
 
 
-Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0222 | 10 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -31,17 +37,15 @@ Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_id = 'report_id_example'; // string | The identifier for the report. This identifier is unique only in combination with a seller ID.
@@ -81,7 +85,15 @@ cancelReportSchedule($report_schedule_id): \SellingPartnerApi\Model\Reports\Canc
 
 
 
-Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Cancels the report schedule that you specify.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0222 | 10 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -89,17 +101,15 @@ Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_schedule_id = 'report_schedule_id_example'; // string | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
@@ -139,7 +149,15 @@ createReport($body): \SellingPartnerApi\Model\Reports\CreateReportResponse
 
 
 
-Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Creates a report.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0167 | 15 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -147,17 +165,15 @@ Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $body = new \SellingPartnerApi\Model\Reports\CreateReportSpecification(); // \SellingPartnerApi\Model\Reports\CreateReportSpecification
@@ -197,7 +213,15 @@ createReportSchedule($body): \SellingPartnerApi\Model\Reports\CreateReportSchedu
 
 
 
-Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0222 | 10 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -205,17 +229,15 @@ Creates a report schedule. If a report schedule with the same report type and ma
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $body = new \SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification(); // \SellingPartnerApi\Model\Reports\CreateReportScheduleSpecification
@@ -255,7 +277,15 @@ getReport($report_id): \SellingPartnerApi\Model\Reports\GetReportResponse
 
 
 
-Returns report details (including the reportDocumentId, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns report details (including the reportDocumentId, if available) for the report that you specify.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 2.0 | 15 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -263,17 +293,15 @@ Returns report details (including the reportDocumentId, if available) for the re
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_id = 'report_id_example'; // string | The identifier for the report. This identifier is unique only in combination with a seller ID.
@@ -308,12 +336,20 @@ Name | Type | Description  | Notes
 ## `getReportDocument()`
 
 ```php
-getReportDocument($report_document_id): \SellingPartnerApi\Model\Reports\GetReportDocumentResponse
+getReportDocument($report_document_id, $report_type): \SellingPartnerApi\Model\Reports\GetReportDocumentResponse
 ```
 
 
 
-Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0167 | 15 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -321,23 +357,22 @@ Returns the information required for retrieving a report document's contents. Th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_document_id = 'report_document_id_example'; // string | The identifier for the report document.
+$report_type = 'report_type_example'; // string | The name of the document's report type.
 
 try {
-    $result = $apiInstance->getReportDocument($report_document_id);
+    $result = $apiInstance->getReportDocument($report_document_id, $report_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->getReportDocument: ', $e->getMessage(), PHP_EOL;
@@ -349,6 +384,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_document_id** | **string**| The identifier for the report document. |
+ **report_type** | **string**| The name of the document&#39;s report type. | [optional]
 
 ### Return type
 
@@ -371,7 +407,15 @@ getReportSchedule($report_schedule_id): \SellingPartnerApi\Model\Reports\GetRepo
 
 
 
-Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns report schedule details for the report schedule that you specify.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0222 | 10 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -379,17 +423,15 @@ Returns report schedule details for the report schedule that you specify.  **Usa
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_schedule_id = 'report_schedule_id_example'; // string | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
@@ -429,7 +471,15 @@ getReportSchedules($report_types): \SellingPartnerApi\Model\Reports\GetReportSch
 
 
 
-Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns report schedule details that match the filters that you specify.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0222 | 10 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -437,17 +487,15 @@ Returns report schedule details that match the filters that you specify.  **Usag
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_types = array('report_types_example'); // string[] | A list of report types used to filter report schedules.
@@ -487,7 +535,15 @@ getReports($report_types, $processing_statuses, $marketplace_ids, $page_size, $c
 
 
 
-Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns report details for the reports that match the filters that you specify.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 0.0222 | 10 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -495,17 +551,15 @@ Returns report details for the reports that match the filters that you specify. 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_types = array('report_types_example'); // string[] | A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.

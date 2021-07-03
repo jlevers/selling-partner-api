@@ -344,7 +344,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets are_cases_required
      *
-     * @param bool|null $are_cases_required Indicates whether or not an inbound shipment contains case-packed boxes. Note: A shipment must contain either all case-packed boxes or all individually packed boxes.  Possible values:  true - All boxes in the shipment must be case packed.  false - All boxes in the shipment must be individually packed.  Note: If AreCasesRequired = true for an inbound shipment, then the value of QuantityInCase must be greater than zero for every item in the shipment. Otherwise the service returns an error.
+     * @param bool|null $are_cases_required Indicates whether or not an inbound shipment contains case-packed boxes. Note: A shipment must contain either all case-packed boxes or all individually packed boxes. Possible values: true - All boxes in the shipment must be case packed. false - All boxes in the shipment must be individually packed. Note: If AreCasesRequired = true for an inbound shipment, then the value of QuantityInCase must be greater than zero for every item in the shipment. Otherwise the service returns an error.
      *
      * @return self
      */

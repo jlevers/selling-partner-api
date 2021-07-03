@@ -33,7 +33,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * OptionalFulfillmentProgram Class Doc Comment
  *
  * @category Class
- * @description An optional enrollment program for which to return the estimated fees when the offer is fulfilled by Amazon (IsAmazonFulfilled is set to true).
+ * @description An optional enrollment program to return the estimated fees when the offer is fulfilled by Amazon (IsAmazonFulfilled is set to true).
  * @package  SellingPartnerApi
  * @group 
  */

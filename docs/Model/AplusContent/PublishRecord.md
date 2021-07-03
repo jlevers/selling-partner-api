@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **marketplace_id** | **string** | The identifier for the marketplace where the A+ Content is published. |
-**locale** | **string** | The IETF language tag. This only supports the primary language subtag with one secondary language subtag. The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$ |
+**locale** | **string** | The IETF language tag. This only supports the primary language subtag with one secondary language subtag. The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary subtags.
+**Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$ |
 **asin** | **string** | The Amazon Standard Identification Number (ASIN). |
 **content_type** | [**\SellingPartnerApi\Model\AplusContent\ContentType**](ContentType.md) |  |
 **content_sub_type** | **string** | The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time. | [optional]

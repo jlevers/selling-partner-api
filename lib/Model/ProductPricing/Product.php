@@ -63,7 +63,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'attribute_sets' => 'object[]',
         'relationships' => 'object[]',
         'competitive_pricing' => '\SellingPartnerApi\Model\ProductPricing\CompetitivePricingType',
-        'sales_rankings' => '\SellingPartnerApi\Model\ProductPricing\SalesRank[]',
+        'sales_rankings' => '\SellingPartnerApi\Model\ProductPricing\SalesRankType[]',
         'offers' => '\SellingPartnerApi\Model\ProductPricing\OfferType[]'
     ];
 
@@ -340,7 +340,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sales_rankings
      *
-     * @return \SellingPartnerApi\Model\ProductPricing\SalesRank[]|null
+     * @return \SellingPartnerApi\Model\ProductPricing\SalesRankType[]|null
      */
     public function getSalesRankings()
     {
@@ -350,7 +350,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sales_rankings
      *
-     * @param \SellingPartnerApi\Model\ProductPricing\SalesRank[]|null $sales_rankings A list of sales rank information for the item, by category.
+     * @param \SellingPartnerApi\Model\ProductPricing\SalesRankType[]|null $sales_rankings A list of sales rank information for the item, by category.
      *
      * @return self
      */

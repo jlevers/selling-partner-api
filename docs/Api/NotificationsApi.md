@@ -1,7 +1,5 @@
 # SellingPartnerApi\NotificationsApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createDestination()**](NotificationsApi.md#createDestination) | **POST** /notifications/v1/destinations | 
@@ -22,7 +20,15 @@ createDestination($body): \SellingPartnerApi\Model\Notifications\CreateDestinati
 
 
 
-Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -30,17 +36,15 @@ Creates a destination resource to receive notifications. The createDestination A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $body = new \SellingPartnerApi\Model\Notifications\CreateDestinationRequest(); // \SellingPartnerApi\Model\Notifications\CreateDestinationRequest
@@ -80,7 +84,15 @@ createSubscription($notification_type, $body): \SellingPartnerApi\Model\Notifica
 
 
 
-Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -88,20 +100,20 @@ Creates a subscription for the specified notification type to be delivered to th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
-$notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+$notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.
+
+ For more information about notification types, see the Notifications API Use Case Guide.
 $body = new \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest(); // \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest
 
 try {
@@ -116,7 +128,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_type** | **string**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. |
+ **notification_type** | **string**| The type of notification to which you want to subscribe.
+
+ For more information about notification types, see the Notifications API Use Case Guide. |
  **body** | [**\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/Notifications/CreateSubscriptionRequest.md)|  |
 
 ### Return type
@@ -140,7 +154,15 @@ deleteDestination($destination_id): \SellingPartnerApi\Model\Notifications\Delet
 
 
 
-Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -148,17 +170,15 @@ Deletes the destination that you specify. The deleteDestination API is grantless
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $destination_id = 'destination_id_example'; // string | The identifier for the destination that you want to delete.
@@ -198,7 +218,15 @@ deleteSubscriptionById($subscription_id, $notification_type): \SellingPartnerApi
 
 
 
-Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -206,21 +234,21 @@ Deletes the subscription indicated by the subscription identifier and notificati
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $subscription_id = 'subscription_id_example'; // string | The identifier for the subscription that you want to delete.
-$notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+$notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.
+
+ For more information about notification types, see the Notifications API Use Case Guide.
 
 try {
     $result = $apiInstance->deleteSubscriptionById($subscription_id, $notification_type);
@@ -235,7 +263,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **string**| The identifier for the subscription that you want to delete. |
- **notification_type** | **string**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. |
+ **notification_type** | **string**| The type of notification to which you want to subscribe.
+
+ For more information about notification types, see the Notifications API Use Case Guide. |
 
 ### Return type
 
@@ -258,7 +288,15 @@ getDestination($destination_id): \SellingPartnerApi\Model\Notifications\GetDesti
 
 
 
-Returns information about the destination that you specify. The getDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns information about the destination that you specify. The getDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -266,17 +304,15 @@ Returns information about the destination that you specify. The getDestination A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $destination_id = 'destination_id_example'; // string | The identifier generated when you created the destination.
@@ -316,7 +352,15 @@ getDestinations(): \SellingPartnerApi\Model\Notifications\GetDestinationsRespons
 
 
 
-Returns information about all destinations. The getDestinations API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns information about all destinations. The getDestinations API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -324,17 +368,15 @@ Returns information about all destinations. The getDestinations API is grantless
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 
@@ -371,7 +413,15 @@ getSubscription($notification_type): \SellingPartnerApi\Model\Notifications\GetS
 
 
 
-Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -379,20 +429,20 @@ Returns information about subscriptions of the specified notification type. You 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
-$notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+$notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.
+
+ For more information about notification types, see the Notifications API Use Case Guide.
 
 try {
     $result = $apiInstance->getSubscription($notification_type);
@@ -406,7 +456,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_type** | **string**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. |
+ **notification_type** | **string**| The type of notification to which you want to subscribe.
+
+ For more information about notification types, see the Notifications API Use Case Guide. |
 
 ### Return type
 
@@ -429,7 +481,15 @@ getSubscriptionById($subscription_id, $notification_type): \SellingPartnerApi\Mo
 
 
 
-Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+
+**Usage Plan:**
+
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1 | 5 |
+
+For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -437,21 +497,21 @@ Returns information about a subscription for the specified notification type. Th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $subscription_id = 'subscription_id_example'; // string | The identifier for the subscription that you want to get.
-$notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+$notification_type = 'notification_type_example'; // string | The type of notification to which you want to subscribe.
+
+ For more information about notification types, see the Notifications API Use Case Guide.
 
 try {
     $result = $apiInstance->getSubscriptionById($subscription_id, $notification_type);
@@ -466,7 +526,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **string**| The identifier for the subscription that you want to get. |
- **notification_type** | **string**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. |
+ **notification_type** | **string**| The type of notification to which you want to subscribe.
+
+ For more information about notification types, see the Notifications API Use Case Guide. |
 
 ### Return type
 

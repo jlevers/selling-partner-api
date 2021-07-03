@@ -231,7 +231,7 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets custom_text_for_label
      *
-     * @param string|null $custom_text_for_label Custom text to print on the label.  Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support CustomTextForLabel.
+     * @param string|null $custom_text_for_label Custom text to print on the label. Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support CustomTextForLabel.
      *
      * @return self
      */

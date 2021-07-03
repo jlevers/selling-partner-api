@@ -419,7 +419,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets payment_amount_type
      *
-     * @param string|null $payment_amount_type The type of payment.  Possible values:  * Sales
+     * @param string|null $payment_amount_type The type of payment. Possible values: * Sales
      *
      * @return self
      */
@@ -467,7 +467,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fulfillment_channel
      *
-     * @param string|null $fulfillment_channel The fulfillment channel.  Possible values:  * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)  * MFN - Merchant Fulfillment Network (self-fulfilled)
+     * @param string|null $fulfillment_channel The fulfillment channel. Possible values: * AFN - Amazon Fulfillment Network (Fulfillment by Amazon) * MFN - Merchant Fulfillment Network (self-fulfilled)
      *
      * @return self
      */

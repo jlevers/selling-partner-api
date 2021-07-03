@@ -257,7 +257,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets retrocharge_event_type
      *
-     * @param string|null $retrocharge_event_type The type of event.  Possible values:  * Retrocharge  * RetrochargeReversal
+     * @param string|null $retrocharge_event_type The type of event. Possible values: * Retrocharge * RetrochargeReversal
      *
      * @return self
      */

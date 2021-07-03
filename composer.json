@@ -1,6 +1,6 @@
 {
     "name": "jlevers/selling-partner-api",
-    "version": "2.3.2",
+    "version": "3.0.0",
     "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",
@@ -27,17 +27,15 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^7.2",
-        "vlucas/phpdotenv": "^4.0 || ^5.2",
         "cyberdummy/gzstream": "^0.0.2",
         "jsq/psr7-stream-encryption": "^0.4.0",
-	"phpoffice/phpspreadsheet": "^1.18"
+        "phpoffice/phpspreadsheet": "^1.18"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": { "SellingPartnerApi\\" : "lib/" },
-        "files": [ "lib/functions_include.php" ]
+        "psr-4": { "SellingPartnerApi\\" : "lib/" }
     }
 }

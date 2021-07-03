@@ -359,7 +359,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets include_cod_fulfillment_preview
      *
-     * @param bool|null $include_cod_fulfillment_preview Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).  Possible values:  * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
+     * @param bool|null $include_cod_fulfillment_preview Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery). Possible values: * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
      *
      * @return self
      */

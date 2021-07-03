@@ -10,7 +10,7 @@
 /**
  * Selling Partner API for FBA Inventory
  *
- * The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon's fulfillment network.
+ * The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon's fulfillment network. Today this API is available only in the North America region. In 2021 we plan to release this API in the Europe and Far East regions.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -150,7 +150,9 @@ class FbaInventoryApi
     public function getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $detail = false, $start_date_time = null, $seller_skus = null, $next_token = null)
     {
         $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $detail, $start_date_time, $seller_skus, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -391,7 +393,9 @@ class FbaInventoryApi
     {
         $returnType = '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse';
         $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $detail, $start_date_time, $seller_skus, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

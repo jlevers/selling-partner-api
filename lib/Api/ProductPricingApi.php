@@ -118,14 +118,15 @@ class ProductPricingApi
      * @param  string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param  string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\ProductPricing\GetPricingResponse
      */
-    public function getCompetitivePricing($marketplace_id, $item_type, $asins = null, $skus = null)
+    public function getCompetitivePricing($marketplace_id, $item_type, $asins = null, $skus = null, $customer_type = null)
     {
-        list($response) = $this->getCompetitivePricingWithHttpInfo($marketplace_id, $item_type, $asins, $skus);
+        list($response) = $this->getCompetitivePricingWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $customer_type);
         return $response;
     }
 
@@ -136,15 +137,18 @@ class ProductPricingApi
      * @param  string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param  string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\ProductPricing\GetPricingResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCompetitivePricingWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null)
+    public function getCompetitivePricingWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $customer_type = null)
     {
-        $request = $this->getCompetitivePricingRequest($marketplace_id, $item_type, $asins, $skus);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getCompetitivePricingRequest($marketplace_id, $item_type, $asins, $skus, $customer_type);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -368,13 +372,14 @@ class ProductPricingApi
      * @param  string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param  string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCompetitivePricingAsync($marketplace_id, $item_type, $asins = null, $skus = null)
+    public function getCompetitivePricingAsync($marketplace_id, $item_type, $asins = null, $skus = null, $customer_type = null)
     {
-        return $this->getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus)
+        return $this->getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $customer_type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -391,15 +396,18 @@ class ProductPricingApi
      * @param  string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param  string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null)
+    public function getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $customer_type = null)
     {
         $returnType = '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
-        $request = $this->getCompetitivePricingRequest($marketplace_id, $item_type, $asins, $skus);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getCompetitivePricingRequest($marketplace_id, $item_type, $asins, $skus, $customer_type);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -442,11 +450,12 @@ class ProductPricingApi
      * @param  string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param  string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCompetitivePricingRequest($marketplace_id, $item_type, $asins = null, $skus = null)
+    public function getCompetitivePricingRequest($marketplace_id, $item_type, $asins = null, $skus = null, $customer_type = null)
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
@@ -503,6 +512,13 @@ class ProductPricingApi
         }
         if ($item_type !== null) {
             $queryParams['ItemType'] = $item_type;
+        }
+        // query params
+        if (is_array($customer_type)) {
+            $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
+        }
+        if ($customer_type !== null) {
+            $queryParams['CustomerType'] = $customer_type;
         }
 
 
@@ -571,14 +587,15 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\ProductPricing\GetOffersResponse
      */
-    public function getItemOffers($marketplace_id, $item_condition, $asin)
+    public function getItemOffers($marketplace_id, $item_condition, $asin, $customer_type = null)
     {
-        list($response) = $this->getItemOffersWithHttpInfo($marketplace_id, $item_condition, $asin);
+        list($response) = $this->getItemOffersWithHttpInfo($marketplace_id, $item_condition, $asin, $customer_type);
         return $response;
     }
 
@@ -588,15 +605,18 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\ProductPricing\GetOffersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getItemOffersWithHttpInfo($marketplace_id, $item_condition, $asin)
+    public function getItemOffersWithHttpInfo($marketplace_id, $item_condition, $asin, $customer_type = null)
     {
-        $request = $this->getItemOffersRequest($marketplace_id, $item_condition, $asin);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getItemOffersRequest($marketplace_id, $item_condition, $asin, $customer_type);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -819,13 +839,14 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getItemOffersAsync($marketplace_id, $item_condition, $asin)
+    public function getItemOffersAsync($marketplace_id, $item_condition, $asin, $customer_type = null)
     {
-        return $this->getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin)
+        return $this->getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin, $customer_type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -841,15 +862,18 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin)
+    public function getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin, $customer_type = null)
     {
         $returnType = '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
-        $request = $this->getItemOffersRequest($marketplace_id, $item_condition, $asin);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getItemOffersRequest($marketplace_id, $item_condition, $asin, $customer_type);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -891,11 +915,12 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getItemOffersRequest($marketplace_id, $item_condition, $asin)
+    public function getItemOffersRequest($marketplace_id, $item_condition, $asin, $customer_type = null)
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
@@ -936,6 +961,13 @@ class ProductPricingApi
         }
         if ($item_condition !== null) {
             $queryParams['ItemCondition'] = $item_condition;
+        }
+        // query params
+        if (is_array($customer_type)) {
+            $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
+        }
+        if ($customer_type !== null) {
+            $queryParams['CustomerType'] = $customer_type;
         }
 
 
@@ -1012,14 +1044,15 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\ProductPricing\GetOffersResponse
      */
-    public function getListingOffers($marketplace_id, $item_condition, $seller_sku)
+    public function getListingOffers($marketplace_id, $item_condition, $seller_sku, $customer_type = null)
     {
-        list($response) = $this->getListingOffersWithHttpInfo($marketplace_id, $item_condition, $seller_sku);
+        list($response) = $this->getListingOffersWithHttpInfo($marketplace_id, $item_condition, $seller_sku, $customer_type);
         return $response;
     }
 
@@ -1029,15 +1062,18 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\ProductPricing\GetOffersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getListingOffersWithHttpInfo($marketplace_id, $item_condition, $seller_sku)
+    public function getListingOffersWithHttpInfo($marketplace_id, $item_condition, $seller_sku, $customer_type = null)
     {
-        $request = $this->getListingOffersRequest($marketplace_id, $item_condition, $seller_sku);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getListingOffersRequest($marketplace_id, $item_condition, $seller_sku, $customer_type);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1260,13 +1296,14 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListingOffersAsync($marketplace_id, $item_condition, $seller_sku)
+    public function getListingOffersAsync($marketplace_id, $item_condition, $seller_sku, $customer_type = null)
     {
-        return $this->getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku)
+        return $this->getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku, $customer_type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1282,15 +1319,18 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku)
+    public function getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku, $customer_type = null)
     {
         $returnType = '\SellingPartnerApi\Model\ProductPricing\GetOffersResponse';
-        $request = $this->getListingOffersRequest($marketplace_id, $item_condition, $seller_sku);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getListingOffersRequest($marketplace_id, $item_condition, $seller_sku, $customer_type);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1332,11 +1372,12 @@ class ProductPricingApi
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getListingOffersRequest($marketplace_id, $item_condition, $seller_sku)
+    public function getListingOffersRequest($marketplace_id, $item_condition, $seller_sku, $customer_type = null)
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
@@ -1377,6 +1418,13 @@ class ProductPricingApi
         }
         if ($item_condition !== null) {
             $queryParams['ItemCondition'] = $item_condition;
+        }
+        // query params
+        if (is_array($customer_type)) {
+            $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
+        }
+        if ($customer_type !== null) {
+            $queryParams['CustomerType'] = $customer_type;
         }
 
 
@@ -1455,14 +1503,15 @@ class ProductPricingApi
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
+     * @param  string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\ProductPricing\GetPricingResponse
      */
-    public function getPricing($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
+    public function getPricing($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null)
     {
-        list($response) = $this->getPricingWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $item_condition);
+        list($response) = $this->getPricingWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type);
         return $response;
     }
 
@@ -1474,15 +1523,18 @@ class ProductPricingApi
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
+     * @param  string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\ProductPricing\GetPricingResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPricingWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
+    public function getPricingWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null)
     {
-        $request = $this->getPricingRequest($marketplace_id, $item_type, $asins, $skus, $item_condition);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getPricingRequest($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1707,13 +1759,14 @@ class ProductPricingApi
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
+     * @param  string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPricingAsync($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
+    public function getPricingAsync($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null)
     {
-        return $this->getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $item_condition)
+        return $this->getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1731,15 +1784,18 @@ class ProductPricingApi
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
+     * @param  string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
+    public function getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null)
     {
         $returnType = '\SellingPartnerApi\Model\ProductPricing\GetPricingResponse';
-        $request = $this->getPricingRequest($marketplace_id, $item_type, $asins, $skus, $item_condition);
-        $signedRequest = $this->config->signRequest($request);
+        $request = $this->getPricingRequest($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1783,11 +1839,12 @@ class ProductPricingApi
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
+     * @param  string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPricingRequest($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null)
+    public function getPricingRequest($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null)
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
@@ -1851,6 +1908,13 @@ class ProductPricingApi
         }
         if ($item_condition !== null) {
             $queryParams['ItemCondition'] = $item_condition;
+        }
+        // query params
+        if (is_array($offer_type)) {
+            $offer_type = ObjectSerializer::serializeCollection($offer_type, '', true);
+        }
+        if ($offer_type !== null) {
+            $queryParams['OfferType'] = $offer_type;
         }
 
 

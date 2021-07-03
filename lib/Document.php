@@ -2,14 +2,16 @@
 
 namespace SellingPartnerApi;
 
-use Cyberdummy\GzStream;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\RequestOptions;
 use Jsq\EncryptionStreams;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use RuntimeException;
 
-use SellingPartnerApi\Model;
+use SellingPartnerApi\Model\Feeds\CreateFeedDocumentResult;
+use SellingPartnerApi\Model\Feeds\FeedDocument;
+use SellingPartnerApi\Model\Reports\ReportDocument;
 
 class Document
 {
@@ -24,28 +26,41 @@ class Document
     private $tmpFilename;
 
     /**
-     * @param Model\(Report\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
+     * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
-     * @param ?string $contentType The content type of the document. Defaults to ContentType::XML.
+     * @param ?array['contentType' => string, 'name' => string] $documentType
+     *      Not required if $documentInfo is of type CreateFeedDocumentResult. Otherwise, should be one
+     *      of the constants defined in ReportType or FeedType.
      */
-    public function __construct(object $documentInfo, ?string $contentType = ContentType::XML) {
-        if (
-            !($documentInfo instanceof Model\Reports\ReportDocument)
-            && !($documentInfo instanceof Model\Feeds\FeedDocument)
-            && !($documentInfo instanceof Model\Feeds\CreateFeedDocumentResult)
-        ) {
-            $msg = "documentInfo must be one of the following types: ReportDocument, FeedDocument, CreateFeedDocumentResult";
-            throw new \Exception($msg);
+    public function __construct(object $documentInfo, ?array $documentType = null) {
+        // Make sure $documentInfo is a valid type
+        if (!(
+            $documentInfo instanceof ReportDocument ||
+            $documentInfo instanceof FeedDocument ||
+            $documentInfo instanceof CreateFeedDocumentResult
+        )) {
+            $msg = "documentInfo must be one of the following types: Model\Feeds\CreateFeedDocumentResult, Model\Feeds\FeedDocument, Model\Reports\ReportDocument";
+            throw new RuntimeException($msg);
         }
 
-
-        $validContentTypes = ContentType::getContentTypes();
-        if (!in_array($contentType, array_values($validContentTypes))) {
-            $readableContentTypes = [];
-            foreach ($validContentTypes as $name => $value) {
-                $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
+        // All feed result documents are tab separated values files
+        if ($documentInfo instanceof CreateFeedDocumentResult) {
+            $documentType = ReportType::__FEED_RESULT_REPORT;
+            $this->contentType = $documentType['contentType'];
+        } else {
+            if ($documentType === null) {
+                throw new RuntimeException('$documentType must be passed when $documentInfo is of type FeedDocument or ReportDocument');
             }
-            throw new \InvalidArgumentException("Valid content types are: " . implode(", ", $readableContentTypes));
+            $this->contentType = $documentType['contentType'];
+            
+            $validContentTypes = ContentType::getContentTypes();
+            if (!in_array($this->contentType, array_values($validContentTypes))) {
+                $readableContentTypes = [];
+                foreach ($validContentTypes as $name => $value) {
+                    $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
+                }
+                throw new \InvalidArgumentException("Valid content types are: " . implode(", ", $readableContentTypes));
+            }
         }
 
         $this->url = $documentInfo->getUrl();
@@ -56,66 +71,67 @@ class Document
         if (method_exists($documentInfo, "getCompressionAlgorithm")) {
             $this->compressionAlgo = $documentInfo->getCompressionAlgorithm() ?? null;
         }
-
-        $this->contentType = $contentType;
     }
 
     public function download(): string {
-        $client = new Client();
-        $stream = $client->get($this->url, [RequestOptions::STREAM => true])->getBody();
+        $rawContents = file_get_contents($this->url);
+        $maybeZippedContents = openssl_decrypt($rawContents, static::ENCRYPTION_SCHEME, $this->key, OPENSSL_RAW_DATA, $this->iv);
 
-        if (!$stream->isReadable()) {
-            throw new \Exception("Download file stream is unreadable.");
-        }
-
-        $cipherMethod = new EncryptionStreams\Cbc($this->iv);
-        $stream = new EncryptionStreams\AesDecryptingStream($stream, $this->key, $cipherMethod);
-
+        $contents = null;
         if ($this->compressionAlgo !== null) {
             if ($this->compressionAlgo === "GZIP") {
-                $stream = new GzStream\GzStreamGuzzle($stream);
+                $contents = gzdecode($maybeZippedContents);
             }
+        } else {
+            $contents = $maybeZippedContents;
         }
 
         // Documents are ISO-8859-1 encoded, which messes up the data when we read it directly
-        // via SimpleXML or fgetcsv, but the original encoding is required to parse XLSX reports
-        if ($this->contentType !== ContentType::XLSX) {
-            $contents = utf8_encode($stream->getContents());
-        } else {
-            $contents = $stream->getContents();
+        // via SimpleXML or fgetcsv, but the original encoding is required to parse XLSX and PDF reports
+        if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
+            $contents = utf8_encode($contents);
         }
 
-        if ($this->contentType === ContentType::XML) {
-            $this->data = simplexml_load_string($contents);
-        } else if ($this->contentType === ContentType::TAB || $this->contentType === ContentType::CSV) {
-            $sep = "\t";
-            if ($this->contentType === ContentType::CSV) {
-                $sep = ",";
-            }
+        switch ($this->contentType) {
+            case ContentType::CSV:
+            case ContentType::TAB:
+                $sep = $this->contentType === ContentType::CSV ? "," : "\t";
+    
+                $bareStream = fopen("php://memory", "rw");
+                fwrite($bareStream, $contents);
+                rewind($bareStream);
 
-            $bareStream = fopen("php://memory", "rw");
-            fwrite($bareStream, $contents);
-            rewind($bareStream);
-
-            $data = [];
-            $header = fgetcsv($bareStream, 0, $sep);
-            while (($line = fgetcsv($bareStream, 0, $sep)) !== false) {
-                $row = [];
-                foreach ($line as $idx => $val) {
-                    $row[$header[$idx]] = $val;
+                $data = [];
+                $header = fgetcsv($bareStream, 0, $sep);
+                while (($line = fgetcsv($bareStream, 0, $sep)) !== false) {
+                    $row = [];
+                    foreach ($line as $idx => $val) {
+                        $row[$header[$idx]] = $val;
+                    }
+                    $data[] = $row;
                 }
-                $data[] = $row;
-            }
-            $this->data = $data;
-            fclose($bareStream);
-        } else if ($this->contentType === ContentType::XLSX) {
-            $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
-            $tempFile = fopen($this->tmpFilename, "r+");
-            fwrite($tempFile, $contents);
-            fclose($tempFile);
-
-            $spreadsheet = IOFactory::load($this->tmpFilename);
-            $this->data = $spreadsheet;
+                $this->data = $data;
+                fclose($bareStream);
+                break;
+            case ContentType::JSON:
+                $this->data = json_decode($contents);
+                break;
+            case ContentType::PDF:
+            case ContentType::PLAIN:
+                $this->data = $contents;
+                break;
+            case ContentType::XLSX:
+                $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
+                $tempFile = fopen($this->tmpFilename, "r+");
+                fwrite($tempFile, $contents);
+                fclose($tempFile);
+    
+                $spreadsheet = IOFactory::load($this->tmpFilename);
+                $this->data = $spreadsheet;
+                break;
+            case ContentType::XML:
+                $this->data = simplexml_load_string($contents);
+                break;               
         }
 
         return $contents;
@@ -131,10 +147,10 @@ class Document
     public function upload(string $feedData): void {
         $stream = fopen("php://memory", "r+");
         if (!$stream) {
-            throw new \Exception("Error creating input stream (php://memory)\n");
+            throw new RuntimeException("Error creating input stream (php://memory)\n");
         }
 
-        // Write the data to an in-memory feed to make it easier to encrypt chunks of it at a time.
+        // Write the data to an in-memory stream to make it easier to encrypt chunks of it at a time.
         // Amazon requires their data to be encrypted at rest, which prevents us from writing the data
         // to a file and encrypting it from there
         $stream = Psr7\Utils::streamFor($stream);
@@ -156,15 +172,12 @@ class Document
         $stream->close();
 
         if ($response->getStatusCode() >= 300) {
-            throw new \Exception("Upload failed ({$response->getStatusCode()}): {$response->getBody()}");
+            throw new RuntimeException("Upload failed ({$response->getStatusCode()}): {$response->getBody()}");
         }
     }
 
     public function getData() {
-        if(isset($this->data)) {
-            return $this->data;
-        }
-        return false;
+        return isset($this->data) ? $this->data : false;
     }
 
     public function __destruct() {

@@ -60,6 +60,9 @@ class LowestPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'condition' => 'string',
         'fulfillment_channel' => 'string',
+        'offer_type' => '\SellingPartnerApi\Model\ProductPricing\OfferCustomerType',
+        'quantity_tier' => 'int',
+        'quantity_discount_type' => '\SellingPartnerApi\Model\ProductPricing\QuantityDiscountType',
         'landed_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
         'listing_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
         'shipping' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
@@ -76,6 +79,9 @@ class LowestPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'condition' => null,
         'fulfillment_channel' => null,
+        'offer_type' => null,
+        'quantity_tier' => 'int32',
+        'quantity_discount_type' => null,
         'landed_price' => null,
         'listing_price' => null,
         'shipping' => null,
@@ -111,6 +117,9 @@ class LowestPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'condition' => 'condition',
         'fulfillment_channel' => 'fulfillmentChannel',
+        'offer_type' => 'offerType',
+        'quantity_tier' => 'quantityTier',
+        'quantity_discount_type' => 'quantityDiscountType',
         'landed_price' => 'LandedPrice',
         'listing_price' => 'ListingPrice',
         'shipping' => 'Shipping',
@@ -125,6 +134,9 @@ class LowestPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'condition' => 'setCondition',
         'fulfillment_channel' => 'setFulfillmentChannel',
+        'offer_type' => 'setOfferType',
+        'quantity_tier' => 'setQuantityTier',
+        'quantity_discount_type' => 'setQuantityDiscountType',
         'landed_price' => 'setLandedPrice',
         'listing_price' => 'setListingPrice',
         'shipping' => 'setShipping',
@@ -139,6 +151,9 @@ class LowestPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'condition' => 'getCondition',
         'fulfillment_channel' => 'getFulfillmentChannel',
+        'offer_type' => 'getOfferType',
+        'quantity_tier' => 'getQuantityTier',
+        'quantity_discount_type' => 'getQuantityDiscountType',
         'landed_price' => 'getLandedPrice',
         'listing_price' => 'getListingPrice',
         'shipping' => 'getShipping',
@@ -207,6 +222,9 @@ class LowestPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['condition'] = $data['condition'] ?? null;
         $this->container['fulfillment_channel'] = $data['fulfillment_channel'] ?? null;
+        $this->container['offer_type'] = $data['offer_type'] ?? null;
+        $this->container['quantity_tier'] = $data['quantity_tier'] ?? null;
+        $this->container['quantity_discount_type'] = $data['quantity_discount_type'] ?? null;
         $this->container['landed_price'] = $data['landed_price'] ?? null;
         $this->container['listing_price'] = $data['listing_price'] ?? null;
         $this->container['shipping'] = $data['shipping'] ?? null;
@@ -296,6 +314,78 @@ class LowestPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFulfillmentChannel($fulfillment_channel)
     {
         $this->container['fulfillment_channel'] = $fulfillment_channel;
+
+        return $this;
+    }
+
+    /**
+     * Gets offer_type
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferCustomerType|null
+     */
+    public function getOfferType()
+    {
+        return $this->container['offer_type'];
+    }
+
+    /**
+     * Sets offer_type
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferCustomerType|null $offer_type offer_type
+     *
+     * @return self
+     */
+    public function setOfferType($offer_type)
+    {
+        $this->container['offer_type'] = $offer_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_tier
+     *
+     * @return int|null
+     */
+    public function getQuantityTier()
+    {
+        return $this->container['quantity_tier'];
+    }
+
+    /**
+     * Sets quantity_tier
+     *
+     * @param int|null $quantity_tier Indicates at what quantity this price becomes active.
+     *
+     * @return self
+     */
+    public function setQuantityTier($quantity_tier)
+    {
+        $this->container['quantity_tier'] = $quantity_tier;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_discount_type
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\QuantityDiscountType|null
+     */
+    public function getQuantityDiscountType()
+    {
+        return $this->container['quantity_discount_type'];
+    }
+
+    /**
+     * Sets quantity_discount_type
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\QuantityDiscountType|null $quantity_discount_type quantity_discount_type
+     *
+     * @return self
+     */
+    public function setQuantityDiscountType($quantity_discount_type)
+    {
+        $this->container['quantity_discount_type'] = $quantity_discount_type;
 
         return $this;
     }

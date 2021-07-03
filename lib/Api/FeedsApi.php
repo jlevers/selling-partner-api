@@ -138,7 +138,9 @@ class FeedsApi
     public function cancelFeedWithHttpInfo($feed_id)
     {
         $request = $this->cancelFeedRequest($feed_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -407,7 +409,9 @@ class FeedsApi
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\CancelFeedResponse';
         $request = $this->cancelFeedRequest($feed_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -563,7 +567,9 @@ class FeedsApi
     public function createFeedWithHttpInfo($body)
     {
         $request = $this->createFeedRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -832,7 +838,9 @@ class FeedsApi
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedResponse';
         $request = $this->createFeedRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -986,7 +994,9 @@ class FeedsApi
     public function createFeedDocumentWithHttpInfo($body)
     {
         $request = $this->createFeedDocumentRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1255,7 +1265,9 @@ class FeedsApi
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse';
         $request = $this->createFeedDocumentRequest($body);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1409,7 +1421,9 @@ class FeedsApi
     public function getFeedWithHttpInfo($feed_id)
     {
         $request = $this->getFeedRequest($feed_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -1678,7 +1692,9 @@ class FeedsApi
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedResponse';
         $request = $this->getFeedRequest($feed_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1834,7 +1850,9 @@ class FeedsApi
     public function getFeedDocumentWithHttpInfo($feed_document_id)
     {
         $request = $this->getFeedDocumentRequest($feed_document_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2103,7 +2121,9 @@ class FeedsApi
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse';
         $request = $this->getFeedDocumentRequest($feed_document_id);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2271,7 +2291,9 @@ class FeedsApi
     public function getFeedsWithHttpInfo($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
         $request = $this->getFeedsRequest($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2552,7 +2574,9 @@ class FeedsApi
     {
         $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedsResponse';
         $request = $this->getFeedsRequest($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
-        $signedRequest = $this->config->signRequest($request);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

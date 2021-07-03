@@ -92,8 +92,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'string',
         'is_estimated_ship_date_set' => 'bool',
         'is_sold_by_ab' => 'bool',
-        'assigned_ship_from_location_address' => '\SellingPartnerApi\Model\Orders\Address',
-        'fulfillment_instruction' => '\SellingPartnerApi\Model\Orders\FulfillmentInstruction'
+        'default_ship_from_location_address' => '\SellingPartnerApi\Model\Orders\Address',
+        'fulfillment_instruction' => '\SellingPartnerApi\Model\Orders\FulfillmentInstruction',
+        'is_ispu' => 'bool'
     ];
 
     /**
@@ -137,8 +138,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => null,
         'is_estimated_ship_date_set' => null,
         'is_sold_by_ab' => null,
-        'assigned_ship_from_location_address' => null,
-        'fulfillment_instruction' => null
+        'default_ship_from_location_address' => null,
+        'fulfillment_instruction' => null,
+        'is_ispu' => null
     ];
 
     /**
@@ -201,8 +203,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'PromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'IsEstimatedShipDateSet',
         'is_sold_by_ab' => 'IsSoldByAB',
-        'assigned_ship_from_location_address' => 'AssignedShipFromLocationAddress',
-        'fulfillment_instruction' => 'FulfillmentInstruction'
+        'default_ship_from_location_address' => 'DefaultShipFromLocationAddress',
+        'fulfillment_instruction' => 'FulfillmentInstruction',
+        'is_ispu' => 'IsISPU'
     ];
 
     /**
@@ -244,8 +247,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'setPromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'setIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'setIsSoldByAb',
-        'assigned_ship_from_location_address' => 'setAssignedShipFromLocationAddress',
-        'fulfillment_instruction' => 'setFulfillmentInstruction'
+        'default_ship_from_location_address' => 'setDefaultShipFromLocationAddress',
+        'fulfillment_instruction' => 'setFulfillmentInstruction',
+        'is_ispu' => 'setIsIspu'
     ];
 
     /**
@@ -287,8 +291,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'getPromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'getIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'getIsSoldByAb',
-        'assigned_ship_from_location_address' => 'getAssignedShipFromLocationAddress',
-        'fulfillment_instruction' => 'getFulfillmentInstruction'
+        'default_ship_from_location_address' => 'getDefaultShipFromLocationAddress',
+        'fulfillment_instruction' => 'getFulfillmentInstruction',
+        'is_ispu' => 'getIsIspu'
     ];
 
     /**
@@ -464,8 +469,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['promise_response_due_date'] = $data['promise_response_due_date'] ?? null;
         $this->container['is_estimated_ship_date_set'] = $data['is_estimated_ship_date_set'] ?? null;
         $this->container['is_sold_by_ab'] = $data['is_sold_by_ab'] ?? null;
-        $this->container['assigned_ship_from_location_address'] = $data['assigned_ship_from_location_address'] ?? null;
+        $this->container['default_ship_from_location_address'] = $data['default_ship_from_location_address'] ?? null;
         $this->container['fulfillment_instruction'] = $data['fulfillment_instruction'] ?? null;
+        $this->container['is_ispu'] = $data['is_ispu'] ?? null;
     }
 
     /**
@@ -625,7 +631,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets last_update_date
      *
-     * @param string $last_update_date The date when the order was last updated.  Note: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     * @param string $last_update_date The date when the order was last updated. Note: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
      *
      * @return self
      */
@@ -967,7 +973,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_service_level_category
      *
-     * @param string|null $shipment_service_level_category The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+     * @param string|null $shipment_service_level_category The shipment service level category of the order. Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
      *
      * @return self
      */
@@ -991,7 +997,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets easy_ship_shipment_status
      *
-     * @param string|null $easy_ship_shipment_status The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.  Possible values: PendingPickUp, LabelCanceled, PickedUp, OutForDelivery, Damaged, Delivered, RejectedByBuyer, Undeliverable, ReturnedToSeller, ReturningToSeller.
+     * @param string|null $easy_ship_shipment_status The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders. Possible values: PendingPickUp, LabelCanceled, PickedUp, OutForDelivery, Damaged, Delivered, RejectedByBuyer, Undeliverable, ReturnedToSeller, ReturningToSeller.
      *
      * @return self
      */
@@ -1073,7 +1079,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets earliest_ship_date
      *
-     * @param string|null $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  Note: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param string|null $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. Note: EarliestShipDate might not be returned for orders placed before February 1, 2013.
      *
      * @return self
      */
@@ -1097,7 +1103,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets latest_ship_date
      *
-     * @param string|null $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  Note: LatestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param string|null $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. Note: LatestShipDate might not be returned for orders placed before February 1, 2013.
      *
      * @return self
      */
@@ -1373,25 +1379,25 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets assigned_ship_from_location_address
+     * Gets default_ship_from_location_address
      *
      * @return \SellingPartnerApi\Model\Orders\Address|null
      */
-    public function getAssignedShipFromLocationAddress()
+    public function getDefaultShipFromLocationAddress()
     {
-        return $this->container['assigned_ship_from_location_address'];
+        return $this->container['default_ship_from_location_address'];
     }
 
     /**
-     * Sets assigned_ship_from_location_address
+     * Sets default_ship_from_location_address
      *
-     * @param \SellingPartnerApi\Model\Orders\Address|null $assigned_ship_from_location_address assigned_ship_from_location_address
+     * @param \SellingPartnerApi\Model\Orders\Address|null $default_ship_from_location_address default_ship_from_location_address
      *
      * @return self
      */
-    public function setAssignedShipFromLocationAddress($assigned_ship_from_location_address)
+    public function setDefaultShipFromLocationAddress($default_ship_from_location_address)
     {
-        $this->container['assigned_ship_from_location_address'] = $assigned_ship_from_location_address;
+        $this->container['default_ship_from_location_address'] = $default_ship_from_location_address;
 
         return $this;
     }
@@ -1416,6 +1422,30 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFulfillmentInstruction($fulfillment_instruction)
     {
         $this->container['fulfillment_instruction'] = $fulfillment_instruction;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_ispu
+     *
+     * @return bool|null
+     */
+    public function getIsIspu()
+    {
+        return $this->container['is_ispu'];
+    }
+
+    /**
+     * Sets is_ispu
+     *
+     * @param bool|null $is_ispu When true, this order is marked to be picked up from a store rather than delivered.
+     *
+     * @return self
+     */
+    public function setIsIspu($is_ispu)
+    {
+        $this->container['is_ispu'] = $is_ispu;
 
         return $this;
     }

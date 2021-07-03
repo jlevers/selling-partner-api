@@ -1,23 +1,29 @@
 # SellingPartnerApi\CatalogApi
 
-All URIs are relative to https://sellingpartnerapi-na.amazon.com.
-
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCatalogItem()**](CatalogApi.md#getCatalogItem) | **GET** /catalog/v0/items/{asin} | 
-[**listCatalogCategories()**](CatalogApi.md#listCatalogCategories) | **GET** /catalog/v0/categories | 
-[**listCatalogItems()**](CatalogApi.md#listCatalogItems) | **GET** /catalog/v0/items | 
+[**getCatalogItem()**](CatalogApi.md#getCatalogItem) | **GET** /catalog/2020-12-01/items/{asin} | 
+[**searchCatalogItems()**](CatalogApi.md#searchCatalogItems) | **GET** /catalog/2020-12-01/items | 
 
 
 ## `getCatalogItem()`
 
 ```php
-getCatalogItem($marketplace_id, $asin): \SellingPartnerApi\Model\Catalog\GetCatalogItemResponse
+getCatalogItem($asin, $marketplace_ids, $included_data, $locale): \SellingPartnerApi\Model\Catalog\Item
 ```
 
 
 
-Returns a specified item and its attributes.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Retrieves details for an item in the Amazon catalog.
+
+**Usage Plans:**
+
+| Plan type | Rate (requests per second) | Burst |
+| ---- | ---- | ---- |
+|Default| 5 | 5 |
+|Selling partner specific| Variable | Variable |
+
+The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -25,24 +31,24 @@ Returns a specified item and its attributes.  **Usage Plan:**  | Rate (requests 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\CatalogApi($config);
-$marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace for the item.
 $asin = 'asin_example'; // string | The Amazon Standard Identification Number (ASIN) of the item.
+$marketplace_ids = ATVPDKIKX0DER; // string[] | A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
+$included_data = [summaries]; // string[] | A comma-delimited list of data sets to include in the response. Default: summaries.
+$locale = en_US; // string | Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
 
 try {
-    $result = $apiInstance->getCatalogItem($marketplace_id, $asin);
+    $result = $apiInstance->getCatalogItem($asin, $marketplace_ids, $included_data, $locale);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CatalogApi->getCatalogItem: ', $e->getMessage(), PHP_EOL;
@@ -53,12 +59,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for the item. |
  **asin** | **string**| The Amazon Standard Identification Number (ASIN) of the item. |
+ **marketplace_ids** | [**string[]**](../Model/Catalog/string.md)| A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. |
+ **included_data** | [**string[]**](../Model/Catalog/string.md)| A comma-delimited list of data sets to include in the response. Default: summaries. | [optional]
+ **locale** | **string**| Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. | [optional]
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Catalog\GetCatalogItemResponse**](../Model/Catalog/GetCatalogItemResponse.md)
+[**\SellingPartnerApi\Model\Catalog\Item**](../Model/Catalog/Item.md)
 
 ### HTTP request headers
 
@@ -69,15 +77,24 @@ Name | Type | Description  | Notes
 [[Catalog Model list]](../Model/Catalog)
 [[README]](../../README.md)
 
-## `listCatalogCategories()`
+## `searchCatalogItems()`
 
 ```php
-listCatalogCategories($marketplace_id, $asin, $seller_sku): \SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse
+searchCatalogItems($keywords, $marketplace_ids, $included_data, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale, $locale): \SellingPartnerApi\Model\Catalog\ItemSearchResults
 ```
 
 
 
-Returns the parent categories to which an item belongs, based on the specified ASIN or SellerSKU.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Search for and return a list of Amazon catalog items and associated information.
+
+**Usage Plans:**
+
+| Plan type | Rate (requests per second) | Burst |
+| ---- | ---- | ---- |
+|Default| 1 | 5 |
+|Selling partner specific| Variable | Variable |
+
+The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
 
@@ -85,28 +102,32 @@ Returns the parent categories to which an item belongs, based on the specified A
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
 
 $apiInstance = new SellingPartnerApi\Api\CatalogApi($config);
-$marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace for the item.
-$asin = 'asin_example'; // string | The Amazon Standard Identification Number (ASIN) of the item.
-$seller_sku = 'seller_sku_example'; // string | Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+$keywords = shoes; // string[] | A comma-delimited list of words or item identifiers to search the Amazon catalog for.
+$marketplace_ids = ATVPDKIKX0DER; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
+$included_data = [summaries]; // string[] | A comma-delimited list of data sets to include in the response. Default: summaries.
+$brand_names = Beautiful Boats; // string[] | A comma-delimited list of brand names to limit the search to.
+$classification_ids = 12345678; // string[] | A comma-delimited list of classification identifiers to limit the search to.
+$page_size = 9; // int | Number of results to be returned per page.
+$page_token = sdlkj234lkj234lksjdflkjwdflkjsfdlkj234234234234; // string | A token to fetch a certain page when there are multiple pages worth of results.
+$keywords_locale = en_US; // string | The language the keywords are provided in. Defaults to the primary locale of the marketplace.
+$locale = en_US; // string | Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
 
 try {
-    $result = $apiInstance->listCatalogCategories($marketplace_id, $asin, $seller_sku);
+    $result = $apiInstance->searchCatalogItems($keywords, $marketplace_ids, $included_data, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale, $locale);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CatalogApi->listCatalogCategories: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CatalogApi->searchCatalogItems: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -114,85 +135,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for the item. |
- **asin** | **string**| The Amazon Standard Identification Number (ASIN) of the item. | [optional]
- **seller_sku** | **string**| Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. | [optional]
+ **keywords** | [**string[]**](../Model/Catalog/string.md)| A comma-delimited list of words or item identifiers to search the Amazon catalog for. |
+ **marketplace_ids** | [**string[]**](../Model/Catalog/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
+ **included_data** | [**string[]**](../Model/Catalog/string.md)| A comma-delimited list of data sets to include in the response. Default: summaries. | [optional]
+ **brand_names** | [**string[]**](../Model/Catalog/string.md)| A comma-delimited list of brand names to limit the search to. | [optional]
+ **classification_ids** | [**string[]**](../Model/Catalog/string.md)| A comma-delimited list of classification identifiers to limit the search to. | [optional]
+ **page_size** | **int**| Number of results to be returned per page. | [optional] [default to 10]
+ **page_token** | **string**| A token to fetch a certain page when there are multiple pages worth of results. | [optional]
+ **keywords_locale** | **string**| The language the keywords are provided in. Defaults to the primary locale of the marketplace. | [optional]
+ **locale** | **string**| Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. | [optional]
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Catalog\ListCatalogCategoriesResponse**](../Model/Catalog/ListCatalogCategoriesResponse.md)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Top]](#) [[API list]](../)
-[[Catalog Model list]](../Model/Catalog)
-[[README]](../../README.md)
-
-## `listCatalogItems()`
-
-```php
-listCatalogItems($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan): \SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse
-```
-
-
-
-Returns a list of items and their attributes, based on a search query or item identifiers that you specify. When based on a search query, provide the Query parameter and optionally, the QueryContextId parameter. When based on item identifiers, provide a single appropriate parameter based on the identifier type, and specify the associated item value. MarketplaceId is always required.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// See README for more information on the ConfigurationOptions object
-$configurationOptions = new SellingPartnerApi\ConfigurationOptions(
-    "amzn1.application-oa2-client.....",
-    "abcd....",
-    "Aztr|IwEBI....",
-    "AKIA....",
-    "ABCD....",
-    "us-east-1",
-    "https://sellingpartnerapi-na.amazon.com",
-);
-$config = new SellingPartnerApi\Configuration($configurationOptions);
-
-$apiInstance = new SellingPartnerApi\Api\CatalogApi($config);
-$marketplace_id = 'marketplace_id_example'; // string | A marketplace identifier. Specifies the marketplace for which items are returned.
-$query = 'query_example'; // string | Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'.
-$query_context_id = 'query_context_id_example'; // string | An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items.
-$seller_sku = 'seller_sku_example'; // string | Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-$upc = 'upc_example'; // string | A 12-digit bar code used for retail packaging.
-$ean = 'ean_example'; // string | A European article number that uniquely identifies the catalog item, manufacturer, and its attributes.
-$isbn = 'isbn_example'; // string | The unique commercial book identifier used to identify books internationally.
-$jan = 'jan_example'; // string | A Japanese article number that uniquely identifies the product, manufacturer, and its attributes.
-
-try {
-    $result = $apiInstance->listCatalogItems($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CatalogApi->listCatalogItems: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which items are returned. |
- **query** | **string**| Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. | [optional]
- **query_context_id** | **string**| An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. | [optional]
- **seller_sku** | **string**| Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. | [optional]
- **upc** | **string**| A 12-digit bar code used for retail packaging. | [optional]
- **ean** | **string**| A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. | [optional]
- **isbn** | **string**| The unique commercial book identifier used to identify books internationally. | [optional]
- **jan** | **string**| A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. | [optional]
-
-### Return type
-
-[**\SellingPartnerApi\Model\Catalog\ListCatalogItemsResponse**](../Model/Catalog/ListCatalogItemsResponse.md)
+[**\SellingPartnerApi\Model\Catalog\ItemSearchResults**](../Model/Catalog/ItemSearchResults.md)
 
 ### HTTP request headers
 

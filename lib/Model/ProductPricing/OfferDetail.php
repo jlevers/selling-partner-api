@@ -58,11 +58,14 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'seller_id' => 'string',
         'my_offer' => 'bool',
+        'offer_type' => '\SellingPartnerApi\Model\ProductPricing\OfferCustomerType',
         'sub_condition' => 'string',
         'seller_feedback_rating' => '\SellingPartnerApi\Model\ProductPricing\SellerFeedbackType',
         'shipping_time' => '\SellingPartnerApi\Model\ProductPricing\DetailedShippingTimeType',
         'listing_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'quantity_discount_prices' => '\SellingPartnerApi\Model\ProductPricing\QuantityDiscountPriceType[]',
         'points' => '\SellingPartnerApi\Model\ProductPricing\Points',
         'shipping' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
         'ships_from' => '\SellingPartnerApi\Model\ProductPricing\ShipsFromType',
@@ -79,11 +82,14 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'seller_id' => null,
         'my_offer' => null,
+        'offer_type' => null,
         'sub_condition' => null,
         'seller_feedback_rating' => null,
         'shipping_time' => null,
         'listing_price' => null,
+        'quantity_discount_prices' => null,
         'points' => null,
         'shipping' => null,
         'ships_from' => null,
@@ -119,11 +125,14 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'seller_id' => 'sellerId',
         'my_offer' => 'MyOffer',
+        'offer_type' => 'offerType',
         'sub_condition' => 'SubCondition',
         'seller_feedback_rating' => 'SellerFeedbackRating',
         'shipping_time' => 'ShippingTime',
         'listing_price' => 'ListingPrice',
+        'quantity_discount_prices' => 'quantityDiscountPrices',
         'points' => 'Points',
         'shipping' => 'Shipping',
         'ships_from' => 'ShipsFrom',
@@ -138,11 +147,14 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'seller_id' => 'setSellerId',
         'my_offer' => 'setMyOffer',
+        'offer_type' => 'setOfferType',
         'sub_condition' => 'setSubCondition',
         'seller_feedback_rating' => 'setSellerFeedbackRating',
         'shipping_time' => 'setShippingTime',
         'listing_price' => 'setListingPrice',
+        'quantity_discount_prices' => 'setQuantityDiscountPrices',
         'points' => 'setPoints',
         'shipping' => 'setShipping',
         'ships_from' => 'setShipsFrom',
@@ -157,11 +169,14 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'seller_id' => 'getSellerId',
         'my_offer' => 'getMyOffer',
+        'offer_type' => 'getOfferType',
         'sub_condition' => 'getSubCondition',
         'seller_feedback_rating' => 'getSellerFeedbackRating',
         'shipping_time' => 'getShippingTime',
         'listing_price' => 'getListingPrice',
+        'quantity_discount_prices' => 'getQuantityDiscountPrices',
         'points' => 'getPoints',
         'shipping' => 'getShipping',
         'ships_from' => 'getShipsFrom',
@@ -230,11 +245,14 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->container['seller_id'] = $data['seller_id'] ?? null;
         $this->container['my_offer'] = $data['my_offer'] ?? null;
+        $this->container['offer_type'] = $data['offer_type'] ?? null;
         $this->container['sub_condition'] = $data['sub_condition'] ?? null;
         $this->container['seller_feedback_rating'] = $data['seller_feedback_rating'] ?? null;
         $this->container['shipping_time'] = $data['shipping_time'] ?? null;
         $this->container['listing_price'] = $data['listing_price'] ?? null;
+        $this->container['quantity_discount_prices'] = $data['quantity_discount_prices'] ?? null;
         $this->container['points'] = $data['points'] ?? null;
         $this->container['shipping'] = $data['shipping'] ?? null;
         $this->container['ships_from'] = $data['ships_from'] ?? null;
@@ -283,6 +301,30 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets seller_id
+     *
+     * @return string|null
+     */
+    public function getSellerId()
+    {
+        return $this->container['seller_id'];
+    }
+
+    /**
+     * Sets seller_id
+     *
+     * @param string|null $seller_id The seller identifier for the offer.
+     *
+     * @return self
+     */
+    public function setSellerId($seller_id)
+    {
+        $this->container['seller_id'] = $seller_id;
+
+        return $this;
+    }
+
+    /**
      * Gets my_offer
      *
      * @return bool|null
@@ -302,6 +344,30 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMyOffer($my_offer)
     {
         $this->container['my_offer'] = $my_offer;
+
+        return $this;
+    }
+
+    /**
+     * Gets offer_type
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\OfferCustomerType|null
+     */
+    public function getOfferType()
+    {
+        return $this->container['offer_type'];
+    }
+
+    /**
+     * Sets offer_type
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\OfferCustomerType|null $offer_type offer_type
+     *
+     * @return self
+     */
+    public function setOfferType($offer_type)
+    {
+        $this->container['offer_type'] = $offer_type;
 
         return $this;
     }
@@ -398,6 +464,30 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setListingPrice($listing_price)
     {
         $this->container['listing_price'] = $listing_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_discount_prices
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\QuantityDiscountPriceType[]|null
+     */
+    public function getQuantityDiscountPrices()
+    {
+        return $this->container['quantity_discount_prices'];
+    }
+
+    /**
+     * Sets quantity_discount_prices
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\QuantityDiscountPriceType[]|null $quantity_discount_prices quantity_discount_prices
+     *
+     * @return self
+     */
+    public function setQuantityDiscountPrices($quantity_discount_prices)
+    {
+        $this->container['quantity_discount_prices'] = $quantity_discount_prices;
 
         return $this;
     }

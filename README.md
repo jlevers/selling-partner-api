@@ -1,5 +1,5 @@
 # Selling Partner API for PHP
-A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/). This library is *not* for connecting to Amazon's older MWS API---if that's what you need, check out [glassfrogbooks/php-amazon-mws](https://github.com/glassfrogbooks/phpAmazonMWS).
+A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/). This library is *not* for connecting to Amazon's older MWS API―if that's what you need, check out [glassfrogbooks/php-amazon-mws](https://github.com/glassfrogbooks/phpAmazonMWS).
 
 ## Powering companies like...
 
@@ -172,13 +172,13 @@ use SellingPartnerApi\Api\ReportsApi;
 use SellingPartnerApi\ReportType;
 
 // Assume we've already fetched a report document ID, and that a $config object was defined above
-$documentId = "foo.1234";
-$reportsApi = new ReportsApi($config);
-$reportDocumentInfo = $reportsApi->getReportDocument($documentId);
-
+$documentId = 'foo.1234';
 $reportType = ReportType::GET_FLAT_FILE_OPEN_LISTINGS_DATA;
 
-$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo->getPayload(), $feedType['name']);
+$reportsApi = new ReportsApi($config);
+$reportDocumentInfo = $reportsApi->getReportDocument($documentId, $reportType['name']);
+
+$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo->getPayload(), $reportType);
 $contents = $docToDownload->download();  // The raw report text
 /*
  * - Array of associative arrays, (each sub array corresponds to a row of the report) if content type is ContentType::TAB or ContentType::CSV
@@ -200,10 +200,10 @@ use SellingPartnerApi\Model\Feeds;
 
 $feedType = FeedType::POST_PRODUCT_PRICING_DATA;
 $feedsApi = new FeedsApi($config);
-$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(["content_type" => $feedType['contentType']]);
+$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(['content_type' => $feedType['contentType']]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
 
-$documentContents = file_get_contents("<your/feed/file.xml>");
+$documentContents = file_get_contents('<your/feed/file.xml>');
 
 $docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload());
 $docToUpload->upload($documentContents);

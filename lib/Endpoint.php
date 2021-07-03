@@ -6,7 +6,8 @@ namespace SellingPartnerApi;
 /** Region/endpoint pairs **/
 /***************************/
 
-class Endpoint {
+class Endpoint
+{
     // North America
     public const NA = [
         'url' => 'https://sellingpartnerapi-na.amazon.com',

@@ -26,8 +26,8 @@ class Document
     private $data;
     private $tmpFilename;
 
-    private $successfulFeedRecords = null;
-    private $failedFeedRecords = null;
+    public $successfulFeedRecords = null;
+    public $failedFeedRecords = null;
 
     /**
      * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
@@ -101,14 +101,15 @@ class Document
                 // Handle the extra data at the beginning of feed processing reports
                 if ($this->documentType === ReportType::__FEED_RESULT_REPORT['name']) {
                     array_shift($lines);  // Skip 1st line
-                    $successfulLine = str_getcsv($lines[0], $sep);
-                    $failedLine = str_getcsv($lines[1], $sep);
+                    $totalProcessedLine = str_getcsv($lines[0], $sep);
+                    $processedSuccessfullyLine = str_getcsv($lines[1], $sep);
                     // Remove the last two parsed lines, plus an additional empty line
                     $lines = array_slice($lines, 3);
 
-                    // Save the number of successful and unsuccessful records
-                    $this->successfulFeedRecords = intval($successfulLine[count($successfulLine) - 1]);
-                    $this->failedFeedRecords = intval($failedLine[count($failedLine) - 1]);
+                    // Save the number of feed records processed successfully and unsuccessfully
+                    $totalProcessed = intval($totalProcessedLine[array_key_last($totalProcessedLine)]);
+                    $this->successfulFeedRecords = intval($processedSuccessfullyLine[array_key_last($processedSuccessfullyLine)]);
+                    $this->failedFeedRecords = $totalProcessed - $this->successfulFeedRecords;
                 }
 
                 $data = array_map(fn ($line) => str_getcsv($line, $sep), $lines);

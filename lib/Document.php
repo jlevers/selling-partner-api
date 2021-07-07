@@ -9,6 +9,7 @@ use Jsq\EncryptionStreams;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use RuntimeException;
 
+use SellingPartnerApi\Model\Feeds\CreateFeedDocumentResult;
 use SellingPartnerApi\Model\Feeds\FeedDocument;
 use SellingPartnerApi\Model\Reports\ReportDocument;
 
@@ -20,41 +21,46 @@ class Document
     private $key;
     private $url;
     private $compressionAlgo;
-    private $documentType;
     private $contentType;
     private $data;
     private $tmpFilename;
 
-    private $successfulFeedRecords;
-    private $failedFeedRecords;
-
     /**
-     * @param Model\(Reports\ReportDocument|Feeds\FeedDocument) $documentInfo
+     * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
-     * @param ?array['contentType' => string, 'name' => string, ?'restricted' => false] $documentType
-     *      Not required if $documentInfo is the result of a getFeedDocument call. Otherwise, should be one
+     * @param ?array['contentType' => string, 'name' => string] $documentType
+     *      Not required if $documentInfo is of type CreateFeedDocumentResult. Otherwise, should be one
      *      of the constants defined in ReportType or FeedType.
      */
-    public function __construct(object $documentInfo, ?array $documentType = ReportType::__FEED_RESULT_REPORT) {
+    public function __construct(object $documentInfo, ?array $documentType = null) {
         // Make sure $documentInfo is a valid type
-        if (!($documentInfo instanceof ReportDocument || $documentInfo instanceof FeedDocument)) {
-            $msg = "documentInfo must be of type Model\Feeds\FeedDocument or Model\Reports\ReportDocument";
+        if (!(
+            $documentInfo instanceof ReportDocument ||
+            $documentInfo instanceof FeedDocument ||
+            $documentInfo instanceof CreateFeedDocumentResult
+        )) {
+            $msg = "documentInfo must be one of the following types: Model\Feeds\CreateFeedDocumentResult, Model\Feeds\FeedDocument, Model\Reports\ReportDocument";
             throw new RuntimeException($msg);
         }
 
-        if ($documentType === null) {
-            throw new RuntimeException('$documentType cannot be null');
-        }
-        $this->contentType = $documentType['contentType'];
-        $this->documentType = $documentType['name'];
-
-        $validContentTypes = ContentType::getContentTypes();
-        if (!in_array($this->contentType, array_values($validContentTypes))) {
-            $readableContentTypes = [];
-            foreach ($validContentTypes as $name => $value) {
-                $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
+        // All feed result documents are tab separated values files
+        if ($documentInfo instanceof CreateFeedDocumentResult) {
+            $documentType = ReportType::__FEED_RESULT_REPORT;
+            $this->contentType = $documentType['contentType'];
+        } else {
+            if ($documentType === null) {
+                throw new RuntimeException('$documentType must be passed when $documentInfo is of type FeedDocument or ReportDocument');
             }
-            throw new \InvalidArgumentException("Valid content types are: " . implode(", ", $readableContentTypes));
+            $this->contentType = $documentType['contentType'];
+            
+            $validContentTypes = ContentType::getContentTypes();
+            if (!in_array($this->contentType, array_values($validContentTypes))) {
+                $readableContentTypes = [];
+                foreach ($validContentTypes as $name => $value) {
+                    $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
+                }
+                throw new \InvalidArgumentException("Valid content types are: " . implode(", ", $readableContentTypes));
+            }
         }
 
         $this->url = $documentInfo->getUrl();

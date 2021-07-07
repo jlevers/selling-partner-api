@@ -90,22 +90,38 @@ class Document
             case ContentType::CSV:
             case ContentType::TAB:
                 $sep = $this->contentType === ContentType::CSV ? "," : "\t";
-    
-                $bareStream = fopen("php://memory", "rw");
-                fwrite($bareStream, $contents);
-                rewind($bareStream);
+                $lines = explode("\n", $contents);
 
-                $data = [];
-                $header = fgetcsv($bareStream, 0, $sep);
-                while (($line = fgetcsv($bareStream, 0, $sep)) !== false) {
-                    $row = [];
-                    foreach ($line as $idx => $val) {
-                        $row[$header[$idx]] = $val;
-                    }
-                    $data[] = $row;
+                // Handle the extra data at the beginning of feed processing reports
+                if ($this->documentType === ReportType::__FEED_RESULT_REPORT['name']) {
+                    array_shift($lines);  // Skip 1st line
+                    $successfulLine = str_getcsv($lines[0], $sep);
+                    $failedLine = str_getcsv($lines[1], $sep);
+                    // Remove the last two parsed lines, plus an additional empty line
+                    $lines = array_slice($lines, 3);
+
+                    // Save the number of successful and unsuccessful records
+                    $this->successfulFeedRecords = intval($successfulLine[count($successfulLine) - 1]);
+                    $this->failedFeedRecords = intval($failedLine[count($failedLine) - 1]);
                 }
+
+                $data = array_map(fn ($line) => str_getcsv($line, $sep), $lines);
+                if (count($data) > 1) {
+                    // Sometimes the final line of a file consists of a single null value. If so, delete it
+                    $lastRow = $data[count($data) - 1];
+                    if (count($lastRow) === 1 && $lastRow[0] === null) {
+                        array_pop($data);
+                    }
+                }
+
+                // Turn each $data subarray into an associative array with the headers as keys
+                array_walk($data, function(&$a) use ($data) {
+                    $a = array_combine($data[0], $a);
+                });
+                // Remove headers line
+                array_shift($data);
+
                 $this->data = $data;
-                fclose($bareStream);
                 break;
             case ContentType::JSON:
                 $this->data = json_decode($contents);

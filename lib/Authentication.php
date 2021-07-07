@@ -167,7 +167,6 @@ class Authentication
             $relevantCreds = $this->getRoleCredentials();
         }
 
-        $request->withHeader("content-type", "application/json");
         $canonicalRequest = $this->createCanonicalRequest($request);
         $signingString = $this->createSigningString($canonicalRequest);
         $signature = $this->createSignature($signingString, $relevantCreds->getSecretKey());

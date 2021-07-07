@@ -2158,10 +2158,7 @@ class OrdersApi
     {
         $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
         $signedRequest = $this->config->signRequest(
-            $request,
-            null,
-            "/orders/v0/orders",
-            "getOrders"
+            $request
         );
 
         try {
@@ -2424,10 +2421,7 @@ class OrdersApi
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrdersResponse';
         $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
         $signedRequest = $this->config->signRequest(
-            $request,
-            null,
-            "/orders/v0/orders",
-            "getOrders"
+            $request
         );
 
         return $this->client

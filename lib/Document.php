@@ -22,17 +22,21 @@ class Document
     private $url;
     private $compressionAlgo;
     private $contentType;
+    private $documentType;
     private $data;
     private $tmpFilename;
+
+    private $successfulFeedRecords = null;
+    private $failedFeedRecords = null;
 
     /**
      * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
      * @param ?array['contentType' => string, 'name' => string] $documentType
-     *      Not required if $documentInfo is of type CreateFeedDocumentResult. Otherwise, should be one
+     *      Not required if $documentInfo is of type FeedDocument. Otherwise, should be one
      *      of the constants defined in ReportType or FeedType.
      */
-    public function __construct(object $documentInfo, ?array $documentType = null) {
+    public function __construct(object $documentInfo, ?array $documentType = ReportType::__FEED_RESULT_REPORT) {
         // Make sure $documentInfo is a valid type
         if (!(
             $documentInfo instanceof ReportDocument ||
@@ -43,24 +47,20 @@ class Document
             throw new RuntimeException($msg);
         }
 
-        // All feed result documents are tab separated values files
-        if ($documentInfo instanceof CreateFeedDocumentResult) {
-            $documentType = ReportType::__FEED_RESULT_REPORT;
-            $this->contentType = $documentType['contentType'];
-        } else {
-            if ($documentType === null) {
-                throw new RuntimeException('$documentType must be passed when $documentInfo is of type FeedDocument or ReportDocument');
+        if ($documentType === null) {
+            throw new RuntimeException('$documentType cannot be null');
+        }
+
+        $this->contentType = $documentType['contentType'];
+        $this->documentType = $documentType['name'];
+
+        $validContentTypes = ContentType::getContentTypes();
+        if (!in_array($this->contentType, array_values($validContentTypes))) {
+            $readableContentTypes = [];
+            foreach ($validContentTypes as $name => $value) {
+                $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
             }
-            $this->contentType = $documentType['contentType'];
-            
-            $validContentTypes = ContentType::getContentTypes();
-            if (!in_array($this->contentType, array_values($validContentTypes))) {
-                $readableContentTypes = [];
-                foreach ($validContentTypes as $name => $value) {
-                    $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
-                }
-                throw new \InvalidArgumentException("Valid content types are: " . implode(", ", $readableContentTypes));
-            }
+            throw new \InvalidArgumentException("Valid content types are: " . implode(", ", $readableContentTypes));
         }
 
         $this->url = $documentInfo->getUrl();

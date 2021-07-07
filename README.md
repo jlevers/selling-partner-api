@@ -200,13 +200,18 @@ use SellingPartnerApi\Model\Feeds;
 
 $feedType = FeedType::POST_PRODUCT_PRICING_DATA;
 $feedsApi = new FeedsApi($config);
+
+// Create feed document
 $createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(['content_type' => $feedType['contentType']]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
+$feedDocumentId = $feedDocumentInfo->getPayload()->getFeedDocumentId();
 
-$documentContents = file_get_contents('<your/feed/file.xml>');
+// Upload feed contents to document
+$feedContents = file_get_contents('<your/feed/file.xml>');
+$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload(), $feedType);
+$docToUpload->upload($feedContents);
 
-$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload());
-$docToUpload->upload($documentContents);
+// ... call FeedsApi::createFeed() with $feedDocumentId
 ```
 
 

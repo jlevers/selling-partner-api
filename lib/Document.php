@@ -71,7 +71,19 @@ class Document
         }
     }
 
-    public function download(): string {
+    /**
+     * Downloads the document data, and optionally parses it into a different format based on its content type.
+     *
+     * @param ?bool $postProcess If true, parse document contents based on the document's content type.
+     *      CSV or TAB: a 2D array of (associative) report rows
+     *      JSON: a nested array of data (result of json_decode)
+     *      PDF or PLAIN: the raw, unmodified document contents
+     *      XLSX: a PhpOffice\PhpSpreadsheet\Spreadsheet object
+     *      XML: a SimpleXML object
+     *
+     * @return string The raw (unencrypted) document contents.
+     */
+    public function download(?bool $postProcess = true): string {
         $rawContents = file_get_contents($this->url);
         $maybeZippedContents = openssl_decrypt($rawContents, static::ENCRYPTION_SCHEME, $this->key, OPENSSL_RAW_DATA, $this->iv);
 
@@ -82,6 +94,13 @@ class Document
             }
         } else {
             $contents = $maybeZippedContents;
+        }
+
+        // Don't try to parse report data. Useful for very large reports, or if someone
+        // wants to do custom parsing
+        if (!$postProcess) {
+            $this->data = $contents;
+            return $contents;
         }
 
         // Documents are ISO-8859-1 encoded, which messes up the data when we read it directly

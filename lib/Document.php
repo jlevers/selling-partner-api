@@ -3,9 +3,7 @@
 namespace SellingPartnerApi;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7;
 use GuzzleHttp\RequestOptions;
-use Jsq\EncryptionStreams;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use RuntimeException;
 
@@ -162,31 +160,16 @@ class Document
      * @return void
      */
     public function upload(string $feedData): void {
-        $stream = fopen("php://memory", "r+");
-        if (!$stream) {
-            throw new RuntimeException("Error creating input stream (php://memory)\n");
-        }
+        $encrypted = openssl_encrypt($feedData, static::ENCRYPTION_SCHEME, $this->key, OPENSSL_RAW_DATA, $this->iv);
 
-        // Write the data to an in-memory stream to make it easier to encrypt chunks of it at a time.
-        // Amazon requires their data to be encrypted at rest, which prevents us from writing the data
-        // to a file and encrypting it from there
-        $stream = Psr7\Utils::streamFor($stream);
-        $stream->write($feedData);
-        $stream->rewind();
-
-        $cipherMethod = new EncryptionStreams\Cbc($this->iv);
-        $stream = new EncryptionStreams\AesEncryptingStream($stream, $this->key, $cipherMethod);
         $client = new Client();
-
         $response = $client->put($this->url, [
             RequestOptions::HEADERS => [
                 "content-type" => $this->contentType,
                 "host" => parse_url($this->url, PHP_URL_HOST),
             ],
-            RequestOptions::BODY => $stream,
+            RequestOptions::BODY => $encrypted,
         ]);
-
-        $stream->close();
 
         if ($response->getStatusCode() >= 300) {
             throw new RuntimeException("Upload failed ({$response->getStatusCode()}): {$response->getBody()}");

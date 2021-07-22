@@ -104,7 +104,7 @@ class Document
         }
 
         // Documents are ISO-8859-1 encoded, which messes up the data when we read it directly
-        // via SimpleXML or fgetcsv, but the original encoding is required to parse XLSX and PDF reports
+        // via SimpleXML or as a plain TAB/CSV, but the original encoding is required to parse XLSX and PDF reports
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
             $contents = utf8_encode($contents);
         }
@@ -112,40 +112,26 @@ class Document
         switch ($this->contentType) {
             case ContentType::CSV:
             case ContentType::TAB:
-                $sep = $this->contentType === ContentType::CSV ? "," : "\t";
-                $lines = explode("\n", $contents);
+            case ContentType::XLSX:
+                $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
+                $tempFile = fopen($this->tmpFilename, "r+");
+                fwrite($tempFile, $contents);
+                fclose($tempFile);
 
-                // Handle the extra data at the beginning of feed processing reports
-                if ($this->documentType === ReportType::__FEED_RESULT_REPORT['name']) {
-                    array_shift($lines);  // Skip 1st line
-                    $totalProcessedLine = str_getcsv($lines[0], $sep);
-                    $processedSuccessfullyLine = str_getcsv($lines[1], $sep);
-                    // Remove the last two parsed lines, plus an additional empty line
-                    $lines = array_slice($lines, 3);
-
-                    // Save the number of feed records processed successfully and unsuccessfully
-                    $totalProcessed = intval($totalProcessedLine[array_key_last($totalProcessedLine)]);
-                    $this->successfulFeedRecords = intval($processedSuccessfullyLine[array_key_last($processedSuccessfullyLine)]);
-                    $this->failedFeedRecords = $totalProcessed - $this->successfulFeedRecords;
+                $spreadsheet = IOFactory::load($this->tmpFilename);
+                if ($this->contentType !== ContentType::XLSX) {
+                    $sheet = $spreadsheet->getSheet(0)->toArray();
+                    // Turn each row of data into an associative array with the headers as keys
+                    array_walk($sheet, function(&$row) use ($sheet) {
+                        $row = array_combine($sheet[0], $row);
+                    });
+                    // Remove headers line
+                    array_shift($sheet);
+                    $this->data = $sheet;
+                } else {
+                    $this->data = $spreadsheet;
                 }
 
-                $data = array_map(fn ($line) => str_getcsv($line, $sep), $lines);
-                if (count($data) > 1) {
-                    // Sometimes the final line of a file consists of a single null value. If so, delete it
-                    $lastRow = $data[count($data) - 1];
-                    if (count($lastRow) === 1 && $lastRow[0] === null) {
-                        array_pop($data);
-                    }
-                }
-
-                // Turn each $data subarray into an associative array with the headers as keys
-                array_walk($data, function(&$a) use ($data) {
-                    $a = array_combine($data[0], $a);
-                });
-                // Remove headers line
-                array_shift($data);
-
-                $this->data = $data;
                 break;
             case ContentType::JSON:
                 $this->data = json_decode($contents);
@@ -153,15 +139,6 @@ class Document
             case ContentType::PDF:
             case ContentType::PLAIN:
                 $this->data = $contents;
-                break;
-            case ContentType::XLSX:
-                $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
-                $tempFile = fopen($this->tmpFilename, "r+");
-                fwrite($tempFile, $contents);
-                fclose($tempFile);
-    
-                $spreadsheet = IOFactory::load($this->tmpFilename);
-                $this->data = $spreadsheet;
                 break;
             case ContentType::XML:
                 $this->data = simplexml_load_string($contents);

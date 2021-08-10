@@ -167,21 +167,8 @@ class Granularity implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const GRANULARITY_TYPE_MARKETPLACE = 'Marketplace';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getGranularityTypeAllowableValues()
-    {
-        return [
-            self::GRANULARITY_TYPE_MARKETPLACE,
-        ];
-    }
     
 
     /**
@@ -211,15 +198,6 @@ class Granularity implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getGranularityTypeAllowableValues();
-        if (!is_null($this->container['granularity_type']) && !in_array($this->container['granularity_type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'granularity_type', must be one of '%s'",
-                $this->container['granularity_type'],
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -255,16 +233,6 @@ class Granularity implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setGranularityType($granularity_type)
     {
-        $allowedValues = $this->getGranularityTypeAllowableValues();
-        if (!is_null($granularity_type) && !in_array($granularity_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'granularity_type', must be one of '%s'",
-                    $granularity_type,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['granularity_type'] = $granularity_type;
 
         return $this;

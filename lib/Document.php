@@ -15,12 +15,9 @@ class Document
 {
     public const ENCRYPTION_SCHEME = "AES-256-CBC";
 
-    private $iv;
-    private $key;
     private $url;
     private $compressionAlgo;
     private $contentType;
-    private $documentType;
     private $data;
     private $tmpFilename;
 
@@ -50,7 +47,6 @@ class Document
         }
 
         $this->contentType = $documentType['contentType'];
-        $this->documentType = $documentType['name'];
 
         $validContentTypes = ContentType::getContentTypes();
         if (!in_array($this->contentType, array_values($validContentTypes))) {
@@ -62,9 +58,6 @@ class Document
         }
 
         $this->url = $documentInfo->getUrl();
-        $encryptionDetails = $documentInfo->getEncryptionDetails();
-        $this->key = base64_decode($encryptionDetails->getKey());
-        $this->iv = base64_decode($encryptionDetails->getInitializationVector());
 
         if (method_exists($documentInfo, "getCompressionAlgorithm")) {
             $this->compressionAlgo = $documentInfo->getCompressionAlgorithm() ?? null;
@@ -85,15 +78,14 @@ class Document
      */
     public function download(?bool $postProcess = true): string {
         $rawContents = file_get_contents($this->url);
-        $maybeZippedContents = openssl_decrypt($rawContents, static::ENCRYPTION_SCHEME, $this->key, OPENSSL_RAW_DATA, $this->iv);
 
         $contents = null;
         if ($this->compressionAlgo !== null) {
             if ($this->compressionAlgo === "GZIP") {
-                $contents = gzdecode($maybeZippedContents);
+                $contents = gzdecode($rawContents);
             }
         } else {
-            $contents = $maybeZippedContents;
+            $contents = $rawContents;
         }
 
         // Don't try to parse report data. Useful for very large reports, or if someone
@@ -156,15 +148,13 @@ class Document
      * @return void
      */
     public function upload(string $feedData): void {
-        $encrypted = openssl_encrypt($feedData, static::ENCRYPTION_SCHEME, $this->key, OPENSSL_RAW_DATA, $this->iv);
-
         $client = new Client();
         $response = $client->put($this->url, [
             RequestOptions::HEADERS => [
                 "content-type" => $this->contentType,
                 "host" => parse_url($this->url, PHP_URL_HOST),
             ],
-            RequestOptions::BODY => $encrypted,
+            RequestOptions::BODY => $feedData,
         ]);
 
         if ($response->getStatusCode() >= 300) {

@@ -179,7 +179,7 @@ $reportType = ReportType::GET_FLAT_FILE_OPEN_LISTINGS_DATA;
 $reportsApi = new ReportsApi($config);
 $reportDocumentInfo = $reportsApi->getReportDocument($documentId, $reportType['name']);
 
-$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo->getPayload(), $reportType);
+$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo, $reportType);
 $contents = $docToDownload->download();  // The raw report text
 /*
  * - Array of associative arrays, (each sub array corresponds to a row of the report) if content type is ContentType::TAB or ContentType::CSV
@@ -205,11 +205,11 @@ $feedsApi = new FeedsApi($config);
 // Create feed document
 $createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(['content_type' => $feedType['contentType']]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
-$feedDocumentId = $feedDocumentInfo->getPayload()->getFeedDocumentId();
+$feedDocumentId = $feedDocumentInfo->getFeedDocumentId();
 
 // Upload feed contents to document
 $feedContents = file_get_contents('<your/feed/file.xml>');
-$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo->getPayload(), $feedType);
+$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo, $feedType);
 $docToUpload->upload($feedContents);
 
 // ... call FeedsApi::createFeed() with $feedDocumentId

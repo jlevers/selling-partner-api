@@ -1,5 +1,5 @@
 # Selling Partner API for PHP
-A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/). This library is *not* for connecting to Amazon's older MWS API―if that's what you need, check out [glassfrogbooks/php-amazon-mws](https://github.com/glassfrogbooks/phpAmazonMWS).
+A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/).
 
 ## Powering companies like...
 
@@ -124,6 +124,7 @@ try {
 * [A+ Content API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AplusContentApi.md)
 * [Authorization API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AuthorizationApi.md)
 * [Catalog API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogApi.md)
+* [Old Catalog API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OldCatalogApi.md) (the original Catalog API)
 * [FBA Inbound API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundApi.md)
 * [FBA Inbound Eligibility API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundEligibilityApi.md)
 * [FBA Inventory API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInventoryApi.md)

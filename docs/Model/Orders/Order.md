@@ -50,5 +50,9 @@ Note: LatestShipDate might not be returned for orders placed before February 1, 
 **default_ship_from_location_address** | [**\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
 **fulfillment_instruction** | [**\SellingPartnerApi\Model\Orders\FulfillmentInstruction**](FulfillmentInstruction.md) |  | [optional]
 **is_ispu** | **bool** | When true, this order is marked to be picked up from a store rather than delivered. | [optional]
+**marketplace_tax_info** | [**\SellingPartnerApi\Model\Orders\MarketplaceTaxInfo**](MarketplaceTaxInfo.md) |  | [optional]
+**seller_display_name** | **string** | The seller’s friendly name registered in the marketplace. | [optional]
+**shipping_address** | [**\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
+**buyer_info** | [**\SellingPartnerApi\Model\Orders\BuyerInfo**](BuyerInfo.md) |  | [optional]
 
 [[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

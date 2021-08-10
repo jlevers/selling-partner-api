@@ -94,7 +94,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_sold_by_ab' => 'bool',
         'default_ship_from_location_address' => '\SellingPartnerApi\Model\Orders\Address',
         'fulfillment_instruction' => '\SellingPartnerApi\Model\Orders\FulfillmentInstruction',
-        'is_ispu' => 'bool'
+        'is_ispu' => 'bool',
+        'marketplace_tax_info' => '\SellingPartnerApi\Model\Orders\MarketplaceTaxInfo',
+        'seller_display_name' => 'string',
+        'shipping_address' => '\SellingPartnerApi\Model\Orders\Address',
+        'buyer_info' => '\SellingPartnerApi\Model\Orders\BuyerInfo'
     ];
 
     /**
@@ -140,7 +144,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_sold_by_ab' => null,
         'default_ship_from_location_address' => null,
         'fulfillment_instruction' => null,
-        'is_ispu' => null
+        'is_ispu' => null,
+        'marketplace_tax_info' => null,
+        'seller_display_name' => null,
+        'shipping_address' => null,
+        'buyer_info' => null
     ];
 
     /**
@@ -205,7 +213,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_sold_by_ab' => 'IsSoldByAB',
         'default_ship_from_location_address' => 'DefaultShipFromLocationAddress',
         'fulfillment_instruction' => 'FulfillmentInstruction',
-        'is_ispu' => 'IsISPU'
+        'is_ispu' => 'IsISPU',
+        'marketplace_tax_info' => 'MarketplaceTaxInfo',
+        'seller_display_name' => 'SellerDisplayName',
+        'shipping_address' => 'ShippingAddress',
+        'buyer_info' => 'BuyerInfo'
     ];
 
     /**
@@ -249,7 +261,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_sold_by_ab' => 'setIsSoldByAb',
         'default_ship_from_location_address' => 'setDefaultShipFromLocationAddress',
         'fulfillment_instruction' => 'setFulfillmentInstruction',
-        'is_ispu' => 'setIsIspu'
+        'is_ispu' => 'setIsIspu',
+        'marketplace_tax_info' => 'setMarketplaceTaxInfo',
+        'seller_display_name' => 'setSellerDisplayName',
+        'shipping_address' => 'setShippingAddress',
+        'buyer_info' => 'setBuyerInfo'
     ];
 
     /**
@@ -293,7 +309,11 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_sold_by_ab' => 'getIsSoldByAb',
         'default_ship_from_location_address' => 'getDefaultShipFromLocationAddress',
         'fulfillment_instruction' => 'getFulfillmentInstruction',
-        'is_ispu' => 'getIsIspu'
+        'is_ispu' => 'getIsIspu',
+        'marketplace_tax_info' => 'getMarketplaceTaxInfo',
+        'seller_display_name' => 'getSellerDisplayName',
+        'shipping_address' => 'getShippingAddress',
+        'buyer_info' => 'getBuyerInfo'
     ];
 
     /**
@@ -472,6 +492,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['default_ship_from_location_address'] = $data['default_ship_from_location_address'] ?? null;
         $this->container['fulfillment_instruction'] = $data['fulfillment_instruction'] ?? null;
         $this->container['is_ispu'] = $data['is_ispu'] ?? null;
+        $this->container['marketplace_tax_info'] = $data['marketplace_tax_info'] ?? null;
+        $this->container['seller_display_name'] = $data['seller_display_name'] ?? null;
+        $this->container['shipping_address'] = $data['shipping_address'] ?? null;
+        $this->container['buyer_info'] = $data['buyer_info'] ?? null;
     }
 
     /**
@@ -1446,6 +1470,102 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsIspu($is_ispu)
     {
         $this->container['is_ispu'] = $is_ispu;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketplace_tax_info
+     *
+     * @return \SellingPartnerApi\Model\Orders\MarketplaceTaxInfo|null
+     */
+    public function getMarketplaceTaxInfo()
+    {
+        return $this->container['marketplace_tax_info'];
+    }
+
+    /**
+     * Sets marketplace_tax_info
+     *
+     * @param \SellingPartnerApi\Model\Orders\MarketplaceTaxInfo|null $marketplace_tax_info marketplace_tax_info
+     *
+     * @return self
+     */
+    public function setMarketplaceTaxInfo($marketplace_tax_info)
+    {
+        $this->container['marketplace_tax_info'] = $marketplace_tax_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets seller_display_name
+     *
+     * @return string|null
+     */
+    public function getSellerDisplayName()
+    {
+        return $this->container['seller_display_name'];
+    }
+
+    /**
+     * Sets seller_display_name
+     *
+     * @param string|null $seller_display_name The seller’s friendly name registered in the marketplace.
+     *
+     * @return self
+     */
+    public function setSellerDisplayName($seller_display_name)
+    {
+        $this->container['seller_display_name'] = $seller_display_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_address
+     *
+     * @return \SellingPartnerApi\Model\Orders\Address|null
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shipping_address'];
+    }
+
+    /**
+     * Sets shipping_address
+     *
+     * @param \SellingPartnerApi\Model\Orders\Address|null $shipping_address shipping_address
+     *
+     * @return self
+     */
+    public function setShippingAddress($shipping_address)
+    {
+        $this->container['shipping_address'] = $shipping_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_info
+     *
+     * @return \SellingPartnerApi\Model\Orders\BuyerInfo|null
+     */
+    public function getBuyerInfo()
+    {
+        return $this->container['buyer_info'];
+    }
+
+    /**
+     * Sets buyer_info
+     *
+     * @param \SellingPartnerApi\Model\Orders\BuyerInfo|null $buyer_info buyer_info
+     *
+     * @return self
+     */
+    public function setBuyerInfo($buyer_info)
+    {
+        $this->container['buyer_info'] = $buyer_info;
 
         return $this;
     }

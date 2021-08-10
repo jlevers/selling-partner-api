@@ -83,7 +83,9 @@ getOrderAddress($order_id): \SellingPartnerApi\Model\Orders\GetOrderAddressRespo
 
 
 
-Returns the shipping address for the order indicated by the specified order ID.
+Returns the shipping address for the specified order.
+
+**Important.** We recommend using the getOrders operation to get shipping address information for an order, as the getOrderAddress operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).
 
 **Usage Plans:**
 
@@ -148,7 +150,9 @@ getOrderBuyerInfo($order_id): \SellingPartnerApi\Model\Orders\GetOrderBuyerInfoR
 
 
 
-Returns buyer information for the order indicated by the specified order ID.
+Returns buyer information for the specified order.
+
+**Important.** We recommend using the getOrders operation to get buyer information for an order, as the getOrderBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).
 
 **Usage Plans:**
 
@@ -282,7 +286,9 @@ getOrderItemsBuyerInfo($order_id, $next_token): \SellingPartnerApi\Model\Orders\
 
 
 
-Returns buyer information in the order items of the order indicated by the specified order ID.
+Returns buyer information for the order items in the specified order.
+
+**Important.** We recommend using the getOrderItems operation to get buyer information for the order items in an order, as the getOrderItemsBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).
 
 **Usage Plans:**
 

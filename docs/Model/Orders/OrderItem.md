@@ -41,8 +41,9 @@ Possible values: BusinessPrice - A special price that is available only for Amaz
 
 Returned only for Amazon Easy Ship orders. | [optional]
 **is_transparency** | **bool** | When true, transparency codes are required. | [optional]
-**ioss_number** | **string** | The IOSS number of the seller. Sellers selling in the EU will be assigned a unique IOSS number that must be listed on all packages sent to the EU. | [optional]
+**ioss_number** | **string** | The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale. | [optional]
 **store_chain_store_id** | **string** | The store chain store identifier. Linked to a specific store in a store chain. | [optional]
 **deemed_reseller_category** | **string** | The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK. | [optional]
+**buyer_info** | [**\SellingPartnerApi\Model\Orders\ItemBuyerInfo**](ItemBuyerInfo.md) |  | [optional]
 
 [[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

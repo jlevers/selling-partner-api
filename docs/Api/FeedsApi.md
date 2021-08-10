@@ -2,18 +2,18 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelFeed()**](FeedsApi.md#cancelFeed) | **DELETE** /feeds/2020-09-04/feeds/{feedId} | 
-[**createFeed()**](FeedsApi.md#createFeed) | **POST** /feeds/2020-09-04/feeds | 
-[**createFeedDocument()**](FeedsApi.md#createFeedDocument) | **POST** /feeds/2020-09-04/documents | 
-[**getFeed()**](FeedsApi.md#getFeed) | **GET** /feeds/2020-09-04/feeds/{feedId} | 
-[**getFeedDocument()**](FeedsApi.md#getFeedDocument) | **GET** /feeds/2020-09-04/documents/{feedDocumentId} | 
-[**getFeeds()**](FeedsApi.md#getFeeds) | **GET** /feeds/2020-09-04/feeds | 
+[**cancelFeed()**](FeedsApi.md#cancelFeed) | **DELETE** /feeds/2021-06-30/feeds/{feedId} | 
+[**createFeed()**](FeedsApi.md#createFeed) | **POST** /feeds/2021-06-30/feeds | 
+[**createFeedDocument()**](FeedsApi.md#createFeedDocument) | **POST** /feeds/2021-06-30/documents | 
+[**getFeed()**](FeedsApi.md#getFeed) | **GET** /feeds/2021-06-30/feeds/{feedId} | 
+[**getFeedDocument()**](FeedsApi.md#getFeedDocument) | **GET** /feeds/2021-06-30/documents/{feedDocumentId} | 
+[**getFeeds()**](FeedsApi.md#getFeeds) | **GET** /feeds/2021-06-30/feeds | 
 
 
 ## `cancelFeed()`
 
 ```php
-cancelFeed($feed_id): \SellingPartnerApi\Model\Feeds\CancelFeedResponse
+cancelFeed($feed_id)
 ```
 
 
@@ -48,8 +48,7 @@ $apiInstance = new SellingPartnerApi\Api\FeedsApi($config);
 $feed_id = 'feed_id_example'; // string | The identifier for the feed. This identifier is unique only in combination with a seller ID.
 
 try {
-    $result = $apiInstance->cancelFeed($feed_id);
-    print_r($result);
+    $apiInstance->cancelFeed($feed_id);
 } catch (Exception $e) {
     echo 'Exception when calling FeedsApi->cancelFeed: ', $e->getMessage(), PHP_EOL;
 }
@@ -63,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Feeds\CancelFeedResponse**](../Model/Feeds/CancelFeedResponse.md)
+void (empty response body)
 
 ### HTTP request headers
 
@@ -82,7 +81,7 @@ createFeed($body): \SellingPartnerApi\Model\Feeds\CreateFeedResponse
 
 
 
-Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.
+Creates a feed. Upload the contents of the feed document before calling this operation.
 
 **Usage Plan:**
 
@@ -146,7 +145,7 @@ createFeedDocument($body): \SellingPartnerApi\Model\Feeds\CreateFeedDocumentResp
 
 
 
-Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.
+Creates a feed document for the feed type that you specify. This operation returns a presigned URL for uploading the feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.
 
 **Usage Plan:**
 
@@ -205,7 +204,7 @@ Name | Type | Description  | Notes
 ## `getFeed()`
 
 ```php
-getFeed($feed_id): \SellingPartnerApi\Model\Feeds\GetFeedResponse
+getFeed($feed_id): \SellingPartnerApi\Model\Feeds\Feed
 ```
 
 
@@ -255,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Feeds\GetFeedResponse**](../Model/Feeds/GetFeedResponse.md)
+[**\SellingPartnerApi\Model\Feeds\Feed**](../Model/Feeds/Feed.md)
 
 ### HTTP request headers
 
@@ -269,12 +268,12 @@ Name | Type | Description  | Notes
 ## `getFeedDocument()`
 
 ```php
-getFeedDocument($feed_document_id): \SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse
+getFeedDocument($feed_document_id): \SellingPartnerApi\Model\Feeds\FeedDocument
 ```
 
 
 
-Returns the information required for retrieving a feed document's contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document's contents.
+Returns the information required for retrieving a feed document's contents.
 
 **Usage Plan:**
 
@@ -319,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\Feeds\GetFeedDocumentResponse**](../Model/Feeds/GetFeedDocumentResponse.md)
+[**\SellingPartnerApi\Model\Feeds\FeedDocument**](../Model/Feeds/FeedDocument.md)
 
 ### HTTP request headers
 

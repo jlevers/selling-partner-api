@@ -78,7 +78,7 @@ class FbaInboundEligibilityApi
         $hostIndex = 0
     ) {
         $this->client = $client ?: new Client();
-        $this->config = $config ?: new Configuration();
+        $this->config = $config;
         $this->headerSelector = $selector ?: new HeaderSelector($this->config);
         $this->hostIndex = $hostIndex;
     }

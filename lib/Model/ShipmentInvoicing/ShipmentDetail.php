@@ -70,6 +70,8 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_name' => 'string',
         'buyer_county' => 'string',
         'buyer_tax_info' => '\SellingPartnerApi\Model\ShipmentInvoicing\BuyerTaxInfo',
+        'marketplace_tax_info' => '\SellingPartnerApi\Model\ShipmentInvoicing\MarketplaceTaxInfo',
+        'seller_display_name' => 'string',
         'shipment_items' => '\SellingPartnerApi\Model\ShipmentInvoicing\ShipmentItem[]'
     ];
 
@@ -92,6 +94,8 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_name' => null,
         'buyer_county' => null,
         'buyer_tax_info' => null,
+        'marketplace_tax_info' => null,
+        'seller_display_name' => null,
         'shipment_items' => null
     ];
 
@@ -133,6 +137,8 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_name' => 'BuyerName',
         'buyer_county' => 'BuyerCounty',
         'buyer_tax_info' => 'BuyerTaxInfo',
+        'marketplace_tax_info' => 'MarketplaceTaxInfo',
+        'seller_display_name' => 'SellerDisplayName',
         'shipment_items' => 'ShipmentItems'
     ];
 
@@ -153,6 +159,8 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_name' => 'setBuyerName',
         'buyer_county' => 'setBuyerCounty',
         'buyer_tax_info' => 'setBuyerTaxInfo',
+        'marketplace_tax_info' => 'setMarketplaceTaxInfo',
+        'seller_display_name' => 'setSellerDisplayName',
         'shipment_items' => 'setShipmentItems'
     ];
 
@@ -173,6 +181,8 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_name' => 'getBuyerName',
         'buyer_county' => 'getBuyerCounty',
         'buyer_tax_info' => 'getBuyerTaxInfo',
+        'marketplace_tax_info' => 'getMarketplaceTaxInfo',
+        'seller_display_name' => 'getSellerDisplayName',
         'shipment_items' => 'getShipmentItems'
     ];
 
@@ -247,6 +257,8 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['buyer_name'] = $data['buyer_name'] ?? null;
         $this->container['buyer_county'] = $data['buyer_county'] ?? null;
         $this->container['buyer_tax_info'] = $data['buyer_tax_info'] ?? null;
+        $this->container['marketplace_tax_info'] = $data['marketplace_tax_info'] ?? null;
+        $this->container['seller_display_name'] = $data['seller_display_name'] ?? null;
         $this->container['shipment_items'] = $data['shipment_items'] ?? null;
     }
 
@@ -534,6 +546,54 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBuyerTaxInfo($buyer_tax_info)
     {
         $this->container['buyer_tax_info'] = $buyer_tax_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketplace_tax_info
+     *
+     * @return \SellingPartnerApi\Model\ShipmentInvoicing\MarketplaceTaxInfo|null
+     */
+    public function getMarketplaceTaxInfo()
+    {
+        return $this->container['marketplace_tax_info'];
+    }
+
+    /**
+     * Sets marketplace_tax_info
+     *
+     * @param \SellingPartnerApi\Model\ShipmentInvoicing\MarketplaceTaxInfo|null $marketplace_tax_info marketplace_tax_info
+     *
+     * @return self
+     */
+    public function setMarketplaceTaxInfo($marketplace_tax_info)
+    {
+        $this->container['marketplace_tax_info'] = $marketplace_tax_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets seller_display_name
+     *
+     * @return string|null
+     */
+    public function getSellerDisplayName()
+    {
+        return $this->container['seller_display_name'];
+    }
+
+    /**
+     * Sets seller_display_name
+     *
+     * @param string|null $seller_display_name The seller’s friendly name registered in the marketplace.
+     *
+     * @return self
+     */
+    public function setSellerDisplayName($seller_display_name)
+    {
+        $this->container['seller_display_name'] = $seller_display_name;
 
         return $this;
     }

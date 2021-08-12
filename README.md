@@ -50,7 +50,8 @@ $config = new SellingPartnerApi\Configuration([
     "lwaRefreshToken" => "<LWA refresh token>",
     "awsAccessKeyId" => "<AWS access key ID>",
     "awsSecretAccessKey" => "<AWS secret access key>",
-    // If you're not working in the North American marketplace, change this to another endpoint from lib/Endpoint.php
+    // If you're not working in the North American marketplace, change
+    // this to another endpoint from lib/Endpoint.php
     "endpoint" => SellingPartnerApi\Endpoint::NA,
 ]);
 ```
@@ -64,7 +65,8 @@ $config = new SellingPartnerApi\Configuration([
     "lwaRefreshToken" => "<LWA refresh token>",
     "awsAccessKeyId" => "<AWS access key ID>",
     "awsSecretAccessKey" => "<AWS secret access key>",
-    // If you're not working in the North American marketplace, change this to another endpoint from lib/Endpoint.php
+    // If you're not working in the North American marketplace, change
+    // this to another endpoint from lib/Endpoint.php
     "endpoint" => SellingPartnerApi\Endpoint::NA,
     "roleArn" => "<Role ARN>",
 ]);
@@ -105,7 +107,8 @@ $config = new Configuration([
     "lwaRefreshToken" => "Aztr|IwEBI....",
     "awsAccessKeyId" => "AKIA....",
     "awsSecretAccessKey" => "ABCD....",
-    // If you're not working in the North American marketplace, change this to another endpoint from lib/Endpoint.php
+    // If you're not working in the North American marketplace, change
+    // this to another endpoint from lib/Endpoint.php
     "endpoint" => Endpoint::NA
 ]);
 

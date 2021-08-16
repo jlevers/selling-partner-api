@@ -80,7 +80,7 @@ The array passed to the `Configuration` constructor accepts the following keys:
 
 * `lwaClientId (string)`: Required. The LWA client ID of the SP API application to use to execute API requests.
 * `lwaClientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
-* `lwaRefreshToken (string)`: Required. The LWA refresh token of the SP API application to use to execute API requests.
+* `lwaRefreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using the `Configuration` instance to call [grantless operations](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#grantless-operations).
 * `awsAccessKeyId (string)`: Required. AWS IAM user Access Key ID with SP API ExecuteAPI permissions.
 * `awsSecretAccessKey (string)`: Required. AWS IAM user Secret Access Key with SP API ExecuteAPI permissions.
 * `endpoint (array)`: Required. An array containing a `url` key (the endpoint URL) and a `region` key (the AWS region). There are predefined constants for these arrays in [`lib/Endpoint.php`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Endpoint.php): (`NA`, `EU`, `FE`, and `NA_SANDBOX`, `EU_SANDBOX`, and `FE_SANDBOX`. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.

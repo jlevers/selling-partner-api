@@ -17,7 +17,7 @@ class Authentication
 
     private $lwaClientId;
     private $lwaClientSecret;
-    private $refreshToken;
+    private $refreshToken = null;
     private $endpoint;
 
     private $onUpdateCreds;
@@ -50,7 +50,7 @@ class Authentication
     {
         $this->client = new Client();
 
-        $this->refreshToken = $configurationOptions['lwaRefreshToken'];
+        $this->refreshToken = $configurationOptions['lwaRefreshToken'] ?? null;
         $this->onUpdateCreds = $configurationOptions['onUpdateCredentials'];
         $this->lwaClientId = $configurationOptions['lwaClientId'];
         $this->lwaClientSecret = $configurationOptions['lwaClientSecret'];
@@ -72,7 +72,7 @@ class Authentication
     /**
      * @param string|null $scope
      * @return array
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \GuzzleHttp\Exception\GuzzleException|\RuntimeException
      */
     public function requestLWAToken(?string $scope = null): array
     {
@@ -87,6 +87,9 @@ class Authentication
         if ($scope !== null) {
             $jsonData["scope"] = $scope;
         } else {
+            if ($this->refreshToken === null) {
+                throw new RuntimeException('lwaRefreshToken must be specified when calling non-grantless API operations');
+            }
             $jsonData["refresh_token"] = $this->refreshToken;
         }
 

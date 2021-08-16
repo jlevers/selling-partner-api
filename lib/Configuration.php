@@ -33,7 +33,7 @@ class Configuration
      * @const array[string]
      */
     public const REQUIRED_CONFIG_KEYS = [
-        "lwaClientId", "lwaClientSecret", "lwaRefreshToken", "awsAccessKeyId", "awsSecretAccessKey", "endpoint"
+        "lwaClientId", "lwaClientSecret", "awsAccessKeyId", "awsSecretAccessKey", "endpoint"
     ];
 
     /**

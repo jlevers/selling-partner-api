@@ -61,7 +61,7 @@ class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'title' => 'string',
         'link' => 'string',
-        'rank' => 'int'
+        'value' => 'int'
     ];
 
     /**
@@ -74,7 +74,7 @@ class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'title' => null,
         'link' => null,
-        'rank' => null
+        'value' => null
     ];
 
     /**
@@ -106,7 +106,7 @@ class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'title' => 'title',
         'link' => 'link',
-        'rank' => 'rank'
+        'value' => 'value'
     ];
 
     /**
@@ -117,7 +117,7 @@ class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'title' => 'setTitle',
         'link' => 'setLink',
-        'rank' => 'setRank'
+        'value' => 'setValue'
     ];
 
     /**
@@ -128,7 +128,7 @@ class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'title' => 'getTitle',
         'link' => 'getLink',
-        'rank' => 'getRank'
+        'value' => 'getValue'
     ];
 
     /**
@@ -193,7 +193,7 @@ class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['title'] = $data['title'] ?? null;
         $this->container['link'] = $data['link'] ?? null;
-        $this->container['rank'] = $data['rank'] ?? null;
+        $this->container['value'] = $data['value'] ?? null;
     }
 
     /**
@@ -208,8 +208,8 @@ class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['title'] === null) {
             $invalidProperties[] = "'title' can't be null";
         }
-        if ($this->container['rank'] === null) {
-            $invalidProperties[] = "'rank' can't be null";
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
         }
         return $invalidProperties;
     }
@@ -275,25 +275,25 @@ class ItemSalesRank implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets rank
+     * Gets value
      *
      * @return int
      */
-    public function getRank()
+    public function getValue()
     {
-        return $this->container['rank'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets rank
+     * Sets value
      *
-     * @param int $rank Sales rank value.
+     * @param int $value Sales rank value.
      *
      * @return self
      */
-    public function setRank($rank)
+    public function setValue($value)
     {
-        $this->container['rank'] = $rank;
+        $this->container['value'] = $value;
 
         return $this;
     }

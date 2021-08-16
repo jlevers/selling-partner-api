@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **identifiers** | [**\SellingPartnerApi\Model\Catalog\ItemIdentifiersByMarketplace[]**](ItemIdentifiersByMarketplace.md) | Identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers. | [optional]
 **images** | [**\SellingPartnerApi\Model\Catalog\ItemImagesByMarketplace[]**](ItemImagesByMarketplace.md) | Images for an item in the Amazon catalog. All image variants are provided to brand owners. Otherwise, a thumbnail of the \&quot;MAIN\&quot; image variant is provided. | [optional]
 **product_types** | [**\SellingPartnerApi\Model\Catalog\ItemProductTypeByMarketplace[]**](ItemProductTypeByMarketplace.md) | Product types associated with the Amazon catalog item. | [optional]
-**sales_ranks** | [**\SellingPartnerApi\Model\Catalog\ItemSalesRanksByMarketplace[]**](ItemSalesRanksByMarketplace.md) | Sales ranks of an Amazon catalog item. | [optional]
+**ranks** | [**\SellingPartnerApi\Model\Catalog\ItemSalesRanksByMarketplace[]**](ItemSalesRanksByMarketplace.md) | Sales ranks of an Amazon catalog item. | [optional]
 **summaries** | [**\SellingPartnerApi\Model\Catalog\ItemSummaryByMarketplace[]**](ItemSummaryByMarketplace.md) | Summary details of an Amazon catalog item. | [optional]
 **variations** | [**\SellingPartnerApi\Model\Catalog\ItemVariationsByMarketplace[]**](ItemVariationsByMarketplace.md) | Variation details by marketplace for an Amazon catalog item (variation relationships). | [optional]
 **vendor_details** | [**\SellingPartnerApi\Model\Catalog\ItemVendorDetailsByMarketplace[]**](ItemVendorDetailsByMarketplace.md) | Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only. | [optional]

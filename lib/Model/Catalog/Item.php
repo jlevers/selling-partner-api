@@ -64,7 +64,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'identifiers' => '\SellingPartnerApi\Model\Catalog\ItemIdentifiersByMarketplace[]',
         'images' => '\SellingPartnerApi\Model\Catalog\ItemImagesByMarketplace[]',
         'product_types' => '\SellingPartnerApi\Model\Catalog\ItemProductTypeByMarketplace[]',
-        'sales_ranks' => '\SellingPartnerApi\Model\Catalog\ItemSalesRanksByMarketplace[]',
+        'ranks' => '\SellingPartnerApi\Model\Catalog\ItemSalesRanksByMarketplace[]',
         'summaries' => '\SellingPartnerApi\Model\Catalog\ItemSummaryByMarketplace[]',
         'variations' => '\SellingPartnerApi\Model\Catalog\ItemVariationsByMarketplace[]',
         'vendor_details' => '\SellingPartnerApi\Model\Catalog\ItemVendorDetailsByMarketplace[]'
@@ -83,7 +83,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'identifiers' => null,
         'images' => null,
         'product_types' => null,
-        'sales_ranks' => null,
+        'ranks' => null,
         'summaries' => null,
         'variations' => null,
         'vendor_details' => null
@@ -121,7 +121,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'identifiers' => 'identifiers',
         'images' => 'images',
         'product_types' => 'productTypes',
-        'sales_ranks' => 'salesRanks',
+        'ranks' => 'ranks',
         'summaries' => 'summaries',
         'variations' => 'variations',
         'vendor_details' => 'vendorDetails'
@@ -138,7 +138,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'identifiers' => 'setIdentifiers',
         'images' => 'setImages',
         'product_types' => 'setProductTypes',
-        'sales_ranks' => 'setSalesRanks',
+        'ranks' => 'setRanks',
         'summaries' => 'setSummaries',
         'variations' => 'setVariations',
         'vendor_details' => 'setVendorDetails'
@@ -155,7 +155,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'identifiers' => 'getIdentifiers',
         'images' => 'getImages',
         'product_types' => 'getProductTypes',
-        'sales_ranks' => 'getSalesRanks',
+        'ranks' => 'getRanks',
         'summaries' => 'getSummaries',
         'variations' => 'getVariations',
         'vendor_details' => 'getVendorDetails'
@@ -226,7 +226,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['identifiers'] = $data['identifiers'] ?? null;
         $this->container['images'] = $data['images'] ?? null;
         $this->container['product_types'] = $data['product_types'] ?? null;
-        $this->container['sales_ranks'] = $data['sales_ranks'] ?? null;
+        $this->container['ranks'] = $data['ranks'] ?? null;
         $this->container['summaries'] = $data['summaries'] ?? null;
         $this->container['variations'] = $data['variations'] ?? null;
         $this->container['vendor_details'] = $data['vendor_details'] ?? null;
@@ -380,25 +380,25 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets sales_ranks
+     * Gets ranks
      *
      * @return \SellingPartnerApi\Model\Catalog\ItemSalesRanksByMarketplace[]|null
      */
-    public function getSalesRanks()
+    public function getRanks()
     {
-        return $this->container['sales_ranks'];
+        return $this->container['ranks'];
     }
 
     /**
-     * Sets sales_ranks
+     * Sets ranks
      *
-     * @param \SellingPartnerApi\Model\Catalog\ItemSalesRanksByMarketplace[]|null $sales_ranks Sales ranks of an Amazon catalog item.
+     * @param \SellingPartnerApi\Model\Catalog\ItemSalesRanksByMarketplace[]|null $ranks Sales ranks of an Amazon catalog item.
      *
      * @return self
      */
-    public function setSalesRanks($sales_ranks)
+    public function setRanks($ranks)
     {
-        $this->container['sales_ranks'] = $sales_ranks;
+        $this->container['ranks'] = $ranks;
 
         return $this;
     }

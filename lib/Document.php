@@ -7,7 +7,7 @@ use GuzzleHttp\RequestOptions;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use RuntimeException;
 
-use SellingPartnerApi\Model\Feeds\CreateFeedDocumentResult;
+use SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse;
 use SellingPartnerApi\Model\Feeds\FeedDocument;
 use SellingPartnerApi\Model\Reports\ReportDocument;
 
@@ -25,7 +25,7 @@ class Document
     public $failedFeedRecords = null;
 
     /**
-     * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResult) $documentInfo
+     * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResponse) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
      * @param ?array['contentType' => string, 'name' => string] $documentType
      *      Not required if $documentInfo is of type FeedDocument. Otherwise, should be one
@@ -36,9 +36,9 @@ class Document
         if (!(
             $documentInfo instanceof ReportDocument ||
             $documentInfo instanceof FeedDocument ||
-            $documentInfo instanceof CreateFeedDocumentResult
+            $documentInfo instanceof CreateFeedDocumentResponse
         )) {
-            $msg = "documentInfo must be one of the following types: Model\Feeds\CreateFeedDocumentResult, Model\Feeds\FeedDocument, Model\Reports\ReportDocument";
+            $msg = "documentInfo must be one of the following types: Model\Feeds\CreateFeedDocumentResponse, Model\Feeds\FeedDocument, Model\Reports\ReportDocument";
             throw new RuntimeException($msg);
         }
 

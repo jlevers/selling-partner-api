@@ -1968,14 +1968,15 @@ class ReportsApi
      * Operation getReportDocument
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\Reports\ReportDocument
      */
-    public function getReportDocument($report_document_id)
+    public function getReportDocument($report_document_id, $report_type = null)
     {
-        list($response) = $this->getReportDocumentWithHttpInfo($report_document_id);
+        list($response) = $this->getReportDocumentWithHttpInfo($report_document_id, $report_type);
         return $response;
     }
 
@@ -1983,16 +1984,20 @@ class ReportsApi
      * Operation getReportDocumentWithHttpInfo
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\Reports\ReportDocument, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getReportDocumentWithHttpInfo($report_document_id)
+    public function getReportDocumentWithHttpInfo($report_document_id, $report_type = null)
     {
-        $request = $this->getReportDocumentRequest($report_document_id);
+        $request = $this->getReportDocumentRequest($report_document_id, $report_type);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            $request->getUri()->getPath(),
+            "getReportDocument"
         );
 
         try {
@@ -2234,13 +2239,14 @@ class ReportsApi
      * 
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReportDocumentAsync($report_document_id)
+    public function getReportDocumentAsync($report_document_id, $report_type = null)
     {
-        return $this->getReportDocumentAsyncWithHttpInfo($report_document_id)
+        return $this->getReportDocumentAsyncWithHttpInfo($report_document_id, $report_type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2254,16 +2260,20 @@ class ReportsApi
      * 
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReportDocumentAsyncWithHttpInfo($report_document_id)
+    public function getReportDocumentAsyncWithHttpInfo($report_document_id, $report_type = null)
     {
         $returnType = '\SellingPartnerApi\Model\Reports\ReportDocument';
-        $request = $this->getReportDocumentRequest($report_document_id);
+        $request = $this->getReportDocumentRequest($report_document_id, $report_type);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            $request->getUri()->getPath(),
+            "getReportDocument"
         );
 
         return $this->client
@@ -2304,11 +2314,12 @@ class ReportsApi
      * Create request for operation 'getReportDocument'
      *
      * @param  string $report_document_id The identifier for the report document. (required)
+     * @param  string $report_type The name of the document&#39;s report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getReportDocumentRequest($report_document_id)
+    public function getReportDocumentRequest($report_document_id, $report_type = null)
     {
         // verify the required parameter 'report_document_id' is set
         if ($report_document_id === null || (is_array($report_document_id) && count($report_document_id) === 0)) {
@@ -2324,6 +2335,13 @@ class ReportsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if (is_array($report_type)) {
+            $report_type = ObjectSerializer::serializeCollection($report_type, '', true);
+        }
+        if ($report_type !== null) {
+            $queryParams['reportType'] = $report_type;
+        }
 
 
         // path params

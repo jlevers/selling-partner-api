@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 ## `getReportDocument()`
 
 ```php
-getReportDocument($report_document_id): \SellingPartnerApi\Model\Reports\ReportDocument
+getReportDocument($report_document_id, $report_type): \SellingPartnerApi\Model\Reports\ReportDocument
 ```
 
 
@@ -367,9 +367,10 @@ $config = new SellingPartnerApi\Configuration([
 
 $apiInstance = new SellingPartnerApi\Api\ReportsApi($config);
 $report_document_id = 'report_document_id_example'; // string | The identifier for the report document.
+$report_type = 'report_type_example'; // string | The name of the document's report type.
 
 try {
-    $result = $apiInstance->getReportDocument($report_document_id);
+    $result = $apiInstance->getReportDocument($report_document_id, $report_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->getReportDocument: ', $e->getMessage(), PHP_EOL;
@@ -381,6 +382,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_document_id** | **string**| The identifier for the report document. |
+ **report_type** | **string**| The name of the document&#39;s report type. | [optional]
 
 ### Return type
 

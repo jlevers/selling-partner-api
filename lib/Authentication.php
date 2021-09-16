@@ -328,7 +328,7 @@ class Authentication
      * 
      * @return string
      */
-    public function getLwaClientId(): string
+    public function getLwaClientId(): ?string
     {
         return $this->lwaClientId;
     }
@@ -349,7 +349,7 @@ class Authentication
      * 
      * @return string
      */
-    public function getLwaClientSecret(): string
+    public function getLwaClientSecret(): ?string
     {
         return $this->lwaClientSecret;
     }
@@ -370,7 +370,7 @@ class Authentication
      * 
      * @return string|null
      */
-    public function getLwaRefreshToken()
+    public function getLwaRefreshToken(): ?string
     {
         return $this->lwaRefreshToken;
     }
@@ -391,7 +391,7 @@ class Authentication
      * 
      * @return string
      */
-    public function getAwsAccessKeyId(): string
+    public function getAwsAccessKeyId(): ?string
     {
         return $this->awsAccessKeyId;
     }
@@ -412,7 +412,7 @@ class Authentication
      * 
      * @return string|null
      */
-    public function getAwsSecretAccessKey(): string|null
+    public function getAwsSecretAccessKey(): ?string
     {
         return $this->awsSecretAccessKey;
     }

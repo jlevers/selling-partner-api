@@ -17,7 +17,7 @@ class Authentication
 
     private $lwaClientId;
     private $lwaClientSecret;
-    private $refreshToken = null;
+    private $lwaRefreshToken = null;
     private $endpoint;
 
     private $onUpdateCreds;
@@ -50,7 +50,7 @@ class Authentication
     {
         $this->client = new Client();
 
-        $this->refreshToken = $configurationOptions['lwaRefreshToken'] ?? null;
+        $this->lwaRefreshToken = $configurationOptions['lwaRefreshToken'] ?? null;
         $this->onUpdateCreds = $configurationOptions['onUpdateCredentials'];
         $this->lwaClientId = $configurationOptions['lwaClientId'];
         $this->lwaClientSecret = $configurationOptions['lwaClientSecret'];
@@ -87,10 +87,10 @@ class Authentication
         if ($scope !== null) {
             $jsonData["scope"] = $scope;
         } else {
-            if ($this->refreshToken === null) {
+            if ($this->lwaRefreshToken === null) {
                 throw new RuntimeException('lwaRefreshToken must be specified when calling non-grantless API operations');
             }
-            $jsonData["refresh_token"] = $this->refreshToken;
+            $jsonData["refresh_token"] = $this->lwaRefreshToken;
         }
 
         $res = $this->client->post("https://api.amazon.com/auth/o2/token", [
@@ -284,7 +284,7 @@ class Authentication
             $config = new Configuration([
                 "lwaClientId" => $this->lwaClientId,
                 "lwaClientSecret" => $this->lwaClientSecret,
-                "lwaRefreshToken" => $this->refreshToken,
+                "lwaRefreshToken" => $this->lwaRefreshToken,
                 "awsAccessKeyId" => $this->awsAccessKeyId,
                 "awsSecretAccessKey" => $this->awsSecretAccessKey,
                 "accessToken" => $standardCredentials->getSecurityToken(),
@@ -321,6 +321,137 @@ class Authentication
         }
 
         return $rdtCreds;
+    }
+
+    /**
+     * Get LWA client ID.
+     * 
+     * @return string
+     */
+    public function getLwaClientId(): string
+    {
+        return $this->lwaClientId;
+    }
+
+    /**
+     * Set LWA client ID.
+     * 
+     * @param string $lwaClientId
+     * @return void
+     */
+    public function setLwaClientId(string $lwaClientId): void
+    {
+        $this->lwaClientId = $lwaClientId;
+    }
+
+    /**
+     * Get LWA client secret.
+     * 
+     * @return string
+     */
+    public function getLwaClientSecret(): string
+    {
+        return $this->lwaClientSecret;
+    }
+
+    /**
+     * Set LWA client secret.
+     * 
+     * @param string $lwaClientSecret
+     * @return void
+     */
+    public function setLwaClientSecret(string $lwaClientSecret): void
+    {
+        $this->lwaClientSecret = $lwaClientSecret;
+    }
+
+    /**
+     * Get LWA refresh token.
+     * 
+     * @return string|null
+     */
+    public function getLwaRefreshToken()
+    {
+        return $this->lwaRefreshToken;
+    }
+
+    /**
+     * Set LWA refresh token.
+     * 
+     * @param string|null $lwaRefreshToken
+     * @return void
+     */
+    public function setLwaRefreshToken(?string $lwaRefreshToken = null): void
+    {
+        $this->lwaRefreshToken = $lwaRefreshToken;
+    }
+
+    /**
+     * Get AWS access key ID.
+     * 
+     * @return string
+     */
+    public function getAwsAccessKeyId(): string
+    {
+        return $this->awsAccessKeyId;
+    }
+
+    /**
+     * Set AWS access key ID.
+     * 
+     * @param string $awsAccessKeyId
+     * @return void
+     */
+    public function setAwsAccessKeyId(string $awsAccessKeyId): void
+    {
+        $this->awsAccessKeyId = $awsAccessKeyId;
+    }
+
+    /**
+     * Get AWS secret access key.
+     * 
+     * @return string|null
+     */
+    public function getAwsSecretAccessKey(): string|null
+    {
+        return $this->awsSecretAccessKey;
+    }
+
+    /**
+     * Set AWS secret access key.
+     * 
+     * @param string $awsSecretAccessKey
+     * @return void
+     */
+    public function setAwsSecretAccessKey(string $awsSecretAccessKey): void
+    {
+        $this->awsSecretAccessKey = $awsSecretAccessKey;
+    }
+
+    /**
+     * Get current SP API endpoint.
+     *
+     * @return array
+     */
+    public function getEndpoint(): array
+    {
+        return $this->endpoint;
+    }
+
+    /**
+     * Set SP API endpoint. $endpoint should be one of the constants from Endpoint.php.
+     * 
+     * @param array $endpoint
+     * @return void
+     * @throws RuntimeException
+     */
+    public function setEndpoint(array $endpoint): void
+    {
+        if (!array_key_exists('url', $endpoint) || !array_key_exists('region', $endpoint)) {
+            throw new RuntimeException('$endpoint must contain `url` and `region` keys');
+        }
+
+        $this->endpoint = $endpoint;
     }
 
     /**

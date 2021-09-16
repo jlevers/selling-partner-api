@@ -44,13 +44,6 @@ class Configuration
     protected $auth;
 
     /**
-     * Access token for OAuth
-     *
-     * @var string
-     */
-    protected $accessToken = '';
-
-    /**
      * The SP API endpoint. One of the constant values from the Endpoint class.
      *
      * @var array
@@ -122,19 +115,6 @@ class Configuration
 
         $this->endpoint = $options["endpoint"];
         $this->auth = new Authentication($options);
-    }
-
-    /**
-     * Sets the host. $endpoint should be one of the constants in the static Endpoint class.
-     *
-     * @param array $endpoint Host
-     *
-     * @return $this
-     */
-    public function setEndpoint(array $endpoint)
-    {
-        $this->endpoint = $endpoint;
-        return $this;
     }
 
     /**
@@ -269,6 +249,138 @@ class Configuration
     public function getRequestDatetime()
     {
         return $this->auth->formattedRequestTime();
+    }
+
+    /**
+     * Get LWA client ID.
+     * 
+     * @return string
+     */
+    public function getLwaClientId(): string
+    {
+        return $this->auth->getLwaClientId();
+    }
+
+    /**
+     * Set LWA client ID.
+     * 
+     * @param string $lwaClientId
+     * @return void
+     */
+    public function setLwaClientId(string $lwaClientId): void
+    {
+        $this->auth->setLwaClientId($lwaClientId);
+    }
+
+    /**
+     * Get LWA client secret.
+     * 
+     * @return string
+     */
+    public function getLwaClientSecret(): string
+    {
+        return $this->auth->getLwaClientSecret();
+    }
+
+    /**
+     * Set LWA client secret.
+     * 
+     * @param string $lwaClientSecret
+     * @return void
+     */
+    public function setLwaClientSecret(string $lwaClientSecret): void
+    {
+        $this->auth->setLwaClientSecret($lwaClientSecret);
+    }
+
+    /**
+     * Get LWA refresh token.
+     * 
+     * @return string|null
+     */
+    public function getLwaRefreshToken()
+    {
+        return $this->auth->getLwaRefreshToken();
+    }
+
+    /**
+     * Set LWA refresh token.
+     * 
+     * @param string|null $lwaRefreshToken
+     * @return void
+     */
+    public function setLwaRefreshToken(?string $lwaRefreshToken = null): void
+    {
+        $this->auth->setLwaRefreshToken($lwaRefreshToken);
+    }
+
+    /**
+     * Get AWS access key ID.
+     * 
+     * @return string
+     */
+    public function getAwsAccessKeyId(): string
+    {
+        return $this->auth->getAwsAccessKeyId();
+    }
+
+    /**
+     * Set AWS access key ID.
+     * 
+     * @param string $awsAccessKeyId
+     * @return void
+     */
+    public function setAwsAccessKeyId(string $awsAccessKeyId): void
+    {
+        $this->auth->setAwsAccessKeyId($awsAccessKeyId);
+    }
+
+    /**
+     * Get AWS secret access key.
+     * 
+     * @return string|null
+     */
+    public function getAwsSecretAccessKey(): string|null
+    {
+        return $this->auth->getAwsSecretAccessKey();
+    }
+
+    /**
+     * Set AWS secret access key.
+     * 
+     * @param string $awsSecretAccessKey
+     * @return void
+     */
+    public function setAwsSecretAccessKey(string $awsSecretAccessKey): void
+    {
+        $this->auth->setAwsSecretAccessKey($awsSecretAccessKey);
+    }
+
+    /**
+     * Get current SP API endpoint.
+     *
+     * @return array
+     */
+    public function getEndpoint(): array
+    {
+        return $this->endpoint;
+    }
+
+    /**
+     * Set SP API endpoint. $endpoint should be one of the constants from Endpoint.php.
+     * 
+     * @param array $endpoint
+     * @return void
+     * @throws RuntimeException
+     */
+    public function setEndpoint(array $endpoint): void
+    {
+        if (!array_key_exists('url', $endpoint) || !array_key_exists('region', $endpoint)) {
+            throw new RuntimeException('$endpoint must contain `url` and `region` keys');
+        }
+
+        $this->endpoint = $endpoint;
+        $this->auth->setEndpoint($endpoint);
     }
 
     /**

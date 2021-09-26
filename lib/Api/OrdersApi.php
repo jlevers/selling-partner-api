@@ -115,14 +115,15 @@ class OrdersApi
      * Operation getOrder
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\Orders\GetOrderResponse
      */
-    public function getOrder($order_id)
+    public function getOrder($order_id, $restricted_elements = null)
     {
-        list($response) = $this->getOrderWithHttpInfo($order_id);
+        list($response) = $this->getOrderWithHttpInfo($order_id, $restricted_elements);
         return $response;
     }
 
@@ -130,16 +131,20 @@ class OrdersApi
      * Operation getOrderWithHttpInfo
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\Orders\GetOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderWithHttpInfo($order_id)
+    public function getOrderWithHttpInfo($order_id, $restricted_elements = null)
     {
-        $request = $this->getOrderRequest($order_id);
+        $request = $this->getOrderRequest($order_id, $restricted_elements);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}",
+            "getOrder"
         );
 
         try {
@@ -341,13 +346,14 @@ class OrdersApi
      * 
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderAsync($order_id)
+    public function getOrderAsync($order_id, $restricted_elements = null)
     {
-        return $this->getOrderAsyncWithHttpInfo($order_id)
+        return $this->getOrderAsyncWithHttpInfo($order_id, $restricted_elements)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -361,16 +367,20 @@ class OrdersApi
      * 
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderAsyncWithHttpInfo($order_id)
+    public function getOrderAsyncWithHttpInfo($order_id, $restricted_elements = null)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderResponse';
-        $request = $this->getOrderRequest($order_id);
+        $request = $this->getOrderRequest($order_id, $restricted_elements);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}",
+            "getOrder"
         );
 
         return $this->client
@@ -411,11 +421,12 @@ class OrdersApi
      * Create request for operation 'getOrder'
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrderRequest($order_id)
+    public function getOrderRequest($order_id, $restricted_elements = null)
     {
         // verify the required parameter 'order_id' is set
         if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
@@ -431,6 +442,13 @@ class OrdersApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if (is_array($restricted_elements)) {
+            $restricted_elements = ObjectSerializer::serializeCollection($restricted_elements, 'form', true);
+        }
+        if ($restricted_elements !== null) {
+            $queryParams['RestrictedElements'] = $restricted_elements;
+        }
 
 
         // path params
@@ -1295,14 +1313,15 @@ class OrdersApi
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\Orders\GetOrderItemsResponse
      */
-    public function getOrderItems($order_id, $next_token = null)
+    public function getOrderItems($order_id, $next_token = null, $restricted_elements = null)
     {
-        list($response) = $this->getOrderItemsWithHttpInfo($order_id, $next_token);
+        list($response) = $this->getOrderItemsWithHttpInfo($order_id, $next_token, $restricted_elements);
         return $response;
     }
 
@@ -1311,16 +1330,20 @@ class OrdersApi
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\Orders\GetOrderItemsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderItemsWithHttpInfo($order_id, $next_token = null)
+    public function getOrderItemsWithHttpInfo($order_id, $next_token = null, $restricted_elements = null)
     {
-        $request = $this->getOrderItemsRequest($order_id, $next_token);
+        $request = $this->getOrderItemsRequest($order_id, $next_token, $restricted_elements);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/orderItems",
+            "getOrderItems"
         );
 
         try {
@@ -1523,13 +1546,14 @@ class OrdersApi
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderItemsAsync($order_id, $next_token = null)
+    public function getOrderItemsAsync($order_id, $next_token = null, $restricted_elements = null)
     {
-        return $this->getOrderItemsAsyncWithHttpInfo($order_id, $next_token)
+        return $this->getOrderItemsAsyncWithHttpInfo($order_id, $next_token, $restricted_elements)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1544,16 +1568,20 @@ class OrdersApi
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderItemsAsyncWithHttpInfo($order_id, $next_token = null)
+    public function getOrderItemsAsyncWithHttpInfo($order_id, $next_token = null, $restricted_elements = null)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrderItemsResponse';
-        $request = $this->getOrderItemsRequest($order_id, $next_token);
+        $request = $this->getOrderItemsRequest($order_id, $next_token, $restricted_elements);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/orderItems",
+            "getOrderItems"
         );
 
         return $this->client
@@ -1595,11 +1623,12 @@ class OrdersApi
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrderItemsRequest($order_id, $next_token = null)
+    public function getOrderItemsRequest($order_id, $next_token = null, $restricted_elements = null)
     {
         // verify the required parameter 'order_id' is set
         if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
@@ -1621,6 +1650,13 @@ class OrdersApi
         }
         if ($next_token !== null) {
             $queryParams['NextToken'] = $next_token;
+        }
+        // query params
+        if (is_array($restricted_elements)) {
+            $restricted_elements = ObjectSerializer::serializeCollection($restricted_elements, 'form', true);
+        }
+        if ($restricted_elements !== null) {
+            $queryParams['RestrictedElements'] = $restricted_elements;
         }
 
 
@@ -2118,14 +2154,15 @@ class OrdersApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\Orders\GetOrdersResponse
      */
-    public function getOrders($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null)
+    public function getOrders($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $restricted_elements = null)
     {
-        list($response) = $this->getOrdersWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
+        list($response) = $this->getOrdersWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $restricted_elements);
         return $response;
     }
 
@@ -2149,16 +2186,20 @@ class OrdersApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\Orders\GetOrdersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrdersWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null)
+    public function getOrdersWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $restricted_elements = null)
     {
-        $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
+        $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $restricted_elements);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/orders/v0/orders",
+            "getOrders"
         );
 
         try {
@@ -2376,13 +2417,14 @@ class OrdersApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrdersAsync($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null)
+    public function getOrdersAsync($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $restricted_elements = null)
     {
-        return $this->getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id)
+        return $this->getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $restricted_elements)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2412,16 +2454,20 @@ class OrdersApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null)
+    public function getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $restricted_elements = null)
     {
         $returnType = '\SellingPartnerApi\Model\Orders\GetOrdersResponse';
-        $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
+        $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $restricted_elements);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/orders/v0/orders",
+            "getOrders"
         );
 
         return $this->client
@@ -2478,11 +2524,12 @@ class OrdersApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
+     * @param  string[] $restricted_elements An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrdersRequest($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null)
+    public function getOrdersRequest($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $restricted_elements = null)
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
@@ -2624,6 +2671,13 @@ class OrdersApi
         }
         if ($store_chain_store_id !== null) {
             $queryParams['StoreChainStoreId'] = $store_chain_store_id;
+        }
+        // query params
+        if (is_array($restricted_elements)) {
+            $restricted_elements = ObjectSerializer::serializeCollection($restricted_elements, 'form', true);
+        }
+        if ($restricted_elements !== null) {
+            $queryParams['RestrictedElements'] = $restricted_elements;
         }
 
 

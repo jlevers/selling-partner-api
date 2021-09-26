@@ -134,7 +134,15 @@ class Authentication
         $this->setRequestTime();
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
         $relevantCreds = null;
-        if ($scope === null && $restrictedPath === null) {
+        $params = [];
+
+        parse_str($request->getUri()->getQuery(), $params);
+        $restrictedDataElements = [];
+        if (isset($params['RestrictedElements'])) {
+            $restrictedDataElements = explode(',', $params['RestrictedElements']);
+        }
+
+        if ($scope === null && ($restrictedPath === null || $restrictedDataElements === [])) {
             $relevantCreds = $this->getAwsCredentials();
         } else if ($scope !== null) {  // There is no overlap between grantless and restricted operations
             $relevantCreds = $this->getGrantlessAwsCredentials($scope);
@@ -145,8 +153,6 @@ class Authentication
             if ($operation === 'getReportDocument') {
                 // We added a reportType query parameter that isn't in the official models, so that we can
                 // determine if the getReportDocument call requires an RDT
-                $params = [];
-                parse_str($request->getUri()->getQuery(), $params);
                 $constantPath = isset($params['reportType']) ? 'SellingPartnerApi\ReportType::' . $params['reportType'] : null;
 
                 if ($constantPath === null || !defined($constantPath) || !constant($constantPath)['restricted']) {
@@ -154,13 +160,17 @@ class Authentication
                     $relevantCreds = $this->getAwsCredentials();
                 }
 
-                // Remove the extra parameter
+                // Remove the extra 'reportType' query parameter
                 $newUri = Psr7\Uri::withoutQueryValue($request->getUri(), 'reportType');
+                $request = $request->withUri($newUri);
+            } else if (isset($params['RestrictedElements'])) {
+                // Remove the extra 'RestrictedElements' query parameter
+                $newUri = Psr7\Uri::withoutQueryValue($request->getUri(), 'RestrictedElements');
                 $request = $request->withUri($newUri);
             }
 
             if ($needRdt) {
-                $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod());
+                $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod(), true, $restrictedDataElements);
             }
         }
 
@@ -263,9 +273,11 @@ class Authentication
      * @param string $path The generic or specific path for the restricted operation
      * @param string $method The HTTP method of the restricted operation
      * @param ?bool $generic Whether or not $path is a generic URL or a specific one. Default true
+     * @param ?array $restrictedDataElements The restricted data elements to request access to, if any.
+     *      Only applies to getOrder, getOrders, and getOrderItems. Default empty array.
      * @return \SellingPartnerApi\Credentials A Credentials object holding the RDT
      */
-    public function getRestrictedDataToken(string $path, string $method, ?bool $generic = true): Credentials
+    public function getRestrictedDataToken(string $path, string $method, ?bool $generic = true, ?array $restrictedDataElements = []): Credentials
     {
         // Grab any pre-existing RDT for this operation
         $existingCreds = null;
@@ -294,13 +306,16 @@ class Authentication
             ]);
             $tokensApi = new Api\TokensApi($config);
 
+            $restrictedResource = new Model\Tokens\RestrictedResource([
+                "method" => $method,
+                "path" => $path,
+            ]);
+            if ($restrictedDataElements !== []) {
+                $restrictedResource->setDataElements($restrictedDataElements);
+            }
+
             $body = new Model\Tokens\CreateRestrictedDataTokenRequest([
-                "restricted_resources" => [
-                    new Model\Tokens\RestrictedResource([
-                        "method" => $method,
-                        "path" => $path,
-                    ]),
-                ],
+                "restricted_resources" => [$restrictedResource],
             ]);
             $rdtData = $tokensApi->createRestrictedDataToken($body);
 

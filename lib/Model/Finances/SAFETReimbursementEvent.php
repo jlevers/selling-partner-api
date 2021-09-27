@@ -125,7 +125,8 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeria
         'safet_claim_id' => 'setSafetClaimId',
         'reimbursed_amount' => 'setReimbursedAmount',
         'reason_code' => 'setReasonCode',
-        'safet_reimbursement_item_list' => 'setSafetReimbursementItemList'
+        'safet_reimbursement_item_list' => 'setSafetReimbursementItemList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeria
         'safet_claim_id' => 'getSafetClaimId',
         'reimbursed_amount' => 'getReimbursedAmount',
         'reason_code' => 'getReasonCode',
-        'safet_reimbursement_item_list' => 'getSafetReimbursementItemList'
+        'safet_reimbursement_item_list' => 'getSafetReimbursementItemList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -229,6 +231,30 @@ class SAFETReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeria
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

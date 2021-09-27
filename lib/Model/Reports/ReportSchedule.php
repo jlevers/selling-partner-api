@@ -129,7 +129,8 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_ids' => 'setMarketplaceIds',
         'report_options' => 'setReportOptions',
         'period' => 'setPeriod',
-        'next_report_creation_time' => 'setNextReportCreationTime'
+        'next_report_creation_time' => 'setNextReportCreationTime',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_ids' => 'getMarketplaceIds',
         'report_options' => 'getReportOptions',
         'period' => 'getPeriod',
-        'next_report_creation_time' => 'getNextReportCreationTime'
+        'next_report_creation_time' => 'getNextReportCreationTime',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -244,6 +246,30 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

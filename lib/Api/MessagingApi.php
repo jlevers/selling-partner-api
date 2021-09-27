@@ -72,7 +72,7 @@ class MessagingApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -124,7 +124,7 @@ class MessagingApi
      */
     public function confirmCustomizationDetails($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->confirmCustomizationDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->confirmCustomizationDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -183,11 +183,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -195,11 +191,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -207,11 +199,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -219,11 +207,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -231,11 +215,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -243,11 +223,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -255,11 +231,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -267,11 +239,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -279,11 +247,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateConfirmCustomizationDetailsResponse';
@@ -294,11 +258,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -432,11 +392,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -505,7 +461,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -514,7 +469,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -550,7 +504,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -592,7 +546,7 @@ class MessagingApi
      */
     public function createAmazonMotors($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->createAmazonMotorsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->createAmazonMotorsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -651,11 +605,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -663,11 +613,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -675,11 +621,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -687,11 +629,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -699,11 +637,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -711,11 +645,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -723,11 +653,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -735,11 +661,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -747,11 +669,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateAmazonMotorsResponse';
@@ -762,11 +680,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -900,11 +814,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -973,7 +883,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -982,7 +891,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1018,7 +926,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1060,7 +968,7 @@ class MessagingApi
      */
     public function createConfirmDeliveryDetails($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->createConfirmDeliveryDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->createConfirmDeliveryDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -1119,11 +1027,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1131,11 +1035,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1143,11 +1043,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1155,11 +1051,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1167,11 +1059,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1179,11 +1067,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1191,11 +1075,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1203,11 +1083,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1215,11 +1091,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateConfirmDeliveryDetailsResponse';
@@ -1230,11 +1102,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1368,11 +1236,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1441,7 +1305,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -1450,7 +1313,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1486,7 +1348,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1528,7 +1390,7 @@ class MessagingApi
      */
     public function createConfirmOrderDetails($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->createConfirmOrderDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->createConfirmOrderDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -1587,11 +1449,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1599,11 +1457,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1611,11 +1465,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1623,11 +1473,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1635,11 +1481,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1647,11 +1489,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1659,11 +1497,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1671,11 +1505,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1683,11 +1513,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateConfirmOrderDetailsResponse';
@@ -1698,11 +1524,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1836,11 +1658,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1909,7 +1727,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -1918,7 +1735,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1954,7 +1770,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1996,7 +1812,7 @@ class MessagingApi
      */
     public function createConfirmServiceDetails($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->createConfirmServiceDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->createConfirmServiceDetailsWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -2055,11 +1871,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2067,11 +1879,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2079,11 +1887,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2091,11 +1895,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2103,11 +1903,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2115,11 +1911,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2127,11 +1919,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2139,11 +1927,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2151,11 +1935,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateConfirmServiceDetailsResponse';
@@ -2166,11 +1946,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2304,11 +2080,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2377,7 +2149,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -2386,7 +2157,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2422,7 +2192,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2464,7 +2234,7 @@ class MessagingApi
      */
     public function createDigitalAccessKey($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->createDigitalAccessKeyWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->createDigitalAccessKeyWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -2523,11 +2293,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2535,11 +2301,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2547,11 +2309,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2559,11 +2317,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2571,11 +2325,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2583,11 +2333,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2595,11 +2341,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2607,11 +2349,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2619,11 +2357,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateDigitalAccessKeyResponse';
@@ -2634,11 +2368,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2772,11 +2502,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2845,7 +2571,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -2854,7 +2579,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2890,7 +2614,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2932,7 +2656,7 @@ class MessagingApi
      */
     public function createLegalDisclosure($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->createLegalDisclosureWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->createLegalDisclosureWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -2991,11 +2715,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3003,11 +2723,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3015,11 +2731,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3027,11 +2739,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3039,11 +2747,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3051,11 +2755,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3063,11 +2763,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3075,11 +2771,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3087,11 +2779,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateLegalDisclosureResponse';
@@ -3102,11 +2790,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -3240,11 +2924,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3313,7 +2993,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -3322,7 +3001,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3358,7 +3036,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -3399,7 +3077,7 @@ class MessagingApi
      */
     public function createNegativeFeedbackRemoval($amazon_order_id, $marketplace_ids)
     {
-        list($response) = $this->createNegativeFeedbackRemovalWithHttpInfo($amazon_order_id, $marketplace_ids);
+        $response = $this->createNegativeFeedbackRemovalWithHttpInfo($amazon_order_id, $marketplace_ids);
         return $response;
     }
 
@@ -3457,11 +3135,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3469,11 +3143,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3481,11 +3151,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3493,11 +3159,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3505,11 +3167,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3517,11 +3175,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3529,11 +3183,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3541,11 +3191,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3553,11 +3199,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateNegativeFeedbackRemovalResponse';
@@ -3568,11 +3210,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -3704,11 +3342,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3770,7 +3404,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -3779,7 +3412,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3809,7 +3441,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -3851,7 +3483,7 @@ class MessagingApi
      */
     public function createUnexpectedProblem($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->createUnexpectedProblemWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->createUnexpectedProblemWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -3910,11 +3542,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3922,11 +3550,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3934,11 +3558,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3946,11 +3566,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3958,11 +3574,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3970,11 +3582,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3982,11 +3590,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3994,11 +3598,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4006,11 +3606,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateUnexpectedProblemResponse';
@@ -4021,11 +3617,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4159,11 +3751,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -4232,7 +3820,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -4241,7 +3828,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4277,7 +3863,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -4319,7 +3905,7 @@ class MessagingApi
      */
     public function createWarranty($amazon_order_id, $marketplace_ids, $body)
     {
-        list($response) = $this->createWarrantyWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        $response = $this->createWarrantyWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
         return $response;
     }
 
@@ -4378,11 +3964,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4390,11 +3972,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4402,11 +3980,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4414,11 +3988,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4426,11 +3996,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4438,11 +4004,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4450,11 +4012,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4462,11 +4020,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4474,11 +4028,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\CreateWarrantyResponse';
@@ -4489,11 +4039,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4627,11 +4173,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -4700,7 +4242,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -4709,7 +4250,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4745,7 +4285,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -4786,7 +4326,7 @@ class MessagingApi
      */
     public function getAttributes($amazon_order_id, $marketplace_ids)
     {
-        list($response) = $this->getAttributesWithHttpInfo($amazon_order_id, $marketplace_ids);
+        $response = $this->getAttributesWithHttpInfo($amazon_order_id, $marketplace_ids);
         return $response;
     }
 
@@ -4844,11 +4384,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\GetAttributesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4856,11 +4392,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\GetAttributesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4868,11 +4400,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\GetAttributesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4880,11 +4408,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\GetAttributesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4892,11 +4416,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\GetAttributesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4904,11 +4424,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\GetAttributesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4916,11 +4432,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\GetAttributesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4928,11 +4440,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\GetAttributesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4940,11 +4448,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetAttributesResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\GetAttributesResponse';
@@ -4955,11 +4459,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -5091,11 +4591,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -5157,7 +4653,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -5166,7 +4661,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5196,7 +4690,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -5237,7 +4731,7 @@ class MessagingApi
      */
     public function getMessagingActionsForOrder($amazon_order_id, $marketplace_ids)
     {
-        list($response) = $this->getMessagingActionsForOrderWithHttpInfo($amazon_order_id, $marketplace_ids);
+        $response = $this->getMessagingActionsForOrderWithHttpInfo($amazon_order_id, $marketplace_ids);
         return $response;
     }
 
@@ -5295,11 +4789,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -5307,11 +4797,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -5319,11 +4805,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -5331,11 +4813,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -5343,11 +4821,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -5355,11 +4829,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -5367,11 +4837,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -5379,11 +4845,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -5391,11 +4853,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Messaging\GetMessagingActionsForOrderResponse';
@@ -5406,11 +4864,7 @@ class MessagingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -5542,11 +4996,7 @@ class MessagingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -5608,7 +5058,6 @@ class MessagingApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($amazon_order_id !== null) {
             $resourcePath = str_replace(
@@ -5617,7 +5066,6 @@ class MessagingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -5647,7 +5095,7 @@ class MessagingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

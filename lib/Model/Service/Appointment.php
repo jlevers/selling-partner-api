@@ -129,7 +129,8 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointment_time' => 'setAppointmentTime',
         'assigned_technicians' => 'setAssignedTechnicians',
         'rescheduled_appointment_id' => 'setRescheduledAppointmentId',
-        'poa' => 'setPoa'
+        'poa' => 'setPoa',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointment_time' => 'getAppointmentTime',
         'assigned_technicians' => 'getAssignedTechnicians',
         'rescheduled_appointment_id' => 'getRescheduledAppointmentId',
-        'poa' => 'getPoa'
+        'poa' => 'getPoa',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -281,6 +283,30 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

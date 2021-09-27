@@ -113,7 +113,8 @@ class PrimeInformationType implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'is_prime' => 'setIsPrime',
-        'is_national_prime' => 'setIsNationalPrime'
+        'is_national_prime' => 'setIsNationalPrime',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class PrimeInformationType implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'is_prime' => 'getIsPrime',
-        'is_national_prime' => 'getIsNationalPrime'
+        'is_national_prime' => 'getIsNationalPrime',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class PrimeInformationType implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

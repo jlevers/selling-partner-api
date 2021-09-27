@@ -125,7 +125,8 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
         'width' => 'setWidth',
         'height' => 'setHeight',
         'unit' => 'setUnit',
-        'predefined_package_dimensions' => 'setPredefinedPackageDimensions'
+        'predefined_package_dimensions' => 'setPredefinedPackageDimensions',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
         'width' => 'getWidth',
         'height' => 'getHeight',
         'unit' => 'getUnit',
-        'predefined_package_dimensions' => 'getPredefinedPackageDimensions'
+        'predefined_package_dimensions' => 'getPredefinedPackageDimensions',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -229,6 +231,30 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

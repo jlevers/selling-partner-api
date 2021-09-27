@@ -169,7 +169,8 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
         'standard_single_side_image' => 'setStandardSingleSideImage',
         'standard_tech_specs' => 'setStandardTechSpecs',
         'standard_text' => 'setStandardText',
-        'standard_three_image_text' => 'setStandardThreeImageText'
+        'standard_three_image_text' => 'setStandardThreeImageText',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -193,7 +194,8 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
         'standard_single_side_image' => 'getStandardSingleSideImage',
         'standard_tech_specs' => 'getStandardTechSpecs',
         'standard_text' => 'getStandardText',
-        'standard_three_image_text' => 'getStandardThreeImageText'
+        'standard_three_image_text' => 'getStandardThreeImageText',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -298,6 +300,30 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

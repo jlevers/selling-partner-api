@@ -108,7 +108,8 @@ class AplusPaginatedResponseAllOf implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'next_page_token' => 'setNextPageToken'
+        'next_page_token' => 'setNextPageToken',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -117,7 +118,8 @@ class AplusPaginatedResponseAllOf implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'next_page_token' => 'getNextPageToken'
+        'next_page_token' => 'getNextPageToken',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -208,6 +210,30 @@ class AplusPaginatedResponseAllOf implements ModelInterface, ArrayAccess, \JsonS
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

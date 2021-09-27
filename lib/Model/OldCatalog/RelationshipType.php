@@ -197,7 +197,8 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_diamond_weight' => 'setTotalDiamondWeight',
         'total_gem_weight' => 'setTotalGemWeight',
         'package_quantity' => 'setPackageQuantity',
-        'item_dimensions' => 'setItemDimensions'
+        'item_dimensions' => 'setItemDimensions',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -228,7 +229,8 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_diamond_weight' => 'getTotalDiamondWeight',
         'total_gem_weight' => 'getTotalGemWeight',
         'package_quantity' => 'getPackageQuantity',
-        'item_dimensions' => 'getItemDimensions'
+        'item_dimensions' => 'getItemDimensions',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -337,6 +339,30 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

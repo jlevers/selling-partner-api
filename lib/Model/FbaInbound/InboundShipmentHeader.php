@@ -133,7 +133,8 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
         'are_cases_required' => 'setAreCasesRequired',
         'shipment_status' => 'setShipmentStatus',
         'label_prep_preference' => 'setLabelPrepPreference',
-        'intended_box_contents_source' => 'setIntendedBoxContentsSource'
+        'intended_box_contents_source' => 'setIntendedBoxContentsSource',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
         'are_cases_required' => 'getAreCasesRequired',
         'shipment_status' => 'getShipmentStatus',
         'label_prep_preference' => 'getLabelPrepPreference',
-        'intended_box_contents_source' => 'getIntendedBoxContentsSource'
+        'intended_box_contents_source' => 'getIntendedBoxContentsSource',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -256,6 +258,30 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

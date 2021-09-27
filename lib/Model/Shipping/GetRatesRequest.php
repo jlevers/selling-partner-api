@@ -125,7 +125,8 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_from' => 'setShipFrom',
         'service_types' => 'setServiceTypes',
         'ship_date' => 'setShipDate',
-        'container_specifications' => 'setContainerSpecifications'
+        'container_specifications' => 'setContainerSpecifications',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_from' => 'getShipFrom',
         'service_types' => 'getServiceTypes',
         'ship_date' => 'getShipDate',
-        'container_specifications' => 'getContainerSpecifications'
+        'container_specifications' => 'getContainerSpecifications',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

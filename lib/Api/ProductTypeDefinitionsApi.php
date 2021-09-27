@@ -72,7 +72,7 @@ class ProductTypeDefinitionsApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -128,7 +128,7 @@ class ProductTypeDefinitionsApi
      */
     public function getDefinitionsProductType($product_type, $marketplace_ids, $seller_id = null, $product_type_version = 'LATEST', $requirements = 'LISTING', $requirements_enforced = 'ENFORCED', $locale = 'DEFAULT')
     {
-        list($response) = $this->getDefinitionsProductTypeWithHttpInfo($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);
+        $response = $this->getDefinitionsProductTypeWithHttpInfo($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);
         return $response;
     }
 
@@ -191,11 +191,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ProductTypeDefinition', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ProductTypeDefinition', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -203,11 +199,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -215,11 +207,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -227,11 +215,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -239,11 +223,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -251,11 +231,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -263,11 +239,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -275,11 +247,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -287,11 +255,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\ProductTypeDefinitions\ProductTypeDefinition';
@@ -302,11 +266,7 @@ class ProductTypeDefinitionsApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -448,11 +408,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -514,6 +470,7 @@ class ProductTypeDefinitionsApi
         if ($seller_id !== null) {
             $queryParams['sellerId'] = $seller_id;
         }
+
         // query params
         if (is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -521,6 +478,7 @@ class ProductTypeDefinitionsApi
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
+
         // query params
         if (is_array($product_type_version)) {
             $product_type_version = ObjectSerializer::serializeCollection($product_type_version, '', true);
@@ -528,6 +486,7 @@ class ProductTypeDefinitionsApi
         if ($product_type_version !== null) {
             $queryParams['productTypeVersion'] = $product_type_version;
         }
+
         // query params
         if (is_array($requirements)) {
             $requirements = ObjectSerializer::serializeCollection($requirements, '', true);
@@ -535,6 +494,7 @@ class ProductTypeDefinitionsApi
         if ($requirements !== null) {
             $queryParams['requirements'] = $requirements;
         }
+
         // query params
         if (is_array($requirements_enforced)) {
             $requirements_enforced = ObjectSerializer::serializeCollection($requirements_enforced, '', true);
@@ -542,6 +502,7 @@ class ProductTypeDefinitionsApi
         if ($requirements_enforced !== null) {
             $queryParams['requirementsEnforced'] = $requirements_enforced;
         }
+
         // query params
         if (is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
@@ -549,7 +510,6 @@ class ProductTypeDefinitionsApi
         if ($locale !== null) {
             $queryParams['locale'] = $locale;
         }
-
 
         // path params
         if ($product_type !== null) {
@@ -559,7 +519,6 @@ class ProductTypeDefinitionsApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -589,7 +548,7 @@ class ProductTypeDefinitionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -630,7 +589,7 @@ class ProductTypeDefinitionsApi
      */
     public function searchDefinitionsProductTypes($marketplace_ids, $keywords = null)
     {
-        list($response) = $this->searchDefinitionsProductTypesWithHttpInfo($marketplace_ids, $keywords);
+        $response = $this->searchDefinitionsProductTypesWithHttpInfo($marketplace_ids, $keywords);
         return $response;
     }
 
@@ -688,11 +647,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ProductTypeList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ProductTypeList', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -700,11 +655,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -712,11 +663,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -724,11 +671,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -736,11 +679,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -748,11 +687,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -760,11 +695,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -772,11 +703,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -784,11 +711,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ProductTypeDefinitions\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\ProductTypeDefinitions\ProductTypeList';
@@ -799,11 +722,7 @@ class ProductTypeDefinitionsApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -935,11 +854,7 @@ class ProductTypeDefinitionsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -990,6 +905,7 @@ class ProductTypeDefinitionsApi
         if ($keywords !== null) {
             $queryParams['keywords'] = $keywords;
         }
+
         // query params
         if (is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -997,9 +913,6 @@ class ProductTypeDefinitionsApi
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1029,7 +942,7 @@ class ProductTypeDefinitionsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

@@ -117,7 +117,8 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'image' => 'setImage',
         'headline' => 'setHeadline',
-        'body' => 'setBody'
+        'body' => 'setBody',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'image' => 'getImage',
         'headline' => 'getHeadline',
-        'body' => 'getBody'
+        'body' => 'getBody',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class StandardImageTextBlock implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

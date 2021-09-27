@@ -112,7 +112,8 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'carton_count' => 'setCartonCount',
-        'carton_reference_numbers' => 'setCartonReferenceNumbers'
+        'carton_reference_numbers' => 'setCartonReferenceNumbers',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -122,7 +123,8 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'carton_count' => 'getCartonCount',
-        'carton_reference_numbers' => 'getCartonReferenceNumbers'
+        'carton_reference_numbers' => 'getCartonReferenceNumbers',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -213,6 +215,30 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

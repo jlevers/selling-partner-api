@@ -121,7 +121,8 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
         'package_number' => 'setPackageNumber',
         'carrier_code' => 'setCarrierCode',
         'tracking_number' => 'setTrackingNumber',
-        'estimated_arrival_date' => 'setEstimatedArrivalDate'
+        'estimated_arrival_date' => 'setEstimatedArrivalDate',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
         'package_number' => 'getPackageNumber',
         'carrier_code' => 'getCarrierCode',
         'tracking_number' => 'getTrackingNumber',
-        'estimated_arrival_date' => 'getEstimatedArrivalDate'
+        'estimated_arrival_date' => 'getEstimatedArrivalDate',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -229,6 +231,30 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

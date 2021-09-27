@@ -117,7 +117,8 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $setters = [
         'is_partnered' => 'setIsPartnered',
         'shipment_type' => 'setShipmentType',
-        'transport_details' => 'setTransportDetails'
+        'transport_details' => 'setTransportDetails',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $getters = [
         'is_partnered' => 'getIsPartnered',
         'shipment_type' => 'getShipmentType',
-        'transport_details' => 'getTransportDetails'
+        'transport_details' => 'getTransportDetails',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -226,6 +228,30 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

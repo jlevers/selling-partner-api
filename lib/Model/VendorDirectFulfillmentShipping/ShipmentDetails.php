@@ -125,7 +125,8 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => 'setShipmentStatus',
         'is_priority_shipment' => 'setIsPriorityShipment',
         'vendor_order_number' => 'setVendorOrderNumber',
-        'estimated_delivery_date' => 'setEstimatedDeliveryDate'
+        'estimated_delivery_date' => 'setEstimatedDeliveryDate',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => 'getShipmentStatus',
         'is_priority_shipment' => 'getIsPriorityShipment',
         'vendor_order_number' => 'getVendorOrderNumber',
-        'estimated_delivery_date' => 'getEstimatedDeliveryDate'
+        'estimated_delivery_date' => 'getEstimatedDeliveryDate',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -259,6 +261,30 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

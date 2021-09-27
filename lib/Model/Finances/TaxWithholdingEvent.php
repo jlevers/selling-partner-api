@@ -121,7 +121,8 @@ class TaxWithholdingEvent implements ModelInterface, ArrayAccess, \JsonSerializa
         'posted_date' => 'setPostedDate',
         'base_amount' => 'setBaseAmount',
         'withheld_amount' => 'setWithheldAmount',
-        'tax_withholding_period' => 'setTaxWithholdingPeriod'
+        'tax_withholding_period' => 'setTaxWithholdingPeriod',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class TaxWithholdingEvent implements ModelInterface, ArrayAccess, \JsonSerializa
         'posted_date' => 'getPostedDate',
         'base_amount' => 'getBaseAmount',
         'withheld_amount' => 'getWithheldAmount',
-        'tax_withholding_period' => 'getTaxWithholdingPeriod'
+        'tax_withholding_period' => 'getTaxWithholdingPeriod',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class TaxWithholdingEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

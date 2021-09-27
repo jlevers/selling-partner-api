@@ -113,7 +113,8 @@ class GetInventorySummariesResult implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $setters = [
         'granularity' => 'setGranularity',
-        'inventory_summaries' => 'setInventorySummaries'
+        'inventory_summaries' => 'setInventorySummaries',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class GetInventorySummariesResult implements ModelInterface, ArrayAccess, \JsonS
      */
     protected static $getters = [
         'granularity' => 'getGranularity',
-        'inventory_summaries' => 'getInventorySummaries'
+        'inventory_summaries' => 'getInventorySummaries',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class GetInventorySummariesResult implements ModelInterface, ArrayAccess, \JsonS
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

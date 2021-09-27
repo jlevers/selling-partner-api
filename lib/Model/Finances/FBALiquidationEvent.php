@@ -121,7 +121,8 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
         'posted_date' => 'setPostedDate',
         'original_removal_order_id' => 'setOriginalRemovalOrderId',
         'liquidation_proceeds_amount' => 'setLiquidationProceedsAmount',
-        'liquidation_fee_amount' => 'setLiquidationFeeAmount'
+        'liquidation_fee_amount' => 'setLiquidationFeeAmount',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
         'posted_date' => 'getPostedDate',
         'original_removal_order_id' => 'getOriginalRemovalOrderId',
         'liquidation_proceeds_amount' => 'getLiquidationProceedsAmount',
-        'liquidation_fee_amount' => 'getLiquidationFeeAmount'
+        'liquidation_fee_amount' => 'getLiquidationFeeAmount',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

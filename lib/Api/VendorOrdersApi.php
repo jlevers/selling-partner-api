@@ -72,7 +72,7 @@ class VendorOrdersApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -122,7 +122,7 @@ class VendorOrdersApi
      */
     public function getPurchaseOrder($purchase_order_number)
     {
-        list($response) = $this->getPurchaseOrderWithHttpInfo($purchase_order_number);
+        $response = $this->getPurchaseOrderWithHttpInfo($purchase_order_number);
         return $response;
     }
 
@@ -179,11 +179,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -191,11 +187,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -203,11 +195,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -215,11 +203,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -227,11 +211,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -239,11 +219,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -251,11 +227,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -263,11 +235,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -275,11 +243,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrderResponse';
@@ -290,11 +254,7 @@ class VendorOrdersApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -424,11 +384,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -471,8 +427,6 @@ class VendorOrdersApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($purchase_order_number !== null) {
             $resourcePath = str_replace(
@@ -481,7 +435,6 @@ class VendorOrdersApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -511,7 +464,7 @@ class VendorOrdersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -562,7 +515,7 @@ class VendorOrdersApi
      */
     public function getPurchaseOrders($limit = null, $created_after = null, $created_before = null, $sort_order = null, $next_token = null, $include_details = null, $changed_after = null, $changed_before = null, $po_item_state = null, $is_po_changed = null, $purchase_order_state = null, $ordering_vendor_code = null)
     {
-        list($response) = $this->getPurchaseOrdersWithHttpInfo($limit, $created_after, $created_before, $sort_order, $next_token, $include_details, $changed_after, $changed_before, $po_item_state, $is_po_changed, $purchase_order_state, $ordering_vendor_code);
+        $response = $this->getPurchaseOrdersWithHttpInfo($limit, $created_after, $created_before, $sort_order, $next_token, $include_details, $changed_after, $changed_before, $po_item_state, $is_po_changed, $purchase_order_state, $ordering_vendor_code);
         return $response;
     }
 
@@ -630,11 +583,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -642,11 +591,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -654,11 +599,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -666,11 +607,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -678,11 +615,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -690,11 +623,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -702,11 +631,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -714,11 +639,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersResponse';
@@ -729,11 +650,7 @@ class VendorOrdersApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -877,11 +794,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -943,6 +856,7 @@ class VendorOrdersApi
         if ($limit !== null) {
             $queryParams['limit'] = $limit;
         }
+
         // query params
         if (is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -950,6 +864,7 @@ class VendorOrdersApi
         if ($created_after !== null) {
             $queryParams['createdAfter'] = $created_after;
         }
+
         // query params
         if (is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -957,6 +872,7 @@ class VendorOrdersApi
         if ($created_before !== null) {
             $queryParams['createdBefore'] = $created_before;
         }
+
         // query params
         if (is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -964,6 +880,7 @@ class VendorOrdersApi
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = $sort_order;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -971,6 +888,7 @@ class VendorOrdersApi
         if ($next_token !== null) {
             $queryParams['nextToken'] = $next_token;
         }
+
         // query params
         if (is_array($include_details)) {
             $include_details = ObjectSerializer::serializeCollection($include_details, '', true);
@@ -978,6 +896,7 @@ class VendorOrdersApi
         if ($include_details !== null) {
             $queryParams['includeDetails'] = $include_details;
         }
+
         // query params
         if (is_array($changed_after)) {
             $changed_after = ObjectSerializer::serializeCollection($changed_after, '', true);
@@ -985,6 +904,7 @@ class VendorOrdersApi
         if ($changed_after !== null) {
             $queryParams['changedAfter'] = $changed_after;
         }
+
         // query params
         if (is_array($changed_before)) {
             $changed_before = ObjectSerializer::serializeCollection($changed_before, '', true);
@@ -992,6 +912,7 @@ class VendorOrdersApi
         if ($changed_before !== null) {
             $queryParams['changedBefore'] = $changed_before;
         }
+
         // query params
         if (is_array($po_item_state)) {
             $po_item_state = ObjectSerializer::serializeCollection($po_item_state, '', true);
@@ -999,6 +920,7 @@ class VendorOrdersApi
         if ($po_item_state !== null) {
             $queryParams['poItemState'] = $po_item_state;
         }
+
         // query params
         if (is_array($is_po_changed)) {
             $is_po_changed = ObjectSerializer::serializeCollection($is_po_changed, '', true);
@@ -1006,6 +928,7 @@ class VendorOrdersApi
         if ($is_po_changed !== null) {
             $queryParams['isPOChanged'] = $is_po_changed;
         }
+
         // query params
         if (is_array($purchase_order_state)) {
             $purchase_order_state = ObjectSerializer::serializeCollection($purchase_order_state, '', true);
@@ -1013,6 +936,7 @@ class VendorOrdersApi
         if ($purchase_order_state !== null) {
             $queryParams['purchaseOrderState'] = $purchase_order_state;
         }
+
         // query params
         if (is_array($ordering_vendor_code)) {
             $ordering_vendor_code = ObjectSerializer::serializeCollection($ordering_vendor_code, '', true);
@@ -1020,9 +944,6 @@ class VendorOrdersApi
         if ($ordering_vendor_code !== null) {
             $queryParams['orderingVendorCode'] = $ordering_vendor_code;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1052,7 +973,7 @@ class VendorOrdersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1103,7 +1024,7 @@ class VendorOrdersApi
      */
     public function getPurchaseOrdersStatus($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
     {
-        list($response) = $this->getPurchaseOrdersStatusWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $ordering_vendor_code, $ship_to_party_id);
+        $response = $this->getPurchaseOrdersStatusWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $ordering_vendor_code, $ship_to_party_id);
         return $response;
     }
 
@@ -1171,11 +1092,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1183,11 +1100,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1195,11 +1108,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1207,11 +1116,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1219,11 +1124,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1231,11 +1132,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1243,11 +1140,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1255,11 +1148,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse';
@@ -1270,11 +1159,7 @@ class VendorOrdersApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1418,11 +1303,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1484,6 +1365,7 @@ class VendorOrdersApi
         if ($limit !== null) {
             $queryParams['limit'] = $limit;
         }
+
         // query params
         if (is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -1491,6 +1373,7 @@ class VendorOrdersApi
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = $sort_order;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -1498,6 +1381,7 @@ class VendorOrdersApi
         if ($next_token !== null) {
             $queryParams['nextToken'] = $next_token;
         }
+
         // query params
         if (is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -1505,6 +1389,7 @@ class VendorOrdersApi
         if ($created_after !== null) {
             $queryParams['createdAfter'] = $created_after;
         }
+
         // query params
         if (is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -1512,6 +1397,7 @@ class VendorOrdersApi
         if ($created_before !== null) {
             $queryParams['createdBefore'] = $created_before;
         }
+
         // query params
         if (is_array($updated_after)) {
             $updated_after = ObjectSerializer::serializeCollection($updated_after, '', true);
@@ -1519,6 +1405,7 @@ class VendorOrdersApi
         if ($updated_after !== null) {
             $queryParams['updatedAfter'] = $updated_after;
         }
+
         // query params
         if (is_array($updated_before)) {
             $updated_before = ObjectSerializer::serializeCollection($updated_before, '', true);
@@ -1526,6 +1413,7 @@ class VendorOrdersApi
         if ($updated_before !== null) {
             $queryParams['updatedBefore'] = $updated_before;
         }
+
         // query params
         if (is_array($purchase_order_number)) {
             $purchase_order_number = ObjectSerializer::serializeCollection($purchase_order_number, '', true);
@@ -1533,6 +1421,7 @@ class VendorOrdersApi
         if ($purchase_order_number !== null) {
             $queryParams['purchaseOrderNumber'] = $purchase_order_number;
         }
+
         // query params
         if (is_array($purchase_order_status)) {
             $purchase_order_status = ObjectSerializer::serializeCollection($purchase_order_status, '', true);
@@ -1540,6 +1429,7 @@ class VendorOrdersApi
         if ($purchase_order_status !== null) {
             $queryParams['purchaseOrderStatus'] = $purchase_order_status;
         }
+
         // query params
         if (is_array($item_confirmation_status)) {
             $item_confirmation_status = ObjectSerializer::serializeCollection($item_confirmation_status, '', true);
@@ -1547,6 +1437,7 @@ class VendorOrdersApi
         if ($item_confirmation_status !== null) {
             $queryParams['itemConfirmationStatus'] = $item_confirmation_status;
         }
+
         // query params
         if (is_array($ordering_vendor_code)) {
             $ordering_vendor_code = ObjectSerializer::serializeCollection($ordering_vendor_code, '', true);
@@ -1554,6 +1445,7 @@ class VendorOrdersApi
         if ($ordering_vendor_code !== null) {
             $queryParams['orderingVendorCode'] = $ordering_vendor_code;
         }
+
         // query params
         if (is_array($ship_to_party_id)) {
             $ship_to_party_id = ObjectSerializer::serializeCollection($ship_to_party_id, '', true);
@@ -1561,9 +1453,6 @@ class VendorOrdersApi
         if ($ship_to_party_id !== null) {
             $queryParams['shipToPartyId'] = $ship_to_party_id;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1593,7 +1482,7 @@ class VendorOrdersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1633,7 +1522,7 @@ class VendorOrdersApi
      */
     public function submitAcknowledgement($body)
     {
-        list($response) = $this->submitAcknowledgementWithHttpInfo($body);
+        $response = $this->submitAcknowledgementWithHttpInfo($body);
         return $response;
     }
 
@@ -1690,11 +1579,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1702,11 +1587,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1714,11 +1595,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1726,11 +1603,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1738,11 +1611,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1750,11 +1619,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1762,11 +1627,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1774,11 +1635,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1786,11 +1643,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorOrders\SubmitAcknowledgementResponse';
@@ -1801,11 +1654,7 @@ class VendorOrdersApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1935,11 +1784,7 @@ class VendorOrdersApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1982,10 +1827,6 @@ class VendorOrdersApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -2020,7 +1861,7 @@ class VendorOrdersApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

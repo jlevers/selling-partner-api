@@ -156,7 +156,8 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'tax_totals' => 'setTaxTotals',
         'additional_details' => 'setAdditionalDetails',
         'charge_details' => 'setChargeDetails',
-        'items' => 'setItems'
+        'items' => 'setItems',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -177,7 +178,8 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'tax_totals' => 'getTaxTotals',
         'additional_details' => 'getAdditionalDetails',
         'charge_details' => 'getChargeDetails',
-        'items' => 'getItems'
+        'items' => 'getItems',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -294,6 +296,30 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

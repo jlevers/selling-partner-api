@@ -129,7 +129,8 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'shipping_service_offer_id' => 'setShippingServiceOfferId',
         'hazmat_type' => 'setHazmatType',
         'label_format_option' => 'setLabelFormatOption',
-        'shipment_level_seller_inputs_list' => 'setShipmentLevelSellerInputsList'
+        'shipment_level_seller_inputs_list' => 'setShipmentLevelSellerInputsList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'shipping_service_offer_id' => 'getShippingServiceOfferId',
         'hazmat_type' => 'getHazmatType',
         'label_format_option' => 'getLabelFormatOption',
-        'shipment_level_seller_inputs_list' => 'getShipmentLevelSellerInputsList'
+        'shipment_level_seller_inputs_list' => 'getShipmentLevelSellerInputsList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class CreateShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

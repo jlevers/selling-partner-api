@@ -121,7 +121,8 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
         'partnered_small_parcel_data' => 'setPartneredSmallParcelData',
         'non_partnered_small_parcel_data' => 'setNonPartneredSmallParcelData',
         'partnered_ltl_data' => 'setPartneredLtlData',
-        'non_partnered_ltl_data' => 'setNonPartneredLtlData'
+        'non_partnered_ltl_data' => 'setNonPartneredLtlData',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
         'partnered_small_parcel_data' => 'getPartneredSmallParcelData',
         'non_partnered_small_parcel_data' => 'getNonPartneredSmallParcelData',
         'partnered_ltl_data' => 'getPartneredLtlData',
-        'non_partnered_ltl_data' => 'getNonPartneredLtlData'
+        'non_partnered_ltl_data' => 'getNonPartneredLtlData',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

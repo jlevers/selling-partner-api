@@ -121,7 +121,8 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'setType',
         'description' => 'setDescription',
         'charge_amount' => 'setChargeAmount',
-        'tax_details' => 'setTaxDetails'
+        'tax_details' => 'setTaxDetails',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'getType',
         'description' => 'getDescription',
         'charge_amount' => 'getChargeAmount',
-        'tax_details' => 'getTaxDetails'
+        'tax_details' => 'getTaxDetails',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -271,6 +273,30 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

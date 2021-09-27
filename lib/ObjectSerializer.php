@@ -369,6 +369,10 @@ class ObjectSerializer
                     $propertyValue = $data->{$instance::attributeMap()[$property]};
                     $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
                 }
+
+                if ($httpHeaders !== null) {
+                    $instance->setHeaders($httpHeaders);
+                }
             }
             return $instance;
         }

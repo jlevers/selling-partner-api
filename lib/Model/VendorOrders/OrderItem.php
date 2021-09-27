@@ -132,7 +132,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_quantity' => 'setOrderedQuantity',
         'is_back_order_allowed' => 'setIsBackOrderAllowed',
         'net_cost' => 'setNetCost',
-        'list_price' => 'setListPrice'
+        'list_price' => 'setListPrice',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -147,7 +148,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_quantity' => 'getOrderedQuantity',
         'is_back_order_allowed' => 'getIsBackOrderAllowed',
         'net_cost' => 'getNetCost',
-        'list_price' => 'getListPrice'
+        'list_price' => 'getListPrice',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -249,6 +251,30 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -117,7 +117,8 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'type' => 'setType',
         'location_code' => 'setLocationCode',
-        'country_code' => 'setCountryCode'
+        'country_code' => 'setCountryCode',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'type' => 'getType',
         'location_code' => 'getLocationCode',
-        'country_code' => 'getCountryCode'
+        'country_code' => 'getCountryCode',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

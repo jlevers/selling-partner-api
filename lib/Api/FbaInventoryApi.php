@@ -72,7 +72,7 @@ class FbaInventoryApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -128,7 +128,7 @@ class FbaInventoryApi
      */
     public function getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $details = false, $start_date_time = null, $seller_skus = null, $next_token = null)
     {
-        list($response) = $this->getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
+        $response = $this->getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
         return $response;
     }
 
@@ -191,11 +191,7 @@ class FbaInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -203,11 +199,7 @@ class FbaInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -215,11 +207,7 @@ class FbaInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -227,11 +215,7 @@ class FbaInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -239,11 +223,7 @@ class FbaInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -251,11 +231,7 @@ class FbaInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -263,11 +239,7 @@ class FbaInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\FbaInventory\GetInventorySummariesResponse';
@@ -278,11 +250,7 @@ class FbaInventoryApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -408,11 +376,7 @@ class FbaInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -488,6 +452,7 @@ class FbaInventoryApi
         if ($details !== null) {
             $queryParams['details'] = $details;
         }
+
         // query params
         if (is_array($granularity_type)) {
             $granularity_type = ObjectSerializer::serializeCollection($granularity_type, '', true);
@@ -495,6 +460,7 @@ class FbaInventoryApi
         if ($granularity_type !== null) {
             $queryParams['granularityType'] = $granularity_type;
         }
+
         // query params
         if (is_array($granularity_id)) {
             $granularity_id = ObjectSerializer::serializeCollection($granularity_id, '', true);
@@ -502,6 +468,7 @@ class FbaInventoryApi
         if ($granularity_id !== null) {
             $queryParams['granularityId'] = $granularity_id;
         }
+
         // query params
         if (is_array($start_date_time)) {
             $start_date_time = ObjectSerializer::serializeCollection($start_date_time, '', true);
@@ -509,6 +476,7 @@ class FbaInventoryApi
         if ($start_date_time !== null) {
             $queryParams['startDateTime'] = $start_date_time;
         }
+
         // query params
         if (is_array($seller_skus)) {
             $seller_skus = ObjectSerializer::serializeCollection($seller_skus, 'form', true);
@@ -516,6 +484,7 @@ class FbaInventoryApi
         if ($seller_skus !== null) {
             $queryParams['sellerSkus'] = $seller_skus;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -523,6 +492,7 @@ class FbaInventoryApi
         if ($next_token !== null) {
             $queryParams['nextToken'] = $next_token;
         }
+
         // query params
         if (is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -530,9 +500,6 @@ class FbaInventoryApi
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -562,7 +529,7 @@ class FbaInventoryApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

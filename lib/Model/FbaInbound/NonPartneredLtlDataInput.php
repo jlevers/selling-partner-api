@@ -113,7 +113,8 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $setters = [
         'carrier_name' => 'setCarrierName',
-        'pro_number' => 'setProNumber'
+        'pro_number' => 'setProNumber',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'carrier_name' => 'getCarrierName',
-        'pro_number' => 'getProNumber'
+        'pro_number' => 'getProNumber',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class NonPartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeri
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

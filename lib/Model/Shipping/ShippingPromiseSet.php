@@ -113,7 +113,8 @@ class ShippingPromiseSet implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'delivery_window' => 'setDeliveryWindow',
-        'receive_window' => 'setReceiveWindow'
+        'receive_window' => 'setReceiveWindow',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class ShippingPromiseSet implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'delivery_window' => 'getDeliveryWindow',
-        'receive_window' => 'getReceiveWindow'
+        'receive_window' => 'getReceiveWindow',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -211,6 +213,30 @@ class ShippingPromiseSet implements ModelInterface, ArrayAccess, \JsonSerializab
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

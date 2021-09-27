@@ -133,7 +133,8 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
         'distributor_damaged_quantity' => 'setDistributorDamagedQuantity',
         'carrier_damaged_quantity' => 'setCarrierDamagedQuantity',
         'defective_quantity' => 'setDefectiveQuantity',
-        'expired_quantity' => 'setExpiredQuantity'
+        'expired_quantity' => 'setExpiredQuantity',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
         'distributor_damaged_quantity' => 'getDistributorDamagedQuantity',
         'carrier_damaged_quantity' => 'getCarrierDamagedQuantity',
         'defective_quantity' => 'getDefectiveQuantity',
-        'expired_quantity' => 'getExpiredQuantity'
+        'expired_quantity' => 'getExpiredQuantity',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -132,7 +132,8 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'net_cost' => 'setNetCost',
         'list_price' => 'setListPrice',
         'ordered_quantity' => 'setOrderedQuantity',
-        'acknowledgement_status' => 'setAcknowledgementStatus'
+        'acknowledgement_status' => 'setAcknowledgementStatus',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -147,7 +148,8 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'net_cost' => 'getNetCost',
         'list_price' => 'getListPrice',
         'ordered_quantity' => 'getOrderedQuantity',
-        'acknowledgement_status' => 'getAcknowledgementStatus'
+        'acknowledgement_status' => 'getAcknowledgementStatus',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -243,6 +245,30 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

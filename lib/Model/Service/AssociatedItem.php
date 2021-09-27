@@ -133,7 +133,8 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_id' => 'setOrderId',
         'item_status' => 'setItemStatus',
         'brand_name' => 'setBrandName',
-        'item_delivery' => 'setItemDelivery'
+        'item_delivery' => 'setItemDelivery',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_id' => 'getOrderId',
         'item_status' => 'getItemStatus',
         'brand_name' => 'getBrandName',
-        'item_delivery' => 'getItemDelivery'
+        'item_delivery' => 'getItemDelivery',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -277,6 +279,30 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

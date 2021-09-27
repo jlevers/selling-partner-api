@@ -112,7 +112,8 @@ class GetPackingSlipResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'payload' => 'setPayload',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -122,7 +123,8 @@ class GetPackingSlipResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'payload' => 'getPayload',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -210,6 +212,30 @@ class GetPackingSlipResponse implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

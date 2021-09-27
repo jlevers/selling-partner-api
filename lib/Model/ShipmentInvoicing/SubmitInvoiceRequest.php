@@ -117,7 +117,8 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $setters = [
         'invoice_content' => 'setInvoiceContent',
         'marketplace_id' => 'setMarketplaceId',
-        'content_md5_value' => 'setContentMd5Value'
+        'content_md5_value' => 'setContentMd5Value',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $getters = [
         'invoice_content' => 'getInvoiceContent',
         'marketplace_id' => 'getMarketplaceId',
-        'content_md5_value' => 'getContentMd5Value'
+        'content_md5_value' => 'getContentMd5Value',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -121,7 +121,8 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
         'minimum_hours' => 'setMinimumHours',
         'maximum_hours' => 'setMaximumHours',
         'available_date' => 'setAvailableDate',
-        'availability_type' => 'setAvailabilityType'
+        'availability_type' => 'setAvailabilityType',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
         'minimum_hours' => 'getMinimumHours',
         'maximum_hours' => 'getMaximumHours',
         'available_date' => 'getAvailableDate',
-        'availability_type' => 'getAvailabilityType'
+        'availability_type' => 'getAvailabilityType',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -249,6 +251,30 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

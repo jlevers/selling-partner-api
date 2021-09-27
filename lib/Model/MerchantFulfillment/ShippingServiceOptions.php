@@ -125,7 +125,8 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
         'declared_value' => 'setDeclaredValue',
         'carrier_will_pick_up' => 'setCarrierWillPickUp',
         'carrier_will_pick_up_option' => 'setCarrierWillPickUpOption',
-        'label_format' => 'setLabelFormat'
+        'label_format' => 'setLabelFormat',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
         'declared_value' => 'getDeclaredValue',
         'carrier_will_pick_up' => 'getCarrierWillPickUp',
         'carrier_will_pick_up_option' => 'getCarrierWillPickUpOption',
-        'label_format' => 'getLabelFormat'
+        'label_format' => 'getLabelFormat',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

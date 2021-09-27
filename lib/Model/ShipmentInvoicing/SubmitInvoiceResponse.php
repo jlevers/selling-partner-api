@@ -109,7 +109,8 @@ class SubmitInvoiceResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -118,7 +119,8 @@ class SubmitInvoiceResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -205,6 +207,30 @@ class SubmitInvoiceResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

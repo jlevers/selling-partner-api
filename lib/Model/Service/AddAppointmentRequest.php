@@ -109,7 +109,8 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'appointment_time' => 'setAppointmentTime'
+        'appointment_time' => 'setAppointmentTime',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -118,7 +119,8 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'appointment_time' => 'getAppointmentTime'
+        'appointment_time' => 'getAppointmentTime',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -208,6 +210,30 @@ class AddAppointmentRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -213,7 +213,8 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_settle_event_list' => 'setShipmentSettleEventList',
         'tax_withholding_event_list' => 'setTaxWithholdingEventList',
         'removal_shipment_event_list' => 'setRemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList'
+        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -248,7 +249,8 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_settle_event_list' => 'getShipmentSettleEventList',
         'tax_withholding_event_list' => 'getTaxWithholdingEventList',
         'removal_shipment_event_list' => 'getRemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList'
+        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -361,6 +363,30 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

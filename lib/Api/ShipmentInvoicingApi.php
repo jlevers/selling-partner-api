@@ -72,7 +72,7 @@ class ShipmentInvoicingApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -122,7 +122,7 @@ class ShipmentInvoicingApi
      */
     public function getInvoiceStatus($shipment_id)
     {
-        list($response) = $this->getInvoiceStatusWithHttpInfo($shipment_id);
+        $response = $this->getInvoiceStatusWithHttpInfo($shipment_id);
         return $response;
     }
 
@@ -179,11 +179,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -191,11 +187,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -203,11 +195,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -215,11 +203,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -227,11 +211,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -239,11 +219,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -251,11 +227,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -263,11 +235,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -275,11 +243,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\ShipmentInvoicing\GetInvoiceStatusResponse';
@@ -290,11 +254,7 @@ class ShipmentInvoicingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -424,11 +384,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -471,8 +427,6 @@ class ShipmentInvoicingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($shipment_id !== null) {
             $resourcePath = str_replace(
@@ -481,7 +435,6 @@ class ShipmentInvoicingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -511,7 +464,7 @@ class ShipmentInvoicingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -551,7 +504,7 @@ class ShipmentInvoicingApi
      */
     public function getShipmentDetails($shipment_id)
     {
-        list($response) = $this->getShipmentDetailsWithHttpInfo($shipment_id);
+        $response = $this->getShipmentDetailsWithHttpInfo($shipment_id);
         return $response;
     }
 
@@ -611,11 +564,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -623,11 +572,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -635,11 +580,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -647,11 +588,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -659,11 +596,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -671,11 +604,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -683,11 +612,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -695,11 +620,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -707,11 +628,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\ShipmentInvoicing\GetShipmentDetailsResponse';
@@ -722,11 +639,7 @@ class ShipmentInvoicingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -859,11 +772,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -906,8 +815,6 @@ class ShipmentInvoicingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($shipment_id !== null) {
             $resourcePath = str_replace(
@@ -916,7 +823,6 @@ class ShipmentInvoicingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -946,7 +852,7 @@ class ShipmentInvoicingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -987,7 +893,7 @@ class ShipmentInvoicingApi
      */
     public function submitInvoice($shipment_id, $body)
     {
-        list($response) = $this->submitInvoiceWithHttpInfo($shipment_id, $body);
+        $response = $this->submitInvoiceWithHttpInfo($shipment_id, $body);
         return $response;
     }
 
@@ -1045,11 +951,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1057,11 +959,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1069,11 +967,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1081,11 +975,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1093,11 +983,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1105,11 +991,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1117,11 +999,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1129,11 +1007,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1141,11 +1015,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\ShipmentInvoicing\SubmitInvoiceResponse';
@@ -1156,11 +1026,7 @@ class ShipmentInvoicingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1292,11 +1158,7 @@ class ShipmentInvoicingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1346,8 +1208,6 @@ class ShipmentInvoicingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($shipment_id !== null) {
             $resourcePath = str_replace(
@@ -1356,7 +1216,6 @@ class ShipmentInvoicingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1392,7 +1251,7 @@ class ShipmentInvoicingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

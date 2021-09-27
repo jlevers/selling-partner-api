@@ -117,7 +117,8 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'asins' => 'setAsins',
-        'variation_type' => 'setVariationType'
+        'variation_type' => 'setVariationType',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'asins' => 'getAsins',
-        'variation_type' => 'getVariationType'
+        'variation_type' => 'getVariationType',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -250,6 +252,30 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -124,7 +124,8 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_amazon_fulfilled' => 'setIsAmazonFulfilled',
         'price_to_estimate_fees' => 'setPriceToEstimateFees',
         'identifier' => 'setIdentifier',
-        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram'
+        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -137,7 +138,8 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_amazon_fulfilled' => 'getIsAmazonFulfilled',
         'price_to_estimate_fees' => 'getPriceToEstimateFees',
         'identifier' => 'getIdentifier',
-        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram'
+        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -237,6 +239,30 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

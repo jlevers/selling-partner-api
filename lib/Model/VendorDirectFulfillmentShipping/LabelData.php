@@ -125,7 +125,8 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
         'tracking_number' => 'setTrackingNumber',
         'ship_method' => 'setShipMethod',
         'ship_method_name' => 'setShipMethodName',
-        'content' => 'setContent'
+        'content' => 'setContent',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
         'tracking_number' => 'getTrackingNumber',
         'ship_method' => 'getShipMethod',
         'ship_method_name' => 'getShipMethodName',
-        'content' => 'getContent'
+        'content' => 'getContent',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -232,6 +234,30 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

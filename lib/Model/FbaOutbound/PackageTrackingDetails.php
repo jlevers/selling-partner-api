@@ -160,7 +160,8 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'current_status_description' => 'setCurrentStatusDescription',
         'signed_for_by' => 'setSignedForBy',
         'additional_location_info' => 'setAdditionalLocationInfo',
-        'tracking_events' => 'setTrackingEvents'
+        'tracking_events' => 'setTrackingEvents',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -182,7 +183,8 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'current_status_description' => 'getCurrentStatusDescription',
         'signed_for_by' => 'getSignedForBy',
         'additional_location_info' => 'getAdditionalLocationInfo',
-        'tracking_events' => 'getTrackingEvents'
+        'tracking_events' => 'getTrackingEvents',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -285,6 +287,30 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

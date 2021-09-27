@@ -137,7 +137,8 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity_received' => 'setQuantityReceived',
         'quantity_in_case' => 'setQuantityInCase',
         'release_date' => 'setReleaseDate',
-        'prep_details_list' => 'setPrepDetailsList'
+        'prep_details_list' => 'setPrepDetailsList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -153,7 +154,8 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity_received' => 'getQuantityReceived',
         'quantity_in_case' => 'getQuantityInCase',
         'release_date' => 'getReleaseDate',
-        'prep_details_list' => 'getPrepDetailsList'
+        'prep_details_list' => 'getPrepDetailsList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -253,6 +255,30 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

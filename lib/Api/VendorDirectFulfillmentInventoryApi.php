@@ -72,7 +72,7 @@ class VendorDirectFulfillmentInventoryApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -123,7 +123,7 @@ class VendorDirectFulfillmentInventoryApi
      */
     public function submitInventoryUpdate($warehouse_id, $body)
     {
-        list($response) = $this->submitInventoryUpdateWithHttpInfo($warehouse_id, $body);
+        $response = $this->submitInventoryUpdateWithHttpInfo($warehouse_id, $body);
         return $response;
     }
 
@@ -181,11 +181,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -193,11 +189,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -205,11 +197,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -217,11 +205,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -229,11 +213,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -241,11 +221,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -253,11 +229,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -265,11 +237,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -277,11 +245,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse';
@@ -292,11 +256,7 @@ class VendorDirectFulfillmentInventoryApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -428,11 +388,7 @@ class VendorDirectFulfillmentInventoryApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -482,8 +438,6 @@ class VendorDirectFulfillmentInventoryApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($warehouse_id !== null) {
             $resourcePath = str_replace(
@@ -492,7 +446,6 @@ class VendorDirectFulfillmentInventoryApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -528,7 +481,7 @@ class VendorDirectFulfillmentInventoryApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

@@ -113,7 +113,8 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'seller_positive_feedback_rating' => 'setSellerPositiveFeedbackRating',
-        'feedback_count' => 'setFeedbackCount'
+        'feedback_count' => 'setFeedbackCount',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'seller_positive_feedback_rating' => 'getSellerPositiveFeedbackRating',
-        'feedback_count' => 'getFeedbackCount'
+        'feedback_count' => 'getFeedbackCount',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -214,6 +216,30 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess, \JsonSerializab
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

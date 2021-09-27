@@ -121,7 +121,8 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'quantity' => 'setQuantity',
         'unit_price' => 'setUnitPrice',
         'unit_weight' => 'setUnitWeight',
-        'title' => 'setTitle'
+        'title' => 'setTitle',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'quantity' => 'getQuantity',
         'unit_price' => 'getUnitPrice',
         'unit_weight' => 'getUnitWeight',
-        'title' => 'getTitle'
+        'title' => 'getTitle',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -239,6 +241,30 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -116,7 +116,8 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     protected static $setters = [
         'return_items' => 'setReturnItems',
         'invalid_return_items' => 'setInvalidReturnItems',
-        'return_authorizations' => 'setReturnAuthorizations'
+        'return_authorizations' => 'setReturnAuthorizations',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -127,7 +128,8 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     protected static $getters = [
         'return_items' => 'getReturnItems',
         'invalid_return_items' => 'getInvalidReturnItems',
-        'return_authorizations' => 'getReturnAuthorizations'
+        'return_authorizations' => 'getReturnAuthorizations',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -216,6 +218,30 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -141,7 +141,8 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'locale' => 'setLocale',
         'marketplace_ids' => 'setMarketplaceIds',
         'product_type' => 'setProductType',
-        'product_type_version' => 'setProductTypeVersion'
+        'product_type_version' => 'setProductTypeVersion',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -158,7 +159,8 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'locale' => 'getLocale',
         'marketplace_ids' => 'getMarketplaceIds',
         'product_type' => 'getProductType',
-        'product_type_version' => 'getProductTypeVersion'
+        'product_type_version' => 'getProductTypeVersion',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -327,6 +329,30 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

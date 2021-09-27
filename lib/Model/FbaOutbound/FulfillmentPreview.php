@@ -149,7 +149,8 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
         'unfulfillable_preview_items' => 'setUnfulfillablePreviewItems',
         'order_unfulfillable_reasons' => 'setOrderUnfulfillableReasons',
         'marketplace_id' => 'setMarketplaceId',
-        'feature_constraints' => 'setFeatureConstraints'
+        'feature_constraints' => 'setFeatureConstraints',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -168,7 +169,8 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
         'unfulfillable_preview_items' => 'getUnfulfillablePreviewItems',
         'order_unfulfillable_reasons' => 'getOrderUnfulfillableReasons',
         'marketplace_id' => 'getMarketplaceId',
-        'feature_constraints' => 'getFeatureConstraints'
+        'feature_constraints' => 'getFeatureConstraints',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -277,6 +279,30 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

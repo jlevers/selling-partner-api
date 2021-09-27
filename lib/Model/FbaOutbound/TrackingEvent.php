@@ -121,7 +121,8 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'event_date' => 'setEventDate',
         'event_address' => 'setEventAddress',
         'event_code' => 'setEventCode',
-        'event_description' => 'setEventDescription'
+        'event_description' => 'setEventDescription',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'event_date' => 'getEventDate',
         'event_address' => 'getEventAddress',
         'event_code' => 'getEventCode',
-        'event_description' => 'getEventDescription'
+        'event_description' => 'getEventDescription',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

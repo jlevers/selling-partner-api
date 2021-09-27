@@ -109,7 +109,8 @@ class GetMyFeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'fees_estimate_result' => 'setFeesEstimateResult'
+        'fees_estimate_result' => 'setFeesEstimateResult',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -118,7 +119,8 @@ class GetMyFeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'fees_estimate_result' => 'getFeesEstimateResult'
+        'fees_estimate_result' => 'getFeesEstimateResult',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -205,6 +207,30 @@ class GetMyFeesEstimateResult implements ModelInterface, ArrayAccess, \JsonSeria
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

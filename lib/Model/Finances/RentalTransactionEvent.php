@@ -145,7 +145,8 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'marketplace_name' => 'setMarketplaceName',
         'rental_initial_value' => 'setRentalInitialValue',
         'rental_reimbursement' => 'setRentalReimbursement',
-        'rental_tax_withheld_list' => 'setRentalTaxWithheldList'
+        'rental_tax_withheld_list' => 'setRentalTaxWithheldList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -163,7 +164,8 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'marketplace_name' => 'getMarketplaceName',
         'rental_initial_value' => 'getRentalInitialValue',
         'rental_reimbursement' => 'getRentalReimbursement',
-        'rental_tax_withheld_list' => 'getRentalTaxWithheldList'
+        'rental_tax_withheld_list' => 'getRentalTaxWithheldList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -259,6 +261,30 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

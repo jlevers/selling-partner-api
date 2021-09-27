@@ -125,7 +125,8 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         'cod_charge' => 'setCodCharge',
         'cod_charge_tax' => 'setCodChargeTax',
         'shipping_charge' => 'setShippingCharge',
-        'shipping_charge_tax' => 'setShippingChargeTax'
+        'shipping_charge_tax' => 'setShippingChargeTax',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         'cod_charge' => 'getCodCharge',
         'cod_charge_tax' => 'getCodChargeTax',
         'shipping_charge' => 'getShippingCharge',
-        'shipping_charge_tax' => 'getShippingChargeTax'
+        'shipping_charge_tax' => 'getShippingChargeTax',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -232,6 +234,30 @@ class CODSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

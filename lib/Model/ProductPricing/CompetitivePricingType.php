@@ -117,7 +117,8 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'competitive_prices' => 'setCompetitivePrices',
         'number_of_offer_listings' => 'setNumberOfOfferListings',
-        'trade_in_value' => 'setTradeInValue'
+        'trade_in_value' => 'setTradeInValue',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'competitive_prices' => 'getCompetitivePrices',
         'number_of_offer_listings' => 'getNumberOfOfferListings',
-        'trade_in_value' => 'getTradeInValue'
+        'trade_in_value' => 'getTradeInValue',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

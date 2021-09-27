@@ -113,7 +113,8 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'delivery_time_zone' => 'setDeliveryTimeZone',
-        'delivery_windows' => 'setDeliveryWindows'
+        'delivery_windows' => 'setDeliveryWindows',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'delivery_time_zone' => 'getDeliveryTimeZone',
-        'delivery_windows' => 'getDeliveryWindows'
+        'delivery_windows' => 'getDeliveryWindows',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

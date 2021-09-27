@@ -133,7 +133,8 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_gift' => 'setIsGift',
         'ship_method' => 'setShipMethod',
         'shipment_dates' => 'setShipmentDates',
-        'message_to_customer' => 'setMessageToCustomer'
+        'message_to_customer' => 'setMessageToCustomer',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_gift' => 'getIsGift',
         'ship_method' => 'getShipMethod',
         'shipment_dates' => 'getShipmentDates',
-        'message_to_customer' => 'getMessageToCustomer'
+        'message_to_customer' => 'getMessageToCustomer',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -256,6 +258,30 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

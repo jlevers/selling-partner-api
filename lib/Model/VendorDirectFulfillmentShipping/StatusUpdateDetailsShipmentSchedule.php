@@ -116,7 +116,8 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     protected static $setters = [
         'estimated_delivery_date_time' => 'setEstimatedDeliveryDateTime',
         'appt_window_start_date_time' => 'setApptWindowStartDateTime',
-        'appt_window_end_date_time' => 'setApptWindowEndDateTime'
+        'appt_window_end_date_time' => 'setApptWindowEndDateTime',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -127,7 +128,8 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     protected static $getters = [
         'estimated_delivery_date_time' => 'getEstimatedDeliveryDateTime',
         'appt_window_start_date_time' => 'getApptWindowStartDateTime',
-        'appt_window_end_date_time' => 'getApptWindowEndDateTime'
+        'appt_window_end_date_time' => 'getApptWindowEndDateTime',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -216,6 +218,30 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

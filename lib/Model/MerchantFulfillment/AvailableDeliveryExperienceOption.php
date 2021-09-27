@@ -113,7 +113,8 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
      */
     protected static $setters = [
         'delivery_experience_option' => 'setDeliveryExperienceOption',
-        'charge' => 'setCharge'
+        'charge' => 'setCharge',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
      */
     protected static $getters = [
         'delivery_experience_option' => 'getDeliveryExperienceOption',
-        'charge' => 'getCharge'
+        'charge' => 'getCharge',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -117,7 +117,8 @@ class NonPartneredSmallParcelPackageOutput implements ModelInterface, ArrayAcces
     protected static $setters = [
         'carrier_name' => 'setCarrierName',
         'tracking_id' => 'setTrackingId',
-        'package_status' => 'setPackageStatus'
+        'package_status' => 'setPackageStatus',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class NonPartneredSmallParcelPackageOutput implements ModelInterface, ArrayAcces
     protected static $getters = [
         'carrier_name' => 'getCarrierName',
         'tracking_id' => 'getTrackingId',
-        'package_status' => 'getPackageStatus'
+        'package_status' => 'getPackageStatus',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -226,6 +228,30 @@ class NonPartneredSmallParcelPackageOutput implements ModelInterface, ArrayAcces
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

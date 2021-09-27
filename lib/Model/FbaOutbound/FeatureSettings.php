@@ -113,7 +113,8 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'feature_name' => 'setFeatureName',
-        'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy'
+        'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'feature_name' => 'getFeatureName',
-        'feature_fulfillment_policy' => 'getFeatureFulfillmentPolicy'
+        'feature_fulfillment_policy' => 'getFeatureFulfillmentPolicy',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

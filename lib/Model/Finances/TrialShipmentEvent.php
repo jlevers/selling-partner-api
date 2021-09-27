@@ -125,7 +125,8 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'financial_event_group_id' => 'setFinancialEventGroupId',
         'posted_date' => 'setPostedDate',
         'sku' => 'setSku',
-        'fee_list' => 'setFeeList'
+        'fee_list' => 'setFeeList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'financial_event_group_id' => 'getFinancialEventGroupId',
         'posted_date' => 'getPostedDate',
         'sku' => 'getSku',
-        'fee_list' => 'getFeeList'
+        'fee_list' => 'getFeeList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -229,6 +231,30 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

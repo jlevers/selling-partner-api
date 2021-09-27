@@ -112,7 +112,8 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'confirmed_need_by_date' => 'setConfirmedNeedByDate',
-        'confirmed_fulfillable_date' => 'setConfirmedFulfillableDate'
+        'confirmed_fulfillable_date' => 'setConfirmedFulfillableDate',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -122,7 +123,8 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'confirmed_need_by_date' => 'getConfirmedNeedByDate',
-        'confirmed_fulfillable_date' => 'getConfirmedFulfillableDate'
+        'confirmed_fulfillable_date' => 'getConfirmedFulfillableDate',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -210,6 +212,30 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

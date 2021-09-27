@@ -72,7 +72,7 @@ class FeedsApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -327,8 +327,6 @@ class FeedsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($feed_id !== null) {
             $resourcePath = str_replace(
@@ -337,7 +335,6 @@ class FeedsApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -367,7 +364,7 @@ class FeedsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -407,7 +404,7 @@ class FeedsApi
      */
     public function createFeed($body)
     {
-        list($response) = $this->createFeedWithHttpInfo($body);
+        $response = $this->createFeedWithHttpInfo($body);
         return $response;
     }
 
@@ -464,11 +461,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -476,11 +469,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -488,11 +477,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -500,11 +485,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -512,11 +493,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -524,11 +501,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -536,11 +509,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -548,11 +517,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -560,11 +525,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedResponse';
@@ -575,11 +536,7 @@ class FeedsApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -709,11 +666,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -756,10 +709,6 @@ class FeedsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -794,7 +743,7 @@ class FeedsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -834,7 +783,7 @@ class FeedsApi
      */
     public function createFeedDocument($body)
     {
-        list($response) = $this->createFeedDocumentWithHttpInfo($body);
+        $response = $this->createFeedDocumentWithHttpInfo($body);
         return $response;
     }
 
@@ -891,11 +840,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -903,11 +848,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -915,11 +856,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -927,11 +864,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -939,11 +872,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -951,11 +880,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -963,11 +888,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -975,11 +896,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -987,11 +904,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse';
@@ -1002,11 +915,7 @@ class FeedsApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1136,11 +1045,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1183,10 +1088,6 @@ class FeedsApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -1221,7 +1122,7 @@ class FeedsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1261,7 +1162,7 @@ class FeedsApi
      */
     public function getFeed($feed_id)
     {
-        list($response) = $this->getFeedWithHttpInfo($feed_id);
+        $response = $this->getFeedWithHttpInfo($feed_id);
         return $response;
     }
 
@@ -1318,11 +1219,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\Feed', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\Feed', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1330,11 +1227,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1342,11 +1235,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1354,11 +1243,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1366,11 +1251,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1378,11 +1259,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1390,11 +1267,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1402,11 +1275,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1414,11 +1283,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Feeds\Feed';
@@ -1429,11 +1294,7 @@ class FeedsApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1563,11 +1424,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1610,8 +1467,6 @@ class FeedsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($feed_id !== null) {
             $resourcePath = str_replace(
@@ -1620,7 +1475,6 @@ class FeedsApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1650,7 +1504,7 @@ class FeedsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1690,7 +1544,7 @@ class FeedsApi
      */
     public function getFeedDocument($feed_document_id)
     {
-        list($response) = $this->getFeedDocumentWithHttpInfo($feed_document_id);
+        $response = $this->getFeedDocumentWithHttpInfo($feed_document_id);
         return $response;
     }
 
@@ -1747,11 +1601,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\FeedDocument', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\FeedDocument', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1759,11 +1609,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1771,11 +1617,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1783,11 +1625,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1795,11 +1633,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1807,11 +1641,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1819,11 +1649,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1831,11 +1657,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1843,11 +1665,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Feeds\FeedDocument';
@@ -1858,11 +1676,7 @@ class FeedsApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1992,11 +1806,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2039,8 +1849,6 @@ class FeedsApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($feed_document_id !== null) {
             $resourcePath = str_replace(
@@ -2049,7 +1857,6 @@ class FeedsApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2079,7 +1886,7 @@ class FeedsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2125,7 +1932,7 @@ class FeedsApi
      */
     public function getFeeds($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
-        list($response) = $this->getFeedsWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
+        $response = $this->getFeedsWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
         return $response;
     }
 
@@ -2188,11 +1995,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\GetFeedsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2200,11 +2003,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2212,11 +2011,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2224,11 +2019,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2236,11 +2027,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2248,11 +2035,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2260,11 +2043,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2272,11 +2051,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Feeds\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2284,11 +2059,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Feeds\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Feeds\GetFeedsResponse';
@@ -2299,11 +2070,7 @@ class FeedsApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2445,11 +2212,7 @@ class FeedsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2524,6 +2287,7 @@ class FeedsApi
         if ($feed_types !== null) {
             $queryParams['feedTypes'] = $feed_types;
         }
+
         // query params
         if (is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -2531,6 +2295,7 @@ class FeedsApi
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
+
         // query params
         if (is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
@@ -2538,6 +2303,7 @@ class FeedsApi
         if ($page_size !== null) {
             $queryParams['pageSize'] = $page_size;
         }
+
         // query params
         if (is_array($processing_statuses)) {
             $processing_statuses = ObjectSerializer::serializeCollection($processing_statuses, 'form', true);
@@ -2545,6 +2311,7 @@ class FeedsApi
         if ($processing_statuses !== null) {
             $queryParams['processingStatuses'] = $processing_statuses;
         }
+
         // query params
         if (is_array($created_since)) {
             $created_since = ObjectSerializer::serializeCollection($created_since, '', true);
@@ -2552,6 +2319,7 @@ class FeedsApi
         if ($created_since !== null) {
             $queryParams['createdSince'] = $created_since;
         }
+
         // query params
         if (is_array($created_until)) {
             $created_until = ObjectSerializer::serializeCollection($created_until, '', true);
@@ -2559,6 +2327,7 @@ class FeedsApi
         if ($created_until !== null) {
             $queryParams['createdUntil'] = $created_until;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -2566,9 +2335,6 @@ class FeedsApi
         if ($next_token !== null) {
             $queryParams['nextToken'] = $next_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2598,7 +2364,7 @@ class FeedsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

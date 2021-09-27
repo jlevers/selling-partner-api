@@ -117,7 +117,8 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'seller_sku' => 'setSellerSku',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'seller_sku' => 'getSellerSku',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -226,6 +228,30 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

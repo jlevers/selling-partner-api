@@ -141,7 +141,8 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
         'tax_type_cgst' => 'setTaxTypeCgst',
         'tax_type_sgst' => 'setTaxTypeSgst',
         'tax_type_igst' => 'setTaxTypeIgst',
-        'total_expense' => 'setTotalExpense'
+        'total_expense' => 'setTotalExpense',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -158,7 +159,8 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
         'tax_type_cgst' => 'getTaxTypeCgst',
         'tax_type_sgst' => 'getTaxTypeSgst',
         'tax_type_igst' => 'getTaxTypeIgst',
-        'total_expense' => 'getTotalExpense'
+        'total_expense' => 'getTotalExpense',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -262,6 +264,30 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

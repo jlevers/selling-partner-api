@@ -133,7 +133,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_to' => 'setShipTo',
         'accepted_rate' => 'setAcceptedRate',
         'shipper' => 'setShipper',
-        'containers' => 'setContainers'
+        'containers' => 'setContainers',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_to' => 'getShipTo',
         'accepted_rate' => 'getAcceptedRate',
         'shipper' => 'getShipper',
-        'containers' => 'getContainers'
+        'containers' => 'getContainers',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -260,6 +262,30 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

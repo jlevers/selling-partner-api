@@ -149,7 +149,8 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'status_changed_date' => 'setStatusChangedDate',
         'return_authorization_id' => 'setReturnAuthorizationId',
         'return_received_condition' => 'setReturnReceivedCondition',
-        'fulfillment_center_id' => 'setFulfillmentCenterId'
+        'fulfillment_center_id' => 'setFulfillmentCenterId',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -168,7 +169,8 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'status_changed_date' => 'getStatusChangedDate',
         'return_authorization_id' => 'getReturnAuthorizationId',
         'return_received_condition' => 'getReturnReceivedCondition',
-        'fulfillment_center_id' => 'getFulfillmentCenterId'
+        'fulfillment_center_id' => 'getFulfillmentCenterId',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -283,6 +285,30 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

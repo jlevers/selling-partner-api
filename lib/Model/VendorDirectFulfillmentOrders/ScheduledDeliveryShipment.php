@@ -117,7 +117,8 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     protected static $setters = [
         'scheduled_delivery_service_type' => 'setScheduledDeliveryServiceType',
         'earliest_nominated_delivery_date' => 'setEarliestNominatedDeliveryDate',
-        'latest_nominated_delivery_date' => 'setLatestNominatedDeliveryDate'
+        'latest_nominated_delivery_date' => 'setLatestNominatedDeliveryDate',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     protected static $getters = [
         'scheduled_delivery_service_type' => 'getScheduledDeliveryServiceType',
         'earliest_nominated_delivery_date' => 'getEarliestNominatedDeliveryDate',
-        'latest_nominated_delivery_date' => 'getLatestNominatedDeliveryDate'
+        'latest_nominated_delivery_date' => 'getLatestNominatedDeliveryDate',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -145,7 +145,8 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
         'are_cases_required' => 'setAreCasesRequired',
         'confirmed_need_by_date' => 'setConfirmedNeedByDate',
         'box_contents_source' => 'setBoxContentsSource',
-        'estimated_box_contents_fee' => 'setEstimatedBoxContentsFee'
+        'estimated_box_contents_fee' => 'setEstimatedBoxContentsFee',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -163,7 +164,8 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
         'are_cases_required' => 'getAreCasesRequired',
         'confirmed_need_by_date' => 'getConfirmedNeedByDate',
         'box_contents_source' => 'getBoxContentsSource',
-        'estimated_box_contents_fee' => 'getEstimatedBoxContentsFee'
+        'estimated_box_contents_fee' => 'getEstimatedBoxContentsFee',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -265,6 +267,30 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

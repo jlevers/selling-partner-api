@@ -133,7 +133,8 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ship_date' => 'setShipDate',
         'service_type' => 'setServiceType',
         'containers' => 'setContainers',
-        'label_specification' => 'setLabelSpecification'
+        'label_specification' => 'setLabelSpecification',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'ship_date' => 'getShipDate',
         'service_type' => 'getServiceType',
         'containers' => 'getContainers',
-        'label_specification' => 'getLabelSpecification'
+        'label_specification' => 'getLabelSpecification',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -263,6 +265,30 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

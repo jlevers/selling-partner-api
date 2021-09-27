@@ -72,7 +72,7 @@ class UploadsApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -125,7 +125,7 @@ class UploadsApi
      */
     public function createUploadDestinationForResource($marketplace_ids, $content_md5, $resource, $content_type = null)
     {
-        list($response) = $this->createUploadDestinationForResourceWithHttpInfo($marketplace_ids, $content_md5, $resource, $content_type);
+        $response = $this->createUploadDestinationForResourceWithHttpInfo($marketplace_ids, $content_md5, $resource, $content_type);
         return $response;
     }
 
@@ -185,11 +185,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -197,11 +193,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -209,11 +201,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -221,11 +209,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -233,11 +217,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -245,11 +225,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -257,11 +233,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -269,11 +241,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -281,11 +249,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Uploads\CreateUploadDestinationResponse';
@@ -296,11 +260,7 @@ class UploadsApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -436,11 +396,7 @@ class UploadsApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -509,6 +465,7 @@ class UploadsApi
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
+
         // query params
         if (is_array($content_md5)) {
             $content_md5 = ObjectSerializer::serializeCollection($content_md5, '', true);
@@ -516,6 +473,7 @@ class UploadsApi
         if ($content_md5 !== null) {
             $queryParams['contentMD5'] = $content_md5;
         }
+
         // query params
         if (is_array($content_type)) {
             $content_type = ObjectSerializer::serializeCollection($content_type, '', true);
@@ -523,7 +481,6 @@ class UploadsApi
         if ($content_type !== null) {
             $queryParams['contentType'] = $content_type;
         }
-
 
         // path params
         if ($resource !== null) {
@@ -533,7 +490,6 @@ class UploadsApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -563,7 +519,7 @@ class UploadsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

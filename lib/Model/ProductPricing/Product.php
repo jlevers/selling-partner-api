@@ -129,7 +129,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'relationships' => 'setRelationships',
         'competitive_pricing' => 'setCompetitivePricing',
         'sales_rankings' => 'setSalesRankings',
-        'offers' => 'setOffers'
+        'offers' => 'setOffers',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'relationships' => 'getRelationships',
         'competitive_pricing' => 'getCompetitivePricing',
         'sales_rankings' => 'getSalesRankings',
-        'offers' => 'getOffers'
+        'offers' => 'getOffers',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -238,6 +240,30 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

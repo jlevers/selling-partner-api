@@ -120,7 +120,8 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
         'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
-        'acknowledged_quantity' => 'setAcknowledgedQuantity'
+        'acknowledged_quantity' => 'setAcknowledgedQuantity',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -132,7 +133,8 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
         'item_sequence_number' => 'getItemSequenceNumber',
         'buyer_product_identifier' => 'getBuyerProductIdentifier',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
-        'acknowledged_quantity' => 'getAcknowledgedQuantity'
+        'acknowledged_quantity' => 'getAcknowledgedQuantity',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -228,6 +230,30 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

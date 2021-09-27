@@ -109,7 +109,8 @@ class BuyerCustomizedInfoDetail implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'customized_url' => 'setCustomizedUrl'
+        'customized_url' => 'setCustomizedUrl',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -118,7 +119,8 @@ class BuyerCustomizedInfoDetail implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'customized_url' => 'getCustomizedUrl'
+        'customized_url' => 'getCustomizedUrl',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -205,6 +207,30 @@ class BuyerCustomizedInfoDetail implements ModelInterface, ArrayAccess, \JsonSer
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -113,7 +113,8 @@ class CurrencyAmount implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'currency_code' => 'setCurrencyCode',
-        'amount' => 'setAmount'
+        'amount' => 'setAmount',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class CurrencyAmount implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'currency_code' => 'getCurrencyCode',
-        'amount' => 'getAmount'
+        'amount' => 'getAmount',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -221,6 +223,30 @@ class CurrencyAmount implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

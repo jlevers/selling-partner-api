@@ -128,7 +128,8 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => 'setRoute',
         'import_containers' => 'setImportContainers',
         'billable_weight' => 'setBillableWeight',
-        'estimated_ship_by_date' => 'setEstimatedShipByDate'
+        'estimated_ship_by_date' => 'setEstimatedShipByDate',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -142,7 +143,8 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => 'getRoute',
         'import_containers' => 'getImportContainers',
         'billable_weight' => 'getBillableWeight',
-        'estimated_ship_by_date' => 'getEstimatedShipByDate'
+        'estimated_ship_by_date' => 'getEstimatedShipByDate',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -270,6 +272,30 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

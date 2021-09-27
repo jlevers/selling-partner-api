@@ -133,7 +133,8 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         'goods_return_date' => 'setGoodsReturnDate',
         'rma_id' => 'setRmaId',
         'coop_reference_number' => 'setCoopReferenceNumber',
-        'consignors_reference_number' => 'setConsignorsReferenceNumber'
+        'consignors_reference_number' => 'setConsignorsReferenceNumber',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         'goods_return_date' => 'getGoodsReturnDate',
         'rma_id' => 'getRmaId',
         'coop_reference_number' => 'getCoopReferenceNumber',
-        'consignors_reference_number' => 'getConsignorsReferenceNumber'
+        'consignors_reference_number' => 'getConsignorsReferenceNumber',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

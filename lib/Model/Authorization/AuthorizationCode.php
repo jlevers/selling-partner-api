@@ -109,7 +109,8 @@ class AuthorizationCode implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'authorization_code' => 'setAuthorizationCode'
+        'authorization_code' => 'setAuthorizationCode',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -118,7 +119,8 @@ class AuthorizationCode implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'authorization_code' => 'getAuthorizationCode'
+        'authorization_code' => 'getAuthorizationCode',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -205,6 +207,30 @@ class AuthorizationCode implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

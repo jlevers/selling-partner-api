@@ -121,7 +121,8 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
         'seller_sku' => 'setSellerSku',
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
         'quantity' => 'setQuantity',
-        'prep_details_list' => 'setPrepDetailsList'
+        'prep_details_list' => 'setPrepDetailsList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
         'seller_sku' => 'getSellerSku',
         'fulfillment_network_sku' => 'getFulfillmentNetworkSku',
         'quantity' => 'getQuantity',
-        'prep_details_list' => 'getPrepDetailsList'
+        'prep_details_list' => 'getPrepDetailsList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -232,6 +234,30 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

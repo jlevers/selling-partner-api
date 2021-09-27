@@ -112,7 +112,8 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'next_token' => 'setNextToken',
-        'fulfillment_orders' => 'setFulfillmentOrders'
+        'fulfillment_orders' => 'setFulfillmentOrders',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -122,7 +123,8 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'next_token' => 'getNextToken',
-        'fulfillment_orders' => 'getFulfillmentOrders'
+        'fulfillment_orders' => 'getFulfillmentOrders',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -210,6 +212,30 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

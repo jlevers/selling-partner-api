@@ -121,7 +121,8 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         'function_code' => 'setFunctionCode',
         'location_identification' => 'setLocationIdentification',
         'arrival_time' => 'setArrivalTime',
-        'departure_time' => 'setDepartureTime'
+        'departure_time' => 'setDepartureTime',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         'function_code' => 'getFunctionCode',
         'location_identification' => 'getLocationIdentification',
         'arrival_time' => 'getArrivalTime',
-        'departure_time' => 'getDepartureTime'
+        'departure_time' => 'getDepartureTime',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -252,6 +254,30 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

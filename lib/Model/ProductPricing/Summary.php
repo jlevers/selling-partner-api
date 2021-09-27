@@ -145,7 +145,8 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'suggested_lower_price_plus_shipping' => 'setSuggestedLowerPricePlusShipping',
         'sales_rankings' => 'setSalesRankings',
         'buy_box_eligible_offers' => 'setBuyBoxEligibleOffers',
-        'offers_available_time' => 'setOffersAvailableTime'
+        'offers_available_time' => 'setOffersAvailableTime',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -163,7 +164,8 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'suggested_lower_price_plus_shipping' => 'getSuggestedLowerPricePlusShipping',
         'sales_rankings' => 'getSalesRankings',
         'buy_box_eligible_offers' => 'getBuyBoxEligibleOffers',
-        'offers_available_time' => 'getOffersAvailableTime'
+        'offers_available_time' => 'getOffersAvailableTime',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -262,6 +264,30 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

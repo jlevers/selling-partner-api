@@ -121,7 +121,8 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
         'shipping_service_list' => 'setShippingServiceList',
         'rejected_shipping_service_list' => 'setRejectedShippingServiceList',
         'temporarily_unavailable_carrier_list' => 'setTemporarilyUnavailableCarrierList',
-        'terms_and_conditions_not_accepted_carrier_list' => 'setTermsAndConditionsNotAcceptedCarrierList'
+        'terms_and_conditions_not_accepted_carrier_list' => 'setTermsAndConditionsNotAcceptedCarrierList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
         'shipping_service_list' => 'getShippingServiceList',
         'rejected_shipping_service_list' => 'getRejectedShippingServiceList',
         'temporarily_unavailable_carrier_list' => 'getTemporarilyUnavailableCarrierList',
-        'terms_and_conditions_not_accepted_carrier_list' => 'getTermsAndConditionsNotAcceptedCarrierList'
+        'terms_and_conditions_not_accepted_carrier_list' => 'getTermsAndConditionsNotAcceptedCarrierList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -226,6 +228,30 @@ class GetEligibleShipmentServicesResult implements ModelInterface, ArrayAccess, 
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

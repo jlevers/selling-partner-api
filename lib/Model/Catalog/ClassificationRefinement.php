@@ -117,7 +117,8 @@ class ClassificationRefinement implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $setters = [
         'number_of_results' => 'setNumberOfResults',
         'display_name' => 'setDisplayName',
-        'classification_id' => 'setClassificationId'
+        'classification_id' => 'setClassificationId',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class ClassificationRefinement implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $getters = [
         'number_of_results' => 'getNumberOfResults',
         'display_name' => 'getDisplayName',
-        'classification_id' => 'getClassificationId'
+        'classification_id' => 'getClassificationId',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -226,6 +228,30 @@ class ClassificationRefinement implements ModelInterface, ArrayAccess, \JsonSeri
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

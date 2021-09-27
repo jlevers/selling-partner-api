@@ -129,7 +129,8 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'invoice_id' => 'setInvoiceId',
         'base_value' => 'setBaseValue',
         'tax_value' => 'setTaxValue',
-        'transaction_value' => 'setTransactionValue'
+        'transaction_value' => 'setTransactionValue',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'invoice_id' => 'getInvoiceId',
         'base_value' => 'getBaseValue',
         'tax_value' => 'getTaxValue',
-        'transaction_value' => 'getTransactionValue'
+        'transaction_value' => 'getTransactionValue',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

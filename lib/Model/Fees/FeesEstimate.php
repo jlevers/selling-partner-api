@@ -117,7 +117,8 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'time_of_fees_estimation' => 'setTimeOfFeesEstimation',
         'total_fees_estimate' => 'setTotalFeesEstimate',
-        'fee_detail_list' => 'setFeeDetailList'
+        'fee_detail_list' => 'setFeeDetailList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'time_of_fees_estimation' => 'getTimeOfFeesEstimation',
         'total_fees_estimate' => 'getTotalFeesEstimate',
-        'fee_detail_list' => 'getFeeDetailList'
+        'fee_detail_list' => 'getFeeDetailList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -220,6 +222,30 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

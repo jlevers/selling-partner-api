@@ -133,7 +133,8 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'base_tax' => 'setBaseTax',
         'shipping_tax' => 'setShippingTax',
         'marketplace_name' => 'setMarketplaceName',
-        'retrocharge_tax_withheld_list' => 'setRetrochargeTaxWithheldList'
+        'retrocharge_tax_withheld_list' => 'setRetrochargeTaxWithheldList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'base_tax' => 'getBaseTax',
         'shipping_tax' => 'getShippingTax',
         'marketplace_name' => 'getMarketplaceName',
-        'retrocharge_tax_withheld_list' => 'getRetrochargeTaxWithheldList'
+        'retrocharge_tax_withheld_list' => 'getRetrochargeTaxWithheldList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

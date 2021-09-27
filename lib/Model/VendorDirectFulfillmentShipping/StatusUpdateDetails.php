@@ -129,7 +129,8 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'reason_code' => 'setReasonCode',
         'status_date_time' => 'setStatusDateTime',
         'status_location_address' => 'setStatusLocationAddress',
-        'shipment_schedule' => 'setShipmentSchedule'
+        'shipment_schedule' => 'setShipmentSchedule',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'reason_code' => 'getReasonCode',
         'status_date_time' => 'getStatusDateTime',
         'status_location_address' => 'getStatusLocationAddress',
-        'shipment_schedule' => 'getShipmentSchedule'
+        'shipment_schedule' => 'getShipmentSchedule',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -250,6 +252,30 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

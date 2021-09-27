@@ -72,7 +72,7 @@ class AuthorizationApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -126,7 +126,7 @@ class AuthorizationApi
      */
     public function getAuthorizationCode($selling_partner_id, $developer_id, $mws_auth_token)
     {
-        list($response) = $this->getAuthorizationCodeWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token);
+        $response = $this->getAuthorizationCodeWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token);
         return $response;
     }
 
@@ -188,11 +188,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -200,11 +196,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -212,11 +204,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -224,11 +212,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -236,11 +220,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -248,11 +228,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -260,11 +236,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -272,11 +244,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -284,11 +252,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Authorization\GetAuthorizationCodeResponse';
@@ -299,11 +263,7 @@ class AuthorizationApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -438,11 +398,7 @@ class AuthorizationApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -506,6 +462,7 @@ class AuthorizationApi
         if ($selling_partner_id !== null) {
             $queryParams['sellingPartnerId'] = $selling_partner_id;
         }
+
         // query params
         if (is_array($developer_id)) {
             $developer_id = ObjectSerializer::serializeCollection($developer_id, '', true);
@@ -513,6 +470,7 @@ class AuthorizationApi
         if ($developer_id !== null) {
             $queryParams['developerId'] = $developer_id;
         }
+
         // query params
         if (is_array($mws_auth_token)) {
             $mws_auth_token = ObjectSerializer::serializeCollection($mws_auth_token, '', true);
@@ -520,9 +478,6 @@ class AuthorizationApi
         if ($mws_auth_token !== null) {
             $queryParams['mwsAuthToken'] = $mws_auth_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -553,7 +508,7 @@ class AuthorizationApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

@@ -129,7 +129,8 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
         'parent_asin' => 'setParentAsin',
         'fee_component' => 'setFeeComponent',
         'charge_component' => 'setChargeComponent',
-        'total_amount' => 'setTotalAmount'
+        'total_amount' => 'setTotalAmount',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
         'parent_asin' => 'getParentAsin',
         'fee_component' => 'getFeeComponent',
         'charge_component' => 'getChargeComponent',
-        'total_amount' => 'getTotalAmount'
+        'total_amount' => 'getTotalAmount',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

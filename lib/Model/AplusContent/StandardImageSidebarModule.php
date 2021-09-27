@@ -129,7 +129,8 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
         'description_text_block' => 'setDescriptionTextBlock',
         'description_list_block' => 'setDescriptionListBlock',
         'sidebar_image_text_block' => 'setSidebarImageTextBlock',
-        'sidebar_list_block' => 'setSidebarListBlock'
+        'sidebar_list_block' => 'setSidebarListBlock',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
         'description_text_block' => 'getDescriptionTextBlock',
         'description_list_block' => 'getDescriptionListBlock',
         'sidebar_image_text_block' => 'getSidebarImageTextBlock',
-        'sidebar_list_block' => 'getSidebarListBlock'
+        'sidebar_list_block' => 'getSidebarListBlock',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

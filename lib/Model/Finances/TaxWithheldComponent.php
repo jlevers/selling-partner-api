@@ -113,7 +113,8 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'tax_collection_model' => 'setTaxCollectionModel',
-        'taxes_withheld' => 'setTaxesWithheld'
+        'taxes_withheld' => 'setTaxesWithheld',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'tax_collection_model' => 'getTaxCollectionModel',
-        'taxes_withheld' => 'getTaxesWithheld'
+        'taxes_withheld' => 'getTaxesWithheld',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -211,6 +213,30 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -121,7 +121,8 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'setType',
         'discount_percent' => 'setDiscountPercent',
         'discount_due_days' => 'setDiscountDueDays',
-        'net_due_days' => 'setNetDueDays'
+        'net_due_days' => 'setNetDueDays',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'getType',
         'discount_percent' => 'getDiscountPercent',
         'discount_due_days' => 'getDiscountDueDays',
-        'net_due_days' => 'getNetDueDays'
+        'net_due_days' => 'getNetDueDays',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -255,6 +257,30 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

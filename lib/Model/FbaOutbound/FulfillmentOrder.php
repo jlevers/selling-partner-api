@@ -169,7 +169,8 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'fulfillment_order_status' => 'setFulfillmentOrderStatus',
         'status_updated_date' => 'setStatusUpdatedDate',
         'notification_emails' => 'setNotificationEmails',
-        'feature_constraints' => 'setFeatureConstraints'
+        'feature_constraints' => 'setFeatureConstraints',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -193,7 +194,8 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'fulfillment_order_status' => 'getFulfillmentOrderStatus',
         'status_updated_date' => 'getStatusUpdatedDate',
         'notification_emails' => 'getNotificationEmails',
-        'feature_constraints' => 'getFeatureConstraints'
+        'feature_constraints' => 'getFeatureConstraints',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -325,6 +327,30 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

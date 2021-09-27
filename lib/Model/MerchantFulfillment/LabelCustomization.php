@@ -113,7 +113,8 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'custom_text_for_label' => 'setCustomTextForLabel',
-        'standard_id_for_label' => 'setStandardIdForLabel'
+        'standard_id_for_label' => 'setStandardIdForLabel',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'custom_text_for_label' => 'getCustomTextForLabel',
-        'standard_id_for_label' => 'getStandardIdForLabel'
+        'standard_id_for_label' => 'getStandardIdForLabel',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -215,6 +217,30 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

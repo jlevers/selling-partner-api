@@ -124,7 +124,8 @@ class ShippingLabel implements ModelInterface, ArrayAccess, \JsonSerializable
         'selling_party' => 'setSellingParty',
         'ship_from_party' => 'setShipFromParty',
         'label_format' => 'setLabelFormat',
-        'label_data' => 'setLabelData'
+        'label_data' => 'setLabelData',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -137,7 +138,8 @@ class ShippingLabel implements ModelInterface, ArrayAccess, \JsonSerializable
         'selling_party' => 'getSellingParty',
         'ship_from_party' => 'getShipFromParty',
         'label_format' => 'getLabelFormat',
-        'label_data' => 'getLabelData'
+        'label_data' => 'getLabelData',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -271,6 +273,30 @@ class ShippingLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

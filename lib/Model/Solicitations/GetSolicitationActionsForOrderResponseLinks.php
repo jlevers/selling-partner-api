@@ -112,7 +112,8 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      */
     protected static $setters = [
         'self' => 'setSelf',
-        'actions' => 'setActions'
+        'actions' => 'setActions',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -122,7 +123,8 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
      */
     protected static $getters = [
         'self' => 'getSelf',
-        'actions' => 'getActions'
+        'actions' => 'getActions',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -216,6 +218,30 @@ class GetSolicitationActionsForOrderResponseLinks implements ModelInterface, Arr
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

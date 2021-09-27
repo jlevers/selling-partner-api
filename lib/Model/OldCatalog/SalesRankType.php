@@ -112,7 +112,8 @@ class SalesRankType implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'product_category_id' => 'setProductCategoryId',
-        'rank' => 'setRank'
+        'rank' => 'setRank',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -122,7 +123,8 @@ class SalesRankType implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'product_category_id' => 'getProductCategoryId',
-        'rank' => 'getRank'
+        'rank' => 'getRank',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -216,6 +218,30 @@ class SalesRankType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

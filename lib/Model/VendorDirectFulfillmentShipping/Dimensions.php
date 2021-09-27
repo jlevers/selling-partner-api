@@ -121,7 +121,8 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
         'length' => 'setLength',
         'width' => 'setWidth',
         'height' => 'setHeight',
-        'unit_of_measure' => 'setUnitOfMeasure'
+        'unit_of_measure' => 'setUnitOfMeasure',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
         'length' => 'getLength',
         'width' => 'getWidth',
         'height' => 'getHeight',
-        'unit_of_measure' => 'getUnitOfMeasure'
+        'unit_of_measure' => 'getUnitOfMeasure',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -259,6 +261,30 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

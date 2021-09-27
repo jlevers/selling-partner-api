@@ -72,7 +72,7 @@ class AplusContentApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -123,7 +123,7 @@ class AplusContentApi
      */
     public function createContentDocument($marketplace_id, $post_content_document_request)
     {
-        list($response) = $this->createContentDocumentWithHttpInfo($marketplace_id, $post_content_document_request);
+        $response = $this->createContentDocumentWithHttpInfo($marketplace_id, $post_content_document_request);
         return $response;
     }
 
@@ -181,11 +181,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -193,11 +189,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -205,11 +197,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -217,11 +205,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -229,11 +213,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -241,11 +221,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -253,11 +229,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -265,11 +237,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse';
@@ -280,11 +248,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -408,11 +372,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -474,9 +434,6 @@ class AplusContentApi
             $queryParams['marketplaceId'] = $marketplace_id;
         }
 
-
-
-
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -511,7 +468,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -553,7 +510,7 @@ class AplusContentApi
      */
     public function getContentDocument($content_reference_key, $marketplace_id, $included_data_set)
     {
-        list($response) = $this->getContentDocumentWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set);
+        $response = $this->getContentDocumentWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set);
         return $response;
     }
 
@@ -612,11 +569,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\GetContentDocumentResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\GetContentDocumentResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -624,11 +577,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -636,11 +585,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -648,11 +593,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -660,11 +601,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 410:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -672,11 +609,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -684,11 +617,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -696,11 +625,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -708,11 +633,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\GetContentDocumentResponse';
@@ -723,11 +644,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -861,11 +778,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -941,6 +854,7 @@ class AplusContentApi
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = $marketplace_id;
         }
+
         // query params
         if (is_array($included_data_set)) {
             $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
@@ -948,7 +862,6 @@ class AplusContentApi
         if ($included_data_set !== null) {
             $queryParams['includedDataSet'] = $included_data_set;
         }
-
 
         // path params
         if ($content_reference_key !== null) {
@@ -958,7 +871,6 @@ class AplusContentApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -988,7 +900,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1032,7 +944,7 @@ class AplusContentApi
      */
     public function listContentDocumentAsinRelations($content_reference_key, $marketplace_id, $included_data_set = null, $asin_set = null, $page_token = null)
     {
-        list($response) = $this->listContentDocumentAsinRelationsWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
+        $response = $this->listContentDocumentAsinRelationsWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
         return $response;
     }
 
@@ -1093,11 +1005,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ListContentDocumentAsinRelationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ListContentDocumentAsinRelationsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1105,11 +1013,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1117,11 +1021,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1129,11 +1029,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1141,11 +1037,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 410:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1153,11 +1045,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1165,11 +1053,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1177,11 +1061,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1189,11 +1069,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\ListContentDocumentAsinRelationsResponse';
@@ -1204,11 +1080,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1346,11 +1218,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1427,6 +1295,7 @@ class AplusContentApi
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = $marketplace_id;
         }
+
         // query params
         if (is_array($included_data_set)) {
             $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
@@ -1434,6 +1303,7 @@ class AplusContentApi
         if ($included_data_set !== null) {
             $queryParams['includedDataSet'] = $included_data_set;
         }
+
         // query params
         if (is_array($asin_set)) {
             $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
@@ -1441,6 +1311,7 @@ class AplusContentApi
         if ($asin_set !== null) {
             $queryParams['asinSet'] = $asin_set;
         }
+
         // query params
         if (is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
@@ -1448,7 +1319,6 @@ class AplusContentApi
         if ($page_token !== null) {
             $queryParams['pageToken'] = $page_token;
         }
-
 
         // path params
         if ($content_reference_key !== null) {
@@ -1458,7 +1328,6 @@ class AplusContentApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1488,7 +1357,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1529,7 +1398,7 @@ class AplusContentApi
      */
     public function postContentDocumentApprovalSubmission($content_reference_key, $marketplace_id)
     {
-        list($response) = $this->postContentDocumentApprovalSubmissionWithHttpInfo($content_reference_key, $marketplace_id);
+        $response = $this->postContentDocumentApprovalSubmissionWithHttpInfo($content_reference_key, $marketplace_id);
         return $response;
     }
 
@@ -1587,11 +1456,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentApprovalSubmissionResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentApprovalSubmissionResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1599,11 +1464,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1611,11 +1472,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1623,11 +1480,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1635,11 +1488,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 410:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1647,11 +1496,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1659,11 +1504,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1671,11 +1512,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1683,11 +1520,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentApprovalSubmissionResponse';
@@ -1698,11 +1531,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1834,11 +1663,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1904,7 +1729,6 @@ class AplusContentApi
             $queryParams['marketplaceId'] = $marketplace_id;
         }
 
-
         // path params
         if ($content_reference_key !== null) {
             $resourcePath = str_replace(
@@ -1913,7 +1737,6 @@ class AplusContentApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1943,7 +1766,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1985,7 +1808,7 @@ class AplusContentApi
      */
     public function postContentDocumentAsinRelations($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request)
     {
-        list($response) = $this->postContentDocumentAsinRelationsWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
+        $response = $this->postContentDocumentAsinRelationsWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
         return $response;
     }
 
@@ -2044,11 +1867,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2056,11 +1875,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2068,11 +1883,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2080,11 +1891,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2092,11 +1899,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 410:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2104,11 +1907,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2116,11 +1915,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2128,11 +1923,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2140,11 +1931,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentAsinRelationsResponse';
@@ -2155,11 +1942,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2293,11 +2076,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2370,7 +2149,6 @@ class AplusContentApi
             $queryParams['marketplaceId'] = $marketplace_id;
         }
 
-
         // path params
         if ($content_reference_key !== null) {
             $resourcePath = str_replace(
@@ -2379,7 +2157,6 @@ class AplusContentApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2415,7 +2192,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2456,7 +2233,7 @@ class AplusContentApi
      */
     public function postContentDocumentSuspendSubmission($content_reference_key, $marketplace_id)
     {
-        list($response) = $this->postContentDocumentSuspendSubmissionWithHttpInfo($content_reference_key, $marketplace_id);
+        $response = $this->postContentDocumentSuspendSubmissionWithHttpInfo($content_reference_key, $marketplace_id);
         return $response;
     }
 
@@ -2514,11 +2291,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentSuspendSubmissionResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentSuspendSubmissionResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2526,11 +2299,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2538,11 +2307,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2550,11 +2315,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2562,11 +2323,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 410:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2574,11 +2331,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2586,11 +2339,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2598,11 +2347,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2610,11 +2355,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentSuspendSubmissionResponse';
@@ -2625,11 +2366,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2761,11 +2498,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2831,7 +2564,6 @@ class AplusContentApi
             $queryParams['marketplaceId'] = $marketplace_id;
         }
 
-
         // path params
         if ($content_reference_key !== null) {
             $resourcePath = str_replace(
@@ -2840,7 +2572,6 @@ class AplusContentApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2870,7 +2601,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2911,7 +2642,7 @@ class AplusContentApi
      */
     public function searchContentDocuments($marketplace_id, $page_token = null)
     {
-        list($response) = $this->searchContentDocumentsWithHttpInfo($marketplace_id, $page_token);
+        $response = $this->searchContentDocumentsWithHttpInfo($marketplace_id, $page_token);
         return $response;
     }
 
@@ -2969,11 +2700,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\SearchContentDocumentsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\SearchContentDocumentsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2981,11 +2708,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2993,11 +2716,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3005,11 +2724,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3017,11 +2732,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 410:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3029,11 +2740,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3041,11 +2748,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3053,11 +2756,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3065,11 +2764,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\SearchContentDocumentsResponse';
@@ -3080,11 +2775,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -3216,11 +2907,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3279,6 +2966,7 @@ class AplusContentApi
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = $marketplace_id;
         }
+
         // query params
         if (is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
@@ -3286,9 +2974,6 @@ class AplusContentApi
         if ($page_token !== null) {
             $queryParams['pageToken'] = $page_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3318,7 +3003,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -3360,7 +3045,7 @@ class AplusContentApi
      */
     public function searchContentPublishRecords($marketplace_id, $asin, $page_token = null)
     {
-        list($response) = $this->searchContentPublishRecordsWithHttpInfo($marketplace_id, $asin, $page_token);
+        $response = $this->searchContentPublishRecordsWithHttpInfo($marketplace_id, $asin, $page_token);
         return $response;
     }
 
@@ -3419,11 +3104,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\SearchContentPublishRecordsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\SearchContentPublishRecordsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3431,11 +3112,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3443,11 +3120,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3455,11 +3128,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3467,11 +3136,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3479,11 +3144,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3491,11 +3152,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3503,11 +3160,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\SearchContentPublishRecordsResponse';
@@ -3518,11 +3171,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -3648,11 +3297,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3722,6 +3367,7 @@ class AplusContentApi
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = $marketplace_id;
         }
+
         // query params
         if (is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
@@ -3729,6 +3375,7 @@ class AplusContentApi
         if ($asin !== null) {
             $queryParams['asin'] = $asin;
         }
+
         // query params
         if (is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
@@ -3736,9 +3383,6 @@ class AplusContentApi
         if ($page_token !== null) {
             $queryParams['pageToken'] = $page_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -3768,7 +3412,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -3810,7 +3454,7 @@ class AplusContentApi
      */
     public function updateContentDocument($content_reference_key, $marketplace_id, $post_content_document_request)
     {
-        list($response) = $this->updateContentDocumentWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_request);
+        $response = $this->updateContentDocumentWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_request);
         return $response;
     }
 
@@ -3869,11 +3513,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3881,11 +3521,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3893,11 +3529,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3905,11 +3537,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3917,11 +3545,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 410:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3929,11 +3553,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3941,11 +3561,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3953,11 +3569,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3965,11 +3577,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\PostContentDocumentResponse';
@@ -3980,11 +3588,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4118,11 +3722,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -4195,7 +3795,6 @@ class AplusContentApi
             $queryParams['marketplaceId'] = $marketplace_id;
         }
 
-
         // path params
         if ($content_reference_key !== null) {
             $resourcePath = str_replace(
@@ -4204,7 +3803,6 @@ class AplusContentApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4240,7 +3838,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -4282,7 +3880,7 @@ class AplusContentApi
      */
     public function validateContentDocumentAsinRelations($marketplace_id, $post_content_document_request, $asin_set = null)
     {
-        list($response) = $this->validateContentDocumentAsinRelationsWithHttpInfo($marketplace_id, $post_content_document_request, $asin_set);
+        $response = $this->validateContentDocumentAsinRelationsWithHttpInfo($marketplace_id, $post_content_document_request, $asin_set);
         return $response;
     }
 
@@ -4341,11 +3939,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ValidateContentDocumentAsinRelationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ValidateContentDocumentAsinRelationsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4353,11 +3947,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4365,11 +3955,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4377,11 +3963,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4389,11 +3971,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4401,11 +3979,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4413,11 +3987,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\AplusContent\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -4425,11 +3995,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\AplusContent\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\AplusContent\ValidateContentDocumentAsinRelationsResponse';
@@ -4440,11 +4006,7 @@ class AplusContentApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4570,11 +4132,7 @@ class AplusContentApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -4637,6 +4195,7 @@ class AplusContentApi
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = $marketplace_id;
         }
+
         // query params
         if (is_array($asin_set)) {
             $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
@@ -4644,9 +4203,6 @@ class AplusContentApi
         if ($asin_set !== null) {
             $queryParams['asinSet'] = $asin_set;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -4682,7 +4238,7 @@ class AplusContentApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

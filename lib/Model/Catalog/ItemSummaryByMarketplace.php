@@ -141,7 +141,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'manufacturer' => 'setManufacturer',
         'model_number' => 'setModelNumber',
         'size_name' => 'setSizeName',
-        'style_name' => 'setStyleName'
+        'style_name' => 'setStyleName',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -158,7 +159,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'manufacturer' => 'getManufacturer',
         'model_number' => 'getModelNumber',
         'size_name' => 'getSizeName',
-        'style_name' => 'getStyleName'
+        'style_name' => 'getStyleName',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -256,6 +258,30 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -172,7 +172,8 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'import_details' => 'setImportDetails',
         'shipped_items' => 'setShippedItems',
         'cartons' => 'setCartons',
-        'pallets' => 'setPallets'
+        'pallets' => 'setPallets',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -197,7 +198,8 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'import_details' => 'getImportDetails',
         'shipped_items' => 'getShippedItems',
         'cartons' => 'getCartons',
-        'pallets' => 'getPallets'
+        'pallets' => 'getPallets',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -405,6 +407,30 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

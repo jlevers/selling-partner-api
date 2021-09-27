@@ -121,7 +121,8 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess, \JsonSer
         'marketplace_id' => 'setMarketplaceId',
         'feature_name' => 'setFeatureName',
         'next_token' => 'setNextToken',
-        'feature_skus' => 'setFeatureSkus'
+        'feature_skus' => 'setFeatureSkus',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess, \JsonSer
         'marketplace_id' => 'getMarketplaceId',
         'feature_name' => 'getFeatureName',
         'next_token' => 'getNextToken',
-        'feature_skus' => 'getFeatureSkus'
+        'feature_skus' => 'getFeatureSkus',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -229,6 +231,30 @@ class GetFeatureInventoryResult implements ModelInterface, ArrayAccess, \JsonSer
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

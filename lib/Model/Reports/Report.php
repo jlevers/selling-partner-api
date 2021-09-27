@@ -148,7 +148,8 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
         'processing_status' => 'setProcessingStatus',
         'processing_start_time' => 'setProcessingStartTime',
         'processing_end_time' => 'setProcessingEndTime',
-        'report_document_id' => 'setReportDocumentId'
+        'report_document_id' => 'setReportDocumentId',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -167,7 +168,8 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
         'processing_status' => 'getProcessingStatus',
         'processing_start_time' => 'getProcessingStartTime',
         'processing_end_time' => 'getProcessingEndTime',
-        'report_document_id' => 'getReportDocumentId'
+        'report_document_id' => 'getReportDocumentId',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -306,6 +308,30 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

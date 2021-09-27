@@ -116,7 +116,8 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     protected static $setters = [
         'warnings' => 'setWarnings',
         'next_page_token' => 'setNextPageToken',
-        'asin_metadata_set' => 'setAsinMetadataSet'
+        'asin_metadata_set' => 'setAsinMetadataSet',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -127,7 +128,8 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     protected static $getters = [
         'warnings' => 'getWarnings',
         'next_page_token' => 'getNextPageToken',
-        'asin_metadata_set' => 'getAsinMetadataSet'
+        'asin_metadata_set' => 'getAsinMetadataSet',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

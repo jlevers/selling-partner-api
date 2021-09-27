@@ -125,7 +125,8 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
         'quantity' => 'setQuantity',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'estimated_shipping_weight' => 'setEstimatedShippingWeight',
-        'shipping_weight_calculation_method' => 'setShippingWeightCalculationMethod'
+        'shipping_weight_calculation_method' => 'setShippingWeightCalculationMethod',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
         'quantity' => 'getQuantity',
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
         'estimated_shipping_weight' => 'getEstimatedShippingWeight',
-        'shipping_weight_calculation_method' => 'getShippingWeightCalculationMethod'
+        'shipping_weight_calculation_method' => 'getShippingWeightCalculationMethod',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -262,6 +264,30 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

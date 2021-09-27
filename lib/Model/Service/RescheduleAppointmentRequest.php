@@ -113,7 +113,8 @@ class RescheduleAppointmentRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'appointment_time' => 'setAppointmentTime',
-        'reschedule_reason_code' => 'setRescheduleReasonCode'
+        'reschedule_reason_code' => 'setRescheduleReasonCode',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class RescheduleAppointmentRequest implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'appointment_time' => 'getAppointmentTime',
-        'reschedule_reason_code' => 'getRescheduleReasonCode'
+        'reschedule_reason_code' => 'getRescheduleReasonCode',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class RescheduleAppointmentRequest implements ModelInterface, ArrayAccess, \Json
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -121,7 +121,8 @@ class Issue implements ModelInterface, ArrayAccess, \JsonSerializable
         'code' => 'setCode',
         'message' => 'setMessage',
         'severity' => 'setSeverity',
-        'attribute_name' => 'setAttributeName'
+        'attribute_name' => 'setAttributeName',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class Issue implements ModelInterface, ArrayAccess, \JsonSerializable
         'code' => 'getCode',
         'message' => 'getMessage',
         'severity' => 'getSeverity',
-        'attribute_name' => 'getAttributeName'
+        'attribute_name' => 'getAttributeName',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -258,6 +260,30 @@ class Issue implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

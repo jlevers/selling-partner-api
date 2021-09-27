@@ -117,7 +117,8 @@ class Image implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'url' => 'setUrl',
         'height' => 'setHeight',
-        'width' => 'setWidth'
+        'width' => 'setWidth',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class Image implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'url' => 'getUrl',
         'height' => 'getHeight',
-        'width' => 'getWidth'
+        'width' => 'getWidth',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class Image implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

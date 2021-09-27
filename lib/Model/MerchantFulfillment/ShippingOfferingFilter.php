@@ -121,7 +121,8 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
         'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
         'include_complex_shipping_options' => 'setIncludeComplexShippingOptions',
         'carrier_will_pick_up' => 'setCarrierWillPickUp',
-        'delivery_experience' => 'setDeliveryExperience'
+        'delivery_experience' => 'setDeliveryExperience',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
         'include_packing_slip_with_label' => 'getIncludePackingSlipWithLabel',
         'include_complex_shipping_options' => 'getIncludeComplexShippingOptions',
         'carrier_will_pick_up' => 'getCarrierWillPickUp',
-        'delivery_experience' => 'getDeliveryExperience'
+        'delivery_experience' => 'getDeliveryExperience',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

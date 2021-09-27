@@ -137,7 +137,8 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'revenue' => 'setRevenue',
         'fee_amount' => 'setFeeAmount',
         'tax_amount' => 'setTaxAmount',
-        'tax_withheld' => 'setTaxWithheld'
+        'tax_withheld' => 'setTaxWithheld',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -153,7 +154,8 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'revenue' => 'getRevenue',
         'fee_amount' => 'getFeeAmount',
         'tax_amount' => 'getTaxAmount',
-        'tax_withheld' => 'getTaxWithheld'
+        'tax_withheld' => 'getTaxWithheld',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -247,6 +249,30 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -117,7 +117,8 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'listing_price' => 'setListingPrice',
         'shipping' => 'setShipping',
-        'points' => 'setPoints'
+        'points' => 'setPoints',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'listing_price' => 'getListingPrice',
         'shipping' => 'getShipping',
-        'points' => 'getPoints'
+        'points' => 'getPoints',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -220,6 +222,30 @@ class PriceToEstimateFees implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

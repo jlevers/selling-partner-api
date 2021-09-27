@@ -145,7 +145,8 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'must_arrive_by_date' => 'setMustArriveByDate',
         'ship_date' => 'setShipDate',
         'shipping_service_options' => 'setShippingServiceOptions',
-        'label_customization' => 'setLabelCustomization'
+        'label_customization' => 'setLabelCustomization',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -163,7 +164,8 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'must_arrive_by_date' => 'getMustArriveByDate',
         'ship_date' => 'getShipDate',
         'shipping_service_options' => 'getShippingServiceOptions',
-        'label_customization' => 'getLabelCustomization'
+        'label_customization' => 'getLabelCustomization',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -281,6 +283,30 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

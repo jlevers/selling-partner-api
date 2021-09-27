@@ -117,7 +117,8 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $setters = [
         'total_units' => 'setTotalUnits',
         'fee_per_unit' => 'setFeePerUnit',
-        'total_fee' => 'setTotalFee'
+        'total_fee' => 'setTotalFee',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $getters = [
         'total_units' => 'getTotalUnits',
         'fee_per_unit' => 'getFeePerUnit',
-        'total_fee' => 'getTotalFee'
+        'total_fee' => 'getTotalFee',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class BoxContentsFeeDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

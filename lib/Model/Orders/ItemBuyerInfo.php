@@ -125,7 +125,8 @@ class ItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_wrap_price' => 'setGiftWrapPrice',
         'gift_wrap_tax' => 'setGiftWrapTax',
         'gift_message_text' => 'setGiftMessageText',
-        'gift_wrap_level' => 'setGiftWrapLevel'
+        'gift_wrap_level' => 'setGiftWrapLevel',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class ItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_wrap_price' => 'getGiftWrapPrice',
         'gift_wrap_tax' => 'getGiftWrapTax',
         'gift_message_text' => 'getGiftMessageText',
-        'gift_wrap_level' => 'getGiftWrapLevel'
+        'gift_wrap_level' => 'getGiftWrapLevel',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -229,6 +231,30 @@ class ItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

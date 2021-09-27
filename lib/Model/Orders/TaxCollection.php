@@ -113,7 +113,8 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'model' => 'setModel',
-        'responsible_party' => 'setResponsibleParty'
+        'responsible_party' => 'setResponsibleParty',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'model' => 'getModel',
-        'responsible_party' => 'getResponsibleParty'
+        'responsible_party' => 'getResponsibleParty',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -255,6 +257,30 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -121,7 +121,8 @@ class ReservedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_reserved_quantity' => 'setTotalReservedQuantity',
         'pending_customer_order_quantity' => 'setPendingCustomerOrderQuantity',
         'pending_transshipment_quantity' => 'setPendingTransshipmentQuantity',
-        'fc_processing_quantity' => 'setFcProcessingQuantity'
+        'fc_processing_quantity' => 'setFcProcessingQuantity',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class ReservedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_reserved_quantity' => 'getTotalReservedQuantity',
         'pending_customer_order_quantity' => 'getPendingCustomerOrderQuantity',
         'pending_transshipment_quantity' => 'getPendingTransshipmentQuantity',
-        'fc_processing_quantity' => 'getFcProcessingQuantity'
+        'fc_processing_quantity' => 'getFcProcessingQuantity',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class ReservedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

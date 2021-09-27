@@ -108,7 +108,8 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'shipment_status_updates' => 'setShipmentStatusUpdates'
+        'shipment_status_updates' => 'setShipmentStatusUpdates',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -117,7 +118,8 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'shipment_status_updates' => 'getShipmentStatusUpdates'
+        'shipment_status_updates' => 'getShipmentStatusUpdates',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -208,6 +210,30 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

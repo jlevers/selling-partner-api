@@ -113,7 +113,8 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'shipment_id' => 'setShipmentId',
-        'eligible_rates' => 'setEligibleRates'
+        'eligible_rates' => 'setEligibleRates',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'shipment_id' => 'getShipmentId',
-        'eligible_rates' => 'getEligibleRates'
+        'eligible_rates' => 'getEligibleRates',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

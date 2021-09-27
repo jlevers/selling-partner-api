@@ -133,7 +133,8 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
         'freight_ready_date' => 'setFreightReadyDate',
         'pallet_list' => 'setPalletList',
         'total_weight' => 'setTotalWeight',
-        'seller_declared_value' => 'setSellerDeclaredValue'
+        'seller_declared_value' => 'setSellerDeclaredValue',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
         'freight_ready_date' => 'getFreightReadyDate',
         'pallet_list' => 'getPalletList',
         'total_weight' => 'getTotalWeight',
-        'seller_declared_value' => 'getSellerDeclaredValue'
+        'seller_declared_value' => 'getSellerDeclaredValue',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

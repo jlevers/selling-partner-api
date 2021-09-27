@@ -129,7 +129,8 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
         'barcode_instruction' => 'setBarcodeInstruction',
         'prep_guidance' => 'setPrepGuidance',
         'prep_instruction_list' => 'setPrepInstructionList',
-        'amazon_prep_fees_details_list' => 'setAmazonPrepFeesDetailsList'
+        'amazon_prep_fees_details_list' => 'setAmazonPrepFeesDetailsList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
         'barcode_instruction' => 'getBarcodeInstruction',
         'prep_guidance' => 'getPrepGuidance',
         'prep_instruction_list' => 'getPrepInstructionList',
-        'amazon_prep_fees_details_list' => 'getAmazonPrepFeesDetailsList'
+        'amazon_prep_fees_details_list' => 'getAmazonPrepFeesDetailsList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

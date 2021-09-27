@@ -113,7 +113,8 @@ class LabelSpecification implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'label_format' => 'setLabelFormat',
-        'label_stock_size' => 'setLabelStockSize'
+        'label_stock_size' => 'setLabelStockSize',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class LabelSpecification implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'label_format' => 'getLabelFormat',
-        'label_stock_size' => 'getLabelStockSize'
+        'label_stock_size' => 'getLabelStockSize',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -261,6 +263,30 @@ class LabelSpecification implements ModelInterface, ArrayAccess, \JsonSerializab
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

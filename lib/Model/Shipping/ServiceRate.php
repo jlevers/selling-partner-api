@@ -121,7 +121,8 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_charge' => 'setTotalCharge',
         'billable_weight' => 'setBillableWeight',
         'service_type' => 'setServiceType',
-        'promise' => 'setPromise'
+        'promise' => 'setPromise',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_charge' => 'getTotalCharge',
         'billable_weight' => 'getBillableWeight',
         'service_type' => 'getServiceType',
-        'promise' => 'getPromise'
+        'promise' => 'getPromise',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class ServiceRate implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

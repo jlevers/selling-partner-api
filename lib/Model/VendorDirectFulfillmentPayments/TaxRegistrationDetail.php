@@ -121,7 +121,8 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
         'tax_registration_type' => 'setTaxRegistrationType',
         'tax_registration_number' => 'setTaxRegistrationNumber',
         'tax_registration_address' => 'setTaxRegistrationAddress',
-        'tax_registration_message' => 'setTaxRegistrationMessage'
+        'tax_registration_message' => 'setTaxRegistrationMessage',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
         'tax_registration_type' => 'getTaxRegistrationType',
         'tax_registration_number' => 'getTaxRegistrationNumber',
         'tax_registration_address' => 'getTaxRegistrationAddress',
-        'tax_registration_message' => 'getTaxRegistrationMessage'
+        'tax_registration_message' => 'getTaxRegistrationMessage',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -250,6 +252,30 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -117,7 +117,8 @@ class ImageComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'upload_destination_id' => 'setUploadDestinationId',
         'image_crop_specification' => 'setImageCropSpecification',
-        'alt_text' => 'setAltText'
+        'alt_text' => 'setAltText',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class ImageComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'upload_destination_id' => 'getUploadDestinationId',
         'image_crop_specification' => 'getImageCropSpecification',
-        'alt_text' => 'getAltText'
+        'alt_text' => 'getAltText',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -238,6 +240,30 @@ class ImageComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

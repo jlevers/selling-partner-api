@@ -125,7 +125,8 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
         'label_prep_preference' => 'setLabelPrepPreference',
         'ship_to_country_code' => 'setShipToCountryCode',
         'ship_to_country_subdivision_code' => 'setShipToCountrySubdivisionCode',
-        'inbound_shipment_plan_request_items' => 'setInboundShipmentPlanRequestItems'
+        'inbound_shipment_plan_request_items' => 'setInboundShipmentPlanRequestItems',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
         'label_prep_preference' => 'getLabelPrepPreference',
         'ship_to_country_code' => 'getShipToCountryCode',
         'ship_to_country_subdivision_code' => 'getShipToCountrySubdivisionCode',
-        'inbound_shipment_plan_request_items' => 'getInboundShipmentPlanRequestItems'
+        'inbound_shipment_plan_request_items' => 'getInboundShipmentPlanRequestItems',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -238,6 +240,30 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

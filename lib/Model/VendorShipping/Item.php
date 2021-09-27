@@ -125,7 +125,8 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_product_identifier' => 'setAmazonProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'shipped_quantity' => 'setShippedQuantity',
-        'item_details' => 'setItemDetails'
+        'item_details' => 'setItemDetails',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_product_identifier' => 'getAmazonProductIdentifier',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
         'shipped_quantity' => 'getShippedQuantity',
-        'item_details' => 'getItemDetails'
+        'item_details' => 'getItemDetails',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -235,6 +237,30 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -145,7 +145,8 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
         'provider_id' => 'setProviderId',
         'provider_store_name' => 'setProviderStoreName',
         'transaction_amount' => 'setTransactionAmount',
-        'transaction_creation_date' => 'setTransactionCreationDate'
+        'transaction_creation_date' => 'setTransactionCreationDate',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -163,7 +164,8 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
         'provider_id' => 'getProviderId',
         'provider_store_name' => 'getProviderStoreName',
         'transaction_amount' => 'getTransactionAmount',
-        'transaction_creation_date' => 'getTransactionCreationDate'
+        'transaction_creation_date' => 'getTransactionCreationDate',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -259,6 +261,30 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

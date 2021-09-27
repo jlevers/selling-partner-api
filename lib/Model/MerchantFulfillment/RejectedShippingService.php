@@ -125,7 +125,8 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
         'shipping_service_name' => 'setShippingServiceName',
         'shipping_service_id' => 'setShippingServiceId',
         'rejection_reason_code' => 'setRejectionReasonCode',
-        'rejection_reason_message' => 'setRejectionReasonMessage'
+        'rejection_reason_message' => 'setRejectionReasonMessage',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
         'shipping_service_name' => 'getShippingServiceName',
         'shipping_service_id' => 'getShippingServiceId',
         'rejection_reason_code' => 'getRejectionReasonCode',
-        'rejection_reason_message' => 'getRejectionReasonMessage'
+        'rejection_reason_message' => 'getRejectionReasonMessage',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -125,7 +125,8 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
         'recovery_amount' => 'setRecoveryAmount',
         'over_payment_credit' => 'setOverPaymentCredit',
         'debt_recovery_item_list' => 'setDebtRecoveryItemList',
-        'charge_instrument_list' => 'setChargeInstrumentList'
+        'charge_instrument_list' => 'setChargeInstrumentList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
         'recovery_amount' => 'getRecoveryAmount',
         'over_payment_credit' => 'getOverPaymentCredit',
         'debt_recovery_item_list' => 'getDebtRecoveryItemList',
-        'charge_instrument_list' => 'getChargeInstrumentList'
+        'charge_instrument_list' => 'getChargeInstrumentList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -229,6 +231,30 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

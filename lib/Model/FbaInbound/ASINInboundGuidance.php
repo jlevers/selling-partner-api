@@ -117,7 +117,8 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'asin' => 'setAsin',
         'inbound_guidance' => 'setInboundGuidance',
-        'guidance_reason_list' => 'setGuidanceReasonList'
+        'guidance_reason_list' => 'setGuidanceReasonList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'asin' => 'getAsin',
         'inbound_guidance' => 'getInboundGuidance',
-        'guidance_reason_list' => 'getGuidanceReasonList'
+        'guidance_reason_list' => 'getGuidanceReasonList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -223,6 +225,30 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

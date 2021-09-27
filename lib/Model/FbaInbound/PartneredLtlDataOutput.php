@@ -165,7 +165,8 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
         'amazon_reference_id' => 'setAmazonReferenceId',
         'is_bill_of_lading_available' => 'setIsBillOfLadingAvailable',
         'partnered_estimate' => 'setPartneredEstimate',
-        'carrier_name' => 'setCarrierName'
+        'carrier_name' => 'setCarrierName',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -188,7 +189,8 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
         'amazon_reference_id' => 'getAmazonReferenceId',
         'is_bill_of_lading_available' => 'getIsBillOfLadingAvailable',
         'partnered_estimate' => 'getPartneredEstimate',
-        'carrier_name' => 'getCarrierName'
+        'carrier_name' => 'getCarrierName',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -322,6 +324,30 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

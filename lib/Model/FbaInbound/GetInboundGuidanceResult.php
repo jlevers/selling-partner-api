@@ -120,7 +120,8 @@ class GetInboundGuidanceResult implements ModelInterface, ArrayAccess, \JsonSeri
         'sku_inbound_guidance_list' => 'setSkuInboundGuidanceList',
         'invalid_sku_list' => 'setInvalidSkuList',
         'asin_inbound_guidance_list' => 'setAsinInboundGuidanceList',
-        'invalid_asin_list' => 'setInvalidAsinList'
+        'invalid_asin_list' => 'setInvalidAsinList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -132,7 +133,8 @@ class GetInboundGuidanceResult implements ModelInterface, ArrayAccess, \JsonSeri
         'sku_inbound_guidance_list' => 'getSkuInboundGuidanceList',
         'invalid_sku_list' => 'getInvalidSkuList',
         'asin_inbound_guidance_list' => 'getAsinInboundGuidanceList',
-        'invalid_asin_list' => 'getInvalidAsinList'
+        'invalid_asin_list' => 'getInvalidAsinList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -222,6 +224,30 @@ class GetInboundGuidanceResult implements ModelInterface, ArrayAccess, \JsonSeri
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

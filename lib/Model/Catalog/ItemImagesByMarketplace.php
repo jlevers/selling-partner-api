@@ -113,7 +113,8 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
-        'images' => 'setImages'
+        'images' => 'setImages',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-        'images' => 'getImages'
+        'images' => 'getImages',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -217,6 +219,30 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

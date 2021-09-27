@@ -108,7 +108,8 @@ class SearchContentDocumentsResponseAllOf implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_metadata_records' => 'setContentMetadataRecords'
+        'content_metadata_records' => 'setContentMetadataRecords',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -117,7 +118,8 @@ class SearchContentDocumentsResponseAllOf implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_metadata_records' => 'getContentMetadataRecords'
+        'content_metadata_records' => 'getContentMetadataRecords',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -207,6 +209,30 @@ class SearchContentDocumentsResponseAllOf implements ModelInterface, ArrayAccess
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

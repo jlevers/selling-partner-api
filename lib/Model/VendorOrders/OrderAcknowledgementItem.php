@@ -137,7 +137,8 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
         'net_cost' => 'setNetCost',
         'list_price' => 'setListPrice',
         'discount_multiplier' => 'setDiscountMultiplier',
-        'item_acknowledgements' => 'setItemAcknowledgements'
+        'item_acknowledgements' => 'setItemAcknowledgements',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -153,7 +154,8 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
         'net_cost' => 'getNetCost',
         'list_price' => 'getListPrice',
         'discount_multiplier' => 'getDiscountMultiplier',
-        'item_acknowledgements' => 'getItemAcknowledgements'
+        'item_acknowledgements' => 'getItemAcknowledgements',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -256,6 +258,30 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

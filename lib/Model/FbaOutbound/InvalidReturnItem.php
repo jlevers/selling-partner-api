@@ -117,7 +117,8 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $setters = [
         'seller_return_item_id' => 'setSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
-        'invalid_item_reason' => 'setInvalidItemReason'
+        'invalid_item_reason' => 'setInvalidItemReason',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'seller_return_item_id' => 'getSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
-        'invalid_item_reason' => 'getInvalidItemReason'
+        'invalid_item_reason' => 'getInvalidItemReason',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -226,6 +228,30 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

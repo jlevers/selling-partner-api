@@ -133,7 +133,8 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'input_display_text' => 'setInputDisplayText',
         'input_target' => 'setInputTarget',
         'stored_value' => 'setStoredValue',
-        'restricted_set_values' => 'setRestrictedSetValues'
+        'restricted_set_values' => 'setRestrictedSetValues',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'input_display_text' => 'getInputDisplayText',
         'input_target' => 'getInputTarget',
         'stored_value' => 'getStoredValue',
-        'restricted_set_values' => 'getRestrictedSetValues'
+        'restricted_set_values' => 'getRestrictedSetValues',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -256,6 +258,30 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

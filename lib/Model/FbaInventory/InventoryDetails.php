@@ -133,7 +133,8 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'inbound_receiving_quantity' => 'setInboundReceivingQuantity',
         'reserved_quantity' => 'setReservedQuantity',
         'researching_quantity' => 'setResearchingQuantity',
-        'unfulfillable_quantity' => 'setUnfulfillableQuantity'
+        'unfulfillable_quantity' => 'setUnfulfillableQuantity',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'inbound_receiving_quantity' => 'getInboundReceivingQuantity',
         'reserved_quantity' => 'getReservedQuantity',
         'researching_quantity' => 'getResearchingQuantity',
-        'unfulfillable_quantity' => 'getUnfulfillableQuantity'
+        'unfulfillable_quantity' => 'getUnfulfillableQuantity',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

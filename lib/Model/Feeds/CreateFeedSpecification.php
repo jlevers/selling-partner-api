@@ -120,7 +120,8 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
         'feed_type' => 'setFeedType',
         'marketplace_ids' => 'setMarketplaceIds',
         'input_feed_document_id' => 'setInputFeedDocumentId',
-        'feed_options' => 'setFeedOptions'
+        'feed_options' => 'setFeedOptions',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -132,7 +133,8 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
         'feed_type' => 'getFeedType',
         'marketplace_ids' => 'getMarketplaceIds',
         'input_feed_document_id' => 'getInputFeedDocumentId',
-        'feed_options' => 'getFeedOptions'
+        'feed_options' => 'getFeedOptions',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -239,6 +241,30 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -72,7 +72,7 @@ class FinancesApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -125,7 +125,7 @@ class FinancesApi
      */
     public function listFinancialEventGroups($max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null)
     {
-        list($response) = $this->listFinancialEventGroupsWithHttpInfo($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
+        $response = $this->listFinancialEventGroupsWithHttpInfo($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
         return $response;
     }
 
@@ -185,11 +185,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -197,11 +193,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -209,11 +201,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -221,11 +209,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -233,11 +217,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -245,11 +225,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -257,11 +233,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Finances\ListFinancialEventGroupsResponse';
@@ -272,11 +244,7 @@ class FinancesApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -396,11 +364,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -454,6 +418,7 @@ class FinancesApi
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = $max_results_per_page;
         }
+
         // query params
         if (is_array($financial_event_group_started_before)) {
             $financial_event_group_started_before = ObjectSerializer::serializeCollection($financial_event_group_started_before, '', true);
@@ -461,6 +426,7 @@ class FinancesApi
         if ($financial_event_group_started_before !== null) {
             $queryParams['FinancialEventGroupStartedBefore'] = $financial_event_group_started_before;
         }
+
         // query params
         if (is_array($financial_event_group_started_after)) {
             $financial_event_group_started_after = ObjectSerializer::serializeCollection($financial_event_group_started_after, '', true);
@@ -468,6 +434,7 @@ class FinancesApi
         if ($financial_event_group_started_after !== null) {
             $queryParams['FinancialEventGroupStartedAfter'] = $financial_event_group_started_after;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -475,9 +442,6 @@ class FinancesApi
         if ($next_token !== null) {
             $queryParams['NextToken'] = $next_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -507,7 +471,7 @@ class FinancesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -550,7 +514,7 @@ class FinancesApi
      */
     public function listFinancialEvents($max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null)
     {
-        list($response) = $this->listFinancialEventsWithHttpInfo($max_results_per_page, $posted_after, $posted_before, $next_token);
+        $response = $this->listFinancialEventsWithHttpInfo($max_results_per_page, $posted_after, $posted_before, $next_token);
         return $response;
     }
 
@@ -610,11 +574,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -622,11 +582,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -634,11 +590,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -646,11 +598,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -658,11 +606,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -670,11 +614,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -682,11 +622,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse';
@@ -697,11 +633,7 @@ class FinancesApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -821,11 +753,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -879,6 +807,7 @@ class FinancesApi
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = $max_results_per_page;
         }
+
         // query params
         if (is_array($posted_after)) {
             $posted_after = ObjectSerializer::serializeCollection($posted_after, '', true);
@@ -886,6 +815,7 @@ class FinancesApi
         if ($posted_after !== null) {
             $queryParams['PostedAfter'] = $posted_after;
         }
+
         // query params
         if (is_array($posted_before)) {
             $posted_before = ObjectSerializer::serializeCollection($posted_before, '', true);
@@ -893,6 +823,7 @@ class FinancesApi
         if ($posted_before !== null) {
             $queryParams['PostedBefore'] = $posted_before;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -900,9 +831,6 @@ class FinancesApi
         if ($next_token !== null) {
             $queryParams['NextToken'] = $next_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -932,7 +860,7 @@ class FinancesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -974,7 +902,7 @@ class FinancesApi
      */
     public function listFinancialEventsByGroupId($event_group_id, $max_results_per_page = 100, $next_token = null)
     {
-        list($response) = $this->listFinancialEventsByGroupIdWithHttpInfo($event_group_id, $max_results_per_page, $next_token);
+        $response = $this->listFinancialEventsByGroupIdWithHttpInfo($event_group_id, $max_results_per_page, $next_token);
         return $response;
     }
 
@@ -1033,11 +961,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1045,11 +969,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1057,11 +977,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1069,11 +985,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1081,11 +993,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1093,11 +1001,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1105,11 +1009,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse';
@@ -1120,11 +1020,7 @@ class FinancesApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1242,11 +1138,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1305,6 +1197,7 @@ class FinancesApi
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = $max_results_per_page;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -1312,7 +1205,6 @@ class FinancesApi
         if ($next_token !== null) {
             $queryParams['NextToken'] = $next_token;
         }
-
 
         // path params
         if ($event_group_id !== null) {
@@ -1322,7 +1214,6 @@ class FinancesApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1352,7 +1243,7 @@ class FinancesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1394,7 +1285,7 @@ class FinancesApi
      */
     public function listFinancialEventsByOrderId($order_id, $max_results_per_page = 100, $next_token = null)
     {
-        list($response) = $this->listFinancialEventsByOrderIdWithHttpInfo($order_id, $max_results_per_page, $next_token);
+        $response = $this->listFinancialEventsByOrderIdWithHttpInfo($order_id, $max_results_per_page, $next_token);
         return $response;
     }
 
@@ -1453,11 +1344,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1465,11 +1352,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1477,11 +1360,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1489,11 +1368,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1501,11 +1376,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1513,11 +1384,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1525,11 +1392,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\Finances\ListFinancialEventsResponse';
@@ -1540,11 +1403,7 @@ class FinancesApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1662,11 +1521,7 @@ class FinancesApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1725,6 +1580,7 @@ class FinancesApi
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = $max_results_per_page;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -1732,7 +1588,6 @@ class FinancesApi
         if ($next_token !== null) {
             $queryParams['NextToken'] = $next_token;
         }
-
 
         // path params
         if ($order_id !== null) {
@@ -1742,7 +1597,6 @@ class FinancesApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1772,7 +1626,7 @@ class FinancesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

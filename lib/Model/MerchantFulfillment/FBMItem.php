@@ -129,7 +129,8 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_weight' => 'setItemWeight',
         'item_description' => 'setItemDescription',
         'transparency_code_list' => 'setTransparencyCodeList',
-        'item_level_seller_inputs_list' => 'setItemLevelSellerInputsList'
+        'item_level_seller_inputs_list' => 'setItemLevelSellerInputsList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_weight' => 'getItemWeight',
         'item_description' => 'getItemDescription',
         'transparency_code_list' => 'getTransparencyCodeList',
-        'item_level_seller_inputs_list' => 'getItemLevelSellerInputsList'
+        'item_level_seller_inputs_list' => 'getItemLevelSellerInputsList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -241,6 +243,30 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -113,7 +113,8 @@ class PartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'package_list' => 'setPackageList',
-        'carrier_name' => 'setCarrierName'
+        'carrier_name' => 'setCarrierName',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class PartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'package_list' => 'getPackageList',
-        'carrier_name' => 'getCarrierName'
+        'carrier_name' => 'getCarrierName',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -211,6 +213,30 @@ class PartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \Jso
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

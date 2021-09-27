@@ -117,7 +117,8 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
     protected static $setters = [
         'shipping_service_id' => 'setShippingServiceId',
         'ship_from_address' => 'setShipFromAddress',
-        'order_id' => 'setOrderId'
+        'order_id' => 'setOrderId',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -128,7 +129,8 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
     protected static $getters = [
         'shipping_service_id' => 'getShippingServiceId',
         'ship_from_address' => 'getShipFromAddress',
-        'order_id' => 'getOrderId'
+        'order_id' => 'getOrderId',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -226,6 +228,30 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

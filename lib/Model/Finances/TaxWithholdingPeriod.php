@@ -113,7 +113,8 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate'
+        'end_date' => 'setEndDate',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate'
+        'end_date' => 'getEndDate',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -211,6 +213,30 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

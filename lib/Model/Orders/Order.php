@@ -265,7 +265,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_tax_info' => 'setMarketplaceTaxInfo',
         'seller_display_name' => 'setSellerDisplayName',
         'shipping_address' => 'setShippingAddress',
-        'buyer_info' => 'setBuyerInfo'
+        'buyer_info' => 'setBuyerInfo',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -313,7 +314,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_tax_info' => 'getMarketplaceTaxInfo',
         'seller_display_name' => 'getSellerDisplayName',
         'shipping_address' => 'getShippingAddress',
-        'buyer_info' => 'getBuyerInfo'
+        'buyer_info' => 'getBuyerInfo',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -567,6 +569,30 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

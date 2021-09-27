@@ -129,7 +129,8 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
         'order_item_count' => 'setOrderItemCount',
         'order_count' => 'setOrderCount',
         'average_unit_price' => 'setAverageUnitPrice',
-        'total_sales' => 'setTotalSales'
+        'total_sales' => 'setTotalSales',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -143,7 +144,8 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
         'order_item_count' => 'getOrderItemCount',
         'order_count' => 'getOrderCount',
         'average_unit_price' => 'getAverageUnitPrice',
-        'total_sales' => 'getTotalSales'
+        'total_sales' => 'getTotalSales',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -253,6 +255,30 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

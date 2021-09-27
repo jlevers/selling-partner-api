@@ -72,7 +72,7 @@ class VendorDirectFulfillmentShippingApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -122,7 +122,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function getCustomerInvoice($purchase_order_number)
     {
-        list($response) = $this->getCustomerInvoiceWithHttpInfo($purchase_order_number);
+        $response = $this->getCustomerInvoiceWithHttpInfo($purchase_order_number);
         return $response;
     }
 
@@ -179,11 +179,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -191,11 +187,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -203,11 +195,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -215,11 +203,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -227,11 +211,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -239,11 +219,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -251,11 +227,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -263,11 +235,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -275,11 +243,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse';
@@ -290,11 +254,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -424,11 +384,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -475,8 +431,6 @@ class VendorDirectFulfillmentShippingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($purchase_order_number !== null) {
             $resourcePath = str_replace(
@@ -485,7 +439,6 @@ class VendorDirectFulfillmentShippingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -515,7 +468,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -560,7 +513,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function getCustomerInvoices($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = null, $next_token = null)
     {
-        list($response) = $this->getCustomerInvoicesWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
+        $response = $this->getCustomerInvoicesWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
         return $response;
     }
 
@@ -625,11 +578,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoicesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoicesResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -637,11 +586,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -649,11 +594,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -661,11 +602,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -673,11 +610,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -685,11 +618,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -697,11 +626,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -709,11 +634,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoiceResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetCustomerInvoicesResponse';
@@ -724,11 +645,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -863,11 +780,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -935,6 +848,7 @@ class VendorDirectFulfillmentShippingApi
         if ($ship_from_party_id !== null) {
             $queryParams['shipFromPartyId'] = $ship_from_party_id;
         }
+
         // query params
         if (is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
@@ -942,6 +856,7 @@ class VendorDirectFulfillmentShippingApi
         if ($limit !== null) {
             $queryParams['limit'] = $limit;
         }
+
         // query params
         if (is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -949,6 +864,7 @@ class VendorDirectFulfillmentShippingApi
         if ($created_after !== null) {
             $queryParams['createdAfter'] = $created_after;
         }
+
         // query params
         if (is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -956,6 +872,7 @@ class VendorDirectFulfillmentShippingApi
         if ($created_before !== null) {
             $queryParams['createdBefore'] = $created_before;
         }
+
         // query params
         if (is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -963,6 +880,7 @@ class VendorDirectFulfillmentShippingApi
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = $sort_order;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -970,9 +888,6 @@ class VendorDirectFulfillmentShippingApi
         if ($next_token !== null) {
             $queryParams['nextToken'] = $next_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1002,7 +917,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1042,7 +957,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function getPackingSlip($purchase_order_number)
     {
-        list($response) = $this->getPackingSlipWithHttpInfo($purchase_order_number);
+        $response = $this->getPackingSlipWithHttpInfo($purchase_order_number);
         return $response;
     }
 
@@ -1099,11 +1014,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1111,11 +1022,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1123,11 +1030,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1135,11 +1038,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1147,11 +1046,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1159,11 +1054,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1171,11 +1062,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1183,11 +1070,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1195,11 +1078,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipResponse';
@@ -1210,11 +1089,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1344,11 +1219,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1395,8 +1266,6 @@ class VendorDirectFulfillmentShippingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($purchase_order_number !== null) {
             $resourcePath = str_replace(
@@ -1405,7 +1274,6 @@ class VendorDirectFulfillmentShippingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1435,7 +1303,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1480,7 +1348,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function getPackingSlips($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = 'ASC', $next_token = null)
     {
-        list($response) = $this->getPackingSlipsWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
+        $response = $this->getPackingSlipsWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
         return $response;
     }
 
@@ -1545,11 +1413,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1557,11 +1421,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1569,11 +1429,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1581,11 +1437,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1593,11 +1445,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1605,11 +1453,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1617,11 +1461,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1629,11 +1469,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1641,11 +1477,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetPackingSlipListResponse';
@@ -1656,11 +1488,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1803,11 +1631,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1875,6 +1699,7 @@ class VendorDirectFulfillmentShippingApi
         if ($ship_from_party_id !== null) {
             $queryParams['shipFromPartyId'] = $ship_from_party_id;
         }
+
         // query params
         if (is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
@@ -1882,6 +1707,7 @@ class VendorDirectFulfillmentShippingApi
         if ($limit !== null) {
             $queryParams['limit'] = $limit;
         }
+
         // query params
         if (is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -1889,6 +1715,7 @@ class VendorDirectFulfillmentShippingApi
         if ($created_after !== null) {
             $queryParams['createdAfter'] = $created_after;
         }
+
         // query params
         if (is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -1896,6 +1723,7 @@ class VendorDirectFulfillmentShippingApi
         if ($created_before !== null) {
             $queryParams['createdBefore'] = $created_before;
         }
+
         // query params
         if (is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -1903,6 +1731,7 @@ class VendorDirectFulfillmentShippingApi
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = $sort_order;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -1910,9 +1739,6 @@ class VendorDirectFulfillmentShippingApi
         if ($next_token !== null) {
             $queryParams['nextToken'] = $next_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1942,7 +1768,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1982,7 +1808,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function getShippingLabel($purchase_order_number)
     {
-        list($response) = $this->getShippingLabelWithHttpInfo($purchase_order_number);
+        $response = $this->getShippingLabelWithHttpInfo($purchase_order_number);
         return $response;
     }
 
@@ -2039,11 +1865,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2051,11 +1873,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2063,11 +1881,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2075,11 +1889,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2087,11 +1897,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2099,11 +1905,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2111,11 +1913,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2123,11 +1921,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2135,11 +1929,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse';
@@ -2150,11 +1940,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2284,11 +2070,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2335,8 +2117,6 @@ class VendorDirectFulfillmentShippingApi
         $httpBody = '';
         $multipart = false;
 
-
-
         // path params
         if ($purchase_order_number !== null) {
             $resourcePath = str_replace(
@@ -2345,7 +2125,6 @@ class VendorDirectFulfillmentShippingApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2375,7 +2154,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2420,7 +2199,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function getShippingLabels($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = 'ASC', $next_token = null)
     {
-        list($response) = $this->getShippingLabelsWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
+        $response = $this->getShippingLabelsWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
         return $response;
     }
 
@@ -2485,11 +2264,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2497,11 +2272,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2509,11 +2280,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2521,11 +2288,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2533,11 +2296,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2545,11 +2304,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2557,11 +2312,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2569,11 +2320,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse';
@@ -2584,11 +2331,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2723,11 +2466,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2795,6 +2534,7 @@ class VendorDirectFulfillmentShippingApi
         if ($ship_from_party_id !== null) {
             $queryParams['shipFromPartyId'] = $ship_from_party_id;
         }
+
         // query params
         if (is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
@@ -2802,6 +2542,7 @@ class VendorDirectFulfillmentShippingApi
         if ($limit !== null) {
             $queryParams['limit'] = $limit;
         }
+
         // query params
         if (is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -2809,6 +2550,7 @@ class VendorDirectFulfillmentShippingApi
         if ($created_after !== null) {
             $queryParams['createdAfter'] = $created_after;
         }
+
         // query params
         if (is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -2816,6 +2558,7 @@ class VendorDirectFulfillmentShippingApi
         if ($created_before !== null) {
             $queryParams['createdBefore'] = $created_before;
         }
+
         // query params
         if (is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -2823,6 +2566,7 @@ class VendorDirectFulfillmentShippingApi
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = $sort_order;
         }
+
         // query params
         if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -2830,9 +2574,6 @@ class VendorDirectFulfillmentShippingApi
         if ($next_token !== null) {
             $queryParams['nextToken'] = $next_token;
         }
-
-
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2862,7 +2603,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2902,7 +2643,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function submitShipmentConfirmations($body)
     {
-        list($response) = $this->submitShipmentConfirmationsWithHttpInfo($body);
+        $response = $this->submitShipmentConfirmationsWithHttpInfo($body);
         return $response;
     }
 
@@ -2959,11 +2700,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2971,11 +2708,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2983,11 +2716,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2995,11 +2724,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3007,11 +2732,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3019,11 +2740,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3031,11 +2748,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3043,11 +2756,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3055,11 +2764,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsResponse';
@@ -3070,11 +2775,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -3204,11 +2905,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3251,10 +2948,6 @@ class VendorDirectFulfillmentShippingApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -3289,7 +2982,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -3329,7 +3022,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function submitShipmentStatusUpdates($body)
     {
-        list($response) = $this->submitShipmentStatusUpdatesWithHttpInfo($body);
+        $response = $this->submitShipmentStatusUpdatesWithHttpInfo($body);
         return $response;
     }
 
@@ -3386,11 +3079,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3398,11 +3087,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3410,11 +3095,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3422,11 +3103,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3434,11 +3111,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3446,11 +3119,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3458,11 +3127,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3470,11 +3135,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3482,11 +3143,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesResponse';
@@ -3497,11 +3154,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -3631,11 +3284,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3678,10 +3327,6 @@ class VendorDirectFulfillmentShippingApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -3716,7 +3361,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -3756,7 +3401,7 @@ class VendorDirectFulfillmentShippingApi
      */
     public function submitShippingLabelRequest($body)
     {
-        list($response) = $this->submitShippingLabelRequestWithHttpInfo($body);
+        $response = $this->submitShippingLabelRequestWithHttpInfo($body);
         return $response;
     }
 
@@ -3813,11 +3458,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3825,11 +3466,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3837,11 +3474,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3849,11 +3482,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3861,11 +3490,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3873,11 +3498,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3885,11 +3506,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3897,11 +3514,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3909,11 +3522,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse';
@@ -3924,11 +3533,7 @@ class VendorDirectFulfillmentShippingApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -4058,11 +3663,7 @@ class VendorDirectFulfillmentShippingApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -4105,10 +3706,6 @@ class VendorDirectFulfillmentShippingApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -4143,7 +3740,7 @@ class VendorDirectFulfillmentShippingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

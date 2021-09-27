@@ -72,7 +72,7 @@ class SmallAndLightApi
      * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
      */
     public function __construct(
-        Configuration $config = null,
+        Configuration $config,
         ClientInterface $client = null,
         HeaderSelector $selector = null,
         $hostIndex = 0
@@ -350,7 +350,6 @@ class SmallAndLightApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($seller_sku !== null) {
             $resourcePath = str_replace(
@@ -359,7 +358,6 @@ class SmallAndLightApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -389,7 +387,7 @@ class SmallAndLightApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -430,7 +428,7 @@ class SmallAndLightApi
      */
     public function getSmallAndLightEligibilityBySellerSKU($seller_sku, $marketplace_ids)
     {
-        list($response) = $this->getSmallAndLightEligibilityBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
+        $response = $this->getSmallAndLightEligibilityBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
         return $response;
     }
 
@@ -488,11 +486,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -500,11 +494,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -512,11 +502,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -524,11 +510,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -536,11 +518,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -548,11 +526,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -560,11 +534,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -572,11 +542,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -584,11 +550,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEligibility';
@@ -599,11 +561,7 @@ class SmallAndLightApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -735,11 +693,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -801,7 +755,6 @@ class SmallAndLightApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($seller_sku !== null) {
             $resourcePath = str_replace(
@@ -810,7 +763,6 @@ class SmallAndLightApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -840,7 +792,7 @@ class SmallAndLightApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -881,7 +833,7 @@ class SmallAndLightApi
      */
     public function getSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
     {
-        list($response) = $this->getSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
+        $response = $this->getSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
         return $response;
     }
 
@@ -939,11 +891,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -951,11 +899,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -963,11 +907,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -975,11 +915,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -987,11 +923,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -999,11 +931,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1011,11 +939,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1023,11 +947,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1035,11 +955,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment';
@@ -1050,11 +966,7 @@ class SmallAndLightApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1186,11 +1098,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1252,7 +1160,6 @@ class SmallAndLightApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($seller_sku !== null) {
             $resourcePath = str_replace(
@@ -1261,7 +1168,6 @@ class SmallAndLightApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1291,7 +1197,7 @@ class SmallAndLightApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1331,7 +1237,7 @@ class SmallAndLightApi
      */
     public function getSmallAndLightFeePreview($body)
     {
-        list($response) = $this->getSmallAndLightFeePreviewWithHttpInfo($body);
+        $response = $this->getSmallAndLightFeePreviewWithHttpInfo($body);
         return $response;
     }
 
@@ -1388,11 +1294,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1400,11 +1302,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 401:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1412,11 +1310,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1424,11 +1318,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1436,11 +1326,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1448,11 +1334,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1460,11 +1342,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1472,11 +1350,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightFeePreviews';
@@ -1487,11 +1361,7 @@ class SmallAndLightApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -1613,11 +1483,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1660,10 +1526,6 @@ class SmallAndLightApi
         $httpBody = '';
         $multipart = false;
 
-
-
-
-
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -1698,7 +1560,7 @@ class SmallAndLightApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1739,7 +1601,7 @@ class SmallAndLightApi
      */
     public function putSmallAndLightEnrollmentBySellerSKU($seller_sku, $marketplace_ids)
     {
-        list($response) = $this->putSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
+        $response = $this->putSmallAndLightEnrollmentBySellerSKUWithHttpInfo($seller_sku, $marketplace_ids);
         return $response;
     }
 
@@ -1797,11 +1659,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment', $response->getHeaders());
                 case 400:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1809,11 +1667,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 403:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1821,11 +1675,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 404:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1833,11 +1683,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 413:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1845,11 +1691,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 415:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1857,11 +1699,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 429:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1869,11 +1707,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 500:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1881,11 +1715,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
                 case 503:
                     if ('\SellingPartnerApi\Model\SmallAndLight\ErrorList' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1893,11 +1723,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\SmallAndLight\ErrorList', $response->getHeaders());
             }
 
             $returnType = '\SellingPartnerApi\Model\SmallAndLight\SmallAndLightEnrollment';
@@ -1908,11 +1734,7 @@ class SmallAndLightApi
                 $content = (string) $responseBody;
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
@@ -2044,11 +1866,7 @@ class SmallAndLightApi
                         $content = (string) $responseBody;
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2110,7 +1928,6 @@ class SmallAndLightApi
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
-
         // path params
         if ($seller_sku !== null) {
             $resourcePath = str_replace(
@@ -2119,7 +1936,6 @@ class SmallAndLightApi
                 $resourcePath
             );
         }
-
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -2149,7 +1965,7 @@ class SmallAndLightApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
 
             } else {
                 // for HTTP post (form)

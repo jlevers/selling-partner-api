@@ -157,7 +157,8 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
         'available_shipping_service_options' => 'setAvailableShippingServiceOptions',
         'available_label_formats' => 'setAvailableLabelFormats',
         'available_format_options_for_label' => 'setAvailableFormatOptionsForLabel',
-        'requires_additional_seller_inputs' => 'setRequiresAdditionalSellerInputs'
+        'requires_additional_seller_inputs' => 'setRequiresAdditionalSellerInputs',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -178,7 +179,8 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
         'available_shipping_service_options' => 'getAvailableShippingServiceOptions',
         'available_label_formats' => 'getAvailableLabelFormats',
         'available_format_options_for_label' => 'getAvailableFormatOptionsForLabel',
-        'requires_additional_seller_inputs' => 'getRequiresAdditionalSellerInputs'
+        'requires_additional_seller_inputs' => 'getRequiresAdditionalSellerInputs',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -301,6 +303,30 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

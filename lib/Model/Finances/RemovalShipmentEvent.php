@@ -125,7 +125,8 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
         'merchant_order_id' => 'setMerchantOrderId',
         'order_id' => 'setOrderId',
         'transaction_type' => 'setTransactionType',
-        'removal_shipment_item_list' => 'setRemovalShipmentItemList'
+        'removal_shipment_item_list' => 'setRemovalShipmentItemList',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
         'merchant_order_id' => 'getMerchantOrderId',
         'order_id' => 'getOrderId',
         'transaction_type' => 'getTransactionType',
-        'removal_shipment_item_list' => 'getRemovalShipmentItemList'
+        'removal_shipment_item_list' => 'getRemovalShipmentItemList',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -229,6 +231,30 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

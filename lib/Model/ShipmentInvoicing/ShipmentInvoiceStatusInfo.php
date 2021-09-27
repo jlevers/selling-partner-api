@@ -113,7 +113,8 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
         'amazon_shipment_id' => 'setAmazonShipmentId',
-        'invoice_status' => 'setInvoiceStatus'
+        'invoice_status' => 'setInvoiceStatus',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'amazon_shipment_id' => 'getAmazonShipmentId',
-        'invoice_status' => 'getInvoiceStatus'
+        'invoice_status' => 'getInvoiceStatus',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -211,6 +213,30 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, ArrayAccess, \JsonSer
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

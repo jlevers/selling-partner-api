@@ -121,7 +121,8 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipment_id' => 'setShipmentId',
         'client_reference_id' => 'setClientReferenceId',
         'accepted_rate' => 'setAcceptedRate',
-        'label_results' => 'setLabelResults'
+        'label_results' => 'setLabelResults',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipment_id' => 'getShipmentId',
         'client_reference_id' => 'getClientReferenceId',
         'accepted_rate' => 'getAcceptedRate',
-        'label_results' => 'getLabelResults'
+        'label_results' => 'getLabelResults',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -236,6 +238,30 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

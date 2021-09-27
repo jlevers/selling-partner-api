@@ -133,7 +133,8 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_updated_date' => 'setLastUpdatedDate',
         'selling_party' => 'setSellingParty',
         'ship_to_party' => 'setShipToParty',
-        'item_status' => 'setItemStatus'
+        'item_status' => 'setItemStatus',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -148,7 +149,8 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_updated_date' => 'getLastUpdatedDate',
         'selling_party' => 'getSellingParty',
         'ship_to_party' => 'getShipToParty',
-        'item_status' => 'getItemStatus'
+        'item_status' => 'getItemStatus',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -283,6 +285,30 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

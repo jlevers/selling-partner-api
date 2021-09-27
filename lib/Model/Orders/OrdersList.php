@@ -121,7 +121,8 @@ class OrdersList implements ModelInterface, ArrayAccess, \JsonSerializable
         'orders' => 'setOrders',
         'next_token' => 'setNextToken',
         'last_updated_before' => 'setLastUpdatedBefore',
-        'created_before' => 'setCreatedBefore'
+        'created_before' => 'setCreatedBefore',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -133,7 +134,8 @@ class OrdersList implements ModelInterface, ArrayAccess, \JsonSerializable
         'orders' => 'getOrders',
         'next_token' => 'getNextToken',
         'last_updated_before' => 'getLastUpdatedBefore',
-        'created_before' => 'getCreatedBefore'
+        'created_before' => 'getCreatedBefore',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -226,6 +228,30 @@ class OrdersList implements ModelInterface, ArrayAccess, \JsonSerializable
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

@@ -125,7 +125,8 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess, \JsonSeria
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'quantity' => 'setQuantity',
         'package_number' => 'setPackageNumber',
-        'serial_number' => 'setSerialNumber'
+        'serial_number' => 'setSerialNumber',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -138,7 +139,8 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess, \JsonSeria
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
         'quantity' => 'getQuantity',
         'package_number' => 'getPackageNumber',
-        'serial_number' => 'getSerialNumber'
+        'serial_number' => 'getSerialNumber',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -238,6 +240,30 @@ class FulfillmentShipmentItem implements ModelInterface, ArrayAccess, \JsonSeria
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

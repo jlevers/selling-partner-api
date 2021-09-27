@@ -113,7 +113,8 @@ class DestinationResourceSpecification implements ModelInterface, ArrayAccess, \
      */
     protected static $setters = [
         'sqs' => 'setSqs',
-        'event_bridge' => 'setEventBridge'
+        'event_bridge' => 'setEventBridge',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -123,7 +124,8 @@ class DestinationResourceSpecification implements ModelInterface, ArrayAccess, \
      */
     protected static $getters = [
         'sqs' => 'getSqs',
-        'event_bridge' => 'getEventBridge'
+        'event_bridge' => 'getEventBridge',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -211,6 +213,30 @@ class DestinationResourceSpecification implements ModelInterface, ArrayAccess, \
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

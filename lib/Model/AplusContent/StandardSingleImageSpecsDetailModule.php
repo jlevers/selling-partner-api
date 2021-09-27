@@ -137,7 +137,8 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
         'description_block2' => 'setDescriptionBlock2',
         'specification_headline' => 'setSpecificationHeadline',
         'specification_list_block' => 'setSpecificationListBlock',
-        'specification_text_block' => 'setSpecificationTextBlock'
+        'specification_text_block' => 'setSpecificationTextBlock',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -153,7 +154,8 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
         'description_block2' => 'getDescriptionBlock2',
         'specification_headline' => 'getSpecificationHeadline',
         'specification_list_block' => 'getSpecificationListBlock',
-        'specification_text_block' => 'getSpecificationTextBlock'
+        'specification_text_block' => 'getSpecificationTextBlock',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -247,6 +249,30 @@ class StandardSingleImageSpecsDetailModule implements ModelInterface, ArrayAcces
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    /**
+     * Gets headers, if this is a top-level response model
+     *
+     * @return array[string]|null
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers (only relevant to response models)
+     *
+     * @param array[string => string]|null $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+
+        return $this;
     }
 
 

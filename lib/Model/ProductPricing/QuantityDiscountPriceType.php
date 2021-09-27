@@ -61,7 +61,7 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'quantity_tier' => 'int',
         'quantity_discount_type' => '\SellingPartnerApi\Model\ProductPricing\QuantityDiscountType',
-        'price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType'
+        'listing_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType'
     ];
 
     /**
@@ -74,7 +74,7 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPIFormats = [
         'quantity_tier' => 'int32',
         'quantity_discount_type' => null,
-        'price' => null
+        'listing_price' => null
     ];
 
     /**
@@ -106,7 +106,7 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
     protected static $attributeMap = [
         'quantity_tier' => 'quantityTier',
         'quantity_discount_type' => 'quantityDiscountType',
-        'price' => 'price'
+        'listing_price' => 'listingPrice'
     ];
 
     /**
@@ -117,7 +117,7 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
     protected static $setters = [
         'quantity_tier' => 'setQuantityTier',
         'quantity_discount_type' => 'setQuantityDiscountType',
-        'price' => 'setPrice'
+        'listing_price' => 'setListingPrice'
     ];
 
     /**
@@ -128,7 +128,7 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
     protected static $getters = [
         'quantity_tier' => 'getQuantityTier',
         'quantity_discount_type' => 'getQuantityDiscountType',
-        'price' => 'getPrice'
+        'listing_price' => 'getListingPrice'
     ];
 
     /**
@@ -193,7 +193,7 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
     {
         $this->container['quantity_tier'] = $data['quantity_tier'] ?? null;
         $this->container['quantity_discount_type'] = $data['quantity_discount_type'] ?? null;
-        $this->container['price'] = $data['price'] ?? null;
+        $this->container['listing_price'] = $data['listing_price'] ?? null;
     }
 
     /**
@@ -211,8 +211,8 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['quantity_discount_type'] === null) {
             $invalidProperties[] = "'quantity_discount_type' can't be null";
         }
-        if ($this->container['price'] === null) {
-            $invalidProperties[] = "'price' can't be null";
+        if ($this->container['listing_price'] === null) {
+            $invalidProperties[] = "'listing_price' can't be null";
         }
         return $invalidProperties;
     }
@@ -278,25 +278,25 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets price
+     * Gets listing_price
      *
      * @return \SellingPartnerApi\Model\ProductPricing\MoneyType
      */
-    public function getPrice()
+    public function getListingPrice()
     {
-        return $this->container['price'];
+        return $this->container['listing_price'];
     }
 
     /**
-     * Sets price
+     * Sets listing_price
      *
-     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType $price price
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType $listing_price listing_price
      *
      * @return self
      */
-    public function setPrice($price)
+    public function setListingPrice($listing_price)
     {
-        $this->container['price'] = $price;
+        $this->container['listing_price'] = $listing_price;
 
         return $this;
     }

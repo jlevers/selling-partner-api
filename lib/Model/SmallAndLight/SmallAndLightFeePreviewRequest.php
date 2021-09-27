@@ -60,7 +60,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'marketplace_id' => 'string',
-        'items' => '\SellingPartnerApi\Model\SmallAndLight\FBAItem[]'
+        'items' => '\SellingPartnerApi\Model\SmallAndLight\Item[]'
     ];
 
     /**
@@ -251,7 +251,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets items
      *
-     * @return \SellingPartnerApi\Model\SmallAndLight\FBAItem[]
+     * @return \SellingPartnerApi\Model\SmallAndLight\Item[]
      */
     public function getItems()
     {
@@ -261,7 +261,7 @@ class SmallAndLightFeePreviewRequest implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets items
      *
-     * @param \SellingPartnerApi\Model\SmallAndLight\FBAItem[] $items A list of items for which to retrieve fee estimates (limit: 25).
+     * @param \SellingPartnerApi\Model\SmallAndLight\Item[] $items A list of items for which to retrieve fee estimates (limit: 25).
      *
      * @return self
      */

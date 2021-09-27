@@ -80,7 +80,12 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'imaging_services_fee_event_list' => '\SellingPartnerApi\Model\Finances\ImagingServicesFeeEvent[]',
         'network_commingling_transaction_event_list' => '\SellingPartnerApi\Model\Finances\NetworkComminglingTransactionEvent[]',
         'affordability_expense_event_list' => '\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]',
-        'affordability_expense_reversal_event_list' => '\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]'
+        'affordability_expense_reversal_event_list' => '\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]',
+        'trial_shipment_event_list' => '\SellingPartnerApi\Model\Finances\TrialShipmentEvent[]',
+        'shipment_settle_event_list' => '\SellingPartnerApi\Model\Finances\ShipmentEvent[]',
+        'tax_withholding_event_list' => '\SellingPartnerApi\Model\Finances\TaxWithholdingEvent[]',
+        'removal_shipment_event_list' => '\SellingPartnerApi\Model\Finances\RemovalShipmentEvent[]',
+        'removal_shipment_adjustment_event_list' => '\SellingPartnerApi\Model\Finances\RemovalShipmentAdjustmentEvent[]'
     ];
 
     /**
@@ -112,7 +117,12 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'imaging_services_fee_event_list' => null,
         'network_commingling_transaction_event_list' => null,
         'affordability_expense_event_list' => null,
-        'affordability_expense_reversal_event_list' => null
+        'affordability_expense_reversal_event_list' => null,
+        'trial_shipment_event_list' => null,
+        'shipment_settle_event_list' => null,
+        'tax_withholding_event_list' => null,
+        'removal_shipment_event_list' => null,
+        'removal_shipment_adjustment_event_list' => null
     ];
 
     /**
@@ -163,7 +173,12 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'imaging_services_fee_event_list' => 'ImagingServicesFeeEventList',
         'network_commingling_transaction_event_list' => 'NetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'AffordabilityExpenseEventList',
-        'affordability_expense_reversal_event_list' => 'AffordabilityExpenseReversalEventList'
+        'affordability_expense_reversal_event_list' => 'AffordabilityExpenseReversalEventList',
+        'trial_shipment_event_list' => 'TrialShipmentEventList',
+        'shipment_settle_event_list' => 'ShipmentSettleEventList',
+        'tax_withholding_event_list' => 'TaxWithholdingEventList',
+        'removal_shipment_event_list' => 'RemovalShipmentEventList',
+        'removal_shipment_adjustment_event_list' => 'RemovalShipmentAdjustmentEventList'
     ];
 
     /**
@@ -193,7 +208,12 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'imaging_services_fee_event_list' => 'setImagingServicesFeeEventList',
         'network_commingling_transaction_event_list' => 'setNetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'setAffordabilityExpenseEventList',
-        'affordability_expense_reversal_event_list' => 'setAffordabilityExpenseReversalEventList'
+        'affordability_expense_reversal_event_list' => 'setAffordabilityExpenseReversalEventList',
+        'trial_shipment_event_list' => 'setTrialShipmentEventList',
+        'shipment_settle_event_list' => 'setShipmentSettleEventList',
+        'tax_withholding_event_list' => 'setTaxWithholdingEventList',
+        'removal_shipment_event_list' => 'setRemovalShipmentEventList',
+        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList'
     ];
 
     /**
@@ -223,7 +243,12 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'imaging_services_fee_event_list' => 'getImagingServicesFeeEventList',
         'network_commingling_transaction_event_list' => 'getNetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'getAffordabilityExpenseEventList',
-        'affordability_expense_reversal_event_list' => 'getAffordabilityExpenseReversalEventList'
+        'affordability_expense_reversal_event_list' => 'getAffordabilityExpenseReversalEventList',
+        'trial_shipment_event_list' => 'getTrialShipmentEventList',
+        'shipment_settle_event_list' => 'getShipmentSettleEventList',
+        'tax_withholding_event_list' => 'getTaxWithholdingEventList',
+        'removal_shipment_event_list' => 'getRemovalShipmentEventList',
+        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList'
     ];
 
     /**
@@ -308,6 +333,11 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['network_commingling_transaction_event_list'] = $data['network_commingling_transaction_event_list'] ?? null;
         $this->container['affordability_expense_event_list'] = $data['affordability_expense_event_list'] ?? null;
         $this->container['affordability_expense_reversal_event_list'] = $data['affordability_expense_reversal_event_list'] ?? null;
+        $this->container['trial_shipment_event_list'] = $data['trial_shipment_event_list'] ?? null;
+        $this->container['shipment_settle_event_list'] = $data['shipment_settle_event_list'] ?? null;
+        $this->container['tax_withholding_event_list'] = $data['tax_withholding_event_list'] ?? null;
+        $this->container['removal_shipment_event_list'] = $data['removal_shipment_event_list'] ?? null;
+        $this->container['removal_shipment_adjustment_event_list'] = $data['removal_shipment_adjustment_event_list'] ?? null;
     }
 
     /**
@@ -858,6 +888,126 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAffordabilityExpenseReversalEventList($affordability_expense_reversal_event_list)
     {
         $this->container['affordability_expense_reversal_event_list'] = $affordability_expense_reversal_event_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets trial_shipment_event_list
+     *
+     * @return \SellingPartnerApi\Model\Finances\TrialShipmentEvent[]|null
+     */
+    public function getTrialShipmentEventList()
+    {
+        return $this->container['trial_shipment_event_list'];
+    }
+
+    /**
+     * Sets trial_shipment_event_list
+     *
+     * @param \SellingPartnerApi\Model\Finances\TrialShipmentEvent[]|null $trial_shipment_event_list A list of information about trial shipment financial events.
+     *
+     * @return self
+     */
+    public function setTrialShipmentEventList($trial_shipment_event_list)
+    {
+        $this->container['trial_shipment_event_list'] = $trial_shipment_event_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipment_settle_event_list
+     *
+     * @return \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null
+     */
+    public function getShipmentSettleEventList()
+    {
+        return $this->container['shipment_settle_event_list'];
+    }
+
+    /**
+     * Sets shipment_settle_event_list
+     *
+     * @param \SellingPartnerApi\Model\Finances\ShipmentEvent[]|null $shipment_settle_event_list A list of information about shipment settle financial events.
+     *
+     * @return self
+     */
+    public function setShipmentSettleEventList($shipment_settle_event_list)
+    {
+        $this->container['shipment_settle_event_list'] = $shipment_settle_event_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_withholding_event_list
+     *
+     * @return \SellingPartnerApi\Model\Finances\TaxWithholdingEvent[]|null
+     */
+    public function getTaxWithholdingEventList()
+    {
+        return $this->container['tax_withholding_event_list'];
+    }
+
+    /**
+     * Sets tax_withholding_event_list
+     *
+     * @param \SellingPartnerApi\Model\Finances\TaxWithholdingEvent[]|null $tax_withholding_event_list List of TaxWithholding events.
+     *
+     * @return self
+     */
+    public function setTaxWithholdingEventList($tax_withholding_event_list)
+    {
+        $this->container['tax_withholding_event_list'] = $tax_withholding_event_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets removal_shipment_event_list
+     *
+     * @return \SellingPartnerApi\Model\Finances\RemovalShipmentEvent[]|null
+     */
+    public function getRemovalShipmentEventList()
+    {
+        return $this->container['removal_shipment_event_list'];
+    }
+
+    /**
+     * Sets removal_shipment_event_list
+     *
+     * @param \SellingPartnerApi\Model\Finances\RemovalShipmentEvent[]|null $removal_shipment_event_list A list of removal shipment event information.
+     *
+     * @return self
+     */
+    public function setRemovalShipmentEventList($removal_shipment_event_list)
+    {
+        $this->container['removal_shipment_event_list'] = $removal_shipment_event_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets removal_shipment_adjustment_event_list
+     *
+     * @return \SellingPartnerApi\Model\Finances\RemovalShipmentAdjustmentEvent[]|null
+     */
+    public function getRemovalShipmentAdjustmentEventList()
+    {
+        return $this->container['removal_shipment_adjustment_event_list'];
+    }
+
+    /**
+     * Sets removal_shipment_adjustment_event_list
+     *
+     * @param \SellingPartnerApi\Model\Finances\RemovalShipmentAdjustmentEvent[]|null $removal_shipment_adjustment_event_list A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
+     *
+     * @return self
+     */
+    public function setRemovalShipmentAdjustmentEventList($removal_shipment_adjustment_event_list)
+    {
+        $this->container['removal_shipment_adjustment_event_list'] = $removal_shipment_adjustment_event_list;
 
         return $this;
     }

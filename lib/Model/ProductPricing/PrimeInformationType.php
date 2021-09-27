@@ -1,6 +1,6 @@
 <?php
 /**
- * TDSReimbursementEvent
+ * PrimeInformationType
  *
  * PHP version 7.2
  *
@@ -9,9 +9,9 @@
  */
 
 /**
- * Selling Partner API for Finances
+ * Selling Partner API for Pricing
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer information for Amazon Marketplace products.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -25,24 +25,24 @@
  * Do not edit the class manually.
  */
 
-namespace SellingPartnerApi\Model\Finances;
+namespace SellingPartnerApi\Model\ProductPricing;
 
 use \ArrayAccess;
 use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * TDSReimbursementEvent Class Doc Comment
+ * PrimeInformationType Class Doc Comment
  *
  * @category Class
- * @description A tax deduction at source (TDS) claim reimbursement event on the seller&#39;s account.
+ * @description Amazon Prime information.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSerializable
+class PrimeInformationType implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TDSReimbursementEvent';
+    protected static $openAPIModelName = 'PrimeInformationType';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,8 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'posted_date' => '\DateTime',
-        'tds_order_id' => 'string',
-        'reimbursed_amount' => '\SellingPartnerApi\Model\Finances\Currency'
+        'is_prime' => 'bool',
+        'is_national_prime' => 'bool'
     ];
 
     /**
@@ -72,9 +71,8 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'posted_date' => 'date-time',
-        'tds_order_id' => null,
-        'reimbursed_amount' => null
+        'is_prime' => null,
+        'is_national_prime' => null
     ];
 
     /**
@@ -104,9 +102,8 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'posted_date' => 'PostedDate',
-        'tds_order_id' => 'TdsOrderId',
-        'reimbursed_amount' => 'ReimbursedAmount'
+        'is_prime' => 'IsPrime',
+        'is_national_prime' => 'IsNationalPrime'
     ];
 
     /**
@@ -115,9 +112,8 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
-        'tds_order_id' => 'setTdsOrderId',
-        'reimbursed_amount' => 'setReimbursedAmount'
+        'is_prime' => 'setIsPrime',
+        'is_national_prime' => 'setIsNationalPrime'
     ];
 
     /**
@@ -126,9 +122,8 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'posted_date' => 'getPostedDate',
-        'tds_order_id' => 'getTdsOrderId',
-        'reimbursed_amount' => 'getReimbursedAmount'
+        'is_prime' => 'getIsPrime',
+        'is_national_prime' => 'getIsNationalPrime'
     ];
 
     /**
@@ -191,9 +186,8 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['posted_date'] = $data['posted_date'] ?? null;
-        $this->container['tds_order_id'] = $data['tds_order_id'] ?? null;
-        $this->container['reimbursed_amount'] = $data['reimbursed_amount'] ?? null;
+        $this->container['is_prime'] = $data['is_prime'] ?? null;
+        $this->container['is_national_prime'] = $data['is_national_prime'] ?? null;
     }
 
     /**
@@ -205,6 +199,12 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
+        if ($this->container['is_prime'] === null) {
+            $invalidProperties[] = "'is_prime' can't be null";
+        }
+        if ($this->container['is_national_prime'] === null) {
+            $invalidProperties[] = "'is_national_prime' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -221,73 +221,49 @@ class TDSReimbursementEvent implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets posted_date
+     * Gets is_prime
      *
-     * @return \DateTime|null
+     * @return bool
      */
-    public function getPostedDate()
+    public function getIsPrime()
     {
-        return $this->container['posted_date'];
+        return $this->container['is_prime'];
     }
 
     /**
-     * Sets posted_date
+     * Sets is_prime
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param bool $is_prime Indicates whether the offer is an Amazon Prime offer.
      *
      * @return self
      */
-    public function setPostedDate($posted_date)
+    public function setIsPrime($is_prime)
     {
-        $this->container['posted_date'] = $posted_date;
+        $this->container['is_prime'] = $is_prime;
 
         return $this;
     }
 
     /**
-     * Gets tds_order_id
+     * Gets is_national_prime
      *
-     * @return string|null
+     * @return bool
      */
-    public function getTdsOrderId()
+    public function getIsNationalPrime()
     {
-        return $this->container['tds_order_id'];
+        return $this->container['is_national_prime'];
     }
 
     /**
-     * Sets tds_order_id
+     * Sets is_national_prime
      *
-     * @param string|null $tds_order_id A tax deduction at source (TDS) claim identifier.
+     * @param bool $is_national_prime Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.
      *
      * @return self
      */
-    public function setTdsOrderId($tds_order_id)
+    public function setIsNationalPrime($is_national_prime)
     {
-        $this->container['tds_order_id'] = $tds_order_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets reimbursed_amount
-     *
-     * @return \SellingPartnerApi\Model\Finances\Currency|null
-     */
-    public function getReimbursedAmount()
-    {
-        return $this->container['reimbursed_amount'];
-    }
-
-    /**
-     * Sets reimbursed_amount
-     *
-     * @param \SellingPartnerApi\Model\Finances\Currency|null $reimbursed_amount reimbursed_amount
-     *
-     * @return self
-     */
-    public function setReimbursedAmount($reimbursed_amount)
-    {
-        $this->container['reimbursed_amount'] = $reimbursed_amount;
+        $this->container['is_national_prime'] = $is_national_prime;
 
         return $this;
     }

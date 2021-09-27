@@ -26,5 +26,10 @@ Name | Type | Description | Notes
 **network_commingling_transaction_event_list** | [**\SellingPartnerApi\Model\Finances\NetworkComminglingTransactionEvent[]**](NetworkComminglingTransactionEvent.md) | A list of network commingling transaction events. | [optional]
 **affordability_expense_event_list** | [**\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]**](AffordabilityExpenseEvent.md) | A list of expense information related to an affordability promotion. | [optional]
 **affordability_expense_reversal_event_list** | [**\SellingPartnerApi\Model\Finances\AffordabilityExpenseEvent[]**](AffordabilityExpenseEvent.md) | A list of expense information related to an affordability promotion. | [optional]
+**trial_shipment_event_list** | [**\SellingPartnerApi\Model\Finances\TrialShipmentEvent[]**](TrialShipmentEvent.md) | A list of information about trial shipment financial events. | [optional]
+**shipment_settle_event_list** | [**\SellingPartnerApi\Model\Finances\ShipmentEvent[]**](ShipmentEvent.md) | A list of information about shipment settle financial events. | [optional]
+**tax_withholding_event_list** | [**\SellingPartnerApi\Model\Finances\TaxWithholdingEvent[]**](TaxWithholdingEvent.md) | List of TaxWithholding events. | [optional]
+**removal_shipment_event_list** | [**\SellingPartnerApi\Model\Finances\RemovalShipmentEvent[]**](RemovalShipmentEvent.md) | A list of removal shipment event information. | [optional]
+**removal_shipment_adjustment_event_list** | [**\SellingPartnerApi\Model\Finances\RemovalShipmentAdjustmentEvent[]**](RemovalShipmentAdjustmentEvent.md) | A comma-delimited list of Removal shipmentAdjustment details for FBA inventory. | [optional]
 
 [[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

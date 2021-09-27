@@ -139,7 +139,10 @@ class VendorDirectFulfillmentOrdersApi
     {
         $request = $this->getOrderRequest($purchase_order_number);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}",
+            "getOrder"
         );
 
         try {
@@ -410,7 +413,10 @@ class VendorDirectFulfillmentOrdersApi
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\GetOrderResponse';
         $request = $this->getOrderRequest($purchase_order_number);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}",
+            "getOrder"
         );
 
         return $this->client
@@ -582,7 +588,10 @@ class VendorDirectFulfillmentOrdersApi
     {
         $request = $this->getOrdersRequest($created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/vendor/directFulfillment/orders/v1/purchaseOrders",
+            "getOrders"
         );
 
         try {
@@ -847,7 +856,10 @@ class VendorDirectFulfillmentOrdersApi
         $returnType = '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\GetOrdersResponse';
         $request = $this->getOrdersRequest($created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/vendor/directFulfillment/orders/v1/purchaseOrders",
+            "getOrders"
         );
 
         return $this->client

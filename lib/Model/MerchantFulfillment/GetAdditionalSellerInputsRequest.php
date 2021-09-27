@@ -290,7 +290,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
     /**
      * Sets order_id
      *
-     * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. <br>**Pattern** : `[0-9A-Z]{3}-[0-9]{7}-[0-9]{7}`.
+     * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format.
      *
      * @return self
      */

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **shipment_id** | **string** | An Amazon-defined shipment identifier. |
-**amazon_order_id** | **string** | An Amazon-defined order identifier, in 3-7-7 format. &lt;br&gt;**Pattern** : &#x60;[0-9A-Z]{3}-[0-9]{7}-[0-9]{7}&#x60;. |
+**amazon_order_id** | **string** | An Amazon-defined order identifier, in 3-7-7 format. |
 **seller_order_id** | **string** | A seller-defined order identifier. | [optional]
 **item_list** | [**\SellingPartnerApi\Model\MerchantFulfillment\FBMItem[]**](FBMItem.md) | The list of items to be included in a shipment. |
 **ship_from_address** | [**\SellingPartnerApi\Model\MerchantFulfillment\Address**](Address.md) |  |

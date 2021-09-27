@@ -64,7 +64,9 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'lowest_prices' => '\SellingPartnerApi\Model\ProductPricing\LowestPriceType[]',
         'buy_box_prices' => '\SellingPartnerApi\Model\ProductPricing\BuyBoxPriceType[]',
         'list_price' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'competitive_price_threshold' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
         'suggested_lower_price_plus_shipping' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
+        'sales_rankings' => '\SellingPartnerApi\Model\ProductPricing\SalesRankType[]',
         'buy_box_eligible_offers' => '\SellingPartnerApi\Model\ProductPricing\OfferCountType[]',
         'offers_available_time' => '\DateTime'
     ];
@@ -82,7 +84,9 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'lowest_prices' => null,
         'buy_box_prices' => null,
         'list_price' => null,
+        'competitive_price_threshold' => null,
         'suggested_lower_price_plus_shipping' => null,
+        'sales_rankings' => null,
         'buy_box_eligible_offers' => null,
         'offers_available_time' => 'date-time'
     ];
@@ -119,7 +123,9 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'lowest_prices' => 'LowestPrices',
         'buy_box_prices' => 'BuyBoxPrices',
         'list_price' => 'ListPrice',
+        'competitive_price_threshold' => 'CompetitivePriceThreshold',
         'suggested_lower_price_plus_shipping' => 'SuggestedLowerPricePlusShipping',
+        'sales_rankings' => 'SalesRankings',
         'buy_box_eligible_offers' => 'BuyBoxEligibleOffers',
         'offers_available_time' => 'OffersAvailableTime'
     ];
@@ -135,7 +141,9 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'lowest_prices' => 'setLowestPrices',
         'buy_box_prices' => 'setBuyBoxPrices',
         'list_price' => 'setListPrice',
+        'competitive_price_threshold' => 'setCompetitivePriceThreshold',
         'suggested_lower_price_plus_shipping' => 'setSuggestedLowerPricePlusShipping',
+        'sales_rankings' => 'setSalesRankings',
         'buy_box_eligible_offers' => 'setBuyBoxEligibleOffers',
         'offers_available_time' => 'setOffersAvailableTime'
     ];
@@ -151,7 +159,9 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'lowest_prices' => 'getLowestPrices',
         'buy_box_prices' => 'getBuyBoxPrices',
         'list_price' => 'getListPrice',
+        'competitive_price_threshold' => 'getCompetitivePriceThreshold',
         'suggested_lower_price_plus_shipping' => 'getSuggestedLowerPricePlusShipping',
+        'sales_rankings' => 'getSalesRankings',
         'buy_box_eligible_offers' => 'getBuyBoxEligibleOffers',
         'offers_available_time' => 'getOffersAvailableTime'
     ];
@@ -221,7 +231,9 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['lowest_prices'] = $data['lowest_prices'] ?? null;
         $this->container['buy_box_prices'] = $data['buy_box_prices'] ?? null;
         $this->container['list_price'] = $data['list_price'] ?? null;
+        $this->container['competitive_price_threshold'] = $data['competitive_price_threshold'] ?? null;
         $this->container['suggested_lower_price_plus_shipping'] = $data['suggested_lower_price_plus_shipping'] ?? null;
+        $this->container['sales_rankings'] = $data['sales_rankings'] ?? null;
         $this->container['buy_box_eligible_offers'] = $data['buy_box_eligible_offers'] ?? null;
         $this->container['offers_available_time'] = $data['offers_available_time'] ?? null;
     }
@@ -374,6 +386,30 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets competitive_price_threshold
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\MoneyType|null
+     */
+    public function getCompetitivePriceThreshold()
+    {
+        return $this->container['competitive_price_threshold'];
+    }
+
+    /**
+     * Sets competitive_price_threshold
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\MoneyType|null $competitive_price_threshold competitive_price_threshold
+     *
+     * @return self
+     */
+    public function setCompetitivePriceThreshold($competitive_price_threshold)
+    {
+        $this->container['competitive_price_threshold'] = $competitive_price_threshold;
+
+        return $this;
+    }
+
+    /**
      * Gets suggested_lower_price_plus_shipping
      *
      * @return \SellingPartnerApi\Model\ProductPricing\MoneyType|null
@@ -393,6 +429,30 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSuggestedLowerPricePlusShipping($suggested_lower_price_plus_shipping)
     {
         $this->container['suggested_lower_price_plus_shipping'] = $suggested_lower_price_plus_shipping;
+
+        return $this;
+    }
+
+    /**
+     * Gets sales_rankings
+     *
+     * @return \SellingPartnerApi\Model\ProductPricing\SalesRankType[]|null
+     */
+    public function getSalesRankings()
+    {
+        return $this->container['sales_rankings'];
+    }
+
+    /**
+     * Sets sales_rankings
+     *
+     * @param \SellingPartnerApi\Model\ProductPricing\SalesRankType[]|null $sales_rankings A list of sales rank information for the item, by category.
+     *
+     * @return self
+     */
+    public function setSalesRankings($sales_rankings)
+    {
+        $this->container['sales_rankings'] = $sales_rankings;
 
         return $this;
     }

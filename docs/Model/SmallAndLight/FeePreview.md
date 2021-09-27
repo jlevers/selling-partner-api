@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **price** | [**\SellingPartnerApi\Model\SmallAndLight\MoneyType**](MoneyType.md) |  | [optional]
 **fee_breakdown** | [**\SellingPartnerApi\Model\SmallAndLight\FeeLineItem[]**](FeeLineItem.md) | A list of the Small and Light fees for the item. | [optional]
 **total_fees** | [**\SellingPartnerApi\Model\SmallAndLight\MoneyType**](MoneyType.md) |  | [optional]
-**errors** | [**\SellingPartnerApi\Model\SmallAndLight\ErrorList**](ErrorList.md) |  | [optional]
+**errors** | [**\SellingPartnerApi\Model\SmallAndLight\Error[]**](Error.md) | One or more unexpected errors occurred during the getSmallAndLightFeePreview operation. | [optional]
 
 [[SmallAndLight Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

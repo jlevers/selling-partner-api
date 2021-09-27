@@ -63,7 +63,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => '\SellingPartnerApi\Model\SmallAndLight\MoneyType',
         'fee_breakdown' => '\SellingPartnerApi\Model\SmallAndLight\FeeLineItem[]',
         'total_fees' => '\SellingPartnerApi\Model\SmallAndLight\MoneyType',
-        'errors' => '\SellingPartnerApi\Model\SmallAndLight\ErrorList'
+        'errors' => '\SellingPartnerApi\Model\SmallAndLight\Error[]'
     ];
 
     /**
@@ -331,7 +331,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets errors
      *
-     * @return \SellingPartnerApi\Model\SmallAndLight\ErrorList|null
+     * @return \SellingPartnerApi\Model\SmallAndLight\Error[]|null
      */
     public function getErrors()
     {
@@ -341,7 +341,7 @@ class FeePreview implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \SellingPartnerApi\Model\SmallAndLight\ErrorList|null $errors errors
+     * @param \SellingPartnerApi\Model\SmallAndLight\Error[]|null $errors One or more unexpected errors occurred during the getSmallAndLightFeePreview operation.
      *
      * @return self
      */

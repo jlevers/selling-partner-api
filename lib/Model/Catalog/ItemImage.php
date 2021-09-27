@@ -179,39 +179,8 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    const VARIANT_MAIN = 'MAIN';
-    const VARIANT_PT01 = 'PT01';
-    const VARIANT_PT02 = 'PT02';
-    const VARIANT_PT03 = 'PT03';
-    const VARIANT_PT04 = 'PT04';
-    const VARIANT_PT05 = 'PT05';
-    const VARIANT_PT06 = 'PT06';
-    const VARIANT_PT07 = 'PT07';
-    const VARIANT_PT08 = 'PT08';
-    const VARIANT_SWCH = 'SWCH';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getVariantAllowableValues()
-    {
-        return [
-            self::VARIANT_MAIN,
-            self::VARIANT_PT01,
-            self::VARIANT_PT02,
-            self::VARIANT_PT03,
-            self::VARIANT_PT04,
-            self::VARIANT_PT05,
-            self::VARIANT_PT06,
-            self::VARIANT_PT07,
-            self::VARIANT_PT08,
-            self::VARIANT_SWCH,
-        ];
-    }
     
 
     /**
@@ -247,15 +216,6 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['variant'] === null) {
             $invalidProperties[] = "'variant' can't be null";
         }
-        $allowedValues = $this->getVariantAllowableValues();
-        if (!is_null($this->container['variant']) && !in_array($this->container['variant'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'variant', must be one of '%s'",
-                $this->container['variant'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['link'] === null) {
             $invalidProperties[] = "'link' can't be null";
         }
@@ -323,16 +283,6 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setVariant($variant)
     {
-        $allowedValues = $this->getVariantAllowableValues();
-        if (!in_array($variant, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'variant', must be one of '%s'",
-                    $variant,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['variant'] = $variant;
 
         return $this;

@@ -175,13 +175,18 @@ try {
 * [Transaction Status API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorTransactionStatusApi.md)
 
 
+## Restricted operations
+
+When you call a [restricted operation]((https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md)), a Restricted Data Token (RDT) is automatically generated. If you're calling a restricted operation that accepts a [`dataElements`](https://github.com/amzn/selling-partner-api-docs/blob/main/references/tokens-api/tokens_2021-03-01.md#restrictedresource) parameter, you can pass `dataElements` values as a parameter to the API call. Check out the [getOrders](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersApi.md#getOrders), [getOrder](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersApi.md#getOrder), and [getOrderItems](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersApi.md#getOrderItems) documentation to see how to pass `dataElements` values to those calls. (At the time of writing, those are the only restricted operations that accept `dataElements` values.)
+
+
 ## Uploading and downloading documents
 
 The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\Reports\ReportDocument`, `Model\Feeds\FeedDocument`, or `Model\Feeds\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsApi.md#getReportDocument), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#createFeedDocument) endpoints, respectively.
 
 ### Downloading a report document
 
-``` php
+```php
 use SellingPartnerApi\Api\ReportsApi;
 use SellingPartnerApi\ReportType;
 
@@ -207,7 +212,7 @@ $data = $docToDownload->getData();
 
 ### Uploading a feed document
 
-``` php
+```php
 use SellingPartnerApi\Api\FeedsApi;
 use SellingPartnerApi\FeedType;
 use SellingPartnerApi\Model\Feeds;
@@ -246,7 +251,7 @@ $buyer = new SellingPartnerApi\Model\Service\Buyer([
 
 Alternatively, you can create an instance of the `Buyer` model and then populate its fields:
 
-``` php
+```php
 $buyer = new SellingPartnerApi\Model\Service\Buyer();
 $buyer->setBuyerId("ABCDEFGHIJKLMNOPQRSTU0123456");
 $buyer->setName("Jane Doe");
@@ -256,7 +261,7 @@ $buyer->setIsPrimeMember(true);
 
 Each model also has the getter methods you might expect:
 
-``` php
+```php
 $buyer->getBuyerId();        // -> "ABCDEFGHIJKLMNOPQRSTU0123456"
 $buyer->getName();           // -> "Jane Doe"
 $buyer->getPhone();          // -> "+12345678901"
@@ -274,4 +279,27 @@ $serviceJob = new SellingPartnerApi\Model\Service\Buyer([
 
 $serviceJob->getBuyer();             // -> [Buyer instance]
 $serviceJob->getBuyer()->getName();  // -> "Jane Doe"
+```
+
+
+## Response headers
+Amazon includes some useful headers with each SP API response. If you need those for any reason, you can get an associative array of response headers by calling `getHeaders()` on the response object. For instance:
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use SellingPartnerApi\Api;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\Endpoint;
+
+$config = new Configuration([...]);
+$api = new Api\SellersApi($config);
+try {
+    $result = $api->getMarketplaceParticipations();
+    $headers = $result->getHeaders();
+    print_r($headers);
+} catch (Exception $e) {
+    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
+}
 ```

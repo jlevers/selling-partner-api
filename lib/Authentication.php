@@ -137,12 +137,12 @@ class Authentication
         $params = [];
 
         parse_str($request->getUri()->getQuery(), $params);
-        $restrictedDataElements = [];
-        if (isset($params['RestrictedElements'])) {
-            $restrictedDataElements = explode(',', $params['RestrictedElements']);
+        $dataElements = [];
+        if (isset($params['dataElements'])) {
+            $dataElements = explode(',', $params['dataElements']);
         }
 
-        if ($scope === null && ($restrictedPath === null || $restrictedDataElements === [])) {
+        if ($scope === null && ($restrictedPath === null || $dataElements === [])) {
             $relevantCreds = $this->getAwsCredentials();
         } else if ($scope !== null) {  // There is no overlap between grantless and restricted operations
             $relevantCreds = $this->getGrantlessAwsCredentials($scope);
@@ -163,14 +163,14 @@ class Authentication
                 // Remove the extra 'reportType' query parameter
                 $newUri = Psr7\Uri::withoutQueryValue($request->getUri(), 'reportType');
                 $request = $request->withUri($newUri);
-            } else if (isset($params['RestrictedElements'])) {
-                // Remove the extra 'RestrictedElements' query parameter
-                $newUri = Psr7\Uri::withoutQueryValue($request->getUri(), 'RestrictedElements');
+            } else if (isset($params['dataElements'])) {
+                // Remove the extra 'dataElements' query parameter
+                $newUri = Psr7\Uri::withoutQueryValue($request->getUri(), 'dataElements');
                 $request = $request->withUri($newUri);
             }
 
             if ($needRdt) {
-                $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod(), true, $restrictedDataElements);
+                $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod(), true, $dataElements);
             }
         }
 
@@ -273,11 +273,11 @@ class Authentication
      * @param string $path The generic or specific path for the restricted operation
      * @param string $method The HTTP method of the restricted operation
      * @param ?bool $generic Whether or not $path is a generic URL or a specific one. Default true
-     * @param ?array $restrictedDataElements The restricted data elements to request access to, if any.
+     * @param ?array $dataElements The restricted data elements to request access to, if any.
      *      Only applies to getOrder, getOrders, and getOrderItems. Default empty array.
      * @return \SellingPartnerApi\Credentials A Credentials object holding the RDT
      */
-    public function getRestrictedDataToken(string $path, string $method, ?bool $generic = true, ?array $restrictedDataElements = []): Credentials
+    public function getRestrictedDataToken(string $path, string $method, ?bool $generic = true, ?array $dataElements = []): Credentials
     {
         // Grab any pre-existing RDT for this operation
         $existingCreds = null;
@@ -310,8 +310,8 @@ class Authentication
                 "method" => $method,
                 "path" => $path,
             ]);
-            if ($restrictedDataElements !== []) {
-                $restrictedResource->setDataElements($restrictedDataElements);
+            if ($dataElements !== []) {
+                $restrictedResource->setDataElements($dataElements);
             }
 
             $body = new Model\Tokens\CreateRestrictedDataTokenRequest([

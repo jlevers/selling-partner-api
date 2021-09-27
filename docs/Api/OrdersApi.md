@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `getOrder()`
 
 ```php
-getOrder($order_id, $restricted_elements): \SellingPartnerApi\Model\Orders\GetOrderResponse
+getOrder($order_id, $data_elements): \SellingPartnerApi\Model\Orders\GetOrderResponse
 ```
 
 
@@ -47,10 +47,10 @@ $config = new SellingPartnerApi\Configuration([
 
 $apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
-$restricted_elements = array('restricted_elements_example'); // string[] | An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\")
+$data_elements = array('data_elements_example'); // string[] | An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\")
 
 try {
-    $result = $apiInstance->getOrder($order_id, $restricted_elements);
+    $result = $apiInstance->getOrder($order_id, $data_elements);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->getOrder: ', $e->getMessage(), PHP_EOL;
@@ -62,7 +62,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **string**| An Amazon-defined order identifier, in 3-7-7 format. |
- **restricted_elements** | [**string[]**](../Model/Orders/string.md)| An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) | [optional]
+ **data_elements** | [**string[]**](../Model/Orders/string.md)| An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) | [optional]
 
 ### Return type
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 ## `getOrderItems()`
 
 ```php
-getOrderItems($order_id, $next_token, $restricted_elements): \SellingPartnerApi\Model\Orders\GetOrderItemsResponse
+getOrderItems($order_id, $next_token, $data_elements): \SellingPartnerApi\Model\Orders\GetOrderItemsResponse
 ```
 
 
@@ -251,10 +251,10 @@ $config = new SellingPartnerApi\Configuration([
 $apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
 $next_token = 'next_token_example'; // string | A string token returned in the response of your previous request.
-$restricted_elements = array('restricted_elements_example'); // string[] | An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\")
+$data_elements = array('data_elements_example'); // string[] | An array of restricted order data elements to retrieve (the only valid array element is \"buyerInfo\")
 
 try {
-    $result = $apiInstance->getOrderItems($order_id, $next_token, $restricted_elements);
+    $result = $apiInstance->getOrderItems($order_id, $next_token, $data_elements);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->getOrderItems: ', $e->getMessage(), PHP_EOL;
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **string**| An Amazon-defined order identifier, in 3-7-7 format. |
  **next_token** | **string**| A string token returned in the response of your previous request. | [optional]
- **restricted_elements** | [**string[]**](../Model/Orders/string.md)| An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) | [optional]
+ **data_elements** | [**string[]**](../Model/Orders/string.md)| An array of restricted order data elements to retrieve (the only valid array element is \&quot;buyerInfo\&quot;) | [optional]
 
 ### Return type
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 ## `getOrders()`
 
 ```php
-getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $restricted_elements): \SellingPartnerApi\Model\Orders\GetOrdersResponse
+getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements): \SellingPartnerApi\Model\Orders\GetOrdersResponse
 ```
 
 
@@ -404,10 +404,10 @@ $amazon_order_ids = array('amazon_order_ids_example'); // string[] | A list of A
 $actual_fulfillment_supply_source_id = 'actual_fulfillment_supply_source_id_example'; // string | Denotes the recommended sourceId where the order should be fulfilled from.
 $is_ispu = True; // bool | When true, this order is marked to be picked up from a store rather than delivered.
 $store_chain_store_id = 'store_chain_store_id_example'; // string | The store chain store identifier. Linked to a specific store in a store chain.
-$restricted_elements = array('restricted_elements_example'); // string[] | An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\")
+$data_elements = array('data_elements_example'); // string[] | An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\")
 
 try {
-    $result = $apiInstance->getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $restricted_elements);
+    $result = $apiInstance->getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersApi->getOrders: ', $e->getMessage(), PHP_EOL;
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
  **actual_fulfillment_supply_source_id** | **string**| Denotes the recommended sourceId where the order should be fulfilled from. | [optional]
  **is_ispu** | **bool**| When true, this order is marked to be picked up from a store rather than delivered. | [optional]
  **store_chain_store_id** | **string**| The store chain store identifier. Linked to a specific store in a store chain. | [optional]
- **restricted_elements** | [**string[]**](../Model/Orders/string.md)| An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) | [optional]
+ **data_elements** | [**string[]**](../Model/Orders/string.md)| An array of restricted order data elements to retrieve (valid array elements are \&quot;buyerInfo\&quot; and \&quot;shippingAddress\&quot;) | [optional]
 
 ### Return type
 

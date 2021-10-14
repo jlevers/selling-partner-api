@@ -131,7 +131,6 @@ class Authentication
      */
     public function signRequest(Psr7\Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Psr7\Request
     {
-        $this->setRequestTime();
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
         $relevantCreds = null;
         $params = [];
@@ -180,6 +179,8 @@ class Authentication
             $relevantCreds = $this->getRoleCredentials();
         }
 
+        $this->setRequestTime();
+        
         $canonicalRequest = $this->createCanonicalRequest($request);
         $signingString = $this->createSigningString($canonicalRequest);
         $signature = $this->createSignature($signingString, $relevantCreds->getSecretKey());

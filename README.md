@@ -137,7 +137,7 @@ try {
 * [A+ Content API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AplusContentApi.md)
 * [Authorization API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AuthorizationApi.md)
 * [Catalog API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogApi.md)
-* [Old Catalog API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OldCatalogApi.md) (the original Catalog API)
+* [Catalog Items API V0](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV0Api.md) (the original Catalog API)
 * [FBA Inbound API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundApi.md)
 * [FBA Inbound Eligibility API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundEligibilityApi.md)
 * [FBA Inventory API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInventoryApi.md)

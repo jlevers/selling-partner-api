@@ -324,20 +324,11 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    /** @var string Import one stop shop. The item being purchased is not held in the EU for shipment. */
     const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
-    
-    /** @var string Union one stop shop. The item being purchased is held in the EU for shipment. */
     const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
-    
-    /** @var string Great Britain VAT On E-Commerce */
     const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
-
-    /** @var string Norway VAT On E-Commerce */
     const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';
-    
-    /** @var string Canada Merchandise Processing Fee */
-    const DEEMED_RESELLER_CATEGORY_CA_MPF = 'CA_MPF';    
+    const DEEMED_RESELLER_CATEGORY_CA_MPF = 'CA_MPF';
 
     
     /**
@@ -352,7 +343,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
             self::DEEMED_RESELLER_CATEGORY_UOSS,
             self::DEEMED_RESELLER_CATEGORY_GB_VOEC,
             self::DEEMED_RESELLER_CATEGORY_NO_VOEC,
-            self::DEEMED_RESELLER_CATEGORY_CA_MPF
+            self::DEEMED_RESELLER_CATEGORY_CA_MPF,
         ];
     }
     

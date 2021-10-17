@@ -24,6 +24,7 @@ class Authentication
     private $roleArn;
 
     private $requestTime;
+    private $signingScope = null;
 
     private $client = null;
     private $awsCredentials = null;
@@ -70,22 +71,21 @@ class Authentication
     }
 
     /**
-     * @param string|null $scope
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException|\RuntimeException
      */
-    public function requestLWAToken(?string $scope = null): array
+    public function requestLWAToken(): array
     {
         $jsonData = [
-            "grant_type" => $scope === null ? "refresh_token" : "client_credentials",
+            "grant_type" => $this->signingScope ? "client_credentials" : "refresh_token",
             "client_id" => $this->lwaClientId,
             "client_secret" => $this->lwaClientSecret,
         ];
 
         // Only pass one of `scope` and `refresh_token`
         // https://github.com/amzn/selling-partner-api-docs/blob/main/guides/developer-guide/SellingPartnerApiDeveloperGuide.md#step-1-request-a-login-with-amazon-access-token
-        if ($scope !== null) {
-            $jsonData["scope"] = $scope;
+        if ($this->signingScope) {
+            $jsonData["scope"] = $this->signingScope;
         } else {
             if ($this->lwaRefreshToken === null) {
                 throw new RuntimeException('lwaRefreshToken must be specified when calling non-grantless API operations');
@@ -104,7 +104,7 @@ class Authentication
         return [$accessToken, $expirationDate->getTimestamp()];
     }
 
-    public function populateCredentials($key, $secret, ?string $token = null, ?int $expires = null, bool $grantless = false): void
+    public function populateCredentials($key, $secret, ?string $token = null, ?int $expires = null): void
     {
         $creds = null;
         if ($token !== null && $expires !== null) {
@@ -113,7 +113,7 @@ class Authentication
             $creds = new Credentials($key, $secret);
         }
 
-        if ($grantless) {
+        if ($this->signingScope) {
             $this->grantlessAwsCredentials = $creds;
         } else {
             $this->awsCredentials = $creds;
@@ -131,6 +131,9 @@ class Authentication
      */
     public function signRequest(Psr7\Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Psr7\Request
     {
+        // This allows us to know if we're signing a grantless operation without passing $scope all over the place
+        $this->signingScope = $scope;
+
         // Check if the relevant AWS creds haven't been fetched or are expiring soon
         $relevantCreds = null;
         $params = [];
@@ -141,9 +144,9 @@ class Authentication
             $dataElements = explode(',', $params['dataElements']);
         }
 
-        if ($scope === null && ($restrictedPath === null || $dataElements === [])) {
+        if (!$this->signingScope && ($restrictedPath === null || $dataElements === [])) {
             $relevantCreds = $this->getAwsCredentials();
-        } else if ($scope !== null) {  // There is no overlap between grantless and restricted operations
+        } else if ($this->signingScope) {  // There is no overlap between grantless and restricted operations
             $relevantCreds = $this->getGrantlessAwsCredentials($scope);
         } else if ($restrictedPath !== null) {
             $needRdt = true;
@@ -202,6 +205,9 @@ class Authentication
                        ->withHeader("x-amz-access-token", $accessToken)
                        ->withHeader("x-amz-date", $this->formattedRequestTime());
 
+
+        $this->signingScope = null;
+
         return $signedRequest;
     }
 
@@ -221,14 +227,13 @@ class Authentication
     /**
      * Get credentials for grantless operations with the given scope.
      *
-     * @param string $scope The grantless operation scope to get credentials for
      * @return \SellingPartnerApi\Credentials The grantless credentials
      */
-    public function getGrantlessAwsCredentials(string $scope): Credentials
+    public function getGrantlessAwsCredentials(): Credentials
     {
-        if ($this->needNewCredentials($this->grantlessAwsCredentials) || $scope !== $this->grantlessCredentialsScope) {
-            $this->newToken($scope);
-            $this->grantlessCredentialsScope = $scope;
+        if ($this->needNewCredentials($this->grantlessAwsCredentials) || $this->signingScope !== $this->grantlessCredentialsScope) {
+            $this->newToken();
+            $this->grantlessCredentialsScope = $this->signingScope;
         }
         return $this->grantlessAwsCredentials;
     }
@@ -240,7 +245,7 @@ class Authentication
      */
     public function getRoleCredentials(): Credentials
     {
-        $originalCreds = $this->getAwsCredentials();
+        $originalCreds = $this->signingScope ? $this->getGrantlessAwsCredentials() : $this->getAwsCredentials();
         if ($this->needNewCredentials($this->roleCredentials)) {
             $client = new StsClient([
                 'sts_regional_endpoints' => 'regional',
@@ -606,11 +611,11 @@ class Authentication
         return hash_hmac("sha256", $signingString, $kSigning);
     }
 
-    private function newToken(?string $scope = null): void
+    private function newToken(): void
     {
-        [$accessToken, $expirationTimestamp] = $this->requestLWAToken($scope);
-        $this->populateCredentials($this->awsAccessKeyId, $this->awsSecretAccessKey, $accessToken, $expirationTimestamp, $scope !== null);
-        if ($scope === null && $this->onUpdateCreds !== null) {
+        [$accessToken, $expirationTimestamp] = $this->requestLWAToken();
+        $this->populateCredentials($this->awsAccessKeyId, $this->awsSecretAccessKey, $accessToken, $expirationTimestamp);
+        if (!$this->signingScope && $this->onUpdateCreds !== null) {
             call_user_func($this->onUpdateCreds, $this->awsCredentials);
         }
     }

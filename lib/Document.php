@@ -98,7 +98,7 @@ class Document
         // Documents are ISO-8859-1 encoded, which messes up the data when we read it directly
         // via SimpleXML or as a plain TAB/CSV, but the original encoding is required to parse XLSX and PDF reports
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
-            $contents = utf8_encode($contents);
+            $contents = mb_convert_encoding($contents, "UTF-8");
         }
 
         switch ($this->contentType) {

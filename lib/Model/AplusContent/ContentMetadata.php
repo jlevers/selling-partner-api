@@ -225,7 +225,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "'name' can't be null";
         }
         if ((mb_strlen($this->container['name']) > self::NAME_MAX_LENGTH)) {
-            $invalidProperties[] = spritnf("invalid value for 'name', the character length must be smaller than or equal to %d.", self::NAME_MAX_LENGTH);
+            $invalidProperties[] = sprintf("invalid value for 'name', the character length must be smaller than or equal to %d.", self::NAME_MAX_LENGTH);
         }
 
         if ((mb_strlen($this->container['name']) < 1)) {

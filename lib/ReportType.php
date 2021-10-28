@@ -8,6 +8,37 @@ namespace SellingPartnerApi;
 
 class ReportType
 {
+    // Brand Analytics reports
+    public const GET_BRAND_ANALYTICS_MARKET_BASKET_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_BRAND_ANALYTICS_MARKET_BASKET_REPORT',
+        'restricted' => false,
+    ];
+    public const GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT',
+        'restricted' => false,
+    ];
+
+
+    // Vendor Retail Analytics reports
+    public const GET_VENDOR_SALES_DIAGNOSTIC_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_VENDOR_SALES_DIAGNOSTIC_REPORT',
+        'restricted' => false,
+    ];
+    public const GET_VENDOR_INVENTORY_HEALTH_AND_PLANNING_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_VENDOR_INVENTORY_HEALTH_AND_PLANNING_REPORT',
+        'restricted' => false,
+    ];
+    public const GET_VENDOR_DEMAND_FORECAST_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_VENDOR_DEMAND_FORECAST_REPORT',
+        'restricted' => false,
+    ];
+
+
     // Inventory reports
     public const GET_FLAT_FILE_OPEN_LISTINGS_DATA = [
         'contentType' => ContentType::TAB,

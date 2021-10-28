@@ -256,7 +256,7 @@ class GetReportsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets reports
      *
-     * @param \SellingPartnerApi\Model\Reports\Report[] $reports reports
+     * @param \SellingPartnerApi\Model\Reports\Report[] $reports A list of reports.
      *
      * @return self
      */

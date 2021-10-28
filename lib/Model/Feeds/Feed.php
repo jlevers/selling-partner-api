@@ -35,6 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * Feed Class Doc Comment
  *
  * @category Class
+ * @description Detailed information about the feed.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

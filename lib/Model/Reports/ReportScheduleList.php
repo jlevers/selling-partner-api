@@ -35,6 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * ReportScheduleList Class Doc Comment
  *
  * @category Class
+ * @description A list of report schedules.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

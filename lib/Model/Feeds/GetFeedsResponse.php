@@ -256,7 +256,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets feeds
      *
-     * @param \SellingPartnerApi\Model\Feeds\Feed[] $feeds feeds
+     * @param \SellingPartnerApi\Model\Feeds\Feed[] $feeds A list of feeds.
      *
      * @return self
      */

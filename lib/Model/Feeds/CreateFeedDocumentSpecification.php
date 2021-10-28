@@ -35,6 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * CreateFeedDocumentSpecification Class Doc Comment
  *
  * @category Class
+ * @description Specifies the content type for the createFeedDocument operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

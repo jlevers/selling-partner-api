@@ -35,6 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * Report Class Doc Comment
  *
  * @category Class
+ * @description Detailed information about the report.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

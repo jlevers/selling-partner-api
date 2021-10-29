@@ -146,6 +146,7 @@ try {
 * [Fees API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeesApi.md)
 * [Finances API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FinancesApi.md)
 * [Listings API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsApi.md)
+* [Listings Restrictions API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsRestrictionsApi.md)
 * [Merchant Fulfillment API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MerchantFulfillmentApi.md)
 * [Messaging API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MessageApi.md)
 * [Notifications API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/NotificationsApi.md)

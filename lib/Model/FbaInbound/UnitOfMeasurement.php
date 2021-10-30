@@ -43,7 +43,9 @@ class UnitOfMeasurement
      * Possible values of this enum
      */
     const INCHES = 'inches';
+    const IN = 'IN';
     const CENTIMETERS = 'centimeters';
+    const CM = 'CM';
     
     /**
      * Gets allowable values of the enum
@@ -53,7 +55,9 @@ class UnitOfMeasurement
     {
         return [
             self::INCHES,
+            self::IN,
             self::CENTIMETERS,
+            self::CM,
         ];
     }
 }

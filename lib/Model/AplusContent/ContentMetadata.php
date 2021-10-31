@@ -45,7 +45,7 @@ use \SellingPartnerApi\Model\ModelInterface;
 class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
-    
+
     /**
       * The original name of the model.
       *

@@ -20,6 +20,7 @@ class Document
     private $contentType;
     private $data;
     private $tmpFilename;
+    private $client;
 
     public $successfulFeedRecords = null;
     public $failedFeedRecords = null;
@@ -30,8 +31,13 @@ class Document
      * @param ?array['contentType' => string, 'name' => string] $documentType
      *      Not required if $documentInfo is of type FeedDocument. Otherwise, should be one
      *      of the constants defined in ReportType or FeedType.
+     * @param ?\GuzzleHttp\Client $client  The Guzzle client to use. If not provided, a new one will be created.
      */
-    public function __construct(object $documentInfo, ?array $documentType = ReportType::__FEED_RESULT_REPORT) {
+    public function __construct(
+        object $documentInfo,
+        ?array $documentType = ReportType::__FEED_RESULT_REPORT,
+        ?Client $client = null
+    ) {
         // Make sure $documentInfo is a valid type
         if (!(
             $documentInfo instanceof ReportDocument ||
@@ -62,6 +68,8 @@ class Document
         if (method_exists($documentInfo, "getCompressionAlgorithm")) {
             $this->compressionAlgo = $documentInfo->getCompressionAlgorithm() ?? null;
         }
+
+        $this->client = $client ?? new Client();
     }
 
     /**
@@ -148,8 +156,7 @@ class Document
      * @return void
      */
     public function upload(string $feedData): void {
-        $client = new Client();
-        $response = $client->put($this->url, [
+        $response = $this->client->put($this->url, [
             RequestOptions::HEADERS => [
                 "content-type" => $this->contentType,
                 "host" => parse_url($this->url, PHP_URL_HOST),

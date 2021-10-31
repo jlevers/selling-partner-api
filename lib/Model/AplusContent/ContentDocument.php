@@ -46,8 +46,6 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
-    private const NAME_MAX_LENGTH = 200;
-    
     /**
       * The original name of the model.
       *
@@ -224,8 +222,8 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ((mb_strlen($this->container['name']) > self::NAME_MAX_LENGTH)) {
-            $invalidProperties[] = sprintf("invalid value for 'name', the character length must be smaller than or equal to %d.", self::NAME_MAX_LENGTH);
+        if ((mb_strlen($this->container['name']) > 200)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 200.";
         }
 
         if ((mb_strlen($this->container['name']) < 1)) {
@@ -315,8 +313,8 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setName($name)
     {
-        if ((mb_strlen($name) > self::NAME_MAX_LENGTH)) {
-            throw new \InvalidArgumentException(sprintf('invalid length for $name when calling ContentDocument., must be smaller than or equal to %d.', self::NAME_MAX_LENGTH));
+        if ((mb_strlen($name) > 200)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling ContentDocument., must be smaller than or equal to 200.');
         }
         if ((mb_strlen($name) < 1)) {
             throw new \InvalidArgumentException('invalid length for $name when calling ContentDocument., must be bigger than or equal to 1.');

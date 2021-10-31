@@ -228,6 +228,8 @@ $feedDocumentId = $feedDocumentInfo->getFeedDocumentId();
 
 // Upload feed contents to document
 $feedContents = file_get_contents('<your/feed/file.xml>');
+// The Document constructor accepts a custom \GuzzleHttp\Client object as an optional 3rd parameter. If that
+// parameter is passed, your custom Guzzle client will be used when uploading the feed document contents to Amazon.
 $docToUpload = new SellingPartnerApi\Document($feedDocumentInfo, $feedType);
 $docToUpload->upload($feedContents);
 

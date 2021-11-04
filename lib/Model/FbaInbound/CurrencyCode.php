@@ -42,6 +42,7 @@ class CurrencyCode
     /**
      * Possible values of this enum
      */
+    const CAD = 'CAD';
     const USD = 'USD';
     const GBP = 'GBP';
     
@@ -52,6 +53,7 @@ class CurrencyCode
     public static function getAllowableEnumValues()
     {
         return [
+            self::CAD,
             self::USD,
             self::GBP,
         ];

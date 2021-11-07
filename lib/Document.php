@@ -29,13 +29,13 @@ class Document
      * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResponse) $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
      * @param ?array['contentType' => string, 'name' => string] $documentType
-     *      Not required if $documentInfo is of type FeedDocument. Otherwise, should be one
-     *      of the constants defined in ReportType or FeedType.
+     *      Must be one of the constants defined in the ReportType or FeedType classes. When downloading a feed
+     *      result document, pass the FeedType constant corresponding to the feed type that produced the result document..
      * @param ?\GuzzleHttp\Client $client  The Guzzle client to use. If not provided, a new one will be created.
      */
     public function __construct(
         object $documentInfo,
-        ?array $documentType = ReportType::__FEED_RESULT_REPORT,
+        ?array $documentType = ReportType::__FEED_RESULT_REPORT,  // $documentType will be required in the next major version
         ?Client $client = null
     ) {
         // Make sure $documentInfo is a valid type
@@ -50,6 +50,9 @@ class Document
 
         if ($documentType === null) {
             throw new RuntimeException('$documentType cannot be null');
+        } else if ($documentType === ReportType::__FEED_RESULT_REPORT) {
+            echo 'ReportType::__FEED_RESULT_REPORT is deprecated, and may not result in a properly parsed feed result document.';
+            echo 'Please pass the feed type constant for the feed whose result document is being parsed (e.g., FeedType::POST_PRODUCT_DATA.';
         }
 
         $this->contentType = $documentType['contentType'];
@@ -134,7 +137,7 @@ class Document
 
                 break;
             case ContentType::JSON:
-                $this->data = json_decode($contents);
+                $this->data = json_decode($contents, true);
                 break;
             case ContentType::PDF:
             case ContentType::PLAIN:

@@ -236,6 +236,34 @@ $docToUpload->upload($feedContents);
 // ... call FeedsApi::createFeed() with $feedDocumentId
 ```
 
+## Downloading a feed result document
+
+This works very similarly to downloading a report document:
+
+```php
+use SellingPartnerApi\Api\FeedsApi;
+use SellingPartnerApi\FeedType;
+
+$feedType = FeedType::GET_FLAT_FILE_OPEN_LISTINGS_DATA;
+$feedsApi = new FeedsApi($config);
+
+// ...
+// Create and upload a feed document, and wait for it to finish processing
+// ...
+
+$feedId = '1234567890';  // From the createFeed call
+$feed = $api->getFeed($feedId);
+
+$feedResultDocumentId = $feed->getResultFeedDocumentId();
+$feedResultDocument = $api->getFeedDocument($feedResultDocumentId);
+
+$doc = new Document($documentInfo, $feedType);
+
+$docToDownload = new SellingPartnerApi\Document($feedResultDocument, $feedType);
+$contents = $docToDownload->download();  // The raw report data
+$data = $docToDownload->getData();  // Parsed/formatted report data
+```
+
 
 ## Models
 

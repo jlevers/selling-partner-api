@@ -235,7 +235,7 @@ class ReportType
         'restricted' => false,
     ];
     public const GET_V2_SELLER_PERFORMANCE_REPORT = [
-        'contentType' => ContentType::TAB,
+        'contentType' => ContentType::JSON,
         'name' => 'GET_V2_SELLER_PERFORMANCE_REPORT',
         'restricted' => false,
     ];
@@ -548,6 +548,7 @@ class ReportType
         'restricted' => false,
     ];
 
+    // DEPRECATED
     // Internal: the report type to use for feed upload result documents
     public const __FEED_RESULT_REPORT = [
         'contentType' => ContentType::TAB,

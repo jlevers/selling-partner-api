@@ -55,7 +55,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'jlevers/selling-partner-api/4.1.3 (Language=PHP)';
+    protected $userAgent = 'jlevers/selling-partner-api/4.1.4 (Language=PHP)';
 
     /**
      * Debug switch (default set to false)
@@ -411,7 +411,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2020-11-01' . PHP_EOL;
-        $report .= '    SDK Package Version: 4.1.3' . PHP_EOL;
+        $report .= '    SDK Package Version: 4.1.4' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . $tempFolderPath . PHP_EOL;
 
         return $report;

@@ -47,6 +47,7 @@ class LabelFormat
     const ZPL203 = 'ZPL203';
     const ZPL300 = 'ZPL300';
     const SHIPPING_SERVICE_DEFAULT = 'ShippingServiceDefault';
+    const EMPTY = '';
     
     /**
      * Gets allowable values of the enum
@@ -60,6 +61,7 @@ class LabelFormat
             self::ZPL203,
             self::ZPL300,
             self::SHIPPING_SERVICE_DEFAULT,
+            self::EMPTY,
         ];
     }
 }

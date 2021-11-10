@@ -512,7 +512,7 @@ class NotificationsApi
     /**
      * Operation createSubscription
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param  \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest $body body (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -528,7 +528,7 @@ class NotificationsApi
     /**
      * Operation createSubscriptionWithHttpInfo
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param  \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest $body (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -756,7 +756,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param  \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -777,7 +777,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param  \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -824,7 +824,7 @@ class NotificationsApi
     /**
      * Create request for operation 'createSubscription'
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param  \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -1329,7 +1329,7 @@ class NotificationsApi
      * Operation deleteSubscriptionById
      *
      * @param  string $subscription_id The identifier for the subscription that you want to delete. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1345,7 +1345,7 @@ class NotificationsApi
      * Operation deleteSubscriptionByIdWithHttpInfo
      *
      * @param  string $subscription_id The identifier for the subscription that you want to delete. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1574,7 +1574,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscription_id The identifier for the subscription that you want to delete. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1595,7 +1595,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscription_id The identifier for the subscription that you want to delete. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1643,7 +1643,7 @@ class NotificationsApi
      * Create request for operation 'deleteSubscriptionById'
      *
      * @param  string $subscription_id The identifier for the subscription that you want to delete. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2531,7 +2531,7 @@ class NotificationsApi
     /**
      * Operation getSubscription
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2546,7 +2546,7 @@ class NotificationsApi
     /**
      * Operation getSubscriptionWithHttpInfo
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2757,7 +2757,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2777,7 +2777,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2823,7 +2823,7 @@ class NotificationsApi
     /**
      * Create request for operation 'getSubscription'
      *
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2914,7 +2914,7 @@ class NotificationsApi
      * Operation getSubscriptionById
      *
      * @param  string $subscription_id The identifier for the subscription that you want to get. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2930,7 +2930,7 @@ class NotificationsApi
      * Operation getSubscriptionByIdWithHttpInfo
      *
      * @param  string $subscription_id The identifier for the subscription that you want to get. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3159,7 +3159,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscription_id The identifier for the subscription that you want to get. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3180,7 +3180,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscription_id The identifier for the subscription that you want to get. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3228,7 +3228,7 @@ class NotificationsApi
      * Create request for operation 'getSubscriptionById'
      *
      * @param  string $subscription_id The identifier for the subscription that you want to get. (required)
-     * @param  string $notification_type The type of notification to which you want to subscribe.  For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param  string $notification_type The type of notification.  For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -61,7 +61,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'contact' => '\SellingPartnerApi\Model\FbaInbound\Contact',
         'box_count' => 'int',
-        'seller_freight_class' => '\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
+        'seller_freight_class' => 'string',
         'freight_ready_date' => '\DateTime',
         'pallet_list' => '\SellingPartnerApi\Model\FbaInbound\Pallet[]',
         'total_weight' => '\SellingPartnerApi\Model\FbaInbound\Weight',
@@ -69,7 +69,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
         'amazon_calculated_value' => '\SellingPartnerApi\Model\FbaInbound\Amount',
         'preview_pickup_date' => '\DateTime',
         'preview_delivery_date' => '\DateTime',
-        'preview_freight_class' => '\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
+        'preview_freight_class' => 'string',
         'amazon_reference_id' => 'string',
         'is_bill_of_lading_available' => 'bool',
         'partnered_estimate' => '\SellingPartnerApi\Model\FbaInbound\PartneredEstimate',
@@ -402,7 +402,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets seller_freight_class
      *
-     * @return \SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null
+     * @return string|null
      */
     public function getSellerFreightClass()
     {
@@ -412,7 +412,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets seller_freight_class
      *
-     * @param \SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null $seller_freight_class seller_freight_class
+     * @param string|null $seller_freight_class The freight class of the shipment. For information about determining the freight class, contact the carrier.
      *
      * @return self
      */
@@ -594,7 +594,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets preview_freight_class
      *
-     * @return \SellingPartnerApi\Model\FbaInbound\SellerFreightClass
+     * @return string
      */
     public function getPreviewFreightClass()
     {
@@ -604,7 +604,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets preview_freight_class
      *
-     * @param \SellingPartnerApi\Model\FbaInbound\SellerFreightClass $preview_freight_class preview_freight_class
+     * @param string $preview_freight_class The freight class of the shipment. For information about determining the freight class, contact the carrier.
      *
      * @return self
      */

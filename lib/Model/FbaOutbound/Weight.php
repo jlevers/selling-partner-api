@@ -170,7 +170,9 @@ class Weight implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     const UNIT_KG = 'KG';
+    const UNIT_KILOGRAMS = 'KILOGRAMS';
     const UNIT_LB = 'LB';
+    const UNIT_POUNDS = 'POUNDS';
     
 
     
@@ -183,7 +185,9 @@ class Weight implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return [
             self::UNIT_KG,
+            self::UNIT_KILOGRAMS,
             self::UNIT_LB,
+            self::UNIT_POUNDS,
         ];
     }
     

@@ -52,6 +52,7 @@ class ShipmentStatus
     const IN_TRANSIT = 'IN_TRANSIT';
     const DELIVERED = 'DELIVERED';
     const CHECKED_IN = 'CHECKED_IN';
+    const READY_TO_SHIP = 'READY_TO_SHIP';
     
     /**
      * Gets allowable values of the enum
@@ -70,6 +71,7 @@ class ShipmentStatus
             self::IN_TRANSIT,
             self::DELIVERED,
             self::CHECKED_IN,
+            self::READY_TO_SHIP,
         ];
     }
 }

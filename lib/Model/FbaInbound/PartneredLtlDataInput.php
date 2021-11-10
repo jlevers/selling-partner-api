@@ -61,7 +61,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'contact' => '\SellingPartnerApi\Model\FbaInbound\Contact',
         'box_count' => 'int',
-        'seller_freight_class' => '\SellingPartnerApi\Model\FbaInbound\SellerFreightClass',
+        'seller_freight_class' => 'string',
         'freight_ready_date' => '\DateTime',
         'pallet_list' => '\SellingPartnerApi\Model\FbaInbound\Pallet[]',
         'total_weight' => '\SellingPartnerApi\Model\FbaInbound\Weight',
@@ -321,7 +321,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets seller_freight_class
      *
-     * @return \SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null
+     * @return string|null
      */
     public function getSellerFreightClass()
     {
@@ -331,7 +331,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets seller_freight_class
      *
-     * @param \SellingPartnerApi\Model\FbaInbound\SellerFreightClass|null $seller_freight_class seller_freight_class
+     * @param string|null $seller_freight_class The freight class of the shipment. For information about determining the freight class, contact the carrier.
      *
      * @return self
      */

@@ -49,9 +49,9 @@ class Authentication
      * @param array $configurationOptions
      * @throws RuntimeException
      */
-    public function __construct(array $configurationOptions, ?ClientInterface $client = null)
+    public function __construct(array $configurationOptions)
     {
-        $this->client = $client ?? new Client();
+        $this->client = new Client();
 
         if($configurationOptions['lwaAuthUrl'] ?? false){
             $this->lwaAuthUrl = $configurationOptions['lwaAuthUrl'];

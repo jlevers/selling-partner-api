@@ -4,6 +4,7 @@ namespace SellingPartnerApi;
 
 use Aws\Sts\StsClient;
 use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7;
 use RuntimeException;
 
@@ -18,6 +19,7 @@ class Authentication
     private $lwaClientId;
     private $lwaClientSecret;
     private $lwaRefreshToken = null;
+    private $lwaAuthUrl      = "https://api.amazon.com/auth/o2/token";
     private $endpoint;
 
     private $onUpdateCreds;
@@ -47,10 +49,13 @@ class Authentication
      * @param array $configurationOptions
      * @throws RuntimeException
      */
-    public function __construct(array $configurationOptions)
+    public function __construct(array $configurationOptions, ?ClientInterface $client = null)
     {
-        $this->client = new Client();
+        $this->client = $client ?? new Client();
 
+        if($configurationOptions['lwaAuthUrl'] ?? null){
+            $this->lwaAuthUrl = $configurationOptions['lwaAuthUrl'];
+        }
         $this->lwaRefreshToken = $configurationOptions['lwaRefreshToken'] ?? null;
         $this->onUpdateCreds = $configurationOptions['onUpdateCredentials'];
         $this->lwaClientId = $configurationOptions['lwaClientId'];
@@ -93,7 +98,7 @@ class Authentication
             $jsonData["refresh_token"] = $this->lwaRefreshToken;
         }
 
-        $res = $this->client->post("https://api.amazon.com/auth/o2/token", [
+        $res = $this->client->post($this->lwaAuthUrl, [
             \GuzzleHttp\RequestOptions::JSON => $jsonData,
         ]);
 

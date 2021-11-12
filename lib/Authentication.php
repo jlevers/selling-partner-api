@@ -53,7 +53,7 @@ class Authentication
     {
         $this->client = $client ?? new Client();
 
-        if($configurationOptions['lwaAuthUrl'] ?? null){
+        if($configurationOptions['lwaAuthUrl'] ?? false){
             $this->lwaAuthUrl = $configurationOptions['lwaAuthUrl'];
         }
         $this->lwaRefreshToken = $configurationOptions['lwaRefreshToken'] ?? null;

@@ -4,7 +4,6 @@ namespace SellingPartnerApi;
 
 use Aws\Sts\StsClient;
 use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7;
 use RuntimeException;
 
@@ -308,6 +307,7 @@ class Authentication
                 "lwaClientId" => $this->lwaClientId,
                 "lwaClientSecret" => $this->lwaClientSecret,
                 "lwaRefreshToken" => $this->lwaRefreshToken,
+                "lwaAuthUrl" => $this->lwaAuthUrl,
                 "awsAccessKeyId" => $this->awsAccessKeyId,
                 "awsSecretAccessKey" => $this->awsSecretAccessKey,
                 "accessToken" => $standardCredentials->getSecurityToken(),

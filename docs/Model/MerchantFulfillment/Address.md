@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **district_or_county** | **string** | The district or county. | [optional]
 **email** | **string** | The email address. |
 **city** | **string** | The city. |
-**state_or_province_code** | **string** | The state or province code. | [optional]
+**state_or_province_code** | **string** | The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China. | [optional]
 **postal_code** | **string** | The zip code or postal code. |
 **country_code** | **string** | The country code. A two-character country code, in ISO 3166-1 alpha-2 format. |
 **phone** | **string** | The phone number. |

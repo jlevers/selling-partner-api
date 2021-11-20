@@ -81,7 +81,26 @@ Getter and setter methods exist for the `Configuration` class's `lwaClientId`, `
 
 `$config` can then be passed into the constructor of any `SellingPartnerApi\Api\*Api` class. See the `Example` section for a complete example.
 
-##### Configuration options
+### If you use AccessToken and RefreshToken from OAuth flow.
+
+In this case you should passed recieved Tokens in `lwaRefreshToken` and `lwaAccessToken` respectively.
+
+```php
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId"       => "<LWA client ID>",
+    "lwaClientSecret"   => "<LWA client secret>",
+    "awsAccessKeyId"    => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "lwaRefreshToken"   => $refreshToken,
+    "lwaAccessToken"    => $accessToken,
+]);
+```
+
+> Note:
+> If you don't pass the lwaAccessToken key/value, the library will automatically generate an access token based on the refresh token above
+
+
+### Configuration options
 
 The array passed to the `Configuration` constructor accepts the following keys:
 

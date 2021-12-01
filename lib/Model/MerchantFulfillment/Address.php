@@ -548,7 +548,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets state_or_province_code
      *
-     * @param string|null $state_or_province_code The state or province code.
+     * @param string|null $state_or_province_code The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
      *
      * @return self
      */

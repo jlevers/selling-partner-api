@@ -315,6 +315,11 @@ class ObjectSerializer
             }
         }
 
+        // Sometimes Amazon returns empty objects instead of empty strings
+        if ($class === 'string' && gettype($data) === 'object' && json_encode($data) === '{}') {
+            return '';
+        }
+
         /** @psalm-suppress ParadoxicalCondition */
         if (in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
             settype($data, $class);

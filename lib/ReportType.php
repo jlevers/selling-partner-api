@@ -80,6 +80,11 @@ class ReportType
         'name' => 'GET_MERCHANT_CANCELLED_LISTINGS_DATA',
         'restricted' => false,
     ];
+    public const GET_MERCHANTS_LISTINGS_FYP_REPORT = [
+        'contentType' => ContentType::TAB,
+        'name' => 'GET_MERCHANTS_LISTINGS_FYP_REPORT',
+        'restricted' => false,
+    ];
     public const GET_MERCHANT_LISTINGS_DEFECT_DATA = [
         'contentType' => ContentType::TAB,
         'name' => 'GET_MERCHANT_LISTINGS_DEFECT_DATA',

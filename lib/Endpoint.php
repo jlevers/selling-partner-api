@@ -12,30 +12,36 @@ class Endpoint
     public const NA = [
         'url' => 'https://sellingpartnerapi-na.amazon.com',
         'region' => 'us-east-1',
+        'authUrl' => Authentication::AUTH_O2_URL
     ];
     public const NA_SANDBOX = [
         'url' => 'https://sandbox.sellingpartnerapi-na.amazon.com',
         'region' => 'us-east-1',
+        'authUrl' => Authentication::AUTH_O2_URL
     ];
 
     // Europe
     public const EU = [
         'url' => 'https://sellingpartnerapi-eu.amazon.com',
         'region' => 'eu-west-1',
+        'authUrl' => Authentication::AUTH_O2_URL
     ];
     public const EU_SANDBOX = [
         'url' => 'https://sandbox.sellingpartnerapi-eu.amazon.com',
         'region' => 'eu-west-1',
+        'authUrl' => Authentication::AUTH_O2_URL
     ];
 
     // Far East
     public const FE = [
         'url' => 'https://sellingpartnerapi-fe.amazon.com',
         'region' => 'us-west-2',
+        'authUrl' => Authentication::AUTH_O2_URL
     ];
     public const FE_SANDBOX = [
         'url' => 'https://sandbox.sellingpartnerapi-fe.amazon.com',
         'region' => 'us-west-2',
+        'authUrl' => Authentication::AUTH_O2_URL
     ];
 
     /**

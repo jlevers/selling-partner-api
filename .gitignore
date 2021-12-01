@@ -1,5 +1,5 @@
 # ref: https://github.com/github/gitignore/blob/master/Composer.gitignore
-
+.idea/
 composer.phar
 /vendor/
 /.openapi-generator/

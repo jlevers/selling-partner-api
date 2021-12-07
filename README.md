@@ -1,19 +1,6 @@
 # Selling Partner API for PHP
 A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/).
 
-## Sponsors
-
-* [B&L Consulting](http://www.blmc.group/)
-* [Meteora Growth](http://www.meteoragrowth.com/)
-
-## Powering companies like...
-
-* [Wizard Industries](https://wizard-industries.com)
-* [Mendota Pet](https://mendotapet.com)
-* [GLE Tech](https://gletech.com)
-
----
-
 If you've found this library useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD)

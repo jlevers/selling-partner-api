@@ -9,7 +9,6 @@ use RuntimeException;
 
 class Authentication
 {
-    public const AUTH_O2_URL  = "https://api.amazon.com/auth/o2/token";
     public const DATETIME_FMT = "Ymd\THis\Z";
     private const DATE_FMT = "Ymd";
     private const SIGNING_ALGO = "AWS4-HMAC-SHA256";
@@ -19,6 +18,7 @@ class Authentication
     private $lwaClientId;
     private $lwaClientSecret;
     private $lwaRefreshToken = null;
+    private $lwaAuthUrl      = null;
     private $endpoint;
 
     private $onUpdateCreds;
@@ -52,6 +52,7 @@ class Authentication
     {
         $this->client = new Client();
 
+        $this->lwaAuthUrl = $configurationOptions['lwaAuthUrl'] ?? "https://api.amazon.com/auth/o2/token";
         $this->lwaRefreshToken = $configurationOptions['lwaRefreshToken'] ?? null;
         $this->onUpdateCreds = $configurationOptions['onUpdateCredentials'];
         $this->lwaClientId = $configurationOptions['lwaClientId'];
@@ -94,7 +95,7 @@ class Authentication
             $jsonData["refresh_token"] = $this->lwaRefreshToken;
         }
 
-        $res = $this->client->post($this->endpoint['authUrl'], [
+        $res = $this->client->post($this->lwaAuthUrl, [
             \GuzzleHttp\RequestOptions::JSON => $jsonData,
         ]);
 
@@ -304,6 +305,7 @@ class Authentication
                 "lwaClientId" => $this->lwaClientId,
                 "lwaClientSecret" => $this->lwaClientSecret,
                 "lwaRefreshToken" => $this->lwaRefreshToken,
+                "lwaAuthUrl" => $this->lwaAuthUrl,
                 "awsAccessKeyId" => $this->awsAccessKeyId,
                 "awsSecretAccessKey" => $this->awsSecretAccessKey,
                 "accessToken" => $standardCredentials->getSecurityToken(),
@@ -469,11 +471,8 @@ class Authentication
      */
     public function setEndpoint(array $endpoint): void
     {
-        $hasKey = function(string $key) use ($endpoint){
-            return array_key_exists($key, $endpoint);
-        };
-        if (!$hasKey('url') || !$hasKey('region') || !$hasKey('authUrl')) {
-            throw new RuntimeException('$endpoint must contain `url`,`region` and `authUrl` keys');
+        if (!array_key_exists('url', $endpoint) || !array_key_exists('region', $endpoint)) {
+            throw new RuntimeException('$endpoint must contain `url` and `region` keys');
         }
 
         $this->endpoint = $endpoint;

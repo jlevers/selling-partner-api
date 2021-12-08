@@ -63,9 +63,9 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
         'carrier_name' => 'string',
         'shipping_service_id' => 'string',
         'shipping_service_offer_id' => 'string',
-        'ship_date' => '\DateTime',
-        'earliest_estimated_delivery_date' => '\DateTime',
-        'latest_estimated_delivery_date' => '\DateTime',
+        'ship_date' => 'string',
+        'earliest_estimated_delivery_date' => 'string',
+        'latest_estimated_delivery_date' => 'string',
         'rate' => '\SellingPartnerApi\Model\MerchantFulfillment\CurrencyAmount',
         'shipping_service_options' => '\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions',
         'available_shipping_service_options' => '\SellingPartnerApi\Model\MerchantFulfillment\AvailableShippingServiceOptions',
@@ -86,9 +86,9 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
         'carrier_name' => null,
         'shipping_service_id' => null,
         'shipping_service_offer_id' => null,
-        'ship_date' => 'date-time',
-        'earliest_estimated_delivery_date' => 'date-time',
-        'latest_estimated_delivery_date' => 'date-time',
+        'ship_date' => null,
+        'earliest_estimated_delivery_date' => null,
+        'latest_estimated_delivery_date' => null,
         'rate' => null,
         'shipping_service_options' => null,
         'available_shipping_service_options' => null,
@@ -429,7 +429,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ship_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getShipDate()
     {
@@ -439,7 +439,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ship_date
      *
-     * @param \DateTime $ship_date ship_date
+     * @param string $ship_date A timestamp in ISO 8601 format.
      *
      * @return self
      */
@@ -453,7 +453,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets earliest_estimated_delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEarliestEstimatedDeliveryDate()
     {
@@ -463,7 +463,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets earliest_estimated_delivery_date
      *
-     * @param \DateTime|null $earliest_estimated_delivery_date earliest_estimated_delivery_date
+     * @param string|null $earliest_estimated_delivery_date A timestamp in ISO 8601 format.
      *
      * @return self
      */
@@ -477,7 +477,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets latest_estimated_delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getLatestEstimatedDeliveryDate()
     {
@@ -487,7 +487,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets latest_estimated_delivery_date
      *
-     * @param \DateTime|null $latest_estimated_delivery_date latest_estimated_delivery_date
+     * @param string|null $latest_estimated_delivery_date A timestamp in ISO 8601 format.
      *
      * @return self
      */

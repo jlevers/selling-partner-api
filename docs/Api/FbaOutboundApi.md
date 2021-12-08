@@ -637,7 +637,7 @@ $config = new SellingPartnerApi\Configuration([
 ]);
 
 $apiInstance = new SellingPartnerApi\Api\FbaOutboundApi($config);
-$query_start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
+$query_start_date = 'query_start_date_example'; // string | A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. Must be in ISO 8601 format.
 $next_token = 'next_token_example'; // string | A string token returned in the response to your previous request.
 
 try {
@@ -652,7 +652,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query_start_date** | **\DateTime**| A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. | [optional]
+ **query_start_date** | **string**| A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. Must be in ISO 8601 format. | [optional]
  **next_token** | **string**| A string token returned in the response to your previous request. | [optional]
 
 ### Return type

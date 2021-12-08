@@ -3065,8 +3065,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -3086,8 +3086,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -3308,8 +3308,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3334,8 +3334,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3390,8 +3390,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException

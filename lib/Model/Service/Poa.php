@@ -62,7 +62,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointment_time' => '\SellingPartnerApi\Model\Service\AppointmentTime',
         'technicians' => '\SellingPartnerApi\Model\Service\Technician[]',
         'uploading_technician' => 'string',
-        'upload_time' => '\DateTime',
+        'upload_time' => 'string',
         'poa_type' => 'string'
     ];
 
@@ -77,7 +77,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointment_time' => null,
         'technicians' => null,
         'uploading_technician' => null,
-        'upload_time' => 'date-time',
+        'upload_time' => null,
         'poa_type' => null
     ];
 
@@ -379,7 +379,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets upload_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getUploadTime()
     {
@@ -389,7 +389,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets upload_time
      *
-     * @param \DateTime|null $upload_time The date and time when the POA was uploaded, in ISO 8601 format.
+     * @param string|null $upload_time The date and time when the POA was uploaded, in ISO 8601 format.
      *
      * @return self
      */

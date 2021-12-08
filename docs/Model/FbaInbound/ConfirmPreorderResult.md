@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**confirmed_need_by_date** | [**\DateTime**](\DateTime.md) |  | [optional]
-**confirmed_fulfillable_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**confirmed_need_by_date** | **string** | A date string in ISO 8601 format. | [optional]
+**confirmed_fulfillable_date** | **string** | A date string in ISO 8601 format. | [optional]
 
 [[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

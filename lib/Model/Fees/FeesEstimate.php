@@ -59,7 +59,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'time_of_fees_estimation' => '\DateTime',
+        'time_of_fees_estimation' => 'string',
         'total_fees_estimate' => '\SellingPartnerApi\Model\Fees\MoneyType',
         'fee_detail_list' => '\SellingPartnerApi\Model\Fees\FeeDetail[]'
     ];
@@ -72,7 +72,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'time_of_fees_estimation' => 'date-time',
+        'time_of_fees_estimation' => null,
         'total_fees_estimate' => null,
         'fee_detail_list' => null
     ];
@@ -252,7 +252,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets time_of_fees_estimation
      *
-     * @return \DateTime
+     * @return string
      */
     public function getTimeOfFeesEstimation()
     {
@@ -262,7 +262,7 @@ class FeesEstimate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_of_fees_estimation
      *
-     * @param \DateTime $time_of_fees_estimation The time at which the fees were estimated. This defaults to the time the request is made.
+     * @param string $time_of_fees_estimation The time at which the fees were estimated. This defaults to the time the request is made. Must be in ISO 8601 format.
      *
      * @return self
      */

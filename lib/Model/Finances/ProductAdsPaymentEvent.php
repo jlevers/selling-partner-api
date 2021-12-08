@@ -59,7 +59,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'transaction_type' => 'string',
         'invoice_id' => 'string',
         'base_value' => '\SellingPartnerApi\Model\Finances\Currency',
@@ -75,7 +75,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'transaction_type' => null,
         'invoice_id' => null,
         'base_value' => null,
@@ -267,7 +267,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -277,7 +277,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

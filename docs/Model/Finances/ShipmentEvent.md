@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **order_fee_list** | [**\SellingPartnerApi\Model\Finances\FeeComponent[]**](FeeComponent.md) | A list of fee component information. | [optional]
 **order_fee_adjustment_list** | [**\SellingPartnerApi\Model\Finances\FeeComponent[]**](FeeComponent.md) | A list of fee component information. | [optional]
 **direct_payment_list** | [**\SellingPartnerApi\Model\Finances\DirectPayment[]**](DirectPayment.md) | A list of direct payment information. | [optional]
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **string** | A date string in ISO 8601 format. | [optional]
 **shipment_item_list** | [**\SellingPartnerApi\Model\Finances\ShipmentItem[]**](ShipmentItem.md) | A list of shipment items. | [optional]
 **shipment_item_adjustment_list** | [**\SellingPartnerApi\Model\Finances\ShipmentItem[]**](ShipmentItem.md) | A list of shipment items. | [optional]
 

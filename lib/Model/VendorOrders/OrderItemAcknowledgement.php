@@ -60,8 +60,8 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'acknowledgement_code' => 'string',
         'acknowledged_quantity' => '\SellingPartnerApi\Model\VendorOrders\ItemQuantity',
-        'scheduled_ship_date' => '\DateTime',
-        'scheduled_delivery_date' => '\DateTime',
+        'scheduled_ship_date' => 'string',
+        'scheduled_delivery_date' => 'string',
         'rejection_reason' => 'string'
     ];
 
@@ -75,8 +75,8 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPIFormats = [
         'acknowledgement_code' => null,
         'acknowledged_quantity' => null,
-        'scheduled_ship_date' => 'date-time',
-        'scheduled_delivery_date' => 'date-time',
+        'scheduled_ship_date' => null,
+        'scheduled_delivery_date' => null,
         'rejection_reason' => null
     ];
 
@@ -376,7 +376,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets scheduled_ship_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getScheduledShipDate()
     {
@@ -386,7 +386,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets scheduled_ship_date
      *
-     * @param \DateTime|null $scheduled_ship_date Estimated ship date per line item. Must be in ISO-8601 date/time format.
+     * @param string|null $scheduled_ship_date Estimated ship date per line item. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
@@ -400,7 +400,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets scheduled_delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getScheduledDeliveryDate()
     {
@@ -410,7 +410,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets scheduled_delivery_date
      *
-     * @param \DateTime|null $scheduled_delivery_date Estimated delivery date per line item. Must be in ISO-8601 date/time format.
+     * @param string|null $scheduled_delivery_date Estimated delivery date per line item. Must be in ISO-8601 date/time format.
      *
      * @return self
      */

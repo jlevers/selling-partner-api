@@ -59,7 +59,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'deal_id' => 'string',
         'deal_description' => 'string',
         'event_type' => 'string',
@@ -77,7 +77,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'deal_id' => null,
         'deal_description' => null,
         'event_type' => null,
@@ -279,7 +279,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -289,7 +289,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

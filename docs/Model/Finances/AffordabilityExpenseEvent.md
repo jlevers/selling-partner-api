@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amazon_order_id** | **string** | An Amazon-defined identifier for an order. | [optional]
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **string** | A date string in ISO 8601 format. | [optional]
 **marketplace_id** | **string** | An encrypted, Amazon-defined marketplace identifier. | [optional]
 **transaction_type** | **string** | Indicates the type of transaction. 
 

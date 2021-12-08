@@ -65,7 +65,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity_shipped' => 'int',
         'quantity_received' => 'int',
         'quantity_in_case' => 'int',
-        'release_date' => '\DateTime',
+        'release_date' => 'string',
         'prep_details_list' => '\SellingPartnerApi\Model\FbaInbound\PrepDetails[]'
     ];
 
@@ -83,7 +83,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity_shipped' => 'int32',
         'quantity_received' => 'int32',
         'quantity_in_case' => 'int32',
-        'release_date' => 'date',
+        'release_date' => null,
         'prep_details_list' => null
     ];
 
@@ -429,7 +429,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets release_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getReleaseDate()
     {
@@ -439,7 +439,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets release_date
      *
-     * @param \DateTime|null $release_date release_date
+     * @param string|null $release_date A date string in ISO 8601 format.
      *
      * @return self
      */

@@ -62,7 +62,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_fulfillment_order_id' => 'string',
         'marketplace_id' => 'string',
         'displayable_order_id' => 'string',
-        'displayable_order_date' => '\DateTime',
+        'displayable_order_date' => 'string',
         'displayable_order_comment' => 'string',
         'shipping_speed_category' => '\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
         'delivery_window' => '\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow',
@@ -70,9 +70,9 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'fulfillment_action' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentAction',
         'fulfillment_policy' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentPolicy',
         'cod_settings' => '\SellingPartnerApi\Model\FbaOutbound\CODSettings',
-        'received_date' => '\DateTime',
+        'received_date' => 'string',
         'fulfillment_order_status' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentOrderStatus',
-        'status_updated_date' => '\DateTime',
+        'status_updated_date' => 'string',
         'notification_emails' => 'string[]',
         'feature_constraints' => '\SellingPartnerApi\Model\FbaOutbound\FeatureSettings[]'
     ];
@@ -88,7 +88,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_fulfillment_order_id' => null,
         'marketplace_id' => null,
         'displayable_order_id' => null,
-        'displayable_order_date' => 'date-time',
+        'displayable_order_date' => null,
         'displayable_order_comment' => null,
         'shipping_speed_category' => null,
         'delivery_window' => null,
@@ -96,9 +96,9 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'fulfillment_action' => null,
         'fulfillment_policy' => null,
         'cod_settings' => null,
-        'received_date' => 'date-time',
+        'received_date' => null,
         'fulfillment_order_status' => null,
-        'status_updated_date' => 'date-time',
+        'status_updated_date' => null,
         'notification_emails' => null,
         'feature_constraints' => null
     ];
@@ -429,7 +429,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets displayable_order_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDisplayableOrderDate()
     {
@@ -439,7 +439,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets displayable_order_date
      *
-     * @param \DateTime $displayable_order_date displayable_order_date
+     * @param string $displayable_order_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -621,7 +621,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets received_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getReceivedDate()
     {
@@ -631,7 +631,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets received_date
      *
-     * @param \DateTime $received_date received_date
+     * @param string $received_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -669,7 +669,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status_updated_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStatusUpdatedDate()
     {
@@ -679,7 +679,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status_updated_date
      *
-     * @param \DateTime $status_updated_date status_updated_date
+     * @param string $status_updated_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

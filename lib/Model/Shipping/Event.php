@@ -60,7 +60,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'event_code' => 'string',
-        'event_time' => '\DateTime',
+        'event_time' => 'string',
         'location' => '\SellingPartnerApi\Model\Shipping\Location'
     ];
 
@@ -73,7 +73,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'event_code' => null,
-        'event_time' => 'date-time',
+        'event_time' => null,
         'location' => null
     ];
 
@@ -294,7 +294,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets event_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEventTime()
     {
@@ -304,7 +304,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets event_time
      *
-     * @param \DateTime $event_time The date and time of an event for a shipment.
+     * @param string $event_time The date and time of an event for a shipment, in ISO 8601 format.
      *
      * @return self
      */

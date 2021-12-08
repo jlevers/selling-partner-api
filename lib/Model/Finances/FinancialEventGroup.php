@@ -64,12 +64,12 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
         'fund_transfer_status' => 'string',
         'original_total' => '\SellingPartnerApi\Model\Finances\Currency',
         'converted_total' => '\SellingPartnerApi\Model\Finances\Currency',
-        'fund_transfer_date' => '\DateTime',
+        'fund_transfer_date' => 'string',
         'trace_id' => 'string',
         'account_tail' => 'string',
         'beginning_balance' => '\SellingPartnerApi\Model\Finances\Currency',
-        'financial_event_group_start' => '\DateTime',
-        'financial_event_group_end' => '\DateTime'
+        'financial_event_group_start' => 'string',
+        'financial_event_group_end' => 'string'
     ];
 
     /**
@@ -85,12 +85,12 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
         'fund_transfer_status' => null,
         'original_total' => null,
         'converted_total' => null,
-        'fund_transfer_date' => 'date-time',
+        'fund_transfer_date' => null,
         'trace_id' => null,
         'account_tail' => null,
         'beginning_balance' => null,
-        'financial_event_group_start' => 'date-time',
-        'financial_event_group_end' => 'date-time'
+        'financial_event_group_start' => null,
+        'financial_event_group_end' => null
     ];
 
     /**
@@ -417,7 +417,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets fund_transfer_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getFundTransferDate()
     {
@@ -427,7 +427,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets fund_transfer_date
      *
-     * @param \DateTime|null $fund_transfer_date fund_transfer_date
+     * @param string|null $fund_transfer_date A date string in ISO 8601 format.
      *
      * @return self
      */
@@ -513,7 +513,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets financial_event_group_start
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getFinancialEventGroupStart()
     {
@@ -523,7 +523,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets financial_event_group_start
      *
-     * @param \DateTime|null $financial_event_group_start financial_event_group_start
+     * @param string|null $financial_event_group_start A date string in ISO 8601 format.
      *
      * @return self
      */
@@ -537,7 +537,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets financial_event_group_end
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getFinancialEventGroupEnd()
     {
@@ -547,7 +547,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets financial_event_group_end
      *
-     * @param \DateTime|null $financial_event_group_end financial_event_group_end
+     * @param string|null $financial_event_group_end A date string in ISO 8601 format.
      *
      * @return self
      */

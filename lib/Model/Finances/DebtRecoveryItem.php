@@ -61,8 +61,8 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'recovery_amount' => '\SellingPartnerApi\Model\Finances\Currency',
         'original_amount' => '\SellingPartnerApi\Model\Finances\Currency',
-        'group_begin_date' => '\DateTime',
-        'group_end_date' => '\DateTime'
+        'group_begin_date' => 'string',
+        'group_end_date' => 'string'
     ];
 
     /**
@@ -75,8 +75,8 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'recovery_amount' => null,
         'original_amount' => null,
-        'group_begin_date' => 'date-time',
-        'group_end_date' => 'date-time'
+        'group_begin_date' => null,
+        'group_end_date' => null
     ];
 
     /**
@@ -303,7 +303,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group_begin_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getGroupBeginDate()
     {
@@ -313,7 +313,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group_begin_date
      *
-     * @param \DateTime|null $group_begin_date group_begin_date
+     * @param string|null $group_begin_date A date string in ISO 8601 format.
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group_end_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getGroupEndDate()
     {
@@ -337,7 +337,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group_end_date
      *
-     * @param \DateTime|null $group_end_date group_end_date
+     * @param string|null $group_end_date A date string in ISO 8601 format.
      *
      * @return self
      */

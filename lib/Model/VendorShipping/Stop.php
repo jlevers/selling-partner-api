@@ -61,8 +61,8 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'function_code' => 'string',
         'location_identification' => '\SellingPartnerApi\Model\VendorShipping\Location',
-        'arrival_time' => '\DateTime',
-        'departure_time' => '\DateTime'
+        'arrival_time' => 'string',
+        'departure_time' => 'string'
     ];
 
     /**
@@ -75,8 +75,8 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'function_code' => null,
         'location_identification' => null,
-        'arrival_time' => 'date-time',
-        'departure_time' => 'date-time'
+        'arrival_time' => null,
+        'departure_time' => null
     ];
 
     /**
@@ -342,7 +342,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets arrival_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getArrivalTime()
     {
@@ -352,7 +352,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets arrival_time
      *
-     * @param \DateTime|null $arrival_time Date and time of the arrival of the cargo.
+     * @param string|null $arrival_time Date and time of the arrival of the cargo, in ISO 8601 format.
      *
      * @return self
      */
@@ -366,7 +366,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets departure_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDepartureTime()
     {
@@ -376,7 +376,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets departure_time
      *
-     * @param \DateTime|null $departure_time Date and time of the departure of the cargo.
+     * @param string|null $departure_time Date and time of the departure of the cargo, in ISO 8601 format.
      *
      * @return self
      */

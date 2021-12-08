@@ -62,8 +62,8 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
         'amazon_shipment_id' => 'string',
         'fulfillment_center_id' => 'string',
         'fulfillment_shipment_status' => 'string',
-        'shipping_date' => '\DateTime',
-        'estimated_arrival_date' => '\DateTime',
+        'shipping_date' => 'string',
+        'estimated_arrival_date' => 'string',
         'shipping_notes' => 'string[]',
         'fulfillment_shipment_item' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentItem[]',
         'fulfillment_shipment_package' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentShipmentPackage[]'
@@ -80,8 +80,8 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
         'amazon_shipment_id' => null,
         'fulfillment_center_id' => null,
         'fulfillment_shipment_status' => null,
-        'shipping_date' => 'date-time',
-        'estimated_arrival_date' => 'date-time',
+        'shipping_date' => null,
+        'estimated_arrival_date' => null,
         'shipping_notes' => null,
         'fulfillment_shipment_item' => null,
         'fulfillment_shipment_package' => null
@@ -401,7 +401,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets shipping_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getShippingDate()
     {
@@ -411,7 +411,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets shipping_date
      *
-     * @param \DateTime|null $shipping_date shipping_date
+     * @param string|null $shipping_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -425,7 +425,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets estimated_arrival_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedArrivalDate()
     {
@@ -435,7 +435,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets estimated_arrival_date
      *
-     * @param \DateTime|null $estimated_arrival_date estimated_arrival_date
+     * @param string|null $estimated_arrival_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

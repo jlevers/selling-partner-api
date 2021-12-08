@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **invoice_number** | **string** | The unique invoice number. |
-**invoice_date** | [**\DateTime**](\DateTime.md) | Invoice date. |
+**invoice_date** | **string** | Invoice date. Must be in ISO 8601 format. |
 **reference_number** | **string** | An additional unique reference number used for regulatory or other purposes. | [optional]
 **remit_to_party** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPayments\PartyIdentification**](PartyIdentification.md) |  |
 **ship_from_party** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPayments\PartyIdentification**](PartyIdentification.md) |  |

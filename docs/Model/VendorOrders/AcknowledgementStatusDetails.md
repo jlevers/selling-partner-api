@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**acknowledgement_date** | [**\DateTime**](\DateTime.md) | The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format. | [optional]
+**acknowledgement_date** | **string** | The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format. | [optional]
 **accepted_quantity** | [**\SellingPartnerApi\Model\VendorOrders\ItemQuantity**](ItemQuantity.md) |  | [optional]
 **rejected_quantity** | [**\SellingPartnerApi\Model\VendorOrders\ItemQuantity**](ItemQuantity.md) |  | [optional]
 

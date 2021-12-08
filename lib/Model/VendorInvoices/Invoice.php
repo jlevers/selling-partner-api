@@ -61,7 +61,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoice_type' => 'string',
         'id' => 'string',
         'reference_number' => 'string',
-        'date' => '\DateTime',
+        'date' => 'string',
         'remit_to_party' => '\SellingPartnerApi\Model\VendorInvoices\PartyIdentification',
         'ship_to_party' => '\SellingPartnerApi\Model\VendorInvoices\PartyIdentification',
         'ship_from_party' => '\SellingPartnerApi\Model\VendorInvoices\PartyIdentification',
@@ -86,7 +86,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
         'invoice_type' => null,
         'id' => null,
         'reference_number' => null,
-        'date' => 'date-time',
+        'date' => null,
         'remit_to_party' => null,
         'ship_to_party' => null,
         'ship_from_party' => null,
@@ -441,7 +441,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -451,7 +451,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date
      *
-     * @param \DateTime $date Defines a date and time according to ISO8601.
+     * @param string $date Defines a date and time according to ISO8601.
      *
      * @return self
      */

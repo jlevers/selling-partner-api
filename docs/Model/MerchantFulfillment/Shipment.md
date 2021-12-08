@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **label** | [**\SellingPartnerApi\Model\MerchantFulfillment\Label**](Label.md) |  |
 **status** | [**\SellingPartnerApi\Model\MerchantFulfillment\ShipmentStatus**](ShipmentStatus.md) |  |
 **tracking_id** | **string** | The shipment tracking identifier provided by the carrier. | [optional]
-**created_date** | [**\DateTime**](\DateTime.md) |  |
-**last_updated_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**created_date** | **string** | A timestamp in ISO 8601 format. |
+**last_updated_date** | **string** | A timestamp in ISO 8601 format. | [optional]
 
 [[MerchantFulfillment Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

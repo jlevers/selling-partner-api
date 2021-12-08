@@ -60,8 +60,8 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'scheduled_delivery_service_type' => 'string',
-        'earliest_nominated_delivery_date' => '\DateTime',
-        'latest_nominated_delivery_date' => '\DateTime'
+        'earliest_nominated_delivery_date' => 'string',
+        'latest_nominated_delivery_date' => 'string'
     ];
 
     /**
@@ -73,8 +73,8 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'scheduled_delivery_service_type' => null,
-        'earliest_nominated_delivery_date' => 'date-time',
-        'latest_nominated_delivery_date' => 'date-time'
+        'earliest_nominated_delivery_date' => null,
+        'latest_nominated_delivery_date' => null
     ];
 
     /**
@@ -273,7 +273,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets earliest_nominated_delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEarliestNominatedDeliveryDate()
     {
@@ -283,7 +283,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets earliest_nominated_delivery_date
      *
-     * @param \DateTime|null $earliest_nominated_delivery_date Earliest nominated delivery date for the scheduled delivery.
+     * @param string|null $earliest_nominated_delivery_date Earliest nominated delivery date for the scheduled delivery, in ISO 8601 format.
      *
      * @return self
      */
@@ -297,7 +297,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets latest_nominated_delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getLatestNominatedDeliveryDate()
     {
@@ -307,7 +307,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets latest_nominated_delivery_date
      *
-     * @param \DateTime|null $latest_nominated_delivery_date Latest nominated delivery date for the scheduled delivery.
+     * @param string|null $latest_nominated_delivery_date Latest nominated delivery date for the scheduled delivery, in ISO 8601 format.
      *
      * @return self
      */

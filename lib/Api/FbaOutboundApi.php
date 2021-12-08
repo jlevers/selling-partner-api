@@ -3577,7 +3577,7 @@ class FbaOutboundApi
     /**
      * Operation listAllFulfillmentOrders
      *
-     * @param  \DateTime $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)
+     * @param  string $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. Must be in ISO 8601 format. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -3593,7 +3593,7 @@ class FbaOutboundApi
     /**
      * Operation listAllFulfillmentOrdersWithHttpInfo
      *
-     * @param  \DateTime $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)
+     * @param  string $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. Must be in ISO 8601 format. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -3794,7 +3794,7 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  \DateTime $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)
+     * @param  string $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. Must be in ISO 8601 format. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3815,7 +3815,7 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  \DateTime $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)
+     * @param  string $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. Must be in ISO 8601 format. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3866,7 +3866,7 @@ class FbaOutboundApi
     /**
      * Create request for operation 'listAllFulfillmentOrders'
      *
-     * @param  \DateTime $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)
+     * @param  string $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. Must be in ISO 8601 format. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \InvalidArgumentException

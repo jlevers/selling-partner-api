@@ -509,8 +509,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getCustomerInvoices
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -529,8 +529,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getCustomerInvoicesWithHttpInfo
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -737,8 +737,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -762,8 +762,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -820,8 +820,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Create request for operation 'getCustomerInvoices'
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -1362,8 +1362,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getPackingSlips
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1382,8 +1382,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getPackingSlipsWithHttpInfo
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1606,8 +1606,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1631,8 +1631,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1689,8 +1689,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Create request for operation 'getPackingSlips'
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -2231,8 +2231,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getShippingLabels
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2251,8 +2251,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getShippingLabelsWithHttpInfo
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2459,8 +2459,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2484,8 +2484,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2542,8 +2542,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Create request for operation 'getShippingLabels'
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')

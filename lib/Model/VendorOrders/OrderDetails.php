@@ -59,9 +59,9 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'purchase_order_date' => '\DateTime',
-        'purchase_order_changed_date' => '\DateTime',
-        'purchase_order_state_changed_date' => '\DateTime',
+        'purchase_order_date' => 'string',
+        'purchase_order_changed_date' => 'string',
+        'purchase_order_state_changed_date' => 'string',
         'purchase_order_type' => 'string',
         'import_details' => '\SellingPartnerApi\Model\VendorOrders\ImportDetails',
         'deal_code' => 'string',
@@ -83,9 +83,9 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'purchase_order_date' => 'date-time',
-        'purchase_order_changed_date' => 'date-time',
-        'purchase_order_state_changed_date' => 'date-time',
+        'purchase_order_date' => null,
+        'purchase_order_changed_date' => null,
+        'purchase_order_state_changed_date' => null,
         'purchase_order_type' => null,
         'import_details' => null,
         'deal_code' => null,
@@ -380,7 +380,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets purchase_order_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getPurchaseOrderDate()
     {
@@ -390,7 +390,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchase_order_date
      *
-     * @param \DateTime $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
+     * @param string $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
@@ -404,7 +404,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets purchase_order_changed_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPurchaseOrderChangedDate()
     {
@@ -414,7 +414,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchase_order_changed_date
      *
-     * @param \DateTime|null $purchase_order_changed_date The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
+     * @param string|null $purchase_order_changed_date The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
@@ -428,7 +428,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets purchase_order_state_changed_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getPurchaseOrderStateChangedDate()
     {
@@ -438,7 +438,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchase_order_state_changed_date
      *
-     * @param \DateTime $purchase_order_state_changed_date The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in ISO-8601 date/time format.
+     * @param string $purchase_order_state_changed_date The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in ISO-8601 date/time format.
      *
      * @return self
      */

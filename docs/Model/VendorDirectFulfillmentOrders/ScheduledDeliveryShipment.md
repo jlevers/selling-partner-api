@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **scheduled_delivery_service_type** | **string** | Scheduled delivery service type. | [optional]
-**earliest_nominated_delivery_date** | [**\DateTime**](\DateTime.md) | Earliest nominated delivery date for the scheduled delivery. | [optional]
-**latest_nominated_delivery_date** | [**\DateTime**](\DateTime.md) | Latest nominated delivery date for the scheduled delivery. | [optional]
+**earliest_nominated_delivery_date** | **string** | Earliest nominated delivery date for the scheduled delivery, in ISO 8601 format. | [optional]
+**latest_nominated_delivery_date** | **string** | Latest nominated delivery date for the scheduled delivery, in ISO 8601 format. | [optional]
 
 [[VendorDirectFulfillmentOrders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -60,7 +60,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'seller_order_id' => 'string',
-        'transaction_posted_date' => '\DateTime',
+        'transaction_posted_date' => 'string',
         'business_object_type' => 'string',
         'sales_channel' => 'string',
         'charge' => '\SellingPartnerApi\Model\Finances\ChargeComponent',
@@ -80,7 +80,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'seller_order_id' => null,
-        'transaction_posted_date' => 'date-time',
+        'transaction_posted_date' => null,
         'business_object_type' => null,
         'sales_channel' => null,
         'charge' => null,
@@ -315,7 +315,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets transaction_posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getTransactionPostedDate()
     {
@@ -325,7 +325,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets transaction_posted_date
      *
-     * @param \DateTime|null $transaction_posted_date transaction_posted_date
+     * @param string|null $transaction_posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

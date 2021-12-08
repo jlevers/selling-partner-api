@@ -368,8 +368,8 @@ $feed_types = array('feed_types_example'); // string[] | A list of feed types us
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
 $page_size = 10; // int | The maximum number of feeds to return in a single call.
 $processing_statuses = array('processing_statuses_example'); // string[] | A list of processing statuses used to filter feeds.
-$created_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
-$created_until = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
+$created_since = 'created_since_example'; // string | The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
+$created_until = 'created_until_example'; // string | The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
 $next_token = 'next_token_example'; // string | A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
 
 try {
@@ -388,8 +388,8 @@ Name | Type | Description  | Notes
  **marketplace_ids** | [**string[]**](../Model/Feeds/string.md)| A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. | [optional]
  **page_size** | **int**| The maximum number of feeds to return in a single call. | [optional] [default to 10]
  **processing_statuses** | [**string[]**](../Model/Feeds/string.md)| A list of processing statuses used to filter feeds. | [optional]
- **created_since** | **\DateTime**| The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. | [optional]
- **created_until** | **\DateTime**| The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. | [optional]
+ **created_since** | **string**| The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days. | [optional]
+ **created_until** | **string**| The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now. | [optional]
  **next_token** | **string**| A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. | [optional]
 
 ### Return type

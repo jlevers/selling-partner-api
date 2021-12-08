@@ -61,7 +61,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'retrocharge_event_type' => 'string',
         'amazon_order_id' => 'string',
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'base_tax' => '\SellingPartnerApi\Model\Finances\Currency',
         'shipping_tax' => '\SellingPartnerApi\Model\Finances\Currency',
         'marketplace_name' => 'string',
@@ -78,7 +78,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'retrocharge_event_type' => null,
         'amazon_order_id' => null,
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'base_tax' => null,
         'shipping_tax' => null,
         'marketplace_name' => null,
@@ -321,7 +321,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -331,7 +331,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

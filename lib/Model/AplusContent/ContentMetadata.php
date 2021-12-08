@@ -63,7 +63,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_id' => 'string',
         'status' => '\SellingPartnerApi\Model\AplusContent\ContentStatus',
         'badge_set' => '\SellingPartnerApi\Model\AplusContent\ContentBadge[]',
-        'update_time' => '\DateTime'
+        'update_time' => 'string'
     ];
 
     /**
@@ -78,7 +78,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_id' => null,
         'status' => null,
         'badge_set' => null,
-        'update_time' => 'date-time'
+        'update_time' => null
     ];
 
     /**
@@ -398,7 +398,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets update_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getUpdateTime()
     {
@@ -408,7 +408,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets update_time
      *
-     * @param \DateTime $update_time The approximate age of the A+ Content document and metadata.
+     * @param string $update_time The approximate age of the A+ Content document and metadata in ISO 8601 format.
      *
      * @return self
      */

@@ -62,7 +62,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'warehouse_id' => 'string',
         'amazon_order_id' => 'string',
         'amazon_shipment_id' => 'string',
-        'purchase_date' => '\DateTime',
+        'purchase_date' => 'string',
         'shipping_address' => '\SellingPartnerApi\Model\ShipmentInvoicing\Address',
         'payment_method_details' => 'string[]',
         'marketplace_id' => 'string',
@@ -86,7 +86,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'warehouse_id' => null,
         'amazon_order_id' => null,
         'amazon_shipment_id' => null,
-        'purchase_date' => 'date-time',
+        'purchase_date' => null,
         'shipping_address' => null,
         'payment_method_details' => null,
         'marketplace_id' => null,
@@ -387,7 +387,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets purchase_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPurchaseDate()
     {
@@ -397,7 +397,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchase_date
      *
-     * @param \DateTime|null $purchase_date The date and time when the order was created.
+     * @param string|null $purchase_date The date and time when the order was created, in ISO 8601 format.
      *
      * @return self
      */

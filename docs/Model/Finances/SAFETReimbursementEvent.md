@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **string** | A date string in ISO 8601 format. | [optional]
 **safet_claim_id** | **string** | A SAFE-T claim identifier. | [optional]
 **reimbursed_amount** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **reason_code** | **string** | Indicates why the seller was reimbursed. | [optional]

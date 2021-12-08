@@ -72,8 +72,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'label' => '\SellingPartnerApi\Model\MerchantFulfillment\Label',
         'status' => '\SellingPartnerApi\Model\MerchantFulfillment\ShipmentStatus',
         'tracking_id' => 'string',
-        'created_date' => '\DateTime',
-        'last_updated_date' => '\DateTime'
+        'created_date' => 'string',
+        'last_updated_date' => 'string'
     ];
 
     /**
@@ -97,8 +97,8 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'label' => null,
         'status' => null,
         'tracking_id' => null,
-        'created_date' => 'date-time',
-        'last_updated_date' => 'date-time'
+        'created_date' => null,
+        'last_updated_date' => null
     ];
 
     /**
@@ -677,7 +677,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedDate()
     {
@@ -687,7 +687,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_date
      *
-     * @param \DateTime $created_date created_date
+     * @param string $created_date A timestamp in ISO 8601 format.
      *
      * @return self
      */
@@ -701,7 +701,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets last_updated_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getLastUpdatedDate()
     {
@@ -711,7 +711,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets last_updated_date
      *
-     * @param \DateTime|null $last_updated_date last_updated_date
+     * @param string|null $last_updated_date A timestamp in ISO 8601 format.
      *
      * @return self
      */

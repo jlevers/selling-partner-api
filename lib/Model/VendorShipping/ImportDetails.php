@@ -63,7 +63,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => '\SellingPartnerApi\Model\VendorShipping\Route',
         'import_containers' => 'string',
         'billable_weight' => '\SellingPartnerApi\Model\VendorShipping\Weight',
-        'estimated_ship_by_date' => '\DateTime'
+        'estimated_ship_by_date' => 'string'
     ];
 
     /**
@@ -79,7 +79,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => null,
         'import_containers' => null,
         'billable_weight' => null,
-        'estimated_ship_by_date' => 'date-time'
+        'estimated_ship_by_date' => null
     ];
 
     /**
@@ -436,7 +436,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets estimated_ship_by_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedShipByDate()
     {
@@ -446,7 +446,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets estimated_ship_by_date
      *
-     * @param \DateTime|null $estimated_ship_by_date Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
+     * @param string|null $estimated_ship_by_date Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future. Must be in in ISO 8601 format.
      *
      * @return self
      */

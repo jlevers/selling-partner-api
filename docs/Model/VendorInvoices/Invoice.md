@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **invoice_type** | **string** | Identifies the type of invoice. |
 **id** | **string** | Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection. |
 **reference_number** | **string** | An additional unique reference number used for regulatory or other purposes. | [optional]
-**date** | [**\DateTime**](\DateTime.md) | Defines a date and time according to ISO8601. |
+**date** | **string** | Defines a date and time according to ISO8601. |
 **remit_to_party** | [**\SellingPartnerApi\Model\VendorInvoices\PartyIdentification**](PartyIdentification.md) |  |
 **ship_to_party** | [**\SellingPartnerApi\Model\VendorInvoices\PartyIdentification**](PartyIdentification.md) |  | [optional]
 **ship_from_party** | [**\SellingPartnerApi\Model\VendorInvoices\PartyIdentification**](PartyIdentification.md) |  | [optional]

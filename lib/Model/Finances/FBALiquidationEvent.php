@@ -59,7 +59,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'original_removal_order_id' => 'string',
         'liquidation_proceeds_amount' => '\SellingPartnerApi\Model\Finances\Currency',
         'liquidation_fee_amount' => '\SellingPartnerApi\Model\Finances\Currency'
@@ -73,7 +73,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'original_removal_order_id' => null,
         'liquidation_proceeds_amount' => null,
         'liquidation_fee_amount' => null
@@ -255,7 +255,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -265,7 +265,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

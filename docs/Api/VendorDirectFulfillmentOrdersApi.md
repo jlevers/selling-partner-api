@@ -108,8 +108,8 @@ $config = new SellingPartnerApi\Configuration([
 ]);
 
 $apiInstance = new SellingPartnerApi\Api\VendorDirectFulfillmentOrdersApi($config);
-$created_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-$created_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+$created_after = 'created_after_example'; // string | Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+$created_before = 'created_before_example'; // string | Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
 $ship_from_party_id = 'ship_from_party_id_example'; // string | The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
 $status = 'status_example'; // string | Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
 $limit = 56; // int | The limit to the number of purchase orders returned.
@@ -129,8 +129,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_after** | **\DateTime**| Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. |
- **created_before** | **\DateTime**| Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
+ **created_after** | **string**| Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. |
+ **created_before** | **string**| Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
  **ship_from_party_id** | **string**| The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses. | [optional]
  **status** | **string**| Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status. | [optional]
  **limit** | **int**| The limit to the number of purchase orders returned. | [optional]

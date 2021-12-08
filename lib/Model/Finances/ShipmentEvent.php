@@ -69,7 +69,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
         'order_fee_adjustment_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
         'direct_payment_list' => '\SellingPartnerApi\Model\Finances\DirectPayment[]',
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'shipment_item_list' => '\SellingPartnerApi\Model\Finances\ShipmentItem[]',
         'shipment_item_adjustment_list' => '\SellingPartnerApi\Model\Finances\ShipmentItem[]'
     ];
@@ -92,7 +92,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_fee_list' => null,
         'order_fee_adjustment_list' => null,
         'direct_payment_list' => null,
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'shipment_item_list' => null,
         'shipment_item_adjustment_list' => null
     ];
@@ -549,7 +549,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -559,7 +559,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

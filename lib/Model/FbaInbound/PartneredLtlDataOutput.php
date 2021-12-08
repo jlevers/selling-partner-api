@@ -62,13 +62,13 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
         'contact' => '\SellingPartnerApi\Model\FbaInbound\Contact',
         'box_count' => 'int',
         'seller_freight_class' => 'string',
-        'freight_ready_date' => '\DateTime',
+        'freight_ready_date' => 'string',
         'pallet_list' => '\SellingPartnerApi\Model\FbaInbound\Pallet[]',
         'total_weight' => '\SellingPartnerApi\Model\FbaInbound\Weight',
         'seller_declared_value' => '\SellingPartnerApi\Model\FbaInbound\Amount',
         'amazon_calculated_value' => '\SellingPartnerApi\Model\FbaInbound\Amount',
-        'preview_pickup_date' => '\DateTime',
-        'preview_delivery_date' => '\DateTime',
+        'preview_pickup_date' => 'string',
+        'preview_delivery_date' => 'string',
         'preview_freight_class' => 'string',
         'amazon_reference_id' => 'string',
         'is_bill_of_lading_available' => 'bool',
@@ -87,13 +87,13 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
         'contact' => null,
         'box_count' => 'int64',
         'seller_freight_class' => null,
-        'freight_ready_date' => 'date',
+        'freight_ready_date' => null,
         'pallet_list' => null,
         'total_weight' => null,
         'seller_declared_value' => null,
         'amazon_calculated_value' => null,
-        'preview_pickup_date' => 'date',
-        'preview_delivery_date' => 'date',
+        'preview_pickup_date' => null,
+        'preview_delivery_date' => null,
         'preview_freight_class' => null,
         'amazon_reference_id' => null,
         'is_bill_of_lading_available' => null,
@@ -426,7 +426,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets freight_ready_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getFreightReadyDate()
     {
@@ -436,7 +436,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets freight_ready_date
      *
-     * @param \DateTime $freight_ready_date freight_ready_date
+     * @param string $freight_ready_date A date string in ISO 8601 format.
      *
      * @return self
      */
@@ -546,7 +546,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets preview_pickup_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getPreviewPickupDate()
     {
@@ -556,7 +556,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets preview_pickup_date
      *
-     * @param \DateTime $preview_pickup_date preview_pickup_date
+     * @param string $preview_pickup_date A date string in ISO 8601 format.
      *
      * @return self
      */
@@ -570,7 +570,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets preview_delivery_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getPreviewDeliveryDate()
     {
@@ -580,7 +580,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets preview_delivery_date
      *
-     * @param \DateTime $preview_delivery_date preview_delivery_date
+     * @param string $preview_delivery_date A date string in ISO 8601 format.
      *
      * @return self
      */

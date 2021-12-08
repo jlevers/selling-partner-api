@@ -66,7 +66,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_comment' => 'string',
         'amazon_return_reason_code' => 'string',
         'status' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentReturnItemStatus',
-        'status_changed_date' => '\DateTime',
+        'status_changed_date' => 'string',
         'return_authorization_id' => 'string',
         'return_received_condition' => '\SellingPartnerApi\Model\FbaOutbound\ReturnItemDisposition',
         'fulfillment_center_id' => 'string'
@@ -87,7 +87,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_comment' => null,
         'amazon_return_reason_code' => null,
         'status' => null,
-        'status_changed_date' => 'date-time',
+        'status_changed_date' => null,
         'return_authorization_id' => null,
         'return_received_condition' => null,
         'fulfillment_center_id' => null
@@ -483,7 +483,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets status_changed_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStatusChangedDate()
     {
@@ -493,7 +493,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status_changed_date
      *
-     * @param \DateTime $status_changed_date status_changed_date
+     * @param string $status_changed_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

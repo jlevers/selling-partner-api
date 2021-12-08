@@ -62,7 +62,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         'reference_invoice_number' => 'string',
         'debit_note_number' => 'string',
         'returns_reference_number' => 'string',
-        'goods_return_date' => '\DateTime',
+        'goods_return_date' => 'string',
         'rma_id' => 'string',
         'coop_reference_number' => 'string',
         'consignors_reference_number' => 'string'
@@ -79,7 +79,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         'reference_invoice_number' => null,
         'debit_note_number' => null,
         'returns_reference_number' => null,
-        'goods_return_date' => 'date-time',
+        'goods_return_date' => null,
         'rma_id' => null,
         'coop_reference_number' => null,
         'consignors_reference_number' => null
@@ -345,7 +345,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets goods_return_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getGoodsReturnDate()
     {
@@ -355,7 +355,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets goods_return_date
      *
-     * @param \DateTime|null $goods_return_date Defines a date and time according to ISO8601.
+     * @param string|null $goods_return_date Defines a date and time according to ISO8601.
      *
      * @return self
      */

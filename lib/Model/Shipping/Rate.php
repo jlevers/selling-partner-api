@@ -62,7 +62,7 @@ class Rate implements ModelInterface, ArrayAccess, \JsonSerializable
         'rate_id' => 'string',
         'total_charge' => '\SellingPartnerApi\Model\Shipping\Currency',
         'billed_weight' => '\SellingPartnerApi\Model\Shipping\Weight',
-        'expiration_time' => '\DateTime',
+        'expiration_time' => 'string',
         'service_type' => '\SellingPartnerApi\Model\Shipping\ServiceType',
         'promise' => '\SellingPartnerApi\Model\Shipping\ShippingPromiseSet'
     ];
@@ -78,7 +78,7 @@ class Rate implements ModelInterface, ArrayAccess, \JsonSerializable
         'rate_id' => null,
         'total_charge' => null,
         'billed_weight' => null,
-        'expiration_time' => 'date-time',
+        'expiration_time' => null,
         'service_type' => null,
         'promise' => null
     ];
@@ -339,7 +339,7 @@ class Rate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets expiration_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getExpirationTime()
     {
@@ -349,7 +349,7 @@ class Rate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiration_time
      *
-     * @param \DateTime|null $expiration_time The time after which the offering will expire.
+     * @param string|null $expiration_time The time after which the offering will expire.
      *
      * @return self
      */

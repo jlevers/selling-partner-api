@@ -64,9 +64,9 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipment_structure' => 'string',
         'transportation_details' => '\SellingPartnerApi\Model\VendorShipping\TransportationDetails',
         'amazon_reference_number' => 'string',
-        'shipment_confirmation_date' => '\DateTime',
-        'shipped_date' => '\DateTime',
-        'estimated_delivery_date' => '\DateTime',
+        'shipment_confirmation_date' => 'string',
+        'shipped_date' => 'string',
+        'estimated_delivery_date' => 'string',
         'selling_party' => '\SellingPartnerApi\Model\VendorShipping\PartyIdentification',
         'ship_from_party' => '\SellingPartnerApi\Model\VendorShipping\PartyIdentification',
         'ship_to_party' => '\SellingPartnerApi\Model\VendorShipping\PartyIdentification',
@@ -91,9 +91,9 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipment_structure' => null,
         'transportation_details' => null,
         'amazon_reference_number' => null,
-        'shipment_confirmation_date' => 'date-time',
-        'shipped_date' => 'date-time',
-        'estimated_delivery_date' => 'date-time',
+        'shipment_confirmation_date' => null,
+        'shipped_date' => null,
+        'estimated_delivery_date' => null,
         'selling_party' => null,
         'ship_from_party' => null,
         'ship_to_party' => null,
@@ -611,7 +611,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets shipment_confirmation_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getShipmentConfirmationDate()
     {
@@ -621,7 +621,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets shipment_confirmation_date
      *
-     * @param \DateTime $shipment_confirmation_date Date on which the shipment confirmation was submitted.
+     * @param string $shipment_confirmation_date Date on which the shipment confirmation was submitted. Must be in ISO 8601 format.
      *
      * @return self
      */
@@ -635,7 +635,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets shipped_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getShippedDate()
     {
@@ -645,7 +645,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets shipped_date
      *
-     * @param \DateTime|null $shipped_date The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
+     * @param string|null $shipped_date The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future. Must be in ISO 8601 format.
      *
      * @return self
      */
@@ -659,7 +659,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets estimated_delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedDeliveryDate()
     {
@@ -669,7 +669,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets estimated_delivery_date
      *
-     * @param \DateTime|null $estimated_delivery_date The date and time on which the shipment is expected to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.
+     * @param string|null $estimated_delivery_date The date and time on which the shipment is expected to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation. Must be in ISO 8601 format.
      *
      * @return self
      */

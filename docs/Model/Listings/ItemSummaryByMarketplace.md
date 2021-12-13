@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **status** | **string[]** | Statuses that apply to the listings item. |
 **fn_sku** | **string** | Fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item. | [optional]
 **item_name** | **string** | Name, or title, associated with an Amazon catalog item. |
-**created_date** | [**\DateTime**](\DateTime.md) | Date the listings item was created, in ISO 8601 format. |
-**last_updated_date** | [**\DateTime**](\DateTime.md) | Date the listings item was last updated, in ISO 8601 format. |
+**created_date** | **string** | Date the listings item was created, in ISO 8601 format. |
+**last_updated_date** | **string** | Date the listings item was last updated, in ISO 8601 format. |
 **main_image** | [**\SellingPartnerApi\Model\Listings\ItemImage**](ItemImage.md) |  | [optional]
 
 [[Listings Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

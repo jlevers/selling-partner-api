@@ -60,7 +60,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'adjustment_type' => 'string',
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'adjustment_amount' => '\SellingPartnerApi\Model\Finances\Currency',
         'adjustment_item_list' => '\SellingPartnerApi\Model\Finances\AdjustmentItem[]'
     ];
@@ -74,7 +74,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'adjustment_type' => null,
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'adjustment_amount' => null,
         'adjustment_item_list' => null
     ];
@@ -279,7 +279,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -289,7 +289,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

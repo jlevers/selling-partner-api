@@ -150,11 +150,17 @@ class ProductPricingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -323,6 +329,7 @@ class ProductPricingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -373,10 +380,13 @@ class ProductPricingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -388,6 +398,7 @@ class ProductPricingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -579,11 +590,17 @@ class ProductPricingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -752,6 +769,7 @@ class ProductPricingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -800,10 +818,13 @@ class ProductPricingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -815,6 +836,7 @@ class ProductPricingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -996,11 +1018,17 @@ class ProductPricingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1169,6 +1197,7 @@ class ProductPricingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1217,10 +1246,13 @@ class ProductPricingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1232,6 +1264,7 @@ class ProductPricingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1417,11 +1450,17 @@ class ProductPricingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1590,6 +1629,7 @@ class ProductPricingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1642,10 +1682,13 @@ class ProductPricingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1657,6 +1700,7 @@ class ProductPricingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1837,5 +1881,18 @@ class ProductPricingApi
         }
 
         return $options;
+    }
+
+    /**
+     * Writes to the debug log file
+     *
+     * @param any $data
+     * @return void
+     */
+    private function writeDebug($data)
+    {
+        if ($this->config->getDebug()) {
+            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        }
     }
 }

@@ -110,13 +110,13 @@ $config = new SellingPartnerApi\Configuration([
 
 $apiInstance = new SellingPartnerApi\Api\VendorOrdersApi($config);
 $limit = 56; // int | The limit to the number of records returned. Default value is 100 records.
-$created_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
-$created_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
+$created_after = 'created_after_example'; // string | Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
+$created_before = 'created_before_example'; // string | Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
 $sort_order = 'sort_order_example'; // string | Sort in ascending or descending order by purchase order creation date.
 $next_token = 'next_token_example'; // string | Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
 $include_details = 'include_details_example'; // bool | When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
-$changed_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-$changed_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+$changed_after = 'changed_after_example'; // string | Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+$changed_before = 'changed_before_example'; // string | Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 $po_item_state = 'po_item_state_example'; // string | Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
 $is_po_changed = 'is_po_changed_example'; // bool | When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
 $purchase_order_state = 'purchase_order_state_example'; // string | Filters purchase orders based on the purchase order state.
@@ -135,13 +135,13 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| The limit to the number of records returned. Default value is 100 records. | [optional]
- **created_after** | **\DateTime**| Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. | [optional]
- **created_before** | **\DateTime**| Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. | [optional]
+ **created_after** | **string**| Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. | [optional]
+ **created_before** | **string**| Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. | [optional]
  **sort_order** | **string**| Sort in ascending or descending order by purchase order creation date. | [optional]
  **next_token** | **string**| Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call | [optional]
  **include_details** | **bool**| When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true. | [optional]
- **changed_after** | **\DateTime**| Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
- **changed_before** | **\DateTime**| Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
+ **changed_after** | **string**| Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
+ **changed_before** | **string**| Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
  **po_item_state** | **string**| Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. | [optional]
  **is_po_changed** | **bool**| When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false. | [optional]
  **purchase_order_state** | **string**| Filters purchase orders based on the purchase order state. | [optional]
@@ -199,10 +199,10 @@ $apiInstance = new SellingPartnerApi\Api\VendorOrdersApi($config);
 $limit = 56; // int | The limit to the number of records returned. Default value is 100 records.
 $sort_order = 'sort_order_example'; // string | Sort in ascending or descending order by purchase order creation date.
 $next_token = 'next_token_example'; // string | Used for pagination when there are more purchase orders than the specified result size limit.
-$created_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-$created_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-$updated_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-$updated_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+$created_after = 'created_after_example'; // string | Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+$created_before = 'created_before_example'; // string | Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+$updated_after = 'updated_after_example'; // string | Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+$updated_before = 'updated_before_example'; // string | Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 $purchase_order_number = 'purchase_order_number_example'; // string | Provides purchase order status for the specified purchase order number.
 $purchase_order_status = 'purchase_order_status_example'; // string | Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
 $item_confirmation_status = 'item_confirmation_status_example'; // string | Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included.
@@ -224,10 +224,10 @@ Name | Type | Description  | Notes
  **limit** | **int**| The limit to the number of records returned. Default value is 100 records. | [optional]
  **sort_order** | **string**| Sort in ascending or descending order by purchase order creation date. | [optional]
  **next_token** | **string**| Used for pagination when there are more purchase orders than the specified result size limit. | [optional]
- **created_after** | **\DateTime**| Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
- **created_before** | **\DateTime**| Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
- **updated_after** | **\DateTime**| Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
- **updated_before** | **\DateTime**| Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
+ **created_after** | **string**| Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
+ **created_before** | **string**| Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
+ **updated_after** | **string**| Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
+ **updated_before** | **string**| Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
  **purchase_order_number** | **string**| Provides purchase order status for the specified purchase order number. | [optional]
  **purchase_order_status** | **string**| Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. | [optional]
  **item_confirmation_status** | **string**| Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. | [optional]

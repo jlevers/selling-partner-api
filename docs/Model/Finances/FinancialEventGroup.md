@@ -15,11 +15,11 @@ Possible values:
 **fund_transfer_status** | **string** | The status of the fund transfer. | [optional]
 **original_total** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **converted_total** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
-**fund_transfer_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**fund_transfer_date** | **string** | A date string in ISO 8601 format. | [optional]
 **trace_id** | **string** | The trace identifier used by sellers to look up transactions externally. | [optional]
 **account_tail** | **string** | The account tail of the payment instrument. | [optional]
 **beginning_balance** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
-**financial_event_group_start** | [**\DateTime**](\DateTime.md) |  | [optional]
-**financial_event_group_end** | [**\DateTime**](\DateTime.md) |  | [optional]
+**financial_event_group_start** | **string** | A date string in ISO 8601 format. | [optional]
+**financial_event_group_end** | **string** | A date string in ISO 8601 format. | [optional]
 
 [[Finances Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

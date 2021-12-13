@@ -117,6 +117,20 @@ try {
 ?>
 ```
 
+To get debugging output when you make an API request, you can call `$config->setDebug(true)`. By default, debug output goes to `stdout` via `php://output`, but you can redirect it a file with `$config->setDebugFile('<path>')`.
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use SellingPartnerApi\Configuration;
+
+$config = new Configuration([/* ... */]);
+$config->setDebug(true);
+// To redirect debug info to a file:
+$config->setDebugFile('./debug.log');
+```
+
 
 ## Supported API segments
 

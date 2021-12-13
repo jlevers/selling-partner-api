@@ -65,8 +65,8 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'ship_from_address' => '\SellingPartnerApi\Model\MerchantFulfillment\Address',
         'package_dimensions' => '\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions',
         'weight' => '\SellingPartnerApi\Model\MerchantFulfillment\Weight',
-        'must_arrive_by_date' => '\DateTime',
-        'ship_date' => '\DateTime',
+        'must_arrive_by_date' => 'string',
+        'ship_date' => 'string',
         'shipping_service_options' => '\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions',
         'label_customization' => '\SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization'
     ];
@@ -85,8 +85,8 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'ship_from_address' => null,
         'package_dimensions' => null,
         'weight' => null,
-        'must_arrive_by_date' => 'date-time',
-        'ship_date' => 'date-time',
+        'must_arrive_by_date' => null,
+        'ship_date' => null,
         'shipping_service_options' => null,
         'label_customization' => null
     ];
@@ -461,7 +461,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets must_arrive_by_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getMustArriveByDate()
     {
@@ -471,7 +471,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets must_arrive_by_date
      *
-     * @param \DateTime|null $must_arrive_by_date must_arrive_by_date
+     * @param string|null $must_arrive_by_date A timestamp in ISO 8601 format.
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets ship_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getShipDate()
     {
@@ -495,7 +495,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets ship_date
      *
-     * @param \DateTime|null $ship_date ship_date
+     * @param string|null $ship_date A timestamp in ISO 8601 format.
      *
      * @return self
      */

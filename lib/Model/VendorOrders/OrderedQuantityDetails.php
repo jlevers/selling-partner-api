@@ -59,7 +59,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'updated_date' => '\DateTime',
+        'updated_date' => 'string',
         'ordered_quantity' => '\SellingPartnerApi\Model\VendorOrders\ItemQuantity',
         'cancelled_quantity' => '\SellingPartnerApi\Model\VendorOrders\ItemQuantity'
     ];
@@ -72,7 +72,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'updated_date' => 'date-time',
+        'updated_date' => null,
         'ordered_quantity' => null,
         'cancelled_quantity' => null
     ];
@@ -249,7 +249,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets updated_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getUpdatedDate()
     {
@@ -259,7 +259,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets updated_date
      *
-     * @param \DateTime|null $updated_date The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
+     * @param string|null $updated_date The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
      *
      * @return self
      */

@@ -59,7 +59,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'merchant_order_id' => 'string',
         'order_id' => 'string',
         'transaction_type' => 'string',
@@ -74,7 +74,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'merchant_order_id' => null,
         'order_id' => null,
         'transaction_type' => null,
@@ -261,7 +261,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -271,7 +271,7 @@ class RemovalShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

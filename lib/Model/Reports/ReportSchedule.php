@@ -64,7 +64,7 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_ids' => 'string[]',
         'report_options' => 'map[string,string]',
         'period' => 'string',
-        'next_report_creation_time' => '\DateTime'
+        'next_report_creation_time' => 'string'
     ];
 
     /**
@@ -80,7 +80,7 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_ids' => null,
         'report_options' => null,
         'period' => null,
-        'next_report_creation_time' => 'date-time'
+        'next_report_creation_time' => null
     ];
 
     /**
@@ -396,7 +396,7 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets next_report_creation_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getNextReportCreationTime()
     {
@@ -406,7 +406,7 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets next_report_creation_time
      *
-     * @param \DateTime|null $next_report_creation_time The date and time when the schedule will create its next report, in ISO 8601 date time format.
+     * @param string|null $next_report_creation_time The date and time when the schedule will create its next report, in ISO 8601 date time format.
      *
      * @return self
      */

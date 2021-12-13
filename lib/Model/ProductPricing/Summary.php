@@ -68,7 +68,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'suggested_lower_price_plus_shipping' => '\SellingPartnerApi\Model\ProductPricing\MoneyType',
         'sales_rankings' => '\SellingPartnerApi\Model\ProductPricing\SalesRankType[]',
         'buy_box_eligible_offers' => '\SellingPartnerApi\Model\ProductPricing\OfferCountType[]',
-        'offers_available_time' => '\DateTime'
+        'offers_available_time' => 'string'
     ];
 
     /**
@@ -88,7 +88,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'suggested_lower_price_plus_shipping' => null,
         'sales_rankings' => null,
         'buy_box_eligible_offers' => null,
-        'offers_available_time' => 'date-time'
+        'offers_available_time' => null
     ];
 
     /**
@@ -510,7 +510,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offers_available_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getOffersAvailableTime()
     {
@@ -520,7 +520,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets offers_available_time
      *
-     * @param \DateTime|null $offers_available_time When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
+     * @param string|null $offers_available_time When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing. Must be in ISO 8601 format.
      *
      * @return self
      */

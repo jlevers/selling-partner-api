@@ -59,7 +59,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'enrollment_id' => 'string',
         'parent_asin' => 'string',
         'fee_component' => '\SellingPartnerApi\Model\Finances\FeeComponent',
@@ -75,7 +75,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'enrollment_id' => null,
         'parent_asin' => null,
         'fee_component' => null,
@@ -267,7 +267,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -277,7 +277,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

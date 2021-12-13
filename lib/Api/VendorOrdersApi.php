@@ -142,11 +142,17 @@ class VendorOrdersApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -331,6 +337,7 @@ class VendorOrdersApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -373,10 +380,13 @@ class VendorOrdersApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -388,6 +398,7 @@ class VendorOrdersApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -497,13 +508,13 @@ class VendorOrdersApi
      * Operation getPurchaseOrders
      *
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call (optional)
      * @param  bool $include_details When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true. (optional)
-     * @param  \DateTime $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $po_item_state Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
      * @param  bool $is_po_changed When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false. (optional)
      * @param  string $purchase_order_state Filters purchase orders based on the purchase order state. (optional)
@@ -523,13 +534,13 @@ class VendorOrdersApi
      * Operation getPurchaseOrdersWithHttpInfo
      *
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call (optional)
      * @param  bool $include_details When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true. (optional)
-     * @param  \DateTime $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $po_item_state Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
      * @param  bool $is_po_changed When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false. (optional)
      * @param  string $purchase_order_state Filters purchase orders based on the purchase order state. (optional)
@@ -546,11 +557,17 @@ class VendorOrdersApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -719,6 +736,7 @@ class VendorOrdersApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -729,13 +747,13 @@ class VendorOrdersApi
      * 
      *
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call (optional)
      * @param  bool $include_details When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true. (optional)
-     * @param  \DateTime $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $po_item_state Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
      * @param  bool $is_po_changed When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false. (optional)
      * @param  string $purchase_order_state Filters purchase orders based on the purchase order state. (optional)
@@ -760,13 +778,13 @@ class VendorOrdersApi
      * 
      *
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call (optional)
      * @param  bool $include_details When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true. (optional)
-     * @param  \DateTime $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $po_item_state Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
      * @param  bool $is_po_changed When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false. (optional)
      * @param  string $purchase_order_state Filters purchase orders based on the purchase order state. (optional)
@@ -783,10 +801,13 @@ class VendorOrdersApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -798,6 +819,7 @@ class VendorOrdersApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -817,13 +839,13 @@ class VendorOrdersApi
      * Create request for operation 'getPurchaseOrders'
      *
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call (optional)
      * @param  bool $include_details When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true. (optional)
-     * @param  \DateTime $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $po_item_state Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
      * @param  bool $is_po_changed When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false. (optional)
      * @param  string $purchase_order_state Filters purchase orders based on the purchase order state. (optional)
@@ -1008,10 +1030,10 @@ class VendorOrdersApi
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
      * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
@@ -1034,10 +1056,10 @@ class VendorOrdersApi
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
      * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
@@ -1055,11 +1077,17 @@ class VendorOrdersApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1228,6 +1256,7 @@ class VendorOrdersApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1240,10 +1269,10 @@ class VendorOrdersApi
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
      * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
@@ -1271,10 +1300,10 @@ class VendorOrdersApi
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
      * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
@@ -1292,10 +1321,13 @@ class VendorOrdersApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1307,6 +1339,7 @@ class VendorOrdersApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1328,10 +1361,10 @@ class VendorOrdersApi
      * @param  int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param  string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)
-     * @param  \DateTime $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param  \DateTime $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
      * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
@@ -1542,11 +1575,17 @@ class VendorOrdersApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1731,6 +1770,7 @@ class VendorOrdersApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1773,10 +1813,13 @@ class VendorOrdersApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1788,6 +1831,7 @@ class VendorOrdersApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1907,5 +1951,18 @@ class VendorOrdersApi
         }
 
         return $options;
+    }
+
+    /**
+     * Writes to the debug log file
+     *
+     * @param any $data
+     * @return void
+     */
+    private function writeDebug($data)
+    {
+        if ($this->config->getDebug()) {
+            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        }
     }
 }

@@ -60,7 +60,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'amazon_order_id' => 'string',
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'marketplace_id' => 'string',
         'transaction_type' => 'string',
         'base_expense' => '\SellingPartnerApi\Model\Finances\Currency',
@@ -79,7 +79,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'amazon_order_id' => null,
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'marketplace_id' => null,
         'transaction_type' => null,
         'base_expense' => null,
@@ -318,7 +318,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -328,7 +328,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

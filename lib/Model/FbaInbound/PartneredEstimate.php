@@ -60,8 +60,8 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'amount' => '\SellingPartnerApi\Model\FbaInbound\Amount',
-        'confirm_deadline' => '\DateTime',
-        'void_deadline' => '\DateTime'
+        'confirm_deadline' => 'string',
+        'void_deadline' => 'string'
     ];
 
     /**
@@ -73,8 +73,8 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'amount' => null,
-        'confirm_deadline' => 'date-time',
-        'void_deadline' => 'date-time'
+        'confirm_deadline' => null,
+        'void_deadline' => null
     ];
 
     /**
@@ -276,7 +276,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets confirm_deadline
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getConfirmDeadline()
     {
@@ -286,7 +286,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets confirm_deadline
      *
-     * @param \DateTime|null $confirm_deadline confirm_deadline
+     * @param string|null $confirm_deadline A datetime string in ISO 8601 format
      *
      * @return self
      */
@@ -300,7 +300,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets void_deadline
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getVoidDeadline()
     {
@@ -310,7 +310,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets void_deadline
      *
-     * @param \DateTime|null $void_deadline void_deadline
+     * @param string|null $void_deadline A datetime string in ISO 8601 format
      *
      * @return self
      */

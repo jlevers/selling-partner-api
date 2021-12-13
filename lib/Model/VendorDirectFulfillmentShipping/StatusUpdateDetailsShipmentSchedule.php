@@ -58,9 +58,9 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'estimated_delivery_date_time' => '\DateTime',
-        'appt_window_start_date_time' => '\DateTime',
-        'appt_window_end_date_time' => '\DateTime'
+        'estimated_delivery_date_time' => 'string',
+        'appt_window_start_date_time' => 'string',
+        'appt_window_end_date_time' => 'string'
     ];
 
     /**
@@ -71,9 +71,9 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'estimated_delivery_date_time' => 'date-time',
-        'appt_window_start_date_time' => 'date-time',
-        'appt_window_end_date_time' => 'date-time'
+        'estimated_delivery_date_time' => null,
+        'appt_window_start_date_time' => null,
+        'appt_window_end_date_time' => null
     ];
 
     /**
@@ -248,7 +248,7 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets estimated_delivery_date_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedDeliveryDateTime()
     {
@@ -258,7 +258,7 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets estimated_delivery_date_time
      *
-     * @param \DateTime|null $estimated_delivery_date_time Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param string|null $estimated_delivery_date_time Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */
@@ -272,7 +272,7 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets appt_window_start_date_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getApptWindowStartDateTime()
     {
@@ -282,7 +282,7 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets appt_window_start_date_time
      *
-     * @param \DateTime|null $appt_window_start_date_time This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param string|null $appt_window_start_date_time This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */
@@ -296,7 +296,7 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     /**
      * Gets appt_window_end_date_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getApptWindowEndDateTime()
     {
@@ -306,7 +306,7 @@ class StatusUpdateDetailsShipmentSchedule implements ModelInterface, ArrayAccess
     /**
      * Sets appt_window_end_date_time
      *
-     * @param \DateTime|null $appt_window_end_date_time This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param string|null $appt_window_end_date_time This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */

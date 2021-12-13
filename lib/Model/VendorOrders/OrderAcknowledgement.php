@@ -60,7 +60,7 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'purchase_order_number' => 'string',
         'selling_party' => '\SellingPartnerApi\Model\VendorOrders\PartyIdentification',
-        'acknowledgement_date' => '\DateTime',
+        'acknowledgement_date' => 'string',
         'items' => '\SellingPartnerApi\Model\VendorOrders\OrderAcknowledgementItem[]'
     ];
 
@@ -74,7 +74,7 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPIFormats = [
         'purchase_order_number' => null,
         'selling_party' => null,
-        'acknowledgement_date' => 'date-time',
+        'acknowledgement_date' => null,
         'items' => null
     ];
 
@@ -314,7 +314,7 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets acknowledgement_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getAcknowledgementDate()
     {
@@ -324,7 +324,7 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets acknowledgement_date
      *
-     * @param \DateTime $acknowledgement_date The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
+     * @param string $acknowledgement_date The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
      *
      * @return self
      */

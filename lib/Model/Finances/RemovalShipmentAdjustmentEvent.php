@@ -59,7 +59,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
       * @var string[]
       */
     protected static $openAPITypes = [
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'adjustment_event_id' => 'string',
         'merchant_order_id' => 'string',
         'order_id' => 'string',
@@ -75,7 +75,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'adjustment_event_id' => null,
         'merchant_order_id' => null,
         'order_id' => null,
@@ -267,7 +267,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -277,7 +277,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

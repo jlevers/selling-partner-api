@@ -61,8 +61,8 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'purchase_order_number' => 'string',
         'purchase_order_status' => 'string',
-        'purchase_order_date' => '\DateTime',
-        'last_updated_date' => '\DateTime',
+        'purchase_order_date' => 'string',
+        'last_updated_date' => 'string',
         'selling_party' => '\SellingPartnerApi\Model\VendorOrders\PartyIdentification',
         'ship_to_party' => '\SellingPartnerApi\Model\VendorOrders\PartyIdentification',
         'item_status' => '\SellingPartnerApi\Model\VendorOrders\OrderItemStatus[]'
@@ -78,8 +78,8 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'purchase_order_number' => null,
         'purchase_order_status' => null,
-        'purchase_order_date' => 'date-time',
-        'last_updated_date' => 'date-time',
+        'purchase_order_date' => null,
+        'last_updated_date' => null,
         'selling_party' => null,
         'ship_to_party' => null,
         'item_status' => null
@@ -373,7 +373,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets purchase_order_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getPurchaseOrderDate()
     {
@@ -383,7 +383,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchase_order_date
      *
-     * @param \DateTime $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
+     * @param string $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets last_updated_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getLastUpdatedDate()
     {
@@ -407,7 +407,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets last_updated_date
      *
-     * @param \DateTime|null $last_updated_date The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
+     * @param string|null $last_updated_date The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
      *
      * @return self
      */

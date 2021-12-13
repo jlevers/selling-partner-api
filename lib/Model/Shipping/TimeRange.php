@@ -59,8 +59,8 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start' => '\DateTime',
-        'end' => '\DateTime'
+        'start' => 'string',
+        'end' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start' => 'date-time',
-        'end' => 'date-time'
+        'start' => null,
+        'end' => null
     ];
 
     /**
@@ -243,7 +243,7 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStart()
     {
@@ -253,7 +253,7 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start
      *
-     * @param \DateTime|null $start The start date and time. This defaults to the current date and time.
+     * @param string|null $start The start date and time. Must be in ISO 8601 format. This defaults to the current date and time.
      *
      * @return self
      */
@@ -267,7 +267,7 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEnd()
     {
@@ -277,7 +277,7 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end
      *
-     * @param \DateTime|null $end The end date and time. This must come after the value of start. This defaults to the next business day from the start.
+     * @param string|null $end The end date and time. This must come after the value of start. This defaults to the next business day from the start.
      *
      * @return self
      */

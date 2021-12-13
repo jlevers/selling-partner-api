@@ -59,7 +59,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'invoice_number' => 'string',
-        'invoice_date' => '\DateTime',
+        'invoice_date' => 'string',
         'reference_number' => 'string',
         'remit_to_party' => '\SellingPartnerApi\Model\VendorDirectFulfillmentPayments\PartyIdentification',
         'ship_from_party' => '\SellingPartnerApi\Model\VendorDirectFulfillmentPayments\PartyIdentification',
@@ -82,7 +82,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'invoice_number' => null,
-        'invoice_date' => 'date-time',
+        'invoice_date' => null,
         'reference_number' => null,
         'remit_to_party' => null,
         'ship_from_party' => null,
@@ -350,7 +350,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets invoice_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getInvoiceDate()
     {
@@ -360,7 +360,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets invoice_date
      *
-     * @param \DateTime $invoice_date Invoice date.
+     * @param string $invoice_date Invoice date. Must be in ISO 8601 format.
      *
      * @return self
      */

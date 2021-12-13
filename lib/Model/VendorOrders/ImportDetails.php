@@ -201,6 +201,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     const INTERNATIONAL_COMMERCIAL_TERMS_DELIVERED_AT_TERMINAL = 'DeliveredAtTerminal';
     const INTERNATIONAL_COMMERCIAL_TERMS_DELIVERED_AT_PLACE = 'DeliveredAtPlace';
     const INTERNATIONAL_COMMERCIAL_TERMS_DELIVER_DUTY_PAID = 'DeliverDutyPaid';
+    const INTERNATIONAL_COMMERCIAL_TERMS_OTHER = 'Other';
     
 
     
@@ -240,6 +241,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
             self::INTERNATIONAL_COMMERCIAL_TERMS_DELIVERED_AT_TERMINAL,
             self::INTERNATIONAL_COMMERCIAL_TERMS_DELIVERED_AT_PLACE,
             self::INTERNATIONAL_COMMERCIAL_TERMS_DELIVER_DUTY_PAID,
+            self::INTERNATIONAL_COMMERCIAL_TERMS_OTHER,
         ];
     }
     

@@ -60,7 +60,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
       */
     protected static $openAPITypes = [
         'transaction_type' => 'string',
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'net_co_transaction_id' => 'string',
         'swap_reason' => 'string',
         'asin' => 'string',
@@ -78,7 +78,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
       */
     protected static $openAPIFormats = [
         'transaction_type' => null,
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'net_co_transaction_id' => null,
         'swap_reason' => null,
         'asin' => null,
@@ -303,7 +303,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -313,7 +313,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

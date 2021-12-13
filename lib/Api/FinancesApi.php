@@ -115,8 +115,8 @@ class FinancesApi
      * Operation listFinancialEventGroups
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
-     * @param  \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
+     * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
+     * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -133,8 +133,8 @@ class FinancesApi
      * Operation listFinancialEventGroupsWithHttpInfo
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
-     * @param  \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
+     * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
+     * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -148,11 +148,17 @@ class FinancesApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -305,6 +311,7 @@ class FinancesApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -315,8 +322,8 @@ class FinancesApi
      * 
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
-     * @param  \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
+     * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
+     * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -338,8 +345,8 @@ class FinancesApi
      * 
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
-     * @param  \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
+     * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
+     * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -353,10 +360,13 @@ class FinancesApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -368,6 +378,7 @@ class FinancesApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -387,8 +398,8 @@ class FinancesApi
      * Create request for operation 'listFinancialEventGroups'
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
-     * @param  \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
+     * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
+     * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -504,8 +515,8 @@ class FinancesApi
      * Operation listFinancialEvents
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
-     * @param  \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -522,8 +533,8 @@ class FinancesApi
      * Operation listFinancialEventsWithHttpInfo
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
-     * @param  \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -537,11 +548,17 @@ class FinancesApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -694,6 +711,7 @@ class FinancesApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -704,8 +722,8 @@ class FinancesApi
      * 
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
-     * @param  \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -727,8 +745,8 @@ class FinancesApi
      * 
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
-     * @param  \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -742,10 +760,13 @@ class FinancesApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -757,6 +778,7 @@ class FinancesApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -776,8 +798,8 @@ class FinancesApi
      * Create request for operation 'listFinancialEvents'
      *
      * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param  \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
-     * @param  \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -924,11 +946,17 @@ class FinancesApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1081,6 +1109,7 @@ class FinancesApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1127,10 +1156,13 @@ class FinancesApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1142,6 +1174,7 @@ class FinancesApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1307,11 +1340,17 @@ class FinancesApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1464,6 +1503,7 @@ class FinancesApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1510,10 +1550,13 @@ class FinancesApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1525,6 +1568,7 @@ class FinancesApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1672,5 +1716,18 @@ class FinancesApi
         }
 
         return $options;
+    }
+
+    /**
+     * Writes to the debug log file
+     *
+     * @param any $data
+     * @return void
+     */
+    private function writeDebug($data)
+    {
+        if ($this->config->getDebug()) {
+            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        }
     }
 }

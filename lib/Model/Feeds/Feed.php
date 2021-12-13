@@ -62,10 +62,10 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
         'feed_id' => 'string',
         'feed_type' => 'string',
         'marketplace_ids' => 'string[]',
-        'created_time' => '\DateTime',
+        'created_time' => 'string',
         'processing_status' => 'string',
-        'processing_start_time' => '\DateTime',
-        'processing_end_time' => '\DateTime',
+        'processing_start_time' => 'string',
+        'processing_end_time' => 'string',
         'result_feed_document_id' => 'string'
     ];
 
@@ -80,10 +80,10 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
         'feed_id' => null,
         'feed_type' => null,
         'marketplace_ids' => null,
-        'created_time' => 'date-time',
+        'created_time' => null,
         'processing_status' => null,
-        'processing_start_time' => 'date-time',
-        'processing_end_time' => 'date-time',
+        'processing_start_time' => null,
+        'processing_end_time' => null,
         'result_feed_document_id' => null
     ];
 
@@ -393,7 +393,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedTime()
     {
@@ -403,7 +403,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_time
      *
-     * @param \DateTime $created_time The date and time when the feed was created, in ISO 8601 date time format.
+     * @param string $created_time The date and time when the feed was created, in ISO 8601 date time format.
      *
      * @return self
      */
@@ -451,7 +451,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets processing_start_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getProcessingStartTime()
     {
@@ -461,7 +461,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets processing_start_time
      *
-     * @param \DateTime|null $processing_start_time The date and time when feed processing started, in ISO 8601 date time format.
+     * @param string|null $processing_start_time The date and time when feed processing started, in ISO 8601 date time format.
      *
      * @return self
      */
@@ -475,7 +475,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets processing_end_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getProcessingEndTime()
     {
@@ -485,7 +485,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets processing_end_time
      *
-     * @param \DateTime|null $processing_end_time The date and time when feed processing completed, in ISO 8601 date time format.
+     * @param string|null $processing_end_time The date and time when feed processing completed, in ISO 8601 date time format.
      *
      * @return self
      */

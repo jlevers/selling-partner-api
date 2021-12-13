@@ -58,8 +58,8 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'manufacturer_date' => '\DateTime',
-        'expiry_date' => '\DateTime',
+        'manufacturer_date' => 'string',
+        'expiry_date' => 'string',
         'expiry_after_duration' => '\SellingPartnerApi\Model\VendorShipping\Duration'
     ];
 
@@ -71,8 +71,8 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'manufacturer_date' => 'date-time',
-        'expiry_date' => 'date-time',
+        'manufacturer_date' => null,
+        'expiry_date' => null,
         'expiry_after_duration' => null
     ];
 
@@ -248,7 +248,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets manufacturer_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getManufacturerDate()
     {
@@ -258,7 +258,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets manufacturer_date
      *
-     * @param \DateTime|null $manufacturer_date Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
+     * @param string|null $manufacturer_date Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context. Must be in ISO 8601 format.
      *
      * @return self
      */
@@ -272,7 +272,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets expiry_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getExpiryDate()
     {
@@ -282,7 +282,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiry_date
      *
-     * @param \DateTime|null $expiry_date The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
+     * @param string|null $expiry_date The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context. Must be in ISO 8601 format.
      *
      * @return self
      */

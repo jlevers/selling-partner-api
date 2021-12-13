@@ -60,8 +60,8 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPITypes = [
         'shipment_contains_preorderable_items' => 'bool',
         'shipment_confirmed_for_preorder' => 'bool',
-        'need_by_date' => '\DateTime',
-        'confirmed_fulfillable_date' => '\DateTime'
+        'need_by_date' => 'string',
+        'confirmed_fulfillable_date' => 'string'
     ];
 
     /**
@@ -74,8 +74,8 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
     protected static $openAPIFormats = [
         'shipment_contains_preorderable_items' => null,
         'shipment_confirmed_for_preorder' => null,
-        'need_by_date' => 'date',
-        'confirmed_fulfillable_date' => 'date'
+        'need_by_date' => null,
+        'confirmed_fulfillable_date' => null
     ];
 
     /**
@@ -302,7 +302,7 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets need_by_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getNeedByDate()
     {
@@ -312,7 +312,7 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets need_by_date
      *
-     * @param \DateTime|null $need_by_date need_by_date
+     * @param string|null $need_by_date A date string in ISO 8601 format.
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets confirmed_fulfillable_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getConfirmedFulfillableDate()
     {
@@ -336,7 +336,7 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets confirmed_fulfillable_date
      *
-     * @param \DateTime|null $confirmed_fulfillable_date confirmed_fulfillable_date
+     * @param string|null $confirmed_fulfillable_date A date string in ISO 8601 format.
      *
      * @return self
      */

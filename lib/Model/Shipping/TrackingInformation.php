@@ -61,7 +61,7 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'tracking_id' => 'string',
         'summary' => '\SellingPartnerApi\Model\Shipping\TrackingSummary',
-        'promised_delivery_date' => '\DateTime',
+        'promised_delivery_date' => 'string',
         'event_history' => '\SellingPartnerApi\Model\Shipping\Event[]'
     ];
 
@@ -75,7 +75,7 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'tracking_id' => null,
         'summary' => null,
-        'promised_delivery_date' => 'date-time',
+        'promised_delivery_date' => null,
         'event_history' => null
     ];
 
@@ -330,7 +330,7 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets promised_delivery_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getPromisedDeliveryDate()
     {
@@ -340,7 +340,7 @@ class TrackingInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets promised_delivery_date
      *
-     * @param \DateTime $promised_delivery_date The promised delivery date and time of a shipment.
+     * @param string $promised_delivery_date The promised delivery date and time of a shipment in ISO 8601 format.
      *
      * @return self
      */

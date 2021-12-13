@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **ship_from_address** | [**\SellingPartnerApi\Model\MerchantFulfillment\Address**](Address.md) |  |
 **package_dimensions** | [**\SellingPartnerApi\Model\MerchantFulfillment\PackageDimensions**](PackageDimensions.md) |  |
 **weight** | [**\SellingPartnerApi\Model\MerchantFulfillment\Weight**](Weight.md) |  |
-**must_arrive_by_date** | [**\DateTime**](\DateTime.md) |  | [optional]
-**ship_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**must_arrive_by_date** | **string** | A timestamp in ISO 8601 format. | [optional]
+**ship_date** | **string** | A timestamp in ISO 8601 format. | [optional]
 **shipping_service_options** | [**\SellingPartnerApi\Model\MerchantFulfillment\ShippingServiceOptions**](ShippingServiceOptions.md) |  |
 **label_customization** | [**\SellingPartnerApi\Model\MerchantFulfillment\LabelCustomization**](LabelCustomization.md) |  | [optional]
 

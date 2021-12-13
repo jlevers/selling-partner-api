@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **order_item_disposition** | **string** | Indicates whether the item is sellable or unsellable. | [optional]
 **cancelled_quantity** | **int** | The item quantity. |
 **unfulfillable_quantity** | **int** | The item quantity. |
-**estimated_ship_date** | [**\DateTime**](\DateTime.md) |  | [optional]
-**estimated_arrival_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**estimated_ship_date** | **string** | A datetime string in ISO 8601 format. | [optional]
+**estimated_arrival_date** | **string** | A datetime string in ISO 8601 format. | [optional]
 **per_unit_price** | [**\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
 **per_unit_tax** | [**\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]
 **per_unit_declared_value** | [**\SellingPartnerApi\Model\FbaOutbound\Money**](Money.md) |  | [optional]

@@ -141,11 +141,17 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -238,6 +244,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -280,14 +287,18 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -423,11 +434,17 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -520,6 +537,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -562,14 +580,18 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -706,11 +728,17 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -895,6 +923,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -937,10 +966,13 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -952,6 +984,7 @@ class ReportsApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1085,11 +1118,17 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1274,6 +1313,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1316,10 +1356,13 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1331,6 +1374,7 @@ class ReportsApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1464,11 +1508,17 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1653,6 +1703,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1695,10 +1746,13 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1710,6 +1764,7 @@ class ReportsApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1851,11 +1906,17 @@ class ReportsApi
             "getReportDocument"
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -2040,6 +2101,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -2087,10 +2149,13 @@ class ReportsApi
             "getReportDocument"
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2102,6 +2167,7 @@ class ReportsApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -2247,11 +2313,17 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -2436,6 +2508,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -2478,10 +2551,13 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2493,6 +2569,7 @@ class ReportsApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -2629,11 +2706,17 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -2818,6 +2901,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -2860,10 +2944,13 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2875,6 +2962,7 @@ class ReportsApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -2993,8 +3081,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -3014,8 +3102,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -3029,11 +3117,17 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -3218,6 +3312,7 @@ class ReportsApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -3231,8 +3326,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3257,8 +3352,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3272,10 +3367,13 @@ class ReportsApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3287,6 +3385,7 @@ class ReportsApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -3309,8 +3408,8 @@ class ReportsApi
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param  string $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  string $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param  string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3481,5 +3580,18 @@ class ReportsApi
         }
 
         return $options;
+    }
+
+    /**
+     * Writes to the debug log file
+     *
+     * @param any $data
+     * @return void
+     */
+    private function writeDebug($data)
+    {
+        if ($this->config->getDebug()) {
+            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        }
     }
 }

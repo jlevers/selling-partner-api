@@ -59,7 +59,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'coupon_id' => 'string',
         'seller_coupon_description' => 'string',
         'clip_or_redemption_count' => 'int',
@@ -77,7 +77,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'coupon_id' => null,
         'seller_coupon_description' => null,
         'clip_or_redemption_count' => 'int64',
@@ -279,7 +279,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -289,7 +289,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

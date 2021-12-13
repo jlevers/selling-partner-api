@@ -60,7 +60,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'customer_order_number' => 'string',
-        'order_date' => '\DateTime',
+        'order_date' => 'string',
         'order_status' => 'string',
         'shipment_details' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\ShipmentDetails',
         'tax_total' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\OrderDetailsTaxTotal',
@@ -80,7 +80,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'customer_order_number' => null,
-        'order_date' => 'date-time',
+        'order_date' => null,
         'order_status' => null,
         'shipment_details' => null,
         'tax_total' => null,
@@ -367,7 +367,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets order_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getOrderDate()
     {
@@ -377,7 +377,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_date
      *
-     * @param \DateTime $order_date The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
+     * @param string $order_date The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
      *
      * @return self
      */

@@ -64,7 +64,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_sku' => 'string',
         'condition' => 'string',
         'inventory_details' => '\SellingPartnerApi\Model\FbaInventory\InventoryDetails',
-        'last_updated_time' => '\DateTime',
+        'last_updated_time' => 'string',
         'product_name' => 'string',
         'total_quantity' => 'int'
     ];
@@ -82,7 +82,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_sku' => null,
         'condition' => null,
         'inventory_details' => null,
-        'last_updated_time' => 'date-time',
+        'last_updated_time' => null,
         'product_name' => null,
         'total_quantity' => null
     ];
@@ -399,7 +399,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets last_updated_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getLastUpdatedTime()
     {
@@ -409,7 +409,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets last_updated_time
      *
-     * @param \DateTime|null $last_updated_time The date and time that any quantity was last updated.
+     * @param string|null $last_updated_time The date and time that any quantity was last updated in ISO8601 format.
      *
      * @return self
      */

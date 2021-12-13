@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **warehouse_id** | **string** | The Amazon-defined identifier for the warehouse. | [optional]
 **amazon_order_id** | **string** | The Amazon-defined identifier for the order. | [optional]
 **amazon_shipment_id** | **string** | The Amazon-defined identifier for the shipment. | [optional]
-**purchase_date** | [**\DateTime**](\DateTime.md) | The date and time when the order was created. | [optional]
+**purchase_date** | **string** | The date and time when the order was created, in ISO 8601 format. | [optional]
 **shipping_address** | [**\SellingPartnerApi\Model\ShipmentInvoicing\Address**](Address.md) |  | [optional]
 **payment_method_details** | **string[]** | The list of payment method details. | [optional]
 **marketplace_id** | **string** | The identifier for the marketplace where the order was placed. | [optional]

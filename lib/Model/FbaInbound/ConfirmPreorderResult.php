@@ -58,8 +58,8 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'confirmed_need_by_date' => '\DateTime',
-        'confirmed_fulfillable_date' => '\DateTime'
+        'confirmed_need_by_date' => 'string',
+        'confirmed_fulfillable_date' => 'string'
     ];
 
     /**
@@ -70,8 +70,8 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'confirmed_need_by_date' => 'date',
-        'confirmed_fulfillable_date' => 'date'
+        'confirmed_need_by_date' => null,
+        'confirmed_fulfillable_date' => null
     ];
 
     /**
@@ -242,7 +242,7 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets confirmed_need_by_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getConfirmedNeedByDate()
     {
@@ -252,7 +252,7 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets confirmed_need_by_date
      *
-     * @param \DateTime|null $confirmed_need_by_date confirmed_need_by_date
+     * @param string|null $confirmed_need_by_date A date string in ISO 8601 format.
      *
      * @return self
      */
@@ -266,7 +266,7 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets confirmed_fulfillable_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getConfirmedFulfillableDate()
     {
@@ -276,7 +276,7 @@ class ConfirmPreorderResult implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets confirmed_fulfillable_date
      *
-     * @param \DateTime|null $confirmed_fulfillable_date confirmed_fulfillable_date
+     * @param string|null $confirmed_fulfillable_date A date string in ISO 8601 format.
      *
      * @return self
      */

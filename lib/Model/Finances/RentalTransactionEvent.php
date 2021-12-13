@@ -62,7 +62,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'amazon_order_id' => 'string',
         'rental_event_type' => 'string',
         'extension_length' => 'int',
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'rental_charge_list' => '\SellingPartnerApi\Model\Finances\ChargeComponent[]',
         'rental_fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]',
         'marketplace_name' => 'string',
@@ -82,7 +82,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'amazon_order_id' => null,
         'rental_event_type' => null,
         'extension_length' => 'int32',
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'rental_charge_list' => null,
         'rental_fee_list' => null,
         'marketplace_name' => null,
@@ -363,7 +363,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -373,7 +373,7 @@ class RentalTransactionEvent implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

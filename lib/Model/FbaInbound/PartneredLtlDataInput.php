@@ -62,7 +62,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
         'contact' => '\SellingPartnerApi\Model\FbaInbound\Contact',
         'box_count' => 'int',
         'seller_freight_class' => 'string',
-        'freight_ready_date' => '\DateTime',
+        'freight_ready_date' => 'string',
         'pallet_list' => '\SellingPartnerApi\Model\FbaInbound\Pallet[]',
         'total_weight' => '\SellingPartnerApi\Model\FbaInbound\Weight',
         'seller_declared_value' => '\SellingPartnerApi\Model\FbaInbound\Amount'
@@ -79,7 +79,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
         'contact' => null,
         'box_count' => 'int64',
         'seller_freight_class' => null,
-        'freight_ready_date' => 'date',
+        'freight_ready_date' => null,
         'pallet_list' => null,
         'total_weight' => null,
         'seller_declared_value' => null
@@ -345,7 +345,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets freight_ready_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getFreightReadyDate()
     {
@@ -355,7 +355,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets freight_ready_date
      *
-     * @param \DateTime|null $freight_ready_date freight_ready_date
+     * @param string|null $freight_ready_date A date string in ISO 8601 format.
      *
      * @return self
      */

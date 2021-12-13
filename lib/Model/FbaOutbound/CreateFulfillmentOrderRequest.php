@@ -62,7 +62,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
         'marketplace_id' => 'string',
         'seller_fulfillment_order_id' => 'string',
         'displayable_order_id' => 'string',
-        'displayable_order_date' => '\DateTime',
+        'displayable_order_date' => 'string',
         'displayable_order_comment' => 'string',
         'shipping_speed_category' => '\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
         'delivery_window' => '\SellingPartnerApi\Model\FbaOutbound\DeliveryWindow',
@@ -87,7 +87,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
         'marketplace_id' => null,
         'seller_fulfillment_order_id' => null,
         'displayable_order_id' => null,
-        'displayable_order_date' => 'date-time',
+        'displayable_order_date' => null,
         'displayable_order_comment' => null,
         'shipping_speed_category' => null,
         'delivery_window' => null,
@@ -434,7 +434,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets displayable_order_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDisplayableOrderDate()
     {
@@ -444,7 +444,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets displayable_order_date
      *
-     * @param \DateTime $displayable_order_date displayable_order_date
+     * @param string $displayable_order_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

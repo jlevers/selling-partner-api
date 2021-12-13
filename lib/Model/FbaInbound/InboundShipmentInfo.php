@@ -66,7 +66,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
         'shipment_status' => '\SellingPartnerApi\Model\FbaInbound\ShipmentStatus',
         'label_prep_type' => '\SellingPartnerApi\Model\FbaInbound\LabelPrepType',
         'are_cases_required' => 'bool',
-        'confirmed_need_by_date' => '\DateTime',
+        'confirmed_need_by_date' => 'string',
         'box_contents_source' => '\SellingPartnerApi\Model\FbaInbound\BoxContentsSource',
         'estimated_box_contents_fee' => '\SellingPartnerApi\Model\FbaInbound\BoxContentsFeeDetails'
     ];
@@ -86,7 +86,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
         'shipment_status' => null,
         'label_prep_type' => null,
         'are_cases_required' => null,
-        'confirmed_need_by_date' => 'date',
+        'confirmed_need_by_date' => null,
         'box_contents_source' => null,
         'estimated_box_contents_fee' => null
     ];
@@ -465,7 +465,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets confirmed_need_by_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getConfirmedNeedByDate()
     {
@@ -475,7 +475,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets confirmed_need_by_date
      *
-     * @param \DateTime|null $confirmed_need_by_date confirmed_need_by_date
+     * @param string|null $confirmed_need_by_date A date string in ISO 8601 format.
      *
      * @return self
      */

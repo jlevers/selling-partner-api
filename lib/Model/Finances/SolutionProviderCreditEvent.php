@@ -68,7 +68,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
         'provider_id' => 'string',
         'provider_store_name' => 'string',
         'transaction_amount' => '\SellingPartnerApi\Model\Finances\Currency',
-        'transaction_creation_date' => '\DateTime'
+        'transaction_creation_date' => 'string'
     ];
 
     /**
@@ -88,7 +88,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
         'provider_id' => null,
         'provider_store_name' => null,
         'transaction_amount' => null,
-        'transaction_creation_date' => 'date-time'
+        'transaction_creation_date' => null
     ];
 
     /**
@@ -507,7 +507,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets transaction_creation_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getTransactionCreationDate()
     {
@@ -517,7 +517,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets transaction_creation_date
      *
-     * @param \DateTime|null $transaction_creation_date transaction_creation_date
+     * @param string|null $transaction_creation_date A date string in ISO 8601 format.
      *
      * @return self
      */

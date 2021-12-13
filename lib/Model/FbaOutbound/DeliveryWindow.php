@@ -59,8 +59,8 @@ class DeliveryWindow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime'
+        'start_date' => 'string',
+        'end_date' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class DeliveryWindow implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start_date' => 'date-time',
-        'end_date' => 'date-time'
+        'start_date' => null,
+        'end_date' => null
     ];
 
     /**
@@ -249,7 +249,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStartDate()
     {
@@ -259,7 +259,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date start_date
+     * @param string $start_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -273,7 +273,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEndDate()
     {
@@ -283,7 +283,7 @@ class DeliveryWindow implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date end_date
+     * @param string $end_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

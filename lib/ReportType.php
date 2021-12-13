@@ -19,6 +19,21 @@ class ReportType
         'name' => 'GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT',
         'restricted' => false,
     ];
+    public const GET_BRAND_ANALYTICS_REPEAT_PURCHASE_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_BRAND_ANALYTICS_REPEAT_PURCHASE_REPORT',
+        'restricted' => false,
+    ];
+    public const GET_BRAND_ANALYTICS_ALTERNATE_PURCHASE_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_BRAND_ANALYTICS_ALTERNATE_PURCHASE_REPORT',
+        'restricted' => false,
+    ];
+    public const GET_BRAND_ANALYTICS_ITEM_COMPARISON_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_BRAND_ANALYTICS_ITEM_COMPARISON_REPORT',
+        'restricted' => false,
+    ];
 
 
     // Vendor Retail Analytics reports

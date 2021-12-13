@@ -63,7 +63,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
         'value_as_string' => 'string',
         'value_as_boolean' => 'bool',
         'value_as_integer' => 'int',
-        'value_as_timestamp' => '\DateTime',
+        'value_as_timestamp' => 'string',
         'value_as_address' => '\SellingPartnerApi\Model\MerchantFulfillment\Address',
         'value_as_weight' => '\SellingPartnerApi\Model\MerchantFulfillment\Weight',
         'value_as_dimension' => '\SellingPartnerApi\Model\MerchantFulfillment\Length',
@@ -82,7 +82,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
         'value_as_string' => null,
         'value_as_boolean' => null,
         'value_as_integer' => null,
-        'value_as_timestamp' => 'date-time',
+        'value_as_timestamp' => null,
         'value_as_address' => null,
         'value_as_weight' => null,
         'value_as_dimension' => null,
@@ -381,7 +381,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets value_as_timestamp
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getValueAsTimestamp()
     {
@@ -391,7 +391,7 @@ class AdditionalSellerInput implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets value_as_timestamp
      *
-     * @param \DateTime|null $value_as_timestamp value_as_timestamp
+     * @param string|null $value_as_timestamp A timestamp in ISO 8601 format.
      *
      * @return self
      */

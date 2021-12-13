@@ -59,8 +59,8 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'required_ship_date' => '\DateTime',
-        'promised_delivery_date' => '\DateTime'
+        'required_ship_date' => 'string',
+        'promised_delivery_date' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'required_ship_date' => 'date-time',
-        'promised_delivery_date' => 'date-time'
+        'required_ship_date' => null,
+        'promised_delivery_date' => null
     ];
 
     /**
@@ -246,7 +246,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets required_ship_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getRequiredShipDate()
     {
@@ -256,7 +256,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets required_ship_date
      *
-     * @param \DateTime $required_ship_date Time by which the vendor is required to ship the order.
+     * @param string $required_ship_date Time by which the vendor is required to ship the order.
      *
      * @return self
      */
@@ -270,7 +270,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets promised_delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPromisedDeliveryDate()
     {
@@ -280,7 +280,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets promised_delivery_date
      *
-     * @param \DateTime|null $promised_delivery_date Delivery date promised to the Amazon customer.
+     * @param string|null $promised_delivery_date Delivery date promised to the Amazon customer. Must be in ISO 8601 format.
      *
      * @return self
      */

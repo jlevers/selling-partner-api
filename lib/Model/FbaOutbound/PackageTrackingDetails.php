@@ -64,8 +64,8 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'carrier_code' => 'string',
         'carrier_phone_number' => 'string',
         'carrier_url' => 'string',
-        'ship_date' => '\DateTime',
-        'estimated_arrival_date' => '\DateTime',
+        'ship_date' => 'string',
+        'estimated_arrival_date' => 'string',
         'ship_to_address' => '\SellingPartnerApi\Model\FbaOutbound\TrackingAddress',
         'current_status' => '\SellingPartnerApi\Model\FbaOutbound\CurrentStatus',
         'current_status_description' => 'string',
@@ -88,8 +88,8 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'carrier_code' => null,
         'carrier_phone_number' => null,
         'carrier_url' => null,
-        'ship_date' => 'date-time',
-        'estimated_arrival_date' => 'date-time',
+        'ship_date' => null,
+        'estimated_arrival_date' => null,
         'ship_to_address' => null,
         'current_status' => null,
         'current_status_description' => null,
@@ -461,7 +461,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets ship_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getShipDate()
     {
@@ -471,7 +471,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets ship_date
      *
-     * @param \DateTime|null $ship_date ship_date
+     * @param string|null $ship_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets estimated_arrival_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedArrivalDate()
     {
@@ -495,7 +495,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets estimated_arrival_date
      *
-     * @param \DateTime|null $estimated_arrival_date estimated_arrival_date
+     * @param string|null $estimated_arrival_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

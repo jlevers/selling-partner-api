@@ -62,13 +62,13 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_ids' => 'string[]',
         'report_id' => 'string',
         'report_type' => 'string',
-        'data_start_time' => '\DateTime',
-        'data_end_time' => '\DateTime',
+        'data_start_time' => 'string',
+        'data_end_time' => 'string',
         'report_schedule_id' => 'string',
-        'created_time' => '\DateTime',
+        'created_time' => 'string',
         'processing_status' => 'string',
-        'processing_start_time' => '\DateTime',
-        'processing_end_time' => '\DateTime',
+        'processing_start_time' => 'string',
+        'processing_end_time' => 'string',
         'report_document_id' => 'string'
     ];
 
@@ -83,13 +83,13 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_ids' => null,
         'report_id' => null,
         'report_type' => null,
-        'data_start_time' => 'date-time',
-        'data_end_time' => 'date-time',
+        'data_start_time' => null,
+        'data_end_time' => null,
         'report_schedule_id' => null,
-        'created_time' => 'date-time',
+        'created_time' => null,
         'processing_status' => null,
-        'processing_start_time' => 'date-time',
-        'processing_end_time' => 'date-time',
+        'processing_start_time' => null,
+        'processing_end_time' => null,
         'report_document_id' => null
     ];
 
@@ -411,7 +411,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data_start_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDataStartTime()
     {
@@ -421,7 +421,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_start_time
      *
-     * @param \DateTime|null $data_start_time The start of a date and time range used for selecting the data to report.
+     * @param string|null $data_start_time The start of a date and time range used for selecting the data to report. Must be in ISO 8601 format.
      *
      * @return self
      */
@@ -435,7 +435,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data_end_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDataEndTime()
     {
@@ -445,7 +445,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_end_time
      *
-     * @param \DateTime|null $data_end_time The end of a date and time range used for selecting the data to report.
+     * @param string|null $data_end_time The end of a date and time range used for selecting the data to report. Must be in ISO 8601 format.
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets created_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedTime()
     {
@@ -493,7 +493,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_time
      *
-     * @param \DateTime $created_time The date and time when the report was created.
+     * @param string $created_time The date and time when the report was created.
      *
      * @return self
      */
@@ -541,7 +541,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets processing_start_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getProcessingStartTime()
     {
@@ -551,7 +551,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets processing_start_time
      *
-     * @param \DateTime|null $processing_start_time The date and time when the report processing started, in ISO 8601 date time format.
+     * @param string|null $processing_start_time The date and time when the report processing started, in ISO 8601 date time format.
      *
      * @return self
      */
@@ -565,7 +565,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets processing_end_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getProcessingEndTime()
     {
@@ -575,7 +575,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets processing_end_time
      *
-     * @param \DateTime|null $processing_end_time The date and time when the report processing completed, in ISO 8601 date time format.
+     * @param string|null $processing_end_time The date and time when the report processing completed, in ISO 8601 date time format.
      *
      * @return self
      */

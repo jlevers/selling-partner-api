@@ -59,7 +59,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'acknowledgement_date' => '\DateTime',
+        'acknowledgement_date' => 'string',
         'accepted_quantity' => '\SellingPartnerApi\Model\VendorOrders\ItemQuantity',
         'rejected_quantity' => '\SellingPartnerApi\Model\VendorOrders\ItemQuantity'
     ];
@@ -72,7 +72,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'acknowledgement_date' => 'date-time',
+        'acknowledgement_date' => null,
         'accepted_quantity' => null,
         'rejected_quantity' => null
     ];
@@ -249,7 +249,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
     /**
      * Gets acknowledgement_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getAcknowledgementDate()
     {
@@ -259,7 +259,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets acknowledgement_date
      *
-     * @param \DateTime|null $acknowledgement_date The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
+     * @param string|null $acknowledgement_date The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
      *
      * @return self
      */

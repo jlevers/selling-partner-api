@@ -62,7 +62,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'tracking_number' => 'string',
         'status_code' => 'string',
         'reason_code' => 'string',
-        'status_date_time' => '\DateTime',
+        'status_date_time' => 'string',
         'status_location_address' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\Address',
         'shipment_schedule' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShipping\StatusUpdateDetailsShipmentSchedule'
     ];
@@ -78,7 +78,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'tracking_number' => null,
         'status_code' => null,
         'reason_code' => null,
-        'status_date_time' => 'date-time',
+        'status_date_time' => null,
         'status_location_address' => null,
         'shipment_schedule' => null
     ];
@@ -354,7 +354,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets status_date_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStatusDateTime()
     {
@@ -364,7 +364,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets status_date_time
      *
-     * @param \DateTime $status_date_time The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param string $status_date_time The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */

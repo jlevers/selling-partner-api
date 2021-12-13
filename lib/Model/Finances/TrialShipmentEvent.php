@@ -61,7 +61,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'financial_event_group_id' => 'string',
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'sku' => 'string',
         'fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]'
     ];
@@ -76,7 +76,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'amazon_order_id' => null,
         'financial_event_group_id' => null,
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'sku' => null,
         'fee_list' => null
     ];
@@ -309,7 +309,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -319,7 +319,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

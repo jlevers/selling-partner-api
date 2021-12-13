@@ -564,8 +564,8 @@ $report_types = array('report_types_example'); // string[] | A list of report ty
 $processing_statuses = array('processing_statuses_example'); // string[] | A list of processing statuses used to filter reports.
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
 $page_size = 10; // int | The maximum number of reports to return in a single call.
-$created_since = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
-$created_until = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
+$created_since = 'created_since_example'; // string | The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
+$created_until = 'created_until_example'; // string | The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
 $next_token = 'next_token_example'; // string | A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
 
 try {
@@ -584,8 +584,8 @@ Name | Type | Description  | Notes
  **processing_statuses** | [**string[]**](../Model/Reports/string.md)| A list of processing statuses used to filter reports. | [optional]
  **marketplace_ids** | [**string[]**](../Model/Reports/string.md)| A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. | [optional]
  **page_size** | **int**| The maximum number of reports to return in a single call. | [optional] [default to 10]
- **created_since** | **\DateTime**| The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. | [optional]
- **created_until** | **\DateTime**| The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. | [optional]
+ **created_since** | **string**| The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. | [optional]
+ **created_until** | **string**| The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. | [optional]
  **next_token** | **string**| A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. | [optional]
 
 ### Return type

@@ -59,8 +59,8 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start_time' => '\DateTime',
-        'end_time' => '\DateTime'
+        'start_time' => 'string',
+        'end_time' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start_time' => 'date-time',
-        'end_time' => 'date-time'
+        'start_time' => null,
+        'end_time' => null
     ];
 
     /**
@@ -243,7 +243,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets start_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStartTime()
     {
@@ -253,7 +253,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets start_time
      *
-     * @param \DateTime|null $start_time The date and time of the start of the promised delivery window, in ISO 8601 format.
+     * @param string|null $start_time The date and time of the start of the promised delivery window, in ISO 8601 format.
      *
      * @return self
      */
@@ -267,7 +267,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets end_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEndTime()
     {
@@ -277,7 +277,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets end_time
      *
-     * @param \DateTime|null $end_time The date and time of the end of the promised delivery window, in ISO 8601 format.
+     * @param string|null $end_time The date and time of the end of the promised delivery window, in ISO 8601 format.
      *
      * @return self
      */

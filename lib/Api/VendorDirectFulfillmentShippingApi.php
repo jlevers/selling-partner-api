@@ -142,11 +142,17 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -331,6 +337,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -373,10 +380,13 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -388,6 +398,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -500,8 +511,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getCustomerInvoices
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -520,8 +531,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getCustomerInvoicesWithHttpInfo
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -541,11 +552,17 @@ class VendorDirectFulfillmentShippingApi
             "getCustomerInvoices"
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -714,6 +731,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -723,8 +741,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -748,8 +766,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -769,10 +787,13 @@ class VendorDirectFulfillmentShippingApi
             "getCustomerInvoices"
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -784,6 +805,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -802,8 +824,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Create request for operation 'getCustomerInvoices'
      *
-     * @param  \DateTime $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional)
@@ -977,11 +999,17 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1166,6 +1194,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1208,10 +1237,13 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1223,6 +1255,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1335,8 +1368,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getPackingSlips
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1355,8 +1388,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getPackingSlipsWithHttpInfo
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1376,11 +1409,17 @@ class VendorDirectFulfillmentShippingApi
             "getPackingSlips"
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -1565,6 +1604,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -1574,8 +1614,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1599,8 +1639,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1620,10 +1660,13 @@ class VendorDirectFulfillmentShippingApi
             "getPackingSlips"
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -1635,6 +1678,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -1653,8 +1697,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Create request for operation 'getPackingSlips'
      *
-     * @param  \DateTime $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
@@ -1828,11 +1872,17 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -2017,6 +2067,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -2059,10 +2110,13 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2074,6 +2128,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -2186,8 +2241,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getShippingLabels
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2206,8 +2261,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Operation getShippingLabelsWithHttpInfo
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2227,11 +2282,17 @@ class VendorDirectFulfillmentShippingApi
             "getShippingLabels"
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -2400,6 +2461,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -2409,8 +2471,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2434,8 +2496,8 @@ class VendorDirectFulfillmentShippingApi
      *
      * 
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2455,10 +2517,13 @@ class VendorDirectFulfillmentShippingApi
             "getShippingLabels"
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2470,6 +2535,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -2488,8 +2554,8 @@ class VendorDirectFulfillmentShippingApi
     /**
      * Create request for operation 'getShippingLabels'
      *
-     * @param  \DateTime $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param  string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
@@ -2663,11 +2729,17 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -2852,6 +2924,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -2894,10 +2967,13 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -2909,6 +2985,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -3042,11 +3119,17 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -3231,6 +3314,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -3273,10 +3357,13 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3288,6 +3375,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -3421,11 +3509,17 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -3610,6 +3704,7 @@ class VendorDirectFulfillmentShippingApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -3652,10 +3747,13 @@ class VendorDirectFulfillmentShippingApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -3667,6 +3765,7 @@ class VendorDirectFulfillmentShippingApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -3786,5 +3885,18 @@ class VendorDirectFulfillmentShippingApi
         }
 
         return $options;
+    }
+
+    /**
+     * Writes to the debug log file
+     *
+     * @param any $data
+     * @return void
+     */
+    private function writeDebug($data)
+    {
+        if ($this->config->getDebug()) {
+            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        }
     }
 }

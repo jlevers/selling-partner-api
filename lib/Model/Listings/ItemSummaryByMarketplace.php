@@ -66,8 +66,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'status' => 'string[]',
         'fn_sku' => 'string',
         'item_name' => 'string',
-        'created_date' => '\DateTime',
-        'last_updated_date' => '\DateTime',
+        'created_date' => 'string',
+        'last_updated_date' => 'string',
         'main_image' => '\SellingPartnerApi\Model\Listings\ItemImage'
     ];
 
@@ -86,8 +86,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'status' => null,
         'fn_sku' => null,
         'item_name' => null,
-        'created_date' => 'date-time',
-        'last_updated_date' => 'date-time',
+        'created_date' => null,
+        'last_updated_date' => null,
         'main_image' => null
     ];
 
@@ -560,7 +560,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets created_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getCreatedDate()
     {
@@ -570,7 +570,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets created_date
      *
-     * @param \DateTime $created_date Date the listings item was created, in ISO 8601 format.
+     * @param string $created_date Date the listings item was created, in ISO 8601 format.
      *
      * @return self
      */
@@ -584,7 +584,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets last_updated_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getLastUpdatedDate()
     {
@@ -594,7 +594,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets last_updated_date
      *
-     * @param \DateTime $last_updated_date Date the listings item was last updated, in ISO 8601 format.
+     * @param string $last_updated_date Date the listings item was last updated, in ISO 8601 format.
      *
      * @return self
      */

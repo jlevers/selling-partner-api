@@ -60,7 +60,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'displayable_order_id' => 'string',
-        'displayable_order_date' => '\DateTime',
+        'displayable_order_date' => 'string',
         'displayable_order_comment' => 'string',
         'shipping_speed_category' => '\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory',
         'destination_address' => '\SellingPartnerApi\Model\FbaOutbound\Address',
@@ -82,7 +82,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPIFormats = [
         'marketplace_id' => null,
         'displayable_order_id' => null,
-        'displayable_order_date' => 'date-time',
+        'displayable_order_date' => null,
         'displayable_order_comment' => null,
         'shipping_speed_category' => null,
         'destination_address' => null,
@@ -362,7 +362,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets displayable_order_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDisplayableOrderDate()
     {
@@ -372,7 +372,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets displayable_order_date
      *
-     * @param \DateTime|null $displayable_order_date displayable_order_date
+     * @param string|null $displayable_order_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

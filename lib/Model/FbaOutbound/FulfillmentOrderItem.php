@@ -68,8 +68,8 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'order_item_disposition' => 'string',
         'cancelled_quantity' => 'int',
         'unfulfillable_quantity' => 'int',
-        'estimated_ship_date' => '\DateTime',
-        'estimated_arrival_date' => '\DateTime',
+        'estimated_ship_date' => 'string',
+        'estimated_arrival_date' => 'string',
         'per_unit_price' => '\SellingPartnerApi\Model\FbaOutbound\Money',
         'per_unit_tax' => '\SellingPartnerApi\Model\FbaOutbound\Money',
         'per_unit_declared_value' => '\SellingPartnerApi\Model\FbaOutbound\Money'
@@ -92,8 +92,8 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'order_item_disposition' => null,
         'cancelled_quantity' => 'int32',
         'unfulfillable_quantity' => 'int32',
-        'estimated_ship_date' => 'date-time',
-        'estimated_arrival_date' => 'date-time',
+        'estimated_ship_date' => null,
+        'estimated_arrival_date' => null,
         'per_unit_price' => null,
         'per_unit_tax' => null,
         'per_unit_declared_value' => null
@@ -546,7 +546,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets estimated_ship_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedShipDate()
     {
@@ -556,7 +556,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets estimated_ship_date
      *
-     * @param \DateTime|null $estimated_ship_date estimated_ship_date
+     * @param string|null $estimated_ship_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -570,7 +570,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets estimated_arrival_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedArrivalDate()
     {
@@ -580,7 +580,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets estimated_arrival_date
      *
-     * @param \DateTime|null $estimated_arrival_date estimated_arrival_date
+     * @param string|null $estimated_arrival_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

@@ -61,7 +61,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'imaging_request_billing_item_id' => 'string',
         'asin' => 'string',
-        'posted_date' => '\DateTime',
+        'posted_date' => 'string',
         'fee_list' => '\SellingPartnerApi\Model\Finances\FeeComponent[]'
     ];
 
@@ -75,7 +75,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPIFormats = [
         'imaging_request_billing_item_id' => null,
         'asin' => null,
-        'posted_date' => 'date-time',
+        'posted_date' => null,
         'fee_list' => null
     ];
 
@@ -303,7 +303,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets posted_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getPostedDate()
     {
@@ -313,7 +313,7 @@ class ImagingServicesFeeEvent implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets posted_date
      *
-     * @param \DateTime|null $posted_date posted_date
+     * @param string|null $posted_date A date string in ISO 8601 format.
      *
      * @return self
      */

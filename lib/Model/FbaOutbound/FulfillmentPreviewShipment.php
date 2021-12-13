@@ -59,10 +59,10 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'earliest_ship_date' => '\DateTime',
-        'latest_ship_date' => '\DateTime',
-        'earliest_arrival_date' => '\DateTime',
-        'latest_arrival_date' => '\DateTime',
+        'earliest_ship_date' => 'string',
+        'latest_ship_date' => 'string',
+        'earliest_arrival_date' => 'string',
+        'latest_arrival_date' => 'string',
         'shipping_notes' => 'string[]',
         'fulfillment_preview_items' => '\SellingPartnerApi\Model\FbaOutbound\FulfillmentPreviewItem[]'
     ];
@@ -75,10 +75,10 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'earliest_ship_date' => 'date-time',
-        'latest_ship_date' => 'date-time',
-        'earliest_arrival_date' => 'date-time',
-        'latest_arrival_date' => 'date-time',
+        'earliest_ship_date' => null,
+        'latest_ship_date' => null,
+        'earliest_arrival_date' => null,
+        'latest_arrival_date' => null,
         'shipping_notes' => null,
         'fulfillment_preview_items' => null
     ];
@@ -270,7 +270,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets earliest_ship_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEarliestShipDate()
     {
@@ -280,7 +280,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets earliest_ship_date
      *
-     * @param \DateTime|null $earliest_ship_date earliest_ship_date
+     * @param string|null $earliest_ship_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -294,7 +294,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets latest_ship_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getLatestShipDate()
     {
@@ -304,7 +304,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets latest_ship_date
      *
-     * @param \DateTime|null $latest_ship_date latest_ship_date
+     * @param string|null $latest_ship_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -318,7 +318,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets earliest_arrival_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEarliestArrivalDate()
     {
@@ -328,7 +328,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets earliest_arrival_date
      *
-     * @param \DateTime|null $earliest_arrival_date earliest_arrival_date
+     * @param string|null $earliest_arrival_date A datetime string in ISO 8601 format.
      *
      * @return self
      */
@@ -342,7 +342,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets latest_arrival_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getLatestArrivalDate()
     {
@@ -352,7 +352,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets latest_arrival_date
      *
-     * @param \DateTime|null $latest_arrival_date latest_arrival_date
+     * @param string|null $latest_arrival_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

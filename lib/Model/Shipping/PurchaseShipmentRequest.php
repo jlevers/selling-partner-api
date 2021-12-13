@@ -62,7 +62,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'client_reference_id' => 'string',
         'ship_to' => '\SellingPartnerApi\Model\Shipping\Address',
         'ship_from' => '\SellingPartnerApi\Model\Shipping\Address',
-        'ship_date' => '\DateTime',
+        'ship_date' => 'string',
         'service_type' => '\SellingPartnerApi\Model\Shipping\ServiceType',
         'containers' => '\SellingPartnerApi\Model\Shipping\Container[]',
         'label_specification' => '\SellingPartnerApi\Model\Shipping\LabelSpecification'
@@ -79,7 +79,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
         'client_reference_id' => null,
         'ship_to' => null,
         'ship_from' => null,
-        'ship_date' => 'date-time',
+        'ship_date' => null,
         'service_type' => null,
         'containers' => null,
         'label_specification' => null
@@ -371,7 +371,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets ship_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getShipDate()
     {
@@ -381,7 +381,7 @@ class PurchaseShipmentRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets ship_date
      *
-     * @param \DateTime|null $ship_date The start date and time. This defaults to the current date and time.
+     * @param string|null $ship_date The start date and time. Must be in ISO 8601 format. This defaults to the current date and time.
      *
      * @return self
      */

@@ -118,7 +118,7 @@ class FbaInventoryApi
      * @param  string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param  string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param  string $details &#39;true&#39; to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* &#39;true&#39;, not the boolean value, due to a bug in Amazon&#39;s API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
-     * @param  \DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
      * @param  string $next_token String token returned in the response of your previous request. (optional)
      *
@@ -139,7 +139,7 @@ class FbaInventoryApi
      * @param  string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param  string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param  string $details &#39;true&#39; to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* &#39;true&#39;, not the boolean value, due to a bug in Amazon&#39;s API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
-     * @param  \DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
      * @param  string $next_token String token returned in the response of your previous request. (optional)
      *
@@ -154,11 +154,17 @@ class FbaInventoryApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         try {
             $options = $this->createHttpClientOption();
             try {
                 $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug($response->getBody()->getContents());
             } catch (RequestException $e) {
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
                     $e->getCode(),
@@ -311,6 +317,7 @@ class FbaInventoryApi
                     $e->setResponseObject($data);
                     break;
             }
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -324,7 +331,7 @@ class FbaInventoryApi
      * @param  string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param  string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param  string $details &#39;true&#39; to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* &#39;true&#39;, not the boolean value, due to a bug in Amazon&#39;s API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
-     * @param  \DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
      * @param  string $next_token String token returned in the response of your previous request. (optional)
      *
@@ -350,7 +357,7 @@ class FbaInventoryApi
      * @param  string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param  string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param  string $details &#39;true&#39; to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* &#39;true&#39;, not the boolean value, due to a bug in Amazon&#39;s API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
-     * @param  \DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
      * @param  string $next_token String token returned in the response of your previous request. (optional)
      *
@@ -365,10 +372,13 @@ class FbaInventoryApi
             $request
         );
 
+        $this->writeDebug($signedRequest);
+
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
                     $responseBody = $response->getBody();
                     if ($returnType === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
@@ -380,6 +390,7 @@ class FbaInventoryApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
                         sprintf(
@@ -402,7 +413,7 @@ class FbaInventoryApi
      * @param  string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param  string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param  string $details &#39;true&#39; to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* &#39;true&#39;, not the boolean value, due to a bug in Amazon&#39;s API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
-     * @param  \DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
      * @param  string $next_token String token returned in the response of your previous request. (optional)
      *
@@ -575,5 +586,18 @@ class FbaInventoryApi
         }
 
         return $options;
+    }
+
+    /**
+     * Writes to the debug log file
+     *
+     * @param any $data
+     * @return void
+     */
+    private function writeDebug($data)
+    {
+        if ($this->config->getDebug()) {
+            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        }
     }
 }

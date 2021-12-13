@@ -62,7 +62,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
         'package_number' => 'int',
         'carrier_code' => 'string',
         'tracking_number' => 'string',
-        'estimated_arrival_date' => '\DateTime'
+        'estimated_arrival_date' => 'string'
     ];
 
     /**
@@ -76,7 +76,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
         'package_number' => 'int32',
         'carrier_code' => null,
         'tracking_number' => null,
-        'estimated_arrival_date' => 'date-time'
+        'estimated_arrival_date' => null
     ];
 
     /**
@@ -333,7 +333,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets estimated_arrival_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedArrivalDate()
     {
@@ -343,7 +343,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets estimated_arrival_date
      *
-     * @param \DateTime|null $estimated_arrival_date estimated_arrival_date
+     * @param string|null $estimated_arrival_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

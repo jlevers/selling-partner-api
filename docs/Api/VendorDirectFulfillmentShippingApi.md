@@ -114,8 +114,8 @@ $config = new SellingPartnerApi\Configuration([
 ]);
 
 $apiInstance = new SellingPartnerApi\Api\VendorDirectFulfillmentShippingApi($config);
-$created_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-$created_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+$created_after = 'created_after_example'; // string | Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+$created_before = 'created_before_example'; // string | Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
 $ship_from_party_id = 'ship_from_party_id_example'; // string | The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
 $limit = 56; // int | The limit to the number of records returned
 $sort_order = 'sort_order_example'; // string | Sort ASC or DESC by order creation date.
@@ -133,8 +133,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_after** | **\DateTime**| Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. |
- **created_before** | **\DateTime**| Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
+ **created_after** | **string**| Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. |
+ **created_before** | **string**| Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
  **ship_from_party_id** | **string**| The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. | [optional]
  **limit** | **int**| The limit to the number of records returned | [optional]
  **sort_order** | **string**| Sort ASC or DESC by order creation date. | [optional]
@@ -254,8 +254,8 @@ $config = new SellingPartnerApi\Configuration([
 ]);
 
 $apiInstance = new SellingPartnerApi\Api\VendorDirectFulfillmentShippingApi($config);
-$created_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-$created_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+$created_after = 'created_after_example'; // string | Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+$created_before = 'created_before_example'; // string | Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
 $ship_from_party_id = 'ship_from_party_id_example'; // string | The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
 $limit = 56; // int | The limit to the number of records returned
 $sort_order = 'ASC'; // string | Sort ASC or DESC by packing slip creation date.
@@ -273,8 +273,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_after** | **\DateTime**| Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. |
- **created_before** | **\DateTime**| Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
+ **created_after** | **string**| Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. |
+ **created_before** | **string**| Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
  **ship_from_party_id** | **string**| The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. | [optional]
  **limit** | **int**| The limit to the number of records returned | [optional]
  **sort_order** | **string**| Sort ASC or DESC by packing slip creation date. | [optional] [default to &#39;ASC&#39;]
@@ -394,8 +394,8 @@ $config = new SellingPartnerApi\Configuration([
 ]);
 
 $apiInstance = new SellingPartnerApi\Api\VendorDirectFulfillmentShippingApi($config);
-$created_after = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-$created_before = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+$created_after = 'created_after_example'; // string | Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+$created_before = 'created_before_example'; // string | Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
 $ship_from_party_id = 'ship_from_party_id_example'; // string | The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
 $limit = 56; // int | The limit to the number of records returned.
 $sort_order = 'ASC'; // string | Sort ASC or DESC by order creation date.
@@ -413,8 +413,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_after** | **\DateTime**| Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. |
- **created_before** | **\DateTime**| Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
+ **created_after** | **string**| Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. |
+ **created_before** | **string**| Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
  **ship_from_party_id** | **string**| The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. | [optional]
  **limit** | **int**| The limit to the number of records returned. | [optional]
  **sort_order** | **string**| Sort ASC or DESC by order creation date. | [optional] [default to &#39;ASC&#39;]

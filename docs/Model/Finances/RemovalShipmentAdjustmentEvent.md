@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **string** | A date string in ISO 8601 format. | [optional]
 **adjustment_event_id** | **string** | The unique identifier for the adjustment event. | [optional]
 **merchant_order_id** | **string** | The merchant removal orderId. | [optional]
 **order_id** | **string** | The orderId for shipping inventory. | [optional]

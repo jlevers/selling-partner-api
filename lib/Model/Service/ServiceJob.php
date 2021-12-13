@@ -59,7 +59,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'create_time' => '\DateTime',
+        'create_time' => 'string',
         'service_job_id' => 'string',
         'service_job_status' => 'string',
         'scope_of_work' => '\SellingPartnerApi\Model\Service\ScopeOfWork',
@@ -82,7 +82,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'create_time' => 'date-time',
+        'create_time' => null,
         'service_job_id' => null,
         'service_job_status' => null,
         'scope_of_work' => null,
@@ -363,7 +363,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets create_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCreateTime()
     {
@@ -373,7 +373,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets create_time
      *
-     * @param \DateTime|null $create_time The date and time of the creation of the job, in ISO 8601 format.
+     * @param string|null $create_time The date and time of the creation of the job, in ISO 8601 format.
      *
      * @return self
      */

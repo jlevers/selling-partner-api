@@ -59,7 +59,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'estimated_delivery_date' => '\DateTime',
+        'estimated_delivery_date' => 'string',
         'item_delivery_promise' => '\SellingPartnerApi\Model\Service\ItemDeliveryPromise'
     ];
 
@@ -71,7 +71,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'estimated_delivery_date' => 'date-time',
+        'estimated_delivery_date' => null,
         'item_delivery_promise' => null
     ];
 
@@ -243,7 +243,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets estimated_delivery_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEstimatedDeliveryDate()
     {
@@ -253,7 +253,7 @@ class ItemDelivery implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets estimated_delivery_date
      *
-     * @param \DateTime|null $estimated_delivery_date The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
+     * @param string|null $estimated_delivery_date The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
      *
      * @return self
      */

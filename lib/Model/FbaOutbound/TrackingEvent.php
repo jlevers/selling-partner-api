@@ -59,7 +59,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'event_date' => '\DateTime',
+        'event_date' => 'string',
         'event_address' => '\SellingPartnerApi\Model\FbaOutbound\TrackingAddress',
         'event_code' => '\SellingPartnerApi\Model\FbaOutbound\EventCode',
         'event_description' => 'string'
@@ -73,7 +73,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'event_date' => 'date-time',
+        'event_date' => null,
         'event_address' => null,
         'event_code' => null,
         'event_description' => null
@@ -267,7 +267,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets event_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEventDate()
     {
@@ -277,7 +277,7 @@ class TrackingEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets event_date
      *
-     * @param \DateTime $event_date event_date
+     * @param string $event_date A datetime string in ISO 8601 format.
      *
      * @return self
      */

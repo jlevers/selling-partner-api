@@ -61,7 +61,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'purchase_order_number' => 'string',
         'vendor_order_number' => 'string',
-        'acknowledgement_date' => '\DateTime',
+        'acknowledgement_date' => 'string',
         'acknowledgement_status' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\AcknowledgementStatus',
         'selling_party' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\PartyIdentification',
         'ship_from_party' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrders\PartyIdentification',
@@ -78,7 +78,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPIFormats = [
         'purchase_order_number' => null,
         'vendor_order_number' => null,
-        'acknowledgement_date' => 'date-time',
+        'acknowledgement_date' => null,
         'acknowledgement_status' => null,
         'selling_party' => null,
         'ship_from_party' => null,
@@ -342,7 +342,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets acknowledgement_date
      *
-     * @return \DateTime
+     * @return string
      */
     public function getAcknowledgementDate()
     {
@@ -352,7 +352,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets acknowledgement_date
      *
-     * @param \DateTime $acknowledgement_date The date and time when the order is acknowledged, in ISO-8601 date/time format. For example: 2018-07-16T23:00:00Z / 2018-07-16T23:00:00-05:00 / 2018-07-16T23:00:00-08:00.
+     * @param string $acknowledgement_date The date and time when the order is acknowledged, in ISO-8601 date/time format. For example: 2018-07-16T23:00:00Z / 2018-07-16T23:00:00-05:00 / 2018-07-16T23:00:00-08:00.
      *
      * @return self
      */

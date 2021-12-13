@@ -12,7 +12,7 @@ Possible values:
 
 * RetrochargeReversal | [optional]
 **amazon_order_id** | **string** | An Amazon-defined identifier for an order. | [optional]
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **string** | A date string in ISO 8601 format. | [optional]
 **base_tax** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **shipping_tax** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **marketplace_name** | **string** | The name of the marketplace where the retrocharge event occurred. | [optional]

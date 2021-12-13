@@ -61,8 +61,8 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPITypes = [
         'report_options' => 'map[string,string]',
         'report_type' => 'string',
-        'data_start_time' => '\DateTime',
-        'data_end_time' => '\DateTime',
+        'data_start_time' => 'string',
+        'data_end_time' => 'string',
         'marketplace_ids' => 'string[]'
     ];
 
@@ -76,8 +76,8 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
     protected static $openAPIFormats = [
         'report_options' => null,
         'report_type' => null,
-        'data_start_time' => 'date-time',
-        'data_end_time' => 'date-time',
+        'data_start_time' => null,
+        'data_end_time' => null,
         'marketplace_ids' => null
     ];
 
@@ -323,7 +323,7 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets data_start_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDataStartTime()
     {
@@ -333,7 +333,7 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets data_start_time
      *
-     * @param \DateTime|null $data_start_time The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     * @param string|null $data_start_time The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      *
      * @return self
      */
@@ -347,7 +347,7 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets data_end_time
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDataEndTime()
     {
@@ -357,7 +357,7 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets data_end_time
      *
-     * @param \DateTime|null $data_end_time The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     * @param string|null $data_end_time The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      *
      * @return self
      */

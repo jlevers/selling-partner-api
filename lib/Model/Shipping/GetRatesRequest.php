@@ -62,7 +62,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_to' => '\SellingPartnerApi\Model\Shipping\Address',
         'ship_from' => '\SellingPartnerApi\Model\Shipping\Address',
         'service_types' => '\SellingPartnerApi\Model\Shipping\ServiceType[]',
-        'ship_date' => '\DateTime',
+        'ship_date' => 'string',
         'container_specifications' => '\SellingPartnerApi\Model\Shipping\ContainerSpecification[]'
     ];
 
@@ -77,7 +77,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_to' => null,
         'ship_from' => null,
         'service_types' => null,
-        'ship_date' => 'date-time',
+        'ship_date' => null,
         'container_specifications' => null
     ];
 
@@ -345,7 +345,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ship_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getShipDate()
     {
@@ -355,7 +355,7 @@ class GetRatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ship_date
      *
-     * @param \DateTime|null $ship_date The start date and time. This defaults to the current date and time.
+     * @param string|null $ship_date The start date and time. Must be in ISO 8601 format. This defaults to the current date and time.
      *
      * @return self
      */

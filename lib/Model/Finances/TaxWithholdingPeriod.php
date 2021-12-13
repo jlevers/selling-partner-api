@@ -59,8 +59,8 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime'
+        'start_date' => 'string',
+        'end_date' => 'string'
     ];
 
     /**
@@ -71,8 +71,8 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start_date' => 'date-time',
-        'end_date' => 'date-time'
+        'start_date' => null,
+        'end_date' => null
     ];
 
     /**
@@ -243,7 +243,7 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getStartDate()
     {
@@ -253,7 +253,7 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date start_date
+     * @param string|null $start_date A date string in ISO 8601 format.
      *
      * @return self
      */
@@ -267,7 +267,7 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getEndDate()
     {
@@ -277,7 +277,7 @@ class TaxWithholdingPeriod implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
+     * @param string|null $end_date A date string in ISO 8601 format.
      *
      * @return self
      */

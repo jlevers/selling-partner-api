@@ -60,8 +60,8 @@ class CreateWarrantyRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'attachments' => '\SellingPartnerApi\Model\Messaging\Attachment[]',
-        'coverage_start_date' => '\DateTime',
-        'coverage_end_date' => '\DateTime'
+        'coverage_start_date' => 'string',
+        'coverage_end_date' => 'string'
     ];
 
     /**
@@ -73,8 +73,8 @@ class CreateWarrantyRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'attachments' => null,
-        'coverage_start_date' => 'date-time',
-        'coverage_end_date' => 'date-time'
+        'coverage_start_date' => null,
+        'coverage_end_date' => null
     ];
 
     /**
@@ -273,7 +273,7 @@ class CreateWarrantyRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets coverage_start_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCoverageStartDate()
     {
@@ -283,7 +283,7 @@ class CreateWarrantyRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets coverage_start_date
      *
-     * @param \DateTime|null $coverage_start_date The start date of the warranty coverage to include in the message to the buyer.
+     * @param string|null $coverage_start_date The start date of the warranty coverage to include in the message to the buyer. Must be in ISO 8601 format.
      *
      * @return self
      */
@@ -297,7 +297,7 @@ class CreateWarrantyRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets coverage_end_date
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getCoverageEndDate()
     {
@@ -307,7 +307,7 @@ class CreateWarrantyRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets coverage_end_date
      *
-     * @param \DateTime|null $coverage_end_date The end date of the warranty coverage to include in the message to the buyer.
+     * @param string|null $coverage_end_date The end date of the warranty coverage to include in the message to the buyer. Must be in ISO 8601 format.
      *
      * @return self
      */

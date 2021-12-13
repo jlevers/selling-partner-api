@@ -23,7 +23,7 @@ Possible values:
 * ReimbursementClawback - An Amazon Easy Ship reimbursement clawback from a seller&#39;s account. This occurs when a prior reimbursement is reversed. This value is used only in the India marketplace.
 
 * SellerRewards - An award credited to a seller&#39;s account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace. | [optional]
-**posted_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**posted_date** | **string** | A date string in ISO 8601 format. | [optional]
 **adjustment_amount** | [**\SellingPartnerApi\Model\Finances\Currency**](Currency.md) |  | [optional]
 **adjustment_item_list** | [**\SellingPartnerApi\Model\Finances\AdjustmentItem[]**](AdjustmentItem.md) | A list of information about items in an adjustment to the seller&#39;s account. | [optional]
 

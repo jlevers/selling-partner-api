@@ -59,7 +59,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'start_time' => '\DateTime',
+        'start_time' => 'string',
         'duration_in_minutes' => 'int'
     ];
 
@@ -71,7 +71,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'start_time' => 'date-time',
+        'start_time' => null,
         'duration_in_minutes' => null
     ];
 
@@ -246,7 +246,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets start_time
      *
-     * @return \DateTime
+     * @return string
      */
     public function getStartTime()
     {
@@ -256,7 +256,7 @@ class AppointmentTimeInput implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets start_time
      *
-     * @param \DateTime $start_time The date, time in UTC for the start time of an appointment in ISO 8601 format.
+     * @param string $start_time The date, time in UTC for the start time of an appointment in ISO 8601 format.
      *
      * @return self
      */

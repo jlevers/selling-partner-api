@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **marketplace_id** | **string** | The marketplace the fulfillment order is placed against. | [optional]
 **displayable_order_id** | **string** | A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier. | [optional]
-**displayable_order_date** | [**\DateTime**](\DateTime.md) |  | [optional]
+**displayable_order_date** | **string** | A datetime string in ISO 8601 format. | [optional]
 **displayable_order_comment** | **string** | Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip. | [optional]
 **shipping_speed_category** | [**\SellingPartnerApi\Model\FbaOutbound\ShippingSpeedCategory**](ShippingSpeedCategory.md) |  | [optional]
 **destination_address** | [**\SellingPartnerApi\Model\FbaOutbound\Address**](Address.md) |  | [optional]

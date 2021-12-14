@@ -1,6 +1,6 @@
 {
     "name": "jlevers/selling-partner-api",
-    "version": "4.2.2",
+    "version": "4.2.3",
     "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",
@@ -27,7 +27,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.0|^7.0",
-        "phpoffice/phpspreadsheet": "^1.18",
+        "phpoffice/phpspreadsheet": "^1.19",
         "aws/aws-sdk-php": "^3.185"
     },
     "require-dev": {

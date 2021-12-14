@@ -18,6 +18,7 @@ class Authentication
     private $lwaClientId;
     private $lwaClientSecret;
     private $lwaRefreshToken = null;
+    private $lwaAuthUrl      = null;
     private $endpoint;
 
     private $onUpdateCreds;
@@ -51,6 +52,7 @@ class Authentication
     {
         $this->client = new Client();
 
+        $this->lwaAuthUrl = $configurationOptions['lwaAuthUrl'] ?? "https://api.amazon.com/auth/o2/token";
         $this->lwaRefreshToken = $configurationOptions['lwaRefreshToken'] ?? null;
         $this->onUpdateCreds = $configurationOptions['onUpdateCredentials'];
         $this->lwaClientId = $configurationOptions['lwaClientId'];
@@ -93,7 +95,7 @@ class Authentication
             $jsonData["refresh_token"] = $this->lwaRefreshToken;
         }
 
-        $res = $this->client->post("https://api.amazon.com/auth/o2/token", [
+        $res = $this->client->post($this->lwaAuthUrl, [
             \GuzzleHttp\RequestOptions::JSON => $jsonData,
         ]);
 
@@ -303,6 +305,7 @@ class Authentication
                 "lwaClientId" => $this->lwaClientId,
                 "lwaClientSecret" => $this->lwaClientSecret,
                 "lwaRefreshToken" => $this->lwaRefreshToken,
+                "lwaAuthUrl" => $this->lwaAuthUrl,
                 "awsAccessKeyId" => $this->awsAccessKeyId,
                 "awsSecretAccessKey" => $this->awsSecretAccessKey,
                 "accessToken" => $standardCredentials->getSecurityToken(),

@@ -27,7 +27,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.0|^7.0",
-        "phpoffice/phpspreadsheet": "^1.19",
+        "phpoffice/phpspreadsheet": "^1.18",
         "aws/aws-sdk-php": "^3.185"
     },
     "require-dev": {

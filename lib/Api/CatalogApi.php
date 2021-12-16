@@ -155,15 +155,16 @@ class CatalogApi
             try {
                 $response = $this->client->send($signedRequest, $options);
                 $this->writeDebug($response);
-                $this->writeDebug($response->getBody()->getContents());
+                $this->writeDebug((string) $response->getBody());
             } catch (RequestException $e) {
+                $body = (string) $e->getResponse()->getBody();
                 $this->writeDebug($e->getResponse());
-                $this->writeDebug($e->getResponse()->getBody()->getContents());
+                $this->writeDebug($body);
                 throw new ApiException(
-                    "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
+                    "[{$e->getCode()}] {$body}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? $body : null
                 );
             }
 
@@ -410,6 +411,7 @@ class CatalogApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $body = (string) $response->getBody();
                     $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
@@ -420,7 +422,7 @@ class CatalogApi
                         ),
                         $statusCode,
                         $response->getHeaders(),
-                        $response->getBody()->getContents()
+                        $body
                     );
                 }
             );
@@ -603,15 +605,16 @@ class CatalogApi
             try {
                 $response = $this->client->send($signedRequest, $options);
                 $this->writeDebug($response);
-                $this->writeDebug($response->getBody()->getContents());
+                $this->writeDebug((string) $response->getBody());
             } catch (RequestException $e) {
+                $body = (string) $e->getResponse()->getBody();
                 $this->writeDebug($e->getResponse());
-                $this->writeDebug($e->getResponse()->getBody()->getContents());
+                $this->writeDebug($body);
                 throw new ApiException(
-                    "[{$e->getCode()}] {$e->getResponse()->getBody()->getContents()}",
+                    "[{$e->getCode()}] {$body}",
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody()->getContents() : null
+                    $e->getResponse() ? $body : null
                 );
             }
 
@@ -868,6 +871,7 @@ class CatalogApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
+                    $body = (string) $response->getBody();
                     $this->writeDebug($response);
                     $statusCode = $response->getStatusCode();
                     throw new ApiException(
@@ -878,7 +882,7 @@ class CatalogApi
                         ),
                         $statusCode,
                         $response->getHeaders(),
-                        $response->getBody()->getContents()
+                        $body
                     );
                 }
             );

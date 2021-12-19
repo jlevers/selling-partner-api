@@ -52,6 +52,11 @@ class ReportType
         'name' => 'GET_VENDOR_DEMAND_FORECAST_REPORT',
         'restricted' => false,
     ];
+    public const GET_VENDOR_NET_PURE_PRODUCT_MARGIN_REPORT = [
+	'contentType' => ContentType::JSON,
+	'name' => 'GET_VENDOR_NET_PURE_PRODUCT_MARGIN_REPORT',
+	'restricted' => false,
+    ];
 
 
     // Inventory reports

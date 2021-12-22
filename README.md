@@ -245,7 +245,7 @@ This works very similarly to downloading a report document:
 use SellingPartnerApi\Api\FeedsApi;
 use SellingPartnerApi\FeedType;
 
-$feedType = FeedType::GET_FLAT_FILE_OPEN_LISTINGS_DATA;
+$feedType = FeedType::POST_PRODUCT_PRICING_DATA;
 $feedsApi = new FeedsApi($config);
 
 // ...

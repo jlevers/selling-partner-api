@@ -53,9 +53,9 @@ class ReportType
         'restricted' => false,
     ];
     public const GET_VENDOR_NET_PURE_PRODUCT_MARGIN_REPORT = [
-	'contentType' => ContentType::JSON,
-	'name' => 'GET_VENDOR_NET_PURE_PRODUCT_MARGIN_REPORT',
-	'restricted' => false,
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_VENDOR_NET_PURE_PRODUCT_MARGIN_REPORT',
+        'restricted' => false,
     ];
 
 
@@ -262,6 +262,11 @@ class ReportType
     public const GET_V2_SELLER_PERFORMANCE_REPORT = [
         'contentType' => ContentType::JSON,
         'name' => 'GET_V2_SELLER_PERFORMANCE_REPORT',
+        'restricted' => false,
+    ];
+    public const GET_PROMOTION_PERFORMANCE_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_PROMOTION_PERFORMANCE_REPORT',
         'restricted' => false,
     ];
 

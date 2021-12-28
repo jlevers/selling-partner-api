@@ -322,6 +322,11 @@ class ObjectSerializer
 
         /** @psalm-suppress ParadoxicalCondition */
         if (in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+            // Boolean value "false" will get parsed to 1 instead of 0 by default
+            if (($class === 'bool' || $class === 'boolean') && $data === 'false') {
+                $data = false;
+            }
+
             settype($data, $class);
             return $data;
         }

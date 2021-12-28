@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getOrderItems()**](OrdersApi.md#getOrderItems) | **GET** /orders/v0/orders/{orderId}/orderItems | 
 [**getOrderItemsBuyerInfo()**](OrdersApi.md#getOrderItemsBuyerInfo) | **GET** /orders/v0/orders/{orderId}/orderItems/buyerInfo | 
 [**getOrders()**](OrdersApi.md#getOrders) | **GET** /orders/v0/orders | 
+[**updateShipmentStatus()**](OrdersApi.md#updateShipmentStatus) | **POST** /orders/v0/orders/{orderId}/shipment | 
 
 
 ## `getOrder()`
@@ -388,6 +389,8 @@ $config = new SellingPartnerApi\Configuration([
 
 $apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
 $marketplace_ids = array('marketplace_ids_example'); // string[] | A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
+
+See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values.
 $created_after = 'created_after_example'; // string | A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
 $created_before = 'created_before_example'; // string | A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
 $last_updated_after = 'last_updated_after_example'; // string | A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
@@ -418,7 +421,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **marketplace_ids** | [**string[]**](../Model/Orders/string.md)| A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. |
+ **marketplace_ids** | [**string[]**](../Model/Orders/string.md)| A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
+
+See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. |
  **created_after** | **string**| A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. | [optional]
  **created_before** | **string**| A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. | [optional]
  **last_updated_after** | **string**| A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. | [optional]
@@ -444,6 +449,63 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Top]](#) [[API list]](../)
+[[Orders Model list]](../Model/Orders)
+[[README]](../../README.md)
+
+## `updateShipmentStatus()`
+
+```php
+updateShipmentStatus($order_id, $payload)
+```
+
+
+
+Update the shipment status.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
+$order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
+$payload = new \SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest(); // \SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest | Request to update the shipment status.
+
+try {
+    $apiInstance->updateShipmentStatus($order_id, $payload);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->updateShipmentStatus: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_id** | **string**| An Amazon-defined order identifier, in 3-7-7 format. |
+ **payload** | [**\SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest**](../Model/Orders/UpdateShipmentStatusRequest.md)| Request to update the shipment status. |
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)

@@ -2011,7 +2011,7 @@ class OrdersApi
     /**
      * Operation getOrders
      *
-     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param  string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param  string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param  string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -2043,7 +2043,7 @@ class OrdersApi
     /**
      * Operation getOrdersWithHttpInfo
      *
-     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param  string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param  string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param  string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -2250,7 +2250,7 @@ class OrdersApi
      *
      * 
      *
-     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param  string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param  string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param  string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -2287,7 +2287,7 @@ class OrdersApi
      *
      * 
      *
-     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param  string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param  string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param  string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -2358,7 +2358,7 @@ class OrdersApi
     /**
      * Create request for operation 'getOrders'
      *
-     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param  string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param  string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param  string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -2599,6 +2599,318 @@ class OrdersApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateShipmentStatus
+     *
+     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest $payload Request to update the shipment status. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function updateShipmentStatus($order_id, $payload)
+    {
+        $this->updateShipmentStatusWithHttpInfo($order_id, $payload);
+    }
+
+    /**
+     * Operation updateShipmentStatusWithHttpInfo
+     *
+     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest $payload Request to update the shipment status. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateShipmentStatusWithHttpInfo($order_id, $payload)
+    {
+        $request = $this->updateShipmentStatusRequest($order_id, $payload);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $body = (string) $e->getResponse()->getBody();
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $body : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateShipmentStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateShipmentStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateShipmentStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateShipmentStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateShipmentStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateShipmentStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateShipmentStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateShipmentStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateShipmentStatusAsync
+     *
+     * 
+     *
+     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest $payload Request to update the shipment status. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateShipmentStatusAsync($order_id, $payload)
+    {
+        return $this->updateShipmentStatusAsyncWithHttpInfo($order_id, $payload)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateShipmentStatusAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest $payload Request to update the shipment status. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateShipmentStatusAsyncWithHttpInfo($order_id, $payload)
+    {
+        $returnType = '';
+        $request = $this->updateShipmentStatusRequest($order_id, $payload);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $body = (string) $response->getBody();
+                    $this->writeDebug($response);
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateShipmentStatus'
+     *
+     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest $payload Request to update the shipment status. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateShipmentStatusRequest($order_id, $payload)
+    {
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_id when calling updateShipmentStatus'
+            );
+        }
+        // verify the required parameter 'payload' is set
+        if ($payload === null || (is_array($payload) && count($payload) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $payload when calling updateShipmentStatus'
+            );
+        }
+
+        $resourcePath = '/orders/v0/orders/{orderId}/shipment';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // path params
+        if ($order_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($payload)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($payload));
+            } else {
+                $httpBody = $payload;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

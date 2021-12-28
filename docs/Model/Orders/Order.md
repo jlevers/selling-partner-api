@@ -48,11 +48,14 @@ Note: LatestShipDate might not be returned for orders placed before February 1, 
 **is_estimated_ship_date_set** | **bool** | When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders. | [optional]
 **is_sold_by_ab** | **bool** | When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller. | [optional]
 **default_ship_from_location_address** | [**\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
+**buyer_invoice_preference** | **string** | The buyer’s invoicing preference. | [optional]
+**buyer_tax_information** | [**\SellingPartnerApi\Model\Orders\BuyerTaxInformation**](BuyerTaxInformation.md) |  | [optional]
 **fulfillment_instruction** | [**\SellingPartnerApi\Model\Orders\FulfillmentInstruction**](FulfillmentInstruction.md) |  | [optional]
 **is_ispu** | **bool** | When true, this order is marked to be picked up from a store rather than delivered. | [optional]
 **marketplace_tax_info** | [**\SellingPartnerApi\Model\Orders\MarketplaceTaxInfo**](MarketplaceTaxInfo.md) |  | [optional]
 **seller_display_name** | **string** | The seller’s friendly name registered in the marketplace. | [optional]
 **shipping_address** | [**\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
 **buyer_info** | [**\SellingPartnerApi\Model\Orders\BuyerInfo**](BuyerInfo.md) |  | [optional]
+**automated_shipping_settings** | [**\SellingPartnerApi\Model\Orders\AutomatedShippingSettings**](AutomatedShippingSettings.md) |  | [optional]
 
 [[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

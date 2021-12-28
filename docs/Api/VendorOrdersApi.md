@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 ## `getPurchaseOrdersStatus()`
 
 ```php
-getPurchaseOrdersStatus($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $ordering_vendor_code, $ship_to_party_id): \SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse
+getPurchaseOrdersStatus($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id): \SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse
 ```
 
 
@@ -205,12 +205,13 @@ $updated_after = 'updated_after_example'; // string | Purchase orders for which 
 $updated_before = 'updated_before_example'; // string | Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
 $purchase_order_number = 'purchase_order_number_example'; // string | Provides purchase order status for the specified purchase order number.
 $purchase_order_status = 'purchase_order_status_example'; // string | Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
-$item_confirmation_status = 'item_confirmation_status_example'; // string | Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included.
+$item_confirmation_status = 'item_confirmation_status_example'; // string | Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
+$item_receive_status = 'item_receive_status_example'; // string | Filters purchase orders based on the purchase order's item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
 $ordering_vendor_code = 'ordering_vendor_code_example'; // string | Filters purchase orders based on the specified ordering vendor code. This value should be same as 'sellingParty.partyId' in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
 $ship_to_party_id = 'ship_to_party_id_example'; // string | Filters purchase orders for a specific buyer's Fulfillment Center/warehouse by providing ship to location id here. This value should be same as 'shipToParty.partyId' in the purchase order. If not included in filter, this will return purchase orders for all the buyer's warehouses used for vendor group purchase orders.
 
 try {
-    $result = $apiInstance->getPurchaseOrdersStatus($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $ordering_vendor_code, $ship_to_party_id);
+    $result = $apiInstance->getPurchaseOrdersStatus($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VendorOrdersApi->getPurchaseOrdersStatus: ', $e->getMessage(), PHP_EOL;
@@ -230,7 +231,8 @@ Name | Type | Description  | Notes
  **updated_before** | **string**| Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. | [optional]
  **purchase_order_number** | **string**| Provides purchase order status for the specified purchase order number. | [optional]
  **purchase_order_status** | **string**| Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. | [optional]
- **item_confirmation_status** | **string**| Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. | [optional]
+ **item_confirmation_status** | **string**| Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included. | [optional]
+ **item_receive_status** | **string**| Filters purchase orders based on the purchase order&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included. | [optional]
  **ordering_vendor_code** | **string**| Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. | [optional]
  **ship_to_party_id** | **string**| Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. | [optional]
 

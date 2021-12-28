@@ -1040,7 +1040,8 @@ class VendorOrdersApi
      * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
-     * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
+     * @param  string $item_confirmation_status Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included. (optional)
+     * @param  string $item_receive_status Filters purchase orders based on the purchase order&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included. (optional)
      * @param  string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)
      * @param  string $ship_to_party_id Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)
      *
@@ -1048,9 +1049,9 @@ class VendorOrdersApi
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse
      */
-    public function getPurchaseOrdersStatus($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
+    public function getPurchaseOrdersStatus($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $item_receive_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
     {
-        $response = $this->getPurchaseOrdersStatusWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $ordering_vendor_code, $ship_to_party_id);
+        $response = $this->getPurchaseOrdersStatusWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id);
         return $response;
     }
 
@@ -1066,7 +1067,8 @@ class VendorOrdersApi
      * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
-     * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
+     * @param  string $item_confirmation_status Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included. (optional)
+     * @param  string $item_receive_status Filters purchase orders based on the purchase order&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included. (optional)
      * @param  string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)
      * @param  string $ship_to_party_id Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)
      *
@@ -1074,9 +1076,9 @@ class VendorOrdersApi
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPurchaseOrdersStatusWithHttpInfo($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
+    public function getPurchaseOrdersStatusWithHttpInfo($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $item_receive_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
     {
-        $request = $this->getPurchaseOrdersStatusRequest($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $ordering_vendor_code, $ship_to_party_id);
+        $request = $this->getPurchaseOrdersStatusRequest($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id);
         $signedRequest = $this->config->signRequest(
             $request
         );
@@ -1280,16 +1282,17 @@ class VendorOrdersApi
      * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
-     * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
+     * @param  string $item_confirmation_status Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included. (optional)
+     * @param  string $item_receive_status Filters purchase orders based on the purchase order&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included. (optional)
      * @param  string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)
      * @param  string $ship_to_party_id Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPurchaseOrdersStatusAsync($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
+    public function getPurchaseOrdersStatusAsync($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $item_receive_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
     {
-        return $this->getPurchaseOrdersStatusAsyncWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $ordering_vendor_code, $ship_to_party_id)
+        return $this->getPurchaseOrdersStatusAsyncWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1311,17 +1314,18 @@ class VendorOrdersApi
      * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
-     * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
+     * @param  string $item_confirmation_status Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included. (optional)
+     * @param  string $item_receive_status Filters purchase orders based on the purchase order&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included. (optional)
      * @param  string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)
      * @param  string $ship_to_party_id Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPurchaseOrdersStatusAsyncWithHttpInfo($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
+    public function getPurchaseOrdersStatusAsyncWithHttpInfo($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $item_receive_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
     {
         $returnType = '\SellingPartnerApi\Model\VendorOrders\GetPurchaseOrdersStatusResponse';
-        $request = $this->getPurchaseOrdersStatusRequest($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $ordering_vendor_code, $ship_to_party_id);
+        $request = $this->getPurchaseOrdersStatusRequest($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id);
         $signedRequest = $this->config->signRequest(
             $request
         );
@@ -1373,14 +1377,15 @@ class VendorOrdersApi
      * @param  string $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param  string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
-     * @param  string $item_confirmation_status Filters purchase orders based on the specified purchase order item status. If not included in filter, purchase orders for all statuses are included. (optional)
+     * @param  string $item_confirmation_status Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included. (optional)
+     * @param  string $item_receive_status Filters purchase orders based on the purchase order&#39;s item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included. (optional)
      * @param  string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)
      * @param  string $ship_to_party_id Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPurchaseOrdersStatusRequest($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
+    public function getPurchaseOrdersStatusRequest($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $item_receive_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
     {
         if ($limit !== null && $limit > 100) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling VendorOrdersApi.getPurchaseOrdersStatus, must be smaller than or equal to 100.');
@@ -1475,6 +1480,14 @@ class VendorOrdersApi
         }
         if ($item_confirmation_status !== null) {
             $queryParams['itemConfirmationStatus'] = $item_confirmation_status;
+        }
+
+        // query params
+        if (is_array($item_receive_status)) {
+            $item_receive_status = ObjectSerializer::serializeCollection($item_receive_status, '', true);
+        }
+        if ($item_receive_status !== null) {
+            $queryParams['itemReceiveStatus'] = $item_receive_status;
         }
 
         // query params

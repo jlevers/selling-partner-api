@@ -64,7 +64,8 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'net_cost' => '\SellingPartnerApi\Model\VendorOrders\Money',
         'list_price' => '\SellingPartnerApi\Model\VendorOrders\Money',
         'ordered_quantity' => '\SellingPartnerApi\Model\VendorOrders\OrderItemStatusOrderedQuantity',
-        'acknowledgement_status' => '\SellingPartnerApi\Model\VendorOrders\OrderItemStatusAcknowledgementStatus'
+        'acknowledgement_status' => '\SellingPartnerApi\Model\VendorOrders\OrderItemStatusAcknowledgementStatus',
+        'receiving_status' => '\SellingPartnerApi\Model\VendorOrders\OrderItemStatusReceivingStatus'
     ];
 
     /**
@@ -81,7 +82,8 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'net_cost' => null,
         'list_price' => null,
         'ordered_quantity' => null,
-        'acknowledgement_status' => null
+        'acknowledgement_status' => null,
+        'receiving_status' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'net_cost' => 'netCost',
         'list_price' => 'listPrice',
         'ordered_quantity' => 'orderedQuantity',
-        'acknowledgement_status' => 'acknowledgementStatus'
+        'acknowledgement_status' => 'acknowledgementStatus',
+        'receiving_status' => 'receivingStatus'
     ];
 
     /**
@@ -133,6 +136,7 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'list_price' => 'setListPrice',
         'ordered_quantity' => 'setOrderedQuantity',
         'acknowledgement_status' => 'setAcknowledgementStatus',
+        'receiving_status' => 'setReceivingStatus',
         'headers' => 'setHeaders'
     ];
 
@@ -149,6 +153,7 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'list_price' => 'getListPrice',
         'ordered_quantity' => 'getOrderedQuantity',
         'acknowledgement_status' => 'getAcknowledgementStatus',
+        'receiving_status' => 'getReceivingStatus',
         'headers' => 'getHeaders'
     ];
 
@@ -219,6 +224,7 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['list_price'] = $data['list_price'] ?? null;
         $this->container['ordered_quantity'] = $data['ordered_quantity'] ?? null;
         $this->container['acknowledgement_status'] = $data['acknowledgement_status'] ?? null;
+        $this->container['receiving_status'] = $data['receiving_status'] ?? null;
     }
 
     /**
@@ -436,6 +442,30 @@ class OrderItemStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAcknowledgementStatus($acknowledgement_status)
     {
         $this->container['acknowledgement_status'] = $acknowledgement_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets receiving_status
+     *
+     * @return \SellingPartnerApi\Model\VendorOrders\OrderItemStatusReceivingStatus|null
+     */
+    public function getReceivingStatus()
+    {
+        return $this->container['receiving_status'];
+    }
+
+    /**
+     * Sets receiving_status
+     *
+     * @param \SellingPartnerApi\Model\VendorOrders\OrderItemStatusReceivingStatus|null $receiving_status receiving_status
+     *
+     * @return self
+     */
+    public function setReceivingStatus($receiving_status)
+    {
+        $this->container['receiving_status'] = $receiving_status;
 
         return $this;
     }

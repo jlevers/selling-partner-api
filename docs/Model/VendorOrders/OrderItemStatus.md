@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **list_price** | [**\SellingPartnerApi\Model\VendorOrders\Money**](Money.md) |  | [optional]
 **ordered_quantity** | [**\SellingPartnerApi\Model\VendorOrders\OrderItemStatusOrderedQuantity**](OrderItemStatusOrderedQuantity.md) |  | [optional]
 **acknowledgement_status** | [**\SellingPartnerApi\Model\VendorOrders\OrderItemStatusAcknowledgementStatus**](OrderItemStatusAcknowledgementStatus.md) |  | [optional]
+**receiving_status** | [**\SellingPartnerApi\Model\VendorOrders\OrderItemStatusReceivingStatus**](OrderItemStatusReceivingStatus.md) |  | [optional]
 
 [[VendorOrders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

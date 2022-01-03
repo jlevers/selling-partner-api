@@ -149,7 +149,7 @@ $config->setDebugFile('./debug.log');
 * [Listings API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsApi.md)
 * [Listings Restrictions API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsRestrictionsApi.md)
 * [Merchant Fulfillment API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MerchantFulfillmentApi.md)
-* [Messaging API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MessageApi.md)
+* [Messaging API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MessagingApi.md)
 * [Notifications API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/NotificationsApi.md)
 * [Orders API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersApi.md)
 * [Product Pricing API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductPricingApi.md)

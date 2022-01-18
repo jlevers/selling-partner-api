@@ -1,7 +1,7 @@
 <?php
 /**
  * ReportsApi
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -142,6 +142,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -289,6 +290,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -437,6 +439,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -584,6 +587,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -733,6 +737,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -972,6 +977,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1125,6 +1131,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -1364,6 +1371,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1517,6 +1525,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -1756,6 +1765,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -1917,6 +1927,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -2161,6 +2172,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2326,6 +2338,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -2565,6 +2578,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -2721,6 +2735,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -2960,6 +2975,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())
@@ -3134,6 +3150,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
@@ -3385,6 +3402,7 @@ class ReportsApi
         );
 
         $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
             ->sendAsync($signedRequest, $this->createHttpClientOption())

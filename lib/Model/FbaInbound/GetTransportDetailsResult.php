@@ -2,7 +2,7 @@
 /**
  * GetTransportDetailsResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -108,8 +108,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'transport_content' => 'setTransportContent',
-        'headers' => 'setHeaders'
+                'transport_content' => 'setTransportContent'
     ];
 
     /**
@@ -118,8 +117,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'transport_content' => 'getTransportContent',
-        'headers' => 'getHeaders'
+        'transport_content' => 'getTransportContent'
     ];
 
     /**
@@ -162,11 +160,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess, \JsonSer
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,30 +202,6 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets transport_content
@@ -256,6 +226,7 @@ class GetTransportDetailsResult implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

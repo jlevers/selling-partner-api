@@ -2,7 +2,7 @@
 /**
  * TaxRegistrationDetail
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'tax_registration_type' => 'setTaxRegistrationType',
+                'tax_registration_type' => 'setTaxRegistrationType',
         'tax_registration_number' => 'setTaxRegistrationNumber',
         'tax_registration_address' => 'setTaxRegistrationAddress',
-        'tax_registration_message' => 'setTaxRegistrationMessage',
-        'headers' => 'setHeaders'
+        'tax_registration_message' => 'setTaxRegistrationMessage'
     ];
 
     /**
@@ -134,8 +133,7 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
         'tax_registration_type' => 'getTaxRegistrationType',
         'tax_registration_number' => 'getTaxRegistrationNumber',
         'tax_registration_address' => 'getTaxRegistrationAddress',
-        'tax_registration_message' => 'getTaxRegistrationMessage',
-        'headers' => 'getHeaders'
+        'tax_registration_message' => 'getTaxRegistrationMessage'
     ];
 
     /**
@@ -177,13 +175,11 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const TAX_REGISTRATION_TYPE_VAT = 'VAT';
+    }const TAX_REGISTRATION_TYPE_VAT = 'VAT';
     const TAX_REGISTRATION_TYPE_GST = 'GST';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -197,7 +193,6 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -254,30 +249,6 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets tax_registration_type
@@ -312,7 +283,6 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets tax_registration_number
      *
@@ -336,7 +306,6 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets tax_registration_address
      *
@@ -360,7 +329,6 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets tax_registration_message
      *
@@ -384,6 +352,7 @@ class TaxRegistrationDetail implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

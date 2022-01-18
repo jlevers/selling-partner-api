@@ -2,7 +2,7 @@
 /**
  * TermsAndConditionsNotAcceptedCarrier
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -109,8 +109,7 @@ class TermsAndConditionsNotAcceptedCarrier implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'carrier_name' => 'setCarrierName',
-        'headers' => 'setHeaders'
+                'carrier_name' => 'setCarrierName'
     ];
 
     /**
@@ -119,8 +118,7 @@ class TermsAndConditionsNotAcceptedCarrier implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'carrier_name' => 'getCarrierName',
-        'headers' => 'getHeaders'
+        'carrier_name' => 'getCarrierName'
     ];
 
     /**
@@ -163,11 +161,7 @@ class TermsAndConditionsNotAcceptedCarrier implements ModelInterface, ArrayAcces
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -212,30 +206,6 @@ class TermsAndConditionsNotAcceptedCarrier implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets carrier_name
@@ -260,6 +230,7 @@ class TermsAndConditionsNotAcceptedCarrier implements ModelInterface, ArrayAcces
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

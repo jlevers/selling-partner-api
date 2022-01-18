@@ -2,7 +2,7 @@
 /**
  * PartneredLtlDataInput
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'contact' => 'setContact',
+                'contact' => 'setContact',
         'box_count' => 'setBoxCount',
         'seller_freight_class' => 'setSellerFreightClass',
         'freight_ready_date' => 'setFreightReadyDate',
         'pallet_list' => 'setPalletList',
         'total_weight' => 'setTotalWeight',
-        'seller_declared_value' => 'setSellerDeclaredValue',
-        'headers' => 'setHeaders'
+        'seller_declared_value' => 'setSellerDeclaredValue'
     ];
 
     /**
@@ -149,8 +148,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
         'freight_ready_date' => 'getFreightReadyDate',
         'pallet_list' => 'getPalletList',
         'total_weight' => 'getTotalWeight',
-        'seller_declared_value' => 'getSellerDeclaredValue',
-        'headers' => 'getHeaders'
+        'seller_declared_value' => 'getSellerDeclaredValue'
     ];
 
     /**
@@ -193,11 +191,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets contact
@@ -293,7 +263,6 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets box_count
      *
@@ -317,7 +286,6 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets seller_freight_class
      *
@@ -341,7 +309,6 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets freight_ready_date
      *
@@ -365,7 +332,6 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets pallet_list
      *
@@ -389,7 +355,6 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets total_weight
      *
@@ -413,7 +378,6 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets seller_declared_value
      *
@@ -437,6 +401,7 @@ class PartneredLtlDataInput implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

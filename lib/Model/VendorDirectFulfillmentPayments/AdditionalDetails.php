@@ -2,7 +2,7 @@
 /**
  * AdditionalDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+                'type' => 'setType',
         'detail' => 'setDetail',
-        'language_code' => 'setLanguageCode',
-        'headers' => 'setHeaders'
+        'language_code' => 'setLanguageCode'
     ];
 
     /**
@@ -129,8 +128,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'type' => 'getType',
         'detail' => 'getDetail',
-        'language_code' => 'getLanguageCode',
-        'headers' => 'getHeaders'
+        'language_code' => 'getLanguageCode'
     ];
 
     /**
@@ -172,13 +170,11 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const TYPE_SUR = 'SUR';
+    }const TYPE_SUR = 'SUR';
     const TYPE_OCR = 'OCR';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -192,7 +188,6 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +246,6 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets type
@@ -309,7 +280,6 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets detail
      *
@@ -333,7 +303,6 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets language_code
      *
@@ -357,6 +326,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

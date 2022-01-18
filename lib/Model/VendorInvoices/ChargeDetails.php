@@ -2,7 +2,7 @@
 /**
  * ChargeDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+                'type' => 'setType',
         'description' => 'setDescription',
         'charge_amount' => 'setChargeAmount',
-        'tax_details' => 'setTaxDetails',
-        'headers' => 'setHeaders'
+        'tax_details' => 'setTaxDetails'
     ];
 
     /**
@@ -134,8 +133,7 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'getType',
         'description' => 'getDescription',
         'charge_amount' => 'getChargeAmount',
-        'tax_details' => 'getTaxDetails',
-        'headers' => 'getHeaders'
+        'tax_details' => 'getTaxDetails'
     ];
 
     /**
@@ -177,9 +175,7 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const TYPE_FREIGHT = 'Freight';
+    }const TYPE_FREIGHT = 'Freight';
     const TYPE_PACKING = 'Packing';
     const TYPE_DUTY = 'Duty';
     const TYPE_SERVICE = 'Service';
@@ -191,8 +187,8 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     const TYPE_ENVIRONMENTAL_PROTECTION_SERVICE = 'EnvironmentalProtectionService';
     const TYPE_TAX_COLLECTED_AT_SOURCE = 'TaxCollectedAtSource';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -215,7 +211,6 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -275,30 +270,6 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets type
@@ -333,7 +304,6 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets description
      *
@@ -357,7 +327,6 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets charge_amount
      *
@@ -381,7 +350,6 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_details
      *
@@ -405,6 +373,7 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

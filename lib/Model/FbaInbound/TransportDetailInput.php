@@ -2,7 +2,7 @@
 /**
  * TransportDetailInput
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'partnered_small_parcel_data' => 'setPartneredSmallParcelData',
+                'partnered_small_parcel_data' => 'setPartneredSmallParcelData',
         'non_partnered_small_parcel_data' => 'setNonPartneredSmallParcelData',
         'partnered_ltl_data' => 'setPartneredLtlData',
-        'non_partnered_ltl_data' => 'setNonPartneredLtlData',
-        'headers' => 'setHeaders'
+        'non_partnered_ltl_data' => 'setNonPartneredLtlData'
     ];
 
     /**
@@ -134,8 +133,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
         'partnered_small_parcel_data' => 'getPartneredSmallParcelData',
         'non_partnered_small_parcel_data' => 'getNonPartneredSmallParcelData',
         'partnered_ltl_data' => 'getPartneredLtlData',
-        'non_partnered_ltl_data' => 'getNonPartneredLtlData',
-        'headers' => 'getHeaders'
+        'non_partnered_ltl_data' => 'getNonPartneredLtlData'
     ];
 
     /**
@@ -178,11 +176,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets partnered_small_parcel_data
@@ -275,7 +245,6 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets non_partnered_small_parcel_data
      *
@@ -299,7 +268,6 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets partnered_ltl_data
      *
@@ -323,7 +291,6 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets non_partnered_ltl_data
      *
@@ -347,6 +314,7 @@ class TransportDetailInput implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

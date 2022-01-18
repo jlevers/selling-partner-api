@@ -2,7 +2,7 @@
 /**
  * OrderItemAcknowledgement
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -120,12 +120,11 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'acknowledgement_code' => 'setAcknowledgementCode',
+                'acknowledgement_code' => 'setAcknowledgementCode',
         'acknowledged_quantity' => 'setAcknowledgedQuantity',
         'scheduled_ship_date' => 'setScheduledShipDate',
         'scheduled_delivery_date' => 'setScheduledDeliveryDate',
-        'rejection_reason' => 'setRejectionReason',
-        'headers' => 'setHeaders'
+        'rejection_reason' => 'setRejectionReason'
     ];
 
     /**
@@ -138,8 +137,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
         'acknowledged_quantity' => 'getAcknowledgedQuantity',
         'scheduled_ship_date' => 'getScheduledShipDate',
         'scheduled_delivery_date' => 'getScheduledDeliveryDate',
-        'rejection_reason' => 'getRejectionReason',
-        'headers' => 'getHeaders'
+        'rejection_reason' => 'getRejectionReason'
     ];
 
     /**
@@ -181,17 +179,15 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const ACKNOWLEDGEMENT_CODE_ACCEPTED = 'Accepted';
+    }const ACKNOWLEDGEMENT_CODE_ACCEPTED = 'Accepted';
     const ACKNOWLEDGEMENT_CODE_BACKORDERED = 'Backordered';
     const ACKNOWLEDGEMENT_CODE_REJECTED = 'Rejected';
     const REJECTION_REASON_TEMPORARILY_UNAVAILABLE = 'TemporarilyUnavailable';
     const REJECTION_REASON_INVALID_PRODUCT_IDENTIFIER = 'InvalidProductIdentifier';
     const REJECTION_REASON_OBSOLETE_PRODUCT = 'ObsoleteProduct';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -206,6 +202,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
         ];
     }
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -220,7 +217,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -290,30 +286,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets acknowledgement_code
@@ -348,7 +320,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets acknowledged_quantity
      *
@@ -372,7 +343,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets scheduled_ship_date
      *
@@ -396,7 +366,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets scheduled_delivery_date
      *
@@ -420,7 +389,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets rejection_reason
      *
@@ -454,6 +422,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

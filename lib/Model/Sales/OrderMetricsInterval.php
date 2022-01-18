@@ -2,7 +2,7 @@
 /**
  * OrderMetricsInterval
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'interval' => 'setInterval',
+                'interval' => 'setInterval',
         'unit_count' => 'setUnitCount',
         'order_item_count' => 'setOrderItemCount',
         'order_count' => 'setOrderCount',
         'average_unit_price' => 'setAverageUnitPrice',
-        'total_sales' => 'setTotalSales',
-        'headers' => 'setHeaders'
+        'total_sales' => 'setTotalSales'
     ];
 
     /**
@@ -144,8 +143,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
         'order_item_count' => 'getOrderItemCount',
         'order_count' => 'getOrderCount',
         'average_unit_price' => 'getAverageUnitPrice',
-        'total_sales' => 'getTotalSales',
-        'headers' => 'getHeaders'
+        'total_sales' => 'getTotalSales'
     ];
 
     /**
@@ -188,11 +186,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -257,30 +251,6 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets interval
@@ -305,7 +275,6 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets unit_count
      *
@@ -329,7 +298,6 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets order_item_count
      *
@@ -353,7 +321,6 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets order_count
      *
@@ -377,7 +344,6 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets average_unit_price
      *
@@ -401,7 +367,6 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets total_sales
      *
@@ -425,6 +390,7 @@ class OrderMetricsInterval implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

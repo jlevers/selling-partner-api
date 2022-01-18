@@ -2,7 +2,7 @@
 /**
  * StandardTechSpecsModule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'headline' => 'setHeadline',
+                'headline' => 'setHeadline',
         'specification_list' => 'setSpecificationList',
-        'table_count' => 'setTableCount',
-        'headers' => 'setHeaders'
+        'table_count' => 'setTableCount'
     ];
 
     /**
@@ -129,8 +128,7 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $getters = [
         'headline' => 'getHeadline',
         'specification_list' => 'getSpecificationList',
-        'table_count' => 'getTableCount',
-        'headers' => 'getHeaders'
+        'table_count' => 'getTableCount'
     ];
 
     /**
@@ -173,11 +171,7 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -240,30 +234,6 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets headline
@@ -288,7 +258,6 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets specification_list
      *
@@ -319,7 +288,6 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets table_count
      *
@@ -351,6 +319,7 @@ class StandardTechSpecsModule implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

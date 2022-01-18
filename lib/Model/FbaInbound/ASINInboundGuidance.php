@@ -2,7 +2,7 @@
 /**
  * ASINInboundGuidance
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
+                'asin' => 'setAsin',
         'inbound_guidance' => 'setInboundGuidance',
-        'guidance_reason_list' => 'setGuidanceReasonList',
-        'headers' => 'setHeaders'
+        'guidance_reason_list' => 'setGuidanceReasonList'
     ];
 
     /**
@@ -129,8 +128,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'asin' => 'getAsin',
         'inbound_guidance' => 'getInboundGuidance',
-        'guidance_reason_list' => 'getGuidanceReasonList',
-        'headers' => 'getHeaders'
+        'guidance_reason_list' => 'getGuidanceReasonList'
     ];
 
     /**
@@ -173,11 +171,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets asin
@@ -275,7 +245,6 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets inbound_guidance
      *
@@ -299,7 +268,6 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets guidance_reason_list
      *
@@ -323,6 +291,7 @@ class ASINInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

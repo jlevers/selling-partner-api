@@ -2,7 +2,7 @@
 /**
  * TaxWithheldComponent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'tax_collection_model' => 'setTaxCollectionModel',
-        'taxes_withheld' => 'setTaxesWithheld',
-        'headers' => 'setHeaders'
+                'tax_collection_model' => 'setTaxCollectionModel',
+        'taxes_withheld' => 'setTaxesWithheld'
     ];
 
     /**
@@ -124,8 +123,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'tax_collection_model' => 'getTaxCollectionModel',
-        'taxes_withheld' => 'getTaxesWithheld',
-        'headers' => 'getHeaders'
+        'taxes_withheld' => 'getTaxesWithheld'
     ];
 
     /**
@@ -168,11 +166,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -215,30 +209,6 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets tax_collection_model
@@ -263,7 +233,6 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets taxes_withheld
      *
@@ -287,6 +256,7 @@ class TaxWithheldComponent implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * OrderAcknowledgement
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -117,11 +117,10 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_number' => 'setPurchaseOrderNumber',
+                'purchase_order_number' => 'setPurchaseOrderNumber',
         'selling_party' => 'setSellingParty',
         'acknowledgement_date' => 'setAcknowledgementDate',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -133,8 +132,7 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'selling_party' => 'getSellingParty',
         'acknowledgement_date' => 'getAcknowledgementDate',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -177,11 +175,7 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -238,30 +232,6 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets purchase_order_number
@@ -286,7 +256,6 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets selling_party
      *
@@ -310,7 +279,6 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets acknowledgement_date
      *
@@ -334,7 +302,6 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -358,6 +325,7 @@ class OrderAcknowledgement implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

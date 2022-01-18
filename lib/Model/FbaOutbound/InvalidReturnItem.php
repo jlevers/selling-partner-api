@@ -2,7 +2,7 @@
 /**
  * InvalidReturnItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'seller_return_item_id' => 'setSellerReturnItemId',
+                'seller_return_item_id' => 'setSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
-        'invalid_item_reason' => 'setInvalidItemReason',
-        'headers' => 'setHeaders'
+        'invalid_item_reason' => 'setInvalidItemReason'
     ];
 
     /**
@@ -129,8 +128,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'seller_return_item_id' => 'getSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
-        'invalid_item_reason' => 'getInvalidItemReason',
-        'headers' => 'getHeaders'
+        'invalid_item_reason' => 'getInvalidItemReason'
     ];
 
     /**
@@ -173,11 +171,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -230,30 +224,6 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_return_item_id
@@ -278,7 +248,6 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_item_id
      *
@@ -302,7 +271,6 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets invalid_item_reason
      *
@@ -326,6 +294,7 @@ class InvalidReturnItem implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

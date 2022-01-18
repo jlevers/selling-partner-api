@@ -2,7 +2,7 @@
 /**
  * ItemIdentifiersByMarketplace
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class ItemIdentifiersByMarketplace implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
-        'identifiers' => 'setIdentifiers',
-        'headers' => 'setHeaders'
+                'marketplace_id' => 'setMarketplaceId',
+        'identifiers' => 'setIdentifiers'
     ];
 
     /**
@@ -124,8 +123,7 @@ class ItemIdentifiersByMarketplace implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-        'identifiers' => 'getIdentifiers',
-        'headers' => 'getHeaders'
+        'identifiers' => 'getIdentifiers'
     ];
 
     /**
@@ -168,11 +166,7 @@ class ItemIdentifiersByMarketplace implements ModelInterface, ArrayAccess, \Json
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class ItemIdentifiersByMarketplace implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -269,7 +239,6 @@ class ItemIdentifiersByMarketplace implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
-
     /**
      * Gets identifiers
      *
@@ -293,6 +262,7 @@ class ItemIdentifiersByMarketplace implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * ProductTypeList
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -100,6 +100,7 @@ class ProductTypeList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'product_types' => 'productTypes'
     ];
 
@@ -109,8 +110,8 @@ class ProductTypeList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'product_types' => 'setProductTypes',
-        'headers' => 'setHeaders'
+        'headers' => 'setHeaders',
+        'product_types' => 'setProductTypes'
     ];
 
     /**
@@ -119,8 +120,8 @@ class ProductTypeList implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'product_types' => 'getProductTypes',
-        'headers' => 'getHeaders'
+        'headers' => 'getHeaders',
+        'product_types' => 'getProductTypes'
     ];
 
     /**
@@ -163,11 +164,7 @@ class ProductTypeList implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -213,9 +210,9 @@ class ProductTypeList implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -223,19 +220,17 @@ class ProductTypeList implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets product_types
@@ -260,6 +255,7 @@ class ProductTypeList implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

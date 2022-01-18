@@ -2,7 +2,7 @@
 /**
  * Subscription
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'subscription_id' => 'setSubscriptionId',
+                'subscription_id' => 'setSubscriptionId',
         'payload_version' => 'setPayloadVersion',
-        'destination_id' => 'setDestinationId',
-        'headers' => 'setHeaders'
+        'destination_id' => 'setDestinationId'
     ];
 
     /**
@@ -129,8 +128,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'subscription_id' => 'getSubscriptionId',
         'payload_version' => 'getPayloadVersion',
-        'destination_id' => 'getDestinationId',
-        'headers' => 'getHeaders'
+        'destination_id' => 'getDestinationId'
     ];
 
     /**
@@ -173,11 +171,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -230,30 +224,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets subscription_id
@@ -278,7 +248,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets payload_version
      *
@@ -302,7 +271,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets destination_id
      *
@@ -326,6 +294,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

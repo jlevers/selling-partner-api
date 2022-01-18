@@ -2,7 +2,7 @@
 /**
  * FinancialEventGroup
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -139,7 +139,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'financial_event_group_id' => 'setFinancialEventGroupId',
+                'financial_event_group_id' => 'setFinancialEventGroupId',
         'processing_status' => 'setProcessingStatus',
         'fund_transfer_status' => 'setFundTransferStatus',
         'original_total' => 'setOriginalTotal',
@@ -149,8 +149,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
         'account_tail' => 'setAccountTail',
         'beginning_balance' => 'setBeginningBalance',
         'financial_event_group_start' => 'setFinancialEventGroupStart',
-        'financial_event_group_end' => 'setFinancialEventGroupEnd',
-        'headers' => 'setHeaders'
+        'financial_event_group_end' => 'setFinancialEventGroupEnd'
     ];
 
     /**
@@ -169,8 +168,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
         'account_tail' => 'getAccountTail',
         'beginning_balance' => 'getBeginningBalance',
         'financial_event_group_start' => 'getFinancialEventGroupStart',
-        'financial_event_group_end' => 'getFinancialEventGroupEnd',
-        'headers' => 'getHeaders'
+        'financial_event_group_end' => 'getFinancialEventGroupEnd'
     ];
 
     /**
@@ -213,11 +211,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -269,30 +263,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets financial_event_group_id
@@ -317,7 +287,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets processing_status
      *
@@ -341,7 +310,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fund_transfer_status
      *
@@ -365,7 +333,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets original_total
      *
@@ -389,7 +356,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets converted_total
      *
@@ -413,7 +379,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fund_transfer_date
      *
@@ -437,7 +402,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets trace_id
      *
@@ -461,7 +425,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets account_tail
      *
@@ -485,7 +448,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets beginning_balance
      *
@@ -509,7 +471,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets financial_event_group_start
      *
@@ -533,7 +494,6 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets financial_event_group_end
      *
@@ -557,6 +517,7 @@ class FinancialEventGroup implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

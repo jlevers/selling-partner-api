@@ -2,7 +2,7 @@
 /**
  * FulfillmentShipmentPackage
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'package_number' => 'setPackageNumber',
+                'package_number' => 'setPackageNumber',
         'carrier_code' => 'setCarrierCode',
         'tracking_number' => 'setTrackingNumber',
-        'estimated_arrival_date' => 'setEstimatedArrivalDate',
-        'headers' => 'setHeaders'
+        'estimated_arrival_date' => 'setEstimatedArrivalDate'
     ];
 
     /**
@@ -134,8 +133,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
         'package_number' => 'getPackageNumber',
         'carrier_code' => 'getCarrierCode',
         'tracking_number' => 'getTrackingNumber',
-        'estimated_arrival_date' => 'getEstimatedArrivalDate',
-        'headers' => 'getHeaders'
+        'estimated_arrival_date' => 'getEstimatedArrivalDate'
     ];
 
     /**
@@ -178,11 +176,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -233,30 +227,6 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets package_number
@@ -281,7 +251,6 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets carrier_code
      *
@@ -305,7 +274,6 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets tracking_number
      *
@@ -329,7 +297,6 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets estimated_arrival_date
      *
@@ -353,6 +320,7 @@ class FulfillmentShipmentPackage implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * CreateFulfillmentOrderItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -133,7 +133,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'quantity' => 'setQuantity',
         'gift_message' => 'setGiftMessage',
@@ -141,8 +141,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
         'per_unit_declared_value' => 'setPerUnitDeclaredValue',
         'per_unit_price' => 'setPerUnitPrice',
-        'per_unit_tax' => 'setPerUnitTax',
-        'headers' => 'setHeaders'
+        'per_unit_tax' => 'setPerUnitTax'
     ];
 
     /**
@@ -159,8 +158,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
         'fulfillment_network_sku' => 'getFulfillmentNetworkSku',
         'per_unit_declared_value' => 'getPerUnitDeclaredValue',
         'per_unit_price' => 'getPerUnitPrice',
-        'per_unit_tax' => 'getPerUnitTax',
-        'headers' => 'getHeaders'
+        'per_unit_tax' => 'getPerUnitTax'
     ];
 
     /**
@@ -203,11 +201,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -282,30 +276,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -334,7 +304,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_item_id
      *
@@ -362,7 +331,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -386,7 +354,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets gift_message
      *
@@ -414,7 +381,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets displayable_comment
      *
@@ -442,7 +408,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets fulfillment_network_sku
      *
@@ -466,7 +431,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets per_unit_declared_value
      *
@@ -490,7 +454,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets per_unit_price
      *
@@ -514,7 +477,6 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets per_unit_tax
      *
@@ -538,6 +500,7 @@ class CreateFulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

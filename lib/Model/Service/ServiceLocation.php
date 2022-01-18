@@ -2,7 +2,7 @@
 /**
  * ServiceLocation
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'service_location_type' => 'setServiceLocationType',
-        'address' => 'setAddress',
-        'headers' => 'setHeaders'
+                'service_location_type' => 'setServiceLocationType',
+        'address' => 'setAddress'
     ];
 
     /**
@@ -124,8 +123,7 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'service_location_type' => 'getServiceLocationType',
-        'address' => 'getAddress',
-        'headers' => 'getHeaders'
+        'address' => 'getAddress'
     ];
 
     /**
@@ -167,14 +165,12 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const SERVICE_LOCATION_TYPE_IN_HOME = 'IN_HOME';
+    }const SERVICE_LOCATION_TYPE_IN_HOME = 'IN_HOME';
     const SERVICE_LOCATION_TYPE_IN_STORE = 'IN_STORE';
     const SERVICE_LOCATION_TYPE_ONLINE = 'ONLINE';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -189,7 +185,6 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -241,30 +236,6 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets service_location_type
@@ -299,7 +270,6 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets address
      *
@@ -323,6 +293,7 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

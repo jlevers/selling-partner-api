@@ -2,7 +2,7 @@
 /**
  * DestinationResource
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'sqs' => 'setSqs',
-        'event_bridge' => 'setEventBridge',
-        'headers' => 'setHeaders'
+                'sqs' => 'setSqs',
+        'event_bridge' => 'setEventBridge'
     ];
 
     /**
@@ -124,8 +123,7 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'sqs' => 'getSqs',
-        'event_bridge' => 'getEventBridge',
-        'headers' => 'getHeaders'
+        'event_bridge' => 'getEventBridge'
     ];
 
     /**
@@ -168,11 +166,7 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -215,30 +209,6 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets sqs
@@ -263,7 +233,6 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets event_bridge
      *
@@ -287,6 +256,7 @@ class DestinationResource implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

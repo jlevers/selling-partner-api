@@ -2,7 +2,7 @@
 /**
  * FulfillmentPreview
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -139,7 +139,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'shipping_speed_category' => 'setShippingSpeedCategory',
+                'shipping_speed_category' => 'setShippingSpeedCategory',
         'scheduled_delivery_info' => 'setScheduledDeliveryInfo',
         'is_fulfillable' => 'setIsFulfillable',
         'is_cod_capable' => 'setIsCodCapable',
@@ -149,8 +149,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
         'unfulfillable_preview_items' => 'setUnfulfillablePreviewItems',
         'order_unfulfillable_reasons' => 'setOrderUnfulfillableReasons',
         'marketplace_id' => 'setMarketplaceId',
-        'feature_constraints' => 'setFeatureConstraints',
-        'headers' => 'setHeaders'
+        'feature_constraints' => 'setFeatureConstraints'
     ];
 
     /**
@@ -169,8 +168,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
         'unfulfillable_preview_items' => 'getUnfulfillablePreviewItems',
         'order_unfulfillable_reasons' => 'getOrderUnfulfillableReasons',
         'marketplace_id' => 'getMarketplaceId',
-        'feature_constraints' => 'getFeatureConstraints',
-        'headers' => 'getHeaders'
+        'feature_constraints' => 'getFeatureConstraints'
     ];
 
     /**
@@ -213,11 +211,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -281,30 +275,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipping_speed_category
@@ -329,7 +299,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets scheduled_delivery_info
      *
@@ -353,7 +322,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets is_fulfillable
      *
@@ -377,7 +345,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets is_cod_capable
      *
@@ -401,7 +368,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets estimated_shipping_weight
      *
@@ -425,7 +391,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets estimated_fees
      *
@@ -449,7 +414,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets fulfillment_preview_shipments
      *
@@ -473,7 +437,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets unfulfillable_preview_items
      *
@@ -497,7 +460,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets order_unfulfillable_reasons
      *
@@ -521,7 +483,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -545,7 +506,6 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets feature_constraints
      *
@@ -569,6 +529,7 @@ class FulfillmentPreview implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

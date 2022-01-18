@@ -2,7 +2,7 @@
 /**
  * ItemSearchResults
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -106,6 +106,7 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'number_of_results' => 'numberOfResults',
         'pagination' => 'pagination',
         'refinements' => 'refinements',
@@ -118,11 +119,11 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'number_of_results' => 'setNumberOfResults',
         'pagination' => 'setPagination',
         'refinements' => 'setRefinements',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -131,11 +132,11 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'number_of_results' => 'getNumberOfResults',
         'pagination' => 'getPagination',
         'refinements' => 'getRefinements',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -178,11 +179,7 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -240,9 +237,9 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -250,19 +247,17 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets number_of_results
@@ -287,7 +282,6 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets pagination
      *
@@ -311,7 +305,6 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets refinements
      *
@@ -335,7 +328,6 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -359,6 +351,7 @@ class ItemSearchResults implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

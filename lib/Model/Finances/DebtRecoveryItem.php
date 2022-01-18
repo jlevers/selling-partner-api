@@ -2,7 +2,7 @@
 /**
  * DebtRecoveryItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'recovery_amount' => 'setRecoveryAmount',
+                'recovery_amount' => 'setRecoveryAmount',
         'original_amount' => 'setOriginalAmount',
         'group_begin_date' => 'setGroupBeginDate',
-        'group_end_date' => 'setGroupEndDate',
-        'headers' => 'setHeaders'
+        'group_end_date' => 'setGroupEndDate'
     ];
 
     /**
@@ -134,8 +133,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'recovery_amount' => 'getRecoveryAmount',
         'original_amount' => 'getOriginalAmount',
         'group_begin_date' => 'getGroupBeginDate',
-        'group_end_date' => 'getGroupEndDate',
-        'headers' => 'getHeaders'
+        'group_end_date' => 'getGroupEndDate'
     ];
 
     /**
@@ -178,11 +176,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets recovery_amount
@@ -275,7 +245,6 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets original_amount
      *
@@ -299,7 +268,6 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets group_begin_date
      *
@@ -323,7 +291,6 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets group_end_date
      *
@@ -347,6 +314,7 @@ class DebtRecoveryItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * CartonReferenceDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -111,9 +111,8 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'carton_count' => 'setCartonCount',
-        'carton_reference_numbers' => 'setCartonReferenceNumbers',
-        'headers' => 'setHeaders'
+                'carton_count' => 'setCartonCount',
+        'carton_reference_numbers' => 'setCartonReferenceNumbers'
     ];
 
     /**
@@ -123,8 +122,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'carton_count' => 'getCartonCount',
-        'carton_reference_numbers' => 'getCartonReferenceNumbers',
-        'headers' => 'getHeaders'
+        'carton_reference_numbers' => 'getCartonReferenceNumbers'
     ];
 
     /**
@@ -167,11 +165,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -217,30 +211,6 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets carton_count
@@ -265,7 +235,6 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets carton_reference_numbers
      *
@@ -289,6 +258,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

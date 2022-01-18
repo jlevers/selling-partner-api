@@ -2,7 +2,7 @@
 /**
  * FeesEstimateIdentifier
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'seller_id' => 'setSellerId',
         'id_type' => 'setIdType',
         'id_value' => 'setIdValue',
         'is_amazon_fulfilled' => 'setIsAmazonFulfilled',
         'price_to_estimate_fees' => 'setPriceToEstimateFees',
         'seller_input_identifier' => 'setSellerInputIdentifier',
-        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram',
-        'headers' => 'setHeaders'
+        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram'
     ];
 
     /**
@@ -154,8 +153,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
         'is_amazon_fulfilled' => 'getIsAmazonFulfilled',
         'price_to_estimate_fees' => 'getPriceToEstimateFees',
         'seller_input_identifier' => 'getSellerInputIdentifier',
-        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram',
-        'headers' => 'getHeaders'
+        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram'
     ];
 
     /**
@@ -198,11 +196,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +245,6 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -299,7 +269,6 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets seller_id
      *
@@ -323,7 +292,6 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets id_type
      *
@@ -347,7 +315,6 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets id_value
      *
@@ -371,7 +338,6 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets is_amazon_fulfilled
      *
@@ -395,7 +361,6 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets price_to_estimate_fees
      *
@@ -419,7 +384,6 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets seller_input_identifier
      *
@@ -443,7 +407,6 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets optional_fulfillment_program
      *
@@ -467,6 +430,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

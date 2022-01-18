@@ -2,7 +2,7 @@
 /**
  * ContainerIdentification
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -111,9 +111,8 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'container_identification_type' => 'setContainerIdentificationType',
-        'container_identification_number' => 'setContainerIdentificationNumber',
-        'headers' => 'setHeaders'
+                'container_identification_type' => 'setContainerIdentificationType',
+        'container_identification_number' => 'setContainerIdentificationNumber'
     ];
 
     /**
@@ -123,8 +122,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'container_identification_type' => 'getContainerIdentificationType',
-        'container_identification_number' => 'getContainerIdentificationNumber',
-        'headers' => 'getHeaders'
+        'container_identification_number' => 'getContainerIdentificationNumber'
     ];
 
     /**
@@ -166,16 +164,14 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const CONTAINER_IDENTIFICATION_TYPE_SSCC = 'SSCC';
+    }const CONTAINER_IDENTIFICATION_TYPE_SSCC = 'SSCC';
     const CONTAINER_IDENTIFICATION_TYPE_AMZNCC = 'AMZNCC';
     const CONTAINER_IDENTIFICATION_TYPE_GTIN = 'GTIN';
     const CONTAINER_IDENTIFICATION_TYPE_BPS = 'BPS';
     const CONTAINER_IDENTIFICATION_TYPE_CID = 'CID';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -192,7 +188,6 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -250,30 +245,6 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets container_identification_type
@@ -308,7 +279,6 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets container_identification_number
      *
@@ -332,6 +302,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

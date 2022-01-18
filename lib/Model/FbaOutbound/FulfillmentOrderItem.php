@@ -2,7 +2,7 @@
 /**
  * FulfillmentOrderItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -148,7 +148,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'quantity' => 'setQuantity',
         'gift_message' => 'setGiftMessage',
@@ -161,8 +161,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'estimated_arrival_date' => 'setEstimatedArrivalDate',
         'per_unit_price' => 'setPerUnitPrice',
         'per_unit_tax' => 'setPerUnitTax',
-        'per_unit_declared_value' => 'setPerUnitDeclaredValue',
-        'headers' => 'setHeaders'
+        'per_unit_declared_value' => 'setPerUnitDeclaredValue'
     ];
 
     /**
@@ -184,8 +183,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
         'estimated_arrival_date' => 'getEstimatedArrivalDate',
         'per_unit_price' => 'getPerUnitPrice',
         'per_unit_tax' => 'getPerUnitTax',
-        'per_unit_declared_value' => 'getPerUnitDeclaredValue',
-        'headers' => 'getHeaders'
+        'per_unit_declared_value' => 'getPerUnitDeclaredValue'
     ];
 
     /**
@@ -228,11 +226,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -302,30 +296,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -350,7 +320,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_item_id
      *
@@ -374,7 +343,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -398,7 +366,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets gift_message
      *
@@ -422,7 +389,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets displayable_comment
      *
@@ -446,7 +412,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets fulfillment_network_sku
      *
@@ -470,7 +435,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets order_item_disposition
      *
@@ -494,7 +458,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets cancelled_quantity
      *
@@ -518,7 +481,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets unfulfillable_quantity
      *
@@ -542,7 +504,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets estimated_ship_date
      *
@@ -566,7 +527,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets estimated_arrival_date
      *
@@ -590,7 +550,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets per_unit_price
      *
@@ -614,7 +573,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets per_unit_tax
      *
@@ -638,7 +596,6 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets per_unit_declared_value
      *
@@ -662,6 +619,7 @@ class FulfillmentOrderItem implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

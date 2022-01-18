@@ -2,7 +2,7 @@
 /**
  * MarketplaceTaxInfo
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -109,8 +109,7 @@ class MarketplaceTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'tax_classifications' => 'setTaxClassifications',
-        'headers' => 'setHeaders'
+                'tax_classifications' => 'setTaxClassifications'
     ];
 
     /**
@@ -119,8 +118,7 @@ class MarketplaceTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'tax_classifications' => 'getTaxClassifications',
-        'headers' => 'getHeaders'
+        'tax_classifications' => 'getTaxClassifications'
     ];
 
     /**
@@ -163,11 +161,7 @@ class MarketplaceTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -209,30 +203,6 @@ class MarketplaceTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets tax_classifications
@@ -257,6 +227,7 @@ class MarketplaceTaxInfo implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

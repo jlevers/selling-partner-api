@@ -2,7 +2,7 @@
 /**
  * CreateReportScheduleSpecification
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -120,12 +120,11 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'report_type' => 'setReportType',
+                'report_type' => 'setReportType',
         'marketplace_ids' => 'setMarketplaceIds',
         'report_options' => 'setReportOptions',
         'period' => 'setPeriod',
-        'next_report_creation_time' => 'setNextReportCreationTime',
-        'headers' => 'setHeaders'
+        'next_report_creation_time' => 'setNextReportCreationTime'
     ];
 
     /**
@@ -138,8 +137,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
         'marketplace_ids' => 'getMarketplaceIds',
         'report_options' => 'getReportOptions',
         'period' => 'getPeriod',
-        'next_report_creation_time' => 'getNextReportCreationTime',
-        'headers' => 'getHeaders'
+        'next_report_creation_time' => 'getNextReportCreationTime'
     ];
 
     /**
@@ -181,9 +179,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const PERIOD_PT5_M = 'PT5M';
+    }const PERIOD_PT5_M = 'PT5M';
     const PERIOD_PT15_M = 'PT15M';
     const PERIOD_PT30_M = 'PT30M';
     const PERIOD_PT1_H = 'PT1H';
@@ -202,8 +198,8 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
     const PERIOD_P30_D = 'P30D';
     const PERIOD_P1_M = 'P1M';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -233,7 +229,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -305,30 +300,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets report_type
@@ -353,7 +324,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets marketplace_ids
      *
@@ -384,7 +354,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets report_options
      *
@@ -408,7 +377,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets period
      *
@@ -442,7 +410,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets next_report_creation_time
      *
@@ -466,6 +433,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

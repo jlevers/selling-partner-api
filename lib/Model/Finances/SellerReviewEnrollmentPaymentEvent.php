@@ -2,7 +2,7 @@
 /**
  * SellerReviewEnrollmentPaymentEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
+                'posted_date' => 'setPostedDate',
         'enrollment_id' => 'setEnrollmentId',
         'parent_asin' => 'setParentAsin',
         'fee_component' => 'setFeeComponent',
         'charge_component' => 'setChargeComponent',
-        'total_amount' => 'setTotalAmount',
-        'headers' => 'setHeaders'
+        'total_amount' => 'setTotalAmount'
     ];
 
     /**
@@ -144,8 +143,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
         'parent_asin' => 'getParentAsin',
         'fee_component' => 'getFeeComponent',
         'charge_component' => 'getChargeComponent',
-        'total_amount' => 'getTotalAmount',
-        'headers' => 'getHeaders'
+        'total_amount' => 'getTotalAmount'
     ];
 
     /**
@@ -188,11 +186,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets posted_date
@@ -287,7 +257,6 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets enrollment_id
      *
@@ -311,7 +280,6 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets parent_asin
      *
@@ -335,7 +303,6 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets fee_component
      *
@@ -359,7 +326,6 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets charge_component
      *
@@ -383,7 +349,6 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets total_amount
      *
@@ -407,6 +372,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

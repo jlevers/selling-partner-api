@@ -2,7 +2,7 @@
 /**
  * ASINIdentifier
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -111,9 +111,8 @@ class ASINIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
-        'asin' => 'setAsin',
-        'headers' => 'setHeaders'
+                'marketplace_id' => 'setMarketplaceId',
+        'asin' => 'setAsin'
     ];
 
     /**
@@ -123,8 +122,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-        'asin' => 'getAsin',
-        'headers' => 'getHeaders'
+        'asin' => 'getAsin'
     ];
 
     /**
@@ -167,11 +165,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -220,30 +214,6 @@ class ASINIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -268,7 +238,6 @@ class ASINIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets asin
      *
@@ -292,6 +261,7 @@ class ASINIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

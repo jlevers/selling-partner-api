@@ -2,7 +2,7 @@
 /**
  * FulfillmentPreviewItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'quantity' => 'setQuantity',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'estimated_shipping_weight' => 'setEstimatedShippingWeight',
-        'shipping_weight_calculation_method' => 'setShippingWeightCalculationMethod',
-        'headers' => 'setHeaders'
+        'shipping_weight_calculation_method' => 'setShippingWeightCalculationMethod'
     ];
 
     /**
@@ -139,8 +138,7 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
         'quantity' => 'getQuantity',
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
         'estimated_shipping_weight' => 'getEstimatedShippingWeight',
-        'shipping_weight_calculation_method' => 'getShippingWeightCalculationMethod',
-        'headers' => 'getHeaders'
+        'shipping_weight_calculation_method' => 'getShippingWeightCalculationMethod'
     ];
 
     /**
@@ -182,13 +180,11 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const SHIPPING_WEIGHT_CALCULATION_METHOD_PACKAGE = 'Package';
+    }const SHIPPING_WEIGHT_CALCULATION_METHOD_PACKAGE = 'Package';
     const SHIPPING_WEIGHT_CALCULATION_METHOD_DIMENSIONAL = 'Dimensional';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -202,7 +198,6 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -266,30 +261,6 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -314,7 +285,6 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -338,7 +308,6 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_item_id
      *
@@ -362,7 +331,6 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets estimated_shipping_weight
      *
@@ -386,7 +354,6 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets shipping_weight_calculation_method
      *
@@ -420,6 +387,7 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

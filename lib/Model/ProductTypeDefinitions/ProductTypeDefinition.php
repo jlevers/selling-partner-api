@@ -2,7 +2,7 @@
 /**
  * ProductTypeDefinition
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -116,6 +116,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'meta_schema' => 'metaSchema',
         'schema' => 'schema',
         'requirements' => 'requirements',
@@ -133,6 +134,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'meta_schema' => 'setMetaSchema',
         'schema' => 'setSchema',
         'requirements' => 'setRequirements',
@@ -141,8 +143,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'locale' => 'setLocale',
         'marketplace_ids' => 'setMarketplaceIds',
         'product_type' => 'setProductType',
-        'product_type_version' => 'setProductTypeVersion',
-        'headers' => 'setHeaders'
+        'product_type_version' => 'setProductTypeVersion'
     ];
 
     /**
@@ -151,6 +152,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'meta_schema' => 'getMetaSchema',
         'schema' => 'getSchema',
         'requirements' => 'getRequirements',
@@ -159,8 +161,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'locale' => 'getLocale',
         'marketplace_ids' => 'getMarketplaceIds',
         'product_type' => 'getProductType',
-        'product_type_version' => 'getProductTypeVersion',
-        'headers' => 'getHeaders'
+        'product_type_version' => 'getProductTypeVersion'
     ];
 
     /**
@@ -202,16 +203,14 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const REQUIREMENTS_LISTING = 'LISTING';
+    }const REQUIREMENTS_LISTING = 'LISTING';
     const REQUIREMENTS_LISTING_PRODUCT_ONLY = 'LISTING_PRODUCT_ONLY';
     const REQUIREMENTS_LISTING_OFFER_ONLY = 'LISTING_OFFER_ONLY';
     const REQUIREMENTS_ENFORCED_ENFORCED = 'ENFORCED';
     const REQUIREMENTS_ENFORCED_NOT_ENFORCED = 'NOT_ENFORCED';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -226,6 +225,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         ];
     }
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -239,7 +239,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -332,9 +331,9 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -342,19 +341,17 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets meta_schema
@@ -379,7 +376,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets schema
      *
@@ -403,7 +399,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets requirements
      *
@@ -437,7 +432,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets requirements_enforced
      *
@@ -471,7 +465,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets property_groups
      *
@@ -495,7 +488,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets locale
      *
@@ -519,7 +511,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets marketplace_ids
      *
@@ -543,7 +534,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets product_type
      *
@@ -567,7 +557,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets product_type_version
      *
@@ -591,6 +580,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

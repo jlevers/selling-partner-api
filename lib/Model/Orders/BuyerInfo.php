@@ -2,7 +2,7 @@
 /**
  * BuyerInfo
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'buyer_email' => 'setBuyerEmail',
+                'buyer_email' => 'setBuyerEmail',
         'buyer_name' => 'setBuyerName',
         'buyer_county' => 'setBuyerCounty',
         'buyer_tax_info' => 'setBuyerTaxInfo',
-        'purchase_order_number' => 'setPurchaseOrderNumber',
-        'headers' => 'setHeaders'
+        'purchase_order_number' => 'setPurchaseOrderNumber'
     ];
 
     /**
@@ -139,8 +138,7 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_name' => 'getBuyerName',
         'buyer_county' => 'getBuyerCounty',
         'buyer_tax_info' => 'getBuyerTaxInfo',
-        'purchase_order_number' => 'getPurchaseOrderNumber',
-        'headers' => 'getHeaders'
+        'purchase_order_number' => 'getPurchaseOrderNumber'
     ];
 
     /**
@@ -183,11 +181,7 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -233,30 +227,6 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets buyer_email
@@ -281,7 +251,6 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer_name
      *
@@ -305,7 +274,6 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer_county
      *
@@ -329,7 +297,6 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer_tax_info
      *
@@ -353,7 +320,6 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets purchase_order_number
      *
@@ -377,6 +343,7 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

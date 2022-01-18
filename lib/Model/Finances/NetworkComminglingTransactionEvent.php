@@ -2,7 +2,7 @@
 /**
  * NetworkComminglingTransactionEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'transaction_type' => 'setTransactionType',
+                'transaction_type' => 'setTransactionType',
         'posted_date' => 'setPostedDate',
         'net_co_transaction_id' => 'setNetCoTransactionId',
         'swap_reason' => 'setSwapReason',
         'asin' => 'setAsin',
         'marketplace_id' => 'setMarketplaceId',
         'tax_exclusive_amount' => 'setTaxExclusiveAmount',
-        'tax_amount' => 'setTaxAmount',
-        'headers' => 'setHeaders'
+        'tax_amount' => 'setTaxAmount'
     ];
 
     /**
@@ -154,8 +153,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
         'asin' => 'getAsin',
         'marketplace_id' => 'getMarketplaceId',
         'tax_exclusive_amount' => 'getTaxExclusiveAmount',
-        'tax_amount' => 'getTaxAmount',
-        'headers' => 'getHeaders'
+        'tax_amount' => 'getTaxAmount'
     ];
 
     /**
@@ -198,11 +196,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +245,6 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets transaction_type
@@ -299,7 +269,6 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets posted_date
      *
@@ -323,7 +292,6 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets net_co_transaction_id
      *
@@ -347,7 +315,6 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets swap_reason
      *
@@ -371,7 +338,6 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets asin
      *
@@ -395,7 +361,6 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -419,7 +384,6 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets tax_exclusive_amount
      *
@@ -443,7 +407,6 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
-
     /**
      * Gets tax_amount
      *
@@ -467,6 +430,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, ArrayAccess,
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

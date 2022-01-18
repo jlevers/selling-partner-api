@@ -2,7 +2,7 @@
 /**
  * Event
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'event_code' => 'setEventCode',
+                'event_code' => 'setEventCode',
         'event_time' => 'setEventTime',
-        'location' => 'setLocation',
-        'headers' => 'setHeaders'
+        'location' => 'setLocation'
     ];
 
     /**
@@ -129,8 +128,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'event_code' => 'getEventCode',
         'event_time' => 'getEventTime',
-        'location' => 'getLocation',
-        'headers' => 'getHeaders'
+        'location' => 'getLocation'
     ];
 
     /**
@@ -173,11 +171,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -235,30 +229,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets event_code
@@ -290,7 +260,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets event_time
      *
@@ -314,7 +283,6 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets location
      *
@@ -338,6 +306,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

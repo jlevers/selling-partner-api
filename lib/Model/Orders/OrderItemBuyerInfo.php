@@ -2,7 +2,7 @@
 /**
  * OrderItemBuyerInfo
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'order_item_id' => 'setOrderItemId',
+                'order_item_id' => 'setOrderItemId',
         'buyer_customized_info' => 'setBuyerCustomizedInfo',
         'gift_wrap_price' => 'setGiftWrapPrice',
         'gift_wrap_tax' => 'setGiftWrapTax',
         'gift_message_text' => 'setGiftMessageText',
-        'gift_wrap_level' => 'setGiftWrapLevel',
-        'headers' => 'setHeaders'
+        'gift_wrap_level' => 'setGiftWrapLevel'
     ];
 
     /**
@@ -144,8 +143,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
         'gift_wrap_price' => 'getGiftWrapPrice',
         'gift_wrap_tax' => 'getGiftWrapTax',
         'gift_message_text' => 'getGiftMessageText',
-        'gift_wrap_level' => 'getGiftWrapLevel',
-        'headers' => 'getHeaders'
+        'gift_wrap_level' => 'getGiftWrapLevel'
     ];
 
     /**
@@ -188,11 +186,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -242,30 +236,6 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets order_item_id
@@ -290,7 +260,6 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets buyer_customized_info
      *
@@ -314,7 +283,6 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets gift_wrap_price
      *
@@ -338,7 +306,6 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets gift_wrap_tax
      *
@@ -362,7 +329,6 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets gift_message_text
      *
@@ -386,7 +352,6 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets gift_wrap_level
      *
@@ -410,6 +375,7 @@ class OrderItemBuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * ReasonCodeDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'return_reason_code' => 'setReturnReasonCode',
+                'return_reason_code' => 'setReturnReasonCode',
         'description' => 'setDescription',
-        'translated_description' => 'setTranslatedDescription',
-        'headers' => 'setHeaders'
+        'translated_description' => 'setTranslatedDescription'
     ];
 
     /**
@@ -129,8 +128,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'return_reason_code' => 'getReturnReasonCode',
         'description' => 'getDescription',
-        'translated_description' => 'getTranslatedDescription',
-        'headers' => 'getHeaders'
+        'translated_description' => 'getTranslatedDescription'
     ];
 
     /**
@@ -173,11 +171,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets return_reason_code
@@ -275,7 +245,6 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets description
      *
@@ -299,7 +268,6 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets translated_description
      *
@@ -323,6 +291,7 @@ class ReasonCodeDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

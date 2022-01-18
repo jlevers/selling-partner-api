@@ -2,7 +2,7 @@
 /**
  * SellerInputDefinition
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'is_required' => 'setIsRequired',
+                'is_required' => 'setIsRequired',
         'data_type' => 'setDataType',
         'constraints' => 'setConstraints',
         'input_display_text' => 'setInputDisplayText',
         'input_target' => 'setInputTarget',
         'stored_value' => 'setStoredValue',
-        'restricted_set_values' => 'setRestrictedSetValues',
-        'headers' => 'setHeaders'
+        'restricted_set_values' => 'setRestrictedSetValues'
     ];
 
     /**
@@ -149,8 +148,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'input_display_text' => 'getInputDisplayText',
         'input_target' => 'getInputTarget',
         'stored_value' => 'getStoredValue',
-        'restricted_set_values' => 'getRestrictedSetValues',
-        'headers' => 'getHeaders'
+        'restricted_set_values' => 'getRestrictedSetValues'
     ];
 
     /**
@@ -193,11 +191,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -260,30 +254,6 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets is_required
@@ -308,7 +278,6 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets data_type
      *
@@ -332,7 +301,6 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets constraints
      *
@@ -356,7 +324,6 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets input_display_text
      *
@@ -380,7 +347,6 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets input_target
      *
@@ -404,7 +370,6 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets stored_value
      *
@@ -428,7 +393,6 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets restricted_set_values
      *
@@ -452,6 +416,7 @@ class SellerInputDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

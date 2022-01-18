@@ -2,7 +2,7 @@
 /**
  * CreditNoteDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'reference_invoice_number' => 'setReferenceInvoiceNumber',
+                'reference_invoice_number' => 'setReferenceInvoiceNumber',
         'debit_note_number' => 'setDebitNoteNumber',
         'returns_reference_number' => 'setReturnsReferenceNumber',
         'goods_return_date' => 'setGoodsReturnDate',
         'rma_id' => 'setRmaId',
         'coop_reference_number' => 'setCoopReferenceNumber',
-        'consignors_reference_number' => 'setConsignorsReferenceNumber',
-        'headers' => 'setHeaders'
+        'consignors_reference_number' => 'setConsignorsReferenceNumber'
     ];
 
     /**
@@ -149,8 +148,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         'goods_return_date' => 'getGoodsReturnDate',
         'rma_id' => 'getRmaId',
         'coop_reference_number' => 'getCoopReferenceNumber',
-        'consignors_reference_number' => 'getConsignorsReferenceNumber',
-        'headers' => 'getHeaders'
+        'consignors_reference_number' => 'getConsignorsReferenceNumber'
     ];
 
     /**
@@ -193,11 +191,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets reference_invoice_number
@@ -293,7 +263,6 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets debit_note_number
      *
@@ -317,7 +286,6 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets returns_reference_number
      *
@@ -341,7 +309,6 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets goods_return_date
      *
@@ -365,7 +332,6 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets rma_id
      *
@@ -389,7 +355,6 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets coop_reference_number
      *
@@ -413,7 +378,6 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets consignors_reference_number
      *
@@ -437,6 +401,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

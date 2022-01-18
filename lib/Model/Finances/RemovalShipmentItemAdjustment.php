@@ -2,7 +2,7 @@
 /**
  * RemovalShipmentItemAdjustment
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'removal_shipment_item_id' => 'setRemovalShipmentItemId',
+                'removal_shipment_item_id' => 'setRemovalShipmentItemId',
         'tax_collection_model' => 'setTaxCollectionModel',
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
         'adjusted_quantity' => 'setAdjustedQuantity',
         'revenue_adjustment' => 'setRevenueAdjustment',
         'tax_amount_adjustment' => 'setTaxAmountAdjustment',
-        'tax_withheld_adjustment' => 'setTaxWithheldAdjustment',
-        'headers' => 'setHeaders'
+        'tax_withheld_adjustment' => 'setTaxWithheldAdjustment'
     ];
 
     /**
@@ -149,8 +148,7 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
         'adjusted_quantity' => 'getAdjustedQuantity',
         'revenue_adjustment' => 'getRevenueAdjustment',
         'tax_amount_adjustment' => 'getTaxAmountAdjustment',
-        'tax_withheld_adjustment' => 'getTaxWithheldAdjustment',
-        'headers' => 'getHeaders'
+        'tax_withheld_adjustment' => 'getTaxWithheldAdjustment'
     ];
 
     /**
@@ -193,11 +191,7 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets removal_shipment_item_id
@@ -293,7 +263,6 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets tax_collection_model
      *
@@ -317,7 +286,6 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets fulfillment_network_sku
      *
@@ -341,7 +309,6 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets adjusted_quantity
      *
@@ -365,7 +332,6 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets revenue_adjustment
      *
@@ -389,7 +355,6 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets tax_amount_adjustment
      *
@@ -413,7 +378,6 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets tax_withheld_adjustment
      *
@@ -437,6 +401,7 @@ class RemovalShipmentItemAdjustment implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

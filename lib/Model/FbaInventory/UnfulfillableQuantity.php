@@ -2,7 +2,7 @@
 /**
  * UnfulfillableQuantity
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'total_unfulfillable_quantity' => 'setTotalUnfulfillableQuantity',
+                'total_unfulfillable_quantity' => 'setTotalUnfulfillableQuantity',
         'customer_damaged_quantity' => 'setCustomerDamagedQuantity',
         'warehouse_damaged_quantity' => 'setWarehouseDamagedQuantity',
         'distributor_damaged_quantity' => 'setDistributorDamagedQuantity',
         'carrier_damaged_quantity' => 'setCarrierDamagedQuantity',
         'defective_quantity' => 'setDefectiveQuantity',
-        'expired_quantity' => 'setExpiredQuantity',
-        'headers' => 'setHeaders'
+        'expired_quantity' => 'setExpiredQuantity'
     ];
 
     /**
@@ -149,8 +148,7 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
         'distributor_damaged_quantity' => 'getDistributorDamagedQuantity',
         'carrier_damaged_quantity' => 'getCarrierDamagedQuantity',
         'defective_quantity' => 'getDefectiveQuantity',
-        'expired_quantity' => 'getExpiredQuantity',
-        'headers' => 'getHeaders'
+        'expired_quantity' => 'getExpiredQuantity'
     ];
 
     /**
@@ -193,11 +191,7 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets total_unfulfillable_quantity
@@ -293,7 +263,6 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets customer_damaged_quantity
      *
@@ -317,7 +286,6 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets warehouse_damaged_quantity
      *
@@ -341,7 +309,6 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets distributor_damaged_quantity
      *
@@ -365,7 +332,6 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets carrier_damaged_quantity
      *
@@ -389,7 +355,6 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets defective_quantity
      *
@@ -413,7 +378,6 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets expired_quantity
      *
@@ -437,6 +401,7 @@ class UnfulfillableQuantity implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * PutTransportDetailsRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'is_partnered' => 'setIsPartnered',
+                'is_partnered' => 'setIsPartnered',
         'shipment_type' => 'setShipmentType',
-        'transport_details' => 'setTransportDetails',
-        'headers' => 'setHeaders'
+        'transport_details' => 'setTransportDetails'
     ];
 
     /**
@@ -129,8 +128,7 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     protected static $getters = [
         'is_partnered' => 'getIsPartnered',
         'shipment_type' => 'getShipmentType',
-        'transport_details' => 'getTransportDetails',
-        'headers' => 'getHeaders'
+        'transport_details' => 'getTransportDetails'
     ];
 
     /**
@@ -173,11 +171,7 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -230,30 +224,6 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets is_partnered
@@ -278,7 +248,6 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets shipment_type
      *
@@ -302,7 +271,6 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets transport_details
      *
@@ -326,6 +294,7 @@ class PutTransportDetailsRequest implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

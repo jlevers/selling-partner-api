@@ -2,7 +2,7 @@
 /**
  * ReportSchedule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -110,6 +110,7 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'report_schedule_id' => 'reportScheduleId',
         'report_type' => 'reportType',
         'marketplace_ids' => 'marketplaceIds',
@@ -124,13 +125,13 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'report_schedule_id' => 'setReportScheduleId',
         'report_type' => 'setReportType',
         'marketplace_ids' => 'setMarketplaceIds',
         'report_options' => 'setReportOptions',
         'period' => 'setPeriod',
-        'next_report_creation_time' => 'setNextReportCreationTime',
-        'headers' => 'setHeaders'
+        'next_report_creation_time' => 'setNextReportCreationTime'
     ];
 
     /**
@@ -139,13 +140,13 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'report_schedule_id' => 'getReportScheduleId',
         'report_type' => 'getReportType',
         'marketplace_ids' => 'getMarketplaceIds',
         'report_options' => 'getReportOptions',
         'period' => 'getPeriod',
-        'next_report_creation_time' => 'getNextReportCreationTime',
-        'headers' => 'getHeaders'
+        'next_report_creation_time' => 'getNextReportCreationTime'
     ];
 
     /**
@@ -188,11 +189,7 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -249,9 +246,9 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -259,19 +256,17 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets report_schedule_id
@@ -296,7 +291,6 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets report_type
      *
@@ -320,7 +314,6 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_ids
      *
@@ -344,7 +337,6 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets report_options
      *
@@ -368,7 +360,6 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets period
      *
@@ -392,7 +383,6 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets next_report_creation_time
      *
@@ -416,6 +406,7 @@ class ReportSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

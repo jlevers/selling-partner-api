@@ -2,7 +2,7 @@
 /**
  * ItemOfferByMarketplace
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'offer_type' => 'setOfferType',
         'price' => 'setPrice',
-        'points' => 'setPoints',
-        'headers' => 'setHeaders'
+        'points' => 'setPoints'
     ];
 
     /**
@@ -134,8 +133,7 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
         'marketplace_id' => 'getMarketplaceId',
         'offer_type' => 'getOfferType',
         'price' => 'getPrice',
-        'points' => 'getPoints',
-        'headers' => 'getHeaders'
+        'points' => 'getPoints'
     ];
 
     /**
@@ -177,13 +175,11 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const OFFER_TYPE_B2_C = 'B2C';
+    }const OFFER_TYPE_B2_C = 'B2C';
     const OFFER_TYPE_B2_B = 'B2B';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -197,7 +193,6 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -260,30 +255,6 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -308,7 +279,6 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets offer_type
      *
@@ -342,7 +312,6 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets price
      *
@@ -366,7 +335,6 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets points
      *
@@ -390,6 +358,7 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

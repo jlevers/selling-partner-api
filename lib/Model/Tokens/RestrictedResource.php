@@ -2,7 +2,7 @@
 /**
  * RestrictedResource
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'method' => 'setMethod',
+                'method' => 'setMethod',
         'path' => 'setPath',
-        'data_elements' => 'setDataElements',
-        'headers' => 'setHeaders'
+        'data_elements' => 'setDataElements'
     ];
 
     /**
@@ -129,8 +128,7 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'method' => 'getMethod',
         'path' => 'getPath',
-        'data_elements' => 'getDataElements',
-        'headers' => 'getHeaders'
+        'data_elements' => 'getDataElements'
     ];
 
     /**
@@ -172,15 +170,13 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const METHOD_GET = 'GET';
+    }const METHOD_GET = 'GET';
     const METHOD_PUT = 'PUT';
     const METHOD_POST = 'POST';
     const METHOD_DELETE = 'DELETE';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -196,7 +192,6 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -255,30 +250,6 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets method
@@ -313,7 +284,6 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets path
      *
@@ -337,7 +307,6 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets data_elements
      *
@@ -361,6 +330,7 @@ class RestrictedResource implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

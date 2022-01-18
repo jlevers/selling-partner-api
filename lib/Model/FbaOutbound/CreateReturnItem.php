@@ -2,7 +2,7 @@
 /**
  * CreateReturnItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'seller_return_item_id' => 'setSellerReturnItemId',
+                'seller_return_item_id' => 'setSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'amazon_shipment_id' => 'setAmazonShipmentId',
         'return_reason_code' => 'setReturnReasonCode',
-        'return_comment' => 'setReturnComment',
-        'headers' => 'setHeaders'
+        'return_comment' => 'setReturnComment'
     ];
 
     /**
@@ -139,8 +138,7 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
         'amazon_shipment_id' => 'getAmazonShipmentId',
         'return_reason_code' => 'getReturnReasonCode',
-        'return_comment' => 'getReturnComment',
-        'headers' => 'getHeaders'
+        'return_comment' => 'getReturnComment'
     ];
 
     /**
@@ -183,11 +181,7 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -253,30 +247,6 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_return_item_id
@@ -305,7 +275,6 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_item_id
      *
@@ -329,7 +298,6 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets amazon_shipment_id
      *
@@ -353,7 +321,6 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets return_reason_code
      *
@@ -377,7 +344,6 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets return_comment
      *
@@ -405,6 +371,7 @@ class CreateReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

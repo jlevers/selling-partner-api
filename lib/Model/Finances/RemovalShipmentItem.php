@@ -2,7 +2,7 @@
 /**
  * RemovalShipmentItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'removal_shipment_item_id' => 'setRemovalShipmentItemId',
+                'removal_shipment_item_id' => 'setRemovalShipmentItemId',
         'tax_collection_model' => 'setTaxCollectionModel',
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
         'quantity' => 'setQuantity',
         'revenue' => 'setRevenue',
         'fee_amount' => 'setFeeAmount',
         'tax_amount' => 'setTaxAmount',
-        'tax_withheld' => 'setTaxWithheld',
-        'headers' => 'setHeaders'
+        'tax_withheld' => 'setTaxWithheld'
     ];
 
     /**
@@ -154,8 +153,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'revenue' => 'getRevenue',
         'fee_amount' => 'getFeeAmount',
         'tax_amount' => 'getTaxAmount',
-        'tax_withheld' => 'getTaxWithheld',
-        'headers' => 'getHeaders'
+        'tax_withheld' => 'getTaxWithheld'
     ];
 
     /**
@@ -198,11 +196,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +245,6 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets removal_shipment_item_id
@@ -299,7 +269,6 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets tax_collection_model
      *
@@ -323,7 +292,6 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fulfillment_network_sku
      *
@@ -347,7 +315,6 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -371,7 +338,6 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets revenue
      *
@@ -395,7 +361,6 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fee_amount
      *
@@ -419,7 +384,6 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets tax_amount
      *
@@ -443,7 +407,6 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets tax_withheld
      *
@@ -467,6 +430,7 @@ class RemovalShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

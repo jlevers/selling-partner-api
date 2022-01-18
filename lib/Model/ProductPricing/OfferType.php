@@ -2,7 +2,7 @@
 /**
  * OfferType
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -132,7 +132,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'offer_type' => 'setOfferType',
+                'offer_type' => 'setOfferType',
         'buying_price' => 'setBuyingPrice',
         'regular_price' => 'setRegularPrice',
         'business_price' => 'setBusinessPrice',
@@ -140,8 +140,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
         'fulfillment_channel' => 'setFulfillmentChannel',
         'item_condition' => 'setItemCondition',
         'item_sub_condition' => 'setItemSubCondition',
-        'seller_sku' => 'setSellerSku',
-        'headers' => 'setHeaders'
+        'seller_sku' => 'setSellerSku'
     ];
 
     /**
@@ -158,8 +157,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
         'fulfillment_channel' => 'getFulfillmentChannel',
         'item_condition' => 'getItemCondition',
         'item_sub_condition' => 'getItemSubCondition',
-        'seller_sku' => 'getSellerSku',
-        'headers' => 'getHeaders'
+        'seller_sku' => 'getSellerSku'
     ];
 
     /**
@@ -202,11 +200,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -274,30 +268,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets offer_type
@@ -322,7 +292,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buying_price
      *
@@ -346,7 +315,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets regular_price
      *
@@ -370,7 +338,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets business_price
      *
@@ -394,7 +361,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets quantity_discount_prices
      *
@@ -418,7 +384,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fulfillment_channel
      *
@@ -442,7 +407,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_condition
      *
@@ -466,7 +430,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_sub_condition
      *
@@ -490,7 +453,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_sku
      *
@@ -514,6 +476,7 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * AttributeSetListType
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -394,7 +394,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'actor' => 'setActor',
+                'actor' => 'setActor',
         'artist' => 'setArtist',
         'aspect_ratio' => 'setAspectRatio',
         'audience_rating' => 'setAudienceRating',
@@ -489,8 +489,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
         'total_diamond_weight' => 'setTotalDiamondWeight',
         'total_gem_weight' => 'setTotalGemWeight',
         'warranty' => 'setWarranty',
-        'weee_tax_value' => 'setWeeeTaxValue',
-        'headers' => 'setHeaders'
+        'weee_tax_value' => 'setWeeeTaxValue'
     ];
 
     /**
@@ -594,8 +593,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
         'total_diamond_weight' => 'getTotalDiamondWeight',
         'total_gem_weight' => 'getTotalGemWeight',
         'warranty' => 'getWarranty',
-        'weee_tax_value' => 'getWeeeTaxValue',
-        'headers' => 'getHeaders'
+        'weee_tax_value' => 'getWeeeTaxValue'
     ];
 
     /**
@@ -638,11 +636,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -779,30 +773,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets actor
@@ -827,7 +797,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets artist
      *
@@ -851,7 +820,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets aspect_ratio
      *
@@ -875,7 +843,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets audience_rating
      *
@@ -899,7 +866,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets author
      *
@@ -923,7 +889,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets back_finding
      *
@@ -947,7 +912,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets band_material_type
      *
@@ -971,7 +935,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets binding
      *
@@ -995,7 +958,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets bluray_region
      *
@@ -1019,7 +981,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets brand
      *
@@ -1043,7 +1004,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets cero_age_rating
      *
@@ -1067,7 +1027,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets chain_type
      *
@@ -1091,7 +1050,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets clasp_type
      *
@@ -1115,7 +1073,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets color
      *
@@ -1139,7 +1096,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets cpu_manufacturer
      *
@@ -1163,7 +1119,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets cpu_speed
      *
@@ -1187,7 +1142,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets cpu_type
      *
@@ -1211,7 +1165,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets creator
      *
@@ -1235,7 +1188,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets department
      *
@@ -1259,7 +1211,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets director
      *
@@ -1283,7 +1234,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets display_size
      *
@@ -1307,7 +1257,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets edition
      *
@@ -1331,7 +1280,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets episode_sequence
      *
@@ -1355,7 +1303,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets esrb_age_rating
      *
@@ -1379,7 +1326,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets feature
      *
@@ -1403,7 +1349,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets flavor
      *
@@ -1427,7 +1372,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets format
      *
@@ -1451,7 +1395,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets gem_type
      *
@@ -1475,7 +1418,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets genre
      *
@@ -1499,7 +1441,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets golf_club_flex
      *
@@ -1523,7 +1464,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets golf_club_loft
      *
@@ -1547,7 +1487,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets hand_orientation
      *
@@ -1571,7 +1510,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets hard_disk_interface
      *
@@ -1595,7 +1533,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets hard_disk_size
      *
@@ -1619,7 +1556,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets hardware_platform
      *
@@ -1643,7 +1579,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets hazardous_material_type
      *
@@ -1667,7 +1602,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets item_dimensions
      *
@@ -1691,7 +1625,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets is_adult_product
      *
@@ -1715,7 +1648,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets is_autographed
      *
@@ -1739,7 +1671,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets is_eligible_for_trade_in
      *
@@ -1763,7 +1694,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets is_memorabilia
      *
@@ -1787,7 +1717,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets issues_per_year
      *
@@ -1811,7 +1740,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets item_part_number
      *
@@ -1835,7 +1763,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets label
      *
@@ -1859,7 +1786,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets languages
      *
@@ -1883,7 +1809,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets legal_disclaimer
      *
@@ -1907,7 +1832,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets list_price
      *
@@ -1931,7 +1855,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets manufacturer
      *
@@ -1955,7 +1878,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets manufacturer_maximum_age
      *
@@ -1979,7 +1901,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets manufacturer_minimum_age
      *
@@ -2003,7 +1924,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets manufacturer_parts_warranty_description
      *
@@ -2027,7 +1947,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets material_type
      *
@@ -2051,7 +1970,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets maximum_resolution
      *
@@ -2075,7 +1993,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets media_type
      *
@@ -2099,7 +2016,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets metal_stamp
      *
@@ -2123,7 +2039,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets metal_type
      *
@@ -2147,7 +2062,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets model
      *
@@ -2171,7 +2085,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets number_of_discs
      *
@@ -2195,7 +2108,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets number_of_issues
      *
@@ -2219,7 +2131,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets number_of_items
      *
@@ -2243,7 +2154,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets number_of_pages
      *
@@ -2267,7 +2177,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets number_of_tracks
      *
@@ -2291,7 +2200,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets operating_system
      *
@@ -2315,7 +2223,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets optical_zoom
      *
@@ -2339,7 +2246,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets package_dimensions
      *
@@ -2363,7 +2269,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets package_quantity
      *
@@ -2387,7 +2292,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets part_number
      *
@@ -2411,7 +2315,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets pegi_rating
      *
@@ -2435,7 +2338,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets platform
      *
@@ -2459,7 +2361,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets processor_count
      *
@@ -2483,7 +2384,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets product_group
      *
@@ -2507,7 +2407,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets product_type_name
      *
@@ -2531,7 +2430,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets product_type_subcategory
      *
@@ -2555,7 +2453,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets publication_date
      *
@@ -2579,7 +2476,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets publisher
      *
@@ -2603,7 +2499,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets region_code
      *
@@ -2627,7 +2522,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets release_date
      *
@@ -2651,7 +2545,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets ring_size
      *
@@ -2675,7 +2568,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets running_time
      *
@@ -2699,7 +2591,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shaft_material
      *
@@ -2723,7 +2614,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets scent
      *
@@ -2747,7 +2637,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets season_sequence
      *
@@ -2771,7 +2660,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets seikodo_product_code
      *
@@ -2795,7 +2683,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets size
      *
@@ -2819,7 +2706,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets size_per_pearl
      *
@@ -2843,7 +2729,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets small_image
      *
@@ -2867,7 +2752,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets studio
      *
@@ -2891,7 +2775,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets subscription_length
      *
@@ -2915,7 +2798,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets system_memory_size
      *
@@ -2939,7 +2821,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets system_memory_type
      *
@@ -2963,7 +2844,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets theatrical_release_date
      *
@@ -2987,7 +2867,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets title
      *
@@ -3011,7 +2890,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets total_diamond_weight
      *
@@ -3035,7 +2913,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets total_gem_weight
      *
@@ -3059,7 +2936,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets warranty
      *
@@ -3083,7 +2959,6 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets weee_tax_value
      *
@@ -3107,6 +2982,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

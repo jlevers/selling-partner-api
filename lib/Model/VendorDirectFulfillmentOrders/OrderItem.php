@@ -2,7 +2,7 @@
 /**
  * OrderItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -135,7 +135,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'item_sequence_number' => 'setItemSequenceNumber',
+                'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'title' => 'setTitle',
@@ -144,8 +144,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_details' => 'setGiftDetails',
         'net_price' => 'setNetPrice',
         'tax_details' => 'setTaxDetails',
-        'total_price' => 'setTotalPrice',
-        'headers' => 'setHeaders'
+        'total_price' => 'setTotalPrice'
     ];
 
     /**
@@ -163,8 +162,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_details' => 'getGiftDetails',
         'net_price' => 'getNetPrice',
         'tax_details' => 'getTaxDetails',
-        'total_price' => 'getTotalPrice',
-        'headers' => 'getHeaders'
+        'total_price' => 'getTotalPrice'
     ];
 
     /**
@@ -207,11 +205,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -271,30 +265,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets item_sequence_number
@@ -319,7 +289,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer_product_identifier
      *
@@ -343,7 +312,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets vendor_product_identifier
      *
@@ -367,7 +335,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets title
      *
@@ -391,7 +358,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ordered_quantity
      *
@@ -415,7 +381,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets scheduled_delivery_shipment
      *
@@ -439,7 +404,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets gift_details
      *
@@ -463,7 +427,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets net_price
      *
@@ -487,7 +450,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_details
      *
@@ -511,7 +473,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets total_price
      *
@@ -535,6 +496,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

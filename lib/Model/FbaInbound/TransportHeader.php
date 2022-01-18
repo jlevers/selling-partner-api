@@ -2,7 +2,7 @@
 /**
  * TransportHeader
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'seller_id' => 'setSellerId',
+                'seller_id' => 'setSellerId',
         'shipment_id' => 'setShipmentId',
         'is_partnered' => 'setIsPartnered',
-        'shipment_type' => 'setShipmentType',
-        'headers' => 'setHeaders'
+        'shipment_type' => 'setShipmentType'
     ];
 
     /**
@@ -134,8 +133,7 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_id' => 'getSellerId',
         'shipment_id' => 'getShipmentId',
         'is_partnered' => 'getIsPartnered',
-        'shipment_type' => 'getShipmentType',
-        'headers' => 'getHeaders'
+        'shipment_type' => 'getShipmentType'
     ];
 
     /**
@@ -178,11 +176,7 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_id
@@ -287,7 +257,6 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_id
      *
@@ -311,7 +280,6 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_partnered
      *
@@ -335,7 +303,6 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_type
      *
@@ -359,6 +326,7 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

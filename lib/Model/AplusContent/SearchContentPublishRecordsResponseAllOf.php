@@ -2,7 +2,7 @@
 /**
  * SearchContentPublishRecordsResponseAllOf
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -108,8 +108,7 @@ class SearchContentPublishRecordsResponseAllOf implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'publish_record_list' => 'setPublishRecordList',
-        'headers' => 'setHeaders'
+                'publish_record_list' => 'setPublishRecordList'
     ];
 
     /**
@@ -118,8 +117,7 @@ class SearchContentPublishRecordsResponseAllOf implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'publish_record_list' => 'getPublishRecordList',
-        'headers' => 'getHeaders'
+        'publish_record_list' => 'getPublishRecordList'
     ];
 
     /**
@@ -162,11 +160,7 @@ class SearchContentPublishRecordsResponseAllOf implements ModelInterface, ArrayA
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -211,30 +205,6 @@ class SearchContentPublishRecordsResponseAllOf implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets publish_record_list
@@ -261,6 +231,7 @@ class SearchContentPublishRecordsResponseAllOf implements ModelInterface, ArrayA
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

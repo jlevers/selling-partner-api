@@ -2,7 +2,7 @@
 /**
  * TrialShipmentEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
+                'amazon_order_id' => 'setAmazonOrderId',
         'financial_event_group_id' => 'setFinancialEventGroupId',
         'posted_date' => 'setPostedDate',
         'sku' => 'setSku',
-        'fee_list' => 'setFeeList',
-        'headers' => 'setHeaders'
+        'fee_list' => 'setFeeList'
     ];
 
     /**
@@ -139,8 +138,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'financial_event_group_id' => 'getFinancialEventGroupId',
         'posted_date' => 'getPostedDate',
         'sku' => 'getSku',
-        'fee_list' => 'getFeeList',
-        'headers' => 'getHeaders'
+        'fee_list' => 'getFeeList'
     ];
 
     /**
@@ -183,11 +181,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -233,30 +227,6 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets amazon_order_id
@@ -281,7 +251,6 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets financial_event_group_id
      *
@@ -305,7 +274,6 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets posted_date
      *
@@ -329,7 +297,6 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets sku
      *
@@ -353,7 +320,6 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets fee_list
      *
@@ -377,6 +343,7 @@ class TrialShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

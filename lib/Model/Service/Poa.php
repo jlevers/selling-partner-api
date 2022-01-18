@@ -2,7 +2,7 @@
 /**
  * Poa
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'appointment_time' => 'setAppointmentTime',
+                'appointment_time' => 'setAppointmentTime',
         'technicians' => 'setTechnicians',
         'uploading_technician' => 'setUploadingTechnician',
         'upload_time' => 'setUploadTime',
-        'poa_type' => 'setPoaType',
-        'headers' => 'setHeaders'
+        'poa_type' => 'setPoaType'
     ];
 
     /**
@@ -139,8 +138,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
         'technicians' => 'getTechnicians',
         'uploading_technician' => 'getUploadingTechnician',
         'upload_time' => 'getUploadTime',
-        'poa_type' => 'getPoaType',
-        'headers' => 'getHeaders'
+        'poa_type' => 'getPoaType'
     ];
 
     /**
@@ -182,15 +180,13 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const POA_TYPE_NO_SIGNATURE_DUMMY_POS = 'NO_SIGNATURE_DUMMY_POS';
+    }const POA_TYPE_NO_SIGNATURE_DUMMY_POS = 'NO_SIGNATURE_DUMMY_POS';
     const POA_TYPE_CUSTOMER_SIGNATURE = 'CUSTOMER_SIGNATURE';
     const POA_TYPE_DUMMY_RECEIPT = 'DUMMY_RECEIPT';
     const POA_TYPE_POA_RECEIPT = 'POA_RECEIPT';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -206,7 +202,6 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -269,30 +264,6 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets appointment_time
@@ -317,7 +288,6 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets technicians
      *
@@ -346,7 +316,6 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets uploading_technician
      *
@@ -375,7 +344,6 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets upload_time
      *
@@ -399,7 +367,6 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets poa_type
      *
@@ -433,6 +400,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

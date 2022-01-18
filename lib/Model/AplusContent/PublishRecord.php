@@ -2,7 +2,7 @@
 /**
  * PublishRecord
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'locale' => 'setLocale',
         'asin' => 'setAsin',
         'content_type' => 'setContentType',
         'content_sub_type' => 'setContentSubType',
-        'content_reference_key' => 'setContentReferenceKey',
-        'headers' => 'setHeaders'
+        'content_reference_key' => 'setContentReferenceKey'
     ];
 
     /**
@@ -144,8 +143,7 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
         'asin' => 'getAsin',
         'content_type' => 'getContentType',
         'content_sub_type' => 'getContentSubType',
-        'content_reference_key' => 'getContentReferenceKey',
-        'headers' => 'getHeaders'
+        'content_reference_key' => 'getContentReferenceKey'
     ];
 
     /**
@@ -188,11 +186,7 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -274,30 +268,6 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -327,7 +297,6 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets locale
      *
@@ -356,7 +325,6 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets asin
      *
@@ -385,7 +353,6 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_type
      *
@@ -409,7 +376,6 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_sub_type
      *
@@ -438,7 +404,6 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_reference_key
      *
@@ -467,6 +432,7 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

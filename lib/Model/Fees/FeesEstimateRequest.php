@@ -2,7 +2,7 @@
 /**
  * FeesEstimateRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -120,12 +120,11 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'is_amazon_fulfilled' => 'setIsAmazonFulfilled',
         'price_to_estimate_fees' => 'setPriceToEstimateFees',
         'identifier' => 'setIdentifier',
-        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram',
-        'headers' => 'setHeaders'
+        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram'
     ];
 
     /**
@@ -138,8 +137,7 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         'is_amazon_fulfilled' => 'getIsAmazonFulfilled',
         'price_to_estimate_fees' => 'getPriceToEstimateFees',
         'identifier' => 'getIdentifier',
-        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram',
-        'headers' => 'getHeaders'
+        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram'
     ];
 
     /**
@@ -182,11 +180,7 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -241,30 +235,6 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -289,7 +259,6 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets is_amazon_fulfilled
      *
@@ -313,7 +282,6 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets price_to_estimate_fees
      *
@@ -337,7 +305,6 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets identifier
      *
@@ -361,7 +328,6 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets optional_fulfillment_program
      *
@@ -385,6 +351,7 @@ class FeesEstimateRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

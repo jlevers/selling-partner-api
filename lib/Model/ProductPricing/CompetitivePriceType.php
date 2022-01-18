@@ -2,7 +2,7 @@
 /**
  * CompetitivePriceType
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -132,7 +132,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'competitive_price_id' => 'setCompetitivePriceId',
+                'competitive_price_id' => 'setCompetitivePriceId',
         'price' => 'setPrice',
         'condition' => 'setCondition',
         'subcondition' => 'setSubcondition',
@@ -140,8 +140,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         'quantity_tier' => 'setQuantityTier',
         'quantity_discount_type' => 'setQuantityDiscountType',
         'seller_id' => 'setSellerId',
-        'belongs_to_requester' => 'setBelongsToRequester',
-        'headers' => 'setHeaders'
+        'belongs_to_requester' => 'setBelongsToRequester'
     ];
 
     /**
@@ -158,8 +157,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         'quantity_tier' => 'getQuantityTier',
         'quantity_discount_type' => 'getQuantityDiscountType',
         'seller_id' => 'getSellerId',
-        'belongs_to_requester' => 'getBelongsToRequester',
-        'headers' => 'getHeaders'
+        'belongs_to_requester' => 'getBelongsToRequester'
     ];
 
     /**
@@ -202,11 +200,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -262,30 +256,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets competitive_price_id
@@ -310,7 +280,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets price
      *
@@ -334,7 +303,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets condition
      *
@@ -358,7 +326,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets subcondition
      *
@@ -382,7 +349,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets offer_type
      *
@@ -406,7 +372,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets quantity_tier
      *
@@ -430,7 +395,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets quantity_discount_type
      *
@@ -454,7 +418,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets seller_id
      *
@@ -478,7 +441,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets belongs_to_requester
      *
@@ -502,6 +464,7 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

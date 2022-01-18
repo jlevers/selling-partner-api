@@ -2,7 +2,7 @@
 /**
  * Appointment
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'appointment_id' => 'setAppointmentId',
+                'appointment_id' => 'setAppointmentId',
         'appointment_status' => 'setAppointmentStatus',
         'appointment_time' => 'setAppointmentTime',
         'assigned_technicians' => 'setAssignedTechnicians',
         'rescheduled_appointment_id' => 'setRescheduledAppointmentId',
-        'poa' => 'setPoa',
-        'headers' => 'setHeaders'
+        'poa' => 'setPoa'
     ];
 
     /**
@@ -144,8 +143,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointment_time' => 'getAppointmentTime',
         'assigned_technicians' => 'getAssignedTechnicians',
         'rescheduled_appointment_id' => 'getRescheduledAppointmentId',
-        'poa' => 'getPoa',
-        'headers' => 'getHeaders'
+        'poa' => 'getPoa'
     ];
 
     /**
@@ -187,14 +185,12 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const APPOINTMENT_STATUS_ACTIVE = 'ACTIVE';
+    }const APPOINTMENT_STATUS_ACTIVE = 'ACTIVE';
     const APPOINTMENT_STATUS_CANCELLED = 'CANCELLED';
     const APPOINTMENT_STATUS_COMPLETED = 'COMPLETED';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -209,7 +205,6 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -285,30 +280,6 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets appointment_id
@@ -340,7 +311,6 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets appointment_status
      *
@@ -374,7 +344,6 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets appointment_time
      *
@@ -398,7 +367,6 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets assigned_technicians
      *
@@ -427,7 +395,6 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets rescheduled_appointment_id
      *
@@ -458,7 +425,6 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets poa
      *
@@ -482,6 +448,7 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

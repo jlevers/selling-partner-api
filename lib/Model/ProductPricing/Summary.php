@@ -2,7 +2,7 @@
 /**
  * Summary
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -136,7 +136,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'total_offer_count' => 'setTotalOfferCount',
+                'total_offer_count' => 'setTotalOfferCount',
         'number_of_offers' => 'setNumberOfOffers',
         'lowest_prices' => 'setLowestPrices',
         'buy_box_prices' => 'setBuyBoxPrices',
@@ -145,8 +145,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'suggested_lower_price_plus_shipping' => 'setSuggestedLowerPricePlusShipping',
         'sales_rankings' => 'setSalesRankings',
         'buy_box_eligible_offers' => 'setBuyBoxEligibleOffers',
-        'offers_available_time' => 'setOffersAvailableTime',
-        'headers' => 'setHeaders'
+        'offers_available_time' => 'setOffersAvailableTime'
     ];
 
     /**
@@ -164,8 +163,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         'suggested_lower_price_plus_shipping' => 'getSuggestedLowerPricePlusShipping',
         'sales_rankings' => 'getSalesRankings',
         'buy_box_eligible_offers' => 'getBuyBoxEligibleOffers',
-        'offers_available_time' => 'getOffersAvailableTime',
-        'headers' => 'getHeaders'
+        'offers_available_time' => 'getOffersAvailableTime'
     ];
 
     /**
@@ -208,11 +206,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -266,30 +260,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets total_offer_count
@@ -314,7 +284,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets number_of_offers
      *
@@ -338,7 +307,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets lowest_prices
      *
@@ -362,7 +330,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buy_box_prices
      *
@@ -386,7 +353,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets list_price
      *
@@ -410,7 +376,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets competitive_price_threshold
      *
@@ -434,7 +399,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets suggested_lower_price_plus_shipping
      *
@@ -458,7 +422,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets sales_rankings
      *
@@ -482,7 +445,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buy_box_eligible_offers
      *
@@ -506,7 +468,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets offers_available_time
      *
@@ -530,6 +491,7 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

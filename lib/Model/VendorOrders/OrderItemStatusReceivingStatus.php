@@ -2,7 +2,7 @@
 /**
  * OrderItemStatusReceivingStatus
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'receive_status' => 'setReceiveStatus',
+                'receive_status' => 'setReceiveStatus',
         'received_quantity' => 'setReceivedQuantity',
-        'last_receive_date' => 'setLastReceiveDate',
-        'headers' => 'setHeaders'
+        'last_receive_date' => 'setLastReceiveDate'
     ];
 
     /**
@@ -129,8 +128,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
     protected static $getters = [
         'receive_status' => 'getReceiveStatus',
         'received_quantity' => 'getReceivedQuantity',
-        'last_receive_date' => 'getLastReceiveDate',
-        'headers' => 'getHeaders'
+        'last_receive_date' => 'getLastReceiveDate'
     ];
 
     /**
@@ -172,14 +170,12 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const RECEIVE_STATUS_NOT_RECEIVED = 'NOT_RECEIVED';
+    }const RECEIVE_STATUS_NOT_RECEIVED = 'NOT_RECEIVED';
     const RECEIVE_STATUS_PARTIALLY_RECEIVED = 'PARTIALLY_RECEIVED';
     const RECEIVE_STATUS_RECEIVED = 'RECEIVED';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -194,7 +190,6 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -247,30 +242,6 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets receive_status
@@ -305,7 +276,6 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets received_quantity
      *
@@ -329,7 +299,6 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets last_receive_date
      *
@@ -353,6 +322,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

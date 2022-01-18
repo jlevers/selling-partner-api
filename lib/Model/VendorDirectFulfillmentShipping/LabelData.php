@@ -2,7 +2,7 @@
 /**
  * LabelData
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'package_identifier' => 'setPackageIdentifier',
+                'package_identifier' => 'setPackageIdentifier',
         'tracking_number' => 'setTrackingNumber',
         'ship_method' => 'setShipMethod',
         'ship_method_name' => 'setShipMethodName',
-        'content' => 'setContent',
-        'headers' => 'setHeaders'
+        'content' => 'setContent'
     ];
 
     /**
@@ -139,8 +138,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
         'tracking_number' => 'getTrackingNumber',
         'ship_method' => 'getShipMethod',
         'ship_method_name' => 'getShipMethodName',
-        'content' => 'getContent',
-        'headers' => 'getHeaders'
+        'content' => 'getContent'
     ];
 
     /**
@@ -183,11 +181,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -236,30 +230,6 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets package_identifier
@@ -284,7 +254,6 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tracking_number
      *
@@ -308,7 +277,6 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_method
      *
@@ -332,7 +300,6 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_method_name
      *
@@ -356,7 +323,6 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content
      *
@@ -380,6 +346,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

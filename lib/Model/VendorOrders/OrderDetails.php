@@ -2,7 +2,7 @@
 /**
  * OrderDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -148,7 +148,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_date' => 'setPurchaseOrderDate',
+                'purchase_order_date' => 'setPurchaseOrderDate',
         'purchase_order_changed_date' => 'setPurchaseOrderChangedDate',
         'purchase_order_state_changed_date' => 'setPurchaseOrderStateChangedDate',
         'purchase_order_type' => 'setPurchaseOrderType',
@@ -161,8 +161,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'bill_to_party' => 'setBillToParty',
         'ship_window' => 'setShipWindow',
         'delivery_window' => 'setDeliveryWindow',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -184,8 +183,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'bill_to_party' => 'getBillToParty',
         'ship_window' => 'getShipWindow',
         'delivery_window' => 'getDeliveryWindow',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -227,9 +225,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const PURCHASE_ORDER_TYPE_REGULAR_ORDER = 'RegularOrder';
+    }const PURCHASE_ORDER_TYPE_REGULAR_ORDER = 'RegularOrder';
     const PURCHASE_ORDER_TYPE_CONSIGNED_ORDER = 'ConsignedOrder';
     const PURCHASE_ORDER_TYPE_NEW_PRODUCT_INTRODUCTION = 'NewProductIntroduction';
     const PURCHASE_ORDER_TYPE_RUSH_ORDER = 'RushOrder';
@@ -238,8 +234,8 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     const PAYMENT_METHOD_CREDIT_CARD = 'CreditCard';
     const PAYMENT_METHOD_PREPAID = 'Prepaid';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -255,6 +251,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -270,7 +267,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -352,30 +348,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets purchase_order_date
@@ -400,7 +372,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets purchase_order_changed_date
      *
@@ -424,7 +395,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets purchase_order_state_changed_date
      *
@@ -448,7 +418,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets purchase_order_type
      *
@@ -482,7 +451,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets import_details
      *
@@ -506,7 +474,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets deal_code
      *
@@ -530,7 +497,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets payment_method
      *
@@ -564,7 +530,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buying_party
      *
@@ -588,7 +553,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets selling_party
      *
@@ -612,7 +576,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_to_party
      *
@@ -636,7 +599,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets bill_to_party
      *
@@ -660,7 +622,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_window
      *
@@ -684,7 +645,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets delivery_window
      *
@@ -708,7 +668,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -732,6 +691,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

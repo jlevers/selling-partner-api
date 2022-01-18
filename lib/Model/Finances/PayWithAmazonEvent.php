@@ -2,7 +2,7 @@
 /**
  * PayWithAmazonEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -136,7 +136,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'seller_order_id' => 'setSellerOrderId',
+                'seller_order_id' => 'setSellerOrderId',
         'transaction_posted_date' => 'setTransactionPostedDate',
         'business_object_type' => 'setBusinessObjectType',
         'sales_channel' => 'setSalesChannel',
@@ -145,8 +145,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'payment_amount_type' => 'setPaymentAmountType',
         'amount_description' => 'setAmountDescription',
         'fulfillment_channel' => 'setFulfillmentChannel',
-        'store_name' => 'setStoreName',
-        'headers' => 'setHeaders'
+        'store_name' => 'setStoreName'
     ];
 
     /**
@@ -164,8 +163,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'payment_amount_type' => 'getPaymentAmountType',
         'amount_description' => 'getAmountDescription',
         'fulfillment_channel' => 'getFulfillmentChannel',
-        'store_name' => 'getStoreName',
-        'headers' => 'getHeaders'
+        'store_name' => 'getStoreName'
     ];
 
     /**
@@ -208,11 +206,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -263,30 +257,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_order_id
@@ -311,7 +281,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets transaction_posted_date
      *
@@ -335,7 +304,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets business_object_type
      *
@@ -359,7 +327,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets sales_channel
      *
@@ -383,7 +350,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets charge
      *
@@ -407,7 +373,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets fee_list
      *
@@ -431,7 +396,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets payment_amount_type
      *
@@ -455,7 +419,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets amount_description
      *
@@ -479,7 +442,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets fulfillment_channel
      *
@@ -503,7 +465,6 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets store_name
      *
@@ -527,6 +488,7 @@ class PayWithAmazonEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

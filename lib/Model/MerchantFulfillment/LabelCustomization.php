@@ -2,7 +2,7 @@
 /**
  * LabelCustomization
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'custom_text_for_label' => 'setCustomTextForLabel',
-        'standard_id_for_label' => 'setStandardIdForLabel',
-        'headers' => 'setHeaders'
+                'custom_text_for_label' => 'setCustomTextForLabel',
+        'standard_id_for_label' => 'setStandardIdForLabel'
     ];
 
     /**
@@ -124,8 +123,7 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'custom_text_for_label' => 'getCustomTextForLabel',
-        'standard_id_for_label' => 'getStandardIdForLabel',
-        'headers' => 'getHeaders'
+        'standard_id_for_label' => 'getStandardIdForLabel'
     ];
 
     /**
@@ -168,11 +166,7 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -219,30 +213,6 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets custom_text_for_label
@@ -271,7 +241,6 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets standard_id_for_label
      *
@@ -295,6 +264,7 @@ class LabelCustomization implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

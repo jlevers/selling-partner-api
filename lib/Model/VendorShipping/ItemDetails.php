@@ -2,7 +2,7 @@
 /**
  * ItemDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_number' => 'setPurchaseOrderNumber',
+                'purchase_order_number' => 'setPurchaseOrderNumber',
         'lot_number' => 'setLotNumber',
         'expiry' => 'setExpiry',
         'maximum_retail_price' => 'setMaximumRetailPrice',
-        'handling_code' => 'setHandlingCode',
-        'headers' => 'setHeaders'
+        'handling_code' => 'setHandlingCode'
     ];
 
     /**
@@ -139,8 +138,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'lot_number' => 'getLotNumber',
         'expiry' => 'getExpiry',
         'maximum_retail_price' => 'getMaximumRetailPrice',
-        'handling_code' => 'getHandlingCode',
-        'headers' => 'getHeaders'
+        'handling_code' => 'getHandlingCode'
     ];
 
     /**
@@ -182,15 +180,13 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const HANDLING_CODE_OVERSIZED = 'Oversized';
+    }const HANDLING_CODE_OVERSIZED = 'Oversized';
     const HANDLING_CODE_FRAGILE = 'Fragile';
     const HANDLING_CODE_FOOD = 'Food';
     const HANDLING_CODE_HANDLE_WITH_CARE = 'HandleWithCare';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -206,7 +202,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -261,30 +256,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets purchase_order_number
@@ -309,7 +280,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets lot_number
      *
@@ -333,7 +303,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets expiry
      *
@@ -357,7 +326,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets maximum_retail_price
      *
@@ -381,7 +349,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets handling_code
      *
@@ -415,6 +382,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

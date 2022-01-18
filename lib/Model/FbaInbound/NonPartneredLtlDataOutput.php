@@ -2,7 +2,7 @@
 /**
  * NonPartneredLtlDataOutput
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class NonPartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'carrier_name' => 'setCarrierName',
-        'pro_number' => 'setProNumber',
-        'headers' => 'setHeaders'
+                'carrier_name' => 'setCarrierName',
+        'pro_number' => 'setProNumber'
     ];
 
     /**
@@ -124,8 +123,7 @@ class NonPartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'carrier_name' => 'getCarrierName',
-        'pro_number' => 'getProNumber',
-        'headers' => 'getHeaders'
+        'pro_number' => 'getProNumber'
     ];
 
     /**
@@ -168,11 +166,7 @@ class NonPartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSer
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class NonPartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets carrier_name
@@ -269,7 +239,6 @@ class NonPartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets pro_number
      *
@@ -293,6 +262,7 @@ class NonPartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

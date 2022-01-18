@@ -2,7 +2,7 @@
 /**
  * ShipmentMeasurements
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'gross_shipment_weight' => 'setGrossShipmentWeight',
+                'gross_shipment_weight' => 'setGrossShipmentWeight',
         'shipment_volume' => 'setShipmentVolume',
         'carton_count' => 'setCartonCount',
-        'pallet_count' => 'setPalletCount',
-        'headers' => 'setHeaders'
+        'pallet_count' => 'setPalletCount'
     ];
 
     /**
@@ -134,8 +133,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
         'gross_shipment_weight' => 'getGrossShipmentWeight',
         'shipment_volume' => 'getShipmentVolume',
         'carton_count' => 'getCartonCount',
-        'pallet_count' => 'getPalletCount',
-        'headers' => 'getHeaders'
+        'pallet_count' => 'getPalletCount'
     ];
 
     /**
@@ -178,11 +176,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets gross_shipment_weight
@@ -275,7 +245,6 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipment_volume
      *
@@ -299,7 +268,6 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets carton_count
      *
@@ -323,7 +291,6 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets pallet_count
      *
@@ -347,6 +314,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

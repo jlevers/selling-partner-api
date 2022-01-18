@@ -2,7 +2,7 @@
 /**
  * RemovalShipmentAdjustmentEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
+                'posted_date' => 'setPostedDate',
         'adjustment_event_id' => 'setAdjustmentEventId',
         'merchant_order_id' => 'setMerchantOrderId',
         'order_id' => 'setOrderId',
         'transaction_type' => 'setTransactionType',
-        'removal_shipment_item_adjustment_list' => 'setRemovalShipmentItemAdjustmentList',
-        'headers' => 'setHeaders'
+        'removal_shipment_item_adjustment_list' => 'setRemovalShipmentItemAdjustmentList'
     ];
 
     /**
@@ -144,8 +143,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
         'merchant_order_id' => 'getMerchantOrderId',
         'order_id' => 'getOrderId',
         'transaction_type' => 'getTransactionType',
-        'removal_shipment_item_adjustment_list' => 'getRemovalShipmentItemAdjustmentList',
-        'headers' => 'getHeaders'
+        'removal_shipment_item_adjustment_list' => 'getRemovalShipmentItemAdjustmentList'
     ];
 
     /**
@@ -188,11 +186,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets posted_date
@@ -287,7 +257,6 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets adjustment_event_id
      *
@@ -311,7 +280,6 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets merchant_order_id
      *
@@ -335,7 +303,6 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets order_id
      *
@@ -359,7 +326,6 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets transaction_type
      *
@@ -383,7 +349,6 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets removal_shipment_item_adjustment_list
      *
@@ -407,6 +372,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

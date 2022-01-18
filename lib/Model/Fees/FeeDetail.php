@@ -2,7 +2,7 @@
 /**
  * FeeDetail
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'fee_type' => 'setFeeType',
+                'fee_type' => 'setFeeType',
         'fee_amount' => 'setFeeAmount',
         'fee_promotion' => 'setFeePromotion',
         'tax_amount' => 'setTaxAmount',
         'final_fee' => 'setFinalFee',
-        'included_fee_detail_list' => 'setIncludedFeeDetailList',
-        'headers' => 'setHeaders'
+        'included_fee_detail_list' => 'setIncludedFeeDetailList'
     ];
 
     /**
@@ -144,8 +143,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'fee_promotion' => 'getFeePromotion',
         'tax_amount' => 'getTaxAmount',
         'final_fee' => 'getFinalFee',
-        'included_fee_detail_list' => 'getIncludedFeeDetailList',
-        'headers' => 'getHeaders'
+        'included_fee_detail_list' => 'getIncludedFeeDetailList'
     ];
 
     /**
@@ -188,11 +186,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -248,30 +242,6 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets fee_type
@@ -296,7 +266,6 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fee_amount
      *
@@ -320,7 +289,6 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fee_promotion
      *
@@ -344,7 +312,6 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_amount
      *
@@ -368,7 +335,6 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets final_fee
      *
@@ -392,7 +358,6 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets included_fee_detail_list
      *
@@ -416,6 +381,7 @@ class FeeDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

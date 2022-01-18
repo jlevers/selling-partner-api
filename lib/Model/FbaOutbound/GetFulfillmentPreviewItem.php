@@ -2,7 +2,7 @@
 /**
  * GetFulfillmentPreviewItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'quantity' => 'setQuantity',
         'per_unit_declared_value' => 'setPerUnitDeclaredValue',
-        'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
-        'headers' => 'setHeaders'
+        'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId'
     ];
 
     /**
@@ -134,8 +133,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
         'seller_sku' => 'getSellerSku',
         'quantity' => 'getQuantity',
         'per_unit_declared_value' => 'getPerUnitDeclaredValue',
-        'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
-        'headers' => 'getHeaders'
+        'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId'
     ];
 
     /**
@@ -178,11 +176,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -244,30 +238,6 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -296,7 +266,6 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -320,7 +289,6 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets per_unit_declared_value
      *
@@ -344,7 +312,6 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_item_id
      *
@@ -372,6 +339,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * Shipment
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -151,7 +151,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
+                'shipment_id' => 'setShipmentId',
         'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
         'item_list' => 'setItemList',
@@ -165,8 +165,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'setStatus',
         'tracking_id' => 'setTrackingId',
         'created_date' => 'setCreatedDate',
-        'last_updated_date' => 'setLastUpdatedDate',
-        'headers' => 'setHeaders'
+        'last_updated_date' => 'setLastUpdatedDate'
     ];
 
     /**
@@ -189,8 +188,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'getStatus',
         'tracking_id' => 'getTrackingId',
         'created_date' => 'getCreatedDate',
-        'last_updated_date' => 'getLastUpdatedDate',
-        'headers' => 'getHeaders'
+        'last_updated_date' => 'getLastUpdatedDate'
     ];
 
     /**
@@ -233,11 +231,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -333,30 +327,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_id
@@ -381,7 +351,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets amazon_order_id
      *
@@ -405,7 +374,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_order_id
      *
@@ -433,7 +401,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_list
      *
@@ -457,7 +424,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_from_address
      *
@@ -481,7 +447,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_to_address
      *
@@ -505,7 +470,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets package_dimensions
      *
@@ -529,7 +493,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets weight
      *
@@ -553,7 +516,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets insurance
      *
@@ -577,7 +539,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_service
      *
@@ -601,7 +562,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets label
      *
@@ -625,7 +585,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets status
      *
@@ -649,7 +608,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tracking_id
      *
@@ -673,7 +631,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets created_date
      *
@@ -697,7 +654,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets last_updated_date
      *
@@ -721,6 +677,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

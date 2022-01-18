@@ -2,7 +2,7 @@
 /**
  * ListingsItemPatchRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class ListingsItemPatchRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'product_type' => 'setProductType',
-        'patches' => 'setPatches',
-        'headers' => 'setHeaders'
+                'product_type' => 'setProductType',
+        'patches' => 'setPatches'
     ];
 
     /**
@@ -124,8 +123,7 @@ class ListingsItemPatchRequest implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'product_type' => 'getProductType',
-        'patches' => 'getPatches',
-        'headers' => 'getHeaders'
+        'patches' => 'getPatches'
     ];
 
     /**
@@ -168,11 +166,7 @@ class ListingsItemPatchRequest implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -225,30 +219,6 @@ class ListingsItemPatchRequest implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets product_type
@@ -273,7 +243,6 @@ class ListingsItemPatchRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets patches
      *
@@ -302,6 +271,7 @@ class ListingsItemPatchRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

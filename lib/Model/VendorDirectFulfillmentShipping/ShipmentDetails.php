@@ -2,7 +2,7 @@
 /**
  * ShipmentDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'shipped_date' => 'setShippedDate',
+                'shipped_date' => 'setShippedDate',
         'shipment_status' => 'setShipmentStatus',
         'is_priority_shipment' => 'setIsPriorityShipment',
         'vendor_order_number' => 'setVendorOrderNumber',
-        'estimated_delivery_date' => 'setEstimatedDeliveryDate',
-        'headers' => 'setHeaders'
+        'estimated_delivery_date' => 'setEstimatedDeliveryDate'
     ];
 
     /**
@@ -139,8 +138,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => 'getShipmentStatus',
         'is_priority_shipment' => 'getIsPriorityShipment',
         'vendor_order_number' => 'getVendorOrderNumber',
-        'estimated_delivery_date' => 'getEstimatedDeliveryDate',
-        'headers' => 'getHeaders'
+        'estimated_delivery_date' => 'getEstimatedDeliveryDate'
     ];
 
     /**
@@ -182,13 +180,11 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
+    }const SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
     const SHIPMENT_STATUS_FLOOR_DENIAL = 'FLOOR_DENIAL';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -202,7 +198,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -263,30 +258,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipped_date
@@ -311,7 +282,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_status
      *
@@ -345,7 +315,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_priority_shipment
      *
@@ -369,7 +338,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets vendor_order_number
      *
@@ -393,7 +361,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets estimated_delivery_date
      *
@@ -417,6 +384,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

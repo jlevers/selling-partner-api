@@ -2,7 +2,7 @@
 /**
  * TransportationDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -117,11 +117,10 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'carrier_scac' => 'setCarrierScac',
+                'carrier_scac' => 'setCarrierScac',
         'carrier_shipment_reference_number' => 'setCarrierShipmentReferenceNumber',
         'transportation_mode' => 'setTransportationMode',
-        'bill_of_lading_number' => 'setBillOfLadingNumber',
-        'headers' => 'setHeaders'
+        'bill_of_lading_number' => 'setBillOfLadingNumber'
     ];
 
     /**
@@ -133,8 +132,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
         'carrier_scac' => 'getCarrierScac',
         'carrier_shipment_reference_number' => 'getCarrierShipmentReferenceNumber',
         'transportation_mode' => 'getTransportationMode',
-        'bill_of_lading_number' => 'getBillOfLadingNumber',
-        'headers' => 'getHeaders'
+        'bill_of_lading_number' => 'getBillOfLadingNumber'
     ];
 
     /**
@@ -176,14 +174,12 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const TRANSPORTATION_MODE_ROAD = 'Road';
+    }const TRANSPORTATION_MODE_ROAD = 'Road';
     const TRANSPORTATION_MODE_AIR = 'Air';
     const TRANSPORTATION_MODE_OCEAN = 'Ocean';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -198,7 +194,6 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -252,30 +247,6 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets carrier_scac
@@ -300,7 +271,6 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets carrier_shipment_reference_number
      *
@@ -324,7 +294,6 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets transportation_mode
      *
@@ -358,7 +327,6 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets bill_of_lading_number
      *
@@ -382,6 +350,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

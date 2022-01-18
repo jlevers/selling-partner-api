@@ -2,7 +2,7 @@
 /**
  * StatusUpdateDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'tracking_number' => 'setTrackingNumber',
+                'tracking_number' => 'setTrackingNumber',
         'status_code' => 'setStatusCode',
         'reason_code' => 'setReasonCode',
         'status_date_time' => 'setStatusDateTime',
         'status_location_address' => 'setStatusLocationAddress',
-        'shipment_schedule' => 'setShipmentSchedule',
-        'headers' => 'setHeaders'
+        'shipment_schedule' => 'setShipmentSchedule'
     ];
 
     /**
@@ -144,8 +143,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'reason_code' => 'getReasonCode',
         'status_date_time' => 'getStatusDateTime',
         'status_location_address' => 'getStatusLocationAddress',
-        'shipment_schedule' => 'getShipmentSchedule',
-        'headers' => 'getHeaders'
+        'shipment_schedule' => 'getShipmentSchedule'
     ];
 
     /**
@@ -188,11 +186,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -254,30 +248,6 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets tracking_number
@@ -302,7 +272,6 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets status_code
      *
@@ -326,7 +295,6 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets reason_code
      *
@@ -350,7 +318,6 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets status_date_time
      *
@@ -374,7 +341,6 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets status_location_address
      *
@@ -398,7 +364,6 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets shipment_schedule
      *
@@ -422,6 +387,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

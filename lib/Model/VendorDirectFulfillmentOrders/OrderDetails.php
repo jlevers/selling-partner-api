@@ -2,7 +2,7 @@
 /**
  * OrderDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -136,7 +136,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'customer_order_number' => 'setCustomerOrderNumber',
+                'customer_order_number' => 'setCustomerOrderNumber',
         'order_date' => 'setOrderDate',
         'order_status' => 'setOrderStatus',
         'shipment_details' => 'setShipmentDetails',
@@ -145,8 +145,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_from_party' => 'setShipFromParty',
         'ship_to_party' => 'setShipToParty',
         'bill_to_party' => 'setBillToParty',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -164,8 +163,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_from_party' => 'getShipFromParty',
         'ship_to_party' => 'getShipToParty',
         'bill_to_party' => 'getBillToParty',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -207,15 +205,13 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const ORDER_STATUS__NEW = 'NEW';
+    }const ORDER_STATUS__NEW = 'NEW';
     const ORDER_STATUS_SHIPPED = 'SHIPPED';
     const ORDER_STATUS_ACCEPTED = 'ACCEPTED';
     const ORDER_STATUS_CANCELLED = 'CANCELLED';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -231,7 +227,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -315,30 +310,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets customer_order_number
@@ -363,7 +334,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_date
      *
@@ -387,7 +357,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_status
      *
@@ -421,7 +390,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_details
      *
@@ -445,7 +413,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_total
      *
@@ -469,7 +436,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets selling_party
      *
@@ -493,7 +459,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_from_party
      *
@@ -517,7 +482,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_to_party
      *
@@ -541,7 +505,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets bill_to_party
      *
@@ -565,7 +528,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -589,6 +551,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

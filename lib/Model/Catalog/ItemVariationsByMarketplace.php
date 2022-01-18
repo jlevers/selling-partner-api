@@ -2,7 +2,7 @@
 /**
  * ItemVariationsByMarketplace
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'asins' => 'setAsins',
-        'variation_type' => 'setVariationType',
-        'headers' => 'setHeaders'
+        'variation_type' => 'setVariationType'
     ];
 
     /**
@@ -129,8 +128,7 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'asins' => 'getAsins',
-        'variation_type' => 'getVariationType',
-        'headers' => 'getHeaders'
+        'variation_type' => 'getVariationType'
     ];
 
     /**
@@ -172,13 +170,11 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const VARIATION_TYPE_PARENT = 'PARENT';
+    }const VARIATION_TYPE_PARENT = 'PARENT';
     const VARIATION_TYPE_CHILD = 'CHILD';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -192,7 +188,6 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -254,30 +249,6 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -302,7 +273,6 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets asins
      *
@@ -326,7 +296,6 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets variation_type
      *
@@ -360,6 +329,7 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

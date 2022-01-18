@@ -2,7 +2,7 @@
 /**
  * StandardSingleImageHighlightsModule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'image' => 'setImage',
+                'image' => 'setImage',
         'headline' => 'setHeadline',
         'text_block1' => 'setTextBlock1',
         'text_block2' => 'setTextBlock2',
         'text_block3' => 'setTextBlock3',
-        'bulleted_list_block' => 'setBulletedListBlock',
-        'headers' => 'setHeaders'
+        'bulleted_list_block' => 'setBulletedListBlock'
     ];
 
     /**
@@ -144,8 +143,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
         'text_block1' => 'getTextBlock1',
         'text_block2' => 'getTextBlock2',
         'text_block3' => 'getTextBlock3',
-        'bulleted_list_block' => 'getBulletedListBlock',
-        'headers' => 'getHeaders'
+        'bulleted_list_block' => 'getBulletedListBlock'
     ];
 
     /**
@@ -188,11 +186,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets image
@@ -287,7 +257,6 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
 
         return $this;
     }
-
     /**
      * Gets headline
      *
@@ -311,7 +280,6 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
 
         return $this;
     }
-
     /**
      * Gets text_block1
      *
@@ -335,7 +303,6 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
 
         return $this;
     }
-
     /**
      * Gets text_block2
      *
@@ -359,7 +326,6 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
 
         return $this;
     }
-
     /**
      * Gets text_block3
      *
@@ -383,7 +349,6 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
 
         return $this;
     }
-
     /**
      * Gets bulleted_list_block
      *
@@ -407,6 +372,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

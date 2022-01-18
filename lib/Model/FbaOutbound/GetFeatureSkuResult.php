@@ -2,7 +2,7 @@
 /**
  * GetFeatureSkuResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'feature_name' => 'setFeatureName',
         'is_eligible' => 'setIsEligible',
         'ineligible_reasons' => 'setIneligibleReasons',
-        'sku_info' => 'setSkuInfo',
-        'headers' => 'setHeaders'
+        'sku_info' => 'setSkuInfo'
     ];
 
     /**
@@ -139,8 +138,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
         'feature_name' => 'getFeatureName',
         'is_eligible' => 'getIsEligible',
         'ineligible_reasons' => 'getIneligibleReasons',
-        'sku_info' => 'getSkuInfo',
-        'headers' => 'getHeaders'
+        'sku_info' => 'getSkuInfo'
     ];
 
     /**
@@ -183,11 +181,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -242,30 +236,6 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -290,7 +260,6 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets feature_name
      *
@@ -314,7 +283,6 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets is_eligible
      *
@@ -338,7 +306,6 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets ineligible_reasons
      *
@@ -362,7 +329,6 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets sku_info
      *
@@ -386,6 +352,7 @@ class GetFeatureSkuResult implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

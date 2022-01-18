@@ -2,7 +2,7 @@
 /**
  * PaymentExecutionDetailItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'payment' => 'setPayment',
-        'payment_method' => 'setPaymentMethod',
-        'headers' => 'setHeaders'
+                'payment' => 'setPayment',
+        'payment_method' => 'setPaymentMethod'
     ];
 
     /**
@@ -124,8 +123,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $getters = [
         'payment' => 'getPayment',
-        'payment_method' => 'getPaymentMethod',
-        'headers' => 'getHeaders'
+        'payment_method' => 'getPaymentMethod'
     ];
 
     /**
@@ -168,11 +166,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets payment
@@ -269,7 +239,6 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets payment_method
      *
@@ -293,6 +262,7 @@ class PaymentExecutionDetailItem implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

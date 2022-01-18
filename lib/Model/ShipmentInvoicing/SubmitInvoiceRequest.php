@@ -2,7 +2,7 @@
 /**
  * SubmitInvoiceRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'invoice_content' => 'setInvoiceContent',
+                'invoice_content' => 'setInvoiceContent',
         'marketplace_id' => 'setMarketplaceId',
-        'content_md5_value' => 'setContentMd5Value',
-        'headers' => 'setHeaders'
+        'content_md5_value' => 'setContentMd5Value'
     ];
 
     /**
@@ -129,8 +128,7 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $getters = [
         'invoice_content' => 'getInvoiceContent',
         'marketplace_id' => 'getMarketplaceId',
-        'content_md5_value' => 'getContentMd5Value',
-        'headers' => 'getHeaders'
+        'content_md5_value' => 'getContentMd5Value'
     ];
 
     /**
@@ -173,11 +171,7 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets invoice_content
@@ -275,7 +245,6 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -299,7 +268,6 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets content_md5_value
      *
@@ -323,6 +291,7 @@ class SubmitInvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * CreateFeedSpecification
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'feed_type' => 'setFeedType',
+                'feed_type' => 'setFeedType',
         'marketplace_ids' => 'setMarketplaceIds',
         'input_feed_document_id' => 'setInputFeedDocumentId',
-        'feed_options' => 'setFeedOptions',
-        'headers' => 'setHeaders'
+        'feed_options' => 'setFeedOptions'
     ];
 
     /**
@@ -134,8 +133,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
         'feed_type' => 'getFeedType',
         'marketplace_ids' => 'getMarketplaceIds',
         'input_feed_document_id' => 'getInputFeedDocumentId',
-        'feed_options' => 'getFeedOptions',
-        'headers' => 'getHeaders'
+        'feed_options' => 'getFeedOptions'
     ];
 
     /**
@@ -178,11 +176,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -244,30 +238,6 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets feed_type
@@ -292,7 +262,6 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets marketplace_ids
      *
@@ -323,7 +292,6 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets input_feed_document_id
      *
@@ -347,7 +315,6 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets feed_options
      *
@@ -371,6 +338,7 @@ class CreateFeedSpecification implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

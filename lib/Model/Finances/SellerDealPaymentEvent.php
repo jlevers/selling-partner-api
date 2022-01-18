@@ -2,7 +2,7 @@
 /**
  * SellerDealPaymentEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
+                'posted_date' => 'setPostedDate',
         'deal_id' => 'setDealId',
         'deal_description' => 'setDealDescription',
         'event_type' => 'setEventType',
         'fee_type' => 'setFeeType',
         'fee_amount' => 'setFeeAmount',
         'tax_amount' => 'setTaxAmount',
-        'total_amount' => 'setTotalAmount',
-        'headers' => 'setHeaders'
+        'total_amount' => 'setTotalAmount'
     ];
 
     /**
@@ -154,8 +153,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'fee_type' => 'getFeeType',
         'fee_amount' => 'getFeeAmount',
         'tax_amount' => 'getTaxAmount',
-        'total_amount' => 'getTotalAmount',
-        'headers' => 'getHeaders'
+        'total_amount' => 'getTotalAmount'
     ];
 
     /**
@@ -198,11 +196,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +245,6 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets posted_date
@@ -299,7 +269,6 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets deal_id
      *
@@ -323,7 +292,6 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets deal_description
      *
@@ -347,7 +315,6 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets event_type
      *
@@ -371,7 +338,6 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets fee_type
      *
@@ -395,7 +361,6 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets fee_amount
      *
@@ -419,7 +384,6 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets tax_amount
      *
@@ -443,7 +407,6 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets total_amount
      *
@@ -467,6 +430,7 @@ class SellerDealPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

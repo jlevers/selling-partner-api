@@ -2,7 +2,7 @@
 /**
  * ItemVendorDetailsByMarketplace
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'brand_code' => 'setBrandCode',
         'category_code' => 'setCategoryCode',
         'manufacturer_code' => 'setManufacturerCode',
         'manufacturer_code_parent' => 'setManufacturerCodeParent',
         'product_group' => 'setProductGroup',
         'replenishment_category' => 'setReplenishmentCategory',
-        'subcategory_code' => 'setSubcategoryCode',
-        'headers' => 'setHeaders'
+        'subcategory_code' => 'setSubcategoryCode'
     ];
 
     /**
@@ -154,8 +153,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
         'manufacturer_code_parent' => 'getManufacturerCodeParent',
         'product_group' => 'getProductGroup',
         'replenishment_category' => 'getReplenishmentCategory',
-        'subcategory_code' => 'getSubcategoryCode',
-        'headers' => 'getHeaders'
+        'subcategory_code' => 'getSubcategoryCode'
     ];
 
     /**
@@ -197,9 +195,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const REPLENISHMENT_CATEGORY_ALLOCATED = 'ALLOCATED';
+    }const REPLENISHMENT_CATEGORY_ALLOCATED = 'ALLOCATED';
     const REPLENISHMENT_CATEGORY_BASIC_REPLENISHMENT = 'BASIC_REPLENISHMENT';
     const REPLENISHMENT_CATEGORY_IN_SEASON = 'IN_SEASON';
     const REPLENISHMENT_CATEGORY_LIMITED_REPLENISHMENT = 'LIMITED_REPLENISHMENT';
@@ -210,8 +206,8 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
     const REPLENISHMENT_CATEGORY_OBSOLETE = 'OBSOLETE';
     const REPLENISHMENT_CATEGORY_PLANNED_REPLENISHMENT = 'PLANNED_REPLENISHMENT';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -233,7 +229,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -294,30 +289,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -342,7 +313,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets brand_code
      *
@@ -366,7 +336,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets category_code
      *
@@ -390,7 +359,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets manufacturer_code
      *
@@ -414,7 +382,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets manufacturer_code_parent
      *
@@ -438,7 +405,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets product_group
      *
@@ -462,7 +428,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets replenishment_category
      *
@@ -496,7 +461,6 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets subcategory_code
      *
@@ -520,6 +484,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

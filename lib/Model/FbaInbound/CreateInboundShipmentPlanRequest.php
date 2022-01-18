@@ -2,7 +2,7 @@
 /**
  * CreateInboundShipmentPlanRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'ship_from_address' => 'setShipFromAddress',
+                'ship_from_address' => 'setShipFromAddress',
         'label_prep_preference' => 'setLabelPrepPreference',
         'ship_to_country_code' => 'setShipToCountryCode',
         'ship_to_country_subdivision_code' => 'setShipToCountrySubdivisionCode',
-        'inbound_shipment_plan_request_items' => 'setInboundShipmentPlanRequestItems',
-        'headers' => 'setHeaders'
+        'inbound_shipment_plan_request_items' => 'setInboundShipmentPlanRequestItems'
     ];
 
     /**
@@ -139,8 +138,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
         'label_prep_preference' => 'getLabelPrepPreference',
         'ship_to_country_code' => 'getShipToCountryCode',
         'ship_to_country_subdivision_code' => 'getShipToCountrySubdivisionCode',
-        'inbound_shipment_plan_request_items' => 'getInboundShipmentPlanRequestItems',
-        'headers' => 'getHeaders'
+        'inbound_shipment_plan_request_items' => 'getInboundShipmentPlanRequestItems'
     ];
 
     /**
@@ -183,11 +181,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -242,30 +236,6 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets ship_from_address
@@ -290,7 +260,6 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
-
     /**
      * Gets label_prep_preference
      *
@@ -314,7 +283,6 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
-
     /**
      * Gets ship_to_country_code
      *
@@ -338,7 +306,6 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
-
     /**
      * Gets ship_to_country_subdivision_code
      *
@@ -362,7 +329,6 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
-
     /**
      * Gets inbound_shipment_plan_request_items
      *
@@ -386,6 +352,7 @@ class CreateInboundShipmentPlanRequest implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

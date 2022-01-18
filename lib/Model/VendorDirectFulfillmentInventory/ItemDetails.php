@@ -2,7 +2,7 @@
 /**
  * ItemDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'buyer_product_identifier' => 'setBuyerProductIdentifier',
+                'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'available_quantity' => 'setAvailableQuantity',
-        'is_obsolete' => 'setIsObsolete',
-        'headers' => 'setHeaders'
+        'is_obsolete' => 'setIsObsolete'
     ];
 
     /**
@@ -134,8 +133,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_product_identifier' => 'getBuyerProductIdentifier',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
         'available_quantity' => 'getAvailableQuantity',
-        'is_obsolete' => 'getIsObsolete',
-        'headers' => 'getHeaders'
+        'is_obsolete' => 'getIsObsolete'
     ];
 
     /**
@@ -178,11 +176,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -230,30 +224,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets buyer_product_identifier
@@ -278,7 +248,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets vendor_product_identifier
      *
@@ -302,7 +271,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets available_quantity
      *
@@ -326,7 +294,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_obsolete
      *
@@ -350,6 +317,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

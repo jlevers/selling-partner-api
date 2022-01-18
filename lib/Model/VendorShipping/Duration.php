@@ -2,7 +2,7 @@
 /**
  * Duration
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -111,9 +111,8 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'duration_unit' => 'setDurationUnit',
-        'duration_value' => 'setDurationValue',
-        'headers' => 'setHeaders'
+                'duration_unit' => 'setDurationUnit',
+        'duration_value' => 'setDurationValue'
     ];
 
     /**
@@ -123,8 +122,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'duration_unit' => 'getDurationUnit',
-        'duration_value' => 'getDurationValue',
-        'headers' => 'getHeaders'
+        'duration_value' => 'getDurationValue'
     ];
 
     /**
@@ -166,13 +164,11 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const DURATION_UNIT_DAYS = 'Days';
+    }const DURATION_UNIT_DAYS = 'Days';
     const DURATION_UNIT_MONTHS = 'Months';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -186,7 +182,6 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -244,30 +239,6 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets duration_unit
@@ -302,7 +273,6 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets duration_value
      *
@@ -326,6 +296,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

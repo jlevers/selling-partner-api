@@ -2,7 +2,7 @@
 /**
  * InboundShipmentItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
+                'shipment_id' => 'setShipmentId',
         'seller_sku' => 'setSellerSku',
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
         'quantity_shipped' => 'setQuantityShipped',
         'quantity_received' => 'setQuantityReceived',
         'quantity_in_case' => 'setQuantityInCase',
         'release_date' => 'setReleaseDate',
-        'prep_details_list' => 'setPrepDetailsList',
-        'headers' => 'setHeaders'
+        'prep_details_list' => 'setPrepDetailsList'
     ];
 
     /**
@@ -154,8 +153,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         'quantity_received' => 'getQuantityReceived',
         'quantity_in_case' => 'getQuantityInCase',
         'release_date' => 'getReleaseDate',
-        'prep_details_list' => 'getPrepDetailsList',
-        'headers' => 'getHeaders'
+        'prep_details_list' => 'getPrepDetailsList'
     ];
 
     /**
@@ -198,11 +196,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -257,30 +251,6 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_id
@@ -305,7 +275,6 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets seller_sku
      *
@@ -329,7 +298,6 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fulfillment_network_sku
      *
@@ -353,7 +321,6 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets quantity_shipped
      *
@@ -377,7 +344,6 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets quantity_received
      *
@@ -401,7 +367,6 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets quantity_in_case
      *
@@ -425,7 +390,6 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets release_date
      *
@@ -449,7 +413,6 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets prep_details_list
      *
@@ -473,6 +436,7 @@ class InboundShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

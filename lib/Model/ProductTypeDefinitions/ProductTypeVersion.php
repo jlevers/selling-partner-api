@@ -2,7 +2,7 @@
 /**
  * ProductTypeVersion
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class ProductTypeVersion implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'version' => 'setVersion',
+                'version' => 'setVersion',
         'latest' => 'setLatest',
-        'release_candidate' => 'setReleaseCandidate',
-        'headers' => 'setHeaders'
+        'release_candidate' => 'setReleaseCandidate'
     ];
 
     /**
@@ -129,8 +128,7 @@ class ProductTypeVersion implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'version' => 'getVersion',
         'latest' => 'getLatest',
-        'release_candidate' => 'getReleaseCandidate',
-        'headers' => 'getHeaders'
+        'release_candidate' => 'getReleaseCandidate'
     ];
 
     /**
@@ -173,11 +171,7 @@ class ProductTypeVersion implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class ProductTypeVersion implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets version
@@ -275,7 +245,6 @@ class ProductTypeVersion implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets latest
      *
@@ -299,7 +268,6 @@ class ProductTypeVersion implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets release_candidate
      *
@@ -323,6 +291,7 @@ class ProductTypeVersion implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

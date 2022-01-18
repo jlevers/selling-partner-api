@@ -2,7 +2,7 @@
 /**
  * FulfillmentShipment
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'amazon_shipment_id' => 'setAmazonShipmentId',
+                'amazon_shipment_id' => 'setAmazonShipmentId',
         'fulfillment_center_id' => 'setFulfillmentCenterId',
         'fulfillment_shipment_status' => 'setFulfillmentShipmentStatus',
         'shipping_date' => 'setShippingDate',
         'estimated_arrival_date' => 'setEstimatedArrivalDate',
         'shipping_notes' => 'setShippingNotes',
         'fulfillment_shipment_item' => 'setFulfillmentShipmentItem',
-        'fulfillment_shipment_package' => 'setFulfillmentShipmentPackage',
-        'headers' => 'setHeaders'
+        'fulfillment_shipment_package' => 'setFulfillmentShipmentPackage'
     ];
 
     /**
@@ -154,8 +153,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
         'estimated_arrival_date' => 'getEstimatedArrivalDate',
         'shipping_notes' => 'getShippingNotes',
         'fulfillment_shipment_item' => 'getFulfillmentShipmentItem',
-        'fulfillment_shipment_package' => 'getFulfillmentShipmentPackage',
-        'headers' => 'getHeaders'
+        'fulfillment_shipment_package' => 'getFulfillmentShipmentPackage'
     ];
 
     /**
@@ -197,15 +195,13 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const FULFILLMENT_SHIPMENT_STATUS_PENDING = 'PENDING';
+    }const FULFILLMENT_SHIPMENT_STATUS_PENDING = 'PENDING';
     const FULFILLMENT_SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
     const FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_FULFILLER = 'CANCELLED_BY_FULFILLER';
     const FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER = 'CANCELLED_BY_SELLER';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -221,7 +217,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -291,30 +286,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets amazon_shipment_id
@@ -339,7 +310,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fulfillment_center_id
      *
@@ -363,7 +333,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fulfillment_shipment_status
      *
@@ -397,7 +366,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets shipping_date
      *
@@ -421,7 +389,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets estimated_arrival_date
      *
@@ -445,7 +412,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets shipping_notes
      *
@@ -469,7 +435,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fulfillment_shipment_item
      *
@@ -493,7 +458,6 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fulfillment_shipment_package
      *
@@ -517,6 +481,7 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

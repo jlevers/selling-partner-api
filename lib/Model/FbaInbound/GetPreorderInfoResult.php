@@ -2,7 +2,7 @@
 /**
  * GetPreorderInfoResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -117,11 +117,10 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'shipment_contains_preorderable_items' => 'setShipmentContainsPreorderableItems',
+                'shipment_contains_preorderable_items' => 'setShipmentContainsPreorderableItems',
         'shipment_confirmed_for_preorder' => 'setShipmentConfirmedForPreorder',
         'need_by_date' => 'setNeedByDate',
-        'confirmed_fulfillable_date' => 'setConfirmedFulfillableDate',
-        'headers' => 'setHeaders'
+        'confirmed_fulfillable_date' => 'setConfirmedFulfillableDate'
     ];
 
     /**
@@ -133,8 +132,7 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
         'shipment_contains_preorderable_items' => 'getShipmentContainsPreorderableItems',
         'shipment_confirmed_for_preorder' => 'getShipmentConfirmedForPreorder',
         'need_by_date' => 'getNeedByDate',
-        'confirmed_fulfillable_date' => 'getConfirmedFulfillableDate',
-        'headers' => 'getHeaders'
+        'confirmed_fulfillable_date' => 'getConfirmedFulfillableDate'
     ];
 
     /**
@@ -177,11 +175,7 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -226,30 +220,6 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_contains_preorderable_items
@@ -274,7 +244,6 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets shipment_confirmed_for_preorder
      *
@@ -298,7 +267,6 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets need_by_date
      *
@@ -322,7 +290,6 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets confirmed_fulfillable_date
      *
@@ -346,6 +313,7 @@ class GetPreorderInfoResult implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

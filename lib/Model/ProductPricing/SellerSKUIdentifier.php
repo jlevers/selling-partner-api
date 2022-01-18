@@ -2,7 +2,7 @@
 /**
  * SellerSKUIdentifier
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -114,10 +114,9 @@ class SellerSKUIdentifier implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'seller_id' => 'setSellerId',
-        'seller_sku' => 'setSellerSku',
-        'headers' => 'setHeaders'
+        'seller_sku' => 'setSellerSku'
     ];
 
     /**
@@ -128,8 +127,7 @@ class SellerSKUIdentifier implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'seller_id' => 'getSellerId',
-        'seller_sku' => 'getSellerSku',
-        'headers' => 'getHeaders'
+        'seller_sku' => 'getSellerSku'
     ];
 
     /**
@@ -172,11 +170,7 @@ class SellerSKUIdentifier implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -229,30 +223,6 @@ class SellerSKUIdentifier implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -277,7 +247,6 @@ class SellerSKUIdentifier implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets seller_id
      *
@@ -301,7 +270,6 @@ class SellerSKUIdentifier implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets seller_sku
      *
@@ -325,6 +293,7 @@ class SellerSKUIdentifier implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

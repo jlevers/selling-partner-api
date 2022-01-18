@@ -2,7 +2,7 @@
 /**
  * GetMessagingActionResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        '_links' => 'setLinks',
+                '_links' => 'setLinks',
         '_embedded' => 'setEmbedded',
         'payload' => 'setPayload',
-        'errors' => 'setErrors',
-        'headers' => 'setHeaders'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -134,8 +133,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
         '_links' => 'getLinks',
         '_embedded' => 'getEmbedded',
         'payload' => 'getPayload',
-        'errors' => 'getErrors',
-        'headers' => 'getHeaders'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -178,11 +176,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets _links
@@ -275,7 +245,6 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets _embedded
      *
@@ -299,7 +268,6 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets payload
      *
@@ -323,7 +291,6 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets errors
      *
@@ -347,6 +314,7 @@ class GetMessagingActionResponse implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

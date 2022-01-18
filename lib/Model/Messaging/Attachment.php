@@ -2,7 +2,7 @@
 /**
  * Attachment
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'upload_destination_id' => 'setUploadDestinationId',
-        'file_name' => 'setFileName',
-        'headers' => 'setHeaders'
+                'upload_destination_id' => 'setUploadDestinationId',
+        'file_name' => 'setFileName'
     ];
 
     /**
@@ -124,8 +123,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'upload_destination_id' => 'getUploadDestinationId',
-        'file_name' => 'getFileName',
-        'headers' => 'getHeaders'
+        'file_name' => 'getFileName'
     ];
 
     /**
@@ -168,11 +166,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets upload_destination_id
@@ -269,7 +239,6 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets file_name
      *
@@ -293,6 +262,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

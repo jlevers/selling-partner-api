@@ -2,7 +2,7 @@
 /**
  * Item
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,6 +112,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'sku' => 'sku',
         'summaries' => 'summaries',
         'attributes' => 'attributes',
@@ -127,14 +128,14 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'sku' => 'setSku',
         'summaries' => 'setSummaries',
         'attributes' => 'setAttributes',
         'issues' => 'setIssues',
         'offers' => 'setOffers',
         'fulfillment_availability' => 'setFulfillmentAvailability',
-        'procurement' => 'setProcurement',
-        'headers' => 'setHeaders'
+        'procurement' => 'setProcurement'
     ];
 
     /**
@@ -143,14 +144,14 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'sku' => 'getSku',
         'summaries' => 'getSummaries',
         'attributes' => 'getAttributes',
         'issues' => 'getIssues',
         'offers' => 'getOffers',
         'fulfillment_availability' => 'getFulfillmentAvailability',
-        'procurement' => 'getProcurement',
-        'headers' => 'getHeaders'
+        'procurement' => 'getProcurement'
     ];
 
     /**
@@ -193,11 +194,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -249,9 +246,9 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -259,19 +256,17 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets sku
@@ -296,7 +291,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets summaries
      *
@@ -320,7 +314,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets attributes
      *
@@ -344,7 +337,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets issues
      *
@@ -368,7 +360,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets offers
      *
@@ -392,7 +383,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fulfillment_availability
      *
@@ -416,7 +406,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets procurement
      *
@@ -440,6 +429,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

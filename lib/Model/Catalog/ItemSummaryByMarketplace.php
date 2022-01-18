@@ -2,7 +2,7 @@
 /**
  * ItemSummaryByMarketplace
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -133,7 +133,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'brand_name' => 'setBrandName',
         'browse_node' => 'setBrowseNode',
         'color_name' => 'setColorName',
@@ -141,8 +141,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'manufacturer' => 'setManufacturer',
         'model_number' => 'setModelNumber',
         'size_name' => 'setSizeName',
-        'style_name' => 'setStyleName',
-        'headers' => 'setHeaders'
+        'style_name' => 'setStyleName'
     ];
 
     /**
@@ -159,8 +158,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'manufacturer' => 'getManufacturer',
         'model_number' => 'getModelNumber',
         'size_name' => 'getSizeName',
-        'style_name' => 'getStyleName',
-        'headers' => 'getHeaders'
+        'style_name' => 'getStyleName'
     ];
 
     /**
@@ -203,11 +201,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -260,30 +254,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -308,7 +278,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets brand_name
      *
@@ -332,7 +301,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets browse_node
      *
@@ -356,7 +324,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets color_name
      *
@@ -380,7 +347,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets item_name
      *
@@ -404,7 +370,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets manufacturer
      *
@@ -428,7 +393,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets model_number
      *
@@ -452,7 +416,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets size_name
      *
@@ -476,7 +439,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets style_name
      *
@@ -500,6 +462,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

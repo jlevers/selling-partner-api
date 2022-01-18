@@ -2,7 +2,7 @@
 /**
  * SubmitShipmentStatusUpdatesRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -108,8 +108,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-        'shipment_status_updates' => 'setShipmentStatusUpdates',
-        'headers' => 'setHeaders'
+                'shipment_status_updates' => 'setShipmentStatusUpdates'
     ];
 
     /**
@@ -118,8 +117,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $getters = [
-        'shipment_status_updates' => 'getShipmentStatusUpdates',
-        'headers' => 'getHeaders'
+        'shipment_status_updates' => 'getShipmentStatusUpdates'
     ];
 
     /**
@@ -162,11 +160,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -212,30 +206,6 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_status_updates
@@ -265,6 +235,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

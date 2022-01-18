@@ -2,7 +2,7 @@
 /**
  * GetSolicitationActionsForOrderResponseEmbedded
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -108,8 +108,7 @@ class GetSolicitationActionsForOrderResponseEmbedded implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'actions' => 'setActions',
-        'headers' => 'setHeaders'
+                'actions' => 'setActions'
     ];
 
     /**
@@ -118,8 +117,7 @@ class GetSolicitationActionsForOrderResponseEmbedded implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'actions' => 'getActions',
-        'headers' => 'getHeaders'
+        'actions' => 'getActions'
     ];
 
     /**
@@ -162,11 +160,7 @@ class GetSolicitationActionsForOrderResponseEmbedded implements ModelInterface, 
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -211,30 +205,6 @@ class GetSolicitationActionsForOrderResponseEmbedded implements ModelInterface, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets actions
@@ -259,6 +229,7 @@ class GetSolicitationActionsForOrderResponseEmbedded implements ModelInterface, 
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

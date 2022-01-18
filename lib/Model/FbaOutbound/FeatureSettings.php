@@ -2,7 +2,7 @@
 /**
  * FeatureSettings
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'feature_name' => 'setFeatureName',
-        'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy',
-        'headers' => 'setHeaders'
+                'feature_name' => 'setFeatureName',
+        'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy'
     ];
 
     /**
@@ -124,8 +123,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'feature_name' => 'getFeatureName',
-        'feature_fulfillment_policy' => 'getFeatureFulfillmentPolicy',
-        'headers' => 'getHeaders'
+        'feature_fulfillment_policy' => 'getFeatureFulfillmentPolicy'
     ];
 
     /**
@@ -167,13 +165,11 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const FEATURE_FULFILLMENT_POLICY_REQUIRED = 'Required';
+    }const FEATURE_FULFILLMENT_POLICY_REQUIRED = 'Required';
     const FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED = 'NotRequired';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -187,7 +183,6 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +234,6 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets feature_name
@@ -287,7 +258,6 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets feature_fulfillment_policy
      *
@@ -321,6 +291,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

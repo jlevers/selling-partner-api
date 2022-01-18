@@ -2,7 +2,7 @@
 /**
  * AvailableDeliveryExperienceOption
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'delivery_experience_option' => 'setDeliveryExperienceOption',
-        'charge' => 'setCharge',
-        'headers' => 'setHeaders'
+                'delivery_experience_option' => 'setDeliveryExperienceOption',
+        'charge' => 'setCharge'
     ];
 
     /**
@@ -124,8 +123,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
      */
     protected static $getters = [
         'delivery_experience_option' => 'getDeliveryExperienceOption',
-        'charge' => 'getCharge',
-        'headers' => 'getHeaders'
+        'charge' => 'getCharge'
     ];
 
     /**
@@ -168,11 +166,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets delivery_experience_option
@@ -269,7 +239,6 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets charge
      *
@@ -293,6 +262,7 @@ class AvailableDeliveryExperienceOption implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

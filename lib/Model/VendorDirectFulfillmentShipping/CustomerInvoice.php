@@ -2,7 +2,7 @@
 /**
  * CustomerInvoice
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -111,9 +111,8 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_number' => 'setPurchaseOrderNumber',
-        'content' => 'setContent',
-        'headers' => 'setHeaders'
+                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'content' => 'setContent'
     ];
 
     /**
@@ -123,8 +122,7 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'purchase_order_number' => 'getPurchaseOrderNumber',
-        'content' => 'getContent',
-        'headers' => 'getHeaders'
+        'content' => 'getContent'
     ];
 
     /**
@@ -167,11 +165,7 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -224,30 +218,6 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets purchase_order_number
@@ -277,7 +247,6 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content
      *
@@ -301,6 +270,7 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * ShipmentConfirmation
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -156,7 +156,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'shipment_identifier' => 'setShipmentIdentifier',
+                'shipment_identifier' => 'setShipmentIdentifier',
         'shipment_confirmation_type' => 'setShipmentConfirmationType',
         'shipment_type' => 'setShipmentType',
         'shipment_structure' => 'setShipmentStructure',
@@ -172,8 +172,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'import_details' => 'setImportDetails',
         'shipped_items' => 'setShippedItems',
         'cartons' => 'setCartons',
-        'pallets' => 'setPallets',
-        'headers' => 'setHeaders'
+        'pallets' => 'setPallets'
     ];
 
     /**
@@ -198,8 +197,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'import_details' => 'getImportDetails',
         'shipped_items' => 'getShippedItems',
         'cartons' => 'getCartons',
-        'pallets' => 'getPallets',
-        'headers' => 'getHeaders'
+        'pallets' => 'getPallets'
     ];
 
     /**
@@ -241,9 +239,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const SHIPMENT_CONFIRMATION_TYPE_ORIGINAL = 'Original';
+    }const SHIPMENT_CONFIRMATION_TYPE_ORIGINAL = 'Original';
     const SHIPMENT_CONFIRMATION_TYPE_REPLACE = 'Replace';
     const SHIPMENT_TYPE_TRUCK_LOAD = 'TruckLoad';
     const SHIPMENT_TYPE_LESS_THAN_TRUCK_LOAD = 'LessThanTruckLoad';
@@ -256,8 +252,8 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     const SHIPMENT_STRUCTURE_MASTER_PALLET = 'MasterPallet';
     const SHIPMENT_STRUCTURE_MASTER_CASE = 'MasterCase';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -271,6 +267,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         ];
     }
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -285,6 +282,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         ];
     }
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -303,7 +301,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -409,30 +406,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_identifier
@@ -457,7 +430,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipment_confirmation_type
      *
@@ -491,7 +463,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipment_type
      *
@@ -525,7 +496,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipment_structure
      *
@@ -559,7 +529,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets transportation_details
      *
@@ -583,7 +552,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets amazon_reference_number
      *
@@ -607,7 +575,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipment_confirmation_date
      *
@@ -631,7 +598,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipped_date
      *
@@ -655,7 +621,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets estimated_delivery_date
      *
@@ -679,7 +644,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets selling_party
      *
@@ -703,7 +667,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets ship_from_party
      *
@@ -727,7 +690,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets ship_to_party
      *
@@ -751,7 +713,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipment_measurements
      *
@@ -775,7 +736,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets import_details
      *
@@ -799,7 +759,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipped_items
      *
@@ -823,7 +782,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets cartons
      *
@@ -847,7 +805,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets pallets
      *
@@ -871,6 +828,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

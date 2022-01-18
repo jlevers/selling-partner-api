@@ -2,7 +2,7 @@
 /**
  * StandardImageSidebarModule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'headline' => 'setHeadline',
+                'headline' => 'setHeadline',
         'image_caption_block' => 'setImageCaptionBlock',
         'description_text_block' => 'setDescriptionTextBlock',
         'description_list_block' => 'setDescriptionListBlock',
         'sidebar_image_text_block' => 'setSidebarImageTextBlock',
-        'sidebar_list_block' => 'setSidebarListBlock',
-        'headers' => 'setHeaders'
+        'sidebar_list_block' => 'setSidebarListBlock'
     ];
 
     /**
@@ -144,8 +143,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
         'description_text_block' => 'getDescriptionTextBlock',
         'description_list_block' => 'getDescriptionListBlock',
         'sidebar_image_text_block' => 'getSidebarImageTextBlock',
-        'sidebar_list_block' => 'getSidebarListBlock',
-        'headers' => 'getHeaders'
+        'sidebar_list_block' => 'getSidebarListBlock'
     ];
 
     /**
@@ -188,11 +186,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets headline
@@ -287,7 +257,6 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets image_caption_block
      *
@@ -311,7 +280,6 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets description_text_block
      *
@@ -335,7 +303,6 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets description_list_block
      *
@@ -359,7 +326,6 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets sidebar_image_text_block
      *
@@ -383,7 +349,6 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets sidebar_list_block
      *
@@ -407,6 +372,7 @@ class StandardImageSidebarModule implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

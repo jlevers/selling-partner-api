@@ -2,7 +2,7 @@
 /**
  * PartneredSmallParcelPackageOutput
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'dimensions' => 'setDimensions',
+                'dimensions' => 'setDimensions',
         'weight' => 'setWeight',
         'carrier_name' => 'setCarrierName',
         'tracking_id' => 'setTrackingId',
-        'package_status' => 'setPackageStatus',
-        'headers' => 'setHeaders'
+        'package_status' => 'setPackageStatus'
     ];
 
     /**
@@ -139,8 +138,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
         'weight' => 'getWeight',
         'carrier_name' => 'getCarrierName',
         'tracking_id' => 'getTrackingId',
-        'package_status' => 'getPackageStatus',
-        'headers' => 'getHeaders'
+        'package_status' => 'getPackageStatus'
     ];
 
     /**
@@ -183,11 +181,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -248,30 +242,6 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets dimensions
@@ -296,7 +266,6 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets weight
      *
@@ -320,7 +289,6 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets carrier_name
      *
@@ -344,7 +312,6 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets tracking_id
      *
@@ -368,7 +335,6 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets package_status
      *
@@ -392,6 +358,7 @@ class PartneredSmallParcelPackageOutput implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

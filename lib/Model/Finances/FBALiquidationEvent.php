@@ -2,7 +2,7 @@
 /**
  * FBALiquidationEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
+                'posted_date' => 'setPostedDate',
         'original_removal_order_id' => 'setOriginalRemovalOrderId',
         'liquidation_proceeds_amount' => 'setLiquidationProceedsAmount',
-        'liquidation_fee_amount' => 'setLiquidationFeeAmount',
-        'headers' => 'setHeaders'
+        'liquidation_fee_amount' => 'setLiquidationFeeAmount'
     ];
 
     /**
@@ -134,8 +133,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
         'posted_date' => 'getPostedDate',
         'original_removal_order_id' => 'getOriginalRemovalOrderId',
         'liquidation_proceeds_amount' => 'getLiquidationProceedsAmount',
-        'liquidation_fee_amount' => 'getLiquidationFeeAmount',
-        'headers' => 'getHeaders'
+        'liquidation_fee_amount' => 'getLiquidationFeeAmount'
     ];
 
     /**
@@ -178,11 +176,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets posted_date
@@ -275,7 +245,6 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets original_removal_order_id
      *
@@ -299,7 +268,6 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets liquidation_proceeds_amount
      *
@@ -323,7 +291,6 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets liquidation_fee_amount
      *
@@ -347,6 +314,7 @@ class FBALiquidationEvent implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

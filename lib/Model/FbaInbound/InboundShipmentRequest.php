@@ -2,7 +2,7 @@
 /**
  * InboundShipmentRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'inbound_shipment_header' => 'setInboundShipmentHeader',
+                'inbound_shipment_header' => 'setInboundShipmentHeader',
         'inbound_shipment_items' => 'setInboundShipmentItems',
-        'marketplace_id' => 'setMarketplaceId',
-        'headers' => 'setHeaders'
+        'marketplace_id' => 'setMarketplaceId'
     ];
 
     /**
@@ -129,8 +128,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'inbound_shipment_header' => 'getInboundShipmentHeader',
         'inbound_shipment_items' => 'getInboundShipmentItems',
-        'marketplace_id' => 'getMarketplaceId',
-        'headers' => 'getHeaders'
+        'marketplace_id' => 'getMarketplaceId'
     ];
 
     /**
@@ -173,11 +171,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -230,30 +224,6 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets inbound_shipment_header
@@ -278,7 +248,6 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets inbound_shipment_items
      *
@@ -302,7 +271,6 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -326,6 +294,7 @@ class InboundShipmentRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

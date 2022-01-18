@@ -2,7 +2,7 @@
 /**
  * PostContentDocumentAsinRelationsResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -99,6 +99,7 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'warnings' => 'warnings'
     ];
 
@@ -108,8 +109,8 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'warnings' => 'setWarnings',
-        'headers' => 'setHeaders'
+        'headers' => 'setHeaders',
+        'warnings' => 'setWarnings'
     ];
 
     /**
@@ -118,8 +119,8 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'warnings' => 'getWarnings',
-        'headers' => 'getHeaders'
+        'headers' => 'getHeaders',
+        'warnings' => 'getWarnings'
     ];
 
     /**
@@ -162,11 +163,7 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -209,9 +206,9 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -219,19 +216,17 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets warnings
@@ -258,6 +253,7 @@ class PostContentDocumentAsinRelationsResponse implements ModelInterface, ArrayA
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

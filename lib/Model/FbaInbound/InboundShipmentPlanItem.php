@@ -2,7 +2,7 @@
 /**
  * InboundShipmentPlanItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
         'quantity' => 'setQuantity',
-        'prep_details_list' => 'setPrepDetailsList',
-        'headers' => 'setHeaders'
+        'prep_details_list' => 'setPrepDetailsList'
     ];
 
     /**
@@ -134,8 +133,7 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
         'seller_sku' => 'getSellerSku',
         'fulfillment_network_sku' => 'getFulfillmentNetworkSku',
         'quantity' => 'getQuantity',
-        'prep_details_list' => 'getPrepDetailsList',
-        'headers' => 'getHeaders'
+        'prep_details_list' => 'getPrepDetailsList'
     ];
 
     /**
@@ -178,11 +176,7 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -236,30 +230,6 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -284,7 +254,6 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets fulfillment_network_sku
      *
@@ -308,7 +277,6 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -332,7 +300,6 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets prep_details_list
      *
@@ -356,6 +323,7 @@ class InboundShipmentPlanItem implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

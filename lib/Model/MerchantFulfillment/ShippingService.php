@@ -2,7 +2,7 @@
 /**
  * ShippingService
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -145,7 +145,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'shipping_service_name' => 'setShippingServiceName',
+                'shipping_service_name' => 'setShippingServiceName',
         'carrier_name' => 'setCarrierName',
         'shipping_service_id' => 'setShippingServiceId',
         'shipping_service_offer_id' => 'setShippingServiceOfferId',
@@ -157,8 +157,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
         'available_shipping_service_options' => 'setAvailableShippingServiceOptions',
         'available_label_formats' => 'setAvailableLabelFormats',
         'available_format_options_for_label' => 'setAvailableFormatOptionsForLabel',
-        'requires_additional_seller_inputs' => 'setRequiresAdditionalSellerInputs',
-        'headers' => 'setHeaders'
+        'requires_additional_seller_inputs' => 'setRequiresAdditionalSellerInputs'
     ];
 
     /**
@@ -179,8 +178,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
         'available_shipping_service_options' => 'getAvailableShippingServiceOptions',
         'available_label_formats' => 'getAvailableLabelFormats',
         'available_format_options_for_label' => 'getAvailableFormatOptionsForLabel',
-        'requires_additional_seller_inputs' => 'getRequiresAdditionalSellerInputs',
-        'headers' => 'getHeaders'
+        'requires_additional_seller_inputs' => 'getRequiresAdditionalSellerInputs'
     ];
 
     /**
@@ -223,11 +221,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -305,30 +299,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipping_service_name
@@ -353,7 +323,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets carrier_name
      *
@@ -377,7 +346,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_service_id
      *
@@ -401,7 +369,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_service_offer_id
      *
@@ -425,7 +392,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_date
      *
@@ -449,7 +415,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets earliest_estimated_delivery_date
      *
@@ -473,7 +438,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets latest_estimated_delivery_date
      *
@@ -497,7 +461,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets rate
      *
@@ -521,7 +484,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_service_options
      *
@@ -545,7 +507,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets available_shipping_service_options
      *
@@ -569,7 +530,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets available_label_formats
      *
@@ -593,7 +553,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets available_format_options_for_label
      *
@@ -617,7 +576,6 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets requires_additional_seller_inputs
      *
@@ -641,6 +599,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

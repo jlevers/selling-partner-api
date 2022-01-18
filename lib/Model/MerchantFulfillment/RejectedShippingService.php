@@ -2,7 +2,7 @@
 /**
  * RejectedShippingService
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'carrier_name' => 'setCarrierName',
+                'carrier_name' => 'setCarrierName',
         'shipping_service_name' => 'setShippingServiceName',
         'shipping_service_id' => 'setShippingServiceId',
         'rejection_reason_code' => 'setRejectionReasonCode',
-        'rejection_reason_message' => 'setRejectionReasonMessage',
-        'headers' => 'setHeaders'
+        'rejection_reason_message' => 'setRejectionReasonMessage'
     ];
 
     /**
@@ -139,8 +138,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
         'shipping_service_name' => 'getShippingServiceName',
         'shipping_service_id' => 'getShippingServiceId',
         'rejection_reason_code' => 'getRejectionReasonCode',
-        'rejection_reason_message' => 'getRejectionReasonMessage',
-        'headers' => 'getHeaders'
+        'rejection_reason_message' => 'getRejectionReasonMessage'
     ];
 
     /**
@@ -183,11 +181,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets carrier_name
@@ -293,7 +263,6 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets shipping_service_name
      *
@@ -317,7 +286,6 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets shipping_service_id
      *
@@ -341,7 +309,6 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets rejection_reason_code
      *
@@ -365,7 +332,6 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets rejection_reason_message
      *
@@ -389,6 +355,7 @@ class RejectedShippingService implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

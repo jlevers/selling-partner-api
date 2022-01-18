@@ -2,7 +2,7 @@
 /**
  * GetFulfillmentPreviewRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'address' => 'setAddress',
         'items' => 'setItems',
         'shipping_speed_categories' => 'setShippingSpeedCategories',
         'include_cod_fulfillment_preview' => 'setIncludeCodFulfillmentPreview',
         'include_delivery_windows' => 'setIncludeDeliveryWindows',
-        'feature_constraints' => 'setFeatureConstraints',
-        'headers' => 'setHeaders'
+        'feature_constraints' => 'setFeatureConstraints'
     ];
 
     /**
@@ -149,8 +148,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
         'shipping_speed_categories' => 'getShippingSpeedCategories',
         'include_cod_fulfillment_preview' => 'getIncludeCodFulfillmentPreview',
         'include_delivery_windows' => 'getIncludeDeliveryWindows',
-        'feature_constraints' => 'getFeatureConstraints',
-        'headers' => 'getHeaders'
+        'feature_constraints' => 'getFeatureConstraints'
     ];
 
     /**
@@ -193,11 +191,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +245,6 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -299,7 +269,6 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
-
     /**
      * Gets address
      *
@@ -323,7 +292,6 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -347,7 +315,6 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
-
     /**
      * Gets shipping_speed_categories
      *
@@ -371,7 +338,6 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
-
     /**
      * Gets include_cod_fulfillment_preview
      *
@@ -395,7 +361,6 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
-
     /**
      * Gets include_delivery_windows
      *
@@ -419,7 +384,6 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
-
     /**
      * Gets feature_constraints
      *
@@ -443,6 +407,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * PackingSlip
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_number' => 'setPurchaseOrderNumber',
+                'purchase_order_number' => 'setPurchaseOrderNumber',
         'content' => 'setContent',
-        'content_type' => 'setContentType',
-        'headers' => 'setHeaders'
+        'content_type' => 'setContentType'
     ];
 
     /**
@@ -129,8 +128,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'content' => 'getContent',
-        'content_type' => 'getContentType',
-        'headers' => 'getHeaders'
+        'content_type' => 'getContentType'
     ];
 
     /**
@@ -172,12 +170,10 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const CONTENT_TYPE_APPLICATION_PDF = 'application/pdf';
+    }const CONTENT_TYPE_APPLICATION_PDF = 'application/pdf';
+    
     
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -190,7 +186,6 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -253,30 +248,6 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets purchase_order_number
@@ -306,7 +277,6 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content
      *
@@ -330,7 +300,6 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_type
      *
@@ -364,6 +333,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

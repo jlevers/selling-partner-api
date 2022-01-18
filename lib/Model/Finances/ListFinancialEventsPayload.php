@@ -2,7 +2,7 @@
 /**
  * ListFinancialEventsPayload
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'next_token' => 'setNextToken',
-        'financial_events' => 'setFinancialEvents',
-        'headers' => 'setHeaders'
+                'next_token' => 'setNextToken',
+        'financial_events' => 'setFinancialEvents'
     ];
 
     /**
@@ -124,8 +123,7 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $getters = [
         'next_token' => 'getNextToken',
-        'financial_events' => 'getFinancialEvents',
-        'headers' => 'getHeaders'
+        'financial_events' => 'getFinancialEvents'
     ];
 
     /**
@@ -168,11 +166,7 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -215,30 +209,6 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets next_token
@@ -263,7 +233,6 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets financial_events
      *
@@ -287,6 +256,7 @@ class ListFinancialEventsPayload implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

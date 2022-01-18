@@ -2,7 +2,7 @@
 /**
  * CreateReportScheduleResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -100,6 +100,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'report_schedule_id' => 'reportScheduleId'
     ];
 
@@ -109,8 +110,8 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'report_schedule_id' => 'setReportScheduleId',
-        'headers' => 'setHeaders'
+        'headers' => 'setHeaders',
+        'report_schedule_id' => 'setReportScheduleId'
     ];
 
     /**
@@ -119,8 +120,8 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'report_schedule_id' => 'getReportScheduleId',
-        'headers' => 'getHeaders'
+        'headers' => 'getHeaders',
+        'report_schedule_id' => 'getReportScheduleId'
     ];
 
     /**
@@ -163,11 +164,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -213,9 +210,9 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -223,19 +220,17 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets report_schedule_id
@@ -260,6 +255,7 @@ class CreateReportScheduleResponse implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

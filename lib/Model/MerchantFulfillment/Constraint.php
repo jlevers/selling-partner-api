@@ -2,7 +2,7 @@
 /**
  * Constraint
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class Constraint implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'validation_reg_ex' => 'setValidationRegEx',
-        'validation_string' => 'setValidationString',
-        'headers' => 'setHeaders'
+                'validation_reg_ex' => 'setValidationRegEx',
+        'validation_string' => 'setValidationString'
     ];
 
     /**
@@ -124,8 +123,7 @@ class Constraint implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'validation_reg_ex' => 'getValidationRegEx',
-        'validation_string' => 'getValidationString',
-        'headers' => 'getHeaders'
+        'validation_string' => 'getValidationString'
     ];
 
     /**
@@ -168,11 +166,7 @@ class Constraint implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -218,30 +212,6 @@ class Constraint implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets validation_reg_ex
@@ -266,7 +236,6 @@ class Constraint implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets validation_string
      *
@@ -290,6 +259,7 @@ class Constraint implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

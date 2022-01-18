@@ -2,7 +2,7 @@
 /**
  * ContentRecord
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'content_reference_key' => 'setContentReferenceKey',
+                'content_reference_key' => 'setContentReferenceKey',
         'content_metadata' => 'setContentMetadata',
-        'content_document' => 'setContentDocument',
-        'headers' => 'setHeaders'
+        'content_document' => 'setContentDocument'
     ];
 
     /**
@@ -129,8 +128,7 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'content_reference_key' => 'getContentReferenceKey',
         'content_metadata' => 'getContentMetadata',
-        'content_document' => 'getContentDocument',
-        'headers' => 'getHeaders'
+        'content_document' => 'getContentDocument'
     ];
 
     /**
@@ -173,11 +171,7 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -228,30 +222,6 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets content_reference_key
@@ -281,7 +251,6 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_metadata
      *
@@ -305,7 +274,6 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_document
      *
@@ -329,6 +297,7 @@ class ContentRecord implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

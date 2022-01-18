@@ -2,7 +2,7 @@
 /**
  * TimeRange
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'start' => 'setStart',
-        'end' => 'setEnd',
-        'headers' => 'setHeaders'
+                'start' => 'setStart',
+        'end' => 'setEnd'
     ];
 
     /**
@@ -124,8 +123,7 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'start' => 'getStart',
-        'end' => 'getEnd',
-        'headers' => 'getHeaders'
+        'end' => 'getEnd'
     ];
 
     /**
@@ -168,11 +166,7 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -215,30 +209,6 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets start
@@ -263,7 +233,6 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets end
      *
@@ -287,6 +256,7 @@ class TimeRange implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

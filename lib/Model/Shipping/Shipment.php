@@ -2,7 +2,7 @@
 /**
  * Shipment
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
+                'shipment_id' => 'setShipmentId',
         'client_reference_id' => 'setClientReferenceId',
         'ship_from' => 'setShipFrom',
         'ship_to' => 'setShipTo',
         'accepted_rate' => 'setAcceptedRate',
         'shipper' => 'setShipper',
-        'containers' => 'setContainers',
-        'headers' => 'setHeaders'
+        'containers' => 'setContainers'
     ];
 
     /**
@@ -149,8 +148,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         'ship_to' => 'getShipTo',
         'accepted_rate' => 'getAcceptedRate',
         'shipper' => 'getShipper',
-        'containers' => 'getContainers',
-        'headers' => 'getHeaders'
+        'containers' => 'getContainers'
     ];
 
     /**
@@ -193,11 +191,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -264,30 +258,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_id
@@ -312,7 +282,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets client_reference_id
      *
@@ -340,7 +309,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_from
      *
@@ -364,7 +332,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_to
      *
@@ -388,7 +355,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets accepted_rate
      *
@@ -412,7 +378,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipper
      *
@@ -436,7 +401,6 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets containers
      *
@@ -460,6 +424,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

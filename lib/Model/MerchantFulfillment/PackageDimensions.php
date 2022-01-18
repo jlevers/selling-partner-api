@@ -2,7 +2,7 @@
 /**
  * PackageDimensions
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'length' => 'setLength',
+                'length' => 'setLength',
         'width' => 'setWidth',
         'height' => 'setHeight',
         'unit' => 'setUnit',
-        'predefined_package_dimensions' => 'setPredefinedPackageDimensions',
-        'headers' => 'setHeaders'
+        'predefined_package_dimensions' => 'setPredefinedPackageDimensions'
     ];
 
     /**
@@ -139,8 +138,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
         'width' => 'getWidth',
         'height' => 'getHeight',
         'unit' => 'getUnit',
-        'predefined_package_dimensions' => 'getPredefinedPackageDimensions',
-        'headers' => 'getHeaders'
+        'predefined_package_dimensions' => 'getPredefinedPackageDimensions'
     ];
 
     /**
@@ -183,11 +181,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -233,30 +227,6 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets length
@@ -281,7 +251,6 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets width
      *
@@ -305,7 +274,6 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets height
      *
@@ -329,7 +297,6 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets unit
      *
@@ -353,7 +320,6 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets predefined_package_dimensions
      *
@@ -377,6 +343,7 @@ class PackageDimensions implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

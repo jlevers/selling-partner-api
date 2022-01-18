@@ -2,7 +2,7 @@
 /**
  * OrderItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -126,14 +126,13 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'item_sequence_number' => 'setItemSequenceNumber',
+                'item_sequence_number' => 'setItemSequenceNumber',
         'amazon_product_identifier' => 'setAmazonProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'ordered_quantity' => 'setOrderedQuantity',
         'is_back_order_allowed' => 'setIsBackOrderAllowed',
         'net_cost' => 'setNetCost',
-        'list_price' => 'setListPrice',
-        'headers' => 'setHeaders'
+        'list_price' => 'setListPrice'
     ];
 
     /**
@@ -148,8 +147,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_quantity' => 'getOrderedQuantity',
         'is_back_order_allowed' => 'getIsBackOrderAllowed',
         'net_cost' => 'getNetCost',
-        'list_price' => 'getListPrice',
-        'headers' => 'getHeaders'
+        'list_price' => 'getListPrice'
     ];
 
     /**
@@ -192,11 +190,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -253,30 +247,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets item_sequence_number
@@ -301,7 +271,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets amazon_product_identifier
      *
@@ -325,7 +294,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets vendor_product_identifier
      *
@@ -349,7 +317,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ordered_quantity
      *
@@ -373,7 +340,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_back_order_allowed
      *
@@ -397,7 +363,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets net_cost
      *
@@ -421,7 +386,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets list_price
      *
@@ -445,6 +409,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

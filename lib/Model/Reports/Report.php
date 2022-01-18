@@ -2,7 +2,7 @@
 /**
  * Report
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -120,6 +120,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'marketplace_ids' => 'marketplaceIds',
         'report_id' => 'reportId',
         'report_type' => 'reportType',
@@ -139,6 +140,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'marketplace_ids' => 'setMarketplaceIds',
         'report_id' => 'setReportId',
         'report_type' => 'setReportType',
@@ -149,8 +151,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
         'processing_status' => 'setProcessingStatus',
         'processing_start_time' => 'setProcessingStartTime',
         'processing_end_time' => 'setProcessingEndTime',
-        'report_document_id' => 'setReportDocumentId',
-        'headers' => 'setHeaders'
+        'report_document_id' => 'setReportDocumentId'
     ];
 
     /**
@@ -159,6 +160,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'marketplace_ids' => 'getMarketplaceIds',
         'report_id' => 'getReportId',
         'report_type' => 'getReportType',
@@ -169,8 +171,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
         'processing_status' => 'getProcessingStatus',
         'processing_start_time' => 'getProcessingStartTime',
         'processing_end_time' => 'getProcessingEndTime',
-        'report_document_id' => 'getReportDocumentId',
-        'headers' => 'getHeaders'
+        'report_document_id' => 'getReportDocumentId'
     ];
 
     /**
@@ -212,16 +213,14 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
+    }const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
     const PROCESSING_STATUS_DONE = 'DONE';
     const PROCESSING_STATUS_FATAL = 'FATAL';
     const PROCESSING_STATUS_IN_PROGRESS = 'IN_PROGRESS';
     const PROCESSING_STATUS_IN_QUEUE = 'IN_QUEUE';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -238,7 +237,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -312,9 +310,9 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -322,19 +320,17 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets marketplace_ids
@@ -359,7 +355,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets report_id
      *
@@ -383,7 +378,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets report_type
      *
@@ -407,7 +401,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets data_start_time
      *
@@ -431,7 +424,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets data_end_time
      *
@@ -455,7 +447,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets report_schedule_id
      *
@@ -479,7 +470,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets created_time
      *
@@ -503,7 +493,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets processing_status
      *
@@ -537,7 +526,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets processing_start_time
      *
@@ -561,7 +549,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets processing_end_time
      *
@@ -585,7 +572,6 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets report_document_id
      *
@@ -609,6 +595,7 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

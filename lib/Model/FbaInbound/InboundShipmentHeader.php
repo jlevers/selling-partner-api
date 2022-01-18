@@ -2,7 +2,7 @@
 /**
  * InboundShipmentHeader
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'shipment_name' => 'setShipmentName',
+                'shipment_name' => 'setShipmentName',
         'ship_from_address' => 'setShipFromAddress',
         'destination_fulfillment_center_id' => 'setDestinationFulfillmentCenterId',
         'are_cases_required' => 'setAreCasesRequired',
         'shipment_status' => 'setShipmentStatus',
         'label_prep_preference' => 'setLabelPrepPreference',
-        'intended_box_contents_source' => 'setIntendedBoxContentsSource',
-        'headers' => 'setHeaders'
+        'intended_box_contents_source' => 'setIntendedBoxContentsSource'
     ];
 
     /**
@@ -149,8 +148,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
         'are_cases_required' => 'getAreCasesRequired',
         'shipment_status' => 'getShipmentStatus',
         'label_prep_preference' => 'getLabelPrepPreference',
-        'intended_box_contents_source' => 'getIntendedBoxContentsSource',
-        'headers' => 'getHeaders'
+        'intended_box_contents_source' => 'getIntendedBoxContentsSource'
     ];
 
     /**
@@ -193,11 +191,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -260,30 +254,6 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_name
@@ -308,7 +278,6 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets ship_from_address
      *
@@ -332,7 +301,6 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets destination_fulfillment_center_id
      *
@@ -356,7 +324,6 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets are_cases_required
      *
@@ -380,7 +347,6 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets shipment_status
      *
@@ -404,7 +370,6 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets label_prep_preference
      *
@@ -428,7 +393,6 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets intended_box_contents_source
      *
@@ -452,6 +416,7 @@ class InboundShipmentHeader implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

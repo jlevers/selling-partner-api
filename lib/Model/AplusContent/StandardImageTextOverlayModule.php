@@ -2,7 +2,7 @@
 /**
  * StandardImageTextOverlayModule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'overlay_color_type' => 'setOverlayColorType',
-        'block' => 'setBlock',
-        'headers' => 'setHeaders'
+                'overlay_color_type' => 'setOverlayColorType',
+        'block' => 'setBlock'
     ];
 
     /**
@@ -124,8 +123,7 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'overlay_color_type' => 'getOverlayColorType',
-        'block' => 'getBlock',
-        'headers' => 'getHeaders'
+        'block' => 'getBlock'
     ];
 
     /**
@@ -168,11 +166,7 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -218,30 +212,6 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets overlay_color_type
@@ -266,7 +236,6 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets block
      *
@@ -290,6 +259,7 @@ class StandardImageTextOverlayModule implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

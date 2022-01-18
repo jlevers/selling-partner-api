@@ -2,7 +2,7 @@
 /**
  * CreateRestrictedDataTokenResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -102,6 +102,7 @@ class CreateRestrictedDataTokenResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'restricted_data_token' => 'restrictedDataToken',
         'expires_in' => 'expiresIn'
     ];
@@ -112,9 +113,9 @@ class CreateRestrictedDataTokenResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'restricted_data_token' => 'setRestrictedDataToken',
-        'expires_in' => 'setExpiresIn',
-        'headers' => 'setHeaders'
+        'expires_in' => 'setExpiresIn'
     ];
 
     /**
@@ -123,9 +124,9 @@ class CreateRestrictedDataTokenResponse implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'restricted_data_token' => 'getRestrictedDataToken',
-        'expires_in' => 'getExpiresIn',
-        'headers' => 'getHeaders'
+        'expires_in' => 'getExpiresIn'
     ];
 
     /**
@@ -168,11 +169,7 @@ class CreateRestrictedDataTokenResponse implements ModelInterface, ArrayAccess, 
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -216,9 +213,9 @@ class CreateRestrictedDataTokenResponse implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -226,19 +223,17 @@ class CreateRestrictedDataTokenResponse implements ModelInterface, ArrayAccess, 
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets restricted_data_token
@@ -263,7 +258,6 @@ class CreateRestrictedDataTokenResponse implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
-
     /**
      * Gets expires_in
      *
@@ -287,6 +281,7 @@ class CreateRestrictedDataTokenResponse implements ModelInterface, ArrayAccess, 
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

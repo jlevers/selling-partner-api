@@ -2,7 +2,7 @@
 /**
  * StandardTextModule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'headline' => 'setHeadline',
-        'body' => 'setBody',
-        'headers' => 'setHeaders'
+                'headline' => 'setHeadline',
+        'body' => 'setBody'
     ];
 
     /**
@@ -124,8 +123,7 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'headline' => 'getHeadline',
-        'body' => 'getBody',
-        'headers' => 'getHeaders'
+        'body' => 'getBody'
     ];
 
     /**
@@ -168,11 +166,7 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -218,30 +212,6 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets headline
@@ -266,7 +236,6 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets body
      *
@@ -290,6 +259,7 @@ class StandardTextModule implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

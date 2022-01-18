@@ -2,7 +2,7 @@
 /**
  * FulfillmentPreviewShipment
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'earliest_ship_date' => 'setEarliestShipDate',
+                'earliest_ship_date' => 'setEarliestShipDate',
         'latest_ship_date' => 'setLatestShipDate',
         'earliest_arrival_date' => 'setEarliestArrivalDate',
         'latest_arrival_date' => 'setLatestArrivalDate',
         'shipping_notes' => 'setShippingNotes',
-        'fulfillment_preview_items' => 'setFulfillmentPreviewItems',
-        'headers' => 'setHeaders'
+        'fulfillment_preview_items' => 'setFulfillmentPreviewItems'
     ];
 
     /**
@@ -144,8 +143,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
         'earliest_arrival_date' => 'getEarliestArrivalDate',
         'latest_arrival_date' => 'getLatestArrivalDate',
         'shipping_notes' => 'getShippingNotes',
-        'fulfillment_preview_items' => 'getFulfillmentPreviewItems',
-        'headers' => 'getHeaders'
+        'fulfillment_preview_items' => 'getFulfillmentPreviewItems'
     ];
 
     /**
@@ -188,11 +186,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -242,30 +236,6 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets earliest_ship_date
@@ -290,7 +260,6 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets latest_ship_date
      *
@@ -314,7 +283,6 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets earliest_arrival_date
      *
@@ -338,7 +306,6 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets latest_arrival_date
      *
@@ -362,7 +329,6 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets shipping_notes
      *
@@ -386,7 +352,6 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets fulfillment_preview_items
      *
@@ -410,6 +375,7 @@ class FulfillmentPreviewShipment implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * CreateShipmentResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
-        'eligible_rates' => 'setEligibleRates',
-        'headers' => 'setHeaders'
+                'shipment_id' => 'setShipmentId',
+        'eligible_rates' => 'setEligibleRates'
     ];
 
     /**
@@ -124,8 +123,7 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'shipment_id' => 'getShipmentId',
-        'eligible_rates' => 'getEligibleRates',
-        'headers' => 'getHeaders'
+        'eligible_rates' => 'getEligibleRates'
     ];
 
     /**
@@ -168,11 +166,7 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_id
@@ -269,7 +239,6 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets eligible_rates
      *
@@ -293,6 +262,7 @@ class CreateShipmentResult implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

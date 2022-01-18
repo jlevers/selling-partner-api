@@ -2,7 +2,7 @@
 /**
  * GetInventorySummariesResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -104,6 +104,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'payload' => 'payload',
         'pagination' => 'pagination',
         'errors' => 'errors'
@@ -115,10 +116,10 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'payload' => 'setPayload',
         'pagination' => 'setPagination',
-        'errors' => 'setErrors',
-        'headers' => 'setHeaders'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -127,10 +128,10 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'payload' => 'getPayload',
         'pagination' => 'getPagination',
-        'errors' => 'getErrors',
-        'headers' => 'getHeaders'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -173,11 +174,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -222,9 +219,9 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -232,19 +229,17 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets payload
@@ -269,7 +264,6 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets pagination
      *
@@ -293,7 +287,6 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets errors
      *
@@ -317,6 +310,7 @@ class GetInventorySummariesResponse implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

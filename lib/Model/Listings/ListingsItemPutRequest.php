@@ -2,7 +2,7 @@
 /**
  * ListingsItemPutRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'product_type' => 'setProductType',
+                'product_type' => 'setProductType',
         'requirements' => 'setRequirements',
-        'attributes' => 'setAttributes',
-        'headers' => 'setHeaders'
+        'attributes' => 'setAttributes'
     ];
 
     /**
@@ -129,8 +128,7 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'product_type' => 'getProductType',
         'requirements' => 'getRequirements',
-        'attributes' => 'getAttributes',
-        'headers' => 'getHeaders'
+        'attributes' => 'getAttributes'
     ];
 
     /**
@@ -172,14 +170,12 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const REQUIREMENTS_LISTING = 'LISTING';
+    }const REQUIREMENTS_LISTING = 'LISTING';
     const REQUIREMENTS_LISTING_PRODUCT_ONLY = 'LISTING_PRODUCT_ONLY';
     const REQUIREMENTS_LISTING_OFFER_ONLY = 'LISTING_OFFER_ONLY';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -194,7 +190,6 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -253,30 +248,6 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets product_type
@@ -301,7 +272,6 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets requirements
      *
@@ -335,7 +305,6 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets attributes
      *
@@ -359,6 +328,7 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

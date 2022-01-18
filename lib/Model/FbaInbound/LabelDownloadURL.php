@@ -2,7 +2,7 @@
 /**
  * LabelDownloadURL
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -108,8 +108,7 @@ class LabelDownloadURL implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'download_url' => 'setDownloadUrl',
-        'headers' => 'setHeaders'
+                'download_url' => 'setDownloadUrl'
     ];
 
     /**
@@ -118,8 +117,7 @@ class LabelDownloadURL implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'download_url' => 'getDownloadUrl',
-        'headers' => 'getHeaders'
+        'download_url' => 'getDownloadUrl'
     ];
 
     /**
@@ -162,11 +160,7 @@ class LabelDownloadURL implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -208,30 +202,6 @@ class LabelDownloadURL implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets download_url
@@ -256,6 +226,7 @@ class LabelDownloadURL implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

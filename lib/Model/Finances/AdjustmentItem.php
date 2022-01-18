@@ -2,7 +2,7 @@
 /**
  * AdjustmentItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'quantity' => 'setQuantity',
+                'quantity' => 'setQuantity',
         'per_unit_amount' => 'setPerUnitAmount',
         'total_amount' => 'setTotalAmount',
         'seller_sku' => 'setSellerSku',
         'fn_sku' => 'setFnSku',
         'product_description' => 'setProductDescription',
-        'asin' => 'setAsin',
-        'headers' => 'setHeaders'
+        'asin' => 'setAsin'
     ];
 
     /**
@@ -149,8 +148,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_sku' => 'getSellerSku',
         'fn_sku' => 'getFnSku',
         'product_description' => 'getProductDescription',
-        'asin' => 'getAsin',
-        'headers' => 'getHeaders'
+        'asin' => 'getAsin'
     ];
 
     /**
@@ -193,11 +191,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets quantity
@@ -293,7 +263,6 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets per_unit_amount
      *
@@ -317,7 +286,6 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets total_amount
      *
@@ -341,7 +309,6 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_sku
      *
@@ -365,7 +332,6 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fn_sku
      *
@@ -389,7 +355,6 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets product_description
      *
@@ -413,7 +378,6 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets asin
      *
@@ -437,6 +401,7 @@ class AdjustmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

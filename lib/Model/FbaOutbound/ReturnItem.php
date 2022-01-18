@@ -2,7 +2,7 @@
 /**
  * ReturnItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -139,7 +139,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'seller_return_item_id' => 'setSellerReturnItemId',
+                'seller_return_item_id' => 'setSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'amazon_shipment_id' => 'setAmazonShipmentId',
         'seller_return_reason_code' => 'setSellerReturnReasonCode',
@@ -149,8 +149,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'status_changed_date' => 'setStatusChangedDate',
         'return_authorization_id' => 'setReturnAuthorizationId',
         'return_received_condition' => 'setReturnReceivedCondition',
-        'fulfillment_center_id' => 'setFulfillmentCenterId',
-        'headers' => 'setHeaders'
+        'fulfillment_center_id' => 'setFulfillmentCenterId'
     ];
 
     /**
@@ -169,8 +168,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'status_changed_date' => 'getStatusChangedDate',
         'return_authorization_id' => 'getReturnAuthorizationId',
         'return_received_condition' => 'getReturnReceivedCondition',
-        'fulfillment_center_id' => 'getFulfillmentCenterId',
-        'headers' => 'getHeaders'
+        'fulfillment_center_id' => 'getFulfillmentCenterId'
     ];
 
     /**
@@ -213,11 +211,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -287,30 +281,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_return_item_id
@@ -335,7 +305,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_item_id
      *
@@ -359,7 +328,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets amazon_shipment_id
      *
@@ -383,7 +351,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_return_reason_code
      *
@@ -407,7 +374,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets return_comment
      *
@@ -431,7 +397,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets amazon_return_reason_code
      *
@@ -455,7 +420,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets status
      *
@@ -479,7 +443,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets status_changed_date
      *
@@ -503,7 +466,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets return_authorization_id
      *
@@ -527,7 +489,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets return_received_condition
      *
@@ -551,7 +512,6 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fulfillment_center_id
      *
@@ -575,6 +535,7 @@ class ReturnItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

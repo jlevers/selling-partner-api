@@ -2,7 +2,7 @@
 /**
  * ScheduledDeliveryShipment
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'scheduled_delivery_service_type' => 'setScheduledDeliveryServiceType',
+                'scheduled_delivery_service_type' => 'setScheduledDeliveryServiceType',
         'earliest_nominated_delivery_date' => 'setEarliestNominatedDeliveryDate',
-        'latest_nominated_delivery_date' => 'setLatestNominatedDeliveryDate',
-        'headers' => 'setHeaders'
+        'latest_nominated_delivery_date' => 'setLatestNominatedDeliveryDate'
     ];
 
     /**
@@ -129,8 +128,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     protected static $getters = [
         'scheduled_delivery_service_type' => 'getScheduledDeliveryServiceType',
         'earliest_nominated_delivery_date' => 'getEarliestNominatedDeliveryDate',
-        'latest_nominated_delivery_date' => 'getLatestNominatedDeliveryDate',
-        'headers' => 'getHeaders'
+        'latest_nominated_delivery_date' => 'getLatestNominatedDeliveryDate'
     ];
 
     /**
@@ -173,11 +171,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets scheduled_delivery_service_type
@@ -269,7 +239,6 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets earliest_nominated_delivery_date
      *
@@ -293,7 +262,6 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets latest_nominated_delivery_date
      *
@@ -317,6 +285,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

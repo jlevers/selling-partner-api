@@ -2,7 +2,7 @@
 /**
  * GetAttributesResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -102,6 +102,7 @@ class GetAttributesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'buyer' => 'buyer',
         'errors' => 'errors'
     ];
@@ -112,9 +113,9 @@ class GetAttributesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'buyer' => 'setBuyer',
-        'errors' => 'setErrors',
-        'headers' => 'setHeaders'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -123,9 +124,9 @@ class GetAttributesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'buyer' => 'getBuyer',
-        'errors' => 'getErrors',
-        'headers' => 'getHeaders'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -168,11 +169,7 @@ class GetAttributesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -216,9 +213,9 @@ class GetAttributesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -226,19 +223,17 @@ class GetAttributesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets buyer
@@ -263,7 +258,6 @@ class GetAttributesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets errors
      *
@@ -287,6 +281,7 @@ class GetAttributesResponse implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

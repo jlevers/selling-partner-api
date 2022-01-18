@@ -2,7 +2,7 @@
 /**
  * RetrochargeEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'retrocharge_event_type' => 'setRetrochargeEventType',
+                'retrocharge_event_type' => 'setRetrochargeEventType',
         'amazon_order_id' => 'setAmazonOrderId',
         'posted_date' => 'setPostedDate',
         'base_tax' => 'setBaseTax',
         'shipping_tax' => 'setShippingTax',
         'marketplace_name' => 'setMarketplaceName',
-        'retrocharge_tax_withheld_list' => 'setRetrochargeTaxWithheldList',
-        'headers' => 'setHeaders'
+        'retrocharge_tax_withheld_list' => 'setRetrochargeTaxWithheldList'
     ];
 
     /**
@@ -149,8 +148,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'base_tax' => 'getBaseTax',
         'shipping_tax' => 'getShippingTax',
         'marketplace_name' => 'getMarketplaceName',
-        'retrocharge_tax_withheld_list' => 'getRetrochargeTaxWithheldList',
-        'headers' => 'getHeaders'
+        'retrocharge_tax_withheld_list' => 'getRetrochargeTaxWithheldList'
     ];
 
     /**
@@ -193,11 +191,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets retrocharge_event_type
@@ -293,7 +263,6 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets amazon_order_id
      *
@@ -317,7 +286,6 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets posted_date
      *
@@ -341,7 +309,6 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets base_tax
      *
@@ -365,7 +332,6 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_tax
      *
@@ -389,7 +355,6 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_name
      *
@@ -413,7 +378,6 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets retrocharge_tax_withheld_list
      *
@@ -437,6 +401,7 @@ class RetrochargeEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

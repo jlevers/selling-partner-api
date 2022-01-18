@@ -2,7 +2,7 @@
 /**
  * Invoice
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -150,7 +150,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'invoice_type' => 'setInvoiceType',
+                'invoice_type' => 'setInvoiceType',
         'id' => 'setId',
         'reference_number' => 'setReferenceNumber',
         'date' => 'setDate',
@@ -164,8 +164,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
         'additional_details' => 'setAdditionalDetails',
         'charge_details' => 'setChargeDetails',
         'allowance_details' => 'setAllowanceDetails',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -188,8 +187,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
         'additional_details' => 'getAdditionalDetails',
         'charge_details' => 'getChargeDetails',
         'allowance_details' => 'getAllowanceDetails',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -231,13 +229,11 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const INVOICE_TYPE_INVOICE = 'Invoice';
+    }const INVOICE_TYPE_INVOICE = 'Invoice';
     const INVOICE_TYPE_CREDIT_NOTE = 'CreditNote';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -251,7 +247,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -331,30 +326,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets invoice_type
@@ -389,7 +360,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets id
      *
@@ -413,7 +383,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets reference_number
      *
@@ -437,7 +406,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets date
      *
@@ -461,7 +429,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets remit_to_party
      *
@@ -485,7 +452,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_to_party
      *
@@ -509,7 +475,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_from_party
      *
@@ -533,7 +498,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets bill_to_party
      *
@@ -557,7 +521,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets payment_terms
      *
@@ -581,7 +544,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets invoice_total
      *
@@ -605,7 +567,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_details
      *
@@ -629,7 +590,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets additional_details
      *
@@ -653,7 +613,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets charge_details
      *
@@ -677,7 +636,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets allowance_details
      *
@@ -701,7 +659,6 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -725,6 +682,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

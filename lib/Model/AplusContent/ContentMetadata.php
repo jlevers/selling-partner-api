@@ -2,7 +2,7 @@
 /**
  * ContentMetadata
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
+                'name' => 'setName',
         'marketplace_id' => 'setMarketplaceId',
         'status' => 'setStatus',
         'badge_set' => 'setBadgeSet',
-        'update_time' => 'setUpdateTime',
-        'headers' => 'setHeaders'
+        'update_time' => 'setUpdateTime'
     ];
 
     /**
@@ -139,8 +138,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_id' => 'getMarketplaceId',
         'status' => 'getStatus',
         'badge_set' => 'getBadgeSet',
-        'update_time' => 'getUpdateTime',
-        'headers' => 'getHeaders'
+        'update_time' => 'getUpdateTime'
     ];
 
     /**
@@ -183,11 +181,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -260,30 +254,6 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets name
@@ -315,7 +285,6 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -344,7 +313,6 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets status
      *
@@ -368,7 +336,6 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets badge_set
      *
@@ -394,7 +361,6 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets update_time
      *
@@ -418,6 +384,7 @@ class ContentMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

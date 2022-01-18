@@ -2,7 +2,7 @@
 /**
  * SmallAndLightFeePreviews
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -99,6 +99,7 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'data' => 'data'
     ];
 
@@ -108,8 +109,8 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData',
-        'headers' => 'setHeaders'
+        'headers' => 'setHeaders',
+        'data' => 'setData'
     ];
 
     /**
@@ -118,8 +119,8 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData',
-        'headers' => 'getHeaders'
+        'headers' => 'getHeaders',
+        'data' => 'getData'
     ];
 
     /**
@@ -162,11 +163,7 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -209,9 +206,9 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -219,19 +216,17 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets data
@@ -256,6 +251,7 @@ class SmallAndLightFeePreviews implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

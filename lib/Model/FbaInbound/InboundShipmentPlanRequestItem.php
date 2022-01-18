@@ -2,7 +2,7 @@
 /**
  * InboundShipmentPlanRequestItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'asin' => 'setAsin',
         'condition' => 'setCondition',
         'quantity' => 'setQuantity',
         'quantity_in_case' => 'setQuantityInCase',
-        'prep_details_list' => 'setPrepDetailsList',
-        'headers' => 'setHeaders'
+        'prep_details_list' => 'setPrepDetailsList'
     ];
 
     /**
@@ -144,8 +143,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
         'condition' => 'getCondition',
         'quantity' => 'getQuantity',
         'quantity_in_case' => 'getQuantityInCase',
-        'prep_details_list' => 'getPrepDetailsList',
-        'headers' => 'getHeaders'
+        'prep_details_list' => 'getPrepDetailsList'
     ];
 
     /**
@@ -188,11 +186,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +245,6 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -299,7 +269,6 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets asin
      *
@@ -323,7 +292,6 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets condition
      *
@@ -347,7 +315,6 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -371,7 +338,6 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets quantity_in_case
      *
@@ -395,7 +361,6 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets prep_details_list
      *
@@ -419,6 +384,7 @@ class InboundShipmentPlanRequestItem implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

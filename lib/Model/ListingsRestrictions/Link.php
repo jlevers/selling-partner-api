@@ -2,7 +2,7 @@
 /**
  * Link
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'resource' => 'setResource',
+                'resource' => 'setResource',
         'verb' => 'setVerb',
         'title' => 'setTitle',
-        'type' => 'setType',
-        'headers' => 'setHeaders'
+        'type' => 'setType'
     ];
 
     /**
@@ -134,8 +133,7 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
         'resource' => 'getResource',
         'verb' => 'getVerb',
         'title' => 'getTitle',
-        'type' => 'getType',
-        'headers' => 'getHeaders'
+        'type' => 'getType'
     ];
 
     /**
@@ -177,12 +175,10 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const VERB_GET = 'GET';
+    }const VERB_GET = 'GET';
+    
     
 
-    
     /**
      * Gets allowable values of the enum
      *
@@ -195,7 +191,6 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -255,30 +250,6 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets resource
@@ -303,7 +274,6 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets verb
      *
@@ -337,7 +307,6 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets title
      *
@@ -361,7 +330,6 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets type
      *
@@ -385,6 +353,7 @@ class Link implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

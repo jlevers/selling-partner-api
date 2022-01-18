@@ -2,7 +2,7 @@
 /**
  * ShipmentConfirmation
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -123,13 +123,12 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_number' => 'setPurchaseOrderNumber',
+                'purchase_order_number' => 'setPurchaseOrderNumber',
         'shipment_details' => 'setShipmentDetails',
         'selling_party' => 'setSellingParty',
         'ship_from_party' => 'setShipFromParty',
         'items' => 'setItems',
-        'containers' => 'setContainers',
-        'headers' => 'setHeaders'
+        'containers' => 'setContainers'
     ];
 
     /**
@@ -143,8 +142,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'selling_party' => 'getSellingParty',
         'ship_from_party' => 'getShipFromParty',
         'items' => 'getItems',
-        'containers' => 'getContainers',
-        'headers' => 'getHeaders'
+        'containers' => 'getContainers'
     ];
 
     /**
@@ -187,11 +185,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -257,30 +251,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets purchase_order_number
@@ -310,7 +280,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets shipment_details
      *
@@ -334,7 +303,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets selling_party
      *
@@ -358,7 +326,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets ship_from_party
      *
@@ -382,7 +349,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -406,7 +372,6 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets containers
      *
@@ -430,6 +395,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * OrderItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -205,7 +205,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
+                'asin' => 'setAsin',
         'seller_sku' => 'setSellerSku',
         'order_item_id' => 'setOrderItemId',
         'title' => 'setTitle',
@@ -237,8 +237,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'ioss_number' => 'setIossNumber',
         'store_chain_store_id' => 'setStoreChainStoreId',
         'deemed_reseller_category' => 'setDeemedResellerCategory',
-        'buyer_info' => 'setBuyerInfo',
-        'headers' => 'setHeaders'
+        'buyer_info' => 'setBuyerInfo'
     ];
 
     /**
@@ -279,8 +278,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'ioss_number' => 'getIossNumber',
         'store_chain_store_id' => 'getStoreChainStoreId',
         'deemed_reseller_category' => 'getDeemedResellerCategory',
-        'buyer_info' => 'getBuyerInfo',
-        'headers' => 'getHeaders'
+        'buyer_info' => 'getBuyerInfo'
     ];
 
     /**
@@ -322,16 +320,14 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
+    }const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
     const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
     const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
     const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';
     const DEEMED_RESELLER_CATEGORY_CA_MPF = 'CA_MPF';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -348,7 +344,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -440,30 +435,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets asin
@@ -488,7 +459,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_sku
      *
@@ -512,7 +482,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_item_id
      *
@@ -536,7 +505,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets title
      *
@@ -560,7 +528,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets quantity_ordered
      *
@@ -584,7 +551,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets quantity_shipped
      *
@@ -608,7 +574,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets product_info
      *
@@ -632,7 +597,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets points_granted
      *
@@ -656,7 +620,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_price
      *
@@ -680,7 +643,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_price
      *
@@ -704,7 +666,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_tax
      *
@@ -728,7 +689,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_tax
      *
@@ -752,7 +712,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_discount
      *
@@ -776,7 +735,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_discount_tax
      *
@@ -800,7 +758,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets promotion_discount
      *
@@ -824,7 +781,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets promotion_discount_tax
      *
@@ -848,7 +804,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets promotion_ids
      *
@@ -872,7 +827,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets cod_fee
      *
@@ -896,7 +850,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets cod_fee_discount
      *
@@ -920,7 +873,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_gift
      *
@@ -944,7 +896,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets condition_note
      *
@@ -968,7 +919,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets condition_id
      *
@@ -992,7 +942,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets condition_subtype_id
      *
@@ -1016,7 +965,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets scheduled_delivery_start_date
      *
@@ -1040,7 +988,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets scheduled_delivery_end_date
      *
@@ -1064,7 +1011,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets price_designation
      *
@@ -1088,7 +1034,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_collection
      *
@@ -1112,7 +1057,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets serial_number_required
      *
@@ -1136,7 +1080,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_transparency
      *
@@ -1160,7 +1103,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ioss_number
      *
@@ -1184,7 +1126,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets store_chain_store_id
      *
@@ -1208,7 +1149,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets deemed_reseller_category
      *
@@ -1242,7 +1182,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer_info
      *
@@ -1266,6 +1205,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

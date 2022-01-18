@@ -2,7 +2,7 @@
 /**
  * OrderStatus
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_number' => 'setPurchaseOrderNumber',
+                'purchase_order_number' => 'setPurchaseOrderNumber',
         'purchase_order_status' => 'setPurchaseOrderStatus',
         'purchase_order_date' => 'setPurchaseOrderDate',
         'last_updated_date' => 'setLastUpdatedDate',
         'selling_party' => 'setSellingParty',
         'ship_to_party' => 'setShipToParty',
-        'item_status' => 'setItemStatus',
-        'headers' => 'setHeaders'
+        'item_status' => 'setItemStatus'
     ];
 
     /**
@@ -149,8 +148,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_updated_date' => 'getLastUpdatedDate',
         'selling_party' => 'getSellingParty',
         'ship_to_party' => 'getShipToParty',
-        'item_status' => 'getItemStatus',
-        'headers' => 'getHeaders'
+        'item_status' => 'getItemStatus'
     ];
 
     /**
@@ -192,13 +190,11 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const PURCHASE_ORDER_STATUS_OPEN = 'OPEN';
+    }const PURCHASE_ORDER_STATUS_OPEN = 'OPEN';
     const PURCHASE_ORDER_STATUS_CLOSED = 'CLOSED';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -212,7 +208,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -287,30 +282,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets purchase_order_number
@@ -335,7 +306,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets purchase_order_status
      *
@@ -369,7 +339,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets purchase_order_date
      *
@@ -393,7 +362,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets last_updated_date
      *
@@ -417,7 +385,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets selling_party
      *
@@ -441,7 +408,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_to_party
      *
@@ -465,7 +431,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_status
      *
@@ -489,6 +454,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * Participation
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class Participation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'is_participating' => 'setIsParticipating',
-        'has_suspended_listings' => 'setHasSuspendedListings',
-        'headers' => 'setHeaders'
+                'is_participating' => 'setIsParticipating',
+        'has_suspended_listings' => 'setHasSuspendedListings'
     ];
 
     /**
@@ -124,8 +123,7 @@ class Participation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'is_participating' => 'getIsParticipating',
-        'has_suspended_listings' => 'getHasSuspendedListings',
-        'headers' => 'getHeaders'
+        'has_suspended_listings' => 'getHasSuspendedListings'
     ];
 
     /**
@@ -168,11 +166,7 @@ class Participation implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class Participation implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets is_participating
@@ -269,7 +239,6 @@ class Participation implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets has_suspended_listings
      *
@@ -293,6 +262,7 @@ class Participation implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * ScheduledDeliveryInfo
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'delivery_time_zone' => 'setDeliveryTimeZone',
-        'delivery_windows' => 'setDeliveryWindows',
-        'headers' => 'setHeaders'
+                'delivery_time_zone' => 'setDeliveryTimeZone',
+        'delivery_windows' => 'setDeliveryWindows'
     ];
 
     /**
@@ -124,8 +123,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'delivery_time_zone' => 'getDeliveryTimeZone',
-        'delivery_windows' => 'getDeliveryWindows',
-        'headers' => 'getHeaders'
+        'delivery_windows' => 'getDeliveryWindows'
     ];
 
     /**
@@ -168,11 +166,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets delivery_time_zone
@@ -269,7 +239,6 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
-
     /**
      * Gets delivery_windows
      *
@@ -293,6 +262,7 @@ class ScheduledDeliveryInfo implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

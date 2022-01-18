@@ -2,7 +2,7 @@
 /**
  * ShippingOfferingFilter
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
+                'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
         'include_complex_shipping_options' => 'setIncludeComplexShippingOptions',
         'carrier_will_pick_up' => 'setCarrierWillPickUp',
-        'delivery_experience' => 'setDeliveryExperience',
-        'headers' => 'setHeaders'
+        'delivery_experience' => 'setDeliveryExperience'
     ];
 
     /**
@@ -134,8 +133,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
         'include_packing_slip_with_label' => 'getIncludePackingSlipWithLabel',
         'include_complex_shipping_options' => 'getIncludeComplexShippingOptions',
         'carrier_will_pick_up' => 'getCarrierWillPickUp',
-        'delivery_experience' => 'getDeliveryExperience',
-        'headers' => 'getHeaders'
+        'delivery_experience' => 'getDeliveryExperience'
     ];
 
     /**
@@ -178,11 +176,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets include_packing_slip_with_label
@@ -275,7 +245,6 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets include_complex_shipping_options
      *
@@ -299,7 +268,6 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets carrier_will_pick_up
      *
@@ -323,7 +291,6 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets delivery_experience
      *
@@ -347,6 +314,7 @@ class ShippingOfferingFilter implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * CouponPaymentEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
+                'posted_date' => 'setPostedDate',
         'coupon_id' => 'setCouponId',
         'seller_coupon_description' => 'setSellerCouponDescription',
         'clip_or_redemption_count' => 'setClipOrRedemptionCount',
         'payment_event_id' => 'setPaymentEventId',
         'fee_component' => 'setFeeComponent',
         'charge_component' => 'setChargeComponent',
-        'total_amount' => 'setTotalAmount',
-        'headers' => 'setHeaders'
+        'total_amount' => 'setTotalAmount'
     ];
 
     /**
@@ -154,8 +153,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         'payment_event_id' => 'getPaymentEventId',
         'fee_component' => 'getFeeComponent',
         'charge_component' => 'getChargeComponent',
-        'total_amount' => 'getTotalAmount',
-        'headers' => 'getHeaders'
+        'total_amount' => 'getTotalAmount'
     ];
 
     /**
@@ -198,11 +196,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +245,6 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets posted_date
@@ -299,7 +269,6 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets coupon_id
      *
@@ -323,7 +292,6 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets seller_coupon_description
      *
@@ -347,7 +315,6 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets clip_or_redemption_count
      *
@@ -371,7 +338,6 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets payment_event_id
      *
@@ -395,7 +361,6 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets fee_component
      *
@@ -419,7 +384,6 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets charge_component
      *
@@ -443,7 +407,6 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets total_amount
      *
@@ -467,6 +430,7 @@ class CouponPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * StandardComparisonTableModule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'product_columns' => 'setProductColumns',
-        'metric_row_labels' => 'setMetricRowLabels',
-        'headers' => 'setHeaders'
+                'product_columns' => 'setProductColumns',
+        'metric_row_labels' => 'setMetricRowLabels'
     ];
 
     /**
@@ -124,8 +123,7 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'product_columns' => 'getProductColumns',
-        'metric_row_labels' => 'getMetricRowLabels',
-        'headers' => 'getHeaders'
+        'metric_row_labels' => 'getMetricRowLabels'
     ];
 
     /**
@@ -168,11 +166,7 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -231,30 +225,6 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets product_columns
@@ -286,7 +256,6 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets metric_row_labels
      *
@@ -317,6 +286,7 @@ class StandardComparisonTableModule implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

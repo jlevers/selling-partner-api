@@ -2,7 +2,7 @@
 /**
  * ProductAdsPaymentEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'posted_date' => 'setPostedDate',
+                'posted_date' => 'setPostedDate',
         'transaction_type' => 'setTransactionType',
         'invoice_id' => 'setInvoiceId',
         'base_value' => 'setBaseValue',
         'tax_value' => 'setTaxValue',
-        'transaction_value' => 'setTransactionValue',
-        'headers' => 'setHeaders'
+        'transaction_value' => 'setTransactionValue'
     ];
 
     /**
@@ -144,8 +143,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
         'invoice_id' => 'getInvoiceId',
         'base_value' => 'getBaseValue',
         'tax_value' => 'getTaxValue',
-        'transaction_value' => 'getTransactionValue',
-        'headers' => 'getHeaders'
+        'transaction_value' => 'getTransactionValue'
     ];
 
     /**
@@ -188,11 +186,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets posted_date
@@ -287,7 +257,6 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets transaction_type
      *
@@ -311,7 +280,6 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets invoice_id
      *
@@ -335,7 +303,6 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets base_value
      *
@@ -359,7 +326,6 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets tax_value
      *
@@ -383,7 +349,6 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets transaction_value
      *
@@ -407,6 +372,7 @@ class ProductAdsPaymentEvent implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

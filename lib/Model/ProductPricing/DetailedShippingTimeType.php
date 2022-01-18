@@ -2,7 +2,7 @@
 /**
  * DetailedShippingTimeType
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'minimum_hours' => 'setMinimumHours',
+                'minimum_hours' => 'setMinimumHours',
         'maximum_hours' => 'setMaximumHours',
         'available_date' => 'setAvailableDate',
-        'availability_type' => 'setAvailabilityType',
-        'headers' => 'setHeaders'
+        'availability_type' => 'setAvailabilityType'
     ];
 
     /**
@@ -134,8 +133,7 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
         'minimum_hours' => 'getMinimumHours',
         'maximum_hours' => 'getMaximumHours',
         'available_date' => 'getAvailableDate',
-        'availability_type' => 'getAvailabilityType',
-        'headers' => 'getHeaders'
+        'availability_type' => 'getAvailabilityType'
     ];
 
     /**
@@ -177,14 +175,12 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const AVAILABILITY_TYPE_NOW = 'NOW';
+    }const AVAILABILITY_TYPE_NOW = 'NOW';
     const AVAILABILITY_TYPE_FUTURE_WITHOUT_DATE = 'FUTURE_WITHOUT_DATE';
     const AVAILABILITY_TYPE_FUTURE_WITH_DATE = 'FUTURE_WITH_DATE';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -199,7 +195,6 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -253,30 +248,6 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets minimum_hours
@@ -301,7 +272,6 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets maximum_hours
      *
@@ -325,7 +295,6 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets available_date
      *
@@ -349,7 +318,6 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets availability_type
      *
@@ -383,6 +351,7 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * UnfulfillablePreviewItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class UnfulfillablePreviewItem implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'quantity' => 'setQuantity',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
-        'item_unfulfillable_reasons' => 'setItemUnfulfillableReasons',
-        'headers' => 'setHeaders'
+        'item_unfulfillable_reasons' => 'setItemUnfulfillableReasons'
     ];
 
     /**
@@ -134,8 +133,7 @@ class UnfulfillablePreviewItem implements ModelInterface, ArrayAccess, \JsonSeri
         'seller_sku' => 'getSellerSku',
         'quantity' => 'getQuantity',
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
-        'item_unfulfillable_reasons' => 'getItemUnfulfillableReasons',
-        'headers' => 'getHeaders'
+        'item_unfulfillable_reasons' => 'getItemUnfulfillableReasons'
     ];
 
     /**
@@ -178,11 +176,7 @@ class UnfulfillablePreviewItem implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -244,30 +238,6 @@ class UnfulfillablePreviewItem implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -296,7 +266,6 @@ class UnfulfillablePreviewItem implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -320,7 +289,6 @@ class UnfulfillablePreviewItem implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_item_id
      *
@@ -348,7 +316,6 @@ class UnfulfillablePreviewItem implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets item_unfulfillable_reasons
      *
@@ -372,6 +339,7 @@ class UnfulfillablePreviewItem implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

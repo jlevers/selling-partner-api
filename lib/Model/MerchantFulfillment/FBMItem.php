@@ -2,7 +2,7 @@
 /**
  * FBMItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'order_item_id' => 'setOrderItemId',
+                'order_item_id' => 'setOrderItemId',
         'quantity' => 'setQuantity',
         'item_weight' => 'setItemWeight',
         'item_description' => 'setItemDescription',
         'transparency_code_list' => 'setTransparencyCodeList',
-        'item_level_seller_inputs_list' => 'setItemLevelSellerInputsList',
-        'headers' => 'setHeaders'
+        'item_level_seller_inputs_list' => 'setItemLevelSellerInputsList'
     ];
 
     /**
@@ -144,8 +143,7 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_weight' => 'getItemWeight',
         'item_description' => 'getItemDescription',
         'transparency_code_list' => 'getTransparencyCodeList',
-        'item_level_seller_inputs_list' => 'getItemLevelSellerInputsList',
-        'headers' => 'getHeaders'
+        'item_level_seller_inputs_list' => 'getItemLevelSellerInputsList'
     ];
 
     /**
@@ -188,11 +186,7 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets order_item_id
@@ -293,7 +263,6 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -317,7 +286,6 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_weight
      *
@@ -341,7 +309,6 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_description
      *
@@ -365,7 +332,6 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets transparency_code_list
      *
@@ -389,7 +355,6 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_level_seller_inputs_list
      *
@@ -413,6 +378,7 @@ class FBMItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

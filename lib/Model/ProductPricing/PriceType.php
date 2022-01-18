@@ -2,7 +2,7 @@
 /**
  * PriceType
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -117,11 +117,10 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'landed_price' => 'setLandedPrice',
+                'landed_price' => 'setLandedPrice',
         'listing_price' => 'setListingPrice',
         'shipping' => 'setShipping',
-        'points' => 'setPoints',
-        'headers' => 'setHeaders'
+        'points' => 'setPoints'
     ];
 
     /**
@@ -133,8 +132,7 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
         'landed_price' => 'getLandedPrice',
         'listing_price' => 'getListingPrice',
         'shipping' => 'getShipping',
-        'points' => 'getPoints',
-        'headers' => 'getHeaders'
+        'points' => 'getPoints'
     ];
 
     /**
@@ -177,11 +175,7 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -229,30 +223,6 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets landed_price
@@ -277,7 +247,6 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets listing_price
      *
@@ -301,7 +270,6 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping
      *
@@ -325,7 +293,6 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets points
      *
@@ -349,6 +316,7 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

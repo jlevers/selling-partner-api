@@ -2,7 +2,7 @@
 /**
  * PurchaseLabelsResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
+                'shipment_id' => 'setShipmentId',
         'client_reference_id' => 'setClientReferenceId',
         'accepted_rate' => 'setAcceptedRate',
-        'label_results' => 'setLabelResults',
-        'headers' => 'setHeaders'
+        'label_results' => 'setLabelResults'
     ];
 
     /**
@@ -134,8 +133,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipment_id' => 'getShipmentId',
         'client_reference_id' => 'getClientReferenceId',
         'accepted_rate' => 'getAcceptedRate',
-        'label_results' => 'getLabelResults',
-        'headers' => 'getHeaders'
+        'label_results' => 'getLabelResults'
     ];
 
     /**
@@ -178,11 +176,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -240,30 +234,6 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_id
@@ -288,7 +258,6 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets client_reference_id
      *
@@ -316,7 +285,6 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets accepted_rate
      *
@@ -340,7 +308,6 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets label_results
      *
@@ -364,6 +331,7 @@ class PurchaseLabelsResult implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

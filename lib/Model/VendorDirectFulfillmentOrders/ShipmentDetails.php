@@ -2,7 +2,7 @@
 /**
  * ShipmentDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'is_priority_shipment' => 'setIsPriorityShipment',
+                'is_priority_shipment' => 'setIsPriorityShipment',
         'is_scheduled_delivery_shipment' => 'setIsScheduledDeliveryShipment',
         'is_pslip_required' => 'setIsPslipRequired',
         'is_gift' => 'setIsGift',
         'ship_method' => 'setShipMethod',
         'shipment_dates' => 'setShipmentDates',
-        'message_to_customer' => 'setMessageToCustomer',
-        'headers' => 'setHeaders'
+        'message_to_customer' => 'setMessageToCustomer'
     ];
 
     /**
@@ -149,8 +148,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_gift' => 'getIsGift',
         'ship_method' => 'getShipMethod',
         'shipment_dates' => 'getShipmentDates',
-        'message_to_customer' => 'getMessageToCustomer',
-        'headers' => 'getHeaders'
+        'message_to_customer' => 'getMessageToCustomer'
     ];
 
     /**
@@ -193,11 +191,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -260,30 +254,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets is_priority_shipment
@@ -308,7 +278,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_scheduled_delivery_shipment
      *
@@ -332,7 +301,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_pslip_required
      *
@@ -356,7 +324,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_gift
      *
@@ -380,7 +347,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_method
      *
@@ -404,7 +370,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_dates
      *
@@ -428,7 +393,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets message_to_customer
      *
@@ -452,6 +416,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

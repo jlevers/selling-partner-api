@@ -2,7 +2,7 @@
 /**
  * SolutionProviderCreditEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -136,7 +136,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'provider_transaction_type' => 'setProviderTransactionType',
+                'provider_transaction_type' => 'setProviderTransactionType',
         'seller_order_id' => 'setSellerOrderId',
         'marketplace_id' => 'setMarketplaceId',
         'marketplace_country_code' => 'setMarketplaceCountryCode',
@@ -145,8 +145,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
         'provider_id' => 'setProviderId',
         'provider_store_name' => 'setProviderStoreName',
         'transaction_amount' => 'setTransactionAmount',
-        'transaction_creation_date' => 'setTransactionCreationDate',
-        'headers' => 'setHeaders'
+        'transaction_creation_date' => 'setTransactionCreationDate'
     ];
 
     /**
@@ -164,8 +163,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
         'provider_id' => 'getProviderId',
         'provider_store_name' => 'getProviderStoreName',
         'transaction_amount' => 'getTransactionAmount',
-        'transaction_creation_date' => 'getTransactionCreationDate',
-        'headers' => 'getHeaders'
+        'transaction_creation_date' => 'getTransactionCreationDate'
     ];
 
     /**
@@ -208,11 +206,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -263,30 +257,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets provider_transaction_type
@@ -311,7 +281,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets seller_order_id
      *
@@ -335,7 +304,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -359,7 +327,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets marketplace_country_code
      *
@@ -383,7 +350,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets seller_id
      *
@@ -407,7 +373,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets seller_store_name
      *
@@ -431,7 +396,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets provider_id
      *
@@ -455,7 +419,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets provider_store_name
      *
@@ -479,7 +442,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets transaction_amount
      *
@@ -503,7 +465,6 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
     /**
      * Gets transaction_creation_date
      *
@@ -527,6 +488,7 @@ class SolutionProviderCreditEvent implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

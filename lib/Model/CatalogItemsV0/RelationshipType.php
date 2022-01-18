@@ -2,7 +2,7 @@
 /**
  * RelationshipType
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -175,7 +175,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'identifiers' => 'setIdentifiers',
+                'identifiers' => 'setIdentifiers',
         'color' => 'setColor',
         'edition' => 'setEdition',
         'flavor' => 'setFlavor',
@@ -197,8 +197,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_diamond_weight' => 'setTotalDiamondWeight',
         'total_gem_weight' => 'setTotalGemWeight',
         'package_quantity' => 'setPackageQuantity',
-        'item_dimensions' => 'setItemDimensions',
-        'headers' => 'setHeaders'
+        'item_dimensions' => 'setItemDimensions'
     ];
 
     /**
@@ -229,8 +228,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
         'total_diamond_weight' => 'getTotalDiamondWeight',
         'total_gem_weight' => 'getTotalGemWeight',
         'package_quantity' => 'getPackageQuantity',
-        'item_dimensions' => 'getItemDimensions',
-        'headers' => 'getHeaders'
+        'item_dimensions' => 'getItemDimensions'
     ];
 
     /**
@@ -273,11 +271,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -341,30 +335,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets identifiers
@@ -389,7 +359,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets color
      *
@@ -413,7 +382,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets edition
      *
@@ -437,7 +405,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets flavor
      *
@@ -461,7 +428,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets gem_type
      *
@@ -485,7 +451,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets golf_club_flex
      *
@@ -509,7 +474,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets hand_orientation
      *
@@ -533,7 +497,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets hardware_platform
      *
@@ -557,7 +520,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets material_type
      *
@@ -581,7 +543,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets metal_type
      *
@@ -605,7 +566,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets model
      *
@@ -629,7 +589,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets operating_system
      *
@@ -653,7 +612,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets product_type_subcategory
      *
@@ -677,7 +635,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ring_size
      *
@@ -701,7 +658,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shaft_material
      *
@@ -725,7 +681,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets scent
      *
@@ -749,7 +704,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets size
      *
@@ -773,7 +727,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets size_per_pearl
      *
@@ -797,7 +750,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets golf_club_loft
      *
@@ -821,7 +773,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets total_diamond_weight
      *
@@ -845,7 +796,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets total_gem_weight
      *
@@ -869,7 +819,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets package_quantity
      *
@@ -893,7 +842,6 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_dimensions
      *
@@ -917,6 +865,7 @@ class RelationshipType implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * SearchContentPublishRecordsResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -103,6 +103,7 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'warnings' => 'warnings',
         'next_page_token' => 'nextPageToken',
         'publish_record_list' => 'publishRecordList'
@@ -114,10 +115,10 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'warnings' => 'setWarnings',
         'next_page_token' => 'setNextPageToken',
-        'publish_record_list' => 'setPublishRecordList',
-        'headers' => 'setHeaders'
+        'publish_record_list' => 'setPublishRecordList'
     ];
 
     /**
@@ -126,10 +127,10 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'warnings' => 'getWarnings',
         'next_page_token' => 'getNextPageToken',
-        'publish_record_list' => 'getPublishRecordList',
-        'headers' => 'getHeaders'
+        'publish_record_list' => 'getPublishRecordList'
     ];
 
     /**
@@ -172,11 +173,7 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -228,9 +225,9 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -238,19 +235,17 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets warnings
@@ -277,7 +272,6 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
 
         return $this;
     }
-
     /**
      * Gets next_page_token
      *
@@ -306,7 +300,6 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
 
         return $this;
     }
-
     /**
      * Gets publish_record_list
      *
@@ -332,6 +325,7 @@ class SearchContentPublishRecordsResponse implements ModelInterface, ArrayAccess
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

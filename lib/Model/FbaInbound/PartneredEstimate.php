@@ -2,7 +2,7 @@
 /**
  * PartneredEstimate
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount',
+                'amount' => 'setAmount',
         'confirm_deadline' => 'setConfirmDeadline',
-        'void_deadline' => 'setVoidDeadline',
-        'headers' => 'setHeaders'
+        'void_deadline' => 'setVoidDeadline'
     ];
 
     /**
@@ -129,8 +128,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'amount' => 'getAmount',
         'confirm_deadline' => 'getConfirmDeadline',
-        'void_deadline' => 'getVoidDeadline',
-        'headers' => 'getHeaders'
+        'void_deadline' => 'getVoidDeadline'
     ];
 
     /**
@@ -173,11 +171,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -224,30 +218,6 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets amount
@@ -272,7 +242,6 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets confirm_deadline
      *
@@ -296,7 +265,6 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets void_deadline
      *
@@ -320,6 +288,7 @@ class PartneredEstimate implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * PaymentTerms
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+                'type' => 'setType',
         'discount_percent' => 'setDiscountPercent',
         'discount_due_days' => 'setDiscountDueDays',
-        'net_due_days' => 'setNetDueDays',
-        'headers' => 'setHeaders'
+        'net_due_days' => 'setNetDueDays'
     ];
 
     /**
@@ -134,8 +133,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'getType',
         'discount_percent' => 'getDiscountPercent',
         'discount_due_days' => 'getDiscountDueDays',
-        'net_due_days' => 'getNetDueDays',
-        'headers' => 'getHeaders'
+        'net_due_days' => 'getNetDueDays'
     ];
 
     /**
@@ -177,17 +175,15 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const TYPE_BASIC = 'Basic';
+    }const TYPE_BASIC = 'Basic';
     const TYPE_END_OF_MONTH = 'EndOfMonth';
     const TYPE_FIXED_DATE = 'FixedDate';
     const TYPE_PROXIMO = 'Proximo';
     const TYPE_PAYMENT_DUE_UPON_RECEIPT_OF_INVOICE = 'PaymentDueUponReceiptOfInvoice';
     const TYPE_LETTEROF_CREDIT = 'LetterofCredit';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -205,7 +201,6 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -259,30 +254,6 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets type
@@ -317,7 +288,6 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets discount_percent
      *
@@ -341,7 +311,6 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets discount_due_days
      *
@@ -365,7 +334,6 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets net_due_days
      *
@@ -389,6 +357,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

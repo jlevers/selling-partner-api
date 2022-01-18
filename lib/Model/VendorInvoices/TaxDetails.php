@@ -2,7 +2,7 @@
 /**
  * TaxDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'tax_type' => 'setTaxType',
+                'tax_type' => 'setTaxType',
         'tax_rate' => 'setTaxRate',
         'tax_amount' => 'setTaxAmount',
-        'taxable_amount' => 'setTaxableAmount',
-        'headers' => 'setHeaders'
+        'taxable_amount' => 'setTaxableAmount'
     ];
 
     /**
@@ -134,8 +133,7 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'tax_type' => 'getTaxType',
         'tax_rate' => 'getTaxRate',
         'tax_amount' => 'getTaxAmount',
-        'taxable_amount' => 'getTaxableAmount',
-        'headers' => 'getHeaders'
+        'taxable_amount' => 'getTaxableAmount'
     ];
 
     /**
@@ -177,9 +175,7 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const TAX_TYPE_CGST = 'CGST';
+    }const TAX_TYPE_CGST = 'CGST';
     const TAX_TYPE_SGST = 'SGST';
     const TAX_TYPE_CESS = 'CESS';
     const TAX_TYPE_UTGST = 'UTGST';
@@ -194,8 +190,8 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     const TAX_TYPE_MUTUALLY_DEFINED = 'MutuallyDefined';
     const TAX_TYPE_DOMESTIC_VAT = 'DomesticVAT';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -221,7 +217,6 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -281,30 +276,6 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets tax_type
@@ -339,7 +310,6 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_rate
      *
@@ -363,7 +333,6 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_amount
      *
@@ -387,7 +356,6 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets taxable_amount
      *
@@ -411,6 +379,7 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

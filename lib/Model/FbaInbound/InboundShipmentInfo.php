@@ -2,7 +2,7 @@
 /**
  * InboundShipmentInfo
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -136,7 +136,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
+                'shipment_id' => 'setShipmentId',
         'shipment_name' => 'setShipmentName',
         'ship_from_address' => 'setShipFromAddress',
         'destination_fulfillment_center_id' => 'setDestinationFulfillmentCenterId',
@@ -145,8 +145,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
         'are_cases_required' => 'setAreCasesRequired',
         'confirmed_need_by_date' => 'setConfirmedNeedByDate',
         'box_contents_source' => 'setBoxContentsSource',
-        'estimated_box_contents_fee' => 'setEstimatedBoxContentsFee',
-        'headers' => 'setHeaders'
+        'estimated_box_contents_fee' => 'setEstimatedBoxContentsFee'
     ];
 
     /**
@@ -164,8 +163,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
         'are_cases_required' => 'getAreCasesRequired',
         'confirmed_need_by_date' => 'getConfirmedNeedByDate',
         'box_contents_source' => 'getBoxContentsSource',
-        'estimated_box_contents_fee' => 'getEstimatedBoxContentsFee',
-        'headers' => 'getHeaders'
+        'estimated_box_contents_fee' => 'getEstimatedBoxContentsFee'
     ];
 
     /**
@@ -208,11 +206,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -269,30 +263,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_id
@@ -317,7 +287,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets shipment_name
      *
@@ -341,7 +310,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets ship_from_address
      *
@@ -365,7 +333,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets destination_fulfillment_center_id
      *
@@ -389,7 +356,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets shipment_status
      *
@@ -413,7 +379,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets label_prep_type
      *
@@ -437,7 +402,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets are_cases_required
      *
@@ -461,7 +425,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets confirmed_need_by_date
      *
@@ -485,7 +448,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets box_contents_source
      *
@@ -509,7 +471,6 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets estimated_box_contents_fee
      *
@@ -533,6 +494,7 @@ class InboundShipmentInfo implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

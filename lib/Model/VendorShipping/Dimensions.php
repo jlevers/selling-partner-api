@@ -2,7 +2,7 @@
 /**
  * Dimensions
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'length' => 'setLength',
+                'length' => 'setLength',
         'width' => 'setWidth',
         'height' => 'setHeight',
-        'unit_of_measure' => 'setUnitOfMeasure',
-        'headers' => 'setHeaders'
+        'unit_of_measure' => 'setUnitOfMeasure'
     ];
 
     /**
@@ -134,8 +133,7 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
         'length' => 'getLength',
         'width' => 'getWidth',
         'height' => 'getHeight',
-        'unit_of_measure' => 'getUnitOfMeasure',
-        'headers' => 'getHeaders'
+        'unit_of_measure' => 'getUnitOfMeasure'
     ];
 
     /**
@@ -177,15 +175,13 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const UNIT_OF_MEASURE_IN = 'In';
+    }const UNIT_OF_MEASURE_IN = 'In';
     const UNIT_OF_MEASURE_FT = 'Ft';
     const UNIT_OF_MEASURE_METER = 'Meter';
     const UNIT_OF_MEASURE_YARD = 'Yard';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -201,7 +197,6 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -267,30 +262,6 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets length
@@ -315,7 +286,6 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets width
      *
@@ -339,7 +309,6 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets height
      *
@@ -363,7 +332,6 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets unit_of_measure
      *
@@ -397,6 +365,7 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

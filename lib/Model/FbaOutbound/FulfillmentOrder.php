@@ -2,7 +2,7 @@
 /**
  * FulfillmentOrder
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -154,7 +154,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
+                'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
         'marketplace_id' => 'setMarketplaceId',
         'displayable_order_id' => 'setDisplayableOrderId',
         'displayable_order_date' => 'setDisplayableOrderDate',
@@ -169,8 +169,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'fulfillment_order_status' => 'setFulfillmentOrderStatus',
         'status_updated_date' => 'setStatusUpdatedDate',
         'notification_emails' => 'setNotificationEmails',
-        'feature_constraints' => 'setFeatureConstraints',
-        'headers' => 'setHeaders'
+        'feature_constraints' => 'setFeatureConstraints'
     ];
 
     /**
@@ -194,8 +193,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         'fulfillment_order_status' => 'getFulfillmentOrderStatus',
         'status_updated_date' => 'getStatusUpdatedDate',
         'notification_emails' => 'getNotificationEmails',
-        'feature_constraints' => 'getFeatureConstraints',
-        'headers' => 'getHeaders'
+        'feature_constraints' => 'getFeatureConstraints'
     ];
 
     /**
@@ -238,11 +236,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -329,30 +323,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_fulfillment_order_id
@@ -377,7 +347,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -401,7 +370,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets displayable_order_id
      *
@@ -425,7 +393,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets displayable_order_date
      *
@@ -449,7 +416,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets displayable_order_comment
      *
@@ -473,7 +439,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_speed_category
      *
@@ -497,7 +462,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets delivery_window
      *
@@ -521,7 +485,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets destination_address
      *
@@ -545,7 +508,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fulfillment_action
      *
@@ -569,7 +531,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fulfillment_policy
      *
@@ -593,7 +554,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets cod_settings
      *
@@ -617,7 +577,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets received_date
      *
@@ -641,7 +600,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fulfillment_order_status
      *
@@ -665,7 +623,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets status_updated_date
      *
@@ -689,7 +646,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets notification_emails
      *
@@ -713,7 +669,6 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets feature_constraints
      *
@@ -737,6 +692,7 @@ class FulfillmentOrder implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

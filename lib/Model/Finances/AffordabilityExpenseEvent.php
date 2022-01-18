@@ -2,7 +2,7 @@
 /**
  * AffordabilityExpenseEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -133,7 +133,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
+                'amazon_order_id' => 'setAmazonOrderId',
         'posted_date' => 'setPostedDate',
         'marketplace_id' => 'setMarketplaceId',
         'transaction_type' => 'setTransactionType',
@@ -141,8 +141,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
         'tax_type_cgst' => 'setTaxTypeCgst',
         'tax_type_sgst' => 'setTaxTypeSgst',
         'tax_type_igst' => 'setTaxTypeIgst',
-        'total_expense' => 'setTotalExpense',
-        'headers' => 'setHeaders'
+        'total_expense' => 'setTotalExpense'
     ];
 
     /**
@@ -159,8 +158,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
         'tax_type_cgst' => 'getTaxTypeCgst',
         'tax_type_sgst' => 'getTaxTypeSgst',
         'tax_type_igst' => 'getTaxTypeIgst',
-        'total_expense' => 'getTotalExpense',
-        'headers' => 'getHeaders'
+        'total_expense' => 'getTotalExpense'
     ];
 
     /**
@@ -203,11 +201,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -266,30 +260,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets amazon_order_id
@@ -314,7 +284,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets posted_date
      *
@@ -338,7 +307,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -362,7 +330,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets transaction_type
      *
@@ -386,7 +353,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets base_expense
      *
@@ -410,7 +376,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets tax_type_cgst
      *
@@ -434,7 +399,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets tax_type_sgst
      *
@@ -458,7 +422,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets tax_type_igst
      *
@@ -482,7 +445,6 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets total_expense
      *
@@ -506,6 +468,7 @@ class AffordabilityExpenseEvent implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

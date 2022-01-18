@@ -2,7 +2,7 @@
 /**
  * CreateFulfillmentReturnResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -114,10 +114,9 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'return_items' => 'setReturnItems',
+                'return_items' => 'setReturnItems',
         'invalid_return_items' => 'setInvalidReturnItems',
-        'return_authorizations' => 'setReturnAuthorizations',
-        'headers' => 'setHeaders'
+        'return_authorizations' => 'setReturnAuthorizations'
     ];
 
     /**
@@ -128,8 +127,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     protected static $getters = [
         'return_items' => 'getReturnItems',
         'invalid_return_items' => 'getInvalidReturnItems',
-        'return_authorizations' => 'getReturnAuthorizations',
-        'headers' => 'getHeaders'
+        'return_authorizations' => 'getReturnAuthorizations'
     ];
 
     /**
@@ -172,11 +170,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -220,30 +214,6 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets return_items
@@ -268,7 +238,6 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets invalid_return_items
      *
@@ -292,7 +261,6 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets return_authorizations
      *
@@ -316,6 +284,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

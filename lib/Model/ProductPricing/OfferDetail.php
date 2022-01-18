@@ -2,7 +2,7 @@
 /**
  * OfferDetail
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -153,7 +153,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'my_offer' => 'setMyOffer',
+                'my_offer' => 'setMyOffer',
         'offer_type' => 'setOfferType',
         'sub_condition' => 'setSubCondition',
         'seller_id' => 'setSellerId',
@@ -168,8 +168,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_fulfilled_by_amazon' => 'setIsFulfilledByAmazon',
         'prime_information' => 'setPrimeInformation',
         'is_buy_box_winner' => 'setIsBuyBoxWinner',
-        'is_featured_merchant' => 'setIsFeaturedMerchant',
-        'headers' => 'setHeaders'
+        'is_featured_merchant' => 'setIsFeaturedMerchant'
     ];
 
     /**
@@ -193,8 +192,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_fulfilled_by_amazon' => 'getIsFulfilledByAmazon',
         'prime_information' => 'getPrimeInformation',
         'is_buy_box_winner' => 'getIsBuyBoxWinner',
-        'is_featured_merchant' => 'getIsFeaturedMerchant',
-        'headers' => 'getHeaders'
+        'is_featured_merchant' => 'getIsFeaturedMerchant'
     ];
 
     /**
@@ -237,11 +235,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -313,30 +307,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets my_offer
@@ -361,7 +331,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets offer_type
      *
@@ -385,7 +354,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets sub_condition
      *
@@ -409,7 +377,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_id
      *
@@ -433,7 +400,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets condition_notes
      *
@@ -457,7 +423,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_feedback_rating
      *
@@ -481,7 +446,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_time
      *
@@ -505,7 +469,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets listing_price
      *
@@ -529,7 +492,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets quantity_discount_prices
      *
@@ -553,7 +515,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets points
      *
@@ -577,7 +538,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping
      *
@@ -601,7 +561,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ships_from
      *
@@ -625,7 +584,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_fulfilled_by_amazon
      *
@@ -649,7 +607,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets prime_information
      *
@@ -673,7 +630,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_buy_box_winner
      *
@@ -697,7 +653,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets is_featured_merchant
      *
@@ -721,6 +676,7 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

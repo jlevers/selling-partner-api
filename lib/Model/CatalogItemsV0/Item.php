@@ -2,7 +2,7 @@
 /**
  * Item
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'identifiers' => 'setIdentifiers',
+                'identifiers' => 'setIdentifiers',
         'attribute_sets' => 'setAttributeSets',
         'relationships' => 'setRelationships',
-        'sales_rankings' => 'setSalesRankings',
-        'headers' => 'setHeaders'
+        'sales_rankings' => 'setSalesRankings'
     ];
 
     /**
@@ -134,8 +133,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'identifiers' => 'getIdentifiers',
         'attribute_sets' => 'getAttributeSets',
         'relationships' => 'getRelationships',
-        'sales_rankings' => 'getSalesRankings',
-        'headers' => 'getHeaders'
+        'sales_rankings' => 'getSalesRankings'
     ];
 
     /**
@@ -178,11 +176,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -230,30 +224,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets identifiers
@@ -278,7 +248,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets attribute_sets
      *
@@ -302,7 +271,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets relationships
      *
@@ -326,7 +294,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets sales_rankings
      *
@@ -350,6 +317,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

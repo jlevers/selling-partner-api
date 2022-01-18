@@ -2,7 +2,7 @@
 /**
  * ListingsItemSubmissionResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -106,6 +106,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'sku' => 'sku',
         'status' => 'status',
         'submission_id' => 'submissionId',
@@ -118,11 +119,11 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'sku' => 'setSku',
         'status' => 'setStatus',
         'submission_id' => 'setSubmissionId',
-        'issues' => 'setIssues',
-        'headers' => 'setHeaders'
+        'issues' => 'setIssues'
     ];
 
     /**
@@ -131,11 +132,11 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'sku' => 'getSku',
         'status' => 'getStatus',
         'submission_id' => 'getSubmissionId',
-        'issues' => 'getIssues',
-        'headers' => 'getHeaders'
+        'issues' => 'getIssues'
     ];
 
     /**
@@ -177,13 +178,11 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const STATUS_ACCEPTED = 'ACCEPTED';
+    }const STATUS_ACCEPTED = 'ACCEPTED';
     const STATUS_INVALID = 'INVALID';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -197,7 +196,6 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -261,9 +259,9 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -271,19 +269,17 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets sku
@@ -308,7 +304,6 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets status
      *
@@ -342,7 +337,6 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets submission_id
      *
@@ -366,7 +360,6 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets issues
      *
@@ -390,6 +383,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

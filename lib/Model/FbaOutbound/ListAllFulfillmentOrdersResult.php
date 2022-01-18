@@ -2,7 +2,7 @@
 /**
  * ListAllFulfillmentOrdersResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -111,9 +111,8 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'next_token' => 'setNextToken',
-        'fulfillment_orders' => 'setFulfillmentOrders',
-        'headers' => 'setHeaders'
+                'next_token' => 'setNextToken',
+        'fulfillment_orders' => 'setFulfillmentOrders'
     ];
 
     /**
@@ -123,8 +122,7 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'next_token' => 'getNextToken',
-        'fulfillment_orders' => 'getFulfillmentOrders',
-        'headers' => 'getHeaders'
+        'fulfillment_orders' => 'getFulfillmentOrders'
     ];
 
     /**
@@ -167,11 +165,7 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,30 +208,6 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets next_token
@@ -262,7 +232,6 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
-
     /**
      * Gets fulfillment_orders
      *
@@ -286,6 +255,7 @@ class ListAllFulfillmentOrdersResult implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

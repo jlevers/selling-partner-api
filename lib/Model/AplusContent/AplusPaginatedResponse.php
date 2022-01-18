@@ -2,7 +2,7 @@
 /**
  * AplusPaginatedResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'warnings' => 'setWarnings',
-        'next_page_token' => 'setNextPageToken',
-        'headers' => 'setHeaders'
+                'warnings' => 'setWarnings',
+        'next_page_token' => 'setNextPageToken'
     ];
 
     /**
@@ -124,8 +123,7 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'warnings' => 'getWarnings',
-        'next_page_token' => 'getNextPageToken',
-        'headers' => 'getHeaders'
+        'next_page_token' => 'getNextPageToken'
     ];
 
     /**
@@ -168,11 +166,7 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -219,30 +213,6 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets warnings
@@ -269,7 +239,6 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets next_page_token
      *
@@ -298,6 +267,7 @@ class AplusPaginatedResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

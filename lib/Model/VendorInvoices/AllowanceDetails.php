@@ -2,7 +2,7 @@
 /**
  * AllowanceDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+                'type' => 'setType',
         'description' => 'setDescription',
         'allowance_amount' => 'setAllowanceAmount',
-        'tax_details' => 'setTaxDetails',
-        'headers' => 'setHeaders'
+        'tax_details' => 'setTaxDetails'
     ];
 
     /**
@@ -134,8 +133,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'getType',
         'description' => 'getDescription',
         'allowance_amount' => 'getAllowanceAmount',
-        'tax_details' => 'getTaxDetails',
-        'headers' => 'getHeaders'
+        'tax_details' => 'getTaxDetails'
     ];
 
     /**
@@ -177,17 +175,15 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const TYPE_DISCOUNT = 'Discount';
+    }const TYPE_DISCOUNT = 'Discount';
     const TYPE_DISCOUNT_INCENTIVE = 'DiscountIncentive';
     const TYPE_DEFECTIVE = 'Defective';
     const TYPE_PROMOTIONAL = 'Promotional';
     const TYPE_UNSALEABLE_MERCHANDISE = 'UnsaleableMerchandise';
     const TYPE_SPECIAL = 'Special';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -205,7 +201,6 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -265,30 +260,6 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets type
@@ -323,7 +294,6 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets description
      *
@@ -347,7 +317,6 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets allowance_amount
      *
@@ -371,7 +340,6 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_details
      *
@@ -395,6 +363,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

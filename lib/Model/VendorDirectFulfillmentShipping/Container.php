@@ -2,7 +2,7 @@
 /**
  * Container
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -141,7 +141,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'container_type' => 'setContainerType',
+                'container_type' => 'setContainerType',
         'container_identifier' => 'setContainerIdentifier',
         'tracking_number' => 'setTrackingNumber',
         'manifest_id' => 'setManifestId',
@@ -152,8 +152,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
         'container_sequence_number' => 'setContainerSequenceNumber',
         'dimensions' => 'setDimensions',
         'weight' => 'setWeight',
-        'packed_items' => 'setPackedItems',
-        'headers' => 'setHeaders'
+        'packed_items' => 'setPackedItems'
     ];
 
     /**
@@ -173,8 +172,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
         'container_sequence_number' => 'getContainerSequenceNumber',
         'dimensions' => 'getDimensions',
         'weight' => 'getWeight',
-        'packed_items' => 'getPackedItems',
-        'headers' => 'getHeaders'
+        'packed_items' => 'getPackedItems'
     ];
 
     /**
@@ -216,13 +214,11 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const CONTAINER_TYPE_CARTON = 'carton';
+    }const CONTAINER_TYPE_CARTON = 'carton';
     const CONTAINER_TYPE_PALLET = 'pallet';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -236,7 +232,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -307,30 +302,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets container_type
@@ -365,7 +336,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets container_identifier
      *
@@ -389,7 +359,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tracking_number
      *
@@ -413,7 +382,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets manifest_id
      *
@@ -437,7 +405,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets manifest_date
      *
@@ -461,7 +428,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_method
      *
@@ -485,7 +451,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets scac_code
      *
@@ -509,7 +474,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets carrier
      *
@@ -533,7 +497,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets container_sequence_number
      *
@@ -557,7 +520,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets dimensions
      *
@@ -581,7 +543,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets weight
      *
@@ -605,7 +566,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets packed_items
      *
@@ -629,6 +589,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

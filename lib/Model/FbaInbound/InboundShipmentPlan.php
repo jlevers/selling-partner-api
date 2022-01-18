@@ -2,7 +2,7 @@
 /**
  * InboundShipmentPlan
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'shipment_id' => 'setShipmentId',
+                'shipment_id' => 'setShipmentId',
         'destination_fulfillment_center_id' => 'setDestinationFulfillmentCenterId',
         'ship_to_address' => 'setShipToAddress',
         'label_prep_type' => 'setLabelPrepType',
         'items' => 'setItems',
-        'estimated_box_contents_fee' => 'setEstimatedBoxContentsFee',
-        'headers' => 'setHeaders'
+        'estimated_box_contents_fee' => 'setEstimatedBoxContentsFee'
     ];
 
     /**
@@ -144,8 +143,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
         'ship_to_address' => 'getShipToAddress',
         'label_prep_type' => 'getLabelPrepType',
         'items' => 'getItems',
-        'estimated_box_contents_fee' => 'getEstimatedBoxContentsFee',
-        'headers' => 'getHeaders'
+        'estimated_box_contents_fee' => 'getEstimatedBoxContentsFee'
     ];
 
     /**
@@ -188,11 +186,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -254,30 +248,6 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_id
@@ -302,7 +272,6 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets destination_fulfillment_center_id
      *
@@ -326,7 +295,6 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets ship_to_address
      *
@@ -350,7 +318,6 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets label_prep_type
      *
@@ -374,7 +341,6 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -398,7 +364,6 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets estimated_box_contents_fee
      *
@@ -422,6 +387,7 @@ class InboundShipmentPlan implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

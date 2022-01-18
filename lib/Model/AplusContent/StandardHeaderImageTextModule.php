@@ -2,7 +2,7 @@
 /**
  * StandardHeaderImageTextModule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'headline' => 'setHeadline',
-        'block' => 'setBlock',
-        'headers' => 'setHeaders'
+                'headline' => 'setHeadline',
+        'block' => 'setBlock'
     ];
 
     /**
@@ -124,8 +123,7 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'headline' => 'getHeadline',
-        'block' => 'getBlock',
-        'headers' => 'getHeaders'
+        'block' => 'getBlock'
     ];
 
     /**
@@ -168,11 +166,7 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -215,30 +209,6 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets headline
@@ -263,7 +233,6 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets block
      *
@@ -287,6 +256,7 @@ class StandardHeaderImageTextModule implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

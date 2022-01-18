@@ -2,7 +2,7 @@
 /**
  * ItemEligibilityPreview
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
+                'asin' => 'setAsin',
         'marketplace_id' => 'setMarketplaceId',
         'program' => 'setProgram',
         'is_eligible_for_program' => 'setIsEligibleForProgram',
-        'ineligibility_reason_list' => 'setIneligibilityReasonList',
-        'headers' => 'setHeaders'
+        'ineligibility_reason_list' => 'setIneligibilityReasonList'
     ];
 
     /**
@@ -139,8 +138,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
         'marketplace_id' => 'getMarketplaceId',
         'program' => 'getProgram',
         'is_eligible_for_program' => 'getIsEligibleForProgram',
-        'ineligibility_reason_list' => 'getIneligibilityReasonList',
-        'headers' => 'getHeaders'
+        'ineligibility_reason_list' => 'getIneligibilityReasonList'
     ];
 
     /**
@@ -182,9 +180,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const PROGRAM_INBOUND = 'INBOUND';
+    }const PROGRAM_INBOUND = 'INBOUND';
     const PROGRAM_COMMINGLING = 'COMMINGLING';
     const INELIGIBILITY_REASON_LIST_FBA_INB_0004 = 'FBA_INB_0004';
     const INELIGIBILITY_REASON_LIST_FBA_INB_0006 = 'FBA_INB_0006';
@@ -225,8 +221,8 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
     const INELIGIBILITY_REASON_LIST_FBA_INB_0104 = 'FBA_INB_0104';
     const INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE = 'UNKNOWN_INB_ERROR_CODE';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -240,6 +236,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
         ];
     }
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -289,7 +286,6 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -353,30 +349,6 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets asin
@@ -401,7 +373,6 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -425,7 +396,6 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets program
      *
@@ -459,7 +429,6 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets is_eligible_for_program
      *
@@ -483,7 +452,6 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets ineligibility_reason_list
      *
@@ -516,6 +484,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

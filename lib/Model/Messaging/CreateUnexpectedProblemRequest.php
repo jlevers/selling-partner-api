@@ -2,7 +2,7 @@
 /**
  * CreateUnexpectedProblemRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -109,8 +109,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText',
-        'headers' => 'setHeaders'
+                'text' => 'setText'
     ];
 
     /**
@@ -119,8 +118,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText',
-        'headers' => 'getHeaders'
+        'text' => 'getText'
     ];
 
     /**
@@ -163,11 +161,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, ArrayAccess, \Js
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -217,30 +211,6 @@ class CreateUnexpectedProblemRequest implements ModelInterface, ArrayAccess, \Js
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets text
@@ -272,6 +242,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, ArrayAccess, \Js
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * ItemSummaryByMarketplace
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -136,7 +136,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'asin' => 'setAsin',
         'product_type' => 'setProductType',
         'condition_type' => 'setConditionType',
@@ -145,8 +145,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'item_name' => 'setItemName',
         'created_date' => 'setCreatedDate',
         'last_updated_date' => 'setLastUpdatedDate',
-        'main_image' => 'setMainImage',
-        'headers' => 'setHeaders'
+        'main_image' => 'setMainImage'
     ];
 
     /**
@@ -164,8 +163,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'item_name' => 'getItemName',
         'created_date' => 'getCreatedDate',
         'last_updated_date' => 'getLastUpdatedDate',
-        'main_image' => 'getMainImage',
-        'headers' => 'getHeaders'
+        'main_image' => 'getMainImage'
     ];
 
     /**
@@ -207,9 +205,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const CONDITION_TYPE_NEW_NEW = 'new_new';
+    }const CONDITION_TYPE_NEW_NEW = 'new_new';
     const CONDITION_TYPE_NEW_OPEN_BOX = 'new_open_box';
     const CONDITION_TYPE_NEW_OEM = 'new_oem';
     const CONDITION_TYPE_REFURBISHED_REFURBISHED = 'refurbished_refurbished';
@@ -225,8 +221,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     const STATUS_BUYABLE = 'BUYABLE';
     const STATUS_DISCOVERABLE = 'DISCOVERABLE';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -251,6 +247,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         ];
     }
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -264,7 +261,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -345,30 +341,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -393,7 +365,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets asin
      *
@@ -417,7 +388,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets product_type
      *
@@ -441,7 +411,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets condition_type
      *
@@ -475,7 +444,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets status
      *
@@ -508,7 +476,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets fn_sku
      *
@@ -532,7 +499,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets item_name
      *
@@ -556,7 +522,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets created_date
      *
@@ -580,7 +545,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets last_updated_date
      *
@@ -604,7 +568,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets main_image
      *
@@ -628,6 +591,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

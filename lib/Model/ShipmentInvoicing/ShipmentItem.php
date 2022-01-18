@@ -2,7 +2,7 @@
 /**
  * ShipmentItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -139,7 +139,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
+                'asin' => 'setAsin',
         'seller_sku' => 'setSellerSku',
         'order_item_id' => 'setOrderItemId',
         'title' => 'setTitle',
@@ -149,8 +149,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_wrap_price' => 'setGiftWrapPrice',
         'shipping_discount' => 'setShippingDiscount',
         'promotion_discount' => 'setPromotionDiscount',
-        'serial_numbers' => 'setSerialNumbers',
-        'headers' => 'setHeaders'
+        'serial_numbers' => 'setSerialNumbers'
     ];
 
     /**
@@ -169,8 +168,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_wrap_price' => 'getGiftWrapPrice',
         'shipping_discount' => 'getShippingDiscount',
         'promotion_discount' => 'getPromotionDiscount',
-        'serial_numbers' => 'getSerialNumbers',
-        'headers' => 'getHeaders'
+        'serial_numbers' => 'getSerialNumbers'
     ];
 
     /**
@@ -213,11 +211,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -269,30 +263,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets asin
@@ -317,7 +287,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_sku
      *
@@ -341,7 +310,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_item_id
      *
@@ -365,7 +333,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets title
      *
@@ -389,7 +356,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets quantity_ordered
      *
@@ -413,7 +379,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_price
      *
@@ -437,7 +402,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_price
      *
@@ -461,7 +425,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets gift_wrap_price
      *
@@ -485,7 +448,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_discount
      *
@@ -509,7 +471,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets promotion_discount
      *
@@ -533,7 +494,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets serial_numbers
      *
@@ -557,6 +517,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

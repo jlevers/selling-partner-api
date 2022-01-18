@@ -2,7 +2,7 @@
 /**
  * OrderItemAcknowledgement
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -117,11 +117,10 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'item_sequence_number' => 'setItemSequenceNumber',
+                'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
-        'acknowledged_quantity' => 'setAcknowledgedQuantity',
-        'headers' => 'setHeaders'
+        'acknowledged_quantity' => 'setAcknowledgedQuantity'
     ];
 
     /**
@@ -133,8 +132,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
         'item_sequence_number' => 'getItemSequenceNumber',
         'buyer_product_identifier' => 'getBuyerProductIdentifier',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
-        'acknowledged_quantity' => 'getAcknowledgedQuantity',
-        'headers' => 'getHeaders'
+        'acknowledged_quantity' => 'getAcknowledgedQuantity'
     ];
 
     /**
@@ -177,11 +175,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -232,30 +226,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets item_sequence_number
@@ -280,7 +250,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets buyer_product_identifier
      *
@@ -304,7 +273,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets vendor_product_identifier
      *
@@ -328,7 +296,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets acknowledged_quantity
      *
@@ -352,6 +319,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

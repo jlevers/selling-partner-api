@@ -2,7 +2,7 @@
 /**
  * OrderItemStatusAcknowledgementStatus
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'confirmation_status' => 'setConfirmationStatus',
+                'confirmation_status' => 'setConfirmationStatus',
         'accepted_quantity' => 'setAcceptedQuantity',
         'rejected_quantity' => 'setRejectedQuantity',
-        'acknowledgement_status_details' => 'setAcknowledgementStatusDetails',
-        'headers' => 'setHeaders'
+        'acknowledgement_status_details' => 'setAcknowledgementStatusDetails'
     ];
 
     /**
@@ -134,8 +133,7 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
         'confirmation_status' => 'getConfirmationStatus',
         'accepted_quantity' => 'getAcceptedQuantity',
         'rejected_quantity' => 'getRejectedQuantity',
-        'acknowledgement_status_details' => 'getAcknowledgementStatusDetails',
-        'headers' => 'getHeaders'
+        'acknowledgement_status_details' => 'getAcknowledgementStatusDetails'
     ];
 
     /**
@@ -177,15 +175,13 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const CONFIRMATION_STATUS_ACCEPTED = 'ACCEPTED';
+    }const CONFIRMATION_STATUS_ACCEPTED = 'ACCEPTED';
     const CONFIRMATION_STATUS_PARTIALLY_ACCEPTED = 'PARTIALLY_ACCEPTED';
     const CONFIRMATION_STATUS_REJECTED = 'REJECTED';
     const CONFIRMATION_STATUS_UNCONFIRMED = 'UNCONFIRMED';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -201,7 +197,6 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -255,30 +250,6 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets confirmation_status
@@ -313,7 +284,6 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
 
         return $this;
     }
-
     /**
      * Gets accepted_quantity
      *
@@ -337,7 +307,6 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
 
         return $this;
     }
-
     /**
      * Gets rejected_quantity
      *
@@ -361,7 +330,6 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
 
         return $this;
     }
-
     /**
      * Gets acknowledgement_status_details
      *
@@ -385,6 +353,7 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

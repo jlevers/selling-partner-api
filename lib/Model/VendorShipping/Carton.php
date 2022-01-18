@@ -2,7 +2,7 @@
 /**
  * Carton
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'carton_identifiers' => 'setCartonIdentifiers',
+                'carton_identifiers' => 'setCartonIdentifiers',
         'carton_sequence_number' => 'setCartonSequenceNumber',
         'dimensions' => 'setDimensions',
         'weight' => 'setWeight',
         'tracking_number' => 'setTrackingNumber',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -144,8 +143,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
         'dimensions' => 'getDimensions',
         'weight' => 'getWeight',
         'tracking_number' => 'getTrackingNumber',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -188,11 +186,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets carton_identifiers
@@ -293,7 +263,6 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets carton_sequence_number
      *
@@ -317,7 +286,6 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets dimensions
      *
@@ -341,7 +309,6 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets weight
      *
@@ -365,7 +332,6 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tracking_number
      *
@@ -389,7 +355,6 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -413,6 +378,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

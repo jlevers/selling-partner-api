@@ -2,7 +2,7 @@
 /**
  * InventoryDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'fulfillable_quantity' => 'setFulfillableQuantity',
+                'fulfillable_quantity' => 'setFulfillableQuantity',
         'inbound_working_quantity' => 'setInboundWorkingQuantity',
         'inbound_shipped_quantity' => 'setInboundShippedQuantity',
         'inbound_receiving_quantity' => 'setInboundReceivingQuantity',
         'reserved_quantity' => 'setReservedQuantity',
         'researching_quantity' => 'setResearchingQuantity',
-        'unfulfillable_quantity' => 'setUnfulfillableQuantity',
-        'headers' => 'setHeaders'
+        'unfulfillable_quantity' => 'setUnfulfillableQuantity'
     ];
 
     /**
@@ -149,8 +148,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'inbound_receiving_quantity' => 'getInboundReceivingQuantity',
         'reserved_quantity' => 'getReservedQuantity',
         'researching_quantity' => 'getResearchingQuantity',
-        'unfulfillable_quantity' => 'getUnfulfillableQuantity',
-        'headers' => 'getHeaders'
+        'unfulfillable_quantity' => 'getUnfulfillableQuantity'
     ];
 
     /**
@@ -193,11 +191,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -245,30 +239,6 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets fulfillable_quantity
@@ -293,7 +263,6 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets inbound_working_quantity
      *
@@ -317,7 +286,6 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets inbound_shipped_quantity
      *
@@ -341,7 +309,6 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets inbound_receiving_quantity
      *
@@ -365,7 +332,6 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets reserved_quantity
      *
@@ -389,7 +355,6 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets researching_quantity
      *
@@ -413,7 +378,6 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets unfulfillable_quantity
      *
@@ -437,6 +401,7 @@ class InventoryDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * ContentModule
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -154,7 +154,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'content_module_type' => 'setContentModuleType',
+                'content_module_type' => 'setContentModuleType',
         'standard_company_logo' => 'setStandardCompanyLogo',
         'standard_comparison_table' => 'setStandardComparisonTable',
         'standard_four_image_text' => 'setStandardFourImageText',
@@ -169,8 +169,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
         'standard_single_side_image' => 'setStandardSingleSideImage',
         'standard_tech_specs' => 'setStandardTechSpecs',
         'standard_text' => 'setStandardText',
-        'standard_three_image_text' => 'setStandardThreeImageText',
-        'headers' => 'setHeaders'
+        'standard_three_image_text' => 'setStandardThreeImageText'
     ];
 
     /**
@@ -194,8 +193,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
         'standard_single_side_image' => 'getStandardSingleSideImage',
         'standard_tech_specs' => 'getStandardTechSpecs',
         'standard_text' => 'getStandardText',
-        'standard_three_image_text' => 'getStandardThreeImageText',
-        'headers' => 'getHeaders'
+        'standard_three_image_text' => 'getStandardThreeImageText'
     ];
 
     /**
@@ -238,11 +236,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -302,30 +296,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets content_module_type
@@ -350,7 +320,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_company_logo
      *
@@ -374,7 +343,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_comparison_table
      *
@@ -398,7 +366,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_four_image_text
      *
@@ -422,7 +389,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_four_image_text_quadrant
      *
@@ -446,7 +412,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_header_image_text
      *
@@ -470,7 +435,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_image_sidebar
      *
@@ -494,7 +458,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_image_text_overlay
      *
@@ -518,7 +481,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_multiple_image_text
      *
@@ -542,7 +504,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_product_description
      *
@@ -566,7 +527,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_single_image_highlights
      *
@@ -590,7 +550,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_single_image_specs_detail
      *
@@ -614,7 +573,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_single_side_image
      *
@@ -638,7 +596,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_tech_specs
      *
@@ -662,7 +619,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_text
      *
@@ -686,7 +642,6 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets standard_three_image_text
      *
@@ -710,6 +665,7 @@ class ContentModule implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

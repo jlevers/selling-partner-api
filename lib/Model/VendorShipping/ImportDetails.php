@@ -2,7 +2,7 @@
 /**
  * ImportDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -123,13 +123,12 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'method_of_payment' => 'setMethodOfPayment',
+                'method_of_payment' => 'setMethodOfPayment',
         'seal_number' => 'setSealNumber',
         'route' => 'setRoute',
         'import_containers' => 'setImportContainers',
         'billable_weight' => 'setBillableWeight',
-        'estimated_ship_by_date' => 'setEstimatedShipByDate',
-        'headers' => 'setHeaders'
+        'estimated_ship_by_date' => 'setEstimatedShipByDate'
     ];
 
     /**
@@ -143,8 +142,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => 'getRoute',
         'import_containers' => 'getImportContainers',
         'billable_weight' => 'getBillableWeight',
-        'estimated_ship_by_date' => 'getEstimatedShipByDate',
-        'headers' => 'getHeaders'
+        'estimated_ship_by_date' => 'getEstimatedShipByDate'
     ];
 
     /**
@@ -186,17 +184,15 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const METHOD_OF_PAYMENT_PAID_BY_BUYER = 'PaidByBuyer';
+    }const METHOD_OF_PAYMENT_PAID_BY_BUYER = 'PaidByBuyer';
     const METHOD_OF_PAYMENT_COLLECT_ON_DELIVERY = 'CollectOnDelivery';
     const METHOD_OF_PAYMENT_DEFINED_BY_BUYER_AND_SELLER = 'DefinedByBuyerAndSeller';
     const METHOD_OF_PAYMENT_FOB_PORT_OF_CALL = 'FOBPortOfCall';
     const METHOD_OF_PAYMENT_PREPAID_BY_SELLER = 'PrepaidBySeller';
     const METHOD_OF_PAYMENT_PAID_BY_SELLER = 'PaidBySeller';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -214,7 +210,6 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -274,30 +269,6 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets method_of_payment
@@ -332,7 +303,6 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seal_number
      *
@@ -356,7 +326,6 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets route
      *
@@ -380,7 +349,6 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets import_containers
      *
@@ -408,7 +376,6 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets billable_weight
      *
@@ -432,7 +399,6 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets estimated_ship_by_date
      *
@@ -456,6 +422,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

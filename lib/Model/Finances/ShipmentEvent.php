@@ -2,7 +2,7 @@
 /**
  * ShipmentEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -145,7 +145,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
+                'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
         'marketplace_name' => 'setMarketplaceName',
         'order_charge_list' => 'setOrderChargeList',
@@ -157,8 +157,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'direct_payment_list' => 'setDirectPaymentList',
         'posted_date' => 'setPostedDate',
         'shipment_item_list' => 'setShipmentItemList',
-        'shipment_item_adjustment_list' => 'setShipmentItemAdjustmentList',
-        'headers' => 'setHeaders'
+        'shipment_item_adjustment_list' => 'setShipmentItemAdjustmentList'
     ];
 
     /**
@@ -179,8 +178,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'direct_payment_list' => 'getDirectPaymentList',
         'posted_date' => 'getPostedDate',
         'shipment_item_list' => 'getShipmentItemList',
-        'shipment_item_adjustment_list' => 'getShipmentItemAdjustmentList',
-        'headers' => 'getHeaders'
+        'shipment_item_adjustment_list' => 'getShipmentItemAdjustmentList'
     ];
 
     /**
@@ -223,11 +221,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -281,30 +275,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets amazon_order_id
@@ -329,7 +299,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_order_id
      *
@@ -353,7 +322,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_name
      *
@@ -377,7 +345,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_charge_list
      *
@@ -401,7 +368,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_charge_adjustment_list
      *
@@ -425,7 +391,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_fee_list
      *
@@ -449,7 +414,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_fee_adjustment_list
      *
@@ -473,7 +437,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_fee_list
      *
@@ -497,7 +460,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_fee_adjustment_list
      *
@@ -521,7 +483,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets direct_payment_list
      *
@@ -545,7 +506,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets posted_date
      *
@@ -569,7 +529,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_item_list
      *
@@ -593,7 +552,6 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_item_adjustment_list
      *
@@ -617,6 +575,7 @@ class ShipmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

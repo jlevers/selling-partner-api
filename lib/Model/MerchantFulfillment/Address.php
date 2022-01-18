@@ -2,7 +2,7 @@
 /**
  * Address
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -139,7 +139,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
+                'name' => 'setName',
         'address_line1' => 'setAddressLine1',
         'address_line2' => 'setAddressLine2',
         'address_line3' => 'setAddressLine3',
@@ -149,8 +149,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
         'state_or_province_code' => 'setStateOrProvinceCode',
         'postal_code' => 'setPostalCode',
         'country_code' => 'setCountryCode',
-        'phone' => 'setPhone',
-        'headers' => 'setHeaders'
+        'phone' => 'setPhone'
     ];
 
     /**
@@ -169,8 +168,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
         'state_or_province_code' => 'getStateOrProvinceCode',
         'postal_code' => 'getPostalCode',
         'country_code' => 'getCountryCode',
-        'phone' => 'getPhone',
-        'headers' => 'getHeaders'
+        'phone' => 'getPhone'
     ];
 
     /**
@@ -213,11 +211,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -322,30 +316,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets name
@@ -374,7 +344,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets address_line1
      *
@@ -402,7 +371,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets address_line2
      *
@@ -430,7 +398,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets address_line3
      *
@@ -458,7 +425,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets district_or_county
      *
@@ -482,7 +448,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets email
      *
@@ -506,7 +471,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets city
      *
@@ -534,7 +498,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets state_or_province_code
      *
@@ -562,7 +525,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets postal_code
      *
@@ -590,7 +552,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets country_code
      *
@@ -614,7 +575,6 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets phone
      *
@@ -642,6 +602,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

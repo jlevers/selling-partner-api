@@ -2,7 +2,7 @@
 /**
  * AdditionalSellerInputs
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'additional_input_field_name' => 'setAdditionalInputFieldName',
-        'additional_seller_input' => 'setAdditionalSellerInput',
-        'headers' => 'setHeaders'
+                'additional_input_field_name' => 'setAdditionalInputFieldName',
+        'additional_seller_input' => 'setAdditionalSellerInput'
     ];
 
     /**
@@ -124,8 +123,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'additional_input_field_name' => 'getAdditionalInputFieldName',
-        'additional_seller_input' => 'getAdditionalSellerInput',
-        'headers' => 'getHeaders'
+        'additional_seller_input' => 'getAdditionalSellerInput'
     ];
 
     /**
@@ -168,11 +166,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets additional_input_field_name
@@ -269,7 +239,6 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets additional_seller_input
      *
@@ -293,6 +262,7 @@ class AdditionalSellerInputs implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * SmallAndLightEligibility
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -104,6 +104,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'marketplace_id' => 'marketplaceId',
         'seller_sku' => 'sellerSKU',
         'status' => 'status'
@@ -115,10 +116,10 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'marketplace_id' => 'setMarketplaceId',
         'seller_sku' => 'setSellerSku',
-        'status' => 'setStatus',
-        'headers' => 'setHeaders'
+        'status' => 'setStatus'
     ];
 
     /**
@@ -127,10 +128,10 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'marketplace_id' => 'getMarketplaceId',
         'seller_sku' => 'getSellerSku',
-        'status' => 'getStatus',
-        'headers' => 'getHeaders'
+        'status' => 'getStatus'
     ];
 
     /**
@@ -173,11 +174,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -231,9 +228,9 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -241,19 +238,17 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets marketplace_id
@@ -278,7 +273,6 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets seller_sku
      *
@@ -302,7 +296,6 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets status
      *
@@ -326,6 +319,7 @@ class SmallAndLightEligibility implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

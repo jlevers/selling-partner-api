@@ -2,7 +2,7 @@
 /**
  * ItemImage
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'variant' => 'setVariant',
+                'variant' => 'setVariant',
         'link' => 'setLink',
         'height' => 'setHeight',
-        'width' => 'setWidth',
-        'headers' => 'setHeaders'
+        'width' => 'setWidth'
     ];
 
     /**
@@ -134,8 +133,7 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
         'variant' => 'getVariant',
         'link' => 'getLink',
         'height' => 'getHeight',
-        'width' => 'getWidth',
-        'headers' => 'getHeaders'
+        'width' => 'getWidth'
     ];
 
     /**
@@ -178,11 +176,7 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets variant
@@ -287,7 +257,6 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets link
      *
@@ -311,7 +280,6 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets height
      *
@@ -335,7 +303,6 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets width
      *
@@ -359,6 +326,7 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

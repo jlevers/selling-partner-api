@@ -2,7 +2,7 @@
 /**
  * CancelServiceJobByServiceJobIdResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -100,6 +100,7 @@ class CancelServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'errors' => 'errors'
     ];
 
@@ -109,8 +110,8 @@ class CancelServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors',
-        'headers' => 'setHeaders'
+        'headers' => 'setHeaders',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -119,8 +120,8 @@ class CancelServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors',
-        'headers' => 'getHeaders'
+        'headers' => 'getHeaders',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -163,11 +164,7 @@ class CancelServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAcc
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -210,9 +207,9 @@ class CancelServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -220,19 +217,17 @@ class CancelServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets errors
@@ -257,6 +252,7 @@ class CancelServiceJobByServiceJobIdResponse implements ModelInterface, ArrayAcc
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

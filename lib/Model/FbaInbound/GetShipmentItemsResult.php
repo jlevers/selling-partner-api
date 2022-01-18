@@ -2,7 +2,7 @@
 /**
  * GetShipmentItemsResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -111,9 +111,8 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'item_data' => 'setItemData',
-        'next_token' => 'setNextToken',
-        'headers' => 'setHeaders'
+                'item_data' => 'setItemData',
+        'next_token' => 'setNextToken'
     ];
 
     /**
@@ -123,8 +122,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'item_data' => 'getItemData',
-        'next_token' => 'getNextToken',
-        'headers' => 'getHeaders'
+        'next_token' => 'getNextToken'
     ];
 
     /**
@@ -167,11 +165,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -214,30 +208,6 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets item_data
@@ -262,7 +232,6 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets next_token
      *
@@ -286,6 +255,7 @@ class GetShipmentItemsResult implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

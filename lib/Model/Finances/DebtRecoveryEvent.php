@@ -2,7 +2,7 @@
 /**
  * DebtRecoveryEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'debt_recovery_type' => 'setDebtRecoveryType',
+                'debt_recovery_type' => 'setDebtRecoveryType',
         'recovery_amount' => 'setRecoveryAmount',
         'over_payment_credit' => 'setOverPaymentCredit',
         'debt_recovery_item_list' => 'setDebtRecoveryItemList',
-        'charge_instrument_list' => 'setChargeInstrumentList',
-        'headers' => 'setHeaders'
+        'charge_instrument_list' => 'setChargeInstrumentList'
     ];
 
     /**
@@ -139,8 +138,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
         'recovery_amount' => 'getRecoveryAmount',
         'over_payment_credit' => 'getOverPaymentCredit',
         'debt_recovery_item_list' => 'getDebtRecoveryItemList',
-        'charge_instrument_list' => 'getChargeInstrumentList',
-        'headers' => 'getHeaders'
+        'charge_instrument_list' => 'getChargeInstrumentList'
     ];
 
     /**
@@ -183,11 +181,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -233,30 +227,6 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets debt_recovery_type
@@ -281,7 +251,6 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets recovery_amount
      *
@@ -305,7 +274,6 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets over_payment_credit
      *
@@ -329,7 +297,6 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets debt_recovery_item_list
      *
@@ -353,7 +320,6 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets charge_instrument_list
      *
@@ -377,6 +343,7 @@ class DebtRecoveryEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

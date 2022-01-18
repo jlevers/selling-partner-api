@@ -2,7 +2,7 @@
 /**
  * ItemImagesByMarketplace
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
-        'images' => 'setImages',
-        'headers' => 'setHeaders'
+                'marketplace_id' => 'setMarketplaceId',
+        'images' => 'setImages'
     ];
 
     /**
@@ -124,8 +123,7 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
-        'images' => 'getImages',
-        'headers' => 'getHeaders'
+        'images' => 'getImages'
     ];
 
     /**
@@ -168,11 +166,7 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -269,7 +239,6 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
     /**
      * Gets images
      *
@@ -293,6 +262,7 @@ class ItemImagesByMarketplace implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

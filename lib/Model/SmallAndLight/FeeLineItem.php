@@ -2,7 +2,7 @@
 /**
  * FeeLineItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'fee_type' => 'setFeeType',
-        'fee_charge' => 'setFeeCharge',
-        'headers' => 'setHeaders'
+                'fee_type' => 'setFeeType',
+        'fee_charge' => 'setFeeCharge'
     ];
 
     /**
@@ -124,8 +123,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'fee_type' => 'getFeeType',
-        'fee_charge' => 'getFeeCharge',
-        'headers' => 'getHeaders'
+        'fee_charge' => 'getFeeCharge'
     ];
 
     /**
@@ -167,15 +165,13 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const FEE_TYPE_FBA_WEIGHT_BASED_FEE = 'FBAWeightBasedFee';
+    }const FEE_TYPE_FBA_WEIGHT_BASED_FEE = 'FBAWeightBasedFee';
     const FEE_TYPE_FBA_PER_ORDER_FULFILLMENT_FEE = 'FBAPerOrderFulfillmentFee';
     const FEE_TYPE_FBA_PER_UNIT_FULFILLMENT_FEE = 'FBAPerUnitFulfillmentFee';
     const FEE_TYPE_COMMISSION = 'Commission';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -191,7 +187,6 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -249,30 +244,6 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets fee_type
@@ -307,7 +278,6 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fee_charge
      *
@@ -331,6 +301,7 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

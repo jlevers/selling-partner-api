@@ -2,7 +2,7 @@
 /**
  * BuyerTaxInformation
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'buyer_legal_company_name' => 'setBuyerLegalCompanyName',
+                'buyer_legal_company_name' => 'setBuyerLegalCompanyName',
         'buyer_business_address' => 'setBuyerBusinessAddress',
         'buyer_tax_registration_id' => 'setBuyerTaxRegistrationId',
-        'buyer_tax_office' => 'setBuyerTaxOffice',
-        'headers' => 'setHeaders'
+        'buyer_tax_office' => 'setBuyerTaxOffice'
     ];
 
     /**
@@ -134,8 +133,7 @@ class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializa
         'buyer_legal_company_name' => 'getBuyerLegalCompanyName',
         'buyer_business_address' => 'getBuyerBusinessAddress',
         'buyer_tax_registration_id' => 'getBuyerTaxRegistrationId',
-        'buyer_tax_office' => 'getBuyerTaxOffice',
-        'headers' => 'getHeaders'
+        'buyer_tax_office' => 'getBuyerTaxOffice'
     ];
 
     /**
@@ -178,11 +176,7 @@ class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets buyer_legal_company_name
@@ -275,7 +245,6 @@ class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets buyer_business_address
      *
@@ -299,7 +268,6 @@ class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets buyer_tax_registration_id
      *
@@ -323,7 +291,6 @@ class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets buyer_tax_office
      *
@@ -347,6 +314,7 @@ class BuyerTaxInformation implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

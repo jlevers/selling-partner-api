@@ -2,7 +2,7 @@
 /**
  * TaxCollection
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'model' => 'setModel',
-        'responsible_party' => 'setResponsibleParty',
-        'headers' => 'setHeaders'
+                'model' => 'setModel',
+        'responsible_party' => 'setResponsibleParty'
     ];
 
     /**
@@ -124,8 +123,7 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'model' => 'getModel',
-        'responsible_party' => 'getResponsibleParty',
-        'headers' => 'getHeaders'
+        'responsible_party' => 'getResponsibleParty'
     ];
 
     /**
@@ -167,15 +165,13 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const MODEL_MARKETPLACE_FACILITATOR = 'MarketplaceFacilitator';
+    }const MODEL_MARKETPLACE_FACILITATOR = 'MarketplaceFacilitator';
     const MODEL_LOW_VALUE_GOODS = 'LowValueGoods';
     const RESPONSIBLE_PARTY_SERVICES_INC = 'Amazon Services, Inc.';
     const RESPONSIBLE_PARTY_COMMERCIAL_SERVICES_PTY_LTD = 'Amazon Commercial Services Pty Ltd';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -189,6 +185,7 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -202,7 +199,6 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -263,30 +259,6 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets model
@@ -321,7 +293,6 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets responsible_party
      *
@@ -355,6 +326,7 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

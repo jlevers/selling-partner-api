@@ -2,7 +2,7 @@
 /**
  * AsinMetadata
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
+                'asin' => 'setAsin',
         'badge_set' => 'setBadgeSet',
         'parent' => 'setParent',
         'title' => 'setTitle',
         'image_url' => 'setImageUrl',
-        'content_reference_key_set' => 'setContentReferenceKeySet',
-        'headers' => 'setHeaders'
+        'content_reference_key_set' => 'setContentReferenceKeySet'
     ];
 
     /**
@@ -144,8 +143,7 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
         'parent' => 'getParent',
         'title' => 'getTitle',
         'image_url' => 'getImageUrl',
-        'content_reference_key_set' => 'getContentReferenceKeySet',
-        'headers' => 'getHeaders'
+        'content_reference_key_set' => 'getContentReferenceKeySet'
     ];
 
     /**
@@ -188,11 +186,7 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -258,30 +252,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets asin
@@ -311,7 +281,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets badge_set
      *
@@ -337,7 +306,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets parent
      *
@@ -366,7 +334,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets title
      *
@@ -395,7 +362,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets image_url
      *
@@ -424,7 +390,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_reference_key_set
      *
@@ -450,6 +415,7 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

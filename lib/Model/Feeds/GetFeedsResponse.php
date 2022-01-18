@@ -2,7 +2,7 @@
 /**
  * GetFeedsResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -102,6 +102,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'feeds' => 'feeds',
         'next_token' => 'nextToken'
     ];
@@ -112,9 +113,9 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'feeds' => 'setFeeds',
-        'next_token' => 'setNextToken',
-        'headers' => 'setHeaders'
+        'next_token' => 'setNextToken'
     ];
 
     /**
@@ -123,9 +124,9 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'feeds' => 'getFeeds',
-        'next_token' => 'getNextToken',
-        'headers' => 'getHeaders'
+        'next_token' => 'getNextToken'
     ];
 
     /**
@@ -168,11 +169,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -219,9 +216,9 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -229,19 +226,17 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets feeds
@@ -266,7 +261,6 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets next_token
      *
@@ -290,6 +284,7 @@ class GetFeedsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

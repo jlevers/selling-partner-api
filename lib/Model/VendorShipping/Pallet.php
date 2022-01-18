@@ -2,7 +2,7 @@
 /**
  * Pallet
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'pallet_identifiers' => 'setPalletIdentifiers',
+                'pallet_identifiers' => 'setPalletIdentifiers',
         'tier' => 'setTier',
         'block' => 'setBlock',
         'dimensions' => 'setDimensions',
         'weight' => 'setWeight',
         'carton_reference_details' => 'setCartonReferenceDetails',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -149,8 +148,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
         'dimensions' => 'getDimensions',
         'weight' => 'getWeight',
         'carton_reference_details' => 'getCartonReferenceDetails',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -193,11 +191,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -248,30 +242,6 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets pallet_identifiers
@@ -296,7 +266,6 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tier
      *
@@ -320,7 +289,6 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets block
      *
@@ -344,7 +312,6 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets dimensions
      *
@@ -368,7 +335,6 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets weight
      *
@@ -392,7 +358,6 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets carton_reference_details
      *
@@ -416,7 +381,6 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -440,6 +404,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

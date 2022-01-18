@@ -2,7 +2,7 @@
 /**
  * ContentDocument
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
+                'name' => 'setName',
         'content_type' => 'setContentType',
         'content_sub_type' => 'setContentSubType',
         'locale' => 'setLocale',
-        'content_module_list' => 'setContentModuleList',
-        'headers' => 'setHeaders'
+        'content_module_list' => 'setContentModuleList'
     ];
 
     /**
@@ -139,8 +138,7 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         'content_type' => 'getContentType',
         'content_sub_type' => 'getContentSubType',
         'locale' => 'getLocale',
-        'content_module_list' => 'getContentModuleList',
-        'headers' => 'getHeaders'
+        'content_module_list' => 'getContentModuleList'
     ];
 
     /**
@@ -183,11 +181,7 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -269,30 +263,6 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets name
@@ -324,7 +294,6 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_type
      *
@@ -348,7 +317,6 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_sub_type
      *
@@ -377,7 +345,6 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets locale
      *
@@ -406,7 +373,6 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets content_module_list
      *
@@ -437,6 +403,7 @@ class ContentDocument implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

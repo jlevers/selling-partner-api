@@ -2,7 +2,7 @@
 /**
  * ReturnAuthorization
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'return_authorization_id' => 'setReturnAuthorizationId',
+                'return_authorization_id' => 'setReturnAuthorizationId',
         'fulfillment_center_id' => 'setFulfillmentCenterId',
         'return_to_address' => 'setReturnToAddress',
         'amazon_rma_id' => 'setAmazonRmaId',
-        'rma_page_url' => 'setRmaPageUrl',
-        'headers' => 'setHeaders'
+        'rma_page_url' => 'setRmaPageUrl'
     ];
 
     /**
@@ -139,8 +138,7 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
         'fulfillment_center_id' => 'getFulfillmentCenterId',
         'return_to_address' => 'getReturnToAddress',
         'amazon_rma_id' => 'getAmazonRmaId',
-        'rma_page_url' => 'getRmaPageUrl',
-        'headers' => 'getHeaders'
+        'rma_page_url' => 'getRmaPageUrl'
     ];
 
     /**
@@ -183,11 +181,7 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -248,30 +242,6 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets return_authorization_id
@@ -296,7 +266,6 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets fulfillment_center_id
      *
@@ -320,7 +289,6 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets return_to_address
      *
@@ -344,7 +312,6 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets amazon_rma_id
      *
@@ -368,7 +335,6 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets rma_page_url
      *
@@ -392,6 +358,7 @@ class ReturnAuthorization implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

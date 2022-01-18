@@ -2,7 +2,7 @@
 /**
  * GetFulfillmentOrderResult
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -120,12 +120,11 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'fulfillment_order' => 'setFulfillmentOrder',
+                'fulfillment_order' => 'setFulfillmentOrder',
         'fulfillment_order_items' => 'setFulfillmentOrderItems',
         'fulfillment_shipments' => 'setFulfillmentShipments',
         'return_items' => 'setReturnItems',
-        'return_authorizations' => 'setReturnAuthorizations',
-        'headers' => 'setHeaders'
+        'return_authorizations' => 'setReturnAuthorizations'
     ];
 
     /**
@@ -138,8 +137,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
         'fulfillment_order_items' => 'getFulfillmentOrderItems',
         'fulfillment_shipments' => 'getFulfillmentShipments',
         'return_items' => 'getReturnItems',
-        'return_authorizations' => 'getReturnAuthorizations',
-        'headers' => 'getHeaders'
+        'return_authorizations' => 'getReturnAuthorizations'
     ];
 
     /**
@@ -182,11 +180,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -244,30 +238,6 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets fulfillment_order
@@ -292,7 +262,6 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets fulfillment_order_items
      *
@@ -316,7 +285,6 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets fulfillment_shipments
      *
@@ -340,7 +308,6 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets return_items
      *
@@ -364,7 +331,6 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets return_authorizations
      *
@@ -388,6 +354,7 @@ class GetFulfillmentOrderResult implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

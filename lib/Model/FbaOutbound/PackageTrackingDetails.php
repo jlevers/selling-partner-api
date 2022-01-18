@@ -2,7 +2,7 @@
 /**
  * PackageTrackingDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -147,7 +147,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'package_number' => 'setPackageNumber',
+                'package_number' => 'setPackageNumber',
         'tracking_number' => 'setTrackingNumber',
         'customer_tracking_link' => 'setCustomerTrackingLink',
         'carrier_code' => 'setCarrierCode',
@@ -160,8 +160,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'current_status_description' => 'setCurrentStatusDescription',
         'signed_for_by' => 'setSignedForBy',
         'additional_location_info' => 'setAdditionalLocationInfo',
-        'tracking_events' => 'setTrackingEvents',
-        'headers' => 'setHeaders'
+        'tracking_events' => 'setTrackingEvents'
     ];
 
     /**
@@ -183,8 +182,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'current_status_description' => 'getCurrentStatusDescription',
         'signed_for_by' => 'getSignedForBy',
         'additional_location_info' => 'getAdditionalLocationInfo',
-        'tracking_events' => 'getTrackingEvents',
-        'headers' => 'getHeaders'
+        'tracking_events' => 'getTrackingEvents'
     ];
 
     /**
@@ -227,11 +225,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -289,30 +283,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets package_number
@@ -337,7 +307,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets tracking_number
      *
@@ -361,7 +330,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets customer_tracking_link
      *
@@ -385,7 +353,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets carrier_code
      *
@@ -409,7 +376,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets carrier_phone_number
      *
@@ -433,7 +399,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets carrier_url
      *
@@ -457,7 +422,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets ship_date
      *
@@ -481,7 +445,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets estimated_arrival_date
      *
@@ -505,7 +468,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets ship_to_address
      *
@@ -529,7 +491,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets current_status
      *
@@ -553,7 +514,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets current_status_description
      *
@@ -577,7 +537,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets signed_for_by
      *
@@ -601,7 +560,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets additional_location_info
      *
@@ -625,7 +583,6 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets tracking_events
      *
@@ -649,6 +606,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

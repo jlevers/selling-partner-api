@@ -2,7 +2,7 @@
 /**
  * SKUPrepInstructions
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -124,13 +124,12 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'asin' => 'setAsin',
         'barcode_instruction' => 'setBarcodeInstruction',
         'prep_guidance' => 'setPrepGuidance',
         'prep_instruction_list' => 'setPrepInstructionList',
-        'amazon_prep_fees_details_list' => 'setAmazonPrepFeesDetailsList',
-        'headers' => 'setHeaders'
+        'amazon_prep_fees_details_list' => 'setAmazonPrepFeesDetailsList'
     ];
 
     /**
@@ -144,8 +143,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
         'barcode_instruction' => 'getBarcodeInstruction',
         'prep_guidance' => 'getPrepGuidance',
         'prep_instruction_list' => 'getPrepInstructionList',
-        'amazon_prep_fees_details_list' => 'getAmazonPrepFeesDetailsList',
-        'headers' => 'getHeaders'
+        'amazon_prep_fees_details_list' => 'getAmazonPrepFeesDetailsList'
     ];
 
     /**
@@ -188,11 +186,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -287,7 +257,6 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets asin
      *
@@ -311,7 +280,6 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets barcode_instruction
      *
@@ -335,7 +303,6 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets prep_guidance
      *
@@ -359,7 +326,6 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets prep_instruction_list
      *
@@ -383,7 +349,6 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
     /**
      * Gets amazon_prep_fees_details_list
      *
@@ -407,6 +372,7 @@ class SKUPrepInstructions implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * Feed
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -114,6 +114,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'feed_id' => 'feedId',
         'feed_type' => 'feedType',
         'marketplace_ids' => 'marketplaceIds',
@@ -130,6 +131,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'feed_id' => 'setFeedId',
         'feed_type' => 'setFeedType',
         'marketplace_ids' => 'setMarketplaceIds',
@@ -137,8 +139,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
         'processing_status' => 'setProcessingStatus',
         'processing_start_time' => 'setProcessingStartTime',
         'processing_end_time' => 'setProcessingEndTime',
-        'result_feed_document_id' => 'setResultFeedDocumentId',
-        'headers' => 'setHeaders'
+        'result_feed_document_id' => 'setResultFeedDocumentId'
     ];
 
     /**
@@ -147,6 +148,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'feed_id' => 'getFeedId',
         'feed_type' => 'getFeedType',
         'marketplace_ids' => 'getMarketplaceIds',
@@ -154,8 +156,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
         'processing_status' => 'getProcessingStatus',
         'processing_start_time' => 'getProcessingStartTime',
         'processing_end_time' => 'getProcessingEndTime',
-        'result_feed_document_id' => 'getResultFeedDocumentId',
-        'headers' => 'getHeaders'
+        'result_feed_document_id' => 'getResultFeedDocumentId'
     ];
 
     /**
@@ -197,16 +198,14 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
+    }const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
     const PROCESSING_STATUS_DONE = 'DONE';
     const PROCESSING_STATUS_FATAL = 'FATAL';
     const PROCESSING_STATUS_IN_PROGRESS = 'IN_PROGRESS';
     const PROCESSING_STATUS_IN_QUEUE = 'IN_QUEUE';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -223,7 +222,6 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -294,9 +292,9 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -304,19 +302,17 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets feed_id
@@ -341,7 +337,6 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets feed_type
      *
@@ -365,7 +360,6 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_ids
      *
@@ -389,7 +383,6 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets created_time
      *
@@ -413,7 +406,6 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets processing_status
      *
@@ -447,7 +439,6 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets processing_start_time
      *
@@ -471,7 +462,6 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets processing_end_time
      *
@@ -495,7 +485,6 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets result_feed_document_id
      *
@@ -519,6 +508,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

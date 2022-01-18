@@ -2,7 +2,7 @@
 /**
  * GetSolicitationActionsForOrderResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -104,6 +104,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         '_links' => '_links',
         '_embedded' => '_embedded',
         'errors' => 'errors'
@@ -115,10 +116,10 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         '_links' => 'setLinks',
         '_embedded' => 'setEmbedded',
-        'errors' => 'setErrors',
-        'headers' => 'setHeaders'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -127,10 +128,10 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         '_links' => 'getLinks',
         '_embedded' => 'getEmbedded',
-        'errors' => 'getErrors',
-        'headers' => 'getHeaders'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -173,11 +174,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -222,9 +219,9 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -232,19 +229,17 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets _links
@@ -269,7 +264,6 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
 
         return $this;
     }
-
     /**
      * Gets _embedded
      *
@@ -293,7 +287,6 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
 
         return $this;
     }
-
     /**
      * Gets errors
      *
@@ -317,6 +310,7 @@ class GetSolicitationActionsForOrderResponse implements ModelInterface, ArrayAcc
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

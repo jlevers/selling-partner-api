@@ -2,7 +2,7 @@
 /**
  * ShipmentDetail
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -148,7 +148,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'warehouse_id' => 'setWarehouseId',
+                'warehouse_id' => 'setWarehouseId',
         'amazon_order_id' => 'setAmazonOrderId',
         'amazon_shipment_id' => 'setAmazonShipmentId',
         'purchase_date' => 'setPurchaseDate',
@@ -161,8 +161,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_info' => 'setBuyerTaxInfo',
         'marketplace_tax_info' => 'setMarketplaceTaxInfo',
         'seller_display_name' => 'setSellerDisplayName',
-        'shipment_items' => 'setShipmentItems',
-        'headers' => 'setHeaders'
+        'shipment_items' => 'setShipmentItems'
     ];
 
     /**
@@ -184,8 +183,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_info' => 'getBuyerTaxInfo',
         'marketplace_tax_info' => 'getMarketplaceTaxInfo',
         'seller_display_name' => 'getSellerDisplayName',
-        'shipment_items' => 'getShipmentItems',
-        'headers' => 'getHeaders'
+        'shipment_items' => 'getShipmentItems'
     ];
 
     /**
@@ -228,11 +226,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -287,30 +281,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets warehouse_id
@@ -335,7 +305,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets amazon_order_id
      *
@@ -359,7 +328,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets amazon_shipment_id
      *
@@ -383,7 +351,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets purchase_date
      *
@@ -407,7 +374,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipping_address
      *
@@ -431,7 +397,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets payment_method_details
      *
@@ -455,7 +420,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -479,7 +443,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_id
      *
@@ -503,7 +466,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer_name
      *
@@ -527,7 +489,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer_county
      *
@@ -551,7 +512,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer_tax_info
      *
@@ -575,7 +535,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_tax_info
      *
@@ -599,7 +558,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_display_name
      *
@@ -623,7 +581,6 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_items
      *
@@ -647,6 +604,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

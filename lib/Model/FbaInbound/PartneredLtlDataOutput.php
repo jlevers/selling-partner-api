@@ -2,7 +2,7 @@
 /**
  * PartneredLtlDataOutput
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -151,7 +151,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'contact' => 'setContact',
+                'contact' => 'setContact',
         'box_count' => 'setBoxCount',
         'seller_freight_class' => 'setSellerFreightClass',
         'freight_ready_date' => 'setFreightReadyDate',
@@ -165,8 +165,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
         'amazon_reference_id' => 'setAmazonReferenceId',
         'is_bill_of_lading_available' => 'setIsBillOfLadingAvailable',
         'partnered_estimate' => 'setPartneredEstimate',
-        'carrier_name' => 'setCarrierName',
-        'headers' => 'setHeaders'
+        'carrier_name' => 'setCarrierName'
     ];
 
     /**
@@ -189,8 +188,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
         'amazon_reference_id' => 'getAmazonReferenceId',
         'is_bill_of_lading_available' => 'getIsBillOfLadingAvailable',
         'partnered_estimate' => 'getPartneredEstimate',
-        'carrier_name' => 'getCarrierName',
-        'headers' => 'getHeaders'
+        'carrier_name' => 'getCarrierName'
     ];
 
     /**
@@ -233,11 +231,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -326,30 +320,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets contact
@@ -374,7 +344,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets box_count
      *
@@ -398,7 +367,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets seller_freight_class
      *
@@ -422,7 +390,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets freight_ready_date
      *
@@ -446,7 +413,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets pallet_list
      *
@@ -470,7 +436,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets total_weight
      *
@@ -494,7 +459,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets seller_declared_value
      *
@@ -518,7 +482,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets amazon_calculated_value
      *
@@ -542,7 +505,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets preview_pickup_date
      *
@@ -566,7 +528,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets preview_delivery_date
      *
@@ -590,7 +551,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets preview_freight_class
      *
@@ -614,7 +574,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets amazon_reference_id
      *
@@ -638,7 +597,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets is_bill_of_lading_available
      *
@@ -662,7 +620,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets partnered_estimate
      *
@@ -686,7 +643,6 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets carrier_name
      *
@@ -710,6 +666,7 @@ class PartneredLtlDataOutput implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

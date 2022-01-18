@@ -2,7 +2,7 @@
 /**
  * InventorySummary
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -130,15 +130,14 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
+                'asin' => 'setAsin',
         'fn_sku' => 'setFnSku',
         'seller_sku' => 'setSellerSku',
         'condition' => 'setCondition',
         'inventory_details' => 'setInventoryDetails',
         'last_updated_time' => 'setLastUpdatedTime',
         'product_name' => 'setProductName',
-        'total_quantity' => 'setTotalQuantity',
-        'headers' => 'setHeaders'
+        'total_quantity' => 'setTotalQuantity'
     ];
 
     /**
@@ -154,8 +153,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
         'inventory_details' => 'getInventoryDetails',
         'last_updated_time' => 'getLastUpdatedTime',
         'product_name' => 'getProductName',
-        'total_quantity' => 'getTotalQuantity',
-        'headers' => 'getHeaders'
+        'total_quantity' => 'getTotalQuantity'
     ];
 
     /**
@@ -198,11 +196,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -251,30 +245,6 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets asin
@@ -299,7 +269,6 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fn_sku
      *
@@ -323,7 +292,6 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_sku
      *
@@ -347,7 +315,6 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets condition
      *
@@ -371,7 +338,6 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets inventory_details
      *
@@ -395,7 +361,6 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets last_updated_time
      *
@@ -419,7 +384,6 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets product_name
      *
@@ -443,7 +407,6 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets total_quantity
      *
@@ -467,6 +430,7 @@ class InventorySummary implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

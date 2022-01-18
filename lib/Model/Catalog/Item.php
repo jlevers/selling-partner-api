@@ -2,7 +2,7 @@
 /**
  * Item
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -116,6 +116,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'asin' => 'asin',
         'attributes' => 'attributes',
         'identifiers' => 'identifiers',
@@ -133,6 +134,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'asin' => 'setAsin',
         'attributes' => 'setAttributes',
         'identifiers' => 'setIdentifiers',
@@ -141,8 +143,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'ranks' => 'setRanks',
         'summaries' => 'setSummaries',
         'variations' => 'setVariations',
-        'vendor_details' => 'setVendorDetails',
-        'headers' => 'setHeaders'
+        'vendor_details' => 'setVendorDetails'
     ];
 
     /**
@@ -151,6 +152,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'asin' => 'getAsin',
         'attributes' => 'getAttributes',
         'identifiers' => 'getIdentifiers',
@@ -159,8 +161,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
         'ranks' => 'getRanks',
         'summaries' => 'getSummaries',
         'variations' => 'getVariations',
-        'vendor_details' => 'getVendorDetails',
-        'headers' => 'getHeaders'
+        'vendor_details' => 'getVendorDetails'
     ];
 
     /**
@@ -203,11 +204,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -261,9 +258,9 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -271,19 +268,17 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets asin
@@ -308,7 +303,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets attributes
      *
@@ -332,7 +326,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets identifiers
      *
@@ -356,7 +349,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets images
      *
@@ -380,7 +372,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets product_types
      *
@@ -404,7 +395,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ranks
      *
@@ -428,7 +418,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets summaries
      *
@@ -452,7 +441,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets variations
      *
@@ -476,7 +464,6 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets vendor_details
      *
@@ -500,6 +487,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * Location
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+                'type' => 'setType',
         'location_code' => 'setLocationCode',
-        'country_code' => 'setCountryCode',
-        'headers' => 'setHeaders'
+        'country_code' => 'setCountryCode'
     ];
 
     /**
@@ -129,8 +128,7 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'type' => 'getType',
         'location_code' => 'getLocationCode',
-        'country_code' => 'getCountryCode',
-        'headers' => 'getHeaders'
+        'country_code' => 'getCountryCode'
     ];
 
     /**
@@ -173,11 +171,7 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets type
@@ -269,7 +239,6 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets location_code
      *
@@ -293,7 +262,6 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets country_code
      *
@@ -317,6 +285,7 @@ class Location implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

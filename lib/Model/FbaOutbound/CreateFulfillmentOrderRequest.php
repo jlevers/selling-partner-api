@@ -2,7 +2,7 @@
 /**
  * CreateFulfillmentOrderRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -151,7 +151,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'marketplace_id' => 'setMarketplaceId',
+                'marketplace_id' => 'setMarketplaceId',
         'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
         'displayable_order_id' => 'setDisplayableOrderId',
         'displayable_order_date' => 'setDisplayableOrderDate',
@@ -165,8 +165,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
         'ship_from_country_code' => 'setShipFromCountryCode',
         'notification_emails' => 'setNotificationEmails',
         'feature_constraints' => 'setFeatureConstraints',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -189,8 +188,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
         'ship_from_country_code' => 'getShipFromCountryCode',
         'notification_emails' => 'getNotificationEmails',
         'feature_constraints' => 'getFeatureConstraints',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -233,11 +231,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -326,30 +320,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets marketplace_id
@@ -374,7 +344,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets seller_fulfillment_order_id
      *
@@ -402,7 +371,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets displayable_order_id
      *
@@ -430,7 +398,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets displayable_order_date
      *
@@ -454,7 +421,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets displayable_order_comment
      *
@@ -482,7 +448,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets shipping_speed_category
      *
@@ -506,7 +471,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets delivery_window
      *
@@ -530,7 +494,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets destination_address
      *
@@ -554,7 +517,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets fulfillment_action
      *
@@ -578,7 +540,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets fulfillment_policy
      *
@@ -602,7 +563,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets cod_settings
      *
@@ -626,7 +586,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets ship_from_country_code
      *
@@ -650,7 +609,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets notification_emails
      *
@@ -674,7 +632,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets feature_constraints
      *
@@ -698,7 +655,6 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -722,6 +678,7 @@ class CreateFulfillmentOrderRequest implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

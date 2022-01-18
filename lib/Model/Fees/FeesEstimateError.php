@@ -2,7 +2,7 @@
 /**
  * FeesEstimateError
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
+                'type' => 'setType',
         'code' => 'setCode',
         'message' => 'setMessage',
-        'detail' => 'setDetail',
-        'headers' => 'setHeaders'
+        'detail' => 'setDetail'
     ];
 
     /**
@@ -134,8 +133,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializabl
         'type' => 'getType',
         'code' => 'getCode',
         'message' => 'getMessage',
-        'detail' => 'getDetail',
-        'headers' => 'getHeaders'
+        'detail' => 'getDetail'
     ];
 
     /**
@@ -178,11 +176,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets type
@@ -287,7 +257,6 @@ class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets code
      *
@@ -311,7 +280,6 @@ class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets message
      *
@@ -335,7 +303,6 @@ class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
-
     /**
      * Gets detail
      *
@@ -359,6 +326,7 @@ class FeesEstimateError implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

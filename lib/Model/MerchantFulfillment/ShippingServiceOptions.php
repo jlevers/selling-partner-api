@@ -2,7 +2,7 @@
 /**
  * ShippingServiceOptions
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'delivery_experience' => 'setDeliveryExperience',
+                'delivery_experience' => 'setDeliveryExperience',
         'declared_value' => 'setDeclaredValue',
         'carrier_will_pick_up' => 'setCarrierWillPickUp',
         'carrier_will_pick_up_option' => 'setCarrierWillPickUpOption',
-        'label_format' => 'setLabelFormat',
-        'headers' => 'setHeaders'
+        'label_format' => 'setLabelFormat'
     ];
 
     /**
@@ -139,8 +138,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
         'declared_value' => 'getDeclaredValue',
         'carrier_will_pick_up' => 'getCarrierWillPickUp',
         'carrier_will_pick_up_option' => 'getCarrierWillPickUpOption',
-        'label_format' => 'getLabelFormat',
-        'headers' => 'getHeaders'
+        'label_format' => 'getLabelFormat'
     ];
 
     /**
@@ -183,11 +181,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets delivery_experience
@@ -287,7 +257,6 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets declared_value
      *
@@ -311,7 +280,6 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets carrier_will_pick_up
      *
@@ -335,7 +303,6 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets carrier_will_pick_up_option
      *
@@ -359,7 +326,6 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets label_format
      *
@@ -383,6 +349,7 @@ class ShippingServiceOptions implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

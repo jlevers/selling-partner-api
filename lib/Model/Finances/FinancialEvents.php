@@ -2,7 +2,7 @@
 /**
  * FinancialEvents
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -187,7 +187,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'shipment_event_list' => 'setShipmentEventList',
+                'shipment_event_list' => 'setShipmentEventList',
         'refund_event_list' => 'setRefundEventList',
         'guarantee_claim_event_list' => 'setGuaranteeClaimEventList',
         'chargeback_event_list' => 'setChargebackEventList',
@@ -213,8 +213,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_settle_event_list' => 'setShipmentSettleEventList',
         'tax_withholding_event_list' => 'setTaxWithholdingEventList',
         'removal_shipment_event_list' => 'setRemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList',
-        'headers' => 'setHeaders'
+        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList'
     ];
 
     /**
@@ -249,8 +248,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_settle_event_list' => 'getShipmentSettleEventList',
         'tax_withholding_event_list' => 'getTaxWithholdingEventList',
         'removal_shipment_event_list' => 'getRemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList',
-        'headers' => 'getHeaders'
+        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList'
     ];
 
     /**
@@ -293,11 +291,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -365,30 +359,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipment_event_list
@@ -413,7 +383,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets refund_event_list
      *
@@ -437,7 +406,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets guarantee_claim_event_list
      *
@@ -461,7 +429,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets chargeback_event_list
      *
@@ -485,7 +452,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets pay_with_amazon_event_list
      *
@@ -509,7 +475,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets service_provider_credit_event_list
      *
@@ -533,7 +498,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets retrocharge_event_list
      *
@@ -557,7 +521,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets rental_transaction_event_list
      *
@@ -581,7 +544,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets product_ads_payment_event_list
      *
@@ -605,7 +567,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets service_fee_event_list
      *
@@ -629,7 +590,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_deal_payment_event_list
      *
@@ -653,7 +613,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets debt_recovery_event_list
      *
@@ -677,7 +636,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets loan_servicing_event_list
      *
@@ -701,7 +659,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets adjustment_event_list
      *
@@ -725,7 +682,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets safet_reimbursement_event_list
      *
@@ -749,7 +705,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_review_enrollment_payment_event_list
      *
@@ -773,7 +728,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets fba_liquidation_event_list
      *
@@ -797,7 +751,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets coupon_payment_event_list
      *
@@ -821,7 +774,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets imaging_services_fee_event_list
      *
@@ -845,7 +797,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets network_commingling_transaction_event_list
      *
@@ -869,7 +820,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets affordability_expense_event_list
      *
@@ -893,7 +843,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets affordability_expense_reversal_event_list
      *
@@ -917,7 +866,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets trial_shipment_event_list
      *
@@ -941,7 +889,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets shipment_settle_event_list
      *
@@ -965,7 +912,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_withholding_event_list
      *
@@ -989,7 +935,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets removal_shipment_event_list
      *
@@ -1013,7 +958,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets removal_shipment_adjustment_event_list
      *
@@ -1037,6 +981,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

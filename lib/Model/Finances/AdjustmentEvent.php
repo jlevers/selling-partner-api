@@ -2,7 +2,7 @@
 /**
  * AdjustmentEvent
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'adjustment_type' => 'setAdjustmentType',
+                'adjustment_type' => 'setAdjustmentType',
         'posted_date' => 'setPostedDate',
         'adjustment_amount' => 'setAdjustmentAmount',
-        'adjustment_item_list' => 'setAdjustmentItemList',
-        'headers' => 'setHeaders'
+        'adjustment_item_list' => 'setAdjustmentItemList'
     ];
 
     /**
@@ -134,8 +133,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         'adjustment_type' => 'getAdjustmentType',
         'posted_date' => 'getPostedDate',
         'adjustment_amount' => 'getAdjustmentAmount',
-        'adjustment_item_list' => 'getAdjustmentItemList',
-        'headers' => 'getHeaders'
+        'adjustment_item_list' => 'getAdjustmentItemList'
     ];
 
     /**
@@ -178,11 +176,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets adjustment_type
@@ -275,7 +245,6 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets posted_date
      *
@@ -299,7 +268,6 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets adjustment_amount
      *
@@ -323,7 +291,6 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets adjustment_item_list
      *
@@ -347,6 +314,7 @@ class AdjustmentEvent implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

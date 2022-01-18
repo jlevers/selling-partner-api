@@ -2,7 +2,7 @@
 /**
  * SKUInboundGuidance
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'asin' => 'setAsin',
         'inbound_guidance' => 'setInboundGuidance',
-        'guidance_reason_list' => 'setGuidanceReasonList',
-        'headers' => 'setHeaders'
+        'guidance_reason_list' => 'setGuidanceReasonList'
     ];
 
     /**
@@ -134,8 +133,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializab
         'seller_sku' => 'getSellerSku',
         'asin' => 'getAsin',
         'inbound_guidance' => 'getInboundGuidance',
-        'guidance_reason_list' => 'getGuidanceReasonList',
-        'headers' => 'getHeaders'
+        'guidance_reason_list' => 'getGuidanceReasonList'
     ];
 
     /**
@@ -178,11 +176,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -236,30 +230,6 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -284,7 +254,6 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets asin
      *
@@ -308,7 +277,6 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets inbound_guidance
      *
@@ -332,7 +300,6 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Gets guidance_reason_list
      *
@@ -356,6 +323,7 @@ class SKUInboundGuidance implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

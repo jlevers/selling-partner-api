@@ -2,7 +2,7 @@
 /**
  * Feature
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class Feature implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'feature_name' => 'setFeatureName',
+                'feature_name' => 'setFeatureName',
         'feature_description' => 'setFeatureDescription',
-        'seller_eligible' => 'setSellerEligible',
-        'headers' => 'setHeaders'
+        'seller_eligible' => 'setSellerEligible'
     ];
 
     /**
@@ -129,8 +128,7 @@ class Feature implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'feature_name' => 'getFeatureName',
         'feature_description' => 'getFeatureDescription',
-        'seller_eligible' => 'getSellerEligible',
-        'headers' => 'getHeaders'
+        'seller_eligible' => 'getSellerEligible'
     ];
 
     /**
@@ -173,11 +171,7 @@ class Feature implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -227,30 +221,6 @@ class Feature implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets feature_name
@@ -275,7 +245,6 @@ class Feature implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets feature_description
      *
@@ -299,7 +268,6 @@ class Feature implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller_eligible
      *
@@ -323,6 +291,7 @@ class Feature implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

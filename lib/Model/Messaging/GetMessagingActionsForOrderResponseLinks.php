@@ -2,7 +2,7 @@
 /**
  * GetMessagingActionsForOrderResponseLinks
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -111,9 +111,8 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'self' => 'setSelf',
-        'actions' => 'setActions',
-        'headers' => 'setHeaders'
+                'self' => 'setSelf',
+        'actions' => 'setActions'
     ];
 
     /**
@@ -123,8 +122,7 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
      */
     protected static $getters = [
         'self' => 'getSelf',
-        'actions' => 'getActions',
-        'headers' => 'getHeaders'
+        'actions' => 'getActions'
     ];
 
     /**
@@ -167,11 +165,7 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -220,30 +214,6 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets self
@@ -268,7 +238,6 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
 
         return $this;
     }
-
     /**
      * Gets actions
      *
@@ -292,6 +261,7 @@ class GetMessagingActionsForOrderResponseLinks implements ModelInterface, ArrayA
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

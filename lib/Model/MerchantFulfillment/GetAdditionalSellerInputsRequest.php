@@ -2,7 +2,7 @@
 /**
  * GetAdditionalSellerInputsRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'shipping_service_id' => 'setShippingServiceId',
+                'shipping_service_id' => 'setShippingServiceId',
         'ship_from_address' => 'setShipFromAddress',
-        'order_id' => 'setOrderId',
-        'headers' => 'setHeaders'
+        'order_id' => 'setOrderId'
     ];
 
     /**
@@ -129,8 +128,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
     protected static $getters = [
         'shipping_service_id' => 'getShippingServiceId',
         'ship_from_address' => 'getShipFromAddress',
-        'order_id' => 'getOrderId',
-        'headers' => 'getHeaders'
+        'order_id' => 'getOrderId'
     ];
 
     /**
@@ -173,11 +171,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -230,30 +224,6 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets shipping_service_id
@@ -278,7 +248,6 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
-
     /**
      * Gets ship_from_address
      *
@@ -302,7 +271,6 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
-
     /**
      * Gets order_id
      *
@@ -326,6 +294,7 @@ class GetAdditionalSellerInputsRequest implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

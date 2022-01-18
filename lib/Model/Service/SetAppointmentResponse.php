@@ -2,7 +2,7 @@
 /**
  * SetAppointmentResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -104,6 +104,7 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'appointment_id' => 'appointmentId',
         'warnings' => 'warnings',
         'errors' => 'errors'
@@ -115,10 +116,10 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'appointment_id' => 'setAppointmentId',
         'warnings' => 'setWarnings',
-        'errors' => 'setErrors',
-        'headers' => 'setHeaders'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -127,10 +128,10 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'appointment_id' => 'getAppointmentId',
         'warnings' => 'getWarnings',
-        'errors' => 'getErrors',
-        'headers' => 'getHeaders'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -173,11 +174,7 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -230,9 +227,9 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -240,19 +237,17 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets appointment_id
@@ -284,7 +279,6 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets warnings
      *
@@ -308,7 +302,6 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets errors
      *
@@ -332,6 +325,7 @@ class SetAppointmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

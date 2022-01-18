@@ -2,7 +2,7 @@
 /**
  * ServiceJob
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -145,7 +145,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'create_time' => 'setCreateTime',
+                'create_time' => 'setCreateTime',
         'service_job_id' => 'setServiceJobId',
         'service_job_status' => 'setServiceJobStatus',
         'scope_of_work' => 'setScopeOfWork',
@@ -157,8 +157,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_id' => 'setMarketplaceId',
         'buyer' => 'setBuyer',
         'associated_items' => 'setAssociatedItems',
-        'service_location' => 'setServiceLocation',
-        'headers' => 'setHeaders'
+        'service_location' => 'setServiceLocation'
     ];
 
     /**
@@ -179,8 +178,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_id' => 'getMarketplaceId',
         'buyer' => 'getBuyer',
         'associated_items' => 'getAssociatedItems',
-        'service_location' => 'getServiceLocation',
-        'headers' => 'getHeaders'
+        'service_location' => 'getServiceLocation'
     ];
 
     /**
@@ -222,9 +220,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const SERVICE_JOB_STATUS_NOT_SERVICED = 'NOT_SERVICED';
+    }const SERVICE_JOB_STATUS_NOT_SERVICED = 'NOT_SERVICED';
     const SERVICE_JOB_STATUS_CANCELLED = 'CANCELLED';
     const SERVICE_JOB_STATUS_COMPLETED = 'COMPLETED';
     const SERVICE_JOB_STATUS_PENDING_SCHEDULE = 'PENDING_SCHEDULE';
@@ -232,8 +228,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     const SERVICE_JOB_STATUS_HOLD = 'HOLD';
     const SERVICE_JOB_STATUS_PAYMENT_DECLINED = 'PAYMENT_DECLINED';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -252,7 +248,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -335,30 +330,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets create_time
@@ -383,7 +354,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets service_job_id
      *
@@ -414,7 +384,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets service_job_status
      *
@@ -448,7 +417,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets scope_of_work
      *
@@ -472,7 +440,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets seller
      *
@@ -496,7 +463,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets service_job_provider
      *
@@ -520,7 +486,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets preferred_appointment_times
      *
@@ -544,7 +509,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets appointments
      *
@@ -568,7 +532,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets service_order_id
      *
@@ -599,7 +562,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets marketplace_id
      *
@@ -628,7 +590,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets buyer
      *
@@ -652,7 +613,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets associated_items
      *
@@ -676,7 +636,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets service_location
      *
@@ -700,6 +659,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

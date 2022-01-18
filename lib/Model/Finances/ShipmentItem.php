@@ -2,7 +2,7 @@
 /**
  * ShipmentItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -145,7 +145,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'seller_sku' => 'setSellerSku',
+                'seller_sku' => 'setSellerSku',
         'order_item_id' => 'setOrderItemId',
         'order_adjustment_item_id' => 'setOrderAdjustmentItemId',
         'quantity_shipped' => 'setQuantityShipped',
@@ -157,8 +157,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'promotion_list' => 'setPromotionList',
         'promotion_adjustment_list' => 'setPromotionAdjustmentList',
         'cost_of_points_granted' => 'setCostOfPointsGranted',
-        'cost_of_points_returned' => 'setCostOfPointsReturned',
-        'headers' => 'setHeaders'
+        'cost_of_points_returned' => 'setCostOfPointsReturned'
     ];
 
     /**
@@ -179,8 +178,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'promotion_list' => 'getPromotionList',
         'promotion_adjustment_list' => 'getPromotionAdjustmentList',
         'cost_of_points_granted' => 'getCostOfPointsGranted',
-        'cost_of_points_returned' => 'getCostOfPointsReturned',
-        'headers' => 'getHeaders'
+        'cost_of_points_returned' => 'getCostOfPointsReturned'
     ];
 
     /**
@@ -223,11 +221,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -281,30 +275,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets seller_sku
@@ -329,7 +299,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_item_id
      *
@@ -353,7 +322,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_adjustment_item_id
      *
@@ -377,7 +345,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets quantity_shipped
      *
@@ -401,7 +368,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_charge_list
      *
@@ -425,7 +391,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_charge_adjustment_list
      *
@@ -449,7 +414,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_fee_list
      *
@@ -473,7 +437,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_fee_adjustment_list
      *
@@ -497,7 +460,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_tax_withheld_list
      *
@@ -521,7 +483,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets promotion_list
      *
@@ -545,7 +506,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets promotion_adjustment_list
      *
@@ -569,7 +529,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets cost_of_points_granted
      *
@@ -593,7 +552,6 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets cost_of_points_returned
      *
@@ -617,6 +575,7 @@ class ShipmentItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * AssociatedItem
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -127,14 +127,13 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'asin' => 'setAsin',
+                'asin' => 'setAsin',
         'title' => 'setTitle',
         'quantity' => 'setQuantity',
         'order_id' => 'setOrderId',
         'item_status' => 'setItemStatus',
         'brand_name' => 'setBrandName',
-        'item_delivery' => 'setItemDelivery',
-        'headers' => 'setHeaders'
+        'item_delivery' => 'setItemDelivery'
     ];
 
     /**
@@ -149,8 +148,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'order_id' => 'getOrderId',
         'item_status' => 'getItemStatus',
         'brand_name' => 'getBrandName',
-        'item_delivery' => 'getItemDelivery',
-        'headers' => 'getHeaders'
+        'item_delivery' => 'getItemDelivery'
     ];
 
     /**
@@ -192,15 +190,13 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const ITEM_STATUS_ACTIVE = 'ACTIVE';
+    }const ITEM_STATUS_ACTIVE = 'ACTIVE';
     const ITEM_STATUS_CANCELLED = 'CANCELLED';
     const ITEM_STATUS_SHIPPED = 'SHIPPED';
     const ITEM_STATUS_DELIVERED = 'DELIVERED';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -216,7 +212,6 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -281,30 +276,6 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets asin
@@ -329,7 +300,6 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets title
      *
@@ -353,7 +323,6 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -377,7 +346,6 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets order_id
      *
@@ -408,7 +376,6 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_status
      *
@@ -442,7 +409,6 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets brand_name
      *
@@ -466,7 +432,6 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets item_delivery
      *
@@ -490,6 +455,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

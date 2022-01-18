@@ -2,7 +2,7 @@
 /**
  * Stop
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -118,11 +118,10 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'function_code' => 'setFunctionCode',
+                'function_code' => 'setFunctionCode',
         'location_identification' => 'setLocationIdentification',
         'arrival_time' => 'setArrivalTime',
-        'departure_time' => 'setDepartureTime',
-        'headers' => 'setHeaders'
+        'departure_time' => 'setDepartureTime'
     ];
 
     /**
@@ -134,8 +133,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         'function_code' => 'getFunctionCode',
         'location_identification' => 'getLocationIdentification',
         'arrival_time' => 'getArrivalTime',
-        'departure_time' => 'getDepartureTime',
-        'headers' => 'getHeaders'
+        'departure_time' => 'getDepartureTime'
     ];
 
     /**
@@ -177,14 +175,12 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const FUNCTION_CODE_PORT_OF_DISCHARGE = 'PortOfDischarge';
+    }const FUNCTION_CODE_PORT_OF_DISCHARGE = 'PortOfDischarge';
     const FUNCTION_CODE_FREIGHT_PAYABLE_AT = 'FreightPayableAt';
     const FUNCTION_CODE_PORT_OF_LOADING = 'PortOfLoading';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -199,7 +195,6 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -256,30 +251,6 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets function_code
@@ -314,7 +285,6 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets location_identification
      *
@@ -338,7 +308,6 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets arrival_time
      *
@@ -362,7 +331,6 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets departure_time
      *
@@ -386,6 +354,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

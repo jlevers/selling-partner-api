@@ -2,7 +2,7 @@
 /**
  * Promotion
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -115,10 +115,9 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'promotion_type' => 'setPromotionType',
+                'promotion_type' => 'setPromotionType',
         'promotion_id' => 'setPromotionId',
-        'promotion_amount' => 'setPromotionAmount',
-        'headers' => 'setHeaders'
+        'promotion_amount' => 'setPromotionAmount'
     ];
 
     /**
@@ -129,8 +128,7 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'promotion_type' => 'getPromotionType',
         'promotion_id' => 'getPromotionId',
-        'promotion_amount' => 'getPromotionAmount',
-        'headers' => 'getHeaders'
+        'promotion_amount' => 'getPromotionAmount'
     ];
 
     /**
@@ -173,11 +171,7 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -221,30 +215,6 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets promotion_type
@@ -269,7 +239,6 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets promotion_id
      *
@@ -293,7 +262,6 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets promotion_amount
      *
@@ -317,6 +285,7 @@ class Promotion implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

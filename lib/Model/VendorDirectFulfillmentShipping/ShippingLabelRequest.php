@@ -2,7 +2,7 @@
 /**
  * ShippingLabelRequest
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -117,11 +117,10 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'purchase_order_number' => 'setPurchaseOrderNumber',
+                'purchase_order_number' => 'setPurchaseOrderNumber',
         'selling_party' => 'setSellingParty',
         'ship_from_party' => 'setShipFromParty',
-        'containers' => 'setContainers',
-        'headers' => 'setHeaders'
+        'containers' => 'setContainers'
     ];
 
     /**
@@ -133,8 +132,7 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'selling_party' => 'getSellingParty',
         'ship_from_party' => 'getShipFromParty',
-        'containers' => 'getContainers',
-        'headers' => 'getHeaders'
+        'containers' => 'getContainers'
     ];
 
     /**
@@ -177,11 +175,7 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -239,30 +233,6 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets purchase_order_number
@@ -292,7 +262,6 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets selling_party
      *
@@ -316,7 +285,6 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets ship_from_party
      *
@@ -340,7 +308,6 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
-
     /**
      * Gets containers
      *
@@ -364,6 +331,7 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

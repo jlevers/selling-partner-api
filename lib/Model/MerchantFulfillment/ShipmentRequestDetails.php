@@ -2,7 +2,7 @@
 /**
  * ShipmentRequestDetails
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -136,7 +136,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'amazon_order_id' => 'setAmazonOrderId',
+                'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
         'item_list' => 'setItemList',
         'ship_from_address' => 'setShipFromAddress',
@@ -145,8 +145,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'must_arrive_by_date' => 'setMustArriveByDate',
         'ship_date' => 'setShipDate',
         'shipping_service_options' => 'setShippingServiceOptions',
-        'label_customization' => 'setLabelCustomization',
-        'headers' => 'setHeaders'
+        'label_customization' => 'setLabelCustomization'
     ];
 
     /**
@@ -164,8 +163,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
         'must_arrive_by_date' => 'getMustArriveByDate',
         'ship_date' => 'getShipDate',
         'shipping_service_options' => 'getShippingServiceOptions',
-        'label_customization' => 'getLabelCustomization',
-        'headers' => 'getHeaders'
+        'label_customization' => 'getLabelCustomization'
     ];
 
     /**
@@ -208,11 +206,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -285,30 +279,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets amazon_order_id
@@ -333,7 +303,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets seller_order_id
      *
@@ -361,7 +330,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets item_list
      *
@@ -385,7 +353,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets ship_from_address
      *
@@ -409,7 +376,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets package_dimensions
      *
@@ -433,7 +399,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets weight
      *
@@ -457,7 +422,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets must_arrive_by_date
      *
@@ -481,7 +445,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets ship_date
      *
@@ -505,7 +468,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets shipping_service_options
      *
@@ -529,7 +491,6 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
     /**
      * Gets label_customization
      *
@@ -553,6 +514,7 @@ class ShipmentRequestDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

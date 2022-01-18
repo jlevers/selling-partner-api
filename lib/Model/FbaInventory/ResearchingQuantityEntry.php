@@ -2,7 +2,7 @@
 /**
  * ResearchingQuantityEntry
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -112,9 +112,8 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'quantity' => 'setQuantity',
-        'headers' => 'setHeaders'
+                'name' => 'setName',
+        'quantity' => 'setQuantity'
     ];
 
     /**
@@ -124,8 +123,7 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'name' => 'getName',
-        'quantity' => 'getQuantity',
-        'headers' => 'getHeaders'
+        'quantity' => 'getQuantity'
     ];
 
     /**
@@ -167,14 +165,12 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }
-
-    const NAME_RESEARCHING_QUANTITY_IN_SHORT_TERM = 'researchingQuantityInShortTerm';
+    }const NAME_RESEARCHING_QUANTITY_IN_SHORT_TERM = 'researchingQuantityInShortTerm';
     const NAME_RESEARCHING_QUANTITY_IN_MID_TERM = 'researchingQuantityInMidTerm';
     const NAME_RESEARCHING_QUANTITY_IN_LONG_TERM = 'researchingQuantityInLongTerm';
     
-
     
+
     /**
      * Gets allowable values of the enum
      *
@@ -189,7 +185,6 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess, \JsonSeri
         ];
     }
     
-
     /**
      * Associative array for storing property values
      *
@@ -247,30 +242,6 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets name
@@ -305,7 +276,6 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
     /**
      * Gets quantity
      *
@@ -329,6 +299,7 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * InvoiceDetail
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -144,7 +144,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'invoice_number' => 'setInvoiceNumber',
+                'invoice_number' => 'setInvoiceNumber',
         'invoice_date' => 'setInvoiceDate',
         'reference_number' => 'setReferenceNumber',
         'remit_to_party' => 'setRemitToParty',
@@ -156,8 +156,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'tax_totals' => 'setTaxTotals',
         'additional_details' => 'setAdditionalDetails',
         'charge_details' => 'setChargeDetails',
-        'items' => 'setItems',
-        'headers' => 'setHeaders'
+        'items' => 'setItems'
     ];
 
     /**
@@ -178,8 +177,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         'tax_totals' => 'getTaxTotals',
         'additional_details' => 'getAdditionalDetails',
         'charge_details' => 'getChargeDetails',
-        'items' => 'getItems',
-        'headers' => 'getHeaders'
+        'items' => 'getItems'
     ];
 
     /**
@@ -222,11 +220,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -298,30 +292,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets invoice_number
@@ -346,7 +316,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets invoice_date
      *
@@ -370,7 +339,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets reference_number
      *
@@ -394,7 +362,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets remit_to_party
      *
@@ -418,7 +385,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_from_party
      *
@@ -442,7 +408,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets bill_to_party
      *
@@ -466,7 +431,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets ship_to_country_code
      *
@@ -490,7 +454,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets payment_terms_code
      *
@@ -514,7 +477,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets invoice_total
      *
@@ -538,7 +500,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets tax_totals
      *
@@ -562,7 +523,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets additional_details
      *
@@ -586,7 +546,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets charge_details
      *
@@ -610,7 +569,6 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Gets items
      *
@@ -634,6 +592,7 @@ class InvoiceDetail implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

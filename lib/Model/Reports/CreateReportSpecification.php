@@ -2,7 +2,7 @@
 /**
  * CreateReportSpecification
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -121,12 +121,11 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'report_options' => 'setReportOptions',
+                'report_options' => 'setReportOptions',
         'report_type' => 'setReportType',
         'data_start_time' => 'setDataStartTime',
         'data_end_time' => 'setDataEndTime',
-        'marketplace_ids' => 'setMarketplaceIds',
-        'headers' => 'setHeaders'
+        'marketplace_ids' => 'setMarketplaceIds'
     ];
 
     /**
@@ -139,8 +138,7 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
         'report_type' => 'getReportType',
         'data_start_time' => 'getDataStartTime',
         'data_end_time' => 'getDataEndTime',
-        'marketplace_ids' => 'getMarketplaceIds',
-        'headers' => 'getHeaders'
+        'marketplace_ids' => 'getMarketplaceIds'
     ];
 
     /**
@@ -183,11 +181,7 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -247,30 +241,6 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
-    /**
-     * Gets headers, if this is a top-level response model
-     *
-     * @return array[string]|null
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers (only relevant to response models)
-     *
-     * @param array[string => string]|null $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
 
     /**
      * Gets report_options
@@ -295,7 +265,6 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets report_type
      *
@@ -319,7 +288,6 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets data_start_time
      *
@@ -343,7 +311,6 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets data_end_time
      *
@@ -367,7 +334,6 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
-
     /**
      * Gets marketplace_ids
      *
@@ -398,6 +364,7 @@ class CreateReportSpecification implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2,7 +2,7 @@
 /**
  * GetContentDocumentResponse
  *
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -101,6 +101,7 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'warnings' => 'warnings',
         'content_record' => 'contentRecord'
     ];
@@ -111,9 +112,9 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
+        'headers' => 'setHeaders',
         'warnings' => 'setWarnings',
-        'content_record' => 'setContentRecord',
-        'headers' => 'setHeaders'
+        'content_record' => 'setContentRecord'
     ];
 
     /**
@@ -122,9 +123,9 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'warnings' => 'getWarnings',
-        'content_record' => 'getContentRecord',
-        'headers' => 'getHeaders'
+        'content_record' => 'getContentRecord'
     ];
 
     /**
@@ -167,11 +168,7 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
     {
         return self::$openAPIModelName;
     }
-
     
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -218,9 +215,9 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Gets headers, if this is a top-level response model
+     * Gets API response headers
      *
-     * @return array[string]|null
+     * @return array[string]
      */
     public function getHeaders()
     {
@@ -228,19 +225,17 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
     }
 
     /**
-     * Sets headers (only relevant to response models)
+     * Sets API response headers (only relevant to response models)
      *
-     * @param array[string => string]|null $headers Associative array of response headers.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
     public function setHeaders($headers)
     {
         $this->container['headers'] = $headers;
-
         return $this;
     }
-
 
     /**
      * Gets warnings
@@ -267,7 +262,6 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
-
     /**
      * Gets content_record
      *
@@ -291,6 +285,7 @@ class GetContentDocumentResponse implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *

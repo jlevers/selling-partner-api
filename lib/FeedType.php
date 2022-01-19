@@ -45,7 +45,7 @@ class FeedType
         'contentType' => ContentType::TAB,
         'name' => 'POST_FLAT_FILE_LISTINGS_DATA'
     ];
-    public const POST_FLAT_FILE_BOOKLOADER_DATA_ = [
+    public const POST_FLAT_FILE_BOOKLOADER_DATA = [
         'contentType' => ContentType::TAB,
         'name' => 'POST_FLAT_FILE_BOOKLOADER_DATA_'
     ];

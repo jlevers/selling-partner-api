@@ -1,6 +1,6 @@
 {
     "name": "jlevers/selling-partner-api",
-    "version": "4.2.5",
+    "version": "4.2.6",
     "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",

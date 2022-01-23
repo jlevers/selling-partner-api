@@ -42,6 +42,12 @@ class Authentication
      * @var string
      */
     private $awsSecretAccessKey;
+    
+    /**
+     * 
+     * @var \GuzzleHttp\ClientInterface
+     */
+    private $rdtTokensApiClient = null;
 
     /**
      * Authentication constructor.
@@ -70,6 +76,8 @@ class Authentication
         if ($accessToken !== null && $accessTokenExpiration !== null) {
             $this->populateCredentials($this->awsAccessKeyId, $this->awsSecretAccessKey, $accessToken, $accessTokenExpiration);
         }
+        
+        $this->rdtTokensApiClient = $configurationOptions['rdtTokensApiClient'] ?? null;
     }
 
     /**
@@ -313,7 +321,7 @@ class Authentication
                 "roleArn" => $this->roleArn,
                 "endpoint" => $this->endpoint,
             ]);
-            $tokensApi = new Api\TokensApi($config);
+            $tokensApi = new Api\TokensApi($config, $this->rdtTokensApiClient);
 
             $restrictedResource = new Model\Tokens\RestrictedResource([
                 "method" => $method,

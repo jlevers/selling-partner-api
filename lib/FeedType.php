@@ -45,9 +45,9 @@ class FeedType
         'contentType' => ContentType::TAB,
         'name' => 'POST_FLAT_FILE_LISTINGS_DATA'
     ];
-    public const POST_FLAT_FILE_BOOKLOADER_DATA_ = [
+    public const POST_FLAT_FILE_BOOKLOADER_DATA = [
         'contentType' => ContentType::TAB,
-        'name' => 'POST_FLAT_FILE_BOOKLOADER_DATA_'
+        'name' => 'POST_FLAT_FILE_BOOKLOADER_DATA'
     ];
     public const POST_FLAT_FILE_CONVERGENCE_LISTINGS_DATA = [
         'contentType' => ContentType::TAB,

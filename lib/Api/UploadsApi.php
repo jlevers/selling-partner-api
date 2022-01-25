@@ -501,7 +501,7 @@ class UploadsApi
         if ($resource !== null) {
             $resourcePath = str_replace(
                 '{' . 'resource' . '}',
-                ObjectSerializer::toPathValue($resource),
+                ObjectSerializer::toPathValue($resource, true),
                 $resourcePath
             );
         }

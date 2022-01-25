@@ -120,12 +120,17 @@ class ObjectSerializer
      * the path, by url-encoding.
      *
      * @param string $value a string which will be part of the path
+     * @param bool $isPath if true, slashes in $value will not be encoded
      *
      * @return string the serialized object
      */
-    public static function toPathValue($value)
+    public static function toPathValue($value, $isPath = false)
     {
-        return rawurlencode(self::toString($value));
+        $encoded =  rawurlencode(self::toString($value));
+        if ($isPath) {
+            $encoded = str_replace('%2F', '/', $encoded);
+        }
+        return $encoded;
     }
 
     /**

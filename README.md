@@ -1,6 +1,10 @@
 # Selling Partner API for PHP
 A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/).
 
+[![Total Downloads](https://img.shields.io/packagist/dt/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
+[![Latest Stable Version](https://img.shields.io/packagist/v/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
+[![License](https://img.shields.io/packagist/l/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
+
 If you've found this library useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD)

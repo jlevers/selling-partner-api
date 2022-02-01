@@ -356,12 +356,7 @@ class VendorOrdersApi
      */
     public function getPurchaseOrderAsync($purchase_order_number)
     {
-        return $this->getPurchaseOrderAsyncWithHttpInfo($purchase_order_number)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getPurchaseOrderAsyncWithHttpInfo($purchase_order_number);;
     }
 
     /**
@@ -770,12 +765,7 @@ class VendorOrdersApi
      */
     public function getPurchaseOrdersAsync($limit = null, $created_after = null, $created_before = null, $sort_order = null, $next_token = null, $include_details = null, $changed_after = null, $changed_before = null, $po_item_state = null, $is_po_changed = null, $purchase_order_state = null, $ordering_vendor_code = null)
     {
-        return $this->getPurchaseOrdersAsyncWithHttpInfo($limit, $created_after, $created_before, $sort_order, $next_token, $include_details, $changed_after, $changed_before, $po_item_state, $is_po_changed, $purchase_order_state, $ordering_vendor_code)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getPurchaseOrdersAsyncWithHttpInfo($limit, $created_after, $created_before, $sort_order, $next_token, $include_details, $changed_after, $changed_before, $po_item_state, $is_po_changed, $purchase_order_state, $ordering_vendor_code);;
     }
 
     /**
@@ -1297,12 +1287,7 @@ class VendorOrdersApi
      */
     public function getPurchaseOrdersStatusAsync($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $updated_after = null, $updated_before = null, $purchase_order_number = null, $purchase_order_status = null, $item_confirmation_status = null, $item_receive_status = null, $ordering_vendor_code = null, $ship_to_party_id = null)
     {
-        return $this->getPurchaseOrdersStatusAsyncWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getPurchaseOrdersStatusAsyncWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id);;
     }
 
     /**
@@ -1814,12 +1799,7 @@ class VendorOrdersApi
      */
     public function submitAcknowledgementAsync($body)
     {
-        return $this->submitAcknowledgementAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->submitAcknowledgementAsyncWithHttpInfo($body);;
     }
 
     /**

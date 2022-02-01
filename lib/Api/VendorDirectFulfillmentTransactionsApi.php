@@ -356,12 +356,7 @@ class VendorDirectFulfillmentTransactionsApi
      */
     public function getTransactionStatusAsync($transaction_id)
     {
-        return $this->getTransactionStatusAsyncWithHttpInfo($transaction_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getTransactionStatusAsyncWithHttpInfo($transaction_id);;
     }
 
     /**

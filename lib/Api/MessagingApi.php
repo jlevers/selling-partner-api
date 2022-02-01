@@ -362,12 +362,7 @@ class MessagingApi
      */
     public function confirmCustomizationDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->confirmCustomizationDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->confirmCustomizationDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -799,12 +794,7 @@ class MessagingApi
      */
     public function createAmazonMotorsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createAmazonMotorsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createAmazonMotorsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -1236,12 +1226,7 @@ class MessagingApi
      */
     public function createConfirmDeliveryDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmDeliveryDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createConfirmDeliveryDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -1673,12 +1658,7 @@ class MessagingApi
      */
     public function createConfirmOrderDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmOrderDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createConfirmOrderDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -2110,12 +2090,7 @@ class MessagingApi
      */
     public function createConfirmServiceDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmServiceDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createConfirmServiceDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -2547,12 +2522,7 @@ class MessagingApi
      */
     public function createDigitalAccessKeyAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createDigitalAccessKeyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createDigitalAccessKeyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -2984,12 +2954,7 @@ class MessagingApi
      */
     public function createLegalDisclosureAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createLegalDisclosureAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createLegalDisclosureAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -3418,12 +3383,7 @@ class MessagingApi
      */
     public function createNegativeFeedbackRemovalAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->createNegativeFeedbackRemovalAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createNegativeFeedbackRemovalAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
     }
 
     /**
@@ -3841,12 +3801,7 @@ class MessagingApi
      */
     public function createUnexpectedProblemAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createUnexpectedProblemAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createUnexpectedProblemAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -4278,12 +4233,7 @@ class MessagingApi
      */
     public function createWarrantyAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createWarrantyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createWarrantyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
     }
 
     /**
@@ -4712,12 +4662,7 @@ class MessagingApi
      */
     public function getAttributesAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->getAttributesAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getAttributesAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
     }
 
     /**
@@ -5132,12 +5077,7 @@ class MessagingApi
      */
     public function getMessagingActionsForOrderAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->getMessagingActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getMessagingActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
     }
 
     /**

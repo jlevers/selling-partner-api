@@ -356,12 +356,7 @@ class VendorShippingApi
      */
     public function submitShipmentConfirmationsAsync($body)
     {
-        return $this->submitShipmentConfirmationsAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->submitShipmentConfirmationsAsyncWithHttpInfo($body);;
     }
 
     /**

@@ -346,12 +346,7 @@ class FbaInboundEligibilityApi
      */
     public function getItemEligibilityPreviewAsync($asin, $program, $marketplace_ids = null)
     {
-        return $this->getItemEligibilityPreviewAsyncWithHttpInfo($asin, $program, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getItemEligibilityPreviewAsyncWithHttpInfo($asin, $program, $marketplace_ids);;
     }
 
     /**

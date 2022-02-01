@@ -333,12 +333,7 @@ class FinancesApi
      */
     public function listFinancialEventGroupsAsync($max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null)
     {
-        return $this->listFinancialEventGroupsAsyncWithHttpInfo($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->listFinancialEventGroupsAsyncWithHttpInfo($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);;
     }
 
     /**
@@ -737,12 +732,7 @@ class FinancesApi
      */
     public function listFinancialEventsAsync($max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null)
     {
-        return $this->listFinancialEventsAsyncWithHttpInfo($max_results_per_page, $posted_after, $posted_before, $next_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->listFinancialEventsAsyncWithHttpInfo($max_results_per_page, $posted_after, $posted_before, $next_token);;
     }
 
     /**
@@ -1138,12 +1128,7 @@ class FinancesApi
      */
     public function listFinancialEventsByGroupIdAsync($event_group_id, $max_results_per_page = 100, $next_token = null)
     {
-        return $this->listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page, $next_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page, $next_token);;
     }
 
     /**
@@ -1536,12 +1521,7 @@ class FinancesApi
      */
     public function listFinancialEventsByOrderIdAsync($order_id, $max_results_per_page = 100, $next_token = null)
     {
-        return $this->listFinancialEventsByOrderIdAsyncWithHttpInfo($order_id, $max_results_per_page, $next_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->listFinancialEventsByOrderIdAsyncWithHttpInfo($order_id, $max_results_per_page, $next_token);;
     }
 
     /**

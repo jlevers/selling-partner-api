@@ -374,12 +374,7 @@ class ProductTypeDefinitionsApi
      */
     public function getDefinitionsProductTypeAsync($product_type, $marketplace_ids, $seller_id = null, $product_type_version = 'LATEST', $requirements = 'LISTING', $requirements_enforced = 'ENFORCED', $locale = 'DEFAULT')
     {
-        return $this->getDefinitionsProductTypeAsyncWithHttpInfo($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getDefinitionsProductTypeAsyncWithHttpInfo($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);;
     }
 
     /**
@@ -840,12 +835,7 @@ class ProductTypeDefinitionsApi
      */
     public function searchDefinitionsProductTypesAsync($marketplace_ids, $keywords = null)
     {
-        return $this->searchDefinitionsProductTypesAsyncWithHttpInfo($marketplace_ids, $keywords)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->searchDefinitionsProductTypesAsyncWithHttpInfo($marketplace_ids, $keywords);;
     }
 
     /**

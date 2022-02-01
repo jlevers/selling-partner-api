@@ -375,12 +375,7 @@ class ServiceApi
      */
     public function addAppointmentForServiceJobByServiceJobIdAsync($service_job_id, $body)
     {
-        return $this->addAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->addAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $body);;
     }
 
     /**
@@ -812,12 +807,7 @@ class ServiceApi
      */
     public function cancelServiceJobByServiceJobIdAsync($service_job_id, $cancellation_reason_code)
     {
-        return $this->cancelServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $cancellation_reason_code)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->cancelServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $cancellation_reason_code);;
     }
 
     /**
@@ -1258,12 +1248,7 @@ class ServiceApi
      */
     public function completeServiceJobByServiceJobIdAsync($service_job_id)
     {
-        return $this->completeServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->completeServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id);;
     }
 
     /**
@@ -1678,12 +1663,7 @@ class ServiceApi
      */
     public function getServiceJobByServiceJobIdAsync($service_job_id)
     {
-        return $this->getServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id);;
     }
 
     /**
@@ -2118,12 +2098,7 @@ class ServiceApi
      */
     public function getServiceJobsAsync($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
     {
-        return $this->getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);;
     }
 
     /**
@@ -2674,12 +2649,7 @@ class ServiceApi
      */
     public function rescheduleAppointmentForServiceJobByServiceJobIdAsync($service_job_id, $appointment_id, $body)
     {
-        return $this->rescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $appointment_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->rescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $appointment_id, $body);;
     }
 
     /**

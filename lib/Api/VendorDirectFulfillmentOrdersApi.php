@@ -359,12 +359,7 @@ class VendorDirectFulfillmentOrdersApi
      */
     public function getOrderAsync($purchase_order_number)
     {
-        return $this->getOrderAsyncWithHttpInfo($purchase_order_number)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrderAsyncWithHttpInfo($purchase_order_number);;
     }
 
     /**
@@ -767,12 +762,7 @@ class VendorDirectFulfillmentOrdersApi
      */
     public function getOrdersAsync($created_after, $created_before, $ship_from_party_id = null, $status = null, $limit = null, $sort_order = null, $next_token = null, $include_details = 'true')
     {
-        return $this->getOrdersAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrdersAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);;
     }
 
     /**
@@ -1249,12 +1239,7 @@ class VendorDirectFulfillmentOrdersApi
      */
     public function submitAcknowledgementAsync($body)
     {
-        return $this->submitAcknowledgementAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->submitAcknowledgementAsyncWithHttpInfo($body);;
     }
 
     /**

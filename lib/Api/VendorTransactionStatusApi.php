@@ -356,12 +356,7 @@ class VendorTransactionStatusApi
      */
     public function getTransactionAsync($transaction_id)
     {
-        return $this->getTransactionAsyncWithHttpInfo($transaction_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getTransactionAsyncWithHttpInfo($transaction_id);;
     }
 
     /**

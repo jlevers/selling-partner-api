@@ -356,12 +356,7 @@ class ShipmentInvoicingApi
      */
     public function getInvoiceStatusAsync($shipment_id)
     {
-        return $this->getInvoiceStatusAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getInvoiceStatusAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -756,12 +751,7 @@ class ShipmentInvoicingApi
      */
     public function getShipmentDetailsAsync($shipment_id)
     {
-        return $this->getShipmentDetailsAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getShipmentDetailsAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -1159,12 +1149,7 @@ class ShipmentInvoicingApi
      */
     public function submitInvoiceAsync($shipment_id, $body)
     {
-        return $this->submitInvoiceAsyncWithHttpInfo($shipment_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->submitInvoiceAsyncWithHttpInfo($shipment_id, $body);;
     }
 
     /**

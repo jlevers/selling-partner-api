@@ -356,12 +356,7 @@ class VendorDirectFulfillmentPaymentsApi
      */
     public function submitInvoiceAsync($body)
     {
-        return $this->submitInvoiceAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->submitInvoiceAsyncWithHttpInfo($body);;
     }
 
     /**

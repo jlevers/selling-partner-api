@@ -352,12 +352,7 @@ class ProductPricingApi
      */
     public function getCompetitivePricingAsync($marketplace_id, $item_type, $asins = null, $skus = null, $customer_type = null)
     {
-        return $this->getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $customer_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $customer_type);;
     }
 
     /**
@@ -795,12 +790,7 @@ class ProductPricingApi
      */
     public function getItemOffersAsync($marketplace_id, $item_condition, $asin, $customer_type = null)
     {
-        return $this->getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin, $customer_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin, $customer_type);;
     }
 
     /**
@@ -1227,12 +1217,7 @@ class ProductPricingApi
      */
     public function getListingOffersAsync($marketplace_id, $item_condition, $seller_sku, $customer_type = null)
     {
-        return $this->getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku, $customer_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku, $customer_type);;
     }
 
     /**
@@ -1665,12 +1650,7 @@ class ProductPricingApi
      */
     public function getPricingAsync($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null)
     {
-        return $this->getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type);;
     }
 
     /**

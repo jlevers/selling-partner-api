@@ -373,12 +373,7 @@ class NotificationsApi
      */
     public function createDestinationAsync($body)
     {
-        return $this->createDestinationAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createDestinationAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -788,12 +783,7 @@ class NotificationsApi
      */
     public function createSubscriptionAsync($notification_type, $body)
     {
-        return $this->createSubscriptionAsyncWithHttpInfo($notification_type, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createSubscriptionAsyncWithHttpInfo($notification_type, $body);;
     }
 
     /**
@@ -1216,12 +1206,7 @@ class NotificationsApi
      */
     public function deleteDestinationAsync($destination_id)
     {
-        return $this->deleteDestinationAsyncWithHttpInfo($destination_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->deleteDestinationAsyncWithHttpInfo($destination_id);;
     }
 
     /**
@@ -1635,12 +1620,7 @@ class NotificationsApi
      */
     public function deleteSubscriptionByIdAsync($subscription_id, $notification_type)
     {
-        return $this->deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);;
     }
 
     /**
@@ -2068,12 +2048,7 @@ class NotificationsApi
      */
     public function getDestinationAsync($destination_id)
     {
-        return $this->getDestinationAsyncWithHttpInfo($destination_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getDestinationAsyncWithHttpInfo($destination_id);;
     }
 
     /**
@@ -2481,12 +2456,7 @@ class NotificationsApi
      */
     public function getDestinationsAsync()
     {
-        return $this->getDestinationsAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getDestinationsAsyncWithHttpInfo();;
     }
 
     /**
@@ -2863,12 +2833,7 @@ class NotificationsApi
      */
     public function getSubscriptionAsync($notification_type)
     {
-        return $this->getSubscriptionAsyncWithHttpInfo($notification_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getSubscriptionAsyncWithHttpInfo($notification_type);;
     }
 
     /**
@@ -3280,12 +3245,7 @@ class NotificationsApi
      */
     public function getSubscriptionByIdAsync($subscription_id, $notification_type)
     {
-        return $this->getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);;
     }
 
     /**

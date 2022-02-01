@@ -365,12 +365,7 @@ class CatalogApi
      */
     public function getCatalogItemAsync($asin, $marketplace_ids, $included_data = null, $locale = null)
     {
-        return $this->getCatalogItemAsyncWithHttpInfo($asin, $marketplace_ids, $included_data, $locale)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getCatalogItemAsyncWithHttpInfo($asin, $marketplace_ids, $included_data, $locale);;
     }
 
     /**
@@ -822,12 +817,7 @@ class CatalogApi
      */
     public function searchCatalogItemsAsync($keywords, $marketplace_ids, $included_data = null, $brand_names = null, $classification_ids = null, $page_size = 10, $page_token = null, $keywords_locale = null, $locale = null)
     {
-        return $this->searchCatalogItemsAsyncWithHttpInfo($keywords, $marketplace_ids, $included_data, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale, $locale)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->searchCatalogItemsAsyncWithHttpInfo($keywords, $marketplace_ids, $included_data, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale, $locale);;
     }
 
     /**

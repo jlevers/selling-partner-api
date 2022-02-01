@@ -343,12 +343,7 @@ class CatalogItemsV0Api
      */
     public function getCatalogItemAsync($marketplace_id, $asin)
     {
-        return $this->getCatalogItemAsyncWithHttpInfo($marketplace_id, $asin)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getCatalogItemAsyncWithHttpInfo($marketplace_id, $asin);;
     }
 
     /**
@@ -746,12 +741,7 @@ class CatalogItemsV0Api
      */
     public function listCatalogCategoriesAsync($marketplace_id, $asin = null, $seller_sku = null)
     {
-        return $this->listCatalogCategoriesAsyncWithHttpInfo($marketplace_id, $asin, $seller_sku)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->listCatalogCategoriesAsyncWithHttpInfo($marketplace_id, $asin, $seller_sku);;
     }
 
     /**
@@ -1167,12 +1157,7 @@ class CatalogItemsV0Api
      */
     public function listCatalogItemsAsync($marketplace_id, $query = null, $query_context_id = null, $seller_sku = null, $upc = null, $ean = null, $isbn = null, $jan = null)
     {
-        return $this->listCatalogItemsAsyncWithHttpInfo($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->listCatalogItemsAsyncWithHttpInfo($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);;
     }
 
     /**

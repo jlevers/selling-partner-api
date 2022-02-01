@@ -330,12 +330,7 @@ class OrdersApi
      */
     public function getOrderAsync($order_id, $data_elements = null)
     {
-        return $this->getOrderAsyncWithHttpInfo($order_id, $data_elements)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrderAsyncWithHttpInfo($order_id, $data_elements);;
     }
 
     /**
@@ -711,12 +706,7 @@ class OrdersApi
      */
     public function getOrderAddressAsync($order_id)
     {
-        return $this->getOrderAddressAsyncWithHttpInfo($order_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrderAddressAsyncWithHttpInfo($order_id);;
     }
 
     /**
@@ -1082,12 +1072,7 @@ class OrdersApi
      */
     public function getOrderBuyerInfoAsync($order_id)
     {
-        return $this->getOrderBuyerInfoAsyncWithHttpInfo($order_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrderBuyerInfoAsyncWithHttpInfo($order_id);;
     }
 
     /**
@@ -1459,12 +1444,7 @@ class OrdersApi
      */
     public function getOrderItemsAsync($order_id, $next_token = null, $data_elements = null)
     {
-        return $this->getOrderItemsAsyncWithHttpInfo($order_id, $next_token, $data_elements)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrderItemsAsyncWithHttpInfo($order_id, $next_token, $data_elements);;
     }
 
     /**
@@ -1853,12 +1833,7 @@ class OrdersApi
      */
     public function getOrderItemsBuyerInfoAsync($order_id, $next_token = null)
     {
-        return $this->getOrderItemsBuyerInfoAsyncWithHttpInfo($order_id, $next_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrderItemsBuyerInfoAsyncWithHttpInfo($order_id, $next_token);;
     }
 
     /**
@@ -2285,12 +2260,7 @@ class OrdersApi
      */
     public function getOrdersAsync($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $data_elements = null)
     {
-        return $this->getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);;
     }
 
     /**
@@ -2772,12 +2742,7 @@ class OrdersApi
      */
     public function updateShipmentStatusAsync($order_id, $payload)
     {
-        return $this->updateShipmentStatusAsyncWithHttpInfo($order_id, $payload)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->updateShipmentStatusAsyncWithHttpInfo($order_id, $payload);;
     }
 
     /**
@@ -2807,7 +2772,7 @@ class OrdersApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return null;
                 },
                 function ($exception) {
                     $response = $exception->getResponse();

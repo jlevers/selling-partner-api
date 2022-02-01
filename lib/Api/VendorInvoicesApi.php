@@ -356,12 +356,7 @@ class VendorInvoicesApi
      */
     public function submitInvoicesAsync($body)
     {
-        return $this->submitInvoicesAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->submitInvoicesAsyncWithHttpInfo($body);;
     }
 
     /**

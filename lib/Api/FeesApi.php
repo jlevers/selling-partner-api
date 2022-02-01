@@ -343,12 +343,7 @@ class FeesApi
      */
     public function getMyFeesEstimateForASINAsync($asin, $body)
     {
-        return $this->getMyFeesEstimateForASINAsyncWithHttpInfo($asin, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getMyFeesEstimateForASINAsyncWithHttpInfo($asin, $body);;
     }
 
     /**
@@ -741,12 +736,7 @@ class FeesApi
      */
     public function getMyFeesEstimateForSKUAsync($seller_sku, $body)
     {
-        return $this->getMyFeesEstimateForSKUAsyncWithHttpInfo($seller_sku, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getMyFeesEstimateForSKUAsyncWithHttpInfo($seller_sku, $body);;
     }
 
     /**

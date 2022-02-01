@@ -346,12 +346,7 @@ class FbaInboundApi
      */
     public function confirmPreorderAsync($shipment_id, $need_by_date, $marketplace_id)
     {
-        return $this->confirmPreorderAsyncWithHttpInfo($shipment_id, $need_by_date, $marketplace_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->confirmPreorderAsyncWithHttpInfo($shipment_id, $need_by_date, $marketplace_id);;
     }
 
     /**
@@ -759,12 +754,7 @@ class FbaInboundApi
      */
     public function confirmTransportAsync($shipment_id)
     {
-        return $this->confirmTransportAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->confirmTransportAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -1143,12 +1133,7 @@ class FbaInboundApi
      */
     public function createInboundShipmentAsync($shipment_id, $body)
     {
-        return $this->createInboundShipmentAsyncWithHttpInfo($shipment_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createInboundShipmentAsyncWithHttpInfo($shipment_id, $body);;
     }
 
     /**
@@ -1538,12 +1523,7 @@ class FbaInboundApi
      */
     public function createInboundShipmentPlanAsync($body)
     {
-        return $this->createInboundShipmentPlanAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createInboundShipmentPlanAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -1916,12 +1896,7 @@ class FbaInboundApi
      */
     public function estimateTransportAsync($shipment_id)
     {
-        return $this->estimateTransportAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->estimateTransportAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -2297,12 +2272,7 @@ class FbaInboundApi
      */
     public function getBillOfLadingAsync($shipment_id)
     {
-        return $this->getBillOfLadingAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getBillOfLadingAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -2684,12 +2654,7 @@ class FbaInboundApi
      */
     public function getInboundGuidanceAsync($marketplace_id, $seller_sku_list = null, $asin_list = null)
     {
-        return $this->getInboundGuidanceAsyncWithHttpInfo($marketplace_id, $seller_sku_list, $asin_list)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getInboundGuidanceAsyncWithHttpInfo($marketplace_id, $seller_sku_list, $asin_list);;
     }
 
     /**
@@ -3113,12 +3078,7 @@ class FbaInboundApi
      */
     public function getLabelsAsync($shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null)
     {
-        return $this->getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getLabelsAsyncWithHttpInfo($shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index);;
     }
 
     /**
@@ -3583,12 +3543,7 @@ class FbaInboundApi
      */
     public function getPreorderInfoAsync($shipment_id, $marketplace_id)
     {
-        return $this->getPreorderInfoAsyncWithHttpInfo($shipment_id, $marketplace_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getPreorderInfoAsyncWithHttpInfo($shipment_id, $marketplace_id);;
     }
 
     /**
@@ -3986,12 +3941,7 @@ class FbaInboundApi
      */
     public function getPrepInstructionsAsync($ship_to_country_code, $seller_sku_list = null, $asin_list = null)
     {
-        return $this->getPrepInstructionsAsyncWithHttpInfo($ship_to_country_code, $seller_sku_list, $asin_list)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getPrepInstructionsAsyncWithHttpInfo($ship_to_country_code, $seller_sku_list, $asin_list);;
     }
 
     /**
@@ -4406,12 +4356,7 @@ class FbaInboundApi
      */
     public function getShipmentItemsAsync($query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
-        return $this->getShipmentItemsAsyncWithHttpInfo($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getShipmentItemsAsyncWithHttpInfo($query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);;
     }
 
     /**
@@ -4835,12 +4780,7 @@ class FbaInboundApi
      */
     public function getShipmentItemsByShipmentIdAsync($shipment_id, $marketplace_id)
     {
-        return $this->getShipmentItemsByShipmentIdAsyncWithHttpInfo($shipment_id, $marketplace_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getShipmentItemsByShipmentIdAsyncWithHttpInfo($shipment_id, $marketplace_id);;
     }
 
     /**
@@ -5250,12 +5190,7 @@ class FbaInboundApi
      */
     public function getShipmentsAsync($query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
-        return $this->getShipmentsAsyncWithHttpInfo($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getShipmentsAsyncWithHttpInfo($query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);;
     }
 
     /**
@@ -5696,12 +5631,7 @@ class FbaInboundApi
      */
     public function getTransportDetailsAsync($shipment_id)
     {
-        return $this->getTransportDetailsAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getTransportDetailsAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -6080,12 +6010,7 @@ class FbaInboundApi
      */
     public function putTransportDetailsAsync($shipment_id, $body)
     {
-        return $this->putTransportDetailsAsyncWithHttpInfo($shipment_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->putTransportDetailsAsyncWithHttpInfo($shipment_id, $body);;
     }
 
     /**
@@ -6478,12 +6403,7 @@ class FbaInboundApi
      */
     public function updateInboundShipmentAsync($shipment_id, $body)
     {
-        return $this->updateInboundShipmentAsyncWithHttpInfo($shipment_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->updateInboundShipmentAsyncWithHttpInfo($shipment_id, $body);;
     }
 
     /**
@@ -6873,12 +6793,7 @@ class FbaInboundApi
      */
     public function voidTransportAsync($shipment_id)
     {
-        return $this->voidTransportAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->voidTransportAsyncWithHttpInfo($shipment_id);;
     }
 
     /**

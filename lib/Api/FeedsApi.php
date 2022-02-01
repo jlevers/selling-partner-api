@@ -263,12 +263,7 @@ class FeedsApi
      */
     public function cancelFeedAsync($feed_id)
     {
-        return $this->cancelFeedAsyncWithHttpInfo($feed_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->cancelFeedAsyncWithHttpInfo($feed_id);;
     }
 
     /**
@@ -297,7 +292,7 @@ class FeedsApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return null;
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -653,12 +648,7 @@ class FeedsApi
      */
     public function createFeedAsync($body)
     {
-        return $this->createFeedAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createFeedAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -1047,12 +1037,7 @@ class FeedsApi
      */
     public function createFeedDocumentAsync($body)
     {
-        return $this->createFeedDocumentAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createFeedDocumentAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -1441,12 +1426,7 @@ class FeedsApi
      */
     public function getFeedAsync($feed_id)
     {
-        return $this->getFeedAsyncWithHttpInfo($feed_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getFeedAsyncWithHttpInfo($feed_id);;
     }
 
     /**
@@ -1838,12 +1818,7 @@ class FeedsApi
      */
     public function getFeedDocumentAsync($feed_document_id)
     {
-        return $this->getFeedDocumentAsyncWithHttpInfo($feed_document_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getFeedDocumentAsyncWithHttpInfo($feed_document_id);;
     }
 
     /**
@@ -2253,12 +2228,7 @@ class FeedsApi
      */
     public function getFeedsAsync($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
-        return $this->getFeedsAsyncWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getFeedsAsyncWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);;
     }
 
     /**

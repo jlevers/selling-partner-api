@@ -340,12 +340,7 @@ class ShippingApi
      */
     public function cancelShipmentAsync($shipment_id)
     {
-        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -721,12 +716,7 @@ class ShippingApi
      */
     public function createShipmentAsync($body)
     {
-        return $this->createShipmentAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createShipmentAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -1096,12 +1086,7 @@ class ShippingApi
      */
     public function getAccountAsync()
     {
-        return $this->getAccountAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getAccountAsyncWithHttpInfo();;
     }
 
     /**
@@ -1460,12 +1445,7 @@ class ShippingApi
      */
     public function getRatesAsync($body)
     {
-        return $this->getRatesAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getRatesAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -1841,12 +1821,7 @@ class ShippingApi
      */
     public function getShipmentAsync($shipment_id)
     {
-        return $this->getShipmentAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getShipmentAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -2225,12 +2200,7 @@ class ShippingApi
      */
     public function getTrackingInformationAsync($tracking_id)
     {
-        return $this->getTrackingInformationAsyncWithHttpInfo($tracking_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getTrackingInformationAsyncWithHttpInfo($tracking_id);;
     }
 
     /**
@@ -2609,12 +2579,7 @@ class ShippingApi
      */
     public function purchaseLabelsAsync($shipment_id, $body)
     {
-        return $this->purchaseLabelsAsyncWithHttpInfo($shipment_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->purchaseLabelsAsyncWithHttpInfo($shipment_id, $body);;
     }
 
     /**
@@ -3004,12 +2969,7 @@ class ShippingApi
      */
     public function purchaseShipmentAsync($body)
     {
-        return $this->purchaseShipmentAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->purchaseShipmentAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -3388,12 +3348,7 @@ class ShippingApi
      */
     public function retrieveShippingLabelAsync($shipment_id, $tracking_id, $body)
     {
-        return $this->retrieveShippingLabelAsyncWithHttpInfo($shipment_id, $tracking_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->retrieveShippingLabelAsyncWithHttpInfo($shipment_id, $tracking_id, $body);;
     }
 
     /**

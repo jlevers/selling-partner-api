@@ -266,12 +266,7 @@ class SmallAndLightApi
      */
     public function deleteSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
     {
-        return $this->deleteSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->deleteSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);;
     }
 
     /**
@@ -301,7 +296,7 @@ class SmallAndLightApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    return null;
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -679,12 +674,7 @@ class SmallAndLightApi
      */
     public function getSmallAndLightEligibilityBySellerSKUAsync($seller_sku, $marketplace_ids)
     {
-        return $this->getSmallAndLightEligibilityBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getSmallAndLightEligibilityBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);;
     }
 
     /**
@@ -1099,12 +1089,7 @@ class SmallAndLightApi
      */
     public function getSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
     {
-        return $this->getSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);;
     }
 
     /**
@@ -1500,12 +1485,7 @@ class SmallAndLightApi
      */
     public function getSmallAndLightFeePreviewAsync($body)
     {
-        return $this->getSmallAndLightFeePreviewAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getSmallAndLightFeePreviewAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -1897,12 +1877,7 @@ class SmallAndLightApi
      */
     public function putSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
     {
-        return $this->putSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->putSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);;
     }
 
     /**

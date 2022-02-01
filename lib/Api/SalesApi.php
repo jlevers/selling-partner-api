@@ -380,12 +380,7 @@ class SalesApi
      */
     public function getOrderMetricsAsync($marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = 'All', $fulfillment_network = null, $first_day_of_week = 'monday', $asin = null, $sku = null)
     {
-        return $this->getOrderMetricsAsyncWithHttpInfo($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getOrderMetricsAsyncWithHttpInfo($marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku);;
     }
 
     /**

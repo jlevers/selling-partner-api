@@ -343,12 +343,7 @@ class AplusContentApi
      */
     public function createContentDocumentAsync($marketplace_id, $post_content_document_request)
     {
-        return $this->createContentDocumentAsyncWithHttpInfo($marketplace_id, $post_content_document_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createContentDocumentAsyncWithHttpInfo($marketplace_id, $post_content_document_request);;
     }
 
     /**
@@ -763,12 +758,7 @@ class AplusContentApi
      */
     public function getContentDocumentAsync($content_reference_key, $marketplace_id, $included_data_set)
     {
-        return $this->getContentDocumentAsyncWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getContentDocumentAsyncWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set);;
     }
 
     /**
@@ -1216,12 +1206,7 @@ class AplusContentApi
      */
     public function listContentDocumentAsinRelationsAsync($content_reference_key, $marketplace_id, $included_data_set = null, $asin_set = null, $page_token = null)
     {
-        return $this->listContentDocumentAsinRelationsAsyncWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->listContentDocumentAsinRelationsAsyncWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);;
     }
 
     /**
@@ -1679,12 +1664,7 @@ class AplusContentApi
      */
     public function postContentDocumentApprovalSubmissionAsync($content_reference_key, $marketplace_id)
     {
-        return $this->postContentDocumentApprovalSubmissionAsyncWithHttpInfo($content_reference_key, $marketplace_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->postContentDocumentApprovalSubmissionAsyncWithHttpInfo($content_reference_key, $marketplace_id);;
     }
 
     /**
@@ -2106,12 +2086,7 @@ class AplusContentApi
      */
     public function postContentDocumentAsinRelationsAsync($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request)
     {
-        return $this->postContentDocumentAsinRelationsAsyncWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->postContentDocumentAsinRelationsAsyncWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);;
     }
 
     /**
@@ -2544,12 +2519,7 @@ class AplusContentApi
      */
     public function postContentDocumentSuspendSubmissionAsync($content_reference_key, $marketplace_id)
     {
-        return $this->postContentDocumentSuspendSubmissionAsyncWithHttpInfo($content_reference_key, $marketplace_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->postContentDocumentSuspendSubmissionAsyncWithHttpInfo($content_reference_key, $marketplace_id);;
     }
 
     /**
@@ -2968,12 +2938,7 @@ class AplusContentApi
      */
     public function searchContentDocumentsAsync($marketplace_id, $page_token = null)
     {
-        return $this->searchContentDocumentsAsyncWithHttpInfo($marketplace_id, $page_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->searchContentDocumentsAsyncWithHttpInfo($marketplace_id, $page_token);;
     }
 
     /**
@@ -3372,12 +3337,7 @@ class AplusContentApi
      */
     public function searchContentPublishRecordsAsync($marketplace_id, $asin, $page_token = null)
     {
-        return $this->searchContentPublishRecordsAsyncWithHttpInfo($marketplace_id, $asin, $page_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->searchContentPublishRecordsAsyncWithHttpInfo($marketplace_id, $asin, $page_token);;
     }
 
     /**
@@ -3812,12 +3772,7 @@ class AplusContentApi
      */
     public function updateContentDocumentAsync($content_reference_key, $marketplace_id, $post_content_document_request)
     {
-        return $this->updateContentDocumentAsyncWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->updateContentDocumentAsyncWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_request);;
     }
 
     /**
@@ -4237,12 +4192,7 @@ class AplusContentApi
      */
     public function validateContentDocumentAsinRelationsAsync($marketplace_id, $post_content_document_request, $asin_set = null)
     {
-        return $this->validateContentDocumentAsinRelationsAsyncWithHttpInfo($marketplace_id, $post_content_document_request, $asin_set)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->validateContentDocumentAsinRelationsAsyncWithHttpInfo($marketplace_id, $post_content_document_request, $asin_set);;
     }
 
     /**

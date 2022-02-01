@@ -343,12 +343,7 @@ class MerchantFulfillmentApi
      */
     public function cancelShipmentAsync($shipment_id)
     {
-        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -734,12 +729,7 @@ class MerchantFulfillmentApi
      */
     public function cancelShipmentOldAsync($shipment_id)
     {
-        return $this->cancelShipmentOldAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->cancelShipmentOldAsyncWithHttpInfo($shipment_id);;
     }
 
     /**
@@ -1125,12 +1115,7 @@ class MerchantFulfillmentApi
      */
     public function createShipmentAsync($body)
     {
-        return $this->createShipmentAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createShipmentAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -1506,12 +1491,7 @@ class MerchantFulfillmentApi
      */
     public function getAdditionalSellerInputsAsync($body)
     {
-        return $this->getAdditionalSellerInputsAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getAdditionalSellerInputsAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -1884,12 +1864,7 @@ class MerchantFulfillmentApi
      */
     public function getAdditionalSellerInputsOldAsync($body)
     {
-        return $this->getAdditionalSellerInputsOldAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getAdditionalSellerInputsOldAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -2262,12 +2237,7 @@ class MerchantFulfillmentApi
      */
     public function getEligibleShipmentServicesAsync($body)
     {
-        return $this->getEligibleShipmentServicesAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getEligibleShipmentServicesAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -2640,12 +2610,7 @@ class MerchantFulfillmentApi
      */
     public function getEligibleShipmentServicesOldAsync($body)
     {
-        return $this->getEligibleShipmentServicesOldAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getEligibleShipmentServicesOldAsyncWithHttpInfo($body);;
     }
 
     /**
@@ -3021,12 +2986,7 @@ class MerchantFulfillmentApi
      */
     public function getShipmentAsync($shipment_id)
     {
-        return $this->getShipmentAsyncWithHttpInfo($shipment_id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getShipmentAsyncWithHttpInfo($shipment_id);;
     }
 
     /**

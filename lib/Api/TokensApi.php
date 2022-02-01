@@ -356,12 +356,7 @@ class TokensApi
      */
     public function createRestrictedDataTokenAsync($body)
     {
-        return $this->createRestrictedDataTokenAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createRestrictedDataTokenAsyncWithHttpInfo($body);;
     }
 
     /**

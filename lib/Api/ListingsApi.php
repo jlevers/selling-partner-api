@@ -349,12 +349,7 @@ class ListingsApi
      */
     public function deleteListingsItemAsync($seller_id, $sku, $marketplace_ids, $issue_locale = null)
     {
-        return $this->deleteListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->deleteListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale);;
     }
 
     /**
@@ -801,12 +796,7 @@ class ListingsApi
      */
     public function getListingsItemAsync($seller_id, $sku, $marketplace_ids, $issue_locale = null, $included_data = null)
     {
-        return $this->getListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale, $included_data)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale, $included_data);;
     }
 
     /**
@@ -1247,12 +1237,7 @@ class ListingsApi
      */
     public function patchListingsItemAsync($seller_id, $sku, $marketplace_ids, $body, $issue_locale = null)
     {
-        return $this->patchListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->patchListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale);;
     }
 
     /**
@@ -1697,12 +1682,7 @@ class ListingsApi
      */
     public function putListingsItemAsync($seller_id, $sku, $marketplace_ids, $body, $issue_locale = null)
     {
-        return $this->putListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->putListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale);;
     }
 
     /**

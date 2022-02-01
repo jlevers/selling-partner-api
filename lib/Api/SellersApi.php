@@ -353,12 +353,7 @@ class SellersApi
      */
     public function getMarketplaceParticipationsAsync()
     {
-        return $this->getMarketplaceParticipationsAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getMarketplaceParticipationsAsyncWithHttpInfo();;
     }
 
     /**

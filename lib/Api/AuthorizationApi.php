@@ -367,12 +367,7 @@ class AuthorizationApi
      */
     public function getAuthorizationCodeAsync($selling_partner_id, $developer_id, $mws_auth_token)
     {
-        return $this->getAuthorizationCodeAsyncWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getAuthorizationCodeAsyncWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token);;
     }
 
     /**

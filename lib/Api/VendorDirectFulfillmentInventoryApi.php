@@ -359,12 +359,7 @@ class VendorDirectFulfillmentInventoryApi
      */
     public function submitInventoryUpdateAsync($warehouse_id, $body)
     {
-        return $this->submitInventoryUpdateAsyncWithHttpInfo($warehouse_id, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->submitInventoryUpdateAsyncWithHttpInfo($warehouse_id, $body);;
     }
 
     /**

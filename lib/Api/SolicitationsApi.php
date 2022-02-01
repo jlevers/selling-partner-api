@@ -359,12 +359,7 @@ class SolicitationsApi
      */
     public function createProductReviewAndSellerFeedbackSolicitationAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->createProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
     }
 
     /**
@@ -779,12 +774,7 @@ class SolicitationsApi
      */
     public function getSolicitationActionsForOrderAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->getSolicitationActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->getSolicitationActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
     }
 
     /**

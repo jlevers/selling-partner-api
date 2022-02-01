@@ -365,12 +365,7 @@ class UploadsApi
      */
     public function createUploadDestinationForResourceAsync($marketplace_ids, $content_md5, $resource, $content_type = null)
     {
-        return $this->createUploadDestinationForResourceAsyncWithHttpInfo($marketplace_ids, $content_md5, $resource, $content_type)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
+        return $this->createUploadDestinationForResourceAsyncWithHttpInfo($marketplace_ids, $content_md5, $resource, $content_type);;
     }
 
     /**

@@ -13,16 +13,16 @@ Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisi
  Values:
 
  ShipToCountryCode values for North America:
- * CA – Canada
+ * CA - Canada
  * MX - Mexico
  * US - United States
 
 ShipToCountryCode values for MCI sellers in Europe:
- * DE – Germany
- * ES – Spain
- * FR – France
- * GB – United Kingdom
- * IT – Italy
+ * DE - Germany
+ * ES - Spain
+ * FR - France
+ * GB - United Kingdom
+ * IT - Italy
 
 Default: The country code for the seller&#39;s home marketplace. | [optional]
 **ship_to_country_subdivision_code** | **string** | The two-character country code, followed by a dash and then up to three characters that represent the subdivision of the country where the inbound shipment is to be sent. For example, \&quot;IN-MH\&quot;. In full ISO 3166-2 format.

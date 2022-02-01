@@ -293,7 +293,7 @@ class TransportHeader implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets is_partnered
      *
-     * @param bool $is_partnered Indicates whether a putTransportDetails request is for a partnered carrier. Possible values: * true – Request is for an Amazon-partnered carrier. * false – Request is for a non-Amazon-partnered carrier.
+     * @param bool $is_partnered Indicates whether a putTransportDetails request is for a partnered carrier. Possible values: * true - Request is for an Amazon-partnered carrier. * false - Request is for a non-Amazon-partnered carrier.
      *
      * @return self
      */

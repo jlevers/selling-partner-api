@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 
 Possible values:
 
-* true – Request is for an Amazon-partnered carrier.
+* true - Request is for an Amazon-partnered carrier.
 
-* false – Request is for a non-Amazon-partnered carrier. |
+* false - Request is for a non-Amazon-partnered carrier. |
 **shipment_type** | [**\SellingPartnerApi\Model\FbaInbound\ShipmentType**](ShipmentType.md) |  |
 
 [[FbaInbound Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

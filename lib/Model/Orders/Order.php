@@ -1448,7 +1448,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer_invoice_preference
      *
-     * @param string|null $buyer_invoice_preference The buyer’s invoicing preference.
+     * @param string|null $buyer_invoice_preference The buyer's invoicing preference.
      *
      * @return self
      */
@@ -1573,7 +1573,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller_display_name
      *
-     * @param string|null $seller_display_name The seller’s friendly name registered in the marketplace.
+     * @param string|null $seller_display_name The seller's friendly name registered in the marketplace.
      *
      * @return self
      */

@@ -412,7 +412,7 @@ class PackageTrackingDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets carrier_url
      *
-     * @param string|null $carrier_url The URL of the carrier’s website.
+     * @param string|null $carrier_url The URL of the carrier's website.
      *
      * @return self
      */

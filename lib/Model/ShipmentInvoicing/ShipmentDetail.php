@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Shipment Invoicing
  *
- * The Selling Partner API for Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner’s Fulfillment by Amazon (FBA) orders.
+ * The Selling Partner API for Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner's Fulfillment by Amazon (FBA) orders.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -571,7 +571,7 @@ class ShipmentDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets seller_display_name
      *
-     * @param string|null $seller_display_name The seller’s friendly name registered in the marketplace.
+     * @param string|null $seller_display_name The seller's friendly name registered in the marketplace.
      *
      * @return self
      */

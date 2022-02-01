@@ -10,7 +10,7 @@
 /**
  * Selling Partner API for Shipment Invoicing
  *
- * The Selling Partner API for Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner’s Fulfillment by Amazon (FBA) orders.
+ * The Selling Partner API for Shipment Invoicing helps you programmatically retrieve shipment invoice information in the Brazil marketplace for a selling partner's Fulfillment by Amazon (FBA) orders.
  *
  * The version of the OpenAPI document: v0
  * 

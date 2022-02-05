@@ -42,6 +42,12 @@ class Authentication
      * @var string
      */
     private $awsSecretAccessKey;
+    
+    /**
+     * 
+     * @var \SellingPartnerApi\Api\TokensApi
+     */
+    private $tokensApi = null;
 
     /**
      * Authentication constructor.
@@ -70,6 +76,8 @@ class Authentication
         if ($accessToken !== null && $accessTokenExpiration !== null) {
             $this->populateCredentials($this->awsAccessKeyId, $this->awsSecretAccessKey, $accessToken, $accessTokenExpiration);
         }
+        
+        $this->tokensApi = $configurationOptions['tokensApi'] ?? null;
     }
 
     /**
@@ -301,19 +309,22 @@ class Authentication
         // Create a new RDT if no matching one exists or if the matching one is expired
         if ($this->needNewCredentials($existingCreds)) {
             $standardCredentials = $this->getAwsCredentials();
-            $config = new Configuration([
-                "lwaClientId" => $this->lwaClientId,
-                "lwaClientSecret" => $this->lwaClientSecret,
-                "lwaRefreshToken" => $this->lwaRefreshToken,
-                "lwaAuthUrl" => $this->lwaAuthUrl,
-                "awsAccessKeyId" => $this->awsAccessKeyId,
-                "awsSecretAccessKey" => $this->awsSecretAccessKey,
-                "accessToken" => $standardCredentials->getSecurityToken(),
-                "accessTokenExpiration" => $standardCredentials->getExpiration(),
-                "roleArn" => $this->roleArn,
-                "endpoint" => $this->endpoint,
-            ]);
-            $tokensApi = new Api\TokensApi($config);
+            $tokensApi = $this->tokensApi;
+            if (is_null($tokensApi)) {
+                $config = new Configuration([
+                    "lwaClientId" => $this->lwaClientId,
+                    "lwaClientSecret" => $this->lwaClientSecret,
+                    "lwaRefreshToken" => $this->lwaRefreshToken,
+                    "lwaAuthUrl" => $this->lwaAuthUrl,
+                    "awsAccessKeyId" => $this->awsAccessKeyId,
+                    "awsSecretAccessKey" => $this->awsSecretAccessKey,
+                    "accessToken" => $standardCredentials->getSecurityToken(),
+                    "accessTokenExpiration" => $standardCredentials->getExpiration(),
+                    "roleArn" => $this->roleArn,
+                    "endpoint" => $this->endpoint,
+                ]);
+                $tokensApi = new Api\TokensApi($config);
+            }
 
             $restrictedResource = new Model\Tokens\RestrictedResource([
                 "method" => $method,

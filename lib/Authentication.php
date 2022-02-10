@@ -47,10 +47,7 @@ class Authentication
      */
     private $awsSecretAccessKey;
     
-    /**
-     * 
-     * @var \SellingPartnerApi\Api\TokensApi
-     */
+    /** @var \SellingPartnerApi\Api\TokensApi */
     private $tokensApi = null;
 
     /**

@@ -27,10 +27,7 @@ class Authentication
     private $requestTime;
     private $signingScope = null;
 
-    /**
-     * 
-     * @var \GuzzleHttp\ClientInterface
-     */
+    /** @var \GuzzleHttp\ClientInterface */
     private $client = null;
     private $awsCredentials = null;
     private $grantlessAwsCredentials = null;

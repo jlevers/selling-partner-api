@@ -222,14 +222,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['asin'] === null) {
             $invalidProperties[] = "'asin' can't be null";
         }
-        if ((mb_strlen($this->container['asin']) < 10)) {
-            $invalidProperties[] = "invalid value for 'asin', the character length must be bigger than or equal to 10.";
-        }
-
-        if (!is_null($this->container['parent']) && (mb_strlen($this->container['parent']) < 10)) {
-            $invalidProperties[] = "invalid value for 'parent', the character length must be bigger than or equal to 10.";
-        }
-
         if (!is_null($this->container['title']) && (mb_strlen($this->container['title']) < 1)) {
             $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
         }
@@ -272,11 +264,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setAsin($asin)
     {
-
-        if ((mb_strlen($asin) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $asin when calling AsinMetadata., must be bigger than or equal to 10.');
-        }
-
         $this->container['asin'] = $asin;
 
         return $this;
@@ -325,11 +312,6 @@ class AsinMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setParent($parent)
     {
-
-        if (!is_null($parent) && (mb_strlen($parent) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $parent when calling AsinMetadata., must be bigger than or equal to 10.');
-        }
-
         $this->container['parent'] = $parent;
 
         return $this;

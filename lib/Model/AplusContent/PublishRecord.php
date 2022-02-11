@@ -236,10 +236,6 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['asin'] === null) {
             $invalidProperties[] = "'asin' can't be null";
         }
-        if ((mb_strlen($this->container['asin']) < 10)) {
-            $invalidProperties[] = "invalid value for 'asin', the character length must be bigger than or equal to 10.";
-        }
-
         if ($this->container['content_type'] === null) {
             $invalidProperties[] = "'content_type' can't be null";
         }
@@ -344,11 +340,6 @@ class PublishRecord implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setAsin($asin)
     {
-
-        if ((mb_strlen($asin) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $asin when calling PublishRecord., must be bigger than or equal to 10.');
-        }
-
         $this->container['asin'] = $asin;
 
         return $this;

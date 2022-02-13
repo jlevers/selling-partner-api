@@ -49,6 +49,7 @@ class AdditionalLocationInfo
     const DOOR_PERSON = 'DOOR_PERSON';
     const FRONT_DESK = 'FRONT_DESK';
     const FRONT_DOOR = 'FRONT_DOOR';
+    const FRONT_DOOR_PORCH = 'FRONT_DOOR/PORCH';
     const GARAGE = 'GARAGE';
     const GUARD = 'GUARD';
     const MAIL_ROOM = 'MAIL_ROOM';
@@ -83,6 +84,7 @@ class AdditionalLocationInfo
             self::DOOR_PERSON,
             self::FRONT_DESK,
             self::FRONT_DOOR,
+            self::FRONT_DOOR_PORCH,
             self::GARAGE,
             self::GUARD,
             self::MAIL_ROOM,

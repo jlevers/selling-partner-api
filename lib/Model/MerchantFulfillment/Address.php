@@ -252,8 +252,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ((mb_strlen($this->container['name']) > 30)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 30.";
+        if ((mb_strlen($this->container['name']) > 60)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 60.";
         }
 
         if ($this->container['address_line1'] === null) {
@@ -336,8 +336,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setName($name)
     {
-        if ((mb_strlen($name) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Address., must be smaller than or equal to 30.');
+        if ((mb_strlen($name) > 60)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling Address., must be smaller than or equal to 60.');
         }
 
         $this->container['name'] = $name;

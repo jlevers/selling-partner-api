@@ -43,6 +43,7 @@ class CurrentStatus
      * Possible values of this enum
      */
     const IN_TRANSIT = 'IN_TRANSIT';
+    const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
     const DELIVERED = 'DELIVERED';
     const RETURNING = 'RETURNING';
     const RETURNED = 'RETURNED';
@@ -59,6 +60,7 @@ class CurrentStatus
     {
         return [
             self::IN_TRANSIT,
+            self::OUT_FOR_DELIVERY,
             self::DELIVERED,
             self::RETURNING,
             self::RETURNED,

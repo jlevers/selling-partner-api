@@ -27,6 +27,7 @@ class Authentication
     private $requestTime;
     private $signingScope = null;
 
+    /** @var \GuzzleHttp\ClientInterface */
     private $client = null;
     private $awsCredentials = null;
     private $grantlessAwsCredentials = null;
@@ -43,10 +44,7 @@ class Authentication
      */
     private $awsSecretAccessKey;
     
-    /**
-     * 
-     * @var \SellingPartnerApi\Api\TokensApi
-     */
+    /** @var \SellingPartnerApi\Api\TokensApi */
     private $tokensApi = null;
 
     /**
@@ -56,7 +54,7 @@ class Authentication
      */
     public function __construct(array $configurationOptions)
     {
-        $this->client = new Client();
+        $this->client = $configurationOptions['authenticationClient'] ?? new Client();
 
         $this->lwaAuthUrl = $configurationOptions['lwaAuthUrl'] ?? "https://api.amazon.com/auth/o2/token";
         $this->lwaRefreshToken = $configurationOptions['lwaRefreshToken'] ?? null;
@@ -102,10 +100,13 @@ class Authentication
             }
             $jsonData["refresh_token"] = $this->lwaRefreshToken;
         }
-
-        $res = $this->client->post($this->lwaAuthUrl, [
-            \GuzzleHttp\RequestOptions::JSON => $jsonData,
-        ]);
+        
+        $lwaTokenRequestHeaders = [
+            'Content-Type' => 'application/json',
+        ];
+        $lwaTokenRequestBody = \GuzzleHttp\json_encode($jsonData);
+        $lwaTokenRequest = new Psr7\Request('POST', $this->lwaAuthUrl, $lwaTokenRequestHeaders, $lwaTokenRequestBody);
+        $res = $this->client->send($lwaTokenRequest);
 
         $body = json_decode($res->getBody(), true);
         $accessToken = $body["access_token"];

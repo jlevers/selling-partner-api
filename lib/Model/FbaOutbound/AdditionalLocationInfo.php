@@ -43,6 +43,7 @@ class AdditionalLocationInfo
      * Possible values of this enum
      */
     const AS_INSTRUCTED = 'AS_INSTRUCTED';
+    const BACK_PORCH = 'BACK_PORCH';
     const CARPORT = 'CARPORT';
     const CUSTOMER_PICKUP = 'CUSTOMER_PICKUP';
     const DECK = 'DECK';
@@ -52,6 +53,7 @@ class AdditionalLocationInfo
     const FRONT_DOOR_PORCH = 'FRONT_DOOR/PORCH';
     const GARAGE = 'GARAGE';
     const GUARD = 'GUARD';
+    const IN_AT_MAILBOX = 'IN/AT_MAILBOX';
     const MAIL_ROOM = 'MAIL_ROOM';
     const MAIL_SLOT = 'MAIL_SLOT';
     const MAILBOX = 'MAILBOX';
@@ -78,6 +80,7 @@ class AdditionalLocationInfo
     {
         return [
             self::AS_INSTRUCTED,
+            self::BACK_PORCH,
             self::CARPORT,
             self::CUSTOMER_PICKUP,
             self::DECK,
@@ -87,6 +90,7 @@ class AdditionalLocationInfo
             self::FRONT_DOOR_PORCH,
             self::GARAGE,
             self::GUARD,
+            self::IN_AT_MAILBOX,
             self::MAIL_ROOM,
             self::MAIL_SLOT,
             self::MAILBOX,

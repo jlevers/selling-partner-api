@@ -57,6 +57,7 @@ class EventCode
     const _307 = 'EVENT_307';
     const _308 = 'EVENT_308';
     const _309 = 'EVENT_309';
+    const _310 = 'EVENT_310';
     const _401 = 'EVENT_401';
     const _402 = 'EVENT_402';
     const _403 = 'EVENT_403';
@@ -98,6 +99,7 @@ class EventCode
             self::_307,
             self::_308,
             self::_309,
+            self::_310,
             self::_401,
             self::_402,
             self::_403,

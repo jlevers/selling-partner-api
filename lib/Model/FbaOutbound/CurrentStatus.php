@@ -44,6 +44,7 @@ class CurrentStatus
      */
     const IN_TRANSIT = 'IN_TRANSIT';
     const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
+    const DELIVERY_ATTEMPTED = 'DELIVERY_ATTEMPTED';
     const DELIVERED = 'DELIVERED';
     const RETURNING = 'RETURNING';
     const RETURNED = 'RETURNED';
@@ -61,6 +62,7 @@ class CurrentStatus
         return [
             self::IN_TRANSIT,
             self::OUT_FOR_DELIVERY,
+            self::DELIVERY_ATTEMPTED,
             self::DELIVERED,
             self::RETURNING,
             self::RETURNED,

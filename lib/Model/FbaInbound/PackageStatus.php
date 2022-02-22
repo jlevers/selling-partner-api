@@ -44,6 +44,7 @@ class PackageStatus
      */
     const SHIPPED = 'SHIPPED';
     const IN_TRANSIT = 'IN_TRANSIT';
+    const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
     const DELIVERED = 'DELIVERED';
     const CHECKED_IN = 'CHECKED_IN';
     const RECEIVING = 'RECEIVING';
@@ -59,6 +60,7 @@ class PackageStatus
         return [
             self::SHIPPED,
             self::IN_TRANSIT,
+            self::OUT_FOR_DELIVERY,
             self::DELIVERED,
             self::CHECKED_IN,
             self::RECEIVING,

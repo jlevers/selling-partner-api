@@ -2990,6 +2990,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
@@ -3002,6 +3003,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return mixed|null
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -3015,6 +3017,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -3031,6 +3034,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
@@ -3043,6 +3047,7 @@ class AttributeSetListType implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed Returns data which can be serialized by json_encode(), which is a value
      * of any type other than a resource.
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);

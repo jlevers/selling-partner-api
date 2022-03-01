@@ -45,6 +45,7 @@ class CurrencyCode
     const CAD = 'CAD';
     const USD = 'USD';
     const GBP = 'GBP';
+    const EUR = 'EUR';
     
     /**
      * Gets allowable values of the enum
@@ -56,6 +57,7 @@ class CurrencyCode
             self::CAD,
             self::USD,
             self::GBP,
+            self::EUR,
         ];
     }
 }

@@ -277,8 +277,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
         }
-        if ((mb_strlen($this->container['city']) > 30)) {
-            $invalidProperties[] = "invalid value for 'city', the character length must be smaller than or equal to 30.";
+        if ((mb_strlen($this->container['city']) > 60)) {
+            $invalidProperties[] = "invalid value for 'city', the character length must be smaller than or equal to 60.";
         }
 
         if (!is_null($this->container['state_or_province_code']) && (mb_strlen($this->container['state_or_province_code']) > 30)) {
@@ -490,8 +490,8 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setCity($city)
     {
-        if ((mb_strlen($city) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling Address., must be smaller than or equal to 30.');
+        if ((mb_strlen($city) > 60)) {
+            throw new \InvalidArgumentException('invalid length for $city when calling Address., must be smaller than or equal to 60.');
         }
 
         $this->container['city'] = $city;

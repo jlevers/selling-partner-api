@@ -155,4 +155,11 @@ class FeedType
         'contentType' => ContentType::TAB,
         'name' => 'POST_EASYSHIP_DOCUMENTS'
     ];    
+    
+    // VAT Invoice Upload feed
+    public const UPLOAD_VAT_INVOICE = [
+        'contentType' => ContentType::PDF,
+        'name' => 'UPLOAD_VAT_INVOICE'
+    ];
+
 }

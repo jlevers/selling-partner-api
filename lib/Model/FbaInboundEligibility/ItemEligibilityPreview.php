@@ -219,6 +219,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
     const INELIGIBILITY_REASON_LIST_FBA_INB_0100 = 'FBA_INB_0100';
     const INELIGIBILITY_REASON_LIST_FBA_INB_0103 = 'FBA_INB_0103';
     const INELIGIBILITY_REASON_LIST_FBA_INB_0104 = 'FBA_INB_0104';
+    const INELIGIBILITY_REASON_LIST_FBA_INB_0197 = 'FBA_INB_0197';
     const INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE = 'UNKNOWN_INB_ERROR_CODE';
     
     
@@ -282,6 +283,7 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
             self::INELIGIBILITY_REASON_LIST_FBA_INB_0100,
             self::INELIGIBILITY_REASON_LIST_FBA_INB_0103,
             self::INELIGIBILITY_REASON_LIST_FBA_INB_0104,
+            self::INELIGIBILITY_REASON_LIST_FBA_INB_0197,
             self::INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE,
         ];
     }

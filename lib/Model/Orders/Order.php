@@ -92,6 +92,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'string',
         'is_estimated_ship_date_set' => 'bool',
         'is_sold_by_ab' => 'bool',
+        'is_iba' => 'bool',
         'default_ship_from_location_address' => '\SellingPartnerApi\Model\Orders\Address',
         'buyer_invoice_preference' => 'string',
         'buyer_tax_information' => '\SellingPartnerApi\Model\Orders\BuyerTaxInformation',
@@ -145,6 +146,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => null,
         'is_estimated_ship_date_set' => null,
         'is_sold_by_ab' => null,
+        'is_iba' => null,
         'default_ship_from_location_address' => null,
         'buyer_invoice_preference' => null,
         'buyer_tax_information' => null,
@@ -217,6 +219,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'PromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'IsEstimatedShipDateSet',
         'is_sold_by_ab' => 'IsSoldByAB',
+        'is_iba' => 'IsIBA',
         'default_ship_from_location_address' => 'DefaultShipFromLocationAddress',
         'buyer_invoice_preference' => 'BuyerInvoicePreference',
         'buyer_tax_information' => 'BuyerTaxInformation',
@@ -268,6 +271,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'setPromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'setIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'setIsSoldByAb',
+        'is_iba' => 'setIsIba',
         'default_ship_from_location_address' => 'setDefaultShipFromLocationAddress',
         'buyer_invoice_preference' => 'setBuyerInvoicePreference',
         'buyer_tax_information' => 'setBuyerTaxInformation',
@@ -319,6 +323,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'promise_response_due_date' => 'getPromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'getIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'getIsSoldByAb',
+        'is_iba' => 'getIsIba',
         'default_ship_from_location_address' => 'getDefaultShipFromLocationAddress',
         'buyer_invoice_preference' => 'getBuyerInvoicePreference',
         'buyer_tax_information' => 'getBuyerTaxInformation',
@@ -520,6 +525,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['promise_response_due_date'] = $data['promise_response_due_date'] ?? null;
         $this->container['is_estimated_ship_date_set'] = $data['is_estimated_ship_date_set'] ?? null;
         $this->container['is_sold_by_ab'] = $data['is_sold_by_ab'] ?? null;
+        $this->container['is_iba'] = $data['is_iba'] ?? null;
         $this->container['default_ship_from_location_address'] = $data['default_ship_from_location_address'] ?? null;
         $this->container['buyer_invoice_preference'] = $data['buyer_invoice_preference'] ?? null;
         $this->container['buyer_tax_information'] = $data['buyer_tax_information'] ?? null;
@@ -1409,6 +1415,29 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsSoldByAb($is_sold_by_ab)
     {
         $this->container['is_sold_by_ab'] = $is_sold_by_ab;
+
+        return $this;
+    }
+    /**
+     * Gets is_iba
+     *
+     * @return bool|null
+     */
+    public function getIsIba()
+    {
+        return $this->container['is_iba'];
+    }
+
+    /**
+     * Sets is_iba
+     *
+     * @param bool|null $is_iba When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
+     *
+     * @return self
+     */
+    public function setIsIba($is_iba)
+    {
+        $this->container['is_iba'] = $is_iba;
 
         return $this;
     }

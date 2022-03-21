@@ -52,6 +52,16 @@ class CurrentStatus
     const DELAYED = 'DELAYED';
     const AVAILABLE_FOR_PICKUP = 'AVAILABLE_FOR_PICKUP';
     const CUSTOMER_ACTION = 'CUSTOMER_ACTION';
+    const UNKNOWN = 'UNKNOWN';
+    const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
+    const DELIVERY_ATTEMPTED = 'DELIVERY_ATTEMPTED';
+    const PICKUP_SUCCESSFUL = 'PICKUP_SUCCESSFUL';
+    const PICKUP_CANCELLED = 'PICKUP_CANCELLED';
+    const PICKUP_ATTEMPTED = 'PICKUP_ATTEMPTED';
+    const PICKUP_SCHEDULED = 'PICKUP_SCHEDULED';
+    const RETURN_REQUEST_ACCEPTED = 'RETURN_REQUEST_ACCEPTED';
+    const REFUND_ISSUED = 'REFUND_ISSUED';
+    const RETURN_RECEIVED_IN_FC = 'RETURN_RECEIVED_IN_FC';
     
     /**
      * Gets allowable values of the enum
@@ -70,6 +80,16 @@ class CurrentStatus
             self::DELAYED,
             self::AVAILABLE_FOR_PICKUP,
             self::CUSTOMER_ACTION,
+            self::UNKNOWN,
+            self::OUT_FOR_DELIVERY,
+            self::DELIVERY_ATTEMPTED,
+            self::PICKUP_SUCCESSFUL,
+            self::PICKUP_CANCELLED,
+            self::PICKUP_ATTEMPTED,
+            self::PICKUP_SCHEDULED,
+            self::RETURN_REQUEST_ACCEPTED,
+            self::REFUND_ISSUED,
+            self::RETURN_RECEIVED_IN_FC,
         ];
     }
 }

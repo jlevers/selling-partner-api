@@ -1448,7 +1448,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer_invoice_preference
      *
-     * @param string|null $buyer_invoice_preference The buyer's invoicing preference.
+     * @param string|null $buyer_invoice_preference The buyer's invoicing preference. Available only in the TR marketplace.
      *
      * @return self
      */

@@ -113,7 +113,7 @@ $config = new SellingPartnerApi\Configuration([
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $notification_type = 'notification_type_example'; // string | The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
+ For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
 $body = new \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest(); // \SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest
 
 try {
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notification_type** | **string**| The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). |
+ For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). |
  **body** | [**\SellingPartnerApi\Model\Notifications\CreateSubscriptionRequest**](../Model/Notifications/CreateSubscriptionRequest.md)|  |
 
 ### Return type
@@ -248,7 +248,7 @@ $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $subscription_id = 'subscription_id_example'; // string | The identifier for the subscription that you want to delete.
 $notification_type = 'notification_type_example'; // string | The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
+ For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
 
 try {
     $result = $apiInstance->deleteSubscriptionById($subscription_id, $notification_type);
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
  **subscription_id** | **string**| The identifier for the subscription that you want to delete. |
  **notification_type** | **string**| The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). |
+ For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). |
 
 ### Return type
 
@@ -442,7 +442,7 @@ $config = new SellingPartnerApi\Configuration([
 $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $notification_type = 'notification_type_example'; // string | The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
+ For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
 
 try {
     $result = $apiInstance->getSubscription($notification_type);
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **notification_type** | **string**| The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). |
+ For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). |
 
 ### Return type
 
@@ -511,7 +511,7 @@ $apiInstance = new SellingPartnerApi\Api\NotificationsApi($config);
 $subscription_id = 'subscription_id_example'; // string | The identifier for the subscription that you want to get.
 $notification_type = 'notification_type_example'; // string | The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
+ For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
 
 try {
     $result = $apiInstance->getSubscriptionById($subscription_id, $notification_type);
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
  **subscription_id** | **string**| The identifier for the subscription that you want to get. |
  **notification_type** | **string**| The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). |
+ For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). |
 
 ### Return type
 

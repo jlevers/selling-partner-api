@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * BuyerTaxInformation Class Doc Comment
  *
  * @category Class
- * @description Contains the business invoice tax information.
+ * @description Contains the business invoice tax information. Available only in the TR marketplace.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

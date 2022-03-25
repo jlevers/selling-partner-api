@@ -84,10 +84,12 @@ class Document
      *      PDF or PLAIN: the raw, unmodified document contents
      *      XLSX: a PhpOffice\PhpSpreadsheet\Spreadsheet object
      *      XML: a SimpleXML object
+     * @param ?string $encoding Pass specific $from_encoding to mb_convert_encoding funtion. If not provided,
+     *      internal mbstring encoding is used
      *
      * @return string The raw (unencrypted) document contents.
      */
-    public function download(?bool $postProcess = true): string {
+    public function download(?bool $postProcess = true, ?string $encoding = null): string {
         $rawContents = file_get_contents($this->url);
 
         $contents = null;
@@ -106,10 +108,14 @@ class Document
             return $contents;
         }
 
-        // Documents are ISO-8859-1 encoded, which messes up the data when we read it directly
+        // Documents encodings depend on target marketplace, which messes up the data when we read it directly
         // via SimpleXML or as a plain TAB/CSV, but the original encoding is required to parse XLSX and PDF reports
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
-            $contents = mb_convert_encoding($contents, "UTF-8");
+            $encoding = strtoupper($encoding);
+            if(!in_array($encoding, mb_list_encodings())) {
+                $encoding = null;
+            }
+            $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());
         }
 
         switch ($this->contentType) {

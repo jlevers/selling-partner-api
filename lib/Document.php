@@ -108,8 +108,10 @@ class Document
             return $contents;
         }
 
-        // Documents encodings depend on target marketplace, which messes up the data when we read it directly
-        // via SimpleXML or as a plain TAB/CSV, but the original encoding is required to parse XLSX and PDF reports
+        // Document encodings depend on the target marketplace. English-language reports are
+        // typically ISO-8859-1 encoded, which messes up the data when we read it directly via
+        // SimpleXML or as a plain TAB/CSV, but the original encoding is required to parse XLSX
+        // and PDF reports.
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
             $encoding = strtoupper($encoding);
             if(!in_array($encoding, mb_list_encodings())) {

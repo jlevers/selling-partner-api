@@ -44,6 +44,7 @@ class ErrorReason
      */
     const DOES_NOT_EXIST = 'DoesNotExist';
     const INVALID_ASIN = 'InvalidASIN';
+    const INVALID_SKU = 'InvalidSKU';
     
     /**
      * Gets allowable values of the enum
@@ -54,6 +55,7 @@ class ErrorReason
         return [
             self::DOES_NOT_EXIST,
             self::INVALID_ASIN,
+            self::INVALID_SKU,
         ];
     }
 }

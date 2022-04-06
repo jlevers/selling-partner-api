@@ -113,8 +113,7 @@ class Document
         // SimpleXML or as a plain TAB/CSV, but the original encoding is required to parse XLSX
         // and PDF reports.
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
-            $encoding = strtoupper($encoding);
-            if(!in_array($encoding, mb_list_encodings())) {
+            if (!is_null($encoding) && !in_array(strtoupper($encoding), mb_list_encodings())) {
                 $encoding = null;
             }
             $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());

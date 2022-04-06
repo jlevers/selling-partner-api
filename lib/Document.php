@@ -119,9 +119,16 @@ class Document
             $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());
         }
 
+        $reader = null;
         switch ($this->contentType) {
             case ContentType::CSV:
+                // Amazon doesn't use enclosure characters (which typically are double quotes),
+                // so if a field starts with a double quote, that double quote needs to be escaped
+                // to avoid parsing errors.
+                $contents = preg_replace("/(,|^)\"([^\"]+?)(,|\n)/", "$1\"\"$2$3", $contents);
             case ContentType::TAB:
+                // See CSV case for explanation of this regex
+                $contents = preg_replace("/(\t|^)\"([^\"]+?)(\t|\n)/", "$1\"\"$2$3", $contents);
             case ContentType::XLSX:
                 $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
                 $tempFile = fopen($this->tmpFilename, "r+");

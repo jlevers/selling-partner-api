@@ -431,6 +431,11 @@ class ReportType
         'name' => 'GET_PRODUCT_EXCHANGE_DATA',
         'restricted' => false,
     ];
+    public const GET_FBA_INVENTORY_PLANNING_DATA = [
+        'contentType' => ContentType::TAB,
+        'name' => 'GET_FBA_INVENTORY_PLANNING_DATA',
+        'restricted' => false,
+    ];
 
 
     // FBA payments reports

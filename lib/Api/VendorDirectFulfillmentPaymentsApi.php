@@ -152,14 +152,14 @@ class VendorDirectFulfillmentPaymentsApi
                 $this->writeDebug($response);
                 $this->writeDebug((string) $response->getBody());
             } catch (RequestException $e) {
-                $body = (string) $e->getResponse()->getBody();
+                $body = (string) ($e->getResponse()?->getBody() ?? '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $body : null
+                    $e->getResponse()?->getHeaders(),
+                    $body
                 );
             }
 

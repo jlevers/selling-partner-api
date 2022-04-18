@@ -168,13 +168,14 @@ class SalesApi
                 $this->writeDebug($response);
                 $this->writeDebug((string) $response->getBody());
             } catch (RequestException $e) {
-                $body = (string) ($e->getResponse()?->getBody() ?? '[NULL response]');
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
-                    $e->getResponse()?->getHeaders(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
                     $body
                 );
             }
@@ -428,9 +429,10 @@ class SalesApi
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
-                    $body = (string) $response->getBody();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
                     $this->writeDebug($response);
-                    $statusCode = $response->getStatusCode();
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
                     throw new ApiException(
                         sprintf(
                             '[%d] Error connecting to the API (%s)',
@@ -438,7 +440,7 @@ class SalesApi
                             $exception->getRequest()->getUri()
                         ),
                         $statusCode,
-                        $response->getHeaders(),
+                        $hasResponse ? $response->getHeaders() : [],
                         $body
                     );
                 }

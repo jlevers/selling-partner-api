@@ -119,7 +119,6 @@ class Document
             $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());
         }
 
-        $reader = null;
         switch ($this->contentType) {
             case ContentType::CSV:
                 // Amazon doesn't use enclosure characters (which typically are double quotes),
@@ -148,6 +147,7 @@ class Document
                 } else {
                     $this->data = $spreadsheet;
                 }
+                unlink($tempFile);
 
                 break;
             case ContentType::JSON:

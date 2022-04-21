@@ -2004,6 +2004,368 @@ class OrdersApi
     }
 
     /**
+     * Operation getOrderRegulatedInfo
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse
+     */
+    public function getOrderRegulatedInfo($order_id)
+    {
+        $response = $this->getOrderRegulatedInfoWithHttpInfo($order_id);
+        return $response;
+    }
+
+    /**
+     * Operation getOrderRegulatedInfoWithHttpInfo
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOrderRegulatedInfoWithHttpInfo($order_id)
+    {
+        $request = $this->getOrderRegulatedInfoRequest($order_id);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOrderRegulatedInfoAsync
+     *
+     * 
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOrderRegulatedInfoAsync($order_id)
+    {
+        return $this->getOrderRegulatedInfoAsyncWithHttpInfo($order_id);;
+    }
+
+    /**
+     * Operation getOrderRegulatedInfoAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOrderRegulatedInfoAsyncWithHttpInfo($order_id)
+    {
+        $returnType = '\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse';
+        $request = $this->getOrderRegulatedInfoRequest($order_id);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getOrderRegulatedInfo'
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getOrderRegulatedInfoRequest($order_id)
+    {
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_id when calling getOrderRegulatedInfo'
+            );
+        }
+
+        $resourcePath = '/orders/v0/orders/{orderId}/regulatedInfo';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // path params
+        if ($order_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'PendingOrder', 'ApprovedOrder', 'RejectedOrder']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'PendingOrder', 'ApprovedOrder', 'RejectedOrder'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getOrders
      *
      * @param  string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. See the [Selling Partner API Developer Guide](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
@@ -2904,6 +3266,317 @@ class OrdersApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateVerificationStatus
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateVerificationStatusRequest $payload Request to update the verification status of an order containing regulated products. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function updateVerificationStatus($order_id, $payload)
+    {
+        $this->updateVerificationStatusWithHttpInfo($order_id, $payload);
+    }
+
+    /**
+     * Operation updateVerificationStatusWithHttpInfo
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateVerificationStatusRequest $payload Request to update the verification status of an order containing regulated products. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateVerificationStatusWithHttpInfo($order_id, $payload)
+    {
+        $request = $this->updateVerificationStatusRequest($order_id, $payload);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateVerificationStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateVerificationStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateVerificationStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateVerificationStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateVerificationStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateVerificationStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateVerificationStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\Orders\UpdateVerificationStatusErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateVerificationStatusAsync
+     *
+     * 
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateVerificationStatusRequest $payload Request to update the verification status of an order containing regulated products. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateVerificationStatusAsync($order_id, $payload)
+    {
+        return $this->updateVerificationStatusAsyncWithHttpInfo($order_id, $payload);;
+    }
+
+    /**
+     * Operation updateVerificationStatusAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateVerificationStatusRequest $payload Request to update the verification status of an order containing regulated products. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateVerificationStatusAsyncWithHttpInfo($order_id, $payload)
+    {
+        $returnType = '';
+        $request = $this->updateVerificationStatusRequest($order_id, $payload);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    return null;
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateVerificationStatus'
+     *
+     * @param  string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param  \SellingPartnerApi\Model\Orders\UpdateVerificationStatusRequest $payload Request to update the verification status of an order containing regulated products. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateVerificationStatusRequest($order_id, $payload)
+    {
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_id when calling updateVerificationStatus'
+            );
+        }
+        // verify the required parameter 'payload' is set
+        if ($payload === null || (is_array($payload) && count($payload) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $payload when calling updateVerificationStatus'
+            );
+        }
+
+        $resourcePath = '/orders/v0/orders/{orderId}/regulatedInfo';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // path params
+        if ($order_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($payload)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($payload));
+            } else {
+                $httpBody = $payload;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PATCH',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

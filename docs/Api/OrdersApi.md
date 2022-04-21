@@ -7,8 +7,10 @@ Method | HTTP request | Description
 [**getOrderBuyerInfo()**](OrdersApi.md#getOrderBuyerInfo) | **GET** /orders/v0/orders/{orderId}/buyerInfo | 
 [**getOrderItems()**](OrdersApi.md#getOrderItems) | **GET** /orders/v0/orders/{orderId}/orderItems | 
 [**getOrderItemsBuyerInfo()**](OrdersApi.md#getOrderItemsBuyerInfo) | **GET** /orders/v0/orders/{orderId}/orderItems/buyerInfo | 
+[**getOrderRegulatedInfo()**](OrdersApi.md#getOrderRegulatedInfo) | **GET** /orders/v0/orders/{orderId}/regulatedInfo | 
 [**getOrders()**](OrdersApi.md#getOrders) | **GET** /orders/v0/orders | 
 [**updateShipmentStatus()**](OrdersApi.md#updateShipmentStatus) | **POST** /orders/v0/orders/{orderId}/shipment | 
+[**updateVerificationStatus()**](OrdersApi.md#updateVerificationStatus) | **PATCH** /orders/v0/orders/{orderId}/regulatedInfo | 
 
 
 ## `getOrder()`
@@ -346,6 +348,71 @@ Name | Type | Description  | Notes
 [[Orders Model list]](../Model/Orders)
 [[README]](../../README.md)
 
+## `getOrderRegulatedInfo()`
+
+```php
+getOrderRegulatedInfo($order_id): \SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse
+```
+
+
+
+Returns regulated information for the order indicated by the specified order ID.
+
+**Usage Plans:**
+
+| Plan type | Rate (requests per second) | Burst |
+| ---- | ---- | ---- |
+|Default| 0.0055 | 20 |
+|Selling partner specific| Variable | Variable |
+
+The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
+$order_id = 'order_id_example'; // string | An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+
+try {
+    $result = $apiInstance->getOrderRegulatedInfo($order_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->getOrderRegulatedInfo: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_id** | **string**| An orderId is an Amazon-defined order identifier, in 3-7-7 format. |
+
+### Return type
+
+[**\SellingPartnerApi\Model\Orders\GetOrderRegulatedInfoResponse**](../Model/Orders/GetOrderRegulatedInfoResponse.md)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`, `PendingOrder`, `ApprovedOrder`, `RejectedOrder`
+
+[[Top]](#) [[API list]](../)
+[[Orders Model list]](../Model/Orders)
+[[README]](../../README.md)
+
 ## `getOrders()`
 
 ```php
@@ -492,6 +559,72 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **order_id** | **string**| An Amazon-defined order identifier, in 3-7-7 format. |
  **payload** | [**\SellingPartnerApi\Model\Orders\UpdateShipmentStatusRequest**](../Model/Orders/UpdateShipmentStatusRequest.md)| Request to update the shipment status. |
+
+### Return type
+
+void (empty response body)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Top]](#) [[API list]](../)
+[[Orders Model list]](../Model/Orders)
+[[README]](../../README.md)
+
+## `updateVerificationStatus()`
+
+```php
+updateVerificationStatus($order_id, $payload)
+```
+
+
+
+Updates (approves or rejects) the verification status of an order containing regulated products.
+
+**Usage Plans:**
+
+| Plan type | Rate (requests per second) | Burst |
+| ---- | ---- | ---- |
+|Default| 0.0055 | 20 |
+|Selling partner specific| Variable | Variable |
+
+The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
+
+$apiInstance = new SellingPartnerApi\Api\OrdersApi($config);
+$order_id = 'order_id_example'; // string | An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+$payload = new \SellingPartnerApi\Model\Orders\UpdateVerificationStatusRequest(); // \SellingPartnerApi\Model\Orders\UpdateVerificationStatusRequest | Request to update the verification status of an order containing regulated products.
+
+try {
+    $apiInstance->updateVerificationStatus($order_id, $payload);
+} catch (Exception $e) {
+    echo 'Exception when calling OrdersApi->updateVerificationStatus: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_id** | **string**| An orderId is an Amazon-defined order identifier, in 3-7-7 format. |
+ **payload** | [**\SellingPartnerApi\Model\Orders\UpdateVerificationStatusRequest**](../Model/Orders/UpdateVerificationStatusRequest.md)| Request to update the verification status of an order containing regulated products. |
 
 ### Return type
 

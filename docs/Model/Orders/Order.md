@@ -58,5 +58,6 @@ Note: LatestShipDate might not be returned for orders placed before February 1, 
 **shipping_address** | [**\SellingPartnerApi\Model\Orders\Address**](Address.md) |  | [optional]
 **buyer_info** | [**\SellingPartnerApi\Model\Orders\BuyerInfo**](BuyerInfo.md) |  | [optional]
 **automated_shipping_settings** | [**\SellingPartnerApi\Model\Orders\AutomatedShippingSettings**](AutomatedShippingSettings.md) |  | [optional]
+**has_regulated_items** | **bool** | Whether the order contains regulated items which may require additional approval steps before being fulfilled. | [optional]
 
 [[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

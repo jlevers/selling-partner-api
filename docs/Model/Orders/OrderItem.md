@@ -45,5 +45,6 @@ Returned only for Amazon Easy Ship orders. | [optional]
 **store_chain_store_id** | **string** | The store chain store identifier. Linked to a specific store in a store chain. | [optional]
 **deemed_reseller_category** | **string** | The category of deemed reseller. This applies to selling partners that are not based in the EU and is used to help them meet the VAT Deemed Reseller tax laws in the EU and UK. | [optional]
 **buyer_info** | [**\SellingPartnerApi\Model\Orders\ItemBuyerInfo**](ItemBuyerInfo.md) |  | [optional]
+**buyer_requested_cancel** | [**\SellingPartnerApi\Model\Orders\BuyerRequestedCancel**](BuyerRequestedCancel.md) |  | [optional]
 
 [[Orders Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **message** | **string** | A message that describes the error condition. |
 **details** | **string** | Additional details that can help the caller understand or fix the issue. | [optional]
 
-[[VendorDirectFulfillmentTransactions Models]](../) [[API list]](../../Api) [[README]](../../../README.md)
+[[VendorDirectFulfillmentTransactionsV20211228 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

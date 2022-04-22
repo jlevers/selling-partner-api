@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * TransactionStatus
  *
  * PHP version 7.3
  *
@@ -25,24 +25,24 @@
  * Do not edit the class manually.
  */
 
-namespace SellingPartnerApi\Model\VendorDirectFulfillmentTransactions;
+namespace SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1;
 
 use \ArrayAccess;
 use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Error Class Doc Comment
+ * TransactionStatus Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description The payload for the getTransactionStatus operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'TransactionStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string'
+        'transaction_status' => '\SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\Transaction'
     ];
 
     /**
@@ -72,9 +70,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null
+        'transaction_status' => null
     ];
 
     /**
@@ -104,9 +100,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details'
+        'transaction_status' => 'transactionStatus'
     ];
 
     /**
@@ -115,9 +109,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails'
+                'transaction_status' => 'setTransactionStatus'
     ];
 
     /**
@@ -126,9 +118,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails'
+        'transaction_status' => 'getTransactionStatus'
     ];
 
     /**
@@ -187,9 +177,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['transaction_status'] = $data['transaction_status'] ?? null;
     }
 
     /**
@@ -201,12 +189,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -223,71 +205,25 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets code
+     * Gets transaction_status
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\Transaction|null
      */
-    public function getCode()
+    public function getTransactionStatus()
     {
-        return $this->container['code'];
+        return $this->container['transaction_status'];
     }
 
     /**
-     * Sets code
+     * Sets transaction_status
      *
-     * @param string $code An error code that identifies the type of error that occurred.
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\Transaction|null $transaction_status transaction_status
      *
      * @return self
      */
-    public function setCode($code)
+    public function setTransactionStatus($transaction_status)
     {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message A message that describes the error condition.
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-    /**
-     * Gets details
-     *
-     * @return string|null
-     */
-    public function getDetails()
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details
-     *
-     * @param string|null $details Additional details that can help the caller understand or fix the issue.
-     *
-     * @return self
-     */
-    public function setDetails($details)
-    {
-        $this->container['details'] = $details;
+        $this->container['transaction_status'] = $transaction_status;
 
         return $this;
     }

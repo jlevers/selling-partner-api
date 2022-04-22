@@ -1,14 +1,14 @@
-# SellingPartnerApi\VendorDirectFulfillmentTransactionsApi
+# SellingPartnerApi\VendorDirectFulfillmentTransactionsV1Api
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTransactionStatus()**](VendorDirectFulfillmentTransactionsApi.md#getTransactionStatus) | **GET** /vendor/directFulfillment/transactions/v1/transactions/{transactionId} | 
+[**getTransactionStatus()**](VendorDirectFulfillmentTransactionsV1Api.md#getTransactionStatus) | **GET** /vendor/directFulfillment/transactions/v1/transactions/{transactionId} | 
 
 
 ## `getTransactionStatus()`
 
 ```php
-getTransactionStatus($transaction_id): \SellingPartnerApi\Model\VendorDirectFulfillmentTransactions\GetTransactionResponse
+getTransactionStatus($transaction_id): \SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\GetTransactionResponse
 ```
 
 
@@ -40,14 +40,14 @@ $config = new SellingPartnerApi\Configuration([
     "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
 ]);
 
-$apiInstance = new SellingPartnerApi\Api\VendorDirectFulfillmentTransactionsApi($config);
+$apiInstance = new SellingPartnerApi\Api\VendorDirectFulfillmentTransactionsV1Api($config);
 $transaction_id = 'transaction_id_example'; // string | Previously returned in the response to the POST request of a specific transaction.
 
 try {
     $result = $apiInstance->getTransactionStatus($transaction_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling VendorDirectFulfillmentTransactionsApi->getTransactionStatus: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling VendorDirectFulfillmentTransactionsV1Api->getTransactionStatus: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SellingPartnerApi\Model\VendorDirectFulfillmentTransactions\GetTransactionResponse**](../Model/VendorDirectFulfillmentTransactions/GetTransactionResponse.md)
+[**\SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\GetTransactionResponse**](../Model/VendorDirectFulfillmentTransactionsV1/GetTransactionResponse.md)
 
 ### HTTP request headers
 
@@ -67,5 +67,5 @@ Name | Type | Description  | Notes
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
-[[VendorDirectFulfillmentTransactions Model list]](../Model/VendorDirectFulfillmentTransactions)
+[[VendorDirectFulfillmentTransactionsV1 Model list]](../Model/VendorDirectFulfillmentTransactionsV1)
 [[README]](../../README.md)

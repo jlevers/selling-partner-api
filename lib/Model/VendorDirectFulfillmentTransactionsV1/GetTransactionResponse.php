@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionStatus
+ * GetTransactionResponse
  *
  * PHP version 7.3
  *
@@ -25,24 +25,24 @@
  * Do not edit the class manually.
  */
 
-namespace SellingPartnerApi\Model\VendorDirectFulfillmentTransactions;
+namespace SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1;
 
 use \ArrayAccess;
 use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * TransactionStatus Class Doc Comment
+ * GetTransactionResponse Class Doc Comment
  *
  * @category Class
- * @description The payload for the getTransactionStatus operation.
+ * @description The response schema for the getTransactionStatus operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetTransactionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransactionStatus';
+    protected static $openAPIModelName = 'GetTransactionResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,8 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'transaction_status' => '\SellingPartnerApi\Model\VendorDirectFulfillmentTransactions\Transaction'
+        'payload' => '\SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\TransactionStatus',
+        'errors' => '\SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\Error[]'
     ];
 
     /**
@@ -70,7 +71,8 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'transaction_status' => null
+        'payload' => null,
+        'errors' => null
     ];
 
     /**
@@ -100,7 +102,9 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'transaction_status' => 'transactionStatus'
+        'headers' => 'headers',
+        'payload' => 'payload',
+        'errors' => 'errors'
     ];
 
     /**
@@ -109,7 +113,9 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-                'transaction_status' => 'setTransactionStatus'
+        'headers' => 'setHeaders',
+        'payload' => 'setPayload',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -118,7 +124,9 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'transaction_status' => 'getTransactionStatus'
+        'headers' => 'getHeaders',
+        'payload' => 'getPayload',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -177,7 +185,8 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['transaction_status'] = $data['transaction_status'] ?? null;
+        $this->container['payload'] = $data['payload'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -203,27 +212,72 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
-     * Gets transaction_status
+     * Gets API response headers
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentTransactions\Transaction|null
+     * @return array[string]
      */
-    public function getTransactionStatus()
+    public function getHeaders()
     {
-        return $this->container['transaction_status'];
+        return $this->container['headers'];
     }
 
     /**
-     * Sets transaction_status
+     * Sets API response headers (only relevant to response models)
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentTransactions\Transaction|null $transaction_status transaction_status
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
-    public function setTransactionStatus($transaction_status)
+    public function setHeaders($headers)
     {
-        $this->container['transaction_status'] = $transaction_status;
+        $this->container['headers'] = $headers;
+        return $this;
+    }
+
+    /**
+     * Gets payload
+     *
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\TransactionStatus|null
+     */
+    public function getPayload()
+    {
+        return $this->container['payload'];
+    }
+
+    /**
+     * Sets payload
+     *
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\TransactionStatus|null $payload payload
+     *
+     * @return self
+     */
+    public function setPayload($payload)
+    {
+        $this->container['payload'] = $payload;
+
+        return $this;
+    }
+    /**
+     * Gets errors
+     *
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\Error[]|null
+     */
+    public function getErrors()
+    {
+        return $this->container['errors'];
+    }
+
+    /**
+     * Sets errors
+     *
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
+     *
+     * @return self
+     */
+    public function setErrors($errors)
+    {
+        $this->container['errors'] = $errors;
 
         return $this;
     }

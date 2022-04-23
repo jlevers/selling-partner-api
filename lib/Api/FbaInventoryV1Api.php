@@ -10,7 +10,7 @@
 /**
  * Selling Partner API for FBA Inventory
  *
- * The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon's fulfillment network. This API `i`s available in the North America region.
+ * The Selling Partner API for FBA Inventory lets you programmatically retrieve information about inventory in Amazon's fulfillment network.
  *
  * The version of the OpenAPI document: v1
  * 

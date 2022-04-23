@@ -12,7 +12,7 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 3/20/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of /20/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
 * Supports applications made with both IAM user and IAM role ARNs ([docs](#setup))
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
@@ -78,16 +78,16 @@ The array passed to the `Configuration` constructor accepts the following keys:
 
 * `lwaClientId (string)`: Required. The LWA client ID of the SP API application to use to execute API requests.
 * `lwaClientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
-* `lwaRefreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using the `Configuration` instance to call [grantless operations](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#grantless-operations).
+* `lwaRefreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using the `Configuration` instance to call [grantless operations](https://developer-docs.amazon.com/amazon-shipping/docs/grantless-operations).
 * `awsAccessKeyId (string)`: Required. AWS IAM user Access Key ID with SP API ExecuteAPI permissions.
 * `awsSecretAccessKey (string)`: Required. AWS IAM user Secret Access Key with SP API ExecuteAPI permissions.
-* `endpoint (array)`: Required. An array containing a `url` key (the endpoint URL) and a `region` key (the AWS region). There are predefined constants for these arrays in [`lib/Endpoint.php`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Endpoint.php): (`NA`, `EU`, `FE`, and `NA_SANDBOX`, `EU_SANDBOX`, and `FE_SANDBOX`. See [here](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#selling-partner-api-endpoints) for more details.
+* `endpoint (array)`: Required. An array containing a `url` key (the endpoint URL) and a `region` key (the AWS region). There are predefined constants for these arrays in [`lib/Endpoint.php`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Endpoint.php): (`NA`, `EU`, `FE`, and `NA_SANDBOX`, `EU_SANDBOX`, and `FE_SANDBOX`. See [here](https://developer-docs.amazon.com/amazon-shipping/docs/sp-api-endpoints) for more details.
 * `accessToken (string)`: An access token generated from the refresh token.
 * `accessTokenExpiration (int)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
 * `onUpdateCredentials (callable|Closure)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`SellingPartnerApi\Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
 * `roleArn (string)`: If you set up your SP API application with an AWS IAM role ARN instead of a user ARN, pass that ARN here.
 * `authenticationClient (GuzzleHttp\ClientInterface)`: Optional `GuzzleHttp\ClientInterface` object that will be used to generate the access token from the refresh token
-* `tokensApi (SellingPartnerApi\Api\TokensApi)`: Optional `SellingPartnerApi\Api\TokensApi` object that will be used to fetch Restricted Data Tokens (RDTs) when you call a [restricted operation]((https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md))
+* `tokensApi (SellingPartnerApi\Api\TokensApi)`: Optional `SellingPartnerApi\Api\TokensApi` object that will be used to fetch Restricted Data Tokens (RDTs) when you call a [restricted operation](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide)
 
 ### Example
 
@@ -112,12 +112,12 @@ $config = new Configuration([
     "endpoint" => Endpoint::NA
 ]);
 
-$api = new Api\SellersApi($config);
+$api = new Api\SellersV1Api($config);
 try {
     $result = $api->getMarketplaceParticipations();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SellersV0Api->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -140,69 +140,76 @@ $config->setDebugFile('./debug.log');
 
 ## Supported API segments
 
+Each API class name contains the API's version. This allows for multiple versions of the same API to be accessible in a single version of this package. It makes the class names a little uglier, but allows for simultaneously using new and old versions of the same API segment, which is often useful. It also means that if a new version of an existing API is introduced, the library can be updated to include that new version without introducing breaking changes.
+
 ### Seller APIs
-* [A+ Content API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AplusContentApi.md)
-* [Authorization API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AuthorizationApi.md)
-* [Catalog API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogApi.md)
-* [Catalog Items API V0](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV0Api.md) (the original Catalog API)
-* [FBA Inbound API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundApi.md)
-* [FBA Inbound Eligibility API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundEligibilityApi.md)
-* [FBA Inventory API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInventoryApi.md)
-* [FBA Outbound API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaOutboundApi.md)
-* [Feeds API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md)
-* [Fees API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeesApi.md)
-* [Finances API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FinancesApi.md)
-* [Listings API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsApi.md)
-* [Listings Restrictions API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsRestrictionsApi.md)
-* [Merchant Fulfillment API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MerchantFulfillmentApi.md)
-* [Messaging API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MessagingApi.md)
-* [Notifications API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/NotificationsApi.md)
-* [Orders API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersApi.md)
-* [Product Pricing API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductPricingApi.md)
-* [Product Type Definitions API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductTypeDefinitionsApi.md)
-* [Reports API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsApi.md)
-* [Sales API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SalesApi.md)
-* [Sellers API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SellersApi.md)
-* [Service API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ServiceApi.md)
-* [Shipment Invoicing API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShipmentInvoicingApi.md)
-* [Shipping API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingApi.md)
-* [Small and Light API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SmallAndLightApi.md)
-* [Solicitations API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SolicitationsApi.md)
-* [Restricted Data Tokens API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/TokensApi.md)
-* [Uploads API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/UploadsApi.md)
+* [A+ Content API (2020-11-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AplusContentV20201101Api.md)
+* [Authorization API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AuthorizationV1Api.md)
+* [Catalog Items API (2021-12-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV20211201Api.md)
+* [Catalog Items API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV0Api.md)
+* [EasyShip API (2022-03-23)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/EasyShipV20220323Api.md)
+* [FBA Inbound API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundV0Api.md)
+* [FBA Inbound Eligibility API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundEligibilityV1Api.md)
+* [FBA Inventory API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInventoryV1Api.md)
+* [FBA Outbound API (2020-07-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaOutboundV20200701Api.md)
+* [Feeds API (2021-06-30)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsV20210630Api.md)
+* [Fees API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeesV0Api.md)
+* [Finances API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FinancesV0Api.md)
+* [Listings API (2021-08-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsV20210801Api.md)
+* [Listings Restrictions API (2021-08-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsRestrictionsV20210801Api.md)
+* [Merchant Fulfillment API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MerchantFulfillmentV0Api.md)
+* [Messaging API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MessagingV1Api.md)
+* [Notifications API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/NotificationsV1Api.md)
+* [Orders API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md)
+* [Product Pricing API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductPricingV0Api.md)
+* [Product Type Definitions API (2020-09-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductTypeDefinitionsV20200901Api.md)
+* [Reports API (2021-06-30)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsV20210630Api.md)
+* [Sales API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SalesV1Api.md)
+* [Sellers API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SellersV1Api.md)
+* [Service API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ServiceV1Api.md)
+* [Shipment Invoicing API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShipmentInvoicingV0Api.md)
+* [Shipping API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingV1Api.md)
+* [Small and Light API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SmallAndLightV1Api.md)
+* [Solicitations API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SolicitationsV1Api.md)
+* [Restricted Data Tokens API (2021-03-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/TokensV20210301Api.md)
+* [Uploads API (2020-11-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/UploadsV20201101Api.md)
 
 ### Vendor APIs
-* [Direct Fulfillment Inventory API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentInventoryApi.md)
-* [Direct Fulfillment Orders API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentOrdersApi.md)
-* [Direct Fulfillment Payments API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentPaymentsApi.md)
-* [Direct Fulfillment Shipping API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentShippingApi.md)
-* [Direct Fulfillment Transactions API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentTransactionsApi.md)
-* [Invoices API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorInvoicesApi.md)
-* [Orders API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorOrdersApi.md)
-* [Shipping API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorShippingApi.md)
-* [Transaction Status API](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorTransactionStatusApi.md)
+* [Direct Fulfillment Inventory API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentInventoryV1Api.md)
+* [Direct Fulfillment Orders API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentOrdersV1Api.md)
+* [Direct Fulfillment Orders API (2021-12-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentOrdersV20211228Api.md)
+* [Direct Fulfillment Payments API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentPaymentsV1Api.md)
+* [Direct Fulfillment Snadbox API (2021-10-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentSandboxV20211028Api.md)
+* [Direct Fulfillment Shipping API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentShippingV1Api.md)
+* [Direct Fulfillment Shipping API (2021-12-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentShippingV20211228Api.md)
+* [Direct Fulfillment Transactions API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentTransactionsV1Api.md)
+* [Direct Fulfillment Transactions API (2021-12-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentTransactionsV20211228Api.md)
+* [Invoices API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorInvoicesV1Api.md)
+* [Orders API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorOrdersV1Api.md)
+* [Shipping API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorShippingV1Api.md)
+* [Transaction Status API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorTransactionStatusV1Api.md)
 
 
 ## Restricted operations
 
-When you call a [restricted operation]((https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md)), a Restricted Data Token (RDT) is automatically generated. If you're calling a restricted operation that accepts a [`dataElements`](https://github.com/amzn/selling-partner-api-docs/blob/main/references/tokens-api/tokens_2021-03-01.md#restrictedresource) parameter, you can pass `dataElements` values as a parameter to the API call. Check out the [getOrders](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersApi.md#getOrders), [getOrder](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersApi.md#getOrder), and [getOrderItems](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersApi.md#getOrderItems) documentation to see how to pass `dataElements` values to those calls. (At the time of writing, those are the only restricted operations that accept `dataElements` values.)
+When you call a [restricted operation](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide), a Restricted Data Token (RDT) is automatically generated. If you're calling a restricted operation that accepts a [`dataElements`](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide#restricted-operations) parameter, you can pass `dataElements` values as a parameter to the API call. Check out the [getOrders](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md#getOrders), [getOrder](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md#getOrder), and [getOrderItems](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md#getOrderItems) documentation to see how to pass `dataElements` values to those calls. (At the time of writing, those are the only restricted operations that accept `dataElements` values.)
 
 
 ## Uploading and downloading documents
 
-The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\Reports\ReportDocument`, `Model\Feeds\FeedDocument`, or `Model\Feeds\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsApi.md#getReportDocument), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsApi.md#createFeedDocument) endpoints, respectively.
+The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\ReportsV20210630\ReportDocument`, `Model\FeedsV20210630\FeedDocument`, or `Model\FeedsV20210630\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsV20210630.md#getReportDocument), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsV20210630.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsV20210630.md#createFeedDocument) endpoints, respectively.
 
 ### Downloading a report document
 
 ```php
-use SellingPartnerApi\Api\ReportsApi;
+use SellingPartnerApi\Api\ReportsV20210630Api;
 use SellingPartnerApi\ReportType;
 
 // Assume we've already fetched a report document ID, and that a $config object was defined above
 $documentId = 'foo.1234';
 $reportType = ReportType::GET_FLAT_FILE_OPEN_LISTINGS_DATA;
 
-$reportsApi = new ReportsApi($config);
+$reportsApi = new ReportsV20210630Api($config);
 $reportDocumentInfo = $reportsApi->getReportDocument($documentId, $reportType['name']);
 
 $docToDownload = new SellingPartnerApi\Document($reportDocumentInfo, $reportType);
@@ -221,15 +228,15 @@ $data = $docToDownload->getData();
 ### Uploading a feed document
 
 ```php
-use SellingPartnerApi\Api\FeedsApi;
+use SellingPartnerApi\Api\FeedsV20210630Api;
 use SellingPartnerApi\FeedType;
-use SellingPartnerApi\Model\Feeds;
+use SellingPartnerApi\Model\FeedsV20210630;
 
 $feedType = FeedType::POST_PRODUCT_PRICING_DATA;
-$feedsApi = new FeedsApi($config);
+$feedsApi = new FeedsV20210630Api($config);
 
 // Create feed document
-$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(['content_type' => $feedType['contentType']]);
+$createFeedDocSpec = new FeedsV20210630\CreateFeedDocumentSpecification(['content_type' => $feedType['contentType']]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
 $feedDocumentId = $feedDocumentInfo->getFeedDocumentId();
 
@@ -248,11 +255,11 @@ $docToUpload->upload($feedContents);
 This works very similarly to downloading a report document:
 
 ```php
-use SellingPartnerApi\Api\FeedsApi;
+use SellingPartnerApi\Api\FeedsV20210630Api;
 use SellingPartnerApi\FeedType;
 
 $feedType = FeedType::POST_PRODUCT_PRICING_DATA;
-$feedsApi = new FeedsApi($config);
+$feedsApi = new FeedsV20210630Api($config);
 
 // ...
 // Create and upload a feed document, and wait for it to finish processing
@@ -274,12 +281,12 @@ $data = $docToDownload->getData();  // Parsed/formatted report data
 
 ## Models
 
-Most operations have one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or use setter methods to set each attribute after the fact. Here's an example using the Service API's `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/Service/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/Service/Buyer.php)).
+Most operations have one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or use setter methods to set each attribute after the fact. Here's an example using the Service API's `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/ServiceV1/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/ServiceV1/Buyer.php)).
 
 The `Buyer` model has four attributes: `buyer_id`, `name`, `phone`, and `is_prime_member`. (If you're wondering how you would figure out which attributes the model has on your own, check out the `docs` link above.) To create an instance of the `Buyer` model with all those attributes set:
 
 ```php
-$buyer = new SellingPartnerApi\Model\Service\Buyer([
+$buyer = new SellingPartnerApi\Model\ServiceV1\Buyer([
     "buyer_id" => "ABCDEFGHIJKLMNOPQRSTU0123456",
     "name" => "Jane Doe",
     "phone" => "+12345678901",
@@ -290,7 +297,7 @@ $buyer = new SellingPartnerApi\Model\Service\Buyer([
 Alternatively, you can create an instance of the `Buyer` model and then populate its fields:
 
 ```php
-$buyer = new SellingPartnerApi\Model\Service\Buyer();
+$buyer = new SellingPartnerApi\Model\ServiceV1\Buyer();
 $buyer->setBuyerId("ABCDEFGHIJKLMNOPQRSTU0123456");
 $buyer->setName("Jane Doe");
 $buyer->setPhone("+12345678901");
@@ -309,7 +316,7 @@ $buyer->getIsPrimeMember();  // -> true
 Models can (and usually do) have other models as attributes:
 
 ``` php
-$serviceJob = new SellingPartnerApi\Model\Service\Buyer([
+$serviceJob = new SellingPartnerApi\Model\ServiceV1\Buyer([
     // ...
     "buyer" => $buyer,
     // ...
@@ -332,12 +339,12 @@ use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 
 $config = new Configuration([...]);
-$api = new Api\SellersApi($config);
+$api = new Api\SellersV1Api($config);
 try {
     $result = $api->getMarketplaceParticipations();
     $headers = $result->getHeaders();
     print_r($headers);
 } catch (Exception $e) {
-    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SellersV1Api->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
 ```

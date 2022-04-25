@@ -355,3 +355,49 @@ try {
     echo 'Exception when calling SellersV1Api->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
 ```
+
+## Custom Request Signer
+There is a possibility to use custom request signer.
+It may be needed if you need to do additional check during the signing of request.
+
+```php
+// RemoteRequestSigner.php
+use GuzzleHttp\Psr7\Request;
+use SellingPartnerApi\Contract\RequestSigner;
+
+class RemoteRequestSigner implements RequestSigner
+{
+    public function signRequest(Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Request {
+        // Sign request.
+        
+        return $signedRequest;
+    }
+}
+
+// Consumer code
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use SellingPartnerApi\Api;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\Endpoint;
+use RemoteRequestSigner;
+
+$config = new Configuration([...], new RemoteRequestSigner());
+$api = new Api\SellersApi($config);
+try {
+    $result = $api->getMarketplaceParticipations();
+    $headers = $result->getHeaders();
+    print_r($headers);
+} catch (Exception $e) {
+    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
+}
+
+```
+
+## Running Unit tests
+Use the following command to run PHPUnit tests:
+```shell
+docker-compose run --rm composer install
+docker-compose run --rm php vendor/bin/phpunit
+```

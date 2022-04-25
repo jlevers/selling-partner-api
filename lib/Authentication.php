@@ -8,8 +8,9 @@ use GuzzleHttp\Psr7;
 use SellingPartnerApi\Api\TokensV20210301Api as TokensApi;
 use SellingPartnerApi\Model\TokensV20210301 as Tokens;
 use RuntimeException;
+use SellingPartnerApi\Contract\RequestSigner;
 
-class Authentication
+class Authentication implements RequestSigner
 {
     public const DATETIME_FMT = "Ymd\THis\Z";
     private const DATE_FMT = "Ymd";

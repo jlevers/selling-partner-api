@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  php:
+    image: php:7.3-alpine
+    volumes:
+      - .:/app
+    working_dir: /app
+  composer:
+    image: composer:2.2
+    volumes:
+      - .:/app
+    working_dir: /app

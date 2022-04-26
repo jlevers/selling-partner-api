@@ -3,8 +3,13 @@
 namespace SellingPartnerApi\Contract;
 
 use GuzzleHttp\Psr7\Request;
+use SellingPartnerApi\Credentials;
 
 interface RequestSigner
 {
-    public function signRequest(Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Request;
+    public function sign(Request $request, Credentials $credentials): Request;
+
+    public function setRequestTime(?\DateTime $datetime = null): void;
+
+    public function formattedRequestTime(?bool $withTime = true): ?string;
 }

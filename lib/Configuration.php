@@ -19,7 +19,6 @@ use Exception;
 use GuzzleHttp\Psr7\Request;
 use InvalidArgumentException;
 use RuntimeException;
-use SellingPartnerApi\Contract\RequestSigner;
 
 /**
  * Configuration Class Doc Comment
@@ -80,17 +79,11 @@ class Configuration
     protected static $tempFolderPath = null;
 
     /**
-     * @var RequestSigner
-     */
-    protected $requestSigner;
-
-    /**
      * Constructor
      * @param array $configurationOptions
-     * @param RequestSigner|null $requestSigner
      * @throws Exception
      */
-    public function __construct(array $configurationOptions, ?RequestSigner $requestSigner = null)
+    public function __construct(array $configurationOptions)
     {
         // Make sure all required configuration options are present
         $missingKeys = [];
@@ -122,13 +115,6 @@ class Configuration
 
         $this->endpoint = $options["endpoint"];
         $this->auth = new Authentication($options);
-
-        $this->requestSigner = $requestSigner ?? $this->auth;
-    }
-
-    public function getRequestSigner(): RequestSigner
-    {
-        return $this->requestSigner;
     }
 
     /**
@@ -407,7 +393,7 @@ class Configuration
      */
     public function signRequest($request, $scope = null, $restrictedPath = null, $operation = null)
     {
-        return $this->requestSigner->signRequest($request, $scope, $restrictedPath, $operation);
+        return $this->auth->signRequest($request, $scope, $restrictedPath, $operation);
     }
 
     /**

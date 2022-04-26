@@ -367,11 +367,14 @@ use SellingPartnerApi\Contract\RequestSigner;
 
 class RemoteRequestSigner implements RequestSigner
 {
-    public function signRequest(Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Request {
-        // Sign request.
+    public function sign(Request $request, Credentials $credentials): Request
+    {
+        // Sign request
         
         return $signedRequest;
     }
+
+    // ...
 }
 
 // Consumer code
@@ -383,7 +386,10 @@ use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 use RemoteRequestSigner;
 
-$config = new Configuration([...], new RemoteRequestSigner());
+$config = new Configuration([
+    ..., 
+    'requestSigner' => new RemoteRequestSigner(),
+]);
 $api = new Api\SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();

@@ -53,6 +53,8 @@ class ShipmentStatus
     const DELIVERED = 'DELIVERED';
     const CHECKED_IN = 'CHECKED_IN';
     const READY_TO_SHIP = 'READY_TO_SHIP';
+    const CREATED = 'CREATED';
+    const ABANDONED = 'ABANDONED';
     
     /**
      * Gets allowable values of the enum
@@ -72,6 +74,8 @@ class ShipmentStatus
             self::DELIVERED,
             self::CHECKED_IN,
             self::READY_TO_SHIP,
+            self::CREATED,
+            self::ABANDONED,
         ];
     }
 }

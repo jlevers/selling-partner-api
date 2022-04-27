@@ -9,8 +9,9 @@ use SellingPartnerApi\Api\TokensV20210301Api as TokensApi;
 use SellingPartnerApi\Model\TokensV20210301 as Tokens;
 use RuntimeException;
 use SellingPartnerApi\Contract\AuthorizationSignerContract;
+use SellingPartnerApi\Contract\RequestSignerContract;
 
-class Authentication
+class Authentication implements RequestSignerContract
 {
     private $lwaClientId;
     private $lwaClientSecret;
@@ -21,7 +22,6 @@ class Authentication
     private $onUpdateCreds;
     private $roleArn;
 
-    private $requestTime;
     private $signingScope = null;
 
     /** @var \GuzzleHttp\ClientInterface */

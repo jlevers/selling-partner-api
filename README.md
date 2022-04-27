@@ -361,7 +361,7 @@ There is a possibility to use custom authorization signer.
 This may be useful if you want to have more control on adding "Authorization" signature to request. 
 
 ```php
-// RemoteRequestSigner.php
+// CustomAuthorizationSigner.php
 use GuzzleHttp\Psr7\Request;
 use SellingPartnerApi\Contract\AuthorizationSignerContract;
 
@@ -369,7 +369,14 @@ class CustomAuthorizationSigner implements AuthorizationSignerContract
 {
     public function sign(Request $request, Credentials $credentials): Request
     {
-        // Sign request
+        // Calculate request signature and request date.
+        
+        $requestDate = '20220426T202300Z';
+        $signatureHeaderValue = 'some calculated signature value';
+        
+        $signedRequest = $request
+            ->withHeader('Authorization', $signatureHeaderValue)
+            ->withHeader('x-amz-date', $requestDate);
         
         return $signedRequest;
     }
@@ -390,6 +397,46 @@ $config = new Configuration([
     ..., 
     'authorizationSigner' => new CustomAuthorizationSigner(),
 ]);
+$api = new Api\SellersApi($config);
+try {
+    $result = $api->getMarketplaceParticipations();
+    $headers = $result->getHeaders();
+    print_r($headers);
+} catch (Exception $e) {
+    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
+}
+
+```
+
+## Custom Request Signer
+More over there is a possibility to customize whole request signing process.
+It may be needed if you need to do additional check during the signing of request.
+Or you need to proceed request signing on separate service instance.
+
+```php
+// RemoteRequestSigner.php
+use GuzzleHttp\Psr7\Request;
+use SellingPartnerApi\Contract\RequestSigner;
+
+class RemoteRequestSigner implements RequestSigner
+{
+    public function signRequest(Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Request {
+        // Sign request by sending HTTP call to ge.
+        
+        return $signedRequest;
+    }
+}
+
+// Consumer code
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use SellingPartnerApi\Api;
+use SellingPartnerApi\Configuration;
+use SellingPartnerApi\Endpoint;
+use RemoteRequestSigner;
+
+$config = new Configuration([...], new RemoteRequestSigner());
 $api = new Api\SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();

@@ -7,10 +7,10 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use SellingPartnerApi\Contract\RequestSigner as RequestSignerContract;
+use SellingPartnerApi\Contract\AuthorizationSignerContract;
 use SellingPartnerApi\Authentication;
 use SellingPartnerApi\Endpoint;
-use SellingPartnerApi\RequestSigner;
+use SellingPartnerApi\AuthorizationSigner;
 
 class AuthenticationTest extends TestCase
 {
@@ -23,13 +23,13 @@ class AuthenticationTest extends TestCase
         'endpoint' => Endpoint::EU_SANDBOX,
     ];
 
-    public function testItUsesInjectedRequestSigner()
+    public function testItUsesInjectedAuthorizationSigner()
     {
         $request = new Request('GET', '/test/uri');
         $accessToken = 'the-access_token';
 
-        $requestSigner = $this->createMock(RequestSignerContract::class);
-        $requestSigner->expects($this->once())
+        $authSigner = $this->createMock(AuthorizationSignerContract::class);
+        $authSigner->expects($this->once())
             ->method('sign')
             ->willReturn($request);
 
@@ -41,7 +41,7 @@ class AuthenticationTest extends TestCase
 
         $auth = new Authentication(
             self::EMPTY_CONFIG + [
-                'requestSigner' => $requestSigner,
+                'authorizationSigner' => $authSigner,
                 'authenticationClient' => $client,
             ]
         );
@@ -52,9 +52,9 @@ class AuthenticationTest extends TestCase
         );
     }
 
-    public function testItUsesDefaultRequestSigner()
+    public function testItUsesDefaultAuthorizationSigner()
     {
         $auth = new Authentication(self::EMPTY_CONFIG);
-        $this->assertInstanceOf(RequestSigner::class, $auth->getRequestSigner());
+        $this->assertInstanceOf(AuthorizationSigner::class, $auth->getAuthorizationSigner());
     }
 }

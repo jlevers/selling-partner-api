@@ -6,16 +6,16 @@ use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
 use SellingPartnerApi\Endpoint;
 use SellingPartnerApi\Credentials;
-use SellingPartnerApi\RequestSigner;
+use SellingPartnerApi\AuthorizationSigner;
 
-class RequestSignerTest extends TestCase
+class AuthorizationSignerTest extends TestCase
 {
     public function testItSingsRequests()
     {
         $key = 'the-awsAccessKeyId';
         $endpoint = Endpoint::EU_SANDBOX;
 
-        $signer = new RequestSigner($endpoint);
+        $signer = new AuthorizationSigner($endpoint);
         $signer->setRequestTime(
             new \DateTime('2022-04-26 20:23:00', new \DateTimeZone('UTC'))
         );

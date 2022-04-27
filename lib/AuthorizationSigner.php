@@ -3,9 +3,9 @@
 namespace SellingPartnerApi;
 
 use GuzzleHttp\Psr7\Request;
-use SellingPartnerApi\Contract\RequestSigner as RequestSignerContract;
+use SellingPartnerApi\Contract\AuthorizationSignerContract;
 
-class RequestSigner implements RequestSignerContract
+class AuthorizationSigner implements AuthorizationSignerContract
 {
     public const DATETIME_FMT = 'Ymd\THis\Z';
     private const DATE_FMT = 'Ymd';

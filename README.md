@@ -356,16 +356,16 @@ try {
 }
 ```
 
-## Custom Request Signer
-There is a possibility to use custom request signer.
-It may be needed if you need to do additional check during the signing of request.
+## Custom Authorization Signer
+There is a possibility to use custom authorization signer.
+This may be useful if you want to have more control on adding "Authorization" signature to request. 
 
 ```php
 // RemoteRequestSigner.php
 use GuzzleHttp\Psr7\Request;
-use SellingPartnerApi\Contract\RequestSigner;
+use SellingPartnerApi\Contract\AuthorizationSignerContract;
 
-class RemoteRequestSigner implements RequestSigner
+class CustomAuthorizationSigner implements AuthorizationSignerContract
 {
     public function sign(Request $request, Credentials $credentials): Request
     {
@@ -384,11 +384,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 use SellingPartnerApi\Api;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
-use RemoteRequestSigner;
+use CustomAuthorizationSigner;
 
 $config = new Configuration([
     ..., 
-    'requestSigner' => new RemoteRequestSigner(),
+    'authorizationSigner' => new CustomAuthorizationSigner(),
 ]);
 $api = new Api\SellersApi($config);
 try {

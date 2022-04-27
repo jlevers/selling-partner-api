@@ -5,7 +5,7 @@ namespace SellingPartnerApi\Contract;
 use GuzzleHttp\Psr7\Request;
 use SellingPartnerApi\Credentials;
 
-interface RequestSigner
+interface AuthorizationSignerContract
 {
     public function sign(Request $request, Credentials $credentials): Request;
 

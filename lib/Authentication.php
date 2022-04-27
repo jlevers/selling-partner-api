@@ -8,7 +8,7 @@ use GuzzleHttp\Psr7;
 use SellingPartnerApi\Api\TokensV20210301Api as TokensApi;
 use SellingPartnerApi\Model\TokensV20210301 as Tokens;
 use RuntimeException;
-use SellingPartnerApi\Contract\RequestSigner as RequestSignerContract;
+use SellingPartnerApi\Contract\AuthorizationSignerContract;
 
 class Authentication
 {
@@ -44,8 +44,8 @@ class Authentication
     /** @var \SellingPartnerApi\Api\TokensV20210301Api */
     private $tokensApi = null;
 
-    /** @var RequestSignerContract */
-    private $requestSigner;
+    /** @var AuthorizationSignerContract */
+    private $authorizationSigner;
 
     /**
      * Authentication constructor.
@@ -77,12 +77,12 @@ class Authentication
         
         $this->tokensApi = $configurationOptions['tokensApi'] ?? null;
 
-        $this->requestSigner = $configurationOptions['requestSigner'] ?? new RequestSigner($this->endpoint);
+        $this->authorizationSigner = $configurationOptions['authorizationSigner'] ?? new AuthorizationSigner($this->endpoint);
     }
 
-    public function getRequestSigner(): RequestSignerContract
+    public function getAuthorizationSigner(): AuthorizationSignerContract
     {
-        return $this->requestSigner;
+        return $this->authorizationSigner;
     }
 
     /**
@@ -200,15 +200,13 @@ class Authentication
             $relevantCreds = $this->getRoleCredentials();
         }
 
-        $this->requestSigner->setRequestTime();
-        $signedRequest = $this->requestSigner->sign($request, $relevantCreds);
+        $this->authorizationSigner->setRequestTime();
+        $signedRequest = $this->authorizationSigner->sign($request, $relevantCreds)
+            ->withHeader('x-amz-access-token', $accessToken);
 
         if ($this->roleArn) {
             $signedRequest = $signedRequest->withHeader("x-amz-security-token", $relevantCreds->getSecurityToken());
         }
-
-        $signedRequest = $signedRequest->withHeader("x-amz-access-token", $accessToken);
-
 
         $this->signingScope = null;
 

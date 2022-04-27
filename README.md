@@ -97,7 +97,7 @@ This example assumes you have access to the `Seller Insights` Selling Partner AP
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\Api;
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 
@@ -112,7 +112,7 @@ $config = new Configuration([
     "endpoint" => Endpoint::NA
 ]);
 
-$api = new Api\SellersV1Api($config);
+$api = new SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
     print_r($result);
@@ -202,14 +202,14 @@ The Feeds and Reports APIs include operations that involve uploading and downloa
 ### Downloading a report document
 
 ```php
-use SellingPartnerApi\Api\ReportsV20210630Api;
+use SellingPartnerApi\Api\ReportsV20210630Api as ReportsApi;
 use SellingPartnerApi\ReportType;
 
 // Assume we've already fetched a report document ID, and that a $config object was defined above
 $documentId = 'foo.1234';
 $reportType = ReportType::GET_FLAT_FILE_OPEN_LISTINGS_DATA;
 
-$reportsApi = new ReportsV20210630Api($config);
+$reportsApi = new ReportsApi($config);
 $reportDocumentInfo = $reportsApi->getReportDocument($documentId, $reportType['name']);
 
 $docToDownload = new SellingPartnerApi\Document($reportDocumentInfo, $reportType);
@@ -228,15 +228,15 @@ $data = $docToDownload->getData();
 ### Uploading a feed document
 
 ```php
-use SellingPartnerApi\Api\FeedsV20210630Api;
+use SellingPartnerApi\Api\FeedsV20210630Api as FeedsApi;
 use SellingPartnerApi\FeedType;
-use SellingPartnerApi\Model\FeedsV20210630;
+use SellingPartnerApi\Model\FeedsV20210630 as Feeds;
 
 $feedType = FeedType::POST_PRODUCT_PRICING_DATA;
-$feedsApi = new FeedsV20210630Api($config);
+$feedsApi = new FeedsApi($config);
 
 // Create feed document
-$createFeedDocSpec = new FeedsV20210630\CreateFeedDocumentSpecification(['content_type' => $feedType['contentType']]);
+$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(['content_type' => $feedType['contentType']]);
 $feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
 $feedDocumentId = $feedDocumentInfo->getFeedDocumentId();
 
@@ -255,11 +255,11 @@ $docToUpload->upload($feedContents);
 This works very similarly to downloading a report document:
 
 ```php
-use SellingPartnerApi\Api\FeedsV20210630Api;
+use SellingPartnerApi\Api\FeedsV20210630Api as FeedsApi;
 use SellingPartnerApi\FeedType;
 
 $feedType = FeedType::POST_PRODUCT_PRICING_DATA;
-$feedsApi = new FeedsV20210630Api($config);
+$feedsApi = new FeedsApi($config);
 
 // ...
 // Create and upload a feed document, and wait for it to finish processing
@@ -334,12 +334,12 @@ Amazon includes some useful headers with each SP API response. If you need those
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\Api;
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 
 $config = new Configuration([...]);
-$api = new Api\SellersV1Api($config);
+$api = new Api\SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
     $headers = $result->getHeaders();

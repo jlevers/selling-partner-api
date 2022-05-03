@@ -90,7 +90,11 @@ class Document
      * @return string The raw (unencrypted) document contents.
      */
     public function download(?bool $postProcess = true, ?string $encoding = null): string {
-        $rawContents = file_get_contents($this->url);
+        $response = $this->client->request(
+            'GET', $this->url, ['stream' => true]
+        );
+			
+        $rawContents = $response->getBody()->getContents();
 
         $contents = null;
         if ($this->compressionAlgo !== null) {

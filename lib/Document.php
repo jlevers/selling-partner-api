@@ -85,14 +85,25 @@ class Document
      *      XLSX: a PhpOffice\PhpSpreadsheet\Spreadsheet object
      *      XML: a SimpleXML object
      * @param ?string $encoding Pass specific $from_encoding to mb_convert_encoding funtion. If not provided,
-     *      internal mbstring encoding is used
+     *      try to automatically detect and use the encoding from the http response, otherwise internal mbstring encoding is used
      *
      * @return string The raw (unencrypted) document contents.
      */
     public function download(?bool $postProcess = true, ?string $encoding = null): string {
-        $response = $this->client->request(
-            'GET', $this->url, ['stream' => true]
-        );
+		try {
+            $response = $this->client->request(
+                'GET', $this->url, ['stream' => true]
+            );
+		}
+		catch (\GuzzleHttp\Exception\ClientException $e) {
+		    $response = $e->getResponse();
+			if ($response->getStatusCode() == 404) {
+                throw new RuntimeException("Document Report not Found ({$response->getStatusCode()}): {$response->getBody()}");
+            }
+            else {
+                throw $e;
+            }
+		}
 			
         $rawContents = $response->getBody()->getContents();
 
@@ -116,10 +127,23 @@ class Document
         // typically ISO-8859-1 encoded, which messes up the data when we read it directly via
         // SimpleXML or as a plain TAB/CSV, but the original encoding is required to parse XLSX
         // and PDF reports.
+        // If encoding is not provided try to automatically detect the encoding from the http response; default is UTF-8
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
             if (!is_null($encoding) && !in_array(strtoupper($encoding), mb_list_encodings())) {
                 $encoding = null;
             }
+            else
+            {
+                $encodings = array('UTF-8');
+                if ($response->hasHeader('content-type')) {
+                    $httpContentType = $response->getHeader('content-type');
+                    $parsedHeader = \GuzzleHttp\Psr7\Header::parse($httpContentType);
+                    if (isset($parsedHeader[0]['charset'])) {
+                        array_unshift($encodings, $parsedHeader[0]['charset']);
+                    }
+				}
+				$encoding = mb_detect_encoding($contents, $encodings, true);
+			}
             $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());
         }
 

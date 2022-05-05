@@ -88,6 +88,8 @@ The array passed to the `Configuration` constructor accepts the following keys:
 * `roleArn (string)`: If you set up your SP API application with an AWS IAM role ARN instead of a user ARN, pass that ARN here.
 * `authenticationClient (GuzzleHttp\ClientInterface)`: Optional `GuzzleHttp\ClientInterface` object that will be used to generate the access token from the refresh token
 * `tokensApi (SellingPartnerApi\Api\TokensApi)`: Optional `SellingPartnerApi\Api\TokensApi` object that will be used to fetch Restricted Data Tokens (RDTs) when you call a [restricted operation](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide)
+* `authorizationSigner (SellingPartnerApi\Contract\AuthorizationSignerContract)`: Optional `SellingPartnerApi\Contract\AuthorizationSignerContract` implementation. See [Custom Authorization Signer](#custom-authorization-signer) section
+* `requestSigner (SellingPartnerApi\Contract\RequestSignerContract)`: Optional `SellingPartnerApi\Contract\RequestSignerContract` implementation. See [Custom Request Signer](#custom-request-signer) section.
 
 ### Example
 
@@ -117,7 +119,7 @@ try {
     $result = $api->getMarketplaceParticipations();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SellersV0Api->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -352,7 +354,7 @@ try {
     $headers = $result->getHeaders();
     print_r($headers);
 } catch (Exception $e) {
-    echo 'Exception when calling SellersV1Api->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -415,9 +417,9 @@ You can do so by creating an implementation of the [RequestSignerContract](lib/C
 ```php
 // RemoteRequestSigner.php
 use GuzzleHttp\Psr7\Request;
-use SellingPartnerApi\Contract\RequestSigner;
+use SellingPartnerApi\Contract\RequestSignerContract;
 
-class RemoteRequestSigner implements RequestSigner
+class RemoteRequestSigner implements RequestSignerContract
 {
     public function signRequest(
         Request $request,
@@ -441,7 +443,10 @@ use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 use RemoteRequestSigner;
 
-$config = new Configuration([...], new RemoteRequestSigner());
+$config = new Configuration([
+    ..., 
+    'requestSigner' => new RemoteRequestSigner(),
+]);
 $api = new Api\SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();

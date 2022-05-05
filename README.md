@@ -419,8 +419,14 @@ use SellingPartnerApi\Contract\RequestSigner;
 
 class RemoteRequestSigner implements RequestSigner
 {
-    public function signRequest(Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Request {
-        // Sign request by sending HTTP call to ge.
+    public function signRequest(
+        Request $request,
+        ?string $scope = null,
+        ?string $restrictedPath = null,
+        ?string $operation = null
+    ): Request {
+        // Sign request by sending HTTP call
+        // to external/separate service instance.
         
         return $signedRequest;
     }

@@ -357,8 +357,8 @@ try {
 ```
 
 ## Custom Authorization Signer
-There is a possibility to use custom authorization signer.
-This may be useful if you want to have more control on adding "Authorization" signature to request. 
+You may need to do custom operations while signing the API request.
+You can create a custom authorization signer by creating an implementation of the [AuthorizationSignerContract](lib/Contract/AuthorizationSignerContract.php) interface and passing it into the Configuration constructor array.
 
 ```php
 // CustomAuthorizationSigner.php
@@ -409,9 +409,8 @@ try {
 ```
 
 ## Custom Request Signer
-More over there is a possibility to customize whole request signing process.
-It may be needed if you need to do additional check during the signing of request.
-Or you need to proceed request signing on separate service instance.
+You may also need to customize the entire request signing process – for instance, if you need to call an external service in the process of signing the request.
+You can do so by creating an implementation of the [RequestSignerContract](lib/Contract/RequestSignerContract.php) interface, and passing an instance of it into the Configuration constructor array.
 
 ```php
 // RemoteRequestSigner.php

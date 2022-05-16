@@ -186,7 +186,7 @@ It also means that if a new version of an existing API is introduced, the librar
 * [Direct Fulfillment Orders API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentOrdersV1Api.md)
 * [Direct Fulfillment Orders API (2021-12-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentOrdersV20211228Api.md)
 * [Direct Fulfillment Payments API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentPaymentsV1Api.md)
-* [Direct Fulfillment Snadbox API (2021-10-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentSandboxV20211028Api.md)
+* [Direct Fulfillment Sandbox API (2021-10-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentSandboxV20211028Api.md)
 * [Direct Fulfillment Shipping API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentShippingV1Api.md)
 * [Direct Fulfillment Shipping API (2021-12-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentShippingV20211228Api.md)
 * [Direct Fulfillment Transactions API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentTransactionsV1Api.md)

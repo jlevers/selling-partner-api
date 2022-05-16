@@ -140,7 +140,14 @@ $config->setDebugFile('./debug.log');
 
 ## Supported API segments
 
-Each API class name contains the API's version. This allows for multiple versions of the same API to be accessible in a single version of this package. It makes the class names a little uglier, but allows for simultaneously using new and old versions of the same API segment, which is often useful. It also means that if a new version of an existing API is introduced, the library can be updated to include that new version without introducing breaking changes.
+Each API class name contains the API's version. This allows for multiple versions of the same API to be accessible in a single version of this package. It makes the class names a little uglier, but allows for simultaneously using new and old versions of the same API segment, which is often useful. The uglier names can be remedied by formatting `use` statements like so:
+
+```php
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
+use SellingPartnerApi\Model\SellersV1 as Sellers;
+```
+
+It also means that if a new version of an existing API is introduced, the library can be updated to include that new version without introducing breaking changes.
 
 ### Seller APIs
 * [A+ Content API (2020-11-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AplusContentV20201101Api.md)

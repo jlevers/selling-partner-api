@@ -59,6 +59,14 @@ class ReportType
     ];
 
 
+    // Seller Retail Analytics reports
+    public const GET_SALES_AND_TRAFFIC_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_SALES_AND_TRAFFIC_REPORT',
+        'restricted' => false,
+    ];
+
+
     // Inventory reports
     public const GET_FLAT_FILE_OPEN_LISTINGS_DATA = [
         'contentType' => ContentType::TAB,

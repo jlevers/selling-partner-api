@@ -122,12 +122,17 @@ class Configuration
         $this->endpoint = $options["endpoint"];
         $this->auth = new Authentication($options);
 
-        $this->requestSigner = $options['requestSigner'] ?? $this->auth;
+        $this->setRequestSigner($options['requestSigner'] ?? $this->auth);
     }
 
     public function getRequestSigner(): RequestSignerContract
     {
         return $this->requestSigner;
+    }
+
+    public function setRequestSigner(RequestSignerContract $requestSigner): void
+    {
+        $this->requestSigner = $requestSigner;
     }
 
     /**

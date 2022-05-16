@@ -7,9 +7,9 @@ use GuzzleHttp\RequestOptions;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use RuntimeException;
 
-use SellingPartnerApi\Model\Feeds\CreateFeedDocumentResponse;
-use SellingPartnerApi\Model\Feeds\FeedDocument;
-use SellingPartnerApi\Model\Reports\ReportDocument;
+use SellingPartnerApi\Model\FeedsV20210630\CreateFeedDocumentResponse;
+use SellingPartnerApi\Model\FeedsV20210630\FeedDocument;
+use SellingPartnerApi\Model\ReportsV20210630\ReportDocument;
 
 class Document
 {
@@ -26,7 +26,7 @@ class Document
     public $failedFeedRecords = null;
 
     /**
-     * @param Model\(Reports\ReportDocument|Feeds\FeedDocument|Feeds\CreateFeedDocumentResponse) $documentInfo
+     * @param Model\Reports\ReportDocument|Model\Feeds\FeedDocument|Model\Feeds\CreateFeedDocumentResponse $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
      * @param ?array['contentType' => string, 'name' => string] $documentType
      *      Must be one of the constants defined in the ReportType or FeedType classes. When downloading a feed
@@ -119,15 +119,16 @@ class Document
             $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());
         }
 
+        $fileType = IOFactory::identify($this->tmpFilename);
+        $reader = IOFactory::createReader($fileType);
         switch ($this->contentType) {
-            case ContentType::CSV:
-                // Amazon doesn't use enclosure characters (which typically are double quotes),
-                // so if a field starts with a double quote, that double quote needs to be escaped
-                // to avoid parsing errors.
-                $contents = preg_replace("/(,|^)\"([^\"]+?)(,|\n)/", "$1\"\"$2$3", $contents);
             case ContentType::TAB:
-                // See CSV case for explanation of this regex
-                $contents = preg_replace("/(\t|^)\"([^\"]+?)(\t|\n)/", "$1\"\"$2$3", $contents);
+                // Amazon doesn't use enclosure characters, and passing an empty string to setEnclosure
+                // results in the default enclosure being used (a double quote character), so we use a
+                // bizarre character to avoid recognizing double quotes as enclosures.
+                // Thanks @gregordonsky (https://github.com/gregordonsky) for the idea!
+                $reader->setEnclosure(chr(8));
+            case ContentType::CSV:
             case ContentType::XLSX:
                 $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
                 $tempFile = fopen($this->tmpFilename, "r+");
@@ -147,8 +148,7 @@ class Document
                 } else {
                     $this->data = $spreadsheet;
                 }
-                unlink($tempFile);
-
+                unlink($this->tmpFilename);
                 break;
             case ContentType::JSON:
                 $this->data = json_decode($contents, true);

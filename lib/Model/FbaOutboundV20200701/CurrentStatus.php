@@ -53,8 +53,6 @@ class CurrentStatus
     const AVAILABLE_FOR_PICKUP = 'AVAILABLE_FOR_PICKUP';
     const CUSTOMER_ACTION = 'CUSTOMER_ACTION';
     const UNKNOWN = 'UNKNOWN';
-    const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
-    const DELIVERY_ATTEMPTED = 'DELIVERY_ATTEMPTED';
     const PICKUP_SUCCESSFUL = 'PICKUP_SUCCESSFUL';
     const PICKUP_CANCELLED = 'PICKUP_CANCELLED';
     const PICKUP_ATTEMPTED = 'PICKUP_ATTEMPTED';
@@ -81,8 +79,6 @@ class CurrentStatus
             self::AVAILABLE_FOR_PICKUP,
             self::CUSTOMER_ACTION,
             self::UNKNOWN,
-            self::OUT_FOR_DELIVERY,
-            self::DELIVERY_ATTEMPTED,
             self::PICKUP_SUCCESSFUL,
             self::PICKUP_CANCELLED,
             self::PICKUP_ATTEMPTED,

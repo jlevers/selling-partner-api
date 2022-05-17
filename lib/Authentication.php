@@ -5,6 +5,8 @@ namespace SellingPartnerApi;
 use Aws\Sts\StsClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
+use SellingPartnerApi\Api\TokensV20210301Api as TokensApi;
+use SellingPartnerApi\Model\TokensV20210301 as Tokens;
 use RuntimeException;
 
 class Authentication
@@ -44,7 +46,7 @@ class Authentication
      */
     private $awsSecretAccessKey;
     
-    /** @var \SellingPartnerApi\Api\TokensApi */
+    /** @var \SellingPartnerApi\Api\TokensV20210301Api */
     private $tokensApi = null;
 
     /**
@@ -324,10 +326,10 @@ class Authentication
                     "roleArn" => $this->roleArn,
                     "endpoint" => $this->endpoint,
                 ]);
-                $tokensApi = new Api\TokensApi($config);
+                $tokensApi = new TokensApi($config);
             }
 
-            $restrictedResource = new Model\Tokens\RestrictedResource([
+            $restrictedResource = new Tokens\RestrictedResource([
                 "method" => $method,
                 "path" => $path,
             ]);
@@ -335,7 +337,7 @@ class Authentication
                 $restrictedResource->setDataElements($dataElements);
             }
 
-            $body = new Model\Tokens\CreateRestrictedDataTokenRequest([
+            $body = new Tokens\CreateRestrictedDataTokenRequest([
                 "restricted_resources" => [$restrictedResource],
             ]);
             $rdtData = $tokensApi->createRestrictedDataToken($body);

@@ -457,10 +457,3 @@ try {
 }
 
 ```
-
-## Running Unit tests
-Use the following command to run PHPUnit tests:
-```shell
-docker-compose run --rm composer install
-docker-compose run --rm php vendor/bin/phpunit
-```

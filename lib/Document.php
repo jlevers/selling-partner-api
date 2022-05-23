@@ -90,21 +90,19 @@ class Document
      * @return string The raw (unencrypted) document contents.
      */
     public function download(?bool $postProcess = true, ?string $encoding = null): string {
-		try {
-            $response = $this->client->request(
-                'GET', $this->url, ['stream' => true]
-            );
-		}
-		catch (\GuzzleHttp\Exception\ClientException $e) {
-		    $response = $e->getResponse();
-			if ($response->getStatusCode() == 404) {
+        try {
+            $response = $this->client->request('GET', $this->url, ['stream' => true]);
+        }
+        catch (\GuzzleHttp\Exception\ClientException $e) {
+            $response = $e->getResponse();
+            if ($response->getStatusCode() == 404) {
                 throw new RuntimeException("Document Report not Found ({$response->getStatusCode()}): {$response->getBody()}");
             }
             else {
                 throw $e;
             }
-		}
-			
+        }
+        
         $rawContents = $response->getBody()->getContents();
 
         $contents = null;
@@ -134,16 +132,16 @@ class Document
             }
             else
             {
-                $encodings = array('UTF-8');
+                $encodings = ['UTF-8'];
                 if ($response->hasHeader('content-type')) {
                     $httpContentType = $response->getHeader('content-type');
                     $parsedHeader = \GuzzleHttp\Psr7\Header::parse($httpContentType);
                     if (isset($parsedHeader[0]['charset'])) {
                         array_unshift($encodings, $parsedHeader[0]['charset']);
                     }
-				}
-				$encoding = mb_detect_encoding($contents, $encodings, true);
-			}
+                }
+                $encoding = mb_detect_encoding($contents, $encodings, true);
+            }
             $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());
         }
 

@@ -120,8 +120,15 @@ class Document
         }
 
         $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
-        $fileType = IOFactory::identify($this->tmpFilename);
-        $reader = IOFactory::createReader($fileType);
+
+        if (in_array($this->contentType, [ContentType::TAB, ContentType::CSV, ContentType::XLSX])) {
+            $tempFile = fopen($this->tmpFilename, "r+");
+            fwrite($tempFile, $contents);
+            fclose($tempFile);
+            $fileType = IOFactory::identify($this->tmpFilename);
+            $reader = IOFactory::createReader($fileType);
+        }
+
         switch ($this->contentType) {
             case ContentType::TAB:
                 // Amazon doesn't use enclosure characters, and passing an empty string to setEnclosure
@@ -131,10 +138,6 @@ class Document
                 $reader->setEnclosure(chr(8));
             case ContentType::CSV:
             case ContentType::XLSX:
-                $tempFile = fopen($this->tmpFilename, "r+");
-                fwrite($tempFile, $contents);
-                fclose($tempFile);
-
                 $spreadsheet = IOFactory::load($this->tmpFilename);
                 if ($this->contentType !== ContentType::XLSX) {
                     $sheet = $spreadsheet->getSheet(0)->toArray();

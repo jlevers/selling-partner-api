@@ -119,6 +119,7 @@ class Document
             $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());
         }
 
+        $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
         $fileType = IOFactory::identify($this->tmpFilename);
         $reader = IOFactory::createReader($fileType);
         switch ($this->contentType) {
@@ -130,7 +131,6 @@ class Document
                 $reader->setEnclosure(chr(8));
             case ContentType::CSV:
             case ContentType::XLSX:
-                $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
                 $tempFile = fopen($this->tmpFilename, "r+");
                 fwrite($tempFile, $contents);
                 fclose($tempFile);

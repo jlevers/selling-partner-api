@@ -1,6 +1,6 @@
 <?php
 /**
- * FeesEstimateIdentifier
+ * FeesEstimateByIdRequest
  *
  * PHP version 7.3
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * FeesEstimateIdentifier Class Doc Comment
+ * FeesEstimateByIdRequest Class Doc Comment
  *
  * @category Class
- * @description An item identifier, marketplace, time of request, and other details that identify an estimate.
+ * @description A product, marketplace, and proposed price used to request estimated fees.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerializable
+class FeesEstimateByIdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'FeesEstimateIdentifier';
+    protected static $openAPIModelName = 'FeesEstimateByIdRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,14 +59,9 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'marketplace_id' => 'string',
-        'seller_id' => 'string',
+        'fees_estimate_request' => '\SellingPartnerApi\Model\FeesV0\FeesEstimateRequest',
         'id_type' => '\SellingPartnerApi\Model\FeesV0\IdType',
-        'id_value' => 'string',
-        'is_amazon_fulfilled' => 'bool',
-        'price_to_estimate_fees' => '\SellingPartnerApi\Model\FeesV0\PriceToEstimateFees',
-        'seller_input_identifier' => 'string',
-        'optional_fulfillment_program' => '\SellingPartnerApi\Model\FeesV0\OptionalFulfillmentProgram'
+        'id_value' => 'string'
     ];
 
     /**
@@ -77,14 +72,9 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'marketplace_id' => null,
-        'seller_id' => null,
+        'fees_estimate_request' => null,
         'id_type' => null,
-        'id_value' => null,
-        'is_amazon_fulfilled' => null,
-        'price_to_estimate_fees' => null,
-        'seller_input_identifier' => null,
-        'optional_fulfillment_program' => null
+        'id_value' => null
     ];
 
     /**
@@ -114,14 +104,9 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'marketplace_id' => 'MarketplaceId',
-        'seller_id' => 'SellerId',
+        'fees_estimate_request' => 'FeesEstimateRequest',
         'id_type' => 'IdType',
-        'id_value' => 'IdValue',
-        'is_amazon_fulfilled' => 'IsAmazonFulfilled',
-        'price_to_estimate_fees' => 'PriceToEstimateFees',
-        'seller_input_identifier' => 'SellerInputIdentifier',
-        'optional_fulfillment_program' => 'OptionalFulfillmentProgram'
+        'id_value' => 'IdValue'
     ];
 
     /**
@@ -130,14 +115,9 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
-        'seller_id' => 'setSellerId',
+                'fees_estimate_request' => 'setFeesEstimateRequest',
         'id_type' => 'setIdType',
-        'id_value' => 'setIdValue',
-        'is_amazon_fulfilled' => 'setIsAmazonFulfilled',
-        'price_to_estimate_fees' => 'setPriceToEstimateFees',
-        'seller_input_identifier' => 'setSellerInputIdentifier',
-        'optional_fulfillment_program' => 'setOptionalFulfillmentProgram'
+        'id_value' => 'setIdValue'
     ];
 
     /**
@@ -146,14 +126,9 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'marketplace_id' => 'getMarketplaceId',
-        'seller_id' => 'getSellerId',
+        'fees_estimate_request' => 'getFeesEstimateRequest',
         'id_type' => 'getIdType',
-        'id_value' => 'getIdValue',
-        'is_amazon_fulfilled' => 'getIsAmazonFulfilled',
-        'price_to_estimate_fees' => 'getPriceToEstimateFees',
-        'seller_input_identifier' => 'getSellerInputIdentifier',
-        'optional_fulfillment_program' => 'getOptionalFulfillmentProgram'
+        'id_value' => 'getIdValue'
     ];
 
     /**
@@ -212,14 +187,9 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['seller_id'] = $data['seller_id'] ?? null;
+        $this->container['fees_estimate_request'] = $data['fees_estimate_request'] ?? null;
         $this->container['id_type'] = $data['id_type'] ?? null;
         $this->container['id_value'] = $data['id_value'] ?? null;
-        $this->container['is_amazon_fulfilled'] = $data['is_amazon_fulfilled'] ?? null;
-        $this->container['price_to_estimate_fees'] = $data['price_to_estimate_fees'] ?? null;
-        $this->container['seller_input_identifier'] = $data['seller_input_identifier'] ?? null;
-        $this->container['optional_fulfillment_program'] = $data['optional_fulfillment_program'] ?? null;
     }
 
     /**
@@ -231,6 +201,12 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
+        if ($this->container['id_type'] === null) {
+            $invalidProperties[] = "'id_type' can't be null";
+        }
+        if ($this->container['id_value'] === null) {
+            $invalidProperties[] = "'id_value' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -247,55 +223,32 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets marketplace_id
+     * Gets fees_estimate_request
      *
-     * @return string|null
+     * @return \SellingPartnerApi\Model\FeesV0\FeesEstimateRequest|null
      */
-    public function getMarketplaceId()
+    public function getFeesEstimateRequest()
     {
-        return $this->container['marketplace_id'];
+        return $this->container['fees_estimate_request'];
     }
 
     /**
-     * Sets marketplace_id
+     * Sets fees_estimate_request
      *
-     * @param string|null $marketplace_id A marketplace identifier.
+     * @param \SellingPartnerApi\Model\FeesV0\FeesEstimateRequest|null $fees_estimate_request fees_estimate_request
      *
      * @return self
      */
-    public function setMarketplaceId($marketplace_id)
+    public function setFeesEstimateRequest($fees_estimate_request)
     {
-        $this->container['marketplace_id'] = $marketplace_id;
-
-        return $this;
-    }
-    /**
-     * Gets seller_id
-     *
-     * @return string|null
-     */
-    public function getSellerId()
-    {
-        return $this->container['seller_id'];
-    }
-
-    /**
-     * Sets seller_id
-     *
-     * @param string|null $seller_id The seller identifier.
-     *
-     * @return self
-     */
-    public function setSellerId($seller_id)
-    {
-        $this->container['seller_id'] = $seller_id;
+        $this->container['fees_estimate_request'] = $fees_estimate_request;
 
         return $this;
     }
     /**
      * Gets id_type
      *
-     * @return \SellingPartnerApi\Model\FeesV0\IdType|null
+     * @return \SellingPartnerApi\Model\FeesV0\IdType
      */
     public function getIdType()
     {
@@ -305,7 +258,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id_type
      *
-     * @param \SellingPartnerApi\Model\FeesV0\IdType|null $id_type id_type
+     * @param \SellingPartnerApi\Model\FeesV0\IdType $id_type id_type
      *
      * @return self
      */
@@ -318,7 +271,7 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets id_value
      *
-     * @return string|null
+     * @return string
      */
     public function getIdValue()
     {
@@ -328,105 +281,13 @@ class FeesEstimateIdentifier implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id_value
      *
-     * @param string|null $id_value The item identifier.
+     * @param string $id_value The item identifier.
      *
      * @return self
      */
     public function setIdValue($id_value)
     {
         $this->container['id_value'] = $id_value;
-
-        return $this;
-    }
-    /**
-     * Gets is_amazon_fulfilled
-     *
-     * @return bool|null
-     */
-    public function getIsAmazonFulfilled()
-    {
-        return $this->container['is_amazon_fulfilled'];
-    }
-
-    /**
-     * Sets is_amazon_fulfilled
-     *
-     * @param bool|null $is_amazon_fulfilled When true, the offer is fulfilled by Amazon.
-     *
-     * @return self
-     */
-    public function setIsAmazonFulfilled($is_amazon_fulfilled)
-    {
-        $this->container['is_amazon_fulfilled'] = $is_amazon_fulfilled;
-
-        return $this;
-    }
-    /**
-     * Gets price_to_estimate_fees
-     *
-     * @return \SellingPartnerApi\Model\FeesV0\PriceToEstimateFees|null
-     */
-    public function getPriceToEstimateFees()
-    {
-        return $this->container['price_to_estimate_fees'];
-    }
-
-    /**
-     * Sets price_to_estimate_fees
-     *
-     * @param \SellingPartnerApi\Model\FeesV0\PriceToEstimateFees|null $price_to_estimate_fees price_to_estimate_fees
-     *
-     * @return self
-     */
-    public function setPriceToEstimateFees($price_to_estimate_fees)
-    {
-        $this->container['price_to_estimate_fees'] = $price_to_estimate_fees;
-
-        return $this;
-    }
-    /**
-     * Gets seller_input_identifier
-     *
-     * @return string|null
-     */
-    public function getSellerInputIdentifier()
-    {
-        return $this->container['seller_input_identifier'];
-    }
-
-    /**
-     * Sets seller_input_identifier
-     *
-     * @param string|null $seller_input_identifier A unique identifier provided by the caller to track this request.
-     *
-     * @return self
-     */
-    public function setSellerInputIdentifier($seller_input_identifier)
-    {
-        $this->container['seller_input_identifier'] = $seller_input_identifier;
-
-        return $this;
-    }
-    /**
-     * Gets optional_fulfillment_program
-     *
-     * @return \SellingPartnerApi\Model\FeesV0\OptionalFulfillmentProgram|null
-     */
-    public function getOptionalFulfillmentProgram()
-    {
-        return $this->container['optional_fulfillment_program'];
-    }
-
-    /**
-     * Sets optional_fulfillment_program
-     *
-     * @param \SellingPartnerApi\Model\FeesV0\OptionalFulfillmentProgram|null $optional_fulfillment_program optional_fulfillment_program
-     *
-     * @return self
-     */
-    public function setOptionalFulfillmentProgram($optional_fulfillment_program)
-    {
-        $this->container['optional_fulfillment_program'] = $optional_fulfillment_program;
 
         return $this;
     }

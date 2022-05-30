@@ -14,3 +14,7 @@ composer.lock
 
 # PHPUnit cache
 .phpunit.result.cache
+
+# IDE
+.idea
+.vscode

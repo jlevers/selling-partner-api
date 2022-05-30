@@ -58,18 +58,18 @@ class Authentication implements RequestSignerContract
 
         $this->lwaAuthUrl = $configurationOptions['lwaAuthUrl'] ?? "https://api.amazon.com/auth/o2/token";
         $this->lwaRefreshToken = $configurationOptions['lwaRefreshToken'] ?? null;
-        $this->onUpdateCreds = $configurationOptions['onUpdateCredentials'];
+        $this->onUpdateCreds = $configurationOptions['onUpdateCredentials'] ?? null;
         $this->lwaClientId = $configurationOptions['lwaClientId'];
         $this->lwaClientSecret = $configurationOptions['lwaClientSecret'];
         $this->endpoint = $configurationOptions['endpoint'];
 
-        $accessToken = $configurationOptions['accessToken'];
-        $accessTokenExpiration = $configurationOptions['accessTokenExpiration'];
+        $accessToken = $configurationOptions['accessToken'] ?? null;
+        $accessTokenExpiration = $configurationOptions['accessTokenExpiration'] ?? null;
 
         $this->awsAccessKeyId = $configurationOptions['awsAccessKeyId'];
         $this->awsSecretAccessKey = $configurationOptions['awsSecretAccessKey'];
 
-        $this->roleArn = $configurationOptions['roleArn'];
+        $this->roleArn = $configurationOptions['roleArn'] ?? null;
 
         if ($accessToken !== null && $accessTokenExpiration !== null) {
             $this->populateCredentials($this->awsAccessKeyId, $this->awsSecretAccessKey, $accessToken, $accessTokenExpiration);

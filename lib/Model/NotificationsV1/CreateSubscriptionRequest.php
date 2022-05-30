@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more. For more information, see the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide)
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more. For more information, see the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  * 
@@ -60,7 +60,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'payload_version' => 'string',
-        'destination_id' => 'string'
+        'destination_id' => 'string',
+        'processing_directive' => '\SellingPartnerApi\Model\NotificationsV1\ProcessingDirective'
     ];
 
     /**
@@ -72,7 +73,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'payload_version' => null,
-        'destination_id' => null
+        'destination_id' => null,
+        'processing_directive' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $attributeMap = [
         'payload_version' => 'payloadVersion',
-        'destination_id' => 'destinationId'
+        'destination_id' => 'destinationId',
+        'processing_directive' => 'processingDirective'
     ];
 
     /**
@@ -113,7 +116,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
                 'payload_version' => 'setPayloadVersion',
-        'destination_id' => 'setDestinationId'
+        'destination_id' => 'setDestinationId',
+        'processing_directive' => 'setProcessingDirective'
     ];
 
     /**
@@ -123,7 +127,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'payload_version' => 'getPayloadVersion',
-        'destination_id' => 'getDestinationId'
+        'destination_id' => 'getDestinationId',
+        'processing_directive' => 'getProcessingDirective'
     ];
 
     /**
@@ -184,6 +189,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $this->container['payload_version'] = $data['payload_version'] ?? null;
         $this->container['destination_id'] = $data['destination_id'] ?? null;
+        $this->container['processing_directive'] = $data['processing_directive'] ?? null;
     }
 
     /**
@@ -253,6 +259,29 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
     public function setDestinationId($destination_id)
     {
         $this->container['destination_id'] = $destination_id;
+
+        return $this;
+    }
+    /**
+     * Gets processing_directive
+     *
+     * @return \SellingPartnerApi\Model\NotificationsV1\ProcessingDirective|null
+     */
+    public function getProcessingDirective()
+    {
+        return $this->container['processing_directive'];
+    }
+
+    /**
+     * Sets processing_directive
+     *
+     * @param \SellingPartnerApi\Model\NotificationsV1\ProcessingDirective|null $processing_directive processing_directive
+     *
+     * @return self
+     */
+    public function setProcessingDirective($processing_directive)
+    {
+        $this->container['processing_directive'] = $processing_directive;
 
         return $this;
     }

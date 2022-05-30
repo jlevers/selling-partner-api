@@ -1,6 +1,6 @@
 <?php
 /**
- * Subscription
+ * AggregationFilter
  *
  * PHP version 7.3
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Subscription Class Doc Comment
+ * AggregationFilter Class Doc Comment
  *
  * @category Class
- * @description Represents a subscription to receive notifications.
+ * @description Use this filter to select the aggregation time period at which to send notifications (e.g. limit to one notification every five minutes for high frequency notifications).
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
+class AggregationFilter implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Subscription';
+    protected static $openAPIModelName = 'AggregationFilter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'subscription_id' => 'string',
-        'payload_version' => 'string',
-        'destination_id' => 'string',
-        'processing_directive' => '\SellingPartnerApi\Model\NotificationsV1\ProcessingDirective'
+        'aggregation_settings' => '\SellingPartnerApi\Model\NotificationsV1\AggregationSettings'
     ];
 
     /**
@@ -73,10 +70,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'subscription_id' => null,
-        'payload_version' => null,
-        'destination_id' => null,
-        'processing_directive' => null
+        'aggregation_settings' => null
     ];
 
     /**
@@ -106,10 +100,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'subscription_id' => 'subscriptionId',
-        'payload_version' => 'payloadVersion',
-        'destination_id' => 'destinationId',
-        'processing_directive' => 'processingDirective'
+        'aggregation_settings' => 'aggregationSettings'
     ];
 
     /**
@@ -118,10 +109,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'subscription_id' => 'setSubscriptionId',
-        'payload_version' => 'setPayloadVersion',
-        'destination_id' => 'setDestinationId',
-        'processing_directive' => 'setProcessingDirective'
+                'aggregation_settings' => 'setAggregationSettings'
     ];
 
     /**
@@ -130,10 +118,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'subscription_id' => 'getSubscriptionId',
-        'payload_version' => 'getPayloadVersion',
-        'destination_id' => 'getDestinationId',
-        'processing_directive' => 'getProcessingDirective'
+        'aggregation_settings' => 'getAggregationSettings'
     ];
 
     /**
@@ -192,10 +177,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['subscription_id'] = $data['subscription_id'] ?? null;
-        $this->container['payload_version'] = $data['payload_version'] ?? null;
-        $this->container['destination_id'] = $data['destination_id'] ?? null;
-        $this->container['processing_directive'] = $data['processing_directive'] ?? null;
+        $this->container['aggregation_settings'] = $data['aggregation_settings'] ?? null;
     }
 
     /**
@@ -207,15 +189,6 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['subscription_id'] === null) {
-            $invalidProperties[] = "'subscription_id' can't be null";
-        }
-        if ($this->container['payload_version'] === null) {
-            $invalidProperties[] = "'payload_version' can't be null";
-        }
-        if ($this->container['destination_id'] === null) {
-            $invalidProperties[] = "'destination_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -232,94 +205,25 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets subscription_id
+     * Gets aggregation_settings
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\NotificationsV1\AggregationSettings|null
      */
-    public function getSubscriptionId()
+    public function getAggregationSettings()
     {
-        return $this->container['subscription_id'];
+        return $this->container['aggregation_settings'];
     }
 
     /**
-     * Sets subscription_id
+     * Sets aggregation_settings
      *
-     * @param string $subscription_id The subscription identifier generated when the subscription is created.
+     * @param \SellingPartnerApi\Model\NotificationsV1\AggregationSettings|null $aggregation_settings aggregation_settings
      *
      * @return self
      */
-    public function setSubscriptionId($subscription_id)
+    public function setAggregationSettings($aggregation_settings)
     {
-        $this->container['subscription_id'] = $subscription_id;
-
-        return $this;
-    }
-    /**
-     * Gets payload_version
-     *
-     * @return string
-     */
-    public function getPayloadVersion()
-    {
-        return $this->container['payload_version'];
-    }
-
-    /**
-     * Sets payload_version
-     *
-     * @param string $payload_version The version of the payload object to be used in the notification.
-     *
-     * @return self
-     */
-    public function setPayloadVersion($payload_version)
-    {
-        $this->container['payload_version'] = $payload_version;
-
-        return $this;
-    }
-    /**
-     * Gets destination_id
-     *
-     * @return string
-     */
-    public function getDestinationId()
-    {
-        return $this->container['destination_id'];
-    }
-
-    /**
-     * Sets destination_id
-     *
-     * @param string $destination_id The identifier for the destination where notifications will be delivered.
-     *
-     * @return self
-     */
-    public function setDestinationId($destination_id)
-    {
-        $this->container['destination_id'] = $destination_id;
-
-        return $this;
-    }
-    /**
-     * Gets processing_directive
-     *
-     * @return \SellingPartnerApi\Model\NotificationsV1\ProcessingDirective|null
-     */
-    public function getProcessingDirective()
-    {
-        return $this->container['processing_directive'];
-    }
-
-    /**
-     * Sets processing_directive
-     *
-     * @param \SellingPartnerApi\Model\NotificationsV1\ProcessingDirective|null $processing_directive processing_directive
-     *
-     * @return self
-     */
-    public function setProcessingDirective($processing_directive)
-    {
-        $this->container['processing_directive'] = $processing_directive;
+        $this->container['aggregation_settings'] = $aggregation_settings;
 
         return $this;
     }

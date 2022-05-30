@@ -1,7 +1,7 @@
 <?php
 /**
  * Configuration
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -23,7 +23,7 @@ use SellingPartnerApi\Contract\RequestSignerContract;
 
 /**
  * Configuration Class Doc Comment
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -56,7 +56,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'jlevers/selling-partner-api/5.0.3 (Language=PHP)';
+    protected $userAgent = 'jlevers/selling-partner-api/5.1.0 (Language=PHP)';
 
     /**
      * Debug switch (default set to false)
@@ -122,7 +122,7 @@ class Configuration
         $this->endpoint = $options["endpoint"];
         $this->auth = new Authentication($options);
 
-        $this->setRequestSigner($options['requestSigner'] ?? $this->auth);
+        $this->setRequestSigner($options["requestSigner"] ?? $this->auth);
     }
 
     public function getRequestSigner(): RequestSignerContract

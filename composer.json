@@ -38,6 +38,9 @@
         "psr-4": { "SellingPartnerApi\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "SellingPartnerApi\\Tests\\" : "tests/" }
+        "psr-4": { "SellingPartnerApi\\Tests\\" : "test/" }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     }
 }

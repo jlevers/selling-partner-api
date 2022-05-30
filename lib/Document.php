@@ -92,13 +92,11 @@ class Document
     public function download(?bool $postProcess = true, ?string $encoding = null): string {
         try {
             $response = $this->client->request('GET', $this->url, ['stream' => true]);
-        }
-        catch (\GuzzleHttp\Exception\ClientException $e) {
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
             if ($response->getStatusCode() == 404) {
                 throw new RuntimeException("Document Report not Found ({$response->getStatusCode()}): {$response->getBody()}");
-            }
-            else {
+            } else {
                 throw $e;
             }
         }
@@ -106,10 +104,8 @@ class Document
         $rawContents = $response->getBody()->getContents();
 
         $contents = null;
-        if ($this->compressionAlgo !== null) {
-            if ($this->compressionAlgo === "GZIP") {
-                $contents = gzdecode($rawContents);
-            }
+        if ($this->compressionAlgo !== null && $this->compressionAlgo === "GZIP") {
+            $contents = gzdecode($rawContents);
         } else {
             $contents = $rawContents;
         }
@@ -129,9 +125,7 @@ class Document
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
             if (!is_null($encoding) && !in_array(strtoupper($encoding), mb_list_encodings())) {
                 $encoding = null;
-            }
-            else
-            {
+            } else {
                 $encodings = ['UTF-8'];
                 if ($response->hasHeader('content-type')) {
                     $httpContentType = $response->getHeader('content-type');

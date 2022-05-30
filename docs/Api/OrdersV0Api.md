@@ -27,7 +27,7 @@ Returns the order indicated by the specified order ID.
 
 | Plan type | Rate (requests per second) | Burst |
 | ---- | ---- | ---- |
-|Default| 0.0055 | 20 |
+|Default| 0.0167 | 20 |
 |Selling partner specific| Variable | Variable |
 
 The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -94,7 +94,7 @@ Returns the shipping address for the specified order.
 
 | Plan type | Rate (requests per second) | Burst |
 | ---- | ---- | ---- |
-|Default| 0.0055 | 20 |
+|Default| 0.0167 | 20 |
 |Selling partner specific| Variable | Variable |
 
 The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -159,7 +159,7 @@ Returns buyer information for the specified order.
 
 | Plan type | Rate (requests per second) | Burst |
 | ---- | ---- | ---- |
-|Default| 0.0055 | 20 |
+|Default| 0.0167 | 20 |
 |Selling partner specific| Variable | Variable |
 
 The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -226,7 +226,7 @@ Note: When an order is in the Pending state (the order has been placed but payme
 
 | Plan type | Rate (requests per second) | Burst |
 | ---- | ---- | ---- |
-|Default| 0.0055 | 20 |
+|Default| 0.5 | 30 |
 |Selling partner specific| Variable | Variable |
 
 The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -295,7 +295,7 @@ Returns buyer information for the order items in the specified order.
 
 | Plan type | Rate (requests per second) | Burst |
 | ---- | ---- | ---- |
-|Default| 0.0055 | 20 |
+|Default| 0.5 | 30 |
 |Selling partner specific| Variable | Variable |
 
 The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -362,7 +362,7 @@ Returns regulated information for the order indicated by the specified order ID.
 
 | Plan type | Rate (requests per second) | Burst |
 | ---- | ---- | ---- |
-|Default| 0.0055 | 20 |
+|Default| 0.5 | 30 |
 |Selling partner specific| Variable | Variable |
 
 The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -427,7 +427,7 @@ Returns orders created or updated during the time frame indicated by the specifi
 
 | Plan type | Rate (requests per second) | Burst |
 | ---- | ---- | ---- |
-|Default| 0.0055 | 20 |
+|Default| 0.0167 | 20 |
 |Selling partner specific| Variable | Variable |
 
 The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
@@ -526,6 +526,15 @@ updateShipmentStatus($order_id, $payload)
 
 Update the shipment status.
 
+**Usage Plans:**
+
+| Plan type | Rate (requests per second) | Burst |
+| ---- | ---- | ---- |
+|Default| 5 | 15 |
+|Selling partner specific| Variable | Variable |
+
+The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+
 ### Example
 
 ```php
@@ -587,7 +596,7 @@ Updates (approves or rejects) the verification status of an order containing reg
 
 | Plan type | Rate (requests per second) | Burst |
 | ---- | ---- | ---- |
-|Default| 0.0055 | 20 |
+|Default| 0.5 | 30 |
 |Selling partner specific| Variable | Variable |
 
 The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.

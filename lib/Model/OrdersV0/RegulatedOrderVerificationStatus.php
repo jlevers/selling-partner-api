@@ -59,7 +59,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'string',
+        'status' => '\SellingPartnerApi\Model\OrdersV0\VerificationStatus',
         'requires_merchant_action' => 'bool',
         'valid_rejection_reasons' => '\SellingPartnerApi\Model\OrdersV0\RejectionReason[]',
         'rejection_reason' => '\SellingPartnerApi\Model\OrdersV0\RejectionReason',
@@ -185,28 +185,6 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const STATUS_PENDING = 'Pending';
-    const STATUS_APPROVED = 'Approved';
-    const STATUS_REJECTED = 'Rejected';
-    const STATUS_EXPIRED = 'Expired';
-    const STATUS_CANCELLED = 'Cancelled';
-    
-    
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_PENDING,
-            self::STATUS_APPROVED,
-            self::STATUS_REJECTED,
-            self::STATUS_EXPIRED,
-            self::STATUS_CANCELLED,
-        ];
     }
     
     /**
@@ -244,15 +222,6 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['requires_merchant_action'] === null) {
             $invalidProperties[] = "'requires_merchant_action' can't be null";
         }
@@ -277,7 +246,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
     /**
      * Gets status
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\OrdersV0\VerificationStatus
      */
     public function getStatus()
     {
@@ -287,22 +256,12 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
     /**
      * Sets status
      *
-     * @param string $status The verification status of the order.
+     * @param \SellingPartnerApi\Model\OrdersV0\VerificationStatus $status status
      *
      * @return self
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

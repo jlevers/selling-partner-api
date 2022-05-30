@@ -53,6 +53,7 @@ Note: LatestShipDate might not be returned for orders placed before February 1, 
 **buyer_tax_information** | [**\SellingPartnerApi\Model\OrdersV0\BuyerTaxInformation**](BuyerTaxInformation.md) |  | [optional]
 **fulfillment_instruction** | [**\SellingPartnerApi\Model\OrdersV0\FulfillmentInstruction**](FulfillmentInstruction.md) |  | [optional]
 **is_ispu** | **bool** | When true, this order is marked to be picked up from a store rather than delivered. | [optional]
+**is_access_point_order** | **bool** | When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers. | [optional]
 **marketplace_tax_info** | [**\SellingPartnerApi\Model\OrdersV0\MarketplaceTaxInfo**](MarketplaceTaxInfo.md) |  | [optional]
 **seller_display_name** | **string** | The seller&#39;s friendly name registered in the marketplace. | [optional]
 **shipping_address** | [**\SellingPartnerApi\Model\OrdersV0\Address**](Address.md) |  | [optional]

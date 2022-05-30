@@ -59,7 +59,7 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'string',
+        'status' => '\SellingPartnerApi\Model\OrdersV0\VerificationStatus',
         'external_reviewer_id' => 'string',
         'rejection_reason_id' => 'string'
     ];
@@ -170,22 +170,6 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, ArrayAccess
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const STATUS_APPROVED = 'Approved';
-    const STATUS_REJECTED = 'Rejected';
-    
-    
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_APPROVED,
-            self::STATUS_REJECTED,
-        ];
     }
     
     /**
@@ -220,15 +204,6 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, ArrayAccess
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['external_reviewer_id'] === null) {
             $invalidProperties[] = "'external_reviewer_id' can't be null";
         }
@@ -250,7 +225,7 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\OrdersV0\VerificationStatus
      */
     public function getStatus()
     {
@@ -260,22 +235,12 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status The new verification status of the order.
+     * @param \SellingPartnerApi\Model\OrdersV0\VerificationStatus $status status
      *
      * @return self
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

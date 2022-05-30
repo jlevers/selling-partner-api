@@ -246,7 +246,7 @@ class BuyerRequestedCancel implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets buyer_cancel_reason
      *
-     * @param string|null $buyer_cancel_reason Reason for buyer requesting cancel
+     * @param string|null $buyer_cancel_reason The reason that the buyer requested cancellation.
      *
      * @return self
      */

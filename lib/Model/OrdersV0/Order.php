@@ -98,6 +98,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => '\SellingPartnerApi\Model\OrdersV0\BuyerTaxInformation',
         'fulfillment_instruction' => '\SellingPartnerApi\Model\OrdersV0\FulfillmentInstruction',
         'is_ispu' => 'bool',
+        'is_access_point_order' => 'bool',
         'marketplace_tax_info' => '\SellingPartnerApi\Model\OrdersV0\MarketplaceTaxInfo',
         'seller_display_name' => 'string',
         'shipping_address' => '\SellingPartnerApi\Model\OrdersV0\Address',
@@ -153,6 +154,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => null,
         'fulfillment_instruction' => null,
         'is_ispu' => null,
+        'is_access_point_order' => null,
         'marketplace_tax_info' => null,
         'seller_display_name' => null,
         'shipping_address' => null,
@@ -227,6 +229,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => 'BuyerTaxInformation',
         'fulfillment_instruction' => 'FulfillmentInstruction',
         'is_ispu' => 'IsISPU',
+        'is_access_point_order' => 'IsAccessPointOrder',
         'marketplace_tax_info' => 'MarketplaceTaxInfo',
         'seller_display_name' => 'SellerDisplayName',
         'shipping_address' => 'ShippingAddress',
@@ -280,6 +283,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => 'setBuyerTaxInformation',
         'fulfillment_instruction' => 'setFulfillmentInstruction',
         'is_ispu' => 'setIsIspu',
+        'is_access_point_order' => 'setIsAccessPointOrder',
         'marketplace_tax_info' => 'setMarketplaceTaxInfo',
         'seller_display_name' => 'setSellerDisplayName',
         'shipping_address' => 'setShippingAddress',
@@ -333,6 +337,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => 'getBuyerTaxInformation',
         'fulfillment_instruction' => 'getFulfillmentInstruction',
         'is_ispu' => 'getIsIspu',
+        'is_access_point_order' => 'getIsAccessPointOrder',
         'marketplace_tax_info' => 'getMarketplaceTaxInfo',
         'seller_display_name' => 'getSellerDisplayName',
         'shipping_address' => 'getShippingAddress',
@@ -536,6 +541,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['buyer_tax_information'] = $data['buyer_tax_information'] ?? null;
         $this->container['fulfillment_instruction'] = $data['fulfillment_instruction'] ?? null;
         $this->container['is_ispu'] = $data['is_ispu'] ?? null;
+        $this->container['is_access_point_order'] = $data['is_access_point_order'] ?? null;
         $this->container['marketplace_tax_info'] = $data['marketplace_tax_info'] ?? null;
         $this->container['seller_display_name'] = $data['seller_display_name'] ?? null;
         $this->container['shipping_address'] = $data['shipping_address'] ?? null;
@@ -1569,6 +1575,29 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsIspu($is_ispu)
     {
         $this->container['is_ispu'] = $is_ispu;
+
+        return $this;
+    }
+    /**
+     * Gets is_access_point_order
+     *
+     * @return bool|null
+     */
+    public function getIsAccessPointOrder()
+    {
+        return $this->container['is_access_point_order'];
+    }
+
+    /**
+     * Sets is_access_point_order
+     *
+     * @param bool|null $is_access_point_order When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
+     *
+     * @return self
+     */
+    public function setIsAccessPointOrder($is_access_point_order)
+    {
+        $this->container['is_access_point_order'] = $is_access_point_order;
 
         return $this;
     }

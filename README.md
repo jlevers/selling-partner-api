@@ -23,6 +23,27 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 `composer require jlevers/selling-partner-api`
 
 
+## Table of Contents 
+
+Check out the [Getting Started](#getting-started) section below for a quick overview.
+
+This README is divided into several sections:
+* [Setup](#setup)
+    * [Configuration options][#configuration-options]
+* [Examples](#examples)
+* [Supported API segments](#supported-api-segments)
+    * [Seller APIs](#seller-apis)
+    * [Vendor APIs](#vendor-apis)
+* [Restricted operations](#restricted-operations)
+* [Uploading and downloading documents](#uploading-and-downloading-documents)
+    * [Downloading a report document](#downloading-a-report-document)
+    * [Uploading a feed document](#uploading-a-feed-document)
+    * [Downloading a feed result document](#downloading-a-feed-result-document)
+* [Working with model classes](#working-with-model-classes)
+* [Response headers](#response-headers)
+* [Custom request authorization](#custom-authorization-signer)
+* [Custom request signing](#custom-request-signer)
+
 ## Getting Started
 
 ### Prerequisites
@@ -91,7 +112,7 @@ The array passed to the `Configuration` constructor accepts the following keys:
 * `authorizationSigner (SellingPartnerApi\Contract\AuthorizationSignerContract)`: Optional `SellingPartnerApi\Contract\AuthorizationSignerContract` implementation. See [Custom Authorization Signer](#custom-authorization-signer) section
 * `requestSigner (SellingPartnerApi\Contract\RequestSignerContract)`: Optional `SellingPartnerApi\Contract\RequestSignerContract` implementation. See [Custom Request Signer](#custom-request-signer) section.
 
-### Example
+### Examples
 
 This example assumes you have access to the `Seller Insights` Selling Partner API role, but the general format applies to any Selling Partner API request.
 
@@ -289,7 +310,7 @@ $data = $docToDownload->getData();  // Parsed/formatted report data
 ```
 
 
-## Models
+## Working with model classes
 
 Most operations have one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or use setter methods to set each attribute after the fact. Here's an example using the Service API's `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/ServiceV1/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/ServiceV1/Buyer.php)).
 
@@ -360,8 +381,7 @@ try {
 ```
 
 ## Custom Authorization Signer
-You may need to do custom operations while signing the API request.
-You can create a custom authorization signer by creating an implementation of the [AuthorizationSignerContract](lib/Contract/AuthorizationSignerContract.php) interface and passing it into the Configuration constructor array.
+You may need to do custom operations while signing the API request. You can create a custom authorization signer by creating an implementation of the [AuthorizationSignerContract](lib/Contract/AuthorizationSignerContract.php) interface and passing it into the `Configuration` constructor array.
 
 ```php
 // CustomAuthorizationSigner.php
@@ -412,8 +432,7 @@ try {
 ```
 
 ## Custom Request Signer
-You may also need to customize the entire request signing process – for instance, if you need to call an external service in the process of signing the request.
-You can do so by creating an implementation of the [RequestSignerContract](lib/Contract/RequestSignerContract.php) interface, and passing an instance of it into the Configuration constructor array.
+You may also need to customize the entire request signing process – for instance, if you need to call an external service in the process of signing the request. You can do so by creating an implementation of the [RequestSignerContract](lib/Contract/RequestSignerContract.php) interface, and passing an instance of it into the `Configuration` constructor array.
 
 ```php
 // RemoteRequestSigner.php

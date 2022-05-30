@@ -175,7 +175,9 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const TAX_REGISTRATION_TYPE_VAT = 'VAT';
+    }
+
+    const TAX_REGISTRATION_TYPE_VAT = 'VAT';
     const TAX_REGISTRATION_TYPE_GST = 'GST';
     
     

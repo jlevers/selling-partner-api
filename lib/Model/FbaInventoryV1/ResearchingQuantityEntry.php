@@ -165,7 +165,9 @@ class ResearchingQuantityEntry implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const NAME_RESEARCHING_QUANTITY_IN_SHORT_TERM = 'researchingQuantityInShortTerm';
+    }
+
+    const NAME_RESEARCHING_QUANTITY_IN_SHORT_TERM = 'researchingQuantityInShortTerm';
     const NAME_RESEARCHING_QUANTITY_IN_MID_TERM = 'researchingQuantityInMidTerm';
     const NAME_RESEARCHING_QUANTITY_IN_LONG_TERM = 'researchingQuantityInLongTerm';
     

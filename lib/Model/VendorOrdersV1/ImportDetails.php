@@ -180,12 +180,16 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const METHOD_OF_PAYMENT_PAID_BY_BUYER = 'PaidByBuyer';
+    }
+
+    const METHOD_OF_PAYMENT_PAID_BY_BUYER = 'PaidByBuyer';
     const METHOD_OF_PAYMENT_COLLECT_ON_DELIVERY = 'CollectOnDelivery';
     const METHOD_OF_PAYMENT_DEFINED_BY_BUYER_AND_SELLER = 'DefinedByBuyerAndSeller';
     const METHOD_OF_PAYMENT_FOB_PORT_OF_CALL = 'FOBPortOfCall';
     const METHOD_OF_PAYMENT_PREPAID_BY_SELLER = 'PrepaidBySeller';
     const METHOD_OF_PAYMENT_PAID_BY_SELLER = 'PaidBySeller';
+    
+
     const INTERNATIONAL_COMMERCIAL_TERMS_EX_WORKS = 'ExWorks';
     const INTERNATIONAL_COMMERCIAL_TERMS_FREE_CARRIER = 'FreeCarrier';
     const INTERNATIONAL_COMMERCIAL_TERMS_FREE_ON_BOARD = 'FreeOnBoard';

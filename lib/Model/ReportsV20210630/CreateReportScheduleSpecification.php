@@ -179,7 +179,9 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const PERIOD_PT5_M = 'PT5M';
+    }
+
+    const PERIOD_PT5_M = 'PT5M';
     const PERIOD_PT15_M = 'PT15M';
     const PERIOD_PT30_M = 'PT30M';
     const PERIOD_PT1_H = 'PT1H';

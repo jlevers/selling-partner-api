@@ -220,7 +220,9 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const SERVICE_JOB_STATUS_NOT_SERVICED = 'NOT_SERVICED';
+    }
+
+    const SERVICE_JOB_STATUS_NOT_SERVICED = 'NOT_SERVICED';
     const SERVICE_JOB_STATUS_CANCELLED = 'CANCELLED';
     const SERVICE_JOB_STATUS_COMPLETED = 'COMPLETED';
     const SERVICE_JOB_STATUS_PENDING_SCHEDULE = 'PENDING_SCHEDULE';

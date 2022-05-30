@@ -164,7 +164,9 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const CONTAINER_IDENTIFICATION_TYPE_SSCC = 'SSCC';
+    }
+
+    const CONTAINER_IDENTIFICATION_TYPE_SSCC = 'SSCC';
     const CONTAINER_IDENTIFICATION_TYPE_AMZNCC = 'AMZNCC';
     const CONTAINER_IDENTIFICATION_TYPE_GTIN = 'GTIN';
     const CONTAINER_IDENTIFICATION_TYPE_BPS = 'BPS';

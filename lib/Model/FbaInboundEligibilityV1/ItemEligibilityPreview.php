@@ -180,8 +180,12 @@ class ItemEligibilityPreview implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const PROGRAM_INBOUND = 'INBOUND';
+    }
+
+    const PROGRAM_INBOUND = 'INBOUND';
     const PROGRAM_COMMINGLING = 'COMMINGLING';
+    
+
     const INELIGIBILITY_REASON_LIST_FBA_INB_0004 = 'FBA_INB_0004';
     const INELIGIBILITY_REASON_LIST_FBA_INB_0006 = 'FBA_INB_0006';
     const INELIGIBILITY_REASON_LIST_FBA_INB_0007 = 'FBA_INB_0007';

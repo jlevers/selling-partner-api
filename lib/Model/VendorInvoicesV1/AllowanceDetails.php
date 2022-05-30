@@ -175,7 +175,9 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const TYPE_DISCOUNT = 'Discount';
+    }
+
+    const TYPE_DISCOUNT = 'Discount';
     const TYPE_DISCOUNT_INCENTIVE = 'DiscountIncentive';
     const TYPE_DEFECTIVE = 'Defective';
     const TYPE_PROMOTIONAL = 'Promotional';

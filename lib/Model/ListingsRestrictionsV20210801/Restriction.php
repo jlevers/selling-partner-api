@@ -170,7 +170,9 @@ class Restriction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const CONDITION_TYPE_NEW_NEW = 'new_new';
+    }
+
+    const CONDITION_TYPE_NEW_NEW = 'new_new';
     const CONDITION_TYPE_NEW_OPEN_BOX = 'new_open_box';
     const CONDITION_TYPE_NEW_OEM = 'new_oem';
     const CONDITION_TYPE_REFURBISHED_REFURBISHED = 'refurbished_refurbished';

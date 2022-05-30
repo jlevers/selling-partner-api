@@ -175,7 +175,9 @@ class RegulatedInformationField implements ModelInterface, ArrayAccess, \JsonSer
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const FIELD_TYPE_TEXT = 'Text';
+    }
+
+    const FIELD_TYPE_TEXT = 'Text';
     const FIELD_TYPE_FILE_ATTACHMENT = 'FileAttachment';
     
     

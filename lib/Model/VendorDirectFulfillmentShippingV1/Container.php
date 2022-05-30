@@ -214,7 +214,9 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const CONTAINER_TYPE_CARTON = 'carton';
+    }
+
+    const CONTAINER_TYPE_CARTON = 'carton';
     const CONTAINER_TYPE_PALLET = 'pallet';
     
     

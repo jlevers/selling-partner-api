@@ -170,7 +170,9 @@ class ListingsItemPutRequest implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const REQUIREMENTS_LISTING = 'LISTING';
+    }
+
+    const REQUIREMENTS_LISTING = 'LISTING';
     const REQUIREMENTS_LISTING_PRODUCT_ONLY = 'LISTING_PRODUCT_ONLY';
     const REQUIREMENTS_LISTING_OFFER_ONLY = 'LISTING_OFFER_ONLY';
     

@@ -225,10 +225,14 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const PURCHASE_ORDER_TYPE_REGULAR_ORDER = 'RegularOrder';
+    }
+
+    const PURCHASE_ORDER_TYPE_REGULAR_ORDER = 'RegularOrder';
     const PURCHASE_ORDER_TYPE_CONSIGNED_ORDER = 'ConsignedOrder';
     const PURCHASE_ORDER_TYPE_NEW_PRODUCT_INTRODUCTION = 'NewProductIntroduction';
     const PURCHASE_ORDER_TYPE_RUSH_ORDER = 'RushOrder';
+    
+
     const PAYMENT_METHOD_INVOICE = 'Invoice';
     const PAYMENT_METHOD_CONSIGNMENT = 'Consignment';
     const PAYMENT_METHOD_CREDIT_CARD = 'CreditCard';

@@ -169,7 +169,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const PURCHASE_ORDER_STATE__NEW = 'New';
+    }
+
+    const PURCHASE_ORDER_STATE__NEW = 'New';
     const PURCHASE_ORDER_STATE_ACKNOWLEDGED = 'Acknowledged';
     const PURCHASE_ORDER_STATE_CLOSED = 'Closed';
     

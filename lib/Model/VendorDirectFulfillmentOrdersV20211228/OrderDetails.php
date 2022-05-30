@@ -205,7 +205,9 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const ORDER_STATUS__NEW = 'NEW';
+    }
+
+    const ORDER_STATUS__NEW = 'NEW';
     const ORDER_STATUS_SHIPPED = 'SHIPPED';
     const ORDER_STATUS_ACCEPTED = 'ACCEPTED';
     const ORDER_STATUS_CANCELLED = 'CANCELLED';

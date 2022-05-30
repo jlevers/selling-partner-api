@@ -229,7 +229,9 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const INVOICE_TYPE_INVOICE = 'Invoice';
+    }
+
+    const INVOICE_TYPE_INVOICE = 'Invoice';
     const INVOICE_TYPE_CREDIT_NOTE = 'CreditNote';
     
     

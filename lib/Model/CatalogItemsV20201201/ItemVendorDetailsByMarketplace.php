@@ -195,7 +195,9 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, ArrayAccess, \Js
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const REPLENISHMENT_CATEGORY_ALLOCATED = 'ALLOCATED';
+    }
+
+    const REPLENISHMENT_CATEGORY_ALLOCATED = 'ALLOCATED';
     const REPLENISHMENT_CATEGORY_BASIC_REPLENISHMENT = 'BASIC_REPLENISHMENT';
     const REPLENISHMENT_CATEGORY_IN_SEASON = 'IN_SEASON';
     const REPLENISHMENT_CATEGORY_LIMITED_REPLENISHMENT = 'LIMITED_REPLENISHMENT';

@@ -175,7 +175,9 @@ class Issue implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const SEVERITY_ERROR = 'ERROR';
+    }
+
+    const SEVERITY_ERROR = 'ERROR';
     const SEVERITY_WARNING = 'WARNING';
     const SEVERITY_INFO = 'INFO';
     

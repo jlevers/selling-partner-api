@@ -185,7 +185,9 @@ class Appointment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const APPOINTMENT_STATUS_ACTIVE = 'ACTIVE';
+    }
+
+    const APPOINTMENT_STATUS_ACTIVE = 'ACTIVE';
     const APPOINTMENT_STATUS_CANCELLED = 'CANCELLED';
     const APPOINTMENT_STATUS_COMPLETED = 'COMPLETED';
     

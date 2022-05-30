@@ -239,11 +239,17 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const SHIPMENT_CONFIRMATION_TYPE_ORIGINAL = 'Original';
+    }
+
+    const SHIPMENT_CONFIRMATION_TYPE_ORIGINAL = 'Original';
     const SHIPMENT_CONFIRMATION_TYPE_REPLACE = 'Replace';
+    
+
     const SHIPMENT_TYPE_TRUCK_LOAD = 'TruckLoad';
     const SHIPMENT_TYPE_LESS_THAN_TRUCK_LOAD = 'LessThanTruckLoad';
     const SHIPMENT_TYPE_SMALL_PARCEL = 'SmallParcel';
+    
+
     const SHIPMENT_STRUCTURE_PALLETIZED_ASSORTMENT_CASE = 'PalletizedAssortmentCase';
     const SHIPMENT_STRUCTURE_LOOSE_ASSORTMENT_CASE = 'LooseAssortmentCase';
     const SHIPMENT_STRUCTURE_PALLET_OF_ITEMS = 'PalletOfItems';

@@ -170,7 +170,9 @@ class Transaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const STATUS_FAILURE = 'FAILURE';
+    }
+
+    const STATUS_FAILURE = 'FAILURE';
     const STATUS_PROCESSING = 'PROCESSING';
     const STATUS_SUCCESS = 'SUCCESS';
     

@@ -179,9 +179,13 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const ACKNOWLEDGEMENT_CODE_ACCEPTED = 'Accepted';
+    }
+
+    const ACKNOWLEDGEMENT_CODE_ACCEPTED = 'Accepted';
     const ACKNOWLEDGEMENT_CODE_BACKORDERED = 'Backordered';
     const ACKNOWLEDGEMENT_CODE_REJECTED = 'Rejected';
+    
+
     const REJECTION_REASON_TEMPORARILY_UNAVAILABLE = 'TemporarilyUnavailable';
     const REJECTION_REASON_INVALID_PRODUCT_IDENTIFIER = 'InvalidProductIdentifier';
     const REJECTION_REASON_OBSOLETE_PRODUCT = 'ObsoleteProduct';

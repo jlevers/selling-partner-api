@@ -213,7 +213,9 @@ class Report implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
+    }
+
+    const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
     const PROCESSING_STATUS_DONE = 'DONE';
     const PROCESSING_STATUS_FATAL = 'FATAL';
     const PROCESSING_STATUS_IN_PROGRESS = 'IN_PROGRESS';

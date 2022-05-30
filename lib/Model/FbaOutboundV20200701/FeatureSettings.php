@@ -165,7 +165,9 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const FEATURE_FULFILLMENT_POLICY_REQUIRED = 'Required';
+    }
+
+    const FEATURE_FULFILLMENT_POLICY_REQUIRED = 'Required';
     const FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED = 'NotRequired';
     
     

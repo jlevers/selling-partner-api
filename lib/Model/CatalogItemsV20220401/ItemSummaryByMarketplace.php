@@ -220,7 +220,9 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const ITEM_CLASSIFICATION_BASE_PRODUCT = 'BASE_PRODUCT';
+    }
+
+    const ITEM_CLASSIFICATION_BASE_PRODUCT = 'BASE_PRODUCT';
     const ITEM_CLASSIFICATION_OTHER = 'OTHER';
     const ITEM_CLASSIFICATION_PRODUCT_BUNDLE = 'PRODUCT_BUNDLE';
     const ITEM_CLASSIFICATION_VARIATION_PARENT = 'VARIATION_PARENT';

@@ -175,7 +175,9 @@ class ItemImage implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const VARIANT_MAIN = 'MAIN';
+    }
+
+    const VARIANT_MAIN = 'MAIN';
     const VARIANT_PT01 = 'PT01';
     const VARIANT_PT02 = 'PT02';
     const VARIANT_PT03 = 'PT03';

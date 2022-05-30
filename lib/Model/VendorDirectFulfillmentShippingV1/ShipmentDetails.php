@@ -180,7 +180,9 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
+    }
+
+    const SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
     const SHIPMENT_STATUS_FLOOR_DENIAL = 'FLOOR_DENIAL';
     
     

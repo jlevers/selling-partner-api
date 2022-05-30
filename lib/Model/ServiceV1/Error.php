@@ -175,7 +175,9 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const ERROR_LEVEL_ERROR = 'ERROR';
+    }
+
+    const ERROR_LEVEL_ERROR = 'ERROR';
     const ERROR_LEVEL_WARNING = 'WARNING';
     
     

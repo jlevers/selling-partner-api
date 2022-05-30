@@ -165,7 +165,9 @@ class SchemaLinkLink implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const VERB_GET = 'GET';
+    }
+
+    const VERB_GET = 'GET';
     
     
 

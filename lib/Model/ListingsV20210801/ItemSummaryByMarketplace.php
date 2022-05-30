@@ -205,7 +205,9 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const CONDITION_TYPE_NEW_NEW = 'new_new';
+    }
+
+    const CONDITION_TYPE_NEW_NEW = 'new_new';
     const CONDITION_TYPE_NEW_OPEN_BOX = 'new_open_box';
     const CONDITION_TYPE_NEW_OEM = 'new_oem';
     const CONDITION_TYPE_REFURBISHED_REFURBISHED = 'refurbished_refurbished';
@@ -218,6 +220,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     const CONDITION_TYPE_COLLECTIBLE_GOOD = 'collectible_good';
     const CONDITION_TYPE_COLLECTIBLE_ACCEPTABLE = 'collectible_acceptable';
     const CONDITION_TYPE_CLUB_CLUB = 'club_club';
+    
+
     const STATUS_BUYABLE = 'BUYABLE';
     const STATUS_DISCOVERABLE = 'DISCOVERABLE';
     

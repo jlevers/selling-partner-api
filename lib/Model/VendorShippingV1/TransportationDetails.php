@@ -174,7 +174,9 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const TRANSPORTATION_MODE_ROAD = 'Road';
+    }
+
+    const TRANSPORTATION_MODE_ROAD = 'Road';
     const TRANSPORTATION_MODE_AIR = 'Air';
     const TRANSPORTATION_MODE_OCEAN = 'Ocean';
     

@@ -170,7 +170,9 @@ class Reason implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const REASON_CODE_APPROVAL_REQUIRED = 'APPROVAL_REQUIRED';
+    }
+
+    const REASON_CODE_APPROVAL_REQUIRED = 'APPROVAL_REQUIRED';
     const REASON_CODE_ASIN_NOT_FOUND = 'ASIN_NOT_FOUND';
     const REASON_CODE_NOT_ELIGIBLE = 'NOT_ELIGIBLE';
     

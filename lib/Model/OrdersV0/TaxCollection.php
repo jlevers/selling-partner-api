@@ -165,8 +165,12 @@ class TaxCollection implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const MODEL_MARKETPLACE_FACILITATOR = 'MarketplaceFacilitator';
+    }
+
+    const MODEL_MARKETPLACE_FACILITATOR = 'MarketplaceFacilitator';
     const MODEL_LOW_VALUE_GOODS = 'LowValueGoods';
+    
+
     const RESPONSIBLE_PARTY_SERVICES_INC = 'Amazon Services, Inc.';
     const RESPONSIBLE_PARTY_COMMERCIAL_SERVICES_PTY_LTD = 'Amazon Commercial Services Pty Ltd';
     

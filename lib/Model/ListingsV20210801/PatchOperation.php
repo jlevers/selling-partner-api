@@ -170,7 +170,9 @@ class PatchOperation implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const OP_ADD = 'add';
+    }
+
+    const OP_ADD = 'add';
     const OP_REPLACE = 'replace';
     const OP_DELETE = 'delete';
     

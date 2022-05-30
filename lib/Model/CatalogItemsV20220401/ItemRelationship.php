@@ -175,7 +175,9 @@ class ItemRelationship implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const TYPE_VARIATION = 'VARIATION';
+    }
+
+    const TYPE_VARIATION = 'VARIATION';
     const TYPE_PACKAGE_HIERARCHY = 'PACKAGE_HIERARCHY';
     
     

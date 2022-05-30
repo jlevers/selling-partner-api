@@ -195,7 +195,9 @@ class FulfillmentShipment implements ModelInterface, ArrayAccess, \JsonSerializa
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const FULFILLMENT_SHIPMENT_STATUS_PENDING = 'PENDING';
+    }
+
+    const FULFILLMENT_SHIPMENT_STATUS_PENDING = 'PENDING';
     const FULFILLMENT_SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
     const FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_FULFILLER = 'CANCELLED_BY_FULFILLER';
     const FULFILLMENT_SHIPMENT_STATUS_CANCELLED_BY_SELLER = 'CANCELLED_BY_SELLER';

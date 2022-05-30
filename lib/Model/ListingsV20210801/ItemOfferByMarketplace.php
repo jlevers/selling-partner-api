@@ -175,7 +175,9 @@ class ItemOfferByMarketplace implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const OFFER_TYPE_B2_C = 'B2C';
+    }
+
+    const OFFER_TYPE_B2_C = 'B2C';
     const OFFER_TYPE_B2_B = 'B2B';
     
     

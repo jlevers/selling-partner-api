@@ -173,7 +173,9 @@ class ReportDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const COMPRESSION_ALGORITHM_GZIP = 'GZIP';
+    }
+
+    const COMPRESSION_ALGORITHM_GZIP = 'GZIP';
     
     
 

@@ -170,7 +170,9 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const RECEIVE_STATUS_NOT_RECEIVED = 'NOT_RECEIVED';
+    }
+
+    const RECEIVE_STATUS_NOT_RECEIVED = 'NOT_RECEIVED';
     const RECEIVE_STATUS_PARTIALLY_RECEIVED = 'PARTIALLY_RECEIVED';
     const RECEIVE_STATUS_RECEIVED = 'RECEIVED';
     

@@ -175,7 +175,9 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const AVAILABILITY_TYPE_NOW = 'NOW';
+    }
+
+    const AVAILABILITY_TYPE_NOW = 'NOW';
     const AVAILABILITY_TYPE_FUTURE_WITHOUT_DATE = 'FUTURE_WITHOUT_DATE';
     const AVAILABILITY_TYPE_FUTURE_WITH_DATE = 'FUTURE_WITH_DATE';
     

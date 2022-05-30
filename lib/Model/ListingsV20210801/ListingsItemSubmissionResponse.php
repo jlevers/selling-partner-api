@@ -178,7 +178,9 @@ class ListingsItemSubmissionResponse implements ModelInterface, ArrayAccess, \Js
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const STATUS_ACCEPTED = 'ACCEPTED';
+    }
+
+    const STATUS_ACCEPTED = 'ACCEPTED';
     const STATUS_INVALID = 'INVALID';
     
     

@@ -180,7 +180,9 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const POA_TYPE_NO_SIGNATURE_DUMMY_POS = 'NO_SIGNATURE_DUMMY_POS';
+    }
+
+    const POA_TYPE_NO_SIGNATURE_DUMMY_POS = 'NO_SIGNATURE_DUMMY_POS';
     const POA_TYPE_CUSTOMER_SIGNATURE = 'CUSTOMER_SIGNATURE';
     const POA_TYPE_DUMMY_RECEIPT = 'DUMMY_RECEIPT';
     const POA_TYPE_POA_RECEIPT = 'POA_RECEIPT';

@@ -385,7 +385,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const ORDER_STATUS_PENDING = 'Pending';
+    }
+
+    const ORDER_STATUS_PENDING = 'Pending';
     const ORDER_STATUS_UNSHIPPED = 'Unshipped';
     const ORDER_STATUS_PARTIALLY_SHIPPED = 'PartiallyShipped';
     const ORDER_STATUS_SHIPPED = 'Shipped';
@@ -393,16 +395,24 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     const ORDER_STATUS_UNFULFILLABLE = 'Unfulfillable';
     const ORDER_STATUS_INVOICE_UNCONFIRMED = 'InvoiceUnconfirmed';
     const ORDER_STATUS_PENDING_AVAILABILITY = 'PendingAvailability';
+    
+
     const FULFILLMENT_CHANNEL_MFN = 'MFN';
     const FULFILLMENT_CHANNEL_AFN = 'AFN';
+    
+
     const PAYMENT_METHOD_COD = 'COD';
     const PAYMENT_METHOD_CVS = 'CVS';
     const PAYMENT_METHOD_OTHER = 'Other';
+    
+
     const ORDER_TYPE_STANDARD_ORDER = 'StandardOrder';
     const ORDER_TYPE_LONG_LEAD_TIME_ORDER = 'LongLeadTimeOrder';
     const ORDER_TYPE_PREORDER = 'Preorder';
     const ORDER_TYPE_BACK_ORDER = 'BackOrder';
     const ORDER_TYPE_SOURCING_ON_DEMAND_ORDER = 'SourcingOnDemandOrder';
+    
+
     const BUYER_INVOICE_PREFERENCE_INDIVIDUAL = 'INDIVIDUAL';
     const BUYER_INVOICE_PREFERENCE_BUSINESS = 'BUSINESS';
     

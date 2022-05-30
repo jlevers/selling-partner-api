@@ -220,7 +220,9 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const ADDRESS_TYPE_RESIDENTIAL = 'Residential';
+    }
+
+    const ADDRESS_TYPE_RESIDENTIAL = 'Residential';
     const ADDRESS_TYPE_COMMERCIAL = 'Commercial';
     
     

@@ -170,7 +170,9 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const TYPE_SUR = 'SUR';
+    }
+
+    const TYPE_SUR = 'SUR';
     const TYPE_OCR = 'OCR';
     const TYPE_CARTON_COUNT = 'CartonCount';
     

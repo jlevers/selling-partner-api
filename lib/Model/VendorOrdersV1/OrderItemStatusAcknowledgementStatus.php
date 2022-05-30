@@ -175,7 +175,9 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const CONFIRMATION_STATUS_ACCEPTED = 'ACCEPTED';
+    }
+
+    const CONFIRMATION_STATUS_ACCEPTED = 'ACCEPTED';
     const CONFIRMATION_STATUS_PARTIALLY_ACCEPTED = 'PARTIALLY_ACCEPTED';
     const CONFIRMATION_STATUS_REJECTED = 'REJECTED';
     const CONFIRMATION_STATUS_UNCONFIRMED = 'UNCONFIRMED';

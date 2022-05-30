@@ -175,7 +175,9 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const TYPE_BASIC = 'Basic';
+    }
+
+    const TYPE_BASIC = 'Basic';
     const TYPE_END_OF_MONTH = 'EndOfMonth';
     const TYPE_FIXED_DATE = 'FixedDate';
     const TYPE_PROXIMO = 'Proximo';

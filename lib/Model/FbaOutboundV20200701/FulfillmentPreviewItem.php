@@ -180,7 +180,9 @@ class FulfillmentPreviewItem implements ModelInterface, ArrayAccess, \JsonSerial
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const SHIPPING_WEIGHT_CALCULATION_METHOD_PACKAGE = 'Package';
+    }
+
+    const SHIPPING_WEIGHT_CALCULATION_METHOD_PACKAGE = 'Package';
     const SHIPPING_WEIGHT_CALCULATION_METHOD_DIMENSIONAL = 'Dimensional';
     
     

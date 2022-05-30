@@ -190,7 +190,9 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const ITEM_STATUS_ACTIVE = 'ACTIVE';
+    }
+
+    const ITEM_STATUS_ACTIVE = 'ACTIVE';
     const ITEM_STATUS_CANCELLED = 'CANCELLED';
     const ITEM_STATUS_SHIPPED = 'SHIPPED';
     const ITEM_STATUS_DELIVERED = 'DELIVERED';

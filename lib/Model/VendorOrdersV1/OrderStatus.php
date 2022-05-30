@@ -190,7 +190,9 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const PURCHASE_ORDER_STATUS_OPEN = 'OPEN';
+    }
+
+    const PURCHASE_ORDER_STATUS_OPEN = 'OPEN';
     const PURCHASE_ORDER_STATUS_CLOSED = 'CLOSED';
     
     

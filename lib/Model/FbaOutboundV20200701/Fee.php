@@ -165,7 +165,9 @@ class Fee implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const NAME_FBA_PER_UNIT_FULFILLMENT_FEE = 'FBAPerUnitFulfillmentFee';
+    }
+
+    const NAME_FBA_PER_UNIT_FULFILLMENT_FEE = 'FBAPerUnitFulfillmentFee';
     const NAME_FBA_PER_ORDER_FULFILLMENT_FEE = 'FBAPerOrderFulfillmentFee';
     const NAME_FBA_TRANSPORTATION_FEE = 'FBATransportationFee';
     const NAME_FBA_FULFILLMENT_COD_FEE = 'FBAFulfillmentCODFee';

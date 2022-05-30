@@ -325,7 +325,9 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
+    }
+
+    const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
     const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
     const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
     const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';

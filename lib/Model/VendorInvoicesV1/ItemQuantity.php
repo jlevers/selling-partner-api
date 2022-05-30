@@ -170,7 +170,9 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const UNIT_OF_MEASURE_CASES = 'Cases';
+    }
+
+    const UNIT_OF_MEASURE_CASES = 'Cases';
     const UNIT_OF_MEASURE_EACHES = 'Eaches';
     
     

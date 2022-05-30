@@ -179,7 +179,9 @@ class ShippingLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const LABEL_FORMAT_PNG = 'PNG';
+    }
+
+    const LABEL_FORMAT_PNG = 'PNG';
     const LABEL_FORMAT_ZPL = 'ZPL';
     
     

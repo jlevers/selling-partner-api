@@ -199,7 +199,7 @@ class Feed implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return self::$openAPIModelName;
     }
-    
+
     const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
     const PROCESSING_STATUS_DONE = 'DONE';
     const PROCESSING_STATUS_FATAL = 'FATAL';

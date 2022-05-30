@@ -165,7 +165,9 @@ class FeeLineItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const FEE_TYPE_FBA_WEIGHT_BASED_FEE = 'FBAWeightBasedFee';
+    }
+
+    const FEE_TYPE_FBA_WEIGHT_BASED_FEE = 'FBAWeightBasedFee';
     const FEE_TYPE_FBA_PER_ORDER_FULFILLMENT_FEE = 'FBAPerOrderFulfillmentFee';
     const FEE_TYPE_FBA_PER_UNIT_FULFILLMENT_FEE = 'FBAPerUnitFulfillmentFee';
     const FEE_TYPE_COMMISSION = 'Commission';

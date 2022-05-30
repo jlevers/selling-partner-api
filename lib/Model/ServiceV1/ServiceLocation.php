@@ -165,7 +165,9 @@ class ServiceLocation implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const SERVICE_LOCATION_TYPE_IN_HOME = 'IN_HOME';
+    }
+
+    const SERVICE_LOCATION_TYPE_IN_HOME = 'IN_HOME';
     const SERVICE_LOCATION_TYPE_IN_STORE = 'IN_STORE';
     const SERVICE_LOCATION_TYPE_ONLINE = 'ONLINE';
     

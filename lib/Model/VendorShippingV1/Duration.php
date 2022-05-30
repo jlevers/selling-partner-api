@@ -164,7 +164,9 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const DURATION_UNIT_DAYS = 'Days';
+    }
+
+    const DURATION_UNIT_DAYS = 'Days';
     const DURATION_UNIT_MONTHS = 'Months';
     
     

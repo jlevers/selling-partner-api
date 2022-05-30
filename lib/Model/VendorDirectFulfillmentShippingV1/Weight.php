@@ -165,7 +165,9 @@ class Weight implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const UNIT_OF_MEASURE_KG = 'KG';
+    }
+
+    const UNIT_OF_MEASURE_KG = 'KG';
     const UNIT_OF_MEASURE_LB = 'LB';
     
     

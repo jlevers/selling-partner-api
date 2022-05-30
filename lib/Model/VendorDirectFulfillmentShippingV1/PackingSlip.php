@@ -170,7 +170,9 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const CONTENT_TYPE_APPLICATION_PDF = 'application/pdf';
+    }
+
+    const CONTENT_TYPE_APPLICATION_PDF = 'application/pdf';
     
     
 

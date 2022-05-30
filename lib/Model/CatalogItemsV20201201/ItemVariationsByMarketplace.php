@@ -170,7 +170,9 @@ class ItemVariationsByMarketplace implements ModelInterface, ArrayAccess, \JsonS
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const VARIATION_TYPE_PARENT = 'PARENT';
+    }
+
+    const VARIATION_TYPE_PARENT = 'PARENT';
     const VARIATION_TYPE_CHILD = 'CHILD';
     
     

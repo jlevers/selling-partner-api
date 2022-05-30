@@ -180,7 +180,9 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const HANDLING_CODE_OVERSIZED = 'Oversized';
+    }
+
+    const HANDLING_CODE_OVERSIZED = 'Oversized';
     const HANDLING_CODE_FRAGILE = 'Fragile';
     const HANDLING_CODE_FOOD = 'Food';
     const HANDLING_CODE_HANDLE_WITH_CARE = 'HandleWithCare';

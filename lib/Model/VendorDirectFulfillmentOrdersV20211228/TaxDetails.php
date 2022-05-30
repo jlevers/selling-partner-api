@@ -174,7 +174,9 @@ class TaxDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const TYPE_CONSUMPTION = 'CONSUMPTION';
+    }
+
+    const TYPE_CONSUMPTION = 'CONSUMPTION';
     const TYPE_GST = 'GST';
     const TYPE_MW_ST = 'MwSt.';
     const TYPE_PST = 'PST';

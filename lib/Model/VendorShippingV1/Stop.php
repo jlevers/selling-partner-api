@@ -175,7 +175,9 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const FUNCTION_CODE_PORT_OF_DISCHARGE = 'PortOfDischarge';
+    }
+
+    const FUNCTION_CODE_PORT_OF_DISCHARGE = 'PortOfDischarge';
     const FUNCTION_CODE_FREIGHT_PAYABLE_AT = 'FreightPayableAt';
     const FUNCTION_CODE_PORT_OF_LOADING = 'PortOfLoading';
     

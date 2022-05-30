@@ -165,7 +165,11 @@ class LabelSpecification implements ModelInterface, ArrayAccess, \JsonSerializab
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const LABEL_FORMAT_PNG = 'PNG';
+    }
+
+    const LABEL_FORMAT_PNG = 'PNG';
+    
+
     const LABEL_STOCK_SIZE__4X6 = '4x6';
     
     

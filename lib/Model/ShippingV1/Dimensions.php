@@ -175,7 +175,9 @@ class Dimensions implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const UNIT_IN = 'IN';
+    }
+
+    const UNIT_IN = 'IN';
     const UNIT_CM = 'CM';
     
     

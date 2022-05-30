@@ -170,7 +170,9 @@ class ChargeDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const TYPE_GIFTWRAP = 'GIFTWRAP';
+    }
+
+    const TYPE_GIFTWRAP = 'GIFTWRAP';
     const TYPE_FULFILLMENT = 'FULFILLMENT';
     const TYPE_MARKETINGINSERT = 'MARKETINGINSERT';
     const TYPE_PACKAGING = 'PACKAGING';

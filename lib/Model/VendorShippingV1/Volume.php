@@ -165,7 +165,9 @@ class Volume implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelName()
     {
         return self::$openAPIModelName;
-    }const UNIT_OF_MEASURE_CU_FT = 'CuFt';
+    }
+
+    const UNIT_OF_MEASURE_CU_FT = 'CuFt';
     const UNIT_OF_MEASURE_CU_IN = 'CuIn';
     const UNIT_OF_MEASURE_CU_M = 'CuM';
     const UNIT_OF_MEASURE_CU_Y = 'CuY';

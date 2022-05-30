@@ -29,7 +29,7 @@ Check out the [Getting Started](#getting-started) section below for a quick over
 
 This README is divided into several sections:
 * [Setup](#setup)
-    * [Configuration options][#configuration-options]
+    * [Configuration options](#configuration-options)
 * [Examples](#examples)
 * [Supported API segments](#supported-api-segments)
     * [Seller APIs](#seller-apis)

@@ -52,6 +52,7 @@ class PrepInstruction
     const BOXING = 'Boxing';
     const SUFFOCATION_STICKERING = 'SuffocationStickering';
     const SET_STICKERING = 'SetStickering';
+    const REMOVE_FROM_HANGER = 'RemoveFromHanger';
     
     /**
      * Gets allowable values of the enum
@@ -70,6 +71,7 @@ class PrepInstruction
             self::BOXING,
             self::SUFFOCATION_STICKERING,
             self::SET_STICKERING,
+            self::REMOVE_FROM_HANGER,
         ];
     }
 }

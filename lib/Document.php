@@ -136,7 +136,7 @@ class Document
                 }
                 $encoding = mb_detect_encoding($contents, $encodings, true);
             }
-            $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?? mb_internal_encoding());
+            $contents = mb_convert_encoding($contents, "UTF-8", $encoding ?: mb_internal_encoding());
         }
 
         $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");

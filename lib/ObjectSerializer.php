@@ -264,7 +264,7 @@ class ObjectSerializer
         }
 
         if (strcasecmp(substr($class, -2), '[]') === 0) {
-            $data = is_string($data) ? json_decode($data, true) : $data;
+            $data = is_string($data) ? json_decode($data) : $data;
             
             if (!is_array($data)) {
                 throw new \InvalidArgumentException("Invalid array '$class'");

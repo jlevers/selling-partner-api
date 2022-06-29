@@ -37,14 +37,34 @@ class ReportType
 
 
     // Vendor Retail Analytics reports
+    public const GET_VENDOR_SALES_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_VENDOR_SALES_REPORT',
+        'restricted' => false,
+    ];
     public const GET_VENDOR_SALES_DIAGNOSTIC_REPORT = [
         'contentType' => ContentType::JSON,
         'name' => 'GET_VENDOR_SALES_DIAGNOSTIC_REPORT',
         'restricted' => false,
     ];
+    public const GET_VENDOR_TRAFFIC_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_VENDOR_TRAFFIC_REPORT',
+        'restricted' => false,
+    ];
     public const GET_VENDOR_INVENTORY_HEALTH_AND_PLANNING_REPORT = [
         'contentType' => ContentType::JSON,
         'name' => 'GET_VENDOR_INVENTORY_HEALTH_AND_PLANNING_REPORT',
+        'restricted' => false,
+    ];
+    public const GET_VENDOR_INVENTORY_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_VENDOR_INVENTORY_REPORT',
+        'restricted' => false,
+    ];
+    public const GET_VENDOR_FORECASTING_REPORT = [
+        'contentType' => ContentType::JSON,
+        'name' => 'GET_VENDOR_FORECASTING_REPORT',
         'restricted' => false,
     ];
     public const GET_VENDOR_DEMAND_FORECAST_REPORT = [

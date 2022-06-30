@@ -197,7 +197,6 @@ class GetPricingResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if (!is_null($this->container['payload']) && (count($this->container['payload']) > 20)) {
             $invalidProperties[] = "invalid value for 'payload', number of items must be less than or equal to 20.";
         }

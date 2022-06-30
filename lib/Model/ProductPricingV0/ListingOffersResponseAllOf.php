@@ -187,7 +187,6 @@ class ListingOffersResponseAllOf implements ModelInterface, ArrayAccess, \JsonSe
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         return $invalidProperties;
     }
 

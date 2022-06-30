@@ -194,7 +194,6 @@ class GetOffersHttpStatusLine implements ModelInterface, ArrayAccess, \JsonSeria
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if (!is_null($this->container['status_code']) && ($this->container['status_code'] > 599)) {
             $invalidProperties[] = "invalid value for 'status_code', must be smaller than or equal to 599.";
         }

@@ -197,7 +197,6 @@ class GetOffersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         return $invalidProperties;
     }
 

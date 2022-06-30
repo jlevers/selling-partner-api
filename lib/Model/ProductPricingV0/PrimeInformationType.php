@@ -194,7 +194,6 @@ class PrimeInformationType implements ModelInterface, ArrayAccess, \JsonSerializ
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['is_prime'] === null) {
             $invalidProperties[] = "'is_prime' can't be null";
         }

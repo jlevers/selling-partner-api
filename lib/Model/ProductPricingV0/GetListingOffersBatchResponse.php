@@ -191,7 +191,6 @@ class GetListingOffersBatchResponse implements ModelInterface, ArrayAccess, \Jso
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if (!is_null($this->container['responses']) && (count($this->container['responses']) > 20)) {
             $invalidProperties[] = "invalid value for 'responses', number of items must be less than or equal to 20.";
         }

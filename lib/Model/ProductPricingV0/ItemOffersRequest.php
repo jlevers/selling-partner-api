@@ -217,7 +217,6 @@ class ItemOffersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['uri'] === null) {
             $invalidProperties[] = "'uri' can't be null";
         }

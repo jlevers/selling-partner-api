@@ -194,7 +194,6 @@ class IdentifierType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['marketplace_asin'] === null) {
             $invalidProperties[] = "'marketplace_asin' can't be null";
         }

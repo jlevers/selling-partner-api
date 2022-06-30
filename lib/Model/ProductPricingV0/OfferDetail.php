@@ -277,7 +277,6 @@ class OfferDetail implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['sub_condition'] === null) {
             $invalidProperties[] = "'sub_condition' can't be null";
         }

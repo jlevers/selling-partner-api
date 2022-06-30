@@ -200,7 +200,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['code'] === null) {
             $invalidProperties[] = "'code' can't be null";
         }

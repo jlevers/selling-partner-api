@@ -235,7 +235,6 @@ class BuyBoxPriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['condition'] === null) {
             $invalidProperties[] = "'condition' can't be null";
         }

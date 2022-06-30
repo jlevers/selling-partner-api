@@ -242,7 +242,6 @@ class Summary implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['total_offer_count'] === null) {
             $invalidProperties[] = "'total_offer_count' can't be null";
         }

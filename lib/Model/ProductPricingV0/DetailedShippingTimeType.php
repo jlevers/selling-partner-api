@@ -226,7 +226,6 @@ class DetailedShippingTimeType implements ModelInterface, ArrayAccess, \JsonSeri
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         $allowedValues = $this->getAvailabilityTypeAllowableValues();
         if (!is_null($this->container['availability_type']) && !in_array($this->container['availability_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(

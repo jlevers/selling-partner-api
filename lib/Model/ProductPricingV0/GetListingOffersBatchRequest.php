@@ -188,7 +188,6 @@ class GetListingOffersBatchRequest implements ModelInterface, ArrayAccess, \Json
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if (!is_null($this->container['requests']) && (count($this->container['requests']) > 20)) {
             $invalidProperties[] = "invalid value for 'requests', number of items must be less than or equal to 20.";
         }

@@ -235,7 +235,6 @@ class OfferType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['buying_price'] === null) {
             $invalidProperties[] = "'buying_price' can't be null";
         }

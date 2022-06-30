@@ -200,7 +200,6 @@ class QuantityDiscountPriceType implements ModelInterface, ArrayAccess, \JsonSer
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['quantity_tier'] === null) {
             $invalidProperties[] = "'quantity_tier' can't be null";
         }

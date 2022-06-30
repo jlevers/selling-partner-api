@@ -187,7 +187,6 @@ class ItemOffersRequestParamsAllOf implements ModelInterface, ArrayAccess, \Json
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         return $invalidProperties;
     }
 

@@ -187,7 +187,6 @@ class ItemOffersResponseAllOf implements ModelInterface, ArrayAccess, \JsonSeria
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['request'] === null) {
             $invalidProperties[] = "'request' can't be null";
         }

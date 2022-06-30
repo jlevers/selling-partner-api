@@ -194,7 +194,6 @@ class SellerFeedbackType implements ModelInterface, ArrayAccess, \JsonSerializab
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['feedback_count'] === null) {
             $invalidProperties[] = "'feedback_count' can't be null";
         }

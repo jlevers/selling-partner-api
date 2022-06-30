@@ -200,7 +200,6 @@ class CompetitivePricingType implements ModelInterface, ArrayAccess, \JsonSerial
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['competitive_prices'] === null) {
             $invalidProperties[] = "'competitive_prices' can't be null";
         }

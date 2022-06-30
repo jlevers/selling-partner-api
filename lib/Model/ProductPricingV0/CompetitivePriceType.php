@@ -235,7 +235,6 @@ class CompetitivePriceType implements ModelInterface, ArrayAccess, \JsonSerializ
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['competitive_price_id'] === null) {
             $invalidProperties[] = "'competitive_price_id' can't be null";
         }

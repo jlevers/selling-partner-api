@@ -218,7 +218,6 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['identifiers'] === null) {
             $invalidProperties[] = "'identifiers' can't be null";
         }

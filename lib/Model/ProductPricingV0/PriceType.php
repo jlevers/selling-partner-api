@@ -205,7 +205,6 @@ class PriceType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['listing_price'] === null) {
             $invalidProperties[] = "'listing_price' can't be null";
         }

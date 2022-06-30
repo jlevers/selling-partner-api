@@ -191,7 +191,6 @@ class Errors implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['errors'] === null) {
             $invalidProperties[] = "'errors' can't be null";
         }

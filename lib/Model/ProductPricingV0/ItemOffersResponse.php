@@ -205,7 +205,6 @@ class ItemOffersResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['body'] === null) {
             $invalidProperties[] = "'body' can't be null";
         }

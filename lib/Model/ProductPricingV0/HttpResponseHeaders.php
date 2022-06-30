@@ -193,8 +193,7 @@ class HttpResponseHeaders implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
-
+        $invalidProperties = [];
         return $invalidProperties;
     }
 

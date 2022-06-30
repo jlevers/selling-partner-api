@@ -194,7 +194,6 @@ class OfferListingCountType implements ModelInterface, ArrayAccess, \JsonSeriali
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['count'] === null) {
             $invalidProperties[] = "'count' can't be null";
         }

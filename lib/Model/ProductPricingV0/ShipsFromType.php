@@ -194,7 +194,6 @@ class ShipsFromType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         return $invalidProperties;
     }
 

@@ -193,7 +193,6 @@ class SalesRankType implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['product_category_id'] === null) {
             $invalidProperties[] = "'product_category_id' can't be null";
         }

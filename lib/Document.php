@@ -193,6 +193,8 @@ class Document
      *
      * @param string $saveToFilename    The full path of the file to save into. If the source is
      *      gzip encoded then '.gz' will be added to the provided filename.
+     *
+     * @return string                   The filename saved into
      */
     public function downloadToFile($saveToFilename) {
         if ($this->compressionAlgo === "GZIP") {
@@ -215,6 +217,8 @@ class Document
                 @fclose($fileHandle);
             }
         }
+
+        return $saveToFilename;
     }
 
     /**

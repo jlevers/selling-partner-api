@@ -189,6 +189,33 @@ class Document
     }
 
     /**
+     * Downloads the raw document and saves it to a local file
+     *
+     * @param string $saveToFilename    The full path of the file to save into. If the source is
+     *      gzip encoded then '.gz' will be added to the provided filename.
+     */
+    public function downloadToFile($saveToFilename) {
+        if ($this->compressionAlgo === "GZIP") {
+            $saveToFilename .= '.gz';
+        }
+
+        $fileHandle = fopen($saveToFilename, "w");
+
+        try {
+            $this->client->request('GET', $this->url, [RequestOptions::SINK => $fileHandle]);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            $response = $e->getResponse();
+            if ($response->getStatusCode() == 404) {
+                throw new \RuntimeException("Document Report not Found ({$response->getStatusCode()}): {$response->getBody()}");
+            } else {
+                throw $e;
+            }
+        } finally {
+            fclose($fileHandle);
+        }
+    }
+
+    /**
      * Uploads data to the document specified in the constructor.
      *
      * @param string $feedData The contents of the feed to be uploaded

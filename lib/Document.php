@@ -211,7 +211,9 @@ class Document
                 throw $e;
             }
         } finally {
-            fclose($fileHandle);
+            if (get_resource_type($fileHandle) !== 'Unknown') {
+                @fclose($fileHandle);
+            }
         }
     }
 

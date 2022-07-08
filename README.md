@@ -18,6 +18,11 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
 
 
+## Sponsors
+
+* **[Tesmo](https://tesmollc.com)**
+
+
 ## Installation
 
 `composer require jlevers/selling-partner-api`

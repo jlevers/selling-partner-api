@@ -2744,8 +2744,11 @@ class OrdersV0Api
                 'Missing the required parameter $marketplace_ids when calling getOrders'
             );
         }
-        if (count($marketplace_ids) > 50) {
-            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
+        // Array check, then count.
+        if (is_array($marketplace_ids)) {
+            if (count($marketplace_ids) > 50) {
+                throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
+            }
         }
 
         if ($amazon_order_ids !== null && count($amazon_order_ids) > 50) {

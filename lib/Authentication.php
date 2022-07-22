@@ -268,7 +268,7 @@ class Authentication implements RequestSignerContract
                 $credentials['AccessKeyId'],
                 $credentials['SecretAccessKey'],
                 $credentials['SessionToken'],
-                $credentials['Expiration']->getTimestamp(),
+                $credentials['Expiration']->getTimestamp()
             );
         }
 

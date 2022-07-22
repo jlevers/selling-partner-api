@@ -125,13 +125,13 @@ class Document
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
             if (!is_null($encoding) && !in_array(strtoupper($encoding), mb_list_encodings())) {
                 $encoding = null;
-            } else {
+            } else if (is_null($encoding)) {
                 $encodings = ['UTF-8'];
                 if ($response->hasHeader('content-type')) {
                     $httpContentType = $response->getHeader('content-type');
                     $parsedHeader = \GuzzleHttp\Psr7\Header::parse($httpContentType);
                     if (isset($parsedHeader[0]['charset'])) {
-                        array_unshift($encodings, $parsedHeader[0]['charset']);
+                        array_unshift($encodings, str_replace("Cp1252", "ISO-8859-1", $parsedHeader[0]['charset']));
                     }
                 }
                 $encoding = mb_detect_encoding($contents, $encodings, true);

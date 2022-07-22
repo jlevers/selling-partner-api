@@ -158,7 +158,7 @@ class Document
                 $reader->setEnclosure(chr(8));
             case ContentType::CSV:
             case ContentType::XLSX:
-                $spreadsheet = IOFactory::load($this->tmpFilename);
+                $spreadsheet = $reader->load($this->tmpFilename);
                 if ($this->contentType !== ContentType::XLSX) {
                     $sheet = $spreadsheet->getSheet(0)->toArray();
                     // Turn each row of data into an associative array with the headers as keys

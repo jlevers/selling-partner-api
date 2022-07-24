@@ -30,7 +30,6 @@ class Authentication implements RequestSignerContract
     private $grantlessAwsCredentials = null;
     private $grantlessCredentialsScope = null;
     private $roleCredentials = null;
-    private $restrictedDataTokens = [];
 
     /**
      * @var string
@@ -162,7 +161,7 @@ class Authentication implements RequestSignerContract
             $dataElements = explode(',', $params['dataElements']);
         }
 
-        if (!$this->signingScope && ($restrictedPath === null || $dataElements === [])) {
+        if (!$this->signingScope && $restrictedPath === null && $dataElements === []) {
             $relevantCreds = $this->getAwsCredentials();
         } else if ($this->signingScope) {  // There is no overlap between grantless and restricted operations
             $relevantCreds = $this->getGrantlessAwsCredentials($scope);
@@ -190,7 +189,7 @@ class Authentication implements RequestSignerContract
             }
 
             if ($needRdt) {
-                $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod(), true, $dataElements);
+                $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod(), $dataElements);
             }
         }
 
@@ -280,72 +279,49 @@ class Authentication implements RequestSignerContract
      *
      * @param string $path The generic or specific path for the restricted operation
      * @param string $method The HTTP method of the restricted operation
-     * @param ?bool $generic Whether or not $path is a generic URL or a specific one. Default true
      * @param ?array $dataElements The restricted data elements to request access to, if any.
      *      Only applies to getOrder, getOrders, and getOrderItems. Default empty array.
      * @return \SellingPartnerApi\Credentials A Credentials object holding the RDT
      */
-    public function getRestrictedDataToken(string $path, string $method, ?bool $generic = true, ?array $dataElements = []): Credentials
+    public function getRestrictedDataToken(string $path, string $method, ?array $dataElements = []): Credentials
     {
-        // Grab any pre-existing RDT for this operation
-        $existingCreds = null;
-        if (
-            $generic &&  // Don't try to find a pre-existing token for a non-generic restricted path
-            isset($this->restrictedDataTokens[$path]) &&
-            strtoupper($this->restrictedDataTokens[$path]['method']) === strtoupper($method)
-        ) {
-            $existingCreds = $this->restrictedDataTokens[$path]['credentials'];
+        $standardCredentials = $this->getAwsCredentials();
+        $tokensApi = $this->tokensApi;
+        if (is_null($tokensApi)) {
+            $config = new Configuration([
+                "lwaClientId" => $this->lwaClientId,
+                "lwaClientSecret" => $this->lwaClientSecret,
+                "lwaRefreshToken" => $this->lwaRefreshToken,
+                "lwaAuthUrl" => $this->lwaAuthUrl,
+                "awsAccessKeyId" => $this->awsAccessKeyId,
+                "awsSecretAccessKey" => $this->awsSecretAccessKey,
+                "accessToken" => $standardCredentials->getSecurityToken(),
+                "accessTokenExpiration" => $standardCredentials->getExpiration(),
+                "roleArn" => $this->roleArn,
+                "endpoint" => $this->endpoint,
+            ]);
+            $tokensApi = new TokensApi($config);
         }
 
-        $rdtCreds = $existingCreds;
-        // Create a new RDT if no matching one exists or if the matching one is expired
-        if ($this->needNewCredentials($existingCreds)) {
-            $standardCredentials = $this->getAwsCredentials();
-            $tokensApi = $this->tokensApi;
-            if (is_null($tokensApi)) {
-                $config = new Configuration([
-                    "lwaClientId" => $this->lwaClientId,
-                    "lwaClientSecret" => $this->lwaClientSecret,
-                    "lwaRefreshToken" => $this->lwaRefreshToken,
-                    "lwaAuthUrl" => $this->lwaAuthUrl,
-                    "awsAccessKeyId" => $this->awsAccessKeyId,
-                    "awsSecretAccessKey" => $this->awsSecretAccessKey,
-                    "accessToken" => $standardCredentials->getSecurityToken(),
-                    "accessTokenExpiration" => $standardCredentials->getExpiration(),
-                    "roleArn" => $this->roleArn,
-                    "endpoint" => $this->endpoint,
-                ]);
-                $tokensApi = new TokensApi($config);
-            }
-
-            $restrictedResource = new Tokens\RestrictedResource([
-                "method" => $method,
-                "path" => $path,
-            ]);
-            if ($dataElements !== []) {
-                $restrictedResource->setDataElements($dataElements);
-            }
-
-            $body = new Tokens\CreateRestrictedDataTokenRequest([
-                "restricted_resources" => [$restrictedResource],
-            ]);
-            $rdtData = $tokensApi->createRestrictedDataToken($body);
-
-            $rdtCreds = new Credentials(
-                $this->awsAccessKeyId,
-                $this->awsSecretAccessKey,
-                $rdtData->getRestrictedDataToken(),
-                time() + intval($rdtData->getExpiresIn())
-            );
-
-            // Save new RDT, if it's generic
-            if ($generic) {
-                $this->restrictedDataTokens[$path] = [
-                    "method" => $method,
-                    "credentials" => $rdtCreds,
-                ];
-            }
+        $restrictedResource = new Tokens\RestrictedResource([
+            "method" => $method,
+            "path" => $path,
+        ]);
+        if ($dataElements !== []) {
+            $restrictedResource->setDataElements($dataElements);
         }
+
+        $body = new Tokens\CreateRestrictedDataTokenRequest([
+            "restricted_resources" => [$restrictedResource],
+        ]);
+        $rdtData = $tokensApi->createRestrictedDataToken($body);
+
+        $rdtCreds = new Credentials(
+            $this->awsAccessKeyId,
+            $this->awsSecretAccessKey,
+            $rdtData->getRestrictedDataToken(),
+            time() + intval($rdtData->getExpiresIn())
+        );
 
         return $rdtCreds;
     }

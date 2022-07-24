@@ -28,14 +28,14 @@ class Document
     /**
      * @param Model\Reports\ReportDocument|Model\Feeds\FeedDocument|Model\Feeds\CreateFeedDocumentResponse $documentInfo
      *      The payload of a successful call to getReportDocument, createFeedDocument, or getFeedDocument
-     * @param ?array['contentType' => string, 'name' => string] $documentType
+     * @param array['contentType' => string, 'name' => string] $documentType
      *      Must be one of the constants defined in the ReportType or FeedType classes. When downloading a feed
      *      result document, pass the FeedType constant corresponding to the feed type that produced the result document..
      * @param ?\GuzzleHttp\Client $client  The Guzzle client to use. If not provided, a new one will be created.
      */
     public function __construct(
         object $documentInfo,
-        ?array $documentType = ReportType::__FEED_RESULT_REPORT,  // $documentType will be required in the next major version
+        array $documentType,
         ?Client $client = null
     ) {
         // Make sure $documentInfo is a valid type

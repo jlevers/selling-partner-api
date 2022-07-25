@@ -481,7 +481,6 @@ class VendorDirectFulfillmentSandboxV20211028Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -874,7 +873,6 @@ class VendorDirectFulfillmentSandboxV20211028Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

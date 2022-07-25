@@ -41,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class AplusPaginatedResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializable
+class AplusPaginatedResponseAllOf implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -187,7 +187,6 @@ class AplusPaginatedResponseAllOf implements ModelInterface, ArrayAccess, \JsonS
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if (!is_null($this->container['next_page_token']) && (mb_strlen($this->container['next_page_token']) < 1)) {
             $invalidProperties[] = "invalid value for 'next_page_token', the character length must be bigger than or equal to 1.";
         }
@@ -327,6 +326,53 @@ class AplusPaginatedResponseAllOf implements ModelInterface, ArrayAccess, \JsonS
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+    }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable
+    {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName)
+    {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return SellingPartnerApi\Model\AplusContentV20201101\AplusPaginatedResponseAllOf
+     */
+    public function __set($propertyName, $propertyValue)
+    {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
     }
 }
 

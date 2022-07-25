@@ -484,7 +484,6 @@ class VendorDirectFulfillmentTransactionsV20211228Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();

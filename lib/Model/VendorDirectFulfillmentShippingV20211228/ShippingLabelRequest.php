@@ -41,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -205,7 +205,6 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['purchase_order_number'] === null) {
             $invalidProperties[] = "'purchase_order_number' can't be null";
         }
@@ -423,6 +422,53 @@ class ShippingLabelRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+    }
+
+    /**
+     * Enable iterating over all of the model's attributes in $key => $value format
+     *
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable
+    {
+        return (function () {
+            foreach ($this->container as $key => $value) {
+                yield $key => $value;
+            }
+        })();
+    }
+
+    /**
+     * Retrieves the property with the given name by converting the property accession
+     * to a getter call.
+     *
+     * @param string $propertyName
+     * @return mixed
+     */
+    public function __get($propertyName)
+    {
+        // This doesn't make a syntactical difference since PHP is case-insensitive, but
+        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
+        // than "Call to undefined method getfoo()").
+        $ucProp = ucfirst($propertyName);
+        $getter = "get$ucProp";
+        return $this->$getter();
+    }
+
+    /**
+     * Sets the property with the given name by converting the property accession
+     * to a setter call.
+     *
+     * @param string $propertyName
+     * @param mixed $propertyValue
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShippingLabelRequest
+     */
+    public function __set($propertyName, $propertyValue)
+    {
+        $ucProp = ucfirst($propertyName);
+        $setter = "set$ucProp";
+        $this->$setter($propertyValue);
+        return $this;
     }
 }
 

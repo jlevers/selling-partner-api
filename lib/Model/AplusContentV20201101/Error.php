@@ -214,10 +214,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
             $invalidProperties[] = "invalid value for 'message', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['details']) && (mb_strlen($this->container['details']) < 1)) {
-            $invalidProperties[] = "invalid value for 'details', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -308,11 +304,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
      */
     public function setDetails($details)
     {
-
-        if (!is_null($details) && (mb_strlen($details) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $details when calling Error., must be bigger than or equal to 1.');
-        }
-
         $this->container['details'] = $details;
 
         return $this;

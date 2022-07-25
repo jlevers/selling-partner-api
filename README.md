@@ -304,7 +304,7 @@ $feedsApi = new FeedsApi($config);
 $feedId = '1234567890';  // From the createFeed call
 $feed = $api->getFeed($feedId);
 
-$feedResultDocumentId = $feed->getResultFeedDocumentId();
+$feedResultDocumentId = $feed->resultFeedDocumentId;
 $feedResultDocument = $api->getFeedDocument($feedResultDocumentId);
 
 $doc = new Document($documentInfo, $feedType);
@@ -317,7 +317,7 @@ $data = $docToDownload->getData();  // Parsed/formatted report data
 
 ## Working with model classes
 
-Most operations have one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or use setter methods to set each attribute after the fact. Here's an example using the Service API's `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/ServiceV1/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/ServiceV1/Buyer.php)).
+Most operations have one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or set each attribute after the fact. Here's an example using the Service API's `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/ServiceV1/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/ServiceV1/Buyer.php)).
 
 The `Buyer` model has four attributes: `buyer_id`, `name`, `phone`, and `is_prime_member`. (If you're wondering how you would figure out which attributes the model has on your own, check out the `docs` link above.) To create an instance of the `Buyer` model with all those attributes set:
 
@@ -334,19 +334,19 @@ Alternatively, you can create an instance of the `Buyer` model and then populate
 
 ```php
 $buyer = new SellingPartnerApi\Model\ServiceV1\Buyer();
-$buyer->setBuyerId("ABCDEFGHIJKLMNOPQRSTU0123456");
-$buyer->setName("Jane Doe");
-$buyer->setPhone("+12345678901");
-$buyer->setIsPrimeMember(true);
+$buyer->buyerId = "ABCDEFGHIJKLMNOPQRSTU0123456";
+$buyer->name = "Jane Doe";
+$buyer->phone = "+12345678901";
+$buyer->isPrimeMember = true;
 ```
 
-Each model also has the getter methods you might expect:
+Each model also has the property accessors you might expect:
 
 ```php
-$buyer->getBuyerId();        // -> "ABCDEFGHIJKLMNOPQRSTU0123456"
-$buyer->getName();           // -> "Jane Doe"
-$buyer->getPhone();          // -> "+12345678901"
-$buyer->getIsPrimeMember();  // -> true
+$buyer->buyerId;        // -> "ABCDEFGHIJKLMNOPQRSTU0123456"
+$buyer->name;           // -> "Jane Doe"
+$buyer->phone;          // -> "+12345678901"
+$buyer->isPrimeMember;  // -> true
 ```
 
 Models can (and usually do) have other models as attributes:
@@ -358,8 +358,8 @@ $serviceJob = new SellingPartnerApi\Model\ServiceV1\Buyer([
     // ...
 ]);
 
-$serviceJob->getBuyer();             // -> [Buyer instance]
-$serviceJob->getBuyer()->getName();  // -> "Jane Doe"
+$serviceJob->buyer;        // -> [Buyer instance]
+$serviceJob->buyer->name;  // -> "Jane Doe"
 ```
 
 
@@ -378,7 +378,7 @@ $config = new Configuration([...]);
 $api = new Api\SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->getHeaders();
+    $headers = $result->headers;
     print_r($headers);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
@@ -428,7 +428,7 @@ $config = new Configuration([
 $api = new Api\SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->getHeaders();
+    $headers = $result->headers;
     print_r($headers);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
@@ -475,7 +475,7 @@ $config = new Configuration([
 $api = new Api\SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->getHeaders();
+    $headers = $result->headers;
     print_r($headers);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;

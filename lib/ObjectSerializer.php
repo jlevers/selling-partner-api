@@ -77,7 +77,7 @@ class ObjectSerializer
                         if (is_callable($callable)) {
                             /** array $callable */
                             $allowedEnumTypes = $callable();
-                            if (!in_array($value, $allowedEnumTypes, true)) {
+                            if (!in_array((string)$value, $allowedEnumTypes, true)) {
                                 $imploded = implode("', '", $allowedEnumTypes);
                                 throw new \InvalidArgumentException("Invalid value for enum '$openAPIType', must be one of: '$imploded'");
                             }
@@ -359,7 +359,7 @@ class ObjectSerializer
                 $imploded = implode("', '", $class::getAllowableEnumValues());
                 throw new \InvalidArgumentException("Invalid value for enum '$class', must be one of: '$imploded'");
             }
-            return $data;
+            return new $class($data);
         } else {
             $data = is_string($data) ? json_decode($data) : $data;
             // If a discriminator is defined and points to a valid subclass, use it.

@@ -39,6 +39,8 @@ use \SellingPartnerApi\Model\ModelInterface;
  */
 class UnitOfLength
 {
+    public $value;
+
     /**
      * Possible values of this enum
      */
@@ -53,6 +55,25 @@ class UnitOfLength
         return [
             self::CM,
         ];
+    }
+
+    public function __construct($value)
+    {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'UnitOfLength', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+        }
+
+        $this->value = $value;
+    }
+
+    /**
+     * Convert the enum value to a string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->value;
     }
 }
 

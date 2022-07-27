@@ -2,8 +2,12 @@
 
 namespace SellingPartnerApi;
 
+use GuzzleHttp\Psr7\Header;
+use GuzzleHttp\Psr7\InflateStream;
+use GuzzleHttp\Psr7\Utils;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
+use Psr\Http\Message\StreamInterface;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use RuntimeException;
 
@@ -192,13 +196,56 @@ class Document
     }
 
     /**
+     * Downloads the document data as a stream.
+     * 
+     * @param resource|string|StreamInterface|null $output Optionnaly copy data stream to the given output.
+     *
+     * @param ?string &$encoding Get the document encoding from the HTTP request.
+     *
+     * @return StreamInterface The raw (unencrypted) document stream..
+     */
+    public function downloadStream($output = null, string &$encoding = null): StreamInterface {
+        try {
+            $response = $this->client->request('GET', $this->url, ['stream' => true]);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            $response = $e->getResponse();
+            if ($response->getStatusCode() == 404) {
+                throw new RuntimeException("Document Report not Found ({$response->getStatusCode()}): {$response->getBody()}");
+            } else {
+                throw $e;
+            }
+        }
+        
+        // trying to detect the document charset/encoding
+        $parsed = Header::parse($response->getHeader('content-type'));
+        foreach ($parsed as $header) {
+            if (isset($header['charset'])) {
+                $encoding = $header['charset'];
+                break;
+            }
+        }
+        $stream = $response->getBody();
+        if (\strtolower((string) $this->compressionAlgo) == 'gzip') {
+            $stream = new InflateStream($stream);
+        }
+
+        if ($output) {
+            $output = Utils::streamFor($output);
+            Utils::copyToStream($stream, $output);
+            return $output;
+        }
+
+        return $stream;
+    }
+
+    /**
      * Uploads data to the document specified in the constructor.
      *
-     * @param string $feedData The contents of the feed to be uploaded
+     * @param string|resource|StreamInterface|callable|\Iterator $feedData The contents of the feed to be uploaded
      *
      * @return void
      */
-    public function upload(string $feedData): void {
+    public function upload($feedData): void {
         $response = $this->client->put($this->url, [
             RequestOptions::HEADERS => [
                 "content-type" => $this->contentType,

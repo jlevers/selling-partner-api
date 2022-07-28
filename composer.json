@@ -13,6 +13,12 @@
         "rest",
         "api"
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/shirushi-dev/selling-partner-api"
+        }
+    ],
     "license": "BSD-3-Clause",
     "type": "library",
     "authors": [

@@ -161,7 +161,14 @@ class Authentication implements RequestSignerContract
             $dataElements = explode(',', $params['dataElements']);
         }
 
-        if (!$this->signingScope && $restrictedPath === null && $dataElements === []) {
+        $hasDataElements = ['getOrders', 'getOrder', 'getOrderItems'];
+        if (
+            !$this->signingScope && (
+                // This makes it possible to call restricted operations that take dataElements *without*
+                // generating an RDT as long as no dataElements are passed.
+                $restrictedPath === null || ($dataElements === [] && in_array($operation, $hasDataElements))
+            )
+        ) {
             $relevantCreds = $this->getAwsCredentials();
         } else if ($this->signingScope) {  // There is no overlap between grantless and restricted operations
             $relevantCreds = $this->getGrantlessAwsCredentials($scope);

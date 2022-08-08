@@ -50,9 +50,6 @@ class Document
 
         if ($documentType === null) {
             throw new RuntimeException('$documentType cannot be null');
-        } else if ($documentType === ReportType::__FEED_RESULT_REPORT) {
-            echo 'ReportType::__FEED_RESULT_REPORT is deprecated, and may not result in a properly parsed feed result document.';
-            echo 'Please pass the feed type constant for the feed whose result document is being parsed (e.g., FeedType::POST_PRODUCT_DATA.';
         }
 
         $this->contentType = $documentType['contentType'];

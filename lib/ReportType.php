@@ -425,6 +425,7 @@ class ReportType
     public const GET_V2_SETTLEMENT_REPORT_DATA_FLAT_FILE_V2 = [
         'contentType' => ContentType::TAB,
         'name' => 'GET_V2_SETTLEMENT_REPORT_DATA_FLAT_FILE_V2',
+        'restricted' => false,
         'requested' => false,
         'scheduled' => false,
     ];

@@ -252,7 +252,6 @@ class Label implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
      */
     public function setCustomTextForLabel($custom_text_for_label)
     {
-
         $this->container['custom_text_for_label'] = $custom_text_for_label;
 
         return $this;

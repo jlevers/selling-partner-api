@@ -72,21 +72,19 @@ class ObjectSerializer
                 foreach ($data::openAPITypes() as $property => $openAPIType) {
                     $getter = $data::getters()[$property];
                     $value = $data->$getter();
-                    if ($value !== null && !in_array($openAPIType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
-                        $callable = [$openAPIType, 'getAllowableEnumValues'];
-                        if (is_callable($callable)) {
-                            /** array $callable */
-                            $allowedEnumTypes = $callable();
-                            if (!in_array((string)$value, $allowedEnumTypes, true)) {
-                                $imploded = implode("', '", $allowedEnumTypes);
-                                throw new \InvalidArgumentException("Invalid value for enum '$openAPIType', must be one of: '$imploded'");
-                            }
-                        }
-                    }
                     if ($value !== null) {
                         $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
                     }
                 }
+            } else if (is_callable([$data, 'getAllowableEnumValues'])) {
+                $callable = [$data, 'getAllowableEnumValues'];
+                $allowedEnumTypes = $callable();
+                if (!in_array((string)$data->value, $allowedEnumTypes, true)) {
+                    $imploded = implode("', '", $allowedEnumTypes);
+                    throw new \InvalidArgumentException("Invalid value for enum '$type', must be one of: '$imploded'");
+                }
+
+                return self::sanitizeForSerialization($data->value);
             } else {
                 foreach($data as $property => $value) {
                     $values[$property] = self::sanitizeForSerialization($value);

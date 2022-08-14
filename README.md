@@ -307,8 +307,6 @@ $feed = $api->getFeed($feedId);
 $feedResultDocumentId = $feed->resultFeedDocumentId;
 $feedResultDocument = $api->getFeedDocument($feedResultDocumentId);
 
-$doc = new Document($documentInfo, $feedType);
-
 $docToDownload = new SellingPartnerApi\Document($feedResultDocument, $feedType);
 $contents = $docToDownload->download();  // The raw report data
 $data = $docToDownload->getData();  // Parsed/formatted report data

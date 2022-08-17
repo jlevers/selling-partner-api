@@ -1,6 +1,6 @@
 <?php
 /**
- * Attachment
+ * InvoiceResponse
  *
  * PHP version 7.3
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Attachment Class Doc Comment
+ * InvoiceResponse Class Doc Comment
  *
  * @category Class
- * @description Represents a file uploaded to a destination that was created by the [createUploadDestinationForResource](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Selling Partner API for Uploads.
+ * @description The response schema for the sendInvoice operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class InvoiceResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Attachment';
+    protected static $openAPIModelName = 'InvoiceResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
       * @var string[]
       */
     protected static $openAPITypes = [
-        'upload_destination_id' => 'string',
-        'file_name' => 'string'
+        'errors' => '\SellingPartnerApi\Model\MessagingV1\Error[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'upload_destination_id' => null,
-        'file_name' => null
+        'errors' => null
     ];
 
     /**
@@ -102,8 +100,8 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      * @var string[]
      */
     protected static $attributeMap = [
-        'upload_destination_id' => 'uploadDestinationId',
-        'file_name' => 'fileName'
+        'headers' => 'headers',
+        'errors' => 'errors'
     ];
 
     /**
@@ -112,8 +110,8 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      * @var string[]
      */
     protected static $setters = [
-                'upload_destination_id' => 'setUploadDestinationId',
-        'file_name' => 'setFileName'
+        'headers' => 'setHeaders',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -122,8 +120,8 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      * @var string[]
      */
     protected static $getters = [
-        'upload_destination_id' => 'getUploadDestinationId',
-        'file_name' => 'getFileName'
+        'headers' => 'getHeaders',
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -182,8 +180,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      */
     public function __construct(array $data = null)
     {
-        $this->container['upload_destination_id'] = $data['upload_destination_id'] ?? null;
-        $this->container['file_name'] = $data['file_name'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -194,12 +191,6 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['upload_destination_id'] === null) {
-            $invalidProperties[] = "'upload_destination_id' can't be null";
-        }
-        if ($this->container['file_name'] === null) {
-            $invalidProperties[] = "'file_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -214,50 +205,49 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
-     * Gets upload_destination_id
+     * Gets API response headers
      *
-     * @return string
+     * @return array[string]
      */
-    public function getUploadDestinationId()
+    public function getHeaders()
     {
-        return $this->container['upload_destination_id'];
+        return $this->container['headers'];
     }
 
     /**
-     * Sets upload_destination_id
+     * Sets API response headers (only relevant to response models)
      *
-     * @param string $upload_destination_id The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
-    public function setUploadDestinationId($upload_destination_id)
+    public function setHeaders($headers)
     {
-        $this->container['upload_destination_id'] = $upload_destination_id;
-
+        $this->container['headers'] = $headers;
         return $this;
     }
+
     /**
-     * Gets file_name
+     * Gets errors
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\MessagingV1\Error[]|null
      */
-    public function getFileName()
+    public function getErrors()
     {
-        return $this->container['file_name'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets file_name
+     * Sets errors
      *
-     * @param string $file_name The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded.
+     * @param \SellingPartnerApi\Model\MessagingV1\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */
-    public function setFileName($file_name)
+    public function setErrors($errors)
     {
-        $this->container['file_name'] = $file_name;
+        $this->container['errors'] = $errors;
 
         return $this;
     }
@@ -392,7 +382,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\MessagingV1\Attachment
+     * @return SellingPartnerApi\Model\MessagingV1\InvoiceResponse
      */
     public function __set($propertyName, $propertyValue)
     {

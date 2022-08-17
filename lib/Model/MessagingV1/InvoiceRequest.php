@@ -1,6 +1,6 @@
 <?php
 /**
- * Attachment
+ * InvoiceRequest
  *
  * PHP version 7.3
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Attachment Class Doc Comment
+ * InvoiceRequest Class Doc Comment
  *
  * @category Class
- * @description Represents a file uploaded to a destination that was created by the [createUploadDestinationForResource](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Selling Partner API for Uploads.
+ * @description The request schema for the sendInvoice operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class InvoiceRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Attachment';
+    protected static $openAPIModelName = 'InvoiceRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
       * @var string[]
       */
     protected static $openAPITypes = [
-        'upload_destination_id' => 'string',
-        'file_name' => 'string'
+        'attachments' => '\SellingPartnerApi\Model\MessagingV1\Attachment[]'
     ];
 
     /**
@@ -71,8 +70,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'upload_destination_id' => null,
-        'file_name' => null
+        'attachments' => null
     ];
 
     /**
@@ -102,8 +100,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      * @var string[]
      */
     protected static $attributeMap = [
-        'upload_destination_id' => 'uploadDestinationId',
-        'file_name' => 'fileName'
+        'attachments' => 'attachments'
     ];
 
     /**
@@ -112,8 +109,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      * @var string[]
      */
     protected static $setters = [
-                'upload_destination_id' => 'setUploadDestinationId',
-        'file_name' => 'setFileName'
+                'attachments' => 'setAttachments'
     ];
 
     /**
@@ -122,8 +118,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      * @var string[]
      */
     protected static $getters = [
-        'upload_destination_id' => 'getUploadDestinationId',
-        'file_name' => 'getFileName'
+        'attachments' => 'getAttachments'
     ];
 
     /**
@@ -182,8 +177,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      */
     public function __construct(array $data = null)
     {
-        $this->container['upload_destination_id'] = $data['upload_destination_id'] ?? null;
-        $this->container['file_name'] = $data['file_name'] ?? null;
+        $this->container['attachments'] = $data['attachments'] ?? null;
     }
 
     /**
@@ -194,12 +188,6 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['upload_destination_id'] === null) {
-            $invalidProperties[] = "'upload_destination_id' can't be null";
-        }
-        if ($this->container['file_name'] === null) {
-            $invalidProperties[] = "'file_name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -216,48 +204,25 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
 
 
     /**
-     * Gets upload_destination_id
+     * Gets attachments
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\MessagingV1\Attachment[]|null
      */
-    public function getUploadDestinationId()
+    public function getAttachments()
     {
-        return $this->container['upload_destination_id'];
+        return $this->container['attachments'];
     }
 
     /**
-     * Sets upload_destination_id
+     * Sets attachments
      *
-     * @param string $upload_destination_id The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.
+     * @param \SellingPartnerApi\Model\MessagingV1\Attachment[]|null $attachments Attachments to include in the message to the buyer.
      *
      * @return self
      */
-    public function setUploadDestinationId($upload_destination_id)
+    public function setAttachments($attachments)
     {
-        $this->container['upload_destination_id'] = $upload_destination_id;
-
-        return $this;
-    }
-    /**
-     * Gets file_name
-     *
-     * @return string
-     */
-    public function getFileName()
-    {
-        return $this->container['file_name'];
-    }
-
-    /**
-     * Sets file_name
-     *
-     * @param string $file_name The name of the file, including the extension. This is the file name that will appear in the message. This does not need to match the file name of the file that you uploaded.
-     *
-     * @return self
-     */
-    public function setFileName($file_name)
-    {
-        $this->container['file_name'] = $file_name;
+        $this->container['attachments'] = $attachments;
 
         return $this;
     }
@@ -392,7 +357,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\MessagingV1\Attachment
+     * @return SellingPartnerApi\Model\MessagingV1\InvoiceRequest
      */
     public function __set($propertyName, $propertyValue)
     {

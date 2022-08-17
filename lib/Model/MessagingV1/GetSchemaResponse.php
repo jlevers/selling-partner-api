@@ -59,7 +59,7 @@ class GetSchemaResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         '_links' => '\SellingPartnerApi\Model\MessagingV1\GetSchemaResponseLinks',
-        'payload' => 'object',
+        'payload' => 'map[string,object]',
         'errors' => '\SellingPartnerApi\Model\MessagingV1\Error[]'
     ];
 
@@ -240,7 +240,7 @@ class GetSchemaResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets payload
      *
-     * @return object|null
+     * @return map[string,object]|null
      */
     public function getPayload()
     {
@@ -250,7 +250,7 @@ class GetSchemaResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets payload
      *
-     * @param object|null $payload A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>.
+     * @param map[string,object]|null $payload A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>.
      *
      * @return self
      */

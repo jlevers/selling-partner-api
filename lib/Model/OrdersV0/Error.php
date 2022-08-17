@@ -257,7 +257,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
     /**
      * Sets message
      *
-     * @param string $message A message that describes the error condition in a human-readable form.
+     * @param string $message A message that describes the error condition.
      *
      * @return self
      */

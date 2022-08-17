@@ -251,7 +251,7 @@ class RejectionReason implements ModelInterface, ArrayAccess, \JsonSerializable,
     /**
      * Sets rejection_reason_description
      *
-     * @param string $rejection_reason_description The human-readable description of this rejection reason.
+     * @param string $rejection_reason_description The description of this rejection reason.
      *
      * @return self
      */

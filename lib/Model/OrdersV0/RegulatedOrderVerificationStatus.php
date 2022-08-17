@@ -278,7 +278,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
     /**
      * Sets requires_merchant_action
      *
-     * @param bool $requires_merchant_action Whether the regulated information provided in the order requires a review by the merchant.
+     * @param bool $requires_merchant_action When true, the regulated information provided in the order requires a review by the merchant.
      *
      * @return self
      */

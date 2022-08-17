@@ -292,7 +292,7 @@ class OrderRegulatedInfo implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets requires_dosage_label
      *
-     * @param bool $requires_dosage_label Whether the order requires attaching a dosage information label when shipped.
+     * @param bool $requires_dosage_label When true, the order requires attaching a dosage information label when shipped.
      *
      * @return self
      */

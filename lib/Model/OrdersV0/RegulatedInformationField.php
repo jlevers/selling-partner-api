@@ -296,7 +296,7 @@ class RegulatedInformationField implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets field_label
      *
-     * @param string $field_label The human-readable name for the field.
+     * @param string $field_label The name for the field.
      *
      * @return self
      */
@@ -319,7 +319,7 @@ class RegulatedInformationField implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets field_type
      *
-     * @param string $field_type The type of field the field.
+     * @param string $field_type The type of field.
      *
      * @return self
      */
@@ -352,7 +352,7 @@ class RegulatedInformationField implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets field_value
      *
-     * @param string $field_value The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain an URL to download the attachment here.
+     * @param string $field_value The content of the field as collected in regulatory form. Note that FileAttachment type fields will contain a URL to download the attachment here.
      *
      * @return self
      */

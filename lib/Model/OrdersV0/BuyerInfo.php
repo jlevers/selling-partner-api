@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * BuyerInfo Class Doc Comment
  *
  * @category Class
- * @description Buyer information
+ * @description Buyer information.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

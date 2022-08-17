@@ -1,6 +1,6 @@
 <?php
 /**
- * ShipmentStatus
+ * ElectronicInvoiceStatus
  *
  * PHP version 7.3
  *
@@ -30,23 +30,25 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * ShipmentStatus Class Doc Comment
+ * ElectronicInvoiceStatus Class Doc Comment
  *
  * @category Class
- * @description The shipment status to apply.
+ * @description The status of the electronic invoice.
  * @package  SellingPartnerApi
  * @group 
  */
-class ShipmentStatus
+class ElectronicInvoiceStatus
 {
     public $value;
 
     /**
      * Possible values of this enum
      */
-    const READY_FOR_PICKUP = 'ReadyForPickup';
-    const PICKED_UP = 'PickedUp';
-    const REFUSED_PICKUP = 'RefusedPickup';
+    const NOT_REQUIRED = 'NotRequired';
+    const NOT_FOUND = 'NotFound';
+    const PROCESSING = 'Processing';
+    const ERRORED = 'Errored';
+    const ACCEPTED = 'Accepted';
     
     /**
      * Gets allowable values of the enum
@@ -55,16 +57,18 @@ class ShipmentStatus
     public static function getAllowableEnumValues()
     {
         return [
-            self::READY_FOR_PICKUP,
-            self::PICKED_UP,
-            self::REFUSED_PICKUP,
+            self::NOT_REQUIRED,
+            self::NOT_FOUND,
+            self::PROCESSING,
+            self::ERRORED,
+            self::ACCEPTED,
         ];
     }
 
     public function __construct($value)
     {
         if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'ShipmentStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'ElectronicInvoiceStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 
         $this->value = $value;

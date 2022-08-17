@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **purchase_date** | **string** | The date when the order was created. |
 **last_update_date** | **string** | The date when the order was last updated.
 
-Note: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01. |
+__Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01. |
 **order_status** | **string** | The current order status. |
 **fulfillment_channel** | **string** | Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN). | [optional]
 **sales_channel** | **string** | The sales channel of the first item in the order. | [optional]
@@ -25,9 +25,7 @@ Note: LastUpdateDate is returned with an incorrect date for orders that were las
 **shipment_service_level_category** | **string** | The shipment service level category of the order.
 
 Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard. | [optional]
-**easy_ship_shipment_status** | **string** | The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
-
-Possible values: PendingPickUp, LabelCanceled, PickedUp, OutForDelivery, Damaged, Delivered, RejectedByBuyer, Undeliverable, ReturnedToSeller, ReturningToSeller. | [optional]
+**easy_ship_shipment_status** | [**\SellingPartnerApi\Model\OrdersV0\EasyShipShipmentStatus**](EasyShipShipmentStatus.md) |  | [optional]
 **cba_displayable_shipping_label** | **string** | Custom ship label for Checkout by Amazon (CBA). | [optional]
 **order_type** | **string** | The type of the order. | [optional]
 **earliest_ship_date** | **string** | The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
@@ -60,5 +58,6 @@ Note: LatestShipDate might not be returned for orders placed before February 1, 
 **buyer_info** | [**\SellingPartnerApi\Model\OrdersV0\BuyerInfo**](BuyerInfo.md) |  | [optional]
 **automated_shipping_settings** | [**\SellingPartnerApi\Model\OrdersV0\AutomatedShippingSettings**](AutomatedShippingSettings.md) |  | [optional]
 **has_regulated_items** | **bool** | Whether the order contains regulated items which may require additional approval steps before being fulfilled. | [optional]
+**electronic_invoice_status** | [**\SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus**](ElectronicInvoiceStatus.md) |  | [optional]
 
 [[OrdersV0 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

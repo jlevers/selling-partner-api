@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * Warning Class Doc Comment
  *
  * @category Class
- * @description Warning returned when the request is successful but execution have some important callouts on basis of which API clients should take defined actions.
+ * @description Warning returned when the request is successful, but there are important callouts based on which API clients should take defined actions.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

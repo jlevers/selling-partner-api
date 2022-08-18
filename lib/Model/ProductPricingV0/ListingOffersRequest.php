@@ -257,7 +257,7 @@ class ListingOffersRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets uri
      *
-     * @param string $uri The full URI corresponding to the API intended for request, including path parameter substitutions.
+     * @param string $uri The `getItemOffers` resource path without any query parameters. **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`
      *
      * @return self
      */

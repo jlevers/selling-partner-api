@@ -12,7 +12,7 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 5/30/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 8/19/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
 * Supports applications made with both IAM user and IAM role ARNs ([docs](#setup))
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents

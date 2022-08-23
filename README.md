@@ -36,6 +36,7 @@ This README is divided into several sections:
 * [Setup](#setup)
     * [Configuration options](#configuration-options)
 * [Examples](#examples)
+* [Debug mode](#debug-mode)
 * [Supported API segments](#supported-api-segments)
     * [Seller APIs](#seller-apis)
     * [Vendor APIs](#vendor-apis)
@@ -150,6 +151,8 @@ try {
 
 ?>
 ```
+
+### Debug mode
 
 To get debugging output when you make an API request, you can call `$config->setDebug(true)`. By default, debug output goes to `stdout` via `php://output`, but you can redirect it a file with `$config->setDebugFile('<path>')`.
 

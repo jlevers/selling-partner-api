@@ -71,7 +71,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'part_number' => 'string',
         'size' => 'string',
         'style' => 'string',
-        'website_display_group' => 'string'
+        'website_display_group' => 'string',
+        'website_display_group_name' => 'string'
     ];
 
     /**
@@ -94,7 +95,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'part_number' => null,
         'size' => null,
         'style' => null,
-        'website_display_group' => null
+        'website_display_group' => null,
+        'website_display_group_name' => null
     ];
 
     /**
@@ -136,7 +138,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'part_number' => 'partNumber',
         'size' => 'size',
         'style' => 'style',
-        'website_display_group' => 'websiteDisplayGroup'
+        'website_display_group' => 'websiteDisplayGroup',
+        'website_display_group_name' => 'websiteDisplayGroupName'
     ];
 
     /**
@@ -157,7 +160,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'part_number' => 'setPartNumber',
         'size' => 'setSize',
         'style' => 'setStyle',
-        'website_display_group' => 'setWebsiteDisplayGroup'
+        'website_display_group' => 'setWebsiteDisplayGroup',
+        'website_display_group_name' => 'setWebsiteDisplayGroupName'
     ];
 
     /**
@@ -178,7 +182,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'part_number' => 'getPartNumber',
         'size' => 'getSize',
         'style' => 'getStyle',
-        'website_display_group' => 'getWebsiteDisplayGroup'
+        'website_display_group' => 'getWebsiteDisplayGroup',
+        'website_display_group_name' => 'getWebsiteDisplayGroupName'
     ];
 
     /**
@@ -272,6 +277,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['size'] = $data['size'] ?? null;
         $this->container['style'] = $data['style'] ?? null;
         $this->container['website_display_group'] = $data['website_display_group'] ?? null;
+        $this->container['website_display_group_name'] = $data['website_display_group_name'] ?? null;
     }
 
     /**
@@ -608,13 +614,36 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets website_display_group
      *
-     * @param string|null $website_display_group Name of the website display group associated with an Amazon catalog item.
+     * @param string|null $website_display_group Identifier of the website display group associated with an Amazon catalog item.
      *
      * @return self
      */
     public function setWebsiteDisplayGroup($website_display_group)
     {
         $this->container['website_display_group'] = $website_display_group;
+
+        return $this;
+    }
+    /**
+     * Gets website_display_group_name
+     *
+     * @return string|null
+     */
+    public function getWebsiteDisplayGroupName()
+    {
+        return $this->container['website_display_group_name'];
+    }
+
+    /**
+     * Sets website_display_group_name
+     *
+     * @param string|null $website_display_group_name Display name of the website display group associated with an Amazon catalog item.
+     *
+     * @return self
+     */
+    public function setWebsiteDisplayGroupName($website_display_group_name)
+    {
+        $this->container['website_display_group_name'] = $website_display_group_name;
 
         return $this;
     }

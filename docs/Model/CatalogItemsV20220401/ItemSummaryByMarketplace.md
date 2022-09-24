@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **part_number** | **string** | Part number associated with an Amazon catalog item. | [optional]
 **size** | **string** | Name of the size associated with an Amazon catalog item. | [optional]
 **style** | **string** | Name of the style associated with an Amazon catalog item. | [optional]
-**website_display_group** | **string** | Name of the website display group associated with an Amazon catalog item. | [optional]
+**website_display_group** | **string** | Identifier of the website display group associated with an Amazon catalog item. | [optional]
+**website_display_group_name** | **string** | Display name of the website display group associated with an Amazon catalog item. | [optional]
 
 [[CatalogItemsV20220401 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

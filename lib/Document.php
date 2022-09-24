@@ -160,7 +160,7 @@ class Document
             case ContentType::XLSX:
                 $spreadsheet = $reader->load($this->tmpFilename);
                 if ($this->contentType !== ContentType::XLSX) {
-                    $sheet = $spreadsheet->getSheet(0)->toArray();
+                    $sheet = $spreadsheet->getSheet(0)->toArray(null, false);
                     // Turn each row of data into an associative array with the headers as keys
                     array_walk($sheet, function(&$row) use ($sheet) {
                         $row = array_combine($sheet[0], $row);

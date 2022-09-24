@@ -505,7 +505,7 @@ class ReportType
         'scheduled' => false,
     ];
     public const GET_LEDGER_DETAIL_VIEW_DATA = [
-        'contentType' => ContentType::TAB,
+        'contentType' => ContentType::CSV,
         'name' => 'GET_LEDGER_DETAIL_VIEW_DATA',
         'restricted' => false,
         'requested' => true,

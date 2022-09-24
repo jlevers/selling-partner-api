@@ -33,7 +33,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * EasyShipShipmentStatus Class Doc Comment
  *
  * @category Class
- * @description The status of the Amazon Easy-Ship order. This property is included only for Amazon Easy-Ship orders.
+ * @description The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
  * @package  SellingPartnerApi
  * @group 
  */

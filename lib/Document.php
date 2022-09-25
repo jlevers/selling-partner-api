@@ -92,7 +92,7 @@ class Document
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
             if ($response->getStatusCode() == 404) {
-                throw new RuntimeException("Document Report not Found ({$response->getStatusCode()}): {$response->getBody()}");
+                throw new RuntimeException("Report document not found ({$response->getStatusCode()}): {$response->getBody()}");
             } else {
                 throw $e;
             }

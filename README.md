@@ -5,14 +5,23 @@ A PHP library for connecting to Amazon's [Selling Partner API](https://github.co
 [![Latest Stable Version](https://img.shields.io/packagist/v/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
 [![License](https://img.shields.io/packagist/l/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
 
+---
+
+<br>
+<div style="display:flex; align-items: center"><img height="75px" style="margin-right: 20px" src="https://highsidelabs.co/images/logo.png" alt="Highside Labs Logo">
+<strong>This package is developed and maintained as part of <a href="https://highsidelabs.co">Highside Labs</a>. If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at <a href="mailto:hi@highsidelabs.co">hi@highsidelabs.co</a>. We'd love to hear from you :)</strong>
+</div>
+<br>
+
 If you've found this library useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD)
 
+---
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 8/19/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 9/24/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
 * Supports applications made with both IAM user and IAM role ARNs ([docs](#setup))
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents

@@ -138,7 +138,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_job_id** | **string**| An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. |
+ **service_job_id** | **string**| An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. |
  **appointment_id** | **string**| An Amazon-defined identifier of active service job appointment. |
  **body** | [**\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesRequest**](../Model/ServiceV1/AssignAppointmentResourcesRequest.md)|  |
 
@@ -537,8 +537,8 @@ Name | Type | Description  | Notes
  **asin** | **string**| ASIN associated with the service. |
  **store_id** | **string**| Store identifier defining the region scope to retrive appointment slots. |
  **marketplace_ids** | [**string[]**](../Model/ServiceV1/string.md)| An identifier for the marketplace for which appointment slots are queried |
- **start_time** | **string**| A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. | [optional]
- **end_time** | **string**| A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. | [optional]
+ **start_time** | **string**| A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. | [optional]
+ **end_time** | **string**| A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. | [optional]
 
 ### Return type
 
@@ -607,8 +607,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_job_id** | **string**| A service job identifier to retrive appointment slots for associated service. |
  **marketplace_ids** | [**string[]**](../Model/ServiceV1/string.md)| An identifier for the marketplace in which the resource operates. |
- **start_time** | **string**| A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. | [optional]
- **end_time** | **string**| A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. | [optional]
+ **start_time** | **string**| A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. | [optional]
+ **end_time** | **string**| A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. | [optional]
 
 ### Return type
 
@@ -898,9 +898,9 @@ Name | Type | Description  | Notes
  **page_size** | **int**| A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. | [optional] [default to 20]
  **sort_field** | **string**| Sort fields on which you want to sort the output. | [optional]
  **sort_order** | **string**| Sort order for the query you want to perform. | [optional]
- **created_after** | **string**| A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. | [optional]
+ **created_after** | **string**| A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. | [optional]
  **created_before** | **string**| A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. | [optional]
- **last_updated_after** | **string**| A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. | [optional]
+ **last_updated_after** | **string**| A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. | [optional]
  **last_updated_before** | **string**| A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. | [optional]
  **schedule_start_date** | **string**| A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. | [optional]
  **schedule_end_date** | **string**| A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. | [optional]
@@ -1040,7 +1040,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_job_id** | **string**| An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. |
+ **service_job_id** | **string**| An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. |
  **appointment_id** | **string**| An Amazon-defined identifier of active service job appointment. |
  **body** | [**\SellingPartnerApi\Model\ServiceV1\SetAppointmentFulfillmentDataRequest**](../Model/ServiceV1/SetAppointmentFulfillmentDataRequest.md)| Appointment fulfillment data collection details. |
 

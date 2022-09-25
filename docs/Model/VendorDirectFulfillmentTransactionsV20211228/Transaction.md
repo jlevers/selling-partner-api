@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transaction_id** | **string** | The unique identifier sent in the &#39;transactionId&#39; field in response to the post request of a specific transaction. |
+**transaction_id** | **string** | The unique identifier sent in the 'transactionId' field in response to the post request of a specific transaction. |
 **status** | **string** | Current processing status of the transaction. |
 **errors** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV20211228\ErrorList**](ErrorList.md) |  | [optional]
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asin** | **string** | The Amazon Standard Identification Number (ASIN) of an item. | [optional]
-**fn_sku** | **string** | Amazon&#39;s fulfillment network SKU identifier. | [optional]
+**fn_sku** | **string** | Amazon's fulfillment network SKU identifier. | [optional]
 **seller_sku** | **string** | The seller SKU of the item. | [optional]
 **condition** | **string** | The condition of the item as described by the seller (for example, New Item). | [optional]
 **inventory_details** | [**\SellingPartnerApi\Model\FbaInventoryV1\InventoryDetails**](InventoryDetails.md) |  | [optional]

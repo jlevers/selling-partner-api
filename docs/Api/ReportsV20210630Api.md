@@ -382,7 +382,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_document_id** | **string**| The identifier for the report document. |
- **report_type** | **string**| The name of the document&#39;s report type. | [optional]
+ **report_type** | **string**| The name of the document's report type. | [optional]
 
 ### Return type
 

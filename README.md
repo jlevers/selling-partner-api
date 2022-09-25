@@ -5,13 +5,9 @@ A PHP library for connecting to Amazon's [Selling Partner API](https://github.co
 [![Latest Stable Version](https://img.shields.io/packagist/v/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
 [![License](https://img.shields.io/packagist/l/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
 
----
-
-<br>
-<div style="display:flex; align-items: center"><img height="75px" style="margin-right: 20px" src="https://highsidelabs.co/images/logo.png" alt="Highside Labs Logo">
-<strong>This package is developed and maintained as part of <a href="https://highsidelabs.co">Highside Labs</a>. If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at <a href="mailto:hi@highsidelabs.co">hi@highsidelabs.co</a>. We'd love to hear from you :)</strong>
-</div>
-<br>
+| | |
+| ------ | ------ |
+| ![Highside Labs Logo](https://highsidelabs.co/images/logo-75px.png) | **This package is developed and maintained as part of [Highside Labs](https://highsidelabs.co). If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at [hi@highsidelabs.co](mailto:hi@highsidelabs.co). We'd love to hear from you :)** |
 
 If you've found this library useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
 

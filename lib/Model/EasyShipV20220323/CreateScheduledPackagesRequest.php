@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateScheduledPackageRequest
+ * CreateScheduledPackagesRequest
  *
  * PHP version 7.3
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CreateScheduledPackageRequest Class Doc Comment
+ * CreateScheduledPackagesRequest Class Doc Comment
  *
  * @category Class
- * @description The request schema for the &#x60;createScheduledPackage&#x60; operation.
+ * @description The request body for the POST /easyShip/2022-03-23/packages/bulk API.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class CreateScheduledPackagesRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateScheduledPackageRequest';
+    protected static $openAPIModelName = 'CreateScheduledPackagesRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amazon_order_id' => 'string',
         'marketplace_id' => 'string',
-        'package_details' => '\SellingPartnerApi\Model\EasyShipV20220323\PackageDetails'
+        'order_schedule_details_list' => '\SellingPartnerApi\Model\EasyShipV20220323\OrderScheduleDetails[]',
+        'label_format' => '\SellingPartnerApi\Model\EasyShipV20220323\LabelFormat'
     ];
 
     /**
@@ -72,9 +72,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amazon_order_id' => null,
         'marketplace_id' => null,
-        'package_details' => null
+        'order_schedule_details_list' => null,
+        'label_format' => null
     ];
 
     /**
@@ -104,9 +104,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_order_id' => 'amazonOrderId',
         'marketplace_id' => 'marketplaceId',
-        'package_details' => 'packageDetails'
+        'order_schedule_details_list' => 'orderScheduleDetailsList',
+        'label_format' => 'labelFormat'
     ];
 
     /**
@@ -115,9 +115,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
-        'marketplace_id' => 'setMarketplaceId',
-        'package_details' => 'setPackageDetails'
+                'marketplace_id' => 'setMarketplaceId',
+        'order_schedule_details_list' => 'setOrderScheduleDetailsList',
+        'label_format' => 'setLabelFormat'
     ];
 
     /**
@@ -126,9 +126,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'amazon_order_id' => 'getAmazonOrderId',
         'marketplace_id' => 'getMarketplaceId',
-        'package_details' => 'getPackageDetails'
+        'order_schedule_details_list' => 'getOrderScheduleDetailsList',
+        'label_format' => 'getLabelFormat'
     ];
 
     /**
@@ -187,9 +187,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
         $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['package_details'] = $data['package_details'] ?? null;
+        $this->container['order_schedule_details_list'] = $data['order_schedule_details_list'] ?? null;
+        $this->container['label_format'] = $data['label_format'] ?? null;
     }
 
     /**
@@ -200,9 +200,6 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['amazon_order_id'] === null) {
-            $invalidProperties[] = "'amazon_order_id' can't be null";
-        }
         if ($this->container['marketplace_id'] === null) {
             $invalidProperties[] = "'marketplace_id' can't be null";
         }
@@ -214,8 +211,15 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
             $invalidProperties[] = "invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['package_details'] === null) {
-            $invalidProperties[] = "'package_details' can't be null";
+        if ($this->container['order_schedule_details_list'] === null) {
+            $invalidProperties[] = "'order_schedule_details_list' can't be null";
+        }
+        if ((count($this->container['order_schedule_details_list']) < 1)) {
+            $invalidProperties[] = "invalid value for 'order_schedule_details_list', number of items must be greater than or equal to 1.";
+        }
+
+        if ($this->container['label_format'] === null) {
+            $invalidProperties[] = "'label_format' can't be null";
         }
         return $invalidProperties;
     }
@@ -232,29 +236,6 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
     }
 
 
-    /**
-     * Gets amazon_order_id
-     *
-     * @return string
-     */
-    public function getAmazonOrderId()
-    {
-        return $this->container['amazon_order_id'];
-    }
-
-    /**
-     * Sets amazon_order_id
-     *
-     * @param string $amazon_order_id An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     *
-     * @return self
-     */
-    public function setAmazonOrderId($amazon_order_id)
-    {
-        $this->container['amazon_order_id'] = $amazon_order_id;
-
-        return $this;
-    }
     /**
      * Gets marketplace_id
      *
@@ -275,10 +256,10 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
     public function setMarketplaceId($marketplace_id)
     {
         if ((mb_strlen($marketplace_id) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling CreateScheduledPackageRequest., must be smaller than or equal to 255.');
+            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling CreateScheduledPackagesRequest., must be smaller than or equal to 255.');
         }
         if ((mb_strlen($marketplace_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling CreateScheduledPackageRequest., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling CreateScheduledPackagesRequest., must be bigger than or equal to 1.');
         }
 
         $this->container['marketplace_id'] = $marketplace_id;
@@ -286,25 +267,53 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
         return $this;
     }
     /**
-     * Gets package_details
+     * Gets order_schedule_details_list
      *
-     * @return \SellingPartnerApi\Model\EasyShipV20220323\PackageDetails
+     * @return \SellingPartnerApi\Model\EasyShipV20220323\OrderScheduleDetails[]
      */
-    public function getPackageDetails()
+    public function getOrderScheduleDetailsList()
     {
-        return $this->container['package_details'];
+        return $this->container['order_schedule_details_list'];
     }
 
     /**
-     * Sets package_details
+     * Sets order_schedule_details_list
      *
-     * @param \SellingPartnerApi\Model\EasyShipV20220323\PackageDetails $package_details package_details
+     * @param \SellingPartnerApi\Model\EasyShipV20220323\OrderScheduleDetails[] $order_schedule_details_list An array allowing users to specify orders to be scheduled.
      *
      * @return self
      */
-    public function setPackageDetails($package_details)
+    public function setOrderScheduleDetailsList($order_schedule_details_list)
     {
-        $this->container['package_details'] = $package_details;
+
+
+        if ((count($order_schedule_details_list) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $order_schedule_details_list when calling CreateScheduledPackagesRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['order_schedule_details_list'] = $order_schedule_details_list;
+
+        return $this;
+    }
+    /**
+     * Gets label_format
+     *
+     * @return \SellingPartnerApi\Model\EasyShipV20220323\LabelFormat
+     */
+    public function getLabelFormat()
+    {
+        return $this->container['label_format'];
+    }
+
+    /**
+     * Sets label_format
+     *
+     * @param \SellingPartnerApi\Model\EasyShipV20220323\LabelFormat $label_format label_format
+     *
+     * @return self
+     */
+    public function setLabelFormat($label_format)
+    {
+        $this->container['label_format'] = $label_format;
 
         return $this;
     }
@@ -439,7 +448,7 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\EasyShipV20220323\CreateScheduledPackageRequest
+     * @return SellingPartnerApi\Model\EasyShipV20220323\CreateScheduledPackagesRequest
      */
     public function __set($propertyName, $propertyValue)
     {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Code
+ * LabelFormat
  *
  * PHP version 7.3
  *
@@ -30,31 +30,22 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * Code Class Doc Comment
+ * LabelFormat Class Doc Comment
  *
  * @category Class
- * @description An error code that identifies the type of error that occurred. The error codes listed below are specific to the Easy Ship section.
+ * @description The file format in which the shipping label will be created.
  * @package  SellingPartnerApi
  * @group 
  */
-class Code
+class LabelFormat
 {
     public $value;
 
     /**
      * Possible values of this enum
      */
-    const INVALID_INPUT = 'InvalidInput';
-    const INVALID_TIME_SLOT_ID = 'InvalidTimeSlotId';
-    const SCHEDULED_PACKAGE_ALREADY_EXISTS = 'ScheduledPackageAlreadyExists';
-    const SCHEDULE_WINDOW_EXPIRED = 'ScheduleWindowExpired';
-    const RETRYABLE_AFTER_GETTING_NEW_SLOTS = 'RetryableAfterGettingNewSlots';
-    const TIME_SLOT_NOT_AVAILABLE = 'TimeSlotNotAvailable';
-    const RESOURCE_NOT_FOUND = 'ResourceNotFound';
-    const INVALID_ORDER_STATE = 'InvalidOrderState';
-    const REGION_NOT_SUPPORTED = 'RegionNotSupported';
-    const ORDER_NOT_ELIGIBLE_FOR_RESCHEDULING = 'OrderNotEligibleForRescheduling';
-    const INTERNAL_SERVER_ERROR = 'InternalServerError';
+    const PDF = 'PDF';
+    const ZPL = 'ZPL';
     
     /**
      * Gets allowable values of the enum
@@ -63,24 +54,15 @@ class Code
     public static function getAllowableEnumValues()
     {
         return [
-            self::INVALID_INPUT,
-            self::INVALID_TIME_SLOT_ID,
-            self::SCHEDULED_PACKAGE_ALREADY_EXISTS,
-            self::SCHEDULE_WINDOW_EXPIRED,
-            self::RETRYABLE_AFTER_GETTING_NEW_SLOTS,
-            self::TIME_SLOT_NOT_AVAILABLE,
-            self::RESOURCE_NOT_FOUND,
-            self::INVALID_ORDER_STATE,
-            self::REGION_NOT_SUPPORTED,
-            self::ORDER_NOT_ELIGIBLE_FOR_RESCHEDULING,
-            self::INTERNAL_SERVER_ERROR,
+            self::PDF,
+            self::ZPL,
         ];
     }
 
     public function __construct($value)
     {
         if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'Code', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'LabelFormat', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 
         $this->value = $value;

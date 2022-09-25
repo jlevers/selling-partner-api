@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateScheduledPackageRequest
+ * CreateScheduledPackagesResponse
  *
  * PHP version 7.3
  *
@@ -32,17 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CreateScheduledPackageRequest Class Doc Comment
+ * CreateScheduledPackagesResponse Class Doc Comment
  *
  * @category Class
- * @description The request schema for the &#x60;createScheduledPackage&#x60; operation.
+ * @description The response schema for the bulk scheduling API. It returns by the bulk scheduling API containing an array of the scheduled packtages, an optional list of orders we couldn&#39;t schedule with the reason, and a pre-signed URL for a ZIP file containing the associated shipping labels plus the documents enabled for your marketplace.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class CreateScheduledPackagesResponse implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateScheduledPackageRequest';
+    protected static $openAPIModelName = 'CreateScheduledPackagesResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'amazon_order_id' => 'string',
-        'marketplace_id' => 'string',
-        'package_details' => '\SellingPartnerApi\Model\EasyShipV20220323\PackageDetails'
+        'scheduled_packages' => '\SellingPartnerApi\Model\EasyShipV20220323\Package[]',
+        'rejected_orders' => '\SellingPartnerApi\Model\EasyShipV20220323\RejectedOrder[]',
+        'printable_documents_url' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'amazon_order_id' => null,
-        'marketplace_id' => null,
-        'package_details' => null
+        'scheduled_packages' => null,
+        'rejected_orders' => null,
+        'printable_documents_url' => null
     ];
 
     /**
@@ -104,9 +104,10 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'amazon_order_id' => 'amazonOrderId',
-        'marketplace_id' => 'marketplaceId',
-        'package_details' => 'packageDetails'
+        'headers' => 'headers',
+        'scheduled_packages' => 'scheduledPackages',
+        'rejected_orders' => 'rejectedOrders',
+        'printable_documents_url' => 'printableDocumentsUrl'
     ];
 
     /**
@@ -115,9 +116,10 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
-        'marketplace_id' => 'setMarketplaceId',
-        'package_details' => 'setPackageDetails'
+        'headers' => 'setHeaders',
+        'scheduled_packages' => 'setScheduledPackages',
+        'rejected_orders' => 'setRejectedOrders',
+        'printable_documents_url' => 'setPrintableDocumentsUrl'
     ];
 
     /**
@@ -126,9 +128,10 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'amazon_order_id' => 'getAmazonOrderId',
-        'marketplace_id' => 'getMarketplaceId',
-        'package_details' => 'getPackageDetails'
+        'headers' => 'getHeaders',
+        'scheduled_packages' => 'getScheduledPackages',
+        'rejected_orders' => 'getRejectedOrders',
+        'printable_documents_url' => 'getPrintableDocumentsUrl'
     ];
 
     /**
@@ -187,9 +190,9 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(array $data = null)
     {
-        $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['package_details'] = $data['package_details'] ?? null;
+        $this->container['scheduled_packages'] = $data['scheduled_packages'] ?? null;
+        $this->container['rejected_orders'] = $data['rejected_orders'] ?? null;
+        $this->container['printable_documents_url'] = $data['printable_documents_url'] ?? null;
     }
 
     /**
@@ -200,23 +203,10 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['amazon_order_id'] === null) {
-            $invalidProperties[] = "'amazon_order_id' can't be null";
-        }
-        if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
-        }
-        if ((mb_strlen($this->container['marketplace_id']) > 255)) {
-            $invalidProperties[] = "invalid value for 'marketplace_id', the character length must be smaller than or equal to 255.";
+        if (!is_null($this->container['scheduled_packages']) && (count($this->container['scheduled_packages']) > 100)) {
+            $invalidProperties[] = "invalid value for 'scheduled_packages', number of items must be less than or equal to 100.";
         }
 
-        if ((mb_strlen($this->container['marketplace_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['package_details'] === null) {
-            $invalidProperties[] = "'package_details' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -231,80 +221,99 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
-     * Gets amazon_order_id
+     * Gets API response headers
      *
-     * @return string
+     * @return array[string]
      */
-    public function getAmazonOrderId()
+    public function getHeaders()
     {
-        return $this->container['amazon_order_id'];
+        return $this->container['headers'];
     }
 
     /**
-     * Sets amazon_order_id
+     * Sets API response headers (only relevant to response models)
      *
-     * @param string $amazon_order_id An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
-    public function setAmazonOrderId($amazon_order_id)
+    public function setHeaders($headers)
     {
-        $this->container['amazon_order_id'] = $amazon_order_id;
+        $this->container['headers'] = $headers;
+        return $this;
+    }
+
+    /**
+     * Gets scheduled_packages
+     *
+     * @return \SellingPartnerApi\Model\EasyShipV20220323\Package[]|null
+     */
+    public function getScheduledPackages()
+    {
+        return $this->container['scheduled_packages'];
+    }
+
+    /**
+     * Sets scheduled_packages
+     *
+     * @param \SellingPartnerApi\Model\EasyShipV20220323\Package[]|null $scheduled_packages A list of packages. Refer to the `Package` object.
+     *
+     * @return self
+     */
+    public function setScheduledPackages($scheduled_packages)
+    {
+
+        if (!is_null($scheduled_packages) && (count($scheduled_packages) > 100)) {
+            throw new \InvalidArgumentException('invalid value for $scheduled_packages when calling CreateScheduledPackagesResponse., number of items must be less than or equal to 100.');
+        }
+        $this->container['scheduled_packages'] = $scheduled_packages;
 
         return $this;
     }
     /**
-     * Gets marketplace_id
+     * Gets rejected_orders
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\EasyShipV20220323\RejectedOrder[]|null
      */
-    public function getMarketplaceId()
+    public function getRejectedOrders()
     {
-        return $this->container['marketplace_id'];
+        return $this->container['rejected_orders'];
     }
 
     /**
-     * Sets marketplace_id
+     * Sets rejected_orders
      *
-     * @param string $marketplace_id A string of up to 255 characters.
+     * @param \SellingPartnerApi\Model\EasyShipV20220323\RejectedOrder[]|null $rejected_orders A list of orders we couldn't scheduled on your behalf. Each element contains the reason and details on the error.
      *
      * @return self
      */
-    public function setMarketplaceId($marketplace_id)
+    public function setRejectedOrders($rejected_orders)
     {
-        if ((mb_strlen($marketplace_id) > 255)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling CreateScheduledPackageRequest., must be smaller than or equal to 255.');
-        }
-        if ((mb_strlen($marketplace_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling CreateScheduledPackageRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['marketplace_id'] = $marketplace_id;
+        $this->container['rejected_orders'] = $rejected_orders;
 
         return $this;
     }
     /**
-     * Gets package_details
+     * Gets printable_documents_url
      *
-     * @return \SellingPartnerApi\Model\EasyShipV20220323\PackageDetails
+     * @return string|null
      */
-    public function getPackageDetails()
+    public function getPrintableDocumentsUrl()
     {
-        return $this->container['package_details'];
+        return $this->container['printable_documents_url'];
     }
 
     /**
-     * Sets package_details
+     * Sets printable_documents_url
      *
-     * @param \SellingPartnerApi\Model\EasyShipV20220323\PackageDetails $package_details package_details
+     * @param string|null $printable_documents_url A pre-signed URL for the zip document containing the shipping labels and the documents enabled for your marketplace.
      *
      * @return self
      */
-    public function setPackageDetails($package_details)
+    public function setPrintableDocumentsUrl($printable_documents_url)
     {
-        $this->container['package_details'] = $package_details;
+        $this->container['printable_documents_url'] = $printable_documents_url;
 
         return $this;
     }
@@ -439,7 +448,7 @@ class CreateScheduledPackageRequest implements ModelInterface, ArrayAccess, \Jso
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\EasyShipV20220323\CreateScheduledPackageRequest
+     * @return SellingPartnerApi\Model\EasyShipV20220323\CreateScheduledPackagesResponse
      */
     public function __set($propertyName, $propertyValue)
     {

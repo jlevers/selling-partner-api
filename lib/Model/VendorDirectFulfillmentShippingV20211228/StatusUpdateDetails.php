@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerInvoiceList
+ * StatusUpdateDetails
  *
  * PHP version 7.3
  *
@@ -32,16 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CustomerInvoiceList Class Doc Comment
+ * StatusUpdateDetails Class Doc Comment
  *
  * @category Class
+ * @description Details for the shipment status update given by the vendor for the specific package.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CustomerInvoiceList';
+    protected static $openAPIModelName = 'StatusUpdateDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +59,12 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination',
-        'customer_invoices' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]'
+        'tracking_number' => 'string',
+        'status_code' => 'string',
+        'reason_code' => 'string',
+        'status_date_time' => 'string',
+        'status_location_address' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Address',
+        'shipment_schedule' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentSchedule'
     ];
 
     /**
@@ -70,8 +75,12 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pagination' => null,
-        'customer_invoices' => null
+        'tracking_number' => null,
+        'status_code' => null,
+        'reason_code' => null,
+        'status_date_time' => null,
+        'status_location_address' => null,
+        'shipment_schedule' => null
     ];
 
     /**
@@ -101,9 +110,12 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'pagination' => 'pagination',
-        'customer_invoices' => 'customerInvoices'
+        'tracking_number' => 'trackingNumber',
+        'status_code' => 'statusCode',
+        'reason_code' => 'reasonCode',
+        'status_date_time' => 'statusDateTime',
+        'status_location_address' => 'statusLocationAddress',
+        'shipment_schedule' => 'shipmentSchedule'
     ];
 
     /**
@@ -112,9 +124,12 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'pagination' => 'setPagination',
-        'customer_invoices' => 'setCustomerInvoices'
+                'tracking_number' => 'setTrackingNumber',
+        'status_code' => 'setStatusCode',
+        'reason_code' => 'setReasonCode',
+        'status_date_time' => 'setStatusDateTime',
+        'status_location_address' => 'setStatusLocationAddress',
+        'shipment_schedule' => 'setShipmentSchedule'
     ];
 
     /**
@@ -123,9 +138,12 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'pagination' => 'getPagination',
-        'customer_invoices' => 'getCustomerInvoices'
+        'tracking_number' => 'getTrackingNumber',
+        'status_code' => 'getStatusCode',
+        'reason_code' => 'getReasonCode',
+        'status_date_time' => 'getStatusDateTime',
+        'status_location_address' => 'getStatusLocationAddress',
+        'shipment_schedule' => 'getShipmentSchedule'
     ];
 
     /**
@@ -184,8 +202,12 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['pagination'] = $data['pagination'] ?? null;
-        $this->container['customer_invoices'] = $data['customer_invoices'] ?? null;
+        $this->container['tracking_number'] = $data['tracking_number'] ?? null;
+        $this->container['status_code'] = $data['status_code'] ?? null;
+        $this->container['reason_code'] = $data['reason_code'] ?? null;
+        $this->container['status_date_time'] = $data['status_date_time'] ?? null;
+        $this->container['status_location_address'] = $data['status_location_address'] ?? null;
+        $this->container['shipment_schedule'] = $data['shipment_schedule'] ?? null;
     }
 
     /**
@@ -196,6 +218,21 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['tracking_number'] === null) {
+            $invalidProperties[] = "'tracking_number' can't be null";
+        }
+        if ($this->container['status_code'] === null) {
+            $invalidProperties[] = "'status_code' can't be null";
+        }
+        if ($this->container['reason_code'] === null) {
+            $invalidProperties[] = "'reason_code' can't be null";
+        }
+        if ($this->container['status_date_time'] === null) {
+            $invalidProperties[] = "'status_date_time' can't be null";
+        }
+        if ($this->container['status_location_address'] === null) {
+            $invalidProperties[] = "'status_location_address' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -210,72 +247,142 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets tracking_number
      *
-     * @return array[string]
+     * @return string
      */
-    public function getHeaders()
+    public function getTrackingNumber()
     {
-        return $this->container['headers'];
+        return $this->container['tracking_number'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets tracking_number
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string $tracking_number This is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation.
      *
      * @return self
      */
-    public function setHeaders($headers)
+    public function setTrackingNumber($tracking_number)
     {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets pagination
-     *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null
-     */
-    public function getPagination()
-    {
-        return $this->container['pagination'];
-    }
-
-    /**
-     * Sets pagination
-     *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null $pagination pagination
-     *
-     * @return self
-     */
-    public function setPagination($pagination)
-    {
-        $this->container['pagination'] = $pagination;
+        $this->container['tracking_number'] = $tracking_number;
 
         return $this;
     }
     /**
-     * Gets customer_invoices
+     * Gets status_code
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null
+     * @return string
      */
-    public function getCustomerInvoices()
+    public function getStatusCode()
     {
-        return $this->container['customer_invoices'];
+        return $this->container['status_code'];
     }
 
     /**
-     * Sets customer_invoices
+     * Sets status_code
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null $customer_invoices customer_invoices
+     * @param string $status_code Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer.
      *
      * @return self
      */
-    public function setCustomerInvoices($customer_invoices)
+    public function setStatusCode($status_code)
     {
-        $this->container['customer_invoices'] = $customer_invoices;
+        $this->container['status_code'] = $status_code;
+
+        return $this;
+    }
+    /**
+     * Gets reason_code
+     *
+     * @return string
+     */
+    public function getReasonCode()
+    {
+        return $this->container['reason_code'];
+    }
+
+    /**
+     * Sets reason_code
+     *
+     * @param string $reason_code Provides a reason code for the status of the package that will provide additional information about the transportation status.
+     *
+     * @return self
+     */
+    public function setReasonCode($reason_code)
+    {
+        $this->container['reason_code'] = $reason_code;
+
+        return $this;
+    }
+    /**
+     * Gets status_date_time
+     *
+     * @return string
+     */
+    public function getStatusDateTime()
+    {
+        return $this->container['status_date_time'];
+    }
+
+    /**
+     * Sets status_date_time
+     *
+     * @param string $status_date_time The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     *
+     * @return self
+     */
+    public function setStatusDateTime($status_date_time)
+    {
+        $this->container['status_date_time'] = $status_date_time;
+
+        return $this;
+    }
+    /**
+     * Gets status_location_address
+     *
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Address
+     */
+    public function getStatusLocationAddress()
+    {
+        return $this->container['status_location_address'];
+    }
+
+    /**
+     * Sets status_location_address
+     *
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Address $status_location_address status_location_address
+     *
+     * @return self
+     */
+    public function setStatusLocationAddress($status_location_address)
+    {
+        $this->container['status_location_address'] = $status_location_address;
+
+        return $this;
+    }
+    /**
+     * Gets shipment_schedule
+     *
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentSchedule|null
+     */
+    public function getShipmentSchedule()
+    {
+        return $this->container['shipment_schedule'];
+    }
+
+    /**
+     * Sets shipment_schedule
+     *
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentSchedule|null $shipment_schedule shipment_schedule
+     *
+     * @return self
+     */
+    public function setShipmentSchedule($shipment_schedule)
+    {
+        $this->container['shipment_schedule'] = $shipment_schedule;
 
         return $this;
     }
@@ -410,7 +517,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoiceList
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\StatusUpdateDetails
      */
     public function __set($propertyName, $propertyValue)
     {

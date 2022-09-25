@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerInvoiceList
+ * ShipmentStatusUpdate
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CustomerInvoiceList Class Doc Comment
+ * ShipmentStatusUpdate Class Doc Comment
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -41,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class ShipmentStatusUpdate implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CustomerInvoiceList';
+    protected static $openAPIModelName = 'ShipmentStatusUpdate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,10 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination',
-        'customer_invoices' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]'
+        'purchase_order_number' => 'string',
+        'selling_party' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification',
+        'ship_from_party' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification',
+        'status_update_details' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\StatusUpdateDetails'
     ];
 
     /**
@@ -70,8 +72,10 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pagination' => null,
-        'customer_invoices' => null
+        'purchase_order_number' => null,
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'status_update_details' => null
     ];
 
     /**
@@ -101,9 +105,10 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'pagination' => 'pagination',
-        'customer_invoices' => 'customerInvoices'
+        'purchase_order_number' => 'purchaseOrderNumber',
+        'selling_party' => 'sellingParty',
+        'ship_from_party' => 'shipFromParty',
+        'status_update_details' => 'statusUpdateDetails'
     ];
 
     /**
@@ -112,9 +117,10 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'pagination' => 'setPagination',
-        'customer_invoices' => 'setCustomerInvoices'
+                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'selling_party' => 'setSellingParty',
+        'ship_from_party' => 'setShipFromParty',
+        'status_update_details' => 'setStatusUpdateDetails'
     ];
 
     /**
@@ -123,9 +129,10 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'pagination' => 'getPagination',
-        'customer_invoices' => 'getCustomerInvoices'
+        'purchase_order_number' => 'getPurchaseOrderNumber',
+        'selling_party' => 'getSellingParty',
+        'ship_from_party' => 'getShipFromParty',
+        'status_update_details' => 'getStatusUpdateDetails'
     ];
 
     /**
@@ -184,8 +191,10 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['pagination'] = $data['pagination'] ?? null;
-        $this->container['customer_invoices'] = $data['customer_invoices'] ?? null;
+        $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
+        $this->container['selling_party'] = $data['selling_party'] ?? null;
+        $this->container['ship_from_party'] = $data['ship_from_party'] ?? null;
+        $this->container['status_update_details'] = $data['status_update_details'] ?? null;
     }
 
     /**
@@ -196,6 +205,22 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['purchase_order_number'] === null) {
+            $invalidProperties[] = "'purchase_order_number' can't be null";
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->container['purchase_order_number'])) {
+            $invalidProperties[] = "invalid value for 'purchase_order_number', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
+        }
+
+        if ($this->container['selling_party'] === null) {
+            $invalidProperties[] = "'selling_party' can't be null";
+        }
+        if ($this->container['ship_from_party'] === null) {
+            $invalidProperties[] = "'ship_from_party' can't be null";
+        }
+        if ($this->container['status_update_details'] === null) {
+            $invalidProperties[] = "'status_update_details' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -210,72 +235,101 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets purchase_order_number
      *
-     * @return array[string]
+     * @return string
      */
-    public function getHeaders()
+    public function getPurchaseOrderNumber()
     {
-        return $this->container['headers'];
+        return $this->container['purchase_order_number'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets purchase_order_number
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string $purchase_order_number Purchase order number of the shipment for which to update the shipment status.
      *
      * @return self
      */
-    public function setHeaders($headers)
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
 
-    /**
-     * Gets pagination
-     *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null
-     */
-    public function getPagination()
-    {
-        return $this->container['pagination'];
-    }
+        if ((!preg_match("/^[a-zA-Z0-9]+$/", $purchase_order_number))) {
+            throw new \InvalidArgumentException("invalid value for $purchase_order_number when calling ShipmentStatusUpdate., must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
 
-    /**
-     * Sets pagination
-     *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null $pagination pagination
-     *
-     * @return self
-     */
-    public function setPagination($pagination)
-    {
-        $this->container['pagination'] = $pagination;
+        $this->container['purchase_order_number'] = $purchase_order_number;
 
         return $this;
     }
     /**
-     * Gets customer_invoices
+     * Gets selling_party
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification
      */
-    public function getCustomerInvoices()
+    public function getSellingParty()
     {
-        return $this->container['customer_invoices'];
+        return $this->container['selling_party'];
     }
 
     /**
-     * Sets customer_invoices
+     * Sets selling_party
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null $customer_invoices customer_invoices
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification $selling_party selling_party
      *
      * @return self
      */
-    public function setCustomerInvoices($customer_invoices)
+    public function setSellingParty($selling_party)
     {
-        $this->container['customer_invoices'] = $customer_invoices;
+        $this->container['selling_party'] = $selling_party;
+
+        return $this;
+    }
+    /**
+     * Gets ship_from_party
+     *
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification
+     */
+    public function getShipFromParty()
+    {
+        return $this->container['ship_from_party'];
+    }
+
+    /**
+     * Sets ship_from_party
+     *
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification $ship_from_party ship_from_party
+     *
+     * @return self
+     */
+    public function setShipFromParty($ship_from_party)
+    {
+        $this->container['ship_from_party'] = $ship_from_party;
+
+        return $this;
+    }
+    /**
+     * Gets status_update_details
+     *
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\StatusUpdateDetails
+     */
+    public function getStatusUpdateDetails()
+    {
+        return $this->container['status_update_details'];
+    }
+
+    /**
+     * Sets status_update_details
+     *
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\StatusUpdateDetails $status_update_details status_update_details
+     *
+     * @return self
+     */
+    public function setStatusUpdateDetails($status_update_details)
+    {
+        $this->container['status_update_details'] = $status_update_details;
 
         return $this;
     }
@@ -410,7 +464,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoiceList
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentStatusUpdate
      */
     public function __set($propertyName, $propertyValue)
     {

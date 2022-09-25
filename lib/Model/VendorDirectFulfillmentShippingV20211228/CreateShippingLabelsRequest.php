@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerInvoiceList
+ * CreateShippingLabelsRequest
  *
  * PHP version 7.3
  *
@@ -32,16 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CustomerInvoiceList Class Doc Comment
+ * CreateShippingLabelsRequest Class Doc Comment
  *
  * @category Class
+ * @description The request body for the createShippingLabels operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class CreateShippingLabelsRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CustomerInvoiceList';
+    protected static $openAPIModelName = 'CreateShippingLabelsRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +59,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination',
-        'customer_invoices' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]'
+        'selling_party' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification',
+        'ship_from_party' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification',
+        'containers' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Container[]'
     ];
 
     /**
@@ -70,8 +72,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pagination' => null,
-        'customer_invoices' => null
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'containers' => null
     ];
 
     /**
@@ -101,9 +104,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'pagination' => 'pagination',
-        'customer_invoices' => 'customerInvoices'
+        'selling_party' => 'sellingParty',
+        'ship_from_party' => 'shipFromParty',
+        'containers' => 'containers'
     ];
 
     /**
@@ -112,9 +115,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'pagination' => 'setPagination',
-        'customer_invoices' => 'setCustomerInvoices'
+                'selling_party' => 'setSellingParty',
+        'ship_from_party' => 'setShipFromParty',
+        'containers' => 'setContainers'
     ];
 
     /**
@@ -123,9 +126,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'pagination' => 'getPagination',
-        'customer_invoices' => 'getCustomerInvoices'
+        'selling_party' => 'getSellingParty',
+        'ship_from_party' => 'getShipFromParty',
+        'containers' => 'getContainers'
     ];
 
     /**
@@ -184,8 +187,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['pagination'] = $data['pagination'] ?? null;
-        $this->container['customer_invoices'] = $data['customer_invoices'] ?? null;
+        $this->container['selling_party'] = $data['selling_party'] ?? null;
+        $this->container['ship_from_party'] = $data['ship_from_party'] ?? null;
+        $this->container['containers'] = $data['containers'] ?? null;
     }
 
     /**
@@ -196,6 +200,12 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['selling_party'] === null) {
+            $invalidProperties[] = "'selling_party' can't be null";
+        }
+        if ($this->container['ship_from_party'] === null) {
+            $invalidProperties[] = "'ship_from_party' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -210,72 +220,73 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets selling_party
      *
-     * @return array[string]
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification
      */
-    public function getHeaders()
+    public function getSellingParty()
     {
-        return $this->container['headers'];
+        return $this->container['selling_party'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets selling_party
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification $selling_party selling_party
      *
      * @return self
      */
-    public function setHeaders($headers)
+    public function setSellingParty($selling_party)
     {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets pagination
-     *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null
-     */
-    public function getPagination()
-    {
-        return $this->container['pagination'];
-    }
-
-    /**
-     * Sets pagination
-     *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null $pagination pagination
-     *
-     * @return self
-     */
-    public function setPagination($pagination)
-    {
-        $this->container['pagination'] = $pagination;
+        $this->container['selling_party'] = $selling_party;
 
         return $this;
     }
     /**
-     * Gets customer_invoices
+     * Gets ship_from_party
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification
      */
-    public function getCustomerInvoices()
+    public function getShipFromParty()
     {
-        return $this->container['customer_invoices'];
+        return $this->container['ship_from_party'];
     }
 
     /**
-     * Sets customer_invoices
+     * Sets ship_from_party
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null $customer_invoices customer_invoices
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PartyIdentification $ship_from_party ship_from_party
      *
      * @return self
      */
-    public function setCustomerInvoices($customer_invoices)
+    public function setShipFromParty($ship_from_party)
     {
-        $this->container['customer_invoices'] = $customer_invoices;
+        $this->container['ship_from_party'] = $ship_from_party;
+
+        return $this;
+    }
+    /**
+     * Gets containers
+     *
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Container[]|null
+     */
+    public function getContainers()
+    {
+        return $this->container['containers'];
+    }
+
+    /**
+     * Sets containers
+     *
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Container[]|null $containers A list of the packages in this shipment.
+     *
+     * @return self
+     */
+    public function setContainers($containers)
+    {
+        $this->container['containers'] = $containers;
 
         return $this;
     }
@@ -410,7 +421,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoiceList
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CreateShippingLabelsRequest
      */
     public function __set($propertyName, $propertyValue)
     {

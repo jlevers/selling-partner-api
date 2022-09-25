@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerInvoiceList
+ * ShipmentDetails
  *
  * PHP version 7.3
  *
@@ -32,16 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CustomerInvoiceList Class Doc Comment
+ * ShipmentDetails Class Doc Comment
  *
  * @category Class
+ * @description Details about a shipment.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CustomerInvoiceList';
+    protected static $openAPIModelName = 'ShipmentDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +59,11 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination',
-        'customer_invoices' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]'
+        'shipped_date' => 'string',
+        'shipment_status' => 'string',
+        'is_priority_shipment' => 'bool',
+        'vendor_order_number' => 'string',
+        'estimated_delivery_date' => 'string'
     ];
 
     /**
@@ -70,8 +74,11 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pagination' => null,
-        'customer_invoices' => null
+        'shipped_date' => null,
+        'shipment_status' => null,
+        'is_priority_shipment' => null,
+        'vendor_order_number' => null,
+        'estimated_delivery_date' => null
     ];
 
     /**
@@ -101,9 +108,11 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'pagination' => 'pagination',
-        'customer_invoices' => 'customerInvoices'
+        'shipped_date' => 'shippedDate',
+        'shipment_status' => 'shipmentStatus',
+        'is_priority_shipment' => 'isPriorityShipment',
+        'vendor_order_number' => 'vendorOrderNumber',
+        'estimated_delivery_date' => 'estimatedDeliveryDate'
     ];
 
     /**
@@ -112,9 +121,11 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'pagination' => 'setPagination',
-        'customer_invoices' => 'setCustomerInvoices'
+                'shipped_date' => 'setShippedDate',
+        'shipment_status' => 'setShipmentStatus',
+        'is_priority_shipment' => 'setIsPriorityShipment',
+        'vendor_order_number' => 'setVendorOrderNumber',
+        'estimated_delivery_date' => 'setEstimatedDeliveryDate'
     ];
 
     /**
@@ -123,9 +134,11 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'pagination' => 'getPagination',
-        'customer_invoices' => 'getCustomerInvoices'
+        'shipped_date' => 'getShippedDate',
+        'shipment_status' => 'getShipmentStatus',
+        'is_priority_shipment' => 'getIsPriorityShipment',
+        'vendor_order_number' => 'getVendorOrderNumber',
+        'estimated_delivery_date' => 'getEstimatedDeliveryDate'
     ];
 
     /**
@@ -168,6 +181,24 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
+
+    const SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
+    const SHIPMENT_STATUS_FLOOR_DENIAL = 'FLOOR_DENIAL';
+    
+    
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getShipmentStatusAllowableValues()
+    {
+        return [
+            self::SHIPMENT_STATUS_SHIPPED,
+            self::SHIPMENT_STATUS_FLOOR_DENIAL,
+        ];
+    }
     
     /**
      * Associative array for storing property values
@@ -184,8 +215,11 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['pagination'] = $data['pagination'] ?? null;
-        $this->container['customer_invoices'] = $data['customer_invoices'] ?? null;
+        $this->container['shipped_date'] = $data['shipped_date'] ?? null;
+        $this->container['shipment_status'] = $data['shipment_status'] ?? null;
+        $this->container['is_priority_shipment'] = $data['is_priority_shipment'] ?? null;
+        $this->container['vendor_order_number'] = $data['vendor_order_number'] ?? null;
+        $this->container['estimated_delivery_date'] = $data['estimated_delivery_date'] ?? null;
     }
 
     /**
@@ -196,6 +230,21 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['shipped_date'] === null) {
+            $invalidProperties[] = "'shipped_date' can't be null";
+        }
+        if ($this->container['shipment_status'] === null) {
+            $invalidProperties[] = "'shipment_status' can't be null";
+        }
+        $allowedValues = $this->getShipmentStatusAllowableValues();
+        if (!is_null($this->container['shipment_status']) && !in_array($this->container['shipment_status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'shipment_status', must be one of '%s'",
+                $this->container['shipment_status'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -210,72 +259,129 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets shipped_date
      *
-     * @return array[string]
+     * @return string
      */
-    public function getHeaders()
+    public function getShippedDate()
     {
-        return $this->container['headers'];
+        return $this->container['shipped_date'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets shipped_date
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string $shipped_date This field indicates the date of the departure of the shipment from vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the Shipment Confirmation should not be in the future. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
-    public function setHeaders($headers)
+    public function setShippedDate($shipped_date)
     {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets pagination
-     *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null
-     */
-    public function getPagination()
-    {
-        return $this->container['pagination'];
-    }
-
-    /**
-     * Sets pagination
-     *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null $pagination pagination
-     *
-     * @return self
-     */
-    public function setPagination($pagination)
-    {
-        $this->container['pagination'] = $pagination;
+        $this->container['shipped_date'] = $shipped_date;
 
         return $this;
     }
     /**
-     * Gets customer_invoices
+     * Gets shipment_status
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null
+     * @return string
      */
-    public function getCustomerInvoices()
+    public function getShipmentStatus()
     {
-        return $this->container['customer_invoices'];
+        return $this->container['shipment_status'];
     }
 
     /**
-     * Sets customer_invoices
+     * Sets shipment_status
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null $customer_invoices customer_invoices
+     * @param string $shipment_status Indicate the shipment status.
      *
      * @return self
      */
-    public function setCustomerInvoices($customer_invoices)
+    public function setShipmentStatus($shipment_status)
     {
-        $this->container['customer_invoices'] = $customer_invoices;
+        $allowedValues = $this->getShipmentStatusAllowableValues();
+        if (!in_array($shipment_status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'shipment_status', must be one of '%s'",
+                    $shipment_status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['shipment_status'] = $shipment_status;
+
+        return $this;
+    }
+    /**
+     * Gets is_priority_shipment
+     *
+     * @return bool|null
+     */
+    public function getIsPriorityShipment()
+    {
+        return $this->container['is_priority_shipment'];
+    }
+
+    /**
+     * Sets is_priority_shipment
+     *
+     * @param bool|null $is_priority_shipment Provide the priority of the shipment.
+     *
+     * @return self
+     */
+    public function setIsPriorityShipment($is_priority_shipment)
+    {
+        $this->container['is_priority_shipment'] = $is_priority_shipment;
+
+        return $this;
+    }
+    /**
+     * Gets vendor_order_number
+     *
+     * @return string|null
+     */
+    public function getVendorOrderNumber()
+    {
+        return $this->container['vendor_order_number'];
+    }
+
+    /**
+     * Sets vendor_order_number
+     *
+     * @param string|null $vendor_order_number The vendor order number is a unique identifier generated by a vendor for their reference.
+     *
+     * @return self
+     */
+    public function setVendorOrderNumber($vendor_order_number)
+    {
+        $this->container['vendor_order_number'] = $vendor_order_number;
+
+        return $this;
+    }
+    /**
+     * Gets estimated_delivery_date
+     *
+     * @return string|null
+     */
+    public function getEstimatedDeliveryDate()
+    {
+        return $this->container['estimated_delivery_date'];
+    }
+
+    /**
+     * Sets estimated_delivery_date
+     *
+     * @param string|null $estimated_delivery_date Date on which the shipment is expected to reach the buyer's warehouse. It needs to be an estimate based on the average transit time between the ship-from location and the destination. The exact appointment time will be provided by buyer and is potentially not known when creating the shipment confirmation. Must be in ISO-8601 date/time format.
+     *
+     * @return self
+     */
+    public function setEstimatedDeliveryDate($estimated_delivery_date)
+    {
+        $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 
         return $this;
     }
@@ -410,7 +516,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoiceList
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentDetails
      */
     public function __set($propertyName, $propertyValue)
     {

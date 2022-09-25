@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerInvoiceList
+ * ShipmentSchedule
  *
  * PHP version 7.3
  *
@@ -32,16 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CustomerInvoiceList Class Doc Comment
+ * ShipmentSchedule Class Doc Comment
  *
  * @category Class
+ * @description Details about the estimated delivery window.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CustomerInvoiceList';
+    protected static $openAPIModelName = 'ShipmentSchedule';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +59,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination',
-        'customer_invoices' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]'
+        'estimated_delivery_date_time' => 'string',
+        'appt_window_start_date_time' => 'string',
+        'appt_window_end_date_time' => 'string'
     ];
 
     /**
@@ -70,8 +72,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pagination' => null,
-        'customer_invoices' => null
+        'estimated_delivery_date_time' => null,
+        'appt_window_start_date_time' => null,
+        'appt_window_end_date_time' => null
     ];
 
     /**
@@ -101,9 +104,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'pagination' => 'pagination',
-        'customer_invoices' => 'customerInvoices'
+        'estimated_delivery_date_time' => 'estimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'apptWindowStartDateTime',
+        'appt_window_end_date_time' => 'apptWindowEndDateTime'
     ];
 
     /**
@@ -112,9 +115,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'pagination' => 'setPagination',
-        'customer_invoices' => 'setCustomerInvoices'
+                'estimated_delivery_date_time' => 'setEstimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'setApptWindowStartDateTime',
+        'appt_window_end_date_time' => 'setApptWindowEndDateTime'
     ];
 
     /**
@@ -123,9 +126,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'pagination' => 'getPagination',
-        'customer_invoices' => 'getCustomerInvoices'
+        'estimated_delivery_date_time' => 'getEstimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'getApptWindowStartDateTime',
+        'appt_window_end_date_time' => 'getApptWindowEndDateTime'
     ];
 
     /**
@@ -184,8 +187,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['pagination'] = $data['pagination'] ?? null;
-        $this->container['customer_invoices'] = $data['customer_invoices'] ?? null;
+        $this->container['estimated_delivery_date_time'] = $data['estimated_delivery_date_time'] ?? null;
+        $this->container['appt_window_start_date_time'] = $data['appt_window_start_date_time'] ?? null;
+        $this->container['appt_window_end_date_time'] = $data['appt_window_end_date_time'] ?? null;
     }
 
     /**
@@ -210,72 +214,73 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets estimated_delivery_date_time
      *
-     * @return array[string]
+     * @return string|null
      */
-    public function getHeaders()
+    public function getEstimatedDeliveryDateTime()
     {
-        return $this->container['headers'];
+        return $this->container['estimated_delivery_date_time'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets estimated_delivery_date_time
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param string|null $estimated_delivery_date_time Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */
-    public function setHeaders($headers)
+    public function setEstimatedDeliveryDateTime($estimated_delivery_date_time)
     {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
-
-    /**
-     * Gets pagination
-     *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null
-     */
-    public function getPagination()
-    {
-        return $this->container['pagination'];
-    }
-
-    /**
-     * Sets pagination
-     *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null $pagination pagination
-     *
-     * @return self
-     */
-    public function setPagination($pagination)
-    {
-        $this->container['pagination'] = $pagination;
+        $this->container['estimated_delivery_date_time'] = $estimated_delivery_date_time;
 
         return $this;
     }
     /**
-     * Gets customer_invoices
+     * Gets appt_window_start_date_time
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null
+     * @return string|null
      */
-    public function getCustomerInvoices()
+    public function getApptWindowStartDateTime()
     {
-        return $this->container['customer_invoices'];
+        return $this->container['appt_window_start_date_time'];
     }
 
     /**
-     * Sets customer_invoices
+     * Sets appt_window_start_date_time
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null $customer_invoices customer_invoices
+     * @param string|null $appt_window_start_date_time This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */
-    public function setCustomerInvoices($customer_invoices)
+    public function setApptWindowStartDateTime($appt_window_start_date_time)
     {
-        $this->container['customer_invoices'] = $customer_invoices;
+        $this->container['appt_window_start_date_time'] = $appt_window_start_date_time;
+
+        return $this;
+    }
+    /**
+     * Gets appt_window_end_date_time
+     *
+     * @return string|null
+     */
+    public function getApptWindowEndDateTime()
+    {
+        return $this->container['appt_window_end_date_time'];
+    }
+
+    /**
+     * Sets appt_window_end_date_time
+     *
+     * @param string|null $appt_window_end_date_time This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     *
+     * @return self
+     */
+    public function setApptWindowEndDateTime($appt_window_end_date_time)
+    {
+        $this->container['appt_window_end_date_time'] = $appt_window_end_date_time;
 
         return $this;
     }
@@ -410,7 +415,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoiceList
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentSchedule
      */
     public function __set($propertyName, $propertyValue)
     {

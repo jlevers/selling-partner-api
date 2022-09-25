@@ -101,6 +101,7 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable,
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'purchase_order_number' => 'purchaseOrderNumber',
         'content' => 'content'
     ];
@@ -111,7 +112,8 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable,
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'headers' => 'setHeaders',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'content' => 'setContent'
     ];
 
@@ -121,6 +123,7 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable,
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'content' => 'getContent'
     ];
@@ -217,6 +220,28 @@ class CustomerInvoice implements ModelInterface, ArrayAccess, \JsonSerializable,
         return count($this->listInvalidProperties()) === 0;
     }
 
+    /**
+     * Gets API response headers
+     *
+     * @return array[string]
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets API response headers (only relevant to response models)
+     *
+     * @param array[string => string] $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+        return $this;
+    }
 
     /**
      * Gets purchase_order_number

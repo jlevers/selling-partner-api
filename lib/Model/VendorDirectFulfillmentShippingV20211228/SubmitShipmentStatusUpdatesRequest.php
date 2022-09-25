@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerInvoiceList
+ * SubmitShipmentStatusUpdatesRequest
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CustomerInvoiceList Class Doc Comment
+ * SubmitShipmentStatusUpdatesRequest Class Doc Comment
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -41,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CustomerInvoiceList';
+    protected static $openAPIModelName = 'SubmitShipmentStatusUpdatesRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination',
-        'customer_invoices' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]'
+        'shipment_status_updates' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentStatusUpdate[]'
     ];
 
     /**
@@ -70,8 +69,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pagination' => null,
-        'customer_invoices' => null
+        'shipment_status_updates' => null
     ];
 
     /**
@@ -101,9 +99,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'headers' => 'headers',
-        'pagination' => 'pagination',
-        'customer_invoices' => 'customerInvoices'
+        'shipment_status_updates' => 'shipmentStatusUpdates'
     ];
 
     /**
@@ -112,9 +108,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'headers' => 'setHeaders',
-        'pagination' => 'setPagination',
-        'customer_invoices' => 'setCustomerInvoices'
+                'shipment_status_updates' => 'setShipmentStatusUpdates'
     ];
 
     /**
@@ -123,9 +117,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'headers' => 'getHeaders',
-        'pagination' => 'getPagination',
-        'customer_invoices' => 'getCustomerInvoices'
+        'shipment_status_updates' => 'getShipmentStatusUpdates'
     ];
 
     /**
@@ -184,8 +176,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['pagination'] = $data['pagination'] ?? null;
-        $this->container['customer_invoices'] = $data['customer_invoices'] ?? null;
+        $this->container['shipment_status_updates'] = $data['shipment_status_updates'] ?? null;
     }
 
     /**
@@ -196,6 +187,10 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if (!is_null($this->container['shipment_status_updates']) && (count($this->container['shipment_status_updates']) < 1)) {
+            $invalidProperties[] = "invalid value for 'shipment_status_updates', number of items must be greater than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -210,72 +205,32 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets API response headers
+     * Gets shipment_status_updates
      *
-     * @return array[string]
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentStatusUpdate[]|null
      */
-    public function getHeaders()
+    public function getShipmentStatusUpdates()
     {
-        return $this->container['headers'];
+        return $this->container['shipment_status_updates'];
     }
 
     /**
-     * Sets API response headers (only relevant to response models)
+     * Sets shipment_status_updates
      *
-     * @param array[string => string] $headers Associative array of response headers.
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ShipmentStatusUpdate[]|null $shipment_status_updates shipment_status_updates
      *
      * @return self
      */
-    public function setHeaders($headers)
+    public function setShipmentStatusUpdates($shipment_status_updates)
     {
-        $this->container['headers'] = $headers;
-        return $this;
-    }
 
-    /**
-     * Gets pagination
-     *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null
-     */
-    public function getPagination()
-    {
-        return $this->container['pagination'];
-    }
 
-    /**
-     * Sets pagination
-     *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null $pagination pagination
-     *
-     * @return self
-     */
-    public function setPagination($pagination)
-    {
-        $this->container['pagination'] = $pagination;
-
-        return $this;
-    }
-    /**
-     * Gets customer_invoices
-     *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null
-     */
-    public function getCustomerInvoices()
-    {
-        return $this->container['customer_invoices'];
-    }
-
-    /**
-     * Sets customer_invoices
-     *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null $customer_invoices customer_invoices
-     *
-     * @return self
-     */
-    public function setCustomerInvoices($customer_invoices)
-    {
-        $this->container['customer_invoices'] = $customer_invoices;
+        if (!is_null($shipment_status_updates) && (count($shipment_status_updates) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $shipment_status_updates when calling SubmitShipmentStatusUpdatesRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['shipment_status_updates'] = $shipment_status_updates;
 
         return $this;
     }
@@ -410,7 +365,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoiceList
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\SubmitShipmentStatusUpdatesRequest
      */
     public function __set($propertyName, $propertyValue)
     {

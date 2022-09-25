@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerInvoiceList
+ * PackingSlipList
  *
  * PHP version 7.3
  *
@@ -32,16 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CustomerInvoiceList Class Doc Comment
+ * PackingSlipList Class Doc Comment
  *
  * @category Class
+ * @description A list of packing slips.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class PackingSlipList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CustomerInvoiceList';
+    protected static $openAPIModelName = 'PackingSlipList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +60,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'pagination' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination',
-        'customer_invoices' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]'
+        'packing_slips' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PackingSlip[]'
     ];
 
     /**
@@ -71,7 +72,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'pagination' => null,
-        'customer_invoices' => null
+        'packing_slips' => null
     ];
 
     /**
@@ -103,7 +104,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'headers' => 'headers',
         'pagination' => 'pagination',
-        'customer_invoices' => 'customerInvoices'
+        'packing_slips' => 'packingSlips'
     ];
 
     /**
@@ -114,7 +115,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'headers' => 'setHeaders',
         'pagination' => 'setPagination',
-        'customer_invoices' => 'setCustomerInvoices'
+        'packing_slips' => 'setPackingSlips'
     ];
 
     /**
@@ -125,7 +126,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'headers' => 'getHeaders',
         'pagination' => 'getPagination',
-        'customer_invoices' => 'getCustomerInvoices'
+        'packing_slips' => 'getPackingSlips'
     ];
 
     /**
@@ -185,7 +186,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['pagination'] = $data['pagination'] ?? null;
-        $this->container['customer_invoices'] = $data['customer_invoices'] ?? null;
+        $this->container['packing_slips'] = $data['packing_slips'] ?? null;
     }
 
     /**
@@ -257,25 +258,25 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
         return $this;
     }
     /**
-     * Gets customer_invoices
+     * Gets packing_slips
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PackingSlip[]|null
      */
-    public function getCustomerInvoices()
+    public function getPackingSlips()
     {
-        return $this->container['customer_invoices'];
+        return $this->container['packing_slips'];
     }
 
     /**
-     * Sets customer_invoices
+     * Sets packing_slips
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null $customer_invoices customer_invoices
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PackingSlip[]|null $packing_slips packing_slips
      *
      * @return self
      */
-    public function setCustomerInvoices($customer_invoices)
+    public function setPackingSlips($packing_slips)
     {
-        $this->container['customer_invoices'] = $customer_invoices;
+        $this->container['packing_slips'] = $packing_slips;
 
         return $this;
     }
@@ -410,7 +411,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoiceList
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PackingSlipList
      */
     public function __set($propertyName, $propertyValue)
     {

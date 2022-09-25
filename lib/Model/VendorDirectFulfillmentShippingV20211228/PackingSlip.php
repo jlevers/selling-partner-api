@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerInvoiceList
+ * PackingSlip
  *
  * PHP version 7.3
  *
@@ -32,16 +32,17 @@ use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
 
 /**
- * CustomerInvoiceList Class Doc Comment
+ * PackingSlip Class Doc Comment
  *
  * @category Class
+ * @description Packing slip information.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CustomerInvoiceList';
+    protected static $openAPIModelName = 'PackingSlip';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +59,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination',
-        'customer_invoices' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]'
+        'purchase_order_number' => 'string',
+        'content' => 'string',
+        'content_type' => 'string'
     ];
 
     /**
@@ -70,8 +72,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pagination' => null,
-        'customer_invoices' => null
+        'purchase_order_number' => null,
+        'content' => null,
+        'content_type' => null
     ];
 
     /**
@@ -102,8 +105,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'headers' => 'headers',
-        'pagination' => 'pagination',
-        'customer_invoices' => 'customerInvoices'
+        'purchase_order_number' => 'purchaseOrderNumber',
+        'content' => 'content',
+        'content_type' => 'contentType'
     ];
 
     /**
@@ -113,8 +117,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'headers' => 'setHeaders',
-        'pagination' => 'setPagination',
-        'customer_invoices' => 'setCustomerInvoices'
+        'purchase_order_number' => 'setPurchaseOrderNumber',
+        'content' => 'setContent',
+        'content_type' => 'setContentType'
     ];
 
     /**
@@ -124,8 +129,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'headers' => 'getHeaders',
-        'pagination' => 'getPagination',
-        'customer_invoices' => 'getCustomerInvoices'
+        'purchase_order_number' => 'getPurchaseOrderNumber',
+        'content' => 'getContent',
+        'content_type' => 'getContentType'
     ];
 
     /**
@@ -168,6 +174,22 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         return self::$openAPIModelName;
     }
+
+    const CONTENT_TYPE_APPLICATION_PDF = 'application/pdf';
+    
+    
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getContentTypeAllowableValues()
+    {
+        return [
+            self::CONTENT_TYPE_APPLICATION_PDF,
+        ];
+    }
     
     /**
      * Associative array for storing property values
@@ -184,8 +206,9 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['pagination'] = $data['pagination'] ?? null;
-        $this->container['customer_invoices'] = $data['customer_invoices'] ?? null;
+        $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
+        $this->container['content'] = $data['content'] ?? null;
+        $this->container['content_type'] = $data['content_type'] ?? null;
     }
 
     /**
@@ -196,6 +219,25 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['purchase_order_number'] === null) {
+            $invalidProperties[] = "'purchase_order_number' can't be null";
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $this->container['purchase_order_number'])) {
+            $invalidProperties[] = "invalid value for 'purchase_order_number', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
+        }
+
+        if ($this->container['content'] === null) {
+            $invalidProperties[] = "'content' can't be null";
+        }
+        $allowedValues = $this->getContentTypeAllowableValues();
+        if (!is_null($this->container['content_type']) && !in_array($this->container['content_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'content_type', must be one of '%s'",
+                $this->container['content_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -234,48 +276,86 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets pagination
+     * Gets purchase_order_number
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null
+     * @return string
      */
-    public function getPagination()
+    public function getPurchaseOrderNumber()
     {
-        return $this->container['pagination'];
+        return $this->container['purchase_order_number'];
     }
 
     /**
-     * Sets pagination
+     * Sets purchase_order_number
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\Pagination|null $pagination pagination
+     * @param string $purchase_order_number Purchase order number of the shipment that the packing slip is for.
      *
      * @return self
      */
-    public function setPagination($pagination)
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
-        $this->container['pagination'] = $pagination;
+
+        if ((!preg_match("/^[a-zA-Z0-9]+$/", $purchase_order_number))) {
+            throw new \InvalidArgumentException("invalid value for $purchase_order_number when calling PackingSlip., must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        $this->container['purchase_order_number'] = $purchase_order_number;
 
         return $this;
     }
     /**
-     * Gets customer_invoices
+     * Gets content
      *
-     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null
+     * @return string
      */
-    public function getCustomerInvoices()
+    public function getContent()
     {
-        return $this->container['customer_invoices'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets customer_invoices
+     * Sets content
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoice[]|null $customer_invoices customer_invoices
+     * @param string $content A Base64encoded string of the packing slip PDF.
      *
      * @return self
      */
-    public function setCustomerInvoices($customer_invoices)
+    public function setContent($content)
     {
-        $this->container['customer_invoices'] = $customer_invoices;
+        $this->container['content'] = $content;
+
+        return $this;
+    }
+    /**
+     * Gets content_type
+     *
+     * @return string|null
+     */
+    public function getContentType()
+    {
+        return $this->container['content_type'];
+    }
+
+    /**
+     * Sets content_type
+     *
+     * @param string|null $content_type The format of the file such as PDF, JPEG etc.
+     *
+     * @return self
+     */
+    public function setContentType($content_type)
+    {
+        $allowedValues = $this->getContentTypeAllowableValues();
+        if (!is_null($content_type) && !in_array($content_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'content_type', must be one of '%s'",
+                    $content_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }
@@ -410,7 +490,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param string $propertyName
      * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\CustomerInvoiceList
+     * @return SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\PackingSlip
      */
     public function __set($propertyName, $propertyValue)
     {

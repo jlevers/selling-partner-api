@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **tracking_number** | **string** | The tracking number. | [optional]
 **manifest_id** | **string** | The manifest identifier. | [optional]
 **manifest_date** | **string** | The date of the manifest. | [optional]
-**ship_method** | **string** | The shipment method. | [optional]
+**ship_method** | **string** | The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise. | [optional]
 **scac_code** | **string** | SCAC code required for NA VOC vendors only. | [optional]
 **carrier** | **string** | Carrier required for EU VOC vendors only. | [optional]
 **container_sequence_number** | **int** | An integer that must be submitted for multi-box shipments only, where one item may come in separate packages. | [optional]

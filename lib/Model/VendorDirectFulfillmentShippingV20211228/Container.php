@@ -442,7 +442,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable, \Iter
     /**
      * Sets ship_method
      *
-     * @param string|null $ship_method The shipment method.
+     * @param string|null $ship_method The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
      *
      * @return self
      */

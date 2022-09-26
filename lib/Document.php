@@ -52,7 +52,14 @@ class Document
             throw new RuntimeException('$documentType cannot be null');
         }
 
-        $this->contentType = $documentType['contentType'];
+        // Amazon is enclosing fields on GET_LEDGER_DETAIL_VIEW_DATA report with double quotes.
+        // Changing the Content Type for the report makes phpSpreadsheet to remove the quotes
+        // when loading the data
+        if ($reportType['name'] === "GET_LEDGER_DETAIL_VIEW_DATA") {
+            $this->contentType = ContentType::CSV;
+        } else {
+            $this->contentType = $documentType['contentType'];
+        }
 
         $validContentTypes = ContentType::getContentTypes();
         if (!in_array($this->contentType, array_values($validContentTypes))) {
@@ -160,6 +167,7 @@ class Document
             case ContentType::XLSX:
                 $spreadsheet = $reader->load($this->tmpFilename);
                 if ($this->contentType !== ContentType::XLSX) {
+                    // Avoid spreadsheet formula processing when loading CSV or TAB files
                     $sheet = $spreadsheet->getSheet(0)->toArray(null, false);
                     // Turn each row of data into an associative array with the headers as keys
                     array_walk($sheet, function(&$row) use ($sheet) {

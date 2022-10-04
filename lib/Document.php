@@ -18,6 +18,7 @@ class Document
     private $url;
     private $compressionAlgo;
     private $contentType;
+    private $reportName;
     private $data;
     private $tmpFilename;
     private $client;
@@ -52,14 +53,8 @@ class Document
             throw new RuntimeException('$documentType cannot be null');
         }
 
-        // Amazon is enclosing fields on GET_LEDGER_DETAIL_VIEW_DATA report with double quotes.
-        // Changing the Content Type for the report makes phpSpreadsheet to remove the quotes
-        // when loading the data
-        if ($reportType['name'] === "GET_LEDGER_DETAIL_VIEW_DATA") {
-            $this->contentType = ContentType::CSV;
-        } else {
-            $this->contentType = $documentType['contentType'];
-        }
+        $this->contentType = $documentType['contentType'];
+        $this->reportName = $documentType['name'];
 
         $validContentTypes = ContentType::getContentTypes();
         if (!in_array($this->contentType, array_values($validContentTypes))) {
@@ -162,7 +157,10 @@ class Document
                 // results in the default enclosure being used (a double quote character), so we use a
                 // bizarre character to avoid recognizing double quotes as enclosures.
                 // Thanks @gregordonsky (https://github.com/gregordonsky) for the idea!
-                $reader->setEnclosure(chr(8));
+                // Keep default enclosure for GET_LEDGER_DETAIL_VIEW_DATA as Amazon is sending with quotes
+                if($this->reportName !== "GET_LEDGER_DETAIL_VIEW_DATA") {
+                    $reader->setEnclosure(chr(8));
+                }
             case ContentType::CSV:
             case ContentType::XLSX:
                 $spreadsheet = $reader->load($this->tmpFilename);

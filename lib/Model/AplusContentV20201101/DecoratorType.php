@@ -59,7 +59,7 @@ class DecoratorType
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::LIST_ITEM,
             self::LIST_ORDERED,
             self::LIST_UNORDERED,
@@ -69,6 +69,10 @@ class DecoratorType
             self::STYLE_PARAGRAPH,
             self::STYLE_UNDERLINE,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(fn ($val) => strtoupper($val), $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

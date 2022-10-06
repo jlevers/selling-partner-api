@@ -62,7 +62,7 @@ class Code
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::INVALID_INPUT,
             self::INVALID_TIME_SLOT_ID,
             self::SCHEDULED_PACKAGE_ALREADY_EXISTS,
@@ -75,6 +75,10 @@ class Code
             self::ORDER_NOT_ELIGIBLE_FOR_RESCHEDULING,
             self::INTERNAL_SERVER_ERROR,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(fn ($val) => strtoupper($val), $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

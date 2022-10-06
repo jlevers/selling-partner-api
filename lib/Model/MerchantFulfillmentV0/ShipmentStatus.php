@@ -55,12 +55,16 @@ class ShipmentStatus
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::PURCHASED,
             self::REFUND_PENDING,
             self::REFUND_REJECTED,
             self::REFUND_APPLIED,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(fn ($val) => strtoupper($val), $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

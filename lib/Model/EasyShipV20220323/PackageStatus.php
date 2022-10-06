@@ -63,7 +63,7 @@ class PackageStatus
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::READY_FOR_PICKUP,
             self::PICKED_UP,
             self::AT_ORIGIN_FC,
@@ -77,6 +77,10 @@ class PackageStatus
             self::DAMAGED_IN_TRANSIT,
             self::OUT_FOR_DELIVERY,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(fn ($val) => strtoupper($val), $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

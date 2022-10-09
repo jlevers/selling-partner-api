@@ -59,7 +59,7 @@ class GetAdditionalInputsResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => 'map[string,object]'
+        'payload' => 'object'
     ];
 
     /**
@@ -231,7 +231,7 @@ class GetAdditionalInputsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets payload
      *
-     * @return map[string,object]|null
+     * @return object|null
      */
     public function getPayload()
     {
@@ -241,7 +241,7 @@ class GetAdditionalInputsResponse implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets payload
      *
-     * @param map[string,object]|null $payload The JSON schema to use to provide additional inputs when required to purchase a shipping offering.
+     * @param object|null $payload The JSON schema to use to provide additional inputs when required to purchase a shipping offering.
      *
      * @return self
      */

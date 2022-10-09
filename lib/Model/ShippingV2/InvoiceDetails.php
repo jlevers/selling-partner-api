@@ -245,7 +245,7 @@ class InvoiceDetails implements ModelInterface, ArrayAccess, \JsonSerializable, 
     /**
      * Sets invoice_date
      *
-     * @param string|null $invoice_date The invoice date of the item in ISO 8061 format.
+     * @param string|null $invoice_date The invoice date of the item in ISO 8601 format.
      *
      * @return self
      */

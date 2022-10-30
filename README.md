@@ -292,7 +292,13 @@ $feedContents = file_get_contents('<your/feed/file.xml>');
 $docToUpload = new SellingPartnerApi\Document($feedDocumentInfo, $feedType);
 $docToUpload->upload($feedContents);
 
-// ... call FeedsApi::createFeed() with $feedDocumentId
+$createFeedSpec = new Feeds\CreateFeedSpecification();
+$createFeedSpec->setMarketplaceIds(['ATVPDKIKX0DER']);
+$createFeedSpec->setInputFeedDocumentId($feedDocumentId);
+$createFeedSpec->setFeedType($feedType['name']);
+
+$createFeedResult = $feedsApi->createFeed($createFeedSpec);
+$feedId = $createFeedResult->getFeedId();
 ```
 
 ## Downloading a feed result document

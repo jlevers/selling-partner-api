@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
  **created_before** | **string**| Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
  **ship_from_party_id** | **string**| The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. | [optional]
  **limit** | **int**| The limit to the number of records returned | [optional]
- **sort_order** | **string**| Sort ASC or DESC by packing slip creation date. | [optional] [default to &#39;ASC&#39;]
+ **sort_order** | **string**| Sort ASC or DESC by packing slip creation date. | [optional] [default to 'ASC']
  **next_token** | **string**| Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call. | [optional]
 
 ### Return type
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
  **created_before** | **string**| Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. |
  **ship_from_party_id** | **string**| The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. | [optional]
  **limit** | **int**| The limit to the number of records returned. | [optional]
- **sort_order** | **string**| Sort ASC or DESC by order creation date. | [optional] [default to &#39;ASC&#39;]
+ **sort_order** | **string**| Sort ASC or DESC by order creation date. | [optional] [default to 'ASC']
  **next_token** | **string**| Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. | [optional]
 
 ### Return type

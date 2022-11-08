@@ -64,6 +64,8 @@ class Endpoint
             // Europe.
             // United Arab Emirates (U.A.E.).
             'A2VIGQ35RCS4UG' => 'EU',
+            // Belgium.
+            'AMEN7PMS3EDWL' => 'EU',
             // Germany.
             'A1PA6795UKMFR9' => 'EU',
             // Egypt.

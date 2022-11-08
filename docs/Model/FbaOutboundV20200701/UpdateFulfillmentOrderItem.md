@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **quantity** | **int** | The item quantity. |
 **gift_message** | **string** | A message to the gift recipient, if applicable. | [optional]
 **displayable_comment** | **string** | Item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip. | [optional]
-**fulfillment_network_sku** | **string** | Amazon&#39;s fulfillment network SKU of the item. | [optional]
+**fulfillment_network_sku** | **string** | Amazon's fulfillment network SKU of the item. | [optional]
 **order_item_disposition** | **string** | Indicates whether the item is sellable or unsellable. | [optional]
 **per_unit_declared_value** | [**\SellingPartnerApi\Model\FbaOutboundV20200701\Money**](Money.md) |  | [optional]
 **per_unit_price** | [**\SellingPartnerApi\Model\FbaOutboundV20200701\Money**](Money.md) |  | [optional]

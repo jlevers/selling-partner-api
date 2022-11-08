@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * BuyerInfo Class Doc Comment
  *
  * @category Class
- * @description Buyer information
+ * @description Buyer information.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
@@ -263,7 +263,7 @@ class BuyerInfo implements ModelInterface, ArrayAccess, \JsonSerializable, \Iter
     /**
      * Sets buyer_name
      *
-     * @param string|null $buyer_name The name of the buyer.
+     * @param string|null $buyer_name The buyer name or the recipient name.
      *
      * @return self
      */

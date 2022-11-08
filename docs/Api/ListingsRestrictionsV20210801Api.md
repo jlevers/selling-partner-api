@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
  **seller_id** | **string**| A selling partner identifier, such as a merchant account. |
  **marketplace_ids** | [**string[]**](../Model/ListingsRestrictionsV20210801/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
  **condition_type** | **string**| The condition used to filter restrictions. | [optional]
- **reason_locale** | **string**| A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. | [optional]
+ **reason_locale** | **string**| A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale. | [optional]
 
 ### Return type
 

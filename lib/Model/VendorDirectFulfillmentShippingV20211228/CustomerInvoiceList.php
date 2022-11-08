@@ -101,6 +101,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'headers' => 'headers',
         'pagination' => 'pagination',
         'customer_invoices' => 'customerInvoices'
     ];
@@ -111,7 +112,8 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-                'pagination' => 'setPagination',
+        'headers' => 'setHeaders',
+        'pagination' => 'setPagination',
         'customer_invoices' => 'setCustomerInvoices'
     ];
 
@@ -121,6 +123,7 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'headers' => 'getHeaders',
         'pagination' => 'getPagination',
         'customer_invoices' => 'getCustomerInvoices'
     ];
@@ -207,6 +210,28 @@ class CustomerInvoiceList implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+    /**
+     * Gets API response headers
+     *
+     * @return array[string]
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets API response headers (only relevant to response models)
+     *
+     * @param array[string => string] $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
+        return $this;
+    }
 
     /**
      * Gets pagination

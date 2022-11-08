@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * JobListing Class Doc Comment
  *
  * @category Class
- * @description The payload for the GetJobs operation.
+ * @description The payload for the &#x60;getServiceJobs&#x60; operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
@@ -257,7 +257,7 @@ class JobListing implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
     /**
      * Sets next_page_token
      *
-     * @param string|null $next_page_token A generated string used to pass information to your next request.If nextPageToken is returned, pass the value of nextPageToken to the pageToken to get next results.
+     * @param string|null $next_page_token A generated string used to pass information to your next request. If `nextPageToken` is returned, pass the value of `nextPageToken` to the `pageToken` to get next results.
      *
      * @return self
      */
@@ -280,7 +280,7 @@ class JobListing implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
     /**
      * Sets previous_page_token
      *
-     * @param string|null $previous_page_token A generated string used to pass information to your next request.If previousPageToken is returned, pass the value of previousPageToken to the pageToken to get previous page results.
+     * @param string|null $previous_page_token A generated string used to pass information to your next request. If `previousPageToken` is returned, pass the value of `previousPageToken` to the `pageToken` to get previous page results.
      *
      * @return self
      */

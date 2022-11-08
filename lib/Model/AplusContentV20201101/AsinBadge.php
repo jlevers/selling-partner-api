@@ -55,12 +55,16 @@ class AsinBadge
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::BRAND_NOT_ELIGIBLE,
             self::CATALOG_NOT_FOUND,
             self::CONTENT_NOT_PUBLISHED,
             self::CONTENT_PUBLISHED,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

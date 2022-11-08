@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * GetServiceJobsResponse Class Doc Comment
  *
  * @category Class
- * @description Response schema for GetJobs operation.
+ * @description Response schema for the &#x60;getServiceJobs&#x60; operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

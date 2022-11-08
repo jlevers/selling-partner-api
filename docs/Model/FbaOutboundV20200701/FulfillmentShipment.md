@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **fulfillment_shipment_status** | **string** | The current status of the shipment. |
 **shipping_date** | **string** | A datetime string in ISO 8601 format. | [optional]
 **estimated_arrival_date** | **string** | A datetime string in ISO 8601 format. | [optional]
-**shipping_notes** | **string[]** | Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren&#39;t available. | [optional]
+**shipping_notes** | **string[]** | Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren't available. | [optional]
 **fulfillment_shipment_item** | [**\SellingPartnerApi\Model\FbaOutboundV20200701\FulfillmentShipmentItem[]**](FulfillmentShipmentItem.md) | An array of fulfillment shipment item information. |
 **fulfillment_shipment_package** | [**\SellingPartnerApi\Model\FbaOutboundV20200701\FulfillmentShipmentPackage[]**](FulfillmentShipmentPackage.md) | An array of fulfillment shipment package information. | [optional]
 

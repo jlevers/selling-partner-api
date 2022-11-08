@@ -53,10 +53,14 @@ class GuidanceReason
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::SLOW_MOVING_ASIN,
             self::NO_APPLICABLE_GUIDANCE,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

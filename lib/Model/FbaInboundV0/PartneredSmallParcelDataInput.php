@@ -245,7 +245,7 @@ class PartneredSmallParcelDataInput implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets carrier_name
      *
-     * @param string|null $carrier_name The Amazon-partnered carrier to use for the inbound shipment.
+     * @param string|null $carrier_name The Amazon-partnered carrier to use for the inbound shipment. **`CarrierName`** values in France (FR), Italy (IT), Spain (ES), the United Kingdom (UK), and the United States (US): `UNITED_PARCEL_SERVICE_INC`. <br> **`CarrierName`** values in Germany (DE): `DHL_STANDARD`,`UNITED_PARCEL_SERVICE_INC`. <br>Default: `UNITED_PARCEL_SERVICE_INC`.
      *
      * @return self
      */

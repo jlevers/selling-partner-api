@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
  **seller_id** | **string**| A selling partner identifier, such as a merchant account or vendor code. |
  **sku** | **string**| A selling partner provided identifier for an Amazon listing. |
  **marketplace_ids** | [**string[]**](../Model/ListingsV20200901/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
- **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. | [optional]
+ **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale. | [optional]
 
 ### Return type
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
  **sku** | **string**| A selling partner provided identifier for an Amazon listing. |
  **marketplace_ids** | [**string[]**](../Model/ListingsV20200901/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
  **body** | [**\SellingPartnerApi\Model\ListingsV20200901\ListingsItemPatchRequest**](../Model/ListingsV20200901/ListingsItemPatchRequest.md)| The request body schema for the patchListingsItem operation. |
- **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. | [optional]
+ **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale. | [optional]
 
 ### Return type
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
  **sku** | **string**| A selling partner provided identifier for an Amazon listing. |
  **marketplace_ids** | [**string[]**](../Model/ListingsV20200901/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request. |
  **body** | [**\SellingPartnerApi\Model\ListingsV20200901\ListingsItemPutRequest**](../Model/ListingsV20200901/ListingsItemPutRequest.md)| The request body schema for the putListingsItem operation. |
- **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. | [optional]
+ **issue_locale** | **string**| A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \"en_US\", \"fr_CA\", \"fr_FR\". Localized messages default to \"en_US\" when a localization is not available in the specified locale. | [optional]
 
 ### Return type
 

@@ -33,7 +33,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * ShipmentStatus Class Doc Comment
  *
  * @category Class
- * @description the status of the shipment of the order to be updated
+ * @description The shipment status to apply.
  * @package  SellingPartnerApi
  * @group 
  */
@@ -54,11 +54,15 @@ class ShipmentStatus
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::READY_FOR_PICKUP,
             self::PICKED_UP,
             self::REFUSED_PICKUP,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

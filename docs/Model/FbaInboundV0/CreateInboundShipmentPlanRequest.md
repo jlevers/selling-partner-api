@@ -24,8 +24,8 @@ ShipToCountryCode values for MCI sellers in Europe:
  * GB - United Kingdom
  * IT - Italy
 
-Default: The country code for the seller&#39;s home marketplace. | [optional]
-**ship_to_country_subdivision_code** | **string** | The two-character country code, followed by a dash and then up to three characters that represent the subdivision of the country where the inbound shipment is to be sent. For example, \&quot;IN-MH\&quot;. In full ISO 3166-2 format.
+Default: The country code for the seller's home marketplace. | [optional]
+**ship_to_country_subdivision_code** | **string** | The two-character country code, followed by a dash and then up to three characters that represent the subdivision of the country where the inbound shipment is to be sent. For example, \"IN-MH\". In full ISO 3166-2 format.
 
 Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error. | [optional]
 **inbound_shipment_plan_request_items** | [**\SellingPartnerApi\Model\FbaInboundV0\InboundShipmentPlanRequestItem[]**](InboundShipmentPlanRequestItem.md) |  |

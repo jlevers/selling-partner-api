@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
  **granularity_type** | **string**| The granularity type for the inventory aggregation level. |
  **granularity_id** | **string**| The granularity ID for the inventory aggregation level. |
  **marketplace_ids** | [**string[]**](../Model/FbaInventoryV1/string.md)| The marketplace ID for the marketplace for which to return inventory summaries. |
- **details** | **string**| &#39;true&#39; to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* &#39;true&#39;, not the boolean value, due to a bug in Amazon&#39;s API implementation. Otherwise, returns inventory summaries only (default value). | [optional] [default to &#39;false&#39;]
+ **details** | **string**| 'true' to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* 'true', not the boolean value, due to a bug in Amazon's API implementation. Otherwise, returns inventory summaries only (default value). | [optional] [default to 'false']
  **start_date_time** | **string**| A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. | [optional]
  **seller_skus** | [**string[]**](../Model/FbaInventoryV1/string.md)| A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. | [optional]
  **next_token** | **string**| String token returned in the response of your previous request. | [optional]

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **buyer_county** | **string** | The county of the buyer. | [optional]
 **buyer_tax_info** | [**\SellingPartnerApi\Model\ShipmentInvoicingV0\BuyerTaxInfo**](BuyerTaxInfo.md) |  | [optional]
 **marketplace_tax_info** | [**\SellingPartnerApi\Model\ShipmentInvoicingV0\MarketplaceTaxInfo**](MarketplaceTaxInfo.md) |  | [optional]
-**seller_display_name** | **string** | The seller&#39;s friendly name registered in the marketplace. | [optional]
+**seller_display_name** | **string** | The seller's friendly name registered in the marketplace. | [optional]
 **shipment_items** | [**\SellingPartnerApi\Model\ShipmentInvoicingV0\ShipmentItem[]**](ShipmentItem.md) | A list of shipment items. | [optional]
 
 [[ShipmentInvoicingV0 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

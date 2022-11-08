@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transaction_id** | **string**| The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. |
+ **transaction_id** | **string**| The GUID provided by Amazon in the 'transactionId' field in response to the post request of a specific transaction. |
 
 ### Return type
 

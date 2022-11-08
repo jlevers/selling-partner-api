@@ -54,11 +54,15 @@ class LabelPrepPreference
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::SELLER_LABEL,
             self::AMAZON_LABEL_ONLY,
             self::AMAZON_LABEL_PREFERRED,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

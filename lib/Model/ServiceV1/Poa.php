@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -358,7 +358,7 @@ class Poa implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAg
     /**
      * Sets upload_time
      *
-     * @param string|null $upload_time The date and time when the POA was uploaded, in ISO 8601 format.
+     * @param string|null $upload_time The date and time when the POA was uploaded in ISO 8601 format.
      *
      * @return self
      */

@@ -133,7 +133,7 @@ class FbaInboundEligibilityV1Api
      *
      * @param  string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param  string $program The program that you want to check eligibility against. (required)
-     * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program=INBOUND. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -340,7 +340,7 @@ class FbaInboundEligibilityV1Api
      *
      * @param  string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param  string $program The program that you want to check eligibility against. (required)
-     * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program=INBOUND. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -357,7 +357,7 @@ class FbaInboundEligibilityV1Api
      *
      * @param  string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param  string $program The program that you want to check eligibility against. (required)
-     * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program=INBOUND. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -412,7 +412,7 @@ class FbaInboundEligibilityV1Api
      *
      * @param  string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param  string $program The program that you want to check eligibility against. (required)
-     * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param  string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program=INBOUND. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

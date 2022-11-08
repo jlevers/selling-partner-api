@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -251,7 +251,7 @@ class RescheduleAppointmentRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets reschedule_reason_code
      *
-     * @param string $reschedule_reason_code Appointment reschedule reason code.
+     * @param string $reschedule_reason_code The appointment reschedule reason code.
      *
      * @return self
      */

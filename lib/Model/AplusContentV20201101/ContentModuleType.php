@@ -66,7 +66,7 @@ class ContentModuleType
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::COMPANY_LOGO,
             self::COMPARISON_TABLE,
             self::FOUR_IMAGE_TEXT,
@@ -83,6 +83,10 @@ class ContentModuleType
             self::TEXT,
             self::THREE_IMAGE_TEXT,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

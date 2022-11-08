@@ -54,11 +54,15 @@ class BarcodeInstruction
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::REQUIRES_FNSKU_LABEL,
             self::CAN_USE_ORIGINAL_BARCODE,
             self::MUST_PROVIDE_SELLER_SKU,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

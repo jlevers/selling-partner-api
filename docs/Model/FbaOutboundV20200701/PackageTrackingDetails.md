@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **customer_tracking_link** | **string** | Link on swiship.com that allows customers to track the package. | [optional]
 **carrier_code** | **string** | The name of the carrier. | [optional]
 **carrier_phone_number** | **string** | The phone number of the carrier. | [optional]
-**carrier_url** | **string** | The URL of the carrier&#39;s website. | [optional]
+**carrier_url** | **string** | The URL of the carrier's website. | [optional]
 **ship_date** | **string** | A datetime string in ISO 8601 format. | [optional]
 **estimated_arrival_date** | **string** | A datetime string in ISO 8601 format. | [optional]
 **ship_to_address** | [**\SellingPartnerApi\Model\FbaOutboundV20200701\TrackingAddress**](TrackingAddress.md) |  | [optional]

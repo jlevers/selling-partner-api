@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * UpdateVerificationStatusRequest Class Doc Comment
  *
  * @category Class
- * @description Request to update the verification status of an order containing regulated products.
+ * @description The request body for the updateVerificationStatus operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

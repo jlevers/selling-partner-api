@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Easy Ship
  *
- * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders. Your Easy Ship applications can: * Get available time slots for packages to be scheduled for delivery. * Schedule, reschedule, and cancel Easy Ship orders. * Print labels, invoices, and warranties. See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easy-ship-api-v2022-03-23-use-case-guide) for the differences in Easy Ship operations by marketplace.
+ * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders. Your Easy Ship applications can: * Get available time slots for packages to be scheduled for delivery. * Schedule, reschedule, and cancel Easy Ship orders. * Print labels, invoices, and warranties. See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
  *
  * The version of the OpenAPI document: 2022-03-23
  * Contact: marketplaceapitest@amazon.com
@@ -63,7 +63,7 @@ class PackageStatus
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::READY_FOR_PICKUP,
             self::PICKED_UP,
             self::AT_ORIGIN_FC,
@@ -77,6 +77,10 @@ class PackageStatus
             self::DAMAGED_IN_TRANSIT,
             self::OUT_FOR_DELIVERY,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

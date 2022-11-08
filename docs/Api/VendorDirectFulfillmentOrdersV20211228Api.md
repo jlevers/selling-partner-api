@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The limit to the number of purchase orders returned. | [optional]
  **sort_order** | **string**| Sort the list in ascending or descending order by order creation date. | [optional]
  **next_token** | **string**| Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. | [optional]
- **include_details** | **bool**| When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned. | [optional] [default to &#39;true&#39;]
+ **include_details** | **bool**| When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned. | [optional] [default to 'true']
 
 ### Return type
 

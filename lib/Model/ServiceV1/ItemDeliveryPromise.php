@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -222,7 +222,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets start_time
      *
-     * @param string|null $start_time The date and time of the start of the promised delivery window, in ISO 8601 format.
+     * @param string|null $start_time The date and time of the start of the promised delivery window in ISO 8601 format.
      *
      * @return self
      */
@@ -245,7 +245,7 @@ class ItemDeliveryPromise implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets end_time
      *
-     * @param string|null $end_time The date and time of the end of the promised delivery window, in ISO 8601 format.
+     * @param string|null $end_time The date and time of the end of the promised delivery window in ISO 8601 format.
      *
      * @return self
      */

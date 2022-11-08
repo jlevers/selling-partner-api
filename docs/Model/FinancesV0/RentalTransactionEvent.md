@@ -24,7 +24,7 @@ Possible values:
 * RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item. | [optional]
 **extension_length** | **int** | The number of days that the buyer extended an already rented item. This value is only returned for RentalCustomerPayment-Extension and RentalCustomerRefund-Extension events. | [optional]
 **posted_date** | **string** | A date string in ISO 8601 format. | [optional]
-**rental_charge_list** | [**\SellingPartnerApi\Model\FinancesV0\ChargeComponent[]**](ChargeComponent.md) | A list of charge information on the seller&#39;s account. | [optional]
+**rental_charge_list** | [**\SellingPartnerApi\Model\FinancesV0\ChargeComponent[]**](ChargeComponent.md) | A list of charge information on the seller's account. | [optional]
 **rental_fee_list** | [**\SellingPartnerApi\Model\FinancesV0\FeeComponent[]**](FeeComponent.md) | A list of fee component information. | [optional]
 **marketplace_name** | **string** | The name of the marketplace. | [optional]
 **rental_initial_value** | [**\SellingPartnerApi\Model\FinancesV0\Currency**](Currency.md) |  | [optional]

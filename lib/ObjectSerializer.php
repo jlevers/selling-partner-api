@@ -79,7 +79,8 @@ class ObjectSerializer
             } else if (is_callable([$data, 'getAllowableEnumValues'])) {
                 $callable = [$data, 'getAllowableEnumValues'];
                 $allowedEnumTypes = $callable();
-                if (!in_array((string)$data->value, $allowedEnumTypes, true)) {
+                $enumVal = strtoupper((string)$data->value);
+                if (!in_array($enumVal, $allowedEnumTypes, true)) {
                     $imploded = implode("', '", $allowedEnumTypes);
                     throw new \InvalidArgumentException("Invalid value for enum '$type', must be one of: '$imploded'");
                 }
@@ -262,7 +263,7 @@ class ObjectSerializer
         }
 
         if (strcasecmp(substr($class, -2), '[]') === 0) {
-            $data = is_string($data) ? json_decode($data) : $data;
+            $data = is_string($data) ? json_decode($data, true) : $data;
             
             if (!is_array($data)) {
                 throw new \InvalidArgumentException("Invalid array '$class'");
@@ -277,7 +278,7 @@ class ObjectSerializer
         }
 
         if (substr($class, 0, 4) === 'map[') { // for associative array e.g. map[string,int]
-            $data = is_string($data) ? json_decode($data) : $data;
+            $data = is_string($data) ? json_decode($data, true) : $data;
             settype($data, 'array');
             $inner = substr($class, 4, -1);
             $deserialized = [];

@@ -24,7 +24,7 @@ Returns competitive pricing information for a seller's offer listings based on s
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 10 | 20 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -96,7 +96,7 @@ Returns the lowest priced offers for a single item based on ASIN.
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 5 | 10 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -166,7 +166,7 @@ Returns the lowest priced offers for a batch of items based on ASIN.
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| .5 | 1 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -230,7 +230,7 @@ Returns the lowest priced offers for a single SKU listing.
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 5 | 10 |
+| 1 | 2 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **marketplace_id** | **string**| A marketplace identifier. Specifies the marketplace for which prices are returned. |
  **item_condition** | **string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. |
- **seller_sku** | **string**| Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. |
+ **seller_sku** | **string**| Identifies an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. |
  **customer_type** | **string**| Indicates whether to request Consumer or Business offers. Default is Consumer. | [optional]
 
 ### Return type
@@ -300,7 +300,7 @@ Returns the lowest priced offers for a batch of listings by SKU.
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| .5 | 1 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -364,7 +364,7 @@ Returns pricing information for a seller's offer listings based on seller SKU or
 
 | Rate (requests per second) | Burst |
 | ---- | ---- |
-| 10 | 20 |
+| 0.5 | 1 |
 
 The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
  **asins** | [**string[]**](../Model/ProductPricingV0/string.md)| A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. | [optional]
  **skus** | [**string[]**](../Model/ProductPricingV0/string.md)| A list of up to twenty seller SKU values used to identify items in the given marketplace. | [optional]
  **item_condition** | **string**| Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. | [optional]
- **offer_type** | **string**| Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. | [optional]
+ **offer_type** | **string**| Indicates whether to request pricing information for the seller's B2C or B2B offers. Default is B2C. | [optional]
 
 ### Return type
 

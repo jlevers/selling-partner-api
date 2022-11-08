@@ -76,7 +76,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
         'payment_method_details' => 'string[]',
         'marketplace_id' => 'string',
         'shipment_service_level_category' => 'string',
-        'easy_ship_shipment_status' => 'string',
+        'easy_ship_shipment_status' => '\SellingPartnerApi\Model\OrdersV0\EasyShipShipmentStatus',
         'cba_displayable_shipping_label' => 'string',
         'order_type' => 'string',
         'earliest_ship_date' => 'string',
@@ -104,7 +104,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
         'shipping_address' => '\SellingPartnerApi\Model\OrdersV0\Address',
         'buyer_info' => '\SellingPartnerApi\Model\OrdersV0\BuyerInfo',
         'automated_shipping_settings' => '\SellingPartnerApi\Model\OrdersV0\AutomatedShippingSettings',
-        'has_regulated_items' => 'bool'
+        'has_regulated_items' => 'bool',
+        'electronic_invoice_status' => '\SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus'
     ];
 
     /**
@@ -160,7 +161,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
         'shipping_address' => null,
         'buyer_info' => null,
         'automated_shipping_settings' => null,
-        'has_regulated_items' => null
+        'has_regulated_items' => null,
+        'electronic_invoice_status' => null
     ];
 
     /**
@@ -235,7 +237,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
         'shipping_address' => 'ShippingAddress',
         'buyer_info' => 'BuyerInfo',
         'automated_shipping_settings' => 'AutomatedShippingSettings',
-        'has_regulated_items' => 'HasRegulatedItems'
+        'has_regulated_items' => 'HasRegulatedItems',
+        'electronic_invoice_status' => 'ElectronicInvoiceStatus'
     ];
 
     /**
@@ -289,7 +292,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
         'shipping_address' => 'setShippingAddress',
         'buyer_info' => 'setBuyerInfo',
         'automated_shipping_settings' => 'setAutomatedShippingSettings',
-        'has_regulated_items' => 'setHasRegulatedItems'
+        'has_regulated_items' => 'setHasRegulatedItems',
+        'electronic_invoice_status' => 'setElectronicInvoiceStatus'
     ];
 
     /**
@@ -343,7 +347,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
         'shipping_address' => 'getShippingAddress',
         'buyer_info' => 'getBuyerInfo',
         'automated_shipping_settings' => 'getAutomatedShippingSettings',
-        'has_regulated_items' => 'getHasRegulatedItems'
+        'has_regulated_items' => 'getHasRegulatedItems',
+        'electronic_invoice_status' => 'getElectronicInvoiceStatus'
     ];
 
     /**
@@ -558,6 +563,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['automated_shipping_settings'] = $data['automated_shipping_settings'] ?? null;
         $this->container['has_regulated_items'] = $data['has_regulated_items'] ?? null;
+        $this->container['electronic_invoice_status'] = $data['electronic_invoice_status'] ?? null;
     }
 
     /**
@@ -722,7 +728,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
     /**
      * Sets last_update_date
      *
-     * @param string $last_update_date The date when the order was last updated. Note: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     * @param string $last_update_date The date when the order was last updated. __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
      *
      * @return self
      */
@@ -1064,7 +1070,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
     /**
      * Gets easy_ship_shipment_status
      *
-     * @return string|null
+     * @return \SellingPartnerApi\Model\OrdersV0\EasyShipShipmentStatus|null
      */
     public function getEasyShipShipmentStatus()
     {
@@ -1074,7 +1080,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
     /**
      * Sets easy_ship_shipment_status
      *
-     * @param string|null $easy_ship_shipment_status The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders. Possible values: PendingPickUp, LabelCanceled, PickedUp, OutForDelivery, Damaged, Delivered, RejectedByBuyer, Undeliverable, ReturnedToSeller, ReturningToSeller.
+     * @param \SellingPartnerApi\Model\OrdersV0\EasyShipShipmentStatus|null $easy_ship_shipment_status easy_ship_shipment_status
      *
      * @return self
      */
@@ -1745,6 +1751,29 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable, \Iterator
     public function setHasRegulatedItems($has_regulated_items)
     {
         $this->container['has_regulated_items'] = $has_regulated_items;
+
+        return $this;
+    }
+    /**
+     * Gets electronic_invoice_status
+     *
+     * @return \SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus|null
+     */
+    public function getElectronicInvoiceStatus()
+    {
+        return $this->container['electronic_invoice_status'];
+    }
+
+    /**
+     * Sets electronic_invoice_status
+     *
+     * @param \SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus|null $electronic_invoice_status electronic_invoice_status
+     *
+     * @return self
+     */
+    public function setElectronicInvoiceStatus($electronic_invoice_status)
+    {
+        $this->container['electronic_invoice_status'] = $electronic_invoice_status;
 
         return $this;
     }

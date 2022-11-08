@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**my_offer** | **bool** | When true, this is the seller&#39;s offer. | [optional]
+**my_offer** | **bool** | When true, this is the seller's offer. | [optional]
 **offer_type** | [**\SellingPartnerApi\Model\ProductPricingV0\OfferCustomerType**](OfferCustomerType.md) |  | [optional]
 **sub_condition** | **string** | The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other. |
 **seller_id** | **string** | The seller identifier for the offer. | [optional]

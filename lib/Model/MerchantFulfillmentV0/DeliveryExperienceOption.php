@@ -56,13 +56,17 @@ class DeliveryExperienceOption
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::DELIVERY_CONFIRMATION_WITH_ADULT_SIGNATURE,
             self::DELIVERY_CONFIRMATION_WITH_SIGNATURE,
             self::DELIVERY_CONFIRMATION_WITHOUT_SIGNATURE,
             self::NO_TRACKING,
             self::NO_PREFERENCE,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

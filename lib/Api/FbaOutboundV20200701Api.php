@@ -885,7 +885,7 @@ class FbaOutboundV20200701Api
     /**
      * Operation createFulfillmentReturnWithHttpInfo
      *
-     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
+     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items. (required)
      * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\CreateFulfillmentReturnRequest $body (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -1091,7 +1091,7 @@ class FbaOutboundV20200701Api
      *
      * 
      *
-     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
+     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items. (required)
      * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\CreateFulfillmentReturnRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -1107,7 +1107,7 @@ class FbaOutboundV20200701Api
      *
      * 
      *
-     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
+     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items. (required)
      * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\CreateFulfillmentReturnRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -1161,7 +1161,7 @@ class FbaOutboundV20200701Api
     /**
      * Create request for operation 'createFulfillmentReturn'
      *
-     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
+     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items. (required)
      * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\CreateFulfillmentReturnRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -1691,7 +1691,7 @@ class FbaOutboundV20200701Api
      *
      * @param  string $marketplace_id The marketplace for which to return the count. (required)
      * @param  string $feature_name The name of the feature. (required)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1898,7 +1898,7 @@ class FbaOutboundV20200701Api
      *
      * @param  string $marketplace_id The marketplace for which to return the count. (required)
      * @param  string $feature_name The name of the feature. (required)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1915,7 +1915,7 @@ class FbaOutboundV20200701Api
      *
      * @param  string $marketplace_id The marketplace for which to return the count. (required)
      * @param  string $feature_name The name of the feature. (required)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1970,7 +1970,7 @@ class FbaOutboundV20200701Api
      *
      * @param  string $marketplace_id The marketplace for which to return the count. (required)
      * @param  string $feature_name The name of the feature. (required)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

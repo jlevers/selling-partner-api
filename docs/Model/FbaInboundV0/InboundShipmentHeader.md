@@ -15,7 +15,7 @@ true - All boxes in the shipment must be case packed.
 
 false - All boxes in the shipment must be individually packed.
 
-Note: If AreCasesRequired &#x3D; true for an inbound shipment, then the value of QuantityInCase must be greater than zero for every item in the shipment. Otherwise the service returns an error. | [optional]
+Note: If AreCasesRequired = true for an inbound shipment, then the value of QuantityInCase must be greater than zero for every item in the shipment. Otherwise the service returns an error. | [optional]
 **shipment_status** | [**\SellingPartnerApi\Model\FbaInboundV0\ShipmentStatus**](ShipmentStatus.md) |  |
 **label_prep_preference** | [**\SellingPartnerApi\Model\FbaInboundV0\LabelPrepPreference**](LabelPrepPreference.md) |  |
 **intended_box_contents_source** | [**\SellingPartnerApi\Model\FbaInboundV0\IntendedBoxContentsSource**](IntendedBoxContentsSource.md) |  | [optional]

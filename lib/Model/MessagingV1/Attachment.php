@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * Attachment Class Doc Comment
  *
  * @category Class
- * @description Represents a file uploaded to a destination that was created by the createUploadDestination operation of the Uploads API.
+ * @description Represents a file uploaded to a destination that was created by the [createUploadDestinationForResource](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Selling Partner API for Uploads.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
@@ -228,7 +228,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
     /**
      * Sets upload_destination_id
      *
-     * @param string $upload_destination_id The identifier of the upload destination. Get this value by calling the createUploadDestination operation of the Uploads API.
+     * @param string $upload_destination_id The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.
      *
      * @return self
      */

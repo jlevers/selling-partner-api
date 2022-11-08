@@ -87,7 +87,7 @@ class EventCode
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::_101,
             self::_102,
             self::_201,
@@ -125,6 +125,10 @@ class EventCode
             self::_419,
             self::_636,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)

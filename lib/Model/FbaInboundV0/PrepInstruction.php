@@ -55,6 +55,7 @@ class PrepInstruction
     const SUFFOCATION_STICKERING = 'SuffocationStickering';
     const SET_STICKERING = 'SetStickering';
     const REMOVE_FROM_HANGER = 'RemoveFromHanger';
+    const CAP_SEALING = 'CapSealing';
     
     /**
      * Gets allowable values of the enum
@@ -74,6 +75,7 @@ class PrepInstruction
             self::SUFFOCATION_STICKERING,
             self::SET_STICKERING,
             self::REMOVE_FROM_HANGER,
+            self::CAP_SEALING,
         ];
         // This is necessary because Amazon does not consistently capitalize their
         // enum values, so we do case-insensitive enum value validation in ObjectSerializer

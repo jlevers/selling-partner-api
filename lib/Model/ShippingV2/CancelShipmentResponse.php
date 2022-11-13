@@ -59,7 +59,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => 'object'
+        'payload' => 'map[string,object]'
     ];
 
     /**
@@ -231,7 +231,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets payload
      *
-     * @return object|null
+     * @return map[string,object]|null
      */
     public function getPayload()
     {
@@ -241,7 +241,7 @@ class CancelShipmentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets payload
      *
-     * @param object|null $payload The payload for the cancelShipment operation.
+     * @param map[string,object]|null $payload The payload for the cancelShipment operation.
      *
      * @return self
      */

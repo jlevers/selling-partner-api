@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * GetItemOffersBatchRequest Class Doc Comment
  *
  * @category Class
- * @description The request associated with the getItemOffersBatch API call.
+ * @description The request associated with the `getItemOffersBatch` API call.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
@@ -224,7 +224,7 @@ class GetItemOffersBatchRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets requests
      *
-     * @param \SellingPartnerApi\Model\ProductPricingV0\ItemOffersRequest[]|null $requests A list of getItemOffers batched requests to run.
+     * @param \SellingPartnerApi\Model\ProductPricingV0\ItemOffersRequest[]|null $requests A list of `getListingOffers` batched requests to run.
      *
      * @return self
      */

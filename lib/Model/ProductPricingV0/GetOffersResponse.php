@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * GetOffersResponse Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getListingOffers and getItemOffers operations.
+ * @description The response schema for the `getListingOffers` and `getItemOffers` operations.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

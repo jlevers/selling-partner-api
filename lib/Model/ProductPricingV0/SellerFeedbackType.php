@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * SellerFeedbackType Class Doc Comment
  *
  * @category Class
- * @description Information about the seller&#39;s feedback, including the percentage of positive feedback, and the total number of ratings received.
+ * @description Information about the seller's feedback, including the percentage of positive feedback, and the total number of ratings received.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

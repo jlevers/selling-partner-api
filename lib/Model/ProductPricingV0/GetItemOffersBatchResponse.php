@@ -35,7 +35,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * GetItemOffersBatchResponse Class Doc Comment
  *
  * @category Class
- * @description The response associated with the getItemOffersBatch API call.
+ * @description The response associated with the `getItemOffersBatch` API call.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
@@ -249,7 +249,7 @@ class GetItemOffersBatchResponse implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets responses
      *
-     * @param \SellingPartnerApi\Model\ProductPricingV0\ItemOffersResponse[]|null $responses A list of getItemOffers batched responses.
+     * @param \SellingPartnerApi\Model\ProductPricingV0\ItemOffersResponse[]|null $responses A list of `getItemOffers` batched responses.
      *
      * @return self
      */

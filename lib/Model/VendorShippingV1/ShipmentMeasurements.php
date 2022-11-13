@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\VendorShippingV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ShipmentMeasurements Class Doc Comment

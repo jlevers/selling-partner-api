@@ -26,8 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\ShippingV2;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * DocumentType Class Doc Comment
@@ -69,7 +69,7 @@ class DocumentType
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'DocumentType', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * OrderItem Class Doc Comment

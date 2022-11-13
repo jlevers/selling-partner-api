@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\ServiceV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * SetAppointmentFulfillmentDataRequest Class Doc Comment

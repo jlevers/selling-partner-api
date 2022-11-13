@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\ServiceV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * AvailabilityRecord Class Doc Comment
  *
  * @category Class
- * @description &#x60;AvailabilityRecord&#x60; to represent the capacity of a resource over a time range.
+ * @description `AvailabilityRecord` to represent the capacity of a resource over a time range.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

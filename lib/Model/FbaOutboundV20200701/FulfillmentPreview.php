@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\FbaOutboundV20200701;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * FulfillmentPreview Class Doc Comment

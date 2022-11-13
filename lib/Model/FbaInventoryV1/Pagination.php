@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\FbaInventoryV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * Pagination Class Doc Comment
  *
  * @category Class
- * @description The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It&#39;s a form of traffic management.
+ * @description The process of returning the results to a request in batches of a defined size called pages. This is done to exercise some control over result size and overall throughput. It's a form of traffic management.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

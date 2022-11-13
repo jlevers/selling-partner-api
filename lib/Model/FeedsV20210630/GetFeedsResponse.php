@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\FeedsV20210630;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetFeedsResponse Class Doc Comment

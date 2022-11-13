@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\ShipmentInvoicingV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ShipmentDetail Class Doc Comment

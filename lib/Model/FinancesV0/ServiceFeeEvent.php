@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\FinancesV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ServiceFeeEvent Class Doc Comment
  *
  * @category Class
- * @description A service fee on the seller&#39;s account.
+ * @description A service fee on the seller's account.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

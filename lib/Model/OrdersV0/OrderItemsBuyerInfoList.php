@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\OrdersV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * OrderItemsBuyerInfoList Class Doc Comment
  *
  * @category Class
- * @description A single order item&#39;s buyer information list with the order ID.
+ * @description A single order item's buyer information list with the order ID.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

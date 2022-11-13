@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\ReportsV20210630;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ReportScheduleList Class Doc Comment

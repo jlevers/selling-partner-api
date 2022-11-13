@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\CatalogItemsV20201201;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ItemSearchResults Class Doc Comment

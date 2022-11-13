@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\EasyShipV20220323;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * PackageDetails Class Doc Comment
  *
  * @category Class
- * @description Package details. Includes &#x60;packageItems&#x60;, &#x60;packageTimeSlot&#x60;, and &#x60;packageIdentifier&#x60;.
+ * @description Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

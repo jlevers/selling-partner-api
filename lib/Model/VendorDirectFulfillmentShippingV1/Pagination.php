@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentShippingV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * Pagination Class Doc Comment

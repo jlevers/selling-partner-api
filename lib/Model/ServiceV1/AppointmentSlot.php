@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\ServiceV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * AppointmentSlot Class Doc Comment

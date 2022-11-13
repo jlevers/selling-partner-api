@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\ProductTypeDefinitionsV20200901;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ProductType Class Doc Comment

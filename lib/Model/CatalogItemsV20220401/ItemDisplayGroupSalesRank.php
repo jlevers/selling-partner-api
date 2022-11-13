@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\CatalogItemsV20220401;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ItemDisplayGroupSalesRank Class Doc Comment

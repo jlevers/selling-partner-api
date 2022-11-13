@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\NotificationsV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * Subscription Class Doc Comment

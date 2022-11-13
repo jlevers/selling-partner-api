@@ -388,8 +388,8 @@ class Configuration
      * Set SP API endpoint. $endpoint should be one of the constants from Endpoint.php.
      * 
      * @param array $endpoint
-     * @return void
      * @throws RuntimeException
+     * @return void
      */
     public function setEndpoint(array $endpoint): void
     {

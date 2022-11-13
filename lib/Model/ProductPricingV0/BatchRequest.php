@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\ProductPricingV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * BatchRequest Class Doc Comment

@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\MessagingV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetMessagingActionsForOrderResponse Class Doc Comment

@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\FbaInboundV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * NonPartneredLtlDataOutput Class Doc Comment

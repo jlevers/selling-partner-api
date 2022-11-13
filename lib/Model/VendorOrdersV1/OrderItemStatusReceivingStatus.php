@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\VendorOrdersV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * OrderItemStatusReceivingStatus Class Doc Comment
  *
  * @category Class
- * @description Item receive status at the buyer&#39;s warehouse.
+ * @description Item receive status at the buyer's warehouse.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

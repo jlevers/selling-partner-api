@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\ServiceV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetServiceJobByServiceJobIdResponse Class Doc Comment
  *
  * @category Class
- * @description The response schema for the &#x60;getServiceJobByServiceJobId&#x60; operation.
+ * @description The response schema for the `getServiceJobByServiceJobId` operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

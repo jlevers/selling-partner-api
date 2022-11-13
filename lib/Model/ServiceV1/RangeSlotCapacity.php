@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\ServiceV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * RangeSlotCapacity Class Doc Comment
  *
  * @category Class
- * @description Response schema for the &#x60;getRangeSlotCapacity&#x60; operation.
+ * @description Response schema for the `getRangeSlotCapacity` operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\EasyShipV20220323;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * UpdateScheduledPackagesRequest Class Doc Comment
  *
  * @category Class
- * @description The request schema for the &#x60;updateScheduledPackages&#x60; operation.
+ * @description The request schema for the `updateScheduledPackages` operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

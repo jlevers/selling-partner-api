@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\FeedsV20210630;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * CreateFeedDocumentResponse Class Doc Comment
  *
  * @category Class
- * @description Information required to upload a feed document&#39;s contents.
+ * @description Information required to upload a feed document's contents.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

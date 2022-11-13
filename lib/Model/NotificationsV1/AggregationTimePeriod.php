@@ -26,8 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\NotificationsV1;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * AggregationTimePeriod Class Doc Comment
@@ -65,7 +65,7 @@ class AggregationTimePeriod
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'AggregationTimePeriod', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

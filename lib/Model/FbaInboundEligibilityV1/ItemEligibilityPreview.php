@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\FbaInboundEligibilityV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ItemEligibilityPreview Class Doc Comment

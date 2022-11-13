@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\ServiceV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * FixedSlotCapacity Class Doc Comment
  *
  * @category Class
- * @description Response schema for the &#x60;getFixedSlotCapacity&#x60; operation.
+ * @description Response schema for the `getFixedSlotCapacity` operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\ListingsRestrictionsV20210801;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * RestrictionList Class Doc Comment

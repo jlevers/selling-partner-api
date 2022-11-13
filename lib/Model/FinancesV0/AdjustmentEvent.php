@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\FinancesV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * AdjustmentEvent Class Doc Comment
  *
  * @category Class
- * @description An adjustment to the seller&#39;s account.
+ * @description An adjustment to the seller's account.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

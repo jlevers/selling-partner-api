@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\SmallAndLightV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * SmallAndLightFeePreviewRequest Class Doc Comment

@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\ServiceV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * CreateServiceDocumentUploadDestination Class Doc Comment
  *
  * @category Class
- * @description The response schema for the &#x60;createServiceDocumentUploadDestination&#x60; operation.
+ * @description The response schema for the `createServiceDocumentUploadDestination` operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

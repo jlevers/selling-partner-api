@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\VendorOrdersV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * PartyIdentification Class Doc Comment

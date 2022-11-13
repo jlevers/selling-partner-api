@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\FinancesV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * FBALiquidationEvent Class Doc Comment

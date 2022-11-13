@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\EasyShipV20220323;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ListHandoverSlotsResponse Class Doc Comment
  *
  * @category Class
- * @description The response schema for the &#x60;listHandoverSlots&#x60; operation.
+ * @description The response schema for the `listHandoverSlots` operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\FeedsV20210630;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * CreateFeedSpecification Class Doc Comment

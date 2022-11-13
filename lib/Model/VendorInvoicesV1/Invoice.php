@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\VendorInvoicesV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * Invoice Class Doc Comment

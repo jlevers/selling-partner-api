@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\MessagingV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetAttributesResponse Class Doc Comment

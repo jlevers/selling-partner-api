@@ -26,14 +26,14 @@
  */
 
 namespace SellingPartnerApi\Model\FeesV0;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * IdType Class Doc Comment
  *
  * @category Class
- * @description The type of product identifier used in a &#x60;FeesEstimateByIdRequest&#x60;.
+ * @description The type of product identifier used in a `FeesEstimateByIdRequest`.
  * @package  SellingPartnerApi
  * @group 
  */
@@ -65,7 +65,7 @@ class IdType
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'IdType', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

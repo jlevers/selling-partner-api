@@ -2,6 +2,8 @@
 
 namespace SellingPartnerApi;
 
+use InvalidArgumentException;
+
 /***************************/
 /** Region/endpoint pairs **/
 /***************************/
@@ -44,9 +46,10 @@ class Endpoint
      * @param string $marketplace_id The identifier for the marketplace. (required)
      * @param bool $sandbox Whether to return the sandbox endpoint for the region. (optional, default to false)
      *
+     * @throws InvalidArgumentException
      * @return array of the endpoint details
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @link https://docs.developer.amazonservices.com/en_US/dev_guide/DG_Endpoints.html
      */
@@ -99,7 +102,7 @@ class Endpoint
             'A1VC38T7YXB528' => 'FE',
         ];
         if (!isset($map[$marketplace_id])) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 'Unknown marketplace ID "%s".',
                 $marketplace_id
             ));

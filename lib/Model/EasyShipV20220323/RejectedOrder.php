@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\EasyShipV20220323;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * RejectedOrder Class Doc Comment
  *
  * @category Class
- * @description A order which we couldn&#39;t schedule on your behalf. It contains its id, and information on the error.
+ * @description A order which we couldn't schedule on your behalf. It contains its id, and information on the error.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

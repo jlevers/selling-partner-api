@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\NotificationsV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * MarketplaceFilter Class Doc Comment
  *
  * @category Class
- * @description Use this event filter to customize your subscription to send notifications for only the specified marketplaceId&#39;s.
+ * @description Use this event filter to customize your subscription to send notifications for only the specified marketplaceId's.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

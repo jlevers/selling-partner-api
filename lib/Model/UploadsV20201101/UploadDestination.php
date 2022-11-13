@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\UploadsV20201101;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * UploadDestination Class Doc Comment

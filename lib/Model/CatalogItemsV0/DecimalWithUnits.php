@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\CatalogItemsV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * DecimalWithUnits Class Doc Comment

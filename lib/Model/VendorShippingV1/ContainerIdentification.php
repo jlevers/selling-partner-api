@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\VendorShippingV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ContainerIdentification Class Doc Comment

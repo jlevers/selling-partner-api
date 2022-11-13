@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\AplusContentV20201101;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * StandardTextPairBlock Class Doc Comment

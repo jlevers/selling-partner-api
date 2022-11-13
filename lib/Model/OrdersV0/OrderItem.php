@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\OrdersV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * OrderItem Class Doc Comment
@@ -334,6 +334,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable, \Iter
     const DEEMED_RESELLER_CATEGORY_CA_MPF = 'CA_MPF';
     const DEEMED_RESELLER_CATEGORY_AU_VOEC = 'AU_VOEC';
     const DEEMED_RESELLER_CATEGORY_NZ_VOEC = 'NZ_VOEC';
+    
     
 
     /**

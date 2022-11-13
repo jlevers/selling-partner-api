@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\FinancesV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * PayWithAmazonEvent Class Doc Comment
  *
  * @category Class
- * @description An event related to the seller&#39;s Pay with Amazon account.
+ * @description An event related to the seller's Pay with Amazon account.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\FbaInventoryV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ResearchingQuantity Class Doc Comment

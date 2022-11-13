@@ -26,8 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\EasyShipV20220323;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * PackageStatus Class Doc Comment
@@ -85,7 +85,7 @@ class PackageStatus
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'PackageStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

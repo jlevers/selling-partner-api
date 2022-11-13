@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\OrdersV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * Money Class Doc Comment

@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\MessagingV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * CreateConfirmOrderDetailsResponse Class Doc Comment

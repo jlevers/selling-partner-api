@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\FinancesV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * TaxWithholdingEvent Class Doc Comment
  *
  * @category Class
- * @description A TaxWithholding event on seller&#39;s account.
+ * @description A TaxWithholding event on seller's account.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

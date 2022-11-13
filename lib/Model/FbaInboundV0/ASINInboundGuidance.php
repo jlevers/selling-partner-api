@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\FbaInboundV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ASINInboundGuidance Class Doc Comment
  *
  * @category Class
- * @description Reasons why a given ASIN is not recommended for shipment to Amazon&#39;s fulfillment network.
+ * @description Reasons why a given ASIN is not recommended for shipment to Amazon's fulfillment network.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

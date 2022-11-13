@@ -26,8 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\OrdersV0;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * VerificationStatus Class Doc Comment
@@ -71,7 +71,7 @@ class VerificationStatus
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'VerificationStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

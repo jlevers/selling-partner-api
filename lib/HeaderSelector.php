@@ -15,8 +15,8 @@
 
 namespace SellingPartnerApi;
 
-use SellingPartnerApi\Authentication;
 use \Exception;
+use SellingPartnerApi\Authentication;
 
 /**
  * ApiException Class Doc Comment

@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\OrdersV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * OrderRegulatedInfo Class Doc Comment
  *
  * @category Class
- * @description The order&#39;s regulated information along with its verification status.
+ * @description The order's regulated information along with its verification status.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

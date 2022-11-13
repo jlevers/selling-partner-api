@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\OrdersV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * RejectionReason Class Doc Comment
  *
  * @category Class
- * @description The reason for rejecting the order&#39;s regulated information. Not present if the order isn&#39;t rejected.
+ * @description The reason for rejecting the order's regulated information. Not present if the order isn't rejected.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

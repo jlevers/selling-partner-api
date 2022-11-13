@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\AplusContentV20201101;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ImageOffsets Class Doc Comment
  *
  * @category Class
- * @description The top left corner of the cropped image, specified in the original image&#39;s coordinate space.
+ * @description The top left corner of the cropped image, specified in the original image's coordinate space.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

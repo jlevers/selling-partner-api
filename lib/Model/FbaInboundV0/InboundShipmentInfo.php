@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\FbaInboundV0;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * InboundShipmentInfo Class Doc Comment
  *
  * @category Class
- * @description Information about the seller&#39;s inbound shipments. Returned by the listInboundShipments operation.
+ * @description Information about the seller's inbound shipments. Returned by the listInboundShipments operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

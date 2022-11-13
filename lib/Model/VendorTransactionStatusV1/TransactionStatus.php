@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\VendorTransactionStatusV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * TransactionStatus Class Doc Comment

@@ -26,8 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\AplusContentV20201101;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * PositionType Class Doc Comment
@@ -65,7 +65,7 @@ class PositionType
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'PositionType', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

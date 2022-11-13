@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\SellersV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * Error Class Doc Comment

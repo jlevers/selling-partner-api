@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\ShippingV2;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetRatesResult Class Doc Comment

@@ -26,8 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\ShipmentInvoicingV0;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * ShipmentInvoiceStatus Class Doc Comment
@@ -69,7 +69,7 @@ class ShipmentInvoiceStatus
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'ShipmentInvoiceStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

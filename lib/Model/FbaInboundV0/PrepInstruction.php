@@ -26,14 +26,14 @@
  */
 
 namespace SellingPartnerApi\Model\FbaInboundV0;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * PrepInstruction Class Doc Comment
  *
  * @category Class
- * @description Preparation instructions for shipping an item to Amazon&#39;s fulfillment network. For more information about preparing items for shipment to Amazon&#39;s fulfillment network, see the Seller Central Help for your marketplace.
+ * @description Preparation instructions for shipping an item to Amazon's fulfillment network. For more information about preparing items for shipment to Amazon's fulfillment network, see the Seller Central Help for your marketplace.
  * @package  SellingPartnerApi
  * @group 
  */
@@ -85,7 +85,7 @@ class PrepInstruction
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'PrepInstruction', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

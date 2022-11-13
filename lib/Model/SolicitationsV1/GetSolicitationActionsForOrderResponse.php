@@ -28,8 +28,8 @@
 namespace SellingPartnerApi\Model\SolicitationsV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetSolicitationActionsForOrderResponse Class Doc Comment

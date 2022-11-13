@@ -28,14 +28,14 @@
 namespace SellingPartnerApi\Model\ServiceV1;
 
 use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
 use \SellingPartnerApi\Model\ModelInterface;
+use \SellingPartnerApi\ObjectSerializer;
 
 /**
  * AssignAppointmentResourcesResponsePayload Class Doc Comment
  *
  * @category Class
- * @description The payload for the &#x60;assignAppointmentResource&#x60; operation.
+ * @description The payload for the `assignAppointmentResource` operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

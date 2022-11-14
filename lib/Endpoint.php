@@ -15,10 +15,6 @@ class Endpoint
         'url' => 'https://sellingpartnerapi-na.amazon.com',
         'region' => 'us-east-1',
     ];
-    public const NA_BUSINESS = [
-        'url' => 'https://na.business-api.amazon.com',
-        'region' => 'us-east-1',
-    ];
     public const NA_SANDBOX = [
         'url' => 'https://sandbox.sellingpartnerapi-na.amazon.com',
         'region' => 'us-east-1',
@@ -29,10 +25,6 @@ class Endpoint
         'url' => 'https://sellingpartnerapi-eu.amazon.com',
         'region' => 'eu-west-1',
     ];
-    public const EU_BUSINESS = [
-        'url' => 'https://eu.business-api.amazon.com',
-        'region' => 'eu-west-1',
-    ];
     public const EU_SANDBOX = [
         'url' => 'https://sandbox.sellingpartnerapi-eu.amazon.com',
         'region' => 'eu-west-1',
@@ -41,10 +33,6 @@ class Endpoint
     // Far East
     public const FE = [
         'url' => 'https://sellingpartnerapi-fe.amazon.com',
-        'region' => 'us-west-2',
-    ];
-    public const FE_BUSINESS = [
-        'url' => 'https://jp.business-api.amazon.com/',
         'region' => 'us-west-2',
     ];
     public const FE_SANDBOX = [

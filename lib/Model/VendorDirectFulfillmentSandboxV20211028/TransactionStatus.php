@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentSandboxV20211028;
+use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * TransactionStatus Class Doc Comment

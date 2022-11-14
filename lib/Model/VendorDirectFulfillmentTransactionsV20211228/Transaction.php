@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV20211228;
+use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Transaction Class Doc Comment

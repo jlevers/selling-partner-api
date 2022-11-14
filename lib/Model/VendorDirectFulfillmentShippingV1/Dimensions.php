@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentShippingV1;
+use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Dimensions Class Doc Comment

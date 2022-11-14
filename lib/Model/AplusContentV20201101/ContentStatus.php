@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\AplusContentV20201101;
+use ArrayAccess;
 
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ContentStatus Class Doc Comment

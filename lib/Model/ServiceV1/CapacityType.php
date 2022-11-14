@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\ServiceV1;
+use ArrayAccess;
 
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * CapacityType Class Doc Comment

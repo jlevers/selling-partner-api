@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\MessagingV1;
+use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetMessagingActionResponseLinks Class Doc Comment

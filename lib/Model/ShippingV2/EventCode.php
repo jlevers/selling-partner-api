@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\ShippingV2;
+use ArrayAccess;
 
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * EventCode Class Doc Comment

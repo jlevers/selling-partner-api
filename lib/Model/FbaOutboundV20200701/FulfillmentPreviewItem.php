@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\FbaOutboundV20200701;
+use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * FulfillmentPreviewItem Class Doc Comment

@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\ProductTypeDefinitionsV20200901;
+use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ProductTypeDefinition Class Doc Comment

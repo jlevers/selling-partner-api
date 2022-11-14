@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\MerchantFulfillmentV0;
+use ArrayAccess;
 
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * HazmatType Class Doc Comment

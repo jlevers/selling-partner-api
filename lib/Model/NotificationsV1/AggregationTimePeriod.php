@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\NotificationsV1;
+use ArrayAccess;
 
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * AggregationTimePeriod Class Doc Comment

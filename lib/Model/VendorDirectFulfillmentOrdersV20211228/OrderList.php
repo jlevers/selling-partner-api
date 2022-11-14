@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228;
+use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * OrderList Class Doc Comment

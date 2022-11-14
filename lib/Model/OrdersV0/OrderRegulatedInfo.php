@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\OrdersV0;
+use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * OrderRegulatedInfo Class Doc Comment

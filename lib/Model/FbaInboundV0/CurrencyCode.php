@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\FbaInboundV0;
+use ArrayAccess;
 
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * CurrencyCode Class Doc Comment

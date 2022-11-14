@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\ShipmentInvoicingV0;
+use ArrayAccess;
 
-use \ArrayAccess;
-use \SellingPartnerApi\Model\ModelInterface;
-use \SellingPartnerApi\ObjectSerializer;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ShipmentInvoiceStatus Class Doc Comment

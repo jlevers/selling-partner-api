@@ -26,6 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\ShippingV1;
+
+use \ArrayAccess;
 use \SellingPartnerApi\Model\ModelInterface;
 use \SellingPartnerApi\ObjectSerializer;
 

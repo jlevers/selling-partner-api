@@ -429,7 +429,7 @@ class CustomAuthorizationSigner implements AuthorizationSignerContract
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\Api;
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 use CustomAuthorizationSigner;
@@ -438,15 +438,13 @@ $config = new Configuration([
     ..., 
     'authorizationSigner' => new CustomAuthorizationSigner(),
 ]);
-$api = new Api\SellersApi($config);
+$api = new SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->headers;
-    print_r($headers);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
-
 ```
 
 ## Custom Request Signer
@@ -476,7 +474,7 @@ class RemoteRequestSigner implements RequestSignerContract
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\Api;
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 use RemoteRequestSigner;
@@ -485,13 +483,11 @@ $config = new Configuration([
     ..., 
     'requestSigner' => new RemoteRequestSigner(),
 ]);
-$api = new Api\SellersApi($config);
+$api = new SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->headers;
-    print_r($headers);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
-
 ```

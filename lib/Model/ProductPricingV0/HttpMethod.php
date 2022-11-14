@@ -26,6 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\ProductPricingV0;
+
+use \ArrayAccess;
 use \SellingPartnerApi\Model\ModelInterface;
 use \SellingPartnerApi\ObjectSerializer;
 

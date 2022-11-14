@@ -26,6 +26,8 @@
  */
 
 namespace SellingPartnerApi\Model\FbaOutboundV20200701;
+
+use \ArrayAccess;
 use \SellingPartnerApi\Model\ModelInterface;
 use \SellingPartnerApi\ObjectSerializer;
 

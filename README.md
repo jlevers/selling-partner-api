@@ -38,22 +38,30 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 Check out the [Getting Started](#getting-started) section below for a quick overview.
 
 This README is divided into several sections:
-* [Setup](#setup)
-    * [Configuration options](#configuration-options)
-* [Examples](#examples)
-* [Debug mode](#debug-mode)
-* [Supported API segments](#supported-api-segments)
-    * [Seller APIs](#seller-apis)
-    * [Vendor APIs](#vendor-apis)
-* [Restricted operations](#restricted-operations)
-* [Uploading and downloading documents](#uploading-and-downloading-documents)
-    * [Downloading a report document](#downloading-a-report-document)
-    * [Uploading a feed document](#uploading-a-feed-document)
-    * [Downloading a feed result document](#downloading-a-feed-result-document)
-* [Working with model classes](#working-with-model-classes)
-* [Response headers](#response-headers)
-* [Custom request authorization](#custom-authorization-signer)
-* [Custom request signing](#custom-request-signer)
+- [Selling Partner API for PHP](#selling-partner-api-for-php)
+  - [Features](#features)
+  - [Sponsors](#sponsors)
+  - [Installation](#installation)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+        - [Configuration options](#configuration-options)
+    - [Examples](#examples)
+    - [Debug mode](#debug-mode)
+  - [Supported API segments](#supported-api-segments)
+    - [Seller APIs](#seller-apis)
+    - [Vendor APIs](#vendor-apis)
+  - [Restricted operations](#restricted-operations)
+  - [Uploading and downloading documents](#uploading-and-downloading-documents)
+    - [Downloading a report document](#downloading-a-report-document)
+    - [Uploading a feed document](#uploading-a-feed-document)
+    - [Uploading with a specific charset](#uploading-with-a-specific-charset)
+  - [Downloading a feed result document](#downloading-a-feed-result-document)
+  - [Working with model classes](#working-with-model-classes)
+  - [Response headers](#response-headers)
+  - [Custom Authorization Signer](#custom-authorization-signer)
+  - [Custom Request Signer](#custom-request-signer)
 
 ## Getting Started
 
@@ -309,6 +317,22 @@ $feedId = $createFeedResult->getFeedId();
 ```
 
 If you are manipulating huge feed documents you can pass to `upload()` anything that Guzzle can turn into a stream.
+
+
+### Uploading with a specific charset
+
+```php
+$charset = "Shift-JIS";
+...
+// Create feed document
+$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification([
+    'content_type' => SellingPartnerApi\Document::get_content_type_with_charset($feedType['contentType'], $charset)]
+]);
+...
+// Upload feed contents to document
+...
+$docToUpload->upload($feedContents, $charset);
+```
 
 
 ## Downloading a feed result document

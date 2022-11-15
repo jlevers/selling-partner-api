@@ -26,14 +26,16 @@
  */
 
 namespace SellingPartnerApi\Model\OrdersV0;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ShipmentStatus Class Doc Comment
  *
  * @category Class
- * @description the status of the shipment of the order to be updated
+ * @description The shipment status to apply.
  * @package  SellingPartnerApi
  * @group 
  */
@@ -54,16 +56,20 @@ class ShipmentStatus
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::READY_FOR_PICKUP,
             self::PICKED_UP,
             self::REFUSED_PICKUP,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'ShipmentStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | **string** | Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See &lt;https://tools.ietf.org/html/rfc6902&gt;. |
-**path** | **string** | JSON Pointer path of the element to patch. See &lt;https://tools.ietf.org/html/rfc6902&gt;. |
+**op** | **string** | Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See <https://tools.ietf.org/html/rfc6902>. |
+**path** | **string** | JSON Pointer path of the element to patch. See <https://tools.ietf.org/html/rfc6902>. |
 **value** | **object[]** | JSON value to add, replace, or delete. | [optional]
 
 [[ListingsV20210801 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

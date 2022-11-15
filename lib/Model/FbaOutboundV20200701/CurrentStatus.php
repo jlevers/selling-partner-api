@@ -26,8 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\FbaOutboundV20200701;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * CurrentStatus Class Doc Comment
@@ -69,7 +71,7 @@ class CurrentStatus
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::IN_TRANSIT,
             self::OUT_FOR_DELIVERY,
             self::DELIVERY_ATTEMPTED,
@@ -89,11 +91,15 @@ class CurrentStatus
             self::REFUND_ISSUED,
             self::RETURN_RECEIVED_IN_FC,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'CurrentStatus', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

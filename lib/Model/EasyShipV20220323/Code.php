@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Easy Ship
  *
- * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders. Your Easy Ship applications can: * Get available time slots for packages to be scheduled for delivery. * Schedule, reschedule, and cancel Easy Ship orders. * Print labels, invoices, and warranties. See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easy-ship-api-v2022-03-23-use-case-guide) for the differences in Easy Ship operations by marketplace.
+ * The Selling Partner API for Easy Ship helps you build applications that help sellers manage and ship Amazon Easy Ship orders. Your Easy Ship applications can: * Get available time slots for packages to be scheduled for delivery. * Schedule, reschedule, and cancel Easy Ship orders. * Print labels, invoices, and warranties. See the [Marketplace Support Table](https://developer-docs.amazon.com/sp-api/docs/easyship-api-v2022-03-23-use-case-guide#marketplace-support-table) for the differences in Easy Ship operations by marketplace.
  *
  * The version of the OpenAPI document: 2022-03-23
  * Contact: marketplaceapitest@amazon.com
@@ -26,8 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\EasyShipV20220323;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Code Class Doc Comment
@@ -62,7 +64,7 @@ class Code
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::INVALID_INPUT,
             self::INVALID_TIME_SLOT_ID,
             self::SCHEDULED_PACKAGE_ALREADY_EXISTS,
@@ -75,11 +77,15 @@ class Code
             self::ORDER_NOT_ELIGIBLE_FOR_RESCHEDULING,
             self::INTERNAL_SERVER_ERROR,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'Code', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

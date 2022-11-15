@@ -26,8 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\AplusContentV20201101;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * DecoratorType Class Doc Comment
@@ -59,7 +61,7 @@ class DecoratorType
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::LIST_ITEM,
             self::LIST_ORDERED,
             self::LIST_UNORDERED,
@@ -69,11 +71,15 @@ class DecoratorType
             self::STYLE_PARAGRAPH,
             self::STYLE_UNDERLINE,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'DecoratorType', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

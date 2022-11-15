@@ -26,14 +26,16 @@
  */
 
 namespace SellingPartnerApi\Model\FbaInboundV0;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * PrepInstruction Class Doc Comment
  *
  * @category Class
- * @description Preparation instructions for shipping an item to Amazon&#39;s fulfillment network. For more information about preparing items for shipment to Amazon&#39;s fulfillment network, see the Seller Central Help for your marketplace.
+ * @description Preparation instructions for shipping an item to Amazon's fulfillment network. For more information about preparing items for shipment to Amazon's fulfillment network, see the Seller Central Help for your marketplace.
  * @package  SellingPartnerApi
  * @group 
  */
@@ -55,6 +57,7 @@ class PrepInstruction
     const SUFFOCATION_STICKERING = 'SuffocationStickering';
     const SET_STICKERING = 'SetStickering';
     const REMOVE_FROM_HANGER = 'RemoveFromHanger';
+    const CAP_SEALING = 'CapSealing';
     
     /**
      * Gets allowable values of the enum
@@ -62,7 +65,7 @@ class PrepInstruction
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::POLYBAGGING,
             self::BUBBLE_WRAPPING,
             self::TAPING,
@@ -74,12 +77,17 @@ class PrepInstruction
             self::SUFFOCATION_STICKERING,
             self::SET_STICKERING,
             self::REMOVE_FROM_HANGER,
+            self::CAP_SEALING,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'PrepInstruction', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

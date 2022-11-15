@@ -22,6 +22,7 @@ class Document
     private $url;
     private $compressionAlgo;
     private $contentType;
+    private $reportName;
     private $data;
     private $tmpFilename;
     private $client;
@@ -55,15 +56,13 @@ class Document
 
         if ($documentType === null) {
             throw new RuntimeException('$documentType cannot be null');
-        } else if ($documentType === ReportType::__FEED_RESULT_REPORT) {
-            echo 'ReportType::__FEED_RESULT_REPORT is deprecated, and may not result in a properly parsed feed result document.';
-            echo 'Please pass the feed type constant for the feed whose result document is being parsed (e.g., FeedType::POST_PRODUCT_DATA.';
         }
 
         $this->contentType = $documentType['contentType'];
+        $this->reportName = $documentType['name'];
 
         $validContentTypes = ContentType::getContentTypes();
-        if (!in_array($this->contentType, array_values($validContentTypes))) {
+        if (!in_array($this->contentType, array_values($validContentTypes), true)) {
             $readableContentTypes = [];
             foreach ($validContentTypes as $name => $value) {
                 $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
@@ -99,8 +98,8 @@ class Document
             $response = $this->client->request('GET', $this->url, ['stream' => true]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
-            if ($response->getStatusCode() == 404) {
-                throw new RuntimeException("Document Report not Found ({$response->getStatusCode()}): {$response->getBody()}");
+            if ($response->getStatusCode() === 404) {
+                throw new RuntimeException("Report document not found ({$response->getStatusCode()}): {$response->getBody()}");
             } else {
                 throw $e;
             }
@@ -128,7 +127,7 @@ class Document
         // and PDF reports.
         // If encoding is not provided try to automatically detect the encoding from the http response; default is UTF-8
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
-            if (!is_null($encoding) && !in_array(strtoupper($encoding), mb_list_encodings())) {
+            if (!is_null($encoding) && !in_array(strtoupper($encoding), mb_list_encodings(), true)) {
                 $encoding = null;
             } else if (is_null($encoding)) {
                 $encodings = ['UTF-8'];
@@ -149,7 +148,7 @@ class Document
 
         $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
 
-        if (in_array($this->contentType, [ContentType::TAB, ContentType::CSV, ContentType::XLSX])) {
+        if (in_array($this->contentType, [ContentType::TAB, ContentType::CSV, ContentType::XLSX], true)) {
             $tempFile = fopen($this->tmpFilename, "r+");
             fwrite($tempFile, $contents);
             fclose($tempFile);
@@ -163,14 +162,19 @@ class Document
                 // results in the default enclosure being used (a double quote character), so we use a
                 // bizarre character to avoid recognizing double quotes as enclosures.
                 // Thanks @gregordonsky (https://github.com/gregordonsky) for the idea!
-                $reader->setEnclosure(chr(8));
+                // Keep default enclosure for GET_LEDGER_DETAIL_VIEW_DATA as Amazon is sending with quotes
+                if($this->reportName !== "GET_LEDGER_DETAIL_VIEW_DATA") {
+                    $reader->setEnclosure(chr(8));
+                }
+                // no break
             case ContentType::CSV:
             case ContentType::XLSX:
                 $spreadsheet = $reader->load($this->tmpFilename);
                 if ($this->contentType !== ContentType::XLSX) {
-                    $sheet = $spreadsheet->getSheet(0)->toArray();
+                    // Avoid spreadsheet formula processing when loading CSV or TAB files
+                    $sheet = $spreadsheet->getSheet(0)->toArray(null, false);
                     // Turn each row of data into an associative array with the headers as keys
-                    array_walk($sheet, function(&$row) use ($sheet) {
+                    array_walk($sheet, function (&$row) use ($sheet) {
                         $row = array_combine($sheet[0], $row);
                     });
                     // Remove headers line

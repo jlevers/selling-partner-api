@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**createWarranty()**](MessagingV1Api.md#createWarranty) | **POST** /messaging/v1/orders/{amazonOrderId}/messages/warranty | 
 [**getAttributes()**](MessagingV1Api.md#getAttributes) | **GET** /messaging/v1/orders/{amazonOrderId}/attributes | 
 [**getMessagingActionsForOrder()**](MessagingV1Api.md#getMessagingActionsForOrder) | **GET** /messaging/v1/orders/{amazonOrderId} | 
+[**sendInvoice()**](MessagingV1Api.md#sendInvoice) | **POST** /messaging/v1/orders/{amazonOrderId}/messages/invoice | 
 
 
 ## `confirmCustomizationDetails()`
@@ -818,6 +819,66 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/hal+json`
+
+[[Top]](#) [[API list]](../)
+[[MessagingV1 Model list]](../Model/MessagingV1)
+[[README]](../../README.md)
+
+## `sendInvoice()`
+
+```php
+sendInvoice($amazon_order_id, $marketplace_ids, $body): \SellingPartnerApi\Model\MessagingV1\InvoiceResponse
+```
+
+
+
+Sends a message providing the buyer an invoice
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
+
+$apiInstance = new SellingPartnerApi\Api\MessagingV1Api($config);
+$amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
+$marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+$body = new \SellingPartnerApi\Model\MessagingV1\InvoiceRequest(); // \SellingPartnerApi\Model\MessagingV1\InvoiceRequest
+
+try {
+    $result = $apiInstance->sendInvoice($amazon_order_id, $marketplace_ids, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MessagingV1Api->sendInvoice: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
+ **marketplace_ids** | [**string[]**](../Model/MessagingV1/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\MessagingV1\InvoiceRequest**](../Model/MessagingV1/InvoiceRequest.md)|  |
+
+### Return type
+
+[**\SellingPartnerApi\Model\MessagingV1\InvoiceResponse**](../Model/MessagingV1/InvoiceResponse.md)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)

@@ -1,6 +1,6 @@
 {
     "name": "jlevers/selling-partner-api",
-    "version": "5.2.1",
+    "version": "5.4.6",
     "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",
@@ -32,7 +32,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^2.12"
+        "friendsofphp/php-cs-fixer": "^3.4"
     },
     "autoload": {
         "psr-4": { "SellingPartnerApi\\" : "lib/" }

@@ -10,7 +10,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -538,6 +538,889 @@ class ServiceV1Api
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation assignAppointmentResources
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesRequest $body body (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse
+     */
+    public function assignAppointmentResources($service_job_id, $appointment_id, $body)
+    {
+        $response = $this->assignAppointmentResourcesWithHttpInfo($service_job_id, $appointment_id, $body);
+        return $response;
+    }
+
+    /**
+     * Operation assignAppointmentResourcesWithHttpInfo
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesRequest $body (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function assignAppointmentResourcesWithHttpInfo($service_job_id, $appointment_id, $body)
+    {
+        $request = $this->assignAppointmentResourcesRequest($service_job_id, $appointment_id, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 422:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation assignAppointmentResourcesAsync
+     *
+     * 
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function assignAppointmentResourcesAsync($service_job_id, $appointment_id, $body)
+    {
+        return $this->assignAppointmentResourcesAsyncWithHttpInfo($service_job_id, $appointment_id, $body);;
+    }
+
+    /**
+     * Operation assignAppointmentResourcesAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function assignAppointmentResourcesAsyncWithHttpInfo($service_job_id, $appointment_id, $body)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesResponse';
+        $request = $this->assignAppointmentResourcesRequest($service_job_id, $appointment_id, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'assignAppointmentResources'
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function assignAppointmentResourcesRequest($service_job_id, $appointment_id, $body)
+    {
+        // verify the required parameter 'service_job_id' is set
+        if ($service_job_id === null || (is_array($service_job_id) && count($service_job_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $service_job_id when calling assignAppointmentResources'
+            );
+        }
+        if (strlen($service_job_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$service_job_id" when calling ServiceV1Api.assignAppointmentResources, must be smaller than or equal to 100.');
+        }
+        if (strlen($service_job_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$service_job_id" when calling ServiceV1Api.assignAppointmentResources, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'appointment_id' is set
+        if ($appointment_id === null || (is_array($appointment_id) && count($appointment_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $appointment_id when calling assignAppointmentResources'
+            );
+        }
+        if (strlen($appointment_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$appointment_id" when calling ServiceV1Api.assignAppointmentResources, must be smaller than or equal to 100.');
+        }
+        if (strlen($appointment_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$appointment_id" when calling ServiceV1Api.assignAppointmentResources, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling assignAppointmentResources'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // path params
+        if ($service_job_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'serviceJobId' . '}',
+                ObjectSerializer::toPathValue($service_job_id),
+                $resourcePath
+            );
+        }
+
+        // path params
+        if ($appointment_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'appointmentId' . '}',
+                ObjectSerializer::toPathValue($appointment_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cancelReservation
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\CancelReservationResponse
+     */
+    public function cancelReservation($reservation_id, $marketplace_ids)
+    {
+        $response = $this->cancelReservationWithHttpInfo($reservation_id, $marketplace_ids);
+        return $response;
+    }
+
+    /**
+     * Operation cancelReservationWithHttpInfo
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\CancelReservationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cancelReservationWithHttpInfo($reservation_id, $marketplace_ids)
+    {
+        $request = $this->cancelReservationRequest($reservation_id, $marketplace_ids);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 204:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 204:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cancelReservationAsync
+     *
+     * 
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cancelReservationAsync($reservation_id, $marketplace_ids)
+    {
+        return $this->cancelReservationAsyncWithHttpInfo($reservation_id, $marketplace_ids);;
+    }
+
+    /**
+     * Operation cancelReservationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cancelReservationAsyncWithHttpInfo($reservation_id, $marketplace_ids)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\CancelReservationResponse';
+        $request = $this->cancelReservationRequest($reservation_id, $marketplace_ids);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cancelReservation'
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function cancelReservationRequest($reservation_id, $marketplace_ids)
+    {
+        // verify the required parameter 'reservation_id' is set
+        if ($reservation_id === null || (is_array($reservation_id) && count($reservation_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $reservation_id when calling cancelReservation'
+            );
+        }
+        if (strlen($reservation_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$reservation_id" when calling ServiceV1Api.cancelReservation, must be smaller than or equal to 100.');
+        }
+        if (strlen($reservation_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$reservation_id" when calling ServiceV1Api.cancelReservation, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling cancelReservation'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling ServiceV1Api.cancelReservation, number of items must be less than or equal to 1.');
+        }
+
+
+        $resourcePath = '/service/v1/reservation/{reservationId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // path params
+        if ($reservation_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'reservationId' . '}',
+                ObjectSerializer::toPathValue($reservation_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1406,6 +2289,2679 @@ class ServiceV1Api
     }
 
     /**
+     * Operation createReservation
+     *
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\CreateReservationResponse
+     */
+    public function createReservation($marketplace_ids, $body)
+    {
+        $response = $this->createReservationWithHttpInfo($marketplace_ids, $body);
+        return $response;
+    }
+
+    /**
+     * Operation createReservationWithHttpInfo
+     *
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\CreateReservationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createReservationWithHttpInfo($marketplace_ids, $body)
+    {
+        $request = $this->createReservationRequest($marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createReservationAsync
+     *
+     * 
+     *
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createReservationAsync($marketplace_ids, $body)
+    {
+        return $this->createReservationAsyncWithHttpInfo($marketplace_ids, $body);;
+    }
+
+    /**
+     * Operation createReservationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createReservationAsyncWithHttpInfo($marketplace_ids, $body)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\CreateReservationResponse';
+        $request = $this->createReservationRequest($marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createReservation'
+     *
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createReservationRequest($marketplace_ids, $body)
+    {
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling createReservation'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling ServiceV1Api.createReservation, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createReservation'
+            );
+        }
+
+        $resourcePath = '/service/v1/reservation';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createServiceDocumentUploadDestination
+     *
+     * @param  \SellingPartnerApi\Model\ServiceV1\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination
+     */
+    public function createServiceDocumentUploadDestination($body)
+    {
+        $response = $this->createServiceDocumentUploadDestinationWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation createServiceDocumentUploadDestinationWithHttpInfo
+     *
+     * @param  \SellingPartnerApi\Model\ServiceV1\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createServiceDocumentUploadDestinationWithHttpInfo($body)
+    {
+        $request = $this->createServiceDocumentUploadDestinationRequest($body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 422:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createServiceDocumentUploadDestinationAsync
+     *
+     * 
+     *
+     * @param  \SellingPartnerApi\Model\ServiceV1\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createServiceDocumentUploadDestinationAsync($body)
+    {
+        return $this->createServiceDocumentUploadDestinationAsyncWithHttpInfo($body);;
+    }
+
+    /**
+     * Operation createServiceDocumentUploadDestinationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \SellingPartnerApi\Model\ServiceV1\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createServiceDocumentUploadDestinationAsyncWithHttpInfo($body)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\CreateServiceDocumentUploadDestination';
+        $request = $this->createServiceDocumentUploadDestinationRequest($body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createServiceDocumentUploadDestination'
+     *
+     * @param  \SellingPartnerApi\Model\ServiceV1\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createServiceDocumentUploadDestinationRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createServiceDocumentUploadDestination'
+            );
+        }
+
+        $resourcePath = '/service/v1/documents';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAppointmentSlots
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $store_id Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse
+     */
+    public function getAppointmentSlots($asin, $store_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        $response = $this->getAppointmentSlotsWithHttpInfo($asin, $store_id, $marketplace_ids, $start_time, $end_time);
+        return $response;
+    }
+
+    /**
+     * Operation getAppointmentSlotsWithHttpInfo
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $store_id Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAppointmentSlotsWithHttpInfo($asin, $store_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        $request = $this->getAppointmentSlotsRequest($asin, $store_id, $marketplace_ids, $start_time, $end_time);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 422:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAppointmentSlotsAsync
+     *
+     * 
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $store_id Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmentSlotsAsync($asin, $store_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        return $this->getAppointmentSlotsAsyncWithHttpInfo($asin, $store_id, $marketplace_ids, $start_time, $end_time);;
+    }
+
+    /**
+     * Operation getAppointmentSlotsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $store_id Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmentSlotsAsyncWithHttpInfo($asin, $store_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse';
+        $request = $this->getAppointmentSlotsRequest($asin, $store_id, $marketplace_ids, $start_time, $end_time);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAppointmentSlots'
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $store_id Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAppointmentSlotsRequest($asin, $store_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        // verify the required parameter 'asin' is set
+        if ($asin === null || (is_array($asin) && count($asin) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $asin when calling getAppointmentSlots'
+            );
+        }
+        // verify the required parameter 'store_id' is set
+        if ($store_id === null || (is_array($store_id) && count($store_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $store_id when calling getAppointmentSlots'
+            );
+        }
+        if (strlen($store_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$store_id" when calling ServiceV1Api.getAppointmentSlots, must be smaller than or equal to 100.');
+        }
+        if (strlen($store_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$store_id" when calling ServiceV1Api.getAppointmentSlots, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling getAppointmentSlots'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling ServiceV1Api.getAppointmentSlots, number of items must be less than or equal to 1.');
+        }
+
+
+        $resourcePath = '/service/v1/appointmentSlots';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($asin)) {
+            $asin = ObjectSerializer::serializeCollection($asin, '', true);
+        }
+        if ($asin !== null) {
+            $queryParams['asin'] = $asin;
+        }
+
+        // query params
+        if (is_array($store_id)) {
+            $store_id = ObjectSerializer::serializeCollection($store_id, '', true);
+        }
+        if ($store_id !== null) {
+            $queryParams['storeId'] = $store_id;
+        }
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // query params
+        if (is_array($start_time)) {
+            $start_time = ObjectSerializer::serializeCollection($start_time, '', true);
+        }
+        if ($start_time !== null) {
+            $queryParams['startTime'] = $start_time;
+        }
+
+        // query params
+        if (is_array($end_time)) {
+            $end_time = ObjectSerializer::serializeCollection($end_time, '', true);
+        }
+        if ($end_time !== null) {
+            $queryParams['endTime'] = $end_time;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAppointmmentSlotsByJobId
+     *
+     * @param  string $service_job_id A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse
+     */
+    public function getAppointmmentSlotsByJobId($service_job_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        $response = $this->getAppointmmentSlotsByJobIdWithHttpInfo($service_job_id, $marketplace_ids, $start_time, $end_time);
+        return $response;
+    }
+
+    /**
+     * Operation getAppointmmentSlotsByJobIdWithHttpInfo
+     *
+     * @param  string $service_job_id A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAppointmmentSlotsByJobIdWithHttpInfo($service_job_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        $request = $this->getAppointmmentSlotsByJobIdRequest($service_job_id, $marketplace_ids, $start_time, $end_time);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 422:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAppointmmentSlotsByJobIdAsync
+     *
+     * 
+     *
+     * @param  string $service_job_id A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmmentSlotsByJobIdAsync($service_job_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        return $this->getAppointmmentSlotsByJobIdAsyncWithHttpInfo($service_job_id, $marketplace_ids, $start_time, $end_time);;
+    }
+
+    /**
+     * Operation getAppointmmentSlotsByJobIdAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $service_job_id A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmmentSlotsByJobIdAsyncWithHttpInfo($service_job_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\GetAppointmentSlotsResponse';
+        $request = $this->getAppointmmentSlotsByJobIdRequest($service_job_id, $marketplace_ids, $start_time, $end_time);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAppointmmentSlotsByJobId'
+     *
+     * @param  string $service_job_id A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAppointmmentSlotsByJobIdRequest($service_job_id, $marketplace_ids, $start_time = null, $end_time = null)
+    {
+        // verify the required parameter 'service_job_id' is set
+        if ($service_job_id === null || (is_array($service_job_id) && count($service_job_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $service_job_id when calling getAppointmmentSlotsByJobId'
+            );
+        }
+        if (strlen($service_job_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$service_job_id" when calling ServiceV1Api.getAppointmmentSlotsByJobId, must be smaller than or equal to 100.');
+        }
+        if (strlen($service_job_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$service_job_id" when calling ServiceV1Api.getAppointmmentSlotsByJobId, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling getAppointmmentSlotsByJobId'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling ServiceV1Api.getAppointmmentSlotsByJobId, number of items must be less than or equal to 1.');
+        }
+
+
+        $resourcePath = '/service/v1/serviceJobs/{serviceJobId}/appointmentSlots';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // query params
+        if (is_array($start_time)) {
+            $start_time = ObjectSerializer::serializeCollection($start_time, '', true);
+        }
+        if ($start_time !== null) {
+            $queryParams['startTime'] = $start_time;
+        }
+
+        // query params
+        if (is_array($end_time)) {
+            $end_time = ObjectSerializer::serializeCollection($end_time, '', true);
+        }
+        if ($end_time !== null) {
+            $queryParams['endTime'] = $end_time;
+        }
+
+        // path params
+        if ($service_job_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'serviceJobId' . '}',
+                ObjectSerializer::toPathValue($service_job_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getFixedSlotCapacity
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\FixedSlotCapacity
+     */
+    public function getFixedSlotCapacity($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        $response = $this->getFixedSlotCapacityWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token);
+        return $response;
+    }
+
+    /**
+     * Operation getFixedSlotCapacityWithHttpInfo
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\FixedSlotCapacity, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getFixedSlotCapacityWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        $request = $this->getFixedSlotCapacityRequest($resource_id, $marketplace_ids, $body, $next_page_token);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacity' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacity', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+                case 401:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacity';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacity',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getFixedSlotCapacityAsync
+     *
+     * 
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFixedSlotCapacityAsync($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        return $this->getFixedSlotCapacityAsyncWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token);;
+    }
+
+    /**
+     * Operation getFixedSlotCapacityAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFixedSlotCapacityAsyncWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\FixedSlotCapacity';
+        $request = $this->getFixedSlotCapacityRequest($resource_id, $marketplace_ids, $body, $next_page_token);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getFixedSlotCapacity'
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getFixedSlotCapacityRequest($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        // verify the required parameter 'resource_id' is set
+        if ($resource_id === null || (is_array($resource_id) && count($resource_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $resource_id when calling getFixedSlotCapacity'
+            );
+        }
+        if (strlen($resource_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$resource_id" when calling ServiceV1Api.getFixedSlotCapacity, must be smaller than or equal to 100.');
+        }
+        if (strlen($resource_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$resource_id" when calling ServiceV1Api.getFixedSlotCapacity, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling getFixedSlotCapacity'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling ServiceV1Api.getFixedSlotCapacity, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling getFixedSlotCapacity'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceResources/{resourceId}/capacity/fixed';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // query params
+        if (is_array($next_page_token)) {
+            $next_page_token = ObjectSerializer::serializeCollection($next_page_token, '', true);
+        }
+        if ($next_page_token !== null) {
+            $queryParams['nextPageToken'] = $next_page_token;
+        }
+
+        // path params
+        if ($resource_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'resourceId' . '}',
+                ObjectSerializer::toPathValue($resource_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getRangeSlotCapacity
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\RangeSlotCapacity
+     */
+    public function getRangeSlotCapacity($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        $response = $this->getRangeSlotCapacityWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token);
+        return $response;
+    }
+
+    /**
+     * Operation getRangeSlotCapacityWithHttpInfo
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\RangeSlotCapacity, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getRangeSlotCapacityWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        $request = $this->getRangeSlotCapacityRequest($resource_id, $marketplace_ids, $body, $next_page_token);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacity' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacity', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+                case 401:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacity';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacity',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getRangeSlotCapacityAsync
+     *
+     * 
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRangeSlotCapacityAsync($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        return $this->getRangeSlotCapacityAsyncWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token);;
+    }
+
+    /**
+     * Operation getRangeSlotCapacityAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRangeSlotCapacityAsyncWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\RangeSlotCapacity';
+        $request = $this->getRangeSlotCapacityRequest($resource_id, $marketplace_ids, $body, $next_page_token);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getRangeSlotCapacity'
+     *
+     * @param  string $resource_id Resource Identifier. (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $next_page_token Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getRangeSlotCapacityRequest($resource_id, $marketplace_ids, $body, $next_page_token = null)
+    {
+        // verify the required parameter 'resource_id' is set
+        if ($resource_id === null || (is_array($resource_id) && count($resource_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $resource_id when calling getRangeSlotCapacity'
+            );
+        }
+        if (strlen($resource_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$resource_id" when calling ServiceV1Api.getRangeSlotCapacity, must be smaller than or equal to 100.');
+        }
+        if (strlen($resource_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$resource_id" when calling ServiceV1Api.getRangeSlotCapacity, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling getRangeSlotCapacity'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling ServiceV1Api.getRangeSlotCapacity, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling getRangeSlotCapacity'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceResources/{resourceId}/capacity/range';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // query params
+        if (is_array($next_page_token)) {
+            $next_page_token = ObjectSerializer::serializeCollection($next_page_token, '', true);
+        }
+        if ($next_page_token !== null) {
+            $queryParams['nextPageToken'] = $next_page_token;
+        }
+
+        // path params
+        if ($resource_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'resourceId' . '}',
+                ObjectSerializer::toPathValue($resource_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getServiceJobByServiceJobId
      *
      * @param  string $service_job_id A service job identifier. (required)
@@ -1831,20 +5387,23 @@ class ServiceV1Api
      * @param  int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sort_field Sort fields on which you want to sort the output. (optional)
      * @param  string $sort_order Sort order for the query you want to perform. (optional)
-     * @param  string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $created_after A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $created_before A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $last_updated_after A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $last_updated_before A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $schedule_start_date A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $schedule_end_date A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $required_skills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $store_ids List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\ServiceV1\GetServiceJobsResponse
      */
-    public function getServiceJobs($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
+    public function getServiceJobs($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null, $asins = null, $required_skills = null, $store_ids = null)
     {
-        $response = $this->getServiceJobsWithHttpInfo($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);
+        $response = $this->getServiceJobsWithHttpInfo($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date, $asins, $required_skills, $store_ids);
         return $response;
     }
 
@@ -1858,20 +5417,23 @@ class ServiceV1Api
      * @param  int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sort_field Sort fields on which you want to sort the output. (optional)
      * @param  string $sort_order Sort order for the query you want to perform. (optional)
-     * @param  string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $created_after A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
+     * @param  string $created_before A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $last_updated_after A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
+     * @param  string $last_updated_before A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $schedule_start_date A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $schedule_end_date A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $required_skills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $store_ids List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\ServiceV1\GetServiceJobsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getServiceJobsWithHttpInfo($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
+    public function getServiceJobsWithHttpInfo($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null, $asins = null, $required_skills = null, $store_ids = null)
     {
-        $request = $this->getServiceJobsRequest($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);
+        $request = $this->getServiceJobsRequest($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date, $asins, $required_skills, $store_ids);
         $signedRequest = $this->config->signRequest(
             $request
         );
@@ -2091,19 +5653,22 @@ class ServiceV1Api
      * @param  int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sort_field Sort fields on which you want to sort the output. (optional)
      * @param  string $sort_order Sort order for the query you want to perform. (optional)
-     * @param  string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $created_after A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
+     * @param  string $created_before A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $last_updated_after A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
+     * @param  string $last_updated_before A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $schedule_start_date A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $schedule_end_date A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $required_skills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $store_ids List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceJobsAsync($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
+    public function getServiceJobsAsync($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null, $asins = null, $required_skills = null, $store_ids = null)
     {
-        return $this->getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);;
+        return $this->getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date, $asins, $required_skills, $store_ids);;
     }
 
     /**
@@ -2118,20 +5683,23 @@ class ServiceV1Api
      * @param  int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sort_field Sort fields on which you want to sort the output. (optional)
      * @param  string $sort_order Sort order for the query you want to perform. (optional)
-     * @param  string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $created_after A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
+     * @param  string $created_before A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $last_updated_after A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
+     * @param  string $last_updated_before A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $schedule_start_date A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $schedule_end_date A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $required_skills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $store_ids List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
+    public function getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null, $asins = null, $required_skills = null, $store_ids = null)
     {
         $returnType = '\SellingPartnerApi\Model\ServiceV1\GetServiceJobsResponse';
-        $request = $this->getServiceJobsRequest($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);
+        $request = $this->getServiceJobsRequest($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date, $asins, $required_skills, $store_ids);
         $signedRequest = $this->config->signRequest(
             $request
         );
@@ -2183,17 +5751,20 @@ class ServiceV1Api
      * @param  int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sort_field Sort fields on which you want to sort the output. (optional)
      * @param  string $sort_order Sort order for the query you want to perform. (optional)
-     * @param  string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $created_after A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
+     * @param  string $created_before A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $last_updated_after A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
+     * @param  string $last_updated_before A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $schedule_start_date A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $schedule_end_date A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $required_skills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $store_ids List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getServiceJobsRequest($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null)
+    public function getServiceJobsRequest($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null, $asins = null, $required_skills = null, $store_ids = null)
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
@@ -2217,6 +5788,27 @@ class ServiceV1Api
         }
         if ($page_size !== null && $page_size < 1) {
             throw new \InvalidArgumentException('invalid value for "$page_size" when calling ServiceV1Api.getServiceJobs, must be bigger than or equal to 1.');
+        }
+
+        if ($asins !== null && count($asins) > 20) {
+            throw new \InvalidArgumentException('invalid value for "$asins" when calling ServiceV1Api.getServiceJobs, number of items must be less than or equal to 20.');
+        }
+        if ($asins !== null && count($asins) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$asins" when calling ServiceV1Api.getServiceJobs, number of items must be greater than or equal to 1.');
+        }
+
+        if ($required_skills !== null && count($required_skills) > 20) {
+            throw new \InvalidArgumentException('invalid value for "$required_skills" when calling ServiceV1Api.getServiceJobs, number of items must be less than or equal to 20.');
+        }
+        if ($required_skills !== null && count($required_skills) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$required_skills" when calling ServiceV1Api.getServiceJobs, number of items must be greater than or equal to 1.');
+        }
+
+        if ($store_ids !== null && count($store_ids) > 50) {
+            throw new \InvalidArgumentException('invalid value for "$store_ids" when calling ServiceV1Api.getServiceJobs, number of items must be less than or equal to 50.');
+        }
+        if ($store_ids !== null && count($store_ids) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$store_ids" when calling ServiceV1Api.getServiceJobs, number of items must be greater than or equal to 1.');
         }
 
 
@@ -2329,6 +5921,30 @@ class ServiceV1Api
         }
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // query params
+        if (is_array($asins)) {
+            $asins = ObjectSerializer::serializeCollection($asins, 'form', true);
+        }
+        if ($asins !== null) {
+            $queryParams['asins'] = $asins;
+        }
+
+        // query params
+        if (is_array($required_skills)) {
+            $required_skills = ObjectSerializer::serializeCollection($required_skills, 'form', true);
+        }
+        if ($required_skills !== null) {
+            $queryParams['requiredSkills'] = $required_skills;
+        }
+
+        // query params
+        if (is_array($store_ids)) {
+            $store_ids = ObjectSerializer::serializeCollection($store_ids, 'form', true);
+        }
+        if ($store_ids !== null) {
+            $queryParams['storeIds'] = $store_ids;
         }
 
         if ($multipart) {
@@ -2841,6 +6457,1346 @@ class ServiceV1Api
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation setAppointmentFulfillmentData
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return string
+     */
+    public function setAppointmentFulfillmentData($service_job_id, $appointment_id, $body)
+    {
+        $response = $this->setAppointmentFulfillmentDataWithHttpInfo($service_job_id, $appointment_id, $body);
+        return $response;
+    }
+
+    /**
+     * Operation setAppointmentFulfillmentDataWithHttpInfo
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function setAppointmentFulfillmentDataWithHttpInfo($service_job_id, $appointment_id, $body)
+    {
+        $request = $this->setAppointmentFulfillmentDataRequest($service_job_id, $appointment_id, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 204:
+                    if ('string' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, 'string', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+                case 422:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\Error[]', $response->getHeaders());
+            }
+
+            $returnType = 'string';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 204:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation setAppointmentFulfillmentDataAsync
+     *
+     * 
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function setAppointmentFulfillmentDataAsync($service_job_id, $appointment_id, $body)
+    {
+        return $this->setAppointmentFulfillmentDataAsyncWithHttpInfo($service_job_id, $appointment_id, $body);;
+    }
+
+    /**
+     * Operation setAppointmentFulfillmentDataAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function setAppointmentFulfillmentDataAsyncWithHttpInfo($service_job_id, $appointment_id, $body)
+    {
+        $returnType = 'string';
+        $request = $this->setAppointmentFulfillmentDataRequest($service_job_id, $appointment_id, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'setAppointmentFulfillmentData'
+     *
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
+     * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function setAppointmentFulfillmentDataRequest($service_job_id, $appointment_id, $body)
+    {
+        // verify the required parameter 'service_job_id' is set
+        if ($service_job_id === null || (is_array($service_job_id) && count($service_job_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $service_job_id when calling setAppointmentFulfillmentData'
+            );
+        }
+        if (strlen($service_job_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$service_job_id" when calling ServiceV1Api.setAppointmentFulfillmentData, must be smaller than or equal to 100.');
+        }
+        if (strlen($service_job_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$service_job_id" when calling ServiceV1Api.setAppointmentFulfillmentData, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'appointment_id' is set
+        if ($appointment_id === null || (is_array($appointment_id) && count($appointment_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $appointment_id when calling setAppointmentFulfillmentData'
+            );
+        }
+        if (strlen($appointment_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$appointment_id" when calling ServiceV1Api.setAppointmentFulfillmentData, must be smaller than or equal to 100.');
+        }
+        if (strlen($appointment_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$appointment_id" when calling ServiceV1Api.setAppointmentFulfillmentData, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling setAppointmentFulfillmentData'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // path params
+        if ($service_job_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'serviceJobId' . '}',
+                ObjectSerializer::toPathValue($service_job_id),
+                $resourcePath
+            );
+        }
+
+        // path params
+        if ($appointment_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'appointmentId' . '}',
+                ObjectSerializer::toPathValue($appointment_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateReservation
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse
+     */
+    public function updateReservation($reservation_id, $marketplace_ids, $body)
+    {
+        $response = $this->updateReservationWithHttpInfo($reservation_id, $marketplace_ids, $body);
+        return $response;
+    }
+
+    /**
+     * Operation updateReservationWithHttpInfo
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateReservationWithHttpInfo($reservation_id, $marketplace_ids, $body)
+    {
+        $request = $this->updateReservationRequest($reservation_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateReservationAsync
+     *
+     * 
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateReservationAsync($reservation_id, $marketplace_ids, $body)
+    {
+        return $this->updateReservationAsyncWithHttpInfo($reservation_id, $marketplace_ids, $body);;
+    }
+
+    /**
+     * Operation updateReservationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateReservationAsyncWithHttpInfo($reservation_id, $marketplace_ids, $body)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\UpdateReservationResponse';
+        $request = $this->updateReservationRequest($reservation_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateReservation'
+     *
+     * @param  string $reservation_id Reservation Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateReservationRequest($reservation_id, $marketplace_ids, $body)
+    {
+        // verify the required parameter 'reservation_id' is set
+        if ($reservation_id === null || (is_array($reservation_id) && count($reservation_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $reservation_id when calling updateReservation'
+            );
+        }
+        if (strlen($reservation_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$reservation_id" when calling ServiceV1Api.updateReservation, must be smaller than or equal to 100.');
+        }
+        if (strlen($reservation_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$reservation_id" when calling ServiceV1Api.updateReservation, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling updateReservation'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling ServiceV1Api.updateReservation, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updateReservation'
+            );
+        }
+
+        $resourcePath = '/service/v1/reservation/{reservationId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // path params
+        if ($reservation_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'reservationId' . '}',
+                ObjectSerializer::toPathValue($reservation_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateSchedule
+     *
+     * @param  string $resource_id Resource (store) Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse
+     */
+    public function updateSchedule($resource_id, $marketplace_ids, $body)
+    {
+        $response = $this->updateScheduleWithHttpInfo($resource_id, $marketplace_ids, $body);
+        return $response;
+    }
+
+    /**
+     * Operation updateScheduleWithHttpInfo
+     *
+     * @param  string $resource_id Resource (store) Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateScheduleWithHttpInfo($resource_id, $marketplace_ids, $body)
+    {
+        $request = $this->updateScheduleRequest($resource_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateScheduleAsync
+     *
+     * 
+     *
+     * @param  string $resource_id Resource (store) Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateScheduleAsync($resource_id, $marketplace_ids, $body)
+    {
+        return $this->updateScheduleAsyncWithHttpInfo($resource_id, $marketplace_ids, $body);;
+    }
+
+    /**
+     * Operation updateScheduleAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $resource_id Resource (store) Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateScheduleAsyncWithHttpInfo($resource_id, $marketplace_ids, $body)
+    {
+        $returnType = '\SellingPartnerApi\Model\ServiceV1\UpdateScheduleResponse';
+        $request = $this->updateScheduleRequest($resource_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateSchedule'
+     *
+     * @param  string $resource_id Resource (store) Identifier (required)
+     * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
+     * @param  \SellingPartnerApi\Model\ServiceV1\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateScheduleRequest($resource_id, $marketplace_ids, $body)
+    {
+        // verify the required parameter 'resource_id' is set
+        if ($resource_id === null || (is_array($resource_id) && count($resource_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $resource_id when calling updateSchedule'
+            );
+        }
+        if (strlen($resource_id) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$resource_id" when calling ServiceV1Api.updateSchedule, must be smaller than or equal to 100.');
+        }
+        if (strlen($resource_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$resource_id" when calling ServiceV1Api.updateSchedule, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling updateSchedule'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling ServiceV1Api.updateSchedule, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updateSchedule'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceResources/{resourceId}/schedules';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // path params
+        if ($resource_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'resourceId' . '}',
+                ObjectSerializer::toPathValue($resource_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\ServiceV1;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ServiceJob Class Doc Comment
@@ -42,7 +42,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class ServiceJob extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -69,6 +69,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         'appointments' => '\SellingPartnerApi\Model\ServiceV1\Appointment[]',
         'service_order_id' => 'string',
         'marketplace_id' => 'string',
+        'store_id' => 'string',
         'buyer' => '\SellingPartnerApi\Model\ServiceV1\Buyer',
         'associated_items' => '\SellingPartnerApi\Model\ServiceV1\AssociatedItem[]',
         'service_location' => '\SellingPartnerApi\Model\ServiceV1\ServiceLocation'
@@ -92,30 +93,13 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         'appointments' => null,
         'service_order_id' => null,
         'marketplace_id' => null,
+        'store_id' => null,
         'buyer' => null,
         'associated_items' => null,
         'service_location' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -134,6 +118,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         'appointments' => 'appointments',
         'service_order_id' => 'serviceOrderId',
         'marketplace_id' => 'marketplaceId',
+        'store_id' => 'storeId',
         'buyer' => 'buyer',
         'associated_items' => 'associatedItems',
         'service_location' => 'serviceLocation'
@@ -155,6 +140,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         'appointments' => 'setAppointments',
         'service_order_id' => 'setServiceOrderId',
         'marketplace_id' => 'setMarketplaceId',
+        'store_id' => 'setStoreId',
         'buyer' => 'setBuyer',
         'associated_items' => 'setAssociatedItems',
         'service_location' => 'setServiceLocation'
@@ -176,51 +162,13 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         'appointments' => 'getAppointments',
         'service_order_id' => 'getServiceOrderId',
         'marketplace_id' => 'getMarketplaceId',
+        'store_id' => 'getStoreId',
         'buyer' => 'getBuyer',
         'associated_items' => 'getAssociatedItems',
         'service_location' => 'getServiceLocation'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }
 
     const SERVICE_JOB_STATUS_NOT_SERVICED = 'NOT_SERVICED';
     const SERVICE_JOB_STATUS_CANCELLED = 'CANCELLED';
@@ -239,7 +187,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
      */
     public function getServiceJobStatusAllowableValues()
     {
-        return [
+        $baseVals = [
             self::SERVICE_JOB_STATUS_NOT_SERVICED,
             self::SERVICE_JOB_STATUS_CANCELLED,
             self::SERVICE_JOB_STATUS_COMPLETED,
@@ -248,6 +196,10 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
             self::SERVICE_JOB_STATUS_HOLD,
             self::SERVICE_JOB_STATUS_PAYMENT_DECLINED,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -275,6 +227,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         $this->container['appointments'] = $data['appointments'] ?? null;
         $this->container['service_order_id'] = $data['service_order_id'] ?? null;
         $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['store_id'] = $data['store_id'] ?? null;
         $this->container['buyer'] = $data['buyer'] ?? null;
         $this->container['associated_items'] = $data['associated_items'] ?? null;
         $this->container['service_location'] = $data['service_location'] ?? null;
@@ -297,7 +250,10 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         }
 
         $allowedValues = $this->getServiceJobStatusAllowableValues();
-        if (!is_null($this->container['service_job_status']) && !in_array($this->container['service_job_status'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['service_job_status']) &&
+            !in_array(strtoupper($this->container['service_job_status']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'service_job_status', must be one of '%s'",
                 $this->container['service_job_status'],
@@ -317,18 +273,15 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
             $invalidProperties[] = "invalid value for 'marketplace_id', must be conform to the pattern /^[A-Z0-9]*$/.";
         }
 
-        return $invalidProperties;
-    }
+        if (!is_null($this->container['store_id']) && (mb_strlen($this->container['store_id']) > 100)) {
+            $invalidProperties[] = "invalid value for 'store_id', the character length must be smaller than or equal to 100.";
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
+        if (!is_null($this->container['store_id']) && (mb_strlen($this->container['store_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'store_id', the character length must be bigger than or equal to 1.";
+        }
+
+        return $invalidProperties;
     }
 
 
@@ -345,7 +298,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
     /**
      * Sets create_time
      *
-     * @param string|null $create_time The date and time of the creation of the job, in ISO 8601 format.
+     * @param string|null $create_time The date and time of the creation of the job in ISO 8601 format.
      *
      * @return self
      */
@@ -405,7 +358,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
     public function setServiceJobStatus($service_job_status)
     {
         $allowedValues = $this->getServiceJobStatusAllowableValues();
-        if (!is_null($service_job_status) && !in_array($service_job_status, $allowedValues, true)) {
+        if (!is_null($service_job_status) &&!in_array(strtoupper($service_job_status), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'service_job_status', must be one of '%s'",
@@ -592,6 +545,36 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
         return $this;
     }
     /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id The Amazon-defined identifier for the region scope.
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (!is_null($store_id) && (mb_strlen($store_id) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $store_id when calling ServiceJob., must be smaller than or equal to 100.');
+        }
+        if (!is_null($store_id) && (mb_strlen($store_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $store_id when calling ServiceJob., must be bigger than or equal to 1.');
+        }
+
+        $this->container['store_id'] = $store_id;
+
+        return $this;
+    }
+    /**
      * Gets buyer
      *
      * @return \SellingPartnerApi\Model\ServiceV1\Buyer|null
@@ -658,146 +641,6 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable, \Ite
     {
         $this->container['service_location'] = $service_location;
 
-        return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
-    }
-
-    /**
-     * Enable iterating over all of the model's attributes in $key => $value format
-     *
-     * @return \Traversable
-     */
-    public function getIterator(): \Traversable
-    {
-        return (function () {
-            foreach ($this->container as $key => $value) {
-                yield $key => $value;
-            }
-        })();
-    }
-
-    /**
-     * Retrieves the property with the given name by converting the property accession
-     * to a getter call.
-     *
-     * @param string $propertyName
-     * @return mixed
-     */
-    public function __get($propertyName)
-    {
-        // This doesn't make a syntactical difference since PHP is case-insensitive, but
-        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
-        // than "Call to undefined method getfoo()").
-        $ucProp = ucfirst($propertyName);
-        $getter = "get$ucProp";
-        return $this->$getter();
-    }
-
-    /**
-     * Sets the property with the given name by converting the property accession
-     * to a setter call.
-     *
-     * @param string $propertyName
-     * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\ServiceV1\ServiceJob
-     */
-    public function __set($propertyName, $propertyValue)
-    {
-        $ucProp = ucfirst($propertyName);
-        $setter = "set$ucProp";
-        $this->$setter($propertyValue);
         return $this;
     }
 }

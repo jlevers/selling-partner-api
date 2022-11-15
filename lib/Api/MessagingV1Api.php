@@ -5257,6 +5257,439 @@ class MessagingV1Api
     }
 
     /**
+     * Operation sendInvoice
+     *
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body body (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\MessagingV1\InvoiceResponse
+     */
+    public function sendInvoice($amazon_order_id, $marketplace_ids, $body)
+    {
+        $response = $this->sendInvoiceWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        return $response;
+    }
+
+    /**
+     * Operation sendInvoiceWithHttpInfo
+     *
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\MessagingV1\InvoiceResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sendInvoiceWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
+    {
+        $request = $this->sendInvoiceRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 201:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sendInvoiceAsync
+     *
+     * 
+     *
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sendInvoiceAsync($amazon_order_id, $marketplace_ids, $body)
+    {
+        return $this->sendInvoiceAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+    }
+
+    /**
+     * Operation sendInvoiceAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sendInvoiceAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
+    {
+        $returnType = '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse';
+        $request = $this->sendInvoiceRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sendInvoice'
+     *
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function sendInvoiceRequest($amazon_order_id, $marketplace_ids, $body)
+    {
+        // verify the required parameter 'amazon_order_id' is set
+        if ($amazon_order_id === null || (is_array($amazon_order_id) && count($amazon_order_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $amazon_order_id when calling sendInvoice'
+            );
+        }
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling sendInvoice'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling MessagingV1Api.sendInvoice, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling sendInvoice'
+            );
+        }
+
+        $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/invoice';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // path params
+        if ($amazon_order_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'amazonOrderId' . '}',
+                ObjectSerializer::toPathValue($amazon_order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/hal+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/hal+json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Create http client option
      *
      * @throws \RuntimeException on file opening failure

@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**locale** | **string** | The buyer&#39;s language of preference, indicated with a locale-specific language tag. Examples: \&quot;en-US\&quot;, \&quot;zh-CN\&quot;, and \&quot;en-GB\&quot;. | [optional]
+**locale** | **string** | The buyer's language of preference, indicated with a locale-specific language tag. Examples: \"en-US\", \"zh-CN\", and \"en-GB\". | [optional]
 
 [[MessagingV1 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

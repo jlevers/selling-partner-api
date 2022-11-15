@@ -5,14 +5,19 @@ A PHP library for connecting to Amazon's [Selling Partner API](https://github.co
 [![Latest Stable Version](https://img.shields.io/packagist/v/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
 [![License](https://img.shields.io/packagist/l/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
 
+| | |
+| ------ | ------ |
+| [![Highside Labs Logo](https://highsidelabs.co/images/favicon.ico)](https://highsidelabs.co) | **This package is developed and maintained as part of [Highside Labs](https://highsidelabs.co). If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at [hi@highsidelabs.co](mailto:hi@highsidelabs.co). We'd love to hear from you :)** |
+
 If you've found this library useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD)
 
+---
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 5/30/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 11/13/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
 * Supports applications made with both IAM user and IAM role ARNs ([docs](#setup))
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
@@ -33,28 +38,22 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 Check out the [Getting Started](#getting-started) section below for a quick overview.
 
 This README is divided into several sections:
-- [Selling Partner API for PHP](#selling-partner-api-for-php)
-  - [Features](#features)
-  - [Sponsors](#sponsors)
-  - [Installation](#installation)
-  - [Table of Contents](#table-of-contents)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-        - [Configuration options](#configuration-options)
-    - [Examples](#examples)
-  - [Supported API segments](#supported-api-segments)
-    - [Seller APIs](#seller-apis)
-    - [Vendor APIs](#vendor-apis)
-  - [Restricted operations](#restricted-operations)
-  - [Uploading and downloading documents](#uploading-and-downloading-documents)
-    - [Downloading a report document](#downloading-a-report-document)
-    - [Uploading a feed document](#uploading-a-feed-document)
-  - [Downloading a feed result document](#downloading-a-feed-result-document)
-  - [Working with model classes](#working-with-model-classes)
-  - [Response headers](#response-headers)
-  - [Custom Authorization Signer](#custom-authorization-signer)
-  - [Custom Request Signer](#custom-request-signer)
+* [Setup](#setup)
+    * [Configuration options](#configuration-options)
+* [Examples](#examples)
+* [Debug mode](#debug-mode)
+* [Supported API segments](#supported-api-segments)
+    * [Seller APIs](#seller-apis)
+    * [Vendor APIs](#vendor-apis)
+* [Restricted operations](#restricted-operations)
+* [Uploading and downloading documents](#uploading-and-downloading-documents)
+    * [Downloading a report document](#downloading-a-report-document)
+    * [Uploading a feed document](#uploading-a-feed-document)
+    * [Downloading a feed result document](#downloading-a-feed-result-document)
+* [Working with model classes](#working-with-model-classes)
+* [Response headers](#response-headers)
+* [Custom request authorization](#custom-authorization-signer)
+* [Custom request signing](#custom-request-signer)
 
 ## Getting Started
 
@@ -158,6 +157,8 @@ try {
 ?>
 ```
 
+### Debug mode
+
 To get debugging output when you make an API request, you can call `$config->setDebug(true)`. By default, debug output goes to `stdout` via `php://output`, but you can redirect it a file with `$config->setDebugFile('<path>')`.
 
 ```php
@@ -212,6 +213,7 @@ It also means that if a new version of an existing API is introduced, the librar
 * [Service API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ServiceV1Api.md)
 * [Shipment Invoicing API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShipmentInvoicingV0Api.md)
 * [Shipping API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingV1Api.md)
+* [Shipping API (V2)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingV2Api.md)
 * [Small and Light API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SmallAndLightV1Api.md)
 * [Solicitations API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SolicitationsV1Api.md)
 * [Restricted Data Tokens API (2021-03-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/TokensV20210301Api.md)
@@ -297,7 +299,13 @@ $feedContents = file_get_contents('<your/feed/file.xml>');
 $docToUpload = new SellingPartnerApi\Document($feedDocumentInfo, $feedType);
 $docToUpload->upload($feedContents);
 
-// ... call FeedsApi::createFeed() with $feedDocumentId
+$createFeedSpec = new Feeds\CreateFeedSpecification();
+$createFeedSpec->setMarketplaceIds(['ATVPDKIKX0DER']);
+$createFeedSpec->setInputFeedDocumentId($feedDocumentId);
+$createFeedSpec->setFeedType($feedType['name']);
+
+$createFeedResult = $feedsApi->createFeed($createFeedSpec);
+$feedId = $createFeedResult->getFeedId();
 ```
 
 If you are manipulating huge feed documents you can pass to `upload()` anything that Guzzle can turn into a stream.
@@ -323,8 +331,6 @@ $feed = $api->getFeed($feedId);
 
 $feedResultDocumentId = $feed->resultFeedDocumentId;
 $feedResultDocument = $api->getFeedDocument($feedResultDocumentId);
-
-$doc = new Document($documentInfo, $feedType);
 
 $docToDownload = new SellingPartnerApi\Document($feedResultDocument, $feedType);
 $contents = $docToDownload->download();  // The raw report data
@@ -433,7 +439,7 @@ class CustomAuthorizationSigner implements AuthorizationSignerContract
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\Api;
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 use CustomAuthorizationSigner;
@@ -442,15 +448,13 @@ $config = new Configuration([
     ..., 
     'authorizationSigner' => new CustomAuthorizationSigner(),
 ]);
-$api = new Api\SellersApi($config);
+$api = new SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->headers;
-    print_r($headers);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
-
 ```
 
 ## Custom Request Signer
@@ -480,7 +484,7 @@ class RemoteRequestSigner implements RequestSignerContract
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\Api;
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 use RemoteRequestSigner;
@@ -489,13 +493,11 @@ $config = new Configuration([
     ..., 
     'requestSigner' => new RemoteRequestSigner(),
 ]);
-$api = new Api\SellersApi($config);
+$api = new SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->headers;
-    print_r($headers);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
-
 ```

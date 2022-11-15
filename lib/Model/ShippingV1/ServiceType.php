@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Shipping
  *
- * Provides programmatic access to Amazon Shipping APIs.
+ * Provides programmatic access to Amazon Shipping APIs.  **Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href=\"https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference\">Amazon Shipping API (v2)</a> on the <a href=\"https://developer-docs.amazon.com/amazon-shipping/\">Amazon Shipping Developer Documentation</a> site.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -26,8 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\ShippingV1;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ServiceType Class Doc Comment
@@ -54,16 +56,20 @@ class ServiceType
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::GROUND,
             self::STANDARD,
             self::PREMIUM,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
     }
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
             throw new \InvalidArgumentException(sprintf("Invalid value for enum 'ServiceType', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
         }
 

@@ -33,21 +33,28 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 Check out the [Getting Started](#getting-started) section below for a quick overview.
 
 This README is divided into several sections:
-* [Setup](#setup)
-    * [Configuration options](#configuration-options)
-* [Examples](#examples)
-* [Supported API segments](#supported-api-segments)
-    * [Seller APIs](#seller-apis)
-    * [Vendor APIs](#vendor-apis)
-* [Restricted operations](#restricted-operations)
-* [Uploading and downloading documents](#uploading-and-downloading-documents)
-    * [Downloading a report document](#downloading-a-report-document)
-    * [Uploading a feed document](#uploading-a-feed-document)
-    * [Downloading a feed result document](#downloading-a-feed-result-document)
-* [Working with model classes](#working-with-model-classes)
-* [Response headers](#response-headers)
-* [Custom request authorization](#custom-authorization-signer)
-* [Custom request signing](#custom-request-signer)
+- [Selling Partner API for PHP](#selling-partner-api-for-php)
+  - [Features](#features)
+  - [Sponsors](#sponsors)
+  - [Installation](#installation)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+        - [Configuration options](#configuration-options)
+    - [Examples](#examples)
+  - [Supported API segments](#supported-api-segments)
+    - [Seller APIs](#seller-apis)
+    - [Vendor APIs](#vendor-apis)
+  - [Restricted operations](#restricted-operations)
+  - [Uploading and downloading documents](#uploading-and-downloading-documents)
+    - [Downloading a report document](#downloading-a-report-document)
+    - [Uploading a feed document](#uploading-a-feed-document)
+  - [Downloading a feed result document](#downloading-a-feed-result-document)
+  - [Working with model classes](#working-with-model-classes)
+  - [Response headers](#response-headers)
+  - [Custom Authorization Signer](#custom-authorization-signer)
+  - [Custom Request Signer](#custom-request-signer)
 
 ## Getting Started
 
@@ -261,6 +268,13 @@ $data = $docToDownload->getData();
 // ... do something with report data
 ```
 
+If you are manipulating huge reports you can use `downloadStream()` to minimize the memory consumption. `downloadStream()` will return a `Psr\Http\Message\StreamInterface`.
+
+```php
+// line to replace >>>>$contents = $docToDownload->download();  // The raw report text
+$streamContents = $docToDownload->downloadStream();  // The raw report stream
+```
+
 ### Uploading a feed document
 
 ```php
@@ -285,6 +299,9 @@ $docToUpload->upload($feedContents);
 
 // ... call FeedsApi::createFeed() with $feedDocumentId
 ```
+
+If you are manipulating huge feed documents you can pass to `upload()` anything that Guzzle can turn into a stream.
+
 
 ## Downloading a feed result document
 

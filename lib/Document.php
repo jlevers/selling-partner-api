@@ -25,6 +25,7 @@ class Document
     private $data;
     private $tmpFilename;
     private $client;
+    private $encoding;
 
     public $successfulFeedRecords = null;
     public $failedFeedRecords = null;
@@ -198,34 +199,32 @@ class Document
     /**
      * Downloads the document data as a stream.
      * 
-     * @param resource|string|StreamInterface|null $output Optionnaly copy data stream to the given output.
-     *
-     * @param ?string &$encoding Get the document encoding from the HTTP request.
+     * @param resource|string|StreamInterface|null $output Optionally copy data stream to the given output.
      *
      * @return StreamInterface The raw (unencrypted) document stream..
      */
-    public function downloadStream($output = null, string &$encoding = null): StreamInterface {
+    public function downloadStream($output = null): StreamInterface {
         try {
             $response = $this->client->request('GET', $this->url, ['stream' => true]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
             if ($response->getStatusCode() == 404) {
-                throw new RuntimeException("Document Report not Found ({$response->getStatusCode()}): {$response->getBody()}");
-            } else {
-                throw $e;
+                throw new RuntimeException("Report document not found ({$response->getStatusCode()}): {$response->getBody()}");
             }
+            throw $e;
         }
         
         // trying to detect the document charset/encoding
+        $this->encoding = null;
         $parsed = Header::parse($response->getHeader('content-type'));
         foreach ($parsed as $header) {
             if (isset($header['charset'])) {
-                $encoding = $header['charset'];
+                $this->encoding = $header['charset'];
                 break;
             }
         }
         $stream = $response->getBody();
-        if (\strtolower((string) $this->compressionAlgo) == 'gzip') {
+        if (strtolower((string) $this->compressionAlgo) == 'gzip') {
             $stream = new InflateStream($stream);
         }
 
@@ -261,6 +260,10 @@ class Document
 
     public function getData() {
         return isset($this->data) ? $this->data : false;
+    }
+
+    public function getEncoding(): ?string {
+        return $this->encoding;
     }
 
     public function __destruct() {

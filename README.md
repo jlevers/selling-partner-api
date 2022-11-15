@@ -270,6 +270,13 @@ $data = $docToDownload->getData();
 // ... do something with report data
 ```
 
+If you are manipulating huge reports you can use `downloadStream()` to minimize the memory consumption. `downloadStream()` will return a `Psr\Http\Message\StreamInterface`.
+
+```php
+// line to replace >>>>$contents = $docToDownload->download();  // The raw report text
+$streamContents = $docToDownload->downloadStream();  // The raw report stream
+```
+
 ### Uploading a feed document
 
 ```php
@@ -300,6 +307,9 @@ $createFeedSpec->setFeedType($feedType['name']);
 $createFeedResult = $feedsApi->createFeed($createFeedSpec);
 $feedId = $createFeedResult->getFeedId();
 ```
+
+If you are manipulating huge feed documents you can pass to `upload()` anything that Guzzle can turn into a stream.
+
 
 ## Downloading a feed result document
 

@@ -8,7 +8,6 @@
         "amazon",
         "ecommerce",
         "sp-api",
-        "php",
         "sdk",
         "rest",
         "api"
@@ -41,6 +40,7 @@
         "psr-4": { "SellingPartnerApi\\Tests\\" : "test/" }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "lint": "vendor/bin/php-cs-fixer fix"
     }
 }

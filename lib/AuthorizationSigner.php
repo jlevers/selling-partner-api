@@ -20,6 +20,11 @@ class AuthorizationSigner implements AuthorizationSignerContract
      */
     private $endpoint;
 
+    /**
+     * @var \DateTime
+     */
+    private $requestTime;
+
     public function __construct(array $endpoint)
     {
         $this->endpoint = $endpoint;

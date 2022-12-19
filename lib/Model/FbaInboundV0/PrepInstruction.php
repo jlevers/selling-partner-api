@@ -54,11 +54,14 @@ class PrepInstruction
     const HANG_GARMENT = 'HangGarment';
     const SET_CREATION = 'SetCreation';
     const BOXING = 'Boxing';
-    const SUFFOCATION_STICKERING = 'SuffocationStickering';
-    const SET_STICKERING = 'SetStickering';
     const REMOVE_FROM_HANGER = 'RemoveFromHanger';
+    const DEBUNDLE = 'Debundle';
+    const SUFFOCATION_STICKERING = 'SuffocationStickering';
     const CAP_SEALING = 'CapSealing';
-    
+    const SET_STICKERING = 'SetStickering';
+    const BLANK_STICKERING = 'BlankStickering';
+    const NO_PREP = 'NoPrep';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -74,10 +77,13 @@ class PrepInstruction
             self::HANG_GARMENT,
             self::SET_CREATION,
             self::BOXING,
-            self::SUFFOCATION_STICKERING,
-            self::SET_STICKERING,
             self::REMOVE_FROM_HANGER,
+            self::DEBUNDLE,
+            self::SUFFOCATION_STICKERING,
             self::CAP_SEALING,
+            self::SET_STICKERING,
+            self::BLANK_STICKERING,
+            self::NO_PREP,
         ];
         // This is necessary because Amazon does not consistently capitalize their
         // enum values, so we do case-insensitive enum value validation in ObjectSerializer
@@ -88,7 +94,7 @@ class PrepInstruction
     public function __construct($value)
     {
         if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'PrepInstruction', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+            throw new \InvalidArgumentException(sprintf("Invalid value(%s) for enum 'PrepInstruction', must be one of '%s'", $value, implode("', '", self::getAllowableEnumValues())));
         }
 
         $this->value = $value;

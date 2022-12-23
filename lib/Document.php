@@ -2,13 +2,13 @@
 
 namespace SellingPartnerApi;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Header;
 use GuzzleHttp\Psr7\InflateStream;
 use GuzzleHttp\Psr7\Utils;
-use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
-use Psr\Http\Message\StreamInterface;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use Psr\Http\Message\StreamInterface;
 use RuntimeException;
 
 use SellingPartnerApi\Model\FeedsV20210630\CreateFeedDocumentResponse;
@@ -212,7 +212,7 @@ class Document
             $response = $this->client->request('GET', $this->url, ['stream' => true]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
-            if ($response->getStatusCode() == 404) {
+            if ($response->getStatusCode() === 404) {
                 throw new RuntimeException("Report document not found ({$response->getStatusCode()}): {$response->getBody()}");
             }
             throw $e;
@@ -228,7 +228,7 @@ class Document
             }
         }
         $stream = $response->getBody();
-        if (strtolower((string) $this->compressionAlgo) == 'gzip') {
+        if (strtolower((string) $this->compressionAlgo) === 'gzip') {
             $stream = new InflateStream($stream);
         }
 

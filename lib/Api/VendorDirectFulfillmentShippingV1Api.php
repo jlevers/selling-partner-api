@@ -29,6 +29,7 @@ namespace SellingPartnerApi\Api;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
+use SellingPartnerApi\ApiException;
 use SellingPartnerApi\ObjectSerializer;
 
 /**

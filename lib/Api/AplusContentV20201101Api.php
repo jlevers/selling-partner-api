@@ -87,6 +87,8 @@ class AplusContentV20201101Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                return $e->getCode(); //処理は止めずにエラーコードを返す。
+
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),

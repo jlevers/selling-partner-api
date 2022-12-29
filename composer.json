@@ -1,7 +1,6 @@
 {
-
     "name": "shirushi-dev/selling-partner-api",
-    "version": "5.4.3",
+    "version": "5.5.2",
     "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",
@@ -9,7 +8,6 @@
         "amazon",
         "ecommerce",
         "sp-api",
-        "php",
         "sdk",
         "rest",
         "api"
@@ -36,7 +34,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^2.12"
+        "friendsofphp/php-cs-fixer": "^3.4"
     },
     "autoload": {
         "psr-4": { "SellingPartnerApi\\": "lib/" }
@@ -45,6 +43,7 @@
         "psr-4": { "SellingPartnerApi\\Tests\\": "test/" }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "lint": "vendor/bin/php-cs-fixer fix"
     }
 }

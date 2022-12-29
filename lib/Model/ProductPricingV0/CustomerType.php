@@ -26,8 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\ProductPricingV0;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * CustomerType Class Doc Comment
@@ -65,8 +67,8 @@ class CustomerType
 
     public function __construct($value)
     {
-        if (is_null($value) || !in_array($value, self::getAllowableEnumValues())) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'CustomerType', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
+            throw new \InvalidArgumentException(sprintf("Invalid value %s for enum 'CustomerType', must be one of '%s'", $value, implode("', '", self::getAllowableEnumValues())));
         }
 
         $this->value = $value;

@@ -3,8 +3,12 @@
 namespace SellingPartnerApi;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Header;
+use GuzzleHttp\Psr7\InflateStream;
+use GuzzleHttp\Psr7\Utils;
 use GuzzleHttp\RequestOptions;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use Psr\Http\Message\StreamInterface;
 use RuntimeException;
 
 use SellingPartnerApi\Model\FeedsV20210630\CreateFeedDocumentResponse;
@@ -22,6 +26,7 @@ class Document
     private $data;
     private $tmpFilename;
     private $client;
+    private $encoding;
 
     public $successfulFeedRecords = null;
     public $failedFeedRecords = null;
@@ -57,7 +62,7 @@ class Document
         $this->reportName = $documentType['name'];
 
         $validContentTypes = ContentType::getContentTypes();
-        if (!in_array($this->contentType, array_values($validContentTypes))) {
+        if (!in_array($this->contentType, array_values($validContentTypes), true)) {
             $readableContentTypes = [];
             foreach ($validContentTypes as $name => $value) {
                 $readableContentTypes[] = "SellingPartnerApi\ContentType::{$name} ($value)";
@@ -93,7 +98,7 @@ class Document
             $response = $this->client->request('GET', $this->url, ['stream' => true]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
-            if ($response->getStatusCode() == 404) {
+            if ($response->getStatusCode() === 404) {
                 throw new RuntimeException("Report document not found ({$response->getStatusCode()}): {$response->getBody()}");
             } else {
                 throw $e;
@@ -122,7 +127,7 @@ class Document
         // and PDF reports.
         // If encoding is not provided try to automatically detect the encoding from the http response; default is UTF-8
         if (!($this->contentType === ContentType::XLSX || $this->contentType === ContentType::PDF)) {
-            if (!is_null($encoding) && !in_array(strtoupper($encoding), mb_list_encodings())) {
+            if (!is_null($encoding) && !in_array(strtoupper($encoding), mb_list_encodings(), true)) {
                 $encoding = null;
             } else if (is_null($encoding)) {
                 $encodings = ['UTF-8'];
@@ -143,7 +148,7 @@ class Document
 
         $this->tmpFilename = tempnam(sys_get_temp_dir(), "tempdoc_spapi");
 
-        if (in_array($this->contentType, [ContentType::TAB, ContentType::CSV, ContentType::XLSX])) {
+        if (in_array($this->contentType, [ContentType::TAB, ContentType::CSV, ContentType::XLSX], true)) {
             $tempFile = fopen($this->tmpFilename, "r+");
             fwrite($tempFile, $contents);
             fclose($tempFile);
@@ -161,6 +166,7 @@ class Document
                 if($this->reportName !== "GET_LEDGER_DETAIL_VIEW_DATA") {
                     $reader->setEnclosure(chr(8));
                 }
+                // no break
             case ContentType::CSV:
             case ContentType::XLSX:
                 $spreadsheet = $reader->load($this->tmpFilename);
@@ -168,7 +174,7 @@ class Document
                     // Avoid spreadsheet formula processing when loading CSV or TAB files
                     $sheet = $spreadsheet->getSheet(0)->toArray(null, false);
                     // Turn each row of data into an associative array with the headers as keys
-                    array_walk($sheet, function(&$row) use ($sheet) {
+                    array_walk($sheet, function (&$row) use ($sheet) {
                         $row = array_combine($sheet[0], $row);
                     });
                     // Remove headers line
@@ -195,13 +201,54 @@ class Document
     }
 
     /**
+     * Downloads the document data as a stream.
+     * 
+     * @param resource|string|StreamInterface|null $output Optionally copy data stream to the given output.
+     *
+     * @return StreamInterface The raw (unencrypted) document stream..
+     */
+    public function downloadStream($output = null): StreamInterface {
+        try {
+            $response = $this->client->request('GET', $this->url, ['stream' => true]);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            $response = $e->getResponse();
+            if ($response->getStatusCode() === 404) {
+                throw new RuntimeException("Report document not found ({$response->getStatusCode()}): {$response->getBody()}");
+            }
+            throw $e;
+        }
+        
+        // trying to detect the document charset/encoding
+        $this->encoding = null;
+        $parsed = Header::parse($response->getHeader('content-type'));
+        foreach ($parsed as $header) {
+            if (isset($header['charset'])) {
+                $this->encoding = $header['charset'];
+                break;
+            }
+        }
+        $stream = $response->getBody();
+        if (strtolower((string) $this->compressionAlgo) === 'gzip') {
+            $stream = new InflateStream($stream);
+        }
+
+        if ($output) {
+            $output = Utils::streamFor($output);
+            Utils::copyToStream($stream, $output);
+            return $output;
+        }
+
+        return $stream;
+    }
+
+    /**
      * Uploads data to the document specified in the constructor.
      *
-     * @param string $feedData The contents of the feed to be uploaded
+     * @param string|resource|StreamInterface|callable|\Iterator $feedData The contents of the feed to be uploaded
      *
      * @return void
      */
-    public function upload(string $feedData): void {
+    public function upload($feedData): void {
         $response = $this->client->put($this->url, [
             RequestOptions::HEADERS => [
                 "content-type" => $this->contentType,
@@ -217,6 +264,10 @@ class Document
 
     public function getData() {
         return isset($this->data) ? $this->data : false;
+    }
+
+    public function getEncoding(): ?string {
+        return $this->encoding;
     }
 
     public function __destruct() {

@@ -7,7 +7,7 @@ A PHP library for connecting to Amazon's [Selling Partner API](https://github.co
 
 | | |
 | ------ | ------ |
-| [![Highside Labs Logo](https://highsidelabs.co/images/logo-75px.png)](https://highsidelabs.co) | **This package is developed and maintained as part of [Highside Labs](https://highsidelabs.co). If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at [hi@highsidelabs.co](mailto:hi@highsidelabs.co). We'd love to hear from you :)** |
+| [![Highside Labs Logo](https://highsidelabs.co/static/favicons/favicon.png)](https://highsidelabs.co) | **This package is developed and maintained as part of [Highside Labs](https://highsidelabs.co). If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at [hi@highsidelabs.co](mailto:hi@highsidelabs.co). We'd love to hear from you :)** |
 
 If you've found this library useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
 
@@ -17,7 +17,7 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 9/24/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 11/13/2022 ([see here](#supported-api-segments) for links to documentation for all calls)
 * Supports applications made with both IAM user and IAM role ARNs ([docs](#setup))
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
@@ -270,6 +270,13 @@ $data = $docToDownload->getData();
 // ... do something with report data
 ```
 
+If you are manipulating huge reports you can use `downloadStream()` to minimize the memory consumption. `downloadStream()` will return a `Psr\Http\Message\StreamInterface`.
+
+```php
+// line to replace >>>>$contents = $docToDownload->download();  // The raw report text
+$streamContents = $docToDownload->downloadStream();  // The raw report stream
+```
+
 ### Uploading a feed document
 
 ```php
@@ -300,6 +307,9 @@ $createFeedSpec->setFeedType($feedType['name']);
 $createFeedResult = $feedsApi->createFeed($createFeedSpec);
 $feedId = $createFeedResult->getFeedId();
 ```
+
+If you are manipulating huge feed documents you can pass to `upload()` anything that Guzzle can turn into a stream.
+
 
 ## Downloading a feed result document
 
@@ -429,7 +439,7 @@ class CustomAuthorizationSigner implements AuthorizationSignerContract
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\Api;
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 use CustomAuthorizationSigner;
@@ -438,15 +448,13 @@ $config = new Configuration([
     ..., 
     'authorizationSigner' => new CustomAuthorizationSigner(),
 ]);
-$api = new Api\SellersApi($config);
+$api = new SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->headers;
-    print_r($headers);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
-
 ```
 
 ## Custom Request Signer
@@ -476,7 +484,7 @@ class RemoteRequestSigner implements RequestSignerContract
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-use SellingPartnerApi\Api;
+use SellingPartnerApi\Api\SellersV1Api as SellersApi;
 use SellingPartnerApi\Configuration;
 use SellingPartnerApi\Endpoint;
 use RemoteRequestSigner;
@@ -485,13 +493,11 @@ $config = new Configuration([
     ..., 
     'requestSigner' => new RemoteRequestSigner(),
 ]);
-$api = new Api\SellersApi($config);
+$api = new SellersApi($config);
 try {
     $result = $api->getMarketplaceParticipations();
-    $headers = $result->headers;
-    print_r($headers);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
 }
-
 ```

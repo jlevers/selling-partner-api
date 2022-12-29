@@ -1,6 +1,9 @@
 <?php
 
-return PhpCsFixer\Config::create()
+require_once __DIR__ . '/vendor/autoload.php';
+
+$config = new PhpCsFixer\Config();
+return $config
     ->setUsingCache(true)
     ->setRules([
         '@PSR2' => true,
@@ -14,7 +17,9 @@ return PhpCsFixer\Config::create()
         'braces' => false,
         'single_blank_line_at_eof' => false,
         'blank_line_after_namespace' => false,
+        'elseif' => false,
     ])
+    ->setRiskyAllowed(true)
     ->setFinder(
         PhpCsFixer\Finder::create()
         ->exclude('test')

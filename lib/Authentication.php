@@ -5,11 +5,11 @@ namespace SellingPartnerApi;
 use Aws\Sts\StsClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
-use SellingPartnerApi\Api\TokensV20210301Api as TokensApi;
-use SellingPartnerApi\Model\TokensV20210301 as Tokens;
 use RuntimeException;
+use SellingPartnerApi\Api\TokensV20210301Api as TokensApi;
 use SellingPartnerApi\Contract\AuthorizationSignerContract;
 use SellingPartnerApi\Contract\RequestSignerContract;
+use SellingPartnerApi\Model\TokensV20210301 as Tokens;
 
 class Authentication implements RequestSignerContract
 {
@@ -85,8 +85,8 @@ class Authentication implements RequestSignerContract
     }
 
     /**
-     * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException|\RuntimeException
+     * @return array
      */
     public function requestLWAToken(): array
     {
@@ -166,7 +166,7 @@ class Authentication implements RequestSignerContract
             !$this->signingScope && (
                 // This makes it possible to call restricted operations that take dataElements *without*
                 // generating an RDT as long as no dataElements are passed.
-                $restrictedPath === null || ($dataElements === [] && in_array($operation, $hasDataElements))
+                $restrictedPath === null || ($dataElements === [] && in_array($operation, $hasDataElements, true))
             )
         ) {
             $relevantCreds = $this->getAwsCredentials();
@@ -452,8 +452,8 @@ class Authentication implements RequestSignerContract
      * Set SP API endpoint. $endpoint should be one of the constants from Endpoint.php.
      * 
      * @param array $endpoint
-     * @return void
      * @throws RuntimeException
+     * @return void
      */
     public function setEndpoint(array $endpoint): void
     {

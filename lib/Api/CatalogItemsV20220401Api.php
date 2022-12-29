@@ -25,15 +25,10 @@
 
 namespace SellingPartnerApi\Api;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
 use SellingPartnerApi\ApiException;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\HeaderSelector;
 use SellingPartnerApi\ObjectSerializer;
 
 /**
@@ -41,73 +36,8 @@ use SellingPartnerApi\ObjectSerializer;
  *
  * @category Class
  */
-class CatalogItemsV20220401Api
+class CatalogItemsV20220401Api extends BaseApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-
-    /**
-     * @var Configuration
-     */
-    protected $config;
-
-    /**
-     * @var HeaderSelector
-     */
-    protected $headerSelector;
-
-    /**
-     * @var int Host index
-     */
-    protected $hostIndex;
-
-    /**
-     * @param ClientInterface $client
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
-     */
-    public function __construct(
-        Configuration $config,
-        ClientInterface $client = null,
-        HeaderSelector $selector = null,
-        $hostIndex = 0
-    ) {
-        $this->client = $client ?: new Client();
-        $this->config = $config;
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Set the host index.
-     *
-     * @param int $hostIndex Host index (required)
-     */
-    public function setHostIndex($hostIndex)
-    {
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Get the host index.
-     *
-     * @return int Host index
-     */
-    public function getHostIndex()
-    {
-        return $this->hostIndex;
-    }
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
     /**
      * Operation getCatalogItem.
      *
@@ -131,17 +61,10 @@ class CatalogItemsV20220401Api
     /**
      * Operation getCatalogItemWithHttpInfo.
      *
-<<<<<<< HEAD
      * @param string   $asin            The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
-     * @param string[] $included_data   A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param string[] $included_data   A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
      * @param string   $locale          Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-=======
-     * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
-     * @param  string[] $included_data A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
-     * @param  string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
->>>>>>> upstream/main
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -362,19 +285,10 @@ class CatalogItemsV20220401Api
     /**
      * Operation getCatalogItemAsync.
      *
-<<<<<<< HEAD
      * @param string   $asin            The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
-     * @param string[] $included_data   A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param string[] $included_data   A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
      * @param string   $locale          Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-=======
-     * 
-     *
-     * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
-     * @param  string[] $included_data A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
-     * @param  string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
->>>>>>> upstream/main
      *
      * @throws \InvalidArgumentException
      *
@@ -388,19 +302,10 @@ class CatalogItemsV20220401Api
     /**
      * Operation getCatalogItemAsyncWithHttpInfo.
      *
-<<<<<<< HEAD
      * @param string   $asin            The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
-     * @param string[] $included_data   A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param string[] $included_data   A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
      * @param string   $locale          Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-=======
-     * 
-     *
-     * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
-     * @param  string[] $included_data A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
-     * @param  string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
->>>>>>> upstream/main
      *
      * @throws \InvalidArgumentException
      *
@@ -454,17 +359,10 @@ class CatalogItemsV20220401Api
     /**
      * Create request for operation 'getCatalogItem'.
      *
-<<<<<<< HEAD
      * @param string   $asin            The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
-     * @param string[] $included_data   A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param string[] $included_data   A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
      * @param string   $locale          Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-=======
-     * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
-     * @param  string[] $included_data A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
-     * @param  string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
->>>>>>> upstream/main
      *
      * @throws \InvalidArgumentException
      *
@@ -611,33 +509,18 @@ class CatalogItemsV20220401Api
     /**
      * Operation searchCatalogItemsWithHttpInfo.
      *
-<<<<<<< HEAD
      * @param string[] $marketplace_ids    A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param string[] $identifiers        A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
-     * @param string   $identifiers_type   Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)
-     * @param string[] $included_data      A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param string[] $identifiers        A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`. (optional)
+     * @param string   $identifiers_type   Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided. (optional)
+     * @param string[] $included_data      A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
      * @param string   $locale             Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-     * @param string   $seller_id          A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)
-     * @param string[] $keywords           A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param string[] $brand_names        A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
+     * @param string   $seller_id          A selling partner identifier, such as a seller account or vendor code. **Note:** Required when `identifiersType` is `SKU`. (optional)
+     * @param string[] $keywords           A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`. (optional)
+     * @param string[] $brand_names        A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
+     * @param string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
      * @param int      $page_size          Number of results to be returned per page. (optional, default to 10)
      * @param string   $page_token         A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param string   $keywords_locale    The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-=======
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`. (optional)
-     * @param  string $identifiers_type Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided. (optional)
-     * @param  string[] $included_data A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
-     * @param  string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-     * @param  string $seller_id A selling partner identifier, such as a seller account or vendor code. **Note:** Required when `identifiersType` is `SKU`. (optional)
-     * @param  string[] $keywords A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  string[] $brand_names A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  int $page_size Number of results to be returned per page. (optional, default to 10)
-     * @param  string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string $keywords_locale The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`. (optional)
->>>>>>> upstream/main
+     * @param string   $keywords_locale    The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -858,35 +741,18 @@ class CatalogItemsV20220401Api
     /**
      * Operation searchCatalogItemsAsync.
      *
-<<<<<<< HEAD
      * @param string[] $marketplace_ids    A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param string[] $identifiers        A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
-     * @param string   $identifiers_type   Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)
-     * @param string[] $included_data      A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param string[] $identifiers        A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`. (optional)
+     * @param string   $identifiers_type   Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided. (optional)
+     * @param string[] $included_data      A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
      * @param string   $locale             Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-     * @param string   $seller_id          A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)
-     * @param string[] $keywords           A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param string[] $brand_names        A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
+     * @param string   $seller_id          A selling partner identifier, such as a seller account or vendor code. **Note:** Required when `identifiersType` is `SKU`. (optional)
+     * @param string[] $keywords           A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`. (optional)
+     * @param string[] $brand_names        A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
+     * @param string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
      * @param int      $page_size          Number of results to be returned per page. (optional, default to 10)
      * @param string   $page_token         A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param string   $keywords_locale    The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-=======
-     * 
-     *
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`. (optional)
-     * @param  string $identifiers_type Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided. (optional)
-     * @param  string[] $included_data A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
-     * @param  string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-     * @param  string $seller_id A selling partner identifier, such as a seller account or vendor code. **Note:** Required when `identifiersType` is `SKU`. (optional)
-     * @param  string[] $keywords A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  string[] $brand_names A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  int $page_size Number of results to be returned per page. (optional, default to 10)
-     * @param  string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string $keywords_locale The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`. (optional)
->>>>>>> upstream/main
+     * @param string   $keywords_locale    The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`. (optional)
      *
      * @throws \InvalidArgumentException
      *
@@ -900,35 +766,18 @@ class CatalogItemsV20220401Api
     /**
      * Operation searchCatalogItemsAsyncWithHttpInfo.
      *
-<<<<<<< HEAD
      * @param string[] $marketplace_ids    A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param string[] $identifiers        A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
-     * @param string   $identifiers_type   Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)
-     * @param string[] $included_data      A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param string[] $identifiers        A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`. (optional)
+     * @param string   $identifiers_type   Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided. (optional)
+     * @param string[] $included_data      A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
      * @param string   $locale             Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-     * @param string   $seller_id          A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)
-     * @param string[] $keywords           A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param string[] $brand_names        A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
+     * @param string   $seller_id          A selling partner identifier, such as a seller account or vendor code. **Note:** Required when `identifiersType` is `SKU`. (optional)
+     * @param string[] $keywords           A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`. (optional)
+     * @param string[] $brand_names        A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
+     * @param string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
      * @param int      $page_size          Number of results to be returned per page. (optional, default to 10)
      * @param string   $page_token         A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param string   $keywords_locale    The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-=======
-     * 
-     *
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`. (optional)
-     * @param  string $identifiers_type Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided. (optional)
-     * @param  string[] $included_data A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
-     * @param  string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-     * @param  string $seller_id A selling partner identifier, such as a seller account or vendor code. **Note:** Required when `identifiersType` is `SKU`. (optional)
-     * @param  string[] $keywords A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  string[] $brand_names A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  int $page_size Number of results to be returned per page. (optional, default to 10)
-     * @param  string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string $keywords_locale The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`. (optional)
->>>>>>> upstream/main
+     * @param string   $keywords_locale    The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`. (optional)
      *
      * @throws \InvalidArgumentException
      *
@@ -982,33 +831,18 @@ class CatalogItemsV20220401Api
     /**
      * Create request for operation 'searchCatalogItems'.
      *
-<<<<<<< HEAD
      * @param string[] $marketplace_ids    A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param string[] $identifiers        A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
-     * @param string   $identifiers_type   Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)
-     * @param string[] $included_data      A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param string[] $identifiers        A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`. (optional)
+     * @param string   $identifiers_type   Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided. (optional)
+     * @param string[] $included_data      A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
      * @param string   $locale             Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-     * @param string   $seller_id          A selling partner identifier, such as a seller account or vendor code. **Note:** Required when &#x60;identifiersType&#x60; is &#x60;SKU&#x60;. (optional)
-     * @param string[] $keywords           A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param string[] $brand_names        A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
+     * @param string   $seller_id          A selling partner identifier, such as a seller account or vendor code. **Note:** Required when `identifiersType` is `SKU`. (optional)
+     * @param string[] $keywords           A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`. (optional)
+     * @param string[] $brand_names        A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
+     * @param string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
      * @param int      $page_size          Number of results to be returned per page. (optional, default to 10)
      * @param string   $page_token         A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param string   $keywords_locale    The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-=======
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with `keywords`. (optional)
-     * @param  string $identifiers_type Type of product identifiers to search the Amazon catalog for. **Note:** Required when `identifiers` are provided. (optional)
-     * @param  string[] $included_data A comma-delimited list of data sets to include in the response. Default: `summaries`. (optional)
-     * @param  string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
-     * @param  string $seller_id A selling partner identifier, such as a seller account or vendor code. **Note:** Required when `identifiersType` is `SKU`. (optional)
-     * @param  string[] $keywords A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  string[] $brand_names A comma-delimited list of brand names to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for `keywords`-based queries. **Note:** Cannot be used with `identifiers`. (optional)
-     * @param  int $page_size Number of results to be returned per page. (optional, default to 10)
-     * @param  string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string $keywords_locale The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`. (optional)
->>>>>>> upstream/main
+     * @param string   $keywords_locale    The language of the keywords provided for `keywords`-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with `identifiers`. (optional)
      *
      * @throws \InvalidArgumentException
      *
@@ -1194,39 +1028,5 @@ class CatalogItemsV20220401Api
             $headers,
             $httpBody
         );
-    }
-
-    /**
-     * Create http client option.
-     *
-     * @throws \RuntimeException on file opening failure
-     *
-     * @return array of http client options
-     */
-    protected function createHttpClientOption()
-    {
-        $options = [];
-        if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: '.$this->config->getDebugFile());
-            }
-        }
-
-        return $options;
-    }
-
-    /**
-     * Writes to the debug log file.
-     *
-     * @param any $data
-     *
-     * @return void
-     */
-    private function writeDebug($data)
-    {
-        if ($this->config->getDebug()) {
-            file_put_contents($this->config->getDebugFile(), '['.date('Y-m-d H:i:s').']: '.print_r($data, true)."\n", FILE_APPEND);
-        }
     }
 }

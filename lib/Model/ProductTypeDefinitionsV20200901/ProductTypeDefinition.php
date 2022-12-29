@@ -26,10 +26,10 @@
  */
 
 namespace SellingPartnerApi\Model\ProductTypeDefinitionsV20200901;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
+use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ProductTypeDefinition Class Doc Comment
@@ -42,7 +42,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class ProductTypeDefinition extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -89,25 +89,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'product_type_version' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,46 +146,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
         'product_type_version' => 'getProductTypeVersion'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }
 
     const REQUIREMENTS_LISTING = 'LISTING';
     const REQUIREMENTS_LISTING_PRODUCT_ONLY = 'LISTING_PRODUCT_ONLY';
@@ -222,11 +165,15 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getRequirementsAllowableValues()
     {
-        return [
+        $baseVals = [
             self::REQUIREMENTS_LISTING,
             self::REQUIREMENTS_LISTING_PRODUCT_ONLY,
             self::REQUIREMENTS_LISTING_OFFER_ONLY,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
 
@@ -237,10 +184,14 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function getRequirementsEnforcedAllowableValues()
     {
-        return [
+        $baseVals = [
             self::REQUIREMENTS_ENFORCED_ENFORCED,
             self::REQUIREMENTS_ENFORCED_NOT_ENFORCED,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -284,7 +235,10 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "'requirements' can't be null";
         }
         $allowedValues = $this->getRequirementsAllowableValues();
-        if (!is_null($this->container['requirements']) && !in_array($this->container['requirements'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['requirements']) &&
+            !in_array(strtoupper($this->container['requirements']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'requirements', must be one of '%s'",
                 $this->container['requirements'],
@@ -296,7 +250,10 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "'requirements_enforced' can't be null";
         }
         $allowedValues = $this->getRequirementsEnforcedAllowableValues();
-        if (!is_null($this->container['requirements_enforced']) && !in_array($this->container['requirements_enforced'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['requirements_enforced']) &&
+            !in_array(strtoupper($this->container['requirements_enforced']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'requirements_enforced', must be one of '%s'",
                 $this->container['requirements_enforced'],
@@ -320,17 +277,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "'product_type_version' can't be null";
         }
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -422,7 +368,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setRequirements($requirements)
     {
         $allowedValues = $this->getRequirementsAllowableValues();
-        if (!in_array($requirements, $allowedValues, true)) {
+        if (!in_array(strtoupper($requirements), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'requirements', must be one of '%s'",
@@ -455,7 +401,7 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setRequirementsEnforced($requirements_enforced)
     {
         $allowedValues = $this->getRequirementsEnforcedAllowableValues();
-        if (!in_array($requirements_enforced, $allowedValues, true)) {
+        if (!in_array(strtoupper($requirements_enforced), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'requirements_enforced', must be one of '%s'",
@@ -581,146 +527,6 @@ class ProductTypeDefinition implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $this->container['product_type_version'] = $product_type_version;
 
-        return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
-    }
-
-    /**
-     * Enable iterating over all of the model's attributes in $key => $value format
-     *
-     * @return \Traversable
-     */
-    public function getIterator(): \Traversable
-    {
-        return (function () {
-            foreach ($this->container as $key => $value) {
-                yield $key => $value;
-            }
-        })();
-    }
-
-    /**
-     * Retrieves the property with the given name by converting the property accession
-     * to a getter call.
-     *
-     * @param string $propertyName
-     * @return mixed
-     */
-    public function __get($propertyName)
-    {
-        // This doesn't make a syntactical difference since PHP is case-insensitive, but
-        // makes error messages clearer (e.g. "Call to undefined method getFoo()" rather
-        // than "Call to undefined method getfoo()").
-        $ucProp = ucfirst($propertyName);
-        $getter = "get$ucProp";
-        return $this->$getter();
-    }
-
-    /**
-     * Sets the property with the given name by converting the property accession
-     * to a setter call.
-     *
-     * @param string $propertyName
-     * @param mixed $propertyValue
-     * @return SellingPartnerApi\Model\ProductTypeDefinitionsV20200901\ProductTypeDefinition
-     */
-    public function __set($propertyName, $propertyValue)
-    {
-        $ucProp = ucfirst($propertyName);
-        $setter = "set$ucProp";
-        $this->$setter($propertyValue);
         return $this;
     }
 }

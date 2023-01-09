@@ -7,9 +7,7 @@ Name | Type | Description | Notes
 **amazon_order_id** | **string** | An Amazon-defined order identifier, in 3-7-7 format. |
 **seller_order_id** | **string** | A seller-defined order identifier. | [optional]
 **purchase_date** | **string** | The date when the order was created. |
-**last_update_date** | **string** | The date when the order was last updated.
-
-__Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01. |
+**last_update_date** | **string** | The date when the order was last updated.<br /><br />__Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01. |
 **order_status** | **string** | The current order status. |
 **fulfillment_channel** | **string** | Whether the order was fulfilled by Amazon (AFN) or by the seller (MFN). | [optional]
 **sales_channel** | **string** | The sales channel of the first item in the order. | [optional]
@@ -22,18 +20,12 @@ __Note__: LastUpdateDate is returned with an incorrect date for orders that were
 **payment_method** | **string** | The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information. | [optional]
 **payment_method_details** | **string[]** | A list of payment method detail items. | [optional]
 **marketplace_id** | **string** | The identifier for the marketplace where the order was placed. | [optional]
-**shipment_service_level_category** | **string** | The shipment service level category of the order.
-
-Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard. | [optional]
+**shipment_service_level_category** | **string** | The shipment service level category of the order.<br /><br />Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard. | [optional]
 **easy_ship_shipment_status** | [**\SellingPartnerApi\Model\OrdersV0\EasyShipShipmentStatus**](EasyShipShipmentStatus.md) |  | [optional]
 **cba_displayable_shipping_label** | **string** | Custom ship label for Checkout by Amazon (CBA). | [optional]
 **order_type** | **string** | The type of the order. | [optional]
-**earliest_ship_date** | **string** | The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
-
-Note: EarliestShipDate might not be returned for orders placed before February 1, 2013. | [optional]
-**latest_ship_date** | **string** | The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
-
-Note: LatestShipDate might not be returned for orders placed before February 1, 2013. | [optional]
+**earliest_ship_date** | **string** | The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.<br /><br />Note: EarliestShipDate might not be returned for orders placed before February 1, 2013. | [optional]
+**latest_ship_date** | **string** | The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.<br /><br />Note: LatestShipDate might not be returned for orders placed before February 1, 2013. | [optional]
 **earliest_delivery_date** | **string** | The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. | [optional]
 **latest_delivery_date** | **string** | The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status. | [optional]
 **is_business_order** | **bool** | When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer. | [optional]

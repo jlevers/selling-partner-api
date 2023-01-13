@@ -296,6 +296,7 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
             self::DEEMED_RESELLER_CATEGORY_CA_MPF,
             self::DEEMED_RESELLER_CATEGORY_AU_VOEC,
             self::DEEMED_RESELLER_CATEGORY_NZ_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_SG_VOEC,
         ];
 
         // This is necessary because Amazon does not consistently capitalize their

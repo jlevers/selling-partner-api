@@ -84,7 +84,7 @@ class IneligibilityReasonCode
     public function __construct($value)
     {
         if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'IneligibilityReasonCode', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+            throw new \InvalidArgumentException(sprintf("Invalid value %s for enum 'IneligibilityReasonCode', must be one of '%s'", $value, implode("', '", self::getAllowableEnumValues())));
         }
 
         $this->value = $value;

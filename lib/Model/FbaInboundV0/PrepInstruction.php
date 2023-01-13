@@ -58,6 +58,9 @@ class PrepInstruction
     const SET_STICKERING = 'SetStickering';
     const REMOVE_FROM_HANGER = 'RemoveFromHanger';
     const CAP_SEALING = 'CapSealing';
+    const NO_PREP = 'NoPrep';
+    const DEBUNDLE = 'Debundle';
+    const BLANK_STICKERING = 'BlankStickering';
     
     /**
      * Gets allowable values of the enum
@@ -78,6 +81,9 @@ class PrepInstruction
             self::SET_STICKERING,
             self::REMOVE_FROM_HANGER,
             self::CAP_SEALING,
+            self::NO_PREP,
+            self::DEBUNDLE,
+            self::BLANK_STICKERING,
         ];
         // This is necessary because Amazon does not consistently capitalize their
         // enum values, so we do case-insensitive enum value validation in ObjectSerializer
@@ -88,7 +94,7 @@ class PrepInstruction
     public function __construct($value)
     {
         if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
-            throw new \InvalidArgumentException(sprintf("Invalid value for enum 'PrepInstruction', must be one of '%s'", implode("', '", self::getAllowableEnumValues())));
+            throw new \InvalidArgumentException(sprintf("Invalid value %s for enum 'PrepInstruction', must be one of '%s'", $value, implode("', '", self::getAllowableEnumValues())));
         }
 
         $this->value = $value;

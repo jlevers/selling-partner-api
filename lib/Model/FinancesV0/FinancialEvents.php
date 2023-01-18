@@ -60,6 +60,7 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPITypes = [
         'shipment_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
+        'shipment_settle_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
         'refund_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
         'guarantee_claim_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
         'chargeback_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
@@ -81,11 +82,16 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
         'network_commingling_transaction_event_list' => '\SellingPartnerApi\Model\FinancesV0\NetworkComminglingTransactionEvent[]',
         'affordability_expense_event_list' => '\SellingPartnerApi\Model\FinancesV0\AffordabilityExpenseEvent[]',
         'affordability_expense_reversal_event_list' => '\SellingPartnerApi\Model\FinancesV0\AffordabilityExpenseEvent[]',
-        'trial_shipment_event_list' => '\SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]',
-        'shipment_settle_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
-        'tax_withholding_event_list' => '\SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]',
         'removal_shipment_event_list' => '\SellingPartnerApi\Model\FinancesV0\RemovalShipmentEvent[]',
-        'removal_shipment_adjustment_event_list' => '\SellingPartnerApi\Model\FinancesV0\RemovalShipmentAdjustmentEvent[]'
+        'removal_shipment_adjustment_event_list' => '\SellingPartnerApi\Model\FinancesV0\RemovalShipmentAdjustmentEvent[]',
+        'trial_shipment_event_list' => '\SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]',
+        'tds_reimbursement_event_list' => '\SellingPartnerApi\Model\FinancesV0\TDSReimbursementEvent[]',
+        'adhoc_disbursement_event_list' => '\SellingPartnerApi\Model\FinancesV0\AdhocDisbursementEvent[]',
+        'tax_withholding_event_list' => '\SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]',
+        'charge_refund_event_list' => '\SellingPartnerApi\Model\FinancesV0\ChargeRefundEvent[]',
+        'failed_adhoc_disbursement_event_list' => '\SellingPartnerApi\Model\FinancesV0\FailedAdhocDisbursementEventList',
+        'value_added_service_charge_event_list' => '\SellingPartnerApi\Model\FinancesV0\ValueAddedServiceChargeEventList',
+        'capacity_reservation_billing_event_list' => '\SellingPartnerApi\Model\FinancesV0\CapacityReservationBillingEvent[]'
     ];
 
     /**
@@ -97,6 +103,7 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
       */
     protected static $openAPIFormats = [
         'shipment_event_list' => null,
+        'shipment_settle_event_list' => null,
         'refund_event_list' => null,
         'guarantee_claim_event_list' => null,
         'chargeback_event_list' => null,
@@ -118,11 +125,16 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
         'network_commingling_transaction_event_list' => null,
         'affordability_expense_event_list' => null,
         'affordability_expense_reversal_event_list' => null,
-        'trial_shipment_event_list' => null,
-        'shipment_settle_event_list' => null,
-        'tax_withholding_event_list' => null,
         'removal_shipment_event_list' => null,
-        'removal_shipment_adjustment_event_list' => null
+        'removal_shipment_adjustment_event_list' => null,
+        'trial_shipment_event_list' => null,
+        'tds_reimbursement_event_list' => null,
+        'adhoc_disbursement_event_list' => null,
+        'tax_withholding_event_list' => null,
+        'charge_refund_event_list' => null,
+        'failed_adhoc_disbursement_event_list' => null,
+        'value_added_service_charge_event_list' => null,
+        'capacity_reservation_billing_event_list' => null
     ];
 
 
@@ -135,6 +147,7 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
      */
     protected static $attributeMap = [
         'shipment_event_list' => 'ShipmentEventList',
+        'shipment_settle_event_list' => 'ShipmentSettleEventList',
         'refund_event_list' => 'RefundEventList',
         'guarantee_claim_event_list' => 'GuaranteeClaimEventList',
         'chargeback_event_list' => 'ChargebackEventList',
@@ -156,11 +169,16 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
         'network_commingling_transaction_event_list' => 'NetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'AffordabilityExpenseEventList',
         'affordability_expense_reversal_event_list' => 'AffordabilityExpenseReversalEventList',
-        'trial_shipment_event_list' => 'TrialShipmentEventList',
-        'shipment_settle_event_list' => 'ShipmentSettleEventList',
-        'tax_withholding_event_list' => 'TaxWithholdingEventList',
         'removal_shipment_event_list' => 'RemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'RemovalShipmentAdjustmentEventList'
+        'removal_shipment_adjustment_event_list' => 'RemovalShipmentAdjustmentEventList',
+        'trial_shipment_event_list' => 'TrialShipmentEventList',
+        'tds_reimbursement_event_list' => 'TDSReimbursementEventList',
+        'adhoc_disbursement_event_list' => 'AdhocDisbursementEventList',
+        'tax_withholding_event_list' => 'TaxWithholdingEventList',
+        'charge_refund_event_list' => 'ChargeRefundEventList',
+        'failed_adhoc_disbursement_event_list' => 'FailedAdhocDisbursementEventList',
+        'value_added_service_charge_event_list' => 'ValueAddedServiceChargeEventList',
+        'capacity_reservation_billing_event_list' => 'CapacityReservationBillingEventList'
     ];
 
     /**
@@ -170,6 +188,7 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
      */
     protected static $setters = [
                 'shipment_event_list' => 'setShipmentEventList',
+        'shipment_settle_event_list' => 'setShipmentSettleEventList',
         'refund_event_list' => 'setRefundEventList',
         'guarantee_claim_event_list' => 'setGuaranteeClaimEventList',
         'chargeback_event_list' => 'setChargebackEventList',
@@ -191,11 +210,16 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
         'network_commingling_transaction_event_list' => 'setNetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'setAffordabilityExpenseEventList',
         'affordability_expense_reversal_event_list' => 'setAffordabilityExpenseReversalEventList',
-        'trial_shipment_event_list' => 'setTrialShipmentEventList',
-        'shipment_settle_event_list' => 'setShipmentSettleEventList',
-        'tax_withholding_event_list' => 'setTaxWithholdingEventList',
         'removal_shipment_event_list' => 'setRemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList'
+        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList',
+        'trial_shipment_event_list' => 'setTrialShipmentEventList',
+        'tds_reimbursement_event_list' => 'setTdsReimbursementEventList',
+        'adhoc_disbursement_event_list' => 'setAdhocDisbursementEventList',
+        'tax_withholding_event_list' => 'setTaxWithholdingEventList',
+        'charge_refund_event_list' => 'setChargeRefundEventList',
+        'failed_adhoc_disbursement_event_list' => 'setFailedAdhocDisbursementEventList',
+        'value_added_service_charge_event_list' => 'setValueAddedServiceChargeEventList',
+        'capacity_reservation_billing_event_list' => 'setCapacityReservationBillingEventList'
     ];
 
     /**
@@ -205,6 +229,7 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
      */
     protected static $getters = [
         'shipment_event_list' => 'getShipmentEventList',
+        'shipment_settle_event_list' => 'getShipmentSettleEventList',
         'refund_event_list' => 'getRefundEventList',
         'guarantee_claim_event_list' => 'getGuaranteeClaimEventList',
         'chargeback_event_list' => 'getChargebackEventList',
@@ -226,11 +251,16 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
         'network_commingling_transaction_event_list' => 'getNetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'getAffordabilityExpenseEventList',
         'affordability_expense_reversal_event_list' => 'getAffordabilityExpenseReversalEventList',
-        'trial_shipment_event_list' => 'getTrialShipmentEventList',
-        'shipment_settle_event_list' => 'getShipmentSettleEventList',
-        'tax_withholding_event_list' => 'getTaxWithholdingEventList',
         'removal_shipment_event_list' => 'getRemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList'
+        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList',
+        'trial_shipment_event_list' => 'getTrialShipmentEventList',
+        'tds_reimbursement_event_list' => 'getTdsReimbursementEventList',
+        'adhoc_disbursement_event_list' => 'getAdhocDisbursementEventList',
+        'tax_withholding_event_list' => 'getTaxWithholdingEventList',
+        'charge_refund_event_list' => 'getChargeRefundEventList',
+        'failed_adhoc_disbursement_event_list' => 'getFailedAdhocDisbursementEventList',
+        'value_added_service_charge_event_list' => 'getValueAddedServiceChargeEventList',
+        'capacity_reservation_billing_event_list' => 'getCapacityReservationBillingEventList'
     ];
 
 
@@ -251,6 +281,7 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
     public function __construct(array $data = null)
     {
         $this->container['shipment_event_list'] = $data['shipment_event_list'] ?? null;
+        $this->container['shipment_settle_event_list'] = $data['shipment_settle_event_list'] ?? null;
         $this->container['refund_event_list'] = $data['refund_event_list'] ?? null;
         $this->container['guarantee_claim_event_list'] = $data['guarantee_claim_event_list'] ?? null;
         $this->container['chargeback_event_list'] = $data['chargeback_event_list'] ?? null;
@@ -272,11 +303,16 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
         $this->container['network_commingling_transaction_event_list'] = $data['network_commingling_transaction_event_list'] ?? null;
         $this->container['affordability_expense_event_list'] = $data['affordability_expense_event_list'] ?? null;
         $this->container['affordability_expense_reversal_event_list'] = $data['affordability_expense_reversal_event_list'] ?? null;
-        $this->container['trial_shipment_event_list'] = $data['trial_shipment_event_list'] ?? null;
-        $this->container['shipment_settle_event_list'] = $data['shipment_settle_event_list'] ?? null;
-        $this->container['tax_withholding_event_list'] = $data['tax_withholding_event_list'] ?? null;
         $this->container['removal_shipment_event_list'] = $data['removal_shipment_event_list'] ?? null;
         $this->container['removal_shipment_adjustment_event_list'] = $data['removal_shipment_adjustment_event_list'] ?? null;
+        $this->container['trial_shipment_event_list'] = $data['trial_shipment_event_list'] ?? null;
+        $this->container['tds_reimbursement_event_list'] = $data['tds_reimbursement_event_list'] ?? null;
+        $this->container['adhoc_disbursement_event_list'] = $data['adhoc_disbursement_event_list'] ?? null;
+        $this->container['tax_withholding_event_list'] = $data['tax_withholding_event_list'] ?? null;
+        $this->container['charge_refund_event_list'] = $data['charge_refund_event_list'] ?? null;
+        $this->container['failed_adhoc_disbursement_event_list'] = $data['failed_adhoc_disbursement_event_list'] ?? null;
+        $this->container['value_added_service_charge_event_list'] = $data['value_added_service_charge_event_list'] ?? null;
+        $this->container['capacity_reservation_billing_event_list'] = $data['capacity_reservation_billing_event_list'] ?? null;
     }
 
     /**
@@ -311,6 +347,29 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
     public function setShipmentEventList($shipment_event_list)
     {
         $this->container['shipment_event_list'] = $shipment_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets shipment_settle_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]|null
+     */
+    public function getShipmentSettleEventList()
+    {
+        return $this->container['shipment_settle_event_list'];
+    }
+
+    /**
+     * Sets shipment_settle_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]|null $shipment_settle_event_list A list of `ShipmentEvent` items.
+     *
+     * @return self
+     */
+    public function setShipmentSettleEventList($shipment_settle_event_list)
+    {
+        $this->container['shipment_settle_event_list'] = $shipment_settle_event_list;
 
         return $this;
     }
@@ -798,75 +857,6 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
         return $this;
     }
     /**
-     * Gets trial_shipment_event_list
-     *
-     * @return \SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]|null
-     */
-    public function getTrialShipmentEventList()
-    {
-        return $this->container['trial_shipment_event_list'];
-    }
-
-    /**
-     * Sets trial_shipment_event_list
-     *
-     * @param \SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]|null $trial_shipment_event_list A list of information about trial shipment financial events.
-     *
-     * @return self
-     */
-    public function setTrialShipmentEventList($trial_shipment_event_list)
-    {
-        $this->container['trial_shipment_event_list'] = $trial_shipment_event_list;
-
-        return $this;
-    }
-    /**
-     * Gets shipment_settle_event_list
-     *
-     * @return \SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]|null
-     */
-    public function getShipmentSettleEventList()
-    {
-        return $this->container['shipment_settle_event_list'];
-    }
-
-    /**
-     * Sets shipment_settle_event_list
-     *
-     * @param \SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]|null $shipment_settle_event_list A list of information about shipment settle financial events.
-     *
-     * @return self
-     */
-    public function setShipmentSettleEventList($shipment_settle_event_list)
-    {
-        $this->container['shipment_settle_event_list'] = $shipment_settle_event_list;
-
-        return $this;
-    }
-    /**
-     * Gets tax_withholding_event_list
-     *
-     * @return \SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]|null
-     */
-    public function getTaxWithholdingEventList()
-    {
-        return $this->container['tax_withholding_event_list'];
-    }
-
-    /**
-     * Sets tax_withholding_event_list
-     *
-     * @param \SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]|null $tax_withholding_event_list List of TaxWithholding events.
-     *
-     * @return self
-     */
-    public function setTaxWithholdingEventList($tax_withholding_event_list)
-    {
-        $this->container['tax_withholding_event_list'] = $tax_withholding_event_list;
-
-        return $this;
-    }
-    /**
      * Gets removal_shipment_event_list
      *
      * @return \SellingPartnerApi\Model\FinancesV0\RemovalShipmentEvent[]|null
@@ -909,6 +899,190 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
     public function setRemovalShipmentAdjustmentEventList($removal_shipment_adjustment_event_list)
     {
         $this->container['removal_shipment_adjustment_event_list'] = $removal_shipment_adjustment_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets trial_shipment_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]|null
+     */
+    public function getTrialShipmentEventList()
+    {
+        return $this->container['trial_shipment_event_list'];
+    }
+
+    /**
+     * Sets trial_shipment_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]|null $trial_shipment_event_list A list of information about trial shipment financial events.
+     *
+     * @return self
+     */
+    public function setTrialShipmentEventList($trial_shipment_event_list)
+    {
+        $this->container['trial_shipment_event_list'] = $trial_shipment_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets tds_reimbursement_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\TDSReimbursementEvent[]|null
+     */
+    public function getTdsReimbursementEventList()
+    {
+        return $this->container['tds_reimbursement_event_list'];
+    }
+
+    /**
+     * Sets tds_reimbursement_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\TDSReimbursementEvent[]|null $tds_reimbursement_event_list A list of `TDSReimbursementEvent` items.
+     *
+     * @return self
+     */
+    public function setTdsReimbursementEventList($tds_reimbursement_event_list)
+    {
+        $this->container['tds_reimbursement_event_list'] = $tds_reimbursement_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets adhoc_disbursement_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\AdhocDisbursementEvent[]|null
+     */
+    public function getAdhocDisbursementEventList()
+    {
+        return $this->container['adhoc_disbursement_event_list'];
+    }
+
+    /**
+     * Sets adhoc_disbursement_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\AdhocDisbursementEvent[]|null $adhoc_disbursement_event_list A list of `AdhocDisbursement` events.
+     *
+     * @return self
+     */
+    public function setAdhocDisbursementEventList($adhoc_disbursement_event_list)
+    {
+        $this->container['adhoc_disbursement_event_list'] = $adhoc_disbursement_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets tax_withholding_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]|null
+     */
+    public function getTaxWithholdingEventList()
+    {
+        return $this->container['tax_withholding_event_list'];
+    }
+
+    /**
+     * Sets tax_withholding_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]|null $tax_withholding_event_list A list of `TaxWithholding` events.
+     *
+     * @return self
+     */
+    public function setTaxWithholdingEventList($tax_withholding_event_list)
+    {
+        $this->container['tax_withholding_event_list'] = $tax_withholding_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets charge_refund_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\ChargeRefundEvent[]|null
+     */
+    public function getChargeRefundEventList()
+    {
+        return $this->container['charge_refund_event_list'];
+    }
+
+    /**
+     * Sets charge_refund_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\ChargeRefundEvent[]|null $charge_refund_event_list A list of charge refund events.
+     *
+     * @return self
+     */
+    public function setChargeRefundEventList($charge_refund_event_list)
+    {
+        $this->container['charge_refund_event_list'] = $charge_refund_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets failed_adhoc_disbursement_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\FailedAdhocDisbursementEventList|null
+     */
+    public function getFailedAdhocDisbursementEventList()
+    {
+        return $this->container['failed_adhoc_disbursement_event_list'];
+    }
+
+    /**
+     * Sets failed_adhoc_disbursement_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\FailedAdhocDisbursementEventList|null $failed_adhoc_disbursement_event_list failed_adhoc_disbursement_event_list
+     *
+     * @return self
+     */
+    public function setFailedAdhocDisbursementEventList($failed_adhoc_disbursement_event_list)
+    {
+        $this->container['failed_adhoc_disbursement_event_list'] = $failed_adhoc_disbursement_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets value_added_service_charge_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\ValueAddedServiceChargeEventList|null
+     */
+    public function getValueAddedServiceChargeEventList()
+    {
+        return $this->container['value_added_service_charge_event_list'];
+    }
+
+    /**
+     * Sets value_added_service_charge_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\ValueAddedServiceChargeEventList|null $value_added_service_charge_event_list value_added_service_charge_event_list
+     *
+     * @return self
+     */
+    public function setValueAddedServiceChargeEventList($value_added_service_charge_event_list)
+    {
+        $this->container['value_added_service_charge_event_list'] = $value_added_service_charge_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets capacity_reservation_billing_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\CapacityReservationBillingEvent[]|null
+     */
+    public function getCapacityReservationBillingEventList()
+    {
+        return $this->container['capacity_reservation_billing_event_list'];
+    }
+
+    /**
+     * Sets capacity_reservation_billing_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\CapacityReservationBillingEvent[]|null $capacity_reservation_billing_event_list A list of `CapacityReservationBillingEvent` events.
+     *
+     * @return self
+     */
+    public function setCapacityReservationBillingEventList($capacity_reservation_billing_event_list)
+    {
+        $this->container['capacity_reservation_billing_event_list'] = $capacity_reservation_billing_event_list;
 
         return $this;
     }

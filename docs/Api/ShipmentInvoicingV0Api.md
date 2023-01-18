@@ -17,14 +17,13 @@ getInvoiceStatus($shipment_id): \SellingPartnerApi\Model\ShipmentInvoicingV0\Get
 
 Returns the invoice status for the shipment you specify.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 1.133 | 25 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1.133 | 25 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -82,14 +81,13 @@ getShipmentDetails($shipment_id): \SellingPartnerApi\Model\ShipmentInvoicingV0\G
 
 Returns the shipment details required to issue an invoice for the specified shipment.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 1.133 | 25 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1.133 | 25 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -147,14 +145,13 @@ submitInvoice($shipment_id, $body): \SellingPartnerApi\Model\ShipmentInvoicingV0
 
 Submits a shipment invoice document for a given shipment.
 
-**Usage Plans:**
+**Usage Plan:**
 
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 1.133 | 25 |
-|Selling partner specific| Variable | Variable |
+| Rate (requests per second) | Burst |
+| ---- | ---- |
+| 1.133 | 25 |
 
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 

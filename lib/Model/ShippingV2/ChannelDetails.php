@@ -97,7 +97,7 @@ class ChannelDetails extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'channel_type' => 'setChannelType',
+        'channel_type' => 'setChannelType',
         'amazon_order_details' => 'setAmazonOrderDetails',
         'amazon_shipment_details' => 'setAmazonShipmentDetails'
     ];

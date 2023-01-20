@@ -100,7 +100,7 @@ class PrintOption extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'supported_dpis' => 'setSupportedDpis',
+        'supported_dpis' => 'setSupportedDpis',
         'supported_page_layouts' => 'setSupportedPageLayouts',
         'supported_file_joining_options' => 'setSupportedFileJoiningOptions',
         'supported_document_details' => 'setSupportedDocumentDetails'

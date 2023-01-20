@@ -94,7 +94,7 @@ class DirectPurchaseResult extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId',
+        'shipment_id' => 'setShipmentId',
         'package_document_detail_list' => 'setPackageDocumentDetailList'
     ];
 

@@ -94,7 +94,7 @@ class GetShipmentDocumentsResult extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId',
+        'shipment_id' => 'setShipmentId',
         'package_document_detail' => 'setPackageDocumentDetail'
     ];
 

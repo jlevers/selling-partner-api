@@ -1,6 +1,6 @@
 <?php
 /**
- * SupportedDocumentSpecification
+ * ErrorList
  *
  * PHP version 7.3
  *
@@ -32,17 +32,17 @@ use SellingPartnerApi\Model\ModelInterface;
 use SellingPartnerApi\ObjectSerializer;
 
 /**
- * SupportedDocumentSpecification Class Doc Comment
+ * ErrorList Class Doc Comment
  *
  * @category Class
- * @description Document specification that is supported for a service offering.
+ * @description A list of error responses returned when a request is unsuccessful.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class SupportedDocumentSpecification extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class ErrorList extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SupportedDocumentSpecification';
+    protected static $openAPIModelName = 'ErrorList';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,9 +59,7 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
       * @var string[]
       */
     protected static $openAPITypes = [
-        'format' => '\SellingPartnerApi\Model\ShippingV2\DocumentFormat',
-        'size' => '\SellingPartnerApi\Model\ShippingV2\DocumentSize',
-        'print_options' => '\SellingPartnerApi\Model\ShippingV2\PrintOption[]'
+        'errors' => '\SellingPartnerApi\Model\ShippingV2\Error[]'
     ];
 
     /**
@@ -72,9 +70,7 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'format' => null,
-        'size' => null,
-        'print_options' => null
+        'errors' => null
     ];
 
 
@@ -86,9 +82,8 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'format' => 'format',
-        'size' => 'size',
-        'print_options' => 'printOptions'
+        'headers' => 'headers',
+        'errors' => 'errors'
     ];
 
     /**
@@ -97,9 +92,8 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'format' => 'setFormat',
-        'size' => 'setSize',
-        'print_options' => 'setPrintOptions'
+        'headers' => 'setHeaders',
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -108,9 +102,8 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'format' => 'getFormat',
-        'size' => 'getSize',
-        'print_options' => 'getPrintOptions'
+        'headers' => 'getHeaders',
+        'errors' => 'getErrors'
     ];
 
 
@@ -130,9 +123,7 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['format'] = $data['format'] ?? null;
-        $this->container['size'] = $data['size'] ?? null;
-        $this->container['print_options'] = $data['print_options'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -143,85 +134,52 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['format'] === null) {
-            $invalidProperties[] = "'format' can't be null";
-        }
-        if ($this->container['size'] === null) {
-            $invalidProperties[] = "'size' can't be null";
-        }
-        if ($this->container['print_options'] === null) {
-            $invalidProperties[] = "'print_options' can't be null";
-        }
         return $invalidProperties;
     }
 
-
     /**
-     * Gets format
+     * Gets API response headers
      *
-     * @return \SellingPartnerApi\Model\ShippingV2\DocumentFormat
+     * @return array[string]
      */
-    public function getFormat()
+    public function getHeaders()
     {
-        return $this->container['format'];
+        return $this->container['headers'];
     }
 
     /**
-     * Sets format
+     * Sets API response headers (only relevant to response models)
      *
-     * @param \SellingPartnerApi\Model\ShippingV2\DocumentFormat $format format
+     * @param array[string => string] $headers Associative array of response headers.
      *
      * @return self
      */
-    public function setFormat($format)
+    public function setHeaders($headers)
     {
-        $this->container['format'] = $format;
-
+        $this->container['headers'] = $headers;
         return $this;
     }
+
     /**
-     * Gets size
+     * Gets errors
      *
-     * @return \SellingPartnerApi\Model\ShippingV2\DocumentSize
+     * @return \SellingPartnerApi\Model\ShippingV2\Error[]|null
      */
-    public function getSize()
+    public function getErrors()
     {
-        return $this->container['size'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets size
+     * Sets errors
      *
-     * @param \SellingPartnerApi\Model\ShippingV2\DocumentSize $size size
+     * @param \SellingPartnerApi\Model\ShippingV2\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */
-    public function setSize($size)
+    public function setErrors($errors)
     {
-        $this->container['size'] = $size;
-
-        return $this;
-    }
-    /**
-     * Gets print_options
-     *
-     * @return \SellingPartnerApi\Model\ShippingV2\PrintOption[]
-     */
-    public function getPrintOptions()
-    {
-        return $this->container['print_options'];
-    }
-
-    /**
-     * Sets print_options
-     *
-     * @param \SellingPartnerApi\Model\ShippingV2\PrintOption[] $print_options A list of the format options for a label.
-     *
-     * @return self
-     */
-    public function setPrintOptions($print_options)
-    {
-        $this->container['print_options'] = $print_options;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

@@ -106,7 +106,7 @@ class RequestedDocumentSpecification extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'format' => 'setFormat',
+        'format' => 'setFormat',
         'size' => 'setSize',
         'dpi' => 'setDpi',
         'page_layout' => 'setPageLayout',

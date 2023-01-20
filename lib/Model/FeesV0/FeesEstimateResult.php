@@ -100,7 +100,7 @@ class FeesEstimateResult extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'status' => 'setStatus',
+        'status' => 'setStatus',
         'fees_estimate_identifier' => 'setFeesEstimateIdentifier',
         'fees_estimate' => 'setFeesEstimate',
         'error' => 'setError'

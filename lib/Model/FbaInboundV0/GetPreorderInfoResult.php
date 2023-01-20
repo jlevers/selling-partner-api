@@ -99,7 +99,7 @@ class GetPreorderInfoResult extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'shipment_contains_preorderable_items' => 'setShipmentContainsPreorderableItems',
+        'shipment_contains_preorderable_items' => 'setShipmentContainsPreorderableItems',
         'shipment_confirmed_for_preorder' => 'setShipmentConfirmedForPreorder',
         'need_by_date' => 'setNeedByDate',
         'confirmed_fulfillable_date' => 'setConfirmedFulfillableDate'

@@ -94,7 +94,7 @@ class FulfillmentDocument extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'upload_destination_id' => 'setUploadDestinationId',
+        'upload_destination_id' => 'setUploadDestinationId',
         'content_sha256' => 'setContentSha256'
     ];
 

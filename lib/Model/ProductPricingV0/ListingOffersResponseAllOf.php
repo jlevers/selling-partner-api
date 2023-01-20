@@ -90,7 +90,7 @@ class ListingOffersResponseAllOf extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'request' => 'setRequest'
+        'request' => 'setRequest'
     ];
 
     /**

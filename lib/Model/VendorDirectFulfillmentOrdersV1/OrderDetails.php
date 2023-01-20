@@ -118,7 +118,7 @@ class OrderDetails extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'customer_order_number' => 'setCustomerOrderNumber',
+        'customer_order_number' => 'setCustomerOrderNumber',
         'order_date' => 'setOrderDate',
         'order_status' => 'setOrderStatus',
         'shipment_details' => 'setShipmentDetails',

@@ -126,7 +126,7 @@ class InvoiceDetail extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'invoice_number' => 'setInvoiceNumber',
+        'invoice_number' => 'setInvoiceNumber',
         'invoice_date' => 'setInvoiceDate',
         'reference_number' => 'setReferenceNumber',
         'remit_to_party' => 'setRemitToParty',

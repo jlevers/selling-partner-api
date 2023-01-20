@@ -94,7 +94,7 @@ class PrimeInformationType extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'is_prime' => 'setIsPrime',
+        'is_prime' => 'setIsPrime',
         'is_national_prime' => 'setIsNationalPrime'
     ];
 

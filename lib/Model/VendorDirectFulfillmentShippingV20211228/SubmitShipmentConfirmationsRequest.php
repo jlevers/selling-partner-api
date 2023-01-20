@@ -90,7 +90,7 @@ class SubmitShipmentConfirmationsRequest extends BaseModel implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-                'shipment_confirmations' => 'setShipmentConfirmations'
+        'shipment_confirmations' => 'setShipmentConfirmations'
     ];
 
     /**

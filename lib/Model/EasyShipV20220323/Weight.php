@@ -94,7 +94,7 @@ class Weight extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'value' => 'setValue',
+        'value' => 'setValue',
         'unit' => 'setUnit'
     ];
 

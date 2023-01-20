@@ -97,7 +97,7 @@ class RestrictedResource extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'method' => 'setMethod',
+        'method' => 'setMethod',
         'path' => 'setPath',
         'data_elements' => 'setDataElements'
     ];

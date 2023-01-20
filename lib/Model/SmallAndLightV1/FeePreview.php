@@ -103,7 +103,7 @@ class FeePreview extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'price' => 'setPrice',
         'fee_breakdown' => 'setFeeBreakdown',
         'total_fees' => 'setTotalFees',

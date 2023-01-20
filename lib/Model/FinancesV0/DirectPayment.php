@@ -94,7 +94,7 @@ class DirectPayment extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'direct_payment_type' => 'setDirectPaymentType',
+        'direct_payment_type' => 'setDirectPaymentType',
         'direct_payment_amount' => 'setDirectPaymentAmount'
     ];
 

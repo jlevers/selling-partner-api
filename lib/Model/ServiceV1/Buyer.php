@@ -100,7 +100,7 @@ class Buyer extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'buyer_id' => 'setBuyerId',
+        'buyer_id' => 'setBuyerId',
         'name' => 'setName',
         'phone' => 'setPhone',
         'is_prime_member' => 'setIsPrimeMember'

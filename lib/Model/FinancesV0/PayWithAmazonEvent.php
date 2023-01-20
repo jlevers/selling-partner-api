@@ -118,7 +118,7 @@ class PayWithAmazonEvent extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'seller_order_id' => 'setSellerOrderId',
+        'seller_order_id' => 'setSellerOrderId',
         'transaction_posted_date' => 'setTransactionPostedDate',
         'business_object_type' => 'setBusinessObjectType',
         'sales_channel' => 'setSalesChannel',

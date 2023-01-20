@@ -130,7 +130,7 @@ class ServiceJob extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'create_time' => 'setCreateTime',
+        'create_time' => 'setCreateTime',
         'service_job_id' => 'setServiceJobId',
         'service_job_status' => 'setServiceJobStatus',
         'scope_of_work' => 'setScopeOfWork',

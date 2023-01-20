@@ -90,7 +90,7 @@ class ListReturnReasonCodesResult extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'reason_code_details' => 'setReasonCodeDetails'
+        'reason_code_details' => 'setReasonCodeDetails'
     ];
 
     /**

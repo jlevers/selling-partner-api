@@ -94,7 +94,7 @@ class OrderItemStatusOrderedQuantity extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'ordered_quantity' => 'setOrderedQuantity',
+        'ordered_quantity' => 'setOrderedQuantity',
         'ordered_quantity_details' => 'setOrderedQuantityDetails'
     ];
 

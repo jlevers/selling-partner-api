@@ -97,7 +97,7 @@ class CreateReservationRecord extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'reservation' => 'setReservation',
+        'reservation' => 'setReservation',
         'warnings' => 'setWarnings',
         'errors' => 'setErrors'
     ];

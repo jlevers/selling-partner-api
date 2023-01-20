@@ -91,7 +91,7 @@ class Account extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'account_id' => 'setAccountId'
+        'account_id' => 'setAccountId'
     ];
 
     /**

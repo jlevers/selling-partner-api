@@ -106,7 +106,7 @@ class OrderItemBuyerInfo extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'order_item_id' => 'setOrderItemId',
+        'order_item_id' => 'setOrderItemId',
         'buyer_customized_info' => 'setBuyerCustomizedInfo',
         'gift_wrap_price' => 'setGiftWrapPrice',
         'gift_wrap_tax' => 'setGiftWrapTax',

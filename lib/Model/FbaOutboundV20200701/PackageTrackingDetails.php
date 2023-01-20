@@ -129,7 +129,7 @@ class PackageTrackingDetails extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'package_number' => 'setPackageNumber',
+        'package_number' => 'setPackageNumber',
         'tracking_number' => 'setTrackingNumber',
         'customer_tracking_link' => 'setCustomerTrackingLink',
         'carrier_code' => 'setCarrierCode',

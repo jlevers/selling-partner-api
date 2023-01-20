@@ -97,7 +97,7 @@ class PackingSlip extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'content' => 'setContent',
         'content_type' => 'setContentType'
     ];

@@ -97,7 +97,7 @@ class PackageDetails extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'package_items' => 'setPackageItems',
+        'package_items' => 'setPackageItems',
         'package_time_slot' => 'setPackageTimeSlot',
         'package_identifier' => 'setPackageIdentifier'
     ];

@@ -100,7 +100,7 @@ class ListHandoverSlotsRequest extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'amazon_order_id' => 'setAmazonOrderId',
         'package_dimensions' => 'setPackageDimensions',
         'package_weight' => 'setPackageWeight'

@@ -91,7 +91,7 @@ class GetFeaturesResult extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'features' => 'setFeatures'
+        'features' => 'setFeatures'
     ];
 
     /**

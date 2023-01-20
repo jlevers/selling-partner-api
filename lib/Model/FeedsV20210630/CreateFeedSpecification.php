@@ -100,7 +100,7 @@ class CreateFeedSpecification extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'feed_type' => 'setFeedType',
+        'feed_type' => 'setFeedType',
         'marketplace_ids' => 'setMarketplaceIds',
         'input_feed_document_id' => 'setInputFeedDocumentId',
         'feed_options' => 'setFeedOptions'

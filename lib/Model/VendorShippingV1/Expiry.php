@@ -96,7 +96,7 @@ class Expiry extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'manufacturer_date' => 'setManufacturerDate',
+        'manufacturer_date' => 'setManufacturerDate',
         'expiry_date' => 'setExpiryDate',
         'expiry_after_duration' => 'setExpiryAfterDuration'
     ];

@@ -94,7 +94,7 @@ class SellerFeedbackType extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'seller_positive_feedback_rating' => 'setSellerPositiveFeedbackRating',
+        'seller_positive_feedback_rating' => 'setSellerPositiveFeedbackRating',
         'feedback_count' => 'setFeedbackCount'
     ];
 

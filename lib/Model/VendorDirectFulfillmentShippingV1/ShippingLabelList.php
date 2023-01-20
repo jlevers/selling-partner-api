@@ -93,7 +93,7 @@ class ShippingLabelList extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'pagination' => 'setPagination',
+        'pagination' => 'setPagination',
         'shipping_labels' => 'setShippingLabels'
     ];
 

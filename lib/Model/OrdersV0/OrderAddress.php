@@ -94,7 +94,7 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'shipping_address' => 'setShippingAddress'
     ];
 

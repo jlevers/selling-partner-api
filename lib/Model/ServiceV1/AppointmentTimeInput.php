@@ -94,7 +94,7 @@ class AppointmentTimeInput extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'start_time' => 'setStartTime',
+        'start_time' => 'setStartTime',
         'duration_in_minutes' => 'setDurationInMinutes'
     ];
 

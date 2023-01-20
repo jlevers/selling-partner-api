@@ -112,7 +112,7 @@ class SellerDealPaymentEvent extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'deal_id' => 'setDealId',
         'deal_description' => 'setDealDescription',
         'event_type' => 'setEventType',

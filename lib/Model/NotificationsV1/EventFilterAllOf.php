@@ -90,7 +90,7 @@ class EventFilterAllOf extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'event_filter_type' => 'setEventFilterType'
+        'event_filter_type' => 'setEventFilterType'
     ];
 
     /**

@@ -100,7 +100,7 @@ class StandardFourImageTextQuadrantModule extends BaseModel implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-                'block1' => 'setBlock1',
+        'block1' => 'setBlock1',
         'block2' => 'setBlock2',
         'block3' => 'setBlock3',
         'block4' => 'setBlock4'

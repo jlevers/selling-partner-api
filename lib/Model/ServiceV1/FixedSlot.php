@@ -103,7 +103,7 @@ class FixedSlot extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'start_date_time' => 'setStartDateTime',
+        'start_date_time' => 'setStartDateTime',
         'scheduled_capacity' => 'setScheduledCapacity',
         'available_capacity' => 'setAvailableCapacity',
         'encumbered_capacity' => 'setEncumberedCapacity',

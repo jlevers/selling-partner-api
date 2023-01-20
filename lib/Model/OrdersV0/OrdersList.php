@@ -100,7 +100,7 @@ class OrdersList extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'orders' => 'setOrders',
+        'orders' => 'setOrders',
         'next_token' => 'setNextToken',
         'last_updated_before' => 'setLastUpdatedBefore',
         'created_before' => 'setCreatedBefore'

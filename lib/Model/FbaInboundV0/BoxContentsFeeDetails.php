@@ -97,7 +97,7 @@ class BoxContentsFeeDetails extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'total_units' => 'setTotalUnits',
+        'total_units' => 'setTotalUnits',
         'fee_per_unit' => 'setFeePerUnit',
         'total_fee' => 'setTotalFee'
     ];

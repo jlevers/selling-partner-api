@@ -103,7 +103,7 @@ class Label extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'custom_text_for_label' => 'setCustomTextForLabel',
+        'custom_text_for_label' => 'setCustomTextForLabel',
         'dimensions' => 'setDimensions',
         'file_contents' => 'setFileContents',
         'label_format' => 'setLabelFormat',

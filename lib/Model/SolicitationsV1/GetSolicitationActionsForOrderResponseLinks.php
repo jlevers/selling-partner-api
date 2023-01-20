@@ -93,7 +93,7 @@ class GetSolicitationActionsForOrderResponseLinks extends BaseModel implements M
      * @var string[]
      */
     protected static $setters = [
-                'self' => 'setSelf',
+        'self' => 'setSelf',
         'actions' => 'setActions'
     ];
 

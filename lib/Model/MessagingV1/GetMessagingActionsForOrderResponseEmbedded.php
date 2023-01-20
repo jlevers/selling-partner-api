@@ -90,7 +90,7 @@ class GetMessagingActionsForOrderResponseEmbedded extends BaseModel implements M
      * @var string[]
      */
     protected static $setters = [
-                'actions' => 'setActions'
+        'actions' => 'setActions'
     ];
 
     /**

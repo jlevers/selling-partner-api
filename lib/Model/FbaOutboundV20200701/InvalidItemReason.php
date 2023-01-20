@@ -94,7 +94,7 @@ class InvalidItemReason extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'invalid_item_reason_code' => 'setInvalidItemReasonCode',
+        'invalid_item_reason_code' => 'setInvalidItemReasonCode',
         'description' => 'setDescription'
     ];
 

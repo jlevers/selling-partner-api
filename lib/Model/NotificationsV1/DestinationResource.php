@@ -94,7 +94,7 @@ class DestinationResource extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'sqs' => 'setSqs',
+        'sqs' => 'setSqs',
         'event_bridge' => 'setEventBridge'
     ];
 

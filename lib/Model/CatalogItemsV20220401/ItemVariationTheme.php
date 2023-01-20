@@ -94,7 +94,7 @@ class ItemVariationTheme extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'attributes' => 'setAttributes',
+        'attributes' => 'setAttributes',
         'theme' => 'setTheme'
     ];
 

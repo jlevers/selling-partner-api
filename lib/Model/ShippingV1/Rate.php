@@ -106,7 +106,7 @@ class Rate extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-                'rate_id' => 'setRateId',
+        'rate_id' => 'setRateId',
         'total_charge' => 'setTotalCharge',
         'billed_weight' => 'setBilledWeight',
         'expiration_time' => 'setExpirationTime',

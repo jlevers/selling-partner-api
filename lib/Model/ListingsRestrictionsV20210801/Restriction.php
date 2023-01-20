@@ -97,7 +97,7 @@ class Restriction extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'condition_type' => 'setConditionType',
         'reasons' => 'setReasons'
     ];

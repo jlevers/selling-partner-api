@@ -94,7 +94,7 @@ class TaxWithholdingPeriod extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'start_date' => 'setStartDate',
+        'start_date' => 'setStartDate',
         'end_date' => 'setEndDate'
     ];
 

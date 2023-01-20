@@ -97,7 +97,7 @@ class TDSReimbursementEvent extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'tds_order_id' => 'setTdsOrderId',
         'reimbursed_amount' => 'setReimbursedAmount'
     ];

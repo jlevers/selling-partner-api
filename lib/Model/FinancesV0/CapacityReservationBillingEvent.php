@@ -100,7 +100,7 @@ class CapacityReservationBillingEvent extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'transaction_type' => 'setTransactionType',
+        'transaction_type' => 'setTransactionType',
         'posted_date' => 'setPostedDate',
         'description' => 'setDescription',
         'transaction_amount' => 'setTransactionAmount'

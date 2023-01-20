@@ -100,7 +100,7 @@ class ShipmentMeasurements extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'gross_shipment_weight' => 'setGrossShipmentWeight',
+        'gross_shipment_weight' => 'setGrossShipmentWeight',
         'shipment_volume' => 'setShipmentVolume',
         'carton_count' => 'setCartonCount',
         'pallet_count' => 'setPalletCount'

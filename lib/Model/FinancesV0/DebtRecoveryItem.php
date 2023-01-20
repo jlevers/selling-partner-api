@@ -100,7 +100,7 @@ class DebtRecoveryItem extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'recovery_amount' => 'setRecoveryAmount',
+        'recovery_amount' => 'setRecoveryAmount',
         'original_amount' => 'setOriginalAmount',
         'group_begin_date' => 'setGroupBeginDate',
         'group_end_date' => 'setGroupEndDate'

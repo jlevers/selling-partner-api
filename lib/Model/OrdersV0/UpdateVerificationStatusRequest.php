@@ -91,7 +91,7 @@ class UpdateVerificationStatusRequest extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'regulated_order_verification_status' => 'setRegulatedOrderVerificationStatus'
+        'regulated_order_verification_status' => 'setRegulatedOrderVerificationStatus'
     ];
 
     /**

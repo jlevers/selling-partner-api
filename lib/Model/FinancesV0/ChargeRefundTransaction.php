@@ -94,7 +94,7 @@ class ChargeRefundTransaction extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'charge_amount' => 'setChargeAmount',
+        'charge_amount' => 'setChargeAmount',
         'charge_type' => 'setChargeType'
     ];
 

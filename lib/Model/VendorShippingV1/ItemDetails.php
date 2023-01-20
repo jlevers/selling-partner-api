@@ -103,7 +103,7 @@ class ItemDetails extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'lot_number' => 'setLotNumber',
         'expiry' => 'setExpiry',
         'maximum_retail_price' => 'setMaximumRetailPrice',

@@ -91,7 +91,7 @@ class CreateFulfillmentReturnRequest extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'items' => 'setItems'
+        'items' => 'setItems'
     ];
 
     /**

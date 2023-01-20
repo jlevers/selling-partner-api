@@ -100,7 +100,7 @@ class AdhocDisbursementEvent extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'transaction_type' => 'setTransactionType',
+        'transaction_type' => 'setTransactionType',
         'posted_date' => 'setPostedDate',
         'transaction_id' => 'setTransactionId',
         'transaction_amount' => 'setTransactionAmount'

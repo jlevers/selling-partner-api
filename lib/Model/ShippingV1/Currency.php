@@ -94,7 +94,7 @@ class Currency extends BaseModel implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-                'value' => 'setValue',
+        'value' => 'setValue',
         'unit' => 'setUnit'
     ];
 

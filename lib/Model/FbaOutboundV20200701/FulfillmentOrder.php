@@ -136,7 +136,7 @@ class FulfillmentOrder extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
+        'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
         'marketplace_id' => 'setMarketplaceId',
         'displayable_order_id' => 'setDisplayableOrderId',
         'displayable_order_date' => 'setDisplayableOrderDate',

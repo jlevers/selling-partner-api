@@ -112,7 +112,7 @@ class CouponPaymentEvent extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'coupon_id' => 'setCouponId',
         'seller_coupon_description' => 'setSellerCouponDescription',
         'clip_or_redemption_count' => 'setClipOrRedemptionCount',

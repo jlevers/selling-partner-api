@@ -97,7 +97,7 @@ class CreateSubscriptionRequest extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'payload_version' => 'setPayloadVersion',
+        'payload_version' => 'setPayloadVersion',
         'destination_id' => 'setDestinationId',
         'processing_directive' => 'setProcessingDirective'
     ];

@@ -97,7 +97,7 @@ class AdditionalDetails extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'type' => 'setType',
+        'type' => 'setType',
         'detail' => 'setDetail',
         'language_code' => 'setLanguageCode'
     ];

@@ -94,7 +94,7 @@ class CreateRestrictedDataTokenRequest extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'target_application' => 'setTargetApplication',
+        'target_application' => 'setTargetApplication',
         'restricted_resources' => 'setRestrictedResources'
     ];
 

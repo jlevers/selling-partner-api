@@ -100,7 +100,7 @@ class AvailabilityRecord extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'start_time' => 'setStartTime',
+        'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
         'recurrence' => 'setRecurrence',
         'capacity' => 'setCapacity'

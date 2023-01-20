@@ -94,7 +94,7 @@ class ItemIdentifier extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'identifier_type' => 'setIdentifierType',
+        'identifier_type' => 'setIdentifierType',
         'identifier' => 'setIdentifier'
     ];
 

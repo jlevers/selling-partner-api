@@ -229,7 +229,7 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
         'purchase_date' => 'setPurchaseDate',
         'last_update_date' => 'setLastUpdateDate',

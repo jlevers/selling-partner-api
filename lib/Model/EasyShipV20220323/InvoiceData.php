@@ -94,7 +94,7 @@ class InvoiceData extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'invoice_number' => 'setInvoiceNumber',
+        'invoice_number' => 'setInvoiceNumber',
         'invoice_date' => 'setInvoiceDate'
     ];
 

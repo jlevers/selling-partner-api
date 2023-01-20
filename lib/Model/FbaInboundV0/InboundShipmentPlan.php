@@ -106,7 +106,7 @@ class InboundShipmentPlan extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId',
+        'shipment_id' => 'setShipmentId',
         'destination_fulfillment_center_id' => 'setDestinationFulfillmentCenterId',
         'ship_to_address' => 'setShipToAddress',
         'label_prep_type' => 'setLabelPrepType',

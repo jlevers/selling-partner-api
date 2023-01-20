@@ -97,7 +97,7 @@ class CreateScheduledPackageRequest extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'marketplace_id' => 'setMarketplaceId',
         'package_details' => 'setPackageDetails'
     ];

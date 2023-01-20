@@ -94,7 +94,7 @@ class ItemContributorRole extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'display_name' => 'setDisplayName',
+        'display_name' => 'setDisplayName',
         'value' => 'setValue'
     ];
 

@@ -97,7 +97,7 @@ class StandardTechSpecsModule extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'headline' => 'setHeadline',
+        'headline' => 'setHeadline',
         'specification_list' => 'setSpecificationList',
         'table_count' => 'setTableCount'
     ];

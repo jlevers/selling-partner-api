@@ -94,7 +94,7 @@ class UpdateScheduledPackagesRequest extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'update_package_details_list' => 'setUpdatePackageDetailsList'
     ];
 

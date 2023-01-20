@@ -100,7 +100,7 @@ class ImagingServicesFeeEvent extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'imaging_request_billing_item_id' => 'setImagingRequestBillingItemId',
+        'imaging_request_billing_item_id' => 'setImagingRequestBillingItemId',
         'asin' => 'setAsin',
         'posted_date' => 'setPostedDate',
         'fee_list' => 'setFeeList'

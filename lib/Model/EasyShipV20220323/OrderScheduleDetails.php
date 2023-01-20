@@ -94,7 +94,7 @@ class OrderScheduleDetails extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'package_details' => 'setPackageDetails'
     ];
 

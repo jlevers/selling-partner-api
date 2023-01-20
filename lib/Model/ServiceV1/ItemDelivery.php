@@ -94,7 +94,7 @@ class ItemDelivery extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'estimated_delivery_date' => 'setEstimatedDeliveryDate',
+        'estimated_delivery_date' => 'setEstimatedDeliveryDate',
         'item_delivery_promise' => 'setItemDeliveryPromise'
     ];
 

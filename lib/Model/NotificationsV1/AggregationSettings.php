@@ -91,7 +91,7 @@ class AggregationSettings extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'aggregation_time_period' => 'setAggregationTimePeriod'
+        'aggregation_time_period' => 'setAggregationTimePeriod'
     ];
 
     /**

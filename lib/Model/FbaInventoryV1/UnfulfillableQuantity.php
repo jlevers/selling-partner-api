@@ -109,7 +109,7 @@ class UnfulfillableQuantity extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'total_unfulfillable_quantity' => 'setTotalUnfulfillableQuantity',
+        'total_unfulfillable_quantity' => 'setTotalUnfulfillableQuantity',
         'customer_damaged_quantity' => 'setCustomerDamagedQuantity',
         'warehouse_damaged_quantity' => 'setWarehouseDamagedQuantity',
         'distributor_damaged_quantity' => 'setDistributorDamagedQuantity',

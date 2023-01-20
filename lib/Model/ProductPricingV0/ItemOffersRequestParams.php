@@ -99,7 +99,7 @@ class ItemOffersRequestParams extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'item_condition' => 'setItemCondition',
         'customer_type' => 'setCustomerType',
         'asin' => 'setAsin'

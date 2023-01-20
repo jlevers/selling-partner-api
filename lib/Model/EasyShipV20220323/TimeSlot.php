@@ -100,7 +100,7 @@ class TimeSlot extends BaseModel implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-                'slot_id' => 'setSlotId',
+        'slot_id' => 'setSlotId',
         'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
         'handover_method' => 'setHandoverMethod'

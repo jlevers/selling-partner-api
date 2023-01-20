@@ -103,7 +103,7 @@ class RejectedShippingService extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'carrier_name' => 'setCarrierName',
+        'carrier_name' => 'setCarrierName',
         'shipping_service_name' => 'setShippingServiceName',
         'shipping_service_id' => 'setShippingServiceId',
         'rejection_reason_code' => 'setRejectionReasonCode',

@@ -100,7 +100,7 @@ class ChargeRefundEvent extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'reason_code' => 'setReasonCode',
         'reason_code_description' => 'setReasonCodeDescription',
         'charge_refund_transactions' => 'setChargeRefundTransactions'

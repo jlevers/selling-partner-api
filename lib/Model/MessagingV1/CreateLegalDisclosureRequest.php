@@ -91,7 +91,7 @@ class CreateLegalDisclosureRequest extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'attachments' => 'setAttachments'
+        'attachments' => 'setAttachments'
     ];
 
     /**

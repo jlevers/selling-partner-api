@@ -106,7 +106,7 @@ class ProductAdsPaymentEvent extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'transaction_type' => 'setTransactionType',
         'invoice_id' => 'setInvoiceId',
         'base_value' => 'setBaseValue',

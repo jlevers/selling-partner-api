@@ -97,7 +97,7 @@ class GetAdditionalSellerInputsRequest extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'shipping_service_id' => 'setShippingServiceId',
+        'shipping_service_id' => 'setShippingServiceId',
         'ship_from_address' => 'setShipFromAddress',
         'order_id' => 'setOrderId'
     ];

@@ -94,7 +94,7 @@ class SubmitAcknowledgementResponse extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'payload' => 'setPayload',
+        'payload' => 'setPayload',
         'errors' => 'setErrors'
     ];
 

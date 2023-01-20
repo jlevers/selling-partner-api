@@ -97,7 +97,7 @@ class FileContents extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'contents' => 'setContents',
+        'contents' => 'setContents',
         'file_type' => 'setFileType',
         'checksum' => 'setChecksum'
     ];

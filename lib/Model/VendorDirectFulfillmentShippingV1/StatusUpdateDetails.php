@@ -106,7 +106,7 @@ class StatusUpdateDetails extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'tracking_number' => 'setTrackingNumber',
+        'tracking_number' => 'setTrackingNumber',
         'status_code' => 'setStatusCode',
         'reason_code' => 'setReasonCode',
         'status_date_time' => 'setStatusDateTime',

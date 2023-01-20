@@ -94,7 +94,7 @@ class AvailableShippingServiceOptions extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'available_carrier_will_pick_up_options' => 'setAvailableCarrierWillPickUpOptions',
+        'available_carrier_will_pick_up_options' => 'setAvailableCarrierWillPickUpOptions',
         'available_delivery_experience_options' => 'setAvailableDeliveryExperienceOptions'
     ];
 

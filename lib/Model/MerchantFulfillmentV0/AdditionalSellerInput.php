@@ -115,7 +115,7 @@ class AdditionalSellerInput extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'data_type' => 'setDataType',
+        'data_type' => 'setDataType',
         'value_as_string' => 'setValueAsString',
         'value_as_boolean' => 'setValueAsBoolean',
         'value_as_integer' => 'setValueAsInteger',

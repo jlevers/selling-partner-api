@@ -127,7 +127,7 @@ class ShipmentItem extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'order_item_id' => 'setOrderItemId',
         'order_adjustment_item_id' => 'setOrderAdjustmentItemId',
         'quantity_shipped' => 'setQuantityShipped',

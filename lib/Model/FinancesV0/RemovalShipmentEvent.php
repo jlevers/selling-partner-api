@@ -103,7 +103,7 @@ class RemovalShipmentEvent extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'merchant_order_id' => 'setMerchantOrderId',
         'order_id' => 'setOrderId',
         'transaction_type' => 'setTransactionType',

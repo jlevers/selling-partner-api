@@ -96,7 +96,7 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'purchase_order_state' => 'setPurchaseOrderState',
         'order_details' => 'setOrderDetails'
     ];

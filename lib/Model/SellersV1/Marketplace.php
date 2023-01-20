@@ -106,7 +106,7 @@ class Marketplace extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'id' => 'setId',
+        'id' => 'setId',
         'name' => 'setName',
         'country_code' => 'setCountryCode',
         'default_currency_code' => 'setDefaultCurrencyCode',

@@ -91,7 +91,7 @@ class NonPartneredSmallParcelDataOutput extends BaseModel implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-                'package_list' => 'setPackageList'
+        'package_list' => 'setPackageList'
     ];
 
     /**

@@ -100,7 +100,7 @@ class ScopeOfWork extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'title' => 'setTitle',
         'quantity' => 'setQuantity',
         'required_skills' => 'setRequiredSkills'

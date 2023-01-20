@@ -97,7 +97,7 @@ class ChargeInstrument extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'description' => 'setDescription',
+        'description' => 'setDescription',
         'tail' => 'setTail',
         'amount' => 'setAmount'
     ];

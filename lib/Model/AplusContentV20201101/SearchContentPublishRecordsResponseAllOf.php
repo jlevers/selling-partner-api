@@ -90,7 +90,7 @@ class SearchContentPublishRecordsResponseAllOf extends BaseModel implements Mode
      * @var string[]
      */
     protected static $setters = [
-                'publish_record_list' => 'setPublishRecordList'
+        'publish_record_list' => 'setPublishRecordList'
     ];
 
     /**

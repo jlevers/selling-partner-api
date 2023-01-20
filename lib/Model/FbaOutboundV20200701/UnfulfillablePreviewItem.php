@@ -100,7 +100,7 @@ class UnfulfillablePreviewItem extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'quantity' => 'setQuantity',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'item_unfulfillable_reasons' => 'setItemUnfulfillableReasons'

@@ -100,7 +100,7 @@ class InboundShipmentPlanItem extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
         'quantity' => 'setQuantity',
         'prep_details_list' => 'setPrepDetailsList'

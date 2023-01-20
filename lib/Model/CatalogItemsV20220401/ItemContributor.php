@@ -94,7 +94,7 @@ class ItemContributor extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'role' => 'setRole',
+        'role' => 'setRole',
         'value' => 'setValue'
     ];
 

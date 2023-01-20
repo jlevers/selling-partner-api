@@ -100,7 +100,7 @@ class FeesEstimateError extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'type' => 'setType',
+        'type' => 'setType',
         'code' => 'setCode',
         'message' => 'setMessage',
         'detail' => 'setDetail'

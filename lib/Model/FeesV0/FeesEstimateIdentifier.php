@@ -112,7 +112,7 @@ class FeesEstimateIdentifier extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'seller_id' => 'setSellerId',
         'id_type' => 'setIdType',
         'id_value' => 'setIdValue',

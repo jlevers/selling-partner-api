@@ -93,7 +93,7 @@ class Duration extends BaseModel implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-                'duration_unit' => 'setDurationUnit',
+        'duration_unit' => 'setDurationUnit',
         'duration_value' => 'setDurationValue'
     ];
 

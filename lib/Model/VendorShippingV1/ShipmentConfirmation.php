@@ -138,7 +138,7 @@ class ShipmentConfirmation extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'shipment_identifier' => 'setShipmentIdentifier',
+        'shipment_identifier' => 'setShipmentIdentifier',
         'shipment_confirmation_type' => 'setShipmentConfirmationType',
         'shipment_type' => 'setShipmentType',
         'shipment_structure' => 'setShipmentStructure',

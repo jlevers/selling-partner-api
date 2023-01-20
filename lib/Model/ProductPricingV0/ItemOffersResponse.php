@@ -99,7 +99,7 @@ class ItemOffersResponse extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'headers' => 'setHeaders',
+        'headers' => 'setHeaders',
         'status' => 'setStatus',
         'body' => 'setBody',
         'request' => 'setRequest'

@@ -94,7 +94,7 @@ class EventBridgeResourceSpecification extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'region' => 'setRegion',
+        'region' => 'setRegion',
         'account_id' => 'setAccountId'
     ];
 

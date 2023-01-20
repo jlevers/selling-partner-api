@@ -100,7 +100,7 @@ class AppointmentSlotReport extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'scheduling_type' => 'setSchedulingType',
+        'scheduling_type' => 'setSchedulingType',
         'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
         'appointment_slots' => 'setAppointmentSlots'

@@ -97,7 +97,7 @@ class ReasonCodeDetails extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'return_reason_code' => 'setReturnReasonCode',
+        'return_reason_code' => 'setReturnReasonCode',
         'description' => 'setDescription',
         'translated_description' => 'setTranslatedDescription'
     ];

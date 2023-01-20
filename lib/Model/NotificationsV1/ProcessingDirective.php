@@ -91,7 +91,7 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'event_filter' => 'setEventFilter'
+        'event_filter' => 'setEventFilter'
     ];
 
     /**

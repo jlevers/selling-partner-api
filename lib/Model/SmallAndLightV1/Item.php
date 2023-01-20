@@ -94,7 +94,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'price' => 'setPrice'
     ];
 

@@ -109,7 +109,7 @@ class AdjustmentItem extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'quantity' => 'setQuantity',
+        'quantity' => 'setQuantity',
         'per_unit_amount' => 'setPerUnitAmount',
         'total_amount' => 'setTotalAmount',
         'seller_sku' => 'setSellerSku',

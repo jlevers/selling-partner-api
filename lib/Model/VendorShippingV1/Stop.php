@@ -100,7 +100,7 @@ class Stop extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-                'function_code' => 'setFunctionCode',
+        'function_code' => 'setFunctionCode',
         'location_identification' => 'setLocationIdentification',
         'arrival_time' => 'setArrivalTime',
         'departure_time' => 'setDepartureTime'

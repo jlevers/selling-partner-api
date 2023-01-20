@@ -109,7 +109,7 @@ class SellerInputDefinition extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'is_required' => 'setIsRequired',
+        'is_required' => 'setIsRequired',
         'data_type' => 'setDataType',
         'constraints' => 'setConstraints',
         'input_display_text' => 'setInputDisplayText',

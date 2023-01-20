@@ -91,7 +91,7 @@ class StandardProductDescriptionModule extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'body' => 'setBody'
+        'body' => 'setBody'
     ];
 
     /**

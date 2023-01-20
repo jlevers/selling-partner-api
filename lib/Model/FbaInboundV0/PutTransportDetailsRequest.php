@@ -97,7 +97,7 @@ class PutTransportDetailsRequest extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'is_partnered' => 'setIsPartnered',
+        'is_partnered' => 'setIsPartnered',
         'shipment_type' => 'setShipmentType',
         'transport_details' => 'setTransportDetails'
     ];

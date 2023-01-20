@@ -94,7 +94,7 @@ class TaxCollection extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'model' => 'setModel',
+        'model' => 'setModel',
         'responsible_party' => 'setResponsibleParty'
     ];
 

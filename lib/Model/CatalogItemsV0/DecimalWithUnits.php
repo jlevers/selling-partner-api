@@ -94,7 +94,7 @@ class DecimalWithUnits extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'value' => 'setValue',
+        'value' => 'setValue',
         'units' => 'setUnits'
     ];
 

@@ -94,7 +94,7 @@ class Technician extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'technician_id' => 'setTechnicianId',
+        'technician_id' => 'setTechnicianId',
         'name' => 'setName'
     ];
 

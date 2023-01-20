@@ -90,7 +90,7 @@ class GetSolicitationActionsForOrderResponseEmbedded extends BaseModel implement
      * @var string[]
      */
     protected static $setters = [
-                'actions' => 'setActions'
+        'actions' => 'setActions'
     ];
 
     /**

@@ -94,7 +94,7 @@ class PointsGrantedDetail extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'points_number' => 'setPointsNumber',
+        'points_number' => 'setPointsNumber',
         'points_monetary_value' => 'setPointsMonetaryValue'
     ];
 

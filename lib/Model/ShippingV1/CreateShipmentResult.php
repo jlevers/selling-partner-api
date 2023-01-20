@@ -94,7 +94,7 @@ class CreateShipmentResult extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId',
+        'shipment_id' => 'setShipmentId',
         'eligible_rates' => 'setEligibleRates'
     ];
 

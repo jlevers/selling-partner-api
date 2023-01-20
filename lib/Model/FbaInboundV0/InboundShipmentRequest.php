@@ -97,7 +97,7 @@ class InboundShipmentRequest extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'inbound_shipment_header' => 'setInboundShipmentHeader',
+        'inbound_shipment_header' => 'setInboundShipmentHeader',
         'inbound_shipment_items' => 'setInboundShipmentItems',
         'marketplace_id' => 'setMarketplaceId'
     ];

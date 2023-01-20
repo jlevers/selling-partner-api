@@ -94,7 +94,7 @@ class ScheduledPackageId extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'package_id' => 'setPackageId'
     ];
 

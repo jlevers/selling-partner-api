@@ -109,7 +109,7 @@ class FailedAdhocDisbursementEventList extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'funds_transfers_type' => 'setFundsTransfersType',
+        'funds_transfers_type' => 'setFundsTransfersType',
         'transfer_id' => 'setTransferId',
         'disbursement_id' => 'setDisbursementId',
         'payment_disbursement_type' => 'setPaymentDisbursementType',

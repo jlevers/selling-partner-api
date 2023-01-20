@@ -103,7 +103,7 @@ class Poa extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-                'appointment_time' => 'setAppointmentTime',
+        'appointment_time' => 'setAppointmentTime',
         'technicians' => 'setTechnicians',
         'uploading_technician' => 'setUploadingTechnician',
         'upload_time' => 'setUploadTime',

@@ -94,7 +94,7 @@ class Granularity extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'granularity_type' => 'setGranularityType',
+        'granularity_type' => 'setGranularityType',
         'granularity_id' => 'setGranularityId'
     ];
 

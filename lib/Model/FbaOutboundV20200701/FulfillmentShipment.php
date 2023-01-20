@@ -112,7 +112,7 @@ class FulfillmentShipment extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'amazon_shipment_id' => 'setAmazonShipmentId',
+        'amazon_shipment_id' => 'setAmazonShipmentId',
         'fulfillment_center_id' => 'setFulfillmentCenterId',
         'fulfillment_shipment_status' => 'setFulfillmentShipmentStatus',
         'shipping_date' => 'setShippingDate',

@@ -94,7 +94,7 @@ class StandardComparisonTableModule extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'product_columns' => 'setProductColumns',
+        'product_columns' => 'setProductColumns',
         'metric_row_labels' => 'setMetricRowLabels'
     ];
 

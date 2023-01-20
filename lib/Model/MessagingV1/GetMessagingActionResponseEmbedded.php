@@ -90,7 +90,7 @@ class GetMessagingActionResponseEmbedded extends BaseModel implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-                'schema' => 'setSchema'
+        'schema' => 'setSchema'
     ];
 
     /**

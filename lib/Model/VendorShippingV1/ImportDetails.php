@@ -105,7 +105,7 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'method_of_payment' => 'setMethodOfPayment',
+        'method_of_payment' => 'setMethodOfPayment',
         'seal_number' => 'setSealNumber',
         'route' => 'setRoute',
         'import_containers' => 'setImportContainers',

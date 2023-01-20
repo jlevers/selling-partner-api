@@ -96,7 +96,7 @@ class PartyIdentification extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'address' => 'setAddress',
+        'address' => 'setAddress',
         'party_id' => 'setPartyId',
         'tax_registration_details' => 'setTaxRegistrationDetails'
     ];

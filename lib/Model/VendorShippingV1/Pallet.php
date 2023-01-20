@@ -109,7 +109,7 @@ class Pallet extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'pallet_identifiers' => 'setPalletIdentifiers',
+        'pallet_identifiers' => 'setPalletIdentifiers',
         'tier' => 'setTier',
         'block' => 'setBlock',
         'dimensions' => 'setDimensions',

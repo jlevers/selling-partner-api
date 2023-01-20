@@ -94,7 +94,7 @@ class UpdatePackageDetails extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'scheduled_package_id' => 'setScheduledPackageId',
+        'scheduled_package_id' => 'setScheduledPackageId',
         'package_time_slot' => 'setPackageTimeSlot'
     ];
 

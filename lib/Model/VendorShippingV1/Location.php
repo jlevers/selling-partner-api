@@ -97,7 +97,7 @@ class Location extends BaseModel implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-                'type' => 'setType',
+        'type' => 'setType',
         'location_code' => 'setLocationCode',
         'country_code' => 'setCountryCode'
     ];

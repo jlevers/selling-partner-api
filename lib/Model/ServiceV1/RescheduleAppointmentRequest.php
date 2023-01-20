@@ -94,7 +94,7 @@ class RescheduleAppointmentRequest extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'appointment_time' => 'setAppointmentTime',
+        'appointment_time' => 'setAppointmentTime',
         'reschedule_reason_code' => 'setRescheduleReasonCode'
     ];
 

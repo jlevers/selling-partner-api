@@ -94,7 +94,7 @@ class ShipmentInvoiceStatusInfo extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'amazon_shipment_id' => 'setAmazonShipmentId',
+        'amazon_shipment_id' => 'setAmazonShipmentId',
         'invoice_status' => 'setInvoiceStatus'
     ];
 

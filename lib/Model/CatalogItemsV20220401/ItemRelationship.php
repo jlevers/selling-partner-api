@@ -100,7 +100,7 @@ class ItemRelationship extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'child_asins' => 'setChildAsins',
+        'child_asins' => 'setChildAsins',
         'parent_asins' => 'setParentAsins',
         'variation_theme' => 'setVariationTheme',
         'type' => 'setType'

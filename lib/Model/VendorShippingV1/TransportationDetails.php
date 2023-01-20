@@ -99,7 +99,7 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'carrier_scac' => 'setCarrierScac',
+        'carrier_scac' => 'setCarrierScac',
         'carrier_shipment_reference_number' => 'setCarrierShipmentReferenceNumber',
         'transportation_mode' => 'setTransportationMode',
         'bill_of_lading_number' => 'setBillOfLadingNumber'

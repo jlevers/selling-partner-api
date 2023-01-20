@@ -97,7 +97,7 @@ class UpdateVerificationStatusRequestBody extends BaseModel implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-                'status' => 'setStatus',
+        'status' => 'setStatus',
         'external_reviewer_id' => 'setExternalReviewerId',
         'rejection_reason_id' => 'setRejectionReasonId'
     ];

@@ -97,7 +97,7 @@ class FeesEstimate extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'time_of_fees_estimation' => 'setTimeOfFeesEstimation',
+        'time_of_fees_estimation' => 'setTimeOfFeesEstimation',
         'total_fees_estimate' => 'setTotalFeesEstimate',
         'fee_detail_list' => 'setFeeDetailList'
     ];

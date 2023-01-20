@@ -94,7 +94,7 @@ class StandardTextBlock extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'headline' => 'setHeadline',
+        'headline' => 'setHeadline',
         'body' => 'setBody'
     ];
 

@@ -187,7 +187,7 @@ class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'shipment_event_list' => 'setShipmentEventList',
+        'shipment_event_list' => 'setShipmentEventList',
         'shipment_settle_event_list' => 'setShipmentSettleEventList',
         'refund_event_list' => 'setRefundEventList',
         'guarantee_claim_event_list' => 'setGuaranteeClaimEventList',

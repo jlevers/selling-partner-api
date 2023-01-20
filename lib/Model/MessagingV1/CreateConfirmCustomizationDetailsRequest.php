@@ -94,7 +94,7 @@ class CreateConfirmCustomizationDetailsRequest extends BaseModel implements Mode
      * @var string[]
      */
     protected static $setters = [
-                'text' => 'setText',
+        'text' => 'setText',
         'attachments' => 'setAttachments'
     ];
 

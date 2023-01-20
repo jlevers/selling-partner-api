@@ -91,7 +91,7 @@ class AggregationFilter extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'aggregation_settings' => 'setAggregationSettings'
+        'aggregation_settings' => 'setAggregationSettings'
     ];
 
     /**

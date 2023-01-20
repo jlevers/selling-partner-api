@@ -106,7 +106,7 @@ class InboundShipmentPlanRequestItem extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'asin' => 'setAsin',
         'condition' => 'setCondition',
         'quantity' => 'setQuantity',

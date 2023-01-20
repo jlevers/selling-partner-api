@@ -94,7 +94,7 @@ class StandardTextModule extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'headline' => 'setHeadline',
+        'headline' => 'setHeadline',
         'body' => 'setBody'
     ];
 

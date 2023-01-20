@@ -100,7 +100,7 @@ class TaxWithholdingEvent extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'base_amount' => 'setBaseAmount',
         'withheld_amount' => 'setWithheldAmount',
         'tax_withholding_period' => 'setTaxWithholdingPeriod'

@@ -97,7 +97,7 @@ class ItemQuantity extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'amount' => 'setAmount',
+        'amount' => 'setAmount',
         'unit_of_measure' => 'setUnitOfMeasure',
         'unit_size' => 'setUnitSize'
     ];

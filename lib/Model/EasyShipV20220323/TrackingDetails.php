@@ -91,7 +91,7 @@ class TrackingDetails extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'tracking_id' => 'setTrackingId'
+        'tracking_id' => 'setTrackingId'
     ];
 
     /**

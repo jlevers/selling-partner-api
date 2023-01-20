@@ -269,38 +269,6 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     ];
 
 
-
-    const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
-    const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
-    const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
-    const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';
-    const DEEMED_RESELLER_CATEGORY_CA_MPF = 'CA_MPF';
-    const DEEMED_RESELLER_CATEGORY_AU_VOEC = 'AU_VOEC';
-    const DEEMED_RESELLER_CATEGORY_NZ_VOEC = 'NZ_VOEC';
-    
-    
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getDeemedResellerCategoryAllowableValues()
-    {
-        $baseVals = [
-            self::DEEMED_RESELLER_CATEGORY_IOSS,
-            self::DEEMED_RESELLER_CATEGORY_UOSS,
-            self::DEEMED_RESELLER_CATEGORY_GB_VOEC,
-            self::DEEMED_RESELLER_CATEGORY_NO_VOEC,
-            self::DEEMED_RESELLER_CATEGORY_CA_MPF,
-            self::DEEMED_RESELLER_CATEGORY_AU_VOEC,
-            self::DEEMED_RESELLER_CATEGORY_NZ_VOEC,
-        ];
-
-        // This is necessary because Amazon does not consistently capitalize their
-        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
-        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
-    }
     
     /**
      * Associative array for storing property values
@@ -370,18 +338,6 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['quantity_ordered'] === null) {
             $invalidProperties[] = "'quantity_ordered' can't be null";
         }
-        $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
-        if (
-            !is_null($this->container['deemed_reseller_category']) &&
-            !in_array(strtoupper($this->container['deemed_reseller_category']), $allowedValues, true)
-        ) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
-                $this->container['deemed_reseller_category'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -1118,16 +1074,6 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setDeemedResellerCategory($deemed_reseller_category)
     {
-        $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
-        if (!is_null($deemed_reseller_category) &&!in_array(strtoupper($deemed_reseller_category), $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
-                    $deemed_reseller_category,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['deemed_reseller_category'] = $deemed_reseller_category;
 
         return $this;

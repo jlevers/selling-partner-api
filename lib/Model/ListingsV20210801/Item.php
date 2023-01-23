@@ -65,7 +65,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
         'issues' => '\SellingPartnerApi\Model\ListingsV20210801\Issue[]',
         'offers' => '\SellingPartnerApi\Model\ListingsV20210801\ItemOfferByMarketplace[]',
         'fulfillment_availability' => '\SellingPartnerApi\Model\ListingsV20210801\FulfillmentAvailability[]',
-        'procurement' => '\SellingPartnerApi\Model\ListingsV20210801\ItemProcurement'
+        'procurement' => '\SellingPartnerApi\Model\ListingsV20210801\ItemProcurement[]'
     ];
 
     /**
@@ -340,7 +340,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets procurement
      *
-     * @return \SellingPartnerApi\Model\ListingsV20210801\ItemProcurement|null
+     * @return \SellingPartnerApi\Model\ListingsV20210801\ItemProcurement[]|null
      */
     public function getProcurement()
     {
@@ -350,7 +350,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets procurement
      *
-     * @param \SellingPartnerApi\Model\ListingsV20210801\ItemProcurement|null $procurement procurement
+     * @param \SellingPartnerApi\Model\ListingsV20210801\ItemProcurement[]|null $procurement Procurement details of a listings item.
      *
      * @return self
      */

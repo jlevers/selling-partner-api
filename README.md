@@ -318,7 +318,7 @@ $charset = "Shift-JIS";
 ...
 // Create feed document
 $createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification([
-    'content_type' => SellingPartnerApi\Document::get_content_type_with_charset($feedType['contentType'], $charset)]
+    'content_type' => SellingPartnerApi\Document::withContentType($feedType['contentType'], $charset)]
 ]);
 ...
 // Upload feed contents to document

@@ -166,7 +166,7 @@ class CapacityReservationBillingEvent extends BaseModel implements ModelInterfac
     /**
      * Sets transaction_type
      *
-     * @param string|null $transaction_type Indicates the type of transaction. Example: \"FBA Inventory Fee\"
+     * @param string|null $transaction_type Indicates the type of transaction. For example, FBA Inventory Fee
      *
      * @return self
      */

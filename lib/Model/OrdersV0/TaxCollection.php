@@ -111,11 +111,9 @@ class TaxCollection extends BaseModel implements ModelInterface, ArrayAccess, \J
 
 
     const MODEL_MARKETPLACE_FACILITATOR = 'MarketplaceFacilitator';
-    const MODEL_LOW_VALUE_GOODS = 'LowValueGoods';
     
 
-    const RESPONSIBLE_PARTY_SERVICES_INC = 'Amazon Services, Inc.';
-    const RESPONSIBLE_PARTY_COMMERCIAL_SERVICES_PTY_LTD = 'Amazon Commercial Services Pty Ltd';
+    const RESPONSIBLE_PARTY_AMAZON_SERVICES_INC = 'Amazon Services, Inc.';
     
     
 
@@ -128,7 +126,6 @@ class TaxCollection extends BaseModel implements ModelInterface, ArrayAccess, \J
     {
         $baseVals = [
             self::MODEL_MARKETPLACE_FACILITATOR,
-            self::MODEL_LOW_VALUE_GOODS,
         ];
 
         // This is necessary because Amazon does not consistently capitalize their
@@ -145,8 +142,7 @@ class TaxCollection extends BaseModel implements ModelInterface, ArrayAccess, \J
     public function getResponsiblePartyAllowableValues()
     {
         $baseVals = [
-            self::RESPONSIBLE_PARTY_SERVICES_INC,
-            self::RESPONSIBLE_PARTY_COMMERCIAL_SERVICES_PTY_LTD,
+            self::RESPONSIBLE_PARTY_AMAZON_SERVICES_INC,
         ];
 
         // This is necessary because Amazon does not consistently capitalize their

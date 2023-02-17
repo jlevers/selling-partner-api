@@ -30,10 +30,10 @@ Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled,
 **order_type** | **string** | The type of the order. | [optional]
 **earliest_ship_date** | **string** | The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
 
-Note: EarliestShipDate might not be returned for orders placed before February 1, 2013. | [optional]
+__Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013. | [optional]
 **latest_ship_date** | **string** | The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
 
-Note: LatestShipDate might not be returned for orders placed before February 1, 2013. | [optional]
+__Note__: LatestShipDate might not be returned for orders placed before February 1, 2013. | [optional]
 **earliest_delivery_date** | **string** | The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. | [optional]
 **latest_delivery_date** | **string** | The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status. | [optional]
 **is_business_order** | **bool** | When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer. | [optional]
@@ -53,11 +53,13 @@ Note: LatestShipDate might not be returned for orders placed before February 1, 
 **is_ispu** | **bool** | When true, this order is marked to be picked up from a store rather than delivered. | [optional]
 **is_access_point_order** | **bool** | When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers. | [optional]
 **marketplace_tax_info** | [**\SellingPartnerApi\Model\OrdersV0\MarketplaceTaxInfo**](MarketplaceTaxInfo.md) |  | [optional]
-**seller_display_name** | **string** | The seller's friendly name registered in the marketplace. | [optional]
+**seller_display_name** | **string** | The seller’s friendly name registered in the marketplace. | [optional]
 **shipping_address** | [**\SellingPartnerApi\Model\OrdersV0\Address**](Address.md) |  | [optional]
 **buyer_info** | [**\SellingPartnerApi\Model\OrdersV0\BuyerInfo**](BuyerInfo.md) |  | [optional]
 **automated_shipping_settings** | [**\SellingPartnerApi\Model\OrdersV0\AutomatedShippingSettings**](AutomatedShippingSettings.md) |  | [optional]
 **has_regulated_items** | **bool** | Whether the order contains regulated items which may require additional approval steps before being fulfilled. | [optional]
 **electronic_invoice_status** | [**\SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus**](ElectronicInvoiceStatus.md) |  | [optional]
+**item_approval_types** | [**\SellingPartnerApi\Model\OrdersV0\ItemApprovalType[]**](ItemApprovalType.md) | Set of approval types which applies to at least one order item in the order. | [optional]
+**item_approval_status** | [**\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[]**](ItemApprovalStatus.md) | Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals. | [optional]
 
 [[OrdersV0 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

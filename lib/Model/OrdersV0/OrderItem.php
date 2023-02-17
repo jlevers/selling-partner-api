@@ -92,7 +92,9 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'store_chain_store_id' => 'string',
         'deemed_reseller_category' => 'string',
         'buyer_info' => '\SellingPartnerApi\Model\OrdersV0\ItemBuyerInfo',
-        'buyer_requested_cancel' => '\SellingPartnerApi\Model\OrdersV0\BuyerRequestedCancel'
+        'buyer_requested_cancel' => '\SellingPartnerApi\Model\OrdersV0\BuyerRequestedCancel',
+        'item_approval_context' => '\SellingPartnerApi\Model\OrdersV0\ItemApprovalContext',
+        'serial_numbers' => 'string[]'
     ];
 
     /**
@@ -136,7 +138,9 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'store_chain_store_id' => null,
         'deemed_reseller_category' => null,
         'buyer_info' => null,
-        'buyer_requested_cancel' => null
+        'buyer_requested_cancel' => null,
+        'item_approval_context' => null,
+        'serial_numbers' => null
     ];
 
 
@@ -181,7 +185,9 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'store_chain_store_id' => 'StoreChainStoreId',
         'deemed_reseller_category' => 'DeemedResellerCategory',
         'buyer_info' => 'BuyerInfo',
-        'buyer_requested_cancel' => 'BuyerRequestedCancel'
+        'buyer_requested_cancel' => 'BuyerRequestedCancel',
+        'item_approval_context' => 'ItemApprovalContext',
+        'serial_numbers' => 'SerialNumbers'
     ];
 
     /**
@@ -223,7 +229,9 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'store_chain_store_id' => 'setStoreChainStoreId',
         'deemed_reseller_category' => 'setDeemedResellerCategory',
         'buyer_info' => 'setBuyerInfo',
-        'buyer_requested_cancel' => 'setBuyerRequestedCancel'
+        'buyer_requested_cancel' => 'setBuyerRequestedCancel',
+        'item_approval_context' => 'setItemApprovalContext',
+        'serial_numbers' => 'setSerialNumbers'
     ];
 
     /**
@@ -265,10 +273,34 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'store_chain_store_id' => 'getStoreChainStoreId',
         'deemed_reseller_category' => 'getDeemedResellerCategory',
         'buyer_info' => 'getBuyerInfo',
-        'buyer_requested_cancel' => 'getBuyerRequestedCancel'
+        'buyer_requested_cancel' => 'getBuyerRequestedCancel',
+        'item_approval_context' => 'getItemApprovalContext',
+        'serial_numbers' => 'getSerialNumbers'
     ];
 
 
+
+    const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
+    const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
+    
+    
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDeemedResellerCategoryAllowableValues()
+    {
+        $baseVals = [
+            self::DEEMED_RESELLER_CATEGORY_IOSS,
+            self::DEEMED_RESELLER_CATEGORY_UOSS,
+        ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
+    }
     
     /**
      * Associative array for storing property values
@@ -319,6 +351,8 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['buyer_requested_cancel'] = $data['buyer_requested_cancel'] ?? null;
+        $this->container['item_approval_context'] = $data['item_approval_context'] ?? null;
+        $this->container['serial_numbers'] = $data['serial_numbers'] ?? null;
     }
 
     /**
@@ -338,6 +372,18 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['quantity_ordered'] === null) {
             $invalidProperties[] = "'quantity_ordered' can't be null";
         }
+        $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
+        if (
+            !is_null($this->container['deemed_reseller_category']) &&
+            !in_array(strtoupper($this->container['deemed_reseller_category']), $allowedValues, true)
+        ) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
+                $this->container['deemed_reseller_category'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -1074,6 +1120,16 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      */
     public function setDeemedResellerCategory($deemed_reseller_category)
     {
+        $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
+        if (!is_null($deemed_reseller_category) &&!in_array(strtoupper($deemed_reseller_category), $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
+                    $deemed_reseller_category,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['deemed_reseller_category'] = $deemed_reseller_category;
 
         return $this;
@@ -1121,6 +1177,52 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     public function setBuyerRequestedCancel($buyer_requested_cancel)
     {
         $this->container['buyer_requested_cancel'] = $buyer_requested_cancel;
+
+        return $this;
+    }
+    /**
+     * Gets item_approval_context
+     *
+     * @return \SellingPartnerApi\Model\OrdersV0\ItemApprovalContext|null
+     */
+    public function getItemApprovalContext()
+    {
+        return $this->container['item_approval_context'];
+    }
+
+    /**
+     * Sets item_approval_context
+     *
+     * @param \SellingPartnerApi\Model\OrdersV0\ItemApprovalContext|null $item_approval_context item_approval_context
+     *
+     * @return self
+     */
+    public function setItemApprovalContext($item_approval_context)
+    {
+        $this->container['item_approval_context'] = $item_approval_context;
+
+        return $this;
+    }
+    /**
+     * Gets serial_numbers
+     *
+     * @return string[]|null
+     */
+    public function getSerialNumbers()
+    {
+        return $this->container['serial_numbers'];
+    }
+
+    /**
+     * Sets serial_numbers
+     *
+     * @param string[]|null $serial_numbers A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
+     *
+     * @return self
+     */
+    public function setSerialNumbers($serial_numbers)
+    {
+        $this->container['serial_numbers'] = $serial_numbers;
 
         return $this;
     }

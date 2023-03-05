@@ -312,22 +312,6 @@ $feedId = $createFeedResult->getFeedId();
 If you are manipulating huge feed documents you can pass to `upload()` anything that Guzzle can turn into a stream.
 
 
-### Uploading with a specific charset
-
-```php
-$charset = "Shift-JIS";
-...
-// Create feed document
-$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification([
-    'content_type' => SellingPartnerApi\Document::withContentType($feedType['contentType'], $charset)]
-]);
-...
-// Upload feed contents to document
-...
-$docToUpload->upload($feedContents, $charset);
-```
-
-
 ## Downloading a feed result document
 
 This works very similarly to downloading a report document:

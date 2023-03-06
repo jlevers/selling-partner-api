@@ -261,7 +261,7 @@ class Stop extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets arrival_time
      *
-     * @param string|null $arrival_time Date and time of the arrival of the cargo, in ISO 8601 format.
+     * @param string|null $arrival_time Date and time of the arrival of the cargo.
      *
      * @return self
      */
@@ -284,7 +284,7 @@ class Stop extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets departure_time
      *
-     * @param string|null $departure_time Date and time of the departure of the cargo, in ISO 8601 format.
+     * @param string|null $departure_time Date and time of the departure of the cargo.
      *
      * @return self
      */

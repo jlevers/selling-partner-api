@@ -210,7 +210,7 @@ class Pallet extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets tier
      *
-     * @param int|null $tier Number of layers per pallet.
+     * @param int|null $tier Number of layers per pallet. Only applicable to container type Pallet.
      *
      * @return self
      */
@@ -233,7 +233,7 @@ class Pallet extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets block
      *
-     * @param int|null $block Number of cartons per layer on the pallet.
+     * @param int|null $block Number of cartons per layer on the pallet. Only applicable to container type Pallet.
      *
      * @return self
      */

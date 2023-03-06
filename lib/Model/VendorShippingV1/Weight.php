@@ -35,7 +35,7 @@ use SellingPartnerApi\ObjectSerializer;
  * Weight Class Doc Comment
  *
  * @category Class
- * @description The weight.
+ * @description The weight of the shipment.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

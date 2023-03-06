@@ -159,7 +159,7 @@ class Expiry extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets manufacturer_date
      *
-     * @param string|null $manufacturer_date Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context. Must be in ISO 8601 format.
+     * @param string|null $manufacturer_date Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
      *
      * @return self
      */
@@ -182,7 +182,7 @@ class Expiry extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets expiry_date
      *
-     * @param string|null $expiry_date The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context. Must be in ISO 8601 format.
+     * @param string|null $expiry_date The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
      *
      * @return self
      */

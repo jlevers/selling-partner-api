@@ -201,7 +201,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets amazon_product_identifier
      *
-     * @param string|null $amazon_product_identifier Amazon Standard Identification Number (ASIN) of an item.
+     * @param string|null $amazon_product_identifier Buyer Standard Identification Number (ASIN) of an item.
      *
      * @return self
      */

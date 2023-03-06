@@ -35,7 +35,7 @@ use SellingPartnerApi\ObjectSerializer;
  * Volume Class Doc Comment
  *
  * @category Class
- * @description The volume of the container.
+ * @description The volume of the shipment.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

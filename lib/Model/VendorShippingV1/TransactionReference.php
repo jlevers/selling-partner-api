@@ -147,7 +147,7 @@ class TransactionReference extends BaseModel implements ModelInterface, ArrayAcc
     /**
      * Sets transaction_id
      *
-     * @param string|null $transaction_id GUID assigned by Amazon to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
+     * @param string|null $transaction_id GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
      *
      * @return self
      */

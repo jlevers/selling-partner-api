@@ -60,7 +60,9 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPITypes = [
         'amazon_order_id' => 'string',
-        'shipping_address' => '\SellingPartnerApi\Model\OrdersV0\Address'
+        'buyer_company_name' => 'string',
+        'shipping_address' => '\SellingPartnerApi\Model\OrdersV0\Address',
+        'delivery_preferences' => '\SellingPartnerApi\Model\OrdersV0\DeliveryPreferences'
     ];
 
     /**
@@ -72,7 +74,9 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
       */
     protected static $openAPIFormats = [
         'amazon_order_id' => null,
-        'shipping_address' => null
+        'buyer_company_name' => null,
+        'shipping_address' => null,
+        'delivery_preferences' => null
     ];
 
 
@@ -85,7 +89,9 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
      */
     protected static $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
-        'shipping_address' => 'ShippingAddress'
+        'buyer_company_name' => 'BuyerCompanyName',
+        'shipping_address' => 'ShippingAddress',
+        'delivery_preferences' => 'DeliveryPreferences'
     ];
 
     /**
@@ -95,7 +101,9 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
      */
     protected static $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
-        'shipping_address' => 'setShippingAddress'
+        'buyer_company_name' => 'setBuyerCompanyName',
+        'shipping_address' => 'setShippingAddress',
+        'delivery_preferences' => 'setDeliveryPreferences'
     ];
 
     /**
@@ -105,7 +113,9 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
      */
     protected static $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
-        'shipping_address' => 'getShippingAddress'
+        'buyer_company_name' => 'getBuyerCompanyName',
+        'shipping_address' => 'getShippingAddress',
+        'delivery_preferences' => 'getDeliveryPreferences'
     ];
 
 
@@ -126,7 +136,9 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
     public function __construct(array $data = null)
     {
         $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
+        $this->container['buyer_company_name'] = $data['buyer_company_name'] ?? null;
         $this->container['shipping_address'] = $data['shipping_address'] ?? null;
+        $this->container['delivery_preferences'] = $data['delivery_preferences'] ?? null;
     }
 
     /**
@@ -168,6 +180,29 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
         return $this;
     }
     /**
+     * Gets buyer_company_name
+     *
+     * @return string|null
+     */
+    public function getBuyerCompanyName()
+    {
+        return $this->container['buyer_company_name'];
+    }
+
+    /**
+     * Sets buyer_company_name
+     *
+     * @param string|null $buyer_company_name Company name of the destination address.
+     *
+     * @return self
+     */
+    public function setBuyerCompanyName($buyer_company_name)
+    {
+        $this->container['buyer_company_name'] = $buyer_company_name;
+
+        return $this;
+    }
+    /**
      * Gets shipping_address
      *
      * @return \SellingPartnerApi\Model\OrdersV0\Address|null
@@ -187,6 +222,29 @@ class OrderAddress extends BaseModel implements ModelInterface, ArrayAccess, \Js
     public function setShippingAddress($shipping_address)
     {
         $this->container['shipping_address'] = $shipping_address;
+
+        return $this;
+    }
+    /**
+     * Gets delivery_preferences
+     *
+     * @return \SellingPartnerApi\Model\OrdersV0\DeliveryPreferences|null
+     */
+    public function getDeliveryPreferences()
+    {
+        return $this->container['delivery_preferences'];
+    }
+
+    /**
+     * Sets delivery_preferences
+     *
+     * @param \SellingPartnerApi\Model\OrdersV0\DeliveryPreferences|null $delivery_preferences delivery_preferences
+     *
+     * @return self
+     */
+    public function setDeliveryPreferences($delivery_preferences)
+    {
+        $this->container['delivery_preferences'] = $delivery_preferences;
 
         return $this;
     }

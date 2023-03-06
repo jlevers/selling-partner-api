@@ -61,7 +61,7 @@ class FeaturedOfferExpectedPriceRequest extends BaseModel implements ModelInterf
     protected static $openAPITypes = [
         'uri' => 'string',
         'method' => '\SellingPartnerApi\Model\ProductPricingV20220501\HttpMethod',
-        'body' => 'object',
+        'body' => 'map[string,object]',
         'headers' => 'map[string,string]',
         'marketplace_id' => 'string',
         'sku' => 'string'
@@ -226,7 +226,7 @@ class FeaturedOfferExpectedPriceRequest extends BaseModel implements ModelInterf
     /**
      * Gets body
      *
-     * @return object|null
+     * @return map[string,object]|null
      */
     public function getBody()
     {
@@ -236,7 +236,7 @@ class FeaturedOfferExpectedPriceRequest extends BaseModel implements ModelInterf
     /**
      * Sets body
      *
-     * @param object|null $body Additional HTTP body information associated with an individual request within a batch.
+     * @param map[string,object]|null $body Additional HTTP body information associated with an individual request within a batch.
      *
      * @return self
      */

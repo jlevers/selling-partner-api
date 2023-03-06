@@ -67,7 +67,8 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'gift_details' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\GiftDetails',
         'net_price' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\Money',
         'tax_details' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\TaxItemDetails',
-        'total_price' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\Money'
+        'total_price' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\Money',
+        'buyer_customized_info' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\BuyerCustomizedInfoDetail'
     ];
 
     /**
@@ -87,7 +88,8 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'gift_details' => null,
         'net_price' => null,
         'tax_details' => null,
-        'total_price' => null
+        'total_price' => null,
+        'buyer_customized_info' => null
     ];
 
 
@@ -108,7 +110,8 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'gift_details' => 'giftDetails',
         'net_price' => 'netPrice',
         'tax_details' => 'taxDetails',
-        'total_price' => 'totalPrice'
+        'total_price' => 'totalPrice',
+        'buyer_customized_info' => 'buyerCustomizedInfo'
     ];
 
     /**
@@ -126,7 +129,8 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'gift_details' => 'setGiftDetails',
         'net_price' => 'setNetPrice',
         'tax_details' => 'setTaxDetails',
-        'total_price' => 'setTotalPrice'
+        'total_price' => 'setTotalPrice',
+        'buyer_customized_info' => 'setBuyerCustomizedInfo'
     ];
 
     /**
@@ -144,7 +148,8 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         'gift_details' => 'getGiftDetails',
         'net_price' => 'getNetPrice',
         'tax_details' => 'getTaxDetails',
-        'total_price' => 'getTotalPrice'
+        'total_price' => 'getTotalPrice',
+        'buyer_customized_info' => 'getBuyerCustomizedInfo'
     ];
 
 
@@ -174,6 +179,7 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
         $this->container['net_price'] = $data['net_price'] ?? null;
         $this->container['tax_details'] = $data['tax_details'] ?? null;
         $this->container['total_price'] = $data['total_price'] ?? null;
+        $this->container['buyer_customized_info'] = $data['buyer_customized_info'] ?? null;
     }
 
     /**
@@ -424,6 +430,29 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     public function setTotalPrice($total_price)
     {
         $this->container['total_price'] = $total_price;
+
+        return $this;
+    }
+    /**
+     * Gets buyer_customized_info
+     *
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\BuyerCustomizedInfoDetail|null
+     */
+    public function getBuyerCustomizedInfo()
+    {
+        return $this->container['buyer_customized_info'];
+    }
+
+    /**
+     * Sets buyer_customized_info
+     *
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\BuyerCustomizedInfoDetail|null $buyer_customized_info buyer_customized_info
+     *
+     * @return self
+     */
+    public function setBuyerCustomizedInfo($buyer_customized_info)
+    {
+        $this->container['buyer_customized_info'] = $buyer_customized_info;
 
         return $this;
     }

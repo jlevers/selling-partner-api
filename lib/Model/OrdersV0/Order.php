@@ -1631,7 +1631,7 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets seller_display_name
      *
-     * @param string|null $seller_display_name The seller’s friendly name registered in the marketplace.
+     * @param string|null $seller_display_name The seller's friendly name registered in the marketplace.
      *
      * @return self
      */

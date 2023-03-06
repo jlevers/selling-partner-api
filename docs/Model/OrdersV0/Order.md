@@ -53,7 +53,7 @@ __Note__: LatestShipDate might not be returned for orders placed before February
 **is_ispu** | **bool** | When true, this order is marked to be picked up from a store rather than delivered. | [optional]
 **is_access_point_order** | **bool** | When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers. | [optional]
 **marketplace_tax_info** | [**\SellingPartnerApi\Model\OrdersV0\MarketplaceTaxInfo**](MarketplaceTaxInfo.md) |  | [optional]
-**seller_display_name** | **string** | The seller’s friendly name registered in the marketplace. | [optional]
+**seller_display_name** | **string** | The seller's friendly name registered in the marketplace. | [optional]
 **shipping_address** | [**\SellingPartnerApi\Model\OrdersV0\Address**](Address.md) |  | [optional]
 **buyer_info** | [**\SellingPartnerApi\Model\OrdersV0\BuyerInfo**](BuyerInfo.md) |  | [optional]
 **automated_shipping_settings** | [**\SellingPartnerApi\Model\OrdersV0\AutomatedShippingSettings**](AutomatedShippingSettings.md) |  | [optional]

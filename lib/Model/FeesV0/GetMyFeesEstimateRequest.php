@@ -91,7 +91,7 @@ class GetMyFeesEstimateRequest extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'fees_estimate_request' => 'setFeesEstimateRequest'
+        'fees_estimate_request' => 'setFeesEstimateRequest'
     ];
 
     /**

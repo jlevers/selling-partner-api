@@ -106,7 +106,7 @@ class Product extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'identifiers' => 'setIdentifiers',
+        'identifiers' => 'setIdentifiers',
         'attribute_sets' => 'setAttributeSets',
         'relationships' => 'setRelationships',
         'competitive_pricing' => 'setCompetitivePricing',

@@ -97,7 +97,7 @@ class Promotion extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'promotion_type' => 'setPromotionType',
+        'promotion_type' => 'setPromotionType',
         'promotion_id' => 'setPromotionId',
         'promotion_amount' => 'setPromotionAmount'
     ];

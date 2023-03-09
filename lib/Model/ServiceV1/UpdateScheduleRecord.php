@@ -97,7 +97,7 @@ class UpdateScheduleRecord extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'availability' => 'setAvailability',
+        'availability' => 'setAvailability',
         'warnings' => 'setWarnings',
         'errors' => 'setErrors'
     ];

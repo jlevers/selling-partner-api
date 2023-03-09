@@ -118,7 +118,7 @@ class RentalTransactionEvent extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'rental_event_type' => 'setRentalEventType',
         'extension_length' => 'setExtensionLength',
         'posted_date' => 'setPostedDate',

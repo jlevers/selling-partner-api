@@ -94,7 +94,7 @@ class DestinationResourceSpecification extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'sqs' => 'setSqs',
+        'sqs' => 'setSqs',
         'event_bridge' => 'setEventBridge'
     ];
 

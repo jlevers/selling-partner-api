@@ -103,7 +103,7 @@ class DebtRecoveryEvent extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'debt_recovery_type' => 'setDebtRecoveryType',
+        'debt_recovery_type' => 'setDebtRecoveryType',
         'recovery_amount' => 'setRecoveryAmount',
         'over_payment_credit' => 'setOverPaymentCredit',
         'debt_recovery_item_list' => 'setDebtRecoveryItemList',

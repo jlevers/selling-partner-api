@@ -94,7 +94,7 @@ class ListFinancialEventGroupsPayload extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'next_token' => 'setNextToken',
+        'next_token' => 'setNextToken',
         'financial_event_group_list' => 'setFinancialEventGroupList'
     ];
 

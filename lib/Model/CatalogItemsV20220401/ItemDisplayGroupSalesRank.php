@@ -100,7 +100,7 @@ class ItemDisplayGroupSalesRank extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'website_display_group' => 'setWebsiteDisplayGroup',
+        'website_display_group' => 'setWebsiteDisplayGroup',
         'title' => 'setTitle',
         'link' => 'setLink',
         'rank' => 'setRank'

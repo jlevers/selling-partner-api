@@ -94,7 +94,7 @@ class RetrieveShippingLabelResult extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'label_stream' => 'setLabelStream',
+        'label_stream' => 'setLabelStream',
         'label_specification' => 'setLabelSpecification'
     ];
 

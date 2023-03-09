@@ -94,7 +94,7 @@ class LabelCustomization extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'custom_text_for_label' => 'setCustomTextForLabel',
+        'custom_text_for_label' => 'setCustomTextForLabel',
         'standard_id_for_label' => 'setStandardIdForLabel'
     ];
 

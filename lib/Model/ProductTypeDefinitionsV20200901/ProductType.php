@@ -94,7 +94,7 @@ class ProductType extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'marketplace_ids' => 'setMarketplaceIds'
     ];
 

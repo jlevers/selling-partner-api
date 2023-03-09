@@ -103,7 +103,7 @@ class GetTrackingResult extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'tracking_id' => 'setTrackingId',
+        'tracking_id' => 'setTrackingId',
         'alternate_leg_tracking_id' => 'setAlternateLegTrackingId',
         'event_history' => 'setEventHistory',
         'promised_delivery_date' => 'setPromisedDeliveryDate',

@@ -91,7 +91,7 @@ class SubmitInventoryUpdateRequest extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'inventory' => 'setInventory'
+        'inventory' => 'setInventory'
     ];
 
     /**

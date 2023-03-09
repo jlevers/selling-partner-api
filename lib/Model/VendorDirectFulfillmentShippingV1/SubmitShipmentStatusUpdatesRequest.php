@@ -90,7 +90,7 @@ class SubmitShipmentStatusUpdatesRequest extends BaseModel implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-                'shipment_status_updates' => 'setShipmentStatusUpdates'
+        'shipment_status_updates' => 'setShipmentStatusUpdates'
     ];
 
     /**

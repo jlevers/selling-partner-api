@@ -1,6 +1,6 @@
 {
     "name": "shirushi-dev/selling-partner-api",
-    "version": "5.5.2",
+    "version": "5.7.2",
     "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",
@@ -12,17 +12,21 @@
         "rest",
         "api"
     ],
-    "repositories": [{
-        "name": "shirushi-dev/selling-partner-api",
-        "type": "vcs",
-        "url": "https://github.com/shirushi-dev/selling-partner-api"
-    }],
+    "repositories": [
+        {
+            "name": "shirushi-dev/selling-partner-api",
+            "type": "vcs",
+            "url": "https://github.com/shirushi-dev/selling-partner-api"
+        }
+    ],
     "license": "BSD-3-Clause",
     "type": "library",
-    "authors": [{
-        "name": "Jesse Evers",
-        "homepage": "https://jesseevers.com"
-    }],
+    "authors": [
+        {
+            "name": "Jesse Evers",
+            "homepage": "https://jesseevers.com"
+        }
+    ],
     "require": {
         "php": ">=7.3",
         "ext-curl": "*",
@@ -37,10 +41,14 @@
         "friendsofphp/php-cs-fixer": "^3.4"
     },
     "autoload": {
-        "psr-4": { "SellingPartnerApi\\": "lib/" }
+        "psr-4": {
+            "SellingPartnerApi\\": "lib/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "SellingPartnerApi\\Tests\\": "test/" }
+        "psr-4": {
+            "SellingPartnerApi\\Tests\\": "test/"
+        }
     },
     "scripts": {
         "test": "vendor/bin/phpunit",

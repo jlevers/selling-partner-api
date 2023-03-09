@@ -94,7 +94,7 @@ class StandardImageTextOverlayModule extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'overlay_color_type' => 'setOverlayColorType',
+        'overlay_color_type' => 'setOverlayColorType',
         'block' => 'setBlock'
     ];
 

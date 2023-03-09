@@ -90,7 +90,7 @@ class CreateInboundShipmentPlanResult extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'inbound_shipment_plans' => 'setInboundShipmentPlans'
+        'inbound_shipment_plans' => 'setInboundShipmentPlans'
     ];
 
     /**

@@ -100,7 +100,7 @@ class TaxDetail extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'tax_type' => 'setTaxType',
+        'tax_type' => 'setTaxType',
         'tax_rate' => 'setTaxRate',
         'tax_amount' => 'setTaxAmount',
         'taxable_amount' => 'setTaxableAmount'

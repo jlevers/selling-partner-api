@@ -97,7 +97,7 @@ class GetRatesResult extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'request_token' => 'setRequestToken',
+        'request_token' => 'setRequestToken',
         'rates' => 'setRates',
         'ineligible_rates' => 'setIneligibleRates'
     ];

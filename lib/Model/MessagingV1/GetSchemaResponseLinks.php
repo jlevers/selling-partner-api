@@ -90,7 +90,7 @@ class GetSchemaResponseLinks extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'self' => 'setSelf'
+        'self' => 'setSelf'
     ];
 
     /**

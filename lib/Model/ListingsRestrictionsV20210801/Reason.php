@@ -97,7 +97,7 @@ class Reason extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'message' => 'setMessage',
+        'message' => 'setMessage',
         'reason_code' => 'setReasonCode',
         'links' => 'setLinks'
     ];

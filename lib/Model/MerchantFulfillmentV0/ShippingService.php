@@ -127,7 +127,7 @@ class ShippingService extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'shipping_service_name' => 'setShippingServiceName',
+        'shipping_service_name' => 'setShippingServiceName',
         'carrier_name' => 'setCarrierName',
         'shipping_service_id' => 'setShippingServiceId',
         'shipping_service_offer_id' => 'setShippingServiceOfferId',

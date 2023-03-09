@@ -91,7 +91,7 @@ class TrackingSummary extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'status' => 'setStatus'
+        'status' => 'setStatus'
     ];
 
     /**

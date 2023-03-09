@@ -91,7 +91,7 @@ class CreateUnexpectedProblemRequest extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'text' => 'setText'
+        'text' => 'setText'
     ];
 
     /**

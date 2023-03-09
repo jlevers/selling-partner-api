@@ -96,7 +96,7 @@ class SellerSKUIdentifier extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'seller_id' => 'setSellerId',
         'seller_sku' => 'setSellerSku'
     ];

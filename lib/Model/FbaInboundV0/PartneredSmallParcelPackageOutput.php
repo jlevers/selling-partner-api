@@ -103,7 +103,7 @@ class PartneredSmallParcelPackageOutput extends BaseModel implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-                'dimensions' => 'setDimensions',
+        'dimensions' => 'setDimensions',
         'weight' => 'setWeight',
         'carrier_name' => 'setCarrierName',
         'tracking_id' => 'setTrackingId',

@@ -97,7 +97,7 @@ class BuyerTaxInfo extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'company_legal_name' => 'setCompanyLegalName',
+        'company_legal_name' => 'setCompanyLegalName',
         'taxing_region' => 'setTaxingRegion',
         'tax_classifications' => 'setTaxClassifications'
     ];

@@ -93,7 +93,7 @@ class ContainerIdentification extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'container_identification_type' => 'setContainerIdentificationType',
+        'container_identification_type' => 'setContainerIdentificationType',
         'container_identification_number' => 'setContainerIdentificationNumber'
     ];
 

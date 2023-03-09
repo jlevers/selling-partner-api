@@ -91,7 +91,7 @@ class AssignAppointmentResourcesResponsePayload extends BaseModel implements Mod
      * @var string[]
      */
     protected static $setters = [
-                'warnings' => 'setWarnings'
+        'warnings' => 'setWarnings'
     ];
 
     /**

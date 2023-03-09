@@ -97,7 +97,7 @@ class InvalidReturnItem extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'seller_return_item_id' => 'setSellerReturnItemId',
+        'seller_return_item_id' => 'setSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'invalid_item_reason' => 'setInvalidItemReason'
     ];

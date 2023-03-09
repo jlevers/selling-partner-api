@@ -97,7 +97,7 @@ class ValueAddedService extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'id' => 'setId',
+        'id' => 'setId',
         'name' => 'setName',
         'cost' => 'setCost'
     ];

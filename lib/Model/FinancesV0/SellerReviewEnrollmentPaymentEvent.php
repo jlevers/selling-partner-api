@@ -106,7 +106,7 @@ class SellerReviewEnrollmentPaymentEvent extends BaseModel implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'enrollment_id' => 'setEnrollmentId',
         'parent_asin' => 'setParentAsin',
         'fee_component' => 'setFeeComponent',

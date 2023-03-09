@@ -94,7 +94,7 @@ class CreateReservationRequest extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'resource_id' => 'setResourceId',
+        'resource_id' => 'setResourceId',
         'reservation' => 'setReservation'
     ];
 

@@ -103,7 +103,7 @@ class SAFETReimbursementEvent extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'safet_claim_id' => 'setSafetClaimId',
         'reimbursed_amount' => 'setReimbursedAmount',
         'reason_code' => 'setReasonCode',

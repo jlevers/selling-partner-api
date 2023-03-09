@@ -109,7 +109,7 @@ class RemovalShipmentItemAdjustment extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'removal_shipment_item_id' => 'setRemovalShipmentItemId',
+        'removal_shipment_item_id' => 'setRemovalShipmentItemId',
         'tax_collection_model' => 'setTaxCollectionModel',
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
         'adjusted_quantity' => 'setAdjustedQuantity',

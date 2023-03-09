@@ -109,7 +109,7 @@ class InboundShipmentHeader extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'shipment_name' => 'setShipmentName',
+        'shipment_name' => 'setShipmentName',
         'ship_from_address' => 'setShipFromAddress',
         'destination_fulfillment_center_id' => 'setDestinationFulfillmentCenterId',
         'are_cases_required' => 'setAreCasesRequired',

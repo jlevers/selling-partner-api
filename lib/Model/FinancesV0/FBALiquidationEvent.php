@@ -100,7 +100,7 @@ class FBALiquidationEvent extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'original_removal_order_id' => 'setOriginalRemovalOrderId',
         'liquidation_proceeds_amount' => 'setLiquidationProceedsAmount',
         'liquidation_fee_amount' => 'setLiquidationFeeAmount'

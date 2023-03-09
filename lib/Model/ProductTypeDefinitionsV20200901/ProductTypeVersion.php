@@ -97,7 +97,7 @@ class ProductTypeVersion extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'version' => 'setVersion',
+        'version' => 'setVersion',
         'latest' => 'setLatest',
         'release_candidate' => 'setReleaseCandidate'
     ];

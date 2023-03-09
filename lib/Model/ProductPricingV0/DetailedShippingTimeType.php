@@ -100,7 +100,7 @@ class DetailedShippingTimeType extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'minimum_hours' => 'setMinimumHours',
+        'minimum_hours' => 'setMinimumHours',
         'maximum_hours' => 'setMaximumHours',
         'available_date' => 'setAvailableDate',
         'availability_type' => 'setAvailabilityType'

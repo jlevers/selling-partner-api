@@ -91,7 +91,7 @@ class CreateAmazonMotorsRequest extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'attachments' => 'setAttachments'
+        'attachments' => 'setAttachments'
     ];
 
     /**

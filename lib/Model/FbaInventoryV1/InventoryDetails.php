@@ -109,7 +109,7 @@ class InventoryDetails extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'fulfillable_quantity' => 'setFulfillableQuantity',
+        'fulfillable_quantity' => 'setFulfillableQuantity',
         'inbound_working_quantity' => 'setInboundWorkingQuantity',
         'inbound_shipped_quantity' => 'setInboundShippedQuantity',
         'inbound_receiving_quantity' => 'setInboundReceivingQuantity',

@@ -94,7 +94,7 @@ class RangeCapacity extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'capacity_type' => 'setCapacityType',
+        'capacity_type' => 'setCapacityType',
         'slots' => 'setSlots'
     ];
 

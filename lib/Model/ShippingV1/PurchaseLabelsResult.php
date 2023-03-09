@@ -100,7 +100,7 @@ class PurchaseLabelsResult extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId',
+        'shipment_id' => 'setShipmentId',
         'client_reference_id' => 'setClientReferenceId',
         'accepted_rate' => 'setAcceptedRate',
         'label_results' => 'setLabelResults'

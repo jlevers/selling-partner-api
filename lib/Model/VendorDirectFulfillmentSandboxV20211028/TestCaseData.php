@@ -91,7 +91,7 @@ class TestCaseData extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'scenarios' => 'setScenarios'
+        'scenarios' => 'setScenarios'
     ];
 
     /**

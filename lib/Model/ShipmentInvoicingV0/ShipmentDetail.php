@@ -130,7 +130,7 @@ class ShipmentDetail extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'warehouse_id' => 'setWarehouseId',
+        'warehouse_id' => 'setWarehouseId',
         'amazon_order_id' => 'setAmazonOrderId',
         'amazon_shipment_id' => 'setAmazonShipmentId',
         'purchase_date' => 'setPurchaseDate',

@@ -91,7 +91,7 @@ class GetAttributesResponseBuyer extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'locale' => 'setLocale'
+        'locale' => 'setLocale'
     ];
 
     /**

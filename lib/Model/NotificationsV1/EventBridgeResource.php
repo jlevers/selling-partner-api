@@ -97,7 +97,7 @@ class EventBridgeResource extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'region' => 'setRegion',
         'account_id' => 'setAccountId'
     ];

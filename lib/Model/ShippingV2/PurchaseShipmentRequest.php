@@ -103,7 +103,7 @@ class PurchaseShipmentRequest extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'request_token' => 'setRequestToken',
+        'request_token' => 'setRequestToken',
         'rate_id' => 'setRateId',
         'requested_document_specification' => 'setRequestedDocumentSpecification',
         'requested_value_added_services' => 'setRequestedValueAddedServices',

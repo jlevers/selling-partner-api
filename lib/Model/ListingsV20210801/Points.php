@@ -91,7 +91,7 @@ class Points extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'points_number' => 'setPointsNumber'
+        'points_number' => 'setPointsNumber'
     ];
 
     /**

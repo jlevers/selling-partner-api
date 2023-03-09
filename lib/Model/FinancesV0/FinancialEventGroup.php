@@ -121,7 +121,7 @@ class FinancialEventGroup extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'financial_event_group_id' => 'setFinancialEventGroupId',
+        'financial_event_group_id' => 'setFinancialEventGroupId',
         'processing_status' => 'setProcessingStatus',
         'fund_transfer_status' => 'setFundTransferStatus',
         'original_total' => 'setOriginalTotal',

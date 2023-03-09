@@ -109,7 +109,7 @@ class RetrochargeEvent extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'retrocharge_event_type' => 'setRetrochargeEventType',
+        'retrocharge_event_type' => 'setRetrochargeEventType',
         'amazon_order_id' => 'setAmazonOrderId',
         'posted_date' => 'setPostedDate',
         'base_tax' => 'setBaseTax',

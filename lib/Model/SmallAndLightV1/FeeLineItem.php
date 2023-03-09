@@ -94,7 +94,7 @@ class FeeLineItem extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'fee_type' => 'setFeeType',
+        'fee_type' => 'setFeeType',
         'fee_charge' => 'setFeeCharge'
     ];
 

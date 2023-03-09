@@ -100,7 +100,7 @@ class Contact extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'phone' => 'setPhone',
         'email' => 'setEmail',
         'fax' => 'setFax'

@@ -97,7 +97,7 @@ class ScheduledDeliveryShipment extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'scheduled_delivery_service_type' => 'setScheduledDeliveryServiceType',
+        'scheduled_delivery_service_type' => 'setScheduledDeliveryServiceType',
         'earliest_nominated_delivery_date' => 'setEarliestNominatedDeliveryDate',
         'latest_nominated_delivery_date' => 'setLatestNominatedDeliveryDate'
     ];

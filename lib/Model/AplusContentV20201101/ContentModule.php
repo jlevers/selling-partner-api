@@ -136,7 +136,7 @@ class ContentModule extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'content_module_type' => 'setContentModuleType',
+        'content_module_type' => 'setContentModuleType',
         'standard_company_logo' => 'setStandardCompanyLogo',
         'standard_comparison_table' => 'setStandardComparisonTable',
         'standard_four_image_text' => 'setStandardFourImageText',

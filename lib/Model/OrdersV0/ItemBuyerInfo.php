@@ -103,7 +103,7 @@ class ItemBuyerInfo extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'buyer_customized_info' => 'setBuyerCustomizedInfo',
+        'buyer_customized_info' => 'setBuyerCustomizedInfo',
         'gift_wrap_price' => 'setGiftWrapPrice',
         'gift_wrap_tax' => 'setGiftWrapTax',
         'gift_message_text' => 'setGiftMessageText',

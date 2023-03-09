@@ -97,7 +97,7 @@ class Reservation extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'reservation_id' => 'setReservationId',
+        'reservation_id' => 'setReservationId',
         'type' => 'setType',
         'availability' => 'setAvailability'
     ];

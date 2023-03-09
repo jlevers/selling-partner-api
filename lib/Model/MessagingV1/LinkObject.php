@@ -94,7 +94,7 @@ class LinkObject extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'href' => 'setHref',
+        'href' => 'setHref',
         'name' => 'setName'
     ];
 

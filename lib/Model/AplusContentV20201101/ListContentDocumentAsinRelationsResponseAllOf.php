@@ -90,7 +90,7 @@ class ListContentDocumentAsinRelationsResponseAllOf extends BaseModel implements
      * @var string[]
      */
     protected static $setters = [
-                'asin_metadata_set' => 'setAsinMetadataSet'
+        'asin_metadata_set' => 'setAsinMetadataSet'
     ];
 
     /**

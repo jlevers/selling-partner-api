@@ -94,7 +94,7 @@ class PaymentExecutionDetailItem extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'payment' => 'setPayment',
+        'payment' => 'setPayment',
         'payment_method' => 'setPaymentMethod'
     ];
 

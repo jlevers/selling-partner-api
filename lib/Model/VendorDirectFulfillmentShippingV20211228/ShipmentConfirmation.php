@@ -105,7 +105,7 @@ class ShipmentConfirmation extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'shipment_details' => 'setShipmentDetails',
         'selling_party' => 'setSellingParty',
         'ship_from_party' => 'setShipFromParty',

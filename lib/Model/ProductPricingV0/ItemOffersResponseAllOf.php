@@ -90,7 +90,7 @@ class ItemOffersResponseAllOf extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'request' => 'setRequest'
+        'request' => 'setRequest'
     ];
 
     /**

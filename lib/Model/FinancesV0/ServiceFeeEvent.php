@@ -109,7 +109,7 @@ class ServiceFeeEvent extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'fee_reason' => 'setFeeReason',
         'fee_list' => 'setFeeList',
         'seller_sku' => 'setSellerSku',

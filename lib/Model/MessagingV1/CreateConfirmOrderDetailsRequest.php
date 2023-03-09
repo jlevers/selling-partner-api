@@ -91,7 +91,7 @@ class CreateConfirmOrderDetailsRequest extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'text' => 'setText'
+        'text' => 'setText'
     ];
 
     /**

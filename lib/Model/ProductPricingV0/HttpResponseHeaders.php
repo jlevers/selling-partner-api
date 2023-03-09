@@ -94,7 +94,7 @@ class HttpResponseHeaders extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'date' => 'setDate',
+        'date' => 'setDate',
         'x_amzn_request_id' => 'setXAmznRequestId'
     ];
 

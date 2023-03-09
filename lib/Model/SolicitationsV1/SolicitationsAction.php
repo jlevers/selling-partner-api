@@ -91,7 +91,7 @@ class SolicitationsAction extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName'
+        'name' => 'setName'
     ];
 
     /**

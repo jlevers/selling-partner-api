@@ -103,7 +103,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-                'item_sequence_number' => 'setItemSequenceNumber',
+        'item_sequence_number' => 'setItemSequenceNumber',
         'amazon_product_identifier' => 'setAmazonProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'shipped_quantity' => 'setShippedQuantity',
@@ -201,7 +201,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets amazon_product_identifier
      *
-     * @param string|null $amazon_product_identifier Amazon Standard Identification Number (ASIN) of an item.
+     * @param string|null $amazon_product_identifier Buyer Standard Identification Number (ASIN) of an item.
      *
      * @return self
      */

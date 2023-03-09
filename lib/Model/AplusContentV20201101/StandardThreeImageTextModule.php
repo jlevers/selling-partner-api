@@ -100,7 +100,7 @@ class StandardThreeImageTextModule extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'headline' => 'setHeadline',
+        'headline' => 'setHeadline',
         'block1' => 'setBlock1',
         'block2' => 'setBlock2',
         'block3' => 'setBlock3'

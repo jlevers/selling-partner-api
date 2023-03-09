@@ -94,7 +94,7 @@ class NonPartneredLtlDataInput extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'carrier_name' => 'setCarrierName',
+        'carrier_name' => 'setCarrierName',
         'pro_number' => 'setProNumber'
     ];
 

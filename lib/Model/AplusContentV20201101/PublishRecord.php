@@ -106,7 +106,7 @@ class PublishRecord extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'locale' => 'setLocale',
         'asin' => 'setAsin',
         'content_type' => 'setContentType',

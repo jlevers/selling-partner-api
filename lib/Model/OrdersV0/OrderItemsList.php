@@ -97,7 +97,7 @@ class OrderItemsList extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'order_items' => 'setOrderItems',
+        'order_items' => 'setOrderItems',
         'next_token' => 'setNextToken',
         'amazon_order_id' => 'setAmazonOrderId'
     ];

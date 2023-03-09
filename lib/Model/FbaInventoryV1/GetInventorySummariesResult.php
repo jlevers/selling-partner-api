@@ -94,7 +94,7 @@ class GetInventorySummariesResult extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'granularity' => 'setGranularity',
+        'granularity' => 'setGranularity',
         'inventory_summaries' => 'setInventorySummaries'
     ];
 

@@ -94,7 +94,7 @@ class ResearchingQuantity extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'total_researching_quantity' => 'setTotalResearchingQuantity',
+        'total_researching_quantity' => 'setTotalResearchingQuantity',
         'researching_quantity_breakdown' => 'setResearchingQuantityBreakdown'
     ];
 

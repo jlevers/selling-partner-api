@@ -90,7 +90,7 @@ class PostContentDocumentAsinRelationsRequest extends BaseModel implements Model
      * @var string[]
      */
     protected static $setters = [
-                'asin_set' => 'setAsinSet'
+        'asin_set' => 'setAsinSet'
     ];
 
     /**

@@ -97,7 +97,7 @@ class ListingsItemPutRequest extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'product_type' => 'setProductType',
+        'product_type' => 'setProductType',
         'requirements' => 'setRequirements',
         'attributes' => 'setAttributes'
     ];

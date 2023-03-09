@@ -94,7 +94,7 @@ class TextItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-                'position' => 'setPosition',
+        'position' => 'setPosition',
         'text' => 'setText'
     ];
 

@@ -93,7 +93,7 @@ class SalesRankType extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'product_category_id' => 'setProductCategoryId',
+        'product_category_id' => 'setProductCategoryId',
         'rank' => 'setRank'
     ];
 

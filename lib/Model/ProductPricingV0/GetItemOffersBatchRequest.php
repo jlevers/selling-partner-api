@@ -91,7 +91,7 @@ class GetItemOffersBatchRequest extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'requests' => 'setRequests'
+        'requests' => 'setRequests'
     ];
 
     /**

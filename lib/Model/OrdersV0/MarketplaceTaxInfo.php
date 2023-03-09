@@ -91,7 +91,7 @@ class MarketplaceTaxInfo extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'tax_classifications' => 'setTaxClassifications'
+        'tax_classifications' => 'setTaxClassifications'
     ];
 
     /**

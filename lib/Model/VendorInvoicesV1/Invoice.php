@@ -132,7 +132,7 @@ class Invoice extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'invoice_type' => 'setInvoiceType',
+        'invoice_type' => 'setInvoiceType',
         'id' => 'setId',
         'reference_number' => 'setReferenceNumber',
         'date' => 'setDate',

@@ -91,7 +91,7 @@ class ValueAddedServiceDetails extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'collect_on_delivery' => 'setCollectOnDelivery'
+        'collect_on_delivery' => 'setCollectOnDelivery'
     ];
 
     /**

@@ -97,7 +97,7 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'aggregation_settings' => 'setAggregationSettings',
+        'aggregation_settings' => 'setAggregationSettings',
         'marketplace_ids' => 'setMarketplaceIds',
         'event_filter_type' => 'setEventFilterType'
     ];

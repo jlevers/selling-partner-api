@@ -100,7 +100,7 @@ class Link extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-                'resource' => 'setResource',
+        'resource' => 'setResource',
         'verb' => 'setVerb',
         'title' => 'setTitle',
         'type' => 'setType'

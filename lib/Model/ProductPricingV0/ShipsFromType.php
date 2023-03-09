@@ -94,7 +94,7 @@ class ShipsFromType extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'state' => 'setState',
+        'state' => 'setState',
         'country' => 'setCountry'
     ];
 

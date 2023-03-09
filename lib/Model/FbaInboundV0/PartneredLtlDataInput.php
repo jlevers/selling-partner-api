@@ -109,7 +109,7 @@ class PartneredLtlDataInput extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'contact' => 'setContact',
+        'contact' => 'setContact',
         'box_count' => 'setBoxCount',
         'seller_freight_class' => 'setSellerFreightClass',
         'freight_ready_date' => 'setFreightReadyDate',

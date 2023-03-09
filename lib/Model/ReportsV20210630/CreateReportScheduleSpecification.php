@@ -102,7 +102,7 @@ class CreateReportScheduleSpecification extends BaseModel implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-                'report_type' => 'setReportType',
+        'report_type' => 'setReportType',
         'marketplace_ids' => 'setMarketplaceIds',
         'report_options' => 'setReportOptions',
         'period' => 'setPeriod',

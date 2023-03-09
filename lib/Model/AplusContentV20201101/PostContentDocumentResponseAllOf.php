@@ -90,7 +90,7 @@ class PostContentDocumentResponseAllOf extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'content_reference_key' => 'setContentReferenceKey'
+        'content_reference_key' => 'setContentReferenceKey'
     ];
 
     /**

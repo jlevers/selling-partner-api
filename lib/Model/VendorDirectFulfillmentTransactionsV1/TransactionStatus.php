@@ -91,7 +91,7 @@ class TransactionStatus extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'transaction_status' => 'setTransactionStatus'
+        'transaction_status' => 'setTransactionStatus'
     ];
 
     /**

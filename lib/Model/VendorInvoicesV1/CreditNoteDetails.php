@@ -109,7 +109,7 @@ class CreditNoteDetails extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'reference_invoice_number' => 'setReferenceInvoiceNumber',
+        'reference_invoice_number' => 'setReferenceInvoiceNumber',
         'debit_note_number' => 'setDebitNoteNumber',
         'returns_reference_number' => 'setReturnsReferenceNumber',
         'goods_return_date' => 'setGoodsReturnDate',

@@ -93,7 +93,7 @@ class ASINIdentifier extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'asin' => 'setAsin'
     ];
 

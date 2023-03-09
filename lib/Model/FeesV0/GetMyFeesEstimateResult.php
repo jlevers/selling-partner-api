@@ -91,7 +91,7 @@ class GetMyFeesEstimateResult extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'fees_estimate_result' => 'setFeesEstimateResult'
+        'fees_estimate_result' => 'setFeesEstimateResult'
     ];
 
     /**

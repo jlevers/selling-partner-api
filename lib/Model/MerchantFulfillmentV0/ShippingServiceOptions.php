@@ -103,7 +103,7 @@ class ShippingServiceOptions extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'delivery_experience' => 'setDeliveryExperience',
+        'delivery_experience' => 'setDeliveryExperience',
         'declared_value' => 'setDeclaredValue',
         'carrier_will_pick_up' => 'setCarrierWillPickUp',
         'carrier_will_pick_up_option' => 'setCarrierWillPickUpOption',

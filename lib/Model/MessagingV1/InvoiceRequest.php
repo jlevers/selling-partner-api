@@ -91,7 +91,7 @@ class InvoiceRequest extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'attachments' => 'setAttachments'
+        'attachments' => 'setAttachments'
     ];
 
     /**

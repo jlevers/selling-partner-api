@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **net_price** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\Money**](Money.md) |  |
 **tax_details** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\TaxItemDetails**](TaxItemDetails.md) |  | [optional]
 **total_price** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\Money**](Money.md) |  | [optional]
+**buyer_customized_info** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\BuyerCustomizedInfoDetail**](BuyerCustomizedInfoDetail.md) |  | [optional]
 
 [[VendorDirectFulfillmentOrdersV20211228 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

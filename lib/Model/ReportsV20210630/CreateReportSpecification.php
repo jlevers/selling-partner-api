@@ -103,7 +103,7 @@ class CreateReportSpecification extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'report_options' => 'setReportOptions',
+        'report_options' => 'setReportOptions',
         'report_type' => 'setReportType',
         'data_start_time' => 'setDataStartTime',
         'data_end_time' => 'setDataEndTime',

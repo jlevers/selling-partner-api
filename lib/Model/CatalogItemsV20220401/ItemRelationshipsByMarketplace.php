@@ -94,7 +94,7 @@ class ItemRelationshipsByMarketplace extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'relationships' => 'setRelationships'
     ];
 

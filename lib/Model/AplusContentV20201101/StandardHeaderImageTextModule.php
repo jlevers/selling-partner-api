@@ -94,7 +94,7 @@ class StandardHeaderImageTextModule extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'headline' => 'setHeadline',
+        'headline' => 'setHeadline',
         'block' => 'setBlock'
     ];
 

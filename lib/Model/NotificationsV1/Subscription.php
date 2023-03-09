@@ -100,7 +100,7 @@ class Subscription extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'subscription_id' => 'setSubscriptionId',
+        'subscription_id' => 'setSubscriptionId',
         'payload_version' => 'setPayloadVersion',
         'destination_id' => 'setDestinationId',
         'processing_directive' => 'setProcessingDirective'

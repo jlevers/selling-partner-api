@@ -100,7 +100,7 @@ class ItemClassificationSalesRank extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'classification_id' => 'setClassificationId',
+        'classification_id' => 'setClassificationId',
         'title' => 'setTitle',
         'link' => 'setLink',
         'rank' => 'setRank'

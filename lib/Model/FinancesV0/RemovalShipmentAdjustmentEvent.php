@@ -106,7 +106,7 @@ class RemovalShipmentAdjustmentEvent extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'posted_date' => 'setPostedDate',
+        'posted_date' => 'setPostedDate',
         'adjustment_event_id' => 'setAdjustmentEventId',
         'merchant_order_id' => 'setMerchantOrderId',
         'order_id' => 'setOrderId',

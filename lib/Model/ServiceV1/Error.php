@@ -100,7 +100,7 @@ class Error extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'code' => 'setCode',
+        'code' => 'setCode',
         'message' => 'setMessage',
         'details' => 'setDetails',
         'error_level' => 'setErrorLevel'

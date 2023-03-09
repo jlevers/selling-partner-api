@@ -133,7 +133,7 @@ class PartneredLtlDataOutput extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'contact' => 'setContact',
+        'contact' => 'setContact',
         'box_count' => 'setBoxCount',
         'seller_freight_class' => 'setSellerFreightClass',
         'freight_ready_date' => 'setFreightReadyDate',

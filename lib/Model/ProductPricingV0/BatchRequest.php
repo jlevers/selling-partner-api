@@ -97,7 +97,7 @@ class BatchRequest extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'uri' => 'setUri',
+        'uri' => 'setUri',
         'method' => 'setMethod',
         'headers' => 'setHeaders'
     ];

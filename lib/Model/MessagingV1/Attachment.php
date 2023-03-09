@@ -94,7 +94,7 @@ class Attachment extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'upload_destination_id' => 'setUploadDestinationId',
+        'upload_destination_id' => 'setUploadDestinationId',
         'file_name' => 'setFileName'
     ];
 

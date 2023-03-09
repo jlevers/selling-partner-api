@@ -97,7 +97,7 @@ class RangeSlot extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'start_date_time' => 'setStartDateTime',
+        'start_date_time' => 'setStartDateTime',
         'end_date_time' => 'setEndDateTime',
         'capacity' => 'setCapacity'
     ];

@@ -112,7 +112,7 @@ class InventorySummary extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'fn_sku' => 'setFnSku',
         'seller_sku' => 'setSellerSku',
         'condition' => 'setCondition',

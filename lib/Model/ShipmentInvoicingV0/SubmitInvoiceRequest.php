@@ -97,7 +97,7 @@ class SubmitInvoiceRequest extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'invoice_content' => 'setInvoiceContent',
+        'invoice_content' => 'setInvoiceContent',
         'marketplace_id' => 'setMarketplaceId',
         'content_md5_value' => 'setContentMd5Value'
     ];

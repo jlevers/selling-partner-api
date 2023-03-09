@@ -94,7 +94,7 @@ class StandardSingleSideImageModule extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'image_position_type' => 'setImagePositionType',
+        'image_position_type' => 'setImagePositionType',
         'block' => 'setBlock'
     ];
 

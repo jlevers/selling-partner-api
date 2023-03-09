@@ -100,7 +100,7 @@ class ASINPrepInstructions extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'barcode_instruction' => 'setBarcodeInstruction',
         'prep_guidance' => 'setPrepGuidance',
         'prep_instruction_list' => 'setPrepInstructionList'

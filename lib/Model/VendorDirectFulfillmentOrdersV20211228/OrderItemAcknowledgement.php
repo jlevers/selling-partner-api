@@ -99,7 +99,7 @@ class OrderItemAcknowledgement extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'item_sequence_number' => 'setItemSequenceNumber',
+        'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'acknowledged_quantity' => 'setAcknowledgedQuantity'

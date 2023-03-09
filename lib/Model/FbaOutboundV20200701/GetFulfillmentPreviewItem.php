@@ -100,7 +100,7 @@ class GetFulfillmentPreviewItem extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'quantity' => 'setQuantity',
         'per_unit_declared_value' => 'setPerUnitDeclaredValue',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId'

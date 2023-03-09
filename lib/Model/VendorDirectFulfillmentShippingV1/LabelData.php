@@ -103,7 +103,7 @@ class LabelData extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'package_identifier' => 'setPackageIdentifier',
+        'package_identifier' => 'setPackageIdentifier',
         'tracking_number' => 'setTrackingNumber',
         'ship_method' => 'setShipMethod',
         'ship_method_name' => 'setShipMethodName',

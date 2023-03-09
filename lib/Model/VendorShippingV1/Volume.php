@@ -35,7 +35,7 @@ use SellingPartnerApi\ObjectSerializer;
  * Volume Class Doc Comment
  *
  * @category Class
- * @description The volume of the container.
+ * @description The volume of the shipment.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
@@ -94,7 +94,7 @@ class Volume extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'unit_of_measure' => 'setUnitOfMeasure',
+        'unit_of_measure' => 'setUnitOfMeasure',
         'value' => 'setValue'
     ];
 

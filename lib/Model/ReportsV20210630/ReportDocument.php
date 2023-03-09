@@ -269,7 +269,7 @@ class ReportDocument extends BaseModel implements ModelInterface, ArrayAccess, \
     /**
      * Sets compression_algorithm
      *
-     * @param string|null $compression_algorithm If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download the report](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-use-case-guide#step-2-download-the-report) in the use case guide, where sample code is provided.
+     * @param string|null $compression_algorithm If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download the report](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-retrieve-a-report#step-2-download-the-report) in the use case guide, where sample code is provided.
      *
      * @return self
      */

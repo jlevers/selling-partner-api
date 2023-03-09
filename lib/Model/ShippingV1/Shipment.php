@@ -109,7 +109,7 @@ class Shipment extends BaseModel implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId',
+        'shipment_id' => 'setShipmentId',
         'client_reference_id' => 'setClientReferenceId',
         'ship_from' => 'setShipFrom',
         'ship_to' => 'setShipTo',

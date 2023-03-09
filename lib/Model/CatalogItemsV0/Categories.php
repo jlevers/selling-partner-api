@@ -96,7 +96,7 @@ class Categories extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'product_category_id' => 'setProductCategoryId',
+        'product_category_id' => 'setProductCategoryId',
         'product_category_name' => 'setProductCategoryName',
         'parent' => 'setParent'
     ];

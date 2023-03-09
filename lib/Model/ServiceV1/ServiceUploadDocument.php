@@ -97,7 +97,7 @@ class ServiceUploadDocument extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'content_type' => 'setContentType',
+        'content_type' => 'setContentType',
         'content_length' => 'setContentLength',
         'content_md5' => 'setContentMd5'
     ];

@@ -94,7 +94,7 @@ class ImageCropSpecification extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'size' => 'setSize',
+        'size' => 'setSize',
         'offset' => 'setOffset'
     ];
 

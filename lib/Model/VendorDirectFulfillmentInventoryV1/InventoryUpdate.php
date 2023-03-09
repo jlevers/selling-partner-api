@@ -96,7 +96,7 @@ class InventoryUpdate extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'selling_party' => 'setSellingParty',
+        'selling_party' => 'setSellingParty',
         'is_full_update' => 'setIsFullUpdate',
         'items' => 'setItems'
     ];

@@ -91,7 +91,7 @@ class AuthorizationCode extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'authorization_code' => 'setAuthorizationCode'
+        'authorization_code' => 'setAuthorizationCode'
     ];
 
     /**

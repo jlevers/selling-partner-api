@@ -94,7 +94,7 @@ class PartneredSmallParcelDataOutput extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'package_list' => 'setPackageList',
+        'package_list' => 'setPackageList',
         'partnered_estimate' => 'setPartneredEstimate'
     ];
 

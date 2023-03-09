@@ -91,7 +91,7 @@ class SqsResource extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'arn' => 'setArn'
+        'arn' => 'setArn'
     ];
 
     /**

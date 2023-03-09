@@ -97,7 +97,7 @@ class ChargeDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'type' => 'setType',
+        'type' => 'setType',
         'charge_amount' => 'setChargeAmount',
         'tax_details' => 'setTaxDetails'
     ];

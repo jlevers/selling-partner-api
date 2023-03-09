@@ -109,7 +109,7 @@ class GetFulfillmentPreviewRequest extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'address' => 'setAddress',
         'items' => 'setItems',
         'shipping_speed_categories' => 'setShippingSpeedCategories',

@@ -94,7 +94,7 @@ class Constraint extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'validation_reg_ex' => 'setValidationRegEx',
+        'validation_reg_ex' => 'setValidationRegEx',
         'validation_string' => 'setValidationString'
     ];
 

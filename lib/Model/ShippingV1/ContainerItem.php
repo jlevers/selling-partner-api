@@ -100,7 +100,7 @@ class ContainerItem extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'quantity' => 'setQuantity',
+        'quantity' => 'setQuantity',
         'unit_price' => 'setUnitPrice',
         'unit_weight' => 'setUnitWeight',
         'title' => 'setTitle'

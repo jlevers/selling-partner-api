@@ -91,7 +91,7 @@ class UpdateScheduleRequest extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'schedules' => 'setSchedules'
+        'schedules' => 'setSchedules'
     ];
 
     /**

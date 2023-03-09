@@ -100,7 +100,7 @@ class Dimensions extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'height' => 'setHeight',
+        'height' => 'setHeight',
         'length' => 'setLength',
         'weight' => 'setWeight',
         'width' => 'setWidth'

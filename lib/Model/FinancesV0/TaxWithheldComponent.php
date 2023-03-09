@@ -94,7 +94,7 @@ class TaxWithheldComponent extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'tax_collection_model' => 'setTaxCollectionModel',
+        'tax_collection_model' => 'setTaxCollectionModel',
         'taxes_withheld' => 'setTaxesWithheld'
     ];
 

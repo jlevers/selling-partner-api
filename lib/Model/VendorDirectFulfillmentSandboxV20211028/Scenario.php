@@ -94,7 +94,7 @@ class Scenario extends BaseModel implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-                'scenario_id' => 'setScenarioId',
+        'scenario_id' => 'setScenarioId',
         'orders' => 'setOrders'
     ];
 

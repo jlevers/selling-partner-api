@@ -103,7 +103,7 @@ class TrialShipmentEvent extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'financial_event_group_id' => 'setFinancialEventGroupId',
         'posted_date' => 'setPostedDate',
         'sku' => 'setSku',

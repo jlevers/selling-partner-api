@@ -91,7 +91,7 @@ class Route extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'stops' => 'setStops'
+        'stops' => 'setStops'
     ];
 
     /**

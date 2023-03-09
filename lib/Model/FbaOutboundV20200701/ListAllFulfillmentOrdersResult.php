@@ -93,7 +93,7 @@ class ListAllFulfillmentOrdersResult extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'next_token' => 'setNextToken',
+        'next_token' => 'setNextToken',
         'fulfillment_orders' => 'setFulfillmentOrders'
     ];
 

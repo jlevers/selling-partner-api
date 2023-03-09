@@ -102,7 +102,7 @@ class OrderItemAcknowledgement extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'acknowledgement_code' => 'setAcknowledgementCode',
+        'acknowledgement_code' => 'setAcknowledgementCode',
         'acknowledged_quantity' => 'setAcknowledgedQuantity',
         'scheduled_ship_date' => 'setScheduledShipDate',
         'scheduled_delivery_date' => 'setScheduledDeliveryDate',

@@ -97,7 +97,7 @@ class PatchOperation extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'op' => 'setOp',
+        'op' => 'setOp',
         'path' => 'setPath',
         'value' => 'setValue'
     ];

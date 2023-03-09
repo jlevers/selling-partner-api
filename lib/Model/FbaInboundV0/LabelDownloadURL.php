@@ -90,7 +90,7 @@ class LabelDownloadURL extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'download_url' => 'setDownloadUrl'
+        'download_url' => 'setDownloadUrl'
     ];
 
     /**

@@ -100,7 +100,7 @@ class ServiceDocumentUploadDestination extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'upload_destination_id' => 'setUploadDestinationId',
+        'upload_destination_id' => 'setUploadDestinationId',
         'url' => 'setUrl',
         'encryption_details' => 'setEncryptionDetails',
         'headers' => 'setHeaders'

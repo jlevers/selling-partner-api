@@ -97,7 +97,7 @@ class RangeSlotCapacityQuery extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'capacity_types' => 'setCapacityTypes',
+        'capacity_types' => 'setCapacityTypes',
         'start_date_time' => 'setStartDateTime',
         'end_date_time' => 'setEndDateTime'
     ];

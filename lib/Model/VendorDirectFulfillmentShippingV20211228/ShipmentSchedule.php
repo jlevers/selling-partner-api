@@ -97,7 +97,7 @@ class ShipmentSchedule extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'estimated_delivery_date_time' => 'setEstimatedDeliveryDateTime',
+        'estimated_delivery_date_time' => 'setEstimatedDeliveryDateTime',
         'appt_window_start_date_time' => 'setApptWindowStartDateTime',
         'appt_window_end_date_time' => 'setApptWindowEndDateTime'
     ];

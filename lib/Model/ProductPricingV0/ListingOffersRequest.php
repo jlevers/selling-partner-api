@@ -105,7 +105,7 @@ class ListingOffersRequest extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'uri' => 'setUri',
+        'uri' => 'setUri',
         'method' => 'setMethod',
         'headers' => 'setHeaders',
         'marketplace_id' => 'setMarketplaceId',

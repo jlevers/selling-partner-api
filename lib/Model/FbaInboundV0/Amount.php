@@ -94,7 +94,7 @@ class Amount extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'currency_code' => 'setCurrencyCode',
+        'currency_code' => 'setCurrencyCode',
         'value' => 'setValue'
     ];
 

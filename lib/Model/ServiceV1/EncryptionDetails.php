@@ -97,7 +97,7 @@ class EncryptionDetails extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'standard' => 'setStandard',
+        'standard' => 'setStandard',
         'initialization_vector' => 'setInitializationVector',
         'key' => 'setKey'
     ];

@@ -91,7 +91,7 @@ class SubmitInvoiceRequest extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'invoices' => 'setInvoices'
+        'invoices' => 'setInvoices'
     ];
 
     /**

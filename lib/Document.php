@@ -114,6 +114,13 @@ class Document
             $contents = $rawContents;
         }
 
+        $mb = mb_detect_encoding($contents);
+        if ($mb != 'UTF-8') {
+            $contents = mb_convert_encoding($contents, 'UTF-8', 'sjis-win');
+        } else {
+            $contents = $contents;
+        }
+
         // Don't try to parse report data. Useful for very large reports, or if someone
         // wants to do custom parsing
         if (!$postProcess) {

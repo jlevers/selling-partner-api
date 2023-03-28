@@ -42,14 +42,14 @@ $config = new SellingPartnerApi\Configuration([
 ]);
 
 $apiInstance = new SellingPartnerApi\Api\ProductTypeDefinitionsV20200901Api($config);
-$product_type = LUGGAGE; // string | The Amazon product type name.
-$marketplace_ids = ATVPDKIKX0DER; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
-Note: This parameter is limited to one marketplaceId at this time.
+$product_type = array('LUGGAGE'); // string | The Amazon product type name.
+$marketplace_ids = 'ATVPDKIKX0DER'; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
+// Note: This parameter is limited to one marketplaceId at this time.
 $seller_id = 'seller_id_example'; // string | A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
-$product_type_version = LATEST; // string | The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided.
-$requirements = LISTING; // string | The name of the requirements set to retrieve requirements for.
-$requirements_enforced = ENFORCED; // string | Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
-$locale = DEFAULT; // string | Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
+$product_type_version = 'LATEST'; // string | The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided.
+$requirements = 'LISTING'; // string | The name of the requirements set to retrieve requirements for.
+$requirements_enforced = 'ENFORCED'; // string | Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
+$locale = 'DEFAULT'; // string | Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
 
 try {
     $result = $apiInstance->getDefinitionsProductType($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);
@@ -121,8 +121,8 @@ $config = new SellingPartnerApi\Configuration([
 ]);
 
 $apiInstance = new SellingPartnerApi\Api\ProductTypeDefinitionsV20200901Api($config);
-$marketplace_ids = ATVPDKIKX0DER; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
-$keywords = LUGGAGE; // string[] | A comma-delimited list of keywords to search product types by.
+$marketplace_ids = 'ATVPDKIKX0DER'; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
+$keywords = array('LUGGAGE'); // string[] | A comma-delimited list of keywords to search product types by.
 
 try {
     $result = $apiInstance->searchDefinitionsProductTypes($marketplace_ids, $keywords);

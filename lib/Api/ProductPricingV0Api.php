@@ -956,6 +956,7 @@ class ProductPricingV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                return $e->getCode();
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),

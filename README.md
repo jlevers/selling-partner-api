@@ -328,10 +328,10 @@ $feedsApi = new FeedsApi($config);
 // ...
 
 $feedId = '1234567890';  // From the createFeed call
-$feed = $api->getFeed($feedId);
+$feed = $feedsApi->getFeed($feedId);
 
 $feedResultDocumentId = $feed->resultFeedDocumentId;
-$feedResultDocument = $api->getFeedDocument($feedResultDocumentId);
+$feedResultDocument = $feedsApi->getFeedDocument($feedResultDocumentId);
 
 $docToDownload = new SellingPartnerApi\Document($feedResultDocument, $feedType);
 $contents = $docToDownload->download();  // The raw report data

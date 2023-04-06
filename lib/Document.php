@@ -245,11 +245,11 @@ class Document
      * Uploads data to the document specified in the constructor.
      *
      * @param string|resource|StreamInterface|callable|\Iterator $feedData The contents of the feed to be uploaded
-     * @param string $charset An optional charset for the document to upload
+     * @param string|null $charset An optional charset for the document to upload
      *
      * @return void
      */
-    public function upload($feedData, string $charset = 'utf-8'): void {
+    public function upload($feedData, string $charset = null): void {
         $response = $this->client->put($this->url, [
             RequestOptions::HEADERS => [
                 "content-type" => self::withContentType($this->contentType, $charset),
@@ -282,10 +282,10 @@ class Document
      * When uploading a document you must use the exact same content-type/charset in createFeedDocument() and upload().
      *
      * @param string $contentType
-     * @param string $charset
+     * @param string|null $charset
      * @return string
      */
-    public static function withContentType(string $contentType, string $charset = 'utf-8'): string {
-        return "{$contentType}; charset={$charset}";
+    public static function withContentType(string $contentType, string $charset = null): string {
+        return $charset ? "{$contentType}; charset={$charset}" : $contentType;
     }
 }

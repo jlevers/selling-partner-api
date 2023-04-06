@@ -94,7 +94,7 @@ class GetAdditionalSellerInputsResult extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'shipment_level_fields' => 'setShipmentLevelFields',
+        'shipment_level_fields' => 'setShipmentLevelFields',
         'item_level_fields_list' => 'setItemLevelFieldsList'
     ];
 

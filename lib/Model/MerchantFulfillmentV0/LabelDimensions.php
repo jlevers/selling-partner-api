@@ -97,7 +97,7 @@ class LabelDimensions extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'length' => 'setLength',
+        'length' => 'setLength',
         'width' => 'setWidth',
         'unit' => 'setUnit'
     ];

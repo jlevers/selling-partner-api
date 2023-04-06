@@ -100,7 +100,7 @@ class TrackingEvent extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'event_date' => 'setEventDate',
+        'event_date' => 'setEventDate',
         'event_address' => 'setEventAddress',
         'event_code' => 'setEventCode',
         'event_description' => 'setEventDescription'

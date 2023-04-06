@@ -100,7 +100,7 @@ class ItemIdentifier extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'asin' => 'setAsin',
         'seller_sku' => 'setSellerSku',
         'item_condition' => 'setItemCondition'

@@ -97,7 +97,7 @@ class StandardImageTextBlock extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'image' => 'setImage',
+        'image' => 'setImage',
         'headline' => 'setHeadline',
         'body' => 'setBody'
     ];

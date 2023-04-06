@@ -94,7 +94,7 @@ class BuyerRequestedCancel extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'is_buyer_requested_cancel' => 'setIsBuyerRequestedCancel',
+        'is_buyer_requested_cancel' => 'setIsBuyerRequestedCancel',
         'buyer_cancel_reason' => 'setBuyerCancelReason'
     ];
 

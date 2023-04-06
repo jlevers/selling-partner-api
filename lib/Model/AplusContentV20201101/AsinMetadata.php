@@ -106,7 +106,7 @@ class AsinMetadata extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'badge_set' => 'setBadgeSet',
         'parent' => 'setParent',
         'title' => 'setTitle',

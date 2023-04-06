@@ -94,7 +94,7 @@ class DirectFulfillmentItemIdentifiers extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'line_item_id' => 'setLineItemId',
+        'line_item_id' => 'setLineItemId',
         'piece_number' => 'setPieceNumber'
     ];
 

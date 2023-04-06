@@ -94,7 +94,7 @@ class StandardTextPairBlock extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'label' => 'setLabel',
+        'label' => 'setLabel',
         'description' => 'setDescription'
     ];
 

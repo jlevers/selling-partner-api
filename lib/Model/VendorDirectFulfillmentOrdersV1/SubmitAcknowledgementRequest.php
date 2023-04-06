@@ -91,7 +91,7 @@ class SubmitAcknowledgementRequest extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'order_acknowledgements' => 'setOrderAcknowledgements'
+        'order_acknowledgements' => 'setOrderAcknowledgements'
     ];
 
     /**

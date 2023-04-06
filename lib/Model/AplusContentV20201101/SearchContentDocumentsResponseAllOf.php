@@ -90,7 +90,7 @@ class SearchContentDocumentsResponseAllOf extends BaseModel implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-                'content_metadata_records' => 'setContentMetadataRecords'
+        'content_metadata_records' => 'setContentMetadataRecords'
     ];
 
     /**

@@ -97,7 +97,7 @@ class OrderItemStatusReceivingStatus extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'receive_status' => 'setReceiveStatus',
+        'receive_status' => 'setReceiveStatus',
         'received_quantity' => 'setReceivedQuantity',
         'last_receive_date' => 'setLastReceiveDate'
     ];

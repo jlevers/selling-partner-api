@@ -94,7 +94,7 @@ class PrepDetails extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'prep_instruction' => 'setPrepInstruction',
+        'prep_instruction' => 'setPrepInstruction',
         'prep_owner' => 'setPrepOwner'
     ];
 

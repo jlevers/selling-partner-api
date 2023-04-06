@@ -94,7 +94,7 @@ class LabelSpecification extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'label_format' => 'setLabelFormat',
+        'label_format' => 'setLabelFormat',
         'label_stock_size' => 'setLabelStockSize'
     ];
 

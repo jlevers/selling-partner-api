@@ -97,7 +97,7 @@ class ASINInboundGuidance extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'inbound_guidance' => 'setInboundGuidance',
         'guidance_reason_list' => 'setGuidanceReasonList'
     ];

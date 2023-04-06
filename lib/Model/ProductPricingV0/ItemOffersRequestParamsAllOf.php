@@ -90,7 +90,7 @@ class ItemOffersRequestParamsAllOf extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin'
+        'asin' => 'setAsin'
     ];
 
     /**

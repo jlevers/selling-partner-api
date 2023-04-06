@@ -130,7 +130,7 @@ class FulfillmentOrderItem extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'quantity' => 'setQuantity',
         'gift_message' => 'setGiftMessage',

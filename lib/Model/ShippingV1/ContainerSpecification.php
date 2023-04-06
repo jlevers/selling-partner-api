@@ -94,7 +94,7 @@ class ContainerSpecification extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'dimensions' => 'setDimensions',
+        'dimensions' => 'setDimensions',
         'weight' => 'setWeight'
     ];
 

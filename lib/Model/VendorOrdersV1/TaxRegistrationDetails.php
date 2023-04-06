@@ -94,7 +94,7 @@ class TaxRegistrationDetails extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'tax_registration_type' => 'setTaxRegistrationType',
+        'tax_registration_type' => 'setTaxRegistrationType',
         'tax_registration_number' => 'setTaxRegistrationNumber'
     ];
 

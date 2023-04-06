@@ -96,7 +96,7 @@ class BatchOffersResponse extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'headers' => 'setHeaders',
+        'headers' => 'setHeaders',
         'status' => 'setStatus',
         'body' => 'setBody'
     ];

@@ -376,7 +376,7 @@ class AttributeSetListType extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'actor' => 'setActor',
+        'actor' => 'setActor',
         'artist' => 'setArtist',
         'aspect_ratio' => 'setAspectRatio',
         'audience_rating' => 'setAudienceRating',

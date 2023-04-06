@@ -97,7 +97,7 @@ class Feature extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'feature_name' => 'setFeatureName',
+        'feature_name' => 'setFeatureName',
         'feature_description' => 'setFeatureDescription',
         'seller_eligible' => 'setSellerEligible'
     ];

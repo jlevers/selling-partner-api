@@ -100,7 +100,7 @@ class TransportDetailInput extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'partnered_small_parcel_data' => 'setPartneredSmallParcelData',
+        'partnered_small_parcel_data' => 'setPartneredSmallParcelData',
         'non_partnered_small_parcel_data' => 'setNonPartneredSmallParcelData',
         'partnered_ltl_data' => 'setPartneredLtlData',
         'non_partnered_ltl_data' => 'setNonPartneredLtlData'

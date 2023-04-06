@@ -94,7 +94,7 @@ class GiftDetails extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'gift_message' => 'setGiftMessage',
+        'gift_message' => 'setGiftMessage',
         'gift_wrap_id' => 'setGiftWrapId'
     ];
 

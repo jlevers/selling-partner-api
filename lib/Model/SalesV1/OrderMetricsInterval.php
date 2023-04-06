@@ -106,7 +106,7 @@ class OrderMetricsInterval extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'interval' => 'setInterval',
+        'interval' => 'setInterval',
         'unit_count' => 'setUnitCount',
         'order_item_count' => 'setOrderItemCount',
         'order_count' => 'setOrderCount',

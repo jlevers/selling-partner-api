@@ -100,7 +100,7 @@ class GetMessagingActionResponse extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                '_links' => 'setLinks',
+        '_links' => 'setLinks',
         '_embedded' => 'setEmbedded',
         'payload' => 'setPayload',
         'errors' => 'setErrors'

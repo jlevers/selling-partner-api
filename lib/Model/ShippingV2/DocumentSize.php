@@ -97,7 +97,7 @@ class DocumentSize extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'width' => 'setWidth',
+        'width' => 'setWidth',
         'length' => 'setLength',
         'unit' => 'setUnit'
     ];

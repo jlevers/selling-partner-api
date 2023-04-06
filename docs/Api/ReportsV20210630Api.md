@@ -92,7 +92,7 @@ Cancels the report schedule that you specify.
 | ---- | ---- |
 | 0.0222 | 10 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 
 ### Example
 
@@ -219,7 +219,7 @@ Creates a report schedule. If a report schedule with the same report type and ma
 | ---- | ---- |
 | 0.0222 | 10 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 
 ### Example
 
@@ -283,7 +283,7 @@ Returns report details (including the reportDocumentId, if available) for the re
 | ---- | ---- |
 | 2.0 | 15 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 
 ### Example
 
@@ -347,7 +347,7 @@ Returns the information required for retrieving a report document's contents.
 | ---- | ---- |
 | 0.0167 | 15 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api)in the Selling Partner API documentation.
 
 ### Example
 
@@ -413,7 +413,7 @@ Returns report schedule details for the report schedule that you specify.
 | ---- | ---- |
 | 0.0222 | 10 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 
 ### Example
 
@@ -477,7 +477,7 @@ Returns report schedule details that match the filters that you specify.
 | ---- | ---- |
 | 0.0222 | 10 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api) in the Selling Partner API documentation.
 
 ### Example
 

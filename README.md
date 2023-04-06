@@ -189,7 +189,7 @@ It also means that if a new version of an existing API is introduced, the librar
 * [A+ Content API (2020-11-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AplusContentV20201101Api.md)
 * [Authorization API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AuthorizationV1Api.md)
 * [Catalog Items API (2022-04-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV20220401Api.md)
-* [Catalog Items API (2021-12-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV20211201Api.md)
+* [Catalog Items API (2021-12-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV20201201Api.md)
 * [Catalog Items API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV0Api.md)
 * [EasyShip API (2022-03-23)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/EasyShipV20220323Api.md)
 * [FBA Inbound API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundV0Api.md)
@@ -206,6 +206,7 @@ It also means that if a new version of an existing API is introduced, the librar
 * [Notifications API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/NotificationsV1Api.md)
 * [Orders API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md)
 * [Product Pricing API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductPricingV0Api.md)
+* [Product Pricing API (V2022-05-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductPricingV20220501Api.md)
 * [Product Type Definitions API (2020-09-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductTypeDefinitionsV20200901Api.md)
 * [Reports API (2021-06-30)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsV20210630Api.md)
 * [Sales API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SalesV1Api.md)
@@ -309,22 +310,6 @@ $feedId = $createFeedResult->getFeedId();
 ```
 
 If you are manipulating huge feed documents you can pass to `upload()` anything that Guzzle can turn into a stream.
-
-
-### Uploading with a specific charset
-
-```php
-$charset = "Shift-JIS";
-...
-// Create feed document
-$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification([
-    'content_type' => SellingPartnerApi\Document::get_content_type_with_charset($feedType['contentType'], $charset)]
-]);
-...
-// Upload feed contents to document
-...
-$docToUpload->upload($feedContents, $charset);
-```
 
 
 ## Downloading a feed result document

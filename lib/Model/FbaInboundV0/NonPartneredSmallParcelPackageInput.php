@@ -91,7 +91,7 @@ class NonPartneredSmallParcelPackageInput extends BaseModel implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-                'tracking_id' => 'setTrackingId'
+        'tracking_id' => 'setTrackingId'
     ];
 
     /**

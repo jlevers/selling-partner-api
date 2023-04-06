@@ -112,7 +112,7 @@ class Package extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'dimensions' => 'setDimensions',
+        'dimensions' => 'setDimensions',
         'weight' => 'setWeight',
         'insured_value' => 'setInsuredValue',
         'is_hazmat' => 'setIsHazmat',

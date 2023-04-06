@@ -99,7 +99,7 @@ class PackedItem extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'item_sequence_number' => 'setItemSequenceNumber',
+        'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'packed_quantity' => 'setPackedQuantity'

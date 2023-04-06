@@ -97,7 +97,7 @@ class PurchaseShipmentResult extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId',
+        'shipment_id' => 'setShipmentId',
         'package_document_details' => 'setPackageDocumentDetails',
         'promise' => 'setPromise'
     ];

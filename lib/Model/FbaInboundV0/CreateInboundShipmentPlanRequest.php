@@ -103,7 +103,7 @@ class CreateInboundShipmentPlanRequest extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'ship_from_address' => 'setShipFromAddress',
+        'ship_from_address' => 'setShipFromAddress',
         'label_prep_preference' => 'setLabelPrepPreference',
         'ship_to_country_code' => 'setShipToCountryCode',
         'ship_to_country_subdivision_code' => 'setShipToCountrySubdivisionCode',

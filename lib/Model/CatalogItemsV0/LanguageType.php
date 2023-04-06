@@ -97,7 +97,7 @@ class LanguageType extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'type' => 'setType',
         'audio_format' => 'setAudioFormat'
     ];

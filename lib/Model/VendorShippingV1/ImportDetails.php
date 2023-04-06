@@ -63,7 +63,8 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
         'route' => '\SellingPartnerApi\Model\VendorShippingV1\Route',
         'import_containers' => 'string',
         'billable_weight' => '\SellingPartnerApi\Model\VendorShippingV1\Weight',
-        'estimated_ship_by_date' => 'string'
+        'estimated_ship_by_date' => 'string',
+        'handling_instructions' => 'string'
     ];
 
     /**
@@ -79,7 +80,8 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
         'route' => null,
         'import_containers' => null,
         'billable_weight' => null,
-        'estimated_ship_by_date' => null
+        'estimated_ship_by_date' => null,
+        'handling_instructions' => null
     ];
 
 
@@ -96,7 +98,8 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
         'route' => 'route',
         'import_containers' => 'importContainers',
         'billable_weight' => 'billableWeight',
-        'estimated_ship_by_date' => 'estimatedShipByDate'
+        'estimated_ship_by_date' => 'estimatedShipByDate',
+        'handling_instructions' => 'handlingInstructions'
     ];
 
     /**
@@ -105,12 +108,13 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'method_of_payment' => 'setMethodOfPayment',
+        'method_of_payment' => 'setMethodOfPayment',
         'seal_number' => 'setSealNumber',
         'route' => 'setRoute',
         'import_containers' => 'setImportContainers',
         'billable_weight' => 'setBillableWeight',
-        'estimated_ship_by_date' => 'setEstimatedShipByDate'
+        'estimated_ship_by_date' => 'setEstimatedShipByDate',
+        'handling_instructions' => 'setHandlingInstructions'
     ];
 
     /**
@@ -124,7 +128,8 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
         'route' => 'getRoute',
         'import_containers' => 'getImportContainers',
         'billable_weight' => 'getBillableWeight',
-        'estimated_ship_by_date' => 'getEstimatedShipByDate'
+        'estimated_ship_by_date' => 'getEstimatedShipByDate',
+        'handling_instructions' => 'getHandlingInstructions'
     ];
 
 
@@ -135,6 +140,12 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
     const METHOD_OF_PAYMENT_FOB_PORT_OF_CALL = 'FOBPortOfCall';
     const METHOD_OF_PAYMENT_PREPAID_BY_SELLER = 'PrepaidBySeller';
     const METHOD_OF_PAYMENT_PAID_BY_SELLER = 'PaidBySeller';
+    
+
+    const HANDLING_INSTRUCTIONS_OVERSIZED = 'Oversized';
+    const HANDLING_INSTRUCTIONS_FRAGILE = 'Fragile';
+    const HANDLING_INSTRUCTIONS_FOOD = 'Food';
+    const HANDLING_INSTRUCTIONS_HANDLE_WITH_CARE = 'HandleWithCare';
     
     
 
@@ -152,6 +163,26 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
             self::METHOD_OF_PAYMENT_FOB_PORT_OF_CALL,
             self::METHOD_OF_PAYMENT_PREPAID_BY_SELLER,
             self::METHOD_OF_PAYMENT_PAID_BY_SELLER,
+        ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
+    }
+    
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getHandlingInstructionsAllowableValues()
+    {
+        $baseVals = [
+            self::HANDLING_INSTRUCTIONS_OVERSIZED,
+            self::HANDLING_INSTRUCTIONS_FRAGILE,
+            self::HANDLING_INSTRUCTIONS_FOOD,
+            self::HANDLING_INSTRUCTIONS_HANDLE_WITH_CARE,
         ];
 
         // This is necessary because Amazon does not consistently capitalize their
@@ -180,6 +211,7 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
         $this->container['import_containers'] = $data['import_containers'] ?? null;
         $this->container['billable_weight'] = $data['billable_weight'] ?? null;
         $this->container['estimated_ship_by_date'] = $data['estimated_ship_by_date'] ?? null;
+        $this->container['handling_instructions'] = $data['handling_instructions'] ?? null;
     }
 
     /**
@@ -204,6 +236,18 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
 
         if (!is_null($this->container['import_containers']) && (mb_strlen($this->container['import_containers']) > 64)) {
             $invalidProperties[] = "invalid value for 'import_containers', the character length must be smaller than or equal to 64.";
+        }
+
+        $allowedValues = $this->getHandlingInstructionsAllowableValues();
+        if (
+            !is_null($this->container['handling_instructions']) &&
+            !in_array(strtoupper($this->container['handling_instructions']), $allowedValues, true)
+        ) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'handling_instructions', must be one of '%s'",
+                $this->container['handling_instructions'],
+                implode("', '", $allowedValues)
+            );
         }
 
         return $invalidProperties;
@@ -352,13 +396,46 @@ class ImportDetails extends BaseModel implements ModelInterface, ArrayAccess, \J
     /**
      * Sets estimated_ship_by_date
      *
-     * @param string|null $estimated_ship_by_date Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future. Must be in in ISO 8601 format.
+     * @param string|null $estimated_ship_by_date Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
      *
      * @return self
      */
     public function setEstimatedShipByDate($estimated_ship_by_date)
     {
         $this->container['estimated_ship_by_date'] = $estimated_ship_by_date;
+
+        return $this;
+    }
+    /**
+     * Gets handling_instructions
+     *
+     * @return string|null
+     */
+    public function getHandlingInstructions()
+    {
+        return $this->container['handling_instructions'];
+    }
+
+    /**
+     * Sets handling_instructions
+     *
+     * @param string|null $handling_instructions Identification of the instructions on how specified item/carton/pallet should be handled.
+     *
+     * @return self
+     */
+    public function setHandlingInstructions($handling_instructions)
+    {
+        $allowedValues = $this->getHandlingInstructionsAllowableValues();
+        if (!is_null($handling_instructions) &&!in_array(strtoupper($handling_instructions), $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'handling_instructions', must be one of '%s'",
+                    $handling_instructions,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['handling_instructions'] = $handling_instructions;
 
         return $this;
     }

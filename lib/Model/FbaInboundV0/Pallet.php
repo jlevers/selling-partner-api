@@ -97,7 +97,7 @@ class Pallet extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'dimensions' => 'setDimensions',
+        'dimensions' => 'setDimensions',
         'weight' => 'setWeight',
         'is_stacked' => 'setIsStacked'
     ];

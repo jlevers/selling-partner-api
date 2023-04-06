@@ -91,7 +91,7 @@ class StandardMultipleImageTextModule extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'blocks' => 'setBlocks'
+        'blocks' => 'setBlocks'
     ];
 
     /**

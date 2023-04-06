@@ -94,7 +94,7 @@ class BrandRefinement extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'number_of_results' => 'setNumberOfResults',
+        'number_of_results' => 'setNumberOfResults',
         'brand_name' => 'setBrandName'
     ];
 

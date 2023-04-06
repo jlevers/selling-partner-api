@@ -91,7 +91,7 @@ class OrderItemTaxDetails extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'tax_line_item' => 'setTaxLineItem'
+        'tax_line_item' => 'setTaxLineItem'
     ];
 
     /**

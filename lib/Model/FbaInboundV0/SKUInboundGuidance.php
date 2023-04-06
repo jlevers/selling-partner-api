@@ -100,7 +100,7 @@ class SKUInboundGuidance extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'asin' => 'setAsin',
         'inbound_guidance' => 'setInboundGuidance',
         'guidance_reason_list' => 'setGuidanceReasonList'

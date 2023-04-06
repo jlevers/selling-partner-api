@@ -94,7 +94,7 @@ class ServiceLocation extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'service_location_type' => 'setServiceLocationType',
+        'service_location_type' => 'setServiceLocationType',
         'address' => 'setAddress'
     ];
 

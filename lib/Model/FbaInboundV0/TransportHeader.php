@@ -100,7 +100,7 @@ class TransportHeader extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'seller_id' => 'setSellerId',
+        'seller_id' => 'setSellerId',
         'shipment_id' => 'setShipmentId',
         'is_partnered' => 'setIsPartnered',
         'shipment_type' => 'setShipmentType'

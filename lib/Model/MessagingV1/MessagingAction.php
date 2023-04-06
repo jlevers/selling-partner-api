@@ -91,7 +91,7 @@ class MessagingAction extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName'
+        'name' => 'setName'
     ];
 
     /**

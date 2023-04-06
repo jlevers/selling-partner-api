@@ -106,7 +106,7 @@ class FulfillmentPreviewShipment extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'earliest_ship_date' => 'setEarliestShipDate',
+        'earliest_ship_date' => 'setEarliestShipDate',
         'latest_ship_date' => 'setLatestShipDate',
         'earliest_arrival_date' => 'setEarliestArrivalDate',
         'latest_arrival_date' => 'setLatestArrivalDate',

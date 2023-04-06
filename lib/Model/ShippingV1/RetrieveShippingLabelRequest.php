@@ -91,7 +91,7 @@ class RetrieveShippingLabelRequest extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'label_specification' => 'setLabelSpecification'
+        'label_specification' => 'setLabelSpecification'
     ];
 
     /**

@@ -94,7 +94,7 @@ class AdditionalSellerInputs extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'additional_input_field_name' => 'setAdditionalInputFieldName',
+        'additional_input_field_name' => 'setAdditionalInputFieldName',
         'additional_seller_input' => 'setAdditionalSellerInput'
     ];
 

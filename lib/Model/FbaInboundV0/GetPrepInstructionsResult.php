@@ -99,7 +99,7 @@ class GetPrepInstructionsResult extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'sku_prep_instructions_list' => 'setSkuPrepInstructionsList',
+        'sku_prep_instructions_list' => 'setSkuPrepInstructionsList',
         'invalid_sku_list' => 'setInvalidSkuList',
         'asin_prep_instructions_list' => 'setAsinPrepInstructionsList',
         'invalid_asin_list' => 'setInvalidAsinList'

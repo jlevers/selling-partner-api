@@ -106,7 +106,7 @@ class Carton extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'carton_identifiers' => 'setCartonIdentifiers',
+        'carton_identifiers' => 'setCartonIdentifiers',
         'carton_sequence_number' => 'setCartonSequenceNumber',
         'dimensions' => 'setDimensions',
         'weight' => 'setWeight',

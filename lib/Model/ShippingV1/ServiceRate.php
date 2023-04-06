@@ -100,7 +100,7 @@ class ServiceRate extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'total_charge' => 'setTotalCharge',
+        'total_charge' => 'setTotalCharge',
         'billable_weight' => 'setBillableWeight',
         'service_type' => 'setServiceType',
         'promise' => 'setPromise'

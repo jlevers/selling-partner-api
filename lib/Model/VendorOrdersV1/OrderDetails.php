@@ -130,7 +130,7 @@ class OrderDetails extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_date' => 'setPurchaseOrderDate',
+        'purchase_order_date' => 'setPurchaseOrderDate',
         'purchase_order_changed_date' => 'setPurchaseOrderChangedDate',
         'purchase_order_state_changed_date' => 'setPurchaseOrderStateChangedDate',
         'purchase_order_type' => 'setPurchaseOrderType',

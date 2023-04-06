@@ -60,17 +60,23 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
       */
     protected static $openAPITypes = [
         'marketplace_id' => 'string',
+        'adult_product' => 'bool',
+        'autographed' => 'bool',
         'brand' => 'string',
         'browse_classification' => '\SellingPartnerApi\Model\CatalogItemsV20220401\ItemBrowseClassification',
         'color' => 'string',
+        'contributors' => '\SellingPartnerApi\Model\CatalogItemsV20220401\ItemContributor[]',
         'item_classification' => 'string',
         'item_name' => 'string',
         'manufacturer' => 'string',
+        'memorabilia' => 'bool',
         'model_number' => 'string',
         'package_quantity' => 'int',
         'part_number' => 'string',
+        'release_date' => 'string',
         'size' => 'string',
         'style' => 'string',
+        'trade_in_eligible' => 'bool',
         'website_display_group' => 'string',
         'website_display_group_name' => 'string'
     ];
@@ -84,17 +90,23 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
       */
     protected static $openAPIFormats = [
         'marketplace_id' => null,
+        'adult_product' => null,
+        'autographed' => null,
         'brand' => null,
         'browse_classification' => null,
         'color' => null,
+        'contributors' => null,
         'item_classification' => null,
         'item_name' => null,
         'manufacturer' => null,
+        'memorabilia' => null,
         'model_number' => null,
         'package_quantity' => null,
         'part_number' => null,
+        'release_date' => null,
         'size' => null,
         'style' => null,
+        'trade_in_eligible' => null,
         'website_display_group' => null,
         'website_display_group_name' => null
     ];
@@ -109,17 +121,23 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
      */
     protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
+        'adult_product' => 'adultProduct',
+        'autographed' => 'autographed',
         'brand' => 'brand',
         'browse_classification' => 'browseClassification',
         'color' => 'color',
+        'contributors' => 'contributors',
         'item_classification' => 'itemClassification',
         'item_name' => 'itemName',
         'manufacturer' => 'manufacturer',
+        'memorabilia' => 'memorabilia',
         'model_number' => 'modelNumber',
         'package_quantity' => 'packageQuantity',
         'part_number' => 'partNumber',
+        'release_date' => 'releaseDate',
         'size' => 'size',
         'style' => 'style',
+        'trade_in_eligible' => 'tradeInEligible',
         'website_display_group' => 'websiteDisplayGroup',
         'website_display_group_name' => 'websiteDisplayGroupName'
     ];
@@ -130,18 +148,24 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
+        'adult_product' => 'setAdultProduct',
+        'autographed' => 'setAutographed',
         'brand' => 'setBrand',
         'browse_classification' => 'setBrowseClassification',
         'color' => 'setColor',
+        'contributors' => 'setContributors',
         'item_classification' => 'setItemClassification',
         'item_name' => 'setItemName',
         'manufacturer' => 'setManufacturer',
+        'memorabilia' => 'setMemorabilia',
         'model_number' => 'setModelNumber',
         'package_quantity' => 'setPackageQuantity',
         'part_number' => 'setPartNumber',
+        'release_date' => 'setReleaseDate',
         'size' => 'setSize',
         'style' => 'setStyle',
+        'trade_in_eligible' => 'setTradeInEligible',
         'website_display_group' => 'setWebsiteDisplayGroup',
         'website_display_group_name' => 'setWebsiteDisplayGroupName'
     ];
@@ -153,17 +177,23 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
      */
     protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
+        'adult_product' => 'getAdultProduct',
+        'autographed' => 'getAutographed',
         'brand' => 'getBrand',
         'browse_classification' => 'getBrowseClassification',
         'color' => 'getColor',
+        'contributors' => 'getContributors',
         'item_classification' => 'getItemClassification',
         'item_name' => 'getItemName',
         'manufacturer' => 'getManufacturer',
+        'memorabilia' => 'getMemorabilia',
         'model_number' => 'getModelNumber',
         'package_quantity' => 'getPackageQuantity',
         'part_number' => 'getPartNumber',
+        'release_date' => 'getReleaseDate',
         'size' => 'getSize',
         'style' => 'getStyle',
+        'trade_in_eligible' => 'getTradeInEligible',
         'website_display_group' => 'getWebsiteDisplayGroup',
         'website_display_group_name' => 'getWebsiteDisplayGroupName'
     ];
@@ -212,17 +242,23 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
     public function __construct(array $data = null)
     {
         $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['adult_product'] = $data['adult_product'] ?? null;
+        $this->container['autographed'] = $data['autographed'] ?? null;
         $this->container['brand'] = $data['brand'] ?? null;
         $this->container['browse_classification'] = $data['browse_classification'] ?? null;
         $this->container['color'] = $data['color'] ?? null;
+        $this->container['contributors'] = $data['contributors'] ?? null;
         $this->container['item_classification'] = $data['item_classification'] ?? null;
         $this->container['item_name'] = $data['item_name'] ?? null;
         $this->container['manufacturer'] = $data['manufacturer'] ?? null;
+        $this->container['memorabilia'] = $data['memorabilia'] ?? null;
         $this->container['model_number'] = $data['model_number'] ?? null;
         $this->container['package_quantity'] = $data['package_quantity'] ?? null;
         $this->container['part_number'] = $data['part_number'] ?? null;
+        $this->container['release_date'] = $data['release_date'] ?? null;
         $this->container['size'] = $data['size'] ?? null;
         $this->container['style'] = $data['style'] ?? null;
+        $this->container['trade_in_eligible'] = $data['trade_in_eligible'] ?? null;
         $this->container['website_display_group'] = $data['website_display_group'] ?? null;
         $this->container['website_display_group_name'] = $data['website_display_group_name'] ?? null;
     }
@@ -274,6 +310,52 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
     public function setMarketplaceId($marketplace_id)
     {
         $this->container['marketplace_id'] = $marketplace_id;
+
+        return $this;
+    }
+    /**
+     * Gets adult_product
+     *
+     * @return bool|null
+     */
+    public function getAdultProduct()
+    {
+        return $this->container['adult_product'];
+    }
+
+    /**
+     * Sets adult_product
+     *
+     * @param bool|null $adult_product Identifies an Amazon catalog item is intended for an adult audience or is sexual in nature.
+     *
+     * @return self
+     */
+    public function setAdultProduct($adult_product)
+    {
+        $this->container['adult_product'] = $adult_product;
+
+        return $this;
+    }
+    /**
+     * Gets autographed
+     *
+     * @return bool|null
+     */
+    public function getAutographed()
+    {
+        return $this->container['autographed'];
+    }
+
+    /**
+     * Sets autographed
+     *
+     * @param bool|null $autographed Identifies an Amazon catalog item is autographed by a player or celebrity.
+     *
+     * @return self
+     */
+    public function setAutographed($autographed)
+    {
+        $this->container['autographed'] = $autographed;
 
         return $this;
     }
@@ -343,6 +425,29 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
     public function setColor($color)
     {
         $this->container['color'] = $color;
+
+        return $this;
+    }
+    /**
+     * Gets contributors
+     *
+     * @return \SellingPartnerApi\Model\CatalogItemsV20220401\ItemContributor[]|null
+     */
+    public function getContributors()
+    {
+        return $this->container['contributors'];
+    }
+
+    /**
+     * Sets contributors
+     *
+     * @param \SellingPartnerApi\Model\CatalogItemsV20220401\ItemContributor[]|null $contributors Individual contributors to the creation of an item, such as the authors or actors.
+     *
+     * @return self
+     */
+    public function setContributors($contributors)
+    {
+        $this->container['contributors'] = $contributors;
 
         return $this;
     }
@@ -426,6 +531,29 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
         return $this;
     }
     /**
+     * Gets memorabilia
+     *
+     * @return bool|null
+     */
+    public function getMemorabilia()
+    {
+        return $this->container['memorabilia'];
+    }
+
+    /**
+     * Sets memorabilia
+     *
+     * @param bool|null $memorabilia Identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment.
+     *
+     * @return self
+     */
+    public function setMemorabilia($memorabilia)
+    {
+        $this->container['memorabilia'] = $memorabilia;
+
+        return $this;
+    }
+    /**
      * Gets model_number
      *
      * @return string|null
@@ -495,6 +623,29 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
         return $this;
     }
     /**
+     * Gets release_date
+     *
+     * @return string|null
+     */
+    public function getReleaseDate()
+    {
+        return $this->container['release_date'];
+    }
+
+    /**
+     * Sets release_date
+     *
+     * @param string|null $release_date First date on which an Amazon catalog item is shippable to customers.
+     *
+     * @return self
+     */
+    public function setReleaseDate($release_date)
+    {
+        $this->container['release_date'] = $release_date;
+
+        return $this;
+    }
+    /**
      * Gets size
      *
      * @return string|null
@@ -537,6 +688,29 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
     public function setStyle($style)
     {
         $this->container['style'] = $style;
+
+        return $this;
+    }
+    /**
+     * Gets trade_in_eligible
+     *
+     * @return bool|null
+     */
+    public function getTradeInEligible()
+    {
+        return $this->container['trade_in_eligible'];
+    }
+
+    /**
+     * Sets trade_in_eligible
+     *
+     * @param bool|null $trade_in_eligible Identifies an Amazon catalog item is eligible for trade-in.
+     *
+     * @return self
+     */
+    public function setTradeInEligible($trade_in_eligible)
+    {
+        $this->container['trade_in_eligible'] = $trade_in_eligible;
 
         return $this;
     }

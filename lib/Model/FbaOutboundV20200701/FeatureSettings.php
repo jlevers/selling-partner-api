@@ -94,7 +94,7 @@ class FeatureSettings extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'feature_name' => 'setFeatureName',
+        'feature_name' => 'setFeatureName',
         'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy'
     ];
 

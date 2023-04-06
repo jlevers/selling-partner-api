@@ -91,7 +91,7 @@ class Seller extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'seller_id' => 'setSellerId'
+        'seller_id' => 'setSellerId'
     ];
 
     /**

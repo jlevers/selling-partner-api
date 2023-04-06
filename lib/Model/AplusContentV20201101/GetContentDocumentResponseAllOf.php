@@ -90,7 +90,7 @@ class GetContentDocumentResponseAllOf extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'content_record' => 'setContentRecord'
+        'content_record' => 'setContentRecord'
     ];
 
     /**

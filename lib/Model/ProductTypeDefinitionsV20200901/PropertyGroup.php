@@ -97,7 +97,7 @@ class PropertyGroup extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'title' => 'setTitle',
+        'title' => 'setTitle',
         'description' => 'setDescription',
         'property_names' => 'setPropertyNames'
     ];

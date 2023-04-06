@@ -94,7 +94,7 @@ class Fee extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'amount' => 'setAmount'
     ];
 

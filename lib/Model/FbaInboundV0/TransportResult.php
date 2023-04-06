@@ -97,7 +97,7 @@ class TransportResult extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'transport_status' => 'setTransportStatus',
+        'transport_status' => 'setTransportStatus',
         'error_code' => 'setErrorCode',
         'error_description' => 'setErrorDescription'
     ];

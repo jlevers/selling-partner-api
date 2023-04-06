@@ -100,7 +100,7 @@ class AcceptedRate extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'total_charge' => 'setTotalCharge',
+        'total_charge' => 'setTotalCharge',
         'billed_weight' => 'setBilledWeight',
         'service_type' => 'setServiceType',
         'promise' => 'setPromise'

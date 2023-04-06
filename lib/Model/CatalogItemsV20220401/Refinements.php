@@ -94,7 +94,7 @@ class Refinements extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'brands' => 'setBrands',
+        'brands' => 'setBrands',
         'classifications' => 'setClassifications'
     ];
 

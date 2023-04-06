@@ -90,7 +90,7 @@ class TransactionReference extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'transaction_id' => 'setTransactionId'
+        'transaction_id' => 'setTransactionId'
     ];
 
     /**

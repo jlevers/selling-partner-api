@@ -106,7 +106,7 @@ class SKUPrepInstructions extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'asin' => 'setAsin',
         'barcode_instruction' => 'setBarcodeInstruction',
         'prep_guidance' => 'setPrepGuidance',

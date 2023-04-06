@@ -93,7 +93,7 @@ class OrderListStatus extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'pagination' => 'setPagination',
+        'pagination' => 'setPagination',
         'orders_status' => 'setOrdersStatus'
     ];
 

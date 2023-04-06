@@ -97,7 +97,7 @@ class OfferCountType extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'condition' => 'setCondition',
+        'condition' => 'setCondition',
         'fulfillment_channel' => 'setFulfillmentChannel',
         'offer_count' => 'setOfferCount'
     ];

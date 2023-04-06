@@ -94,7 +94,7 @@ class ListingsItemPatchRequest extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'product_type' => 'setProductType',
+        'product_type' => 'setProductType',
         'patches' => 'setPatches'
     ];
 

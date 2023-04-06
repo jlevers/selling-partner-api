@@ -94,7 +94,7 @@ class Promise extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'delivery_window' => 'setDeliveryWindow',
+        'delivery_window' => 'setDeliveryWindow',
         'pickup_window' => 'setPickupWindow'
     ];
 

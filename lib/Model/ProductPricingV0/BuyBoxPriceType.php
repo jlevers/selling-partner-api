@@ -114,7 +114,7 @@ class BuyBoxPriceType extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'condition' => 'setCondition',
+        'condition' => 'setCondition',
         'offer_type' => 'setOfferType',
         'quantity_tier' => 'setQuantityTier',
         'quantity_discount_type' => 'setQuantityDiscountType',

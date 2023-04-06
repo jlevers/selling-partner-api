@@ -91,7 +91,7 @@ class AssignAppointmentResourcesRequest extends BaseModel implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-                'resources' => 'setResources'
+        'resources' => 'setResources'
     ];
 
     /**

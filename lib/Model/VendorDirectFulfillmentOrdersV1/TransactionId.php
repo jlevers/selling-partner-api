@@ -90,7 +90,7 @@ class TransactionId extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'transaction_id' => 'setTransactionId'
+        'transaction_id' => 'setTransactionId'
     ];
 
     /**

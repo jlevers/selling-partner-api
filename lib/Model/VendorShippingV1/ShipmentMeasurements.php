@@ -100,7 +100,7 @@ class ShipmentMeasurements extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'gross_shipment_weight' => 'setGrossShipmentWeight',
+        'gross_shipment_weight' => 'setGrossShipmentWeight',
         'shipment_volume' => 'setShipmentVolume',
         'carton_count' => 'setCartonCount',
         'pallet_count' => 'setPalletCount'
@@ -212,7 +212,7 @@ class ShipmentMeasurements extends BaseModel implements ModelInterface, ArrayAcc
     /**
      * Sets carton_count
      *
-     * @param int|null $carton_count Number of cartons present in the shipment. Provide the cartonCount only for unpalletized shipments.
+     * @param int|null $carton_count Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
      *
      * @return self
      */

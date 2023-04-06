@@ -90,7 +90,7 @@ class ListingOffersRequestParamsAllOf extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku'
+        'seller_sku' => 'setSellerSku'
     ];
 
     /**

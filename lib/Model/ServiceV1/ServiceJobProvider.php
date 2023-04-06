@@ -91,7 +91,7 @@ class ServiceJobProvider extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'service_job_provider_id' => 'setServiceJobProviderId'
+        'service_job_provider_id' => 'setServiceJobProviderId'
     ];
 
     /**

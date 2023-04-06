@@ -97,7 +97,7 @@ class Recurrence extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'end_time' => 'setEndTime',
+        'end_time' => 'setEndTime',
         'days_of_week' => 'setDaysOfWeek',
         'days_of_month' => 'setDaysOfMonth'
     ];

@@ -91,7 +91,7 @@ class TemporarilyUnavailableCarrier extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'carrier_name' => 'setCarrierName'
+        'carrier_name' => 'setCarrierName'
     ];
 
     /**

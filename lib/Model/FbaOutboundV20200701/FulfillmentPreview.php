@@ -121,7 +121,7 @@ class FulfillmentPreview extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'shipping_speed_category' => 'setShippingSpeedCategory',
+        'shipping_speed_category' => 'setShippingSpeedCategory',
         'scheduled_delivery_info' => 'setScheduledDeliveryInfo',
         'is_fulfillable' => 'setIsFulfillable',
         'is_cod_capable' => 'setIsCodCapable',

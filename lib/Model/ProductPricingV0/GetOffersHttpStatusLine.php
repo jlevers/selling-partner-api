@@ -94,7 +94,7 @@ class GetOffersHttpStatusLine extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'status_code' => 'setStatusCode',
+        'status_code' => 'setStatusCode',
         'reason_phrase' => 'setReasonPhrase'
     ];
 

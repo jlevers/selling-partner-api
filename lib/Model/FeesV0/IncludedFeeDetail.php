@@ -103,7 +103,7 @@ class IncludedFeeDetail extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'fee_type' => 'setFeeType',
+        'fee_type' => 'setFeeType',
         'fee_amount' => 'setFeeAmount',
         'fee_promotion' => 'setFeePromotion',
         'tax_amount' => 'setTaxAmount',

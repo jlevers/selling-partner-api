@@ -94,7 +94,7 @@ class AcknowledgementStatus extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'code' => 'setCode',
+        'code' => 'setCode',
         'description' => 'setDescription'
     ];
 

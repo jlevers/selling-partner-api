@@ -99,7 +99,7 @@ class GetInboundGuidanceResult extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'sku_inbound_guidance_list' => 'setSkuInboundGuidanceList',
+        'sku_inbound_guidance_list' => 'setSkuInboundGuidanceList',
         'invalid_sku_list' => 'setInvalidSkuList',
         'asin_inbound_guidance_list' => 'setAsinInboundGuidanceList',
         'invalid_asin_list' => 'setInvalidAsinList'

@@ -94,7 +94,7 @@ class PlainTextItem extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'position' => 'setPosition',
+        'position' => 'setPosition',
         'value' => 'setValue'
     ];
 

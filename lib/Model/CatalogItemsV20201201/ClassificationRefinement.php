@@ -97,7 +97,7 @@ class ClassificationRefinement extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'number_of_results' => 'setNumberOfResults',
+        'number_of_results' => 'setNumberOfResults',
         'display_name' => 'setDisplayName',
         'classification_id' => 'setClassificationId'
     ];

@@ -97,7 +97,7 @@ class Event extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'event_code' => 'setEventCode',
+        'event_code' => 'setEventCode',
         'location' => 'setLocation',
         'event_time' => 'setEventTime'
     ];

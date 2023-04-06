@@ -91,7 +91,7 @@ class StandardTextListBlock extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'text_list' => 'setTextList'
+        'text_list' => 'setTextList'
     ];
 
     /**

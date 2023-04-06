@@ -93,7 +93,7 @@ class MarketplaceParticipation extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'marketplace' => 'setMarketplace',
+        'marketplace' => 'setMarketplace',
         'participation' => 'setParticipation'
     ];
 

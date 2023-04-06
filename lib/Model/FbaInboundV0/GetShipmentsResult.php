@@ -93,7 +93,7 @@ class GetShipmentsResult extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'shipment_data' => 'setShipmentData',
+        'shipment_data' => 'setShipmentData',
         'next_token' => 'setNextToken'
     ];
 

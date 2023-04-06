@@ -94,7 +94,7 @@ class Dimension extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'unit' => 'setUnit',
+        'unit' => 'setUnit',
         'value' => 'setValue'
     ];
 

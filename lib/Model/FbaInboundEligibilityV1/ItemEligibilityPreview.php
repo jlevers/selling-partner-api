@@ -103,7 +103,7 @@ class ItemEligibilityPreview extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'marketplace_id' => 'setMarketplaceId',
         'program' => 'setProgram',
         'is_eligible_for_program' => 'setIsEligibleForProgram',

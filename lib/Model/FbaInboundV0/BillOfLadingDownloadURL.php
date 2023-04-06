@@ -90,7 +90,7 @@ class BillOfLadingDownloadURL extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'download_url' => 'setDownloadUrl'
+        'download_url' => 'setDownloadUrl'
     ];
 
     /**

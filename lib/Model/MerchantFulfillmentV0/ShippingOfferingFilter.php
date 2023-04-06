@@ -100,7 +100,7 @@ class ShippingOfferingFilter extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
+        'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
         'include_complex_shipping_options' => 'setIncludeComplexShippingOptions',
         'carrier_will_pick_up' => 'setCarrierWillPickUp',
         'delivery_experience' => 'setDeliveryExperience'

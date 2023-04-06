@@ -138,7 +138,7 @@ class ShipmentConfirmation extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'shipment_identifier' => 'setShipmentIdentifier',
+        'shipment_identifier' => 'setShipmentIdentifier',
         'shipment_confirmation_type' => 'setShipmentConfirmationType',
         'shipment_type' => 'setShipmentType',
         'shipment_structure' => 'setShipmentStructure',
@@ -546,7 +546,7 @@ class ShipmentConfirmation extends BaseModel implements ModelInterface, ArrayAcc
     /**
      * Sets shipment_confirmation_date
      *
-     * @param string $shipment_confirmation_date Date on which the shipment confirmation was submitted. Must be in ISO 8601 format.
+     * @param string $shipment_confirmation_date Date on which the shipment confirmation was submitted.
      *
      * @return self
      */
@@ -569,7 +569,7 @@ class ShipmentConfirmation extends BaseModel implements ModelInterface, ArrayAcc
     /**
      * Sets shipped_date
      *
-     * @param string|null $shipped_date The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future. Must be in ISO 8601 format.
+     * @param string|null $shipped_date The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the buyer destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
      *
      * @return self
      */
@@ -592,7 +592,7 @@ class ShipmentConfirmation extends BaseModel implements ModelInterface, ArrayAcc
     /**
      * Sets estimated_delivery_date
      *
-     * @param string|null $estimated_delivery_date The date and time on which the shipment is expected to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation. Must be in ISO 8601 format.
+     * @param string|null $estimated_delivery_date The date and time on which the shipment is estimated to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.
      *
      * @return self
      */

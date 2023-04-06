@@ -97,7 +97,7 @@ class PackageDocument extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'type' => 'setType',
+        'type' => 'setType',
         'format' => 'setFormat',
         'contents' => 'setContents'
     ];

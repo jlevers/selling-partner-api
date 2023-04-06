@@ -115,7 +115,7 @@ class AffordabilityExpenseEvent extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'posted_date' => 'setPostedDate',
         'marketplace_id' => 'setMarketplaceId',
         'transaction_type' => 'setTransactionType',

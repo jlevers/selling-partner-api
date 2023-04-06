@@ -97,7 +97,7 @@ class SAFETReimbursementItem extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'item_charge_list' => 'setItemChargeList',
+        'item_charge_list' => 'setItemChargeList',
         'product_description' => 'setProductDescription',
         'quantity' => 'setQuantity'
     ];

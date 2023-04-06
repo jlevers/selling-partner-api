@@ -94,7 +94,7 @@ class StandardImageTextCaptionBlock extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'block' => 'setBlock',
+        'block' => 'setBlock',
         'caption' => 'setCaption'
     ];
 

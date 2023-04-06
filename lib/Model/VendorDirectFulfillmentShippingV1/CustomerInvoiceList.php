@@ -93,7 +93,7 @@ class CustomerInvoiceList extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'pagination' => 'setPagination',
+        'pagination' => 'setPagination',
         'customer_invoices' => 'setCustomerInvoices'
     ];
 

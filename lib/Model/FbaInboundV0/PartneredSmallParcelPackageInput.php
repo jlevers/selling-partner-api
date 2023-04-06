@@ -94,7 +94,7 @@ class PartneredSmallParcelPackageInput extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'dimensions' => 'setDimensions',
+        'dimensions' => 'setDimensions',
         'weight' => 'setWeight'
     ];
 

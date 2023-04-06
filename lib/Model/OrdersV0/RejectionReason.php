@@ -94,7 +94,7 @@ class RejectionReason extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'rejection_reason_id' => 'setRejectionReasonId',
+        'rejection_reason_id' => 'setRejectionReasonId',
         'rejection_reason_description' => 'setRejectionReasonDescription'
     ];
 

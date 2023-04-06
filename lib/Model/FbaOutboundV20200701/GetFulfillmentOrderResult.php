@@ -102,7 +102,7 @@ class GetFulfillmentOrderResult extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'fulfillment_order' => 'setFulfillmentOrder',
+        'fulfillment_order' => 'setFulfillmentOrder',
         'fulfillment_order_items' => 'setFulfillmentOrderItems',
         'fulfillment_shipments' => 'setFulfillmentShipments',
         'return_items' => 'setReturnItems',

@@ -97,7 +97,7 @@ class ImageComponent extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'upload_destination_id' => 'setUploadDestinationId',
+        'upload_destination_id' => 'setUploadDestinationId',
         'image_crop_specification' => 'setImageCropSpecification',
         'alt_text' => 'setAltText'
     ];

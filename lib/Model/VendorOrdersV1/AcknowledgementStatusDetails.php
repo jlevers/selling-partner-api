@@ -97,7 +97,7 @@ class AcknowledgementStatusDetails extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'acknowledgement_date' => 'setAcknowledgementDate',
+        'acknowledgement_date' => 'setAcknowledgementDate',
         'accepted_quantity' => 'setAcceptedQuantity',
         'rejected_quantity' => 'setRejectedQuantity'
     ];

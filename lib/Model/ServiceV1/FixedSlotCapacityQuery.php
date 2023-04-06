@@ -100,7 +100,7 @@ class FixedSlotCapacityQuery extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'capacity_types' => 'setCapacityTypes',
+        'capacity_types' => 'setCapacityTypes',
         'slot_duration' => 'setSlotDuration',
         'start_date_time' => 'setStartDateTime',
         'end_date_time' => 'setEndDateTime'

@@ -94,7 +94,7 @@ class ItemProductTypeByMarketplace extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'product_type' => 'setProductType'
     ];
 

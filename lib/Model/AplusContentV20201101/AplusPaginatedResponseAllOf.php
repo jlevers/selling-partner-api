@@ -90,7 +90,7 @@ class AplusPaginatedResponseAllOf extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'next_page_token' => 'setNextPageToken'
+        'next_page_token' => 'setNextPageToken'
     ];
 
     /**

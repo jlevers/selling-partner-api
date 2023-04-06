@@ -100,7 +100,7 @@ class PaymentTerms extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'type' => 'setType',
+        'type' => 'setType',
         'discount_percent' => 'setDiscountPercent',
         'discount_due_days' => 'setDiscountDueDays',
         'net_due_days' => 'setNetDueDays'

@@ -94,7 +94,7 @@ class CreateDestinationRequest extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'resource_specification' => 'setResourceSpecification',
+        'resource_specification' => 'setResourceSpecification',
         'name' => 'setName'
     ];
 

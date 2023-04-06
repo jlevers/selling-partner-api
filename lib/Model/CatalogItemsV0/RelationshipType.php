@@ -157,7 +157,7 @@ class RelationshipType extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'identifiers' => 'setIdentifiers',
+        'identifiers' => 'setIdentifiers',
         'color' => 'setColor',
         'edition' => 'setEdition',
         'flavor' => 'setFlavor',

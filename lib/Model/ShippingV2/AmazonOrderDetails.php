@@ -91,7 +91,7 @@ class AmazonOrderDetails extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'order_id' => 'setOrderId'
+        'order_id' => 'setOrderId'
     ];
 
     /**

@@ -97,7 +97,7 @@ class QuantityDiscountPriceType extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'quantity_tier' => 'setQuantityTier',
+        'quantity_tier' => 'setQuantityTier',
         'quantity_discount_type' => 'setQuantityDiscountType',
         'listing_price' => 'setListingPrice'
     ];

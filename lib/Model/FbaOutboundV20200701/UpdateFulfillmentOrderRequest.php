@@ -123,7 +123,7 @@ class UpdateFulfillmentOrderRequest extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'displayable_order_id' => 'setDisplayableOrderId',
         'displayable_order_date' => 'setDisplayableOrderDate',
         'displayable_order_comment' => 'setDisplayableOrderComment',

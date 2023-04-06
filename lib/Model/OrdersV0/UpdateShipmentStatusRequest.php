@@ -97,7 +97,7 @@ class UpdateShipmentStatusRequest extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'shipment_status' => 'setShipmentStatus',
         'order_items' => 'setOrderItems'
     ];

@@ -94,7 +94,7 @@ class FulfillmentAvailability extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'fulfillment_channel_code' => 'setFulfillmentChannelCode',
+        'fulfillment_channel_code' => 'setFulfillmentChannelCode',
         'quantity' => 'setQuantity'
     ];
 

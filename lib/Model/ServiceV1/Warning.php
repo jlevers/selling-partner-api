@@ -97,7 +97,7 @@ class Warning extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'code' => 'setCode',
+        'code' => 'setCode',
         'message' => 'setMessage',
         'details' => 'setDetails'
     ];

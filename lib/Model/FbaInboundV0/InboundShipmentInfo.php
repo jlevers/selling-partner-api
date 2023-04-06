@@ -118,7 +118,7 @@ class InboundShipmentInfo extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId',
+        'shipment_id' => 'setShipmentId',
         'shipment_name' => 'setShipmentName',
         'ship_from_address' => 'setShipFromAddress',
         'destination_fulfillment_center_id' => 'setDestinationFulfillmentCenterId',

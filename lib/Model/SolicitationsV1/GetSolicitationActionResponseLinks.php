@@ -93,7 +93,7 @@ class GetSolicitationActionResponseLinks extends BaseModel implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-                'self' => 'setSelf',
+        'self' => 'setSelf',
         'schema' => 'setSchema'
     ];
 

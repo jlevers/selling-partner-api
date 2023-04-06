@@ -94,7 +94,7 @@ class AmazonPrepFeesDetails extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'prep_instruction' => 'setPrepInstruction',
+        'prep_instruction' => 'setPrepInstruction',
         'fee_per_unit' => 'setFeePerUnit'
     ];
 

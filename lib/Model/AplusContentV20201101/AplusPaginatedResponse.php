@@ -94,7 +94,7 @@ class AplusPaginatedResponse extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'warnings' => 'setWarnings',
+        'warnings' => 'setWarnings',
         'next_page_token' => 'setNextPageToken'
     ];
 

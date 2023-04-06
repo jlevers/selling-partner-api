@@ -102,7 +102,7 @@ class FeesEstimateRequest extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'is_amazon_fulfilled' => 'setIsAmazonFulfilled',
         'price_to_estimate_fees' => 'setPriceToEstimateFees',
         'identifier' => 'setIdentifier',

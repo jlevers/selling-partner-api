@@ -100,7 +100,7 @@ class ReservedQuantity extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'total_reserved_quantity' => 'setTotalReservedQuantity',
+        'total_reserved_quantity' => 'setTotalReservedQuantity',
         'pending_customer_order_quantity' => 'setPendingCustomerOrderQuantity',
         'pending_transshipment_quantity' => 'setPendingTransshipmentQuantity',
         'fc_processing_quantity' => 'setFcProcessingQuantity'

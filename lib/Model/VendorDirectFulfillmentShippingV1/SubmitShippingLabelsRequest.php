@@ -90,7 +90,7 @@ class SubmitShippingLabelsRequest extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'shipping_label_requests' => 'setShippingLabelRequests'
+        'shipping_label_requests' => 'setShippingLabelRequests'
     ];
 
     /**

@@ -94,7 +94,7 @@ class ScheduledDeliveryInfo extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'delivery_time_zone' => 'setDeliveryTimeZone',
+        'delivery_time_zone' => 'setDeliveryTimeZone',
         'delivery_windows' => 'setDeliveryWindows'
     ];
 

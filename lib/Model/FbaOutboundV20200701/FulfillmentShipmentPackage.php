@@ -100,7 +100,7 @@ class FulfillmentShipmentPackage extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'package_number' => 'setPackageNumber',
+        'package_number' => 'setPackageNumber',
         'carrier_code' => 'setCarrierCode',
         'tracking_number' => 'setTrackingNumber',
         'estimated_arrival_date' => 'setEstimatedArrivalDate'

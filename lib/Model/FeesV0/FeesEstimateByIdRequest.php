@@ -97,7 +97,7 @@ class FeesEstimateByIdRequest extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'fees_estimate_request' => 'setFeesEstimateRequest',
+        'fees_estimate_request' => 'setFeesEstimateRequest',
         'id_type' => 'setIdType',
         'id_value' => 'setIdValue'
     ];

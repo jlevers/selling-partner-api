@@ -97,7 +97,7 @@ class ItemVariationsByMarketplace extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'asins' => 'setAsins',
         'variation_type' => 'setVariationType'
     ];

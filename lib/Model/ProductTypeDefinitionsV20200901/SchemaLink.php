@@ -93,7 +93,7 @@ class SchemaLink extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'link' => 'setLink',
+        'link' => 'setLink',
         'checksum' => 'setChecksum'
     ];
 

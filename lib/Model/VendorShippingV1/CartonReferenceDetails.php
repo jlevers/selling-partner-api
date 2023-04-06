@@ -93,7 +93,7 @@ class CartonReferenceDetails extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'carton_count' => 'setCartonCount',
+        'carton_count' => 'setCartonCount',
         'carton_reference_numbers' => 'setCartonReferenceNumbers'
     ];
 

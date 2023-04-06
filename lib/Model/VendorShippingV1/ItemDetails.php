@@ -103,7 +103,7 @@ class ItemDetails extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'lot_number' => 'setLotNumber',
         'expiry' => 'setExpiry',
         'maximum_retail_price' => 'setMaximumRetailPrice',
@@ -210,7 +210,7 @@ class ItemDetails extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets purchase_order_number
      *
-     * @param string|null $purchase_order_number The Amazon purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
+     * @param string|null $purchase_order_number The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
      *
      * @return self
      */

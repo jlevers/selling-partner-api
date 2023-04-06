@@ -94,7 +94,7 @@ class Participation extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'is_participating' => 'setIsParticipating',
+        'is_participating' => 'setIsParticipating',
         'has_suspended_listings' => 'setHasSuspendedListings'
     ];
 

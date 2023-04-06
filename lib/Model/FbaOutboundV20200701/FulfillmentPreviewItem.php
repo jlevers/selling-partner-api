@@ -103,7 +103,7 @@ class FulfillmentPreviewItem extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'quantity' => 'setQuantity',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'estimated_shipping_weight' => 'setEstimatedShippingWeight',

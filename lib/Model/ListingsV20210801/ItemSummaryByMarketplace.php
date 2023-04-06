@@ -118,7 +118,7 @@ class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'asin' => 'setAsin',
         'product_type' => 'setProductType',
         'condition_type' => 'setConditionType',

@@ -103,7 +103,7 @@ class ReturnAuthorization extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'return_authorization_id' => 'setReturnAuthorizationId',
+        'return_authorization_id' => 'setReturnAuthorizationId',
         'fulfillment_center_id' => 'setFulfillmentCenterId',
         'return_to_address' => 'setReturnToAddress',
         'amazon_rma_id' => 'setAmazonRmaId',

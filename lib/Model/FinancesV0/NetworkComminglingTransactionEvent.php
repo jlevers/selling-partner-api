@@ -112,7 +112,7 @@ class NetworkComminglingTransactionEvent extends BaseModel implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-                'transaction_type' => 'setTransactionType',
+        'transaction_type' => 'setTransactionType',
         'posted_date' => 'setPostedDate',
         'net_co_transaction_id' => 'setNetCoTransactionId',
         'swap_reason' => 'setSwapReason',

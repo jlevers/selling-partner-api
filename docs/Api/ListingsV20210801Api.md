@@ -18,6 +18,8 @@ deleteListingsItem($seller_id, $sku, $marketplace_ids, $issue_locale): \SellingP
 
 Delete a listings item for a selling partner.
 
+**Note:** The parameters associated with this operation may contain special characters that must be encoded to successfully call the API. To avoid errors with SKUs when encoding URLs, refer to [URL Encoding](https://developer-docs.amazon.com/sp-api/docs/url-encoding).
+
 **Usage Plan:**
 
 | Rate (requests per second) | Burst |

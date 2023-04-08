@@ -331,7 +331,7 @@ class Report extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets report_type
      *
-     * @param string $report_type The report type.
+     * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      *
      * @return self
      */

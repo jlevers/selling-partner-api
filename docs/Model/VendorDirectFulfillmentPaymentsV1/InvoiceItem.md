@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **net_cost** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\Money**](Money.md) |  |
 **purchase_order_number** | **string** | The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code. |
 **vendor_order_number** | **string** | The vendor's order number for this order. | [optional]
-**hsn_code** | **string** | HSN tax code. The HSN number cannot contain alphabets. | [optional]
+**hsn_code** | **string** | Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets. | [optional]
 **tax_details** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\TaxDetail[]**](TaxDetail.md) | Individual tax details per line item. | [optional]
 **charge_details** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\ChargeDetails[]**](ChargeDetails.md) | Individual charge details per line item. | [optional]
 

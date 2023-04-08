@@ -374,7 +374,7 @@ class InvoiceItem extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets hsn_code
      *
-     * @param string|null $hsn_code HSN tax code. The HSN number cannot contain alphabets.
+     * @param string|null $hsn_code Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
      *
      * @return self
      */

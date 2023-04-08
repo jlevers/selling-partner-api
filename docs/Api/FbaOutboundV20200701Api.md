@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getPackageTrackingDetails()**](FbaOutboundV20200701Api.md#getPackageTrackingDetails) | **GET** /fba/outbound/2020-07-01/tracking | 
 [**listAllFulfillmentOrders()**](FbaOutboundV20200701Api.md#listAllFulfillmentOrders) | **GET** /fba/outbound/2020-07-01/fulfillmentOrders | 
 [**listReturnReasonCodes()**](FbaOutboundV20200701Api.md#listReturnReasonCodes) | **GET** /fba/outbound/2020-07-01/returnReasonCodes | 
+[**submitFulfillmentOrderStatusUpdate()**](FbaOutboundV20200701Api.md#submitFulfillmentOrderStatusUpdate) | **PUT** /fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/status | 
 [**updateFulfillmentOrder()**](FbaOutboundV20200701Api.md#updateFulfillmentOrder) | **PUT** /fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId} | 
 
 
@@ -733,6 +734,64 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`, `payload`
+
+[[Top]](#) [[API list]](../)
+[[FbaOutboundV20200701 Model list]](../Model/FbaOutboundV20200701)
+[[README]](../../README.md)
+
+## `submitFulfillmentOrderStatusUpdate()`
+
+```php
+submitFulfillmentOrderStatusUpdate($seller_fulfillment_order_id, $body): \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse
+```
+
+
+
+Requests that Amazon update the status of an order in the sandbox testing environment. This is a sandbox-only operation and must be directed to a sandbox endpoint. Refer to [Fulfillment Outbound Dynamic Sandbox Guide](https://developer-docs.amazon.com/sp-api/docs/fulfillment-outbound-dynamic-sandbox-guide) and [Selling Partner API sandbox](https://developer-docs.amazon.com/sp-api/docs/the-selling-partner-api-sandbox) for more information.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
+
+$apiInstance = new SellingPartnerApi\Api\FbaOutboundV20200701Api($config);
+$seller_fulfillment_order_id = 'seller_fulfillment_order_id_example'; // string | The identifier assigned to the item by the seller when the fulfillment order was created.
+$body = new \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateRequest(); // \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateRequest
+
+try {
+    $result = $apiInstance->submitFulfillmentOrderStatusUpdate($seller_fulfillment_order_id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbaOutboundV20200701Api->submitFulfillmentOrderStatusUpdate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **seller_fulfillment_order_id** | **string**| The identifier assigned to the item by the seller when the fulfillment order was created. |
+ **body** | [**\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateRequest**](../Model/FbaOutboundV20200701/SubmitFulfillmentOrderStatusUpdateRequest.md)|  |
+
+### Return type
+
+[**\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse**](../Model/FbaOutboundV20200701/SubmitFulfillmentOrderStatusUpdateResponse.md)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)
 [[FbaOutboundV20200701 Model list]](../Model/FbaOutboundV20200701)

@@ -898,7 +898,7 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets condition_id
      *
-     * @param string|null $condition_id The condition of the item. Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
+     * @param string|null $condition_id The condition of the item.  Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
      *
      * @return self
      */
@@ -921,7 +921,7 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets condition_subtype_id
      *
-     * @param string|null $condition_subtype_id The subcondition of the item. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
+     * @param string|null $condition_subtype_id The subcondition of the item.  Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
      *
      * @return self
      */
@@ -990,7 +990,7 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets price_designation
      *
-     * @param string|null $price_designation Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).  Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
+     * @param string|null $price_designation Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
      *
      * @return self
      */
@@ -1036,7 +1036,7 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets serial_number_required
      *
-     * @param bool|null $serial_number_required When true, the product type for this item has a serial number. Returned only for Amazon Easy Ship orders.
+     * @param bool|null $serial_number_required When true, the product type for this item has a serial number.  Returned only for Amazon Easy Ship orders.
      *
      * @return self
      */

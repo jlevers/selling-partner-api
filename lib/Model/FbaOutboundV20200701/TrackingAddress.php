@@ -97,7 +97,7 @@ class TrackingAddress extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'city' => 'setCity',
+        'city' => 'setCity',
         'state' => 'setState',
         'country' => 'setCountry'
     ];

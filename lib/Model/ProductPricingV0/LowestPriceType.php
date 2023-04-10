@@ -114,7 +114,7 @@ class LowestPriceType extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'condition' => 'setCondition',
+        'condition' => 'setCondition',
         'fulfillment_channel' => 'setFulfillmentChannel',
         'offer_type' => 'setOfferType',
         'quantity_tier' => 'setQuantityTier',

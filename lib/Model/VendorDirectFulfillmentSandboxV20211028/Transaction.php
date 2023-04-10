@@ -97,7 +97,7 @@ class Transaction extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'transaction_id' => 'setTransactionId',
+        'transaction_id' => 'setTransactionId',
         'status' => 'setStatus',
         'test_case_data' => 'setTestCaseData'
     ];

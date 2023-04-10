@@ -100,7 +100,7 @@ class ItemDetails extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'buyer_product_identifier' => 'setBuyerProductIdentifier',
+        'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'available_quantity' => 'setAvailableQuantity',
         'is_obsolete' => 'setIsObsolete'

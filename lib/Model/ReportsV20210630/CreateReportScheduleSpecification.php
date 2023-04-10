@@ -102,7 +102,7 @@ class CreateReportScheduleSpecification extends BaseModel implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-                'report_type' => 'setReportType',
+        'report_type' => 'setReportType',
         'marketplace_ids' => 'setMarketplaceIds',
         'report_options' => 'setReportOptions',
         'period' => 'setPeriod',
@@ -254,7 +254,7 @@ class CreateReportScheduleSpecification extends BaseModel implements ModelInterf
     /**
      * Sets report_type
      *
-     * @param string $report_type The report type.
+     * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      *
      * @return self
      */

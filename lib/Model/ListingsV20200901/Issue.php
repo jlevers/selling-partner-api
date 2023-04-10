@@ -100,7 +100,7 @@ class Issue extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'code' => 'setCode',
+        'code' => 'setCode',
         'message' => 'setMessage',
         'severity' => 'setSeverity',
         'attribute_name' => 'setAttributeName'

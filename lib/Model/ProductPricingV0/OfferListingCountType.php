@@ -94,7 +94,7 @@ class OfferListingCountType extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'count' => 'setCount',
+        'count' => 'setCount',
         'condition' => 'setCondition'
     ];
 

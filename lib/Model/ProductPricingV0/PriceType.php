@@ -99,7 +99,7 @@ class PriceType extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'landed_price' => 'setLandedPrice',
+        'landed_price' => 'setLandedPrice',
         'listing_price' => 'setListingPrice',
         'shipping' => 'setShipping',
         'points' => 'setPoints'

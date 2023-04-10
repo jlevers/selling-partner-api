@@ -100,7 +100,7 @@ class AvailableValueAddedServiceGroup extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'group_id' => 'setGroupId',
+        'group_id' => 'setGroupId',
         'group_description' => 'setGroupDescription',
         'is_required' => 'setIsRequired',
         'value_added_services' => 'setValueAddedServices'

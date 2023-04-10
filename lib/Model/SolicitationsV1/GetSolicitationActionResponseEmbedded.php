@@ -90,7 +90,7 @@ class GetSolicitationActionResponseEmbedded extends BaseModel implements ModelIn
      * @var string[]
      */
     protected static $setters = [
-                'schema' => 'setSchema'
+        'schema' => 'setSchema'
     ];
 
     /**

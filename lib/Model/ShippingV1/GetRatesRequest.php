@@ -103,7 +103,7 @@ class GetRatesRequest extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'ship_to' => 'setShipTo',
+        'ship_to' => 'setShipTo',
         'ship_from' => 'setShipFrom',
         'service_types' => 'setServiceTypes',
         'ship_date' => 'setShipDate',

@@ -93,7 +93,7 @@ class ItemLevelFields extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'additional_inputs' => 'setAdditionalInputs'
     ];
 

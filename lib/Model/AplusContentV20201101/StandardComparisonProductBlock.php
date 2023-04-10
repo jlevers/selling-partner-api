@@ -106,7 +106,7 @@ class StandardComparisonProductBlock extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'position' => 'setPosition',
+        'position' => 'setPosition',
         'image' => 'setImage',
         'title' => 'setTitle',
         'asin' => 'setAsin',

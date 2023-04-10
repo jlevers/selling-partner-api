@@ -97,7 +97,7 @@ class ContentRecord extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'content_reference_key' => 'setContentReferenceKey',
+        'content_reference_key' => 'setContentReferenceKey',
         'content_metadata' => 'setContentMetadata',
         'content_document' => 'setContentDocument'
     ];

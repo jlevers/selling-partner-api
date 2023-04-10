@@ -97,7 +97,7 @@ class SupportedDocumentSpecification extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'format' => 'setFormat',
+        'format' => 'setFormat',
         'size' => 'setSize',
         'print_options' => 'setPrintOptions'
     ];

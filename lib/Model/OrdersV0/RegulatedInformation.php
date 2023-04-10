@@ -91,7 +91,7 @@ class RegulatedInformation extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'fields' => 'setFields'
+        'fields' => 'setFields'
     ];
 
     /**

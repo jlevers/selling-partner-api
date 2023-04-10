@@ -97,7 +97,7 @@ class PackageDocumentDetail extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'package_client_reference_id' => 'setPackageClientReferenceId',
+        'package_client_reference_id' => 'setPackageClientReferenceId',
         'package_documents' => 'setPackageDocuments',
         'tracking_id' => 'setTrackingId'
     ];

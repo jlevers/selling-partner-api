@@ -94,7 +94,7 @@ class TimeRange extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'start' => 'setStart',
+        'start' => 'setStart',
         'end' => 'setEnd'
     ];
 

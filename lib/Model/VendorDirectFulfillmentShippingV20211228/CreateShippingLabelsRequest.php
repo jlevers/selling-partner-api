@@ -97,7 +97,7 @@ class CreateShippingLabelsRequest extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'selling_party' => 'setSellingParty',
+        'selling_party' => 'setSellingParty',
         'ship_from_party' => 'setShipFromParty',
         'containers' => 'setContainers'
     ];

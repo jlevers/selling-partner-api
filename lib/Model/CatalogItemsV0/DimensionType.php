@@ -100,7 +100,7 @@ class DimensionType extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'height' => 'setHeight',
+        'height' => 'setHeight',
         'length' => 'setLength',
         'width' => 'setWidth',
         'weight' => 'setWeight'

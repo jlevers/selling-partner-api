@@ -96,7 +96,7 @@ class GetSchemaResponse extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                '_links' => 'setLinks',
+        '_links' => 'setLinks',
         'payload' => 'setPayload',
         'errors' => 'setErrors'
     ];

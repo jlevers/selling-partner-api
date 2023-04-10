@@ -103,7 +103,7 @@ class IneligibleRate extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'service_id' => 'setServiceId',
+        'service_id' => 'setServiceId',
         'service_name' => 'setServiceName',
         'carrier_name' => 'setCarrierName',
         'carrier_id' => 'setCarrierId',

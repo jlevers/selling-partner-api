@@ -106,7 +106,7 @@ class StandardImageSidebarModule extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'headline' => 'setHeadline',
+        'headline' => 'setHeadline',
         'image_caption_block' => 'setImageCaptionBlock',
         'description_text_block' => 'setDescriptionTextBlock',
         'description_list_block' => 'setDescriptionListBlock',

@@ -94,7 +94,7 @@ class AvailableCarrierWillPickUpOption extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'carrier_will_pick_up_option' => 'setCarrierWillPickUpOption',
+        'carrier_will_pick_up_option' => 'setCarrierWillPickUpOption',
         'charge' => 'setCharge'
     ];
 

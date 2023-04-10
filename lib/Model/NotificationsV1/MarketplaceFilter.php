@@ -91,7 +91,7 @@ class MarketplaceFilter extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_ids' => 'setMarketplaceIds'
+        'marketplace_ids' => 'setMarketplaceIds'
     ];
 
     /**

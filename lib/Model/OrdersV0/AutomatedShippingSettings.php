@@ -97,7 +97,7 @@ class AutomatedShippingSettings extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'has_automated_shipping_settings' => 'setHasAutomatedShippingSettings',
+        'has_automated_shipping_settings' => 'setHasAutomatedShippingSettings',
         'automated_carrier' => 'setAutomatedCarrier',
         'automated_ship_method' => 'setAutomatedShipMethod'
     ];

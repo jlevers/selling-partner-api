@@ -58,9 +58,12 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'carrier_scac' => 'string',
-        'carrier_shipment_reference_number' => 'string',
+        'ship_mode' => 'string',
         'transportation_mode' => 'string',
+        'shipped_date' => 'string',
+        'estimated_delivery_date' => 'string',
+        'shipment_delivery_date' => 'string',
+        'carrier_details' => '\SellingPartnerApi\Model\VendorShippingV1\CarrierDetails',
         'bill_of_lading_number' => 'string'
     ];
 
@@ -72,9 +75,12 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'carrier_scac' => null,
-        'carrier_shipment_reference_number' => null,
+        'ship_mode' => null,
         'transportation_mode' => null,
+        'shipped_date' => null,
+        'estimated_delivery_date' => null,
+        'shipment_delivery_date' => null,
+        'carrier_details' => null,
         'bill_of_lading_number' => null
     ];
 
@@ -87,9 +93,12 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'carrier_scac' => 'carrierScac',
-        'carrier_shipment_reference_number' => 'carrierShipmentReferenceNumber',
+        'ship_mode' => 'shipMode',
         'transportation_mode' => 'transportationMode',
+        'shipped_date' => 'shippedDate',
+        'estimated_delivery_date' => 'estimatedDeliveryDate',
+        'shipment_delivery_date' => 'shipmentDeliveryDate',
+        'carrier_details' => 'carrierDetails',
         'bill_of_lading_number' => 'billOfLadingNumber'
     ];
 
@@ -99,9 +108,12 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'carrier_scac' => 'setCarrierScac',
-        'carrier_shipment_reference_number' => 'setCarrierShipmentReferenceNumber',
+        'ship_mode' => 'setShipMode',
         'transportation_mode' => 'setTransportationMode',
+        'shipped_date' => 'setShippedDate',
+        'estimated_delivery_date' => 'setEstimatedDeliveryDate',
+        'shipment_delivery_date' => 'setShipmentDeliveryDate',
+        'carrier_details' => 'setCarrierDetails',
         'bill_of_lading_number' => 'setBillOfLadingNumber'
     ];
 
@@ -111,18 +123,45 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'carrier_scac' => 'getCarrierScac',
-        'carrier_shipment_reference_number' => 'getCarrierShipmentReferenceNumber',
+        'ship_mode' => 'getShipMode',
         'transportation_mode' => 'getTransportationMode',
+        'shipped_date' => 'getShippedDate',
+        'estimated_delivery_date' => 'getEstimatedDeliveryDate',
+        'shipment_delivery_date' => 'getShipmentDeliveryDate',
+        'carrier_details' => 'getCarrierDetails',
         'bill_of_lading_number' => 'getBillOfLadingNumber'
     ];
 
 
 
+    const SHIP_MODE_TRUCK_LOAD = 'TruckLoad';
+    const SHIP_MODE_LESS_THAN_TRUCK_LOAD = 'LessThanTruckLoad';
+    const SHIP_MODE_SMALL_PARCEL = 'SmallParcel';
+    
+
     const TRANSPORTATION_MODE_ROAD = 'Road';
     const TRANSPORTATION_MODE_AIR = 'Air';
     const TRANSPORTATION_MODE_OCEAN = 'Ocean';
     
+    
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getShipModeAllowableValues()
+    {
+        $baseVals = [
+            self::SHIP_MODE_TRUCK_LOAD,
+            self::SHIP_MODE_LESS_THAN_TRUCK_LOAD,
+            self::SHIP_MODE_SMALL_PARCEL,
+        ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
+    }
     
 
     /**
@@ -158,9 +197,12 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
      */
     public function __construct(array $data = null)
     {
-        $this->container['carrier_scac'] = $data['carrier_scac'] ?? null;
-        $this->container['carrier_shipment_reference_number'] = $data['carrier_shipment_reference_number'] ?? null;
+        $this->container['ship_mode'] = $data['ship_mode'] ?? null;
         $this->container['transportation_mode'] = $data['transportation_mode'] ?? null;
+        $this->container['shipped_date'] = $data['shipped_date'] ?? null;
+        $this->container['estimated_delivery_date'] = $data['estimated_delivery_date'] ?? null;
+        $this->container['shipment_delivery_date'] = $data['shipment_delivery_date'] ?? null;
+        $this->container['carrier_details'] = $data['carrier_details'] ?? null;
         $this->container['bill_of_lading_number'] = $data['bill_of_lading_number'] ?? null;
     }
 
@@ -172,6 +214,18 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        $allowedValues = $this->getShipModeAllowableValues();
+        if (
+            !is_null($this->container['ship_mode']) &&
+            !in_array(strtoupper($this->container['ship_mode']), $allowedValues, true)
+        ) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'ship_mode', must be one of '%s'",
+                $this->container['ship_mode'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getTransportationModeAllowableValues();
         if (
             !is_null($this->container['transportation_mode']) &&
@@ -189,48 +243,35 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets carrier_scac
+     * Gets ship_mode
      *
      * @return string|null
      */
-    public function getCarrierScac()
+    public function getShipMode()
     {
-        return $this->container['carrier_scac'];
+        return $this->container['ship_mode'];
     }
 
     /**
-     * Sets carrier_scac
+     * Sets ship_mode
      *
-     * @param string|null $carrier_scac Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.
+     * @param string|null $ship_mode The type of shipment.
      *
      * @return self
      */
-    public function setCarrierScac($carrier_scac)
+    public function setShipMode($ship_mode)
     {
-        $this->container['carrier_scac'] = $carrier_scac;
-
-        return $this;
-    }
-    /**
-     * Gets carrier_shipment_reference_number
-     *
-     * @return string|null
-     */
-    public function getCarrierShipmentReferenceNumber()
-    {
-        return $this->container['carrier_shipment_reference_number'];
-    }
-
-    /**
-     * Sets carrier_shipment_reference_number
-     *
-     * @param string|null $carrier_shipment_reference_number The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
-     *
-     * @return self
-     */
-    public function setCarrierShipmentReferenceNumber($carrier_shipment_reference_number)
-    {
-        $this->container['carrier_shipment_reference_number'] = $carrier_shipment_reference_number;
+        $allowedValues = $this->getShipModeAllowableValues();
+        if (!is_null($ship_mode) &&!in_array(strtoupper($ship_mode), $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'ship_mode', must be one of '%s'",
+                    $ship_mode,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['ship_mode'] = $ship_mode;
 
         return $this;
     }
@@ -264,6 +305,98 @@ class TransportationDetails extends BaseModel implements ModelInterface, ArrayAc
             );
         }
         $this->container['transportation_mode'] = $transportation_mode;
+
+        return $this;
+    }
+    /**
+     * Gets shipped_date
+     *
+     * @return string|null
+     */
+    public function getShippedDate()
+    {
+        return $this->container['shipped_date'];
+    }
+
+    /**
+     * Sets shipped_date
+     *
+     * @param string|null $shipped_date Date when shipment is performed by the Vendor to Buyer
+     *
+     * @return self
+     */
+    public function setShippedDate($shipped_date)
+    {
+        $this->container['shipped_date'] = $shipped_date;
+
+        return $this;
+    }
+    /**
+     * Gets estimated_delivery_date
+     *
+     * @return string|null
+     */
+    public function getEstimatedDeliveryDate()
+    {
+        return $this->container['estimated_delivery_date'];
+    }
+
+    /**
+     * Sets estimated_delivery_date
+     *
+     * @param string|null $estimated_delivery_date Estimated Date on which shipment will be delivered from Vendor to Buyer
+     *
+     * @return self
+     */
+    public function setEstimatedDeliveryDate($estimated_delivery_date)
+    {
+        $this->container['estimated_delivery_date'] = $estimated_delivery_date;
+
+        return $this;
+    }
+    /**
+     * Gets shipment_delivery_date
+     *
+     * @return string|null
+     */
+    public function getShipmentDeliveryDate()
+    {
+        return $this->container['shipment_delivery_date'];
+    }
+
+    /**
+     * Sets shipment_delivery_date
+     *
+     * @param string|null $shipment_delivery_date Date on which shipment will be delivered from Vendor to Buyer
+     *
+     * @return self
+     */
+    public function setShipmentDeliveryDate($shipment_delivery_date)
+    {
+        $this->container['shipment_delivery_date'] = $shipment_delivery_date;
+
+        return $this;
+    }
+    /**
+     * Gets carrier_details
+     *
+     * @return \SellingPartnerApi\Model\VendorShippingV1\CarrierDetails|null
+     */
+    public function getCarrierDetails()
+    {
+        return $this->container['carrier_details'];
+    }
+
+    /**
+     * Sets carrier_details
+     *
+     * @param \SellingPartnerApi\Model\VendorShippingV1\CarrierDetails|null $carrier_details carrier_details
+     *
+     * @return self
+     */
+    public function setCarrierDetails($carrier_details)
+    {
+        $this->container['carrier_details'] = $carrier_details;
 
         return $this;
     }

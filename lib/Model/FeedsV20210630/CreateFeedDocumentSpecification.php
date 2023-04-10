@@ -91,7 +91,7 @@ class CreateFeedDocumentSpecification extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'content_type' => 'setContentType'
+        'content_type' => 'setContentType'
     ];
 
     /**

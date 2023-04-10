@@ -96,7 +96,7 @@ class CreateFulfillmentReturnResult extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'return_items' => 'setReturnItems',
+        'return_items' => 'setReturnItems',
         'invalid_return_items' => 'setInvalidReturnItems',
         'return_authorizations' => 'setReturnAuthorizations'
     ];

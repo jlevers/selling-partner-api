@@ -97,7 +97,7 @@ class ContainerItem extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'item_reference' => 'setItemReference',
+        'item_reference' => 'setItemReference',
         'shipped_quantity' => 'setShippedQuantity',
         'item_details' => 'setItemDetails'
     ];

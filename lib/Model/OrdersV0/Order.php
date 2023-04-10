@@ -105,7 +105,9 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
         'buyer_info' => '\SellingPartnerApi\Model\OrdersV0\BuyerInfo',
         'automated_shipping_settings' => '\SellingPartnerApi\Model\OrdersV0\AutomatedShippingSettings',
         'has_regulated_items' => 'bool',
-        'electronic_invoice_status' => '\SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus'
+        'electronic_invoice_status' => '\SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus',
+        'item_approval_types' => '\SellingPartnerApi\Model\OrdersV0\ItemApprovalType[]',
+        'item_approval_status' => '\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[]'
     ];
 
     /**
@@ -162,7 +164,9 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
         'buyer_info' => null,
         'automated_shipping_settings' => null,
         'has_regulated_items' => null,
-        'electronic_invoice_status' => null
+        'electronic_invoice_status' => null,
+        'item_approval_types' => null,
+        'item_approval_status' => null
     ];
 
 
@@ -220,7 +224,9 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
         'buyer_info' => 'BuyerInfo',
         'automated_shipping_settings' => 'AutomatedShippingSettings',
         'has_regulated_items' => 'HasRegulatedItems',
-        'electronic_invoice_status' => 'ElectronicInvoiceStatus'
+        'electronic_invoice_status' => 'ElectronicInvoiceStatus',
+        'item_approval_types' => 'ItemApprovalTypes',
+        'item_approval_status' => 'ItemApprovalStatus'
     ];
 
     /**
@@ -229,7 +235,7 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
         'purchase_date' => 'setPurchaseDate',
         'last_update_date' => 'setLastUpdateDate',
@@ -275,7 +281,9 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
         'buyer_info' => 'setBuyerInfo',
         'automated_shipping_settings' => 'setAutomatedShippingSettings',
         'has_regulated_items' => 'setHasRegulatedItems',
-        'electronic_invoice_status' => 'setElectronicInvoiceStatus'
+        'electronic_invoice_status' => 'setElectronicInvoiceStatus',
+        'item_approval_types' => 'setItemApprovalTypes',
+        'item_approval_status' => 'setItemApprovalStatus'
     ];
 
     /**
@@ -330,7 +338,9 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
         'buyer_info' => 'getBuyerInfo',
         'automated_shipping_settings' => 'getAutomatedShippingSettings',
         'has_regulated_items' => 'getHasRegulatedItems',
-        'electronic_invoice_status' => 'getElectronicInvoiceStatus'
+        'electronic_invoice_status' => 'getElectronicInvoiceStatus',
+        'item_approval_types' => 'getItemApprovalTypes',
+        'item_approval_status' => 'getItemApprovalStatus'
     ];
 
 
@@ -527,6 +537,8 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['automated_shipping_settings'] = $data['automated_shipping_settings'] ?? null;
         $this->container['has_regulated_items'] = $data['has_regulated_items'] ?? null;
         $this->container['electronic_invoice_status'] = $data['electronic_invoice_status'] ?? null;
+        $this->container['item_approval_types'] = $data['item_approval_types'] ?? null;
+        $this->container['item_approval_status'] = $data['item_approval_status'] ?? null;
     }
 
     /**
@@ -1126,7 +1138,7 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets earliest_ship_date
      *
-     * @param string|null $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. Note: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param string|null $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
      *
      * @return self
      */
@@ -1149,7 +1161,7 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets latest_ship_date
      *
-     * @param string|null $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. Note: LatestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param string|null $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
      *
      * @return self
      */
@@ -1741,6 +1753,52 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
     public function setElectronicInvoiceStatus($electronic_invoice_status)
     {
         $this->container['electronic_invoice_status'] = $electronic_invoice_status;
+
+        return $this;
+    }
+    /**
+     * Gets item_approval_types
+     *
+     * @return \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[]|null
+     */
+    public function getItemApprovalTypes()
+    {
+        return $this->container['item_approval_types'];
+    }
+
+    /**
+     * Sets item_approval_types
+     *
+     * @param \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[]|null $item_approval_types Set of approval types which applies to at least one order item in the order.
+     *
+     * @return self
+     */
+    public function setItemApprovalTypes($item_approval_types)
+    {
+        $this->container['item_approval_types'] = $item_approval_types;
+
+        return $this;
+    }
+    /**
+     * Gets item_approval_status
+     *
+     * @return \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[]|null
+     */
+    public function getItemApprovalStatus()
+    {
+        return $this->container['item_approval_status'];
+    }
+
+    /**
+     * Sets item_approval_status
+     *
+     * @param \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[]|null $item_approval_status Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals.
+     *
+     * @return self
+     */
+    public function setItemApprovalStatus($item_approval_status)
+    {
+        $this->container['item_approval_status'] = $item_approval_status;
 
         return $this;
     }

@@ -94,7 +94,7 @@ class LoanServicingEvent extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'loan_amount' => 'setLoanAmount',
+        'loan_amount' => 'setLoanAmount',
         'source_business_event_type' => 'setSourceBusinessEventType'
     ];
 

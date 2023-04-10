@@ -91,7 +91,7 @@ class Party extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'account_id' => 'setAccountId'
+        'account_id' => 'setAccountId'
     ];
 
     /**

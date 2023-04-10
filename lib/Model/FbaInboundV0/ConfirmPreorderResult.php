@@ -93,7 +93,7 @@ class ConfirmPreorderResult extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'confirmed_need_by_date' => 'setConfirmedNeedByDate',
+        'confirmed_need_by_date' => 'setConfirmedNeedByDate',
         'confirmed_fulfillable_date' => 'setConfirmedFulfillableDate'
     ];
 

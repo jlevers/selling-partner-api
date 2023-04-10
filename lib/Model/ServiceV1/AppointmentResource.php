@@ -91,7 +91,7 @@ class AppointmentResource extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'resource_id' => 'setResourceId'
+        'resource_id' => 'setResourceId'
     ];
 
     /**

@@ -114,7 +114,7 @@ class CompetitivePriceType extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'competitive_price_id' => 'setCompetitivePriceId',
+        'competitive_price_id' => 'setCompetitivePriceId',
         'price' => 'setPrice',
         'condition' => 'setCondition',
         'subcondition' => 'setSubcondition',

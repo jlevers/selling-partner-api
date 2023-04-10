@@ -91,7 +91,7 @@ class ProductInfoDetail extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'number_of_items' => 'setNumberOfItems'
+        'number_of_items' => 'setNumberOfItems'
     ];
 
     /**

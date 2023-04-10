@@ -25,7 +25,7 @@ Removes the item indicated by the specified seller SKU from the Small and Light 
 | ---- | ---- |
 | 2 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -90,7 +90,7 @@ Returns the Small and Light program eligibility status of the item indicated by 
 | ---- | ---- |
 | 2 | 10 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -156,7 +156,7 @@ Returns the Small and Light enrollment status for the item indicated by the spec
 | ---- | ---- |
 | 2 | 10 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -222,7 +222,7 @@ Returns the Small and Light fee estimates for the specified items. You must incl
 | ---- | ---- |
 | 1 | 3 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -286,7 +286,7 @@ Enrolls the item indicated by the specified seller SKU in the Small and Light pr
 | ---- | ---- |
 | 2 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 

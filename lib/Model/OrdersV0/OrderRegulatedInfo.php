@@ -100,7 +100,7 @@ class OrderRegulatedInfo extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'regulated_information' => 'setRegulatedInformation',
         'requires_dosage_label' => 'setRequiresDosageLabel',
         'regulated_order_verification_status' => 'setRegulatedOrderVerificationStatus'

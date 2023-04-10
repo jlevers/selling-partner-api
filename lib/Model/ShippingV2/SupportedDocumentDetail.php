@@ -94,7 +94,7 @@ class SupportedDocumentDetail extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'is_mandatory' => 'setIsMandatory'
     ];
 

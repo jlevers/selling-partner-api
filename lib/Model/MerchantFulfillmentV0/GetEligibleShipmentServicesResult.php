@@ -100,7 +100,7 @@ class GetEligibleShipmentServicesResult extends BaseModel implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-                'shipping_service_list' => 'setShippingServiceList',
+        'shipping_service_list' => 'setShippingServiceList',
         'rejected_shipping_service_list' => 'setRejectedShippingServiceList',
         'temporarily_unavailable_carrier_list' => 'setTemporarilyUnavailableCarrierList',
         'terms_and_conditions_not_accepted_carrier_list' => 'setTermsAndConditionsNotAcceptedCarrierList'

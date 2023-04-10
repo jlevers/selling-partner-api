@@ -94,7 +94,7 @@ class NonPartneredSmallParcelDataInput extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'carrier_name' => 'setCarrierName',
+        'carrier_name' => 'setCarrierName',
         'package_list' => 'setPackageList'
     ];
 

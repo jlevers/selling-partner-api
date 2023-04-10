@@ -94,7 +94,7 @@ class ItemImagesByMarketplace extends BaseModel implements ModelInterface, Array
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'images' => 'setImages'
     ];
 

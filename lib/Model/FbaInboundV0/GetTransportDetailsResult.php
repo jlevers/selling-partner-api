@@ -90,7 +90,7 @@ class GetTransportDetailsResult extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'transport_content' => 'setTransportContent'
+        'transport_content' => 'setTransportContent'
     ];
 
     /**

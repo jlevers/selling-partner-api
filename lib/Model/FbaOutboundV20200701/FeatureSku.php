@@ -103,7 +103,7 @@ class FeatureSku extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'seller_sku' => 'setSellerSku',
+        'seller_sku' => 'setSellerSku',
         'fn_sku' => 'setFnSku',
         'asin' => 'setAsin',
         'sku_count' => 'setSkuCount',

@@ -97,7 +97,7 @@ class SetAppointmentFulfillmentDataRequest extends BaseModel implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-                'fulfillment_time' => 'setFulfillmentTime',
+        'fulfillment_time' => 'setFulfillmentTime',
         'appointment_resources' => 'setAppointmentResources',
         'fulfillment_documents' => 'setFulfillmentDocuments'
     ];

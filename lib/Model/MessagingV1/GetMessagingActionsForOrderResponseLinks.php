@@ -93,7 +93,7 @@ class GetMessagingActionsForOrderResponseLinks extends BaseModel implements Mode
      * @var string[]
      */
     protected static $setters = [
-                'self' => 'setSelf',
+        'self' => 'setSelf',
         'actions' => 'setActions'
     ];
 

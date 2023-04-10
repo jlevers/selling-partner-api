@@ -97,7 +97,7 @@ class Destination extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'destination_id' => 'setDestinationId',
         'resource' => 'setResource'
     ];

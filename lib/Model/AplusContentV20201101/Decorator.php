@@ -100,7 +100,7 @@ class Decorator extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'type' => 'setType',
+        'type' => 'setType',
         'offset' => 'setOffset',
         'length' => 'setLength',
         'depth' => 'setDepth'

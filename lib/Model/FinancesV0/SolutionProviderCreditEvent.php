@@ -118,7 +118,7 @@ class SolutionProviderCreditEvent extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'provider_transaction_type' => 'setProviderTransactionType',
+        'provider_transaction_type' => 'setProviderTransactionType',
         'seller_order_id' => 'setSellerOrderId',
         'marketplace_id' => 'setMarketplaceId',
         'marketplace_country_code' => 'setMarketplaceCountryCode',

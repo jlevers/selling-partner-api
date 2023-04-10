@@ -109,7 +109,7 @@ class OrderStatus extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'purchase_order_status' => 'setPurchaseOrderStatus',
         'purchase_order_date' => 'setPurchaseOrderDate',
         'last_updated_date' => 'setLastUpdatedDate',

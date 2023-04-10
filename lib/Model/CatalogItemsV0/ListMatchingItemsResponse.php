@@ -90,7 +90,7 @@ class ListMatchingItemsResponse extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'items' => 'setItems'
+        'items' => 'setItems'
     ];
 
     /**

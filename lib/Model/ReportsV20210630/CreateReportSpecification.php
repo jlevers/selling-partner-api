@@ -103,7 +103,7 @@ class CreateReportSpecification extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'report_options' => 'setReportOptions',
+        'report_options' => 'setReportOptions',
         'report_type' => 'setReportType',
         'data_start_time' => 'setDataStartTime',
         'data_end_time' => 'setDataEndTime',
@@ -209,7 +209,7 @@ class CreateReportSpecification extends BaseModel implements ModelInterface, Arr
     /**
      * Sets report_type
      *
-     * @param string $report_type The report type.
+     * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      *
      * @return self
      */

@@ -90,7 +90,7 @@ class InboundShipmentResult extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'shipment_id' => 'setShipmentId'
+        'shipment_id' => 'setShipmentId'
     ];
 
     /**

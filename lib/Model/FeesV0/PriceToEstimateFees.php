@@ -97,7 +97,7 @@ class PriceToEstimateFees extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'listing_price' => 'setListingPrice',
+        'listing_price' => 'setListingPrice',
         'shipping' => 'setShipping',
         'points' => 'setPoints'
     ];

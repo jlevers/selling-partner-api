@@ -97,7 +97,7 @@ class OrderedQuantityDetails extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'updated_date' => 'setUpdatedDate',
+        'updated_date' => 'setUpdatedDate',
         'ordered_quantity' => 'setOrderedQuantity',
         'cancelled_quantity' => 'setCancelledQuantity'
     ];

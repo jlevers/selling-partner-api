@@ -103,7 +103,7 @@ class ShipmentDetails extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'shipped_date' => 'setShippedDate',
+        'shipped_date' => 'setShippedDate',
         'shipment_status' => 'setShipmentStatus',
         'is_priority_shipment' => 'setIsPriorityShipment',
         'vendor_order_number' => 'setVendorOrderNumber',

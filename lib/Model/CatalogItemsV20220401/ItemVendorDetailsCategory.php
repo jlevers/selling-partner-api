@@ -94,7 +94,7 @@ class ItemVendorDetailsCategory extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'display_name' => 'setDisplayName',
+        'display_name' => 'setDisplayName',
         'value' => 'setValue'
     ];
 

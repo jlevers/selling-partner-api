@@ -91,7 +91,7 @@ class AplusResponse extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'warnings' => 'setWarnings'
+        'warnings' => 'setWarnings'
     ];
 
     /**

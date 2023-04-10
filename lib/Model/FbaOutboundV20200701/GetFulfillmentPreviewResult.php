@@ -91,7 +91,7 @@ class GetFulfillmentPreviewResult extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'fulfillment_previews' => 'setFulfillmentPreviews'
+        'fulfillment_previews' => 'setFulfillmentPreviews'
     ];
 
     /**

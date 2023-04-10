@@ -54,13 +54,13 @@ class PrepInstruction
     const HANG_GARMENT = 'HangGarment';
     const SET_CREATION = 'SetCreation';
     const BOXING = 'Boxing';
-    const SUFFOCATION_STICKERING = 'SuffocationStickering';
-    const SET_STICKERING = 'SetStickering';
     const REMOVE_FROM_HANGER = 'RemoveFromHanger';
-    const CAP_SEALING = 'CapSealing';
-    const NO_PREP = 'NoPrep';
     const DEBUNDLE = 'Debundle';
+    const SUFFOCATION_STICKERING = 'SuffocationStickering';
+    const CAP_SEALING = 'CapSealing';
+    const SET_STICKERING = 'SetStickering';
     const BLANK_STICKERING = 'BlankStickering';
+    const NO_PREP = 'NoPrep';
     
     /**
      * Gets allowable values of the enum
@@ -77,13 +77,13 @@ class PrepInstruction
             self::HANG_GARMENT,
             self::SET_CREATION,
             self::BOXING,
-            self::SUFFOCATION_STICKERING,
-            self::SET_STICKERING,
             self::REMOVE_FROM_HANGER,
-            self::CAP_SEALING,
-            self::NO_PREP,
             self::DEBUNDLE,
+            self::SUFFOCATION_STICKERING,
+            self::CAP_SEALING,
+            self::SET_STICKERING,
             self::BLANK_STICKERING,
+            self::NO_PREP,
         ];
         // This is necessary because Amazon does not consistently capitalize their
         // enum values, so we do case-insensitive enum value validation in ObjectSerializer

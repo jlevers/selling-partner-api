@@ -124,7 +124,7 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'attention' => 'setAttention',
         'address_line1' => 'setAddressLine1',
         'address_line2' => 'setAddressLine2',

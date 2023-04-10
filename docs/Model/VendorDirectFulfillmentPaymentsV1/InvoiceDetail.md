@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **payment_terms_code** | **string** | The payment terms for the invoice. | [optional]
 **invoice_total** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\Money**](Money.md) |  |
 **tax_totals** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\TaxDetail[]**](TaxDetail.md) | Individual tax details per line item. | [optional]
-**additional_details** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\AdditionalDetails[]**](AdditionalDetails.md) | Additional details provided by the selling party, for tax related or other purposes. | [optional]
+**additional_details** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\AdditionalDetails[]**](AdditionalDetails.md) | Additional details provided by the selling party, for tax-related or other purposes. | [optional]
 **charge_details** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\ChargeDetails[]**](ChargeDetails.md) | Total charge amount details for all line items. | [optional]
 **items** | [**\SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\InvoiceItem[]**](InvoiceItem.md) | Provides the details of the items in this invoice. |
 

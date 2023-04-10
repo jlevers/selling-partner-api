@@ -93,7 +93,7 @@ class GetMessagingActionResponseLinks extends BaseModel implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-                'self' => 'setSelf',
+        'self' => 'setSelf',
         'schema' => 'setSchema'
     ];
 

@@ -50,6 +50,7 @@ class CurrencyCode
     const USD = 'USD';
     const GBP = 'GBP';
     const EUR = 'EUR';
+    const PLN = 'PLN';
     
     /**
      * Gets allowable values of the enum
@@ -62,6 +63,7 @@ class CurrencyCode
             self::USD,
             self::GBP,
             self::EUR,
+            self::PLN,
         ];
         // This is necessary because Amazon does not consistently capitalize their
         // enum values, so we do case-insensitive enum value validation in ObjectSerializer

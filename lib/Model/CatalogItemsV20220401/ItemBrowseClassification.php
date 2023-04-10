@@ -94,7 +94,7 @@ class ItemBrowseClassification extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'display_name' => 'setDisplayName',
+        'display_name' => 'setDisplayName',
         'classification_id' => 'setClassificationId'
     ];
 

@@ -94,7 +94,7 @@ class GetEligibleShipmentServicesRequest extends BaseModel implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-                'shipment_request_details' => 'setShipmentRequestDetails',
+        'shipment_request_details' => 'setShipmentRequestDetails',
         'shipping_offering_filter' => 'setShippingOfferingFilter'
     ];
 

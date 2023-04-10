@@ -100,7 +100,7 @@ class JobListing extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'total_result_size' => 'setTotalResultSize',
+        'total_result_size' => 'setTotalResultSize',
         'next_page_token' => 'setNextPageToken',
         'previous_page_token' => 'setPreviousPageToken',
         'jobs' => 'setJobs'

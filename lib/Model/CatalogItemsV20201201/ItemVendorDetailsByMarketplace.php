@@ -112,7 +112,7 @@ class ItemVendorDetailsByMarketplace extends BaseModel implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'brand_code' => 'setBrandCode',
         'category_code' => 'setCategoryCode',
         'manufacturer_code' => 'setManufacturerCode',

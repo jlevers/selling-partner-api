@@ -94,7 +94,7 @@ class CreatorType extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'value' => 'setValue',
+        'value' => 'setValue',
         'role' => 'setRole'
     ];
 

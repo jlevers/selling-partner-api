@@ -94,7 +94,7 @@ class ItemDeliveryPromise extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'start_time' => 'setStartTime',
+        'start_time' => 'setStartTime',
         'end_time' => 'setEndTime'
     ];
 

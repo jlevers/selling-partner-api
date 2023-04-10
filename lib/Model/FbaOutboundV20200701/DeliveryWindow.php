@@ -94,7 +94,7 @@ class DeliveryWindow extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'start_date' => 'setStartDate',
+        'start_date' => 'setStartDate',
         'end_date' => 'setEndDate'
     ];
 

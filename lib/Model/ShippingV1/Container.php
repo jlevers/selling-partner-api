@@ -106,7 +106,7 @@ class Container extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'container_type' => 'setContainerType',
+        'container_type' => 'setContainerType',
         'container_reference_id' => 'setContainerReferenceId',
         'value' => 'setValue',
         'dimensions' => 'setDimensions',

@@ -58,6 +58,7 @@ class ShipmentStatus
     const CHECKED_IN = 'CHECKED_IN';
     const READY_TO_SHIP = 'READY_TO_SHIP';
     const CREATED = 'CREATED';
+    const CREATING = 'CREATING';
     const ABANDONED = 'ABANDONED';
     
     /**
@@ -79,6 +80,7 @@ class ShipmentStatus
             self::CHECKED_IN,
             self::READY_TO_SHIP,
             self::CREATED,
+            self::CREATING,
             self::ABANDONED,
         ];
         // This is necessary because Amazon does not consistently capitalize their

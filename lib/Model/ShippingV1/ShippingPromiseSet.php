@@ -94,7 +94,7 @@ class ShippingPromiseSet extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'delivery_window' => 'setDeliveryWindow',
+        'delivery_window' => 'setDeliveryWindow',
         'receive_window' => 'setReceiveWindow'
     ];
 

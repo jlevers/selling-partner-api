@@ -97,7 +97,7 @@ class ItemSalesRank extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'title' => 'setTitle',
+        'title' => 'setTitle',
         'link' => 'setLink',
         'value' => 'setValue'
     ];

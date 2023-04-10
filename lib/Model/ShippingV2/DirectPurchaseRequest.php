@@ -106,7 +106,7 @@ class DirectPurchaseRequest extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'ship_to' => 'setShipTo',
+        'ship_to' => 'setShipTo',
         'ship_from' => 'setShipFrom',
         'return_to' => 'setReturnTo',
         'packages' => 'setPackages',

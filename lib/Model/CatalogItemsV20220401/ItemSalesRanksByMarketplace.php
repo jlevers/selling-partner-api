@@ -97,7 +97,7 @@ class ItemSalesRanksByMarketplace extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'classification_ranks' => 'setClassificationRanks',
         'display_group_ranks' => 'setDisplayGroupRanks'
     ];

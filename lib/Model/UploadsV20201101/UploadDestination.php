@@ -97,7 +97,7 @@ class UploadDestination extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'upload_destination_id' => 'setUploadDestinationId',
+        'upload_destination_id' => 'setUploadDestinationId',
         'url' => 'setUrl',
         'headers' => 'setHeaders'
     ];

@@ -91,7 +91,7 @@ class GetRatesResult extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'service_rates' => 'setServiceRates'
+        'service_rates' => 'setServiceRates'
     ];
 
     /**

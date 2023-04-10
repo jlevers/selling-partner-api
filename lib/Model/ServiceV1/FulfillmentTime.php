@@ -94,7 +94,7 @@ class FulfillmentTime extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'start_time' => 'setStartTime',
+        'start_time' => 'setStartTime',
         'end_time' => 'setEndTime'
     ];
 

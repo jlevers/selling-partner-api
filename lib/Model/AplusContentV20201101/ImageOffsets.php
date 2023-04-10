@@ -94,7 +94,7 @@ class ImageOffsets extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'x' => 'setX',
+        'x' => 'setX',
         'y' => 'setY'
     ];
 

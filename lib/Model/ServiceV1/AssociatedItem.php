@@ -109,7 +109,7 @@ class AssociatedItem extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'title' => 'setTitle',
         'quantity' => 'setQuantity',
         'order_id' => 'setOrderId',

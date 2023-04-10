@@ -94,7 +94,7 @@ class Label extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'label_stream' => 'setLabelStream',
+        'label_stream' => 'setLabelStream',
         'label_specification' => 'setLabelSpecification'
     ];
 

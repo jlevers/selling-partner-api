@@ -106,7 +106,7 @@ class RegulatedOrderVerificationStatus extends BaseModel implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
-                'status' => 'setStatus',
+        'status' => 'setStatus',
         'requires_merchant_action' => 'setRequiresMerchantAction',
         'valid_rejection_reasons' => 'setValidRejectionReasons',
         'rejection_reason' => 'setRejectionReason',

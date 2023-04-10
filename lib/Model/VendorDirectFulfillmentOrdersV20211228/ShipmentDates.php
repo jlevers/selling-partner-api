@@ -94,7 +94,7 @@ class ShipmentDates extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'required_ship_date' => 'setRequiredShipDate',
+        'required_ship_date' => 'setRequiredShipDate',
         'promised_delivery_date' => 'setPromisedDeliveryDate'
     ];
 

@@ -127,7 +127,7 @@ class ShipmentEvent extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
         'marketplace_name' => 'setMarketplaceName',
         'order_charge_list' => 'setOrderChargeList',

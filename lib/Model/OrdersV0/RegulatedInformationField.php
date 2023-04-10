@@ -100,7 +100,7 @@ class RegulatedInformationField extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'field_id' => 'setFieldId',
+        'field_id' => 'setFieldId',
         'field_label' => 'setFieldLabel',
         'field_type' => 'setFieldType',
         'field_value' => 'setFieldValue'

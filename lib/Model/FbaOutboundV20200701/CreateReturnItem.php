@@ -103,7 +103,7 @@ class CreateReturnItem extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'seller_return_item_id' => 'setSellerReturnItemId',
+        'seller_return_item_id' => 'setSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'amazon_shipment_id' => 'setAmazonShipmentId',
         'return_reason_code' => 'setReturnReasonCode',

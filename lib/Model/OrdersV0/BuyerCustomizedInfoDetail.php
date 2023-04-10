@@ -91,7 +91,7 @@ class BuyerCustomizedInfoDetail extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'customized_url' => 'setCustomizedUrl'
+        'customized_url' => 'setCustomizedUrl'
     ];
 
     /**

@@ -100,7 +100,7 @@ class CreateShipmentRequest extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'client_reference_id' => 'setClientReferenceId',
+        'client_reference_id' => 'setClientReferenceId',
         'ship_to' => 'setShipTo',
         'ship_from' => 'setShipFrom',
         'containers' => 'setContainers'

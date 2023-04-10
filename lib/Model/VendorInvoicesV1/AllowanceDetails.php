@@ -100,7 +100,7 @@ class AllowanceDetails extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'type' => 'setType',
+        'type' => 'setType',
         'description' => 'setDescription',
         'allowance_amount' => 'setAllowanceAmount',
         'tax_details' => 'setTaxDetails'

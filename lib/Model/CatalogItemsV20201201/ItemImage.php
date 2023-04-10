@@ -100,7 +100,7 @@ class ItemImage extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'variant' => 'setVariant',
+        'variant' => 'setVariant',
         'link' => 'setLink',
         'height' => 'setHeight',
         'width' => 'setWidth'

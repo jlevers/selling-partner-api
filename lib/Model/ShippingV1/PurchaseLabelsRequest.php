@@ -94,7 +94,7 @@ class PurchaseLabelsRequest extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'rate_id' => 'setRateId',
+        'rate_id' => 'setRateId',
         'label_specification' => 'setLabelSpecification'
     ];
 

@@ -96,7 +96,7 @@ class BatchOffersRequestParams extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'item_condition' => 'setItemCondition',
         'customer_type' => 'setCustomerType'
     ];

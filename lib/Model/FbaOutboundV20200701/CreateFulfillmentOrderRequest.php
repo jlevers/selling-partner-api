@@ -133,7 +133,7 @@ class CreateFulfillmentOrderRequest extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
         'displayable_order_id' => 'setDisplayableOrderId',
         'displayable_order_date' => 'setDisplayableOrderDate',

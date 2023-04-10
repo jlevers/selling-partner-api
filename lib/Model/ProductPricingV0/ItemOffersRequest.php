@@ -105,7 +105,7 @@ class ItemOffersRequest extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'uri' => 'setUri',
+        'uri' => 'setUri',
         'method' => 'setMethod',
         'headers' => 'setHeaders',
         'marketplace_id' => 'setMarketplaceId',

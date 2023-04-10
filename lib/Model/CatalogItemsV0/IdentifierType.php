@@ -93,7 +93,7 @@ class IdentifierType extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_asin' => 'setMarketplaceAsin',
+        'marketplace_asin' => 'setMarketplaceAsin',
         'sku_identifier' => 'setSkuIdentifier'
     ];
 

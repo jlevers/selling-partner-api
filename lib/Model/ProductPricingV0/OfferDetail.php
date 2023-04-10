@@ -135,7 +135,7 @@ class OfferDetail extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'my_offer' => 'setMyOffer',
+        'my_offer' => 'setMyOffer',
         'offer_type' => 'setOfferType',
         'sub_condition' => 'setSubCondition',
         'seller_id' => 'setSellerId',

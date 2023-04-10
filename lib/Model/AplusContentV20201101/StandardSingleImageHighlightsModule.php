@@ -106,7 +106,7 @@ class StandardSingleImageHighlightsModule extends BaseModel implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-                'image' => 'setImage',
+        'image' => 'setImage',
         'headline' => 'setHeadline',
         'text_block1' => 'setTextBlock1',
         'text_block2' => 'setTextBlock2',

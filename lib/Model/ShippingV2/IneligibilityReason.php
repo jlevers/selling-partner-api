@@ -94,7 +94,7 @@ class IneligibilityReason extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'code' => 'setCode',
+        'code' => 'setCode',
         'message' => 'setMessage'
     ];
 

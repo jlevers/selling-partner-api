@@ -97,7 +97,7 @@ class PackingSlip extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'content' => 'setContent',
         'content_type' => 'setContentType'
     ];
@@ -202,7 +202,7 @@ class PackingSlip extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets purchase_order_number
      *
-     * @param string $purchase_order_number Purchase order number of the shipment that the packing slip is for.
+     * @param string $purchase_order_number Purchase order number of the shipment that corresponds to the packing slip.
      *
      * @return self
      */

@@ -91,7 +91,7 @@ class ParagraphComponent extends BaseModel implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-                'text_list' => 'setTextList'
+        'text_list' => 'setTextList'
     ];
 
     /**

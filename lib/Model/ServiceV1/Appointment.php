@@ -106,7 +106,7 @@ class Appointment extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'appointment_id' => 'setAppointmentId',
+        'appointment_id' => 'setAppointmentId',
         'appointment_status' => 'setAppointmentStatus',
         'appointment_time' => 'setAppointmentTime',
         'assigned_technicians' => 'setAssignedTechnicians',

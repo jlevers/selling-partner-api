@@ -94,7 +94,7 @@ class Pagination extends BaseModel implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-                'next_token' => 'setNextToken',
+        'next_token' => 'setNextToken',
         'previous_token' => 'setPreviousToken'
     ];
 

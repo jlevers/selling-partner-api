@@ -100,7 +100,7 @@ class ItemOfferByMarketplace extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'offer_type' => 'setOfferType',
         'price' => 'setPrice',
         'points' => 'setPoints'

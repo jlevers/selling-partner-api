@@ -94,7 +94,7 @@ class AvailableDeliveryExperienceOption extends BaseModel implements ModelInterf
      * @var string[]
      */
     protected static $setters = [
-                'delivery_experience_option' => 'setDeliveryExperienceOption',
+        'delivery_experience_option' => 'setDeliveryExperienceOption',
         'charge' => 'setCharge'
     ];
 

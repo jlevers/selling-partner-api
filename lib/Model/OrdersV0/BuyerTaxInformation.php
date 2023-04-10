@@ -100,7 +100,7 @@ class BuyerTaxInformation extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'buyer_legal_company_name' => 'setBuyerLegalCompanyName',
+        'buyer_legal_company_name' => 'setBuyerLegalCompanyName',
         'buyer_business_address' => 'setBuyerBusinessAddress',
         'buyer_tax_registration_id' => 'setBuyerTaxRegistrationId',
         'buyer_tax_office' => 'setBuyerTaxOffice'

@@ -91,7 +91,7 @@ class GenerateOrderScenarioRequest extends BaseModel implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-                'orders' => 'setOrders'
+        'orders' => 'setOrders'
     ];
 
     /**

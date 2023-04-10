@@ -91,7 +91,7 @@ class ItemProcurement extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'cost_price' => 'setCostPrice'
+        'cost_price' => 'setCostPrice'
     ];
 
     /**

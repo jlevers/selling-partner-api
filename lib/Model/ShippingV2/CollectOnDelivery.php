@@ -91,7 +91,7 @@ class CollectOnDelivery extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'amount' => 'setAmount'
+        'amount' => 'setAmount'
     ];
 
     /**

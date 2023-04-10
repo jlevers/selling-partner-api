@@ -93,7 +93,7 @@ class GetShipmentItemsResult extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'item_data' => 'setItemData',
+        'item_data' => 'setItemData',
         'next_token' => 'setNextToken'
     ];
 

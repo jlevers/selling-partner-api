@@ -100,7 +100,7 @@ class AdjustmentEvent extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'adjustment_type' => 'setAdjustmentType',
+        'adjustment_type' => 'setAdjustmentType',
         'posted_date' => 'setPostedDate',
         'adjustment_amount' => 'setAdjustmentAmount',
         'adjustment_item_list' => 'setAdjustmentItemList'

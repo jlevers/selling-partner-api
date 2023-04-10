@@ -106,7 +106,7 @@ class FBMItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'order_item_id' => 'setOrderItemId',
+        'order_item_id' => 'setOrderItemId',
         'quantity' => 'setQuantity',
         'item_weight' => 'setItemWeight',
         'item_description' => 'setItemDescription',

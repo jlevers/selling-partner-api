@@ -97,7 +97,7 @@ class Image extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-                'url' => 'setUrl',
+        'url' => 'setUrl',
         'height' => 'setHeight',
         'width' => 'setWidth'
     ];

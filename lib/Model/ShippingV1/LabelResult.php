@@ -97,7 +97,7 @@ class LabelResult extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'container_reference_id' => 'setContainerReferenceId',
+        'container_reference_id' => 'setContainerReferenceId',
         'tracking_id' => 'setTrackingId',
         'label' => 'setLabel'
     ];

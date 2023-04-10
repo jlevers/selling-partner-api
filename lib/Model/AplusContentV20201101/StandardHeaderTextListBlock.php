@@ -94,7 +94,7 @@ class StandardHeaderTextListBlock extends BaseModel implements ModelInterface, A
      * @var string[]
      */
     protected static $setters = [
-                'headline' => 'setHeadline',
+        'headline' => 'setHeadline',
         'block' => 'setBlock'
     ];
 

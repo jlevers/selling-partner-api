@@ -100,7 +100,7 @@ class GetFeatureInventoryResult extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'feature_name' => 'setFeatureName',
         'next_token' => 'setNextToken',
         'feature_skus' => 'setFeatureSkus'

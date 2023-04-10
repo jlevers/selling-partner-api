@@ -91,7 +91,7 @@ class RequestedValueAddedService extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'id' => 'setId'
+        'id' => 'setId'
     ];
 
     /**

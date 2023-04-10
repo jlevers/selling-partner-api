@@ -112,7 +112,7 @@ class StandardSingleImageSpecsDetailModule extends BaseModel implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-                'headline' => 'setHeadline',
+        'headline' => 'setHeadline',
         'image' => 'setImage',
         'description_headline' => 'setDescriptionHeadline',
         'description_block1' => 'setDescriptionBlock1',

@@ -91,7 +91,7 @@ class StandardCompanyLogoModule extends BaseModel implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-                'company_logo' => 'setCompanyLogo'
+        'company_logo' => 'setCompanyLogo'
     ];
 
     /**

@@ -94,7 +94,7 @@ class CurrencyAmount extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'currency_code' => 'setCurrencyCode',
+        'currency_code' => 'setCurrencyCode',
         'amount' => 'setAmount'
     ];
 

@@ -100,7 +100,7 @@ class OrderItemStatusAcknowledgementStatus extends BaseModel implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-                'confirmation_status' => 'setConfirmationStatus',
+        'confirmation_status' => 'setConfirmationStatus',
         'accepted_quantity' => 'setAcceptedQuantity',
         'rejected_quantity' => 'setRejectedQuantity',
         'acknowledgement_status_details' => 'setAcknowledgementStatusDetails'

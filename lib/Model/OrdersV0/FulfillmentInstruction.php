@@ -91,7 +91,7 @@ class FulfillmentInstruction extends BaseModel implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-                'fulfillment_supply_source_id' => 'setFulfillmentSupplySourceId'
+        'fulfillment_supply_source_id' => 'setFulfillmentSupplySourceId'
     ];
 
     /**

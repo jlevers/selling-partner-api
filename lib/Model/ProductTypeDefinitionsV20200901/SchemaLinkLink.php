@@ -94,7 +94,7 @@ class SchemaLinkLink extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'resource' => 'setResource',
+        'resource' => 'setResource',
         'verb' => 'setVerb'
     ];
 

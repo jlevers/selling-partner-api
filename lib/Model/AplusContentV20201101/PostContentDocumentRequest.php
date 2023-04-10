@@ -90,7 +90,7 @@ class PostContentDocumentRequest extends BaseModel implements ModelInterface, Ar
      * @var string[]
      */
     protected static $setters = [
-                'content_document' => 'setContentDocument'
+        'content_document' => 'setContentDocument'
     ];
 
     /**

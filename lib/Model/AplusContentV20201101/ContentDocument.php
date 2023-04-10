@@ -103,7 +103,7 @@ class ContentDocument extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'content_type' => 'setContentType',
         'content_sub_type' => 'setContentSubType',
         'locale' => 'setLocale',

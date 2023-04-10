@@ -91,7 +91,7 @@ class ShipmentInvoiceStatusResponse extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                'shipments' => 'setShipments'
+        'shipments' => 'setShipments'
     ];
 
     /**

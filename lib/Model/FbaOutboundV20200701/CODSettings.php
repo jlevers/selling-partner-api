@@ -103,7 +103,7 @@ class CODSettings extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-                'is_cod_required' => 'setIsCodRequired',
+        'is_cod_required' => 'setIsCodRequired',
         'cod_charge' => 'setCodCharge',
         'cod_charge_tax' => 'setCodChargeTax',
         'shipping_charge' => 'setShippingCharge',

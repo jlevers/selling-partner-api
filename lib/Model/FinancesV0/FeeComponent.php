@@ -94,7 +94,7 @@ class FeeComponent extends BaseModel implements ModelInterface, ArrayAccess, \Js
      * @var string[]
      */
     protected static $setters = [
-                'fee_type' => 'setFeeType',
+        'fee_type' => 'setFeeType',
         'fee_amount' => 'setFeeAmount'
     ];
 

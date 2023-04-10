@@ -94,7 +94,7 @@ class ChargeComponent extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'charge_type' => 'setChargeType',
+        'charge_type' => 'setChargeType',
         'charge_amount' => 'setChargeAmount'
     ];
 

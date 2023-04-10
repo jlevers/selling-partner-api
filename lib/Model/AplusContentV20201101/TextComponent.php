@@ -94,7 +94,7 @@ class TextComponent extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'value' => 'setValue',
+        'value' => 'setValue',
         'decorator_set' => 'setDecoratorSet'
     ];
 

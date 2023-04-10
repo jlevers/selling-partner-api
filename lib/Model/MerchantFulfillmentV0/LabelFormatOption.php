@@ -94,7 +94,7 @@ class LabelFormatOption extends BaseModel implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-                'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
+        'include_packing_slip_with_label' => 'setIncludePackingSlipWithLabel',
         'label_format' => 'setLabelFormat'
     ];
 

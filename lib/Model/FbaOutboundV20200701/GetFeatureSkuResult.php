@@ -103,7 +103,7 @@ class GetFeatureSkuResult extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'feature_name' => 'setFeatureName',
         'is_eligible' => 'setIsEligible',
         'ineligible_reasons' => 'setIneligibleReasons',

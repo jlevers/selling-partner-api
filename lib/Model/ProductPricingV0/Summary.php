@@ -118,7 +118,7 @@ class Summary extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-                'total_offer_count' => 'setTotalOfferCount',
+        'total_offer_count' => 'setTotalOfferCount',
         'number_of_offers' => 'setNumberOfOffers',
         'lowest_prices' => 'setLowestPrices',
         'buy_box_prices' => 'setBuyBoxPrices',

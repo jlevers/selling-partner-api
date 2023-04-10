@@ -91,7 +91,7 @@ class CreateConfirmServiceDetailsRequest extends BaseModel implements ModelInter
      * @var string[]
      */
     protected static $setters = [
-                'text' => 'setText'
+        'text' => 'setText'
     ];
 
     /**

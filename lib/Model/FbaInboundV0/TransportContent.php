@@ -97,7 +97,7 @@ class TransportContent extends BaseModel implements ModelInterface, ArrayAccess,
      * @var string[]
      */
     protected static $setters = [
-                'transport_header' => 'setTransportHeader',
+        'transport_header' => 'setTransportHeader',
         'transport_details' => 'setTransportDetails',
         'transport_result' => 'setTransportResult'
     ];

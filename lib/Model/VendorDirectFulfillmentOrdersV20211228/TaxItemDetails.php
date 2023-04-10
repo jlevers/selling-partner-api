@@ -91,7 +91,7 @@ class TaxItemDetails extends BaseModel implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'tax_line_item' => 'setTaxLineItem'
+        'tax_line_item' => 'setTaxLineItem'
     ];
 
     /**

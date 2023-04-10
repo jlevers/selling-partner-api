@@ -94,7 +94,7 @@ class PackingSlipList extends BaseModel implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'pagination' => 'setPagination',
+        'pagination' => 'setPagination',
         'packing_slips' => 'setPackingSlips'
     ];
 

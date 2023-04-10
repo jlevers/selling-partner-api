@@ -97,7 +97,7 @@ class CreateWarrantyRequest extends BaseModel implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-                'attachments' => 'setAttachments',
+        'attachments' => 'setAttachments',
         'coverage_start_date' => 'setCoverageStartDate',
         'coverage_end_date' => 'setCoverageEndDate'
     ];

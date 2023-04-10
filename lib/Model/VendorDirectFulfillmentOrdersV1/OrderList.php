@@ -93,7 +93,7 @@ class OrderList extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'pagination' => 'setPagination',
+        'pagination' => 'setPagination',
         'orders' => 'setOrders'
     ];
 

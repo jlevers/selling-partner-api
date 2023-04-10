@@ -100,7 +100,7 @@ class GetSolicitationActionResponse extends BaseModel implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-                '_links' => 'setLinks',
+        '_links' => 'setLinks',
         '_embedded' => 'setEmbedded',
         'payload' => 'setPayload',
         'errors' => 'setErrors'

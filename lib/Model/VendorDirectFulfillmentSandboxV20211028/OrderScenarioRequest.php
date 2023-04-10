@@ -94,7 +94,7 @@ class OrderScenarioRequest extends BaseModel implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-                'selling_party' => 'setSellingParty',
+        'selling_party' => 'setSellingParty',
         'ship_from_party' => 'setShipFromParty'
     ];
 

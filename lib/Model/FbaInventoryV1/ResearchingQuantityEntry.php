@@ -94,7 +94,7 @@ class ResearchingQuantityEntry extends BaseModel implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-                'name' => 'setName',
+        'name' => 'setName',
         'quantity' => 'setQuantity'
     ];
 

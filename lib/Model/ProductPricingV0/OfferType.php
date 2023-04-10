@@ -114,7 +114,7 @@ class OfferType extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-                'offer_type' => 'setOfferType',
+        'offer_type' => 'setOfferType',
         'buying_price' => 'setBuyingPrice',
         'regular_price' => 'setRegularPrice',
         'business_price' => 'setBusinessPrice',

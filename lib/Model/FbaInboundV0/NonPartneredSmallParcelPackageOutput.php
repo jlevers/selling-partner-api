@@ -97,7 +97,7 @@ class NonPartneredSmallParcelPackageOutput extends BaseModel implements ModelInt
      * @var string[]
      */
     protected static $setters = [
-                'carrier_name' => 'setCarrierName',
+        'carrier_name' => 'setCarrierName',
         'tracking_id' => 'setTrackingId',
         'package_status' => 'setPackageStatus'
     ];

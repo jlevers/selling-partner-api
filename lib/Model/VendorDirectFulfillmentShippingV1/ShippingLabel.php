@@ -102,7 +102,7 @@ class ShippingLabel extends BaseModel implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'selling_party' => 'setSellingParty',
         'ship_from_party' => 'setShipFromParty',
         'label_format' => 'setLabelFormat',

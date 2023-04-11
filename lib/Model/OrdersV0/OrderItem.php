@@ -289,7 +289,6 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     const DEEMED_RESELLER_CATEGORY_AU_VOEC = 'AU_VOEC';
     const DEEMED_RESELLER_CATEGORY_NZ_VOEC = 'NZ_VOEC';
     const DEEMED_RESELLER_CATEGORY_CH_SUPPLIER_IMPORT = 'CH_SUPPLIER_IMPORT';
-
     
     
 

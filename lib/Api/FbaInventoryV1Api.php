@@ -46,18 +46,19 @@ class FbaInventoryV1Api extends BaseApi
      * @param  string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param  string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param  string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param  string $details &#39;true&#39; to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* &#39;true&#39;, not the boolean value, due to a bug in Amazon&#39;s API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
+     * @param  string $details 'true' to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* 'true', not the boolean value, due to a bug in Amazon's API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
      * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param  string $next_token String token returned in the response of your previous request. (optional)
+     * @param  string $next_token String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)
+     * @param  string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\FbaInventoryV1\GetInventorySummariesResponse
      */
-    public function getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
+    public function getInventorySummaries($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null, $seller_sku = null)
     {
-        $response = $this->getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
+        $response = $this->getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token, $seller_sku);
         return $response;
     }
 
@@ -70,15 +71,16 @@ class FbaInventoryV1Api extends BaseApi
      * @param  string $details 'true' to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* 'true', not the boolean value, due to a bug in Amazon's API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
      * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param  string $next_token String token returned in the response of your previous request. (optional)
+     * @param  string $next_token String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)
+     * @param  string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\FbaInventoryV1\GetInventorySummariesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
+    public function getInventorySummariesWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null, $seller_sku = null)
     {
-        $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
+        $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token, $seller_sku);
         $signedRequest = $this->config->signRequest(
             $request
         );
@@ -265,14 +267,15 @@ class FbaInventoryV1Api extends BaseApi
      * @param  string $details 'true' to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* 'true', not the boolean value, due to a bug in Amazon's API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
      * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param  string $next_token String token returned in the response of your previous request. (optional)
+     * @param  string $next_token String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)
+     * @param  string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInventorySummariesAsync($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
+    public function getInventorySummariesAsync($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null, $seller_sku = null)
     {
-        return $this->getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);;
+        return $this->getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token, $seller_sku);;
     }
 
     /**
@@ -286,15 +289,16 @@ class FbaInventoryV1Api extends BaseApi
      * @param  string $details 'true' to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* 'true', not the boolean value, due to a bug in Amazon's API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
      * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param  string $next_token String token returned in the response of your previous request. (optional)
+     * @param  string $next_token String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)
+     * @param  string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
+    public function getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null, $seller_sku = null)
     {
         $returnType = '\SellingPartnerApi\Model\FbaInventoryV1\GetInventorySummariesResponse';
-        $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
+        $request = $this->getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token, $seller_sku);
         $signedRequest = $this->config->signRequest(
             $request
         );
@@ -345,12 +349,13 @@ class FbaInventoryV1Api extends BaseApi
      * @param  string $details 'true' to return inventory summaries with additional summarized inventory details and quantities. Must be the *string* 'true', not the boolean value, due to a bug in Amazon's API implementation. Otherwise, returns inventory summaries only (default value). (optional, default to 'false')
      * @param  string $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param  string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param  string $next_token String token returned in the response of your previous request. (optional)
+     * @param  string $next_token String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)
+     * @param  string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null)
+    public function getInventorySummariesRequest($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null, $seller_sku = null)
     {
         // verify the required parameter 'granularity_type' is set
         if ($granularity_type === null || (is_array($granularity_type) && count($granularity_type) === 0)) {
@@ -432,6 +437,14 @@ class FbaInventoryV1Api extends BaseApi
         }
         if ($next_token !== null) {
             $queryParams['nextToken'] = $next_token;
+        }
+
+        // query params
+        if (is_array($seller_sku)) {
+            $seller_sku = ObjectSerializer::serializeCollection($seller_sku, '', true);
+        }
+        if ($seller_sku !== null) {
+            $queryParams['sellerSku'] = $seller_sku;
         }
 
         // query params

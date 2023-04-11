@@ -189,7 +189,8 @@ class ChargeRefundEvent extends BaseModel implements ModelInterface, ArrayAccess
     /**
      * Sets reason_code
      *
-     * @param string|null $reason_code The reason given for a charge refund. Example: `SubscriptionFeeCorrection`
+     * @param string|null $reason_code The reason given for a charge refund.
+     *   Example: `SubscriptionFeeCorrection`
      *
      * @return self
      */
@@ -212,7 +213,8 @@ class ChargeRefundEvent extends BaseModel implements ModelInterface, ArrayAccess
     /**
      * Sets reason_code_description
      *
-     * @param string|null $reason_code_description A description of the Reason Code.  Example: `SubscriptionFeeCorrection`
+     * @param string|null $reason_code_description A description of the Reason Code. 
+     *   Example: `SubscriptionFeeCorrection`
      *
      * @return self
      */

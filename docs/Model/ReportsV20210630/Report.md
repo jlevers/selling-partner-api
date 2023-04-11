@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **marketplace_ids** | **string[]** | A list of marketplace identifiers for the report. | [optional]
 **report_id** | **string** | The identifier for the report. This identifier is unique only in combination with a seller ID. |
-**report_type** | **string** | The report type. |
+**report_type** | **string** | The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. |
 **data_start_time** | **string** | The start of a date and time range used for selecting the data to report. Must be in ISO 8601 format. | [optional]
 **data_end_time** | **string** | The end of a date and time range used for selecting the data to report. Must be in ISO 8601 format. | [optional]
 **report_schedule_id** | **string** | The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID. | [optional]

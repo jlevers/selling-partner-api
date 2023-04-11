@@ -44,7 +44,7 @@ $config = new SellingPartnerApi\Configuration([
 $apiInstance = new SellingPartnerApi\Api\ProductTypeDefinitionsV20200901Api($config);
 $product_type = LUGGAGE; // string | The Amazon product type name.
 $marketplace_ids = ATVPDKIKX0DER; // string[] | A comma-delimited list of Amazon marketplace identifiers for the request.
-Note: This parameter is limited to one marketplaceId at this time.
+    // Note: This parameter is limited to one marketplaceId at this time.
 $seller_id = 'seller_id_example'; // string | A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
 $product_type_version = LATEST; // string | The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided.
 $requirements = LISTING; // string | The name of the requirements set to retrieve requirements for.
@@ -64,8 +64,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_type** | **string**| The Amazon product type name. |
- **marketplace_ids** | [**string[]**](../Model/ProductTypeDefinitionsV20200901/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request.
-Note: This parameter is limited to one marketplaceId at this time. |
+ **marketplace_ids** | [**string[]**](../Model/ProductTypeDefinitionsV20200901/string.md)| A comma-delimited list of Amazon marketplace identifiers for the request.<br>Note: This parameter is limited to one marketplaceId at this time. |
  **seller_id** | **string**| A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. | [optional]
  **product_type_version** | **string**| The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided. | [optional] [default to 'LATEST']
  **requirements** | **string**| The name of the requirements set to retrieve requirements for. | [optional] [default to 'LISTING']

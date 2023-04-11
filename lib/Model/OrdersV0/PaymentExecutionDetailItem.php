@@ -183,7 +183,11 @@ class PaymentExecutionDetailItem extends BaseModel implements ModelInterface, Ar
     /**
      * Sets payment_method
      *
-     * @param string $payment_method A sub-payment method for a COD order. Possible values: * COD - Cash On Delivery. * GC - Gift Card. * PointsAccount - Amazon Points.
+     * @param string $payment_method A sub-payment method for a COD order.
+     *   Possible values:
+     *   * COD - Cash On Delivery.
+     *   * GC - Gift Card.
+     *   * PointsAccount - Amazon Points.
      *
      * @return self
      */

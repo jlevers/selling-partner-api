@@ -1803,7 +1803,7 @@ class ReportsV20210630Api extends BaseApi
      * Operation getReportDocument
      *
      * @param  string $report_document_id The identifier for the report document. (required)
-     * @param  string $report_type The name of the document&#39;s report type. (optional)
+     * @param  string $report_type The name of the document's report type. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2607,7 +2607,7 @@ class ReportsV20210630Api extends BaseApi
     /**
      * Operation getReportSchedules
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2622,7 +2622,7 @@ class ReportsV20210630Api extends BaseApi
     /**
      * Operation getReportSchedulesWithHttpInfo
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2843,7 +2843,7 @@ class ReportsV20210630Api extends BaseApi
      *
      * 
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2858,7 +2858,7 @@ class ReportsV20210630Api extends BaseApi
      *
      * 
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2911,7 +2911,7 @@ class ReportsV20210630Api extends BaseApi
     /**
      * Create request for operation 'getReportSchedules'
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3006,7 +3006,7 @@ class ReportsV20210630Api extends BaseApi
     /**
      * Operation getReports
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3027,7 +3027,7 @@ class ReportsV20210630Api extends BaseApi
     /**
      * Operation getReportsWithHttpInfo
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3254,7 +3254,7 @@ class ReportsV20210630Api extends BaseApi
      *
      * 
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3275,7 +3275,7 @@ class ReportsV20210630Api extends BaseApi
      *
      * 
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3334,7 +3334,7 @@ class ReportsV20210630Api extends BaseApi
     /**
      * Create request for operation 'getReports'
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)

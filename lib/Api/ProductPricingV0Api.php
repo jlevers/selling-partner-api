@@ -1289,7 +1289,7 @@ class ProductPricingV0Api extends BaseApi
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
-     * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (required)
      * @param  string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -2094,7 +2094,7 @@ class ProductPricingV0Api extends BaseApi
      * @param  string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
      * @param  string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param  string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
-     * @param  string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
+     * @param  string $offer_type Indicates whether to request pricing information for the seller's B2C or B2B offers. Default is B2C. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException

@@ -225,7 +225,15 @@ class RentalTransactionEvent extends BaseModel implements ModelInterface, ArrayA
     /**
      * Sets rental_event_type
      *
-     * @param string|null $rental_event_type The type of rental event. Possible values: * RentalCustomerPayment-Buyout - Transaction type that represents when the customer wants to buy out a rented item. * RentalCustomerPayment-Extension - Transaction type that represents when the customer wants to extend the rental period. * RentalCustomerRefund-Buyout - Transaction type that represents when the customer requests a refund for the buyout of the rented item. * RentalCustomerRefund-Extension - Transaction type that represents when the customer requests a refund over the extension on the rented item. * RentalHandlingFee - Transaction type that represents the fee that Amazon charges sellers who rent through Amazon. * RentalChargeFailureReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a failed charge. * RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item.
+     * @param string|null $rental_event_type The type of rental event.
+     *   Possible values:
+     *   * RentalCustomerPayment-Buyout - Transaction type that represents when the customer wants to buy out a rented item.
+     *   * RentalCustomerPayment-Extension - Transaction type that represents when the customer wants to extend the rental period.
+     *   * RentalCustomerRefund-Buyout - Transaction type that represents when the customer requests a refund for the buyout of the rented item.
+     *   * RentalCustomerRefund-Extension - Transaction type that represents when the customer requests a refund over the extension on the rented item.
+     *   * RentalHandlingFee - Transaction type that represents the fee that Amazon charges sellers who rent through Amazon.
+     *   * RentalChargeFailureReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a failed charge.
+     *   * RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item.
      *
      * @return self
      */

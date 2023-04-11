@@ -37,7 +37,7 @@ Returns information needed to confirm a shipment for pre-order. Call this operat
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -109,7 +109,7 @@ Important: After confirming the transportation request, if the seller decides th
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -173,7 +173,7 @@ Returns a new inbound shipment based on the specified shipmentId that was return
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -231,7 +231,7 @@ createInboundShipmentPlan($body): \SellingPartnerApi\Model\FbaInboundV0\CreateIn
 
 
 
-Returns one or more inbound shipment plans, which provide the information you need to create one or more inbound shipments for a set of items that you specify. Multiple inbound shipment plans might be required so that items can be optimally placed in Amazon's fulfillment network--for example, positioning inventory closer to the customer. Alternatively, two inbound shipment plans might be created with the same Amazon fulfillment center destination if the two shipment plans require different processing--for example, items that require labels must be shipped separately from stickerless, commingled inventory.
+Returns one or more inbound shipment plans, which provide the information you need to create one or more inbound shipments for a set of items that you specify. Multiple inbound shipment plans might be required so that items can be optimally placed in Amazon's fulfillment network—for example, positioning inventory closer to the customer. Alternatively, two inbound shipment plans might be created with the same Amazon fulfillment center destination if the two shipment plans require different processing—for example, items that require labels must be shipped separately from stickerless, commingled inventory.
 
 **Usage Plan:**
 
@@ -239,7 +239,7 @@ Returns one or more inbound shipment plans, which provide the information you ne
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -305,7 +305,7 @@ Prior to calling the estimateTransport operation, you must call the putTransport
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -369,7 +369,7 @@ Returns a bill of lading for a Less Than Truckload/Full Truckload (LTL/FTL) ship
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -433,7 +433,7 @@ Returns information that lets a seller know if Amazon recommends sending an item
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -501,7 +501,7 @@ Returns package/pallet labels for faster and more accurate shipment processing a
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -583,7 +583,7 @@ Returns pre-order information, including dates, that a seller needs before confi
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -649,7 +649,7 @@ Returns labeling requirements and item preparation instructions to help prepare 
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -725,7 +725,7 @@ Returns a list of items in a specified inbound shipment, or a list of items that
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -797,7 +797,7 @@ Returns a list of items in a specified inbound shipment.
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -863,7 +863,7 @@ Returns a list of inbound shipments based on criteria that you specify.
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -939,7 +939,7 @@ Returns current transportation information about an inbound shipment.
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -1003,7 +1003,7 @@ Sends transportation information to Amazon about an inbound shipment.
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -1069,7 +1069,7 @@ Updates or removes items from the inbound shipment identified by the specified s
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -1139,7 +1139,7 @@ Important: The VoidDeadline date is 24 hours after you confirm a Small Parcel sh
 | ---- | ---- |
 | 2 | 30 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 

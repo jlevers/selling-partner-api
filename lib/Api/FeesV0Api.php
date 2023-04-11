@@ -437,7 +437,7 @@ class FeesV0Api extends BaseApi
     /**
      * Operation getMyFeesEstimateForSKU
      *
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (required)
      * @param  \SellingPartnerApi\Model\FeesV0\GetMyFeesEstimateRequest $body body (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response

@@ -35,6 +35,7 @@ use SellingPartnerApi\ObjectSerializer;
  * UpdateFulfillmentOrderRequest Class Doc Comment
  *
  * @category Class
+ * @description The request body schema for the updateFulfillmentOrder operation.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

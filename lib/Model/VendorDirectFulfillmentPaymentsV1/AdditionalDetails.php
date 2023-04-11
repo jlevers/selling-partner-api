@@ -35,7 +35,7 @@ use SellingPartnerApi\ObjectSerializer;
  * AdditionalDetails Class Doc Comment
  *
  * @category Class
- * @description A field where selling party can provide additional information for tax related or any other purposes.
+ * @description A field where the selling party can provide additional information for tax-related or any other purposes.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

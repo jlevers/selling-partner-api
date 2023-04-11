@@ -115,9 +115,8 @@ $apiInstance = new SellingPartnerApi\Api\ShippingV2Api($config);
 $body = new \SellingPartnerApi\Model\ShippingV2\DirectPurchaseRequest(); // \SellingPartnerApi\Model\ShippingV2\DirectPurchaseRequest
 $x_amzn_idempotency_key = 'x_amzn_idempotency_key_example'; // string | A unique value which the server uses to recognize subsequent retries of the same request.
 $locale = 'locale_example'; // string | The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).
-The secondary language subtag is almost always a regional designation.
-This does not support additional subtags beyond the primary and secondary language subtags.
-
+    // The secondary language subtag is almost always a regional designation.
+    // This does not support additional subtags beyond the primary and secondary language subtags.
 $x_amzn_shipping_business_id = 'x_amzn_shipping_business_id_example'; // string | Amazon shipping business to assume for this request. The default is AmazonShipping_UK.
 
 try {
@@ -134,10 +133,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\SellingPartnerApi\Model\ShippingV2\DirectPurchaseRequest**](../Model/ShippingV2/DirectPurchaseRequest.md)|  |
  **x_amzn_idempotency_key** | **string**| A unique value which the server uses to recognize subsequent retries of the same request. | [optional]
- **locale** | **string**| The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).
-The secondary language subtag is almost always a regional designation.
-This does not support additional subtags beyond the primary and secondary language subtags.
- | [optional]
+ **locale** | **string**| The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).<br>The secondary language subtag is almost always a regional designation.<br>This does not support additional subtags beyond the primary and secondary language subtags.<br> | [optional]
  **x_amzn_shipping_business_id** | **string**| Amazon shipping business to assume for this request. The default is AmazonShipping_UK. | [optional]
 
 ### Return type

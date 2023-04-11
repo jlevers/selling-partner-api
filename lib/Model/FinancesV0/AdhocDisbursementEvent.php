@@ -166,7 +166,8 @@ class AdhocDisbursementEvent extends BaseModel implements ModelInterface, ArrayA
     /**
      * Sets transaction_type
      *
-     * @param string|null $transaction_type Indicates the type of transaction. Example: \"Disbursed to Amazon Gift Card balance\"
+     * @param string|null $transaction_type Indicates the type of transaction.
+     *   Example: \"Disbursed to Amazon Gift Card balance\"
      *
      * @return self
      */

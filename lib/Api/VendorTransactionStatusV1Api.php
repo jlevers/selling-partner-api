@@ -43,7 +43,7 @@ class VendorTransactionStatusV1Api extends BaseApi
     /**
      * Operation getTransaction
      *
-     * @param  string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
+     * @param  string $transaction_id The GUID provided by Amazon in the 'transactionId' field in response to the post request of a specific transaction. (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException

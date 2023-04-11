@@ -63,7 +63,7 @@ class PurchaseShipmentRequest extends BaseModel implements ModelInterface, Array
         'rate_id' => 'string',
         'requested_document_specification' => '\SellingPartnerApi\Model\ShippingV2\RequestedDocumentSpecification',
         'requested_value_added_services' => '\SellingPartnerApi\Model\ShippingV2\RequestedValueAddedService[]',
-        'additional_inputs' => 'map[string,object]'
+        'additional_inputs' => 'object'
     ];
 
     /**
@@ -263,7 +263,7 @@ class PurchaseShipmentRequest extends BaseModel implements ModelInterface, Array
     /**
      * Gets additional_inputs
      *
-     * @return map[string,object]|null
+     * @return object|null
      */
     public function getAdditionalInputs()
     {
@@ -273,7 +273,8 @@ class PurchaseShipmentRequest extends BaseModel implements ModelInterface, Array
     /**
      * Sets additional_inputs
      *
-     * @param map[string,object]|null $additional_inputs The additional inputs required to purchase a shipping offering, in JSON format. The JSON provided here must adhere to the JSON schema that is returned in the response to the getAdditionalInputs operation. Additional inputs are only required when indicated by the requiresAdditionalInputs property in the response to the getRates operation.
+     * @param object|null $additional_inputs The additional inputs required to purchase a shipping offering, in JSON format. The JSON provided here must adhere to the JSON schema that is returned in the response to the getAdditionalInputs operation.
+     *   Additional inputs are only required when indicated by the requiresAdditionalInputs property in the response to the getRates operation.
      *
      * @return self
      */

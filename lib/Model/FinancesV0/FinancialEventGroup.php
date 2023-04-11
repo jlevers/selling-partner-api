@@ -231,7 +231,10 @@ class FinancialEventGroup extends BaseModel implements ModelInterface, ArrayAcce
     /**
      * Sets processing_status
      *
-     * @param string|null $processing_status The processing status of the financial event group indicates whether the balance of the financial event group is settled. Possible values: * Open * Closed
+     * @param string|null $processing_status The processing status of the financial event group indicates whether the balance of the financial event group is settled.
+     *   Possible values:
+     *   * Open
+     *   * Closed
      *
      * @return self
      */

@@ -216,7 +216,8 @@ class Dimensions extends BaseModel implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets length
      *
-     * @param string $length A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
+     * @param string $length A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. 
+     *   **Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
      *
      * @return self
      */
@@ -239,7 +240,8 @@ class Dimensions extends BaseModel implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets width
      *
-     * @param string $width A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
+     * @param string $width A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. 
+     *   **Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
      *
      * @return self
      */
@@ -262,7 +264,8 @@ class Dimensions extends BaseModel implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets height
      *
-     * @param string $height A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
+     * @param string $height A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. 
+     *   **Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
      *
      * @return self
      */

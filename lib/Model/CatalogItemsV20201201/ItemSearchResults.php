@@ -203,7 +203,8 @@ class ItemSearchResults extends BaseModel implements ModelInterface, ArrayAccess
     /**
      * Sets number_of_results
      *
-     * @param int $number_of_results The estimated total number of products matched by the search query (only results up to the page count limit will be returned per request regardless of the number found). Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.
+     * @param int $number_of_results The estimated total number of products matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).
+     *   Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.
      *
      * @return self
      */

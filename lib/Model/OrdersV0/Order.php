@@ -707,7 +707,8 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets last_update_date
      *
-     * @param string $last_update_date The date when the order was last updated. __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     * @param string $last_update_date The date when the order was last updated.
+     *   __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
      *
      * @return self
      */
@@ -1036,7 +1037,8 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets shipment_service_level_category
      *
-     * @param string|null $shipment_service_level_category The shipment service level category of the order. Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+     * @param string|null $shipment_service_level_category The shipment service level category of the order.
+     *   Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
      *
      * @return self
      */
@@ -1138,7 +1140,8 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets earliest_ship_date
      *
-     * @param string|null $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param string|null $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+     *   __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
      *
      * @return self
      */
@@ -1161,7 +1164,8 @@ class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets latest_ship_date
      *
-     * @param string|null $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param string|null $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+     *   __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
      *
      * @return self
      */

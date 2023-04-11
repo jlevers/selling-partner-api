@@ -1803,7 +1803,7 @@ class ReportsV20210630Api extends BaseApi
      * Operation getReportDocument
      *
      * @param  string $report_document_id The identifier for the report document. (required)
-     * @param  string $report_type The name of the document&#39;s report type. (optional)
+     * @param  string $report_type The name of the document's report type. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException

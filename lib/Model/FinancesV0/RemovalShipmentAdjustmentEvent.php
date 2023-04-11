@@ -270,7 +270,9 @@ class RemovalShipmentAdjustmentEvent extends BaseModel implements ModelInterface
     /**
      * Sets transaction_type
      *
-     * @param string|null $transaction_type The type of removal order. Possible values: * WHOLESALE_LIQUIDATION.
+     * @param string|null $transaction_type The type of removal order.
+     *   Possible values:
+     *   * WHOLESALE_LIQUIDATION.
      *
      * @return self
      */

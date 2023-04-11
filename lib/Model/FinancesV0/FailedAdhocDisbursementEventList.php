@@ -184,7 +184,8 @@ class FailedAdhocDisbursementEventList extends BaseModel implements ModelInterfa
     /**
      * Sets funds_transfers_type
      *
-     * @param string|null $funds_transfers_type The type of fund transfer.  Example \"Refund\"
+     * @param string|null $funds_transfers_type The type of fund transfer. 
+     *   Example \"Refund\"
      *
      * @return self
      */
@@ -253,7 +254,8 @@ class FailedAdhocDisbursementEventList extends BaseModel implements ModelInterfa
     /**
      * Sets payment_disbursement_type
      *
-     * @param string|null $payment_disbursement_type The type of payment for disbursement.  Example `CREDIT_CARD`
+     * @param string|null $payment_disbursement_type The type of payment for disbursement. 
+     *   Example `CREDIT_CARD`
      *
      * @return self
      */
@@ -276,7 +278,8 @@ class FailedAdhocDisbursementEventList extends BaseModel implements ModelInterfa
     /**
      * Sets status
      *
-     * @param string|null $status The status of the failed `AdhocDisbursement`.  Example `HARD_DECLINED`
+     * @param string|null $status The status of the failed `AdhocDisbursement`. 
+     *   Example `HARD_DECLINED`
      *
      * @return self
      */

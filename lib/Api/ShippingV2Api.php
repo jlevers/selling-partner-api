@@ -464,7 +464,10 @@ class ShippingV2Api extends BaseApi
      *
      * @param  \SellingPartnerApi\Model\ShippingV2\DirectPurchaseRequest $body body (required)
      * @param  string $x_amzn_idempotency_key A unique value which the server uses to recognize subsequent retries of the same request. (optional)
-     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags.  (optional)
+     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).
+     *   The secondary language subtag is almost always a regional designation.
+     *   This does not support additional subtags beyond the primary and secondary language subtags.
+     *    (optional)
      * @param  string $x_amzn_shipping_business_id Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -482,7 +485,10 @@ class ShippingV2Api extends BaseApi
      *
      * @param  \SellingPartnerApi\Model\ShippingV2\DirectPurchaseRequest $body (required)
      * @param  string $x_amzn_idempotency_key A unique value which the server uses to recognize subsequent retries of the same request. (optional)
-     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags.  (optional)
+     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).
+     *   The secondary language subtag is almost always a regional designation.
+     *   This does not support additional subtags beyond the primary and secondary language subtags.
+     *    (optional)
      * @param  string $x_amzn_shipping_business_id Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -722,7 +728,10 @@ class ShippingV2Api extends BaseApi
      *
      * @param  \SellingPartnerApi\Model\ShippingV2\DirectPurchaseRequest $body (required)
      * @param  string $x_amzn_idempotency_key A unique value which the server uses to recognize subsequent retries of the same request. (optional)
-     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags.  (optional)
+     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).
+     *   The secondary language subtag is almost always a regional designation.
+     *   This does not support additional subtags beyond the primary and secondary language subtags.
+     *    (optional)
      * @param  string $x_amzn_shipping_business_id Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -740,7 +749,10 @@ class ShippingV2Api extends BaseApi
      *
      * @param  \SellingPartnerApi\Model\ShippingV2\DirectPurchaseRequest $body (required)
      * @param  string $x_amzn_idempotency_key A unique value which the server uses to recognize subsequent retries of the same request. (optional)
-     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags.  (optional)
+     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).
+     *   The secondary language subtag is almost always a regional designation.
+     *   This does not support additional subtags beyond the primary and secondary language subtags.
+     *    (optional)
      * @param  string $x_amzn_shipping_business_id Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -796,7 +808,10 @@ class ShippingV2Api extends BaseApi
      *
      * @param  \SellingPartnerApi\Model\ShippingV2\DirectPurchaseRequest $body (required)
      * @param  string $x_amzn_idempotency_key A unique value which the server uses to recognize subsequent retries of the same request. (optional)
-     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags.  (optional)
+     * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA).
+     *   The secondary language subtag is almost always a regional designation.
+     *   This does not support additional subtags beyond the primary and secondary language subtags.
+     *    (optional)
      * @param  string $x_amzn_shipping_business_id Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException

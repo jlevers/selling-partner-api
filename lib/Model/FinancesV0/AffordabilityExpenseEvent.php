@@ -274,7 +274,10 @@ class AffordabilityExpenseEvent extends BaseModel implements ModelInterface, Arr
     /**
      * Sets transaction_type
      *
-     * @param string|null $transaction_type Indicates the type of transaction.  Possible values: * Charge - For an affordability promotion expense. * Refund - For an affordability promotion expense reversal.
+     * @param string|null $transaction_type Indicates the type of transaction. 
+     *   Possible values:
+     *   * Charge - For an affordability promotion expense.
+     *   * Refund - For an affordability promotion expense reversal.
      *
      * @return self
      */

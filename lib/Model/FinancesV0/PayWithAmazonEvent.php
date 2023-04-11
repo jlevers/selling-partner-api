@@ -340,7 +340,9 @@ class PayWithAmazonEvent extends BaseModel implements ModelInterface, ArrayAcces
     /**
      * Sets payment_amount_type
      *
-     * @param string|null $payment_amount_type The type of payment. Possible values: * Sales
+     * @param string|null $payment_amount_type The type of payment.
+     *   Possible values:
+     *   * Sales
      *
      * @return self
      */
@@ -386,7 +388,10 @@ class PayWithAmazonEvent extends BaseModel implements ModelInterface, ArrayAcces
     /**
      * Sets fulfillment_channel
      *
-     * @param string|null $fulfillment_channel The fulfillment channel. Possible values: * AFN - Amazon Fulfillment Network (Fulfillment by Amazon) * MFN - Merchant Fulfillment Network (self-fulfilled)
+     * @param string|null $fulfillment_channel The fulfillment channel.
+     *   Possible values:
+     *   * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)
+     *   * MFN - Merchant Fulfillment Network (self-fulfilled)
      *
      * @return self
      */

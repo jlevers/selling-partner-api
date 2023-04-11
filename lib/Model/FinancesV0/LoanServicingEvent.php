@@ -177,7 +177,11 @@ class LoanServicingEvent extends BaseModel implements ModelInterface, ArrayAcces
     /**
      * Sets source_business_event_type
      *
-     * @param string|null $source_business_event_type The type of event. Possible values: * LoanAdvance * LoanPayment * LoanRefund
+     * @param string|null $source_business_event_type The type of event.
+     *   Possible values:
+     *   * LoanAdvance
+     *   * LoanPayment
+     *   * LoanRefund
      *
      * @return self
      */

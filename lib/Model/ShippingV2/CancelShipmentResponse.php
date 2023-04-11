@@ -59,7 +59,7 @@ class CancelShipmentResponse extends BaseModel implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => 'map[string,object]'
+        'payload' => 'object'
     ];
 
     /**
@@ -163,7 +163,7 @@ class CancelShipmentResponse extends BaseModel implements ModelInterface, ArrayA
     /**
      * Gets payload
      *
-     * @return map[string,object]|null
+     * @return object|null
      */
     public function getPayload()
     {
@@ -173,7 +173,7 @@ class CancelShipmentResponse extends BaseModel implements ModelInterface, ArrayA
     /**
      * Sets payload
      *
-     * @param map[string,object]|null $payload The payload for the cancelShipment operation.
+     * @param object|null $payload The payload for the cancelShipment operation.
      *
      * @return self
      */

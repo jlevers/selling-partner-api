@@ -172,7 +172,11 @@ class DebtRecoveryEvent extends BaseModel implements ModelInterface, ArrayAccess
     /**
      * Sets debt_recovery_type
      *
-     * @param string|null $debt_recovery_type The debt recovery type. Possible values: * DebtPayment * DebtPaymentFailure *DebtAdjustment
+     * @param string|null $debt_recovery_type The debt recovery type.
+     *   Possible values:
+     *   * DebtPayment
+     *   * DebtPaymentFailure
+     *   *DebtAdjustment
      *
      * @return self
      */

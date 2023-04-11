@@ -180,7 +180,8 @@ class CreateRestrictedDataTokenRequest extends BaseModel implements ModelInterfa
     /**
      * Sets restricted_resources
      *
-     * @param \SellingPartnerApi\Model\TokensV20210301\RestrictedResource[] $restricted_resources A list of restricted resources. Maximum: 50
+     * @param \SellingPartnerApi\Model\TokensV20210301\RestrictedResource[] $restricted_resources A list of restricted resources.
+     *   Maximum: 50
      *
      * @return self
      */

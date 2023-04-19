@@ -1,17 +1,34 @@
-# Selling Partner API for PHP
+<p align="center">
+    <a href="https://highsidelabs.co" target="_blank">
+        <img src="https://github.com/highsidelabs/.github/blob/main/images/logo.png?raw=true" width="125">
+    </a>
+</p>
+
+<p align="center">
+    <a href="https://packagist.org/packages/jlevers/selling-partner-api"><img alt="Total downloads" src="https://img.shields.io/packagist/dt/jlevers/selling-partner-api.svg?style=flat-square"></a>
+    <a href="https://packagist.org/packages/jlevers/selling-partner-api"><img alt="Latest stable version" src="https://img.shields.io/packagist/v/jlevers/selling-partner-api.svg?style=flat-square"></a>
+    <a href="https://packagist.org/packages/jlevers/selling-partner-api"><img alt="License" src="https://img.shields.io/packagist/l/jlevers/selling-partner-api.svg?style=flat-square"></a>
+</p>
+
+## Selling Partner API for PHP
 A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/).
 
-[![Total Downloads](https://img.shields.io/packagist/dt/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
-[![Latest Stable Version](https://img.shields.io/packagist/v/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
-[![License](https://img.shields.io/packagist/l/jlevers/selling-partner-api.svg?style=flat-square)](https://packagist.org/packages/jlevers/selling-partner-api)
+### Related packages
 
-| | |
-| ------ | ------ |
-| [![Highside Labs Logo](https://highsidelabs.co/static/favicons/favicon.png)](https://highsidelabs.co) | **This package is developed and maintained as part of [Highside Labs](https://highsidelabs.co). If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at [hi@highsidelabs.co](mailto:hi@highsidelabs.co). We'd love to hear from you :)** |
+* [`highsidelabs/laravel-spapi`](https://github.com/highsidelabs/laravel-spapi): An Laravel wrapper for this package that makes SP API integration in Laravel projects quick and easy.
+* [`highsidelabs/amazon-business-api`](https://github.com/highsidelabs/amazon-business-api): A PHP library for Amazon's [Business API](https://developer-docs.amazon.com/amazon-business/docs), with a near-identical interface to this package.
 
-If you've found this library useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
+---
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD)
+**This package is developed and maintained by [Highside Labs](https://highsidelabs.co). If you need support integrating with Amazon's (or any other e-commerce platform's) APIs, we're happy to help! Shoot us an email at [hi@highsidelabs.co](mailto:hi@highsidelabs.co). We'd love to hear from you :)**
+
+If you've found any of our packages useful, please consider [becoming a Sponsor](https://github.com/sponsors/jlevers), or making a one-time donation via the button below. I appreciate any and all support you can provide!
+
+<p align="center">
+    <a href="https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD"><img alt="Donate to Highside Labs" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>
+</p>
+
+### Sponsored by **[Tesmo](https://tesmollc.com)**.
 
 ---
 
@@ -21,11 +38,6 @@ If you've found this library useful, please consider [becoming a Sponsor](https:
 * Supports applications made with both IAM user and IAM role ARNs ([docs](#setup))
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
-
-
-## Sponsors
-
-* **[Tesmo](https://tesmollc.com)**
 
 
 ## Installation

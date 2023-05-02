@@ -162,8 +162,8 @@ class Document
                 // results in the default enclosure being used (a double quote character), so we use a
                 // bizarre character to avoid recognizing double quotes as enclosures.
                 // Thanks @gregordonsky (https://github.com/gregordonsky) for the idea!
-                // Keep default enclosure for GET_LEDGER_DETAIL_VIEW_DATA as Amazon is sending with quotes
-                if($this->reportName !== "GET_LEDGER_DETAIL_VIEW_DATA") {
+                // Keep default enclosure for GET_LEDGER_DETAIL_VIEW_DATA and GET_LEDGER_SUMMARY_VIEW_DATA as Amazon is sending with quotes
+                if($this->reportName !== "GET_LEDGER_DETAIL_VIEW_DATA" && $this->reportName !== "GET_LEDGER_SUMMARY_VIEW_DATA") {
                     $reader->setEnclosure(chr(8));
                 }
                 // no break

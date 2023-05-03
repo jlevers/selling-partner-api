@@ -90,6 +90,7 @@ class SolicitationsV1Api extends BaseApi
                 $this->writeDebug($body);
 
                 return false; //エラーの場合でも処理を停止させない
+                return $e->getCode();
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -505,6 +506,7 @@ class SolicitationsV1Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                return $e->getCode();
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),

@@ -94,6 +94,7 @@ class CatalogItemsV20220401Api extends BaseApi
                 $this->writeDebug($body);
 
                 return false; //エラーが出ても処理を止めない
+                return $e->getCode();
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -550,6 +551,7 @@ class CatalogItemsV20220401Api extends BaseApi
                 $this->writeDebug($body);
 
                 return false; //エラーが出ても処理を止めない
+                return $e->getCode();
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),

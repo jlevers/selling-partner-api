@@ -55,6 +55,7 @@ abstract class BaseApi
     public function setConfig(Configuration $config)
     {
         $this->config = $config;
+        $this->headerSelector = new HeaderSelector($config);
         return $this;
     }
 

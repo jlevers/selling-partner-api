@@ -208,11 +208,6 @@ class Error extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setMessage($message)
     {
-
-        if ((mb_strlen($message) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $message when calling Error., must be bigger than or equal to 1.');
-        }
-
         $this->container['message'] = $message;
 
         return $this;

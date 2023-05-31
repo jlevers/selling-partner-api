@@ -202,7 +202,7 @@ class PackingSlip extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets purchase_order_number
      *
-     * @param string $purchase_order_number Purchase order number of the shipment that the packing slip is for.
+     * @param string $purchase_order_number Purchase order number of the shipment that corresponds to the packing slip.
      *
      * @return self
      */

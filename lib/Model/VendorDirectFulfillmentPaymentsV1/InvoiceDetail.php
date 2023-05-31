@@ -467,7 +467,7 @@ class InvoiceDetail extends BaseModel implements ModelInterface, ArrayAccess, \J
     /**
      * Sets additional_details
      *
-     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\AdditionalDetails[]|null $additional_details Additional details provided by the selling party, for tax related or other purposes.
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentPaymentsV1\AdditionalDetails[]|null $additional_details Additional details provided by the selling party, for tax-related or other purposes.
      *
      * @return self
      */

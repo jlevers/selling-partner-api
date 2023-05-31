@@ -166,7 +166,8 @@ class ValueAddedServiceChargeEventList extends BaseModel implements ModelInterfa
     /**
      * Sets transaction_type
      *
-     * @param string|null $transaction_type Indicates the type of transaction. Example: 'Other Support Service fees'
+     * @param string|null $transaction_type Indicates the type of transaction.
+     *   Example: 'Other Support Service fees'
      *
      * @return self
      */

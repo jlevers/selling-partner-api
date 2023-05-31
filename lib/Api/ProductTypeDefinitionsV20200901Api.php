@@ -44,9 +44,10 @@ class ProductTypeDefinitionsV20200901Api extends BaseApi
      * Operation getDefinitionsProductType
      *
      * @param  string $product_type The Amazon product type name. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
+     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request.
+     *   Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param  string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
-     * @param  string $product_type_version The version of the Amazon product type to retrieve. Defaults to \&quot;LATEST\&quot;,. Prerelease versions of product type definitions may be retrieved with \&quot;RELEASE_CANDIDATE\&quot;. If no prerelease version is currently available, the \&quot;LATEST\&quot; live version will be provided. (optional, default to 'LATEST')
+     * @param  string $product_type_version The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided. (optional, default to 'LATEST')
      * @param  string $requirements The name of the requirements set to retrieve requirements for. (optional, default to 'LISTING')
      * @param  string $requirements_enforced Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to 'ENFORCED')
      * @param  string $locale Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to 'DEFAULT')
@@ -65,7 +66,8 @@ class ProductTypeDefinitionsV20200901Api extends BaseApi
      * Operation getDefinitionsProductTypeWithHttpInfo
      *
      * @param  string $product_type The Amazon product type name. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
+     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request.
+     *   Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param  string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
      * @param  string $product_type_version The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided. (optional, default to 'LATEST')
      * @param  string $requirements The name of the requirements set to retrieve requirements for. (optional, default to 'LISTING')
@@ -293,7 +295,8 @@ class ProductTypeDefinitionsV20200901Api extends BaseApi
      * 
      *
      * @param  string $product_type The Amazon product type name. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
+     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request.
+     *   Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param  string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
      * @param  string $product_type_version The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided. (optional, default to 'LATEST')
      * @param  string $requirements The name of the requirements set to retrieve requirements for. (optional, default to 'LISTING')
@@ -314,7 +317,8 @@ class ProductTypeDefinitionsV20200901Api extends BaseApi
      * 
      *
      * @param  string $product_type The Amazon product type name. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
+     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request.
+     *   Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param  string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
      * @param  string $product_type_version The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided. (optional, default to 'LATEST')
      * @param  string $requirements The name of the requirements set to retrieve requirements for. (optional, default to 'LISTING')
@@ -373,7 +377,8 @@ class ProductTypeDefinitionsV20200901Api extends BaseApi
      * Create request for operation 'getDefinitionsProductType'
      *
      * @param  string $product_type The Amazon product type name. (required)
-     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
+     * @param  string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request.
+     *   Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param  string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
      * @param  string $product_type_version The version of the Amazon product type to retrieve. Defaults to \"LATEST\",. Prerelease versions of product type definitions may be retrieved with \"RELEASE_CANDIDATE\". If no prerelease version is currently available, the \"LATEST\" live version will be provided. (optional, default to 'LATEST')
      * @param  string $requirements The name of the requirements set to retrieve requirements for. (optional, default to 'LISTING')

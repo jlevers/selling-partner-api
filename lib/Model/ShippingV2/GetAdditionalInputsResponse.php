@@ -59,7 +59,7 @@ class GetAdditionalInputsResponse extends BaseModel implements ModelInterface, A
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => 'map[string,object]'
+        'payload' => 'object'
     ];
 
     /**
@@ -163,7 +163,7 @@ class GetAdditionalInputsResponse extends BaseModel implements ModelInterface, A
     /**
      * Gets payload
      *
-     * @return map[string,object]|null
+     * @return object|null
      */
     public function getPayload()
     {
@@ -173,7 +173,7 @@ class GetAdditionalInputsResponse extends BaseModel implements ModelInterface, A
     /**
      * Sets payload
      *
-     * @param map[string,object]|null $payload The JSON schema to use to provide additional inputs when required to purchase a shipping offering.
+     * @param object|null $payload The JSON schema to use to provide additional inputs when required to purchase a shipping offering.
      *
      * @return self
      */

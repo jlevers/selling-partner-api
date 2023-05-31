@@ -241,7 +241,9 @@ class RemovalShipmentEvent extends BaseModel implements ModelInterface, ArrayAcc
     /**
      * Sets transaction_type
      *
-     * @param string|null $transaction_type The type of removal order. Possible values: * WHOLESALE_LIQUIDATION
+     * @param string|null $transaction_type The type of removal order.
+     *   Possible values:
+     *   * WHOLESALE_LIQUIDATION
      *
      * @return self
      */

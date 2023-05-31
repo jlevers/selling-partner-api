@@ -169,8 +169,8 @@ class Document
                 // results in the default enclosure being used (a double quote character), so we use a
                 // bizarre character to avoid recognizing double quotes as enclosures.
                 // Thanks @gregordonsky (https://github.com/gregordonsky) for the idea!
-                // Keep default enclosure for GET_LEDGER_DETAIL_VIEW_DATA as Amazon is sending with quotes
-                if($this->reportName !== "GET_LEDGER_DETAIL_VIEW_DATA") {
+                // Keep default enclosure for GET_LEDGER_DETAIL_VIEW_DATA and GET_LEDGER_SUMMARY_VIEW_DATA as Amazon is sending with quotes
+                if($this->reportName !== "GET_LEDGER_DETAIL_VIEW_DATA" && $this->reportName !== "GET_LEDGER_SUMMARY_VIEW_DATA") {
                     $reader->setEnclosure(chr(8));
                 }
                 // no break
@@ -252,13 +252,14 @@ class Document
      * Uploads data to the document specified in the constructor.
      *
      * @param string|resource|StreamInterface|callable|\Iterator $feedData The contents of the feed to be uploaded
+     * @param string|null $charset An optional charset for the document to upload
      *
      * @return void
      */
-    public function upload($feedData): void {
+    public function upload($feedData, string $charset = null): void {
         $response = $this->client->put($this->url, [
             RequestOptions::HEADERS => [
-                "content-type" => $this->contentType,
+                "content-type" => self::withContentType($this->contentType, $charset),
                 "host" => parse_url($this->url, PHP_URL_HOST),
             ],
             RequestOptions::BODY => $feedData,
@@ -281,5 +282,17 @@ class Document
         if (isset($this->tempFilename)) {
             unlink($this->tempFilename);
         }
+    }
+
+    /**
+     * Create a normalized content-type header.
+     * When uploading a document you must use the exact same content-type/charset in createFeedDocument() and upload().
+     *
+     * @param string $contentType
+     * @param string|null $charset
+     * @return string
+     */
+    public static function withContentType(string $contentType, string $charset = null): string {
+        return $charset ? "{$contentType}; charset={$charset}" : $contentType;
     }
 }

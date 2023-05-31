@@ -153,10 +153,6 @@ class Error extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['message'] === null) {
             $invalidProperties[] = "'message' can't be null";
         }
-        if ((mb_strlen($this->container['message']) < 1)) {
-            $invalidProperties[] = "invalid value for 'message', the character length must be bigger than or equal to 1.";
-        }
-
         return $invalidProperties;
     }
 
@@ -208,11 +204,6 @@ class Error extends BaseModel implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function setMessage($message)
     {
-
-        if ((mb_strlen($message) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $message when calling Error., must be bigger than or equal to 1.');
-        }
-
         $this->container['message'] = $message;
 
         return $this;

@@ -800,7 +800,7 @@ class FbaOutboundV20200701Api extends BaseApi
     /**
      * Operation createFulfillmentReturn
      *
-     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
+     * @param  string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items. (required)
      * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\CreateFulfillmentReturnRequest $body body (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -1607,7 +1607,7 @@ class FbaOutboundV20200701Api extends BaseApi
      *
      * @param  string $marketplace_id The marketplace for which to return the count. (required)
      * @param  string $feature_name The name of the feature. (required)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4330,6 +4330,404 @@ class FbaOutboundV20200701Api extends BaseApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation submitFulfillmentOrderStatusUpdate
+     *
+     * @param  string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateRequest $body body (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse
+     */
+    public function submitFulfillmentOrderStatusUpdate($seller_fulfillment_order_id, $body)
+    {
+        $response = $this->submitFulfillmentOrderStatusUpdateWithHttpInfo($seller_fulfillment_order_id, $body);
+        return $response;
+    }
+
+    /**
+     * Operation submitFulfillmentOrderStatusUpdateWithHttpInfo
+     *
+     * @param  string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateRequest $body (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function submitFulfillmentOrderStatusUpdateWithHttpInfo($seller_fulfillment_order_id, $body)
+    {
+        $request = $this->submitFulfillmentOrderStatusUpdateRequest($seller_fulfillment_order_id, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse', $response->getHeaders());
+                case 401:
+                    if ('\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation submitFulfillmentOrderStatusUpdateAsync
+     *
+     * 
+     *
+     * @param  string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitFulfillmentOrderStatusUpdateAsync($seller_fulfillment_order_id, $body)
+    {
+        return $this->submitFulfillmentOrderStatusUpdateAsyncWithHttpInfo($seller_fulfillment_order_id, $body);;
+    }
+
+    /**
+     * Operation submitFulfillmentOrderStatusUpdateAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitFulfillmentOrderStatusUpdateAsyncWithHttpInfo($seller_fulfillment_order_id, $body)
+    {
+        $returnType = '\SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateResponse';
+        $request = $this->submitFulfillmentOrderStatusUpdateRequest($seller_fulfillment_order_id, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'submitFulfillmentOrderStatusUpdate'
+     *
+     * @param  string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \SellingPartnerApi\Model\FbaOutboundV20200701\SubmitFulfillmentOrderStatusUpdateRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function submitFulfillmentOrderStatusUpdateRequest($seller_fulfillment_order_id, $body)
+    {
+        // verify the required parameter 'seller_fulfillment_order_id' is set
+        if ($seller_fulfillment_order_id === null || (is_array($seller_fulfillment_order_id) && count($seller_fulfillment_order_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $seller_fulfillment_order_id when calling submitFulfillmentOrderStatusUpdate'
+            );
+        }
+        if (strlen($seller_fulfillment_order_id) > 40) {
+            throw new \InvalidArgumentException('invalid length for "$seller_fulfillment_order_id" when calling FbaOutboundV20200701Api.submitFulfillmentOrderStatusUpdate, must be smaller than or equal to 40.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling submitFulfillmentOrderStatusUpdate'
+            );
+        }
+
+        $resourcePath = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/status';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // path params
+        if ($seller_fulfillment_order_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sellerFulfillmentOrderId' . '}',
+                ObjectSerializer::toPathValue($seller_fulfillment_order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

@@ -191,8 +191,14 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['address_line1'] === null) {
             $invalidProperties[] = "'address_line1' can't be null";
         }
+        if ($this->container['city'] === null) {
+            $invalidProperties[] = "'city' can't be null";
+        }
         if ($this->container['state_or_region'] === null) {
             $invalidProperties[] = "'state_or_region' can't be null";
+        }
+        if ($this->container['postal_code'] === null) {
+            $invalidProperties[] = "'postal_code' can't be null";
         }
         if ($this->container['country_code'] === null) {
             $invalidProperties[] = "'country_code' can't be null";
@@ -296,7 +302,7 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets city
      *
-     * @return string|null
+     * @return string
      */
     public function getCity()
     {
@@ -306,7 +312,7 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets city
      *
-     * @param string|null $city The city where the person, business, or institution is located.
+     * @param string $city The city where the person, business, or institution is located.
      *
      * @return self
      */
@@ -365,7 +371,7 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets postal_code
      *
-     * @return string|null
+     * @return string
      */
     public function getPostalCode()
     {
@@ -375,7 +381,7 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets postal_code
      *
-     * @param string|null $postal_code The postal code of the address.
+     * @param string $postal_code The postal code of the address.
      *
      * @return self
      */

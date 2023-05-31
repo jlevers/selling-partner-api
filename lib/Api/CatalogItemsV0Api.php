@@ -442,7 +442,7 @@ class CatalogItemsV0Api extends BaseApi
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -844,9 +844,9 @@ class CatalogItemsV0Api extends BaseApi
      * Operation listCatalogItems
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'. (optional)
      * @param  string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      * @param  string $upc A 12-digit bar code used for retail packaging. (optional)
      * @param  string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
      * @param  string $isbn The unique commercial book identifier used to identify books internationally. (optional)

@@ -477,7 +477,7 @@ class ServiceV1Api extends BaseApi
     /**
      * Operation assignAppointmentResources
      *
-     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
      * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
      * @param  \SellingPartnerApi\Model\ServiceV1\AssignAppointmentResourcesRequest $body body (required)
      *
@@ -3049,8 +3049,8 @@ class ServiceV1Api extends BaseApi
      * @param  string $asin ASIN associated with the service. (required)
      * @param  string $store_id Store identifier defining the region scope to retrive appointment slots. (required)
      * @param  string[] $marketplace_ids An identifier for the marketplace for which appointment slots are queried (required)
-     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
-     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3516,8 +3516,8 @@ class ServiceV1Api extends BaseApi
      *
      * @param  string $service_job_id A service job identifier to retrive appointment slots for associated service. (required)
      * @param  string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
-     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
-     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     * @param  string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5328,9 +5328,9 @@ class ServiceV1Api extends BaseApi
      * @param  int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sort_field Sort fields on which you want to sort the output. (optional)
      * @param  string $sort_order Sort order for the query you want to perform. (optional)
-     * @param  string $created_after A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $created_after A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
      * @param  string $created_before A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
-     * @param  string $last_updated_after A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $last_updated_after A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error. (optional)
      * @param  string $last_updated_before A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
      * @param  string $schedule_start_date A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
      * @param  string $schedule_end_date A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
@@ -6409,7 +6409,7 @@ class ServiceV1Api extends BaseApi
     /**
      * Operation setAppointmentFulfillmentData
      *
-     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $service_job_id An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API. (required)
      * @param  string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
      * @param  \SellingPartnerApi\Model\ServiceV1\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
      *

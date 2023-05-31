@@ -190,7 +190,10 @@ class NetworkComminglingTransactionEvent extends BaseModel implements ModelInter
     /**
      * Sets transaction_type
      *
-     * @param string|null $transaction_type The type of network item swap. Possible values: * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace. * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
+     * @param string|null $transaction_type The type of network item swap.
+     *   Possible values:
+     *   * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.
+     *   * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
      *
      * @return self
      */

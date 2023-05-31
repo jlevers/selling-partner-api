@@ -65,8 +65,8 @@ class VendorShippingV1Api extends BaseApi
      * @param  string $current_shipment_status Get Shipment Details by passing Current shipment status. (optional)
      * @param  string $vendor_shipment_identifier Get Shipment Details by passing Vendor Shipment ID (optional)
      * @param  string $buyer_reference_number Get Shipment Details by passing buyer Reference ID (optional)
-     * @param  string $buyer_warehouse_code Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
-     * @param  string $seller_warehouse_code Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
+     * @param  string $buyer_warehouse_code Get Shipping Details based on buyer warehouse code. This value should be same as 'shipToParty.partyId' in the Shipment. (optional)
+     * @param  string $seller_warehouse_code Get Shipping Details based on vendor warehouse code. This value should be same as 'sellingParty.partyId' in the Shipment. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -743,7 +743,7 @@ class VendorShippingV1Api extends BaseApi
      * @param  string $labelcreated_before transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param  string $buyer_reference_number Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label. (optional)
      * @param  string $vendor_shipment_identifier Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label. (optional)
-     * @param  string $seller_warehouse_code Get Shipping labels based Vendor Warehouse code. This value should be same as &#39;shipFromParty.partyId&#39; in the Shipment. (optional)
+     * @param  string $seller_warehouse_code Get Shipping labels based Vendor Warehouse code. This value should be same as 'shipFromParty.partyId' in the Shipment. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException

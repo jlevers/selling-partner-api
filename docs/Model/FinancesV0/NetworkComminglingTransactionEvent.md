@@ -4,13 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transaction_type** | **string** | The type of network item swap.
-
-Possible values:
-
-* NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.
-
-* ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces. | [optional]
+**transaction_type** | **string** | The type of network item swap.<br><br>Possible values:<br><br>* NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.<br><br>* ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces. | [optional]
 **posted_date** | **string** | A date string in ISO 8601 format. | [optional]
 **net_co_transaction_id** | **string** | The identifier for the network item swap. | [optional]
 **swap_reason** | **string** | The reason for the network item swap. | [optional]

@@ -17,6 +17,7 @@ A PHP library for connecting to Amazon's [Selling Partner API](https://github.co
 
 * [`highsidelabs/laravel-spapi`](https://github.com/highsidelabs/laravel-spapi): An Laravel wrapper for this package that makes SP API integration in Laravel projects quick and easy.
 * [`highsidelabs/amazon-business-api`](https://github.com/highsidelabs/amazon-business-api): A PHP library for Amazon's [Business API](https://developer-docs.amazon.com/amazon-business/docs), with a near-identical interface to this package.
+* [`highsidelabs/walmart-api`](https://github.com/highsidelabs/walmart-api-php): A PHP library for Walmart's seller and supplier APIs, including the Marketplace, Drop Ship Vendor, Content Provider, and Warehouse Supplier APIs.
 
 ---
 
@@ -76,7 +77,7 @@ You need a few things to get started:
 * An AWS IAM user or role configured for use with the Selling Partner API
 * A Selling Partner API application
 
-If you're looking for more information on how to set those things up, check out [this blog post](https://jesseevers.com/selling-partner-api-access/). It provides a detailed walkthrough of the whole setup process.
+If you're looking for more information on how to set those things up, check out [this blog post](https://highsidelabs.co/blog/selling-partner-api-access/). It provides a detailed walkthrough of the whole setup process.
 
 
 ### Setup

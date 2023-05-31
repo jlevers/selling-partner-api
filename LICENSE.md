@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2022, Highside Labs
+Copyright (c) 2023, Highside Labs
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

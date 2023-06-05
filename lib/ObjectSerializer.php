@@ -16,6 +16,7 @@
 
 namespace SellingPartnerApi;
 
+use DateTime;
 use SellingPartnerApi\Model\ModelInterface;
 
 /**
@@ -27,7 +28,7 @@ use SellingPartnerApi\Model\ModelInterface;
 class ObjectSerializer
 {
     /** @var string */
-    private static $dateTimeFormat = \DateTime::ATOM;
+    private static $dateTimeFormat = DateTime::ATOM;
 
     /**
      * Change the date format
@@ -54,7 +55,7 @@ class ObjectSerializer
             return $data;
         }
 
-        if ($data instanceof \DateTime) {
+        if ($data instanceof DateTime) {
             return ($format === 'date') ? $data->format('Y-m-d') : $data->format(self::$dateTimeFormat);
         }
 
@@ -138,7 +139,7 @@ class ObjectSerializer
      * If it's a string, pass through unchanged. It will be url-encoded
      * later.
      *
-     * @param string[]|string|\DateTime $object an object to be serialized to a string
+     * @param string[]|string|DateTime $object an object to be serialized to a string
      *
      * @return string the serialized object
      */
@@ -194,13 +195,13 @@ class ObjectSerializer
      * If it's a datetime object, format it in ISO8601
      * If it's a boolean, convert it to "true" or "false".
      *
-     * @param string|bool|\DateTime $value the value of the parameter
+     * @param string|bool|DateTime $value the value of the parameter
      *
      * @return string the header string
      */
     public static function toString($value)
     {
-        if ($value instanceof \DateTime) { // datetime in ISO8601 format
+        if ($value instanceof DateTime) { // datetime in ISO8601 format
             return $value->format(self::$dateTimeFormat);
         } elseif (is_bool($value)) {
             return $value ? 'true' : 'false';
@@ -297,7 +298,7 @@ class ObjectSerializer
             return $data;
         }
 
-        if ($class === '\DateTime') {
+    if ($class === '\DateTime') {
             // Some API's return an invalid, empty string as a
             // date-time property. DateTime::__construct() will return
             // the current time for empty input which is probably not
@@ -306,13 +307,13 @@ class ObjectSerializer
             // this graceful.
             if (!empty($data)) {
                 try {
-                    return new \DateTime($data);
+                    return new DateTime($data);
                 } catch (\Exception $exception) {
                     // Some API's return a date-time with too high nanosecond
                     // precision for php's DateTime to handle. This conversion
                     // (string -> unix timestamp -> DateTime) is a workaround
                     // for the problem.
-                    return (new \DateTime())->setTimestamp(strtotime($data));
+                    return (new DateTime())->setTimestamp(strtotime($data));
                 }
             } else {
                 return null;

@@ -114,4 +114,28 @@ class Endpoint
 
         return constant("\SellingPartnerApi\Endpoint::$region");
     }
+
+    /**
+     * Checks if the given endpoint is valid. If the given endpoint is an array, checks
+     * the value of the `url` key. If it's a string, checks if it's a sandbox URL.
+     *
+     * @param array|string $endpoint The endpoint to check
+     * @return bool
+     */
+    public static function isSandbox($endpoint) {
+        $sandboxHosts = [
+            self::NA_SANDBOX['url'],
+            self::EU_SANDBOX['url'],
+            self::FE_SANDBOX['url'],
+        ];
+        if (is_array($endpoint)) {
+            return in_array($endpoint['url'], $sandboxHosts);
+        } else if (is_string($endpoint)) {
+            return in_array($endpoint, $sandboxHosts);
+        } else {
+            throw new InvalidArgumentException(
+                'Invalid endpoint type ' . gettype($endpoint) . '. Must be array or string.'
+            );
+        }
+    }
 }

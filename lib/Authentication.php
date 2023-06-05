@@ -195,7 +195,8 @@ class Authentication implements RequestSignerContract
                 $request = $request->withUri($newUri);
             }
 
-            if ($needRdt) {
+            // Sandbox requests don't require RDTs
+            if ($needRdt && !Endpoint::isSandbox($request->getUri()->getHost())) {
                 $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod(), $dataElements);
             }
         }
@@ -490,6 +491,6 @@ class Authentication implements RequestSignerContract
      */
     public function formattedRequestTime(?bool $withTime = true): ?string
     {
-        return $this->requestSigner->formattedRequestTime($withTime);
+        return $this->authorizationSigner->formattedRequestTime($withTime);
     }
 }

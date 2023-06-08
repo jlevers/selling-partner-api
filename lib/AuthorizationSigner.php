@@ -2,7 +2,9 @@
 
 namespace SellingPartnerApi;
 
-use GuzzleHttp\Psr7\Request;
+use DateTime;
+use DateTimeZone;
+use Psr\Http\Message\RequestInterface;
 use SellingPartnerApi\Contract\AuthorizationSignerContract;
 
 class AuthorizationSigner implements AuthorizationSignerContract
@@ -21,6 +23,11 @@ class AuthorizationSigner implements AuthorizationSignerContract
     private $endpoint;
 
     /**
+     * @var RequestInterface
+     */
+    private $request;
+
+    /**
      * @var \DateTime
      */
     private $requestTime;
@@ -30,26 +37,29 @@ class AuthorizationSigner implements AuthorizationSignerContract
         $this->endpoint = $endpoint;
     }
 
-    public function sign(Request $request, Credentials $credentials): Request
+    public function sign(RequestInterface $request, Credentials $credentials): RequestInterface
     {
-        $canonicalRequest = $this->createCanonicalRequest($request);
+        $this->request = $request;
+
+        $canonicalRequest = $this->createCanonicalRequest();
         $signingString = $this->createSigningString($canonicalRequest);
         $signature = $this->createSignature($signingString, $credentials->getSecretKey());
 
-        [, $signedHeaders] = $this->createCanonicalizedHeaders($request->getHeaders());
+        [, $signedHeaders] = $this->createCanonicalizedHeaders($this->request->getHeaders());
         $credentialScope = $this->createCredentialScope();
         $credsForHeader = "Credential={$credentials->getAccessKeyId()}/{$credentialScope}";
         $headersForHeader = "SignedHeaders={$signedHeaders}";
         $sigForHeader = "Signature={$signature}";
         $authHeaderVal = static::SIGNING_ALGO . ' ' . implode(', ', [$credsForHeader, $headersForHeader, $sigForHeader]);
 
-        return $request
+        return $this->request
             ->withHeader('Authorization', $authHeaderVal)
             ->withHeader('x-amz-date', $this->formattedRequestTime());
     }
 
-    private function createCanonicalizedHeaders(array $headers): array
+    private function createCanonicalizedHeaders(): array
     {
+        $headers = $this->request->getHeaders();
         // Convert all header names to lowercase
         foreach ($headers as $key => $values) {
             $headers[strtolower($key)] = $values;
@@ -80,8 +90,9 @@ class AuthorizationSigner implements AuthorizationSignerContract
         ];
     }
 
-    private function createCanonicalizedPath(string $path): string
+    private function createCanonicalizedPath(): string
     {
+        $path = $this->request->getUri()->getPath();
         // Remove leading slash
         $trimmed = ltrim($path, '/');
         // URL encode an already URL-encoded path
@@ -91,8 +102,9 @@ class AuthorizationSigner implements AuthorizationSignerContract
         return '/' . str_replace('%2F', '/', $doubleEncoded);
     }
 
-    private function createCanonicalizedQuery(string $query): string
+    private function createCanonicalizedQuery(): string
     {
+        $query = $this->request->getUri()->getQuery();
         if (strlen($query) === 0) {
             return '';
         }
@@ -144,14 +156,13 @@ class AuthorizationSigner implements AuthorizationSignerContract
         return $canonicalized;
     }
 
-    private function createCanonicalRequest(Request $request): string
+    private function createCanonicalRequest(): string
     {
-        $method = $request->getMethod();
-        $uri = $request->getUri();
-        $path = $this->createCanonicalizedPath($uri->getPath());
-        $query = $this->createCanonicalizedQuery($uri->getQuery());
-        [$headers, $headerNames] = $this->createCanonicalizedHeaders($request->getHeaders());
-        $hashedPayload = hash('sha256', $request->getBody());
+        $method = $this->request->getMethod();
+        $path = $this->createCanonicalizedPath();
+        $query = $this->createCanonicalizedQuery();
+        [$headers, $headerNames] = $this->createCanonicalizedHeaders();
+        $hashedPayload = hash('sha256', $this->request->getBody());
 
         $canonicalRequest = "{$method}\n{$path}\n{$query}\n{$headers}\n{$headerNames}\n{$hashedPayload}";
 
@@ -170,22 +181,27 @@ class AuthorizationSigner implements AuthorizationSignerContract
     {
         $terminator = static::TERMINATION_STR;
 
-        return "{$this->formattedRequestTime(false)}/{$this->endpoint['region']}/" . static::SERVICE_NAME . "/{$terminator}";
+        return "{$this->formattedRequestTime(false)}/{$this->endpoint['region']}/" . $this->getServiceName() . "/{$terminator}";
     }
 
     private function createSignature(string $signingString, string $secretKey): string
     {
         $kDate = hash_hmac('sha256', $this->formattedRequestTime(false), "AWS4{$secretKey}", true);
         $kRegion = hash_hmac('sha256', $this->endpoint['region'], $kDate, true);
-        $kService = hash_hmac('sha256', self::SERVICE_NAME, $kRegion, true);
+        $kService = hash_hmac('sha256', $this->getServiceName(), $kRegion, true);
         $kSigning = hash_hmac('sha256', static::TERMINATION_STR, $kService, true);
 
         return hash_hmac('sha256', $signingString, $kSigning);
     }
 
-    public function setRequestTime(?\DateTime $datetime = null): void
+    private function getServiceName(): string
     {
-        $this->requestTime = $datetime ?? new \DateTime('now', new \DateTimeZone('UTC'));
+        return stripos($this->request->getUri()->getHost(), 'sts.') !== false ? 'sts' : static::SERVICE_NAME;
+    }
+
+    public function setRequestTime(?DateTime $datetime = null): void
+    {
+        $this->requestTime = $datetime ?? new DateTime('now', new DateTimeZone('UTC'));
     }
 
     /**

@@ -2,14 +2,14 @@
 
 namespace SellingPartnerApi\Contract;
 
-use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\RequestInterface;
 
 interface RequestSignerContract
 {
     public function signRequest(
-        Request $request,
+        RequestInterface $request,
         ?string $scope = null,
         ?string $restrictedPath = null,
         ?string $operation = null
-    ): Request;
+    ): RequestInterface;
 }

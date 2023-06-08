@@ -2,14 +2,15 @@
 
 namespace SellingPartnerApi\Contract;
 
-use GuzzleHttp\Psr7\Request;
+use DateTime;
+use Psr\Http\Message\RequestInterface;
 use SellingPartnerApi\Credentials;
 
 interface AuthorizationSignerContract
 {
-    public function sign(Request $request, Credentials $credentials): Request;
+    public function sign(RequestInterface $request, Credentials $credentials): RequestInterface;
 
-    public function setRequestTime(?\DateTime $datetime = null): void;
+    public function setRequestTime(?DateTime $datetime = null): void;
 
     public function formattedRequestTime(?bool $withTime = true): ?string;
 }

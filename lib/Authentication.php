@@ -2,9 +2,14 @@
 
 namespace SellingPartnerApi;
 
-use Aws\Sts\StsClient;
+use DateInterval;
+use DateTime;
+use DateTimeZone;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7;
+use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\RequestInterface;
 use RuntimeException;
 use SellingPartnerApi\Api\TokensV20210301Api as TokensApi;
 use SellingPartnerApi\Contract\AuthorizationSignerContract;
@@ -116,8 +121,8 @@ class Authentication implements RequestSignerContract
 
         $body = json_decode($res->getBody(), true);
         $accessToken = $body["access_token"];
-        $expirationDate = new \DateTime("now", new \DateTimeZone("UTC"));
-        $expirationDate->add(new \DateInterval("PT" . strval($body["expires_in"]) . "S"));
+        $expirationDate = new DateTime("now", new DateTimeZone("UTC"));
+        $expirationDate->add(new DateInterval("PT" . strval($body["expires_in"]) . "S"));
         return [$accessToken, $expirationDate->getTimestamp()];
     }
 
@@ -140,14 +145,18 @@ class Authentication implements RequestSignerContract
     /**
      * Signs the given request using Amazon Signature V4.
      *
-     * @param \Guzzle\Psr7\Request $request The request to sign
+     * @param \Psr\Http\Message\RequestInterface $request The request to sign
      * @param ?string $scope If the request is to a grantless operation endpoint, the scope for the grantless token
      * @param ?string $restrictedPath The absolute (generic) path for the endpoint that the request is using if it's an endpoint that requires
      *      a restricted data token
-     * @return \Guzzle\Psr7\Request The signed request
+     * @return \Psr\Http\Message\RequestInterface The signed request
      */
-    public function signRequest(Psr7\Request $request, ?string $scope = null, ?string $restrictedPath = null, ?string $operation = null): Psr7\Request
-    {
+    public function signRequest(
+        RequestInterface $request,
+        ?string $scope = null,
+        ?string $restrictedPath = null,
+        ?string $operation = null
+    ): RequestInterface {
         // This allows us to know if we're signing a grantless operation without passing $scope all over the place
         $this->signingScope = $scope;
 
@@ -202,8 +211,11 @@ class Authentication implements RequestSignerContract
         }
 
         $accessToken = $relevantCreds->getSecurityToken();
+        $isStsRequest = stripos($request->getUri()->getHost(), 'sts.') !== false;
 
-        if ($this->roleArn !== null) {
+        // Don't try to get role credentials if we're using this method to sign an STS request, because
+        // that will cause an infinite loop
+        if ($this->roleArn !== null && !$isStsRequest) {
             $relevantCreds = $this->getRoleCredentials();
         }
 
@@ -211,12 +223,11 @@ class Authentication implements RequestSignerContract
         $signedRequest = $this->authorizationSigner->sign($request, $relevantCreds)
             ->withHeader('x-amz-access-token', $accessToken);
 
-        if ($this->roleArn) {
+        if ($this->roleArn && !$isStsRequest) {
             $signedRequest = $signedRequest->withHeader("x-amz-security-token", $relevantCreds->getSecurityToken());
         }
 
         $this->signingScope = null;
-
         return $signedRequest;
     }
 
@@ -254,28 +265,31 @@ class Authentication implements RequestSignerContract
      */
     public function getRoleCredentials(): Credentials
     {
-        $originalCreds = $this->signingScope ? $this->getGrantlessAwsCredentials() : $this->getAwsCredentials();
         if ($this->needNewCredentials($this->roleCredentials)) {
-            $client = new StsClient([
-                'sts_regional_endpoints' => 'regional',
-                'region' => $this->endpoint['region'],
-                'version' => '2011-06-15',
-                'credentials' => [
-                    'key' => $originalCreds->getAccessKeyId(),
-                    'secret' => $originalCreds->getSecretKey(),
-                ],
-            ]);
             $assumeTime = time();
-            $assumed = $client->AssumeRole([
+            $client = new Client();
+            $query = Psr7\Query::build([
+                'Action' => 'AssumeRole',
                 'RoleArn' => $this->roleArn,
                 'RoleSessionName' => "spapi-assumerole-{$assumeTime}",
+                'Version' => '2011-06-15',
             ]);
-            $credentials = $assumed['Credentials'];
+            $request = new Request(
+                'POST',
+                "https://sts.{$this->endpoint['region']}.amazonaws.com?{$query}",
+                ['Accept' => 'application/json']
+            );
+            $signedRequest = $this->signRequest($request);
+
+            $assumed = $client->send($signedRequest);
+            $assumedJson = json_decode($assumed->getBody(), true);
+            $credentials = $assumedJson['AssumeRoleResponse']['AssumeRoleResult']['Credentials'];
+
             $this->roleCredentials = new Credentials(
                 $credentials['AccessKeyId'],
                 $credentials['SecretAccessKey'],
                 $credentials['SessionToken'],
-                $credentials['Expiration']->getTimestamp()
+                $credentials['Expiration'],
             );
         }
 

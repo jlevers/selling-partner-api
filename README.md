@@ -429,12 +429,12 @@ You may need to do custom operations while signing the API request. You can crea
 
 ```php
 // CustomAuthorizationSigner.php
-use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\RequestInterface;
 use SellingPartnerApi\Contract\AuthorizationSignerContract;
 
 class CustomAuthorizationSigner implements AuthorizationSignerContract
 {
-    public function sign(Request $request, Credentials $credentials): Request
+    public function sign(RequestInterface $request, Credentials $credentials): RequestInterface
     {
         // Calculate request signature and request date.
         
@@ -478,17 +478,17 @@ You may also need to customize the entire request signing process – for instan
 
 ```php
 // RemoteRequestSigner.php
-use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\RequestInterface;
 use SellingPartnerApi\Contract\RequestSignerContract;
 
 class RemoteRequestSigner implements RequestSignerContract
 {
     public function signRequest(
-        Request $request,
+        RequestInterface $request,
         ?string $scope = null,
         ?string $restrictedPath = null,
         ?string $operation = null
-    ): Request {
+    ): RequestInterface {
         // Sign request by sending HTTP call
         // to external/separate service instance.
         

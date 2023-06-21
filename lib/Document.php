@@ -95,7 +95,10 @@ class Document
      */
     public function download(?bool $postProcess = true, ?string $encoding = null): string {
         try {
-            $response = $this->client->request('GET', $this->url, ['stream' => true]);
+            $response = $this->client->request('GET', $this->url, [
+                'stream' => true,
+                'decode_content' => false,
+            ]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
             if ($response->getStatusCode() === 404) {
@@ -209,7 +212,10 @@ class Document
      */
     public function downloadStream($output = null): StreamInterface {
         try {
-            $response = $this->client->request('GET', $this->url, ['stream' => true]);
+            $response = $this->client->request('GET', $this->url, [
+                'stream' => true,
+                'decode_content' => false,
+            ]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
             if ($response->getStatusCode() === 404) {

@@ -10,6 +10,7 @@
 
 namespace SellingPartnerApi\Model;
 
+use InvalidArgumentException;
 use SellingPartnerApi\ObjectSerializer;
 
 /**
@@ -255,6 +256,7 @@ abstract class BaseModel implements ModelInterface
      * to a getter call.
      *
      * @param string $propertyName
+     * @throws InvalidArgumentException
      * @return mixed
      */
     public function __get($propertyName)
@@ -264,6 +266,11 @@ abstract class BaseModel implements ModelInterface
         // than "Call to undefined method getfoo()").
         $ucProp = ucfirst($propertyName);
         $getter = "get$ucProp";
+
+        if (!method_exists($this, $getter)) {
+            throw new InvalidArgumentException("Property \"$propertyName\" does not exist on class \"" . static::class . "\"");
+        }
+
         return $this->$getter();
     }
 
@@ -273,12 +280,18 @@ abstract class BaseModel implements ModelInterface
      *
      * @param string $propertyName
      * @param mixed $propertyValue
+     * @throws InvalidArgumentException
      * @return static
      */
     public function __set($propertyName, $propertyValue)
     {
         $ucProp = ucfirst($propertyName);
         $setter = "set$ucProp";
+
+        if (!method_exists($this, $setter)) {
+            throw new InvalidArgumentException("Property \"$propertyName\" does not exist on class \"" . static::class . "\"");
+        }
+
         $this->$setter($propertyValue);
         return $this;
     }

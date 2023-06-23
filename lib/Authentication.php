@@ -336,7 +336,12 @@ class Authentication implements RequestSignerContract
         $body = new Tokens\CreateRestrictedDataTokenRequest([
             "restricted_resources" => [$restrictedResource],
         ]);
-        $rdtData = $tokensApi->createRestrictedDataToken($body);
+
+        try {
+            $rdtData = $tokensApi->createRestrictedDataToken($body);
+        } catch (ApiException $e) {
+            throw new RuntimeException("Failed to create restricted data token: {$e->getMessage()}", $e->getCode());
+        }
 
         $rdtCreds = new Credentials(
             $this->awsAccessKeyId,

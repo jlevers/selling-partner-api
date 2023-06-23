@@ -51,7 +51,5 @@ Name | Type | Description | Notes
 **automated_shipping_settings** | [**\SellingPartnerApi\Model\OrdersV0\AutomatedShippingSettings**](AutomatedShippingSettings.md) |  | [optional]
 **has_regulated_items** | **bool** | Whether the order contains regulated items which may require additional approval steps before being fulfilled. | [optional]
 **electronic_invoice_status** | [**\SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus**](ElectronicInvoiceStatus.md) |  | [optional]
-**item_approval_types** | [**\SellingPartnerApi\Model\OrdersV0\ItemApprovalType[]**](ItemApprovalType.md) | Set of approval types which applies to at least one order item in the order. | [optional]
-**item_approval_status** | [**\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[]**](ItemApprovalStatus.md) | Subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals. | [optional]
 
 [[OrdersV0 Models]](../) [[API list]](../../Api) [[README]](../../../README.md)

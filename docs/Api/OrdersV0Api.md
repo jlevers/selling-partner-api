@@ -7,11 +7,9 @@ Method | HTTP request | Description
 [**getOrderAddress()**](OrdersV0Api.md#getOrderAddress) | **GET** /orders/v0/orders/{orderId}/address | 
 [**getOrderBuyerInfo()**](OrdersV0Api.md#getOrderBuyerInfo) | **GET** /orders/v0/orders/{orderId}/buyerInfo | 
 [**getOrderItems()**](OrdersV0Api.md#getOrderItems) | **GET** /orders/v0/orders/{orderId}/orderItems | 
-[**getOrderItemsApprovals()**](OrdersV0Api.md#getOrderItemsApprovals) | **GET** /orders/v0/orders/{orderId}/approvals | 
 [**getOrderItemsBuyerInfo()**](OrdersV0Api.md#getOrderItemsBuyerInfo) | **GET** /orders/v0/orders/{orderId}/orderItems/buyerInfo | 
 [**getOrderRegulatedInfo()**](OrdersV0Api.md#getOrderRegulatedInfo) | **GET** /orders/v0/orders/{orderId}/regulatedInfo | 
 [**getOrders()**](OrdersV0Api.md#getOrders) | **GET** /orders/v0/orders | 
-[**updateOrderItemsApprovals()**](OrdersV0Api.md#updateOrderItemsApprovals) | **POST** /orders/v0/orders/{orderId}/approvals | 
 [**updateShipmentStatus()**](OrdersV0Api.md#updateShipmentStatus) | **POST** /orders/v0/orders/{orderId}/shipment | 
 [**updateVerificationStatus()**](OrdersV0Api.md#updateVerificationStatus) | **PATCH** /orders/v0/orders/{orderId}/regulatedInfo | 
 
@@ -345,77 +343,6 @@ Name | Type | Description  | Notes
 [[OrdersV0 Model list]](../Model/OrdersV0)
 [[README]](../../README.md)
 
-## `getOrderItemsApprovals()`
-
-```php
-getOrderItemsApprovals($order_id, $next_token, $item_approval_types, $item_approval_status): \SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse
-```
-
-
-
-Returns detailed order items approvals information for the order specified. If NextToken is provided, it's used to retrieve the next page of order items approvals.
-
-**Usage Plans:**
-
-| Plan type | Rate (requests per second) | Burst |
-| ---- | ---- | ---- |
-|Default| 0.5 | 30 |
-|Selling partner specific| Variable | Variable |
-
-The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// See README for more information on the Configuration object's options
-$config = new SellingPartnerApi\Configuration([
-    "lwaClientId" => "<LWA client ID>",
-    "lwaClientSecret" => "<LWA client secret>",
-    "lwaRefreshToken" => "<LWA refresh token>",
-    "awsAccessKeyId" => "<AWS access key ID>",
-    "awsSecretAccessKey" => "<AWS secret access key>",
-    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
-]);
-
-$apiInstance = new SellingPartnerApi\Api\OrdersV0Api($config);
-$order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format, e.g. 933-1671587-0818628.
-$next_token = 'next_token_example'; // string | A string token returned in the response of your previous request.
-$item_approval_types = array(new \SellingPartnerApi\Model\OrdersV0\\SellingPartnerApi\Model\OrdersV0\ItemApprovalType()); // \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] | When set, only return approvals for items which approval type is contained in the specified approval types.
-$item_approval_status = array(new \SellingPartnerApi\Model\OrdersV0\\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus()); // \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] | When set, only return approvals that contain items which approval status is contained in the specified approval status.
-
-try {
-    $result = $apiInstance->getOrderItemsApprovals($order_id, $next_token, $item_approval_types, $item_approval_status);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrdersV0Api->getOrderItemsApprovals: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_id** | **string**| An Amazon-defined order identifier, in 3-7-7 format, e.g. 933-1671587-0818628. |
- **next_token** | **string**| A string token returned in the response of your previous request. | [optional]
- **item_approval_types** | [**\SellingPartnerApi\Model\OrdersV0\ItemApprovalType[]**](../Model/OrdersV0/\SellingPartnerApi\Model\OrdersV0\ItemApprovalType.md)| When set, only return approvals for items which approval type is contained in the specified approval types. | [optional]
- **item_approval_status** | [**\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[]**](../Model/OrdersV0/\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus.md)| When set, only return approvals that contain items which approval status is contained in the specified approval status. | [optional]
-
-### Return type
-
-[**\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse**](../Model/OrdersV0/GetOrderApprovalsResponse.md)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Top]](#) [[API list]](../)
-[[OrdersV0 Model list]](../Model/OrdersV0)
-[[README]](../../README.md)
-
 ## `getOrderItemsBuyerInfo()`
 
 ```php
@@ -549,7 +476,7 @@ Name | Type | Description  | Notes
 ## `getOrders()`
 
 ```php
-getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $item_approval_types, $item_approval_status, $data_elements): \SellingPartnerApi\Model\OrdersV0\GetOrdersResponse
+getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements): \SellingPartnerApi\Model\OrdersV0\GetOrdersResponse
 ```
 
 
@@ -631,12 +558,10 @@ $amazon_order_ids = array('amazon_order_ids_example'); // string[] | A list of A
 $actual_fulfillment_supply_source_id = 'actual_fulfillment_supply_source_id_example'; // string | Denotes the recommended sourceId where the order should be fulfilled from.
 $is_ispu = True; // bool | When true, this order is marked to be picked up from a store rather than delivered.
 $store_chain_store_id = 'store_chain_store_id_example'; // string | The store chain store identifier. Linked to a specific store in a store chain.
-$item_approval_types = array(new \SellingPartnerApi\Model\OrdersV0\\SellingPartnerApi\Model\OrdersV0\ItemApprovalType()); // \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] | When set, only return orders that contain items which approval type is contained in the specified approval types.
-$item_approval_status = array(new \SellingPartnerApi\Model\OrdersV0\\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus()); // \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] | When set, only return orders that contain items which approval status is contained in the specified approval status.
 $data_elements = array('data_elements_example'); // string[] | An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\")
 
 try {
-    $result = $apiInstance->getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $item_approval_types, $item_approval_status, $data_elements);
+    $result = $apiInstance->getOrders($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrdersV0Api->getOrders: ', $e->getMessage(), PHP_EOL;
@@ -665,8 +590,6 @@ Name | Type | Description  | Notes
  **actual_fulfillment_supply_source_id** | **string**| Denotes the recommended sourceId where the order should be fulfilled from. | [optional]
  **is_ispu** | **bool**| When true, this order is marked to be picked up from a store rather than delivered. | [optional]
  **store_chain_store_id** | **string**| The store chain store identifier. Linked to a specific store in a store chain. | [optional]
- **item_approval_types** | [**\SellingPartnerApi\Model\OrdersV0\ItemApprovalType[]**](../Model/OrdersV0/\SellingPartnerApi\Model\OrdersV0\ItemApprovalType.md)| When set, only return orders that contain items which approval type is contained in the specified approval types. | [optional]
- **item_approval_status** | [**\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[]**](../Model/OrdersV0/\SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus.md)| When set, only return orders that contain items which approval status is contained in the specified approval status. | [optional]
  **data_elements** | [**string[]**](../Model/OrdersV0/string.md)| An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\") | [optional]
 
 ### Return type
@@ -676,71 +599,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Top]](#) [[API list]](../)
-[[OrdersV0 Model list]](../Model/OrdersV0)
-[[README]](../../README.md)
-
-## `updateOrderItemsApprovals()`
-
-```php
-updateOrderItemsApprovals($order_id, $payload)
-```
-
-
-
-Update the order items approvals for an order that you specify.
-
-**Usage Plan:**
-
-| Rate (requests per second) | Burst |
-| ---- | ---- |
-| 5 | 15 |
-
-The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values then those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// See README for more information on the Configuration object's options
-$config = new SellingPartnerApi\Configuration([
-    "lwaClientId" => "<LWA client ID>",
-    "lwaClientSecret" => "<LWA client secret>",
-    "lwaRefreshToken" => "<LWA refresh token>",
-    "awsAccessKeyId" => "<AWS access key ID>",
-    "awsSecretAccessKey" => "<AWS secret access key>",
-    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
-]);
-
-$apiInstance = new SellingPartnerApi\Api\OrdersV0Api($config);
-$order_id = 'order_id_example'; // string | An Amazon-defined order identifier, in 3-7-7 format.
-$payload = new \SellingPartnerApi\Model\OrdersV0\UpdateOrderApprovalsRequest(); // \SellingPartnerApi\Model\OrdersV0\UpdateOrderApprovalsRequest | The request body for the updateOrderItemsApprovals operation.
-
-try {
-    $apiInstance->updateOrderItemsApprovals($order_id, $payload);
-} catch (Exception $e) {
-    echo 'Exception when calling OrdersV0Api->updateOrderItemsApprovals: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_id** | **string**| An Amazon-defined order identifier, in 3-7-7 format. |
- **payload** | [**\SellingPartnerApi\Model\OrdersV0\UpdateOrderApprovalsRequest**](../Model/OrdersV0/UpdateOrderApprovalsRequest.md)| The request body for the updateOrderItemsApprovals operation. |
-
-### Return type
-
-void (empty response body)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Top]](#) [[API list]](../)

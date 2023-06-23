@@ -10,7 +10,7 @@
 /**
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API only supports orders that are less than two years old. Orders more than two years old will not show in the API response.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -86,6 +86,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    'null',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -392,6 +397,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    '\SellingPartnerApi\Model\OrdersV0\GetOrderResponse',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -770,6 +780,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    '\SellingPartnerApi\Model\OrdersV0\GetOrderAddressResponse',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -1137,6 +1152,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    '\SellingPartnerApi\Model\OrdersV0\GetOrderBuyerInfoResponse',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -1508,6 +1528,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    '\SellingPartnerApi\Model\OrdersV0\GetOrderItemsResponse',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -1850,414 +1875,6 @@ class OrdersV0Api extends BaseApi
     }
 
     /**
-     * Operation getOrderItemsApprovals
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format, e.g. 933-1671587-0818628. (required)
-     * @param  string $next_token A string token returned in the response of your previous request. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return approvals for items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return approvals that contain items which approval status is contained in the specified approval status. (optional)
-     *
-     * @throws \SellingPartnerApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse
-     */
-    public function getOrderItemsApprovals($order_id, $next_token = null, $item_approval_types = null, $item_approval_status = null)
-    {
-        $response = $this->getOrderItemsApprovalsWithHttpInfo($order_id, $next_token, $item_approval_types, $item_approval_status);
-        return $response;
-    }
-
-    /**
-     * Operation getOrderItemsApprovalsWithHttpInfo
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format, e.g. 933-1671587-0818628. (required)
-     * @param  string $next_token A string token returned in the response of your previous request. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return approvals for items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return approvals that contain items which approval status is contained in the specified approval status. (optional)
-     *
-     * @throws \SellingPartnerApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getOrderItemsApprovalsWithHttpInfo($order_id, $next_token = null, $item_approval_types = null, $item_approval_status = null)
-    {
-        $request = $this->getOrderItemsApprovalsRequest($order_id, $next_token, $item_approval_types, $item_approval_status);
-        $signedRequest = $this->config->signRequest(
-            $request
-        );
-
-        $this->writeDebug($signedRequest);
-        $this->writeDebug((string) $signedRequest->getBody());
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($signedRequest, $options);
-                $this->writeDebug($response);
-                $this->writeDebug((string) $response->getBody());
-            } catch (RequestException $e) {
-                $hasResponse = !empty($e->hasResponse());
-                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
-                $this->writeDebug($e->getResponse());
-                $this->writeDebug($body);
-                throw new ApiException(
-                    "[{$e->getCode()}] {$body}",
-                    $e->getCode(),
-                    $hasResponse ? $e->getResponse()->getHeaders() : [],
-                    $body
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $signedRequest->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()->getContents()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse', $response->getHeaders());
-                case 400:
-                    if ('\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse', $response->getHeaders());
-                case 403:
-                    if ('\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse', $response->getHeaders());
-                case 404:
-                    if ('\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse', $response->getHeaders());
-                case 429:
-                    if ('\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse', $response->getHeaders());
-                case 500:
-                    if ('\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse', $response->getHeaders());
-                case 503:
-                    if ('\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse', $response->getHeaders());
-            }
-
-            $returnType = '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            $this->writeDebug($e);
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getOrderItemsApprovalsAsync
-     *
-     * 
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format, e.g. 933-1671587-0818628. (required)
-     * @param  string $next_token A string token returned in the response of your previous request. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return approvals for items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return approvals that contain items which approval status is contained in the specified approval status. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getOrderItemsApprovalsAsync($order_id, $next_token = null, $item_approval_types = null, $item_approval_status = null)
-    {
-        return $this->getOrderItemsApprovalsAsyncWithHttpInfo($order_id, $next_token, $item_approval_types, $item_approval_status);;
-    }
-
-    /**
-     * Operation getOrderItemsApprovalsAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format, e.g. 933-1671587-0818628. (required)
-     * @param  string $next_token A string token returned in the response of your previous request. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return approvals for items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return approvals that contain items which approval status is contained in the specified approval status. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getOrderItemsApprovalsAsyncWithHttpInfo($order_id, $next_token = null, $item_approval_types = null, $item_approval_status = null)
-    {
-        $returnType = '\SellingPartnerApi\Model\OrdersV0\GetOrderApprovalsResponse';
-        $request = $this->getOrderItemsApprovalsRequest($order_id, $next_token, $item_approval_types, $item_approval_status);
-        $signedRequest = $this->config->signRequest(
-            $request
-        );
-
-        $this->writeDebug($signedRequest);
-        $this->writeDebug((string) $signedRequest->getBody());
-
-        return $this->client
-            ->sendAsync($signedRequest, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $this->writeDebug($response);
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $hasResponse = !empty($response);
-                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
-                    $this->writeDebug($response);
-                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $hasResponse ? $response->getHeaders() : [],
-                        $body
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getOrderItemsApprovals'
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format, e.g. 933-1671587-0818628. (required)
-     * @param  string $next_token A string token returned in the response of your previous request. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return approvals for items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return approvals that contain items which approval status is contained in the specified approval status. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getOrderItemsApprovalsRequest($order_id, $next_token = null, $item_approval_types = null, $item_approval_status = null)
-    {
-        // verify the required parameter 'order_id' is set
-        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $order_id when calling getOrderItemsApprovals'
-            );
-        }
-        if ($item_approval_types !== null && count($item_approval_types) > 1) {
-            throw new \InvalidArgumentException('invalid value for "$item_approval_types" when calling OrdersV0Api.getOrderItemsApprovals, number of items must be less than or equal to 1.');
-        }
-
-        if ($item_approval_status !== null && count($item_approval_status) > 6) {
-            throw new \InvalidArgumentException('invalid value for "$item_approval_status" when calling OrdersV0Api.getOrderItemsApprovals, number of items must be less than or equal to 6.');
-        }
-
-
-        $resourcePath = '/orders/v0/orders/{orderId}/approvals';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($next_token)) {
-            $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
-        }
-        if ($next_token !== null) {
-            $queryParams['NextToken'] = $next_token;
-        }
-
-        // query params
-        if (is_array($item_approval_types)) {
-            $item_approval_types = ObjectSerializer::serializeCollection($item_approval_types, 'form', true);
-        }
-        if ($item_approval_types !== null) {
-            $queryParams['ItemApprovalTypes'] = $item_approval_types;
-        }
-
-        // query params
-        if (is_array($item_approval_status)) {
-            $item_approval_status = ObjectSerializer::serializeCollection($item_approval_status, 'form', true);
-        }
-        if ($item_approval_status !== null) {
-            $queryParams['ItemApprovalStatus'] = $item_approval_status;
-        }
-
-        // path params
-        if ($order_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
-                ObjectSerializer::toPathValue($order_id),
-                $resourcePath
-            );
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation getOrderItemsBuyerInfo
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
@@ -2307,6 +1924,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    '\SellingPartnerApi\Model\OrdersV0\GetOrderItemsBuyerInfoResponse',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -2682,6 +2304,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    '\SellingPartnerApi\Model\OrdersV0\GetOrderRegulatedInfoResponse',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -3051,17 +2678,15 @@ class OrdersV0Api extends BaseApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
      * @param  string[] $data_elements An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\") (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\OrdersV0\GetOrdersResponse
      */
-    public function getOrders($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $item_approval_types = null, $item_approval_status = null, $data_elements = null)
+    public function getOrders($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $data_elements = null)
     {
-        $response = $this->getOrdersWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $item_approval_types, $item_approval_status, $data_elements);
+        $response = $this->getOrdersWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);
         return $response;
     }
 
@@ -3118,17 +2743,15 @@ class OrdersV0Api extends BaseApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
      * @param  string[] $data_elements An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\") (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\OrdersV0\GetOrdersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrdersWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $item_approval_types = null, $item_approval_status = null, $data_elements = null)
+    public function getOrdersWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $data_elements = null)
     {
-        $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $item_approval_types, $item_approval_status, $data_elements);
+        $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);
         $signedRequest = $this->config->signRequest(
             $request,
             null,
@@ -3150,6 +2773,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    '\SellingPartnerApi\Model\OrdersV0\GetOrdersResponse',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -3362,16 +2990,14 @@ class OrdersV0Api extends BaseApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
      * @param  string[] $data_elements An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\") (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrdersAsync($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $item_approval_types = null, $item_approval_status = null, $data_elements = null)
+    public function getOrdersAsync($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $data_elements = null)
     {
-        return $this->getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $item_approval_types, $item_approval_status, $data_elements);;
+        return $this->getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);;
     }
 
     /**
@@ -3429,17 +3055,15 @@ class OrdersV0Api extends BaseApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
      * @param  string[] $data_elements An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\") (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $item_approval_types = null, $item_approval_status = null, $data_elements = null)
+    public function getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $data_elements = null)
     {
         $returnType = '\SellingPartnerApi\Model\OrdersV0\GetOrdersResponse';
-        $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $item_approval_types, $item_approval_status, $data_elements);
+        $request = $this->getOrdersRequest($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);
         $signedRequest = $this->config->signRequest(
             $request,
             null,
@@ -3537,14 +3161,12 @@ class OrdersV0Api extends BaseApi
      * @param  string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param  bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param  string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
-     * @param  \SellingPartnerApi\Model\OrdersV0\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
      * @param  string[] $data_elements An array of restricted order data elements to retrieve (valid array elements are \"buyerInfo\" and \"shippingAddress\") (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrdersRequest($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $item_approval_types = null, $item_approval_status = null, $data_elements = null)
+    public function getOrdersRequest($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $data_elements = null)
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
@@ -3558,14 +3180,6 @@ class OrdersV0Api extends BaseApi
 
         if ($amazon_order_ids !== null && count($amazon_order_ids) > 50) {
             throw new \InvalidArgumentException('invalid value for "$amazon_order_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
-        }
-
-        if ($item_approval_types !== null && count($item_approval_types) > 1) {
-            throw new \InvalidArgumentException('invalid value for "$item_approval_types" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 1.');
-        }
-
-        if ($item_approval_status !== null && count($item_approval_status) > 6) {
-            throw new \InvalidArgumentException('invalid value for "$item_approval_status" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 6.');
         }
 
 
@@ -3721,22 +3335,6 @@ class OrdersV0Api extends BaseApi
         }
 
         // query params
-        if (is_array($item_approval_types)) {
-            $item_approval_types = ObjectSerializer::serializeCollection($item_approval_types, 'form', true);
-        }
-        if ($item_approval_types !== null) {
-            $queryParams['ItemApprovalTypes'] = $item_approval_types;
-        }
-
-        // query params
-        if (is_array($item_approval_status)) {
-            $item_approval_status = ObjectSerializer::serializeCollection($item_approval_status, 'form', true);
-        }
-        if ($item_approval_status !== null) {
-            $queryParams['ItemApprovalStatus'] = $item_approval_status;
-        }
-
-        // query params
         if (is_array($data_elements)) {
             $data_elements = ObjectSerializer::serializeCollection($data_elements, 'form', true);
         }
@@ -3801,316 +3399,6 @@ class OrdersV0Api extends BaseApi
     }
 
     /**
-     * Operation updateOrderItemsApprovals
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  \SellingPartnerApi\Model\OrdersV0\UpdateOrderApprovalsRequest $payload The request body for the updateOrderItemsApprovals operation. (required)
-     *
-     * @throws \SellingPartnerApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function updateOrderItemsApprovals($order_id, $payload)
-    {
-        $this->updateOrderItemsApprovalsWithHttpInfo($order_id, $payload);
-    }
-
-    /**
-     * Operation updateOrderItemsApprovalsWithHttpInfo
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  \SellingPartnerApi\Model\OrdersV0\UpdateOrderApprovalsRequest $payload The request body for the updateOrderItemsApprovals operation. (required)
-     *
-     * @throws \SellingPartnerApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateOrderItemsApprovalsWithHttpInfo($order_id, $payload)
-    {
-        $request = $this->updateOrderItemsApprovalsRequest($order_id, $payload);
-        $signedRequest = $this->config->signRequest(
-            $request
-        );
-
-        $this->writeDebug($signedRequest);
-        $this->writeDebug((string) $signedRequest->getBody());
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($signedRequest, $options);
-                $this->writeDebug($response);
-                $this->writeDebug((string) $response->getBody());
-            } catch (RequestException $e) {
-                $hasResponse = !empty($e->hasResponse());
-                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
-                $this->writeDebug($e->getResponse());
-                $this->writeDebug($body);
-                throw new ApiException(
-                    "[{$e->getCode()}] {$body}",
-                    $e->getCode(),
-                    $hasResponse ? $e->getResponse()->getHeaders() : [],
-                    $body
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $signedRequest->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()->getContents()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\UpdateItemsApprovalsErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\UpdateItemsApprovalsErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\UpdateItemsApprovalsErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 413:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\UpdateItemsApprovalsErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\UpdateItemsApprovalsErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\UpdateItemsApprovalsErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\UpdateItemsApprovalsErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SellingPartnerApi\Model\OrdersV0\UpdateItemsApprovalsErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            $this->writeDebug($e);
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateOrderItemsApprovalsAsync
-     *
-     * 
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  \SellingPartnerApi\Model\OrdersV0\UpdateOrderApprovalsRequest $payload The request body for the updateOrderItemsApprovals operation. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateOrderItemsApprovalsAsync($order_id, $payload)
-    {
-        return $this->updateOrderItemsApprovalsAsyncWithHttpInfo($order_id, $payload);;
-    }
-
-    /**
-     * Operation updateOrderItemsApprovalsAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  \SellingPartnerApi\Model\OrdersV0\UpdateOrderApprovalsRequest $payload The request body for the updateOrderItemsApprovals operation. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function updateOrderItemsApprovalsAsyncWithHttpInfo($order_id, $payload)
-    {
-        $returnType = '';
-        $request = $this->updateOrderItemsApprovalsRequest($order_id, $payload);
-        $signedRequest = $this->config->signRequest(
-            $request
-        );
-
-        $this->writeDebug($signedRequest);
-        $this->writeDebug((string) $signedRequest->getBody());
-
-        return $this->client
-            ->sendAsync($signedRequest, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $this->writeDebug($response);
-                    return null;
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $hasResponse = !empty($response);
-                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
-                    $this->writeDebug($response);
-                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $hasResponse ? $response->getHeaders() : [],
-                        $body
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'updateOrderItemsApprovals'
-     *
-     * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  \SellingPartnerApi\Model\OrdersV0\UpdateOrderApprovalsRequest $payload The request body for the updateOrderItemsApprovals operation. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function updateOrderItemsApprovalsRequest($order_id, $payload)
-    {
-        // verify the required parameter 'order_id' is set
-        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $order_id when calling updateOrderItemsApprovals'
-            );
-        }
-        // verify the required parameter 'payload' is set
-        if ($payload === null || (is_array($payload) && count($payload) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $payload when calling updateOrderItemsApprovals'
-            );
-        }
-
-        $resourcePath = '/orders/v0/orders/{orderId}/approvals';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // path params
-        if ($order_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
-                ObjectSerializer::toPathValue($order_id),
-                $resourcePath
-            );
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($payload)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($payload));
-            } else {
-                $httpBody = $payload;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation updateShipmentStatus
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
@@ -4156,6 +3444,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    'null',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -4466,6 +3759,11 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    'null',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),

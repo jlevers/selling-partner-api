@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\TokensV20210301;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * RestrictedResource Class Doc Comment

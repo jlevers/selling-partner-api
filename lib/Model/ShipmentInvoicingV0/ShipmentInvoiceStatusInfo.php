@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ShipmentInvoicingV0;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ShipmentInvoiceStatusInfo Class Doc Comment

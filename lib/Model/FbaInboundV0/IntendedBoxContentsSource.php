@@ -29,13 +29,12 @@ namespace SellingPartnerApi\Model\FbaInboundV0;
 use ArrayAccess;
 
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * IntendedBoxContentsSource Class Doc Comment
  *
  * @category Class
- * @description How the seller intends to provide box contents information for a shipment.
+ * @description How the seller intends to provide box contents information for a shipment. Leaving this field blank is equivalent to selecting `NONE`, which will incur a fee if the seller does not provide box contents information.
  * @package  SellingPartnerApi
  * @group 
  */

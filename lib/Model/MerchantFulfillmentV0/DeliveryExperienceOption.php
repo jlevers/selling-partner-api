@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\MerchantFulfillmentV0;
 use ArrayAccess;
 
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * DeliveryExperienceOption Class Doc Comment

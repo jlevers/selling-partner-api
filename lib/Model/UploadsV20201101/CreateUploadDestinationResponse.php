@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\UploadsV20201101;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * CreateUploadDestinationResponse Class Doc Comment

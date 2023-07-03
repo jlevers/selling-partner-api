@@ -16,7 +16,7 @@ listFinancialEventGroups($max_results_per_page, $financial_event_group_started_b
 
 
 
-Returns financial event groups for a given date range.
+Returns financial event groups for a given date range. It may take up to 48 hours for orders to appear in your financial events.
 
 **Usage Plan:**
 
@@ -86,7 +86,7 @@ listFinancialEvents($max_results_per_page, $posted_after, $posted_before, $next_
 
 
 
-Returns financial events for the specified data range.
+Returns financial events for the specified data range. It may take up to 48 hours for orders to appear in your financial events.
 
 **Usage Plan:**
 
@@ -156,7 +156,9 @@ listFinancialEventsByGroupId($event_group_id, $max_results_per_page, $next_token
 
 
 
-Returns all financial events for the specified financial event group.
+Returns all financial events for the specified financial event group. It may take up to 48 hours for orders to appear in your financial events.
+
+**Note:** This operation will only retrieve group's data for the past two years. If a request is submitted for data spanning more than two years, an empty response is returned.
 
 **Usage Plan:**
 
@@ -228,7 +230,7 @@ listFinancialEventsByOrderId($order_id, $max_results_per_page, $next_token): \Se
 
 
 
-Returns all financial events for the specified order.
+Returns all financial events for the specified order. It may take up to 48 hours for orders to appear in your financial events.
 
 **Usage Plan:**
 

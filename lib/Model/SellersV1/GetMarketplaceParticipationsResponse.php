@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\SellersV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetMarketplaceParticipationsResponse Class Doc Comment

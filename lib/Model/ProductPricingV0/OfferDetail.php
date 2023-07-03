@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ProductPricingV0;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * OfferDetail Class Doc Comment

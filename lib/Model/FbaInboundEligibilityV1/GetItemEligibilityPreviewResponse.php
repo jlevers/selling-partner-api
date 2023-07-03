@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\FbaInboundEligibilityV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetItemEligibilityPreviewResponse Class Doc Comment

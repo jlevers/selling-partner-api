@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ShippingV2;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Location Class Doc Comment

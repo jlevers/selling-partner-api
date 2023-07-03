@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\FinancesV0;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * FeeComponent Class Doc Comment

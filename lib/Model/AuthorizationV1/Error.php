@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\AuthorizationV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Error Class Doc Comment

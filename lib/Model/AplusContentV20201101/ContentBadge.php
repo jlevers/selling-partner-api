@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\AplusContentV20201101;
 use ArrayAccess;
 
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ContentBadge Class Doc Comment

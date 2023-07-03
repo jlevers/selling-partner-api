@@ -29,13 +29,12 @@ namespace SellingPartnerApi\Model\FbaOutboundV20200701;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * DeliveryWindow Class Doc Comment
  *
  * @category Class
- * @description The time range within which a Scheduled Delivery fulfillment order should be delivered.
+ * @description The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

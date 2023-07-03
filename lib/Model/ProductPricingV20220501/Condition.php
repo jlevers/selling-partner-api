@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ProductPricingV20220501;
 use ArrayAccess;
 
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Condition Class Doc Comment

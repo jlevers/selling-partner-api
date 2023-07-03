@@ -29,12 +29,12 @@ namespace SellingPartnerApi\Model\FeesV0;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * FeesEstimateRequest Class Doc Comment
  *
  * @category Class
+ * @description A product, marketplace, and proposed price used to request estimated fees.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

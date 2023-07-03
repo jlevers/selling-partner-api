@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\MessagingV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetAttributesResponseBuyer Class Doc Comment

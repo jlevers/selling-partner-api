@@ -29,13 +29,12 @@ namespace SellingPartnerApi\Model\FbaOutboundV20200701;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ScheduledDeliveryInfo Class Doc Comment
  *
  * @category Class
- * @description Delivery information for a scheduled delivery.
+ * @description Delivery information for a scheduled delivery. This is only available in the JP marketplace.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>

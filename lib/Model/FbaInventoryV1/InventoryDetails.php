@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\FbaInventoryV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * InventoryDetails Class Doc Comment

@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\EasyShipV20220323;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * InvoiceData Class Doc Comment

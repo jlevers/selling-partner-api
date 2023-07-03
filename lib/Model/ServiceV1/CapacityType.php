@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ServiceV1;
 use ArrayAccess;
 
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * CapacityType Class Doc Comment

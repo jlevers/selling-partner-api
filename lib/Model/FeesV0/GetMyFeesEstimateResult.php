@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\FeesV0;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetMyFeesEstimateResult Class Doc Comment

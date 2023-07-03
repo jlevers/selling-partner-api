@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ReportsV20210630;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ReportSchedule Class Doc Comment

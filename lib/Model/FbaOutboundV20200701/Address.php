@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\FbaOutboundV20200701;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Address Class Doc Comment
@@ -191,9 +190,6 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
         if ($this->container['address_line1'] === null) {
             $invalidProperties[] = "'address_line1' can't be null";
         }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
         if ($this->container['state_or_region'] === null) {
             $invalidProperties[] = "'state_or_region' can't be null";
         }
@@ -302,7 +298,7 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity()
     {
@@ -312,7 +308,7 @@ class Address extends BaseModel implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets city
      *
-     * @param string $city The city where the person, business, or institution is located.
+     * @param string|null $city The city where the person, business, or institution is located. This property is required in all countries except Japan. It should not be used in Japan.
      *
      * @return self
      */

@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\SmallAndLightV1;
 use ArrayAccess;
 
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * SmallAndLightEligibilityStatus Class Doc Comment

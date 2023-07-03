@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ProductTypeDefinitionsV20200901;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Error Class Doc Comment

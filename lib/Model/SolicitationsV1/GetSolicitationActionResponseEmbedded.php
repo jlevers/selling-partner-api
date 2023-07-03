@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\SolicitationsV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetSolicitationActionResponseEmbedded Class Doc Comment

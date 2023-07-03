@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ShippingV2;
 use ArrayAccess;
 
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * EventCode Class Doc Comment

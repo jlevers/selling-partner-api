@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ReplenishmentV20221107;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ListOffersRequestFilters Class Doc Comment

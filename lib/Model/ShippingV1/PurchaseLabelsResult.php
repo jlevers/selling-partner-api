@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\ShippingV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * PurchaseLabelsResult Class Doc Comment

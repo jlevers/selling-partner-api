@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\FeedsV20210630;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * CreateFeedDocumentResponse Class Doc Comment

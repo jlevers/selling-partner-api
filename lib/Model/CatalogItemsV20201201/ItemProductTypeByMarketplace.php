@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\CatalogItemsV20201201;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ItemProductTypeByMarketplace Class Doc Comment

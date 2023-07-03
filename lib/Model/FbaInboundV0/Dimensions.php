@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\FbaInboundV0;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Dimensions Class Doc Comment

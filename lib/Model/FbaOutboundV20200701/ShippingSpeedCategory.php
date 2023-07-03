@@ -29,13 +29,12 @@ namespace SellingPartnerApi\Model\FbaOutboundV20200701;
 use ArrayAccess;
 
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ShippingSpeedCategory Class Doc Comment
  *
  * @category Class
- * @description The shipping method used for the fulfillment order.
+ * @description The shipping method used for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the fulfillmentAction. Hold is not a valid fulfillmentAction value when the shippingSpeedCategory value is ScheduledDelivery.
  * @package  SellingPartnerApi
  * @group 
  */

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **address_line1** | **string** | The first line of the address. |
 **address_line2** | **string** | Additional address information, if required. | [optional]
 **address_line3** | **string** | Additional address information, if required. | [optional]
-**city** | **string** | The city where the person, business, or institution is located. |
+**city** | **string** | The city where the person, business, or institution is located. This property is required in all countries except Japan. It should not be used in Japan. | [optional]
 **district_or_county** | **string** | The district or county where the person, business, or institution is located. | [optional]
 **state_or_region** | **string** | The state or region where the person, business or institution is located. |
 **postal_code** | **string** | The postal code of the address. |

@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\NotificationsV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * DeleteDestinationResponse Class Doc Comment

@@ -83,6 +83,11 @@ class SellersV1Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
+                $deserializedResponse = ObjectSerializer::deserialize(
+                    $body,
+                    '\SellingPartnerApi\Model\SellersV1\GetMarketplaceParticipationsResponse',
+                    $hasResponse ? $e->getResponse()->getHeaders() : []
+                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),

@@ -89,7 +89,7 @@ class TokensV20210301Api extends BaseApi
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
                     $hasResponse ? $e->getResponse()->getHeaders() : [],
-                    $body
+                    json_decode($body, true) ?? $body
                 );
             }
 

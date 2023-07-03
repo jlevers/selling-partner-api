@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **item_value** | [**\SellingPartnerApi\Model\ShippingV2\Currency**](Currency.md) |  | [optional]
 **description** | **string** | The product description of the item. | [optional]
-**item_identifier** | **string** | A unique identifier for an item provided by the client. | [optional]
+**item_identifier** | **string** | A unique identifier for an item provided by the client. Should be the order item identifier for the item if this item is associated with an Amazon order. If the item is part of an external (non-Amazon) order, this field can be left blank. | [optional]
 **quantity** | **int** | The number of units. This value is required. |
-**weight** | [**\SellingPartnerApi\Model\ShippingV2\Weight**](Weight.md) |  | [optional]
+**weight** | [**\SellingPartnerApi\Model\ShippingV2\Weight**](Weight.md) |  |
 **is_hazmat** | **bool** | When true, the item qualifies as hazardous materials (hazmat). Defaults to false. | [optional]
 **product_type** | **string** | The product type of the item. | [optional]
 **invoice_details** | [**\SellingPartnerApi\Model\ShippingV2\InvoiceDetails**](InvoiceDetails.md) |  | [optional]

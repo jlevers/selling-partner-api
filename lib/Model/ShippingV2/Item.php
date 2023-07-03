@@ -187,6 +187,9 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
         if ($this->container['quantity'] === null) {
             $invalidProperties[] = "'quantity' can't be null";
         }
+        if ($this->container['weight'] === null) {
+            $invalidProperties[] = "'weight' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -250,7 +253,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets item_identifier
      *
-     * @param string|null $item_identifier A unique identifier for an item provided by the client.
+     * @param string|null $item_identifier A unique identifier for an item provided by the client. Should be the order item identifier for the item if this item is associated with an Amazon order. If the item is part of an external (non-Amazon) order, this field can be left blank.
      *
      * @return self
      */
@@ -286,7 +289,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets weight
      *
-     * @return \SellingPartnerApi\Model\ShippingV2\Weight|null
+     * @return \SellingPartnerApi\Model\ShippingV2\Weight
      */
     public function getWeight()
     {
@@ -296,7 +299,7 @@ class Item extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets weight
      *
-     * @param \SellingPartnerApi\Model\ShippingV2\Weight|null $weight weight
+     * @param \SellingPartnerApi\Model\ShippingV2\Weight $weight weight
      *
      * @return self
      */

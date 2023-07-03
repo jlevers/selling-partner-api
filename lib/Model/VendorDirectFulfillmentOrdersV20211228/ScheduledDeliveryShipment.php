@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ScheduledDeliveryShipment Class Doc Comment

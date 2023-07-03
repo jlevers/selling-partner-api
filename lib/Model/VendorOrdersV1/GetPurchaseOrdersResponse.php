@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\VendorOrdersV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * GetPurchaseOrdersResponse Class Doc Comment

@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\VendorInvoicesV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * AdditionalDetails Class Doc Comment

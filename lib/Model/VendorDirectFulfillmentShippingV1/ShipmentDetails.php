@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\VendorDirectFulfillmentShippingV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * ShipmentDetails Class Doc Comment

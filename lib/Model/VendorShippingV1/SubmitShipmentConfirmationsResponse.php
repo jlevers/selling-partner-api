@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\VendorShippingV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * SubmitShipmentConfirmationsResponse Class Doc Comment

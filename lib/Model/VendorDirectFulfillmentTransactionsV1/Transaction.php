@@ -29,7 +29,6 @@ namespace SellingPartnerApi\Model\VendorDirectFulfillmentTransactionsV1;
 use ArrayAccess;
 use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
-use SellingPartnerApi\ObjectSerializer;
 
 /**
  * Transaction Class Doc Comment

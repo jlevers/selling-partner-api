@@ -102,6 +102,28 @@ class EventFilterAllOf extends BaseModel implements ModelInterface, ArrayAccess,
     ];
 
 
+
+    const EVENT_FILTER_TYPE_ANY_OFFER_CHANGED = 'ANY_OFFER_CHANGED';
+    const EVENT_FILTER_TYPE_ORDER_CHANGE = 'ORDER_CHANGE';
+    
+    
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEventFilterTypeAllowableValues()
+    {
+        $baseVals = [
+            self::EVENT_FILTER_TYPE_ANY_OFFER_CHANGED,
+            self::EVENT_FILTER_TYPE_ORDER_CHANGE,
+        ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
+    }
     
     /**
      * Associative array for storing property values
@@ -132,6 +154,18 @@ class EventFilterAllOf extends BaseModel implements ModelInterface, ArrayAccess,
         if ($this->container['event_filter_type'] === null) {
             $invalidProperties[] = "'event_filter_type' can't be null";
         }
+        $allowedValues = $this->getEventFilterTypeAllowableValues();
+        if (
+            !is_null($this->container['event_filter_type']) &&
+            !in_array(strtoupper($this->container['event_filter_type']), $allowedValues, true)
+        ) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'event_filter_type', must be one of '%s'",
+                $this->container['event_filter_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -155,6 +189,16 @@ class EventFilterAllOf extends BaseModel implements ModelInterface, ArrayAccess,
      */
     public function setEventFilterType($event_filter_type)
     {
+        $allowedValues = $this->getEventFilterTypeAllowableValues();
+        if (!in_array(strtoupper($event_filter_type), $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'event_filter_type', must be one of '%s'",
+                    $event_filter_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['event_filter_type'] = $event_filter_type;
 
         return $this;

@@ -60,6 +60,7 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPITypes = [
         'aggregation_settings' => '\SellingPartnerApi\Model\NotificationsV1\AggregationSettings',
         'marketplace_ids' => 'string[]',
+        'order_change_types' => '\SellingPartnerApi\Model\NotificationsV1\OrderChangeTypeEnum[]',
         'event_filter_type' => 'string'
     ];
 
@@ -73,6 +74,7 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     protected static $openAPIFormats = [
         'aggregation_settings' => null,
         'marketplace_ids' => null,
+        'order_change_types' => null,
         'event_filter_type' => null
     ];
 
@@ -87,6 +89,7 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     protected static $attributeMap = [
         'aggregation_settings' => 'aggregationSettings',
         'marketplace_ids' => 'marketplaceIds',
+        'order_change_types' => 'orderChangeTypes',
         'event_filter_type' => 'eventFilterType'
     ];
 
@@ -98,6 +101,7 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     protected static $setters = [
         'aggregation_settings' => 'setAggregationSettings',
         'marketplace_ids' => 'setMarketplaceIds',
+        'order_change_types' => 'setOrderChangeTypes',
         'event_filter_type' => 'setEventFilterType'
     ];
 
@@ -109,10 +113,33 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     protected static $getters = [
         'aggregation_settings' => 'getAggregationSettings',
         'marketplace_ids' => 'getMarketplaceIds',
+        'order_change_types' => 'getOrderChangeTypes',
         'event_filter_type' => 'getEventFilterType'
     ];
 
 
+
+    const EVENT_FILTER_TYPE_ANY_OFFER_CHANGED = 'ANY_OFFER_CHANGED';
+    const EVENT_FILTER_TYPE_ORDER_CHANGE = 'ORDER_CHANGE';
+    
+    
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEventFilterTypeAllowableValues()
+    {
+        $baseVals = [
+            self::EVENT_FILTER_TYPE_ANY_OFFER_CHANGED,
+            self::EVENT_FILTER_TYPE_ORDER_CHANGE,
+        ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
+    }
     
     /**
      * Associative array for storing property values
@@ -131,6 +158,7 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
     {
         $this->container['aggregation_settings'] = $data['aggregation_settings'] ?? null;
         $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
+        $this->container['order_change_types'] = $data['order_change_types'] ?? null;
         $this->container['event_filter_type'] = $data['event_filter_type'] ?? null;
     }
 
@@ -145,6 +173,18 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
         if ($this->container['event_filter_type'] === null) {
             $invalidProperties[] = "'event_filter_type' can't be null";
         }
+        $allowedValues = $this->getEventFilterTypeAllowableValues();
+        if (
+            !is_null($this->container['event_filter_type']) &&
+            !in_array(strtoupper($this->container['event_filter_type']), $allowedValues, true)
+        ) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'event_filter_type', must be one of '%s'",
+                $this->container['event_filter_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -196,6 +236,29 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
         return $this;
     }
     /**
+     * Gets order_change_types
+     *
+     * @return \SellingPartnerApi\Model\NotificationsV1\OrderChangeTypeEnum[]|null
+     */
+    public function getOrderChangeTypes()
+    {
+        return $this->container['order_change_types'];
+    }
+
+    /**
+     * Sets order_change_types
+     *
+     * @param \SellingPartnerApi\Model\NotificationsV1\OrderChangeTypeEnum[]|null $order_change_types A list of order change types to subscribe to (e.g. BuyerRequestedChange). To receive notifications of all change types, do not provide this list.
+     *
+     * @return self
+     */
+    public function setOrderChangeTypes($order_change_types)
+    {
+        $this->container['order_change_types'] = $order_change_types;
+
+        return $this;
+    }
+    /**
      * Gets event_filter_type
      *
      * @return string
@@ -214,6 +277,16 @@ class EventFilter extends BaseModel implements ModelInterface, ArrayAccess, \Jso
      */
     public function setEventFilterType($event_filter_type)
     {
+        $allowedValues = $this->getEventFilterTypeAllowableValues();
+        if (!in_array(strtoupper($event_filter_type), $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'event_filter_type', must be one of '%s'",
+                    $event_filter_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['event_filter_type'] = $event_filter_type;
 
         return $this;

@@ -1,6 +1,6 @@
 <?php
 /**
- * ProcessingDirective
+ * OrderChangeTypeFilter
  *
  * PHP version 7.3
  *
@@ -31,17 +31,17 @@ use SellingPartnerApi\Model\BaseModel;
 use SellingPartnerApi\Model\ModelInterface;
 
 /**
- * ProcessingDirective Class Doc Comment
+ * OrderChangeTypeFilter Class Doc Comment
  *
  * @category Class
- * @description Additional information passed to the subscription to control the processing of notifications. For example, you can use an `eventFilter` to customize your subscription to send notifications for only the specified marketplaceId's, or select the aggregation time period at which to send notifications (e.g. limit to one notification every five minutes for high frequency notifications). The specific features available vary depending on the notificationType. This feature is currently only supported by the `ANY_OFFER_CHANGED` and `ORDER_CHANGE` notificationTypes.
+ * @description Use this event filter to customize your subscription to send notifications for only the specified orderChangeType.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
+class OrderChangeTypeFilter extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ProcessingDirective';
+    protected static $openAPIModelName = 'OrderChangeTypeFilter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
       * @var string[]
       */
     protected static $openAPITypes = [
-        'event_filter' => '\SellingPartnerApi\Model\NotificationsV1\EventFilter'
+        'order_change_types' => '\SellingPartnerApi\Model\NotificationsV1\OrderChangeTypeEnum[]'
     ];
 
     /**
@@ -69,7 +69,7 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'event_filter' => null
+        'order_change_types' => null
     ];
 
 
@@ -81,7 +81,7 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $attributeMap = [
-        'event_filter' => 'eventFilter'
+        'order_change_types' => 'orderChangeTypes'
     ];
 
     /**
@@ -90,7 +90,7 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $setters = [
-        'event_filter' => 'setEventFilter'
+        'order_change_types' => 'setOrderChangeTypes'
     ];
 
     /**
@@ -99,7 +99,7 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
      * @var string[]
      */
     protected static $getters = [
-        'event_filter' => 'getEventFilter'
+        'order_change_types' => 'getOrderChangeTypes'
     ];
 
 
@@ -119,7 +119,7 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
      */
     public function __construct(array $data = null)
     {
-        $this->container['event_filter'] = $data['event_filter'] ?? null;
+        $this->container['order_change_types'] = $data['order_change_types'] ?? null;
     }
 
     /**
@@ -135,25 +135,25 @@ class ProcessingDirective extends BaseModel implements ModelInterface, ArrayAcce
 
 
     /**
-     * Gets event_filter
+     * Gets order_change_types
      *
-     * @return \SellingPartnerApi\Model\NotificationsV1\EventFilter|null
+     * @return \SellingPartnerApi\Model\NotificationsV1\OrderChangeTypeEnum[]|null
      */
-    public function getEventFilter()
+    public function getOrderChangeTypes()
     {
-        return $this->container['event_filter'];
+        return $this->container['order_change_types'];
     }
 
     /**
-     * Sets event_filter
+     * Sets order_change_types
      *
-     * @param \SellingPartnerApi\Model\NotificationsV1\EventFilter|null $event_filter event_filter
+     * @param \SellingPartnerApi\Model\NotificationsV1\OrderChangeTypeEnum[]|null $order_change_types A list of order change types to subscribe to (e.g. BuyerRequestedChange). To receive notifications of all change types, do not provide this list.
      *
      * @return self
      */
-    public function setEventFilter($event_filter)
+    public function setOrderChangeTypes($order_change_types)
     {
-        $this->container['event_filter'] = $event_filter;
+        $this->container['order_change_types'] = $order_change_types;
 
         return $this;
     }

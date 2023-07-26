@@ -81,6 +81,7 @@ class EventCode
     const _418 = 'EVENT_418';
     const _419 = 'EVENT_419';
     const _636 = 'EVENT_636';
+    const _637 = 'EVENT_637';
     
     /**
      * Gets allowable values of the enum
@@ -125,6 +126,7 @@ class EventCode
             self::_418,
             self::_419,
             self::_636,
+            self::_637,
         ];
         // This is necessary because Amazon does not consistently capitalize their
         // enum values, so we do case-insensitive enum value validation in ObjectSerializer

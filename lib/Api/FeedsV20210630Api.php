@@ -193,7 +193,7 @@ class FeedsV20210630Api extends BaseApi
      */
     public function cancelFeedAsync($feed_id)
     {
-        return $this->cancelFeedAsyncWithHttpInfo($feed_id);;
+        return $this->cancelFeedAsyncWithHttpInfo($feed_id);
     }
 
     /**
@@ -579,7 +579,7 @@ class FeedsV20210630Api extends BaseApi
      */
     public function createFeedAsync($body)
     {
-        return $this->createFeedAsyncWithHttpInfo($body);;
+        return $this->createFeedAsyncWithHttpInfo($body);
     }
 
     /**
@@ -969,7 +969,7 @@ class FeedsV20210630Api extends BaseApi
      */
     public function createFeedDocumentAsync($body)
     {
-        return $this->createFeedDocumentAsyncWithHttpInfo($body);;
+        return $this->createFeedDocumentAsyncWithHttpInfo($body);
     }
 
     /**
@@ -1359,7 +1359,7 @@ class FeedsV20210630Api extends BaseApi
      */
     public function getFeedAsync($feed_id)
     {
-        return $this->getFeedAsyncWithHttpInfo($feed_id);;
+        return $this->getFeedAsyncWithHttpInfo($feed_id);
     }
 
     /**
@@ -1752,7 +1752,7 @@ class FeedsV20210630Api extends BaseApi
      */
     public function getFeedDocumentAsync($feed_document_id)
     {
-        return $this->getFeedDocumentAsyncWithHttpInfo($feed_document_id);;
+        return $this->getFeedDocumentAsyncWithHttpInfo($feed_document_id);
     }
 
     /**
@@ -2163,7 +2163,7 @@ class FeedsV20210630Api extends BaseApi
      */
     public function getFeedsAsync($feed_types = null, $marketplace_ids = null, $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null)
     {
-        return $this->getFeedsAsyncWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);;
+        return $this->getFeedsAsyncWithHttpInfo($feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
     }
 
     /**

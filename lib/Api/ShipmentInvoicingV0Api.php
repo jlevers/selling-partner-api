@@ -286,7 +286,7 @@ class ShipmentInvoicingV0Api extends BaseApi
      */
     public function getInvoiceStatusAsync($shipment_id)
     {
-        return $this->getInvoiceStatusAsyncWithHttpInfo($shipment_id);;
+        return $this->getInvoiceStatusAsyncWithHttpInfo($shipment_id);
     }
 
     /**
@@ -682,7 +682,7 @@ class ShipmentInvoicingV0Api extends BaseApi
      */
     public function getShipmentDetailsAsync($shipment_id)
     {
-        return $this->getShipmentDetailsAsyncWithHttpInfo($shipment_id);;
+        return $this->getShipmentDetailsAsyncWithHttpInfo($shipment_id);
     }
 
     /**
@@ -1081,7 +1081,7 @@ class ShipmentInvoicingV0Api extends BaseApi
      */
     public function submitInvoiceAsync($shipment_id, $body)
     {
-        return $this->submitInvoiceAsyncWithHttpInfo($shipment_id, $body);;
+        return $this->submitInvoiceAsyncWithHttpInfo($shipment_id, $body);
     }
 
     /**

@@ -286,7 +286,7 @@ class VendorDirectFulfillmentTransactionsV1Api extends BaseApi
      */
     public function getTransactionStatusAsync($transaction_id)
     {
-        return $this->getTransactionStatusAsyncWithHttpInfo($transaction_id);;
+        return $this->getTransactionStatusAsyncWithHttpInfo($transaction_id);
     }
 
     /**

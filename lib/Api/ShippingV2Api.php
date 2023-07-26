@@ -305,7 +305,7 @@ class ShippingV2Api extends BaseApi
      */
     public function cancelShipmentAsync($shipment_id, $x_amzn_shipping_business_id = null)
     {
-        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id, $x_amzn_shipping_business_id);;
+        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id, $x_amzn_shipping_business_id);
     }
 
     /**
@@ -739,7 +739,7 @@ class ShippingV2Api extends BaseApi
      */
     public function directPurchaseShipmentAsync($body, $x_amzn_idempotency_key = null, $locale = null, $x_amzn_shipping_business_id = null)
     {
-        return $this->directPurchaseShipmentAsyncWithHttpInfo($body, $x_amzn_idempotency_key, $locale, $x_amzn_shipping_business_id);;
+        return $this->directPurchaseShipmentAsyncWithHttpInfo($body, $x_amzn_idempotency_key, $locale, $x_amzn_shipping_business_id);
     }
 
     /**
@@ -1178,7 +1178,7 @@ class ShippingV2Api extends BaseApi
      */
     public function getAdditionalInputsAsync($request_token, $rate_id, $x_amzn_shipping_business_id = null)
     {
-        return $this->getAdditionalInputsAsyncWithHttpInfo($request_token, $rate_id, $x_amzn_shipping_business_id);;
+        return $this->getAdditionalInputsAsyncWithHttpInfo($request_token, $rate_id, $x_amzn_shipping_business_id);
     }
 
     /**
@@ -1612,7 +1612,7 @@ class ShippingV2Api extends BaseApi
      */
     public function getRatesAsync($body, $x_amzn_shipping_business_id = null)
     {
-        return $this->getRatesAsyncWithHttpInfo($body, $x_amzn_shipping_business_id);;
+        return $this->getRatesAsyncWithHttpInfo($body, $x_amzn_shipping_business_id);
     }
 
     /**
@@ -2037,7 +2037,7 @@ class ShippingV2Api extends BaseApi
      */
     public function getShipmentDocumentsAsync($shipment_id, $package_client_reference_id, $format = null, $dpi = null, $x_amzn_shipping_business_id = null)
     {
-        return $this->getShipmentDocumentsAsyncWithHttpInfo($shipment_id, $package_client_reference_id, $format, $dpi, $x_amzn_shipping_business_id);;
+        return $this->getShipmentDocumentsAsyncWithHttpInfo($shipment_id, $package_client_reference_id, $format, $dpi, $x_amzn_shipping_business_id);
     }
 
     /**
@@ -2495,7 +2495,7 @@ class ShippingV2Api extends BaseApi
      */
     public function getTrackingAsync($tracking_id, $carrier_id, $x_amzn_shipping_business_id = null)
     {
-        return $this->getTrackingAsyncWithHttpInfo($tracking_id, $carrier_id, $x_amzn_shipping_business_id);;
+        return $this->getTrackingAsyncWithHttpInfo($tracking_id, $carrier_id, $x_amzn_shipping_business_id);
     }
 
     /**
@@ -2932,7 +2932,7 @@ class ShippingV2Api extends BaseApi
      */
     public function purchaseShipmentAsync($body, $x_amzn_idempotency_key = null, $x_amzn_shipping_business_id = null)
     {
-        return $this->purchaseShipmentAsyncWithHttpInfo($body, $x_amzn_idempotency_key, $x_amzn_shipping_business_id);;
+        return $this->purchaseShipmentAsyncWithHttpInfo($body, $x_amzn_idempotency_key, $x_amzn_shipping_business_id);
     }
 
     /**

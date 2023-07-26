@@ -86,11 +86,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    'null',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -193,7 +188,7 @@ class OrdersV0Api extends BaseApi
      */
     public function confirmShipmentAsync($order_id, $payload)
     {
-        return $this->confirmShipmentAsyncWithHttpInfo($order_id, $payload);;
+        return $this->confirmShipmentAsyncWithHttpInfo($order_id, $payload);
     }
 
     /**
@@ -397,11 +392,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\OrdersV0\GetOrderResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -572,7 +562,7 @@ class OrdersV0Api extends BaseApi
      */
     public function getOrderAsync($order_id, $data_elements = null)
     {
-        return $this->getOrderAsyncWithHttpInfo($order_id, $data_elements);;
+        return $this->getOrderAsyncWithHttpInfo($order_id, $data_elements);
     }
 
     /**
@@ -780,11 +770,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\OrdersV0\GetOrderAddressResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -954,7 +939,7 @@ class OrdersV0Api extends BaseApi
      */
     public function getOrderAddressAsync($order_id)
     {
-        return $this->getOrderAddressAsyncWithHttpInfo($order_id);;
+        return $this->getOrderAddressAsyncWithHttpInfo($order_id);
     }
 
     /**
@@ -1152,11 +1137,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\OrdersV0\GetOrderBuyerInfoResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -1326,7 +1306,7 @@ class OrdersV0Api extends BaseApi
      */
     public function getOrderBuyerInfoAsync($order_id)
     {
-        return $this->getOrderBuyerInfoAsyncWithHttpInfo($order_id);;
+        return $this->getOrderBuyerInfoAsyncWithHttpInfo($order_id);
     }
 
     /**
@@ -1528,11 +1508,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\OrdersV0\GetOrderItemsResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -1704,7 +1679,7 @@ class OrdersV0Api extends BaseApi
      */
     public function getOrderItemsAsync($order_id, $next_token = null, $data_elements = null)
     {
-        return $this->getOrderItemsAsyncWithHttpInfo($order_id, $next_token, $data_elements);;
+        return $this->getOrderItemsAsyncWithHttpInfo($order_id, $next_token, $data_elements);
     }
 
     /**
@@ -1924,11 +1899,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\OrdersV0\GetOrderItemsBuyerInfoResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -2099,7 +2069,7 @@ class OrdersV0Api extends BaseApi
      */
     public function getOrderItemsBuyerInfoAsync($order_id, $next_token = null)
     {
-        return $this->getOrderItemsBuyerInfoAsyncWithHttpInfo($order_id, $next_token);;
+        return $this->getOrderItemsBuyerInfoAsyncWithHttpInfo($order_id, $next_token);
     }
 
     /**
@@ -2304,11 +2274,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\OrdersV0\GetOrderRegulatedInfoResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -2478,7 +2443,7 @@ class OrdersV0Api extends BaseApi
      */
     public function getOrderRegulatedInfoAsync($order_id)
     {
-        return $this->getOrderRegulatedInfoAsyncWithHttpInfo($order_id);;
+        return $this->getOrderRegulatedInfoAsyncWithHttpInfo($order_id);
     }
 
     /**
@@ -2773,11 +2738,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\OrdersV0\GetOrdersResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -2997,7 +2957,7 @@ class OrdersV0Api extends BaseApi
      */
     public function getOrdersAsync($marketplace_ids, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $order_statuses = null, $fulfillment_channels = null, $payment_methods = null, $buyer_email = null, $seller_order_id = null, $max_results_per_page = null, $easy_ship_shipment_statuses = null, $electronic_invoice_statuses = null, $next_token = null, $amazon_order_ids = null, $actual_fulfillment_supply_source_id = null, $is_ispu = null, $store_chain_store_id = null, $data_elements = null)
     {
-        return $this->getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);;
+        return $this->getOrdersAsyncWithHttpInfo($marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $data_elements);
     }
 
     /**
@@ -3444,11 +3404,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    'null',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -3559,7 +3514,7 @@ class OrdersV0Api extends BaseApi
      */
     public function updateShipmentStatusAsync($order_id, $payload)
     {
-        return $this->updateShipmentStatusAsyncWithHttpInfo($order_id, $payload);;
+        return $this->updateShipmentStatusAsyncWithHttpInfo($order_id, $payload);
     }
 
     /**
@@ -3759,11 +3714,6 @@ class OrdersV0Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    'null',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -3874,7 +3824,7 @@ class OrdersV0Api extends BaseApi
      */
     public function updateVerificationStatusAsync($order_id, $payload)
     {
-        return $this->updateVerificationStatusAsyncWithHttpInfo($order_id, $payload);;
+        return $this->updateVerificationStatusAsyncWithHttpInfo($order_id, $payload);
     }
 
     /**

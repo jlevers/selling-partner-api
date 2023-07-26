@@ -282,7 +282,7 @@ class ProductPricingV0Api extends BaseApi
      */
     public function getCompetitivePricingAsync($marketplace_id, $item_type, $asins = null, $skus = null, $customer_type = null)
     {
-        return $this->getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $customer_type);;
+        return $this->getCompetitivePricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $customer_type);
     }
 
     /**
@@ -721,7 +721,7 @@ class ProductPricingV0Api extends BaseApi
      */
     public function getItemOffersAsync($marketplace_id, $item_condition, $asin, $customer_type = null)
     {
-        return $this->getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin, $customer_type);;
+        return $this->getItemOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $asin, $customer_type);
     }
 
     /**
@@ -1140,7 +1140,7 @@ class ProductPricingV0Api extends BaseApi
      */
     public function getItemOffersBatchAsync($get_item_offers_batch_request_body)
     {
-        return $this->getItemOffersBatchAsyncWithHttpInfo($get_item_offers_batch_request_body);;
+        return $this->getItemOffersBatchAsyncWithHttpInfo($get_item_offers_batch_request_body);
     }
 
     /**
@@ -1523,7 +1523,7 @@ class ProductPricingV0Api extends BaseApi
      */
     public function getListingOffersAsync($marketplace_id, $item_condition, $seller_sku, $customer_type = null)
     {
-        return $this->getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku, $customer_type);;
+        return $this->getListingOffersAsyncWithHttpInfo($marketplace_id, $item_condition, $seller_sku, $customer_type);
     }
 
     /**
@@ -1942,7 +1942,7 @@ class ProductPricingV0Api extends BaseApi
      */
     public function getListingOffersBatchAsync($get_listing_offers_batch_request_body)
     {
-        return $this->getListingOffersBatchAsyncWithHttpInfo($get_listing_offers_batch_request_body);;
+        return $this->getListingOffersBatchAsyncWithHttpInfo($get_listing_offers_batch_request_body);
     }
 
     /**
@@ -2331,7 +2331,7 @@ class ProductPricingV0Api extends BaseApi
      */
     public function getPricingAsync($marketplace_id, $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null)
     {
-        return $this->getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type);;
+        return $this->getPricingAsyncWithHttpInfo($marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type);
     }
 
     /**

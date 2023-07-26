@@ -303,7 +303,7 @@ class NotificationsV1Api extends BaseApi
      */
     public function createDestinationAsync($body)
     {
-        return $this->createDestinationAsyncWithHttpInfo($body);;
+        return $this->createDestinationAsyncWithHttpInfo($body);
     }
 
     /**
@@ -714,7 +714,7 @@ class NotificationsV1Api extends BaseApi
      */
     public function createSubscriptionAsync($notification_type, $body)
     {
-        return $this->createSubscriptionAsyncWithHttpInfo($notification_type, $body);;
+        return $this->createSubscriptionAsyncWithHttpInfo($notification_type, $body);
     }
 
     /**
@@ -1138,7 +1138,7 @@ class NotificationsV1Api extends BaseApi
      */
     public function deleteDestinationAsync($destination_id)
     {
-        return $this->deleteDestinationAsyncWithHttpInfo($destination_id);;
+        return $this->deleteDestinationAsyncWithHttpInfo($destination_id);
     }
 
     /**
@@ -1553,7 +1553,7 @@ class NotificationsV1Api extends BaseApi
      */
     public function deleteSubscriptionByIdAsync($subscription_id, $notification_type)
     {
-        return $this->deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);;
+        return $this->deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);
     }
 
     /**
@@ -1982,7 +1982,7 @@ class NotificationsV1Api extends BaseApi
      */
     public function getDestinationAsync($destination_id)
     {
-        return $this->getDestinationAsyncWithHttpInfo($destination_id);;
+        return $this->getDestinationAsyncWithHttpInfo($destination_id);
     }
 
     /**
@@ -2391,7 +2391,7 @@ class NotificationsV1Api extends BaseApi
      */
     public function getDestinationsAsync()
     {
-        return $this->getDestinationsAsyncWithHttpInfo();;
+        return $this->getDestinationsAsyncWithHttpInfo();
     }
 
     /**
@@ -2769,7 +2769,7 @@ class NotificationsV1Api extends BaseApi
      */
     public function getSubscriptionAsync($notification_type)
     {
-        return $this->getSubscriptionAsyncWithHttpInfo($notification_type);;
+        return $this->getSubscriptionAsyncWithHttpInfo($notification_type);
     }
 
     /**
@@ -3182,7 +3182,7 @@ class NotificationsV1Api extends BaseApi
      */
     public function getSubscriptionByIdAsync($subscription_id, $notification_type)
     {
-        return $this->getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);;
+        return $this->getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);
     }
 
     /**

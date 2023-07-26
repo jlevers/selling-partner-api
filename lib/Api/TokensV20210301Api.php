@@ -286,7 +286,7 @@ class TokensV20210301Api extends BaseApi
      */
     public function createRestrictedDataTokenAsync($body)
     {
-        return $this->createRestrictedDataTokenAsyncWithHttpInfo($body);;
+        return $this->createRestrictedDataTokenAsyncWithHttpInfo($body);
     }
 
     /**

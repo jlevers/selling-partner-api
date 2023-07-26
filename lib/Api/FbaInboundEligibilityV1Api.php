@@ -276,7 +276,7 @@ class FbaInboundEligibilityV1Api extends BaseApi
      */
     public function getItemEligibilityPreviewAsync($asin, $program, $marketplace_ids = null)
     {
-        return $this->getItemEligibilityPreviewAsyncWithHttpInfo($asin, $program, $marketplace_ids);;
+        return $this->getItemEligibilityPreviewAsyncWithHttpInfo($asin, $program, $marketplace_ids);
     }
 
     /**

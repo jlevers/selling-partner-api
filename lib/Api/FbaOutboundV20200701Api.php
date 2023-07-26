@@ -270,7 +270,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function cancelFulfillmentOrderAsync($seller_fulfillment_order_id)
     {
-        return $this->cancelFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id);;
+        return $this->cancelFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id);
     }
 
     /**
@@ -651,7 +651,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function createFulfillmentOrderAsync($body)
     {
-        return $this->createFulfillmentOrderAsyncWithHttpInfo($body);;
+        return $this->createFulfillmentOrderAsyncWithHttpInfo($body);
     }
 
     /**
@@ -1028,7 +1028,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function createFulfillmentReturnAsync($seller_fulfillment_order_id, $body)
     {
-        return $this->createFulfillmentReturnAsyncWithHttpInfo($seller_fulfillment_order_id, $body);;
+        return $this->createFulfillmentReturnAsyncWithHttpInfo($seller_fulfillment_order_id, $body);
     }
 
     /**
@@ -1425,7 +1425,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function getFeatureInventoryAsync($marketplace_id, $feature_name, $next_token = null)
     {
-        return $this->getFeatureInventoryAsyncWithHttpInfo($marketplace_id, $feature_name, $next_token);;
+        return $this->getFeatureInventoryAsyncWithHttpInfo($marketplace_id, $feature_name, $next_token);
     }
 
     /**
@@ -1834,7 +1834,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function getFeatureSKUAsync($marketplace_id, $feature_name, $seller_sku)
     {
-        return $this->getFeatureSKUAsyncWithHttpInfo($marketplace_id, $feature_name, $seller_sku);;
+        return $this->getFeatureSKUAsyncWithHttpInfo($marketplace_id, $feature_name, $seller_sku);
     }
 
     /**
@@ -2244,7 +2244,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function getFeaturesAsync($marketplace_id)
     {
-        return $this->getFeaturesAsyncWithHttpInfo($marketplace_id);;
+        return $this->getFeaturesAsyncWithHttpInfo($marketplace_id);
     }
 
     /**
@@ -2620,7 +2620,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function getFulfillmentOrderAsync($seller_fulfillment_order_id)
     {
-        return $this->getFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id);;
+        return $this->getFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id);
     }
 
     /**
@@ -3001,7 +3001,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function getFulfillmentPreviewAsync($body)
     {
-        return $this->getFulfillmentPreviewAsyncWithHttpInfo($body);;
+        return $this->getFulfillmentPreviewAsyncWithHttpInfo($body);
     }
 
     /**
@@ -3375,7 +3375,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function getPackageTrackingDetailsAsync($package_number)
     {
-        return $this->getPackageTrackingDetailsAsyncWithHttpInfo($package_number);;
+        return $this->getPackageTrackingDetailsAsyncWithHttpInfo($package_number);
     }
 
     /**
@@ -3754,7 +3754,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function listAllFulfillmentOrdersAsync($query_start_date = null, $next_token = null)
     {
-        return $this->listAllFulfillmentOrdersAsyncWithHttpInfo($query_start_date, $next_token);;
+        return $this->listAllFulfillmentOrdersAsyncWithHttpInfo($query_start_date, $next_token);
     }
 
     /**
@@ -4143,7 +4143,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function listReturnReasonCodesAsync($seller_sku, $language, $marketplace_id = null, $seller_fulfillment_order_id = null)
     {
-        return $this->listReturnReasonCodesAsyncWithHttpInfo($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id);;
+        return $this->listReturnReasonCodesAsyncWithHttpInfo($seller_sku, $language, $marketplace_id, $seller_fulfillment_order_id);
     }
 
     /**
@@ -4558,7 +4558,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function submitFulfillmentOrderStatusUpdateAsync($seller_fulfillment_order_id, $body)
     {
-        return $this->submitFulfillmentOrderStatusUpdateAsyncWithHttpInfo($seller_fulfillment_order_id, $body);;
+        return $this->submitFulfillmentOrderStatusUpdateAsyncWithHttpInfo($seller_fulfillment_order_id, $body);
     }
 
     /**
@@ -4956,7 +4956,7 @@ class FbaOutboundV20200701Api extends BaseApi
      */
     public function updateFulfillmentOrderAsync($seller_fulfillment_order_id, $body)
     {
-        return $this->updateFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id, $body);;
+        return $this->updateFulfillmentOrderAsyncWithHttpInfo($seller_fulfillment_order_id, $body);
     }
 
     /**

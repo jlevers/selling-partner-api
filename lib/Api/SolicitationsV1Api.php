@@ -289,7 +289,7 @@ class SolicitationsV1Api extends BaseApi
      */
     public function createProductReviewAndSellerFeedbackSolicitationAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->createProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
+        return $this->createProductReviewAndSellerFeedbackSolicitationAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);
     }
 
     /**
@@ -705,7 +705,7 @@ class SolicitationsV1Api extends BaseApi
      */
     public function getSolicitationActionsForOrderAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->getSolicitationActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
+        return $this->getSolicitationActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);
     }
 
     /**

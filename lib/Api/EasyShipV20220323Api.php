@@ -286,7 +286,7 @@ class EasyShipV20220323Api extends BaseApi
      */
     public function createScheduledPackageAsync($create_scheduled_package_request)
     {
-        return $this->createScheduledPackageAsyncWithHttpInfo($create_scheduled_package_request);;
+        return $this->createScheduledPackageAsyncWithHttpInfo($create_scheduled_package_request);
     }
 
     /**
@@ -676,7 +676,7 @@ class EasyShipV20220323Api extends BaseApi
      */
     public function createScheduledPackageBulkAsync($create_scheduled_packages_request)
     {
-        return $this->createScheduledPackageBulkAsyncWithHttpInfo($create_scheduled_packages_request);;
+        return $this->createScheduledPackageBulkAsyncWithHttpInfo($create_scheduled_packages_request);
     }
 
     /**
@@ -1069,7 +1069,7 @@ class EasyShipV20220323Api extends BaseApi
      */
     public function getScheduledPackageAsync($amazon_order_id, $marketplace_id)
     {
-        return $this->getScheduledPackageAsyncWithHttpInfo($amazon_order_id, $marketplace_id);;
+        return $this->getScheduledPackageAsyncWithHttpInfo($amazon_order_id, $marketplace_id);
     }
 
     /**
@@ -1491,7 +1491,7 @@ class EasyShipV20220323Api extends BaseApi
      */
     public function listHandoverSlotsAsync($list_handover_slots_request = null)
     {
-        return $this->listHandoverSlotsAsyncWithHttpInfo($list_handover_slots_request);;
+        return $this->listHandoverSlotsAsyncWithHttpInfo($list_handover_slots_request);
     }
 
     /**
@@ -1875,7 +1875,7 @@ class EasyShipV20220323Api extends BaseApi
      */
     public function updateScheduledPackagesAsync($update_scheduled_packages_request = null)
     {
-        return $this->updateScheduledPackagesAsyncWithHttpInfo($update_scheduled_packages_request);;
+        return $this->updateScheduledPackagesAsyncWithHttpInfo($update_scheduled_packages_request);
     }
 
     /**

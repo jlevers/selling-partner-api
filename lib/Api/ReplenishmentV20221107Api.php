@@ -85,11 +85,6 @@ class ReplenishmentV20221107Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\ReplenishmentV20221107\GetSellingPartnerMetricsResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -291,7 +286,7 @@ class ReplenishmentV20221107Api extends BaseApi
      */
     public function getSellingPartnerMetricsAsync($body = null)
     {
-        return $this->getSellingPartnerMetricsAsyncWithHttpInfo($body);;
+        return $this->getSellingPartnerMetricsAsyncWithHttpInfo($body);
     }
 
     /**
@@ -474,11 +469,6 @@ class ReplenishmentV20221107Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\ReplenishmentV20221107\ListOfferMetricsResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -680,7 +670,7 @@ class ReplenishmentV20221107Api extends BaseApi
      */
     public function listOfferMetricsAsync($body = null)
     {
-        return $this->listOfferMetricsAsyncWithHttpInfo($body);;
+        return $this->listOfferMetricsAsyncWithHttpInfo($body);
     }
 
     /**
@@ -863,11 +853,6 @@ class ReplenishmentV20221107Api extends BaseApi
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
                 $this->writeDebug($e->getResponse());
                 $this->writeDebug($body);
-                $deserializedResponse = ObjectSerializer::deserialize(
-                    $body,
-                    '\SellingPartnerApi\Model\ReplenishmentV20221107\ListOffersResponse',
-                    $hasResponse ? $e->getResponse()->getHeaders() : []
-                );
                 throw new ApiException(
                     "[{$e->getCode()}] {$body}",
                     $e->getCode(),
@@ -1069,7 +1054,7 @@ class ReplenishmentV20221107Api extends BaseApi
      */
     public function listOffersAsync($body = null)
     {
-        return $this->listOffersAsyncWithHttpInfo($body);;
+        return $this->listOffersAsyncWithHttpInfo($body);
     }
 
     /**

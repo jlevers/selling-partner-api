@@ -273,7 +273,7 @@ class FeesV0Api extends BaseApi
      */
     public function getMyFeesEstimateForASINAsync($asin, $body)
     {
-        return $this->getMyFeesEstimateForASINAsyncWithHttpInfo($asin, $body);;
+        return $this->getMyFeesEstimateForASINAsyncWithHttpInfo($asin, $body);
     }
 
     /**
@@ -667,7 +667,7 @@ class FeesV0Api extends BaseApi
      */
     public function getMyFeesEstimateForSKUAsync($seller_sku, $body)
     {
-        return $this->getMyFeesEstimateForSKUAsyncWithHttpInfo($seller_sku, $body);;
+        return $this->getMyFeesEstimateForSKUAsyncWithHttpInfo($seller_sku, $body);
     }
 
     /**
@@ -1058,7 +1058,7 @@ class FeesV0Api extends BaseApi
      */
     public function getMyFeesEstimatesAsync($body)
     {
-        return $this->getMyFeesEstimatesAsyncWithHttpInfo($body);;
+        return $this->getMyFeesEstimatesAsyncWithHttpInfo($body);
     }
 
     /**

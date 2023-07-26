@@ -295,7 +295,7 @@ class CatalogItemsV20220401Api extends BaseApi
      */
     public function getCatalogItemAsync($asin, $marketplace_ids, $included_data = null, $locale = null)
     {
-        return $this->getCatalogItemAsyncWithHttpInfo($asin, $marketplace_ids, $included_data, $locale);;
+        return $this->getCatalogItemAsyncWithHttpInfo($asin, $marketplace_ids, $included_data, $locale);
     }
 
     /**
@@ -757,7 +757,7 @@ class CatalogItemsV20220401Api extends BaseApi
      */
     public function searchCatalogItemsAsync($marketplace_ids, $identifiers = null, $identifiers_type = null, $included_data = null, $locale = null, $seller_id = null, $keywords = null, $brand_names = null, $classification_ids = null, $page_size = 10, $page_token = null, $keywords_locale = null)
     {
-        return $this->searchCatalogItemsAsyncWithHttpInfo($marketplace_ids, $identifiers, $identifiers_type, $included_data, $locale, $seller_id, $keywords, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale);;
+        return $this->searchCatalogItemsAsyncWithHttpInfo($marketplace_ids, $identifiers, $identifiers_type, $included_data, $locale, $seller_id, $keywords, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale);
     }
 
     /**

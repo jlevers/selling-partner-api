@@ -298,7 +298,7 @@ class ListingsRestrictionsV20210801Api extends BaseApi
      */
     public function getListingsRestrictionsAsync($asin, $seller_id, $marketplace_ids, $condition_type = null, $reason_locale = null)
     {
-        return $this->getListingsRestrictionsAsyncWithHttpInfo($asin, $seller_id, $marketplace_ids, $condition_type, $reason_locale);;
+        return $this->getListingsRestrictionsAsyncWithHttpInfo($asin, $seller_id, $marketplace_ids, $condition_type, $reason_locale);
     }
 
     /**

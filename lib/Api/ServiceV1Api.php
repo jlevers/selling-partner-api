@@ -305,7 +305,7 @@ class ServiceV1Api extends BaseApi
      */
     public function addAppointmentForServiceJobByServiceJobIdAsync($service_job_id, $body)
     {
-        return $this->addAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $body);;
+        return $this->addAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $body);
     }
 
     /**
@@ -741,7 +741,7 @@ class ServiceV1Api extends BaseApi
      */
     public function assignAppointmentResourcesAsync($service_job_id, $appointment_id, $body)
     {
-        return $this->assignAppointmentResourcesAsyncWithHttpInfo($service_job_id, $appointment_id, $body);;
+        return $this->assignAppointmentResourcesAsyncWithHttpInfo($service_job_id, $appointment_id, $body);
     }
 
     /**
@@ -1182,7 +1182,7 @@ class ServiceV1Api extends BaseApi
      */
     public function cancelReservationAsync($reservation_id, $marketplace_ids)
     {
-        return $this->cancelReservationAsyncWithHttpInfo($reservation_id, $marketplace_ids);;
+        return $this->cancelReservationAsyncWithHttpInfo($reservation_id, $marketplace_ids);
     }
 
     /**
@@ -1621,7 +1621,7 @@ class ServiceV1Api extends BaseApi
      */
     public function cancelServiceJobByServiceJobIdAsync($service_job_id, $cancellation_reason_code)
     {
-        return $this->cancelServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $cancellation_reason_code);;
+        return $this->cancelServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $cancellation_reason_code);
     }
 
     /**
@@ -2063,7 +2063,7 @@ class ServiceV1Api extends BaseApi
      */
     public function completeServiceJobByServiceJobIdAsync($service_job_id)
     {
-        return $this->completeServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id);;
+        return $this->completeServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id);
     }
 
     /**
@@ -2466,7 +2466,7 @@ class ServiceV1Api extends BaseApi
      */
     public function createReservationAsync($marketplace_ids, $body)
     {
-        return $this->createReservationAsyncWithHttpInfo($marketplace_ids, $body);;
+        return $this->createReservationAsyncWithHttpInfo($marketplace_ids, $body);
     }
 
     /**
@@ -2892,7 +2892,7 @@ class ServiceV1Api extends BaseApi
      */
     public function createServiceDocumentUploadDestinationAsync($body)
     {
-        return $this->createServiceDocumentUploadDestinationAsyncWithHttpInfo($body);;
+        return $this->createServiceDocumentUploadDestinationAsyncWithHttpInfo($body);
     }
 
     /**
@@ -3294,7 +3294,7 @@ class ServiceV1Api extends BaseApi
      */
     public function getAppointmentSlotsAsync($asin, $store_id, $marketplace_ids, $start_time = null, $end_time = null)
     {
-        return $this->getAppointmentSlotsAsyncWithHttpInfo($asin, $store_id, $marketplace_ids, $start_time, $end_time);;
+        return $this->getAppointmentSlotsAsyncWithHttpInfo($asin, $store_id, $marketplace_ids, $start_time, $end_time);
     }
 
     /**
@@ -3758,7 +3758,7 @@ class ServiceV1Api extends BaseApi
      */
     public function getAppointmmentSlotsByJobIdAsync($service_job_id, $marketplace_ids, $start_time = null, $end_time = null)
     {
-        return $this->getAppointmmentSlotsByJobIdAsyncWithHttpInfo($service_job_id, $marketplace_ids, $start_time, $end_time);;
+        return $this->getAppointmmentSlotsByJobIdAsyncWithHttpInfo($service_job_id, $marketplace_ids, $start_time, $end_time);
     }
 
     /**
@@ -4223,7 +4223,7 @@ class ServiceV1Api extends BaseApi
      */
     public function getFixedSlotCapacityAsync($resource_id, $marketplace_ids, $body, $next_page_token = null)
     {
-        return $this->getFixedSlotCapacityAsyncWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token);;
+        return $this->getFixedSlotCapacityAsyncWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token);
     }
 
     /**
@@ -4692,7 +4692,7 @@ class ServiceV1Api extends BaseApi
      */
     public function getRangeSlotCapacityAsync($resource_id, $marketplace_ids, $body, $next_page_token = null)
     {
-        return $this->getRangeSlotCapacityAsyncWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token);;
+        return $this->getRangeSlotCapacityAsyncWithHttpInfo($resource_id, $marketplace_ids, $body, $next_page_token);
     }
 
     /**
@@ -5152,7 +5152,7 @@ class ServiceV1Api extends BaseApi
      */
     public function getServiceJobByServiceJobIdAsync($service_job_id)
     {
-        return $this->getServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id);;
+        return $this->getServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id);
     }
 
     /**
@@ -5597,7 +5597,7 @@ class ServiceV1Api extends BaseApi
      */
     public function getServiceJobsAsync($marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null, $asins = null, $required_skills = null, $store_ids = null)
     {
-        return $this->getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date, $asins, $required_skills, $store_ids);;
+        return $this->getServiceJobsAsyncWithHttpInfo($marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date, $asins, $required_skills, $store_ids);
     }
 
     /**
@@ -6200,7 +6200,7 @@ class ServiceV1Api extends BaseApi
      */
     public function rescheduleAppointmentForServiceJobByServiceJobIdAsync($service_job_id, $appointment_id, $body)
     {
-        return $this->rescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $appointment_id, $body);;
+        return $this->rescheduleAppointmentForServiceJobByServiceJobIdAsyncWithHttpInfo($service_job_id, $appointment_id, $body);
     }
 
     /**
@@ -6660,7 +6660,7 @@ class ServiceV1Api extends BaseApi
      */
     public function setAppointmentFulfillmentDataAsync($service_job_id, $appointment_id, $body)
     {
-        return $this->setAppointmentFulfillmentDataAsyncWithHttpInfo($service_job_id, $appointment_id, $body);;
+        return $this->setAppointmentFulfillmentDataAsyncWithHttpInfo($service_job_id, $appointment_id, $body);
     }
 
     /**
@@ -7104,7 +7104,7 @@ class ServiceV1Api extends BaseApi
      */
     public function updateReservationAsync($reservation_id, $marketplace_ids, $body)
     {
-        return $this->updateReservationAsyncWithHttpInfo($reservation_id, $marketplace_ids, $body);;
+        return $this->updateReservationAsyncWithHttpInfo($reservation_id, $marketplace_ids, $body);
     }
 
     /**
@@ -7544,7 +7544,7 @@ class ServiceV1Api extends BaseApi
      */
     public function updateScheduleAsync($resource_id, $marketplace_ids, $body)
     {
-        return $this->updateScheduleAsyncWithHttpInfo($resource_id, $marketplace_ids, $body);;
+        return $this->updateScheduleAsyncWithHttpInfo($resource_id, $marketplace_ids, $body);
     }
 
     /**

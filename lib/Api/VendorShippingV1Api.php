@@ -355,7 +355,7 @@ class VendorShippingV1Api extends BaseApi
      */
     public function getShipmentDetailsAsync($limit = null, $sort_order = null, $next_token = null, $created_after = null, $created_before = null, $shipment_confirmed_before = null, $shipment_confirmed_after = null, $package_label_created_before = null, $package_label_created_after = null, $shipped_before = null, $shipped_after = null, $estimated_delivery_before = null, $estimated_delivery_after = null, $shipment_delivery_before = null, $shipment_delivery_after = null, $requested_pick_up_before = null, $requested_pick_up_after = null, $scheduled_pick_up_before = null, $scheduled_pick_up_after = null, $current_shipment_status = null, $vendor_shipment_identifier = null, $buyer_reference_number = null, $buyer_warehouse_code = null, $seller_warehouse_code = null)
     {
-        return $this->getShipmentDetailsAsyncWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $shipment_confirmed_before, $shipment_confirmed_after, $package_label_created_before, $package_label_created_after, $shipped_before, $shipped_after, $estimated_delivery_before, $estimated_delivery_after, $shipment_delivery_before, $shipment_delivery_after, $requested_pick_up_before, $requested_pick_up_after, $scheduled_pick_up_before, $scheduled_pick_up_after, $current_shipment_status, $vendor_shipment_identifier, $buyer_reference_number, $buyer_warehouse_code, $seller_warehouse_code);;
+        return $this->getShipmentDetailsAsyncWithHttpInfo($limit, $sort_order, $next_token, $created_after, $created_before, $shipment_confirmed_before, $shipment_confirmed_after, $package_label_created_before, $package_label_created_after, $shipped_before, $shipped_after, $estimated_delivery_before, $estimated_delivery_after, $shipment_delivery_before, $shipment_delivery_after, $requested_pick_up_before, $requested_pick_up_after, $scheduled_pick_up_before, $scheduled_pick_up_after, $current_shipment_status, $vendor_shipment_identifier, $buyer_reference_number, $buyer_warehouse_code, $seller_warehouse_code);
     }
 
     /**
@@ -999,7 +999,7 @@ class VendorShippingV1Api extends BaseApi
      */
     public function getShipmentLabelsAsync($limit = null, $sort_order = null, $next_token = null, $label_created_after = null, $labelcreated_before = null, $buyer_reference_number = null, $vendor_shipment_identifier = null, $seller_warehouse_code = null)
     {
-        return $this->getShipmentLabelsAsyncWithHttpInfo($limit, $sort_order, $next_token, $label_created_after, $labelcreated_before, $buyer_reference_number, $vendor_shipment_identifier, $seller_warehouse_code);;
+        return $this->getShipmentLabelsAsyncWithHttpInfo($limit, $sort_order, $next_token, $label_created_after, $labelcreated_before, $buyer_reference_number, $vendor_shipment_identifier, $seller_warehouse_code);
     }
 
     /**
@@ -1462,7 +1462,7 @@ class VendorShippingV1Api extends BaseApi
      */
     public function submitShipmentConfirmationsAsync($body)
     {
-        return $this->submitShipmentConfirmationsAsyncWithHttpInfo($body);;
+        return $this->submitShipmentConfirmationsAsyncWithHttpInfo($body);
     }
 
     /**
@@ -1852,7 +1852,7 @@ class VendorShippingV1Api extends BaseApi
      */
     public function submitShipmentsAsync($body)
     {
-        return $this->submitShipmentsAsyncWithHttpInfo($body);;
+        return $this->submitShipmentsAsyncWithHttpInfo($body);
     }
 
     /**

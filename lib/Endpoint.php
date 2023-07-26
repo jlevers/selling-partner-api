@@ -52,7 +52,8 @@ class Endpoint
      *
      * @link https://docs.developer.amazonservices.com/en_US/dev_guide/DG_Endpoints.html
      */
-    public static function getByMarketplaceId(string $marketplace_id, bool $sandbox = false) {
+    public static function getByMarketplaceId(string $marketplace_id, bool $sandbox = false)
+    {
         $map = [
             // North America.
             // Brazil.
@@ -122,16 +123,17 @@ class Endpoint
      * @param array|string $endpoint The endpoint to check
      * @return bool
      */
-    public static function isSandbox($endpoint) {
+    public static function isSandbox($endpoint)
+    {
         $sandboxHosts = [
             self::NA_SANDBOX['url'],
             self::EU_SANDBOX['url'],
             self::FE_SANDBOX['url'],
         ];
         if (is_array($endpoint)) {
-            return in_array($endpoint['url'], $sandboxHosts);
+            return in_array($endpoint['url'], $sandboxHosts, true);
         } else if (is_string($endpoint)) {
-            return in_array($endpoint, $sandboxHosts);
+            return in_array($endpoint, $sandboxHosts, true);
         } else {
             throw new InvalidArgumentException(
                 'Invalid endpoint type ' . gettype($endpoint) . '. Must be array or string.'

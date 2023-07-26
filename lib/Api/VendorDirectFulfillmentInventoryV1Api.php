@@ -289,7 +289,7 @@ class VendorDirectFulfillmentInventoryV1Api extends BaseApi
      */
     public function submitInventoryUpdateAsync($warehouse_id, $body)
     {
-        return $this->submitInventoryUpdateAsyncWithHttpInfo($warehouse_id, $body);;
+        return $this->submitInventoryUpdateAsyncWithHttpInfo($warehouse_id, $body);
     }
 
     /**

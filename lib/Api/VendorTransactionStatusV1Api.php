@@ -286,7 +286,7 @@ class VendorTransactionStatusV1Api extends BaseApi
      */
     public function getTransactionAsync($transaction_id)
     {
-        return $this->getTransactionAsyncWithHttpInfo($transaction_id);;
+        return $this->getTransactionAsyncWithHttpInfo($transaction_id);
     }
 
     /**

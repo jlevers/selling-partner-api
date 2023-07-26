@@ -307,7 +307,7 @@ class ProductTypeDefinitionsV20200901Api extends BaseApi
      */
     public function getDefinitionsProductTypeAsync($product_type, $marketplace_ids, $seller_id = null, $product_type_version = 'LATEST', $requirements = 'LISTING', $requirements_enforced = 'ENFORCED', $locale = 'DEFAULT')
     {
-        return $this->getDefinitionsProductTypeAsyncWithHttpInfo($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);;
+        return $this->getDefinitionsProductTypeAsyncWithHttpInfo($product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);
     }
 
     /**
@@ -771,7 +771,7 @@ class ProductTypeDefinitionsV20200901Api extends BaseApi
      */
     public function searchDefinitionsProductTypesAsync($marketplace_ids, $keywords = null)
     {
-        return $this->searchDefinitionsProductTypesAsyncWithHttpInfo($marketplace_ids, $keywords);;
+        return $this->searchDefinitionsProductTypesAsyncWithHttpInfo($marketplace_ids, $keywords);
     }
 
     /**

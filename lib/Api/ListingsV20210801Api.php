@@ -279,7 +279,7 @@ class ListingsV20210801Api extends BaseApi
      */
     public function deleteListingsItemAsync($seller_id, $sku, $marketplace_ids, $issue_locale = null)
     {
-        return $this->deleteListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale);;
+        return $this->deleteListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale);
     }
 
     /**
@@ -727,7 +727,7 @@ class ListingsV20210801Api extends BaseApi
      */
     public function getListingsItemAsync($seller_id, $sku, $marketplace_ids, $issue_locale = null, $included_data = null)
     {
-        return $this->getListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale, $included_data);;
+        return $this->getListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $issue_locale, $included_data);
     }
 
     /**
@@ -1169,7 +1169,7 @@ class ListingsV20210801Api extends BaseApi
      */
     public function patchListingsItemAsync($seller_id, $sku, $marketplace_ids, $body, $issue_locale = null)
     {
-        return $this->patchListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale);;
+        return $this->patchListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale);
     }
 
     /**
@@ -1615,7 +1615,7 @@ class ListingsV20210801Api extends BaseApi
      */
     public function putListingsItemAsync($seller_id, $sku, $marketplace_ids, $body, $issue_locale = null)
     {
-        return $this->putListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale);;
+        return $this->putListingsItemAsyncWithHttpInfo($seller_id, $sku, $marketplace_ids, $body, $issue_locale);
     }
 
     /**

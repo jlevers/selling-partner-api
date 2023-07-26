@@ -263,7 +263,7 @@ class FinancesV0Api extends BaseApi
      */
     public function listFinancialEventGroupsAsync($max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null)
     {
-        return $this->listFinancialEventGroupsAsyncWithHttpInfo($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);;
+        return $this->listFinancialEventGroupsAsyncWithHttpInfo($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
     }
 
     /**
@@ -663,7 +663,7 @@ class FinancesV0Api extends BaseApi
      */
     public function listFinancialEventsAsync($max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null)
     {
-        return $this->listFinancialEventsAsyncWithHttpInfo($max_results_per_page, $posted_after, $posted_before, $next_token);;
+        return $this->listFinancialEventsAsyncWithHttpInfo($max_results_per_page, $posted_after, $posted_before, $next_token);
     }
 
     /**
@@ -1066,7 +1066,7 @@ class FinancesV0Api extends BaseApi
      */
     public function listFinancialEventsByGroupIdAsync($event_group_id, $max_results_per_page = 100, $next_token = null, $posted_after = null, $posted_before = null)
     {
-        return $this->listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page, $next_token, $posted_after, $posted_before);;
+        return $this->listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page, $next_token, $posted_after, $posted_before);
     }
 
     /**
@@ -1480,7 +1480,7 @@ class FinancesV0Api extends BaseApi
      */
     public function listFinancialEventsByOrderIdAsync($order_id, $max_results_per_page = 100, $next_token = null)
     {
-        return $this->listFinancialEventsByOrderIdAsyncWithHttpInfo($order_id, $max_results_per_page, $next_token);;
+        return $this->listFinancialEventsByOrderIdAsyncWithHttpInfo($order_id, $max_results_per_page, $next_token);
     }
 
     /**

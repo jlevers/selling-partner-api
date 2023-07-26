@@ -286,7 +286,7 @@ class VendorDirectFulfillmentSandboxV20211028Api extends BaseApi
      */
     public function generateOrderScenariosAsync($body)
     {
-        return $this->generateOrderScenariosAsyncWithHttpInfo($body);;
+        return $this->generateOrderScenariosAsyncWithHttpInfo($body);
     }
 
     /**
@@ -676,7 +676,7 @@ class VendorDirectFulfillmentSandboxV20211028Api extends BaseApi
      */
     public function getOrderScenariosAsync($transaction_id)
     {
-        return $this->getOrderScenariosAsyncWithHttpInfo($transaction_id);;
+        return $this->getOrderScenariosAsyncWithHttpInfo($transaction_id);
     }
 
     /**

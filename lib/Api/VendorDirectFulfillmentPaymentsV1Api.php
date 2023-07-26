@@ -286,7 +286,7 @@ class VendorDirectFulfillmentPaymentsV1Api extends BaseApi
      */
     public function submitInvoiceAsync($body)
     {
-        return $this->submitInvoiceAsyncWithHttpInfo($body);;
+        return $this->submitInvoiceAsyncWithHttpInfo($body);
     }
 
     /**

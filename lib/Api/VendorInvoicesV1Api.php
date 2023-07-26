@@ -286,7 +286,7 @@ class VendorInvoicesV1Api extends BaseApi
      */
     public function submitInvoicesAsync($body)
     {
-        return $this->submitInvoicesAsyncWithHttpInfo($body);;
+        return $this->submitInvoicesAsyncWithHttpInfo($body);
     }
 
     /**

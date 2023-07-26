@@ -93,7 +93,8 @@ class Document
      *
      * @return string The raw (unencrypted) document contents.
      */
-    public function download(?bool $postProcess = true, ?string $encoding = null): string {
+    public function download(?bool $postProcess = true, ?string $encoding = null): string
+    {
         try {
             $response = $this->client->request('GET', $this->url, ['stream' => true]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
@@ -207,7 +208,8 @@ class Document
      *
      * @return StreamInterface The raw (unencrypted) document stream..
      */
-    public function downloadStream($output = null): StreamInterface {
+    public function downloadStream($output = null): StreamInterface
+    {
         try {
             $response = $this->client->request('GET', $this->url, ['stream' => true]);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
@@ -249,7 +251,8 @@ class Document
      *
      * @return void
      */
-    public function upload($feedData, string $charset = null): void {
+    public function upload($feedData, string $charset = null): void
+    {
         $response = $this->client->put($this->url, [
             RequestOptions::HEADERS => [
                 "content-type" => self::withContentType($this->contentType, $charset),
@@ -263,15 +266,18 @@ class Document
         }
     }
 
-    public function getData() {
+    public function getData()
+    {
         return isset($this->data) ? $this->data : false;
     }
 
-    public function getEncoding(): ?string {
+    public function getEncoding(): ?string
+    {
         return $this->encoding;
     }
 
-    public function __destruct() {
+    public function __destruct()
+    {
         if (isset($this->tempFilename)) {
             unlink($this->tempFilename);
         }
@@ -285,7 +291,8 @@ class Document
      * @param string|null $charset
      * @return string
      */
-    public static function withContentType(string $contentType, string $charset = null): string {
+    public static function withContentType(string $contentType, string $charset = null): string
+    {
         return $charset ? "{$contentType}; charset={$charset}" : $contentType;
     }
 }

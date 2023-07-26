@@ -283,7 +283,7 @@ class SellersV1Api extends BaseApi
      */
     public function getMarketplaceParticipationsAsync()
     {
-        return $this->getMarketplaceParticipationsAsyncWithHttpInfo();;
+        return $this->getMarketplaceParticipationsAsyncWithHttpInfo();
     }
 
     /**

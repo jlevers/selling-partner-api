@@ -193,7 +193,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function cancelReportAsync($report_id)
     {
-        return $this->cancelReportAsyncWithHttpInfo($report_id);;
+        return $this->cancelReportAsyncWithHttpInfo($report_id);
     }
 
     /**
@@ -486,7 +486,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function cancelReportScheduleAsync($report_schedule_id)
     {
-        return $this->cancelReportScheduleAsyncWithHttpInfo($report_schedule_id);;
+        return $this->cancelReportScheduleAsyncWithHttpInfo($report_schedule_id);
     }
 
     /**
@@ -872,7 +872,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function createReportAsync($body)
     {
-        return $this->createReportAsyncWithHttpInfo($body);;
+        return $this->createReportAsyncWithHttpInfo($body);
     }
 
     /**
@@ -1262,7 +1262,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function createReportScheduleAsync($body)
     {
-        return $this->createReportScheduleAsyncWithHttpInfo($body);;
+        return $this->createReportScheduleAsyncWithHttpInfo($body);
     }
 
     /**
@@ -1652,7 +1652,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function getReportAsync($report_id)
     {
-        return $this->getReportAsyncWithHttpInfo($report_id);;
+        return $this->getReportAsyncWithHttpInfo($report_id);
     }
 
     /**
@@ -2051,7 +2051,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function getReportDocumentAsync($report_document_id, $report_type = null)
     {
-        return $this->getReportDocumentAsyncWithHttpInfo($report_document_id, $report_type);;
+        return $this->getReportDocumentAsyncWithHttpInfo($report_document_id, $report_type);
     }
 
     /**
@@ -2457,7 +2457,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function getReportScheduleAsync($report_schedule_id)
     {
-        return $this->getReportScheduleAsyncWithHttpInfo($report_schedule_id);;
+        return $this->getReportScheduleAsyncWithHttpInfo($report_schedule_id);
     }
 
     /**
@@ -2850,7 +2850,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function getReportSchedulesAsync($report_types)
     {
-        return $this->getReportSchedulesAsyncWithHttpInfo($report_types);;
+        return $this->getReportSchedulesAsyncWithHttpInfo($report_types);
     }
 
     /**
@@ -3267,7 +3267,7 @@ class ReportsV20210630Api extends BaseApi
      */
     public function getReportsAsync($report_types = null, $processing_statuses = null, $marketplace_ids = null, $page_size = 10, $created_since = null, $created_until = null, $next_token = null)
     {
-        return $this->getReportsAsyncWithHttpInfo($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);;
+        return $this->getReportsAsyncWithHttpInfo($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
     }
 
     /**

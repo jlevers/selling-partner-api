@@ -177,6 +177,7 @@ class Authentication implements RequestSignerContract
                 // generating an RDT as long as no dataElements are passed.
                 $restrictedPath === null || ($dataElements === [] && in_array($operation, $hasDataElements, true))
             )
+            || Endpoint::isSandbox("{$request->getUri()->getScheme()}://{$request->getUri()->getHost()}")
         ) {
             $relevantCreds = $this->getAwsCredentials();
         } else if ($this->signingScope) {  // There is no overlap between grantless and restricted operations
@@ -205,7 +206,7 @@ class Authentication implements RequestSignerContract
             }
 
             // Sandbox requests don't require RDTs
-            if ($needRdt && !Endpoint::isSandbox($request->getUri()->getHost())) {
+            if ($needRdt) {
                 $relevantCreds = $this->getRestrictedDataToken($restrictedPath, $request->getMethod(), $dataElements);
             }
         }

@@ -29,8 +29,6 @@ If you've found any of our packages useful, please consider [becoming a Sponsor]
     <a href="https://www.paypal.com/donate?business=EL4PRLAEMGXNQ&currency_code=USD"><img alt="Donate to Highside Labs" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>
 </p>
 
-### Sponsored by **[Tesmo](https://tesmollc.com)**.
-
 ---
 
 ## Features

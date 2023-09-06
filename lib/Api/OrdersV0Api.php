@@ -2257,7 +2257,10 @@ class OrdersV0Api extends BaseApi
     {
         $request = $this->getOrderRegulatedInfoRequest($order_id);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/regulatedInfo",
+            "getOrderRegulatedInfo"
         );
 
         $this->writeDebug($signedRequest);
@@ -2461,7 +2464,10 @@ class OrdersV0Api extends BaseApi
         $returnType = '\SellingPartnerApi\Model\OrdersV0\GetOrderRegulatedInfoResponse';
         $request = $this->getOrderRegulatedInfoRequest($order_id);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            "/orders/v0/orders/{orderId}/regulatedInfo",
+            "getOrderRegulatedInfo"
         );
 
         $this->writeDebug($signedRequest);

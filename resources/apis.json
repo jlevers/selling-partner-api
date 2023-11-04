@@ -1,0 +1,402 @@
+{
+  "seller": {
+    "a-plus-content": {
+      "name": "A+ Content",
+      "schemas": [
+        {
+          "version": "2020-11-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/aplus-content-api-model/aplusContent_2020-11-01.json"
+        }
+      ]
+    },
+    "authorization": {
+      "name": "Authorization",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/authorization-api-model/authorization.json",
+          "deprecated": true
+        }
+      ]
+    },
+    "catalog-items": {
+      "name": "Catalog Items",
+      "schemas": [
+        {
+          "version": 0,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItemsV0.json"
+        },
+        {
+          "version": "2020-12-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItems_2020-12-01.json"
+        },
+        {
+          "version": "2022-04-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItems_2022-04-01.json"
+        }
+      ]
+    },
+    "easy-ship": {
+      "name": "Easy Ship",
+      "schemas": [
+        {
+          "version": "2022-03-23",
+          "url": "https://github.com/amzn/selling-partner-api-models/raw/main/models/easy-ship-model/easyShip_2022-03-23.json"
+        }
+      ]
+    },
+    "fba-inbound-eligibility": {
+      "name": "FBA Inbound Eligibility",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fba-inbound-eligibility-api-model/fbaInbound.json"
+        }
+      ]
+    },
+    "fba-inbound": {
+      "name": "FBA Inbound",
+      "schemas": [
+        {
+          "version": 0,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-inbound-api-model/fulfillmentInboundV0.json"
+        }
+      ]
+    },
+    "fba-inventory": {
+      "name": "FBA Inventory",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fba-inventory-api-model/fbaInventory.json"
+        }
+      ]
+    },
+    "fba-outbound": {
+      "name": "FBA Outbound",
+      "schemas": [
+        {
+          "version": "2020-07-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-outbound-api-model/fulfillmentOutbound_2020-07-01.json"
+        }
+      ]
+    },
+    "fba-small-and-light": {
+      "name": "FBA Small and Light",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fba-small-and-light-api-model/fbaSmallandLight.json",
+          "deprecated": true
+        }
+      ]
+    },
+    "feeds": {
+      "name": "Feeds",
+      "schemas": [
+        {
+          "version": "2021-06-30",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/feeds-api-model/feeds_2021-06-30.json"
+        }
+      ]
+    },
+    "finances": {
+      "name": "Finances",
+      "schemas": [
+        {
+          "version": 0,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/finances-api-model/financesV0.json"
+        }
+      ]
+    },
+    "listings-restrictions": {
+      "name": "Listings Restrictions",
+      "schemas": [
+        {
+          "version": "2021-08-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/listings-restrictions-api-model/listingsRestrictions_2021-08-01.json"
+        }
+      ]
+    },
+    "listings-items": {
+      "name": "Listings Items",
+      "schemas": [
+        {
+          "version": "2020-09-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/listings-items-api-model/listingsItems_2020-09-01.json"
+        },
+        {
+          "version": "2021-08-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/listings-items-api-model/listingsItems_2021-08-01.json"
+        }
+      ]
+    },
+    "merchant-fulfillment": {
+      "name": "Merchant Fulfillment",
+      "schemas": [
+        {
+          "version": 0,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/merchant-fulfillment-api-model/merchantFulfillmentV0.json"
+        }
+      ]
+    },
+    "messaging": {
+      "name": "Messaging",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/messaging-api-model/messaging.json"
+        }
+      ]
+    },
+    "notifications": {
+      "name": "Notifications",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/notifications-api-model/notifications.json"
+        }
+      ]
+    },
+    "orders": {
+      "name": "Orders",
+      "schemas": [
+        {
+          "version": 0,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/orders-api-model/ordersV0.json"
+        }
+      ]
+    },
+    "product-fees": {
+      "name": "Product Fees",
+      "schemas": [
+        {
+          "version": 0,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/product-fees-api-model/productFeesV0.json"
+        }
+      ]
+    },
+    "product-pricing": {
+      "name": "Product Pricing",
+      "schemas": [
+        {
+          "version": 0,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/product-pricing-api-model/productPricingV0.json"
+        },
+        {
+          "version": "2022-05-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/product-pricing-api-model/productPricing_2022-05-01.json"
+        }
+      ]
+    },
+    "product-type-definitions": {
+      "name": "Product Type Definitions",
+      "schemas": [
+        {
+          "version": "2020-09-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/product-type-definitions-api-model/definitionsProductTypes_2020-09-01.json"
+        }
+      ]
+    },
+    "replenishment": {
+      "name": "Replenishment",
+      "schemas": [
+        {
+          "version": "2022-11-07",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/replenishment-api-model/replenishment-2022-11-07.json"
+        }
+      ]
+    },
+    "reports": {
+      "name": "Reports",
+      "schemas": [
+        {
+          "version": "2021-06-30",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/reports-api-model/reports_2021-06-30.json"
+        }
+      ]
+    },
+    "sales": {
+      "name": "Sales",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/sales-api-model/sales.json"
+        }
+      ]
+    },
+    "sellers": {
+      "name": "Sellers",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/sellers-api-model/sellers.json"
+        }
+      ]
+    },
+    "services": {
+      "name": "Services",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/services-api-model/services.json"
+        }
+      ]
+    },
+    "shipment-invoicing": {
+      "name": "Shipment Invoicing",
+      "schemas": [
+        {
+          "version": 0,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/shipment-invoicing-api-model/shipmentInvoicingV0.json"
+        }
+      ]
+    },
+    "shipping": {
+      "name": "Shipping",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/shipping-api-model/shipping.json",
+          "deprecated": true
+        },
+        {
+          "version": 2,
+          "url": "https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-model",
+          "element": "code[data-lang='json']"
+        }
+      ]
+    },
+    "solicitations": {
+      "name": "Solicitations",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/solicitations-api-model/solicitations.json"
+        }
+      ]
+    },
+    "tokens": {
+      "name": "Tokens",
+      "schemas": [
+        {
+          "version": "2021-03-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/tokens-api-model/tokens_2021-03-01.json"
+        }
+      ]
+    },
+    "uploads": {
+      "name": "Uploads",
+      "schemas": [
+        {
+          "version": "2020-11-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/uploads-api-model/uploads_2020-11-01.json"
+        }
+      ]
+    }
+  },
+  "vendor": {
+    "direct-fulfillment-inventory": {
+      "name": "Direct Fulfillment Inventory",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-inventory-api-model/vendorDirectFulfillmentInventoryV1.json"
+        }
+      ]
+    },
+    "direct-fulfillment-orders": {
+      "name": "Direct Fulfillment Orders",
+      "schemas": [
+        {
+          "version": "2021-12-28",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-orders-api-model/vendorDirectFulfillmentOrders_2021-12-28.json"
+        },
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-orders-api-model/vendorDirectFulfillmentOrdersV1.json"
+        }
+      ]
+    },
+    "direct-fulfillment-payment": {
+      "name": "Direct Fulfillment Payment",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-payments-api-model/vendorDirectFulfillmentPaymentsV1.json"
+        }
+      ]
+    },
+    "direct-fulfillment-sandbox": {
+      "name": "Direct Fulfillment Sandbox",
+      "schemas": [
+        {
+          "version": "2021-10-28",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-sandbox-test-data-api-model/vendorDirectFulfillmentSandboxData_2021-10-28.json"
+        }
+      ]
+    },
+    "direct-fulfillment-shipping": {
+      "name": "Direct Fulfillment Shipping",
+      "schemas": [
+        {
+          "version": "2021-12-28",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-shipping-api-model/vendorDirectFulfillmentShipping_2021-12-28.json"
+        },
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-shipping-api-model/vendorDirectFulfillmentShippingV1.json"
+        }
+      ]
+    },
+    "direct-fulfillment-transactions": {
+      "name": "Direct Fulfillment Transactions",
+      "schemas": [
+        {
+          "version": "2021-12-28",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-transactions-api-model/vendorDirectFulfillmentTransactions_2021-12-28.json"
+        },
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-transactions-api-model/vendorDirectFulfillmentTransactionsV1.json"
+        }
+      ]
+    },
+    "invoices": {
+      "name": "Vendor Invoices",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-invoices-api-model/vendorInvoices.json"
+        }
+      ]
+    },
+    "orders": {
+      "name": "Vendor Orders",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-orders-api-model/vendorOrders.json"
+        }
+      ]
+    },
+    "shipments": {
+      "name": "Vendor Shipments",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-shipments-api-model/vendorShipments.json"
+        }
+      ]
+    },
+    "transaction-status": {
+      "name": "Vendor Transaction Status",
+      "schemas": [
+        {
+          "version": 1,
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-transaction-status-api-model/vendorTransactionStatus.json"
+        }
+      ]
+    }
+  }
+}

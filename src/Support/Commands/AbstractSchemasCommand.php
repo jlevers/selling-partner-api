@@ -2,6 +2,7 @@
 
 namespace SellingPartnerApi\Support\Commands;
 
+use Exception;
 use SellingPartnerApi\Support\Schema;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -25,10 +26,19 @@ abstract class AbstractSchemasCommand extends Command
         $this->schemas = static::filterSchemas($input);
 
         foreach ($this->schemas as $schema) {
-            $code = $this->handleSchema($schema);
-            if ($code > 0) {
-                return $code;
+            echo "Handling schema {$schema->code} ...";
+
+            try {
+                $returnCode = $this->handleSchema($schema);
+                if ($returnCode > 0) {
+                    return $returnCode;
+                }
+            } catch (Exception $e) {
+                echo "\n\nFailed to handle schema {$schema->code}: {$e->getMessage()}\n";
+                return 1;
             }
+
+            echo " done\n";
         }
 
         return 0;

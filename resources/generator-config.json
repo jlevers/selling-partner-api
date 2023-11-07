@@ -1,0 +1,20 @@
+{
+  "artifactVersion": "6.0.0",
+  "variableNamingConvention": "camelCase",
+
+  "gitUserId": "jlevers",
+  "gitRepoId": "selling-partner-api",
+
+  "srcBasePath": "src",
+  "apiPackage": "Apis",
+
+  "invokerPackage": "SellingPartnerApi",
+
+  "files": {
+    "ModelInterface.mustache": {
+      "folder": "lib/Model",
+      "destinationFilename": "ModelInterface.php",
+      "templateType": "SupportingFiles"
+    }
+  }
+}

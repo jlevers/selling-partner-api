@@ -2,58 +2,34 @@
 
 namespace SellingPartnerApi\Support\Commands;
 
+use Exception;
 use GuzzleHttp\Client;
+use SellingPartnerApi\Support\Schema;
 use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use voku\helper\HtmlDomParser;
 
 #[AsCommand(
-    name: 'build:download',
+    name: 'schema:download',
     description: 'Download the latest schemas for the Selling Partner API'
 )]
-class DownloadSchemas extends Command
+class DownloadSchemas extends AbstractSchemasCommand
 {
     use HasSchemaArgs;
 
-    protected function execute(InputInterface $input, OutputInterface $output): int
+    protected function handleSchema(Schema $schema): int
     {
-        $this->schemas = static::filterSchemas($input);
+        echo "Retrieving schema verisons for {$schema->category->value} category {$schema->code}\n";
 
-        $client = new Client([
-            'headers' => [
-                'Accept' => '*/*',
-            ],
-        ]);
-
-        foreach ($this->schemas as $api) {
-            $category = $api['category'];
-            $apiCode = $api['code'];
-
-            $savePath = MODEL_DIR . "/{$category->value}/{$apiCode}/";
-            if (!file_exists($savePath)) {
-                mkdir($savePath, 0755, true);
-            }
-
-            echo "Retrieving schemas for {$category->value} category {$apiCode}\n";
-
-            foreach ($api['versions'] as $version) {
-                $res = $client->get($version['url']);
-                if (isset($version['selector'])) {
-                    $html = HtmlDomParser::str_get_html($res->getBody()->getContents());
-                    $rawSchemaData = $html->findOne($version['selector'])->text();
-                    $json = json_decode(html_entity_decode($rawSchemaData));
-                } else {
-                    $json = json_decode($res->getBody()->getContents());
-                }
-
-                file_put_contents($version['path'], json_encode($json, JSON_PRETTY_PRINT));
-            }
-
-            echo "Downloaded {$apiCode} schema\n";
+        try {
+            $schema->download();
+        } catch (Exception $e) {
+            echo "Failed to download {$schema->code} schema: {$e->getMessage()}\n";
+            return 1;
         }
 
+        echo "Downloaded {$schema->code} schema\n";
         return 0;
     }
 }

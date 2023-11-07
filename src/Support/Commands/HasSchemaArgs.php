@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace SellingPartnerApi\Support\Commands;
 
@@ -22,7 +21,8 @@ trait HasSchemaArgs
      * a subset of schemas, filtered by category or schema name.
      *
      * @return void
-     */ protected function configure(): void
+     */
+    protected function configure(): void
     {
         parent::configure();
 
@@ -62,7 +62,7 @@ trait HasSchemaArgs
         $categories = $input->getOption('category');
         $schemas = $input->getOption('schema');
 
-        return Schema::schemas(
+        return Schema::where(
             is_string($categories) ? [$categories] : $categories,
             is_string($schemas) ? [$schemas] : $schemas,
         );

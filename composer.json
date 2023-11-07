@@ -30,16 +30,40 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^3.4"
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "composer/semver": "^3.4",
+        "symfony/console": "^6.3",
+        "psy/psysh": "^0.11.22",
+        "voku/simple_html_dom": "^4.8"
     },
     "autoload": {
-        "psr-4": { "SellingPartnerApi\\" : "lib/" }
+        "psr-4": {
+          "SellingPartnerApi\\" : "src/"
+        },
+        "files": [
+          "src/Support/constants.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": { "SellingPartnerApi\\Tests\\" : "test/" }
     },
     "scripts": {
+        "generate": [
+            "composer\\config::disableprocesstimeout",
+            "php utils/generate-apis --"
+        ],
+        "refresh-schemas": [
+            "@download-schemas",
+            "@customize-schemas"
+        ],
+        "make": [
+            "@download-schemas",
+            "@customize-schemas",
+            "@generate"
+        ],
+        "version-update": "SellingPartnerApi\\Support\\Commands\\UpdateVersion::execute",
         "test": "vendor/bin/phpunit",
-        "lint": "vendor/bin/php-cs-fixer fix"
+        "clean": "rm -rf docs src/models/*/* src/apis/*/*/*",
+        "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * VendorDirectFulfillmentInventoryV1Api
  * PHP version 7.3
@@ -289,7 +289,8 @@ class VendorDirectFulfillmentInventoryV1Api extends BaseApi
      */
     public function submitInventoryUpdateAsync($warehouse_id, $body)
     {
-        return $this->submitInventoryUpdateAsyncWithHttpInfo($warehouse_id, $body);;
+        return $this->submitInventoryUpdateAsyncWithHttpInfo($warehouse_id, $body);
+        ;
     }
 
     /**

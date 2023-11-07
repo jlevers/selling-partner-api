@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * FbaInventoryV1Api
  * PHP version 7.3
@@ -275,7 +275,8 @@ class FbaInventoryV1Api extends BaseApi
      */
     public function getInventorySummariesAsync($granularity_type, $granularity_id, $marketplace_ids, $details = 'false', $start_date_time = null, $seller_skus = null, $next_token = null, $seller_sku = null)
     {
-        return $this->getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token, $seller_sku);;
+        return $this->getInventorySummariesAsyncWithHttpInfo($granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token, $seller_sku);
+        ;
     }
 
     /**

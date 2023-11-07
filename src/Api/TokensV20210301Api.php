@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * TokensV20210301Api
  * PHP version 7.3
@@ -286,7 +286,8 @@ class TokensV20210301Api extends BaseApi
      */
     public function createRestrictedDataTokenAsync($body)
     {
-        return $this->createRestrictedDataTokenAsyncWithHttpInfo($body);;
+        return $this->createRestrictedDataTokenAsyncWithHttpInfo($body);
+        ;
     }
 
     /**

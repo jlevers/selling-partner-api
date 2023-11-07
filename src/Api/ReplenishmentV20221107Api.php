@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * ReplenishmentV20221107Api
  * PHP version 7.3
@@ -291,7 +291,8 @@ class ReplenishmentV20221107Api extends BaseApi
      */
     public function getSellingPartnerMetricsAsync($body = null)
     {
-        return $this->getSellingPartnerMetricsAsyncWithHttpInfo($body);;
+        return $this->getSellingPartnerMetricsAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -680,7 +681,8 @@ class ReplenishmentV20221107Api extends BaseApi
      */
     public function listOfferMetricsAsync($body = null)
     {
-        return $this->listOfferMetricsAsyncWithHttpInfo($body);;
+        return $this->listOfferMetricsAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -1069,7 +1071,8 @@ class ReplenishmentV20221107Api extends BaseApi
      */
     public function listOffersAsync($body = null)
     {
-        return $this->listOffersAsyncWithHttpInfo($body);;
+        return $this->listOffersAsyncWithHttpInfo($body);
+        ;
     }
 
     /**

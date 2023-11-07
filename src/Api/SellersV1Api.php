@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * SellersV1Api
  * PHP version 7.3
@@ -288,7 +288,8 @@ class SellersV1Api extends BaseApi
      */
     public function getMarketplaceParticipationsAsync()
     {
-        return $this->getMarketplaceParticipationsAsyncWithHttpInfo();;
+        return $this->getMarketplaceParticipationsAsyncWithHttpInfo();
+        ;
     }
 
     /**

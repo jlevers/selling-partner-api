@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * AplusContentV20201101Api
  * PHP version 7.3
@@ -273,7 +273,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function createContentDocumentAsync($marketplace_id, $post_content_document_request)
     {
-        return $this->createContentDocumentAsyncWithHttpInfo($marketplace_id, $post_content_document_request);;
+        return $this->createContentDocumentAsyncWithHttpInfo($marketplace_id, $post_content_document_request);
+        ;
     }
 
     /**
@@ -689,7 +690,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function getContentDocumentAsync($content_reference_key, $marketplace_id, $included_data_set)
     {
-        return $this->getContentDocumentAsyncWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set);;
+        return $this->getContentDocumentAsyncWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set);
+        ;
     }
 
     /**
@@ -1138,7 +1140,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function listContentDocumentAsinRelationsAsync($content_reference_key, $marketplace_id, $included_data_set = null, $asin_set = null, $page_token = null)
     {
-        return $this->listContentDocumentAsinRelationsAsyncWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);;
+        return $this->listContentDocumentAsinRelationsAsyncWithHttpInfo($content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
+        ;
     }
 
     /**
@@ -1597,7 +1600,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function postContentDocumentApprovalSubmissionAsync($content_reference_key, $marketplace_id)
     {
-        return $this->postContentDocumentApprovalSubmissionAsyncWithHttpInfo($content_reference_key, $marketplace_id);;
+        return $this->postContentDocumentApprovalSubmissionAsyncWithHttpInfo($content_reference_key, $marketplace_id);
+        ;
     }
 
     /**
@@ -2020,7 +2024,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function postContentDocumentAsinRelationsAsync($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request)
     {
-        return $this->postContentDocumentAsinRelationsAsyncWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);;
+        return $this->postContentDocumentAsinRelationsAsyncWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
+        ;
     }
 
     /**
@@ -2454,7 +2459,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function postContentDocumentSuspendSubmissionAsync($content_reference_key, $marketplace_id)
     {
-        return $this->postContentDocumentSuspendSubmissionAsyncWithHttpInfo($content_reference_key, $marketplace_id);;
+        return $this->postContentDocumentSuspendSubmissionAsyncWithHttpInfo($content_reference_key, $marketplace_id);
+        ;
     }
 
     /**
@@ -2874,7 +2880,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function searchContentDocumentsAsync($marketplace_id, $page_token = null)
     {
-        return $this->searchContentDocumentsAsyncWithHttpInfo($marketplace_id, $page_token);;
+        return $this->searchContentDocumentsAsyncWithHttpInfo($marketplace_id, $page_token);
+        ;
     }
 
     /**
@@ -3274,7 +3281,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function searchContentPublishRecordsAsync($marketplace_id, $asin, $page_token = null)
     {
-        return $this->searchContentPublishRecordsAsyncWithHttpInfo($marketplace_id, $asin, $page_token);;
+        return $this->searchContentPublishRecordsAsyncWithHttpInfo($marketplace_id, $asin, $page_token);
+        ;
     }
 
     /**
@@ -3710,7 +3718,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function updateContentDocumentAsync($content_reference_key, $marketplace_id, $post_content_document_request)
     {
-        return $this->updateContentDocumentAsyncWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_request);;
+        return $this->updateContentDocumentAsyncWithHttpInfo($content_reference_key, $marketplace_id, $post_content_document_request);
+        ;
     }
 
     /**
@@ -4131,7 +4140,8 @@ class AplusContentV20201101Api extends BaseApi
      */
     public function validateContentDocumentAsinRelationsAsync($marketplace_id, $post_content_document_request, $asin_set = null)
     {
-        return $this->validateContentDocumentAsinRelationsAsyncWithHttpInfo($marketplace_id, $post_content_document_request, $asin_set);;
+        return $this->validateContentDocumentAsinRelationsAsyncWithHttpInfo($marketplace_id, $post_content_document_request, $asin_set);
+        ;
     }
 
     /**

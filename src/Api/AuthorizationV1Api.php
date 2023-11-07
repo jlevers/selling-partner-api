@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * AuthorizationV1Api
  * PHP version 7.3
@@ -297,7 +297,8 @@ class AuthorizationV1Api extends BaseApi
      */
     public function getAuthorizationCodeAsync($selling_partner_id, $developer_id, $mws_auth_token)
     {
-        return $this->getAuthorizationCodeAsyncWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token);;
+        return $this->getAuthorizationCodeAsyncWithHttpInfo($selling_partner_id, $developer_id, $mws_auth_token);
+        ;
     }
 
     /**

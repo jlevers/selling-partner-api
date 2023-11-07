@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * VendorDirectFulfillmentPaymentsV1Api
  * PHP version 7.3
@@ -286,7 +286,8 @@ class VendorDirectFulfillmentPaymentsV1Api extends BaseApi
      */
     public function submitInvoiceAsync($body)
     {
-        return $this->submitInvoiceAsyncWithHttpInfo($body);;
+        return $this->submitInvoiceAsyncWithHttpInfo($body);
+        ;
     }
 
     /**

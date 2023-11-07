@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * ShipmentInvoicingV0Api
  * PHP version 7.3
@@ -286,7 +286,8 @@ class ShipmentInvoicingV0Api extends BaseApi
      */
     public function getInvoiceStatusAsync($shipment_id)
     {
-        return $this->getInvoiceStatusAsyncWithHttpInfo($shipment_id);;
+        return $this->getInvoiceStatusAsyncWithHttpInfo($shipment_id);
+        ;
     }
 
     /**
@@ -682,7 +683,8 @@ class ShipmentInvoicingV0Api extends BaseApi
      */
     public function getShipmentDetailsAsync($shipment_id)
     {
-        return $this->getShipmentDetailsAsyncWithHttpInfo($shipment_id);;
+        return $this->getShipmentDetailsAsyncWithHttpInfo($shipment_id);
+        ;
     }
 
     /**
@@ -1081,7 +1083,8 @@ class ShipmentInvoicingV0Api extends BaseApi
      */
     public function submitInvoiceAsync($shipment_id, $body)
     {
-        return $this->submitInvoiceAsyncWithHttpInfo($shipment_id, $body);;
+        return $this->submitInvoiceAsyncWithHttpInfo($shipment_id, $body);
+        ;
     }
 
     /**

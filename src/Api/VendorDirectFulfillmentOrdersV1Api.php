@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * VendorDirectFulfillmentOrdersV1Api
  * PHP version 7.3
@@ -289,7 +289,8 @@ class VendorDirectFulfillmentOrdersV1Api extends BaseApi
      */
     public function getOrderAsync($purchase_order_number)
     {
-        return $this->getOrderAsyncWithHttpInfo($purchase_order_number);;
+        return $this->getOrderAsyncWithHttpInfo($purchase_order_number);
+        ;
     }
 
     /**
@@ -693,7 +694,8 @@ class VendorDirectFulfillmentOrdersV1Api extends BaseApi
      */
     public function getOrdersAsync($created_after, $created_before, $ship_from_party_id = null, $status = null, $limit = null, $sort_order = null, $next_token = null, $include_details = 'true')
     {
-        return $this->getOrdersAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);;
+        return $this->getOrdersAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
+        ;
     }
 
     /**
@@ -1171,7 +1173,8 @@ class VendorDirectFulfillmentOrdersV1Api extends BaseApi
      */
     public function submitAcknowledgementAsync($body)
     {
-        return $this->submitAcknowledgementAsyncWithHttpInfo($body);;
+        return $this->submitAcknowledgementAsyncWithHttpInfo($body);
+        ;
     }
 
     /**

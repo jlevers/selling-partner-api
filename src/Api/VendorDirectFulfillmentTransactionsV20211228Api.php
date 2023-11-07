@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * VendorDirectFulfillmentTransactionsV20211228Api
  * PHP version 7.3
@@ -286,7 +286,8 @@ class VendorDirectFulfillmentTransactionsV20211228Api extends BaseApi
      */
     public function getTransactionStatusAsync($transaction_id)
     {
-        return $this->getTransactionStatusAsyncWithHttpInfo($transaction_id);;
+        return $this->getTransactionStatusAsyncWithHttpInfo($transaction_id);
+        ;
     }
 
     /**

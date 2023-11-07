@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * VendorDirectFulfillmentSandboxV20211028Api
  * PHP version 7.3
@@ -286,7 +286,8 @@ class VendorDirectFulfillmentSandboxV20211028Api extends BaseApi
      */
     public function generateOrderScenariosAsync($body)
     {
-        return $this->generateOrderScenariosAsyncWithHttpInfo($body);;
+        return $this->generateOrderScenariosAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -676,7 +677,8 @@ class VendorDirectFulfillmentSandboxV20211028Api extends BaseApi
      */
     public function getOrderScenariosAsync($transaction_id)
     {
-        return $this->getOrderScenariosAsyncWithHttpInfo($transaction_id);;
+        return $this->getOrderScenariosAsyncWithHttpInfo($transaction_id);
+        ;
     }
 
     /**

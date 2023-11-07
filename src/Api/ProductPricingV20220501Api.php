@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * ProductPricingV20220501Api
  * PHP version 7.3
@@ -270,7 +270,8 @@ class ProductPricingV20220501Api extends BaseApi
      */
     public function getFeaturedOfferExpectedPriceBatchAsync($get_featured_offer_expected_price_batch_request_body)
     {
-        return $this->getFeaturedOfferExpectedPriceBatchAsyncWithHttpInfo($get_featured_offer_expected_price_batch_request_body);;
+        return $this->getFeaturedOfferExpectedPriceBatchAsyncWithHttpInfo($get_featured_offer_expected_price_batch_request_body);
+        ;
     }
 
     /**

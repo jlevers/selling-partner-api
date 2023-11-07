@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -18,6 +18,7 @@ return $config
         'single_blank_line_at_eof' => false,
         'blank_line_after_namespace' => false,
         'elseif' => false,
+        'declare_strict_types' => true,
     ])
     ->setRiskyAllowed(true)
     ->setFinder(

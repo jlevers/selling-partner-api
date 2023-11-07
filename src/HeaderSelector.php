@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * ApiException
  * PHP version 7.3

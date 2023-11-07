@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * UploadsV20201101Api
  * PHP version 7.3
@@ -295,7 +295,8 @@ class UploadsV20201101Api extends BaseApi
      */
     public function createUploadDestinationForResourceAsync($marketplace_ids, $content_md5, $resource, $content_type = null)
     {
-        return $this->createUploadDestinationForResourceAsyncWithHttpInfo($marketplace_ids, $content_md5, $resource, $content_type);;
+        return $this->createUploadDestinationForResourceAsyncWithHttpInfo($marketplace_ids, $content_md5, $resource, $content_type);
+        ;
     }
 
     /**

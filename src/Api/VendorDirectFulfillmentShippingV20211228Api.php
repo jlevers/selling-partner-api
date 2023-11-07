@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * VendorDirectFulfillmentShippingV20211228Api
  * PHP version 7.3
@@ -305,7 +305,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function createShippingLabelsAsync($purchase_order_number, $body)
     {
-        return $this->createShippingLabelsAsyncWithHttpInfo($purchase_order_number, $body);;
+        return $this->createShippingLabelsAsyncWithHttpInfo($purchase_order_number, $body);
+        ;
     }
 
     /**
@@ -716,7 +717,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function getCustomerInvoiceAsync($purchase_order_number)
     {
-        return $this->getCustomerInvoiceAsyncWithHttpInfo($purchase_order_number);;
+        return $this->getCustomerInvoiceAsyncWithHttpInfo($purchase_order_number);
+        ;
     }
 
     /**
@@ -1112,7 +1114,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function getCustomerInvoicesAsync($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = null, $next_token = null)
     {
-        return $this->getCustomerInvoicesAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);;
+        return $this->getCustomerInvoicesAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
+        ;
     }
 
     /**
@@ -1567,7 +1570,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function getPackingSlipAsync($purchase_order_number)
     {
-        return $this->getPackingSlipAsyncWithHttpInfo($purchase_order_number);;
+        return $this->getPackingSlipAsyncWithHttpInfo($purchase_order_number);
+        ;
     }
 
     /**
@@ -1979,7 +1983,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function getPackingSlipsAsync($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = 'ASC', $next_token = null)
     {
-        return $this->getPackingSlipsAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);;
+        return $this->getPackingSlipsAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
+        ;
     }
 
     /**
@@ -2434,7 +2439,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function getShippingLabelAsync($purchase_order_number)
     {
-        return $this->getShippingLabelAsyncWithHttpInfo($purchase_order_number);;
+        return $this->getShippingLabelAsyncWithHttpInfo($purchase_order_number);
+        ;
     }
 
     /**
@@ -2830,7 +2836,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function getShippingLabelsAsync($created_after, $created_before, $ship_from_party_id = null, $limit = null, $sort_order = 'ASC', $next_token = null)
     {
-        return $this->getShippingLabelsAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);;
+        return $this->getShippingLabelsAsyncWithHttpInfo($created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
+        ;
     }
 
     /**
@@ -3285,7 +3292,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function submitShipmentConfirmationsAsync($body)
     {
-        return $this->submitShipmentConfirmationsAsyncWithHttpInfo($body);;
+        return $this->submitShipmentConfirmationsAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -3675,7 +3683,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function submitShipmentStatusUpdatesAsync($body)
     {
-        return $this->submitShipmentStatusUpdatesAsyncWithHttpInfo($body);;
+        return $this->submitShipmentStatusUpdatesAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -4065,7 +4074,8 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
      */
     public function submitShippingLabelRequestAsync($body)
     {
-        return $this->submitShippingLabelRequestAsyncWithHttpInfo($body);;
+        return $this->submitShippingLabelRequestAsyncWithHttpInfo($body);
+        ;
     }
 
     /**

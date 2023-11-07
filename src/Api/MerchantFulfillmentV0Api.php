@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * MerchantFulfillmentV0Api
  * PHP version 7.3
@@ -273,7 +273,8 @@ class MerchantFulfillmentV0Api extends BaseApi
      */
     public function cancelShipmentAsync($shipment_id)
     {
-        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id);;
+        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id);
+        ;
     }
 
     /**
@@ -660,7 +661,8 @@ class MerchantFulfillmentV0Api extends BaseApi
      */
     public function cancelShipmentOldAsync($shipment_id)
     {
-        return $this->cancelShipmentOldAsyncWithHttpInfo($shipment_id);;
+        return $this->cancelShipmentOldAsyncWithHttpInfo($shipment_id);
+        ;
     }
 
     /**
@@ -1047,7 +1049,8 @@ class MerchantFulfillmentV0Api extends BaseApi
      */
     public function createShipmentAsync($body)
     {
-        return $this->createShipmentAsyncWithHttpInfo($body);;
+        return $this->createShipmentAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -1424,7 +1427,8 @@ class MerchantFulfillmentV0Api extends BaseApi
      */
     public function getAdditionalSellerInputsAsync($body)
     {
-        return $this->getAdditionalSellerInputsAsyncWithHttpInfo($body);;
+        return $this->getAdditionalSellerInputsAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -1798,7 +1802,8 @@ class MerchantFulfillmentV0Api extends BaseApi
      */
     public function getAdditionalSellerInputsOldAsync($body)
     {
-        return $this->getAdditionalSellerInputsOldAsyncWithHttpInfo($body);;
+        return $this->getAdditionalSellerInputsOldAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -2172,7 +2177,8 @@ class MerchantFulfillmentV0Api extends BaseApi
      */
     public function getEligibleShipmentServicesAsync($body)
     {
-        return $this->getEligibleShipmentServicesAsyncWithHttpInfo($body);;
+        return $this->getEligibleShipmentServicesAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -2546,7 +2552,8 @@ class MerchantFulfillmentV0Api extends BaseApi
      */
     public function getEligibleShipmentServicesOldAsync($body)
     {
-        return $this->getEligibleShipmentServicesOldAsyncWithHttpInfo($body);;
+        return $this->getEligibleShipmentServicesOldAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -2923,7 +2930,8 @@ class MerchantFulfillmentV0Api extends BaseApi
      */
     public function getShipmentAsync($shipment_id)
     {
-        return $this->getShipmentAsyncWithHttpInfo($shipment_id);;
+        return $this->getShipmentAsyncWithHttpInfo($shipment_id);
+        ;
     }
 
     /**

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * SmallAndLightV1Api
  * PHP version 7.3
@@ -196,7 +196,8 @@ class SmallAndLightV1Api extends BaseApi
      */
     public function deleteSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
     {
-        return $this->deleteSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);;
+        return $this->deleteSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);
+        ;
     }
 
     /**
@@ -605,7 +606,8 @@ class SmallAndLightV1Api extends BaseApi
      */
     public function getSmallAndLightEligibilityBySellerSKUAsync($seller_sku, $marketplace_ids)
     {
-        return $this->getSmallAndLightEligibilityBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);;
+        return $this->getSmallAndLightEligibilityBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);
+        ;
     }
 
     /**
@@ -1021,7 +1023,8 @@ class SmallAndLightV1Api extends BaseApi
      */
     public function getSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
     {
-        return $this->getSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);;
+        return $this->getSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);
+        ;
     }
 
     /**
@@ -1418,7 +1421,8 @@ class SmallAndLightV1Api extends BaseApi
      */
     public function getSmallAndLightFeePreviewAsync($body)
     {
-        return $this->getSmallAndLightFeePreviewAsyncWithHttpInfo($body);;
+        return $this->getSmallAndLightFeePreviewAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -1811,7 +1815,8 @@ class SmallAndLightV1Api extends BaseApi
      */
     public function putSmallAndLightEnrollmentBySellerSKUAsync($seller_sku, $marketplace_ids)
     {
-        return $this->putSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);;
+        return $this->putSmallAndLightEnrollmentBySellerSKUAsyncWithHttpInfo($seller_sku, $marketplace_ids);
+        ;
     }
 
     /**

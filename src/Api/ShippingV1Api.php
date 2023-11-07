@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * ShippingV1Api
  * PHP version 7.3
@@ -270,7 +270,8 @@ class ShippingV1Api extends BaseApi
      */
     public function cancelShipmentAsync($shipment_id)
     {
-        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id);;
+        return $this->cancelShipmentAsyncWithHttpInfo($shipment_id);
+        ;
     }
 
     /**
@@ -647,7 +648,8 @@ class ShippingV1Api extends BaseApi
      */
     public function createShipmentAsync($body)
     {
-        return $this->createShipmentAsyncWithHttpInfo($body);;
+        return $this->createShipmentAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -1018,7 +1020,8 @@ class ShippingV1Api extends BaseApi
      */
     public function getAccountAsync()
     {
-        return $this->getAccountAsyncWithHttpInfo();;
+        return $this->getAccountAsyncWithHttpInfo();
+        ;
     }
 
     /**
@@ -1378,7 +1381,8 @@ class ShippingV1Api extends BaseApi
      */
     public function getRatesAsync($body)
     {
-        return $this->getRatesAsyncWithHttpInfo($body);;
+        return $this->getRatesAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -1755,7 +1759,8 @@ class ShippingV1Api extends BaseApi
      */
     public function getShipmentAsync($shipment_id)
     {
-        return $this->getShipmentAsyncWithHttpInfo($shipment_id);;
+        return $this->getShipmentAsyncWithHttpInfo($shipment_id);
+        ;
     }
 
     /**
@@ -2135,7 +2140,8 @@ class ShippingV1Api extends BaseApi
      */
     public function getTrackingInformationAsync($tracking_id)
     {
-        return $this->getTrackingInformationAsyncWithHttpInfo($tracking_id);;
+        return $this->getTrackingInformationAsyncWithHttpInfo($tracking_id);
+        ;
     }
 
     /**
@@ -2515,7 +2521,8 @@ class ShippingV1Api extends BaseApi
      */
     public function purchaseLabelsAsync($shipment_id, $body)
     {
-        return $this->purchaseLabelsAsyncWithHttpInfo($shipment_id, $body);;
+        return $this->purchaseLabelsAsyncWithHttpInfo($shipment_id, $body);
+        ;
     }
 
     /**
@@ -2906,7 +2913,8 @@ class ShippingV1Api extends BaseApi
      */
     public function purchaseShipmentAsync($body)
     {
-        return $this->purchaseShipmentAsyncWithHttpInfo($body);;
+        return $this->purchaseShipmentAsyncWithHttpInfo($body);
+        ;
     }
 
     /**
@@ -3286,7 +3294,8 @@ class ShippingV1Api extends BaseApi
      */
     public function retrieveShippingLabelAsync($shipment_id, $tracking_id, $body)
     {
-        return $this->retrieveShippingLabelAsyncWithHttpInfo($shipment_id, $tracking_id, $body);;
+        return $this->retrieveShippingLabelAsyncWithHttpInfo($shipment_id, $tracking_id, $body);
+        ;
     }
 
     /**

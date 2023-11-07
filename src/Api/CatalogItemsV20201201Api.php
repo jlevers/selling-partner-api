@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * CatalogItemsV20201201Api
  * PHP version 7.3
@@ -295,7 +295,8 @@ class CatalogItemsV20201201Api extends BaseApi
      */
     public function getCatalogItemAsync($asin, $marketplace_ids, $included_data = null, $locale = null)
     {
-        return $this->getCatalogItemAsyncWithHttpInfo($asin, $marketplace_ids, $included_data, $locale);;
+        return $this->getCatalogItemAsyncWithHttpInfo($asin, $marketplace_ids, $included_data, $locale);
+        ;
     }
 
     /**
@@ -748,7 +749,8 @@ class CatalogItemsV20201201Api extends BaseApi
      */
     public function searchCatalogItemsAsync($keywords, $marketplace_ids, $included_data = null, $brand_names = null, $classification_ids = null, $page_size = 10, $page_token = null, $keywords_locale = null, $locale = null)
     {
-        return $this->searchCatalogItemsAsyncWithHttpInfo($keywords, $marketplace_ids, $included_data, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale, $locale);;
+        return $this->searchCatalogItemsAsyncWithHttpInfo($keywords, $marketplace_ids, $included_data, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale, $locale);
+        ;
     }
 
     /**

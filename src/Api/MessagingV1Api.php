@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * MessagingV1Api
  * PHP version 7.3
@@ -292,7 +292,8 @@ class MessagingV1Api extends BaseApi
      */
     public function confirmCustomizationDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->confirmCustomizationDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->confirmCustomizationDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -725,7 +726,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createAmazonMotorsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createAmazonMotorsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createAmazonMotorsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -1158,7 +1160,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createConfirmDeliveryDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmDeliveryDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createConfirmDeliveryDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -1591,7 +1594,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createConfirmOrderDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmOrderDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createConfirmOrderDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -2024,7 +2028,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createConfirmServiceDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmServiceDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createConfirmServiceDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -2457,7 +2462,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createDigitalAccessKeyAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createDigitalAccessKeyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createDigitalAccessKeyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -2890,7 +2896,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createLegalDisclosureAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createLegalDisclosureAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createLegalDisclosureAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -3320,7 +3327,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createNegativeFeedbackRemovalAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->createNegativeFeedbackRemovalAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
+        return $this->createNegativeFeedbackRemovalAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);
+        ;
     }
 
     /**
@@ -3739,7 +3747,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createUnexpectedProblemAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createUnexpectedProblemAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createUnexpectedProblemAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -4172,7 +4181,8 @@ class MessagingV1Api extends BaseApi
      */
     public function createWarrantyAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createWarrantyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createWarrantyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**
@@ -4602,7 +4612,8 @@ class MessagingV1Api extends BaseApi
      */
     public function getAttributesAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->getAttributesAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
+        return $this->getAttributesAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);
+        ;
     }
 
     /**
@@ -5018,7 +5029,8 @@ class MessagingV1Api extends BaseApi
      */
     public function getMessagingActionsForOrderAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->getMessagingActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
+        return $this->getMessagingActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);
+        ;
     }
 
     /**
@@ -5437,7 +5449,8 @@ class MessagingV1Api extends BaseApi
      */
     public function sendInvoiceAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->sendInvoiceAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->sendInvoiceAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        ;
     }
 
     /**

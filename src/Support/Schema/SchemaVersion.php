@@ -2,9 +2,12 @@
 
 namespace SellingPartnerApi\Support\Schema;
 
+use SellingPartnerApi\Support\Schema;
+
 class SchemaVersion
 {
     public function __construct(
+        public Schema $schema,
         public string $url,
         public string $version,
         public bool $latest = false,

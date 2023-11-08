@@ -13,17 +13,49 @@ class Schema
     public const API_DATA_FILE = RESOURCE_DIR . '/apis.json';
 
     /**
+     * The human-readable name of this schema.
+     *
+     * @var string
+     */
+    public string $name;
+
+    /**
      * The versions of this schema (as SchemaVersion objects).
      *
      * @var array<SchemaVersion>
      */
     private array $versions = [];
 
+    /**
+     * The decoded JSON data from the apis.json file.
+     *
+     * @var array
+     */
+    private static array $allSchemaData;
+
     public function __construct(
         public string $code,
-        private string $name,
         public ApiCategory $category,
     ) {
+        if (!static::$allSchemaData) {
+            static::loadSchemaData();
+        }
+
+        $apiData = static::$allSchemaData[$this->category->value][$this->code];
+        $this->name = $apiData['name'];
+
+        $latestVersionIdx = count($apiData['versions']) - 1;
+        foreach ($apiData['versions'] as $i => $version) {
+            $this->versions[] = new SchemaVersion(
+                $this,
+                $version['url'],
+                // Casting to string because json_decode automatically casts numeric strings to ints
+                (string) $version['version'],
+                latest: $i === $latestVersionIdx,
+                deprecated: $version['deprecated'] ?? false,
+                selector: $version['selector'] ?? null,
+            );
+        }
     }
 
     /**
@@ -50,7 +82,10 @@ class Schema
                 $json = json_decode($res->getBody()->getContents());
             }
 
-            file_put_contents($this->path() . $version->filename(), json_encode($json, JSON_PRETTY_PRINT));
+            file_put_contents(
+                $this->path(true) . $version->filename(),
+                json_encode($json, JSON_PRETTY_PRINT)
+            );
         }
     }
 
@@ -65,14 +100,14 @@ class Schema
     }
 
     /**
-     * Add a version to this schema.
+     * Get the path where versions of this schema are stored.
      *
-     * @param  SchemaVersion  $version
-     * @return void
+     * @param  bool  $upstream  If true, return the path where original Amazon schemas are stored.
+     * @return string
      */
-    public function addVersion(SchemaVersion $version): void
+    public function path(bool $upstream = false): string
     {
-        $this->versions[] = $version;
+        return MODEL_DIR . ($upstream ? '/raw' : '') . "/{$this->category->value}/{$this->code}/";
     }
 
     /**
@@ -97,7 +132,7 @@ class Schema
      */
     public static function where(array $categories, array $apiCodes): array
     {
-        $apiData = json_decode(file_get_contents(static::API_DATA_FILE), true);
+        static::loadSchemaData();
 
         $allCats = ApiCategory::values();
         $cats = null;
@@ -114,7 +149,7 @@ class Schema
         $schemas = [];
         foreach ($cats as $cat) {
             $apis = null;
-            $allCatApis = array_keys($apiData[$cat]);
+            $allCatApis = array_keys(static::$allSchemaData[$cat]);
             if ($apiCodes === []) {
                 $apis = $allCatApis;
             } else {
@@ -125,31 +160,21 @@ class Schema
                 echo "No matching API names found in the {$cat} category. Skipping...\n";
             }
 
-            foreach ($apis as $api) {
-                $schema = new Schema(
-                    $api,
-                    $apiData[$cat][$api]['name'],
-                    ApiCategory::from($cat),
-                );
-
-                $versions = $apiData[$cat][$api]['versions'];
-                $latestVersionIdx = count($versions) - 1;
-                foreach ($versions as $i => $version) {
-                    $schemaVersion = new SchemaVersion(
-                        $version['url'],
-                        // Casting to string because json_decode automatically casts numeric strings to ints
-                        (string) $version['version'],
-                        latest: $i === $latestVersionIdx,
-                        deprecated: $version['deprecated'] ?? false,
-                        selector: $version['selector'] ?? null,
-                    );
-                    $schema->addVersion($schemaVersion);
-                }
-
-                $schemas[] = $schema;
+            foreach ($apis as $apiCode) {
+                $schemas[] = new Schema($apiCode, ApiCategory::from($cat));
             }
         }
 
         return $schemas;
+    }
+
+    /**
+     * Load the raw schema data from resources/apis.json.
+     *
+     * @return void
+     */
+    private static function loadSchemaData(): void
+    {
+        static::$allSchemaData = json_decode(file_get_contents(static::API_DATA_FILE), true);
     }
 }

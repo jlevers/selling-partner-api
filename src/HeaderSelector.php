@@ -48,7 +48,10 @@ class HeaderSelector
         }
 
         $headers['Content-Type'] = $this->selectContentTypeHeader($contentTypes);
-        $headers['Host'] = $this->configuration->getBareHost();
+
+        $host = $this->configuration->getEndpoint();
+        $noProtocol = preg_replace('/.+\:\/\//', ' ', $host->value);
+        $headers['Host'] = trim($noProtocol, '/');
         return $headers;
     }
 
@@ -100,4 +103,3 @@ class HeaderSelector
         }
     }
 }
-

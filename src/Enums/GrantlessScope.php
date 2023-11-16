@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+
+namespace SellingPartnerApi\Enums;
+
+enum GrantlessScope: string
+{
+    use EnumTrait;
+
+    case NOTIFICATIONS = 'sellingpartnerapi::notifications';
+    case TOKEN_MIGRATION = 'sellingpartnerapi::migration';
+}

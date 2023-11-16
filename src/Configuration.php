@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 /**
  * Configuration
- * PHP version 7.3
+ * PHP version 8.1
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -15,44 +15,77 @@
 
 namespace SellingPartnerApi;
 
+use DateTime;
 use Exception;
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Utils as GuzzleUtils;
 use InvalidArgumentException;
 use RuntimeException;
-use SellingPartnerApi\Contract\RequestSignerContract;
+use SellingPartnerApi\Enums\Endpoint;
+use SellingPartnerApi\Enums\GrantlessScope;
 
-/**
- * Configuration Class Doc Comment
- * PHP version 7.3
- *
- * @category Class
- * @package  SellingPartnerApi
- */
 class Configuration
 {
     /**
-     * @const array[string]
+     * Amazon's Login With Amazon (LWA) authorization endpoint.
      */
-    public const REQUIRED_CONFIG_KEYS = [
-        "lwaClientId", "lwaClientSecret", "awsAccessKeyId", "awsSecretAccessKey", "endpoint"
-    ];
+    const LWA_AUTH_URL = 'https://api.amazon.com/auth/o2/token';
 
     /**
-     * Auth object for the SP API
+     * The LWA client ID.
      *
-     * @var Authentication
+     * @var string
      */
-    protected $auth;
+    protected string $clientId;
 
     /**
-     * The SP API endpoint. One of the constant values from the Endpoint class.
+     * The LWA client secret.
      *
-     * @var array
+     * @var string
      */
-    protected $endpoint = Endpoint::NA;
+    protected string $clientSecret;
 
     /**
-     * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
+     * The LWA refresh token.
+     *
+     * @var string
+     */
+    protected string $refreshToken;
+
+    /**
+     * A map of LWA client IDs to access tokens. Used to cache access tokens
+     * for multiple clients in a single spot.
+     *
+     * @var array[string => AccessToken]
+     */
+    private static array $accessTokens = [];
+
+    /**
+     * The SP API endpoint.
+     *
+     * @var Endpoint
+     */
+    protected Endpoint $endpoint;
+
+    /**
+     * The access token update callback, if any.
+     * PHP does not support callable type hints on attributes, so this is untyped.
+     *
+     * @var callable|null
+     */
+    protected $onUpdateCredentials = null;
+
+    /**
+     * The authentication client, if any.
+     *
+     * @var GuzzleHttp\ClientInterface|null
+     */
+    protected ClientInterface|null $authenticationClient = null;
+
+    /**
+     * User agent of the HTTP request
      *
      * @var string
      */
@@ -80,105 +113,217 @@ class Configuration
     protected static $tempFolderPath = null;
 
     /**
-     * @var RequestSignerContract
-     */
-    protected $requestSigner;
-
-    /**
-     * Constructor
-     * @param array $configurationOptions
+     * @param array  $options  Array of configuration options
      * @throws Exception
      */
-    public function __construct(array $configurationOptions)
+    public function __construct(array $options)
     {
-        // Make sure all required configuration options are present
-        $missingKeys = [];
-        foreach (static::REQUIRED_CONFIG_KEYS as $key) {
-            if (!isset($configurationOptions[$key])) {
-                $missingKeys[] = $key;
-            }
-        }
-        if (count($missingKeys) > 0) {
-            throw new RuntimeException("Required configuration values were missing: " . implode(", ", $missingKeys));
-        }
-
-        if (
-            (isset($configurationOptions["accessToken"]) && !isset($configurationOptions["accessTokenExpiration"])) ||
-            (!isset($configurationOptions["accessToken"]) && isset($configurationOptions["accessTokenExpiration"]))
-        ) {
-            throw new RuntimeException('If one of the `accessToken` or `accessTokenExpiration` configuration options is provided, the other must be provided as well');
-        }
-
-        $options = array_merge(
-            $configurationOptions,
-            [
-                "accessToken" => $configurationOptions["accessToken"] ?? null,
-                "accessTokenExpiration" => $configurationOptions["accessTokenExpiration"] ?? null,
-                "onUpdateCredentials" => $configurationOptions["onUpdateCredentials"] ?? null,
-                "roleArn" => $configurationOptions["roleArn"] ?? null,
-            ]
-        );
-
-        $this->endpoint = $options["endpoint"];
-        $this->auth = new Authentication($options);
-
-        $this->setRequestSigner($options["requestSigner"] ?? $this->auth);
-    }
-
-    public function getRequestSigner(): RequestSignerContract
-    {
-        return $this->requestSigner;
-    }
-
-    public function setRequestSigner(RequestSignerContract $requestSigner): void
-    {
-        $this->requestSigner = $requestSigner;
+        $this->validateOptions($options);
     }
 
     /**
-     * Gets the host
+     * Get LWA client ID.
      *
-     * @return string Host
+     * @return string
      */
-    public function getHost()
+    public function getClientId(): ?string
     {
-        return $this->endpoint["url"];
+        return $this->clientId;
     }
 
     /**
-     * Gets the stripped-down host (no protocol or trailing slash)
+     * Set LWA client ID.
      *
-     * @return string Host
+     * @param string  $clientId
+     * @return static
      */
-    public function getBareHost()
+    public function setClientId(string $clientId): static
     {
-        $host = $this->getHost();
-        $noProtocol = preg_replace("/.+\:\/\//", " ", $host);
-        return trim($noProtocol, "/");
+        $this->clientId = $clientId;
+        return $this;
     }
 
     /**
-     * Sets the user agent of the api client
+     * Get LWA client secret.
      *
-     * @param string $userAgent the user agent of the api client
+     * @return string
+     */
+    public function getClientSecret(): ?string
+    {
+        return $this->clientSecret;
+    }
+
+    /**
+     * Set LWA client secret.
      *
-     * @throws InvalidArgumentException
+     * @param string  $clientSecret
+     * @return static
+     */
+    public function setClientSecret(string $clientSecret): static
+    {
+        $this->clientSecret = $clientSecret;
+        return $this;
+    }
+
+    /**
+     * Get LWA refresh token.
+     *
+     * @return string
+     */
+    public function getRefreshToken(): ?string
+    {
+        return $this->refreshToken;
+    }
+
+    /**
+     * Set LWA refresh token.
+     *
+     * @param string  $refreshToken
+     * @return static
+     */
+    public function setRefreshToken(string $refreshToken): static
+    {
+        $this->refreshToken = $refreshToken;
+        return $this;
+    }
+
+    /**
+     * Sets the access token for OAuth
+     *
+     * @param AccessToken  $accessToken  Token for OAuth
+     *
      * @return $this
      */
-    public function setUserAgent($userAgent)
+    public function setAccessToken(AccessToken $accessToken): static
     {
-        if (!is_string($userAgent)) {
-            throw new InvalidArgumentException("User-agent must be a string.");
+        static::$accessTokens[$this->clientId] = $accessToken;
+        return $this;
+    }
+
+    /**
+     * Gets the access token for OAuth
+     *
+     * @param GrantlessScope|null  $scope  The scope of the request, if it's grantless
+     * @return AccessToken|null  Access token for OAuth
+     */
+    public function getAccessToken(GrantlessScope $scope = null): AccessToken|null
+    {
+        // We don't cache grantless access tokens, since they're used relatively rarely
+        // and caching them adds complexity
+        if ($scope || !array_key_exists($this->clientId, static::$accessTokens) || static::$accessTokens[$this->clientId]->expired()) {
+            $jsonData = [
+                'grant_type' => $scope ? 'client_credentials' : 'refresh_token',
+                'client_id' => $this->clientId,
+                'client_secret' => $this->clientSecret,
+            ];
+
+            // Only pass one of `scope` and `refresh_token`. For more info, see:
+            // https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api#step-1-request-a-login-with-amazon-access-token
+            if ($scope) {
+                $jsonData['scope'] = $scope;
+            } else {
+                if ($this->refreshToken === null) {
+                    throw new RuntimeException('Refresh token is required unless calling a grantless API endpoint.');
+                }
+                $jsonData['refresh_token'] = $this->refreshToken;
+            }
+
+            $lwaTokenRequest = new Request(
+                'POST',
+                static::LWA_AUTH_URL,
+                ['Content-Type' => 'application/json'],
+                GuzzleUtils::jsonEncode($jsonData)
+            );
+            $res = $this->authenticationClient->send($lwaTokenRequest);
+
+            $body = json_decode(stream_get_contents($res->getBody()), true);
+            $accessToken = new AccessToken(
+                $body['access_token'],
+                new DateTime("+{$body['expires_in']} seconds")
+            );
+
+            if ($scope) {
+                // As mentioned above, we don't cache grantless access tokens
+                return $accessToken;
+            }
+
+            static::$accessTokens[$this->clientId] = $accessToken;
         }
 
-        $this->userAgent = $userAgent;
+        return static::$accessTokens[$this->clientId];
+    }
+
+    /**
+     * Get current SP API endpoint.
+     *
+     * @return Endpoint
+     */
+    public function getEndpoint(): Endpoint
+    {
+        return $this->endpoint;
+    }
+
+    /**
+     * Set SP API endpoint.
+     *
+     * @param array  $endpoint
+     * @throws RuntimeException
+     * @return static
+     */
+    public function setEndpoint(Endpoint $endpoint): static
+    {
+        $this->endpoint = $endpoint;
+        return $this;
+    }
+
+    /**
+     * Get the access token update callback, if any.
+     *
+     * @return callable|null
+     */
+    public function getOnUpdateCredentials(): callable|null
+    {
+        return $this->onUpdateCredentials;
+    }
+
+    /**
+     * Set the access token update callback, if any.
+     *
+     * @param callable|null  $onUpdateCredentials
+     * @return static
+     */
+    public function setOnUpdateCredentials(callable|null $onUpdateCredentials): static
+    {
+        $this->onUpdateCredentials = $onUpdateCredentials;
+        return $this;
+    }
+
+    /**
+     * Get the authentication client, if any.
+     *
+     * @return GuzzleHttp\ClientInterface|null
+     */
+    public function getAuthenticationClient(): ClientInterface|null
+    {
+        return $this->authenticationClient;
+    }
+
+    /**
+     * Set the authentication client, if any.
+     *
+     * @param GuzzleHttp\ClientInterface|null  $authenticationClient
+     * @return static
+     */
+    public function setAuthenticationClient(ClientInterface|null $authenticationClient): static
+    {
+        $this->authenticationClient = $authenticationClient;
         return $this;
     }
 
     /**
      * Gets the user agent of the api client
      *
-     * @return string user agent
+     * @return string
      */
     public function getUserAgent()
     {
@@ -189,10 +334,9 @@ class Configuration
      * Sets debug flag
      *
      * @param bool $debug Debug flag
-     *
      * @return $this
      */
-    public function setDebug($debug)
+    public function setDebug(bool $debug): static
     {
         $this->debug = $debug;
         return $this;
@@ -211,11 +355,10 @@ class Configuration
     /**
      * Sets the debug file
      *
-     * @param string $debugFile Debug file
-     *
+     * @param string  $debugFile  Debug file path
      * @return $this
      */
-    public function setDebugFile($debugFile)
+    public function setDebugFile(string $debugFile): static
     {
         $this->debugFile = $debugFile;
         return $this;
@@ -234,10 +377,10 @@ class Configuration
     /**
      * Sets the temp folder path
      *
-     * @param ?string $tempFolderPath Temp folder path
+     * @param string|null $tempFolderPath Temp folder path
      * @return void
      */
-    public static function setTempFolderPath(?string $tempFolderPath = null): void
+    public static function setTempFolderPath(string $tempFolderPath = null): void
     {
         if ($tempFolderPath === null) {
             static::$tempFolderPath = sys_get_temp_dir();
@@ -260,148 +403,6 @@ class Configuration
     }
 
     /**
-     * Get the datetime string that was used to sign the most recently signed Selling Partner API request
-     *
-     * @return \DateTime The current time
-     */
-    public function getRequestDatetime()
-    {
-        return $this->auth->formattedRequestTime();
-    }
-
-    /**
-     * Get LWA client ID.
-     * 
-     * @return string
-     */
-    public function getLwaClientId(): ?string
-    {
-        return $this->auth->getLwaClientId();
-    }
-
-    /**
-     * Set LWA client ID.
-     * 
-     * @param string $lwaClientId
-     * @return void
-     */
-    public function setLwaClientId(string $lwaClientId): void
-    {
-        $this->auth->setLwaClientId($lwaClientId);
-    }
-
-    /**
-     * Get LWA client secret.
-     * 
-     * @return string
-     */
-    public function getLwaClientSecret(): ?string
-    {
-        return $this->auth->getLwaClientSecret();
-    }
-
-    /**
-     * Set LWA client secret.
-     * 
-     * @param string $lwaClientSecret
-     * @return void
-     */
-    public function setLwaClientSecret(string $lwaClientSecret): void
-    {
-        $this->auth->setLwaClientSecret($lwaClientSecret);
-    }
-
-    /**
-     * Get LWA refresh token.
-     * 
-     * @return string
-     */
-    public function getLwaRefreshToken(): ?string
-    {
-        return $this->auth->getLwaRefreshToken();
-    }
-
-    /**
-     * Set LWA refresh token.
-     * 
-     * @param string|null $lwaRefreshToken
-     * @return void
-     */
-    public function setLwaRefreshToken(?string $lwaRefreshToken = null): void
-    {
-        $this->auth->setLwaRefreshToken($lwaRefreshToken);
-    }
-
-    /**
-     * Get AWS access key ID.
-     * 
-     * @return string
-     */
-    public function getAwsAccessKeyId(): ?string
-    {
-        return $this->auth->getAwsAccessKeyId();
-    }
-
-    /**
-     * Set AWS access key ID.
-     * 
-     * @param string $awsAccessKeyId
-     * @return void
-     */
-    public function setAwsAccessKeyId(string $awsAccessKeyId): void
-    {
-        $this->auth->setAwsAccessKeyId($awsAccessKeyId);
-    }
-
-    /**
-     * Get AWS secret access key.
-     * 
-     * @return string|null
-     */
-    public function getAwsSecretAccessKey(): ?string
-    {
-        return $this->auth->getAwsSecretAccessKey();
-    }
-
-    /**
-     * Set AWS secret access key.
-     * 
-     * @param string $awsSecretAccessKey
-     * @return void
-     */
-    public function setAwsSecretAccessKey(string $awsSecretAccessKey): void
-    {
-        $this->auth->setAwsSecretAccessKey($awsSecretAccessKey);
-    }
-
-    /**
-     * Get current SP API endpoint.
-     *
-     * @return array
-     */
-    public function getEndpoint(): array
-    {
-        return $this->endpoint;
-    }
-
-    /**
-     * Set SP API endpoint. $endpoint should be one of the constants from Endpoint.php.
-     * 
-     * @param array $endpoint
-     * @throws RuntimeException
-     * @return void
-     */
-    public function setEndpoint(array $endpoint): void
-    {
-        if (!array_key_exists('url', $endpoint) || !array_key_exists('region', $endpoint)) {
-            throw new RuntimeException('$endpoint must contain `url` and `region` keys');
-        }
-
-        $this->endpoint = $endpoint;
-        $this->auth->setEndpoint($endpoint);
-    }
-
-    /**
      * Sign a request to the Selling Partner API using the AWS Signature V4 protocol.
      *
      * @param Request $request The request to sign
@@ -415,78 +416,37 @@ class Configuration
     }
 
     /**
-     * Gets the essential information for debugging
+     * Validate the options passed to the constructor.
      *
-     * @param string|null $tempFolderPath The path to the temp folder.
-     * @return string The report for debugging
+     * @param array  $options  Associative array of options
+     * @throws InvalidArgumentException
+     * @return void
      */
-    public static function toDebugReport(?string $tempFolderPath = null)
+    protected function validateOptions(array $options): void
     {
-        if ($tempFolderPath === null) {
-            $tempFolderPath = static::getTempFolderPath();
-        }
-        $report  = 'PHP SDK (SellingPartnerApi) Debug Report:' . PHP_EOL;
-        $report .= '    OS: ' . php_uname() . PHP_EOL;
-        $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    The version of the OpenAPI document: 2020-11-01' . PHP_EOL;
-        $report .= '    SDK Package Version: 5.9.0' . PHP_EOL;
-        $report .= '    Temp Folder Path: ' . $tempFolderPath . PHP_EOL;
-
-        return $report;
-    }
-
-    /**
-     * Returns an array of host settings
-     *
-     * @return array an array of host settings
-     */
-    public function getHostSettings()
-    {
-        return [
-            [
-                "url" => "https://sellingpartnerapi-na.amazon.com",
-                "description" => "No description provided",
-            ]
+        $requiredKeys = [
+            'clientId', 'clientSecret', 'endpoint',
         ];
-    }
-
-    /**
-     * Returns URL based on the index and variables
-     *
-     * @param int        $index     index of the host settings
-     * @param array|null $variables hash of variable and the corresponding value (optional)
-     * @return string URL based on host settings
-     */
-    public function getHostFromSettings($index, $variables = null)
-    {
-        if (null === $variables) {
-            $variables = [];
+        $missing = array_diff($requiredKeys, array_keys($options));
+        if (count($missing) > 0) {
+            throw new InvalidArgumentException('Required configuration option(s) missing: ' . implode(', ', $missing));
         }
 
-        $hosts = $this->getHostSettings();
-
-        // check array index out of bound
-        if ($index < 0 || $index >= count($hosts)) {
-            throw new InvalidArgumentException("Invalid index $index when selecting the host. Must be less than ".count($hosts));
+        $validKeys = [
+            'clientId', 'clientSecret', 'endpoint', 'refreshToken', 'accessToken',
+            'onUpdateCredentials', 'authenticationClient',
+        ];
+        $invalid = array_diff(array_keys($options), $validKeys);
+        if (count($invalid) > 0) {
+            throw new InvalidArgumentException('Invalid configuration option(s) passed: ' . implode(', ', $invalid));
         }
 
-        $host = $hosts[$index];
-        $url = $host["url"];
-
-        // go through variable and assign a value
-        foreach ($host["variables"] ?? [] as $name => $variable) {
-            if (array_key_exists($name, $variables)) { // check to see if it's in the variables provided by the user
-                if (in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
-                    $url = str_replace("{".$name."}", $variables[$name], $url);
-                } else {
-                    throw new InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".implode(',', $variable["enum_values"]).".");
-                }
-            } else {
-                // use default value
-                $url = str_replace("{".$name."}", $variable["default_value"], $url);
-            }
+        if (!array_key_exists('authenticationClient', $options)) {
+            $options['authenticationClient'] = new Client();
         }
 
-        return $url;
+        foreach ($options as $option => $value) {
+            $this->{'set' . ucfirst($option)}($value);
+        }
     }
 }

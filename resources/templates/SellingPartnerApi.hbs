@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * Selling Partner Api
+ * PHP version 8.1
+ *
+ * @category Class
+ * @package  {{invokerPackage}}
+ * @author   Jesse Evers
+ * @link     https://highsidelabs.co
+ */
+
+{{>partials/partial_header}}
+
+namespace {{invokerPackage}};
+
+use BadMethodCallException;
+use RuntimeException;
+use {{apiPackage}}\Seller\SellerApiProvider;
+use {{apiPackage}}\Vendor\VendorApiProvider;
+use {{invokerPackage}}\Configuration;
+
+abstract class SellingPartnerApi
+{
+    public const VERSION = '{{artifactVersion}}';
+
+    /**
+     * The configuration for this client.
+     * @var Configuration
+     */
+    protected Configuration $config;
+
+    /**
+     * Create a new Selling Partner API client.
+     *
+     * @param Configuration $config The configuration for this client.
+     */
+    public function __construct(public Configuration $config)
+    {
+    }
+
+    /**
+     * Return an instance of the Seller API provider.
+     *
+     * @param Configuration $config
+     * @return SellerApiProvider
+     */
+    public static function seller(Configuration $config): SellerApiProvider
+    {
+        return new SellerApiProvider($config);
+    }
+
+    /**
+     * Return an instance of the Vendor API provider.
+     *
+     * @param Configuration $config
+     * @return VendorApiProvider
+     */
+    public static function vendor(Configuration $config): VendorApiProvider
+    {
+        return new VendorApiProvider($config);
+    }
+}

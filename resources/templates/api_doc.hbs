@@ -1,0 +1,83 @@
+# {{apiPackage}}\
+{{~ classname}}  {{! classname is on a new line to avoid the backslash after Api being treated as a block escape }}
+{{#if description}}
+
+{{{description}}}
+{{~/if ~}}
+
+All URIs are relative to {{basePath}}, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+{{#operations~}}
+{{#operation}}| [**{{operationId}}()**](#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}} |
+{{/operation}}{{~/operations~}}
+{{~#operations}}{{#operation}}
+
+## `{{operationId}}()`
+
+```php
+{{{operationId}}}({{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}){{#if returnType}}: {{{returnType}}}{{/if}}
+```
+{{{summary}}}
+{{~#if notes}}
+
+{{{notes}}}
+{{~/if}}
+
+### Example
+
+```php
+<?php declare(strict_types=1);
+use {{invokerPackage}}\Configuration;
+use {{invokerPackage}}\SellingPartnerApi;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+{{> php_doc_auth_partial ~}}
+$api = SellingPartnerApi::{{x-sp-api-category-code}}($config)->{{x-sp-api-accessor}}();
+{{#if vendorExtensions.x-group-parameters}}
+$associative_array = [
+{{#allParams}}    '{{paramName}}' => {{{example}}}, // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}
+{{/allParams ~}}
+
+];
+
+{{else}}
+{{#allParams}}${{paramName}} = {{{example}}}; // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}
+{{/allParams}}{{/if}}
+try {
+    {{#if returnType}}$result = {{/if}}$api->{{{operationId}}}({{#if vendorExtensions.x-group-parameters}}$associate_array{{else}}{{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}{{/if}});{{#if returnType}}
+    print_r($result);{{/if}}
+} catch (Exception $e) {
+    echo "Exception when calling {{classname}}->{{operationId}}: {$e->getMessage()}\n";
+}
+```
+
+### Parameters
+
+{{~#if vendorExtensions.x-group-parameters~}}
+Note: the input parameter is an associative array with the keys listed as the parameter names below.
+
+{{~/if}}
+{{#unless allParams}}This endpoint does not need any parameter.{{/unless}}{{#each allParams}}{{#if @last}}| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |{{/if}}{{/each}}
+{{#allParams}}| **{{paramName}}** | {{#if isFile}}**{{{dataType}}}**{{/if}}{{#if isPrimitiveType}}**{{{dataType}}}**{{else}}{{#unless isFile}}[**{{{dataType}}}**](../../../Models/{{x-sp-api-category}}/{{x-sp-api-name}}/{{baseType}}.md){{/unless}}{{/if}}| {{{description}}} |{{#unless required}} [optional]{{/unless}}{{#if defaultValue}} [default to {{{defaultValue}}}]{{/if}} |
+{{/allParams}}
+
+### Return type
+
+{{#if returnType}}{{#if returnTypeIsPrimitive}}**{{{returnType}}}**{{else}}[**{{{returnType}}}**](../../../Models/{{x-sp-api-category}}/{{x-sp-api-name}}/{{returnBaseType}}.md){{/if}}{{else}}void (empty response body){{/if}}
+
+### Authorization
+{{{authMethodsinDescription}}}
+{{#if authMethods}}This endpoint requires the following authorization methods:{{else}}No authorization required{{/if}}
+{{#each authMethods}}
+* `{{{name}}}`: {{{description}}}{{/each}}{{#if authMethods}}
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.{{/if}}
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/{{x-sp-api-category}})
+[[Back to README]](../../../../README.md){{/operation}}{{/operations}}

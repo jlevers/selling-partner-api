@@ -11,10 +11,23 @@
   "invokerPackage": "SellingPartnerApi",
 
   "files": {
-    "ModelInterface.mustache": {
-      "folder": "lib/Model",
-      "destinationFilename": "ModelInterface.php",
+    "SellingPartnerApi.hbs": {
+      "folder": "src",
+      "destinationFilename": "SellingPartnerApi.php",
       "templateType": "SupportingFiles"
+    },
+    "BaseApi.hbs": {
+      "folder": "src/Apis",
+      "destinationFilename": "BaseApi.php",
+      "templateType": "SupportingFiles"
+    },
+    "ModelInterface.hbs": {
+      "folder": "src/Models",
+      "destinationFilename": "ModelInterface.php"
+    },
+    "BaseModel.hbs": {
+      "folder": "src/Models",
+      "destinationFilename": "BaseModel.php"
     }
   }
 }

@@ -1,0 +1,27 @@
+class {{classname}}
+{
+    /**
+     * Possible values of this enum
+     */
+    {{#allowableValues}}
+    {{#enumVars}}
+    public const {{#unless isString}}NUMBER_{{/unless}}{{{name}}} = {{{value}}};
+    {{/enumVars}}
+    {{/allowableValues}}
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public static function getAllowableEnumValues()
+    {
+        return [
+            {{#allowableValues}}
+            {{#enumVars}}
+            self::{{#unless isString}}NUMBER_{{/unless}}{{{name}}}{{#unless @last}},
+            {{/unless}}
+            {{/enumVars}}
+            {{/allowableValues}}
+
+        ];
+    }
+}

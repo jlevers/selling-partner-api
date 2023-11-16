@@ -1,0 +1,8 @@
+{{#if hasAuthMethods ~}}
+$config = new {{invokerPackage}}\Configuration([
+    'clientId' => 'CLIENT_ID',
+    'clientSecret' => 'CLIENT_SECRET',
+    'refreshToken' => 'REFRESH_TOKEN',  // Not necessary if you only plan to call grantless operations{{/if}}{{/if}}{{/each}}
+]);
+
+{{/if}}

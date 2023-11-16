@@ -1,0 +1,100 @@
+<?php declare(strict_types=1);
+
+/**
+ * BaseApi
+ * PHP version 8.1
+ *
+ * @category Class
+ * @package  {{invokerPackage}}
+ * @author   Jesse Evers
+ * @link     https://highsidelabs.co
+ */
+
+{{>partials/partial_header}}
+
+namespace {{apiPackage}};
+
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\RequestOptions;
+use RuntimeException
+use {{invokerPackage}}\Configuration;
+use {{invokerPackage}}\HeaderSelector;
+use {{invokerPackage}}\{{invokerPackage}};
+
+class BaseApi
+{
+    /**
+     * @var Configuration
+     */
+    protected Configuration $config;
+
+    /**
+     * @var ClientInterface
+     */
+    protected ClientInterface $client;
+
+    /**
+     * @var HeaderSelector
+     */
+    protected HeaderSelector $headerSelector;
+
+    /**
+     * @var string[] $contentTypes
+     */
+    public const contentTypes = [];
+
+    /**
+     * @param Configuration   $config
+     * @param ?ClientInterface $client
+     * @param ?HeaderSelector  $selector
+     */
+    public function __construct(
+        protected Configuration $config,
+        ClientInterface $client = null,
+        HeaderSelector $selector = null,
+    ) {
+        $this->client = $client ?: new Client();
+        $this->headerSelector = $selector ?: new HeaderSelector();
+    }
+
+    /**
+     * @return Configuration
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    /**
+     * Create HTTP client options array
+     *
+     * @throws RuntimeException  on file opening failure
+     * @return array  An array of HTTP client options
+     */
+    protected function createHttpClientOption(): array
+    {
+        $options = [];
+        if ($this->config->getDebug()) {
+            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
+            if (!$options[RequestOptions::DEBUG]) {
+                throw new RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+            }
+        }
+
+        return $options;
+    }
+
+    /**
+     * Writes to the debug log file
+     *
+     * @param any  $data
+     * @return void
+     */
+    protected function writeDebug($data): void
+    {
+        if ($this->config->getDebug()) {
+            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        }
+    }
+}

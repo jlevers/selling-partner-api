@@ -1,0 +1,59 @@
+{
+    "name": "jlevers/selling-partner-api",
+    {{#if artifactVersion~}}
+    "version": "{{artifactVersion}}",
+    {{/if~}}
+    "description": "A PHP client for Amazon's Selling Partner API",
+    "keywords": [
+        "api",
+        "selling-partner-api",
+        "amazon",
+        "ecommerce",
+        "sp-api",
+        "sdk",
+        "rest",
+        "api"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Highside Labs",
+            "homepage": "https://highsidelabs.co",
+            "email": "jesse@highsidelabs.co"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.0|^7.0",
+        "phpoffice/phpspreadsheet": "^1.19"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "composer/semver": "^3.4",
+        "symfony/console": "^6.3",
+        "psy/psysh": "^0.11.22",
+        "voku/simple_html_dom": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "{{escapedInvokerPackage}}\\" : "{{srcBasePath}}/"
+        },
+        "files": [
+            "{{srcBasePath}}/Generator/constants.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "{{escapedInvokerPackage}}\\Test\\" : "{{testBasePath}}/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "clean": "rm -rf docs src/models/*/* src/apis/*/*/*",
+        "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
+    }
+}

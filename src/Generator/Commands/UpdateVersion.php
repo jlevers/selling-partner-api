@@ -1,59 +1,22 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
-namespace SellingPartnerApi\Support\Commands;
+namespace SellingPartnerApi\Generator\Commands;
 
 use Composer\Semver\Comparator;
 use Composer\Semver\VersionParser;
+use SellingPartnerApi\Generator\Package;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use UnexpectedValueException;
 
-#[AsCommand(name: 'update-version')]
+#[AsCommand(
+    name: 'library:update-version',
+    description: 'Interactively update the library version, and optionally make and commit any version-related file changes'
+)]
 class UpdateVersion extends Command
 {
-    public static function downloadSchemas(): void
-    {
-
-    }
-
-    public static function customizeSchemas(): void
-    {
-
-    }
-
-    public static function generateModels(): void
-    {
-
-    }
-
-    public static function generateApis(): void
-    {
-
-    }
-
-    public static function generateSupportingFiles(): void
-    {
-
-    }
-
-    /**
-     * Get the current version code for the library.
-     *
-     * @return string
-     */
-    public static function libVersion(): string
-    {
-        $configPath = RESOURCE_DIR . '/generator-config.json';
-        $config = json_decode(file_get_contents($configPath), true);
-        $rawVersion = $config['artifactVersion'];
-
-        $versionParser = new VersionParser();
-        // This will throw an exception if the version is invalid
-        return $versionParser->normalize($rawVersion);
-    }
 
     /**
      * Interactively change the current version code for the library, by editing
@@ -63,9 +26,9 @@ class UpdateVersion extends Command
      * @param OutputInterface $output
      * @return int
      */
-    public function execute(InputInterface $input, OutputInterface $output): int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $currentVersion = static::libVersion();
+        $currentVersion = Package::version();
         $newVersion = null;
         do {
             try {
@@ -111,15 +74,5 @@ class UpdateVersion extends Command
 
         echo "\nVersioning-related changes have been committed.\n";
         return 0;
-    }
-
-    /**
-     * Clean the generated files from the default model and api directories.
-     *
-     * @return void
-     */
-    public static function clean(): void
-    {
-
     }
 }

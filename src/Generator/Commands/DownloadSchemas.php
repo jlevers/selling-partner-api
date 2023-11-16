@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace SellingPartnerApi\Support\Commands;
+namespace SellingPartnerApi\Generator\Commands;
 
-use SellingPartnerApi\Support\Schema;
+use SellingPartnerApi\Generator\Schema;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(

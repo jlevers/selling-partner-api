@@ -3,12 +3,14 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use SellingPartnerApi\Support\Commands\DownloadSchemas;
+use SellingPartnerApi\Support\Commands\UpdateVersion;
 use Symfony\Component\Console\Application;
 
 // Initialize the Console Application
 $application = new Application();
 
 $application->add(new DownloadSchemas());
+$application->add(new UpdateVersion());
 
 // Run the application
 $application->run();

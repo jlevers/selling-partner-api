@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace SellingPartnerApi\Support\Commands;
+namespace SellingPartnerApi\Generator\Commands;
 
 use Exception;
-use SellingPartnerApi\Support\Schema;
+use SellingPartnerApi\Generator\Schema;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

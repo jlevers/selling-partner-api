@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace SellingPartnerApi\Support;
+namespace SellingPartnerApi\Generator;
 
 use GuzzleHttp\Client;
 use InvalidArgumentException;
 use SellingPartnerApi\Enums\ApiCategory;
-use SellingPartnerApi\Support\Schema\SchemaVersion;
+use SellingPartnerApi\Generator\Schema\SchemaVersion;
 use voku\helper\HtmlDomParser;
 
 class Schema
@@ -67,7 +67,7 @@ class Schema
     {
         $client = new Client();
 
-        $savePath = $this->path();
+        $savePath = $this->path(true);
         if (!file_exists($savePath)) {
             mkdir($savePath, 0755, true);
         }
@@ -83,20 +83,24 @@ class Schema
             }
 
             file_put_contents(
-                $this->path(true) . $version->filename(),
+                $version->path(),
                 json_encode($json, JSON_PRETTY_PRINT)
             );
         }
     }
 
     /**
-     * Get the path where versions of this schema are stored.
+     * Convert a raw Amazon schema to the schema format we need for generating code.
      *
-     * @return string
+     * @return  string  The path to the folder containing each of the converted versions of this schema.
      */
-    public function path(): string
+    public function refactor(): string
     {
-        return MODEL_DIR . "/{$this->category->value}/{$this->code}/";
+        foreach ($this->versions as $version) {
+            $rawSchema = json_decode(file_get_contents($version->path(true)));
+        }
+
+        return $this->path();
     }
 
     /**
@@ -107,7 +111,7 @@ class Schema
      */
     public function path(bool $upstream = false): string
     {
-        return MODEL_DIR . ($upstream ? '/raw' : '') . "/{$this->category->value}/{$this->code}/";
+        return MODEL_DIR . ($upstream ? '/raw' : '') . "/{$this->category->value}/{$this->code}";
     }
 
     /**

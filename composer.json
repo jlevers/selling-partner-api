@@ -41,27 +41,13 @@
           "SellingPartnerApi\\" : "src/"
         },
         "files": [
-          "src/Support/constants.php"
+          "src/Generator/constants.php"
         ]
     },
     "autoload-dev": {
         "psr-4": { "SellingPartnerApi\\Tests\\" : "test/" }
     },
     "scripts": {
-        "generate": [
-            "composer\\config::disableprocesstimeout",
-            "php utils/generate-apis --"
-        ],
-        "refresh-schemas": [
-            "@download-schemas",
-            "@customize-schemas"
-        ],
-        "make": [
-            "@download-schemas",
-            "@customize-schemas",
-            "@generate"
-        ],
-        "version-update": "SellingPartnerApi\\Support\\Commands\\UpdateVersion::execute",
         "test": "vendor/bin/phpunit",
         "clean": "rm -rf docs src/models/*/* src/apis/*/*/*",
         "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"

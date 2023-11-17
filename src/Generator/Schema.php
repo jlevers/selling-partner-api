@@ -2,11 +2,9 @@
 
 namespace SellingPartnerApi\Generator;
 
-use GuzzleHttp\Client;
 use InvalidArgumentException;
 use SellingPartnerApi\Enums\ApiCategory;
 use SellingPartnerApi\Generator\Schema\SchemaVersion;
-use voku\helper\HtmlDomParser;
 
 class Schema
 {
@@ -33,10 +31,8 @@ class Schema
      */
     private static array $allSchemaData;
 
-    public function __construct(
-        public string $code,
-        public ApiCategory $category,
-    ) {
+    public function __construct(public string $code, public ApiCategory $category)
+    {
         if (!static::$allSchemaData) {
             static::loadSchemaData();
         }
@@ -61,31 +57,17 @@ class Schema
     /**
      * Download all the versions of this schema.
      *
-     * @return  void
+     * @return void
      */
     public function download(): void
     {
-        $client = new Client();
-
         $savePath = $this->path(true);
         if (!file_exists($savePath)) {
             mkdir($savePath, 0755, true);
         }
 
         foreach ($this->versions as $version) {
-            $res = $client->get($version->url);
-            if ($version->selector !== null) {
-                $html = HtmlDomParser::str_get_html($res->getBody()->getContents());
-                $rawSchemaData = $html->findOne($version->selector)->text();
-                $json = json_decode(html_entity_decode($rawSchemaData));
-            } else {
-                $json = json_decode($res->getBody()->getContents());
-            }
-
-            file_put_contents(
-                $version->path(),
-                json_encode($json, JSON_PRETTY_PRINT)
-            );
+            $version->download();
         }
     }
 

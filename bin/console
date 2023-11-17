@@ -2,8 +2,8 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use SellingPartnerApi\Support\Commands\DownloadSchemas;
-use SellingPartnerApi\Support\Commands\UpdateVersion;
+use SellingPartnerApi\Generator\Commands\DownloadSchemas;
+use SellingPartnerApi\Generator\Commands\UpdateVersion;
 use Symfony\Component\Console\Application;
 
 // Initialize the Console Application

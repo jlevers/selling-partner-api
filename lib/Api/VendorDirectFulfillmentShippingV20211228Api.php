@@ -70,7 +70,10 @@ class VendorDirectFulfillmentShippingV20211228Api extends BaseApi
     {
         $request = $this->createShippingLabelsRequest($purchase_order_number, $body);
         $signedRequest = $this->config->signRequest(
-            $request
+            $request,
+            null,
+            '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}',
+            'createShippingLabels'
         );
 
         $this->writeDebug($signedRequest);

@@ -25,4 +25,9 @@ enum Endpoint: string
             true
         );
     }
+
+    public static function host(Endpoint $endpoint): string
+    {
+        return str_replace('https://', '', $endpoint->value);
+    }
 }

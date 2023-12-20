@@ -6,6 +6,7 @@ use DateTime;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\StreamWrapper;
 use GuzzleHttp\Utils;
 use RuntimeException;
 use Saloon\Contracts\Authenticator;
@@ -103,10 +104,11 @@ class LWAAuthenticator implements Authenticator
             );
             $res = $this->authenticationClient->send($lwaTokenRequest);
 
-            $body = json_decode($res->getBody(), true);
+            $body = stream_get_contents(StreamWrapper::getResource($res->getBody()));
+            $data = json_decode($body, true);
             $accessToken = new AccessToken(
-                $body['access_token'],
-                new DateTime("+{$body['expires_in']} seconds")
+                $data['access_token'],
+                new DateTime("+{$data['expires_in']} seconds")
             );
 
             if ($scope) {

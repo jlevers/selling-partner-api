@@ -35,7 +35,8 @@
         "composer/semver": "^3.4",
         "symfony/console": "^6.3",
         "psy/psysh": "^0.11.22",
-        "voku/simple_html_dom": "^4.8"
+        "voku/simple_html_dom": "^4.8",
+        "crescat-io/saloon-sdk-generator": "dev-master"
     },
     "autoload": {
         "psr-4": {

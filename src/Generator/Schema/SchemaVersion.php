@@ -45,7 +45,7 @@ class SchemaVersion
             --enable-post-process-file \
             --http-user-agent $libName/$version \
             --api-package \"" . CUSTOM_API_DIR . "\\$categoryNamespace\" \
-            --model-package \"" . CUSTOM_MODEL_DIR . "\\$categoryNamespace\\$compressedSchemaName\" \
+            --model-package \"" . CUSTOM_API_DIR . "\\$categoryNamespace\\$compressedSchemaName\\" . CUSTOM_MODEL_DIR . "\" \
             --additional-properties=\"x-sp-api-category=$categoryNamespace,x-sp-api-accessor=$nameAccessor,x-sp-api-name=$compressedSchemaName,x-sp-api-version={$this->version},x-sp-api-latest={$this->latest},x-sp-api-deprecated={$this->deprecated}\" \
             2>&1";
 

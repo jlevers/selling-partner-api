@@ -86,6 +86,18 @@ class Schema
     }
 
     /**
+     * Generate code for all the versions of this schema.
+     *
+     * @return void
+     */
+    public function generate(): void
+    {
+        foreach ($this->versions as $version) {
+            $version->generate();
+        }
+    }
+
+    /**
      * Get the path where versions of this schema are stored.
      *
      * @param  bool  $upstream  If true, return the path where original Amazon schemas are stored.

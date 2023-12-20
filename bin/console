@@ -3,6 +3,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use SellingPartnerApi\Generator\Commands\DownloadSchemas;
+use SellingPartnerApi\Generator\Commands\GenerateSchemas;
 use SellingPartnerApi\Generator\Commands\UpdateVersion;
 use Symfony\Component\Console\Application;
 
@@ -10,6 +11,7 @@ use Symfony\Component\Console\Application;
 $application = new Application();
 
 $application->add(new DownloadSchemas());
+$application->add(new GenerateSchemas());
 $application->add(new UpdateVersion());
 
 // Run the application

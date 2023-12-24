@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace SellingPartnerApi\Generator\Commands;
 
@@ -18,6 +20,7 @@ class GenerateSchemas extends AbstractSchemasCommand
         foreach ($schema->versions() as $version) {
             $schema->generate($version);
         }
+
         return 0;
     }
 }

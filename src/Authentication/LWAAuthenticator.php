@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace SellingPartnerApi\Authentication;
 
@@ -26,7 +28,7 @@ class LWAAuthenticator implements Authenticator
      *
      * @var GuzzleHttp\ClientInterface|null
      */
-    protected ClientInterface|null $authenticationClient;
+    protected ?ClientInterface $authenticationClient;
 
     /**
      * A map of LWA client IDs to access tokens. Used to cache access tokens
@@ -41,7 +43,7 @@ class LWAAuthenticator implements Authenticator
         protected readonly string $clientSecret,
         protected readonly string $refreshToken,
         protected readonly Endpoint $endpoint,
-        ClientInterface|null $authenticationClient = null,
+        ?ClientInterface $authenticationClient = null,
     ) {
         $this->authenticationClient = $authenticationClient ?? new Client();
     }
@@ -54,27 +56,26 @@ class LWAAuthenticator implements Authenticator
     /**
      * Sets the access token for OAuth
      *
-     * @param AccessToken  $accessToken  Token for OAuth
-     *
-     * @return $this
+     * @param  AccessToken  $accessToken  Token for OAuth
      */
     protected function setAccessToken(AccessToken $accessToken): static
     {
         static::$accessTokens[$this->clientId] = $accessToken;
+
         return $this;
     }
 
     /**
      * Gets the access token for OAuth
      *
-     * @param GrantlessScope|null  $scope  The scope of the request, if it's grantless
+     * @param  GrantlessScope|null  $scope  The scope of the request, if it's grantless
      * @return string|null  Access token for OAuth
      */
-    protected function getAccessToken(GrantlessScope $scope = null): string|null
+    protected function getAccessToken(?GrantlessScope $scope = null): ?string
     {
         // We don't cache grantless access tokens, since they're used relatively rarely
         // and caching them adds complexity
-        if ($scope || !array_key_exists($this->clientId, static::$accessTokens) || static::$accessTokens[$this->clientId]->expired()) {
+        if ($scope || ! array_key_exists($this->clientId, static::$accessTokens) || static::$accessTokens[$this->clientId]->expired()) {
             $jsonData = [
                 'grant_type' => $scope ? 'client_credentials' : 'refresh_token',
                 'client_id' => $this->clientId,

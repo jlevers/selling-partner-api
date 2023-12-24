@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace SellingPartnerApi\Generator\Commands;
 
@@ -14,6 +16,7 @@ class ModifySchemas extends AbstractSchemasCommand
     protected function handleSchema(Schema $schema): int
     {
         $schema->refactor();
+
         return 0;
     }
 }

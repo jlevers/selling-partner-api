@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace SellingPartnerApi\Generator\Commands;
 
@@ -16,6 +18,7 @@ class DownloadSchemas extends AbstractSchemasCommand
     protected function handleSchema(Schema $schema): int
     {
         $schema->download();
+
         return 0;
     }
 }

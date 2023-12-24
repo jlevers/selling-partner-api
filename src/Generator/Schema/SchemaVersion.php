@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace SellingPartnerApi\Generator\Schema;
 
@@ -16,14 +18,12 @@ class SchemaVersion
         public string $version,
         public bool $latest = false,
         public bool $deprecated = false,
-        public string|null $selector = null,
+        public ?string $selector = null,
     ) {
     }
 
     /**
      * Generate the code for this version of this schema.
-     *
-     * @return void
      */
     public function generate(): void
     {
@@ -37,34 +37,34 @@ class SchemaVersion
 
         $generateCmd = "openapi-generator generate \
             --input-spec {$this->path()} \
-            --template-dir " . TEMPLATE_DIR . " \
+            --template-dir ".TEMPLATE_DIR." \
             --generator-name php \
-            --config " . GENERATOR_CONFIG_FILE . " \
+            --config ".GENERATOR_CONFIG_FILE." \
             --engine handlebars \
             --global-property apis,models \
             --enable-post-process-file \
             --http-user-agent $libName/$version \
-            --api-package \"" . CUSTOM_API_DIR . "\\$categoryNamespace\" \
-            --model-package \"" . CUSTOM_API_DIR . "\\$categoryNamespace\\$compressedSchemaName\\" . CUSTOM_MODEL_DIR . "\" \
+            --api-package \"".CUSTOM_API_DIR."\\$categoryNamespace\" \
+            --model-package \"".CUSTOM_API_DIR."\\$categoryNamespace\\$compressedSchemaName\\".CUSTOM_MODEL_DIR."\" \
             --additional-properties=\"x-sp-api-category=$categoryNamespace,x-sp-api-accessor=$nameAccessor,x-sp-api-name=$compressedSchemaName,x-sp-api-version={$this->version},x-sp-api-latest={$this->latest},x-sp-api-deprecated={$this->deprecated}\" \
             2>&1";
 
         Generator::execAndLog($generateCmd);
 
-        $defaultApiDocsPath = DOCS_DIR . '/' . DEFAULT_API_DIR;
-        $defaultModelDocsPath = DOCS_DIR . '/' . DEFAULT_MODEL_DIR;
+        $defaultApiDocsPath = DOCS_DIR.'/'.DEFAULT_API_DIR;
+        $defaultModelDocsPath = DOCS_DIR.'/'.DEFAULT_MODEL_DIR;
         // There is currently no way to change the docs output directories with the OpenAPI generator
         $apiDocSrcPath = "$defaultApiDocsPath/{$compressedSchemaName}Api.md";
         $modelDocSrcPath = "$defaultModelDocsPath/*.md";
 
-        $apiDocDestPath = DOCS_DIR . '/' . CUSTOM_API_DIR . '/' . $categoryNamespace . '/';
-        $modelDocDestPath = DOCS_DIR . '/' . CUSTOM_MODEL_DIR . "/$categoryNamespace/$compressedSchemaName/";
+        $apiDocDestPath = DOCS_DIR.'/'.CUSTOM_API_DIR.'/'.$categoryNamespace.'/';
+        $modelDocDestPath = DOCS_DIR.'/'.CUSTOM_MODEL_DIR."/$categoryNamespace/$compressedSchemaName/";
 
         // Create the documentation directories if they don't exist
-        if (!file_exists($apiDocDestPath)) {
+        if (! file_exists($apiDocDestPath)) {
             mkdir($apiDocDestPath, 0755, true);
         }
-        if (!file_exists($modelDocDestPath)) {
+        if (! file_exists($modelDocDestPath)) {
             mkdir($modelDocDestPath, 0755, true);
         }
 
@@ -96,8 +96,6 @@ class SchemaVersion
 
     /**
      * Download the schema, converting it from Swagger 2.0 to OpenAPI 3.0 in the process.
-     *
-     * @return void
      */
     public function download(): void
     {
@@ -130,7 +128,6 @@ class SchemaVersion
      * Get the path for this schema version.
      *
      * @param  bool  $upstream  If true, return the path where original Amazon schemas are stored.
-     * @return string
      */
     public function path(bool $upstream = false): string
     {
@@ -142,21 +139,21 @@ class SchemaVersion
         $libName = Package::name();
         $version = Package::version();
         // Static path -- this won't actually be used since we're only generating supporting files
-        $schemaPath = MODEL_DIR . '/seller/sellers/v1.json';
+        $schemaPath = MODEL_DIR.'/seller/sellers/v1.json';
 
         Generator::setPrettifyEnv();
 
         $generateCmd = "openapi-generator generate \
             --input-spec $schemaPath \
-            --template-dir " . TEMPLATE_DIR . " \
+            --template-dir ".TEMPLATE_DIR." \
             --generator-name php \
-            --config " . GENERATOR_CONFIG_FILE . "\
+            --config ".GENERATOR_CONFIG_FILE."\
             --engine handlebars \
             --global-property supportingFiles \
             --enable-post-process-file \
             --http-user-agent $libName/$version \
-            --api-package " . CUSTOM_API_DIR . " \
-            --model-package " . CUSTOM_MODEL_DIR . " \
+            --api-package ".CUSTOM_API_DIR." \
+            --model-package ".CUSTOM_MODEL_DIR." \
             --openapi-normalizer KEEP_ONLY_FIRST_TAG_IN_OPERATION=true \
             2>&1";
 

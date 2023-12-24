@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace SellingPartnerApi\Generator\Commands;
 
@@ -11,16 +13,12 @@ trait HasSchemaArgs
 {
     /**
      * The schema definitions matching the input options given to the command.
-     *
-     * @var array
      */
     protected array $schemas = [];
 
     /**
      * Parse the command line options for a Symfony command that can operate on
      * a subset of schemas, filtered by category or schema name.
-     *
-     * @return void
      */
     protected function configure(): void
     {
@@ -54,7 +52,6 @@ trait HasSchemaArgs
     /**
      * Retrieve metadata about the schemas matching the given input options.
      *
-     * @param  InputInterface  $input
      * @return  array  The filtered categories and names.
      */
     protected static function filterSchemas(InputInterface $input): array

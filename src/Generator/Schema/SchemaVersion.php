@@ -39,7 +39,7 @@ class SchemaVersion
             --input-spec {$this->path()} \
             --template-dir " . TEMPLATE_DIR . " \
             --generator-name php \
-            --config " . GENERATOR_CONFIG . " \
+            --config " . GENERATOR_CONFIG_FILE . " \
             --engine handlebars \
             --global-property apis,models \
             --enable-post-process-file \
@@ -150,7 +150,7 @@ class SchemaVersion
             --input-spec $schemaPath \
             --template-dir " . TEMPLATE_DIR . " \
             --generator-name php \
-            --config " . GENERATOR_CONFIG . "\
+            --config " . GENERATOR_CONFIG_FILE . "\
             --engine handlebars \
             --global-property supportingFiles \
             --enable-post-process-file \

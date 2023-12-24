@@ -1,18 +1,25 @@
-<?php declare(strict_types=1);
+<?php
 
-const RESOURCE_DIR = __DIR__ . '/../../resources';
-const MODEL_DIR = RESOURCE_DIR . '/schemas/models';
-const TEMPLATE_DIR = RESOURCE_DIR . '/templates';
-const DOCS_DIR = __DIR__ . '/../../docs';
+declare(strict_types=1);
 
-const AUTOLOADER = __DIR__ . '/../vendor/autoload.php';
-const GENERATOR_CONFIG = RESOURCE_DIR . '/generator-config.json';
+const _NAMESPACE = 'SellingPartnerApi';
+
+const ROOT_DIR = __DIR__.'/../..';
+const GENERATED_DIR = ROOT_DIR.'/src';
+const RESOURCE_DIR = ROOT_DIR.'/resources';
+const MODEL_DIR = RESOURCE_DIR.'/schemas/models';
+const TEMPLATE_DIR = RESOURCE_DIR.'/templates';
+const DOCS_DIR = ROOT_DIR.'/docs';
+
+const AUTOLOADER = ROOT_DIR.'/vendor/autoload.php';
+const GENERATOR_CONFIG_FILE = RESOURCE_DIR.'/generator-config.json';
 
 const CUSTOM_API_DIR = 'Apis';
 const CUSTOM_MODEL_DIR = 'Models';
 const DEFAULT_API_DIR = 'Api';
 const DEFAULT_MODEL_DIR = 'Model';
 
+const RESOURCE_FILE_SUFFIX = 'Api';
 
 // const LOGFILE = __DIR__ . '/../generate.log';
 

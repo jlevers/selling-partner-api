@@ -4,8 +4,25 @@ declare(strict_types=1);
 
 namespace SellingPartnerApi\Generator;
 
+use Crescat\SaloonSdkGenerator\CodeGenerator;
+use Crescat\SaloonSdkGenerator\Data\Generator\Config;
+use Crescat\SaloonSdkGenerator\Generators\NullGenerator;
+
 class Generator
 {
+    /**
+     * Create a new code generator instance.
+     */
+    public static function make(array $overrides = []): CodeGenerator
+    {
+        $config = Config::load(GENERATOR_CONFIG_FILE, $overrides);
+
+        return new CodeGenerator(
+            $config,
+            connectorGenerator: new NullGenerator($config),
+        );
+    }
+
     /**
      * Execute a command. If it succeeds, return. Otherwise exit with command's exit code.
      * Logs the command's output to the log file.
@@ -24,15 +41,5 @@ class Generator
             echo "Error executing command\n";
             exit($resultCode);
         }
-    }
-
-    /**
-     * Set the relevant environment variables to ensure the OpenAPI generator's output
-     * files are prettified.
-     */
-    public static function setPrettifyEnv(): void
-    {
-        $projectRoot = __DIR__.'/../..';
-        putenv("PHP_POST_PROCESS_FILE=$projectRoot/vendor/bin/php-cs-fixer fix --allow-risky=yes --config $projectRoot/.php-cs-fixer.dist.php");
     }
 }

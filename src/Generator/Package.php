@@ -29,4 +29,12 @@ class Package
     {
         return json_decode(file_get_contents(__DIR__.'/../../composer.json'), true)['name'];
     }
+
+    /**
+     * Get the base namespace for the package.
+     */
+    public static function namespace(): string
+    {
+        return json_decode(file_get_contents(GENERATOR_CONFIG_FILE), true)['namespace'];
+    }
 }

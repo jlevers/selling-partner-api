@@ -5,7 +5,7 @@
   "outputDir": "src",
   "force": true,
 
-  "connectorName": "Selling Partner API",
+  "connectorName": "SellingPartnerApi",
   "namespace": "SellingPartnerApi",
   "resourceNamespaceSuffix": "Apis"
 }

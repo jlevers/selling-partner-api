@@ -24,7 +24,7 @@ abstract class AbstractSchemasCommand extends Command
         $this->schemas = static::filterSchemas($input);
 
         foreach ($this->schemas as $schema) {
-            echo "Handling schema {$schema->code} ...";
+            echo "Handling schema {$schema->code} ...\n";
 
             try {
                 $returnCode = $this->handleSchema($schema);
@@ -37,7 +37,7 @@ abstract class AbstractSchemasCommand extends Command
                 return 1;
             }
 
-            echo " done\n";
+            echo "Done\n";
         }
 
         return 0;

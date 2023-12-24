@@ -17,9 +17,7 @@ class GenerateSchemas extends AbstractSchemasCommand
 
     protected function handleSchema(Schema $schema): int
     {
-        foreach ($schema->versions() as $version) {
-            $schema->generate($version);
-        }
+        $schema->generate();
 
         return 0;
     }

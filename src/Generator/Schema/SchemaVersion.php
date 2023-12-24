@@ -27,71 +27,17 @@ class SchemaVersion
      */
     public function generate(): void
     {
-        Generator::setPrettifyEnv();
-
-        $libName = Package::name();
-        $version = Package::version();
+        $baseNamespace = Package::namespace();
         $categoryNamespace = ucfirst($this->schema->category->value);
-        $compressedSchemaName = str_replace(' ', '', $this->schema->name);
-        $nameAccessor = lcfirst($compressedSchemaName);
+        $compressedSchemaName = str_replace(' ', '', $this->schema->name).'V'.$this->version;
 
-        $generateCmd = "openapi-generator generate \
-            --input-spec {$this->path()} \
-            --template-dir ".TEMPLATE_DIR." \
-            --generator-name php \
-            --config ".GENERATOR_CONFIG_FILE." \
-            --engine handlebars \
-            --global-property apis,models \
-            --enable-post-process-file \
-            --http-user-agent $libName/$version \
-            --api-package \"".CUSTOM_API_DIR."\\$categoryNamespace\" \
-            --model-package \"".CUSTOM_API_DIR."\\$categoryNamespace\\$compressedSchemaName\\".CUSTOM_MODEL_DIR."\" \
-            --additional-properties=\"x-sp-api-category=$categoryNamespace,x-sp-api-accessor=$nameAccessor,x-sp-api-name=$compressedSchemaName,x-sp-api-version={$this->version},x-sp-api-latest={$this->latest},x-sp-api-deprecated={$this->deprecated}\" \
-            2>&1";
-
-        Generator::execAndLog($generateCmd);
-
-        $defaultApiDocsPath = DOCS_DIR.'/'.DEFAULT_API_DIR;
-        $defaultModelDocsPath = DOCS_DIR.'/'.DEFAULT_MODEL_DIR;
-        // There is currently no way to change the docs output directories with the OpenAPI generator
-        $apiDocSrcPath = "$defaultApiDocsPath/{$compressedSchemaName}Api.md";
-        $modelDocSrcPath = "$defaultModelDocsPath/*.md";
-
-        $apiDocDestPath = DOCS_DIR.'/'.CUSTOM_API_DIR.'/'.$categoryNamespace.'/';
-        $modelDocDestPath = DOCS_DIR.'/'.CUSTOM_MODEL_DIR."/$categoryNamespace/$compressedSchemaName/";
-
-        // Create the documentation directories if they don't exist
-        if (! file_exists($apiDocDestPath)) {
-            mkdir($apiDocDestPath, 0755, true);
-        }
-        if (! file_exists($modelDocDestPath)) {
-            mkdir($modelDocDestPath, 0755, true);
-        }
-
-        // Move the generated documentation to the correct directories
-        Generator::execAndLog("mv $apiDocSrcPath $apiDocDestPath");
-
-        if (count(glob($modelDocSrcPath)) > 0) {
-            Generator::execAndLog("mv $modelDocSrcPath $modelDocDestPath");
-        } else {
-            echo "No model documentation found for {$this->schema->name} in category {$this->schema->category->value}\n";
-        }
-
-        // Delete default documentation directories if they are not in use
-        if (
-            DEFAULT_API_DIR !== CUSTOM_API_DIR
-            && file_exists($defaultApiDocsPath)
-            && count(scandir($defaultApiDocsPath)) === 2  // 2 because of . and ..
-        ) {
-            rmdir($defaultApiDocsPath);
-        }
-        if (
-            DEFAULT_MODEL_DIR !== CUSTOM_MODEL_DIR
-            && file_exists($defaultModelDocsPath)
-            && count(scandir($defaultModelDocsPath)) === 2
-        ) {
-            rmdir($defaultModelDocsPath);
-        }
+        $inputPath = $this->path();
+        $generator = Generator::make([
+            'namespace' => "$baseNamespace\\$categoryNamespace",
+            'outputDir' => "src/$categoryNamespace/$compressedSchemaName",
+        ]);
+        $result = $generator->run($inputPath);
+        $result->dumpFiles();
     }
 
     /**

@@ -29,12 +29,12 @@ class SchemaVersion
     {
         $baseNamespace = Package::namespace();
         $categoryNamespace = ucfirst($this->schema->category->value);
-        $compressedSchemaName = str_replace(' ', '', $this->schema->name).'V'.$this->version;
+        $schemaNamespace = str_replace(' ', '', $this->schema->name).'V'.$this->version;
 
         $inputPath = $this->path();
         $generator = Generator::make([
-            'namespace' => "$baseNamespace\\$categoryNamespace",
-            'outputDir' => "src/$categoryNamespace/$compressedSchemaName",
+            'namespace' => "$baseNamespace\\$categoryNamespace\\$schemaNamespace",
+            'outputDir' => "src/$categoryNamespace/$schemaNamespace",
         ]);
         $result = $generator->run($inputPath);
         $result->dumpFiles();

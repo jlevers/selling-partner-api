@@ -14,7 +14,7 @@ class Package
     public static function version(): string
     {
         $config = json_decode(file_get_contents(GENERATOR_CONFIG_FILE), true);
-        $rawVersion = $config['artifactVersion'];
+        $rawVersion = $config['version'];
 
         $versionParser = new VersionParser();
 

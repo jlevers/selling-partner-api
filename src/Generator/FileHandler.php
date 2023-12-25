@@ -11,7 +11,7 @@ class FileHandler extends BasicFileHandler
 {
     public function baseResourcePath(PhpFile $file): string
     {
-        return GENERATED_DIR . '/BaseResource.php';
+        return GENERATED_DIR.'/BaseResource.php';
     }
 
     public function connectorPath(PhpFile $file): string

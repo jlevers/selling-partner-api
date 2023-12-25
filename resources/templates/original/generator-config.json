@@ -1,0 +1,33 @@
+{
+  "artifactVersion": "6.0.0",
+  "variableNamingConvention": "camelCase",
+
+  "gitUserId": "jlevers",
+  "gitRepoId": "selling-partner-api",
+
+  "srcBasePath": "src",
+  "apiPackage": "Apis",
+
+  "invokerPackage": "SellingPartnerApi",
+
+  "files": {
+    "SellingPartnerApi.hbs": {
+      "folder": "src",
+      "destinationFilename": "SellingPartnerApi.php",
+      "templateType": "SupportingFiles"
+    },
+    "BaseApi.hbs": {
+      "folder": "src/Apis",
+      "destinationFilename": "BaseApi.php",
+      "templateType": "SupportingFiles"
+    },
+    "ModelInterface.hbs": {
+      "folder": "src/Models",
+      "destinationFilename": "ModelInterface.php"
+    },
+    "BaseModel.hbs": {
+      "folder": "src/Models",
+      "destinationFilename": "BaseModel.php"
+    }
+  }
+}

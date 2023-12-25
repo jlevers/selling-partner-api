@@ -1,0 +1,26 @@
+<?php declare(strict_types=1);
+
+{{#models~}}
+{{#model~}}
+/**
+ * {{classname}}
+ *
+ * PHP version 8.1
+ *
+ * @category Class
+ * @package  {{invokerPackage}}
+ * @author   Jesse Evers
+ * @link     https://highsidelabs.co
+ * @email    jesse@highsidelabs.co
+ */
+
+{{>partials/partial_header}}
+
+namespace {{modelPackage}};
+
+{{#unless isEnum~}}
+use {{invokerPackage}}\Models\BaseModel;
+{{~#if vendorExtensions.x-expose-headers}}
+use SellingPartnerApi\Traits\HasResponseHeaders;
+{{/if}}{{/unless}}
+{{#if isEnum}}{{>model_enum}}{{else}}{{>model_generic}}{{/if}}{{/model}}{{/models}}

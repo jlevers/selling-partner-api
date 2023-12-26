@@ -1,11 +1,12 @@
 {
   "version": "6.0.0",
 
-  "type": "openapi",
+  "type": "sp-api",
   "outputDir": "src",
   "force": true,
 
   "connectorName": "SellingPartnerApi",
   "namespace": "SellingPartnerApi",
-  "resourceNamespaceSuffix": "Apis"
+  "baseResourceNamespace": "SellingPartnerApi",
+  "resourceNamespaceSuffix": null
 }

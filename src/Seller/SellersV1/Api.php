@@ -8,8 +8,8 @@ use SellingPartnerApi\Seller\SellersV1\Requests\GetMarketplaceParticipations;
 
 class Api extends BaseResource
 {
-    public function getMarketplaceParticipations(): Response
-    {
-        return $this->connector->send(new GetMarketplaceParticipations());
-    }
+	public function getMarketplaceParticipations(): Response
+	{
+		return $this->connector->send(new GetMarketplaceParticipations());
+	}
 }

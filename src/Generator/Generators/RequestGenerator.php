@@ -116,7 +116,7 @@ class RequestGenerator extends BaseGenerator
             )
             ->addBody('    default => throw new Exception("Unhandled response status: {$status}")')
             ->addBody('};')
-            ->addBody('return $responseCls::deserialize($response->json());');
+            ->addBody('return $responseCls::deserialize($response->json(), $responseCls);');
         $createDtoMethod
             ->addParameter('response')
             ->setType(Response::class);

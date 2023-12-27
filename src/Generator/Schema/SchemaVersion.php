@@ -79,30 +79,4 @@ class SchemaVersion
     {
         return "{$this->schema->path($upstream)}/v{$this->version}.json";
     }
-
-    public static function generateSupportingFiles(): void
-    {
-        $libName = Package::name();
-        $version = Package::version();
-        // Static path -- this won't actually be used since we're only generating supporting files
-        $schemaPath = MODEL_DIR.'/seller/sellers/v1.json';
-
-        Generator::setPrettifyEnv();
-
-        $generateCmd = "openapi-generator generate \
-            --input-spec $schemaPath \
-            --template-dir ".TEMPLATE_DIR." \
-            --generator-name php \
-            --config ".GENERATOR_CONFIG_FILE."\
-            --engine handlebars \
-            --global-property supportingFiles \
-            --enable-post-process-file \
-            --http-user-agent $libName/$version \
-            --api-package ".CUSTOM_API_DIR." \
-            --model-package ".CUSTOM_MODEL_DIR." \
-            --openapi-normalizer KEEP_ONLY_FIRST_TAG_IN_OPERATION=true \
-            2>&1";
-
-        Generator::execAndLog($generateCmd);
-    }
 }

@@ -2,15 +2,20 @@
 
 namespace SellingPartnerApi\Seller\SellersV1\Dto;
 
-class MarketplaceParticipation
+use Crescat\SaloonSdkGenerator\Contracts\Deserializable;
+use Crescat\SaloonSdkGenerator\Traits\Deserializes;
+
+final class MarketplaceParticipation implements Deserializable
 {
-    /**
-     * @param  Marketplace  $marketplace Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items.
-     * @param  Participation  $participation Detailed information that is specific to a seller in a Marketplace.
-     */
-    public function __construct(
-        public Marketplace $marketplace,
-        public Participation $participation,
-    ) {
-    }
+	use Deserializes;
+
+	/**
+	 * @param Marketplace $marketplace Detailed information about an Amazon market where a seller can list items for sale and customers can view and purchase items.
+	 * @param Participation $participation Detailed information that is specific to a seller in a Marketplace.
+	 */
+	public function __construct(
+		public readonly Marketplace $marketplace,
+		public readonly Participation $participation,
+	) {
+	}
 }

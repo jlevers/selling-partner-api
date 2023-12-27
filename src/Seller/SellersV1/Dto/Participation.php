@@ -2,14 +2,20 @@
 
 namespace SellingPartnerApi\Seller\SellersV1\Dto;
 
-class Participation
+use Crescat\SaloonSdkGenerator\Contracts\Deserializable;
+use Crescat\SaloonSdkGenerator\Traits\Deserializes;
+
+final class Participation implements Deserializable
 {
-    /**
-     * @param  bool  $hasSuspendedListings Specifies if the seller has suspended listings. True if the seller Listing Status is set to Inactive, otherwise False.
-     */
-    public function __construct(
-        public bool $isParticipating,
-        public bool $hasSuspendedListings,
-    ) {
-    }
+	use Deserializes;
+
+	/**
+	 * @param bool $isParticipating
+	 * @param bool $hasSuspendedListings Specifies if the seller has suspended listings. True if the seller Listing Status is set to Inactive, otherwise False.
+	 */
+	public function __construct(
+		public readonly bool $isParticipating,
+		public readonly bool $hasSuspendedListings,
+	) {
+	}
 }

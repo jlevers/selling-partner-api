@@ -3,13 +3,13 @@
 namespace SellingPartnerApi\Generator\Generators;
 
 use Crescat\SaloonSdkGenerator\Data\Generator\Endpoint;
+use Crescat\SaloonSdkGenerator\EmptyResponse;
 use Crescat\SaloonSdkGenerator\Generators\RequestGenerator as BaseGenerator;
 use Crescat\SaloonSdkGenerator\Helpers\NameHelper;
-use Crescat\SaloonSdkGenerator\Helpers\Utils;
 use Exception;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Nette\PhpGenerator\ClassType;
+use Nette\PhpGenerator\Helpers;
 use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpFile;
 use Saloon\Contracts\Body\HasBody;
@@ -23,17 +23,10 @@ class RequestGenerator extends BaseGenerator
     protected function generateRequestClass(Endpoint $endpoint): PhpFile
     {
         $className = NameHelper::requestClassName($endpoint->name);
-        $classType = new ClassType($className);
-
-        $classFile = new PhpFile;
-        $requestNamespaceSuffix = NameHelper::optionalNamespaceSuffix($this->config->requestNamespaceSuffix);
-        $namespace = $classFile
-            ->addNamespace("{$this->config->namespace}{$requestNamespaceSuffix}");
+        [$classFile, $namespace, $classType] = $this->makeClass($className, $this->config->requestNamespaceSuffix);
 
         $classType->setExtends(Request::class)
-            ->setComment($endpoint->name)
-            ->addComment('')
-            ->addComment(Utils::wrapLongLines($endpoint->description ?? ''));
+            ->setComment($endpoint->name);
 
         // TODO: We assume JSON body if post/patch, make these assumptions configurable in the future.
         if ($endpoint->method->isPost() || $endpoint->method->isPatch()) {
@@ -55,20 +48,18 @@ class RequestGenerator extends BaseGenerator
                 )
             );
 
+        $this->generateConstructor($endpoint, $classType);
+
         $classType->addMethod('resolveEndpoint')
             ->setPublic()
             ->setReturnType('string')
             ->addBody(
                 collect($endpoint->pathSegments)
-                    ->map(function ($segment) {
-                        return Str::startsWith($segment, ':')
-                            ? new Literal(sprintf('{$this->%s}', NameHelper::safeVariableName($segment)))
-                            : $segment;
-                    })
-                    ->pipe(function (Collection $segments) {
-                        return new Literal(sprintf('return "/%s";', $segments->implode('/')));
-                    })
-
+                    ->map(fn ($segment) => Str::startsWith($segment, ':')
+                        ? new Literal(sprintf('{$this->%s}', NameHelper::safeVariableName($segment)))
+                        : $segment
+                    )
+                    ->pipe(fn (Collection $segments) => new Literal(sprintf('return "/%s";', $segments->implode('/'))))
             );
 
         $responseSuffix = NameHelper::optionalNamespaceSuffix($this->config->responseNamespaceSuffix);
@@ -77,9 +68,17 @@ class RequestGenerator extends BaseGenerator
         $codesByResponseType = collect($endpoint->responses)
             // TODO: We assume JSON is the only response content type for each HTTP status code.
             // We should support multiple response types in the future
-            ->mapWithKeys(fn (array $response, int $httpCode) => [
-                $httpCode => NameHelper::responseClassName($response[array_key_first($response)]->name),
-            ])
+            ->mapWithKeys(function (array $response, int $httpCode) use ($namespace, $responseNamespace) {
+                if (count($response) === 0) {
+                    $cls = EmptyResponse::class;
+                } else {
+                    $className = NameHelper::responseClassName($response[array_key_first($response)]->name);
+                    $cls = "{$responseNamespace}\\{$className}";
+                }
+                $namespace->addUse($cls);
+
+                return [$httpCode => $cls];
+            })
             ->reduce(function (Collection $carry, string $className, int $httpCode) {
                 $carry->put(
                     $className,
@@ -89,27 +88,20 @@ class RequestGenerator extends BaseGenerator
                 return $carry;
             }, collect());
 
-        $fqnResponseTypes = $codesByResponseType
-            ->keys()
-            ->map(fn (string $className) => "{$responseNamespace}\\{$className}");
-
-        foreach ($fqnResponseTypes as $className) {
-            $namespace->addUse($className);
-        }
         $namespace
             ->addUse(Exception::class)
             ->addUse(Response::class);
 
         $createDtoMethod = $classType->addMethod('createDtoFromResponse')
             ->setPublic()
-            ->setReturnType($fqnResponseTypes->implode('|'))
+            ->setReturnType($codesByResponseType->keys()->implode('|'))
             ->addBody('$status = $response->status();')
             ->addBody('$responseCls = match ($status) {')
             ->addBody(
                 $codesByResponseType
                     ->map(fn (array $codes, string $className) => sprintf(
                         '    %s => %s::class,',
-                        implode(', ', $codes), $className
+                        implode(', ', $codes), Helpers::extractShortName($className)
                     ))
                     ->values()
                     ->implode("\n")
@@ -120,8 +112,6 @@ class RequestGenerator extends BaseGenerator
         $createDtoMethod
             ->addParameter('response')
             ->setType(Response::class);
-
-        $this->generateConstructor($endpoint, $classType);
 
         $namespace
             ->addUse(SaloonHttpMethod::class)

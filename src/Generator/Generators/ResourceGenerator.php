@@ -68,13 +68,14 @@ class ResourceGenerator extends BaseResourceGenerator
                 $args[] = new Literal(sprintf('$%s', NameHelper::safeVariableName($parameter->name)));
             }
 
-            foreach ($endpoint->bodyParameters as $parameter) {
-                if (in_array($parameter->name, $this->config->ignoredBodyParams)) {
-                    continue;
-                }
+            if ($endpoint->bodySchema) {
+                $dtoNamespaceSuffix = NameHelper::optionalNamespaceSuffix($this->config->dtoNamespaceSuffix);
+                $dtoNamespace = "{$this->config->namespace}{$dtoNamespaceSuffix}";
+                $bodyFQN = "{$dtoNamespace}\\{$endpoint->bodySchema->name}";
 
-                $this->addPropertyToMethod($method, $parameter);
-                $args[] = new Literal(sprintf('$%s', NameHelper::safeVariableName($parameter->name)));
+                $namespace->addUse($bodyFQN);
+                $this->addPropertyToMethod($method, $endpoint->bodySchema, $bodyFQN);
+                $args[] = new Literal(sprintf('$%s', NameHelper::safeVariableName($endpoint->bodySchema->name)));
             }
 
             foreach ($endpoint->queryParameters as $parameter) {

@@ -113,6 +113,18 @@ class RequestGenerator extends BaseGenerator
             ->addParameter('response')
             ->setType(Response::class);
 
+        if ($endpoint->bodySchema) {
+            $classType
+                ->addMethod('defaultBody')
+                ->setReturnType('array')
+                ->addBody(
+                    sprintf('return $this->%s->toArray();', NameHelper::safeVariableName($endpoint->bodySchema->name))
+                );
+
+            $bodyFQN = $this->bodyFQN($endpoint->bodySchema);
+            $namespace->addUse($bodyFQN);
+        }
+
         $namespace
             ->addUse(SaloonHttpMethod::class)
             ->addUse(Request::class)

@@ -40,6 +40,41 @@ class SchemaVersion
         $result->dumpFiles();
     }
 
+    public function refactor(): void
+    {
+        $schema = json_decode(file_get_contents($this->path(true)));
+
+        foreach ($schema->paths as $path => $operations) {
+            foreach ($operations as $method => $operation) {
+                // Standardize tags
+                $operation->tags = [ucfirst($this->schema->name).'V'.$this->version];
+
+                foreach ($operation->responses as $code => $response) {
+                    $content = [];
+                    foreach ($response->content as $contentType => $mediaType) {
+                        // Sometimes Amazon puts response payload examples in the response content list,
+                        // which is not valid OpenAPI spec. This regex will have some false positives, but
+                        // it should be fine for our purposes.
+                        $regex = '/^(application|audio|image|message|multipart|text|video)\/.+$/';
+                        if (! preg_match($regex, $contentType)) {
+                            continue;
+                        }
+                        $content[$contentType] = $mediaType;
+                    }
+                    $response->content = $content;
+                    $operation->responses->{$code} = $response;
+                }
+                $operations->{$method} = $operation;
+            }
+            $schema->paths->{$path} = $operations;
+        }
+
+        file_put_contents(
+            $this->path(),
+            json_encode($schema, JSON_PRETTY_PRINT)
+        );
+    }
+
     /**
      * Download the schema, converting it from Swagger 2.0 to OpenAPI 3.0 in the process.
      */

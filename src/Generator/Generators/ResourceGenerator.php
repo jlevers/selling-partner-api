@@ -88,7 +88,6 @@ class ResourceGenerator extends BaseResourceGenerator
             $method->setBody(
                 new Literal(sprintf('return $this->connector->send(new %s(%s));', $requestClassNameAlias ?? $requestClassName, implode(', ', $args)))
             );
-
         }
 
         $namespace->add($classType);

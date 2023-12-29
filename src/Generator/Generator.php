@@ -6,7 +6,6 @@ namespace SellingPartnerApi\Generator;
 
 use Crescat\SaloonSdkGenerator\CodeGenerator;
 use Crescat\SaloonSdkGenerator\Data\Generator\Config;
-use Crescat\SaloonSdkGenerator\Factory;
 use Crescat\SaloonSdkGenerator\Generators\NullGenerator;
 use SellingPartnerApi\Generator\Generators\BaseResourceGenerator;
 use SellingPartnerApi\Generator\Generators\RequestGenerator;
@@ -19,7 +18,6 @@ class Generator
      */
     public static function make(array $overrides = []): CodeGenerator
     {
-        Factory::registerParser('sp-api', Parser::class);
         $config = Config::load(GENERATOR_CONFIG_FILE, $overrides);
 
         return new CodeGenerator(

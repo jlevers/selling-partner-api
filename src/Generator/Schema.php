@@ -75,7 +75,7 @@ class Schema
     public function refactor(): string
     {
         foreach ($this->versions as $version) {
-            $rawSchema = json_decode(file_get_contents($version->path(true)));
+            $version->refactor();
         }
 
         return $this->path();

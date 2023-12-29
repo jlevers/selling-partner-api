@@ -8,10 +8,10 @@ use SellingPartnerApi\Generator\Schema;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(
-    name: 'schema:modify',
+    name: 'schema:refactor',
     description: 'Convert the original Amazon schemas downloaded by the library into a format that can be used by the library'
 )]
-class ModifySchemas extends AbstractSchemasCommand
+class RefactorSchemas extends AbstractSchemasCommand
 {
     protected function handleSchema(Schema $schema): int
     {

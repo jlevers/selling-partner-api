@@ -2,23 +2,24 @@
 
 namespace SellingPartnerApi\Seller\SellersV1\Responses;
 
-use Crescat\SaloonSdkGenerator\Contracts\Deserializable;
-use Crescat\SaloonSdkGenerator\Traits\Deserializes;
-use Saloon\Contracts\DataObjects\WithResponse;
-use Saloon\Traits\Responses\HasResponse;
+use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\SellersV1\Dto\Error;
+use SellingPartnerApi\Seller\SellersV1\Dto\MarketplaceParticipation;
 
-final class GetMarketplaceParticipationsResponse implements Deserializable, WithResponse
+final class GetMarketplaceParticipationsResponse extends BaseResponse
 {
-	use HasResponse;
-	use Deserializes;
+    protected static array $complexArrayTypes = [
+        'payload' => [MarketplaceParticipation::class],
+        'errors' => [Error::class],
+    ];
 
-	/**
-	 * @param MarketplaceParticipation[] $marketplaceParticipations List of marketplace participations.
-	 * @param Error[] $errors A list of error responses returned when a request is unsuccessful.
-	 */
-	public function __construct(
-		public readonly array $marketplaceParticipations,
-		public readonly array $errors,
-	) {
-	}
+    /**
+     * @param  MarketplaceParticipation[]  $payload List of marketplace participations.
+     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     */
+    public function __construct(
+        public readonly ?array $payload = null,
+        public readonly ?array $errors = null,
+    ) {
+    }
 }

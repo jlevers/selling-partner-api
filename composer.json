@@ -52,6 +52,6 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "clean": "rm -rf docs src/models/*/* src/apis/*/*/*",
-        "format": "php vendor/bin/pint -v"
+        "format": "php vendor/bin/pint"
     }
 }

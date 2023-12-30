@@ -363,7 +363,7 @@
       ]
     },
     "invoices": {
-      "name": "Vendor Invoices",
+      "name": "Invoices",
       "versions": [
         {
           "version": 1,
@@ -372,7 +372,7 @@
       ]
     },
     "orders": {
-      "name": "Vendor Orders",
+      "name": "Orders",
       "versions": [
         {
           "version": 1,
@@ -381,7 +381,7 @@
       ]
     },
     "shipments": {
-      "name": "Vendor Shipments",
+      "name": "Shipments",
       "versions": [
         {
           "version": 1,
@@ -390,7 +390,7 @@
       ]
     },
     "transaction-status": {
-      "name": "Vendor Transaction Status",
+      "name": "Transaction Status",
       "versions": [
         {
           "version": 1,

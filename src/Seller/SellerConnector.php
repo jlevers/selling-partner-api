@@ -28,6 +28,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->ordersV0();
     }
 
+    public function sales(): SalesV1\Api
+    {
+        return $this->salesV1();
+    }
+
     public function sellers(): SellersV1\Api
     {
         return $this->sellersV1();
@@ -51,6 +56,11 @@ class SellerConnector extends SellingPartnerApi
     public function ordersV0(): OrdersV0\Api
     {
         return new OrdersV0\Api($this);
+    }
+
+    public function salesV1(): SalesV1\Api
+    {
+        return new SalesV1\Api($this);
     }
 
     public function sellersV1(): SellersV1\Api

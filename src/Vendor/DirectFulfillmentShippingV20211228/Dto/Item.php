@@ -1,0 +1,22 @@
+<?php
+
+namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto;
+
+use Crescat\SaloonSdkGenerator\BaseDto;
+
+final class Item extends BaseDto
+{
+    /**
+     * @param  int  $itemSequenceNumber Item Sequence Number for the item. This must be the same value as sent in order for a given item.
+     * @param  string  $buyerProductIdentifier Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * @param  string  $vendorProductIdentifier The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number.
+     * @param  ItemQuantity  $shippedQuantity Details of item quantity.
+     */
+    public function __construct(
+        public readonly int $itemSequenceNumber,
+        public readonly ?string $buyerProductIdentifier = null,
+        public readonly ?string $vendorProductIdentifier = null,
+        public readonly ?ItemQuantity $shippedQuantity = null,
+    ) {
+    }
+}

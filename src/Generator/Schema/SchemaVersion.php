@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Generator\Schema;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Str;
 use SellingPartnerApi\Generator\Generator;
 use SellingPartnerApi\Generator\Package;
 use SellingPartnerApi\Generator\Schema;
@@ -29,7 +30,7 @@ class SchemaVersion
     {
         $baseNamespace = Package::namespace();
         $categoryNamespace = ucfirst($this->schema->category->value);
-        $schemaNamespace = str_replace(' ', '', $this->schema->name).'V'.$this->version;
+        $schemaNamespace = $this->studlyName();
 
         $inputPath = $this->path();
         $generator = Generator::make([
@@ -47,7 +48,7 @@ class SchemaVersion
         foreach ($schema->paths as $path => $operations) {
             foreach ($operations as $method => $operation) {
                 // Standardize tags
-                $operation->tags = [ucfirst($this->schema->name).'V'.$this->version];
+                $operation->tags = [$this->studlyName()];
 
                 foreach ($operation->responses as $code => $response) {
                     $content = [];
@@ -113,5 +114,10 @@ class SchemaVersion
     public function path(bool $upstream = false): string
     {
         return "{$this->schema->path($upstream)}/v{$this->version}.json";
+    }
+
+    public function studlyName(): string
+    {
+        return Str::studly($this->schema->name).'V'.str_replace('-', '', $this->version);
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use SellingPartnerApi\Generator\Generator;
 use SellingPartnerApi\Generator\Package;
 use SellingPartnerApi\Generator\Schema;
+use stdClass;
 use voku\helper\HtmlDomParser;
 
 class SchemaVersion
@@ -51,7 +52,7 @@ class SchemaVersion
                 $operation->tags = [$this->studlyName()];
 
                 foreach ($operation->responses as $code => $response) {
-                    $content = [];
+                    $content = new stdClass;
                     foreach ($response->content as $contentType => $mediaType) {
                         // Sometimes Amazon puts response payload examples in the response content list,
                         // which is not valid OpenAPI spec. This regex will have some false positives, but
@@ -60,7 +61,7 @@ class SchemaVersion
                         if (! preg_match($regex, $contentType)) {
                             continue;
                         }
-                        $content[$contentType] = $mediaType;
+                        $content->{$contentType} = $mediaType;
                     }
                     $response->content = $content;
                     $operation->responses->{$code} = $response;

@@ -8,9 +8,29 @@ use SellingPartnerApi\SellingPartnerApi;
 
 class SellerConnector extends SellingPartnerApi
 {
+    public function authorization(): AuthorizationV1\Api
+    {
+        return $this->authorizationV1();
+    }
+
+    public function orders(): OrdersV0\Api
+    {
+        return $this->ordersV0();
+    }
+
     public function sellers(): SellersV1\Api
     {
         return $this->sellersV1();
+    }
+
+    public function authorizationV1(): AuthorizationV1\Api
+    {
+        return new AuthorizationV1\Api($this);
+    }
+
+    public function ordersV0(): OrdersV0\Api
+    {
+        return new OrdersV0\Api($this);
     }
 
     public function sellersV1(): SellersV1\Api

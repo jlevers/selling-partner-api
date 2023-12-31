@@ -13,6 +13,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->authorizationV1();
     }
 
+    public function catalogItems(): CatalogItemsV20220401\Api
+    {
+        return $this->catalogItemsV20220401();
+    }
+
     public function fbaInboundEligibility(): FBAInboundEligibilityV1\Api
     {
         return $this->fbaInboundEligibilityV1();
@@ -71,6 +76,21 @@ class SellerConnector extends SellingPartnerApi
     public function authorizationV1(): AuthorizationV1\Api
     {
         return new AuthorizationV1\Api($this);
+    }
+
+    public function catalogItemsV20220401(): CatalogItemsV20220401\Api
+    {
+        return new CatalogItemsV20220401\Api($this);
+    }
+
+    public function catalogItemsV20201201(): CatalogItemsV20201201\Api
+    {
+        return new CatalogItemsV20201201\Api($this);
+    }
+
+    public function catalogItemsV0(): CatalogItemsV0\Api
+    {
+        return new CatalogItemsV0\Api($this);
     }
 
     public function fbaInboundEligibilityV1(): FBAInboundEligibilityV1\Api

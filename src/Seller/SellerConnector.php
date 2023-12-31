@@ -28,6 +28,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->feedsV20210630();
     }
 
+    public function listingsItems(): ListingsItemsV20210801\Api
+    {
+        return $this->listingsItemsV20210801();
+    }
+
     public function orders(): OrdersV0\Api
     {
         return $this->ordersV0();
@@ -66,6 +71,16 @@ class SellerConnector extends SellingPartnerApi
     public function feedsV20210630(): FeedsV20210630\Api
     {
         return new FeedsV20210630\Api($this);
+    }
+
+    public function listingsItemsV20210801(): ListingsItemsV20210801\Api
+    {
+        return new ListingsItemsV20210801\Api($this);
+    }
+
+    public function listingsItemsV20200901(): ListingsItemsV20200901\Api
+    {
+        return new ListingsItemsV20200901\Api($this);
     }
 
     public function ordersV0(): OrdersV0\Api

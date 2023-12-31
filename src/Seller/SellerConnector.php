@@ -38,6 +38,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->ordersV0();
     }
 
+    public function reports(): ReportsV20210630\Api
+    {
+        return $this->reportsV20210630();
+    }
+
     public function sales(): SalesV1\Api
     {
         return $this->salesV1();
@@ -86,6 +91,11 @@ class SellerConnector extends SellingPartnerApi
     public function ordersV0(): OrdersV0\Api
     {
         return new OrdersV0\Api($this);
+    }
+
+    public function reportsV20210630(): ReportsV20210630\Api
+    {
+        return new ReportsV20210630\Api($this);
     }
 
     public function salesV1(): SalesV1\Api

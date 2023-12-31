@@ -23,6 +23,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->fbaInventoryV1();
     }
 
+    public function feeds(): FeedsV20210630\Api
+    {
+        return $this->feedsV20210630();
+    }
+
     public function orders(): OrdersV0\Api
     {
         return $this->ordersV0();
@@ -56,6 +61,11 @@ class SellerConnector extends SellingPartnerApi
     public function fbaInventoryV1(): FBAInventoryV1\Api
     {
         return new FBAInventoryV1\Api($this);
+    }
+
+    public function feedsV20210630(): FeedsV20210630\Api
+    {
+        return new FeedsV20210630\Api($this);
     }
 
     public function ordersV0(): OrdersV0\Api

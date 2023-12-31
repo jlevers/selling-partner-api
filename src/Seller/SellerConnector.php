@@ -63,6 +63,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->tokensV20210301();
     }
 
+    public function uploads(): UploadsV20201101\Api
+    {
+        return $this->uploadsV20201101();
+    }
+
     public function authorizationV1(): AuthorizationV1\Api
     {
         return new AuthorizationV1\Api($this);
@@ -126,5 +131,10 @@ class SellerConnector extends SellingPartnerApi
     public function tokensV20210301(): TokensV20210301\Api
     {
         return new TokensV20210301\Api($this);
+    }
+
+    public function uploadsV20201101(): UploadsV20201101\Api
+    {
+        return new UploadsV20201101\Api($this);
     }
 }

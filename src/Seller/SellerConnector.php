@@ -53,6 +53,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->sellersV1();
     }
 
+    public function shipping(): ShippingV2\Api
+    {
+        return $this->shippingV2();
+    }
+
     public function tokens(): TokensV20210301\Api
     {
         return $this->tokensV20210301();
@@ -106,6 +111,16 @@ class SellerConnector extends SellingPartnerApi
     public function sellersV1(): SellersV1\Api
     {
         return new SellersV1\Api($this);
+    }
+
+    public function shippingV2(): ShippingV2\Api
+    {
+        return new ShippingV2\Api($this);
+    }
+
+    public function shippingV1(): ShippingV1\Api
+    {
+        return new ShippingV1\Api($this);
     }
 
     public function tokensV20210301(): TokensV20210301\Api

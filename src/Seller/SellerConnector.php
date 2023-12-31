@@ -18,6 +18,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->catalogItemsV20220401();
     }
 
+    public function easyShip(): EasyShipV20220323\Api
+    {
+        return $this->easyShipV20220323();
+    }
+
     public function fbaInboundEligibility(): FBAInboundEligibilityV1\Api
     {
         return $this->fbaInboundEligibilityV1();
@@ -101,6 +106,11 @@ class SellerConnector extends SellingPartnerApi
     public function catalogItemsV0(): CatalogItemsV0\Api
     {
         return new CatalogItemsV0\Api($this);
+    }
+
+    public function easyShipV20220323(): EasyShipV20220323\Api
+    {
+        return new EasyShipV20220323\Api($this);
     }
 
     public function fbaInboundEligibilityV1(): FBAInboundEligibilityV1\Api

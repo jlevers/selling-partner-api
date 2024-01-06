@@ -38,6 +38,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->fbaInventoryV1();
     }
 
+    public function fbaOutbound(): FBAOutboundV20200701\Api
+    {
+        return $this->fbaOutboundV20200701();
+    }
+
     public function fbaSmallAndLight(): FBASmallAndLightV1\Api
     {
         return $this->fbaSmallAndLightV1();
@@ -141,6 +146,11 @@ class SellerConnector extends SellingPartnerApi
     public function fbaInventoryV1(): FBAInventoryV1\Api
     {
         return new FBAInventoryV1\Api($this);
+    }
+
+    public function fbaOutboundV20200701(): FBAOutboundV20200701\Api
+    {
+        return new FBAOutboundV20200701\Api($this);
     }
 
     public function fbaSmallAndLightV1(): FBASmallAndLightV1\Api

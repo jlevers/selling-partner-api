@@ -48,6 +48,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->listingsItemsV20210801();
     }
 
+    public function merchantFulfillment(): MerchantFulfillmentV0\Api
+    {
+        return $this->merchantFulfillmentV0();
+    }
+
     public function orders(): OrdersV0\Api
     {
         return $this->ordersV0();
@@ -146,6 +151,11 @@ class SellerConnector extends SellingPartnerApi
     public function listingsItemsV20200901(): ListingsItemsV20200901\Api
     {
         return new ListingsItemsV20200901\Api($this);
+    }
+
+    public function merchantFulfillmentV0(): MerchantFulfillmentV0\Api
+    {
+        return new MerchantFulfillmentV0\Api($this);
     }
 
     public function ordersV0(): OrdersV0\Api

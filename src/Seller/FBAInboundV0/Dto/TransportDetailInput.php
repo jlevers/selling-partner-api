@@ -1,0 +1,24 @@
+<?php
+
+namespace SellingPartnerApi\Seller\FBAInboundV0\Dto;
+
+use Crescat\SaloonSdkGenerator\BaseDto;
+
+final class TransportDetailInput extends BaseDto
+{
+    /**
+     * @param  PartneredSmallParcelDataInput  $partneredSmallParcelData Information that is required by an Amazon-partnered carrier to ship a Small Parcel inbound shipment.
+     * @param  NonPartneredSmallParcelDataInput  $nonPartneredSmallParcelData Information that you provide to Amazon about a Small Parcel shipment shipped by a carrier that has not partnered with Amazon.
+     * @param  PartneredLtlDataInput  $partneredLtlData Information that is required by an Amazon-partnered carrier to ship a Less Than Truckload/Full Truckload (LTL/FTL) inbound shipment.
+     * @param  NonPartneredLtlDataInput  $nonPartneredLtlData Information that you provide to Amazon about a Less Than Truckload/Full Truckload (LTL/FTL) shipment by a carrier that has not partnered with Amazon.
+     */
+    public function __construct(
+        public readonly PartneredSmallParcelDataInput $partneredSmallParcelData,
+        public readonly NonPartneredSmallParcelDataInput $nonPartneredSmallParcelData,
+        public readonly PartneredLtlDataInput $partneredLtlData,
+        public readonly NonPartneredLtlDataInput $nonPartneredLtlData,
+        mixed ...$additionalProperties,
+    ) {
+        parent::__construct(...$additionalProperties);
+    }
+}

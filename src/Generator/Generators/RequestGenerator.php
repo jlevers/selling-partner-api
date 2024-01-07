@@ -4,6 +4,7 @@ namespace SellingPartnerApi\Generator\Generators;
 
 use Crescat\SaloonSdkGenerator\Data\Generator\Endpoint;
 use Crescat\SaloonSdkGenerator\EmptyResponse;
+use Crescat\SaloonSdkGenerator\Enums\SimpleType;
 use Crescat\SaloonSdkGenerator\Generators\RequestGenerator as BaseGenerator;
 use Crescat\SaloonSdkGenerator\Helpers\NameHelper;
 use Exception;
@@ -114,11 +115,19 @@ class RequestGenerator extends BaseGenerator
             ->setType(Response::class);
 
         if ($endpoint->bodySchema) {
+            $bodyType = $endpoint->bodySchema->type;
+            if (SimpleType::isScalar($bodyType)) {
+                $returnValText = '[$this->%s]';
+            } elseif (! SimpleType::tryFrom($bodyType)) {
+                $returnValText = '$this->%s->toArray()';
+            } else {
+                $returnValText = '$this->%s';
+            }
             $classType
                 ->addMethod('defaultBody')
                 ->setReturnType('array')
                 ->addBody(
-                    sprintf('return $this->%s->toArray();', NameHelper::safeVariableName($endpoint->bodySchema->name))
+                    sprintf("return {$returnValText};", NameHelper::safeVariableName($endpoint->bodySchema->name))
                 );
 
             $bodyFQN = $this->bodyFQN($endpoint->bodySchema);

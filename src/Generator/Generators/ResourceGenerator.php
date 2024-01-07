@@ -2,7 +2,9 @@
 
 namespace SellingPartnerApi\Generator\Generators;
 
+use Crescat\SaloonSdkGenerator\Enums\SimpleType;
 use Crescat\SaloonSdkGenerator\Generators\ResourceGenerator as BaseResourceGenerator;
+use Crescat\SaloonSdkGenerator\Helpers\MethodGeneratorHelper;
 use Crescat\SaloonSdkGenerator\Helpers\NameHelper;
 use Nette\InvalidStateException;
 use Nette\PhpGenerator\ClassType;
@@ -64,17 +66,22 @@ class ResourceGenerator extends BaseResourceGenerator
             $args = [];
 
             foreach ($endpoint->pathParameters as $parameter) {
-                $this->addPropertyToMethod($method, $parameter);
+                MethodGeneratorHelper::addParameterToMethod($method, $parameter);
                 $args[] = new Literal(sprintf('$%s', NameHelper::safeVariableName($parameter->name)));
             }
 
             if ($endpoint->bodySchema) {
                 $dtoNamespaceSuffix = NameHelper::optionalNamespaceSuffix($this->config->dtoNamespaceSuffix);
                 $dtoNamespace = "{$this->config->namespace}{$dtoNamespaceSuffix}";
-                $bodyFQN = "{$dtoNamespace}\\{$endpoint->bodySchema->name}";
 
-                $namespace->addUse($bodyFQN);
-                $this->addPropertyToMethod($method, $endpoint->bodySchema, $bodyFQN);
+                // Don't need to import the DTO if the body is an array
+                if (SimpleType::tryFrom($endpoint->bodySchema->type) !== SimpleType::ARRAY) {
+                    $safeSchemaName = NameHelper::requestClassName($endpoint->bodySchema->name);
+                    $bodyFQN = "{$dtoNamespace}\\{$safeSchemaName}";
+                    $namespace->addUse($bodyFQN);
+                }
+
+                MethodGeneratorHelper::addParameterToMethod($method, $endpoint->bodySchema, namespace: $dtoNamespace);
                 $args[] = new Literal(sprintf('$%s', NameHelper::safeVariableName($endpoint->bodySchema->name)));
             }
 
@@ -82,7 +89,7 @@ class ResourceGenerator extends BaseResourceGenerator
                 if (in_array($parameter->name, $this->config->ignoredQueryParams)) {
                     continue;
                 }
-                $this->addPropertyToMethod($method, $parameter);
+                MethodGeneratorHelper::addParameterToMethod($method, $parameter);
                 $args[] = new Literal(sprintf('$%s', NameHelper::safeVariableName($parameter->name)));
             }
 

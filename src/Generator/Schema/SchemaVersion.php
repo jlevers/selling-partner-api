@@ -47,7 +47,13 @@ class SchemaVersion
         $schema = json_decode(file_get_contents($this->path(true)));
 
         foreach ($schema->paths as $path => $operations) {
+            $ops = new stdClass;
             foreach ($operations as $method => $operation) {
+                // Amazon sometimes puts random data in the operations list
+                if (! in_array($method, ['get', 'post', 'put', 'patch', 'delete'])) {
+                    continue;
+                }
+
                 // Standardize tags
                 $operation->tags = [$this->studlyName()];
 
@@ -66,7 +72,7 @@ class SchemaVersion
                     $response->content = $content;
                     $operation->responses->{$code} = $response;
                 }
-                $operations->{$method} = $operation;
+                $ops->{$method} = $operation;
             }
             $schema->paths->{$path} = $operations;
         }

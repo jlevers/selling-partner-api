@@ -7,6 +7,7 @@ use Crescat\SaloonSdkGenerator\EmptyResponse;
 use Crescat\SaloonSdkGenerator\Enums\SimpleType;
 use Crescat\SaloonSdkGenerator\Generators\RequestGenerator as BaseGenerator;
 use Crescat\SaloonSdkGenerator\Helpers\NameHelper;
+use Crescat\SaloonSdkGenerator\Helpers\Utils;
 use Exception;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
@@ -118,7 +119,7 @@ class RequestGenerator extends BaseGenerator
             $bodyType = $endpoint->bodySchema->type;
             if (SimpleType::isScalar($bodyType)) {
                 $returnValText = '[$this->%s]';
-            } elseif (! SimpleType::tryFrom($bodyType)) {
+            } elseif (! Utils::isBuiltinType($bodyType)) {
                 $returnValText = '$this->%s->toArray()';
             } else {
                 $returnValText = '$this->%s';

@@ -77,8 +77,13 @@ class SchemaVersion
             $schema->paths->{$path} = $operations;
         }
 
+        $path = $this->path();
+        $pathDir = dirname($path);
+        if (! is_dir($pathDir)) {
+            mkdir($pathDir, 0755, true);
+        }
         file_put_contents(
-            $this->path(),
+            $path,
             json_encode($schema, JSON_PRETTY_PRINT)
         );
     }
@@ -107,8 +112,13 @@ class SchemaVersion
         }
         $json = json_decode($res->getBody()->getContents());
 
+        $path = $this->path(true);
+        $pathDir = dirname($path);
+        if (! is_dir($pathDir)) {
+            mkdir($pathDir, 0755, true);
+        }
         file_put_contents(
-            $this->path(true),
+            $path,
             json_encode($json, JSON_PRETTY_PRINT)
         );
     }

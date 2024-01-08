@@ -36,6 +36,15 @@
         }
       ]
     },
+    "data-kiosk": {
+      "name": "Data Kiosk",
+      "versions": [
+        {
+          "version": "2023-11-15",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/data-kiosk-api-model/dataKiosk_2023-11-15.json"
+        }
+      ]
+    },
     "easy-ship": {
       "name": "Easy Ship",
       "versions": [
@@ -273,6 +282,15 @@
         {
           "version": 1,
           "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/solicitations-api-model/solicitations.json"
+        }
+      ]
+    },
+    "supply-sources": {
+      "name": "Supply Sources",
+      "versions": [
+        {
+          "version": "2020-07-01",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/supply-sources-api-model/supplySources_2020-07-01.json"
         }
       ]
     },

@@ -8,6 +8,11 @@ use SellingPartnerApi\SellingPartnerApi;
 
 class SellerConnector extends SellingPartnerApi
 {
+    public function aPlusContent(): APlusContentV20201101\Api
+    {
+        return $this->aPlusContentV20201101();
+    }
+
     public function authorization(): AuthorizationV1\Api
     {
         return $this->authorizationV1();
@@ -126,6 +131,11 @@ class SellerConnector extends SellingPartnerApi
     public function uploads(): UploadsV20201101\Api
     {
         return $this->uploadsV20201101();
+    }
+
+    public function aPlusContentV20201101(): APlusContentV20201101\Api
+    {
+        return new APlusContentV20201101\Api($this);
     }
 
     public function authorizationV1(): AuthorizationV1\Api

@@ -33,6 +33,11 @@ class VendorConnector extends SellingPartnerApi
         return $this->directFulfillmentShippingV20211228();
     }
 
+    public function directFulfillmentTransactions(): DirectFulfillmentTransactionsV20211228\Api
+    {
+        return $this->directFulfillmentTransactionsV20211228();
+    }
+
     public function invoices(): InvoicesV1\Api
     {
         return $this->invoicesV1();
@@ -71,6 +76,11 @@ class VendorConnector extends SellingPartnerApi
     public function directFulfillmentShippingV20211228(): DirectFulfillmentShippingV20211228\Api
     {
         return new DirectFulfillmentShippingV20211228\Api($this);
+    }
+
+    public function directFulfillmentTransactionsV20211228(): DirectFulfillmentTransactionsV20211228\Api
+    {
+        return new DirectFulfillmentTransactionsV20211228\Api($this);
     }
 
     public function directFulfillmentTransactionsV1(): DirectFulfillmentTransactionsV1\Api

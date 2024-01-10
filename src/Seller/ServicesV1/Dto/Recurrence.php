@@ -1,0 +1,23 @@
+<?php
+
+namespace SellingPartnerApi\Seller\ServicesV1\Dto;
+
+use Crescat\SaloonSdkGenerator\BaseDto;
+
+final class Recurrence extends BaseDto
+{
+    /**
+     * @param  string  $endTime End time of the recurrence.
+     * @param  ?string[]  $daysOfWeek Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
+     * @param  int[]  $daysOfMonth Days of the month when recurrence is valid.
+     * @param  ?mixed  $additionalProperties
+     */
+    public function __construct(
+        public readonly string $endTime,
+        public readonly ?array $daysOfWeek = null,
+        public readonly ?array $daysOfMonth = null,
+        mixed ...$additionalProperties,
+    ) {
+        parent::__construct(...$additionalProperties);
+    }
+}

@@ -133,6 +133,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->sellersV1();
     }
 
+    public function services(): ServicesV1\Api
+    {
+        return $this->servicesV1();
+    }
+
     public function shipmentInvoicing(): ShipmentInvoicingV0\Api
     {
         return $this->shipmentInvoicingV0();
@@ -296,6 +301,11 @@ class SellerConnector extends SellingPartnerApi
     public function sellersV1(): SellersV1\Api
     {
         return new SellersV1\Api($this);
+    }
+
+    public function servicesV1(): ServicesV1\Api
+    {
+        return new ServicesV1\Api($this);
     }
 
     public function shipmentInvoicingV0(): ShipmentInvoicingV0\Api

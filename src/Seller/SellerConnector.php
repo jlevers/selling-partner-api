@@ -153,6 +153,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->solicitationsV1();
     }
 
+    public function supplySources(): SupplySourcesV20200701\Api
+    {
+        return $this->supplySourcesV20200701();
+    }
+
     public function tokens(): TokensV20210301\Api
     {
         return $this->tokensV20210301();
@@ -331,6 +336,11 @@ class SellerConnector extends SellingPartnerApi
     public function solicitationsV1(): SolicitationsV1\Api
     {
         return new SolicitationsV1\Api($this);
+    }
+
+    public function supplySourcesV20200701(): SupplySourcesV20200701\Api
+    {
+        return new SupplySourcesV20200701\Api($this);
     }
 
     public function tokensV20210301(): TokensV20210301\Api

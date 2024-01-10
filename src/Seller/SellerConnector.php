@@ -23,6 +23,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->catalogItemsV20220401();
     }
 
+    public function dataKiosk(): DataKioskV20231115\Api
+    {
+        return $this->dataKioskV20231115();
+    }
+
     public function easyShip(): EasyShipV20220323\Api
     {
         return $this->easyShipV20220323();
@@ -161,6 +166,11 @@ class SellerConnector extends SellingPartnerApi
     public function catalogItemsV0(): CatalogItemsV0\Api
     {
         return new CatalogItemsV0\Api($this);
+    }
+
+    public function dataKioskV20231115(): DataKioskV20231115\Api
+    {
+        return new DataKioskV20231115\Api($this);
     }
 
     public function easyShipV20220323(): EasyShipV20220323\Api

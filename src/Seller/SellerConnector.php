@@ -83,6 +83,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->merchantFulfillmentV0();
     }
 
+    public function messaging(): MessagingV1\Api
+    {
+        return $this->messagingV1();
+    }
+
     public function notifications(): NotificationsV1\Api
     {
         return $this->notificationsV1();
@@ -231,6 +236,11 @@ class SellerConnector extends SellingPartnerApi
     public function merchantFulfillmentV0(): MerchantFulfillmentV0\Api
     {
         return new MerchantFulfillmentV0\Api($this);
+    }
+
+    public function messagingV1(): MessagingV1\Api
+    {
+        return new MessagingV1\Api($this);
     }
 
     public function notificationsV1(): NotificationsV1\Api

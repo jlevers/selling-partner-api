@@ -108,6 +108,11 @@ class SellerConnector extends SellingPartnerApi
         return $this->productPricingV20220501();
     }
 
+    public function productTypeDefinitions(): ProductTypeDefinitionsV20200901\Api
+    {
+        return $this->productTypeDefinitionsV20200901();
+    }
+
     public function replenishment(): ReplenishmentV20221107\Api
     {
         return $this->replenishmentV20221107();
@@ -266,6 +271,11 @@ class SellerConnector extends SellingPartnerApi
     public function productPricingV0(): ProductPricingV0\Api
     {
         return new ProductPricingV0\Api($this);
+    }
+
+    public function productTypeDefinitionsV20200901(): ProductTypeDefinitionsV20200901\Api
+    {
+        return new ProductTypeDefinitionsV20200901\Api($this);
     }
 
     public function replenishmentV20221107(): ReplenishmentV20221107\Api

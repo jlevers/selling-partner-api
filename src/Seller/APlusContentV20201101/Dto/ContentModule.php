@@ -23,7 +23,6 @@ final class ContentModule extends BaseDto
      * @param  ?StandardTechSpecsModule  $standardTechSpecs The standard table of technical feature names and definitions.
      * @param  ?StandardTextModule  $standardText A standard headline and body text.
      * @param  ?StandardThreeImageTextModule  $standardThreeImageText Three standard images with text, presented across a single row.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $contentModuleType,
@@ -42,8 +41,6 @@ final class ContentModule extends BaseDto
         public readonly ?StandardTechSpecsModule $standardTechSpecs = null,
         public readonly ?StandardTextModule $standardText = null,
         public readonly ?StandardThreeImageTextModule $standardThreeImageText = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

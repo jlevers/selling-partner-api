@@ -13,7 +13,6 @@ final class StandardSingleImageHighlightsModule extends BaseDto
      * @param  ?StandardTextBlock  $textBlock2 The A+ Content standard text box block, comprised of a paragraph with a headline.
      * @param  ?StandardTextBlock  $textBlock3 The A+ Content standard text box block, comprised of a paragraph with a headline.
      * @param  ?StandardHeaderTextListBlock  $bulletedListBlock The A+ standard fixed-length list of text, with a related headline.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?ImageComponent $image = null,
@@ -22,8 +21,6 @@ final class StandardSingleImageHighlightsModule extends BaseDto
         public readonly ?StandardTextBlock $textBlock2 = null,
         public readonly ?StandardTextBlock $textBlock3 = null,
         public readonly ?StandardHeaderTextListBlock $bulletedListBlock = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

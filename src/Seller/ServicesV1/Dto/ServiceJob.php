@@ -27,7 +27,6 @@ final class ServiceJob extends BaseDto
      * @param  ?Buyer  $buyer Information about the buyer.
      * @param  AssociatedItem[]  $associatedItems A list of items associated with the service job.
      * @param  ?ServiceLocation  $serviceLocation Information about the location of the service job.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $createTime = null,
@@ -44,8 +43,6 @@ final class ServiceJob extends BaseDto
         public readonly ?Buyer $buyer = null,
         public readonly ?array $associatedItems = null,
         public readonly ?ServiceLocation $serviceLocation = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

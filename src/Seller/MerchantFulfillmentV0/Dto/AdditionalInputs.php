@@ -7,14 +7,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class AdditionalInputs extends BaseDto
 {
     /**
-     * @param  string  $additionalInputFieldName The field name.
-     * @param  SellerInputDefinition  $sellerInputDefinition Specifies characteristics that apply to a seller input.
+     * @param  ?string  $additionalInputFieldName The field name.
+     * @param  ?SellerInputDefinition  $sellerInputDefinition Specifies characteristics that apply to a seller input.
      */
     public function __construct(
-        public readonly string $additionalInputFieldName,
-        public readonly SellerInputDefinition $sellerInputDefinition,
-        mixed ...$additionalProperties,
+        public readonly ?string $additionalInputFieldName = null,
+        public readonly ?SellerInputDefinition $sellerInputDefinition = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

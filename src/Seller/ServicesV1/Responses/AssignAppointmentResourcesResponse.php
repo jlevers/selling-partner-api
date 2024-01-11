@@ -3,10 +3,13 @@
 namespace SellingPartnerApi\Seller\ServicesV1\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\ServicesV1\Dto\Error;
 use SellingPartnerApi\Seller\ServicesV1\Dto\Payload;
 
 final class AssignAppointmentResourcesResponse extends BaseResponse
 {
+    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+
     /**
      * @param  ?Payload  $payload The payload for the `assignAppointmentResource` operation.
      * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.

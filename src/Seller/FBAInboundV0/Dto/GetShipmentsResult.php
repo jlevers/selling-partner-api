@@ -10,13 +10,11 @@ final class GetShipmentsResult extends BaseDto
 
     /**
      * @param  InboundShipmentInfo[]  $shipmentData A list of inbound shipment information.
-     * @param  string  $nextToken When present and not empty, pass this string token in the next request to return the next response page.
+     * @param  ?string  $nextToken When present and not empty, pass this string token in the next request to return the next response page.
      */
     public function __construct(
-        public readonly array $shipmentData,
-        public readonly string $nextToken,
-        mixed ...$additionalProperties,
+        public readonly ?array $shipmentData = null,
+        public readonly ?string $nextToken = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

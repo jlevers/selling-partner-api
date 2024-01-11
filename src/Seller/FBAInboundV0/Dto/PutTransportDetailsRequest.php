@@ -12,11 +12,9 @@ final class PutTransportDetailsRequest extends BaseDto
      * @param  TransportDetailInput  $transportDetails Information required to create an Amazon-partnered carrier shipping estimate, or to alert the Amazon fulfillment center to the arrival of an inbound shipment by a non-Amazon-partnered carrier.
      */
     public function __construct(
-        public readonly ?bool $isPartnered = null,
-        public readonly ?string $shipmentType = null,
-        public readonly ?TransportDetailInput $transportDetails = null,
-        mixed ...$additionalProperties,
+        public readonly bool $isPartnered,
+        public readonly string $shipmentType,
+        public readonly TransportDetailInput $transportDetails,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

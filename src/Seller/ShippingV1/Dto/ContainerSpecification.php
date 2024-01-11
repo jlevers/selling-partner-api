@@ -11,10 +11,8 @@ final class ContainerSpecification extends BaseDto
      * @param  Weight  $weight The weight.
      */
     public function __construct(
-        public readonly ?Dimensions $dimensions = null,
-        public readonly ?Weight $weight = null,
-        mixed ...$additionalProperties,
+        public readonly Dimensions $dimensions,
+        public readonly Weight $weight,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -7,9 +7,9 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class AssociatedItem extends BaseDto
 {
     /**
-     * @param  string  $orderId The order item's order identifier, in 3-7-7 format.
-     * @param  string  $orderItemId An Amazon-defined item identifier for the associated item.
-     * @param  string  $associationType The type of association an item has with an order item.
+     * @param  ?string  $orderId The order item's order identifier, in 3-7-7 format.
+     * @param  ?string  $orderItemId An Amazon-defined item identifier for the associated item.
+     * @param  ?string  $associationType The type of association an item has with an order item.
      */
     public function __construct(
         public readonly ?string $orderId = null,

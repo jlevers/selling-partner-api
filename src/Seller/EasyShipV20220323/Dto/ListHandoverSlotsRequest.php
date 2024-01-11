@@ -17,8 +17,6 @@ final class ListHandoverSlotsRequest extends BaseDto
         public readonly string $amazonOrderId,
         public readonly Dimensions $packageDimensions,
         public readonly Weight $packageWeight,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

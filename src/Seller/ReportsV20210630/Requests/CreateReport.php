@@ -25,7 +25,7 @@ class CreateReport extends Request implements HasBody
      * @param  CreateReportSpecification  $createReportSpecification Information required to create the report.
      */
     public function __construct(
-        protected CreateReportSpecification $createReportSpecification,
+        public CreateReportSpecification $createReportSpecification,
     ) {
     }
 

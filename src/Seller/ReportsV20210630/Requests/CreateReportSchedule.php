@@ -22,7 +22,7 @@ class CreateReportSchedule extends Request implements HasBody
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected CreateReportScheduleSpecification $createReportScheduleSpecification,
+        public CreateReportScheduleSpecification $createReportScheduleSpecification,
     ) {
     }
 

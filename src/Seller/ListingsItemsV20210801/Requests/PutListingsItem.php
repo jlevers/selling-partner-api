@@ -27,7 +27,7 @@ class PutListingsItem extends Request
     public function __construct(
         protected string $sellerId,
         protected string $sku,
-        protected ListingsItemPutRequest $listingsItemPutRequest,
+        public ListingsItemPutRequest $listingsItemPutRequest,
         protected array $marketplaceIds,
         protected ?string $issueLocale = null,
     ) {

@@ -25,7 +25,7 @@ class ListOffers extends Request implements HasBody
      * @param  ListOffersRequest  $listOffersRequest The request body for the `listOffers` operation.
      */
     public function __construct(
-        protected ListOffersRequest $listOffersRequest,
+        public ListOffersRequest $listOffersRequest,
     ) {
     }
 

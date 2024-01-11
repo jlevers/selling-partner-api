@@ -13,10 +13,8 @@ final class NonPartneredSmallParcelDataInput extends BaseDto
      * @param  NonPartneredSmallParcelPackageInput[]  $packageList A list of package tracking information.
      */
     public function __construct(
-        public readonly ?string $carrierName = null,
+        public readonly string $carrierName,
         public readonly ?array $packageList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

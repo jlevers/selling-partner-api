@@ -7,14 +7,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class DecimalWithUnits extends BaseDto
 {
     /**
-     * @param  float  $value The decimal value.
-     * @param  string  $units The unit of the decimal value.
+     * @param  ?float  $value The decimal value.
+     * @param  ?string  $units The unit of the decimal value.
      */
     public function __construct(
-        public readonly float $value,
-        public readonly string $units,
-        mixed ...$additionalProperties,
+        public readonly ?float $value = null,
+        public readonly ?string $units = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

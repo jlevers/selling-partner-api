@@ -16,10 +16,8 @@ final class GetAdditionalSellerInputsResult extends BaseDto
      * @param  ItemLevelFields[]  $itemLevelFieldsList A list of item level fields.
      */
     public function __construct(
-        public readonly array $shipmentLevelFields,
-        public readonly array $itemLevelFieldsList,
-        mixed ...$additionalProperties,
+        public readonly ?array $shipmentLevelFields = null,
+        public readonly ?array $itemLevelFieldsList = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

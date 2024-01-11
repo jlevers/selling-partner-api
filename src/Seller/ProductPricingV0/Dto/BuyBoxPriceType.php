@@ -13,7 +13,6 @@ final class BuyBoxPriceType extends BaseDto
      * @param  ?string  $quantityDiscountType
      * @param  ?Points  $points
      * @param  ?string  $sellerId The seller identifier for the offer.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $condition,
@@ -25,8 +24,6 @@ final class BuyBoxPriceType extends BaseDto
         public readonly ?string $quantityDiscountType = null,
         public readonly ?Points $points = null,
         public readonly ?string $sellerId = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

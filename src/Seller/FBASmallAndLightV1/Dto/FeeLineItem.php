@@ -12,8 +12,6 @@ final class FeeLineItem extends BaseDto
     public function __construct(
         public readonly string $feeType,
         public readonly MoneyType $feeCharge,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

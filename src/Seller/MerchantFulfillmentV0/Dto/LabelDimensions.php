@@ -15,8 +15,6 @@ final class LabelDimensions extends BaseDto
         public readonly float $length,
         public readonly float $width,
         public readonly string $unit,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

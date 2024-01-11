@@ -23,7 +23,6 @@ final class OfferDetail extends BaseDto
      * @param  ?PrimeInformationType  $primeInformation Amazon Prime information.
      * @param  ?bool  $isBuyBoxWinner When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.
      * @param  ?bool  $isFeaturedMerchant When true, the seller of the item is eligible to win the Buy Box.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $subCondition,
@@ -42,8 +41,6 @@ final class OfferDetail extends BaseDto
         public readonly ?PrimeInformationType $primeInformation = null,
         public readonly ?bool $isBuyBoxWinner = null,
         public readonly ?bool $isFeaturedMerchant = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

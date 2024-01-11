@@ -22,7 +22,7 @@ class UpdateInboundShipment extends Request
      */
     public function __construct(
         protected string $shipmentId,
-        protected InboundShipmentRequest $inboundShipmentRequest,
+        public InboundShipmentRequest $inboundShipmentRequest,
     ) {
     }
 

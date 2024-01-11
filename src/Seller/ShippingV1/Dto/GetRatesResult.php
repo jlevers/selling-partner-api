@@ -13,8 +13,6 @@ final class GetRatesResult extends BaseDto
      */
     public function __construct(
         public readonly ?array $serviceRates = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

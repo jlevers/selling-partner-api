@@ -13,8 +13,6 @@ final class UpdatePackageDetails extends BaseDto
     public function __construct(
         public readonly ScheduledPackageId $scheduledPackageId,
         public readonly TimeSlot $packageTimeSlot,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

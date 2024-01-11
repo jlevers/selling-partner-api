@@ -7,10 +7,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class SubstitutionOption extends BaseDto
 {
     /**
-     * @param  string  $asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  int  $quantityOrdered The number of items to be picked for this substitution option.
-     * @param  string  $sellerSku The seller stock keeping unit (SKU) of the item.
-     * @param  string  $title The title of the item.
+     * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  ?int  $quantityOrdered The number of items to be picked for this substitution option.
+     * @param  ?string  $sellerSku The seller stock keeping unit (SKU) of the item.
+     * @param  ?string  $title The title of the item.
+     * @param  ?Measurement  $measurement
      */
     public function __construct(
         public readonly ?string $asin = null,

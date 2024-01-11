@@ -9,13 +9,10 @@ final class StandardSingleSideImageModule extends BaseDto
     /**
      * @param  string  $imagePositionType The relative positioning of content.
      * @param  ?StandardImageTextBlock  $block The A+ Content standard image and text box block.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $imagePositionType,
         public readonly ?StandardImageTextBlock $block = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -9,7 +9,7 @@ final class BusinessHours extends BaseDto
     protected static array $complexArrayTypes = ['openIntervals' => [OpenInterval::class]];
 
     /**
-     * @param  string  $dayOfWeek Day of the week.
+     * @param  ?string  $dayOfWeek Day of the week.
      * @param  OpenInterval[]  $openIntervals Time window during the day when the business is open.
      */
     public function __construct(

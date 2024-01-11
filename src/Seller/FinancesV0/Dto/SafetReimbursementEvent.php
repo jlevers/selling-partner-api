@@ -14,7 +14,6 @@ final class SafetReimbursementEvent extends BaseDto
      * @param  ?Currency  $reimbursedAmount A currency type and amount.
      * @param  ?string  $reasonCode Indicates why the seller was reimbursed.
      * @param  SafetReimbursementItem[]  $safetReimbursementItemList A list of SAFETReimbursementItems.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $postedDate = null,
@@ -22,8 +21,6 @@ final class SafetReimbursementEvent extends BaseDto
         public readonly ?Currency $reimbursedAmount = null,
         public readonly ?string $reasonCode = null,
         public readonly ?array $safetReimbursementItemList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

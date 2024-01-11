@@ -32,7 +32,6 @@ final class ShipmentEvent extends BaseDto
      * @param  ?string  $postedDate
      * @param  ShipmentItem[]  $shipmentItemList A list of shipment items.
      * @param  ShipmentItem[]  $shipmentItemAdjustmentList A list of shipment items.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $amazonOrderId = null,
@@ -48,8 +47,6 @@ final class ShipmentEvent extends BaseDto
         public readonly ?string $postedDate = null,
         public readonly ?array $shipmentItemList = null,
         public readonly ?array $shipmentItemAdjustmentList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -21,7 +21,7 @@ class GetMyFeesEstimates extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  ?FeesEstimateByIdRequest[]  $getMyFeesEstimatesRequest Request for estimated fees for a list of products.
+     * @param  FeesEstimateByIdRequest[]  $getMyFeesEstimatesRequest Request for estimated fees for a list of products.
      */
     public function __construct(
         public array $getMyFeesEstimatesRequest,

@@ -25,7 +25,7 @@ class DirectPurchaseShipment extends Request implements HasBody
      * @param  DirectPurchaseRequest  $directPurchaseRequest The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
      */
     public function __construct(
-        protected DirectPurchaseRequest $directPurchaseRequest,
+        public DirectPurchaseRequest $directPurchaseRequest,
     ) {
     }
 

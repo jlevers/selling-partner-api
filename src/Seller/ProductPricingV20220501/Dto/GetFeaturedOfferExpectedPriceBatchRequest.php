@@ -10,12 +10,9 @@ final class GetFeaturedOfferExpectedPriceBatchRequest extends BaseDto
 
     /**
      * @param  FeaturedOfferExpectedPriceRequest[]  $requests A batched list of featured offer expected price requests.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $requests = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

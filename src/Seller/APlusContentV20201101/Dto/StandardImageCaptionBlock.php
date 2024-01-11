@@ -9,13 +9,10 @@ final class StandardImageCaptionBlock extends BaseDto
     /**
      * @param  ?ImageComponent  $image A reference to an image, hosted in the A+ Content media library.
      * @param  ?TextComponent  $caption Rich text content.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?ImageComponent $image = null,
         public readonly ?TextComponent $caption = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

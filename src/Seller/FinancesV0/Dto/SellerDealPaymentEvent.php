@@ -15,7 +15,6 @@ final class SellerDealPaymentEvent extends BaseDto
      * @param  ?Currency  $feeAmount A currency type and amount.
      * @param  ?Currency  $taxAmount A currency type and amount.
      * @param  ?Currency  $totalAmount A currency type and amount.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $postedDate = null,
@@ -26,8 +25,6 @@ final class SellerDealPaymentEvent extends BaseDto
         public readonly ?Currency $feeAmount = null,
         public readonly ?Currency $taxAmount = null,
         public readonly ?Currency $totalAmount = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

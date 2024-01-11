@@ -29,7 +29,7 @@ class GetInboundGuidance extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['MarketplaceId' => $this->marketplaceId, 'SellerSkuList' => $this->sellerSkuList, 'AsinList' => $this->asinList]);
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'sellerSkuList' => $this->sellerSkuList, 'asinList' => $this->asinList]);
     }
 
     public function resolveEndpoint(): string

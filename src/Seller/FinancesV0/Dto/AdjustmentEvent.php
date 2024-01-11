@@ -31,15 +31,12 @@ final class AdjustmentEvent extends BaseDto
      * @param  ?string  $postedDate
      * @param  ?Currency  $adjustmentAmount A currency type and amount.
      * @param  AdjustmentItem[]  $adjustmentItemList A list of information about items in an adjustment to the seller's account.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $adjustmentType = null,
         public readonly ?string $postedDate = null,
         public readonly ?Currency $adjustmentAmount = null,
         public readonly ?array $adjustmentItemList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

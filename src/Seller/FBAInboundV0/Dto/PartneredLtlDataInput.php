@@ -9,22 +9,22 @@ final class PartneredLtlDataInput extends BaseDto
     protected static array $complexArrayTypes = ['palletList' => [Pallet::class]];
 
     /**
-     * @param  Contact  $contact Contact information for the person in the seller's organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.
-     * @param  string  $sellerFreightClass The freight class of the shipment. For information about determining the freight class, contact the carrier.
+     * @param  ?Contact  $contact Contact information for the person in the seller's organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.
+     * @param  ?int  $boxCount
+     * @param  ?string  $sellerFreightClass The freight class of the shipment. For information about determining the freight class, contact the carrier.
+     * @param  ?string  $freightReadyDate
      * @param  Pallet[]  $palletList A list of pallet information.
-     * @param  Weight  $totalWeight The weight of the package.
-     * @param  Amount  $sellerDeclaredValue The monetary value.
+     * @param  ?Weight  $totalWeight The weight of the package.
+     * @param  ?Amount  $sellerDeclaredValue The monetary value.
      */
     public function __construct(
-        public readonly Contact $contact,
-        public readonly int $boxCount,
-        public readonly string $sellerFreightClass,
-        public readonly string $freightReadyDate,
-        public readonly array $palletList,
-        public readonly Weight $totalWeight,
-        public readonly Amount $sellerDeclaredValue,
-        mixed ...$additionalProperties,
+        public readonly ?Contact $contact = null,
+        public readonly ?int $boxCount = null,
+        public readonly ?string $sellerFreightClass = null,
+        public readonly ?string $freightReadyDate = null,
+        public readonly ?array $palletList = null,
+        public readonly ?Weight $totalWeight = null,
+        public readonly ?Amount $sellerDeclaredValue = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

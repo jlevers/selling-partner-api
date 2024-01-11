@@ -32,7 +32,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  ?FeesEstimateByIdRequest[]  $getMyFeesEstimatesRequest Request for estimated fees for a list of products.
+     * @param  FeesEstimateByIdRequest[]  $getMyFeesEstimatesRequest Request for estimated fees for a list of products.
      */
     public function getMyFeesEstimates(array $getMyFeesEstimatesRequest): Response
     {

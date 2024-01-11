@@ -13,8 +13,6 @@ final class AvailableDeliveryExperienceOption extends BaseDto
     public function __construct(
         public readonly string $deliveryExperienceOption,
         public readonly CurrencyAmount $charge,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

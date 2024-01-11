@@ -9,14 +9,12 @@ final class SmallAndLightFeePreviewRequest extends BaseDto
     protected static array $complexArrayTypes = ['items' => [Item::class]];
 
     /**
-     * @param  Item[]  $items A list of items for which to retrieve fee estimates (limit: 25).
      * @param  string  $marketplaceId A marketplace identifier.
+     * @param  Item[]  $items A list of items for which to retrieve fee estimates (limit: 25).
      */
     public function __construct(
-        public readonly array $items,
         public readonly string $marketplaceId,
-        mixed ...$additionalProperties,
+        public readonly ?array $items = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

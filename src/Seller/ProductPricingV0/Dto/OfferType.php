@@ -19,7 +19,6 @@ final class OfferType extends BaseDto
      * @param  ?string  $offerType
      * @param  ?MoneyType  $businessPrice
      * @param  QuantityDiscountPriceType[]  $quantityDiscountPrices
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly PriceType $buyingPrice,
@@ -31,8 +30,6 @@ final class OfferType extends BaseDto
         public readonly ?string $offerType = null,
         public readonly ?MoneyType $businessPrice = null,
         public readonly ?array $quantityDiscountPrices = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

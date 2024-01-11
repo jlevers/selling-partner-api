@@ -7,14 +7,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ItemProductTypeByMarketplace extends BaseDto
 {
     /**
-     * @param  string  $marketplaceId Amazon marketplace identifier.
-     * @param  string  $productType Name of the product type associated with the Amazon catalog item.
+     * @param  ?string  $marketplaceId Amazon marketplace identifier.
+     * @param  ?string  $productType Name of the product type associated with the Amazon catalog item.
      */
     public function __construct(
-        public readonly string $marketplaceId,
-        public readonly string $productType,
-        mixed ...$additionalProperties,
+        public readonly ?string $marketplaceId = null,
+        public readonly ?string $productType = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

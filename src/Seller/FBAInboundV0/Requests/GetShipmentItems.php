@@ -34,11 +34,11 @@ class GetShipmentItems extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'QueryType' => $this->queryType,
-            'MarketplaceId' => $this->marketplaceId,
-            'LastUpdatedAfter' => $this->lastUpdatedAfter,
-            'LastUpdatedBefore' => $this->lastUpdatedBefore,
-            'NextToken' => $this->nextToken,
+            'queryType' => $this->queryType,
+            'marketplaceId' => $this->marketplaceId,
+            'lastUpdatedAfter' => $this->lastUpdatedAfter,
+            'lastUpdatedBefore' => $this->lastUpdatedBefore,
+            'nextToken' => $this->nextToken,
         ]);
     }
 

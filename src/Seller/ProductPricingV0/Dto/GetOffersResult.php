@@ -17,7 +17,6 @@ final class GetOffersResult extends BaseDto
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) of the item.
      * @param  ?string  $sku The stock keeping unit (SKU) of the item.
      * @param  OfferDetail[]  $offers
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $marketplaceId,
@@ -28,8 +27,6 @@ final class GetOffersResult extends BaseDto
         public readonly ?string $asin = null,
         public readonly ?string $sku = null,
         public readonly ?array $offers = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -24,7 +24,7 @@ class GetEligibleShipmentServicesOld extends Request implements HasBody
      * @param  GetEligibleShipmentServicesRequest  $getEligibleShipmentServicesRequest Request schema.
      */
     public function __construct(
-        protected GetEligibleShipmentServicesRequest $getEligibleShipmentServicesRequest,
+        public GetEligibleShipmentServicesRequest $getEligibleShipmentServicesRequest,
     ) {
     }
 

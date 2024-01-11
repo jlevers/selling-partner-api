@@ -20,7 +20,6 @@ final class CompetitivePriceType extends BaseDto
      * @param  ?string  $quantityDiscountType
      * @param  ?string  $sellerId The seller identifier for the offer.
      * @param  ?bool  $belongsToRequester  Indicates whether or not the pricing information is for an offer listing that belongs to the requester. The requester is the seller associated with the SellerId that was submitted with the request. Possible values are: true and false.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $competitivePriceId,
@@ -32,8 +31,6 @@ final class CompetitivePriceType extends BaseDto
         public readonly ?string $quantityDiscountType = null,
         public readonly ?string $sellerId = null,
         public readonly ?bool $belongsToRequester = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

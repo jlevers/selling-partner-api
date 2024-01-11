@@ -14,13 +14,11 @@ final class PartneredSmallParcelPackageOutput extends BaseDto
      * @param  string  $packageStatus The shipment status of the package.
      */
     public function __construct(
-        public readonly ?Dimensions $dimensions = null,
-        public readonly ?Weight $weight = null,
-        public readonly ?string $carrierName = null,
-        public readonly ?string $trackingId = null,
-        public readonly ?string $packageStatus = null,
-        mixed ...$additionalProperties,
+        public readonly Dimensions $dimensions,
+        public readonly Weight $weight,
+        public readonly string $carrierName,
+        public readonly string $trackingId,
+        public readonly string $packageStatus,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

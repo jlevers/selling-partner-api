@@ -18,7 +18,6 @@ final class Address extends BaseDto
      * @param  ?string  $postalCode The postal code. This can contain letters, digits, spaces, and/or punctuation.
      * @param  ?string  $countryCode The two digit country code, in ISO 3166-1 alpha-2 format.
      * @param  ?string  $phone The phone number.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $name,
@@ -32,8 +31,6 @@ final class Address extends BaseDto
         public readonly ?string $postalCode = null,
         public readonly ?string $countryCode = null,
         public readonly ?string $phone = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

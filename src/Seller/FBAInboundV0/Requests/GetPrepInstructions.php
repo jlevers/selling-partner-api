@@ -34,9 +34,9 @@ class GetPrepInstructions extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'ShipToCountryCode' => $this->shipToCountryCode,
-            'SellerSkuList' => $this->sellerSkuList,
-            'AsinList' => $this->asinList,
+            'shipToCountryCode' => $this->shipToCountryCode,
+            'sellerSkuList' => $this->sellerSkuList,
+            'asinList' => $this->asinList,
         ]);
     }
 

@@ -10,7 +10,7 @@ final class GetMyFeesEstimatesResponse extends BaseResponse
     protected static array $complexArrayTypes = ['getMyFeesEstimatesResponse' => [FeesEstimateResult::class]];
 
     /**
-     * @param  ?FeesEstimateResult[]  $getMyFeesEstimatesResponse Estimated fees for a list of products.
+     * @param  FeesEstimateResult[]  $getMyFeesEstimatesResponse Estimated fees for a list of products.
      */
     public function __construct(
         public readonly array $getMyFeesEstimatesResponse,

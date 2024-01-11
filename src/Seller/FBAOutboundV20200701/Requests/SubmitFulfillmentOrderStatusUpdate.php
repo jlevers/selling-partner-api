@@ -22,7 +22,7 @@ class SubmitFulfillmentOrderStatusUpdate extends Request
      */
     public function __construct(
         protected string $sellerFulfillmentOrderId,
-        protected SubmitFulfillmentOrderStatusUpdateRequest $submitFulfillmentOrderStatusUpdateRequest,
+        public SubmitFulfillmentOrderStatusUpdateRequest $submitFulfillmentOrderStatusUpdateRequest,
     ) {
     }
 

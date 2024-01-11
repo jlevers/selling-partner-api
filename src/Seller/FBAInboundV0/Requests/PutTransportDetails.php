@@ -22,7 +22,7 @@ class PutTransportDetails extends Request
      */
     public function __construct(
         protected string $shipmentId,
-        protected PutTransportDetailsRequest $putTransportDetailsRequest,
+        public PutTransportDetailsRequest $putTransportDetailsRequest,
     ) {
     }
 

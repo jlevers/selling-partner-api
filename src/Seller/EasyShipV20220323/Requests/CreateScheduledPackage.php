@@ -25,7 +25,7 @@ class CreateScheduledPackage extends Request implements HasBody
      * @param  CreateScheduledPackageRequest  $createScheduledPackageRequest The request schema for the `createScheduledPackage` operation.
      */
     public function __construct(
-        protected CreateScheduledPackageRequest $createScheduledPackageRequest,
+        public CreateScheduledPackageRequest $createScheduledPackageRequest,
     ) {
     }
 

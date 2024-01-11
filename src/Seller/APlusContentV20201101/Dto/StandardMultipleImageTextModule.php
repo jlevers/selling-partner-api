@@ -10,12 +10,9 @@ final class StandardMultipleImageTextModule extends BaseDto
 
     /**
      * @param  StandardImageTextCaptionBlock[]  $blocks
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $blocks = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

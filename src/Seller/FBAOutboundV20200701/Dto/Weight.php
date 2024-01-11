@@ -11,10 +11,8 @@ final class Weight extends BaseDto
      * @param  string  $value The weight value.
      */
     public function __construct(
-        public readonly ?string $unit = null,
-        public readonly ?string $value = null,
-        mixed ...$additionalProperties,
+        public readonly string $unit,
+        public readonly string $value,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

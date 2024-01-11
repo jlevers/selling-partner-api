@@ -76,7 +76,6 @@ final class FinancialEvents extends BaseDto
      * @param  FailedAdhocDisbursementEvent[]  $failedAdhocDisbursementEventList A list of `FailedAdhocDisbursementEvent`s.
      * @param  ValueAddedServiceChargeEvent[]  $valueAddedServiceChargeEventList A list of `ValueAddedServiceCharge` events.
      * @param  CapacityReservationBillingEvent[]  $capacityReservationBillingEventList A list of `CapacityReservationBillingEvent` events.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $shipmentEventList = null,
@@ -112,8 +111,6 @@ final class FinancialEvents extends BaseDto
         public readonly ?array $failedAdhocDisbursementEventList = null,
         public readonly ?array $valueAddedServiceChargeEventList = null,
         public readonly ?array $capacityReservationBillingEventList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

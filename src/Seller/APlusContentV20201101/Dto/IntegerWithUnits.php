@@ -9,13 +9,10 @@ final class IntegerWithUnits extends BaseDto
     /**
      * @param  int  $value The dimension value.
      * @param  string  $units The unit of measurement.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly int $value,
         public readonly string $units,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

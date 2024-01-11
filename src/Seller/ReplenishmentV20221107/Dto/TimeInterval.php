@@ -24,8 +24,6 @@ final class TimeInterval extends BaseDto
     public function __construct(
         public readonly string $startDate,
         public readonly string $endDate,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

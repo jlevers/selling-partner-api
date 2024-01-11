@@ -19,8 +19,8 @@ final class OrderMetricsInterval extends BaseDto
         public readonly int $unitCount,
         public readonly int $orderItemCount,
         public readonly int $orderCount,
-        public readonly ?Money $averageUnitPrice = null,
-        public readonly ?Money $totalSales = null,
+        public readonly Money $averageUnitPrice,
+        public readonly Money $totalSales,
     ) {
     }
 }

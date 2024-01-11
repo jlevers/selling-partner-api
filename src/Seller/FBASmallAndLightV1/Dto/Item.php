@@ -12,8 +12,6 @@ final class Item extends BaseDto
     public function __construct(
         public readonly string $asin,
         public readonly MoneyType $price,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

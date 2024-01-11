@@ -25,7 +25,7 @@ class ListOfferMetrics extends Request implements HasBody
      * @param  ListOfferMetricsRequest  $listOfferMetricsRequest The request body for the `listOfferMetrics` operation.
      */
     public function __construct(
-        protected ListOfferMetricsRequest $listOfferMetricsRequest,
+        public ListOfferMetricsRequest $listOfferMetricsRequest,
     ) {
     }
 

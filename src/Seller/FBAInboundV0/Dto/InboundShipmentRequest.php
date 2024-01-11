@@ -10,15 +10,13 @@ final class InboundShipmentRequest extends BaseDto
 
     /**
      * @param  InboundShipmentHeader  $inboundShipmentHeader Inbound shipment information used to create and update inbound shipments.
-     * @param  InboundShipmentItem[]  $inboundShipmentItems A list of inbound shipment item information.
      * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
+     * @param  InboundShipmentItem[]  $inboundShipmentItems A list of inbound shipment item information.
      */
     public function __construct(
-        public readonly ?InboundShipmentHeader $inboundShipmentHeader = null,
+        public readonly InboundShipmentHeader $inboundShipmentHeader,
+        public readonly string $marketplaceId,
         public readonly ?array $inboundShipmentItems = null,
-        public readonly ?string $marketplaceId = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

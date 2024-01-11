@@ -40,14 +40,14 @@ class ListCatalogItems extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'MarketplaceId' => $this->marketplaceId,
-            'Query' => $this->query,
-            'QueryContextId' => $this->queryContextId,
-            'SellerSKU' => $this->sellerSku,
-            'UPC' => $this->upc,
-            'EAN' => $this->ean,
-            'ISBN' => $this->isbn,
-            'JAN' => $this->jan,
+            'marketplaceId' => $this->marketplaceId,
+            'query' => $this->query,
+            'queryContextId' => $this->queryContextId,
+            'sellerSku' => $this->sellerSku,
+            'upc' => $this->upc,
+            'ean' => $this->ean,
+            'isbn' => $this->isbn,
+            'jan' => $this->jan,
         ]);
     }
 

@@ -14,7 +14,6 @@ final class Offer extends BaseDto
      * @param  string  $fulfillmentType Indicates whether the item is fulfilled by Amazon or by the seller (merchant).
      * @param  ShippingOption[]  $shippingOptions A list of shipping options associated with this offer
      * @param  ?Points  $points
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $sellerId,
@@ -23,8 +22,6 @@ final class Offer extends BaseDto
         public readonly MoneyType $listingPrice,
         public readonly ?array $shippingOptions = null,
         public readonly ?Points $points = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

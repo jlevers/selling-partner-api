@@ -11,21 +11,20 @@ final class Shipment extends BaseDto
     /**
      * @param  string  $shipmentId The unique shipment identifier.
      * @param  string  $clientReferenceId Client reference id.
-     * @param  Address  $address The address.
-     * @param  Address  $address The address.
-     * @param  AcceptedRate  $acceptedRate The specific rate purchased for the shipment, or null if unpurchased.
-     * @param  Party  $party The account related with the shipment.
+     * @param  Address  $shipFrom The address.
+     * @param  Address  $shipTo The address.
+     * @param  ?AcceptedRate  $acceptedRate The specific rate purchased for the shipment, or null if unpurchased.
+     * @param  ?Party  $shipper The account related with the shipment.
      * @param  Container[]  $containers A list of container.
      */
     public function __construct(
-        public readonly ?string $shipmentId = null,
-        public readonly ?string $clientReferenceId = null,
-        public readonly ?Address $address = null,
+        public readonly string $shipmentId,
+        public readonly string $clientReferenceId,
+        public readonly Address $shipFrom,
+        public readonly Address $shipTo,
         public readonly ?AcceptedRate $acceptedRate = null,
-        public readonly ?Party $party = null,
+        public readonly ?Party $shipper = null,
         public readonly ?array $containers = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

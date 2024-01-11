@@ -13,7 +13,7 @@ final class GetInventorySummariesResult extends BaseDto
      * @param  InventorySummary[]  $inventorySummaries A list of inventory summaries.
      */
     public function __construct(
-        public readonly ?Granularity $granularity = null,
+        public readonly Granularity $granularity,
         public readonly ?array $inventorySummaries = null,
     ) {
     }

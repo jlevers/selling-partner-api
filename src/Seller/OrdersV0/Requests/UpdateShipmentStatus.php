@@ -27,7 +27,7 @@ class UpdateShipmentStatus extends Request implements HasBody
      */
     public function __construct(
         protected string $orderId,
-        protected UpdateShipmentStatusRequest $updateShipmentStatusRequest,
+        public UpdateShipmentStatusRequest $updateShipmentStatusRequest,
     ) {
     }
 

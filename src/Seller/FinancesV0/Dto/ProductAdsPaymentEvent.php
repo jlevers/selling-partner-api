@@ -19,7 +19,6 @@ final class ProductAdsPaymentEvent extends BaseDto
      * @param  ?Currency  $baseValue A currency type and amount.
      * @param  ?Currency  $taxValue A currency type and amount.
      * @param  ?Currency  $transactionValue A currency type and amount.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $postedDate = null,
@@ -28,8 +27,6 @@ final class ProductAdsPaymentEvent extends BaseDto
         public readonly ?Currency $baseValue = null,
         public readonly ?Currency $taxValue = null,
         public readonly ?Currency $transactionValue = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -24,8 +24,6 @@ final class GetEligibleShipmentServicesResult extends BaseDto
         public readonly ?array $rejectedShippingServiceList = null,
         public readonly ?array $temporarilyUnavailableCarrierList = null,
         public readonly ?array $termsAndConditionsNotAcceptedCarrierList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

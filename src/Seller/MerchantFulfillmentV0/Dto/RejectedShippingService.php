@@ -11,7 +11,7 @@ final class RejectedShippingService extends BaseDto
      * @param  string  $shippingServiceName The rejected shipping service localized name. e.g. FedEx Standard Overnight
      * @param  string  $shippingServiceId An Amazon-defined shipping service identifier.
      * @param  string  $rejectionReasonCode A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX
-     * @param  string  $rejectionReasonMessage A localized human readable description of the rejected reason.
+     * @param  ?string  $rejectionReasonMessage A localized human readable description of the rejected reason.
      */
     public function __construct(
         public readonly string $carrierName,
@@ -19,8 +19,6 @@ final class RejectedShippingService extends BaseDto
         public readonly string $shippingServiceId,
         public readonly string $rejectionReasonCode,
         public readonly ?string $rejectionReasonMessage = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

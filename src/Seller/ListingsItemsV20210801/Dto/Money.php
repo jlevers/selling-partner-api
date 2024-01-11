@@ -8,13 +8,11 @@ final class Money extends BaseDto
 {
     /**
      * @param  string  $currencyCode Three-digit currency code. In ISO 4217 format.
-     * @param  string  $decimal A decimal number with no loss of precision. Useful when precision loss is unnaceptable, as with currencies. Follows RFC7159 for number representation.
+     * @param  string  $amount A decimal number with no loss of precision. Useful when precision loss is unnaceptable, as with currencies. Follows RFC7159 for number representation.
      */
     public function __construct(
         public readonly string $currencyCode,
-        public readonly ?string $decimal = null,
-        mixed ...$additionalProperties,
+        public readonly string $amount,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

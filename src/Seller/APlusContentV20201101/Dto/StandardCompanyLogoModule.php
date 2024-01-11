@@ -8,12 +8,9 @@ final class StandardCompanyLogoModule extends BaseDto
 {
     /**
      * @param  ImageComponent  $companyLogo A reference to an image, hosted in the A+ Content media library.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ImageComponent $companyLogo,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

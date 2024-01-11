@@ -3,14 +3,17 @@
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\APlusContentV20201101\Dto\Error;
 
 final class PostContentDocumentSuspendSubmissionResponse extends BaseResponse
 {
+    protected static array $complexArrayTypes = ['warnings' => [Error::class]];
+
     /**
-     * @param  Error[]  $messageSet A set of messages to the user, such as warnings or comments.
+     * @param  Error[]  $warnings A set of messages to the user, such as warnings or comments.
      */
     public function __construct(
-        public readonly ?array $messageSet = null,
+        public readonly ?array $warnings = null,
     ) {
     }
 }

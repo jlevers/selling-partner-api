@@ -3,14 +3,17 @@
 namespace SellingPartnerApi\Seller\ProductPricingV0\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\ProductPricingV0\Dto\ItemOffersResponse;
 
 final class GetItemOffersBatchResponse extends BaseResponse
 {
+    protected static array $complexArrayTypes = ['responses' => [ItemOffersResponse::class]];
+
     /**
-     * @param  ItemOffersResponse[]  $itemOffersResponse A list of `getItemOffers` batched responses.
+     * @param  ItemOffersResponse[]  $responses A list of `getItemOffers` batched responses.
      */
     public function __construct(
-        public readonly ?array $itemOffersResponse = null,
+        public readonly ?array $responses = null,
     ) {
     }
 }

@@ -19,12 +19,10 @@ final class TransportHeader extends BaseDto
      * @param  string  $shipmentType Specifies the carrier shipment type in a putTransportDetails request.
      */
     public function __construct(
-        public readonly ?string $sellerId = null,
-        public readonly ?string $shipmentId = null,
-        public readonly ?bool $isPartnered = null,
-        public readonly ?string $shipmentType = null,
-        mixed ...$additionalProperties,
+        public readonly string $sellerId,
+        public readonly string $shipmentId,
+        public readonly bool $isPartnered,
+        public readonly string $shipmentType,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -12,8 +12,7 @@ final class FeeDetail extends BaseDto
      * @param  string  $feeType The type of fee charged to a seller.
      * @param  ?MoneyType  $feePromotion
      * @param  ?MoneyType  $taxAmount
-     * @param  ?IncludedFeeDetail[]  $includedFeeDetailList A list of other fees that contribute to a given fee.
-     * @param  ?mixed  $additionalProperties
+     * @param  IncludedFeeDetail[]  $includedFeeDetailList A list of other fees that contribute to a given fee.
      */
     public function __construct(
         public readonly string $feeType,
@@ -22,8 +21,6 @@ final class FeeDetail extends BaseDto
         public readonly ?MoneyType $feePromotion = null,
         public readonly ?MoneyType $taxAmount = null,
         public readonly ?array $includedFeeDetailList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

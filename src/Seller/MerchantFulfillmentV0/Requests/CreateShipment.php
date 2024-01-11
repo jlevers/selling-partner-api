@@ -24,7 +24,7 @@ class CreateShipment extends Request implements HasBody
      * @param  CreateShipmentRequest  $createShipmentRequest Request schema.
      */
     public function __construct(
-        protected CreateShipmentRequest $createShipmentRequest,
+        public CreateShipmentRequest $createShipmentRequest,
     ) {
     }
 

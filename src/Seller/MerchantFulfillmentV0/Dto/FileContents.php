@@ -15,8 +15,6 @@ final class FileContents extends BaseDto
         public readonly string $contents,
         public readonly string $fileType,
         public readonly string $checksum,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -25,7 +25,7 @@ class CreateRestrictedDataToken extends Request implements HasBody
      * @param  CreateRestrictedDataTokenRequest  $createRestrictedDataTokenRequest The request schema for the createRestrictedDataToken operation.
      */
     public function __construct(
-        protected CreateRestrictedDataTokenRequest $createRestrictedDataTokenRequest,
+        public CreateRestrictedDataTokenRequest $createRestrictedDataTokenRequest,
     ) {
     }
 

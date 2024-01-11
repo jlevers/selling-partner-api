@@ -11,8 +11,6 @@ final class RequestedValueAddedService extends BaseDto
      */
     public function __construct(
         public readonly string $id,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

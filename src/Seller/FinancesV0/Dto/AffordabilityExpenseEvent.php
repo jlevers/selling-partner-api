@@ -22,7 +22,6 @@ final class AffordabilityExpenseEvent extends BaseDto
      * * Refund - For an affordability promotion expense reversal.
      * @param  ?Currency  $baseExpense A currency type and amount.
      * @param  ?Currency  $totalExpense A currency type and amount.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly Currency $taxTypeCgst,
@@ -34,8 +33,6 @@ final class AffordabilityExpenseEvent extends BaseDto
         public readonly ?string $transactionType = null,
         public readonly ?Currency $baseExpense = null,
         public readonly ?Currency $totalExpense = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

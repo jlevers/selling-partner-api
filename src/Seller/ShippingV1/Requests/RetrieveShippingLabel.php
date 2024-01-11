@@ -26,7 +26,7 @@ class RetrieveShippingLabel extends Request implements HasBody
     public function __construct(
         protected string $shipmentId,
         protected string $trackingId,
-        protected RetrieveShippingLabelRequest $retrieveShippingLabelRequest,
+        public RetrieveShippingLabelRequest $retrieveShippingLabelRequest,
     ) {
     }
 

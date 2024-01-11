@@ -13,8 +13,6 @@ final class BrandRefinement extends BaseDto
     public function __construct(
         public readonly int $numberOfResults,
         public readonly string $brandName,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

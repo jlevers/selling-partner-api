@@ -3,13 +3,26 @@
 namespace SellingPartnerApi\Seller\ListingsItemsV20210801\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\FulfillmentAvailability;
+use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\Issue;
+use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemOfferByMarketplace;
+use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemProcurement;
+use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemSummaryByMarketplace;
 
 final class Item extends BaseResponse
 {
+    protected static array $complexArrayTypes = [
+        'summaries' => [ItemSummaryByMarketplace::class],
+        'issues' => [Issue::class],
+        'offers' => [ItemOfferByMarketplace::class],
+        'fulfillmentAvailability' => [FulfillmentAvailability::class],
+        'procurement' => [ItemProcurement::class],
+    ];
+
     /**
      * @param  string  $sku A selling partner provided identifier for an Amazon listing.
      * @param  ItemSummaryByMarketplace[]  $summaries Summary details of a listings item.
-     * @param  array  $attributes JSON object containing structured listings item attribute data keyed by attribute name.
+     * @param  ?mixed[]  $attributes JSON object containing structured listings item attribute data keyed by attribute name.
      * @param  Issue[]  $issues Issues associated with the listings item.
      * @param  ItemOfferByMarketplace[]  $offers Offer details for the listings item.
      * @param  FulfillmentAvailability[]  $fulfillmentAvailability Fulfillment availability for the listings item.

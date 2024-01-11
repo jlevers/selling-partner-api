@@ -14,9 +14,7 @@ final class ItemIdentifiersByMarketplace extends BaseDto
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly array $identifiers,
-        mixed ...$additionalProperties,
+        public readonly ?array $identifiers = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

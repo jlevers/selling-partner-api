@@ -11,10 +11,8 @@ final class Fee extends BaseDto
      * @param  Money  $amount An amount of money, including units in the form of currency.
      */
     public function __construct(
-        public readonly ?string $name = null,
-        public readonly ?Money $amount = null,
-        mixed ...$additionalProperties,
+        public readonly string $name,
+        public readonly Money $amount,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

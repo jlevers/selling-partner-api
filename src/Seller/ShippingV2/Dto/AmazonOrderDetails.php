@@ -11,8 +11,6 @@ final class AmazonOrderDetails extends BaseDto
      */
     public function __construct(
         public readonly string $orderId,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

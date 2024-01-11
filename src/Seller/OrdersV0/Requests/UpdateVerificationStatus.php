@@ -27,7 +27,7 @@ class UpdateVerificationStatus extends Request implements HasBody
      */
     public function __construct(
         protected string $orderId,
-        protected UpdateVerificationStatusRequest $updateVerificationStatusRequest,
+        public UpdateVerificationStatusRequest $updateVerificationStatusRequest,
     ) {
     }
 

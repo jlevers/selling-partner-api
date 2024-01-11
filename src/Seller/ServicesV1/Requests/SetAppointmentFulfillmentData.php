@@ -8,6 +8,7 @@ use Saloon\Http\Request;
 use Saloon\Http\Response;
 use SellingPartnerApi\Seller\ServicesV1\Dto\SetAppointmentFulfillmentDataRequest;
 use SellingPartnerApi\Seller\ServicesV1\Responses\Errors;
+use SellingPartnerApi\Seller\ServicesV1\Responses\SetAppointmentFulfillmentData as SetAppointmentFulfillmentData1;
 
 /**
  * setAppointmentFulfillmentData
@@ -33,10 +34,11 @@ class SetAppointmentFulfillmentData extends Request
         return "/service/v1/serviceJobs/{$this->serviceJobId}/appointments/{$this->appointmentId}/fulfillment";
     }
 
-    public function createDtoFromResponse(Response $response): Errors
+    public function createDtoFromResponse(Response $response): SetAppointmentFulfillmentData1|Errors
     {
         $status = $response->status();
         $responseCls = match ($status) {
+            204 => SetAppointmentFulfillmentData::class,
             400, 403, 404, 413, 415, 422, 429, 500, 503 => Errors::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };

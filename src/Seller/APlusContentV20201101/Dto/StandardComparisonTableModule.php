@@ -14,13 +14,10 @@ final class StandardComparisonTableModule extends BaseDto
     /**
      * @param  StandardComparisonProductBlock[]  $productColumns
      * @param  PlainTextItem[]  $metricRowLabels
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $productColumns = null,
         public readonly ?array $metricRowLabels = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

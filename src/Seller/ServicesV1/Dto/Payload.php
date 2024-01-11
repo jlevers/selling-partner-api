@@ -10,12 +10,9 @@ final class Payload extends BaseDto
 
     /**
      * @param  Warning[]  $warnings A list of warnings returned in the sucessful execution response of an API request.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $warnings = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

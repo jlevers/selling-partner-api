@@ -15,7 +15,6 @@ final class Appointment extends BaseDto
      * @param  Technician[]  $assignedTechnicians A list of technicians assigned to the service job.
      * @param  ?string  $rescheduledAppointmentId The appointment identifier.
      * @param  ?Poa  $poa Proof of Appointment (POA) details.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $appointmentId = null,
@@ -24,8 +23,6 @@ final class Appointment extends BaseDto
         public readonly ?array $assignedTechnicians = null,
         public readonly ?string $rescheduledAppointmentId = null,
         public readonly ?Poa $poa = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

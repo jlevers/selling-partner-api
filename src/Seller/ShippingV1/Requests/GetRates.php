@@ -24,7 +24,7 @@ class GetRates extends Request implements HasBody
      * @param  GetRatesRequest  $getRatesRequest The payload schema for the getRates operation.
      */
     public function __construct(
-        protected GetRatesRequest $getRatesRequest,
+        public GetRatesRequest $getRatesRequest,
     ) {
     }
 

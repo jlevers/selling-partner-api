@@ -11,15 +11,12 @@ final class StandardThreeImageTextModule extends BaseDto
      * @param  ?StandardImageTextBlock  $block1 The A+ Content standard image and text box block.
      * @param  ?StandardImageTextBlock  $block2 The A+ Content standard image and text box block.
      * @param  ?StandardImageTextBlock  $block3 The A+ Content standard image and text box block.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?TextComponent $headline = null,
         public readonly ?StandardImageTextBlock $block1 = null,
         public readonly ?StandardImageTextBlock $block2 = null,
         public readonly ?StandardImageTextBlock $block3 = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

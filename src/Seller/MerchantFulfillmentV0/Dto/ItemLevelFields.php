@@ -15,8 +15,6 @@ final class ItemLevelFields extends BaseDto
     public function __construct(
         public readonly string $asin,
         public readonly ?array $additionalInputs = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

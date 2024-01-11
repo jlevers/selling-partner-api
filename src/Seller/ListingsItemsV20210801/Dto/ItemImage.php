@@ -15,8 +15,6 @@ final class ItemImage extends BaseDto
         public readonly string $link,
         public readonly int $height,
         public readonly int $width,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

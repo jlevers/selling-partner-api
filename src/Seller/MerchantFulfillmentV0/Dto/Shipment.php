@@ -19,9 +19,10 @@ final class Shipment extends BaseDto
      * @param  ShippingService  $shippingService A shipping service offer made by a carrier.
      * @param  Label  $label Data for creating a shipping label and dimensions for printing the label.
      * @param  string  $status The shipment status.
-     * @param  string  $sellerOrderId A seller-defined order identifier.
+     * @param  ?string  $sellerOrderId A seller-defined order identifier.
      * @param  Item[]  $itemList The list of items to be included in a shipment.
-     * @param  string  $trackingId The shipment tracking identifier provided by the carrier.
+     * @param  ?string  $trackingId The shipment tracking identifier provided by the carrier.
+     * @param  ?string  $lastUpdatedDate
      */
     public function __construct(
         public readonly string $shipmentId,
@@ -39,8 +40,6 @@ final class Shipment extends BaseDto
         public readonly ?array $itemList = null,
         public readonly ?string $trackingId = null,
         public readonly ?string $lastUpdatedDate = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

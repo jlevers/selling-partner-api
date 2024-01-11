@@ -10,9 +10,7 @@ final class NonPartneredSmallParcelPackageInput extends BaseDto
      * @param  string  $trackingId The tracking number of the package, provided by the carrier.
      */
     public function __construct(
-        public readonly ?string $trackingId = null,
-        mixed ...$additionalProperties,
+        public readonly string $trackingId,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

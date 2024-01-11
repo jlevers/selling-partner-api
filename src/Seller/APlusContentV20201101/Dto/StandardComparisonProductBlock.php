@@ -15,7 +15,6 @@ final class StandardComparisonProductBlock extends BaseDto
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN).
      * @param  ?bool  $highlight Determines whether this block of content is visually highlighted.
      * @param  PlainTextItem[]  $metrics Comparison metrics for the product.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly int $position,
@@ -24,8 +23,6 @@ final class StandardComparisonProductBlock extends BaseDto
         public readonly ?string $asin = null,
         public readonly ?bool $highlight = null,
         public readonly ?array $metrics = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

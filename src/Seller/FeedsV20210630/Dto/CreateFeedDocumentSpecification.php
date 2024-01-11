@@ -11,8 +11,6 @@ final class CreateFeedDocumentSpecification extends BaseDto
      */
     public function __construct(
         public readonly string $contentType,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

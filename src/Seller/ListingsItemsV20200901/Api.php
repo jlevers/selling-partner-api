@@ -17,7 +17,7 @@ class Api extends BaseResource
      * @param  string  $sku A selling partner provided identifier for an Amazon listing.
      * @param  ListingsItemPutRequest  $listingsItemPutRequest The request body schema for the putListingsItem operation.
      * @param  array  $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @param  string|null  $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
+     * @param  ?string  $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
      */
     public function putListingsItem(
         string $sellerId,
@@ -33,7 +33,7 @@ class Api extends BaseResource
      * @param  string  $sellerId A selling partner identifier, such as a merchant account or vendor code.
      * @param  string  $sku A selling partner provided identifier for an Amazon listing.
      * @param  array  $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @param  string|null  $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
+     * @param  ?string  $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
      */
     public function deleteListingsItem(
         string $sellerId,
@@ -49,7 +49,7 @@ class Api extends BaseResource
      * @param  string  $sku A selling partner provided identifier for an Amazon listing.
      * @param  ListingsItemPatchRequest  $listingsItemPatchRequest The request body schema for the patchListingsItem operation.
      * @param  array  $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @param  string|null  $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
+     * @param  ?string  $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: "en_US", "fr_CA", "fr_FR". Localized messages default to "en_US" when a localization is not available in the specified locale.
      */
     public function patchListingsItem(
         string $sellerId,

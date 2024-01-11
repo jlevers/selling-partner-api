@@ -11,10 +11,8 @@ final class RetrieveShippingLabelResult extends BaseDto
      * @param  LabelSpecification  $labelSpecification The label specification info.
      */
     public function __construct(
-        public readonly ?string $labelStream = null,
-        public readonly ?LabelSpecification $labelSpecification = null,
-        mixed ...$additionalProperties,
+        public readonly string $labelStream,
+        public readonly LabelSpecification $labelSpecification,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

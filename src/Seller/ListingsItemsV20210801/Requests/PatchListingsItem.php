@@ -31,7 +31,7 @@ class PatchListingsItem extends Request implements HasBody
     public function __construct(
         protected string $sellerId,
         protected string $sku,
-        protected ListingsItemPatchRequest $listingsItemPatchRequest,
+        public ListingsItemPatchRequest $listingsItemPatchRequest,
         protected array $marketplaceIds,
         protected ?string $issueLocale = null,
     ) {

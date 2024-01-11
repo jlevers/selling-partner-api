@@ -14,9 +14,7 @@ final class ItemImagesByMarketplace extends BaseDto
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly array $images,
-        mixed ...$additionalProperties,
+        public readonly ?array $images = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -8,13 +8,10 @@ final class ShippingOption extends BaseDto
 {
     /**
      * @param  string  $shippingOptionType The type of the shipping option.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $shippingOptionType,
         public readonly MoneyType $price,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

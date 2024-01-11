@@ -11,13 +11,10 @@ final class TextComponent extends BaseDto
     /**
      * @param  string  $value The actual plain text.
      * @param  Decorator[]  $decoratorSet A set of content decorators.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $value,
         public readonly ?array $decoratorSet = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

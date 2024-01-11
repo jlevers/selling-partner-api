@@ -15,12 +15,10 @@ final class InboundShipmentPlanItem extends BaseDto
      * @param  PrepDetails[]  $prepDetailsList A list of preparation instructions and who is responsible for that preparation.
      */
     public function __construct(
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $fulfillmentNetworkSku = null,
-        public readonly ?int $quantity = null,
+        public readonly string $sellerSku,
+        public readonly string $fulfillmentNetworkSku,
+        public readonly int $quantity,
         public readonly ?array $prepDetailsList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

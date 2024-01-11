@@ -12,7 +12,6 @@ final class CompetitiveSummaryRequest extends BaseDto
      * @param  string  $method The HTTP method associated with an individual request within a batch.
      * @param  string  $uri The URI associated with the individual APIs being called as part of the batch request.
      * @param  ?string[]  $includedData The list of requested competitive pricing data for the product.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $asin,
@@ -20,8 +19,6 @@ final class CompetitiveSummaryRequest extends BaseDto
         public readonly string $method,
         public readonly string $uri,
         public readonly ?array $includedData = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

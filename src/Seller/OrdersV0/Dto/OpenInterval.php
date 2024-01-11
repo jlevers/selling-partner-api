@@ -7,8 +7,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class OpenInterval extends BaseDto
 {
     /**
-     * @param  OpenTimeInterval  $startTime The time when the business opens or closes.
-     * @param  OpenTimeInterval  $endTime The time when the business opens or closes.
+     * @param  ?OpenTimeInterval  $startTime The time when the business opens or closes.
+     * @param  ?OpenTimeInterval  $endTime The time when the business opens or closes.
      */
     public function __construct(
         public readonly ?OpenTimeInterval $startTime = null,

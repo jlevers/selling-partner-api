@@ -29,7 +29,7 @@ class ConfirmPreorder extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['NeedByDate' => $this->needByDate, 'MarketplaceId' => $this->marketplaceId]);
+        return array_filter(['needByDate' => $this->needByDate, 'marketplaceId' => $this->marketplaceId]);
     }
 
     public function resolveEndpoint(): string

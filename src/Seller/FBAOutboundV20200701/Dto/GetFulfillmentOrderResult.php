@@ -21,13 +21,11 @@ final class GetFulfillmentOrderResult extends BaseDto
      * @param  ReturnAuthorization[]  $returnAuthorizations An array of return authorization information.
      */
     public function __construct(
-        public readonly ?FulfillmentOrder $fulfillmentOrder = null,
+        public readonly FulfillmentOrder $fulfillmentOrder,
         public readonly ?array $fulfillmentOrderItems = null,
         public readonly ?array $fulfillmentShipments = null,
         public readonly ?array $returnItems = null,
         public readonly ?array $returnAuthorizations = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

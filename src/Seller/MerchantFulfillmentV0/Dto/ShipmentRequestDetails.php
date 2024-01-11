@@ -14,9 +14,11 @@ final class ShipmentRequestDetails extends BaseDto
      * @param  PackageDimensions  $packageDimensions The dimensions of a package contained in a shipment.
      * @param  Weight  $weight The weight.
      * @param  ShippingServiceOptions  $shippingServiceOptions Extra services provided by a carrier.
-     * @param  string  $sellerOrderId A seller-defined order identifier.
+     * @param  ?string  $sellerOrderId A seller-defined order identifier.
      * @param  Item[]  $itemList The list of items to be included in a shipment.
-     * @param  LabelCustomization  $labelCustomization Custom text for shipping labels.
+     * @param  ?string  $mustArriveByDate
+     * @param  ?string  $shipDate
+     * @param  ?LabelCustomization  $labelCustomization Custom text for shipping labels.
      */
     public function __construct(
         public readonly string $amazonOrderId,
@@ -29,8 +31,6 @@ final class ShipmentRequestDetails extends BaseDto
         public readonly ?string $mustArriveByDate = null,
         public readonly ?string $shipDate = null,
         public readonly ?LabelCustomization $labelCustomization = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

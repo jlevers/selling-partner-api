@@ -3,9 +3,12 @@
 namespace SellingPartnerApi\Seller\ServicesV1\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\ServicesV1\Dto\Error;
 
 final class CancelServiceJobByServiceJobIdResponse extends BaseResponse
 {
+    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+
     /**
      * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
      */

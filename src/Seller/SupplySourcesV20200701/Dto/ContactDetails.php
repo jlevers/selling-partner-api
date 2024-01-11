@@ -8,12 +8,9 @@ final class ContactDetails extends BaseDto
 {
     /**
      * @param  ?Primary  $primary
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?Primary $primary = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

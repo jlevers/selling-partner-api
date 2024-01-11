@@ -7,16 +7,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class PackageDocument extends BaseDto
 {
     /**
-     * @param  string  $documentType The type of shipping document.
-     * @param  string  $documentFormat The file format of the document.
+     * @param  string  $type The type of shipping document.
+     * @param  string  $format The file format of the document.
      * @param  string  $contents A Base64 encoded string of the file contents.
      */
     public function __construct(
-        public readonly ?string $documentType = null,
-        public readonly ?string $documentFormat = null,
-        public readonly ?string $contents = null,
-        mixed ...$additionalProperties,
+        public readonly string $type,
+        public readonly string $format,
+        public readonly string $contents,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

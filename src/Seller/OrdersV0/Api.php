@@ -24,11 +24,11 @@ class Api extends BaseResource
      * @param  array  $marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
      *
      * Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values.
-     * @param  string|null  $createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
-     * @param  string|null  $createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
-     * @param  string|null  $lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
-     * @param  string|null  $lastUpdatedBefore A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
-     * @param  array|null  $orderStatuses A list of `OrderStatus` values used to filter the results.
+     * @param  ?string  $createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
+     * @param  ?string  $createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
+     * @param  ?string  $lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+     * @param  ?string  $lastUpdatedBefore A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+     * @param  ?array  $orderStatuses A list of `OrderStatus` values used to filter the results.
      *
      * **Possible values:**
      * - `PendingAvailability` (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.)
@@ -39,12 +39,12 @@ class Api extends BaseResource
      * - `InvoiceUnconfirmed` (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.)
      * - `Canceled` (The order has been canceled.)
      * - `Unfulfillable` (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.)
-     * @param  array|null  $fulfillmentChannels A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: AFN (Fulfillment by Amazon); MFN (Fulfilled by the seller).
-     * @param  array|null  $paymentMethods A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS).
-     * @param  string|null  $buyerEmail The email address of a buyer. Used to select orders that contain the specified email address.
-     * @param  string|null  $sellerOrderId An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified.
-     * @param  int|null  $maxResultsPerPage A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
-     * @param  array|null  $easyShipShipmentStatuses A list of `EasyShipShipmentStatus` values. Used to select Easy Ship orders with statuses that match the specified values. If `EasyShipShipmentStatus` is specified, only Amazon Easy Ship orders are returned.
+     * @param  ?array  $fulfillmentChannels A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: AFN (Fulfillment by Amazon); MFN (Fulfilled by the seller).
+     * @param  ?array  $paymentMethods A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS).
+     * @param  ?string  $buyerEmail The email address of a buyer. Used to select orders that contain the specified email address.
+     * @param  ?string  $sellerOrderId An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified.
+     * @param  ?int  $maxResultsPerPage A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
+     * @param  ?array  $easyShipShipmentStatuses A list of `EasyShipShipmentStatus` values. Used to select Easy Ship orders with statuses that match the specified values. If `EasyShipShipmentStatus` is specified, only Amazon Easy Ship orders are returned.
      *
      * **Possible values:**
      * - `PendingSchedule` (The package is awaiting the schedule for pick-up.)
@@ -63,7 +63,7 @@ class Api extends BaseResource
      * - `Lost` (The package is lost.)
      * - `OutForDelivery` (The package is out for delivery.)
      * - `Damaged` (The package was damaged by the carrier.)
-     * @param  array|null  $electronicInvoiceStatuses A list of `ElectronicInvoiceStatus` values. Used to select orders with electronic invoice statuses that match the specified values.
+     * @param  ?array  $electronicInvoiceStatuses A list of `ElectronicInvoiceStatus` values. Used to select orders with electronic invoice statuses that match the specified values.
      *
      * **Possible values:**
      * - `NotRequired` (Electronic invoice submission is not required for this order.)
@@ -71,15 +71,15 @@ class Api extends BaseResource
      * - `Processing` (The electronic invoice is being processed for this order.)
      * - `Errored` (The last submitted electronic invoice was rejected for this order.)
      * - `Accepted` (The last submitted electronic invoice was submitted and accepted.)
-     * @param  string|null  $nextToken A string token returned in the response of your previous request.
-     * @param  array|null  $amazonOrderIds A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format.
-     * @param  string|null  $actualFulfillmentSupplySourceId Denotes the recommended sourceId where the order should be fulfilled from.
-     * @param  bool|null  $isIspu When true, this order is marked to be picked up from a store rather than delivered.
-     * @param  string|null  $storeChainStoreId The store chain store identifier. Linked to a specific store in a store chain.
-     * @param  string|null  $earliestDeliveryDateBefore A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
-     * @param  string|null  $earliestDeliveryDateAfter A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
-     * @param  string|null  $latestDeliveryDateBefore A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
-     * @param  string|null  $latestDeliveryDateAfter A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+     * @param  ?string  $nextToken A string token returned in the response of your previous request.
+     * @param  ?array  $amazonOrderIds A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format.
+     * @param  ?string  $actualFulfillmentSupplySourceId Denotes the recommended sourceId where the order should be fulfilled from.
+     * @param  ?bool  $isIspu When true, this order is marked to be picked up from a store rather than delivered.
+     * @param  ?string  $storeChainStoreId The store chain store identifier. Linked to a specific store in a store chain.
+     * @param  ?string  $earliestDeliveryDateBefore A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+     * @param  ?string  $earliestDeliveryDateAfter A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+     * @param  ?string  $latestDeliveryDateBefore A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
+     * @param  ?string  $latestDeliveryDateAfter A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
      */
     public function getOrders(
         array $marketplaceIds,
@@ -134,7 +134,7 @@ class Api extends BaseResource
 
     /**
      * @param  string  $orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  string|null  $nextToken A string token returned in the response of your previous request.
+     * @param  ?string  $nextToken A string token returned in the response of your previous request.
      */
     public function getOrderItems(string $orderId, ?string $nextToken = null): Response
     {
@@ -143,7 +143,7 @@ class Api extends BaseResource
 
     /**
      * @param  string  $orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  string|null  $nextToken A string token returned in the response of your previous request.
+     * @param  ?string  $nextToken A string token returned in the response of your previous request.
      */
     public function getOrderItemsBuyerInfo(string $orderId, ?string $nextToken = null): Response
     {

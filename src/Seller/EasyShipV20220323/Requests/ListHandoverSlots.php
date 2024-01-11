@@ -25,7 +25,7 @@ class ListHandoverSlots extends Request implements HasBody
      * @param  ListHandoverSlotsRequest  $listHandoverSlotsRequest The request schema for the `listHandoverSlots` operation.
      */
     public function __construct(
-        protected ListHandoverSlotsRequest $listHandoverSlotsRequest,
+        public ListHandoverSlotsRequest $listHandoverSlotsRequest,
     ) {
     }
 

@@ -7,14 +7,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class CreatorType extends BaseDto
 {
     /**
-     * @param  string  $value The value of the attribute.
-     * @param  string  $role The role of the value.
+     * @param  ?string  $value The value of the attribute.
+     * @param  ?string  $role The role of the value.
      */
     public function __construct(
-        public readonly string $value,
-        public readonly string $role,
-        mixed ...$additionalProperties,
+        public readonly ?string $value = null,
+        public readonly ?string $role = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

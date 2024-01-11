@@ -93,7 +93,6 @@ final class PayWithAmazonEvent extends BaseDto
      *
      * * MFN - Merchant Fulfillment Network (self-fulfilled)
      * @param  ?string  $storeName The store name where the event occurred.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $sellerOrderId = null,
@@ -106,8 +105,6 @@ final class PayWithAmazonEvent extends BaseDto
         public readonly ?string $amountDescription = null,
         public readonly ?string $fulfillmentChannel = null,
         public readonly ?string $storeName = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

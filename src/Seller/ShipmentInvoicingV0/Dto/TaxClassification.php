@@ -7,14 +7,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class TaxClassification extends BaseDto
 {
     /**
-     * @param  string  $name The type of tax.
-     * @param  string  $value The entity's tax identifier.
+     * @param  ?string  $name The type of tax.
+     * @param  ?string  $value The entity's tax identifier.
      */
     public function __construct(
-        public readonly string $name,
-        public readonly string $value,
-        mixed ...$additionalProperties,
+        public readonly ?string $name = null,
+        public readonly ?string $value = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

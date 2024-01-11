@@ -6,7 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
-use SellingPartnerApi\Seller\ListingsRestrictionsV20210801\Responses\ErrorList;
+use SellingPartnerApi\Seller\ListingsRestrictionsV20210801\Responses\Errors;
 use SellingPartnerApi\Seller\ListingsRestrictionsV20210801\Responses\RestrictionList;
 
 /**
@@ -48,12 +48,12 @@ class GetListingsRestrictions extends Request
         return '/listings/2021-08-01/restrictions';
     }
 
-    public function createDtoFromResponse(Response $response): RestrictionList|ErrorList
+    public function createDtoFromResponse(Response $response): RestrictionList|Errors
     {
         $status = $response->status();
         $responseCls = match ($status) {
             200 => RestrictionList::class,
-            400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
+            400, 403, 404, 413, 415, 429, 500, 503 => Errors::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

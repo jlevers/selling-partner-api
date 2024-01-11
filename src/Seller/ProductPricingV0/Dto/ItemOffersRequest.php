@@ -19,7 +19,7 @@ final class ItemOffersRequest extends BaseDto
      * @param  string  $method The HTTP method associated with the individual APIs being called as part of the batch request.
      * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
      * @param  string  $itemCondition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @param  ?array  $headers A mapping of additional HTTP headers to send/receive for the individual batch request.
+     * @param  ?string[]  $headers A mapping of additional HTTP headers to send/receive for the individual batch request.
      * @param  ?string  $customerType Indicates whether to request Consumer or Business offers. Default is Consumer.
      */
     public function __construct(

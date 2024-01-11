@@ -29,7 +29,7 @@ class GetFeatureInventory extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['MarketplaceId' => $this->marketplaceId, 'NextToken' => $this->nextToken]);
+        return array_filter(['marketplaceId' => $this->marketplaceId, 'nextToken' => $this->nextToken]);
     }
 
     public function resolveEndpoint(): string

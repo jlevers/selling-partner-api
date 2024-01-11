@@ -7,12 +7,10 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ItemProcurement extends BaseDto
 {
     /**
-     * @param  Money  $money The currency type and the amount.
+     * @param  Money  $costPrice The currency type and the amount.
      */
     public function __construct(
-        public readonly ?Money $money = null,
-        mixed ...$additionalProperties,
+        public readonly Money $costPrice,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

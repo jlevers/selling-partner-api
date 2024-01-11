@@ -13,8 +13,6 @@ final class ListOfferMetricsRequestSort extends BaseDto
     public function __construct(
         public readonly string $order,
         public readonly string $key,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

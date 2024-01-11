@@ -15,7 +15,6 @@ final class LowestPriceType extends BaseDto
      * @param  ?MoneyType  $landedPrice
      * @param  ?MoneyType  $shipping
      * @param  ?Points  $points
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $condition,
@@ -27,8 +26,6 @@ final class LowestPriceType extends BaseDto
         public readonly ?MoneyType $landedPrice = null,
         public readonly ?MoneyType $shipping = null,
         public readonly ?Points $points = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -25,7 +25,7 @@ class UpdateScheduledPackages extends Request implements HasBody
      * @param  UpdateScheduledPackagesRequest  $updateScheduledPackagesRequest The request schema for the `updateScheduledPackages` operation.
      */
     public function __construct(
-        protected UpdateScheduledPackagesRequest $updateScheduledPackagesRequest,
+        public UpdateScheduledPackagesRequest $updateScheduledPackagesRequest,
     ) {
     }
 

@@ -24,7 +24,7 @@ class GetFulfillmentPreview extends Request implements HasBody
      * @param  GetFulfillmentPreviewRequest  $getFulfillmentPreviewRequest The request body schema for the getFulfillmentPreview operation.
      */
     public function __construct(
-        protected GetFulfillmentPreviewRequest $getFulfillmentPreviewRequest,
+        public GetFulfillmentPreviewRequest $getFulfillmentPreviewRequest,
     ) {
     }
 

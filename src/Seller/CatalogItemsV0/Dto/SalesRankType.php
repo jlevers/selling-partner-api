@@ -11,10 +11,8 @@ final class SalesRankType extends BaseDto
      * @param  int  $rank The sales rank of the item within the item category.
      */
     public function __construct(
-        public readonly ?string $productCategoryId = null,
-        public readonly ?int $rank = null,
-        mixed ...$additionalProperties,
+        public readonly string $productCategoryId,
+        public readonly int $rank,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

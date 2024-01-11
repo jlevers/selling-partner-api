@@ -13,7 +13,6 @@ final class AsinMetadata extends BaseDto
      * @param  ?string  $title The title for the ASIN in the Amazon catalog.
      * @param  ?string  $imageUrl The default image for the ASIN in the Amazon catalog.
      * @param  ?string[]  $contentReferenceKeySet A set of content reference keys.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $asin,
@@ -22,8 +21,6 @@ final class AsinMetadata extends BaseDto
         public readonly ?string $title = null,
         public readonly ?string $imageUrl = null,
         public readonly ?array $contentReferenceKeySet = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

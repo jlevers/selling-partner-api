@@ -24,7 +24,6 @@ final class FinancialEventGroup extends BaseDto
      * @param  ?Currency  $beginningBalance A currency type and amount.
      * @param  ?string  $financialEventGroupStart
      * @param  ?string  $financialEventGroupEnd
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $financialEventGroupId = null,
@@ -38,8 +37,6 @@ final class FinancialEventGroup extends BaseDto
         public readonly ?Currency $beginningBalance = null,
         public readonly ?string $financialEventGroupStart = null,
         public readonly ?string $financialEventGroupEnd = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -42,13 +42,13 @@ class GetLabels extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'PageType' => $this->pageType,
-            'LabelType' => $this->labelType,
-            'NumberOfPackages' => $this->numberOfPackages,
-            'PackageLabelsToPrint' => $this->packageLabelsToPrint,
-            'NumberOfPallets' => $this->numberOfPallets,
-            'PageSize' => $this->pageSize,
-            'PageStartIndex' => $this->pageStartIndex,
+            'pageType' => $this->pageType,
+            'labelType' => $this->labelType,
+            'numberOfPackages' => $this->numberOfPackages,
+            'packageLabelsToPrint' => $this->packageLabelsToPrint,
+            'numberOfPallets' => $this->numberOfPallets,
+            'pageSize' => $this->pageSize,
+            'pageStartIndex' => $this->pageStartIndex,
         ]);
     }
 

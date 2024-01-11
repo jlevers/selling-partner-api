@@ -11,15 +11,12 @@ final class Error extends BaseDto
      * @param  string  $message A message that describes the error condition in a human-readable form.
      * @param  ?string  $details Additional details that can help the caller understand or fix the issue.
      * @param  ?string  $errorLevel The type of error.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $code,
         public readonly string $message,
         public readonly ?string $details = null,
         public readonly ?string $errorLevel = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

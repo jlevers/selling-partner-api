@@ -14,9 +14,7 @@ final class ItemSalesRanksByMarketplace extends BaseDto
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly array $ranks,
-        mixed ...$additionalProperties,
+        public readonly ?array $ranks = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

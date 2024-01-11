@@ -7,10 +7,10 @@ use Crescat\SaloonSdkGenerator\BaseResponse;
 final class GetSellingPartnerMetricsResponse extends BaseResponse
 {
     /**
-     * @param  GetSellingPartnerMetricsResponseMetric[]  $metrics A list of metrics data for the selling partner.
+     * @param  ?string[]  $metrics The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.
      */
     public function __construct(
-        public readonly array $metrics,
+        public readonly ?array $metrics = null,
     ) {
     }
 }

@@ -12,9 +12,9 @@ final class SmallAndLightEligibility extends BaseResponse
      * @param  string  $status The Small and Light eligibility status of the item.
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $status = null,
+        public readonly string $marketplaceId,
+        public readonly string $sellerSku,
+        public readonly string $status,
     ) {
     }
 }

@@ -14,11 +14,9 @@ final class PurchaseShipmentResult extends BaseDto
      * @param  LabelResult[]  $labelResults A list of label results
      */
     public function __construct(
-        public readonly ?string $shipmentId = null,
-        public readonly ?ServiceRate $serviceRate = null,
+        public readonly string $shipmentId,
+        public readonly ServiceRate $serviceRate,
         public readonly ?array $labelResults = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

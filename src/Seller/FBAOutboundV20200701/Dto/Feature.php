@@ -9,14 +9,12 @@ final class Feature extends BaseDto
     /**
      * @param  string  $featureName The feature name.
      * @param  string  $featureDescription The feature description.
-     * @param  bool  $sellerEligible When true, indicates that the seller is eligible to use the feature.
+     * @param  ?bool  $sellerEligible When true, indicates that the seller is eligible to use the feature.
      */
     public function __construct(
-        public readonly ?string $featureName = null,
-        public readonly ?string $featureDescription = null,
+        public readonly string $featureName,
+        public readonly string $featureDescription,
         public readonly ?bool $sellerEligible = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

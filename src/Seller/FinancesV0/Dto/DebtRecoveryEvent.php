@@ -25,7 +25,6 @@ final class DebtRecoveryEvent extends BaseDto
      * @param  ?Currency  $overPaymentCredit A currency type and amount.
      * @param  DebtRecoveryItem[]  $debtRecoveryItemList A list of debt recovery item information.
      * @param  ChargeInstrument[]  $chargeInstrumentList A list of payment instruments.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $debtRecoveryType = null,
@@ -33,8 +32,6 @@ final class DebtRecoveryEvent extends BaseDto
         public readonly ?Currency $overPaymentCredit = null,
         public readonly ?array $debtRecoveryItemList = null,
         public readonly ?array $chargeInstrumentList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

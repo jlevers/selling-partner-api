@@ -23,13 +23,10 @@ final class DirectPayment extends BaseDto
      *
      * * CollectOnDeliveryRefund - The amount that Amazon refunds to the buyer if an order paid for by COD is refunded.
      * @param  ?Currency  $directPaymentAmount A currency type and amount.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $directPaymentType = null,
         public readonly ?Currency $directPaymentAmount = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -14,9 +14,7 @@ final class ListingsItemPatchRequest extends BaseDto
      */
     public function __construct(
         public readonly string $productType,
-        public readonly array $patches,
-        mixed ...$additionalProperties,
+        public readonly ?array $patches = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

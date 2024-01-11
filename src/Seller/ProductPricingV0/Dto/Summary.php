@@ -25,7 +25,6 @@ final class Summary extends BaseDto
      * @param  SalesRankType[]  $salesRankings A list of sales rank information for the item, by category.
      * @param  OfferCountType[]  $buyBoxEligibleOffers
      * @param  ?string  $offersAvailableTime When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly int $totalOfferCount,
@@ -38,8 +37,6 @@ final class Summary extends BaseDto
         public readonly ?array $salesRankings = null,
         public readonly ?array $buyBoxEligibleOffers = null,
         public readonly ?string $offersAvailableTime = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

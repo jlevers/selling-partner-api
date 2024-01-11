@@ -25,7 +25,7 @@ class GetSmallAndLightFeePreview extends Request implements HasBody
      * @param  SmallAndLightFeePreviewRequest  $smallAndLightFeePreviewRequest Request schema for submitting items for which to retrieve fee estimates.
      */
     public function __construct(
-        protected SmallAndLightFeePreviewRequest $smallAndLightFeePreviewRequest,
+        public SmallAndLightFeePreviewRequest $smallAndLightFeePreviewRequest,
     ) {
     }
 

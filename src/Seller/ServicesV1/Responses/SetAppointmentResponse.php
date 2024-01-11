@@ -3,9 +3,13 @@
 namespace SellingPartnerApi\Seller\ServicesV1\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\ServicesV1\Dto\Error;
+use SellingPartnerApi\Seller\ServicesV1\Dto\Warning;
 
 final class SetAppointmentResponse extends BaseResponse
 {
+    protected static array $complexArrayTypes = ['warnings' => [Warning::class], 'errors' => [Error::class]];
+
     /**
      * @param  ?string  $appointmentId The appointment identifier.
      * @param  Warning[]  $warnings A list of warnings returned in the sucessful execution response of an API request.

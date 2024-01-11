@@ -13,8 +13,6 @@ final class CurrencyAmount extends BaseDto
     public function __construct(
         public readonly string $currencyCode,
         public readonly float $amount,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

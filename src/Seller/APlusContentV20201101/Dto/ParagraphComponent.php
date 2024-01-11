@@ -6,16 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ParagraphComponent extends BaseDto
 {
-    protected static array $complexArrayTypes = ['textList' => [TextComponent::class]];
+    protected static array $complexArrayTypes = ['textList' => [TextItem::class]];
 
     /**
-     * @param  TextComponent[]  $textList
-     * @param  ?mixed  $additionalProperties
+     * @param  TextItem[]  $textList
      */
     public function __construct(
         public readonly ?array $textList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

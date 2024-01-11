@@ -13,8 +13,6 @@ final class GetFeaturesResult extends BaseDto
      */
     public function __construct(
         public readonly ?array $features = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

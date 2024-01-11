@@ -10,9 +10,7 @@ final class DiscountFunding extends BaseDto
      * @param  float[]  $percentage Filters the results to only include offers with the percentage specified.
      */
     public function __construct(
-        public readonly array $percentage,
-        mixed ...$additionalProperties,
+        public readonly ?array $percentage = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

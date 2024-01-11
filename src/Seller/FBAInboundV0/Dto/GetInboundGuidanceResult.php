@@ -20,12 +20,10 @@ final class GetInboundGuidanceResult extends BaseDto
      * @param  InvalidAsin[]  $invalidAsinList A list of invalid ASIN values and the reasons they are invalid.
      */
     public function __construct(
-        public readonly array $skuInboundGuidanceList,
-        public readonly array $invalidSkuList,
-        public readonly array $asinInboundGuidanceList,
-        public readonly array $invalidAsinList,
-        mixed ...$additionalProperties,
+        public readonly ?array $skuInboundGuidanceList = null,
+        public readonly ?array $invalidSkuList = null,
+        public readonly ?array $asinInboundGuidanceList = null,
+        public readonly ?array $invalidAsinList = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

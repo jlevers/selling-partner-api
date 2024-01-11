@@ -9,13 +9,10 @@ final class StandardTextBlock extends BaseDto
     /**
      * @param  ?TextComponent  $headline Rich text content.
      * @param  ?ParagraphComponent  $body A list of rich text content, usually presented in a text box.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?TextComponent $headline = null,
         public readonly ?ParagraphComponent $body = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

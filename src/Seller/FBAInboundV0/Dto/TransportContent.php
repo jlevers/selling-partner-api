@@ -12,11 +12,9 @@ final class TransportContent extends BaseDto
      * @param  TransportResult  $transportResult The workflow status for a shipment with an Amazon-partnered carrier.
      */
     public function __construct(
-        public readonly ?TransportHeader $transportHeader = null,
-        public readonly ?TransportDetailOutput $transportDetails = null,
-        public readonly ?TransportResult $transportResult = null,
-        mixed ...$additionalProperties,
+        public readonly TransportHeader $transportHeader,
+        public readonly TransportDetailOutput $transportDetails,
+        public readonly TransportResult $transportResult,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

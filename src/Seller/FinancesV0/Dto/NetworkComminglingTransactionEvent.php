@@ -21,7 +21,6 @@ final class NetworkComminglingTransactionEvent extends BaseDto
      * @param  ?string  $marketplaceId The marketplace in which the event took place.
      * @param  ?Currency  $taxExclusiveAmount A currency type and amount.
      * @param  ?Currency  $taxAmount A currency type and amount.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $transactionType = null,
@@ -32,8 +31,6 @@ final class NetworkComminglingTransactionEvent extends BaseDto
         public readonly ?string $marketplaceId = null,
         public readonly ?Currency $taxExclusiveAmount = null,
         public readonly ?Currency $taxAmount = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

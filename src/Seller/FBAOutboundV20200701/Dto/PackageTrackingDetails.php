@@ -10,20 +10,22 @@ final class PackageTrackingDetails extends BaseDto
 
     /**
      * @param  int  $packageNumber The package identifier.
-     * @param  string  $trackingNumber The tracking number for the package.
-     * @param  string  $customerTrackingLink Link on swiship.com that allows customers to track the package.
-     * @param  string  $carrierCode The name of the carrier.
-     * @param  string  $carrierPhoneNumber The phone number of the carrier.
-     * @param  string  $carrierUrl The URL of the carrier's website.
-     * @param  TrackingAddress  $shipToAddress Address information for tracking the package.
-     * @param  string  $currentStatus The current delivery status of the package.
-     * @param  string  $currentStatusDescription Description corresponding to the CurrentStatus value.
-     * @param  string  $signedForBy The name of the person who signed for the package.
-     * @param  string  $additionalLocationInfo Additional location information.
+     * @param  ?string  $trackingNumber The tracking number for the package.
+     * @param  ?string  $customerTrackingLink Link on swiship.com that allows customers to track the package.
+     * @param  ?string  $carrierCode The name of the carrier.
+     * @param  ?string  $carrierPhoneNumber The phone number of the carrier.
+     * @param  ?string  $carrierUrl The URL of the carrier's website.
+     * @param  ?string  $shipDate
+     * @param  ?string  $estimatedArrivalDate
+     * @param  ?TrackingAddress  $shipToAddress Address information for tracking the package.
+     * @param  ?string  $currentStatus The current delivery status of the package.
+     * @param  ?string  $currentStatusDescription Description corresponding to the CurrentStatus value.
+     * @param  ?string  $signedForBy The name of the person who signed for the package.
+     * @param  ?string  $additionalLocationInfo Additional location information.
      * @param  TrackingEvent[]  $trackingEvents An array of tracking event information.
      */
     public function __construct(
-        public readonly ?int $packageNumber = null,
+        public readonly int $packageNumber,
         public readonly ?string $trackingNumber = null,
         public readonly ?string $customerTrackingLink = null,
         public readonly ?string $carrierCode = null,
@@ -37,8 +39,6 @@ final class PackageTrackingDetails extends BaseDto
         public readonly ?string $signedForBy = null,
         public readonly ?string $additionalLocationInfo = null,
         public readonly ?array $trackingEvents = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

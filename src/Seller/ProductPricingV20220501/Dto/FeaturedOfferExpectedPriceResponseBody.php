@@ -15,14 +15,11 @@ final class FeaturedOfferExpectedPriceResponseBody extends BaseDto
      * @param  OfferIdentifier  $offerIdentifier Identifies an offer from a particular seller on an ASIN.
      * @param  FeaturedOfferExpectedPriceResult[]  $featuredOfferExpectedPriceResults A list of featured offer expected price results for the requested offer.
      * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly OfferIdentifier $offerIdentifier,
         public readonly ?array $featuredOfferExpectedPriceResults = null,
         public readonly ?array $errors = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

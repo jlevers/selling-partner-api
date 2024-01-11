@@ -12,7 +12,7 @@ final class Money extends BaseDto
      */
     public function __construct(
         public readonly string $currencyCode,
-        public readonly ?string $amount = null,
+        public readonly string $amount,
     ) {
     }
 }

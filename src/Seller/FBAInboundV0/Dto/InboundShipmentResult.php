@@ -10,9 +10,7 @@ final class InboundShipmentResult extends BaseDto
      * @param  string  $shipmentId The shipment identifier submitted in the request.
      */
     public function __construct(
-        public readonly ?string $shipmentId = null,
-        mixed ...$additionalProperties,
+        public readonly string $shipmentId,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

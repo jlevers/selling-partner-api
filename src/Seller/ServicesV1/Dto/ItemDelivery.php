@@ -9,13 +9,10 @@ final class ItemDelivery extends BaseDto
     /**
      * @param  ?string  $estimatedDeliveryDate The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
      * @param  ?ItemDeliveryPromise  $itemDeliveryPromise Promised delivery information for the item.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $estimatedDeliveryDate = null,
         public readonly ?ItemDeliveryPromise $itemDeliveryPromise = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

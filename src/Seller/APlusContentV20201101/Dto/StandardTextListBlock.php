@@ -10,12 +10,9 @@ final class StandardTextListBlock extends BaseDto
 
     /**
      * @param  TextItem[]  $textList
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $textList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

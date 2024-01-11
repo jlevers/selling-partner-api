@@ -12,7 +12,6 @@ final class PickupChannel extends BaseDto
      * @param  ?OperationalConfiguration  $operationalConfiguration The operational configuration of `supplySources`.
      * @param  ?InStorePickupConfiguration  $inStorePickupConfiguration The in-store pickup configuration of a supply source.
      * @param  ?CurbsidePickupConfiguration  $curbsidePickupConfiguration The curbside pickup configuration of a supply source.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?Duration $inventoryHoldPeriod = null,
@@ -20,8 +19,6 @@ final class PickupChannel extends BaseDto
         public readonly ?OperationalConfiguration $operationalConfiguration = null,
         public readonly ?InStorePickupConfiguration $inStorePickupConfiguration = null,
         public readonly ?CurbsidePickupConfiguration $curbsidePickupConfiguration = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

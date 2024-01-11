@@ -16,8 +16,10 @@ final class ShippingService extends BaseDto
      * @param  CurrencyAmount  $rate Currency type and amount.
      * @param  ShippingServiceOptions  $shippingServiceOptions Extra services provided by a carrier.
      * @param  bool  $requiresAdditionalSellerInputs When true, additional seller inputs are required.
-     * @param  AvailableShippingServiceOptions  $availableShippingServiceOptions The available shipping service options.
-     * @param  string[]  $availableLabelFormats List of label formats.
+     * @param  ?string  $earliestEstimatedDeliveryDate
+     * @param  ?string  $latestEstimatedDeliveryDate
+     * @param  ?AvailableShippingServiceOptions  $availableShippingServiceOptions The available shipping service options.
+     * @param  ?string[]  $availableLabelFormats List of label formats.
      * @param  LabelFormatOption[]  $availableFormatOptionsForLabel The available label formats.
      */
     public function __construct(
@@ -34,8 +36,6 @@ final class ShippingService extends BaseDto
         public readonly ?AvailableShippingServiceOptions $availableShippingServiceOptions = null,
         public readonly ?array $availableLabelFormats = null,
         public readonly ?array $availableFormatOptionsForLabel = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

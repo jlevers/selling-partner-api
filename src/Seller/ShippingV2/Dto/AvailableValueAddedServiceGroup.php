@@ -19,8 +19,6 @@ final class AvailableValueAddedServiceGroup extends BaseDto
         public readonly string $groupDescription,
         public readonly bool $isRequired,
         public readonly ?array $valueAddedServices = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

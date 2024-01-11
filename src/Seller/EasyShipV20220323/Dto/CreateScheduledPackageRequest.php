@@ -15,8 +15,6 @@ final class CreateScheduledPackageRequest extends BaseDto
         public readonly string $amazonOrderId,
         public readonly string $marketplaceId,
         public readonly PackageDetails $packageDetails,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

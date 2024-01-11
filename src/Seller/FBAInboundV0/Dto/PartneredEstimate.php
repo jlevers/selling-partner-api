@@ -8,13 +8,13 @@ final class PartneredEstimate extends BaseDto
 {
     /**
      * @param  Amount  $amount The monetary value.
+     * @param  ?string  $confirmDeadline
+     * @param  ?string  $voidDeadline
      */
     public function __construct(
-        public readonly ?Amount $amount = null,
+        public readonly Amount $amount,
         public readonly ?string $confirmDeadline = null,
         public readonly ?string $voidDeadline = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

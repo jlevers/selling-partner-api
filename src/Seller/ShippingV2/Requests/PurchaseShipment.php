@@ -25,7 +25,7 @@ class PurchaseShipment extends Request implements HasBody
      * @param  PurchaseShipmentRequest  $purchaseShipmentRequest The request schema for the purchaseShipment operation.
      */
     public function __construct(
-        protected PurchaseShipmentRequest $purchaseShipmentRequest,
+        public PurchaseShipmentRequest $purchaseShipmentRequest,
     ) {
     }
 

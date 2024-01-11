@@ -10,10 +10,8 @@ final class Weight extends BaseDto
      * @param  string  $unit Indicates the unit of weight.
      */
     public function __construct(
-        public readonly ?float $value = null,
-        public readonly ?string $unit = null,
-        mixed ...$additionalProperties,
+        public readonly float $value,
+        public readonly string $unit,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

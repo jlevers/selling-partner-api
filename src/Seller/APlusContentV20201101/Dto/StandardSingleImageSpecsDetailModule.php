@@ -15,7 +15,6 @@ final class StandardSingleImageSpecsDetailModule extends BaseDto
      * @param  ?TextComponent  $specificationHeadline Rich text content.
      * @param  ?StandardHeaderTextListBlock  $specificationListBlock The A+ standard fixed-length list of text, with a related headline.
      * @param  ?StandardTextBlock  $specificationTextBlock The A+ Content standard text box block, comprised of a paragraph with a headline.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?TextComponent $headline = null,
@@ -26,8 +25,6 @@ final class StandardSingleImageSpecsDetailModule extends BaseDto
         public readonly ?TextComponent $specificationHeadline = null,
         public readonly ?StandardHeaderTextListBlock $specificationListBlock = null,
         public readonly ?StandardTextBlock $specificationTextBlock = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

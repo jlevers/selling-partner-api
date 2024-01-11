@@ -12,7 +12,7 @@ final class RegulatedInformation extends BaseDto
      * @param  RegulatedInformationField[]  $fields A list of regulated information fields as collected from the regulatory form.
      */
     public function __construct(
-        public readonly array $fields,
+        public readonly ?array $fields = null,
     ) {
     }
 }

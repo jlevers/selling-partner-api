@@ -14,15 +14,12 @@ final class CompetitiveSummaryResponseBody extends BaseDto
      * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace for which data is returned.
      * @param  FeaturedBuyingOption[]  $featuredBuyingOptions A list of featured buying options for the given ASIN `marketplaceId` combination.
      * @param  ?Errors  $errors A list of error responses returned when a request is unsuccessful.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $asin,
         public readonly string $marketplaceId,
         public readonly ?array $featuredBuyingOptions = null,
         public readonly ?Errors $errors = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

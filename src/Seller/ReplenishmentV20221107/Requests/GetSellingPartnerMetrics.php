@@ -25,7 +25,7 @@ class GetSellingPartnerMetrics extends Request implements HasBody
      * @param  GetSellingPartnerMetricsRequest  $getSellingPartnerMetricsRequest The request body for the `getSellingPartnerMetrics` operation.
      */
     public function __construct(
-        protected GetSellingPartnerMetricsRequest $getSellingPartnerMetricsRequest,
+        public GetSellingPartnerMetricsRequest $getSellingPartnerMetricsRequest,
     ) {
     }
 

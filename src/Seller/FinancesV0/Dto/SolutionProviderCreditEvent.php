@@ -17,7 +17,6 @@ final class SolutionProviderCreditEvent extends BaseDto
      * @param  ?string  $providerStoreName The store name where the payment event occurred.
      * @param  ?Currency  $transactionAmount A currency type and amount.
      * @param  ?string  $transactionCreationDate
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $providerTransactionType = null,
@@ -30,8 +29,6 @@ final class SolutionProviderCreditEvent extends BaseDto
         public readonly ?string $providerStoreName = null,
         public readonly ?Currency $transactionAmount = null,
         public readonly ?string $transactionCreationDate = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

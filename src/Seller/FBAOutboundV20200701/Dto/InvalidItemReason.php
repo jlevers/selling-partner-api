@@ -11,10 +11,8 @@ final class InvalidItemReason extends BaseDto
      * @param  string  $description A human readable description of the invalid item reason code.
      */
     public function __construct(
-        public readonly ?string $invalidItemReasonCode = null,
-        public readonly ?string $description = null,
-        mixed ...$additionalProperties,
+        public readonly string $invalidItemReasonCode,
+        public readonly string $description,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

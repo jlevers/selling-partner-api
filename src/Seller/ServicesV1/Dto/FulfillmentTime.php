@@ -9,13 +9,10 @@ final class FulfillmentTime extends BaseDto
     /**
      * @param  ?string  $startTime The date, time in UTC of the fulfillment start time in ISO 8601 format.
      * @param  ?string  $endTime The date, time in UTC of the fulfillment end time in ISO 8601 format.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $startTime = null,
         public readonly ?string $endTime = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

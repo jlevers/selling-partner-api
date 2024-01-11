@@ -22,7 +22,6 @@ final class RetrochargeEvent extends BaseDto
      * @param  ?Currency  $shippingTax A currency type and amount.
      * @param  ?string  $marketplaceName The name of the marketplace where the retrocharge event occurred.
      * @param  TaxWithheldComponent[]  $retrochargeTaxWithheldList A list of information about taxes withheld.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $retrochargeEventType = null,
@@ -32,8 +31,6 @@ final class RetrochargeEvent extends BaseDto
         public readonly ?Currency $shippingTax = null,
         public readonly ?string $marketplaceName = null,
         public readonly ?array $retrochargeTaxWithheldList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

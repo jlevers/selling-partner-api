@@ -7,14 +7,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class Length extends BaseDto
 {
     /**
-     * @param  float  $value The value in units.
-     * @param  string  $unit The unit of length.
+     * @param  ?float  $value The value in units.
+     * @param  ?string  $unit The unit of length.
      */
     public function __construct(
-        public readonly float $value,
-        public readonly string $unit,
-        mixed ...$additionalProperties,
+        public readonly ?float $value = null,
+        public readonly ?string $unit = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

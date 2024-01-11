@@ -9,8 +9,6 @@ final class Address extends BaseDto
     /**
      * @param  string  $name Name of the individual or business.
      * @param  string  $addressLine1 The street address information.
-     * @param  string  $addressLine2 Additional street address information, if required.
-     * @param  string  $districtOrCounty The district or county.
      * @param  string  $city The city.
      * @param  string  $stateOrProvinceCode The state or province code.
      *
@@ -19,18 +17,18 @@ final class Address extends BaseDto
      * @param  string  $postalCode The postal code.
      *
      * If postal codes are used in your marketplace, we recommended that you include one with your request. This helps Amazon select the most appropriate Amazon fulfillment center for the inbound shipment plan.
+     * @param  ?string  $addressLine2 Additional street address information, if required.
+     * @param  ?string  $districtOrCounty The district or county.
      */
     public function __construct(
-        public readonly ?string $name = null,
-        public readonly ?string $addressLine1 = null,
+        public readonly string $name,
+        public readonly string $addressLine1,
+        public readonly string $city,
+        public readonly string $stateOrProvinceCode,
+        public readonly string $countryCode,
+        public readonly string $postalCode,
         public readonly ?string $addressLine2 = null,
         public readonly ?string $districtOrCounty = null,
-        public readonly ?string $city = null,
-        public readonly ?string $stateOrProvinceCode = null,
-        public readonly ?string $countryCode = null,
-        public readonly ?string $postalCode = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

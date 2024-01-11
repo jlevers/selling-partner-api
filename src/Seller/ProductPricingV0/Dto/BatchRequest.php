@@ -17,15 +17,12 @@ final class BatchRequest extends BaseDto
      *
      * **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
      * @param  string  $method The HTTP method associated with the individual APIs being called as part of the batch request.
-     * @param  ?array  $headers A mapping of additional HTTP headers to send/receive for the individual batch request.
-     * @param  ?mixed  $additionalProperties
+     * @param  ?string[]  $headers A mapping of additional HTTP headers to send/receive for the individual batch request.
      */
     public function __construct(
         public readonly string $uri,
         public readonly string $method,
         public readonly ?array $headers = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

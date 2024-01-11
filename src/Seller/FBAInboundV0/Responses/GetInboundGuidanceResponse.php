@@ -3,16 +3,20 @@
 namespace SellingPartnerApi\Seller\FBAInboundV0\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\FBAInboundV0\Dto\Error;
 use SellingPartnerApi\Seller\FBAInboundV0\Dto\GetInboundGuidanceResult;
 
 final class GetInboundGuidanceResponse extends BaseResponse
 {
+    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+
     /**
+     * @param  ?GetInboundGuidanceResult  $payload
      * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly GetInboundGuidanceResult $payload,
-        public readonly array $errors,
+        public readonly ?GetInboundGuidanceResult $payload = null,
+        public readonly ?array $errors = null,
     ) {
     }
 }

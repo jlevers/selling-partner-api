@@ -10,12 +10,9 @@ final class GetItemOffersBatchRequest extends BaseDto
 
     /**
      * @param  ItemOffersRequest[]  $requests A list of `getListingOffers` batched requests to run.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $requests = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

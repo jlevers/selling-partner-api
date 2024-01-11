@@ -10,12 +10,9 @@ final class AssignAppointmentResourcesRequest extends BaseDto
 
     /**
      * @param  AppointmentResource[]  $resources List of resources that performs or performed job appointment fulfillment.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $resources = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

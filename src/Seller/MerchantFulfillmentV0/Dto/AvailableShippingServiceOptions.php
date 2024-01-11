@@ -18,8 +18,6 @@ final class AvailableShippingServiceOptions extends BaseDto
     public function __construct(
         public readonly ?array $availableCarrierWillPickUpOptions = null,
         public readonly ?array $availableDeliveryExperienceOptions = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

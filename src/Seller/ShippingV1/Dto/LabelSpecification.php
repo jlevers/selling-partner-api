@@ -13,8 +13,6 @@ final class LabelSpecification extends BaseDto
     public function __construct(
         public readonly string $labelFormat,
         public readonly string $labelStockSize,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

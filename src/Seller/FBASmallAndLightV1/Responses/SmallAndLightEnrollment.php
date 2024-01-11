@@ -12,9 +12,9 @@ final class SmallAndLightEnrollment extends BaseResponse
      * @param  string  $status The Small and Light enrollment status of the item.
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $status = null,
+        public readonly string $marketplaceId,
+        public readonly string $sellerSku,
+        public readonly string $status,
     ) {
     }
 }

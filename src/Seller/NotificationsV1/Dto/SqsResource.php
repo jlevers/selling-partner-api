@@ -8,12 +8,9 @@ final class SqsResource extends BaseDto
 {
     /**
      * @param  string  $arn The Amazon Resource Name (ARN) associated with the SQS queue.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $arn,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -34,8 +34,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string|null  $queryStartDate A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
-     * @param  string|null  $nextToken A string token returned in the response to your previous request.
+     * @param  ?string  $queryStartDate A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
+     * @param  ?string  $nextToken A string token returned in the response to your previous request.
      */
     public function listAllFulfillmentOrders(?string $queryStartDate = null, ?string $nextToken = null): Response
     {
@@ -61,8 +61,8 @@ class Api extends BaseResource
     /**
      * @param  string  $sellerSku The seller SKU for which return reason codes are required.
      * @param  string  $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
-     * @param  string|null  $marketplaceId The marketplace for which the seller wants return reason codes.
-     * @param  string|null  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+     * @param  ?string  $marketplaceId The marketplace for which the seller wants return reason codes.
+     * @param  ?string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
      */
     public function listReturnReasonCodes(
         string $sellerSku,
@@ -133,7 +133,7 @@ class Api extends BaseResource
     /**
      * @param  string  $featureName The name of the feature for which to return a list of eligible inventory.
      * @param  string  $marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature.
-     * @param  string|null  $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
+     * @param  ?string  $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
      */
     public function getFeatureInventory(string $featureName, string $marketplaceId, ?string $nextToken = null): Response
     {

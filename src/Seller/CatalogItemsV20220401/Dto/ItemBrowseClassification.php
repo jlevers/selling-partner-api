@@ -13,8 +13,6 @@ final class ItemBrowseClassification extends BaseDto
     public function __construct(
         public readonly string $displayName,
         public readonly string $classificationId,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

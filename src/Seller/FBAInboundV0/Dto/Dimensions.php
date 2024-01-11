@@ -10,12 +10,10 @@ final class Dimensions extends BaseDto
      * @param  string  $unit Indicates the unit of measurement.
      */
     public function __construct(
-        public readonly ?float $length = null,
-        public readonly ?float $width = null,
-        public readonly ?float $height = null,
-        public readonly ?string $unit = null,
-        mixed ...$additionalProperties,
+        public readonly float $length,
+        public readonly float $width,
+        public readonly float $height,
+        public readonly string $unit,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

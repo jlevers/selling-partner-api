@@ -32,7 +32,7 @@ class ArchiveSupplySource extends Request
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
+            204, 400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

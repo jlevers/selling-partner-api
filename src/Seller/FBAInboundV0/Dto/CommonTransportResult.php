@@ -7,12 +7,10 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class CommonTransportResult extends BaseDto
 {
     /**
-     * @param  TransportResult  $transportResult The workflow status for a shipment with an Amazon-partnered carrier.
+     * @param  ?TransportResult  $transportResult The workflow status for a shipment with an Amazon-partnered carrier.
      */
     public function __construct(
-        public readonly TransportResult $transportResult,
-        mixed ...$additionalProperties,
+        public readonly ?TransportResult $transportResult = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

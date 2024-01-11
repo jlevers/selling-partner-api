@@ -8,10 +8,10 @@ use SellingPartnerApi\Seller\ShippingV2\Dto\GetShipmentDocumentsResult;
 final class GetShipmentDocumentsResponse extends BaseResponse
 {
     /**
-     * @param  GetShipmentDocumentsResult  $payload The payload for the getShipmentDocuments operation.
+     * @param  ?GetShipmentDocumentsResult  $payload The payload for the getShipmentDocuments operation.
      */
     public function __construct(
-        public readonly GetShipmentDocumentsResult $payload,
+        public readonly ?GetShipmentDocumentsResult $payload = null,
     ) {
     }
 }

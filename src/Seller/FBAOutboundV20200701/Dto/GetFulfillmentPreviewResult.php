@@ -12,9 +12,7 @@ final class GetFulfillmentPreviewResult extends BaseDto
      * @param  FulfillmentPreview[]  $fulfillmentPreviews An array of fulfillment preview information.
      */
     public function __construct(
-        public readonly array $fulfillmentPreviews,
-        mixed ...$additionalProperties,
+        public readonly ?array $fulfillmentPreviews = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

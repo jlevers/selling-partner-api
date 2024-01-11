@@ -10,12 +10,11 @@ final class Product extends BaseDto
 
     /**
      * @param  IdentifierType  $identifiers Specifies the identifiers used to uniquely identify an item.
-     * @param  array[]  $attributeSets A list of product attributes if they are applicable to the product that is returned.
-     * @param  array[]  $relationships A list that contains product variation information, if applicable.
+     * @param  ?mixed[][]  $attributeSets A list of product attributes if they are applicable to the product that is returned.
+     * @param  ?mixed[][]  $relationships A list that contains product variation information, if applicable.
      * @param  ?CompetitivePricingType  $competitivePricing Competitive pricing information for the item.
      * @param  SalesRankType[]  $salesRankings A list of sales rank information for the item, by category.
      * @param  OfferType[]  $offers A list of offers.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly IdentifierType $identifiers,
@@ -24,8 +23,6 @@ final class Product extends BaseDto
         public readonly ?CompetitivePricingType $competitivePricing = null,
         public readonly ?array $salesRankings = null,
         public readonly ?array $offers = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

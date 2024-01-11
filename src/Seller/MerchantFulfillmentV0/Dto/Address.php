@@ -14,10 +14,10 @@ final class Address extends BaseDto
      * @param  string  $postalCode The zip code or postal code.
      * @param  string  $countryCode The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
      * @param  string  $phone The phone number.
-     * @param  string  $addressLine2 Additional street address information.
-     * @param  string  $addressLine3 Additional street address information.
-     * @param  string  $districtOrCounty The district or county.
-     * @param  string  $stateOrProvinceCode The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
+     * @param  ?string  $addressLine2 Additional street address information.
+     * @param  ?string  $addressLine3 Additional street address information.
+     * @param  ?string  $districtOrCounty The district or county.
+     * @param  ?string  $stateOrProvinceCode The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
      */
     public function __construct(
         public readonly string $name,
@@ -31,8 +31,6 @@ final class Address extends BaseDto
         public readonly ?string $addressLine3 = null,
         public readonly ?string $districtOrCounty = null,
         public readonly ?string $stateOrProvinceCode = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

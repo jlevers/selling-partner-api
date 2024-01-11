@@ -10,13 +10,11 @@ final class DirectPurchaseResult extends BaseDto
 
     /**
      * @param  string  $shipmentId The unique shipment identifier provided by a shipping service.
-     * @param  PackageDocumentDetail[]  $packageDocumentDetails A list of post-purchase details about a package that will be shipped using a shipping service.
+     * @param  PackageDocumentDetail[]  $packageDocumentDetailList A list of post-purchase details about a package that will be shipped using a shipping service.
      */
     public function __construct(
-        public readonly ?string $shipmentId = null,
-        public readonly ?array $packageDocumentDetails = null,
-        mixed ...$additionalProperties,
+        public readonly string $shipmentId,
+        public readonly ?array $packageDocumentDetailList = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -20,12 +20,10 @@ final class GetPrepInstructionsResult extends BaseDto
      * @param  InvalidAsin[]  $invalidAsinList A list of invalid ASIN values and the reasons they are invalid.
      */
     public function __construct(
-        public readonly array $skuPrepInstructionsList,
-        public readonly array $invalidSkuList,
-        public readonly array $asinPrepInstructionsList,
-        public readonly array $invalidAsinList,
-        mixed ...$additionalProperties,
+        public readonly ?array $skuPrepInstructionsList = null,
+        public readonly ?array $invalidSkuList = null,
+        public readonly ?array $asinPrepInstructionsList = null,
+        public readonly ?array $invalidAsinList = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

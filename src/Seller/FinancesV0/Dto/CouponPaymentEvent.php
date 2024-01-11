@@ -79,7 +79,6 @@ final class CouponPaymentEvent extends BaseDto
      *
      * * TCS-UTGST - Tax Collected at Source for Union Territories Goods and Services Tax (UTGST).
      * @param  ?Currency  $totalAmount A currency type and amount.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $postedDate = null,
@@ -90,8 +89,6 @@ final class CouponPaymentEvent extends BaseDto
         public readonly ?FeeComponent $feeComponent = null,
         public readonly ?ChargeComponent $chargeComponent = null,
         public readonly ?Currency $totalAmount = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

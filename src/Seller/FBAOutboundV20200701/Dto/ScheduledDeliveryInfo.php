@@ -13,10 +13,8 @@ final class ScheduledDeliveryInfo extends BaseDto
      * @param  DeliveryWindow[]  $deliveryWindows An array of delivery windows.
      */
     public function __construct(
-        public readonly ?string $deliveryTimeZone = null,
+        public readonly string $deliveryTimeZone,
         public readonly ?array $deliveryWindows = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

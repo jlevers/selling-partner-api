@@ -13,8 +13,6 @@ final class ListOffersRequestPagination extends BaseDto
     public function __construct(
         public readonly int $limit,
         public readonly int $offset,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

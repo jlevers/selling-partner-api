@@ -26,7 +26,7 @@ class SubmitInvoice extends Request implements HasBody
      */
     public function __construct(
         protected string $shipmentId,
-        protected SubmitInvoiceRequest $submitInvoiceRequest,
+        public SubmitInvoiceRequest $submitInvoiceRequest,
     ) {
     }
 

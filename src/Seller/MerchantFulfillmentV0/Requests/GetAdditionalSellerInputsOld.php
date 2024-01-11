@@ -24,7 +24,7 @@ class GetAdditionalSellerInputsOld extends Request implements HasBody
      * @param  GetAdditionalSellerInputsRequest  $getAdditionalSellerInputsRequest Request schema.
      */
     public function __construct(
-        protected GetAdditionalSellerInputsRequest $getAdditionalSellerInputsRequest,
+        public GetAdditionalSellerInputsRequest $getAdditionalSellerInputsRequest,
     ) {
     }
 

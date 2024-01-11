@@ -17,15 +17,12 @@ final class ChargeRefundEvent extends BaseDto
      *
      * Example: `SubscriptionFeeCorrection`
      * @param  ChargeRefundTransaction[]  $chargeRefundTransactions A list of `ChargeRefund` transactions.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $postedDate = null,
         public readonly ?string $reasonCode = null,
         public readonly ?string $reasonCodeDescription = null,
         public readonly ?array $chargeRefundTransactions = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

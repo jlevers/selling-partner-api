@@ -7,12 +7,10 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class CollectOnDelivery extends BaseDto
 {
     /**
-     * @param  Currency  $currency The monetary value in the currency indicated, in ISO 4217 standard format.
+     * @param  Currency  $amount The monetary value in the currency indicated, in ISO 4217 standard format.
      */
     public function __construct(
-        public readonly ?Currency $currency = null,
-        mixed ...$additionalProperties,
+        public readonly Currency $amount,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

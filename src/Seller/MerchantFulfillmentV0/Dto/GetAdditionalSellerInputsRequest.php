@@ -15,8 +15,6 @@ final class GetAdditionalSellerInputsRequest extends BaseDto
         public readonly string $shippingServiceId,
         public readonly Address $shipFromAddress,
         public readonly string $orderId,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

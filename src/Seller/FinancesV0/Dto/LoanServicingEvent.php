@@ -17,13 +17,10 @@ final class LoanServicingEvent extends BaseDto
      * * LoanPayment
      *
      * * LoanRefund
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?Currency $loanAmount = null,
         public readonly ?string $sourceBusinessEventType = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

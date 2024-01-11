@@ -14,11 +14,9 @@ final class GetRatesResult extends BaseDto
      * @param  IneligibleRate[]  $ineligibleRates A list of ineligible shipping service offerings.
      */
     public function __construct(
-        public readonly ?string $requestToken = null,
+        public readonly string $requestToken,
         public readonly ?array $rates = null,
         public readonly ?array $ineligibleRates = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

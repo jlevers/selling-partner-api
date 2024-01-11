@@ -25,7 +25,7 @@ class GetPackageTrackingDetails extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['PackageNumber' => $this->packageNumber]);
+        return array_filter(['packageNumber' => $this->packageNumber]);
     }
 
     public function resolveEndpoint(): string

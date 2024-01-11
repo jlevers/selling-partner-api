@@ -11,10 +11,8 @@ final class NonPartneredLtlDataOutput extends BaseDto
      * @param  string  $proNumber The PRO number ("progressive number" or "progressive ID") assigned to the shipment by the carrier.
      */
     public function __construct(
-        public readonly ?string $carrierName = null,
-        public readonly ?string $proNumber = null,
-        mixed ...$additionalProperties,
+        public readonly string $carrierName,
+        public readonly string $proNumber,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

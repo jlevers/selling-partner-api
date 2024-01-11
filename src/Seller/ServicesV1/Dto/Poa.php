@@ -14,7 +14,6 @@ final class Poa extends BaseDto
      * @param  ?string  $uploadingTechnician The identifier of the technician who uploaded the POA.
      * @param  ?string  $uploadTime The date and time when the POA was uploaded in ISO 8601 format.
      * @param  ?string  $poaType The type of POA uploaded.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?AppointmentTime $appointmentTime = null,
@@ -22,8 +21,6 @@ final class Poa extends BaseDto
         public readonly ?string $uploadingTechnician = null,
         public readonly ?string $uploadTime = null,
         public readonly ?string $poaType = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

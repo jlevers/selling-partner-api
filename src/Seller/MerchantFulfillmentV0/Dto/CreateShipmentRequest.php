@@ -11,9 +11,9 @@ final class CreateShipmentRequest extends BaseDto
     /**
      * @param  ShipmentRequestDetails  $shipmentRequestDetails Shipment information required for requesting shipping service offers or for creating a shipment.
      * @param  string  $shippingServiceId An Amazon-defined shipping service identifier.
-     * @param  string  $shippingServiceOfferId Identifies a shipping service order made by a carrier.
-     * @param  string  $hazmatType Hazardous materials options for a package. Consult the terms and conditions for each carrier for more information on hazardous materials.
-     * @param  LabelFormatOptionRequest  $labelFormatOption Whether to include a packing slip.
+     * @param  ?string  $shippingServiceOfferId Identifies a shipping service order made by a carrier.
+     * @param  ?string  $hazmatType Hazardous materials options for a package. Consult the terms and conditions for each carrier for more information on hazardous materials.
+     * @param  ?LabelFormatOptionRequest  $labelFormatOption Whether to include a packing slip.
      * @param  AdditionalSellerInputs[]  $shipmentLevelSellerInputsList A list of additional seller input pairs required to purchase shipping.
      */
     public function __construct(
@@ -23,8 +23,6 @@ final class CreateShipmentRequest extends BaseDto
         public readonly ?string $hazmatType = null,
         public readonly ?LabelFormatOptionRequest $labelFormatOption = null,
         public readonly ?array $shipmentLevelSellerInputsList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

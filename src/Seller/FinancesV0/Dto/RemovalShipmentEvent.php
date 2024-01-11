@@ -18,7 +18,6 @@ final class RemovalShipmentEvent extends BaseDto
      *
      * * WHOLESALE_LIQUIDATION
      * @param  RemovalShipmentItem[]  $removalShipmentItemList A list of information about removal shipment items.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $postedDate = null,
@@ -26,8 +25,6 @@ final class RemovalShipmentEvent extends BaseDto
         public readonly ?string $orderId = null,
         public readonly ?string $transactionType = null,
         public readonly ?array $removalShipmentItemList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -4,10 +4,13 @@ namespace SellingPartnerApi\Seller\SolicitationsV1\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
 use SellingPartnerApi\Seller\SolicitationsV1\Dto\Embedded;
+use SellingPartnerApi\Seller\SolicitationsV1\Dto\Error;
 use SellingPartnerApi\Seller\SolicitationsV1\Dto\Links;
 
 final class GetSolicitationActionsForOrderResponse extends BaseResponse
 {
+    protected static array $complexArrayTypes = ['errors' => [Error::class]];
+
     /**
      * @param  ?Links  $links
      * @param  ?Embedded  $embedded

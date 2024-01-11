@@ -15,8 +15,6 @@ final class DocumentSize extends BaseDto
         public readonly float $width,
         public readonly float $length,
         public readonly string $unit,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

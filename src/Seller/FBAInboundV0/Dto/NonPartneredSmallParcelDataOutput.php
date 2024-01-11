@@ -13,8 +13,6 @@ final class NonPartneredSmallParcelDataOutput extends BaseDto
      */
     public function __construct(
         public readonly ?array $packageList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

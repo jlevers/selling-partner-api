@@ -7,14 +7,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ItemContributor extends BaseDto
 {
     /**
-     * @param  string  $value Name of the contributor, such as Jane Austen.
      * @param  ItemContributorRole  $role Role of an individual contributor in the creation of an item, such as author or actor.
+     * @param  string  $value Name of the contributor, such as Jane Austen.
      */
     public function __construct(
-        public readonly string $value,
         public readonly ItemContributorRole $role,
-        mixed ...$additionalProperties,
+        public readonly string $value,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

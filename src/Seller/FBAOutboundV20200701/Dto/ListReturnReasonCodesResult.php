@@ -12,9 +12,7 @@ final class ListReturnReasonCodesResult extends BaseDto
      * @param  ReasonCodeDetails[]  $reasonCodeDetails An array of return reason code details.
      */
     public function __construct(
-        public readonly array $reasonCodeDetails,
-        mixed ...$additionalProperties,
+        public readonly ?array $reasonCodeDetails = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -16,7 +16,6 @@ final class ServiceFeeEvent extends BaseDto
      * @param  ?string  $fnSku A unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center.
      * @param  ?string  $feeDescription A short description of the service fee event.
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $amazonOrderId = null,
@@ -26,8 +25,6 @@ final class ServiceFeeEvent extends BaseDto
         public readonly ?string $fnSku = null,
         public readonly ?string $feeDescription = null,
         public readonly ?string $asin = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

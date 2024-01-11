@@ -10,17 +10,15 @@ final class TrackingInformation extends BaseDto
 
     /**
      * @param  string  $trackingId The tracking id generated to each shipment. It contains a series of letters or digits or both.
-     * @param  TrackingSummary  $trackingSummary The tracking summary.
+     * @param  TrackingSummary  $summary The tracking summary.
      * @param  string  $promisedDeliveryDate The promised delivery date and time of a shipment.
-     * @param  Event[]  $events A list of events of a shipment.
+     * @param  Event[]  $eventHistory A list of events of a shipment.
      */
     public function __construct(
-        public readonly ?string $trackingId = null,
-        public readonly ?TrackingSummary $trackingSummary = null,
-        public readonly ?string $promisedDeliveryDate = null,
-        public readonly ?array $events = null,
-        mixed ...$additionalProperties,
+        public readonly string $trackingId,
+        public readonly TrackingSummary $summary,
+        public readonly string $promisedDeliveryDate,
+        public readonly ?array $eventHistory = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

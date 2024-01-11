@@ -12,11 +12,9 @@ final class InvalidReturnItem extends BaseDto
      * @param  InvalidItemReason  $invalidItemReason The reason that the item is invalid for return.
      */
     public function __construct(
-        public readonly ?string $sellerReturnItemId = null,
-        public readonly ?string $sellerFulfillmentOrderItemId = null,
-        public readonly ?InvalidItemReason $invalidItemReason = null,
-        mixed ...$additionalProperties,
+        public readonly string $sellerReturnItemId,
+        public readonly string $sellerFulfillmentOrderItemId,
+        public readonly InvalidItemReason $invalidItemReason,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

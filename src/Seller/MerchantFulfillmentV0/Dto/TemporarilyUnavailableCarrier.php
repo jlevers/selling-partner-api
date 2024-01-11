@@ -11,8 +11,6 @@ final class TemporarilyUnavailableCarrier extends BaseDto
      */
     public function __construct(
         public readonly string $carrierName,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

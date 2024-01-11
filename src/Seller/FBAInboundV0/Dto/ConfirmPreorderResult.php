@@ -6,11 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ConfirmPreorderResult extends BaseDto
 {
+    /**
+     * @param  ?string  $confirmedNeedByDate
+     * @param  ?string  $confirmedFulfillableDate
+     */
     public function __construct(
-        public readonly string $confirmedNeedByDate,
-        public readonly string $confirmedFulfillableDate,
-        mixed ...$additionalProperties,
+        public readonly ?string $confirmedNeedByDate = null,
+        public readonly ?string $confirmedFulfillableDate = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -7,12 +7,10 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ShipmentInvoiceStatusResponse extends BaseDto
 {
     /**
-     * @param  ShipmentInvoiceStatusInfo  $shipments The shipment invoice status information.
+     * @param  ?ShipmentInvoiceStatusInfo  $shipments The shipment invoice status information.
      */
     public function __construct(
-        public readonly ShipmentInvoiceStatusInfo $shipments,
-        mixed ...$additionalProperties,
+        public readonly ?ShipmentInvoiceStatusInfo $shipments = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

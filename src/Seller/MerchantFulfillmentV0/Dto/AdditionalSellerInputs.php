@@ -13,8 +13,6 @@ final class AdditionalSellerInputs extends BaseDto
     public function __construct(
         public readonly string $additionalInputFieldName,
         public readonly AdditionalSellerInput $additionalSellerInput,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

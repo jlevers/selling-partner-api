@@ -16,10 +16,8 @@ final class Refinements extends BaseDto
      * @param  ClassificationRefinement[]  $classifications Classification search refinements.
      */
     public function __construct(
-        public readonly array $brands,
-        public readonly array $classifications,
-        mixed ...$additionalProperties,
+        public readonly ?array $brands = null,
+        public readonly ?array $classifications = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

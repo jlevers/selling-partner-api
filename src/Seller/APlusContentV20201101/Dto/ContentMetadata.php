@@ -12,7 +12,6 @@ final class ContentMetadata extends BaseDto
      * @param  string  $status The submission status of the content document.
      * @param  string  $updateTime The approximate age of the A+ Content document and metadata.
      * @param  ?string[]  $badgeSet The set of content badges.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $name,
@@ -20,8 +19,6 @@ final class ContentMetadata extends BaseDto
         public readonly string $status,
         public readonly string $updateTime,
         public readonly ?array $badgeSet = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

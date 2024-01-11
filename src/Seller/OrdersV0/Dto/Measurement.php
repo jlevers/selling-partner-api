@@ -8,11 +8,11 @@ final class Measurement extends BaseDto
 {
     /**
      * @param  string  $unit The unit of measure for this measurement.
-     * @param  float|int  $value The value of the measurement.
+     * @param  float  $value The value of the measurement.
      */
     public function __construct(
         public readonly string $unit,
-        public readonly float|int $value,
+        public readonly float $value,
     ) {
     }
 }

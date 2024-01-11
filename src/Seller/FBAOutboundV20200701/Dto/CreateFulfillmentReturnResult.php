@@ -18,11 +18,9 @@ final class CreateFulfillmentReturnResult extends BaseDto
      * @param  ReturnAuthorization[]  $returnAuthorizations An array of return authorization information.
      */
     public function __construct(
-        public readonly array $returnItems,
-        public readonly array $invalidReturnItems,
-        public readonly array $returnAuthorizations,
-        mixed ...$additionalProperties,
+        public readonly ?array $returnItems = null,
+        public readonly ?array $invalidReturnItems = null,
+        public readonly ?array $returnAuthorizations = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

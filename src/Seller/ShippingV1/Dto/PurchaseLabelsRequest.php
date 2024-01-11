@@ -11,10 +11,8 @@ final class PurchaseLabelsRequest extends BaseDto
      * @param  LabelSpecification  $labelSpecification The label specification info.
      */
     public function __construct(
-        public readonly ?string $rateId = null,
-        public readonly ?LabelSpecification $labelSpecification = null,
-        mixed ...$additionalProperties,
+        public readonly string $rateId,
+        public readonly LabelSpecification $labelSpecification,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

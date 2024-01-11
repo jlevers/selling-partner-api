@@ -9,8 +9,8 @@ final class BuyerTaxInfo extends BaseDto
     protected static array $complexArrayTypes = ['taxClassifications' => [TaxClassification::class]];
 
     /**
-     * @param  string  $companyLegalName The legal name of the company.
-     * @param  string  $taxingRegion The country or region imposing the tax.
+     * @param  ?string  $companyLegalName The legal name of the company.
+     * @param  ?string  $taxingRegion The country or region imposing the tax.
      * @param  TaxClassification[]  $taxClassifications A list of tax classifications that apply to the order.
      */
     public function __construct(

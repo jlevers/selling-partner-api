@@ -11,16 +11,14 @@ final class GetFeatureInventoryResult extends BaseDto
     /**
      * @param  string  $marketplaceId The requested marketplace.
      * @param  string  $featureName The name of the feature.
-     * @param  string  $nextToken When present and not empty, pass this string token in the next request to return the next response page.
+     * @param  ?string  $nextToken When present and not empty, pass this string token in the next request to return the next response page.
      * @param  FeatureSku[]  $featureSkus An array of SKUs eligible for this feature and the quantity available.
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $featureName = null,
+        public readonly string $marketplaceId,
+        public readonly string $featureName,
         public readonly ?string $nextToken = null,
         public readonly ?array $featureSkus = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -7,14 +7,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class LabelFormatOption extends BaseDto
 {
     /**
-     * @param  bool  $includePackingSlipWithLabel When true, include a packing slip with the label.
-     * @param  string  $labelFormat The label format.
+     * @param  ?bool  $includePackingSlipWithLabel When true, include a packing slip with the label.
+     * @param  ?string  $labelFormat The label format.
      */
     public function __construct(
-        public readonly bool $includePackingSlipWithLabel,
-        public readonly string $labelFormat,
-        mixed ...$additionalProperties,
+        public readonly ?bool $includePackingSlipWithLabel = null,
+        public readonly ?string $labelFormat = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

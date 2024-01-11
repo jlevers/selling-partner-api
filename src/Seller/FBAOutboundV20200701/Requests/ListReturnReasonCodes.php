@@ -32,10 +32,10 @@ class ListReturnReasonCodes extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'SellerSku' => $this->sellerSku,
-            'Language' => $this->language,
-            'MarketplaceId' => $this->marketplaceId,
-            'SellerFulfillmentOrderId' => $this->sellerFulfillmentOrderId,
+            'sellerSku' => $this->sellerSku,
+            'language' => $this->language,
+            'marketplaceId' => $this->marketplaceId,
+            'sellerFulfillmentOrderId' => $this->sellerFulfillmentOrderId,
         ]);
     }
 

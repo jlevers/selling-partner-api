@@ -25,7 +25,7 @@ class CreateFeedDocument extends Request implements HasBody
      * @param  CreateFeedDocumentSpecification  $createFeedDocumentSpecification Specifies the content type for the createFeedDocument operation.
      */
     public function __construct(
-        protected CreateFeedDocumentSpecification $createFeedDocumentSpecification,
+        public CreateFeedDocumentSpecification $createFeedDocumentSpecification,
     ) {
     }
 

@@ -24,7 +24,7 @@ class CreateInboundShipmentPlan extends Request implements HasBody
      * @param  CreateInboundShipmentPlanRequest  $createInboundShipmentPlanRequest The request schema for the createInboundShipmentPlan operation.
      */
     public function __construct(
-        protected CreateInboundShipmentPlanRequest $createInboundShipmentPlanRequest,
+        public CreateInboundShipmentPlanRequest $createInboundShipmentPlanRequest,
     ) {
     }
 

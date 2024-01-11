@@ -9,18 +9,18 @@ final class FeePreview extends BaseDto
     protected static array $complexArrayTypes = ['feeBreakdown' => [FeeLineItem::class], 'errors' => [Error::class]];
 
     /**
-     * @param  string  $asin The Amazon Standard Identification Number (ASIN) value used to identify the item.
+     * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) value used to identify the item.
+     * @param  ?MoneyType  $price
      * @param  FeeLineItem[]  $feeBreakdown A list of the Small and Light fees for the item.
-     * @param  Error[]  $errors One or more unexpected errors occurred during the getSmallAndLightFeePreview operation.
+     * @param  ?MoneyType  $totalFees
+     * @param  Error[]  $errors
      */
     public function __construct(
-        public readonly string $asin,
-        public readonly MoneyType $price,
-        public readonly array $feeBreakdown,
-        public readonly MoneyType $totalFees,
-        public readonly array $errors,
-        mixed ...$additionalProperties,
+        public readonly ?string $asin = null,
+        public readonly ?MoneyType $price = null,
+        public readonly ?array $feeBreakdown = null,
+        public readonly ?MoneyType $totalFees = null,
+        public readonly ?array $errors = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

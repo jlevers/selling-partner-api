@@ -30,7 +30,6 @@ final class ShipmentItem extends BaseDto
      * @param  Promotion[]  $promotionAdjustmentList A list of promotions.
      * @param  ?Currency  $costOfPointsGranted A currency type and amount.
      * @param  ?Currency  $costOfPointsReturned A currency type and amount.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $sellerSku = null,
@@ -46,8 +45,6 @@ final class ShipmentItem extends BaseDto
         public readonly ?array $promotionAdjustmentList = null,
         public readonly ?Currency $costOfPointsGranted = null,
         public readonly ?Currency $costOfPointsReturned = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

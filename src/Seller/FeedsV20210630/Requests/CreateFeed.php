@@ -25,7 +25,7 @@ class CreateFeed extends Request implements HasBody
      * @param  CreateFeedSpecification  $createFeedSpecification Information required to create the feed.
      */
     public function __construct(
-        protected CreateFeedSpecification $createFeedSpecification,
+        public CreateFeedSpecification $createFeedSpecification,
     ) {
     }
 

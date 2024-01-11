@@ -8,12 +8,9 @@ final class ProcessingDirective extends BaseDto
 {
     /**
      * @param  ?EventFilter  $eventFilter A notificationType specific filter. This object contains all of the currently available filters and properties that you can use to define a notificationType specific filter.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?EventFilter $eventFilter = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

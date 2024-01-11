@@ -15,7 +15,6 @@ final class FeesEstimateIdentifier extends BaseDto
      * @param  ?PriceToEstimateFees  $priceToEstimateFees Price information for an item, used to estimate fees.
      * @param  ?string  $sellerInputIdentifier A unique identifier provided by the caller to track this request.
      * @param  ?string  $optionalFulfillmentProgram An optional enrollment program to return the estimated fees when the offer is fulfilled by Amazon (IsAmazonFulfilled is set to true).
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $marketplaceId = null,
@@ -26,8 +25,6 @@ final class FeesEstimateIdentifier extends BaseDto
         public readonly ?PriceToEstimateFees $priceToEstimateFees = null,
         public readonly ?string $sellerInputIdentifier = null,
         public readonly ?string $optionalFulfillmentProgram = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

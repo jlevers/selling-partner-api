@@ -9,13 +9,10 @@ final class Primary extends BaseDto
     /**
      * @param  ?string  $email The email address to which email messages are delivered.
      * @param  ?string  $phone The phone number of the person, business or institution.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $email = null,
         public readonly ?string $phone = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

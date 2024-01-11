@@ -11,15 +11,12 @@ final class Reason extends BaseDto
     /**
      * @param  string  $message A message describing the reason for the restriction.
      * @param  ?string  $reasonCode A code indicating why the listing is restricted.
-     * @param  ?Link[]  $links A list of path forward links that may allow Selling Partners to remove the restriction.
-     * @param  ?mixed  $additionalProperties
+     * @param  Link[]  $links A list of path forward links that may allow Selling Partners to remove the restriction.
      */
     public function __construct(
         public readonly string $message,
         public readonly ?string $reasonCode = null,
         public readonly ?array $links = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

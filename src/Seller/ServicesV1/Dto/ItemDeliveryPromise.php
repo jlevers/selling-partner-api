@@ -9,13 +9,10 @@ final class ItemDeliveryPromise extends BaseDto
     /**
      * @param  ?string  $startTime The date and time of the start of the promised delivery window in ISO 8601 format.
      * @param  ?string  $endTime The date and time of the end of the promised delivery window in ISO 8601 format.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $startTime = null,
         public readonly ?string $endTime = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -17,8 +17,6 @@ final class Dimensions extends BaseDto
         public readonly float $width,
         public readonly float $height,
         public readonly string $unit,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

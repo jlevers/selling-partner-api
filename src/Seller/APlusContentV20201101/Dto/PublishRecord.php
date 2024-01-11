@@ -14,7 +14,6 @@ final class PublishRecord extends BaseDto
      * @param  string  $contentType The A+ Content document type.
      * @param  string  $contentReferenceKey A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
      * @param  ?string  $contentSubType The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $marketplaceId,
@@ -23,8 +22,6 @@ final class PublishRecord extends BaseDto
         public readonly string $contentType,
         public readonly string $contentReferenceKey,
         public readonly ?string $contentSubType = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

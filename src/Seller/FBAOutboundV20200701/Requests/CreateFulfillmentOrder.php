@@ -24,7 +24,7 @@ class CreateFulfillmentOrder extends Request implements HasBody
      * @param  CreateFulfillmentOrderRequest  $createFulfillmentOrderRequest The request body schema for the createFulfillmentOrder operation.
      */
     public function __construct(
-        protected CreateFulfillmentOrderRequest $createFulfillmentOrderRequest,
+        public CreateFulfillmentOrderRequest $createFulfillmentOrderRequest,
     ) {
     }
 

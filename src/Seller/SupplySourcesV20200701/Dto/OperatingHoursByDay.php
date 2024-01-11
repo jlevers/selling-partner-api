@@ -24,7 +24,6 @@ final class OperatingHoursByDay extends BaseDto
      * @param  OperatingHour[]  $friday A list of Operating Hours.
      * @param  OperatingHour[]  $saturday A list of Operating Hours.
      * @param  OperatingHour[]  $sunday A list of Operating Hours.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $monday = null,
@@ -34,8 +33,6 @@ final class OperatingHoursByDay extends BaseDto
         public readonly ?array $friday = null,
         public readonly ?array $saturday = null,
         public readonly ?array $sunday = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

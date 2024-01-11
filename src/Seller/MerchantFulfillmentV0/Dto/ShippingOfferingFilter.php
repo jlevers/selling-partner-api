@@ -7,18 +7,16 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ShippingOfferingFilter extends BaseDto
 {
     /**
-     * @param  bool  $includePackingSlipWithLabel When true, include a packing slip with the label.
-     * @param  bool  $includeComplexShippingOptions When true, include complex shipping options.
-     * @param  string  $carrierWillPickUp Carrier will pick up option.
-     * @param  string  $deliveryExperience The delivery confirmation level.
+     * @param  ?bool  $includePackingSlipWithLabel When true, include a packing slip with the label.
+     * @param  ?bool  $includeComplexShippingOptions When true, include complex shipping options.
+     * @param  ?string  $carrierWillPickUp Carrier will pick up option.
+     * @param  ?string  $deliveryExperience The delivery confirmation level.
      */
     public function __construct(
-        public readonly bool $includePackingSlipWithLabel,
-        public readonly bool $includeComplexShippingOptions,
-        public readonly string $carrierWillPickUp,
-        public readonly string $deliveryExperience,
-        mixed ...$additionalProperties,
+        public readonly ?bool $includePackingSlipWithLabel = null,
+        public readonly ?bool $includeComplexShippingOptions = null,
+        public readonly ?string $carrierWillPickUp = null,
+        public readonly ?string $deliveryExperience = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

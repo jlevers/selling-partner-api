@@ -11,10 +11,8 @@ final class GetShipmentDocumentsResult extends BaseDto
      * @param  PackageDocumentDetail  $packageDocumentDetail The post-purchase details of a package that will be shipped using a shipping service.
      */
     public function __construct(
-        public readonly ?string $shipmentId = null,
-        public readonly ?PackageDocumentDetail $packageDocumentDetail = null,
-        mixed ...$additionalProperties,
+        public readonly string $shipmentId,
+        public readonly PackageDocumentDetail $packageDocumentDetail,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

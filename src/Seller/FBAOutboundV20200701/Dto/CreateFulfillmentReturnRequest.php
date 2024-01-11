@@ -13,8 +13,6 @@ final class CreateFulfillmentReturnRequest extends BaseDto
      */
     public function __construct(
         public readonly ?array $items = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

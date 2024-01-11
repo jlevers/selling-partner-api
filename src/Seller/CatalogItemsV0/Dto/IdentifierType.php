@@ -6,11 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class IdentifierType extends BaseDto
 {
+    /**
+     * @param  ?AsinIdentifier  $marketplaceAsin
+     * @param  ?SellerSkuIdentifier  $skuIdentifier
+     */
     public function __construct(
-        public readonly ASINIdentifier $marketplaceAsin,
-        public readonly SellerSKUIdentifier $skuidentifier,
-        mixed ...$additionalProperties,
+        public readonly ?AsinIdentifier $marketplaceAsin = null,
+        public readonly ?SellerSkuIdentifier $skuIdentifier = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

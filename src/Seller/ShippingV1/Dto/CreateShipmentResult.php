@@ -10,13 +10,11 @@ final class CreateShipmentResult extends BaseDto
 
     /**
      * @param  string  $shipmentId The unique shipment identifier.
-     * @param  Rate[]  $rates A list of all the available rates that can be used to send the shipment.
+     * @param  Rate[]  $eligibleRates A list of all the available rates that can be used to send the shipment.
      */
     public function __construct(
-        public readonly ?string $shipmentId = null,
-        public readonly ?array $rates = null,
-        mixed ...$additionalProperties,
+        public readonly string $shipmentId,
+        public readonly ?array $eligibleRates = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

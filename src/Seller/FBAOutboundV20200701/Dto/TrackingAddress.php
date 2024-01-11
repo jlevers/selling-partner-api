@@ -12,11 +12,9 @@ final class TrackingAddress extends BaseDto
      * @param  string  $country The country.
      */
     public function __construct(
-        public readonly ?string $city = null,
-        public readonly ?string $state = null,
-        public readonly ?string $country = null,
-        mixed ...$additionalProperties,
+        public readonly string $city,
+        public readonly string $state,
+        public readonly string $country,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

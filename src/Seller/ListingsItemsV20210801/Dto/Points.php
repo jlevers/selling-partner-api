@@ -8,8 +8,6 @@ final class Points extends BaseDto
 {
     public function __construct(
         public readonly int $pointsNumber,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -9,13 +9,10 @@ final class AppointmentTimeInput extends BaseDto
     /**
      * @param  string  $startTime The date, time in UTC for the start time of an appointment in ISO 8601 format.
      * @param  ?int  $durationInMinutes The duration of an appointment in minutes.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $startTime,
         public readonly ?int $durationInMinutes = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

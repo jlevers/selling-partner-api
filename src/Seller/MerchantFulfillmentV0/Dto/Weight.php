@@ -13,8 +13,6 @@ final class Weight extends BaseDto
     public function __construct(
         public readonly float $value,
         public readonly string $unit,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

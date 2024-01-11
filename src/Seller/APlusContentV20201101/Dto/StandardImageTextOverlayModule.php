@@ -9,13 +9,10 @@ final class StandardImageTextOverlayModule extends BaseDto
     /**
      * @param  string  $overlayColorType The relative color scheme of content.
      * @param  ?StandardImageTextBlock  $block The A+ Content standard image and text box block.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $overlayColorType,
         public readonly ?StandardImageTextBlock $block = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -15,7 +15,6 @@ final class ContentDocument extends BaseDto
      * **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
      * @param  ?string  $contentSubType The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
      * @param  ContentModule[]  $contentModuleList A list of A+ Content modules.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $name,
@@ -23,8 +22,6 @@ final class ContentDocument extends BaseDto
         public readonly string $locale,
         public readonly ?string $contentSubType = null,
         public readonly ?array $contentModuleList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

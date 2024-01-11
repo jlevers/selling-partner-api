@@ -12,9 +12,7 @@ final class ListMatchingItemsResponse extends BaseDto
      * @param  Item[]  $items A list of items.
      */
     public function __construct(
-        public readonly array $items,
-        mixed ...$additionalProperties,
+        public readonly ?array $items = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

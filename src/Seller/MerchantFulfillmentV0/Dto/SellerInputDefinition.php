@@ -14,8 +14,8 @@ final class SellerInputDefinition extends BaseDto
      * @param  string  $inputDisplayText The display text for the additional input field.
      * @param  AdditionalSellerInput  $storedValue Additional information required to purchase shipping.
      * @param  Constraint[]  $constraints List of constraints.
-     * @param  string  $inputTarget Indicates whether the additional seller input is at the item or shipment level.
-     * @param  string[]  $restrictedSetValues The set of fixed values in an additional seller input.
+     * @param  ?string  $inputTarget Indicates whether the additional seller input is at the item or shipment level.
+     * @param  ?string[]  $restrictedSetValues The set of fixed values in an additional seller input.
      */
     public function __construct(
         public readonly bool $isRequired,
@@ -25,8 +25,6 @@ final class SellerInputDefinition extends BaseDto
         public readonly ?array $constraints = null,
         public readonly ?string $inputTarget = null,
         public readonly ?array $restrictedSetValues = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

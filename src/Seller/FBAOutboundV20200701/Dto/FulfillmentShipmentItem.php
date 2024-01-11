@@ -10,17 +10,15 @@ final class FulfillmentShipmentItem extends BaseDto
      * @param  string  $sellerSku The seller SKU of the item.
      * @param  string  $sellerFulfillmentOrderItemId The fulfillment order item identifier that the seller created and submitted with a call to the createFulfillmentOrder operation.
      * @param  int  $quantity The item quantity.
-     * @param  int  $packageNumber An identifier for the package that contains the item quantity.
-     * @param  string  $serialNumber The serial number of the shipped item.
+     * @param  ?int  $packageNumber An identifier for the package that contains the item quantity.
+     * @param  ?string  $serialNumber The serial number of the shipped item.
      */
     public function __construct(
-        public readonly ?string $sellerSku = null,
-        public readonly ?string $sellerFulfillmentOrderItemId = null,
-        public readonly ?int $quantity = null,
+        public readonly string $sellerSku,
+        public readonly string $sellerFulfillmentOrderItemId,
+        public readonly int $quantity,
         public readonly ?int $packageNumber = null,
         public readonly ?string $serialNumber = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

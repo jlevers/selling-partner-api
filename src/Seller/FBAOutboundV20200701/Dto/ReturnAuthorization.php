@@ -14,13 +14,11 @@ final class ReturnAuthorization extends BaseDto
      * @param  string  $rmaPageUrl A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.
      */
     public function __construct(
-        public readonly ?string $returnAuthorizationId = null,
-        public readonly ?string $fulfillmentCenterId = null,
-        public readonly ?Address $returnToAddress = null,
-        public readonly ?string $amazonRmaId = null,
-        public readonly ?string $rmaPageUrl = null,
-        mixed ...$additionalProperties,
+        public readonly string $returnAuthorizationId,
+        public readonly string $fulfillmentCenterId,
+        public readonly Address $returnToAddress,
+        public readonly string $amazonRmaId,
+        public readonly string $rmaPageUrl,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

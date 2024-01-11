@@ -4,7 +4,7 @@ namespace SellingPartnerApi\Seller\CatalogItemsV0\Dto;
 
 use Crescat\SaloonSdkGenerator\BaseDto;
 
-final class SellerSkuidentifier extends BaseDto
+final class SellerSkuIdentifier extends BaseDto
 {
     /**
      * @param  string  $marketplaceId A marketplace identifier.
@@ -12,11 +12,9 @@ final class SellerSkuidentifier extends BaseDto
      * @param  string  $sellerSku The seller stock keeping unit (SKU) of the item.
      */
     public function __construct(
-        public readonly ?string $marketplaceId = null,
-        public readonly ?string $sellerId = null,
-        public readonly ?string $sellerSku = null,
-        mixed ...$additionalProperties,
+        public readonly string $marketplaceId,
+        public readonly string $sellerId,
+        public readonly string $sellerSku,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

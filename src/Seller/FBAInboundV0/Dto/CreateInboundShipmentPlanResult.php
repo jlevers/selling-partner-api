@@ -12,9 +12,7 @@ final class CreateInboundShipmentPlanResult extends BaseDto
      * @param  InboundShipmentPlan[]  $inboundShipmentPlans A list of inbound shipment plan information
      */
     public function __construct(
-        public readonly array $inboundShipmentPlans,
-        mixed ...$additionalProperties,
+        public readonly ?array $inboundShipmentPlans = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

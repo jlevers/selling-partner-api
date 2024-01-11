@@ -11,15 +11,12 @@ final class FeaturedOfferExpectedPriceResult extends BaseDto
      * @param  ?FeaturedOfferExpectedPrice  $featuredOfferExpectedPrice The item price at or below which the target offer may be featured.
      * @param  ?FeaturedOffer  $competingFeaturedOffer
      * @param  ?FeaturedOffer  $currentFeaturedOffer
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $resultStatus,
         public readonly ?FeaturedOfferExpectedPrice $featuredOfferExpectedPrice = null,
         public readonly ?FeaturedOffer $competingFeaturedOffer = null,
         public readonly ?FeaturedOffer $currentFeaturedOffer = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

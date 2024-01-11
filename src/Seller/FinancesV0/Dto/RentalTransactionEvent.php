@@ -39,7 +39,6 @@ final class RentalTransactionEvent extends BaseDto
      * @param  ?Currency  $rentalInitialValue A currency type and amount.
      * @param  ?Currency  $rentalReimbursement A currency type and amount.
      * @param  TaxWithheldComponent[]  $rentalTaxWithheldList A list of information about taxes withheld.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $amazonOrderId = null,
@@ -52,8 +51,6 @@ final class RentalTransactionEvent extends BaseDto
         public readonly ?Currency $rentalInitialValue = null,
         public readonly ?Currency $rentalReimbursement = null,
         public readonly ?array $rentalTaxWithheldList = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

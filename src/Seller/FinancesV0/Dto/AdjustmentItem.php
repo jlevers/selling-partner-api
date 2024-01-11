@@ -14,7 +14,6 @@ final class AdjustmentItem extends BaseDto
      * @param  ?string  $fnSku A unique identifier assigned to products stored in and fulfilled from a fulfillment center.
      * @param  ?string  $productDescription A short description of the item.
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $quantity = null,
@@ -24,8 +23,6 @@ final class AdjustmentItem extends BaseDto
         public readonly ?string $fnSku = null,
         public readonly ?string $productDescription = null,
         public readonly ?string $asin = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

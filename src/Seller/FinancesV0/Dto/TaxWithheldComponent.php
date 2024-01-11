@@ -17,13 +17,10 @@ final class TaxWithheldComponent extends BaseDto
      *
      * * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
      * @param  ChargeComponent[]  $taxesWithheld A list of charge information on the seller's account.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $taxCollectionModel = null,
         public readonly ?array $taxesWithheld = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

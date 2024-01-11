@@ -14,9 +14,7 @@ final class UpdateScheduledPackagesRequest extends BaseDto
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly array $updatePackageDetailsList,
-        mixed ...$additionalProperties,
+        public readonly ?array $updatePackageDetailsList = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

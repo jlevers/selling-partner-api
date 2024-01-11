@@ -12,12 +12,10 @@ final class TrackingEvent extends BaseDto
      * @param  string  $eventDescription A description for the corresponding event code.
      */
     public function __construct(
-        public readonly ?string $eventDate = null,
-        public readonly ?TrackingAddress $eventAddress = null,
-        public readonly ?string $eventCode = null,
-        public readonly ?string $eventDescription = null,
-        mixed ...$additionalProperties,
+        public readonly string $eventDate,
+        public readonly TrackingAddress $eventAddress,
+        public readonly string $eventCode,
+        public readonly string $eventDescription,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

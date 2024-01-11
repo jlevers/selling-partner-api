@@ -15,8 +15,6 @@ final class ClassificationRefinement extends BaseDto
         public readonly int $numberOfResults,
         public readonly string $displayName,
         public readonly string $classificationId,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

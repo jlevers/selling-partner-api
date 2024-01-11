@@ -7,12 +7,10 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class SubmitFulfillmentOrderStatusUpdateRequest extends BaseDto
 {
     /**
-     * @param  string  $fulfillmentOrderStatus The current status of the fulfillment order.
+     * @param  ?string  $fulfillmentOrderStatus The current status of the fulfillment order.
      */
     public function __construct(
-        public readonly string $fulfillmentOrderStatus,
-        mixed ...$additionalProperties,
+        public readonly ?string $fulfillmentOrderStatus = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

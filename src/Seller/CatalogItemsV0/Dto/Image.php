@@ -7,16 +7,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class Image extends BaseDto
 {
     /**
-     * @param  string  $url The image URL attribute of the item.
-     * @param  DecimalWithUnits  $height The decimal value and unit.
-     * @param  DecimalWithUnits  $width The decimal value and unit.
+     * @param  ?string  $url The image URL attribute of the item.
+     * @param  ?DecimalWithUnits  $height The decimal value and unit.
+     * @param  ?DecimalWithUnits  $width The decimal value and unit.
      */
     public function __construct(
-        public readonly string $url,
-        public readonly DecimalWithUnits $height,
-        public readonly DecimalWithUnits $width,
-        mixed ...$additionalProperties,
+        public readonly ?string $url = null,
+        public readonly ?DecimalWithUnits $height = null,
+        public readonly ?DecimalWithUnits $width = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

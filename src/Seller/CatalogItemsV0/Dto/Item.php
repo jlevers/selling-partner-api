@@ -18,12 +18,10 @@ final class Item extends BaseDto
      * @param  SalesRankType[]  $salesRankings A list of sales rank information for the item by category.
      */
     public function __construct(
-        public readonly ?IdentifierType $identifiers = null,
+        public readonly IdentifierType $identifiers,
         public readonly ?array $attributeSets = null,
         public readonly ?array $relationships = null,
         public readonly ?array $salesRankings = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -20,7 +20,6 @@ final class RemovalShipmentItemAdjustment extends BaseDto
      * @param  ?Currency  $revenueAdjustment A currency type and amount.
      * @param  ?Currency  $taxAmountAdjustment A currency type and amount.
      * @param  ?Currency  $taxWithheldAdjustment A currency type and amount.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $removalShipmentItemId = null,
@@ -30,8 +29,6 @@ final class RemovalShipmentItemAdjustment extends BaseDto
         public readonly ?Currency $revenueAdjustment = null,
         public readonly ?Currency $taxAmountAdjustment = null,
         public readonly ?Currency $taxWithheldAdjustment = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -12,14 +12,11 @@ final class StandardTechSpecsModule extends BaseDto
      * @param  ?TextComponent  $headline Rich text content.
      * @param  StandardTextPairBlock[]  $specificationList The specification list.
      * @param  ?int  $tableCount The number of tables to present. Features are evenly divided between the tables.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?TextComponent $headline = null,
         public readonly ?array $specificationList = null,
         public readonly ?int $tableCount = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

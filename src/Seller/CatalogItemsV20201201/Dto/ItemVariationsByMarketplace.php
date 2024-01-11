@@ -8,15 +8,13 @@ final class ItemVariationsByMarketplace extends BaseDto
 {
     /**
      * @param  string  $marketplaceId Amazon marketplace identifier.
-     * @param  string[]  $asins Identifiers (ASINs) of the related items.
      * @param  string  $variationType Type of variation relationship of the Amazon catalog item in the request to the related item(s): "PARENT" or "CHILD".
+     * @param  ?string[]  $asins Identifiers (ASINs) of the related items.
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly array $asins,
         public readonly string $variationType,
-        mixed ...$additionalProperties,
+        public readonly ?array $asins = null,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

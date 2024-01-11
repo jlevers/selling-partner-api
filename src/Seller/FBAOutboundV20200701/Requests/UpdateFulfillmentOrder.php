@@ -22,7 +22,7 @@ class UpdateFulfillmentOrder extends Request
      */
     public function __construct(
         protected string $sellerFulfillmentOrderId,
-        protected UpdateFulfillmentOrderRequest $updateFulfillmentOrderRequest,
+        public UpdateFulfillmentOrderRequest $updateFulfillmentOrderRequest,
     ) {
     }
 

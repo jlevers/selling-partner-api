@@ -27,7 +27,7 @@ class ListAllFulfillmentOrders extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['QueryStartDate' => $this->queryStartDate, 'NextToken' => $this->nextToken]);
+        return array_filter(['queryStartDate' => $this->queryStartDate, 'nextToken' => $this->nextToken]);
     }
 
     public function resolveEndpoint(): string

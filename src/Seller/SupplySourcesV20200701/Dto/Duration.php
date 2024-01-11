@@ -9,13 +9,10 @@ final class Duration extends BaseDto
     /**
      * @param  ?int  $value An unsigned integer that can be only positive or zero.
      * @param  ?string  $timeUnit The time unit
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?int $value = null,
         public readonly ?string $timeUnit = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

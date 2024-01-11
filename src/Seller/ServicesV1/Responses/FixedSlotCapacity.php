@@ -3,9 +3,12 @@
 namespace SellingPartnerApi\Seller\ServicesV1\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Seller\ServicesV1\Dto\RangeCapacity;
 
 final class FixedSlotCapacity extends BaseResponse
 {
+    protected static array $complexArrayTypes = ['capacities' => [RangeCapacity::class]];
+
     /**
      * @param  ?string  $resourceId Resource Identifier.
      * @param  ?float  $slotDuration The duration of each slot which is returned. This value will be a multiple of 5 and fall in the following range: 5 <= `slotDuration` <= 360.

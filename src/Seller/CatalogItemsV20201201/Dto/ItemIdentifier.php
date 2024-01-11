@@ -13,8 +13,6 @@ final class ItemIdentifier extends BaseDto
     public function __construct(
         public readonly string $identifierType,
         public readonly string $identifier,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

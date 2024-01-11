@@ -2237,7 +2237,7 @@
                                 }
                             }
                         },
-                        "content": [],
+                        "content": {},
                         "x-amzn-api-sandbox": {
                             "static": [
                                 {
@@ -2718,7 +2718,7 @@
                                 }
                             }
                         },
-                        "content": [],
+                        "content": {},
                         "x-amzn-api-sandbox": {
                             "static": [
                                 {
@@ -3006,7 +3006,7 @@
                                 }
                             }
                         },
-                        "content": [],
+                        "content": {},
                         "x-amzn-api-sandbox": {
                             "static": [
                                 {

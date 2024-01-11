@@ -78,6 +78,11 @@ class VendorConnector extends SellingPartnerApi
         return new DirectFulfillmentShippingV20211228\Api($this);
     }
 
+    public function directFulfillmentShippingV1(): DirectFulfillmentShippingV1\Api
+    {
+        return new DirectFulfillmentShippingV1\Api($this);
+    }
+
     public function directFulfillmentTransactionsV20211228(): DirectFulfillmentTransactionsV20211228\Api
     {
         return new DirectFulfillmentTransactionsV20211228\Api($this);

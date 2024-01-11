@@ -1,0 +1,21 @@
+<?php
+
+namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
+
+use Crescat\SaloonSdkGenerator\BaseDto;
+
+final class TaxRegistrationDetails extends BaseDto
+{
+	/**
+	 * @param string $taxRegistrationType Tax registration type for the entity.
+	 * @param string $taxRegistrationNumber Tax registration number for the entity. For example, VAT ID.
+	 * @param ?mixed $additionalProperties
+	 */
+	public function __construct(
+		public readonly string $taxRegistrationType,
+		public readonly string $taxRegistrationNumber,
+		mixed ...$additionalProperties,
+	) {
+		parent::__construct(...$additionalProperties);
+	}
+}

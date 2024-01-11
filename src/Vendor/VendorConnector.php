@@ -48,6 +48,11 @@ class VendorConnector extends SellingPartnerApi
         return $this->ordersV1();
     }
 
+    public function shipments(): ShipmentsV1\Api
+    {
+        return $this->shipmentsV1();
+    }
+
     public function transactionStatus(): TransactionStatusV1\Api
     {
         return $this->transactionStatusV1();
@@ -106,6 +111,11 @@ class VendorConnector extends SellingPartnerApi
     public function ordersV1(): OrdersV1\Api
     {
         return new OrdersV1\Api($this);
+    }
+
+    public function shipmentsV1(): ShipmentsV1\Api
+    {
+        return new ShipmentsV1\Api($this);
     }
 
     public function transactionStatusV1(): TransactionStatusV1\Api

@@ -24,10 +24,10 @@ class Api extends BaseResource
     /**
      * @param  string  $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  string  $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string|null  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
-     * @param  int|null  $limit The limit to the number of records returned.
-     * @param  string|null  $sortOrder Sort ASC or DESC by order creation date.
-     * @param  string|null  $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
+     * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
+     * @param  ?int  $limit The limit to the number of records returned.
+     * @param  ?string  $sortOrder Sort ASC or DESC by order creation date.
+     * @param  ?string  $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getShippingLabels(
         string $createdAfter,
@@ -79,10 +79,10 @@ class Api extends BaseResource
     /**
      * @param  string  $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  string  $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string|null  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
-     * @param  int|null  $limit The limit to the number of records returned
-     * @param  string|null  $sortOrder Sort ASC or DESC by order creation date.
-     * @param  string|null  $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
+     * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
+     * @param  ?int  $limit The limit to the number of records returned
+     * @param  ?string  $sortOrder Sort ASC or DESC by order creation date.
+     * @param  ?string  $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getCustomerInvoices(
         string $createdAfter,
@@ -106,10 +106,10 @@ class Api extends BaseResource
     /**
      * @param  string  $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  string  $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string|null  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
-     * @param  int|null  $limit The limit to the number of records returned
-     * @param  string|null  $sortOrder Sort ASC or DESC by packing slip creation date.
-     * @param  string|null  $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
+     * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
+     * @param  ?int  $limit The limit to the number of records returned
+     * @param  ?string  $sortOrder Sort ASC or DESC by packing slip creation date.
+     * @param  ?string  $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getPackingSlips(
         string $createdAfter,

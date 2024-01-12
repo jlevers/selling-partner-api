@@ -18,7 +18,6 @@ final class Address extends BaseDto
      * @param  ?string  $stateOrRegion The state or region where person, business or institution is located.
      * @param  ?string  $postalCode The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
      * @param  ?string  $phone The phone number of the person, business or institution located at that address.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $name,
@@ -32,8 +31,6 @@ final class Address extends BaseDto
         public readonly ?string $stateOrRegion = null,
         public readonly ?string $postalCode = null,
         public readonly ?string $phone = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

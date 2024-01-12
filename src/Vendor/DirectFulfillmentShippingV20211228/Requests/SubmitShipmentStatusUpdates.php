@@ -22,7 +22,7 @@ class SubmitShipmentStatusUpdates extends Request implements HasBody
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected SubmitShipmentStatusUpdatesRequest $submitShipmentStatusUpdatesRequest,
+        public SubmitShipmentStatusUpdatesRequest $submitShipmentStatusUpdatesRequest,
     ) {
     }
 

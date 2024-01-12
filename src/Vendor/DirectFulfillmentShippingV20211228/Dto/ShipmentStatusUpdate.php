@@ -12,9 +12,9 @@ final class ShipmentStatusUpdate extends BaseDto
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,
-        public readonly ?PartyIdentification $sellingParty = null,
-        public readonly ?PartyIdentification $shipFromParty = null,
-        public readonly ?StatusUpdateDetails $statusUpdateDetails = null,
+        public readonly PartyIdentification $sellingParty,
+        public readonly PartyIdentification $shipFromParty,
+        public readonly StatusUpdateDetails $statusUpdateDetails,
     ) {
     }
 }

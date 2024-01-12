@@ -8,10 +8,10 @@ use SellingPartnerApi\Vendor\DirectFulfillmentTransactionsV20211228\Dto\Transact
 final class TransactionStatus extends BaseResponse
 {
     /**
-     * @param  ?Transaction  $transaction The transaction status details.
+     * @param  ?Transaction  $transactionStatus The transaction status details.
      */
     public function __construct(
-        public readonly ?Transaction $transaction = null,
+        public readonly ?Transaction $transactionStatus = null,
     ) {
     }
 }

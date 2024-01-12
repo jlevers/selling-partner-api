@@ -12,7 +12,6 @@ final class ShippingLabel extends BaseDto
      * @param  string  $purchaseOrderNumber This field will contain the Purchase Order Number for this order.
      * @param  string  $labelFormat Format of the label.
      * @param  LabelData[]  $labelData Provides the details of the packages in this shipment.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,
@@ -20,8 +19,6 @@ final class ShippingLabel extends BaseDto
         public readonly PartyIdentification $shipFromParty,
         public readonly string $labelFormat,
         public readonly ?array $labelData = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

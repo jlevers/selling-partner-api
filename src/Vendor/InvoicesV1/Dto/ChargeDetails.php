@@ -10,14 +10,14 @@ final class ChargeDetails extends BaseDto
 
     /**
      * @param  string  $type Type of the charge applied.
-     * @param  string  $description Description of the charge.
      * @param  Money  $chargeAmount An amount of money, including units in the form of currency.
+     * @param  ?string  $description Description of the charge.
      * @param  TaxDetails[]  $taxDetails Tax amount details applied on this charge.
      */
     public function __construct(
         public readonly string $type,
+        public readonly Money $chargeAmount,
         public readonly ?string $description = null,
-        public readonly ?Money $chargeAmount = null,
         public readonly ?array $taxDetails = null,
     ) {
     }

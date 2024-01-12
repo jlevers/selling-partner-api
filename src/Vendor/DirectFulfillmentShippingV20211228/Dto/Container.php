@@ -11,21 +11,21 @@ final class Container extends BaseDto
     /**
      * @param  string  $containerType The type of container.
      * @param  string  $containerIdentifier The container identifier.
-     * @param  PackedItem[]  $packedItems A list of packed items.
-     * @param  string  $trackingNumber The tracking number.
-     * @param  string  $manifestId The manifest identifier.
-     * @param  string  $manifestDate The date of the manifest.
-     * @param  string  $shipMethod The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
-     * @param  string  $scacCode SCAC code required for NA VOC vendors only.
-     * @param  string  $carrier Carrier required for EU VOC vendors only.
-     * @param  int  $containerSequenceNumber An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
-     * @param  Dimensions  $dimensions Physical dimensional measurements of a container.
      * @param  Weight  $weight The weight.
+     * @param  ?string  $trackingNumber The tracking number.
+     * @param  ?string  $manifestId The manifest identifier.
+     * @param  ?string  $manifestDate The date of the manifest.
+     * @param  ?string  $shipMethod The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
+     * @param  ?string  $scacCode SCAC code required for NA VOC vendors only.
+     * @param  ?string  $carrier Carrier required for EU VOC vendors only.
+     * @param  ?int  $containerSequenceNumber An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
+     * @param  ?Dimensions  $dimensions Physical dimensional measurements of a container.
+     * @param  PackedItem[]  $packedItems A list of packed items.
      */
     public function __construct(
         public readonly string $containerType,
         public readonly string $containerIdentifier,
-        public readonly array $packedItems,
+        public readonly Weight $weight,
         public readonly ?string $trackingNumber = null,
         public readonly ?string $manifestId = null,
         public readonly ?string $manifestDate = null,
@@ -34,7 +34,7 @@ final class Container extends BaseDto
         public readonly ?string $carrier = null,
         public readonly ?int $containerSequenceNumber = null,
         public readonly ?Dimensions $dimensions = null,
-        public readonly ?Weight $weight = null,
+        public readonly ?array $packedItems = null,
     ) {
     }
 }

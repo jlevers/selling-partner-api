@@ -11,13 +11,10 @@ final class ShippingLabelList extends BaseDto
     /**
      * @param  ?Pagination  $pagination
      * @param  ShippingLabel[]  $shippingLabels
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,
         public readonly ?array $shippingLabels = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -10,7 +10,7 @@ final class PartyIdentification extends BaseDto
 
     /**
      * @param  string  $partyId Assigned Identification for the party.
-     * @param  Address  $address Address of the party.
+     * @param  ?Address  $address Address of the party.
      * @param  TaxRegistrationDetail[]  $taxRegistrationDetails Tax registration details of the entity.
      */
     public function __construct(

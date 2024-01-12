@@ -14,12 +14,12 @@ class Api extends BaseResource
     /**
      * @param  string  $createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  string  $createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string|null  $shipFromPartyId The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
-     * @param  string|null  $status Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
-     * @param  int|null  $limit The limit to the number of purchase orders returned.
-     * @param  string|null  $sortOrder Sort the list in ascending or descending order by order creation date.
-     * @param  string|null  $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
-     * @param  string|null  $includeDetails When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
+     * @param  ?string  $shipFromPartyId The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
+     * @param  ?string  $status Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
+     * @param  ?int  $limit The limit to the number of purchase orders returned.
+     * @param  ?string  $sortOrder Sort the list in ascending or descending order by order creation date.
+     * @param  ?string  $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
+     * @param  ?string  $includeDetails When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
      */
     public function getOrders(
         string $createdAfter,

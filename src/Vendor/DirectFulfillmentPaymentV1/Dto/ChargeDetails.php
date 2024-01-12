@@ -15,7 +15,7 @@ final class ChargeDetails extends BaseDto
      */
     public function __construct(
         public readonly string $type,
-        public readonly ?Money $chargeAmount = null,
+        public readonly Money $chargeAmount,
         public readonly ?array $taxDetails = null,
     ) {
     }

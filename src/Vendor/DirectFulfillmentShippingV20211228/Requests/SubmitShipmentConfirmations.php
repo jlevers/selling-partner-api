@@ -22,7 +22,7 @@ class SubmitShipmentConfirmations extends Request implements HasBody
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,
+        public SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,
     ) {
     }
 

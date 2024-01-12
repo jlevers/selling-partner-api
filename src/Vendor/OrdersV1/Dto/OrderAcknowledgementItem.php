@@ -17,7 +17,6 @@ final class OrderAcknowledgementItem extends BaseDto
      * @param  ?Money  $listPrice An amount of money, including units in the form of currency.
      * @param  ?string  $discountMultiplier The discount multiplier that should be applied to the price if a vendor sells books with a list price. This is a multiplier factor to arrive at a final discounted price. A multiplier of .90 would be the factor if a 10% discount is given.
      * @param  OrderItemAcknowledgement[]  $itemAcknowledgements This is used to indicate acknowledged quantity.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ItemQuantity $orderedQuantity,
@@ -28,8 +27,6 @@ final class OrderAcknowledgementItem extends BaseDto
         public readonly ?Money $listPrice = null,
         public readonly ?string $discountMultiplier = null,
         public readonly ?array $itemAcknowledgements = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

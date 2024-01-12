@@ -24,7 +24,7 @@ class SubmitAcknowledgement extends Request implements HasBody
      * @param  SubmitAcknowledgementRequest  $submitAcknowledgementRequest The request schema for the submitAcknowledgement operation.
      */
     public function __construct(
-        protected SubmitAcknowledgementRequest $submitAcknowledgementRequest,
+        public SubmitAcknowledgementRequest $submitAcknowledgementRequest,
     ) {
     }
 

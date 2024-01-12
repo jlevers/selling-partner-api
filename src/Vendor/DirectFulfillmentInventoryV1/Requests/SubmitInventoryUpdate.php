@@ -26,7 +26,7 @@ class SubmitInventoryUpdate extends Request implements HasBody
      */
     public function __construct(
         protected string $warehouseId,
-        protected SubmitInventoryUpdateRequest $submitInventoryUpdateRequest,
+        public SubmitInventoryUpdateRequest $submitInventoryUpdateRequest,
     ) {
     }
 

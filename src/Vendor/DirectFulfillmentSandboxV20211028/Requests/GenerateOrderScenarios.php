@@ -25,7 +25,7 @@ class GenerateOrderScenarios extends Request implements HasBody
      * @param  GenerateOrderScenarioRequest  $generateOrderScenarioRequest The request body for the generateOrderScenarios operation.
      */
     public function __construct(
-        protected GenerateOrderScenarioRequest $generateOrderScenarioRequest,
+        public GenerateOrderScenarioRequest $generateOrderScenarioRequest,
     ) {
     }
 

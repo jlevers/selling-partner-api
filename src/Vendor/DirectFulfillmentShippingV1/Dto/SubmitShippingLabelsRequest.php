@@ -10,12 +10,9 @@ final class SubmitShippingLabelsRequest extends BaseDto
 
     /**
      * @param  ShippingLabelRequest[]  $shippingLabelRequests
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $shippingLabelRequests = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -24,7 +24,7 @@ class SubmitInvoices extends Request implements HasBody
      * @param  SubmitInvoicesRequest  $submitInvoicesRequest The request schema for the submitInvoices operation.
      */
     public function __construct(
-        protected SubmitInvoicesRequest $submitInvoicesRequest,
+        public SubmitInvoicesRequest $submitInvoicesRequest,
     ) {
     }
 

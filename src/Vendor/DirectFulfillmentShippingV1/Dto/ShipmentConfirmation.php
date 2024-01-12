@@ -13,7 +13,6 @@ final class ShipmentConfirmation extends BaseDto
      * @param  ShipmentDetails  $shipmentDetails Details about a shipment.
      * @param  Item[]  $items Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      * @param  Container[]  $containers A list of the packages in this shipment.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,
@@ -22,8 +21,6 @@ final class ShipmentConfirmation extends BaseDto
         public readonly PartyIdentification $shipFromParty,
         public readonly ?array $items = null,
         public readonly ?array $containers = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

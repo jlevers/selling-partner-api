@@ -7,8 +7,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ItemQuantity extends BaseDto
 {
     /**
-     * @param  int  $amount Acknowledged quantity. This value should not be zero.
-     * @param  string  $unitOfMeasure Unit of measure for the acknowledged quantity.
+     * @param  ?int  $amount Acknowledged quantity. This value should not be zero.
+     * @param  ?string  $unitOfMeasure Unit of measure for the acknowledged quantity.
      */
     public function __construct(
         public readonly ?int $amount = null,

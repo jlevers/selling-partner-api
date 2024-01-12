@@ -6,17 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class SubmitShipments extends BaseDto
 {
-	protected static array $complexArrayTypes = ['shipments' => [Shipment::class]];
+    protected static array $complexArrayTypes = ['shipments' => [Shipment::class]];
 
-
-	/**
-	 * @param Shipment[] $shipments
-	 * @param ?mixed $additionalProperties
-	 */
-	public function __construct(
-		public readonly ?array $shipments = null,
-		mixed ...$additionalProperties,
-	) {
-		parent::__construct(...$additionalProperties);
-	}
+    /**
+     * @param  Shipment[]  $shipments
+     */
+    public function __construct(
+        public readonly ?array $shipments = null,
+    ) {
+    }
 }

@@ -10,14 +10,14 @@ final class AllowanceDetails extends BaseDto
 
     /**
      * @param  string  $type Type of the allowance applied.
-     * @param  string  $description Description of the allowance.
      * @param  Money  $allowanceAmount An amount of money, including units in the form of currency.
-     * @param  TaxDetails[]  $taxDetails Tax amount details applied on this allowance.
+     * @param  ?string  $description Description of the allowance.
+     * @param  TaxDetails[]  $taxDetails Tax amount details applied on this charge.
      */
     public function __construct(
         public readonly string $type,
+        public readonly Money $allowanceAmount,
         public readonly ?string $description = null,
-        public readonly ?Money $allowanceAmount = null,
         public readonly ?array $taxDetails = null,
     ) {
     }

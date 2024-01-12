@@ -14,7 +14,6 @@ final class OrderItem extends BaseDto
      * @param  ?string  $vendorProductIdentifier The vendor selected product identification of the item.
      * @param  ?Money  $netCost An amount of money, including units in the form of currency.
      * @param  ?Money  $listPrice An amount of money, including units in the form of currency.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $itemSequenceNumber,
@@ -24,8 +23,6 @@ final class OrderItem extends BaseDto
         public readonly ?string $vendorProductIdentifier = null,
         public readonly ?Money $netCost = null,
         public readonly ?Money $listPrice = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

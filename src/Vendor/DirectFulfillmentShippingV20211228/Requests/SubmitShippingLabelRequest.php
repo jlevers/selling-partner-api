@@ -22,7 +22,7 @@ class SubmitShippingLabelRequest extends Request implements HasBody
     protected Method $method = Method::POST;
 
     public function __construct(
-        protected SubmitShippingLabelsRequest $submitShippingLabelsRequest,
+        public SubmitShippingLabelsRequest $submitShippingLabelsRequest,
     ) {
     }
 

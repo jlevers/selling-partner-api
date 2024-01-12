@@ -13,9 +13,9 @@ final class InventoryUpdate extends BaseDto
      * @param  ItemDetails[]  $items A list of inventory items with updated details, including quantity available.
      */
     public function __construct(
+        public readonly PartyIdentification $sellingParty,
         public readonly bool $isFullUpdate,
-        public readonly array $items,
-        public readonly ?PartyIdentification $sellingParty = null,
+        public readonly ?array $items = null,
     ) {
     }
 }

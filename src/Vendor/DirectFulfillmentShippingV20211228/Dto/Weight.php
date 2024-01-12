@@ -12,7 +12,7 @@ final class Weight extends BaseDto
      */
     public function __construct(
         public readonly string $unitOfMeasure,
-        public readonly ?string $value = null,
+        public readonly string $value,
     ) {
     }
 }

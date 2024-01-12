@@ -14,11 +14,9 @@ final class Transaction extends BaseDto
      * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
-        public readonly ?string $transactionId = null,
-        public readonly ?string $status = null,
+        public readonly string $transactionId,
+        public readonly string $status,
         public readonly ?array $errors = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -14,8 +14,8 @@ final class ShippingLabelRequest extends BaseDto
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,
-        public readonly ?PartyIdentification $sellingParty = null,
-        public readonly ?PartyIdentification $shipFromParty = null,
+        public readonly PartyIdentification $sellingParty,
+        public readonly PartyIdentification $shipFromParty,
         public readonly ?array $containers = null,
     ) {
     }

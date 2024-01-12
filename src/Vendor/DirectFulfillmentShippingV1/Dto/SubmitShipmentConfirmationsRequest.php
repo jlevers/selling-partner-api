@@ -10,12 +10,9 @@ final class SubmitShipmentConfirmationsRequest extends BaseDto
 
     /**
      * @param  ShipmentConfirmation[]  $shipmentConfirmations
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?array $shipmentConfirmations = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

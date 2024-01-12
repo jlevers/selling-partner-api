@@ -23,7 +23,6 @@ final class OrderDetails extends BaseDto
      * @param  ?string  $shipWindow Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      * @param  ?string  $deliveryWindow Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      * @param  OrderItem[]  $items A list of items in this purchase order.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $purchaseOrderDate,
@@ -40,8 +39,6 @@ final class OrderDetails extends BaseDto
         public readonly ?string $shipWindow = null,
         public readonly ?string $deliveryWindow = null,
         public readonly ?array $items = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

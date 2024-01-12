@@ -11,13 +11,10 @@ final class OrderListStatus extends BaseDto
     /**
      * @param  ?Pagination  $pagination
      * @param  OrderStatus[]  $ordersStatus
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?Pagination $pagination = null,
         public readonly ?array $ordersStatus = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

@@ -9,6 +9,7 @@ final class OrderList extends BaseDto
     protected static array $complexArrayTypes = ['orders' => [Order::class]];
 
     /**
+     * @param  ?Pagination  $pagination
      * @param  Order[]  $orders
      */
     public function __construct(

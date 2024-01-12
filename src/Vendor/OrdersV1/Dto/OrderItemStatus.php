@@ -15,7 +15,6 @@ final class OrderItemStatus extends BaseDto
      * @param  ?OrderedQuantity  $orderedQuantity Ordered quantity information.
      * @param  ?AcknowledgementStatus  $acknowledgementStatus Acknowledgement status information.
      * @param  ?ReceivingStatus  $receivingStatus Item receive status at the buyer's warehouse.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $itemSequenceNumber,
@@ -26,8 +25,6 @@ final class OrderItemStatus extends BaseDto
         public readonly ?OrderedQuantity $orderedQuantity = null,
         public readonly ?AcknowledgementStatus $acknowledgementStatus = null,
         public readonly ?ReceivingStatus $receivingStatus = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

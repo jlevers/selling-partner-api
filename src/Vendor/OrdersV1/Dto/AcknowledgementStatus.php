@@ -13,15 +13,12 @@ final class AcknowledgementStatus extends BaseDto
      * @param  ?ItemQuantity  $acceptedQuantity Details of quantity ordered.
      * @param  ?ItemQuantity  $rejectedQuantity Details of quantity ordered.
      * @param  AcknowledgementStatusDetails[]  $acknowledgementStatusDetails Details of item quantity confirmed.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?string $confirmationStatus = null,
         public readonly ?ItemQuantity $acceptedQuantity = null,
         public readonly ?ItemQuantity $rejectedQuantity = null,
         public readonly ?array $acknowledgementStatusDetails = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

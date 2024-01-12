@@ -4,7 +4,7 @@ namespace SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Dto;
 
 use Crescat\SaloonSdkGenerator\BaseDto;
 
-final class TaxDetails extends BaseDto
+final class TaxTotal extends BaseDto
 {
     protected static array $complexArrayTypes = ['taxLineItem' => [Object::class]];
 

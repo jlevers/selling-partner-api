@@ -10,16 +10,16 @@ final class ShipmentConfirmation extends BaseDto
 
     /**
      * @param  string  $purchaseOrderNumber Purchase order number corresponding to the shipment.
-     * @param  Item[]  $items Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      * @param  ShipmentDetails  $shipmentDetails Details about a shipment.
-     * @param  Container[]  $containers Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
+     * @param  Item[]  $items Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
+     * @param  Container[]  $containers A list of the packages in this shipment.
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,
-        public readonly array $items,
-        public readonly ?ShipmentDetails $shipmentDetails = null,
-        public readonly ?PartyIdentification $sellingParty = null,
-        public readonly ?PartyIdentification $shipFromParty = null,
+        public readonly ShipmentDetails $shipmentDetails,
+        public readonly PartyIdentification $sellingParty,
+        public readonly PartyIdentification $shipFromParty,
+        public readonly ?array $items = null,
         public readonly ?array $containers = null,
     ) {
     }

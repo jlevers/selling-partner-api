@@ -12,7 +12,6 @@ final class LabelData extends BaseDto
      * @param  ?string  $trackingNumber Package tracking identifier from the shipping carrier.
      * @param  ?string  $shipMethod Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation.
      * @param  ?string  $shipMethodName Shipping method name for internal reference.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $content,
@@ -20,8 +19,6 @@ final class LabelData extends BaseDto
         public readonly ?string $trackingNumber = null,
         public readonly ?string $shipMethod = null,
         public readonly ?string $shipMethodName = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

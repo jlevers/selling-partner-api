@@ -14,7 +14,6 @@ final class OrderStatus extends BaseDto
      * @param  string  $purchaseOrderDate The date the purchase order was placed. Must be in ISO-8601 date/time format.
      * @param  ?string  $lastUpdatedDate The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
      * @param  OrderItemStatus[]  $itemStatus Detailed description of items order status.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,
@@ -24,8 +23,6 @@ final class OrderStatus extends BaseDto
         public readonly PartyIdentification $shipToParty,
         public readonly ?string $lastUpdatedDate = null,
         public readonly ?array $itemStatus = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

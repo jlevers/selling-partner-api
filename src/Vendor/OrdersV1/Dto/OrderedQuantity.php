@@ -11,13 +11,10 @@ final class OrderedQuantity extends BaseDto
     /**
      * @param  ?ItemQuantity  $orderedQuantity Details of quantity ordered.
      * @param  OrderedQuantityDetails[]  $orderedQuantityDetails Details of item quantity ordered.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly ?ItemQuantity $orderedQuantity = null,
         public readonly ?array $orderedQuantityDetails = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

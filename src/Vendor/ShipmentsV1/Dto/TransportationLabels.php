@@ -6,19 +6,15 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TransportationLabels extends BaseDto
 {
-	protected static array $complexArrayTypes = ['transportLabels' => [TransportLabel::class]];
+    protected static array $complexArrayTypes = ['transportLabels' => [TransportLabel::class]];
 
-
-	/**
-	 * @param ?Pagination $pagination
-	 * @param TransportLabel[] $transportLabels
-	 * @param ?mixed $additionalProperties
-	 */
-	public function __construct(
-		public readonly ?Pagination $pagination = null,
-		public readonly ?array $transportLabels = null,
-		mixed ...$additionalProperties,
-	) {
-		parent::__construct(...$additionalProperties);
-	}
+    /**
+     * @param  ?Pagination  $pagination
+     * @param  TransportLabel[]  $transportLabels
+     */
+    public function __construct(
+        public readonly ?Pagination $pagination = null,
+        public readonly ?array $transportLabels = null,
+    ) {
+    }
 }

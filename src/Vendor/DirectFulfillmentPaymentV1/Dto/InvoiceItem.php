@@ -13,23 +13,23 @@ final class InvoiceItem extends BaseDto
 
     /**
      * @param  string  $itemSequenceNumber Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
-     * @param  string  $purchaseOrderNumber The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-     * @param  string  $buyerProductIdentifier Buyer's standard identification number (ASIN) of an item.
-     * @param  string  $vendorProductIdentifier The vendor selected product identification of the item.
      * @param  ItemQuantity  $invoicedQuantity Details of item quantity.
      * @param  Money  $netCost An amount of money, including units in the form of currency.
-     * @param  string  $vendorOrderNumber The vendor's order number for this order.
-     * @param  string  $hsnCode Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
+     * @param  string  $purchaseOrderNumber The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
+     * @param  ?string  $buyerProductIdentifier Buyer's standard identification number (ASIN) of an item.
+     * @param  ?string  $vendorProductIdentifier The vendor selected product identification of the item.
+     * @param  ?string  $vendorOrderNumber The vendor's order number for this order.
+     * @param  ?string  $hsnCode Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
      * @param  TaxDetail[]  $taxDetails Individual tax details per line item.
-     * @param  ChargeDetails[]  $chargeDetails Individual charge details per line item.
+     * @param  ChargeDetails[]  $chargeDetails Total charge amount details for all line items.
      */
     public function __construct(
         public readonly string $itemSequenceNumber,
+        public readonly ItemQuantity $invoicedQuantity,
+        public readonly Money $netCost,
         public readonly string $purchaseOrderNumber,
         public readonly ?string $buyerProductIdentifier = null,
         public readonly ?string $vendorProductIdentifier = null,
-        public readonly ?ItemQuantity $invoicedQuantity = null,
-        public readonly ?Money $netCost = null,
         public readonly ?string $vendorOrderNumber = null,
         public readonly ?string $hsnCode = null,
         public readonly ?array $taxDetails = null,

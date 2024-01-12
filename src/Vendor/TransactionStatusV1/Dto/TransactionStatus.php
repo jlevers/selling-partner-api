@@ -7,7 +7,7 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class TransactionStatus extends BaseDto
 {
     /**
-     * @param  Transaction  $transactionStatus The transaction status.
+     * @param  ?Transaction  $transactionStatus The transaction status.
      */
     public function __construct(
         public readonly ?Transaction $transactionStatus = null,

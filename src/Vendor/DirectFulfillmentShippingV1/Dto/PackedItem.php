@@ -11,15 +11,12 @@ final class PackedItem extends BaseDto
      * @param  ItemQuantity  $packedQuantity Details of item quantity.
      * @param  ?string  $buyerProductIdentifier Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
      * @param  ?string  $vendorProductIdentifier The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly int $itemSequenceNumber,
         public readonly ItemQuantity $packedQuantity,
         public readonly ?string $buyerProductIdentifier = null,
         public readonly ?string $vendorProductIdentifier = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

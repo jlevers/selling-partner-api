@@ -11,15 +11,12 @@ final class ShippingLabelRequest extends BaseDto
     /**
      * @param  string  $purchaseOrderNumber Purchase order number of the order for which to create a shipping label.
      * @param  Container[]  $containers A list of the packages in this shipment.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,
         public readonly PartyIdentification $sellingParty,
         public readonly PartyIdentification $shipFromParty,
         public readonly ?array $containers = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

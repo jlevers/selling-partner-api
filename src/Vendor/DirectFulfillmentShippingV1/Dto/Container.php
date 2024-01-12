@@ -21,7 +21,6 @@ final class Container extends BaseDto
      * @param  ?int  $containerSequenceNumber An integer that must be submitted for multi-box shipments only, where one item may come in separate packages.
      * @param  ?Dimensions  $dimensions Physical dimensional measurements of a container.
      * @param  PackedItem[]  $packedItems A list of packed items.
-     * @param  ?mixed  $additionalProperties
      */
     public function __construct(
         public readonly string $containerType,
@@ -36,8 +35,6 @@ final class Container extends BaseDto
         public readonly ?int $containerSequenceNumber = null,
         public readonly ?Dimensions $dimensions = null,
         public readonly ?array $packedItems = null,
-        mixed ...$additionalProperties,
     ) {
-        parent::__construct(...$additionalProperties);
     }
 }

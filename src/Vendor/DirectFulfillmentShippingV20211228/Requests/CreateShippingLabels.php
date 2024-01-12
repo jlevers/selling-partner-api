@@ -27,7 +27,7 @@ class CreateShippingLabels extends Request implements HasBody
      */
     public function __construct(
         protected string $purchaseOrderNumber,
-        protected CreateShippingLabelsRequest $createShippingLabelsRequest,
+        public CreateShippingLabelsRequest $createShippingLabelsRequest,
     ) {
     }
 

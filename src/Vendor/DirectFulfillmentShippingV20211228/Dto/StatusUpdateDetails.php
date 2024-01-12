@@ -12,14 +12,14 @@ final class StatusUpdateDetails extends BaseDto
      * @param  string  $reasonCode Provides a reason code for the status of the package that will provide additional information about the transportation status.
      * @param  string  $statusDateTime The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      * @param  Address  $statusLocationAddress Address of the party.
-     * @param  ShipmentSchedule  $shipmentSchedule Details about the estimated delivery window.
+     * @param  ?ShipmentSchedule  $shipmentSchedule Details about the estimated delivery window.
      */
     public function __construct(
         public readonly string $trackingNumber,
         public readonly string $statusCode,
         public readonly string $reasonCode,
         public readonly string $statusDateTime,
-        public readonly ?Address $statusLocationAddress = null,
+        public readonly Address $statusLocationAddress,
         public readonly ?ShipmentSchedule $shipmentSchedule = null,
     ) {
     }

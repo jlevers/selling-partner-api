@@ -6,6 +6,16 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class InboundShipmentItem extends BaseDto
 {
+    protected static array $attributeMap = [
+        'sellerSku' => 'SellerSKU',
+        'quantityShipped' => 'QuantityShipped',
+        'shipmentId' => 'ShipmentId',
+        'fulfillmentNetworkSku' => 'FulfillmentNetworkSKU',
+        'quantityReceived' => 'QuantityReceived',
+        'quantityInCase' => 'QuantityInCase',
+        'releaseDate' => 'ReleaseDate',
+    ];
+
     protected static array $complexArrayTypes = ['prepDetailsList' => [PrepDetails::class]];
 
     /**

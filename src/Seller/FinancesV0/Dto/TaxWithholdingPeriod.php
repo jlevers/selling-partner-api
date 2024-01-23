@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TaxWithholdingPeriod extends BaseDto
 {
+    protected static array $attributeMap = ['startDate' => 'StartDate', 'endDate' => 'EndDate'];
+
     /**
      * @param  ?string  $startDate
      * @param  ?string  $endDate

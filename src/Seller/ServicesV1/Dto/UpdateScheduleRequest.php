@@ -12,7 +12,7 @@ final class UpdateScheduleRequest extends BaseDto
      * @param  AvailabilityRecord[]  $schedules List of `AvailabilityRecord`s to represent the capacity of a resource over a time range.
      */
     public function __construct(
-        public readonly ?array $schedules = null,
+        public readonly array $schedules,
     ) {
     }
 }

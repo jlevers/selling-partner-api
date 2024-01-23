@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ListFinancialEventGroupsPayload extends BaseDto
 {
+    protected static array $attributeMap = ['nextToken' => 'NextToken'];
+
     protected static array $complexArrayTypes = ['financialEventGroupList' => [FinancialEventGroup::class]];
 
     /**

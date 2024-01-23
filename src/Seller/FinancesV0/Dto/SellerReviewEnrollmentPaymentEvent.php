@@ -6,6 +6,15 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class SellerReviewEnrollmentPaymentEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'postedDate' => 'PostedDate',
+        'enrollmentId' => 'EnrollmentId',
+        'parentAsin' => 'ParentASIN',
+        'feeComponent' => 'FeeComponent',
+        'chargeComponent' => 'ChargeComponent',
+        'totalAmount' => 'TotalAmount',
+    ];
+
     /**
      * @param  ?string  $postedDate
      * @param  ?string  $enrollmentId An enrollment identifier.

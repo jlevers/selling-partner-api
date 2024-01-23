@@ -27,7 +27,7 @@ class GetCatalogItem extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['marketplaceId' => $this->marketplaceId]);
+        return array_filter(['MarketplaceId' => $this->marketplaceId]);
     }
 
     public function resolveEndpoint(): string

@@ -13,7 +13,7 @@ final class CompetitiveSummaryBatchResponse extends BaseResponse
      * @param  CompetitiveSummaryResponse[]  $responses The response list of the `competitiveSummaryBatch` operation.
      */
     public function __construct(
-        public readonly ?array $responses = null,
+        public readonly array $responses,
     ) {
     }
 }

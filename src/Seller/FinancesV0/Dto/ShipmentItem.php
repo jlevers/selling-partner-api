@@ -6,6 +6,15 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ShipmentItem extends BaseDto
 {
+    protected static array $attributeMap = [
+        'sellerSku' => 'SellerSKU',
+        'orderItemId' => 'OrderItemId',
+        'orderAdjustmentItemId' => 'OrderAdjustmentItemId',
+        'quantityShipped' => 'QuantityShipped',
+        'costOfPointsGranted' => 'CostOfPointsGranted',
+        'costOfPointsReturned' => 'CostOfPointsReturned',
+    ];
+
     protected static array $complexArrayTypes = [
         'itemChargeList' => [ChargeComponent::class],
         'itemChargeAdjustmentList' => [ChargeComponent::class],

@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ServiceUploadDocument extends BaseDto
 {
+    protected static array $attributeMap = ['contentMd5' => 'contentMD5'];
+
     /**
      * @param  string  $contentType The content type of the to-be-uploaded file
      * @param  float  $contentLength The content length of the to-be-uploaded file

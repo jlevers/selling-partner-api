@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class SkuPrepInstructions extends BaseDto
 {
+    protected static array $attributeMap = [
+        'sellerSku' => 'SellerSKU',
+        'asin' => 'ASIN',
+        'barcodeInstruction' => 'BarcodeInstruction',
+        'prepGuidance' => 'PrepGuidance',
+    ];
+
     protected static array $complexArrayTypes = ['amazonPrepFeesDetailsList' => [AmazonPrepFeesDetails::class]];
 
     /**

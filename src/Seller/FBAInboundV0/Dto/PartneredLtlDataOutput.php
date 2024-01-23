@@ -6,6 +6,23 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PartneredLtlDataOutput extends BaseDto
 {
+    protected static array $attributeMap = [
+        'contact' => 'Contact',
+        'boxCount' => 'BoxCount',
+        'freightReadyDate' => 'FreightReadyDate',
+        'totalWeight' => 'TotalWeight',
+        'previewPickupDate' => 'PreviewPickupDate',
+        'previewDeliveryDate' => 'PreviewDeliveryDate',
+        'previewFreightClass' => 'PreviewFreightClass',
+        'amazonReferenceId' => 'AmazonReferenceId',
+        'isBillOfLadingAvailable' => 'IsBillOfLadingAvailable',
+        'carrierName' => 'CarrierName',
+        'sellerFreightClass' => 'SellerFreightClass',
+        'sellerDeclaredValue' => 'SellerDeclaredValue',
+        'amazonCalculatedValue' => 'AmazonCalculatedValue',
+        'partneredEstimate' => 'PartneredEstimate',
+    ];
+
     protected static array $complexArrayTypes = ['palletList' => [Pallet::class]];
 
     /**

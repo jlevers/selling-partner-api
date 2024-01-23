@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class CommonTransportResult extends BaseDto
 {
+    protected static array $attributeMap = ['transportResult' => 'TransportResult'];
+
     /**
      * @param  ?TransportResult  $transportResult The workflow status for a shipment with an Amazon-partnered carrier.
      */

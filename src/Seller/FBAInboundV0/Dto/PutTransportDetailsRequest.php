@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PutTransportDetailsRequest extends BaseDto
 {
+    protected static array $attributeMap = [
+        'isPartnered' => 'IsPartnered',
+        'shipmentType' => 'ShipmentType',
+        'transportDetails' => 'TransportDetails',
+    ];
+
     /**
      * @param  bool  $isPartnered Indicates whether a putTransportDetails request is for an Amazon-partnered carrier.
      * @param  string  $shipmentType Specifies the carrier shipment type in a putTransportDetails request.

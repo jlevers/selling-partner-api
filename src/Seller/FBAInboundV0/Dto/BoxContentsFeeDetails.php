@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class BoxContentsFeeDetails extends BaseDto
 {
+    protected static array $attributeMap = [
+        'totalUnits' => 'TotalUnits',
+        'feePerUnit' => 'FeePerUnit',
+        'totalFee' => 'TotalFee',
+    ];
+
     /**
      * @param  ?int  $totalUnits The item quantity.
      * @param  ?Amount  $feePerUnit The monetary value.

@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TransportResult extends BaseDto
 {
+    protected static array $attributeMap = [
+        'transportStatus' => 'TransportStatus',
+        'errorCode' => 'ErrorCode',
+        'errorDescription' => 'ErrorDescription',
+    ];
+
     /**
      * @param  string  $transportStatus Indicates the status of the Amazon-partnered carrier shipment.
      * @param  ?string  $errorCode An error code that identifies the type of error that occured.

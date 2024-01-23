@@ -36,12 +36,12 @@ class GetPricing extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'marketplaceId' => $this->marketplaceId,
-            'itemType' => $this->itemType,
-            'asins' => $this->asins,
-            'skus' => $this->skus,
-            'itemCondition' => $this->itemCondition,
-            'offerType' => $this->offerType,
+            'MarketplaceId' => $this->marketplaceId,
+            'ItemType' => $this->itemType,
+            'Asins' => $this->asins,
+            'Skus' => $this->skus,
+            'ItemCondition' => $this->itemCondition,
+            'OfferType' => $this->offerType,
         ]);
     }
 

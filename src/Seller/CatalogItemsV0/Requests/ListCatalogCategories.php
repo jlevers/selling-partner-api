@@ -29,7 +29,7 @@ class ListCatalogCategories extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['marketplaceId' => $this->marketplaceId, 'asin' => $this->asin, 'sellerSku' => $this->sellerSku]);
+        return array_filter(['MarketplaceId' => $this->marketplaceId, 'ASIN' => $this->asin, 'SellerSKU' => $this->sellerSku]);
     }
 
     public function resolveEndpoint(): string

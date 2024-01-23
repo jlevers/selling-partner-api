@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class OrderAddress extends BaseDto
 {
+    protected static array $attributeMap = [
+        'amazonOrderId' => 'AmazonOrderId',
+        'buyerCompanyName' => 'BuyerCompanyName',
+        'shippingAddress' => 'ShippingAddress',
+        'deliveryPreferences' => 'DeliveryPreferences',
+    ];
+
     /**
      * @param  string  $amazonOrderId An Amazon-defined order identifier, in 3-7-7 format.
      * @param  ?string  $buyerCompanyName Company Name of the Buyer.

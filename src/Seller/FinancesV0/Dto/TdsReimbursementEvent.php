@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TdsReimbursementEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'postedDate' => 'PostedDate',
+        'tdsOrderId' => 'TDSOrderId',
+        'reimbursedAmount' => 'ReimbursedAmount',
+    ];
+
     /**
      * @param  ?string  $postedDate
      * @param  ?string  $tdsOrderId The Tax-Deducted-at-Source (TDS) identifier.

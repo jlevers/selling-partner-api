@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TaxWithholdingEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'postedDate' => 'PostedDate',
+        'baseAmount' => 'BaseAmount',
+        'withheldAmount' => 'WithheldAmount',
+        'taxWithholdingPeriod' => 'TaxWithholdingPeriod',
+    ];
+
     /**
      * @param  ?string  $postedDate
      * @param  ?Currency  $baseAmount A currency type and amount.

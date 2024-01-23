@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ProductInfoDetail extends BaseDto
 {
+    protected static array $attributeMap = ['numberOfItems' => 'NumberOfItems'];
+
     /**
      * @param  ?int  $numberOfItems The total number of items that are included in the ASIN.
      */

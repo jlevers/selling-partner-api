@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class CompetitivePricingType extends BaseDto
 {
+    protected static array $attributeMap = [
+        'competitivePrices' => 'CompetitivePrices',
+        'numberOfOfferListings' => 'NumberOfOfferListings',
+        'tradeInValue' => 'TradeInValue',
+    ];
+
     protected static array $complexArrayTypes = [
         'competitivePrices' => [CompetitivePriceType::class],
         'numberOfOfferListings' => [OfferListingCountType::class],
@@ -17,8 +23,8 @@ final class CompetitivePricingType extends BaseDto
      * @param  ?MoneyType  $tradeInValue
      */
     public function __construct(
-        public readonly ?array $competitivePrices = null,
-        public readonly ?array $numberOfOfferListings = null,
+        public readonly array $competitivePrices,
+        public readonly array $numberOfOfferListings,
         public readonly ?MoneyType $tradeInValue = null,
     ) {
     }

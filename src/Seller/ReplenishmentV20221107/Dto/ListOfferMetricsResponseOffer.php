@@ -6,6 +6,16 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ListOfferMetricsResponseOffer extends BaseDto
 {
+    protected static array $attributeMap = [
+        'notDeliveredDueToOos' => 'notDeliveredDueToOOS',
+        'next30dayTotalSubscriptionsRevenue' => 'next30DayTotalSubscriptionsRevenue',
+        'next60dayTotalSubscriptionsRevenue' => 'next60DayTotalSubscriptionsRevenue',
+        'next90dayTotalSubscriptionsRevenue' => 'next90DayTotalSubscriptionsRevenue',
+        'next30dayShippedSubscriptionUnits' => 'next30DayShippedSubscriptionUnits',
+        'next60dayShippedSubscriptionUnits' => 'next60DayShippedSubscriptionUnits',
+        'next90dayShippedSubscriptionUnits' => 'next90DayShippedSubscriptionUnits',
+    ];
+
     /**
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN).
      * @param  ?float  $notDeliveredDueToOos The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the PERFORMANCE timePeriodType.

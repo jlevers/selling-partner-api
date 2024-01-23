@@ -6,6 +6,29 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class RelationshipType extends BaseDto
 {
+    protected static array $attributeMap = [
+        'identifiers' => 'Identifiers',
+        'color' => 'Color',
+        'edition' => 'Edition',
+        'flavor' => 'Flavor',
+        'golfClubFlex' => 'GolfClubFlex',
+        'handOrientation' => 'HandOrientation',
+        'hardwarePlatform' => 'HardwarePlatform',
+        'metalType' => 'MetalType',
+        'model' => 'Model',
+        'productTypeSubcategory' => 'ProductTypeSubcategory',
+        'ringSize' => 'RingSize',
+        'shaftMaterial' => 'ShaftMaterial',
+        'scent' => 'Scent',
+        'size' => 'Size',
+        'sizePerPearl' => 'SizePerPearl',
+        'golfClubLoft' => 'GolfClubLoft',
+        'totalDiamondWeight' => 'TotalDiamondWeight',
+        'totalGemWeight' => 'TotalGemWeight',
+        'packageQuantity' => 'PackageQuantity',
+        'itemDimensions' => 'ItemDimensions',
+    ];
+
     /**
      * @param  ?IdentifierType  $identifiers
      * @param  ?string  $color The color variation of the item.

@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class DeliveryPreferences extends BaseDto
 {
+    protected static array $attributeMap = [
+        'dropOffLocation' => 'DropOffLocation',
+        'preferredDeliveryTime' => 'PreferredDeliveryTime',
+        'otherAttributes' => 'OtherAttributes',
+        'addressInstructions' => 'AddressInstructions',
+    ];
+
     /**
      * @param  ?string  $dropOffLocation Drop-off location selected by the customer.
      * @param  ?PreferredDeliveryTime  $preferredDeliveryTime The time window when the delivery is preferred.

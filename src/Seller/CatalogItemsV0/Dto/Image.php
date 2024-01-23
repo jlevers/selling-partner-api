@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Image extends BaseDto
 {
+    protected static array $attributeMap = ['url' => 'URL', 'height' => 'Height', 'width' => 'Width'];
+
     /**
      * @param  ?string  $url The image URL attribute of the item.
      * @param  ?DecimalWithUnits  $height The decimal value and unit.

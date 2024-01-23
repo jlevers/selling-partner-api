@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PriceToEstimateFees extends BaseDto
 {
+    protected static array $attributeMap = [
+        'listingPrice' => 'ListingPrice',
+        'shipping' => 'Shipping',
+        'points' => 'Points',
+    ];
+
     /**
      * @param  ?MoneyType  $shipping
      * @param  ?Points  $points

@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ChargeRefundEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'postedDate' => 'PostedDate',
+        'reasonCode' => 'ReasonCode',
+        'reasonCodeDescription' => 'ReasonCodeDescription',
+    ];
+
     protected static array $complexArrayTypes = ['chargeRefundTransactions' => [ChargeRefundTransaction::class]];
 
     /**

@@ -6,6 +6,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class SubstitutionPreferences extends BaseDto
 {
+    protected static array $attributeMap = [
+        'substitutionType' => 'SubstitutionType',
+        'substitutionOptions' => 'SubstitutionOptions',
+    ];
+
     protected static array $complexArrayTypes = ['substitutionOptions' => [SubstitutionOption::class]];
 
     /**

@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Promotion extends BaseDto
 {
+    protected static array $attributeMap = [
+        'promotionType' => 'PromotionType',
+        'promotionId' => 'PromotionId',
+        'promotionAmount' => 'PromotionAmount',
+    ];
+
     /**
      * @param  ?string  $promotionType The type of promotion.
      * @param  ?string  $promotionId The seller-specified identifier for the promotion.

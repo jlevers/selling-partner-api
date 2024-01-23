@@ -6,6 +6,19 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Summary extends BaseDto
 {
+    protected static array $attributeMap = [
+        'totalOfferCount' => 'TotalOfferCount',
+        'numberOfOffers' => 'NumberOfOffers',
+        'lowestPrices' => 'LowestPrices',
+        'buyBoxPrices' => 'BuyBoxPrices',
+        'listPrice' => 'ListPrice',
+        'competitivePriceThreshold' => 'CompetitivePriceThreshold',
+        'suggestedLowerPricePlusShipping' => 'SuggestedLowerPricePlusShipping',
+        'salesRankings' => 'SalesRankings',
+        'buyBoxEligibleOffers' => 'BuyBoxEligibleOffers',
+        'offersAvailableTime' => 'OffersAvailableTime',
+    ];
+
     protected static array $complexArrayTypes = [
         'numberOfOffers' => [OfferCountType::class],
         'lowestPrices' => [LowestPriceType::class],

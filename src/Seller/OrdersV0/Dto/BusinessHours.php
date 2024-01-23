@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class BusinessHours extends BaseDto
 {
+    protected static array $attributeMap = ['dayOfWeek' => 'DayOfWeek', 'openIntervals' => 'OpenIntervals'];
+
     protected static array $complexArrayTypes = ['openIntervals' => [OpenInterval::class]];
 
     /**

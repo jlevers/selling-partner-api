@@ -6,6 +6,22 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Address extends BaseDto
 {
+    protected static array $attributeMap = [
+        'name' => 'Name',
+        'addressLine1' => 'AddressLine1',
+        'addressLine2' => 'AddressLine2',
+        'addressLine3' => 'AddressLine3',
+        'city' => 'City',
+        'county' => 'County',
+        'district' => 'District',
+        'stateOrRegion' => 'StateOrRegion',
+        'municipality' => 'Municipality',
+        'postalCode' => 'PostalCode',
+        'countryCode' => 'CountryCode',
+        'phone' => 'Phone',
+        'addressType' => 'AddressType',
+    ];
+
     /**
      * @param  string  $name The name.
      * @param  ?string  $addressLine1 The street address.

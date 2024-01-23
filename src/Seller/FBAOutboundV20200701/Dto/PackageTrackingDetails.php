@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PackageTrackingDetails extends BaseDto
 {
+    protected static array $attributeMap = ['carrierUrl' => 'carrierURL'];
+
     protected static array $complexArrayTypes = ['trackingEvents' => [TrackingEvent::class]];
 
     /**

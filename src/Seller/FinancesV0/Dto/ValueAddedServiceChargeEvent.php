@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ValueAddedServiceChargeEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'transactionType' => 'TransactionType',
+        'postedDate' => 'PostedDate',
+        'description' => 'Description',
+        'transactionAmount' => 'TransactionAmount',
+    ];
+
     /**
      * @param  ?string  $transactionType Indicates the type of transaction.
      *

@@ -6,6 +6,16 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class RemovalShipmentItemAdjustment extends BaseDto
 {
+    protected static array $attributeMap = [
+        'removalShipmentItemId' => 'RemovalShipmentItemId',
+        'taxCollectionModel' => 'TaxCollectionModel',
+        'fulfillmentNetworkSku' => 'FulfillmentNetworkSKU',
+        'adjustedQuantity' => 'AdjustedQuantity',
+        'revenueAdjustment' => 'RevenueAdjustment',
+        'taxAmountAdjustment' => 'TaxAmountAdjustment',
+        'taxWithheldAdjustment' => 'TaxWithheldAdjustment',
+    ];
+
     /**
      * @param  ?string  $removalShipmentItemId An identifier for an item in a removal shipment.
      * @param  ?string  $taxCollectionModel The tax collection model applied to the item.

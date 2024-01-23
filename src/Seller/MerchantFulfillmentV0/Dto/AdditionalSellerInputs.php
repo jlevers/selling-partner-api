@@ -6,6 +6,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class AdditionalSellerInputs extends BaseDto
 {
+    protected static array $attributeMap = [
+        'additionalInputFieldName' => 'AdditionalInputFieldName',
+        'additionalSellerInput' => 'AdditionalSellerInput',
+    ];
+
     /**
      * @param  string  $additionalInputFieldName The name of the additional input field.
      * @param  AdditionalSellerInput  $additionalSellerInput Additional information required to purchase shipping.

@@ -6,6 +6,20 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FinancialEventGroup extends BaseDto
 {
+    protected static array $attributeMap = [
+        'financialEventGroupId' => 'FinancialEventGroupId',
+        'processingStatus' => 'ProcessingStatus',
+        'fundTransferStatus' => 'FundTransferStatus',
+        'originalTotal' => 'OriginalTotal',
+        'convertedTotal' => 'ConvertedTotal',
+        'fundTransferDate' => 'FundTransferDate',
+        'traceId' => 'TraceId',
+        'accountTail' => 'AccountTail',
+        'beginningBalance' => 'BeginningBalance',
+        'financialEventGroupStart' => 'FinancialEventGroupStart',
+        'financialEventGroupEnd' => 'FinancialEventGroupEnd',
+    ];
+
     /**
      * @param  ?string  $financialEventGroupId A unique identifier for the financial event group.
      * @param  ?string  $processingStatus The processing status of the financial event group indicates whether the balance of the financial event group is settled.

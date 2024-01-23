@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class CreateShipmentRequest extends BaseDto
 {
+    protected static array $attributeMap = [
+        'shipmentRequestDetails' => 'ShipmentRequestDetails',
+        'shippingServiceId' => 'ShippingServiceId',
+        'shippingServiceOfferId' => 'ShippingServiceOfferId',
+        'hazmatType' => 'HazmatType',
+        'labelFormatOption' => 'LabelFormatOption',
+    ];
+
     protected static array $complexArrayTypes = ['shipmentLevelSellerInputsList' => [AdditionalSellerInputs::class]];
 
     /**

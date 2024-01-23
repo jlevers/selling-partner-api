@@ -7,7 +7,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use SellingPartnerApi\Seller\ServicesV1\Dto\SetAppointmentFulfillmentDataRequest;
-use SellingPartnerApi\Seller\ServicesV1\Responses\Errors;
+use SellingPartnerApi\Seller\ServicesV1\Responses\ErrorList;
 use SellingPartnerApi\Seller\ServicesV1\Responses\SetAppointmentFulfillmentData as SetAppointmentFulfillmentData1;
 
 /**

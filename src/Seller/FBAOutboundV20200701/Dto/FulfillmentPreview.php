@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FulfillmentPreview extends BaseDto
 {
+    protected static array $attributeMap = ['isCodCapable' => 'isCODCapable'];
+
     protected static array $complexArrayTypes = [
         'estimatedFees' => [Fee::class],
         'fulfillmentPreviewShipments' => [FulfillmentPreviewShipment::class],

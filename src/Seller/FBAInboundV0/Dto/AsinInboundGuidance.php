@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class AsinInboundGuidance extends BaseDto
 {
+    protected static array $attributeMap = ['asin' => 'ASIN', 'inboundGuidance' => 'InboundGuidance'];
+
     /**
      * @param  string  $asin The Amazon Standard Identification Number (ASIN) of the item.
      * @param  string  $inboundGuidance Specific inbound guidance for an item.

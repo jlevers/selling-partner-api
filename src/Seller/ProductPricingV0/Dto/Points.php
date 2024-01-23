@@ -6,6 +6,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Points extends BaseDto
 {
+    protected static array $attributeMap = [
+        'pointsNumber' => 'PointsNumber',
+        'pointsMonetaryValue' => 'PointsMonetaryValue',
+    ];
+
     /**
      * @param  ?int  $pointsNumber The number of points.
      * @param  ?MoneyType  $pointsMonetaryValue

@@ -6,6 +6,19 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class SolutionProviderCreditEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'providerTransactionType' => 'ProviderTransactionType',
+        'sellerOrderId' => 'SellerOrderId',
+        'marketplaceId' => 'MarketplaceId',
+        'marketplaceCountryCode' => 'MarketplaceCountryCode',
+        'sellerId' => 'SellerId',
+        'sellerStoreName' => 'SellerStoreName',
+        'providerId' => 'ProviderId',
+        'providerStoreName' => 'ProviderStoreName',
+        'transactionAmount' => 'TransactionAmount',
+        'transactionCreationDate' => 'TransactionCreationDate',
+    ];
+
     /**
      * @param  ?string  $providerTransactionType The transaction type.
      * @param  ?string  $sellerOrderId A seller-defined identifier for an order.

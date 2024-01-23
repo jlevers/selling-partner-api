@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class OfferCountType extends BaseDto
 {
+    protected static array $attributeMap = ['offerCount' => 'OfferCount'];
+
     /**
      * @param  ?string  $condition Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
      * @param  ?string  $fulfillmentChannel Indicates whether the item is fulfilled by Amazon or by the seller (merchant).

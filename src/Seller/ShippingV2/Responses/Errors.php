@@ -7,6 +7,8 @@ use SellingPartnerApi\Seller\ShippingV2\Dto\Error;
 
 final class Errors extends BaseResponse
 {
+    protected static array $attributeMap = ['Errors' => null];
+
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**

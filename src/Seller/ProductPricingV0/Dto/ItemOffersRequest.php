@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ItemOffersRequest extends BaseDto
 {
+    protected static array $attributeMap = [
+        'marketplaceId' => 'MarketplaceId',
+        'itemCondition' => 'ItemCondition',
+        'customerType' => 'CustomerType',
+    ];
+
     /**
      * @param  string  $uri The resource path of the operation you are calling in batch without any query parameters.
      *

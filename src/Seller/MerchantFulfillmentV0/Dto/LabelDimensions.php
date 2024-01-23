@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class LabelDimensions extends BaseDto
 {
+    protected static array $attributeMap = ['length' => 'Length', 'width' => 'Width', 'unit' => 'Unit'];
+
     /**
      * @param  float  $length A label dimension.
      * @param  float  $width A label dimension.

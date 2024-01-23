@@ -35,7 +35,7 @@ class CreateUploadDestinationForResource extends Request implements HasBody
 
     public function defaultQuery(): array
     {
-        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'contentMd5' => $this->contentMd5, 'contentType' => $this->contentType]);
+        return array_filter(['marketplaceIds' => $this->marketplaceIds, 'contentMD5' => $this->contentMd5, 'contentType' => $this->contentType]);
     }
 
     public function resolveEndpoint(): string

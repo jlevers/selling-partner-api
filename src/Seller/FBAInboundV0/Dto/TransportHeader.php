@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TransportHeader extends BaseDto
 {
+    protected static array $attributeMap = [
+        'sellerId' => 'SellerId',
+        'shipmentId' => 'ShipmentId',
+        'isPartnered' => 'IsPartnered',
+        'shipmentType' => 'ShipmentType',
+    ];
+
     /**
      * @param  string  $sellerId The Amazon seller identifier.
      * @param  string  $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.

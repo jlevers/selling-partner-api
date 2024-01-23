@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class GetSchemaResponse extends BaseDto
 {
+    protected static array $attributeMap = ['links' => '_links'];
+
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**

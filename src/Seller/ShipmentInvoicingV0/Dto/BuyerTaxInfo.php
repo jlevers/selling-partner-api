@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class BuyerTaxInfo extends BaseDto
 {
+    protected static array $attributeMap = ['companyLegalName' => 'CompanyLegalName', 'taxingRegion' => 'TaxingRegion'];
+
     protected static array $complexArrayTypes = ['taxClassifications' => [TaxClassification::class]];
 
     /**

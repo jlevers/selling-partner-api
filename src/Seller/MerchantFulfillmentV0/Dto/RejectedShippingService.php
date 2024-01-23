@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class RejectedShippingService extends BaseDto
 {
+    protected static array $attributeMap = [
+        'carrierName' => 'CarrierName',
+        'shippingServiceName' => 'ShippingServiceName',
+        'shippingServiceId' => 'ShippingServiceId',
+        'rejectionReasonCode' => 'RejectionReasonCode',
+        'rejectionReasonMessage' => 'RejectionReasonMessage',
+    ];
+
     /**
      * @param  string  $carrierName The rejected shipping carrier name. e.g. USPS
      * @param  string  $shippingServiceName The rejected shipping service localized name. e.g. FedEx Standard Overnight

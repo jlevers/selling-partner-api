@@ -32,10 +32,10 @@ class ListFinancialEvents extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'maxResultsPerPage' => $this->maxResultsPerPage,
-            'postedAfter' => $this->postedAfter,
-            'postedBefore' => $this->postedBefore,
-            'nextToken' => $this->nextToken,
+            'MaxResultsPerPage' => $this->maxResultsPerPage,
+            'PostedAfter' => $this->postedAfter,
+            'PostedBefore' => $this->postedBefore,
+            'NextToken' => $this->nextToken,
         ]);
     }
 

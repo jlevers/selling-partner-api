@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ListingOffersRequestParams extends BaseDto
 {
+    protected static array $attributeMap = [
+        'marketplaceId' => 'MarketplaceId',
+        'itemCondition' => 'ItemCondition',
+        'sellerSku' => 'SellerSKU',
+        'customerType' => 'CustomerType',
+    ];
+
     /**
      * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
      * @param  string  $itemCondition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.

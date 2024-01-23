@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class RegulatedInformationField extends BaseDto
 {
+    protected static array $attributeMap = [
+        'fieldId' => 'FieldId',
+        'fieldLabel' => 'FieldLabel',
+        'fieldType' => 'FieldType',
+        'fieldValue' => 'FieldValue',
+    ];
+
     /**
      * @param  string  $fieldId The unique identifier for the field.
      * @param  string  $fieldLabel The name for the field.

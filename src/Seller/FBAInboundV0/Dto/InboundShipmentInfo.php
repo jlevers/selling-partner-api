@@ -6,6 +6,19 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class InboundShipmentInfo extends BaseDto
 {
+    protected static array $attributeMap = [
+        'shipFromAddress' => 'ShipFromAddress',
+        'areCasesRequired' => 'AreCasesRequired',
+        'shipmentId' => 'ShipmentId',
+        'shipmentName' => 'ShipmentName',
+        'destinationFulfillmentCenterId' => 'DestinationFulfillmentCenterId',
+        'shipmentStatus' => 'ShipmentStatus',
+        'labelPrepType' => 'LabelPrepType',
+        'confirmedNeedByDate' => 'ConfirmedNeedByDate',
+        'boxContentsSource' => 'BoxContentsSource',
+        'estimatedBoxContentsFee' => 'EstimatedBoxContentsFee',
+    ];
+
     /**
      * @param  bool  $areCasesRequired Indicates whether or not an inbound shipment contains case-packed boxes. When AreCasesRequired = true for an inbound shipment, all items in the inbound shipment must be case packed.
      * @param  ?string  $shipmentId The shipment identifier submitted in the request.

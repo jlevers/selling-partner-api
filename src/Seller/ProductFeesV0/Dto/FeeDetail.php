@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FeeDetail extends BaseDto
 {
+    protected static array $attributeMap = [
+        'feeType' => 'FeeType',
+        'feeAmount' => 'FeeAmount',
+        'finalFee' => 'FinalFee',
+        'feePromotion' => 'FeePromotion',
+        'taxAmount' => 'TaxAmount',
+    ];
+
     protected static array $complexArrayTypes = ['includedFeeDetailList' => [IncludedFeeDetail::class]];
 
     /**

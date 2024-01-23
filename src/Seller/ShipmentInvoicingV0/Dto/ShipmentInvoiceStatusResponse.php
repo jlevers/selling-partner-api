@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ShipmentInvoiceStatusResponse extends BaseDto
 {
+    protected static array $attributeMap = ['shipments' => 'Shipments'];
+
     /**
      * @param  ?ShipmentInvoiceStatusInfo  $shipments The shipment invoice status information.
      */

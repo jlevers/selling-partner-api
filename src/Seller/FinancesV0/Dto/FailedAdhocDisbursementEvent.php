@@ -6,6 +6,16 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FailedAdhocDisbursementEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'fundsTransfersType' => 'FundsTransfersType',
+        'transferId' => 'TransferId',
+        'disbursementId' => 'DisbursementId',
+        'paymentDisbursementType' => 'PaymentDisbursementType',
+        'status' => 'Status',
+        'transferAmount' => 'TransferAmount',
+        'postedDate' => 'PostedDate',
+    ];
+
     /**
      * @param  ?string  $fundsTransfersType The type of fund transfer.
      *

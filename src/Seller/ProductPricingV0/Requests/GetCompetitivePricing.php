@@ -34,11 +34,11 @@ class GetCompetitivePricing extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'marketplaceId' => $this->marketplaceId,
-            'itemType' => $this->itemType,
-            'asins' => $this->asins,
-            'skus' => $this->skus,
-            'customerType' => $this->customerType,
+            'MarketplaceId' => $this->marketplaceId,
+            'ItemType' => $this->itemType,
+            'Asins' => $this->asins,
+            'Skus' => $this->skus,
+            'CustomerType' => $this->customerType,
         ]);
     }
 

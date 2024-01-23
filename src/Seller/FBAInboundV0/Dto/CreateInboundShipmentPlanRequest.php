@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class CreateInboundShipmentPlanRequest extends BaseDto
 {
+    protected static array $attributeMap = [
+        'shipFromAddress' => 'ShipFromAddress',
+        'labelPrepPreference' => 'LabelPrepPreference',
+        'shipToCountryCode' => 'ShipToCountryCode',
+        'shipToCountrySubdivisionCode' => 'ShipToCountrySubdivisionCode',
+    ];
+
     protected static array $complexArrayTypes = [
         'inboundShipmentPlanRequestItems' => [InboundShipmentPlanRequestItem::class],
     ];

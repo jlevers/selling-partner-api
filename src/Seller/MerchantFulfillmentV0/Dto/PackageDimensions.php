@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PackageDimensions extends BaseDto
 {
+    protected static array $attributeMap = [
+        'length' => 'Length',
+        'width' => 'Width',
+        'height' => 'Height',
+        'unit' => 'Unit',
+        'predefinedPackageDimensions' => 'PredefinedPackageDimensions',
+    ];
+
     /**
      * @param  ?float  $length
      * @param  ?float  $width

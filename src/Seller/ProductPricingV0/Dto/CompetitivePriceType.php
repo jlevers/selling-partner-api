@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class CompetitivePriceType extends BaseDto
 {
+    protected static array $attributeMap = ['competitivePriceId' => 'CompetitivePriceId', 'price' => 'Price'];
+
     /**
      * @param  string  $competitivePriceId The pricing model for each price that is returned.
      *

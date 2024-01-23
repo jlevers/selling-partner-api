@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ShippingOfferingFilter extends BaseDto
 {
+    protected static array $attributeMap = [
+        'includePackingSlipWithLabel' => 'IncludePackingSlipWithLabel',
+        'includeComplexShippingOptions' => 'IncludeComplexShippingOptions',
+        'carrierWillPickUp' => 'CarrierWillPickUp',
+        'deliveryExperience' => 'DeliveryExperience',
+    ];
+
     /**
      * @param  ?bool  $includePackingSlipWithLabel When true, include a packing slip with the label.
      * @param  ?bool  $includeComplexShippingOptions When true, include complex shipping options.

@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FbaLiquidationEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'postedDate' => 'PostedDate',
+        'originalRemovalOrderId' => 'OriginalRemovalOrderId',
+        'liquidationProceedsAmount' => 'LiquidationProceedsAmount',
+        'liquidationFeeAmount' => 'LiquidationFeeAmount',
+    ];
+
     /**
      * @param  ?string  $postedDate
      * @param  ?string  $originalRemovalOrderId The identifier for the original removal order.

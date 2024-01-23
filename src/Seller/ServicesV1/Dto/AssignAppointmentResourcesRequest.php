@@ -12,7 +12,7 @@ final class AssignAppointmentResourcesRequest extends BaseDto
      * @param  AppointmentResource[]  $resources List of resources that performs or performed job appointment fulfillment.
      */
     public function __construct(
-        public readonly ?array $resources = null,
+        public readonly array $resources,
     ) {
     }
 }

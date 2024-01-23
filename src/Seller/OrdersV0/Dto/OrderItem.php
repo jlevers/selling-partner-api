@@ -6,6 +6,47 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class OrderItem extends BaseDto
 {
+    protected static array $attributeMap = [
+        'asin' => 'ASIN',
+        'orderItemId' => 'OrderItemId',
+        'quantityOrdered' => 'QuantityOrdered',
+        'sellerSku' => 'SellerSKU',
+        'associatedItems' => 'AssociatedItems',
+        'title' => 'Title',
+        'quantityShipped' => 'QuantityShipped',
+        'productInfo' => 'ProductInfo',
+        'pointsGranted' => 'PointsGranted',
+        'itemPrice' => 'ItemPrice',
+        'shippingPrice' => 'ShippingPrice',
+        'itemTax' => 'ItemTax',
+        'shippingTax' => 'ShippingTax',
+        'shippingDiscount' => 'ShippingDiscount',
+        'shippingDiscountTax' => 'ShippingDiscountTax',
+        'promotionDiscount' => 'PromotionDiscount',
+        'promotionDiscountTax' => 'PromotionDiscountTax',
+        'promotionIds' => 'PromotionIds',
+        'codFee' => 'CODFee',
+        'codFeeDiscount' => 'CODFeeDiscount',
+        'isGift' => 'IsGift',
+        'conditionNote' => 'ConditionNote',
+        'conditionId' => 'ConditionId',
+        'conditionSubtypeId' => 'ConditionSubtypeId',
+        'scheduledDeliveryStartDate' => 'ScheduledDeliveryStartDate',
+        'scheduledDeliveryEndDate' => 'ScheduledDeliveryEndDate',
+        'priceDesignation' => 'PriceDesignation',
+        'taxCollection' => 'TaxCollection',
+        'serialNumberRequired' => 'SerialNumberRequired',
+        'isTransparency' => 'IsTransparency',
+        'iossNumber' => 'IossNumber',
+        'storeChainStoreId' => 'StoreChainStoreId',
+        'deemedResellerCategory' => 'DeemedResellerCategory',
+        'buyerInfo' => 'BuyerInfo',
+        'buyerRequestedCancel' => 'BuyerRequestedCancel',
+        'serialNumbers' => 'SerialNumbers',
+        'substitutionPreferences' => 'SubstitutionPreferences',
+        'measurement' => 'Measurement',
+    ];
+
     protected static array $complexArrayTypes = ['associatedItems' => [AssociatedItem::class]];
 
     /**

@@ -6,6 +6,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class DirectPayment extends BaseDto
 {
+    protected static array $attributeMap = [
+        'directPaymentType' => 'DirectPaymentType',
+        'directPaymentAmount' => 'DirectPaymentAmount',
+    ];
+
     /**
      * @param  ?string  $directPaymentType The type of payment.
      *

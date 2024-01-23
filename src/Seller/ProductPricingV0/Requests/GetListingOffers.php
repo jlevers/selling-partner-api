@@ -32,9 +32,9 @@ class GetListingOffers extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'marketplaceId' => $this->marketplaceId,
-            'itemCondition' => $this->itemCondition,
-            'customerType' => $this->customerType,
+            'MarketplaceId' => $this->marketplaceId,
+            'ItemCondition' => $this->itemCondition,
+            'CustomerType' => $this->customerType,
         ]);
     }
 

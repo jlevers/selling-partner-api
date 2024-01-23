@@ -6,6 +6,16 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class AdjustmentItem extends BaseDto
 {
+    protected static array $attributeMap = [
+        'quantity' => 'Quantity',
+        'perUnitAmount' => 'PerUnitAmount',
+        'totalAmount' => 'TotalAmount',
+        'sellerSku' => 'SellerSKU',
+        'fnSku' => 'FnSKU',
+        'productDescription' => 'ProductDescription',
+        'asin' => 'ASIN',
+    ];
+
     /**
      * @param  ?string  $quantity Represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement.
      * @param  ?Currency  $perUnitAmount A currency type and amount.

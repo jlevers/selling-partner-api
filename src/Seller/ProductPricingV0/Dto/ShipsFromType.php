@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ShipsFromType extends BaseDto
 {
+    protected static array $attributeMap = ['state' => 'State', 'country' => 'Country'];
+
     /**
      * @param  ?string  $state The state from where the item is shipped.
      * @param  ?string  $country The country from where the item is shipped.

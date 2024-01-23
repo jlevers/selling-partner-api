@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PrimeInformationType extends BaseDto
 {
+    protected static array $attributeMap = ['isPrime' => 'IsPrime', 'isNationalPrime' => 'IsNationalPrime'];
+
     /**
      * @param  bool  $isPrime Indicates whether the offer is an Amazon Prime offer.
      * @param  bool  $isNationalPrime Indicates whether the offer is an Amazon Prime offer throughout the entire marketplace where it is listed.

@@ -12,7 +12,7 @@ final class CompetitiveSummaryBatchRequest extends BaseDto
      * @param  CompetitiveSummaryRequest[]  $requests A batched list of `competitiveSummary` requests.
      */
     public function __construct(
-        public readonly ?array $requests = null,
+        public readonly array $requests,
     ) {
     }
 }

@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class GetSellingPartnerMetricsResponseMetric extends BaseDto
 {
+    protected static array $attributeMap = ['notDeliveredDueToOos' => 'notDeliveredDueToOOS'];
+
     /**
      * @param  ?float  $notDeliveredDueToOos The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the PERFORMANCE timePeriodType.
      * @param  ?float  $totalSubscriptionsRevenue The revenue generated from subscriptions over a period of time. Applicable for both the PERFORMANCE and FORECAST timePeriodType.

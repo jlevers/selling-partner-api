@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ImagingServicesFeeEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'imagingRequestBillingItemId' => 'ImagingRequestBillingItemID',
+        'asin' => 'ASIN',
+        'postedDate' => 'PostedDate',
+    ];
+
     protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];
 
     /**

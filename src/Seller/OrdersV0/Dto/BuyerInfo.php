@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class BuyerInfo extends BaseDto
 {
+    protected static array $attributeMap = [
+        'buyerEmail' => 'BuyerEmail',
+        'buyerName' => 'BuyerName',
+        'buyerCounty' => 'BuyerCounty',
+        'buyerTaxInfo' => 'BuyerTaxInfo',
+        'purchaseOrderNumber' => 'PurchaseOrderNumber',
+    ];
+
     /**
      * @param  ?string  $buyerEmail The anonymized email address of the buyer.
      * @param  ?string  $buyerName The buyer name or the recipient name.

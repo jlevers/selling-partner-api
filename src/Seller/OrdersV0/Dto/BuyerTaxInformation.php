@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class BuyerTaxInformation extends BaseDto
 {
+    protected static array $attributeMap = [
+        'buyerLegalCompanyName' => 'BuyerLegalCompanyName',
+        'buyerBusinessAddress' => 'BuyerBusinessAddress',
+        'buyerTaxRegistrationId' => 'BuyerTaxRegistrationId',
+        'buyerTaxOffice' => 'BuyerTaxOffice',
+    ];
+
     /**
      * @param  ?string  $buyerLegalCompanyName Business buyer's company legal name.
      * @param  ?string  $buyerBusinessAddress Business buyer's address.

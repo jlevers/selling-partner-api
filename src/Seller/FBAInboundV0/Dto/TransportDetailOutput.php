@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TransportDetailOutput extends BaseDto
 {
+    protected static array $attributeMap = [
+        'partneredSmallParcelData' => 'PartneredSmallParcelData',
+        'nonPartneredSmallParcelData' => 'NonPartneredSmallParcelData',
+        'partneredLtlData' => 'PartneredLtlData',
+        'nonPartneredLtlData' => 'NonPartneredLtlData',
+    ];
+
     /**
      * @param  ?PartneredSmallParcelDataOutput  $partneredSmallParcelData Information returned by Amazon about a Small Parcel shipment by an Amazon-partnered carrier.
      * @param  ?NonPartneredSmallParcelDataOutput  $nonPartneredSmallParcelData Information returned by Amazon about a Small Parcel shipment by a carrier that has not partnered with Amazon.

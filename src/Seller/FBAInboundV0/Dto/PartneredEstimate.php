@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PartneredEstimate extends BaseDto
 {
+    protected static array $attributeMap = [
+        'amount' => 'Amount',
+        'confirmDeadline' => 'ConfirmDeadline',
+        'voidDeadline' => 'VoidDeadline',
+    ];
+
     /**
      * @param  Amount  $amount The monetary value.
      * @param  ?string  $confirmDeadline

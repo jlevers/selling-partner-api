@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PreferredDeliveryTime extends BaseDto
 {
+    protected static array $attributeMap = ['businessHours' => 'BusinessHours', 'exceptionDates' => 'ExceptionDates'];
+
     protected static array $complexArrayTypes = [
         'businessHours' => [BusinessHours::class],
         'exceptionDates' => [ExceptionDates::class],

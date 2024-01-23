@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FeesEstimateByIdRequest extends BaseDto
 {
+    protected static array $attributeMap = [
+        'idType' => 'IdType',
+        'idValue' => 'IdValue',
+        'feesEstimateRequest' => 'FeesEstimateRequest',
+    ];
+
     /**
      * @param  string  $idType The type of product identifier used in a `FeesEstimateByIdRequest`.
      * @param  string  $idValue The item identifier.

@@ -14,7 +14,7 @@ final class FeaturedBuyingOption extends BaseDto
      */
     public function __construct(
         public readonly string $buyingOptionType,
-        public readonly ?array $segmentedFeaturedOffers = null,
+        public readonly array $segmentedFeaturedOffers,
     ) {
     }
 }

@@ -29,7 +29,7 @@ class ListFinancialEventsByOrderId extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['maxResultsPerPage' => $this->maxResultsPerPage, 'nextToken' => $this->nextToken]);
+        return array_filter(['MaxResultsPerPage' => $this->maxResultsPerPage, 'NextToken' => $this->nextToken]);
     }
 
     public function resolveEndpoint(): string

@@ -6,6 +6,23 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class OfferDetail extends BaseDto
 {
+    protected static array $attributeMap = [
+        'subCondition' => 'SubCondition',
+        'shippingTime' => 'ShippingTime',
+        'listingPrice' => 'ListingPrice',
+        'shipping' => 'Shipping',
+        'isFulfilledByAmazon' => 'IsFulfilledByAmazon',
+        'myOffer' => 'MyOffer',
+        'sellerId' => 'SellerId',
+        'conditionNotes' => 'ConditionNotes',
+        'sellerFeedbackRating' => 'SellerFeedbackRating',
+        'points' => 'Points',
+        'shipsFrom' => 'ShipsFrom',
+        'primeInformation' => 'PrimeInformation',
+        'isBuyBoxWinner' => 'IsBuyBoxWinner',
+        'isFeaturedMerchant' => 'IsFeaturedMerchant',
+    ];
+
     protected static array $complexArrayTypes = ['quantityDiscountPrices' => [QuantityDiscountPriceType::class]];
 
     /**

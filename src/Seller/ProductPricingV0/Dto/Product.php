@@ -6,12 +6,21 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Product extends BaseDto
 {
+    protected static array $attributeMap = [
+        'identifiers' => 'Identifiers',
+        'attributeSets' => 'AttributeSets',
+        'relationships' => 'Relationships',
+        'competitivePricing' => 'CompetitivePricing',
+        'salesRankings' => 'SalesRankings',
+        'offers' => 'Offers',
+    ];
+
     protected static array $complexArrayTypes = ['salesRankings' => [SalesRankType::class], 'offers' => [OfferType::class]];
 
     /**
      * @param  IdentifierType  $identifiers Specifies the identifiers used to uniquely identify an item.
-     * @param  ?mixed[][]  $attributeSets A list of product attributes if they are applicable to the product that is returned.
-     * @param  ?mixed[][]  $relationships A list that contains product variation information, if applicable.
+     * @param  ?mixed[]  $attributeSets
+     * @param  ?mixed[]  $relationships
      * @param  ?CompetitivePricingType  $competitivePricing Competitive pricing information for the item.
      * @param  SalesRankType[]  $salesRankings A list of sales rank information for the item, by category.
      * @param  OfferType[]  $offers A list of offers.

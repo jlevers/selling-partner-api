@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class BuyBoxPriceType extends BaseDto
 {
+    protected static array $attributeMap = [
+        'landedPrice' => 'LandedPrice',
+        'listingPrice' => 'ListingPrice',
+        'shipping' => 'Shipping',
+        'points' => 'Points',
+    ];
+
     /**
      * @param  string  $condition Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
      * @param  ?string  $offerType

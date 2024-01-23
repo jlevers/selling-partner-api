@@ -6,17 +6,15 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class UpdateShipmentStatusRequest extends BaseDto
 {
-    protected static array $complexArrayTypes = ['orderItems' => [OrderItems::class]];
-
     /**
      * @param  string  $marketplaceId The unobfuscated marketplace identifier.
      * @param  string  $shipmentStatus The shipment status to apply.
-     * @param  OrderItems[]  $orderItems For partial shipment status updates, the list of order items and quantities to be updated.
+     * @param  ?OrderItems  $orderItems
      */
     public function __construct(
         public readonly string $marketplaceId,
         public readonly string $shipmentStatus,
-        public readonly ?array $orderItems = null,
+        public readonly ?OrderItems $orderItems = null,
     ) {
     }
 }

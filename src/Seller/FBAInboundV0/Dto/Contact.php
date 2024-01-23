@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Contact extends BaseDto
 {
+    protected static array $attributeMap = ['name' => 'Name', 'phone' => 'Phone', 'email' => 'Email', 'fax' => 'Fax'];
+
     /**
      * @param  string  $name The name of the contact person.
      * @param  string  $phone The phone number of the contact person.

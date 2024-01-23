@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ChargeInstrument extends BaseDto
 {
+    protected static array $attributeMap = ['description' => 'Description', 'tail' => 'Tail', 'amount' => 'Amount'];
+
     /**
      * @param  ?string  $description A short description of the charge instrument.
      * @param  ?string  $tail The account tail (trailing digits) of the charge instrument.

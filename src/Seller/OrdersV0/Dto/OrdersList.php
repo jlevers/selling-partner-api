@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class OrdersList extends BaseDto
 {
+    protected static array $attributeMap = [
+        'orders' => 'Orders',
+        'nextToken' => 'NextToken',
+        'lastUpdatedBefore' => 'LastUpdatedBefore',
+        'createdBefore' => 'CreatedBefore',
+    ];
+
     protected static array $complexArrayTypes = ['orders' => [Order::class]];
 
     /**
@@ -15,7 +22,7 @@ final class OrdersList extends BaseDto
      * @param  ?string  $createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
      */
     public function __construct(
-        public readonly ?array $orders = null,
+        public readonly array $orders,
         public readonly ?string $nextToken = null,
         public readonly ?string $lastUpdatedBefore = null,
         public readonly ?string $createdBefore = null,

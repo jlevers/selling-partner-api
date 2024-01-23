@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class CapacityReservationBillingEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'transactionType' => 'TransactionType',
+        'postedDate' => 'PostedDate',
+        'description' => 'Description',
+        'transactionAmount' => 'TransactionAmount',
+    ];
+
     /**
      * @param  ?string  $transactionType Indicates the type of transaction. For example, FBA Inventory Fee
      * @param  ?string  $postedDate

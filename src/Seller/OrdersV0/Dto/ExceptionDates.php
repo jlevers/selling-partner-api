@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ExceptionDates extends BaseDto
 {
+    protected static array $attributeMap = [
+        'exceptionDate' => 'ExceptionDate',
+        'isOpen' => 'IsOpen',
+        'openIntervals' => 'OpenIntervals',
+    ];
+
     protected static array $complexArrayTypes = ['openIntervals' => [OpenInterval::class]];
 
     /**

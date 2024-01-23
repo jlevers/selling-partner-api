@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class RemovalShipmentAdjustmentEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'postedDate' => 'PostedDate',
+        'adjustmentEventId' => 'AdjustmentEventId',
+        'merchantOrderId' => 'MerchantOrderId',
+        'orderId' => 'OrderId',
+        'transactionType' => 'TransactionType',
+    ];
+
     protected static array $complexArrayTypes = [
         'removalShipmentItemAdjustmentList' => [RemovalShipmentItemAdjustment::class],
     ];

@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Item extends BaseDto
 {
+    protected static array $attributeMap = [
+        'orderItemId' => 'OrderItemId',
+        'quantity' => 'Quantity',
+        'itemWeight' => 'ItemWeight',
+        'itemDescription' => 'ItemDescription',
+    ];
+
     protected static array $complexArrayTypes = ['itemLevelSellerInputsList' => [AdditionalSellerInputs::class]];
 
     /**

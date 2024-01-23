@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TemporarilyUnavailableCarrier extends BaseDto
 {
+    protected static array $attributeMap = ['carrierName' => 'CarrierName'];
+
     /**
      * @param  string  $carrierName The name of the carrier.
      */

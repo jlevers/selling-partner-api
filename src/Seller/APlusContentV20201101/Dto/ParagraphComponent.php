@@ -12,7 +12,7 @@ final class ParagraphComponent extends BaseDto
      * @param  TextItem[]  $textList
      */
     public function __construct(
-        public readonly ?array $textList = null,
+        public readonly array $textList,
     ) {
     }
 }

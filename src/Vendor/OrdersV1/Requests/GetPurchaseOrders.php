@@ -57,7 +57,7 @@ class GetPurchaseOrders extends Request
             'changedAfter' => $this->changedAfter,
             'changedBefore' => $this->changedBefore,
             'poItemState' => $this->poItemState,
-            'isPoChanged' => $this->isPoChanged,
+            'isPOChanged' => $this->isPoChanged,
             'purchaseOrderState' => $this->purchaseOrderState,
             'orderingVendorCode' => $this->orderingVendorCode,
         ]);

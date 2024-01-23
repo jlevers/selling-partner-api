@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Price extends BaseDto
 {
+    protected static array $attributeMap = ['sellerSku' => 'SellerSKU', 'asin' => 'ASIN', 'product' => 'Product'];
+
     /**
      * @param  string  $status The status of the operation.
      * @param  ?string  $sellerSku The seller stock keeping unit (SKU) of the item.

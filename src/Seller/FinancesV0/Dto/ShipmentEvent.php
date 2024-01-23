@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ShipmentEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'amazonOrderId' => 'AmazonOrderId',
+        'sellerOrderId' => 'SellerOrderId',
+        'marketplaceName' => 'MarketplaceName',
+        'postedDate' => 'PostedDate',
+    ];
+
     protected static array $complexArrayTypes = [
         'orderChargeList' => [ChargeComponent::class],
         'orderChargeAdjustmentList' => [ChargeComponent::class],

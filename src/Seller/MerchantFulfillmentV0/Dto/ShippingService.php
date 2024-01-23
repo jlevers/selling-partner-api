@@ -6,6 +6,20 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ShippingService extends BaseDto
 {
+    protected static array $attributeMap = [
+        'shippingServiceName' => 'ShippingServiceName',
+        'carrierName' => 'CarrierName',
+        'shippingServiceId' => 'ShippingServiceId',
+        'shippingServiceOfferId' => 'ShippingServiceOfferId',
+        'shipDate' => 'ShipDate',
+        'rate' => 'Rate',
+        'shippingServiceOptions' => 'ShippingServiceOptions',
+        'requiresAdditionalSellerInputs' => 'RequiresAdditionalSellerInputs',
+        'earliestEstimatedDeliveryDate' => 'EarliestEstimatedDeliveryDate',
+        'latestEstimatedDeliveryDate' => 'LatestEstimatedDeliveryDate',
+        'availableShippingServiceOptions' => 'AvailableShippingServiceOptions',
+    ];
+
     protected static array $complexArrayTypes = ['availableFormatOptionsForLabel' => [LabelFormatOption::class]];
 
     /**

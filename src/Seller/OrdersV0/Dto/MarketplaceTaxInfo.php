@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class MarketplaceTaxInfo extends BaseDto
 {
+    protected static array $attributeMap = ['taxClassifications' => 'TaxClassifications'];
+
     protected static array $complexArrayTypes = ['taxClassifications' => [TaxClassification::class]];
 
     /**

@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class AvailableDeliveryExperienceOption extends BaseDto
 {
+    protected static array $attributeMap = ['deliveryExperienceOption' => 'DeliveryExperienceOption', 'charge' => 'Charge'];
+
     /**
      * @param  string  $deliveryExperienceOption The delivery confirmation level.
      * @param  CurrencyAmount  $charge Currency type and amount.

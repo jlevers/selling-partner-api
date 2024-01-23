@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class AdhocDisbursementEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'transactionType' => 'TransactionType',
+        'postedDate' => 'PostedDate',
+        'transactionId' => 'TransactionId',
+        'transactionAmount' => 'TransactionAmount',
+    ];
+
     /**
      * @param  ?string  $transactionType Indicates the type of transaction.
      *

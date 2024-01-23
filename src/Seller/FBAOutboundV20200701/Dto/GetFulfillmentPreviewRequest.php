@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class GetFulfillmentPreviewRequest extends BaseDto
 {
+    protected static array $attributeMap = ['includeCodFulfillmentPreview' => 'includeCODFulfillmentPreview'];
+
     protected static array $complexArrayTypes = [
         'items' => [GetFulfillmentPreviewItem::class],
         'featureConstraints' => [FeatureSettings::class],

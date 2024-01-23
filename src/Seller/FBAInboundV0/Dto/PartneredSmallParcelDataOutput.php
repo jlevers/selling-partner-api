@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PartneredSmallParcelDataOutput extends BaseDto
 {
+    protected static array $attributeMap = ['partneredEstimate' => 'PartneredEstimate'];
+
     protected static array $complexArrayTypes = ['packageList' => [PartneredSmallParcelPackageOutput::class]];
 
     /**

@@ -6,6 +6,19 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ShipmentItem extends BaseDto
 {
+    protected static array $attributeMap = [
+        'asin' => 'ASIN',
+        'sellerSku' => 'SellerSKU',
+        'orderItemId' => 'OrderItemId',
+        'title' => 'Title',
+        'quantityOrdered' => 'QuantityOrdered',
+        'itemPrice' => 'ItemPrice',
+        'shippingPrice' => 'ShippingPrice',
+        'giftWrapPrice' => 'GiftWrapPrice',
+        'shippingDiscount' => 'ShippingDiscount',
+        'promotionDiscount' => 'PromotionDiscount',
+    ];
+
     /**
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) of the item.
      * @param  ?string  $sellerSku The seller SKU of the item.

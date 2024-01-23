@@ -6,6 +6,16 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class InboundShipmentHeader extends BaseDto
 {
+    protected static array $attributeMap = [
+        'shipmentName' => 'ShipmentName',
+        'shipFromAddress' => 'ShipFromAddress',
+        'destinationFulfillmentCenterId' => 'DestinationFulfillmentCenterId',
+        'shipmentStatus' => 'ShipmentStatus',
+        'labelPrepPreference' => 'LabelPrepPreference',
+        'areCasesRequired' => 'AreCasesRequired',
+        'intendedBoxContentsSource' => 'IntendedBoxContentsSource',
+    ];
+
     /**
      * @param  string  $shipmentName The name for the shipment. Use a naming convention that helps distinguish between shipments over time, such as the date the shipment was created.
      * @param  string  $destinationFulfillmentCenterId The identifier for the fulfillment center to which the shipment will be shipped. Get this value from the InboundShipmentPlan object in the response returned by the createInboundShipmentPlan operation.

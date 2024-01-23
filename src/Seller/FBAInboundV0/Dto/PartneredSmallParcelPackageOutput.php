@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PartneredSmallParcelPackageOutput extends BaseDto
 {
+    protected static array $attributeMap = [
+        'dimensions' => 'Dimensions',
+        'weight' => 'Weight',
+        'carrierName' => 'CarrierName',
+        'trackingId' => 'TrackingId',
+        'packageStatus' => 'PackageStatus',
+    ];
+
     /**
      * @param  Dimensions  $dimensions The dimension values and unit of measurement.
      * @param  Weight  $weight The weight of the package.

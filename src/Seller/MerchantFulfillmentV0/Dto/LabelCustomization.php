@@ -6,6 +6,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class LabelCustomization extends BaseDto
 {
+    protected static array $attributeMap = [
+        'customTextForLabel' => 'CustomTextForLabel',
+        'standardIdForLabel' => 'StandardIdForLabel',
+    ];
+
     /**
      * @param  ?string  $customTextForLabel Custom text to print on the label.
      *

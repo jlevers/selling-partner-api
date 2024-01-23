@@ -27,7 +27,7 @@ class GetOrderItemsBuyerInfo extends Request
 
     public function defaultQuery(): array
     {
-        return array_filter(['nextToken' => $this->nextToken]);
+        return array_filter(['NextToken' => $this->nextToken]);
     }
 
     public function resolveEndpoint(): string

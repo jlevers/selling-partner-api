@@ -6,6 +6,18 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class AdditionalSellerInput extends BaseDto
 {
+    protected static array $attributeMap = [
+        'dataType' => 'DataType',
+        'valueAsString' => 'ValueAsString',
+        'valueAsBoolean' => 'ValueAsBoolean',
+        'valueAsInteger' => 'ValueAsInteger',
+        'valueAsTimestamp' => 'ValueAsTimestamp',
+        'valueAsAddress' => 'ValueAsAddress',
+        'valueAsWeight' => 'ValueAsWeight',
+        'valueAsDimension' => 'ValueAsDimension',
+        'valueAsCurrency' => 'ValueAsCurrency',
+    ];
+
     /**
      * @param  ?string  $dataType The data type of the additional information.
      * @param  ?string  $valueAsString The value when the data type is string.

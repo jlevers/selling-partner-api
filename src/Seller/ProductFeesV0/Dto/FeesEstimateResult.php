@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FeesEstimateResult extends BaseDto
 {
+    protected static array $attributeMap = [
+        'status' => 'Status',
+        'feesEstimateIdentifier' => 'FeesEstimateIdentifier',
+        'feesEstimate' => 'FeesEstimate',
+        'error' => 'Error',
+    ];
+
     /**
      * @param  ?string  $status The status of the fee request. Possible values: Success, ClientError, ServiceError.
      * @param  ?FeesEstimateIdentifier  $feesEstimateIdentifier An item identifier, marketplace, time of request, and other details that identify an estimate.

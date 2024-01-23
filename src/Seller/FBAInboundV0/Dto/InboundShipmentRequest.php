@@ -6,6 +6,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class InboundShipmentRequest extends BaseDto
 {
+    protected static array $attributeMap = [
+        'inboundShipmentHeader' => 'InboundShipmentHeader',
+        'marketplaceId' => 'MarketplaceId',
+    ];
+
     protected static array $complexArrayTypes = ['inboundShipmentItems' => [InboundShipmentItem::class]];
 
     /**

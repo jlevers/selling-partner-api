@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class SellerInputDefinition extends BaseDto
 {
+    protected static array $attributeMap = [
+        'isRequired' => 'IsRequired',
+        'dataType' => 'DataType',
+        'inputDisplayText' => 'InputDisplayText',
+        'storedValue' => 'StoredValue',
+        'inputTarget' => 'InputTarget',
+    ];
+
     protected static array $complexArrayTypes = ['constraints' => [Constraint::class]];
 
     /**

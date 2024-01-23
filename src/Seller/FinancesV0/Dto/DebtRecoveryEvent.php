@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class DebtRecoveryEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'debtRecoveryType' => 'DebtRecoveryType',
+        'recoveryAmount' => 'RecoveryAmount',
+        'overPaymentCredit' => 'OverPaymentCredit',
+    ];
+
     protected static array $complexArrayTypes = [
         'debtRecoveryItemList' => [DebtRecoveryItem::class],
         'chargeInstrumentList' => [ChargeInstrument::class],

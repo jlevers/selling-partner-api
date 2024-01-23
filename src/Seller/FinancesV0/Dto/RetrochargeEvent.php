@@ -6,6 +6,15 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class RetrochargeEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'retrochargeEventType' => 'RetrochargeEventType',
+        'amazonOrderId' => 'AmazonOrderId',
+        'postedDate' => 'PostedDate',
+        'baseTax' => 'BaseTax',
+        'shippingTax' => 'ShippingTax',
+        'marketplaceName' => 'MarketplaceName',
+    ];
+
     protected static array $complexArrayTypes = ['retrochargeTaxWithheldList' => [TaxWithheldComponent::class]];
 
     /**

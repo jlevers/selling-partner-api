@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class SafetReimbursementEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'postedDate' => 'PostedDate',
+        'safetClaimId' => 'SAFETClaimId',
+        'reimbursedAmount' => 'ReimbursedAmount',
+        'reasonCode' => 'ReasonCode',
+    ];
+
     protected static array $complexArrayTypes = ['safetReimbursementItemList' => [SafetReimbursementItem::class]];
 
     /**

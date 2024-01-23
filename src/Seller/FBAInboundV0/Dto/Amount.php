@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Amount extends BaseDto
 {
+    protected static array $attributeMap = ['currencyCode' => 'CurrencyCode', 'value' => 'Value'];
+
     /**
      * @param  string  $currencyCode The currency code.
      */

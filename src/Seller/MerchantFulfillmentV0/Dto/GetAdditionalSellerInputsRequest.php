@@ -6,6 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class GetAdditionalSellerInputsRequest extends BaseDto
 {
+    protected static array $attributeMap = [
+        'shippingServiceId' => 'ShippingServiceId',
+        'shipFromAddress' => 'ShipFromAddress',
+        'orderId' => 'OrderId',
+    ];
+
     /**
      * @param  string  $shippingServiceId An Amazon-defined shipping service identifier.
      * @param  Address  $shipFromAddress The postal address information.

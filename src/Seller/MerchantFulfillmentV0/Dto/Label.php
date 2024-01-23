@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Label extends BaseDto
 {
+    protected static array $attributeMap = [
+        'dimensions' => 'Dimensions',
+        'fileContents' => 'FileContents',
+        'customTextForLabel' => 'CustomTextForLabel',
+        'labelFormat' => 'LabelFormat',
+        'standardIdForLabel' => 'StandardIdForLabel',
+    ];
+
     /**
      * @param  LabelDimensions  $dimensions Dimensions for printing a shipping label.
      * @param  FileContents  $fileContents The document data and checksum.

@@ -6,6 +6,18 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PayWithAmazonEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'sellerOrderId' => 'SellerOrderId',
+        'transactionPostedDate' => 'TransactionPostedDate',
+        'businessObjectType' => 'BusinessObjectType',
+        'salesChannel' => 'SalesChannel',
+        'charge' => 'Charge',
+        'paymentAmountType' => 'PaymentAmountType',
+        'amountDescription' => 'AmountDescription',
+        'fulfillmentChannel' => 'FulfillmentChannel',
+        'storeName' => 'StoreName',
+    ];
+
     protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];
 
     /**

@@ -6,6 +6,17 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FeesEstimateIdentifier extends BaseDto
 {
+    protected static array $attributeMap = [
+        'marketplaceId' => 'MarketplaceId',
+        'sellerId' => 'SellerId',
+        'idType' => 'IdType',
+        'idValue' => 'IdValue',
+        'isAmazonFulfilled' => 'IsAmazonFulfilled',
+        'priceToEstimateFees' => 'PriceToEstimateFees',
+        'sellerInputIdentifier' => 'SellerInputIdentifier',
+        'optionalFulfillmentProgram' => 'OptionalFulfillmentProgram',
+    ];
+
     /**
      * @param  ?string  $marketplaceId A marketplace identifier.
      * @param  ?string  $sellerId The seller identifier.

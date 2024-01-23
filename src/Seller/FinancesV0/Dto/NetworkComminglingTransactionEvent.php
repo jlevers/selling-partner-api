@@ -6,6 +6,17 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class NetworkComminglingTransactionEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'transactionType' => 'TransactionType',
+        'postedDate' => 'PostedDate',
+        'netCoTransactionId' => 'NetCoTransactionID',
+        'swapReason' => 'SwapReason',
+        'asin' => 'ASIN',
+        'marketplaceId' => 'MarketplaceId',
+        'taxExclusiveAmount' => 'TaxExclusiveAmount',
+        'taxAmount' => 'TaxAmount',
+    ];
+
     /**
      * @param  ?string  $transactionType The type of network item swap.
      *

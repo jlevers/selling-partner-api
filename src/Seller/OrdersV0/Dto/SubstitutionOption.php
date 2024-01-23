@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class SubstitutionOption extends BaseDto
 {
+    protected static array $attributeMap = [
+        'asin' => 'ASIN',
+        'quantityOrdered' => 'QuantityOrdered',
+        'sellerSku' => 'SellerSKU',
+        'title' => 'Title',
+        'measurement' => 'Measurement',
+    ];
+
     /**
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) of the item.
      * @param  ?int  $quantityOrdered The number of items to be picked for this substitution option.

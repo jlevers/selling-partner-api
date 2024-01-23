@@ -6,6 +6,18 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class AffordabilityExpenseEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'taxTypeCgst' => 'TaxTypeCGST',
+        'taxTypeSgst' => 'TaxTypeSGST',
+        'taxTypeIgst' => 'TaxTypeIGST',
+        'amazonOrderId' => 'AmazonOrderId',
+        'postedDate' => 'PostedDate',
+        'marketplaceId' => 'MarketplaceId',
+        'transactionType' => 'TransactionType',
+        'baseExpense' => 'BaseExpense',
+        'totalExpense' => 'TotalExpense',
+    ];
+
     /**
      * @param  Currency  $taxTypeCgst A currency type and amount.
      * @param  Currency  $taxTypeSgst A currency type and amount.

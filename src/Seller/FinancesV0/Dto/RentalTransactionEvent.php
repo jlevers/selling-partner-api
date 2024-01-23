@@ -6,6 +6,16 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class RentalTransactionEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'amazonOrderId' => 'AmazonOrderId',
+        'rentalEventType' => 'RentalEventType',
+        'extensionLength' => 'ExtensionLength',
+        'postedDate' => 'PostedDate',
+        'marketplaceName' => 'MarketplaceName',
+        'rentalInitialValue' => 'RentalInitialValue',
+        'rentalReimbursement' => 'RentalReimbursement',
+    ];
+
     protected static array $complexArrayTypes = [
         'rentalChargeList' => [ChargeComponent::class],
         'rentalFeeList' => [FeeComponent::class],

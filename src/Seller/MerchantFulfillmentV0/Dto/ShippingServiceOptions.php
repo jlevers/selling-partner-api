@@ -6,6 +6,14 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ShippingServiceOptions extends BaseDto
 {
+    protected static array $attributeMap = [
+        'deliveryExperience' => 'DeliveryExperience',
+        'carrierWillPickUp' => 'CarrierWillPickUp',
+        'declaredValue' => 'DeclaredValue',
+        'carrierWillPickUpOption' => 'CarrierWillPickUpOption',
+        'labelFormat' => 'LabelFormat',
+    ];
+
     /**
      * @param  string  $deliveryExperience The delivery confirmation level.
      * @param  bool  $carrierWillPickUp When true, the carrier will pick up the package.

@@ -6,6 +6,15 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class OrderItemBuyerInfo extends BaseDto
 {
+    protected static array $attributeMap = [
+        'orderItemId' => 'OrderItemId',
+        'buyerCustomizedInfo' => 'BuyerCustomizedInfo',
+        'giftWrapPrice' => 'GiftWrapPrice',
+        'giftWrapTax' => 'GiftWrapTax',
+        'giftMessageText' => 'GiftMessageText',
+        'giftWrapLevel' => 'GiftWrapLevel',
+    ];
+
     /**
      * @param  string  $orderItemId An Amazon-defined order item identifier.
      * @param  ?BuyerCustomizedInfoDetail  $buyerCustomizedInfo Buyer information for custom orders from the Amazon Custom program.

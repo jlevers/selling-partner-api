@@ -38,13 +38,13 @@ class GetShipments extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'queryType' => $this->queryType,
-            'marketplaceId' => $this->marketplaceId,
-            'shipmentStatusList' => $this->shipmentStatusList,
-            'shipmentIdList' => $this->shipmentIdList,
-            'lastUpdatedAfter' => $this->lastUpdatedAfter,
-            'lastUpdatedBefore' => $this->lastUpdatedBefore,
-            'nextToken' => $this->nextToken,
+            'QueryType' => $this->queryType,
+            'MarketplaceId' => $this->marketplaceId,
+            'ShipmentStatusList' => $this->shipmentStatusList,
+            'ShipmentIdList' => $this->shipmentIdList,
+            'LastUpdatedAfter' => $this->lastUpdatedAfter,
+            'LastUpdatedBefore' => $this->lastUpdatedBefore,
+            'NextToken' => $this->nextToken,
         ]);
     }
 

@@ -32,10 +32,10 @@ class ListFinancialEventGroups extends Request
     public function defaultQuery(): array
     {
         return array_filter([
-            'maxResultsPerPage' => $this->maxResultsPerPage,
-            'financialEventGroupStartedBefore' => $this->financialEventGroupStartedBefore,
-            'financialEventGroupStartedAfter' => $this->financialEventGroupStartedAfter,
-            'nextToken' => $this->nextToken,
+            'MaxResultsPerPage' => $this->maxResultsPerPage,
+            'FinancialEventGroupStartedBefore' => $this->financialEventGroupStartedBefore,
+            'FinancialEventGroupStartedAfter' => $this->financialEventGroupStartedAfter,
+            'NextToken' => $this->nextToken,
         ]);
     }
 

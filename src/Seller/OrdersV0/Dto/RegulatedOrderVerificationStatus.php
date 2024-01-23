@@ -6,6 +6,15 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class RegulatedOrderVerificationStatus extends BaseDto
 {
+    protected static array $attributeMap = [
+        'status' => 'Status',
+        'requiresMerchantAction' => 'RequiresMerchantAction',
+        'validRejectionReasons' => 'ValidRejectionReasons',
+        'rejectionReason' => 'RejectionReason',
+        'reviewDate' => 'ReviewDate',
+        'externalReviewerId' => 'ExternalReviewerId',
+    ];
+
     protected static array $complexArrayTypes = ['validRejectionReasons' => [RejectionReason::class]];
 
     /**
@@ -19,7 +28,7 @@ final class RegulatedOrderVerificationStatus extends BaseDto
     public function __construct(
         public readonly string $status,
         public readonly bool $requiresMerchantAction,
-        public readonly ?array $validRejectionReasons = null,
+        public readonly array $validRejectionReasons,
         public readonly ?RejectionReason $rejectionReason = null,
         public readonly ?string $reviewDate = null,
         public readonly ?string $externalReviewerId = null,

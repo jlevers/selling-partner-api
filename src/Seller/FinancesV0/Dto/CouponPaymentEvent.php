@@ -6,6 +6,17 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class CouponPaymentEvent extends BaseDto
 {
+    protected static array $attributeMap = [
+        'postedDate' => 'PostedDate',
+        'couponId' => 'CouponId',
+        'sellerCouponDescription' => 'SellerCouponDescription',
+        'clipOrRedemptionCount' => 'ClipOrRedemptionCount',
+        'paymentEventId' => 'PaymentEventId',
+        'feeComponent' => 'FeeComponent',
+        'chargeComponent' => 'ChargeComponent',
+        'totalAmount' => 'TotalAmount',
+    ];
+
     /**
      * @param  ?string  $postedDate
      * @param  ?string  $couponId A coupon identifier.

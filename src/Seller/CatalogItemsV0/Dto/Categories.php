@@ -6,6 +6,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Categories extends BaseDto
 {
+    protected static array $attributeMap = [
+        'productCategoryId' => 'ProductCategoryId',
+        'productCategoryName' => 'ProductCategoryName',
+    ];
+
     /**
      * @param  ?string  $productCategoryId The identifier for the product category (or browse node).
      * @param  ?string  $productCategoryName The name of the product category (or browse node).

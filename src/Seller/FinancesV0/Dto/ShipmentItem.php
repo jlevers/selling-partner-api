@@ -11,6 +11,13 @@ final class ShipmentItem extends BaseDto
         'orderItemId' => 'OrderItemId',
         'orderAdjustmentItemId' => 'OrderAdjustmentItemId',
         'quantityShipped' => 'QuantityShipped',
+        'itemChargeList' => 'ItemChargeList',
+        'itemChargeAdjustmentList' => 'ItemChargeAdjustmentList',
+        'itemFeeList' => 'ItemFeeList',
+        'itemFeeAdjustmentList' => 'ItemFeeAdjustmentList',
+        'itemTaxWithheldList' => 'ItemTaxWithheldList',
+        'promotionList' => 'PromotionList',
+        'promotionAdjustmentList' => 'PromotionAdjustmentList',
         'costOfPointsGranted' => 'CostOfPointsGranted',
         'costOfPointsReturned' => 'CostOfPointsReturned',
     ];

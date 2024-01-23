@@ -10,6 +10,7 @@ final class AsinPrepInstructions extends BaseDto
         'asin' => 'ASIN',
         'barcodeInstruction' => 'BarcodeInstruction',
         'prepGuidance' => 'PrepGuidance',
+        'prepInstructionList' => 'PrepInstructionList',
     ];
 
     /**

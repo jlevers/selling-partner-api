@@ -10,7 +10,16 @@ final class ShipmentEvent extends BaseDto
         'amazonOrderId' => 'AmazonOrderId',
         'sellerOrderId' => 'SellerOrderId',
         'marketplaceName' => 'MarketplaceName',
+        'orderChargeList' => 'OrderChargeList',
+        'orderChargeAdjustmentList' => 'OrderChargeAdjustmentList',
+        'shipmentFeeList' => 'ShipmentFeeList',
+        'shipmentFeeAdjustmentList' => 'ShipmentFeeAdjustmentList',
+        'orderFeeList' => 'OrderFeeList',
+        'orderFeeAdjustmentList' => 'OrderFeeAdjustmentList',
+        'directPaymentList' => 'DirectPaymentList',
         'postedDate' => 'PostedDate',
+        'shipmentItemList' => 'ShipmentItemList',
+        'shipmentItemAdjustmentList' => 'ShipmentItemAdjustmentList',
     ];
 
     protected static array $complexArrayTypes = [

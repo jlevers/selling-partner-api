@@ -9,6 +9,7 @@ final class FeesEstimate extends BaseDto
     protected static array $attributeMap = [
         'timeOfFeesEstimation' => 'TimeOfFeesEstimation',
         'totalFeesEstimate' => 'TotalFeesEstimate',
+        'feeDetailList' => 'FeeDetailList',
     ];
 
     protected static array $complexArrayTypes = ['feeDetailList' => [FeeDetail::class]];

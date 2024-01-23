@@ -18,7 +18,7 @@ final class CreateShipmentRequest extends BaseDto
         public readonly string $clientReferenceId,
         public readonly Address $shipTo,
         public readonly Address $shipFrom,
-        public readonly ?array $containers = null,
+        public readonly array $containers,
     ) {
     }
 }

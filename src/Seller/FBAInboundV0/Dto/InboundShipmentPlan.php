@@ -11,6 +11,7 @@ final class InboundShipmentPlan extends BaseDto
         'destinationFulfillmentCenterId' => 'DestinationFulfillmentCenterId',
         'shipToAddress' => 'ShipToAddress',
         'labelPrepType' => 'LabelPrepType',
+        'items' => 'Items',
         'estimatedBoxContentsFee' => 'EstimatedBoxContentsFee',
     ];
 
@@ -28,7 +29,7 @@ final class InboundShipmentPlan extends BaseDto
         public readonly string $destinationFulfillmentCenterId,
         public readonly Address $shipToAddress,
         public readonly string $labelPrepType,
-        public readonly ?array $items = null,
+        public readonly array $items,
         public readonly ?BoxContentsFeeDetails $estimatedBoxContentsFee = null,
     ) {
     }

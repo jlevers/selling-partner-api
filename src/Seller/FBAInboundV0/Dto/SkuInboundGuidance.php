@@ -10,6 +10,7 @@ final class SkuInboundGuidance extends BaseDto
         'sellerSku' => 'SellerSKU',
         'asin' => 'ASIN',
         'inboundGuidance' => 'InboundGuidance',
+        'guidanceReasonList' => 'GuidanceReasonList',
     ];
 
     /**

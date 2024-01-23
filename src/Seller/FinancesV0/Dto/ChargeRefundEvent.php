@@ -10,6 +10,7 @@ final class ChargeRefundEvent extends BaseDto
         'postedDate' => 'PostedDate',
         'reasonCode' => 'ReasonCode',
         'reasonCodeDescription' => 'ReasonCodeDescription',
+        'chargeRefundTransactions' => 'ChargeRefundTransactions',
     ];
 
     protected static array $complexArrayTypes = ['chargeRefundTransactions' => [ChargeRefundTransaction::class]];

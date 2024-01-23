@@ -6,7 +6,7 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PartneredSmallParcelDataInput extends BaseDto
 {
-    protected static array $attributeMap = ['carrierName' => 'CarrierName'];
+    protected static array $attributeMap = ['packageList' => 'PackageList', 'carrierName' => 'CarrierName'];
 
     protected static array $complexArrayTypes = ['packageList' => [PartneredSmallParcelPackageInput::class]];
 

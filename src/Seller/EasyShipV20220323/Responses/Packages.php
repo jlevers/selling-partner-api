@@ -13,7 +13,7 @@ final class Packages extends BaseResponse
      * @param  Package[]  $packages
      */
     public function __construct(
-        public readonly ?array $packages = null,
+        public readonly array $packages,
     ) {
     }
 }

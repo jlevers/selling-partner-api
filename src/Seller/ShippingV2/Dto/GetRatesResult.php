@@ -15,7 +15,7 @@ final class GetRatesResult extends BaseDto
      */
     public function __construct(
         public readonly string $requestToken,
-        public readonly ?array $rates = null,
+        public readonly array $rates,
         public readonly ?array $ineligibleRates = null,
     ) {
     }

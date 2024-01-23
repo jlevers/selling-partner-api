@@ -11,6 +11,7 @@ final class SafetReimbursementEvent extends BaseDto
         'safetClaimId' => 'SAFETClaimId',
         'reimbursedAmount' => 'ReimbursedAmount',
         'reasonCode' => 'ReasonCode',
+        'safetReimbursementItemList' => 'SAFETReimbursementItemList',
     ];
 
     protected static array $complexArrayTypes = ['safetReimbursementItemList' => [SafetReimbursementItem::class]];

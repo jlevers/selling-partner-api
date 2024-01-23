@@ -14,7 +14,7 @@ final class SmallAndLightFeePreviewRequest extends BaseDto
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly ?array $items = null,
+        public readonly array $items,
     ) {
     }
 }

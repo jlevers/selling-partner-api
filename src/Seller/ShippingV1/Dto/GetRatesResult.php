@@ -12,7 +12,7 @@ final class GetRatesResult extends BaseDto
      * @param  ServiceRate[]  $serviceRates A list of service rates.
      */
     public function __construct(
-        public readonly ?array $serviceRates = null,
+        public readonly array $serviceRates,
     ) {
     }
 }

@@ -10,13 +10,13 @@ final class PurchaseShipmentResult extends BaseDto
 
     /**
      * @param  string  $shipmentId The unique shipment identifier provided by a shipping service.
-     * @param  Promise  $promise The time windows promised for pickup and delivery events.
      * @param  PackageDocumentDetail[]  $packageDocumentDetails A list of post-purchase details about a package that will be shipped using a shipping service.
+     * @param  Promise  $promise The time windows promised for pickup and delivery events.
      */
     public function __construct(
         public readonly string $shipmentId,
+        public readonly array $packageDocumentDetails,
         public readonly Promise $promise,
-        public readonly ?array $packageDocumentDetails = null,
     ) {
     }
 }

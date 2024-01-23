@@ -6,6 +6,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class GetInboundGuidanceResult extends BaseDto
 {
+    protected static array $attributeMap = [
+        'skuInboundGuidanceList' => 'SKUInboundGuidanceList',
+        'invalidSkuList' => 'InvalidSKUList',
+        'asinInboundGuidanceList' => 'ASINInboundGuidanceList',
+        'invalidAsinList' => 'InvalidASINList',
+    ];
+
     protected static array $complexArrayTypes = [
         'skuInboundGuidanceList' => [SkuInboundGuidance::class],
         'invalidSkuList' => [InvalidSku::class],

@@ -14,7 +14,7 @@ final class GetInventorySummariesResult extends BaseDto
      */
     public function __construct(
         public readonly Granularity $granularity,
-        public readonly ?array $inventorySummaries = null,
+        public readonly array $inventorySummaries,
     ) {
     }
 }

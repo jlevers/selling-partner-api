@@ -12,6 +12,7 @@ final class ShipmentDetail extends BaseDto
         'amazonShipmentId' => 'AmazonShipmentId',
         'purchaseDate' => 'PurchaseDate',
         'shippingAddress' => 'ShippingAddress',
+        'paymentMethodDetails' => 'PaymentMethodDetails',
         'marketplaceId' => 'MarketplaceId',
         'sellerId' => 'SellerId',
         'buyerName' => 'BuyerName',
@@ -19,6 +20,7 @@ final class ShipmentDetail extends BaseDto
         'buyerTaxInfo' => 'BuyerTaxInfo',
         'marketplaceTaxInfo' => 'MarketplaceTaxInfo',
         'sellerDisplayName' => 'SellerDisplayName',
+        'shipmentItems' => 'ShipmentItems',
     ];
 
     protected static array $complexArrayTypes = ['shipmentItems' => [ShipmentItem::class]];

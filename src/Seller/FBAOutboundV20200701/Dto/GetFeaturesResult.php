@@ -12,7 +12,7 @@ final class GetFeaturesResult extends BaseDto
      * @param  Feature[]  $features An array of features.
      */
     public function __construct(
-        public readonly ?array $features = null,
+        public readonly array $features,
     ) {
     }
 }

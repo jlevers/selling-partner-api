@@ -20,7 +20,7 @@ final class IneligibleRate extends BaseDto
         public readonly string $serviceName,
         public readonly string $carrierName,
         public readonly string $carrierId,
-        public readonly ?array $ineligibilityReasons = null,
+        public readonly array $ineligibilityReasons,
     ) {
     }
 }

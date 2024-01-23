@@ -15,7 +15,7 @@ final class ListHandoverSlotsResponse extends BaseResponse
      */
     public function __construct(
         public readonly string $amazonOrderId,
-        public readonly ?array $timeSlots = null,
+        public readonly array $timeSlots,
     ) {
     }
 }

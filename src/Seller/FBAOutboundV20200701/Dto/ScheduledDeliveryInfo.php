@@ -14,7 +14,7 @@ final class ScheduledDeliveryInfo extends BaseDto
      */
     public function __construct(
         public readonly string $deliveryTimeZone,
-        public readonly ?array $deliveryWindows = null,
+        public readonly array $deliveryWindows,
     ) {
     }
 }

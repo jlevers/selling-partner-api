@@ -16,7 +16,7 @@ final class SupportedDocumentSpecification extends BaseDto
     public function __construct(
         public readonly string $format,
         public readonly DocumentSize $size,
-        public readonly ?array $printOptions = null,
+        public readonly array $printOptions,
     ) {
     }
 }

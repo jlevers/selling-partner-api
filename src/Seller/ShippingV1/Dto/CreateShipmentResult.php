@@ -14,7 +14,7 @@ final class CreateShipmentResult extends BaseDto
      */
     public function __construct(
         public readonly string $shipmentId,
-        public readonly ?array $eligibleRates = null,
+        public readonly array $eligibleRates,
     ) {
     }
 }

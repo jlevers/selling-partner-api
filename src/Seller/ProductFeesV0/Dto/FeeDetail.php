@@ -12,6 +12,7 @@ final class FeeDetail extends BaseDto
         'finalFee' => 'FinalFee',
         'feePromotion' => 'FeePromotion',
         'taxAmount' => 'TaxAmount',
+        'includedFeeDetailList' => 'IncludedFeeDetailList',
     ];
 
     protected static array $complexArrayTypes = ['includedFeeDetailList' => [IncludedFeeDetail::class]];

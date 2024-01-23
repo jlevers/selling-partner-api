@@ -10,6 +10,8 @@ final class DebtRecoveryEvent extends BaseDto
         'debtRecoveryType' => 'DebtRecoveryType',
         'recoveryAmount' => 'RecoveryAmount',
         'overPaymentCredit' => 'OverPaymentCredit',
+        'debtRecoveryItemList' => 'DebtRecoveryItemList',
+        'chargeInstrumentList' => 'ChargeInstrumentList',
     ];
 
     protected static array $complexArrayTypes = [

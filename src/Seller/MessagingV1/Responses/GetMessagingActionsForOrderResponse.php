@@ -9,6 +9,8 @@ use SellingPartnerApi\Seller\MessagingV1\Dto\Links;
 
 final class GetMessagingActionsForOrderResponse extends BaseResponse
 {
+    protected static array $attributeMap = ['links' => '_links', 'embedded' => '_embedded'];
+
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**

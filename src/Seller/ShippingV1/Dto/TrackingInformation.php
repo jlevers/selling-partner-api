@@ -18,7 +18,7 @@ final class TrackingInformation extends BaseDto
         public readonly string $trackingId,
         public readonly TrackingSummary $summary,
         public readonly string $promisedDeliveryDate,
-        public readonly ?array $eventHistory = null,
+        public readonly array $eventHistory,
     ) {
     }
 }

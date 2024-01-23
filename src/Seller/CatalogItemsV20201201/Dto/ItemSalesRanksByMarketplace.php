@@ -14,7 +14,7 @@ final class ItemSalesRanksByMarketplace extends BaseDto
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly ?array $ranks = null,
+        public readonly array $ranks,
     ) {
     }
 }

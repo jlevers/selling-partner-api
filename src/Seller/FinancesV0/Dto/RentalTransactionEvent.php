@@ -11,9 +11,12 @@ final class RentalTransactionEvent extends BaseDto
         'rentalEventType' => 'RentalEventType',
         'extensionLength' => 'ExtensionLength',
         'postedDate' => 'PostedDate',
+        'rentalChargeList' => 'RentalChargeList',
+        'rentalFeeList' => 'RentalFeeList',
         'marketplaceName' => 'MarketplaceName',
         'rentalInitialValue' => 'RentalInitialValue',
         'rentalReimbursement' => 'RentalReimbursement',
+        'rentalTaxWithheldList' => 'RentalTaxWithheldList',
     ];
 
     protected static array $complexArrayTypes = [

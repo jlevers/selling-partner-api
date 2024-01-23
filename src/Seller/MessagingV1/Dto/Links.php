@@ -14,7 +14,7 @@ final class Links extends BaseDto
      */
     public function __construct(
         public readonly LinkObject $self,
-        public readonly ?array $actions = null,
+        public readonly array $actions,
     ) {
     }
 }

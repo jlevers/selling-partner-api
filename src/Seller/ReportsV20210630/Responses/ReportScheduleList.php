@@ -13,7 +13,7 @@ final class ReportScheduleList extends BaseResponse
      * @param  ReportSchedule[]  $reportSchedules
      */
     public function __construct(
-        public readonly ?array $reportSchedules = null,
+        public readonly array $reportSchedules,
     ) {
     }
 }

@@ -11,6 +11,8 @@ final class SkuPrepInstructions extends BaseDto
         'asin' => 'ASIN',
         'barcodeInstruction' => 'BarcodeInstruction',
         'prepGuidance' => 'PrepGuidance',
+        'prepInstructionList' => 'PrepInstructionList',
+        'amazonPrepFeesDetailsList' => 'AmazonPrepFeesDetailsList',
     ];
 
     protected static array $complexArrayTypes = ['amazonPrepFeesDetailsList' => [AmazonPrepFeesDetails::class]];

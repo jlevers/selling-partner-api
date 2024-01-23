@@ -11,6 +11,7 @@ final class TrialShipmentEvent extends BaseDto
         'financialEventGroupId' => 'FinancialEventGroupId',
         'postedDate' => 'PostedDate',
         'sku' => 'SKU',
+        'feeList' => 'FeeList',
     ];
 
     protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];

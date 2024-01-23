@@ -12,6 +12,7 @@ final class InboundShipmentPlanRequestItem extends BaseDto
         'condition' => 'Condition',
         'quantity' => 'Quantity',
         'quantityInCase' => 'QuantityInCase',
+        'prepDetailsList' => 'PrepDetailsList',
     ];
 
     protected static array $complexArrayTypes = ['prepDetailsList' => [PrepDetails::class]];

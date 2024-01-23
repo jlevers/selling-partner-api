@@ -17,6 +17,7 @@ final class ShipmentItem extends BaseDto
         'giftWrapPrice' => 'GiftWrapPrice',
         'shippingDiscount' => 'ShippingDiscount',
         'promotionDiscount' => 'PromotionDiscount',
+        'serialNumbers' => 'SerialNumbers',
     ];
 
     /**

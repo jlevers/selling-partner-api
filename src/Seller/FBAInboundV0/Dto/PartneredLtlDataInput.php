@@ -11,6 +11,7 @@ final class PartneredLtlDataInput extends BaseDto
         'boxCount' => 'BoxCount',
         'sellerFreightClass' => 'SellerFreightClass',
         'freightReadyDate' => 'FreightReadyDate',
+        'palletList' => 'PalletList',
         'totalWeight' => 'TotalWeight',
         'sellerDeclaredValue' => 'SellerDeclaredValue',
     ];

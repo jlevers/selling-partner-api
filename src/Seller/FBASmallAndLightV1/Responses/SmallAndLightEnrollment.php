@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseResponse;
 
 final class SmallAndLightEnrollment extends BaseResponse
 {
+    protected static array $attributeMap = ['sellerSku' => 'sellerSKU'];
+
     /**
      * @param  string  $marketplaceId A marketplace identifier.
      * @param  string  $sellerSku Identifies an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.

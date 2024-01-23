@@ -11,12 +11,12 @@ final class ProductTypeList extends BaseResponse
     protected static array $complexArrayTypes = ['productTypes' => [ProductType::class]];
 
     /**
-     * @param  ProductTypeVersion  $productTypeVersion The version details for an Amazon product type.
      * @param  ProductType[]  $productTypes
+     * @param  ProductTypeVersion  $productTypeVersion The version details for an Amazon product type.
      */
     public function __construct(
+        public readonly array $productTypes,
         public readonly ProductTypeVersion $productTypeVersion,
-        public readonly ?array $productTypes = null,
     ) {
     }
 }

@@ -11,6 +11,8 @@ final class Item extends BaseDto
         'quantity' => 'Quantity',
         'itemWeight' => 'ItemWeight',
         'itemDescription' => 'ItemDescription',
+        'transparencyCodeList' => 'TransparencyCodeList',
+        'itemLevelSellerInputsList' => 'ItemLevelSellerInputsList',
     ];
 
     protected static array $complexArrayTypes = ['itemLevelSellerInputsList' => [AdditionalSellerInputs::class]];

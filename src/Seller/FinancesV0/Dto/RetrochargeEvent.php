@@ -13,6 +13,7 @@ final class RetrochargeEvent extends BaseDto
         'baseTax' => 'BaseTax',
         'shippingTax' => 'ShippingTax',
         'marketplaceName' => 'MarketplaceName',
+        'retrochargeTaxWithheldList' => 'RetrochargeTaxWithheldList',
     ];
 
     protected static array $complexArrayTypes = ['retrochargeTaxWithheldList' => [TaxWithheldComponent::class]];

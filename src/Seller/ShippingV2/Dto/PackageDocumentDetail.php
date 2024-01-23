@@ -15,7 +15,7 @@ final class PackageDocumentDetail extends BaseDto
      */
     public function __construct(
         public readonly string $packageClientReferenceId,
-        public readonly ?array $packageDocuments = null,
+        public readonly array $packageDocuments,
         public readonly ?string $trackingId = null,
     ) {
     }

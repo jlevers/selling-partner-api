@@ -13,7 +13,7 @@ final class RestrictionList extends BaseResponse
      * @param  Restriction[]  $restrictions
      */
     public function __construct(
-        public readonly ?array $restrictions = null,
+        public readonly array $restrictions,
     ) {
     }
 }

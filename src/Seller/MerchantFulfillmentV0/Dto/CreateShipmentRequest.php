@@ -12,6 +12,7 @@ final class CreateShipmentRequest extends BaseDto
         'shippingServiceOfferId' => 'ShippingServiceOfferId',
         'hazmatType' => 'HazmatType',
         'labelFormatOption' => 'LabelFormatOption',
+        'shipmentLevelSellerInputsList' => 'ShipmentLevelSellerInputsList',
     ];
 
     protected static array $complexArrayTypes = ['shipmentLevelSellerInputsList' => [AdditionalSellerInputs::class]];

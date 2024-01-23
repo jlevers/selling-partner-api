@@ -6,7 +6,7 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class PartneredSmallParcelDataOutput extends BaseDto
 {
-    protected static array $attributeMap = ['partneredEstimate' => 'PartneredEstimate'];
+    protected static array $attributeMap = ['packageList' => 'PackageList', 'partneredEstimate' => 'PartneredEstimate'];
 
     protected static array $complexArrayTypes = ['packageList' => [PartneredSmallParcelPackageOutput::class]];
 
@@ -15,7 +15,7 @@ final class PartneredSmallParcelDataOutput extends BaseDto
      * @param  ?PartneredEstimate  $partneredEstimate The estimated shipping cost for a shipment using an Amazon-partnered carrier.
      */
     public function __construct(
-        public readonly ?array $packageList = null,
+        public readonly array $packageList,
         public readonly ?PartneredEstimate $partneredEstimate = null,
     ) {
     }

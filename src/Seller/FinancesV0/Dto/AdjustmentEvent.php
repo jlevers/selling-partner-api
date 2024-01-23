@@ -10,6 +10,7 @@ final class AdjustmentEvent extends BaseDto
         'adjustmentType' => 'AdjustmentType',
         'postedDate' => 'PostedDate',
         'adjustmentAmount' => 'AdjustmentAmount',
+        'adjustmentItemList' => 'AdjustmentItemList',
     ];
 
     protected static array $complexArrayTypes = ['adjustmentItemList' => [AdjustmentItem::class]];

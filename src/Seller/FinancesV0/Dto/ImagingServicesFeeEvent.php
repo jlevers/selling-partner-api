@@ -10,6 +10,7 @@ final class ImagingServicesFeeEvent extends BaseDto
         'imagingRequestBillingItemId' => 'ImagingRequestBillingItemID',
         'asin' => 'ASIN',
         'postedDate' => 'PostedDate',
+        'feeList' => 'FeeList',
     ];
 
     protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];

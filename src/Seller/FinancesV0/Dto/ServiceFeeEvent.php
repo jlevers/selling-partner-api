@@ -9,6 +9,7 @@ final class ServiceFeeEvent extends BaseDto
     protected static array $attributeMap = [
         'amazonOrderId' => 'AmazonOrderId',
         'feeReason' => 'FeeReason',
+        'feeList' => 'FeeList',
         'sellerSku' => 'SellerSKU',
         'fnSku' => 'FnSKU',
         'feeDescription' => 'FeeDescription',

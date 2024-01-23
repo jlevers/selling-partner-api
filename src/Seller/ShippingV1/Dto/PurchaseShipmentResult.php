@@ -16,7 +16,7 @@ final class PurchaseShipmentResult extends BaseDto
     public function __construct(
         public readonly string $shipmentId,
         public readonly ServiceRate $serviceRate,
-        public readonly ?array $labelResults = null,
+        public readonly array $labelResults,
     ) {
     }
 }

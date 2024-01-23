@@ -12,6 +12,7 @@ final class PayWithAmazonEvent extends BaseDto
         'businessObjectType' => 'BusinessObjectType',
         'salesChannel' => 'SalesChannel',
         'charge' => 'Charge',
+        'feeList' => 'FeeList',
         'paymentAmountType' => 'PaymentAmountType',
         'amountDescription' => 'AmountDescription',
         'fulfillmentChannel' => 'FulfillmentChannel',

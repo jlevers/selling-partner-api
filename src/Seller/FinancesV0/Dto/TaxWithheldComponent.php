@@ -6,7 +6,10 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class TaxWithheldComponent extends BaseDto
 {
-    protected static array $attributeMap = ['taxCollectionModel' => 'TaxCollectionModel'];
+    protected static array $attributeMap = [
+        'taxCollectionModel' => 'TaxCollectionModel',
+        'taxesWithheld' => 'TaxesWithheld',
+    ];
 
     protected static array $complexArrayTypes = ['taxesWithheld' => [ChargeComponent::class]];
 

@@ -10,6 +10,7 @@ final class InboundShipmentPlanItem extends BaseDto
         'sellerSku' => 'SellerSKU',
         'fulfillmentNetworkSku' => 'FulfillmentNetworkSKU',
         'quantity' => 'Quantity',
+        'prepDetailsList' => 'PrepDetailsList',
     ];
 
     protected static array $complexArrayTypes = ['prepDetailsList' => [PrepDetails::class]];

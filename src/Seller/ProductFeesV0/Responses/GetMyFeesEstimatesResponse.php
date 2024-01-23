@@ -7,8 +7,6 @@ use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateResult;
 
 final class GetMyFeesEstimatesResponse extends BaseResponse
 {
-    protected static array $attributeMap = ['GetMyFeesEstimatesResponse' => null];
-
     protected static array $complexArrayTypes = ['getMyFeesEstimatesResponse' => [FeesEstimateResult::class]];
 
     /**

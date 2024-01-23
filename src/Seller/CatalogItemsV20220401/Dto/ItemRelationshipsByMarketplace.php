@@ -14,7 +14,7 @@ final class ItemRelationshipsByMarketplace extends BaseDto
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly ?array $relationships = null,
+        public readonly array $relationships,
     ) {
     }
 }

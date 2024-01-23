@@ -12,17 +12,17 @@ final class Container extends BaseDto
      * @param  string  $containerReferenceId An identifier for the container. This must be unique within all the containers in the same shipment.
      * @param  Currency  $value The total value of all items in the container.
      * @param  Dimensions  $dimensions A set of measurements for a three-dimensional object.
+     * @param  ContainerItem[]  $items A list of the items in the container.
      * @param  Weight  $weight The weight.
      * @param  ?string  $containerType The type of physical container being used. (always 'PACKAGE')
-     * @param  ContainerItem[]  $items A list of the items in the container.
      */
     public function __construct(
         public readonly string $containerReferenceId,
         public readonly Currency $value,
         public readonly Dimensions $dimensions,
+        public readonly array $items,
         public readonly Weight $weight,
         public readonly ?string $containerType = null,
-        public readonly ?array $items = null,
     ) {
     }
 }

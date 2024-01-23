@@ -6,6 +6,42 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class FinancialEvents extends BaseDto
 {
+    protected static array $attributeMap = [
+        'shipmentEventList' => 'ShipmentEventList',
+        'shipmentSettleEventList' => 'ShipmentSettleEventList',
+        'refundEventList' => 'RefundEventList',
+        'guaranteeClaimEventList' => 'GuaranteeClaimEventList',
+        'chargebackEventList' => 'ChargebackEventList',
+        'payWithAmazonEventList' => 'PayWithAmazonEventList',
+        'serviceProviderCreditEventList' => 'ServiceProviderCreditEventList',
+        'retrochargeEventList' => 'RetrochargeEventList',
+        'rentalTransactionEventList' => 'RentalTransactionEventList',
+        'productAdsPaymentEventList' => 'ProductAdsPaymentEventList',
+        'serviceFeeEventList' => 'ServiceFeeEventList',
+        'sellerDealPaymentEventList' => 'SellerDealPaymentEventList',
+        'debtRecoveryEventList' => 'DebtRecoveryEventList',
+        'loanServicingEventList' => 'LoanServicingEventList',
+        'adjustmentEventList' => 'AdjustmentEventList',
+        'safetReimbursementEventList' => 'SAFETReimbursementEventList',
+        'sellerReviewEnrollmentPaymentEventList' => 'SellerReviewEnrollmentPaymentEventList',
+        'fbaLiquidationEventList' => 'FBALiquidationEventList',
+        'couponPaymentEventList' => 'CouponPaymentEventList',
+        'imagingServicesFeeEventList' => 'ImagingServicesFeeEventList',
+        'networkComminglingTransactionEventList' => 'NetworkComminglingTransactionEventList',
+        'affordabilityExpenseEventList' => 'AffordabilityExpenseEventList',
+        'affordabilityExpenseReversalEventList' => 'AffordabilityExpenseReversalEventList',
+        'removalShipmentEventList' => 'RemovalShipmentEventList',
+        'removalShipmentAdjustmentEventList' => 'RemovalShipmentAdjustmentEventList',
+        'trialShipmentEventList' => 'TrialShipmentEventList',
+        'tdsReimbursementEventList' => 'TDSReimbursementEventList',
+        'adhocDisbursementEventList' => 'AdhocDisbursementEventList',
+        'taxWithholdingEventList' => 'TaxWithholdingEventList',
+        'chargeRefundEventList' => 'ChargeRefundEventList',
+        'failedAdhocDisbursementEventList' => 'FailedAdhocDisbursementEventList',
+        'valueAddedServiceChargeEventList' => 'ValueAddedServiceChargeEventList',
+        'capacityReservationBillingEventList' => 'CapacityReservationBillingEventList',
+    ];
+
     protected static array $complexArrayTypes = [
         'shipmentEventList' => [ShipmentEvent::class],
         'shipmentSettleEventList' => [ShipmentEvent::class],

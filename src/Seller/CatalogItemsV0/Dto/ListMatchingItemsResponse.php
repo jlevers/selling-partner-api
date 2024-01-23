@@ -6,6 +6,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class ListMatchingItemsResponse extends BaseDto
 {
+    protected static array $attributeMap = ['items' => 'Items'];
+
     protected static array $complexArrayTypes = ['items' => [Item::class]];
 
     /**

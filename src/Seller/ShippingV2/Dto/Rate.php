@@ -19,9 +19,9 @@ final class Rate extends BaseDto
      * @param  string  $serviceName The name of the shipping service.
      * @param  Currency  $totalCharge The monetary value in the currency indicated, in ISO 4217 standard format.
      * @param  Promise  $promise The time windows promised for pickup and delivery events.
+     * @param  SupportedDocumentSpecification[]  $supportedDocumentSpecifications A list of the document specifications supported for a shipment service offering.
      * @param  bool  $requiresAdditionalInputs When true, indicates that additional inputs are required to purchase this shipment service. You must then call the getAdditionalInputs operation to return the JSON schema to use when providing the additional inputs to the purchaseShipment operation.
      * @param  ?Weight  $billedWeight The weight in the units indicated.
-     * @param  SupportedDocumentSpecification[]  $supportedDocumentSpecifications A list of the document specifications supported for a shipment service offering.
      * @param  AvailableValueAddedServiceGroup[]  $availableValueAddedServiceGroups A list of value-added services available for a shipping service offering.
      */
     public function __construct(
@@ -32,9 +32,9 @@ final class Rate extends BaseDto
         public readonly string $serviceName,
         public readonly Currency $totalCharge,
         public readonly Promise $promise,
+        public readonly array $supportedDocumentSpecifications,
         public readonly bool $requiresAdditionalInputs,
         public readonly ?Weight $billedWeight = null,
-        public readonly ?array $supportedDocumentSpecifications = null,
         public readonly ?array $availableValueAddedServiceGroups = null,
     ) {
     }

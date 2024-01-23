@@ -23,7 +23,7 @@ final class ItemSearchResults extends BaseResponse
         public readonly int $numberOfResults,
         public readonly Pagination $pagination,
         public readonly Refinements $refinements,
-        public readonly ?array $items = null,
+        public readonly array $items,
     ) {
     }
 }

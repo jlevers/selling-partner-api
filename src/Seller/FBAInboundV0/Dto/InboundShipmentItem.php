@@ -14,6 +14,7 @@ final class InboundShipmentItem extends BaseDto
         'quantityReceived' => 'QuantityReceived',
         'quantityInCase' => 'QuantityInCase',
         'releaseDate' => 'ReleaseDate',
+        'prepDetailsList' => 'PrepDetailsList',
     ];
 
     protected static array $complexArrayTypes = ['prepDetailsList' => [PrepDetails::class]];

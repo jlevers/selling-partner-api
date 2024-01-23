@@ -9,6 +9,8 @@ use SellingPartnerApi\Seller\SolicitationsV1\Dto\Links;
 
 final class GetSolicitationActionsForOrderResponse extends BaseResponse
 {
+    protected static array $attributeMap = ['links' => '_links', 'embedded' => '_embedded'];
+
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**

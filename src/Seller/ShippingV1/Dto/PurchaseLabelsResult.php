@@ -11,14 +11,14 @@ final class PurchaseLabelsResult extends BaseDto
     /**
      * @param  string  $shipmentId The unique shipment identifier.
      * @param  AcceptedRate  $acceptedRate The specific rate purchased for the shipment, or null if unpurchased.
-     * @param  ?string  $clientReferenceId Client reference id.
      * @param  LabelResult[]  $labelResults A list of label results
+     * @param  ?string  $clientReferenceId Client reference id.
      */
     public function __construct(
         public readonly string $shipmentId,
         public readonly AcceptedRate $acceptedRate,
+        public readonly array $labelResults,
         public readonly ?string $clientReferenceId = null,
-        public readonly ?array $labelResults = null,
     ) {
     }
 }

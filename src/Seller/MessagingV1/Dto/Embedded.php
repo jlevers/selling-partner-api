@@ -12,7 +12,7 @@ final class Embedded extends BaseDto
      * @param  LinkObject[]  $actions Eligible actions for the specified amazonOrderId.
      */
     public function __construct(
-        public readonly ?array $actions = null,
+        public readonly array $actions,
     ) {
     }
 }

@@ -6,7 +6,7 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class GetShipmentsResult extends BaseDto
 {
-    protected static array $attributeMap = ['nextToken' => 'NextToken'];
+    protected static array $attributeMap = ['shipmentData' => 'ShipmentData', 'nextToken' => 'NextToken'];
 
     protected static array $complexArrayTypes = ['shipmentData' => [InboundShipmentInfo::class]];
 

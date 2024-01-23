@@ -11,6 +11,7 @@ final class RemovalShipmentEvent extends BaseDto
         'merchantOrderId' => 'MerchantOrderId',
         'orderId' => 'OrderId',
         'transactionType' => 'TransactionType',
+        'removalShipmentItemList' => 'RemovalShipmentItemList',
     ];
 
     protected static array $complexArrayTypes = ['removalShipmentItemList' => [RemovalShipmentItem::class]];

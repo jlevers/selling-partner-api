@@ -14,7 +14,7 @@ final class UpdateScheduledPackagesRequest extends BaseDto
      */
     public function __construct(
         public readonly string $marketplaceId,
-        public readonly ?array $updatePackageDetailsList = null,
+        public readonly array $updatePackageDetailsList,
     ) {
     }
 }

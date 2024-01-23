@@ -7,8 +7,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class CreateFulfillmentOrderRequest extends BaseDto
 {
     protected static array $complexArrayTypes = [
-        'featureConstraints' => [FeatureSettings::class],
         'items' => [CreateFulfillmentOrderItem::class],
+        'featureConstraints' => [FeatureSettings::class],
     ];
 
     /**
@@ -19,6 +19,7 @@ final class CreateFulfillmentOrderRequest extends BaseDto
      * @param  string  $displayableOrderComment Order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip.
      * @param  string  $shippingSpeedCategory The shipping method used for the fulfillment order. When this value is ScheduledDelivery, choose Ship for the fulfillmentAction. Hold is not a valid fulfillmentAction value when the shippingSpeedCategory value is ScheduledDelivery.
      * @param  Address  $destinationAddress A physical address.
+     * @param  CreateFulfillmentOrderItem[]  $items An array of item information for creating a fulfillment order.
      * @param  ?string  $marketplaceId The marketplace the fulfillment order is placed against.
      * @param  ?DeliveryWindow  $deliveryWindow The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace.
      * @param  ?string  $fulfillmentAction Specifies whether the fulfillment order should ship now or have an order hold put on it.
@@ -27,7 +28,6 @@ final class CreateFulfillmentOrderRequest extends BaseDto
      * @param  ?string  $shipFromCountryCode The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
      * @param  ?string[]  $notificationEmails A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
      * @param  FeatureSettings[]  $featureConstraints A list of features and their fulfillment policies to apply to the order.
-     * @param  CreateFulfillmentOrderItem[]  $items An array of item information for creating a fulfillment order.
      */
     public function __construct(
         public readonly string $sellerFulfillmentOrderId,
@@ -36,6 +36,7 @@ final class CreateFulfillmentOrderRequest extends BaseDto
         public readonly string $displayableOrderComment,
         public readonly string $shippingSpeedCategory,
         public readonly Address $destinationAddress,
+        public readonly array $items,
         public readonly ?string $marketplaceId = null,
         public readonly ?DeliveryWindow $deliveryWindow = null,
         public readonly ?string $fulfillmentAction = null,
@@ -44,7 +45,6 @@ final class CreateFulfillmentOrderRequest extends BaseDto
         public readonly ?string $shipFromCountryCode = null,
         public readonly ?array $notificationEmails = null,
         public readonly ?array $featureConstraints = null,
-        public readonly ?array $items = null,
     ) {
     }
 }

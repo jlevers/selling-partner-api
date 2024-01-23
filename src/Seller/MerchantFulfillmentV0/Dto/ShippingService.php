@@ -18,6 +18,8 @@ final class ShippingService extends BaseDto
         'earliestEstimatedDeliveryDate' => 'EarliestEstimatedDeliveryDate',
         'latestEstimatedDeliveryDate' => 'LatestEstimatedDeliveryDate',
         'availableShippingServiceOptions' => 'AvailableShippingServiceOptions',
+        'availableLabelFormats' => 'AvailableLabelFormats',
+        'availableFormatOptionsForLabel' => 'AvailableFormatOptionsForLabel',
     ];
 
     protected static array $complexArrayTypes = ['availableFormatOptionsForLabel' => [LabelFormatOption::class]];

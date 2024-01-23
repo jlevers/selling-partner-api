@@ -6,7 +6,12 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class Item extends BaseDto
 {
-    protected static array $attributeMap = ['identifiers' => 'Identifiers'];
+    protected static array $attributeMap = [
+        'identifiers' => 'Identifiers',
+        'attributeSets' => 'AttributeSets',
+        'relationships' => 'Relationships',
+        'salesRankings' => 'SalesRankings',
+    ];
 
     protected static array $complexArrayTypes = [
         'attributeSets' => [AttributeSetListType::class],

@@ -9,6 +9,7 @@ final class CreateInboundShipmentPlanRequest extends BaseDto
     protected static array $attributeMap = [
         'shipFromAddress' => 'ShipFromAddress',
         'labelPrepPreference' => 'LabelPrepPreference',
+        'inboundShipmentPlanRequestItems' => 'InboundShipmentPlanRequestItems',
         'shipToCountryCode' => 'ShipToCountryCode',
         'shipToCountrySubdivisionCode' => 'ShipToCountrySubdivisionCode',
     ];
@@ -19,6 +20,7 @@ final class CreateInboundShipmentPlanRequest extends BaseDto
 
     /**
      * @param  string  $labelPrepPreference The preference for label preparation for an inbound shipment.
+     * @param  InboundShipmentPlanRequestItem[]  $inboundShipmentPlanRequestItems
      * @param  ?string  $shipToCountryCode The two-character country code for the country where the inbound shipment is to be sent.
      *
      * Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error.
@@ -41,14 +43,13 @@ final class CreateInboundShipmentPlanRequest extends BaseDto
      * @param  ?string  $shipToCountrySubdivisionCode The two-character country code, followed by a dash and then up to three characters that represent the subdivision of the country where the inbound shipment is to be sent. For example, "IN-MH". In full ISO 3166-2 format.
      *
      * Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error.
-     * @param  InboundShipmentPlanRequestItem[]  $inboundShipmentPlanRequestItems
      */
     public function __construct(
         public readonly Address $shipFromAddress,
         public readonly string $labelPrepPreference,
+        public readonly array $inboundShipmentPlanRequestItems,
         public readonly ?string $shipToCountryCode = null,
         public readonly ?string $shipToCountrySubdivisionCode = null,
-        public readonly ?array $inboundShipmentPlanRequestItems = null,
     ) {
     }
 }

@@ -6,6 +6,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 
 final class GetAdditionalSellerInputsResult extends BaseDto
 {
+    protected static array $attributeMap = [
+        'shipmentLevelFields' => 'ShipmentLevelFields',
+        'itemLevelFieldsList' => 'ItemLevelFieldsList',
+    ];
+
     protected static array $complexArrayTypes = [
         'shipmentLevelFields' => [AdditionalInputs::class],
         'itemLevelFieldsList' => [ItemLevelFields::class],

@@ -12,7 +12,7 @@ final class CreateFulfillmentReturnRequest extends BaseDto
      * @param  CreateReturnItem[]  $items An array of items to be returned.
      */
     public function __construct(
-        public readonly ?array $items = null,
+        public readonly array $items,
     ) {
     }
 }

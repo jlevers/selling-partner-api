@@ -283,6 +283,7 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
     const DEEMED_RESELLER_CATEGORY_KZ_VOEC = 'KZ_VOEC';
     const DEEMED_RESELLER_CATEGORY_MY_VOEC = 'MY_VOEC';
     const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';
+    const DEEMED_RESELLER_CATEGORY_NG_VOEC = 'NG_VOEC';
     const DEEMED_RESELLER_CATEGORY_NZ_VOEC = 'NZ_VOEC';
     const DEEMED_RESELLER_CATEGORY_SG_VOEC = 'SG_VOEC';
     const DEEMED_RESELLER_CATEGORY_CH_SUPPLIER_IMPORT = 'CH_SUPPLIER_IMPORT';
@@ -306,6 +307,7 @@ class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonS
             self::DEEMED_RESELLER_CATEGORY_KZ_VOEC,
             self::DEEMED_RESELLER_CATEGORY_MY_VOEC,
             self::DEEMED_RESELLER_CATEGORY_NO_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_NG_VOEC,
             self::DEEMED_RESELLER_CATEGORY_NZ_VOEC,
             self::DEEMED_RESELLER_CATEGORY_SG_VOEC,
             self::DEEMED_RESELLER_CATEGORY_CH_SUPPLIER_IMPORT,

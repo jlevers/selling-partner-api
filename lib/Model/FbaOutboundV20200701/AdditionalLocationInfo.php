@@ -74,7 +74,8 @@ class AdditionalLocationInfo
     const RECEIVER = 'RECEIVER';
     const SECURE_LOCATION = 'SECURE_LOCATION';
     const SIDE_DOOR = 'SIDE_DOOR';
-    
+    const GARAGE_OTHER_LOC = 'GARAGE/OTHER DOOR/OTHER LOC';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -111,6 +112,7 @@ class AdditionalLocationInfo
             self::RECEIVER,
             self::SECURE_LOCATION,
             self::SIDE_DOOR,
+            self::GARAGE_OTHER_LOC,
         ];
         // This is necessary because Amazon does not consistently capitalize their
         // enum values, so we do case-insensitive enum value validation in ObjectSerializer

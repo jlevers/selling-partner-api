@@ -15,7 +15,7 @@ final class ListFinancialEventGroupsPayload extends BaseDto
 
     /**
      * @param  ?string  $nextToken When present and not empty, pass this string token in the next request to return the next response page.
-     * @param  FinancialEventGroup[]  $financialEventGroupList A list of financial event group information.
+     * @param  FinancialEventGroup[]|null  $financialEventGroupList A list of financial event group information.
      */
     public function __construct(
         public readonly ?string $nextToken = null,

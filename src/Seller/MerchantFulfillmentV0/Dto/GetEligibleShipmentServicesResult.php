@@ -22,9 +22,9 @@ final class GetEligibleShipmentServicesResult extends BaseDto
 
     /**
      * @param  ShippingService[]  $shippingServiceList A list of shipping services offers.
-     * @param  RejectedShippingService[]  $rejectedShippingServiceList List of services that were for some reason unavailable for this request
-     * @param  TemporarilyUnavailableCarrier[]  $temporarilyUnavailableCarrierList A list of temporarily unavailable carriers.
-     * @param  TermsAndConditionsNotAcceptedCarrier[]  $termsAndConditionsNotAcceptedCarrierList List of carriers whose terms and conditions were not accepted by the seller.
+     * @param  RejectedShippingService[]|null  $rejectedShippingServiceList List of services that were for some reason unavailable for this request
+     * @param  TemporarilyUnavailableCarrier[]|null  $temporarilyUnavailableCarrierList A list of temporarily unavailable carriers.
+     * @param  TermsAndConditionsNotAcceptedCarrier[]|null  $termsAndConditionsNotAcceptedCarrierList List of carriers whose terms and conditions were not accepted by the seller.
      */
     public function __construct(
         public readonly array $shippingServiceList,

@@ -21,7 +21,7 @@ final class TrialShipmentEvent extends BaseDto
      * @param  ?string  $financialEventGroupId The identifier of the financial event group.
      * @param  ?string  $postedDate
      * @param  ?string  $sku The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
-     * @param  FeeComponent[]  $feeList A list of fee component information.
+     * @param  FeeComponent[]|null  $feeList A list of fee component information.
      */
     public function __construct(
         public readonly ?string $amazonOrderId = null,

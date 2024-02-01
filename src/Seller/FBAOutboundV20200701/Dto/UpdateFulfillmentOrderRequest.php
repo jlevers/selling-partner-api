@@ -22,8 +22,8 @@ final class UpdateFulfillmentOrderRequest extends BaseDto
      * @param  ?string  $fulfillmentPolicy The FulfillmentPolicy value specified when you submitted the createFulfillmentOrder operation.
      * @param  ?string  $shipFromCountryCode The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
      * @param  ?string[]  $notificationEmails A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
-     * @param  FeatureSettings[]  $featureConstraints A list of features and their fulfillment policies to apply to the order.
-     * @param  UpdateFulfillmentOrderItem[]  $items An array of fulfillment order item information for updating a fulfillment order.
+     * @param  FeatureSettings[]|null  $featureConstraints A list of features and their fulfillment policies to apply to the order.
+     * @param  UpdateFulfillmentOrderItem[]|null  $items An array of fulfillment order item information for updating a fulfillment order.
      */
     public function __construct(
         public readonly ?string $marketplaceId = null,

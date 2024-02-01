@@ -10,7 +10,7 @@ final class RangeCapacity extends BaseDto
 
     /**
      * @param  ?string  $capacityType Type of capacity
-     * @param  RangeSlot[]  $slots Array of capacity slots in range slot format.
+     * @param  RangeSlot[]|null  $slots Array of capacity slots in range slot format.
      */
     public function __construct(
         public readonly ?string $capacityType = null,

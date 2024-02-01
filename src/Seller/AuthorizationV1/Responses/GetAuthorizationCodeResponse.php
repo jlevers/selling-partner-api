@@ -12,7 +12,7 @@ final class GetAuthorizationCodeResponse extends BaseResponse
 
     /**
      * @param  ?AuthorizationCode  $payload A Login with Amazon (LWA) authorization code.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?AuthorizationCode $payload = null,

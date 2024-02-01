@@ -21,10 +21,10 @@ final class GetInboundGuidanceResult extends BaseDto
     ];
 
     /**
-     * @param  SkuInboundGuidance[]  $skuInboundGuidanceList A list of SKU inbound guidance information.
-     * @param  InvalidSku[]  $invalidSkuList A list of invalid SKU values and the reason they are invalid.
-     * @param  AsinInboundGuidance[]  $asinInboundGuidanceList A list of ASINs and their associated inbound guidance.
-     * @param  InvalidAsin[]  $invalidAsinList A list of invalid ASIN values and the reasons they are invalid.
+     * @param  SkuInboundGuidance[]|null  $skuInboundGuidanceList A list of SKU inbound guidance information.
+     * @param  InvalidSku[]|null  $invalidSkuList A list of invalid SKU values and the reason they are invalid.
+     * @param  AsinInboundGuidance[]|null  $asinInboundGuidanceList A list of ASINs and their associated inbound guidance.
+     * @param  InvalidAsin[]|null  $invalidAsinList A list of invalid ASIN values and the reasons they are invalid.
      */
     public function __construct(
         public readonly ?array $skuInboundGuidanceList = null,

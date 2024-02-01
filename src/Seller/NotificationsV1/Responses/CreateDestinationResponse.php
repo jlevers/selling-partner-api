@@ -12,7 +12,7 @@ final class CreateDestinationResponse extends BaseResponse
 
     /**
      * @param  ?Destination  $payload Represents a destination created when you call the createDestination operation.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?Destination $payload = null,

@@ -9,7 +9,7 @@ final class StandardMultipleImageTextModule extends BaseDto
     protected static array $complexArrayTypes = ['blocks' => [StandardImageTextCaptionBlock::class]];
 
     /**
-     * @param  StandardImageTextCaptionBlock[]  $blocks
+     * @param  StandardImageTextCaptionBlock[]|null  $blocks
      */
     public function __construct(
         public readonly ?array $blocks = null,

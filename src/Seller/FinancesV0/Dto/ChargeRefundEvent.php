@@ -23,7 +23,7 @@ final class ChargeRefundEvent extends BaseDto
      * @param  ?string  $reasonCodeDescription A description of the Reason Code.
      *
      * Example: `SubscriptionFeeCorrection`
-     * @param  ChargeRefundTransaction[]  $chargeRefundTransactions A list of `ChargeRefund` transactions.
+     * @param  ChargeRefundTransaction[]|null  $chargeRefundTransactions A list of `ChargeRefund` transactions.
      */
     public function __construct(
         public readonly ?string $postedDate = null,

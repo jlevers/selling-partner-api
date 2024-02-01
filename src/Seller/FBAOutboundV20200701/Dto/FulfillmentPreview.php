@@ -22,11 +22,11 @@ final class FulfillmentPreview extends BaseDto
      * @param  string  $marketplaceId The marketplace the fulfillment order is placed against.
      * @param  ?ScheduledDeliveryInfo  $scheduledDeliveryInfo Delivery information for a scheduled delivery. This is only available in the JP marketplace.
      * @param  ?Weight  $estimatedShippingWeight The weight.
-     * @param  Fee[]  $estimatedFees An array of fee type and cost pairs.
-     * @param  FulfillmentPreviewShipment[]  $fulfillmentPreviewShipments An array of fulfillment preview shipment information.
-     * @param  UnfulfillablePreviewItem[]  $unfulfillablePreviewItems An array of unfulfillable preview item information.
+     * @param  Fee[]|null  $estimatedFees An array of fee type and cost pairs.
+     * @param  FulfillmentPreviewShipment[]|null  $fulfillmentPreviewShipments An array of fulfillment preview shipment information.
+     * @param  UnfulfillablePreviewItem[]|null  $unfulfillablePreviewItems An array of unfulfillable preview item information.
      * @param  ?string[]  $orderUnfulfillableReasons
-     * @param  FeatureSettings[]  $featureConstraints A list of features and their fulfillment policies to apply to the order.
+     * @param  FeatureSettings[]|null  $featureConstraints A list of features and their fulfillment policies to apply to the order.
      */
     public function __construct(
         public readonly string $shippingSpeedCategory,

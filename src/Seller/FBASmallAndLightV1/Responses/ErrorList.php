@@ -10,7 +10,7 @@ final class ErrorList extends BaseResponse
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  Error[]  $errors
+     * @param  Error[]|null  $errors
      */
     public function __construct(
         public readonly ?array $errors = null,

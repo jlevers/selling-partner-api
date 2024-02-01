@@ -20,7 +20,7 @@ final class Package extends BaseResponse
      * @param  Dimensions  $packageDimensions The dimensions of the scheduled package.
      * @param  Weight  $packageWeight The weight of the scheduled package
      * @param  TimeSlot  $packageTimeSlot A time window to hand over an Easy Ship package to Amazon Logistics.
-     * @param  Item[]  $packageItems A list of items contained in the package.
+     * @param  Item[]|null  $packageItems A list of items contained in the package.
      * @param  ?string  $packageIdentifier Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
      * @param  ?InvoiceData  $invoice Invoice number and date.
      * @param  ?string  $packageStatus The status of the package.

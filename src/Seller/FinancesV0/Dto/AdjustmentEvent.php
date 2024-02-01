@@ -37,7 +37,7 @@ final class AdjustmentEvent extends BaseDto
      * * SellerRewards - An award credited to a seller's account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace.
      * @param  ?string  $postedDate
      * @param  ?Currency  $adjustmentAmount A currency type and amount.
-     * @param  AdjustmentItem[]  $adjustmentItemList A list of information about items in an adjustment to the seller's account.
+     * @param  AdjustmentItem[]|null  $adjustmentItemList A list of information about items in an adjustment to the seller's account.
      */
     public function __construct(
         public readonly ?string $adjustmentType = null,

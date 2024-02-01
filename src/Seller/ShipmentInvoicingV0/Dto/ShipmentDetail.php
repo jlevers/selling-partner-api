@@ -39,7 +39,7 @@ final class ShipmentDetail extends BaseDto
      * @param  ?BuyerTaxInfo  $buyerTaxInfo Tax information about the buyer.
      * @param  ?MarketplaceTaxInfo  $marketplaceTaxInfo Tax information about the marketplace.
      * @param  ?string  $sellerDisplayName The seller’s friendly name registered in the marketplace.
-     * @param  ShipmentItem[]  $shipmentItems A list of shipment items.
+     * @param  ShipmentItem[]|null  $shipmentItems A list of shipment items.
      */
     public function __construct(
         public readonly ?string $warehouseId = null,

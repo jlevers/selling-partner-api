@@ -38,16 +38,16 @@ final class ShipmentEvent extends BaseDto
      * @param  ?string  $amazonOrderId An Amazon-defined identifier for an order.
      * @param  ?string  $sellerOrderId A seller-defined identifier for an order.
      * @param  ?string  $marketplaceName The name of the marketplace where the event occurred.
-     * @param  ChargeComponent[]  $orderChargeList A list of charge information on the seller's account.
-     * @param  ChargeComponent[]  $orderChargeAdjustmentList A list of charge information on the seller's account.
-     * @param  FeeComponent[]  $shipmentFeeList A list of fee component information.
-     * @param  FeeComponent[]  $shipmentFeeAdjustmentList A list of fee component information.
-     * @param  FeeComponent[]  $orderFeeList A list of fee component information.
-     * @param  FeeComponent[]  $orderFeeAdjustmentList A list of fee component information.
-     * @param  DirectPayment[]  $directPaymentList A list of direct payment information.
+     * @param  ChargeComponent[]|null  $orderChargeList A list of charge information on the seller's account.
+     * @param  ChargeComponent[]|null  $orderChargeAdjustmentList A list of charge information on the seller's account.
+     * @param  FeeComponent[]|null  $shipmentFeeList A list of fee component information.
+     * @param  FeeComponent[]|null  $shipmentFeeAdjustmentList A list of fee component information.
+     * @param  FeeComponent[]|null  $orderFeeList A list of fee component information.
+     * @param  FeeComponent[]|null  $orderFeeAdjustmentList A list of fee component information.
+     * @param  DirectPayment[]|null  $directPaymentList A list of direct payment information.
      * @param  ?string  $postedDate
-     * @param  ShipmentItem[]  $shipmentItemList A list of shipment items.
-     * @param  ShipmentItem[]  $shipmentItemAdjustmentList A list of shipment items.
+     * @param  ShipmentItem[]|null  $shipmentItemList A list of shipment items.
+     * @param  ShipmentItem[]|null  $shipmentItemAdjustmentList A list of shipment items.
      */
     public function __construct(
         public readonly ?string $amazonOrderId = null,

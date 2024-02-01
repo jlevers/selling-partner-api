@@ -14,7 +14,7 @@ final class StandardComparisonProductBlock extends BaseDto
      * @param  ?string  $title The comparison product title.
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN).
      * @param  ?bool  $highlight Determines whether this block of content is visually highlighted.
-     * @param  PlainTextItem[]  $metrics Comparison metrics for the product.
+     * @param  PlainTextItem[]|null  $metrics Comparison metrics for the product.
      */
     public function __construct(
         public readonly int $position,

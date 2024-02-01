@@ -22,7 +22,7 @@ final class Rate extends BaseDto
      * @param  SupportedDocumentSpecification[]  $supportedDocumentSpecifications A list of the document specifications supported for a shipment service offering.
      * @param  bool  $requiresAdditionalInputs When true, indicates that additional inputs are required to purchase this shipment service. You must then call the getAdditionalInputs operation to return the JSON schema to use when providing the additional inputs to the purchaseShipment operation.
      * @param  ?Weight  $billedWeight The weight in the units indicated.
-     * @param  AvailableValueAddedServiceGroup[]  $availableValueAddedServiceGroups A list of value-added services available for a shipping service offering.
+     * @param  AvailableValueAddedServiceGroup[]|null  $availableValueAddedServiceGroups A list of value-added services available for a shipping service offering.
      */
     public function __construct(
         public readonly string $rateId,

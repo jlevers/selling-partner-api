@@ -9,7 +9,7 @@ final class CreateWarrantyRequest extends BaseDto
     protected static array $complexArrayTypes = ['attachments' => [Attachment::class]];
 
     /**
-     * @param  Attachment[]  $attachments Attachments to include in the message to the buyer.
+     * @param  Attachment[]|null  $attachments Attachments to include in the message to the buyer.
      * @param  ?string  $coverageStartDate The start date of the warranty coverage to include in the message to the buyer.
      * @param  ?string  $coverageEndDate The end date of the warranty coverage to include in the message to the buyer.
      */

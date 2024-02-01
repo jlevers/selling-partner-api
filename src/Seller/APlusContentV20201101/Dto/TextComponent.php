@@ -10,7 +10,7 @@ final class TextComponent extends BaseDto
 
     /**
      * @param  string  $value The actual plain text.
-     * @param  Decorator[]  $decoratorSet A set of content decorators.
+     * @param  Decorator[]|null  $decoratorSet A set of content decorators.
      */
     public function __construct(
         public readonly string $value,

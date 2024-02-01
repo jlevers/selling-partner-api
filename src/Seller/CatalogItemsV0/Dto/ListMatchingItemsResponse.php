@@ -11,7 +11,7 @@ final class ListMatchingItemsResponse extends BaseDto
     protected static array $complexArrayTypes = ['items' => [Item::class]];
 
     /**
-     * @param  Item[]  $items A list of items.
+     * @param  Item[]|null  $items A list of items.
      */
     public function __construct(
         public readonly ?array $items = null,

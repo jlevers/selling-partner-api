@@ -79,39 +79,39 @@ final class FinancialEvents extends BaseDto
     ];
 
     /**
-     * @param  ShipmentEvent[]  $shipmentEventList A list of shipment event information.
-     * @param  ShipmentEvent[]  $shipmentSettleEventList A list of `ShipmentEvent` items.
-     * @param  ShipmentEvent[]  $refundEventList A list of shipment event information.
-     * @param  ShipmentEvent[]  $guaranteeClaimEventList A list of shipment event information.
-     * @param  ShipmentEvent[]  $chargebackEventList A list of shipment event information.
-     * @param  PayWithAmazonEvent[]  $payWithAmazonEventList A list of events related to the seller's Pay with Amazon account.
-     * @param  SolutionProviderCreditEvent[]  $serviceProviderCreditEventList A list of information about solution provider credits.
-     * @param  RetrochargeEvent[]  $retrochargeEventList A list of information about Retrocharge or RetrochargeReversal events.
-     * @param  RentalTransactionEvent[]  $rentalTransactionEventList A list of rental transaction event information.
-     * @param  ProductAdsPaymentEvent[]  $productAdsPaymentEventList A list of sponsored products payment events.
-     * @param  ServiceFeeEvent[]  $serviceFeeEventList A list of information about service fee events.
-     * @param  SellerDealPaymentEvent[]  $sellerDealPaymentEventList A list of payment events for deal-related fees.
-     * @param  DebtRecoveryEvent[]  $debtRecoveryEventList A list of debt recovery event information.
-     * @param  LoanServicingEvent[]  $loanServicingEventList A list of loan servicing events.
-     * @param  AdjustmentEvent[]  $adjustmentEventList A list of adjustment event information for the seller's account.
-     * @param  SafetReimbursementEvent[]  $safetReimbursementEventList A list of SAFETReimbursementEvents.
-     * @param  SellerReviewEnrollmentPaymentEvent[]  $sellerReviewEnrollmentPaymentEventList A list of information about fee events for the Early Reviewer Program.
-     * @param  FbaLiquidationEvent[]  $fbaLiquidationEventList A list of FBA inventory liquidation payment events.
-     * @param  CouponPaymentEvent[]  $couponPaymentEventList A list of coupon payment event information.
-     * @param  ImagingServicesFeeEvent[]  $imagingServicesFeeEventList A list of fee events related to Amazon Imaging services.
-     * @param  NetworkComminglingTransactionEvent[]  $networkComminglingTransactionEventList A list of network commingling transaction events.
-     * @param  AffordabilityExpenseEvent[]  $affordabilityExpenseEventList A list of expense information related to an affordability promotion.
-     * @param  AffordabilityExpenseEvent[]  $affordabilityExpenseReversalEventList A list of expense information related to an affordability promotion.
-     * @param  RemovalShipmentEvent[]  $removalShipmentEventList A list of removal shipment event information.
-     * @param  RemovalShipmentAdjustmentEvent[]  $removalShipmentAdjustmentEventList A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
-     * @param  TrialShipmentEvent[]  $trialShipmentEventList A list of information about trial shipment financial events.
-     * @param  TdsReimbursementEvent[]  $tdsReimbursementEventList A list of `TDSReimbursementEvent` items.
-     * @param  AdhocDisbursementEvent[]  $adhocDisbursementEventList A list of `AdhocDisbursement` events.
-     * @param  TaxWithholdingEvent[]  $taxWithholdingEventList A list of `TaxWithholding` events.
-     * @param  ChargeRefundEvent[]  $chargeRefundEventList A list of charge refund events.
-     * @param  FailedAdhocDisbursementEvent[]  $failedAdhocDisbursementEventList A list of `FailedAdhocDisbursementEvent`s.
-     * @param  ValueAddedServiceChargeEvent[]  $valueAddedServiceChargeEventList A list of `ValueAddedServiceCharge` events.
-     * @param  CapacityReservationBillingEvent[]  $capacityReservationBillingEventList A list of `CapacityReservationBillingEvent` events.
+     * @param  ShipmentEvent[]|null  $shipmentEventList A list of shipment event information.
+     * @param  ShipmentEvent[]|null  $shipmentSettleEventList A list of `ShipmentEvent` items.
+     * @param  ShipmentEvent[]|null  $refundEventList A list of shipment event information.
+     * @param  ShipmentEvent[]|null  $guaranteeClaimEventList A list of shipment event information.
+     * @param  ShipmentEvent[]|null  $chargebackEventList A list of shipment event information.
+     * @param  PayWithAmazonEvent[]|null  $payWithAmazonEventList A list of events related to the seller's Pay with Amazon account.
+     * @param  SolutionProviderCreditEvent[]|null  $serviceProviderCreditEventList A list of information about solution provider credits.
+     * @param  RetrochargeEvent[]|null  $retrochargeEventList A list of information about Retrocharge or RetrochargeReversal events.
+     * @param  RentalTransactionEvent[]|null  $rentalTransactionEventList A list of rental transaction event information.
+     * @param  ProductAdsPaymentEvent[]|null  $productAdsPaymentEventList A list of sponsored products payment events.
+     * @param  ServiceFeeEvent[]|null  $serviceFeeEventList A list of information about service fee events.
+     * @param  SellerDealPaymentEvent[]|null  $sellerDealPaymentEventList A list of payment events for deal-related fees.
+     * @param  DebtRecoveryEvent[]|null  $debtRecoveryEventList A list of debt recovery event information.
+     * @param  LoanServicingEvent[]|null  $loanServicingEventList A list of loan servicing events.
+     * @param  AdjustmentEvent[]|null  $adjustmentEventList A list of adjustment event information for the seller's account.
+     * @param  SafetReimbursementEvent[]|null  $safetReimbursementEventList A list of SAFETReimbursementEvents.
+     * @param  SellerReviewEnrollmentPaymentEvent[]|null  $sellerReviewEnrollmentPaymentEventList A list of information about fee events for the Early Reviewer Program.
+     * @param  FbaLiquidationEvent[]|null  $fbaLiquidationEventList A list of FBA inventory liquidation payment events.
+     * @param  CouponPaymentEvent[]|null  $couponPaymentEventList A list of coupon payment event information.
+     * @param  ImagingServicesFeeEvent[]|null  $imagingServicesFeeEventList A list of fee events related to Amazon Imaging services.
+     * @param  NetworkComminglingTransactionEvent[]|null  $networkComminglingTransactionEventList A list of network commingling transaction events.
+     * @param  AffordabilityExpenseEvent[]|null  $affordabilityExpenseEventList A list of expense information related to an affordability promotion.
+     * @param  AffordabilityExpenseEvent[]|null  $affordabilityExpenseReversalEventList A list of expense information related to an affordability promotion.
+     * @param  RemovalShipmentEvent[]|null  $removalShipmentEventList A list of removal shipment event information.
+     * @param  RemovalShipmentAdjustmentEvent[]|null  $removalShipmentAdjustmentEventList A comma-delimited list of Removal shipmentAdjustment details for FBA inventory.
+     * @param  TrialShipmentEvent[]|null  $trialShipmentEventList A list of information about trial shipment financial events.
+     * @param  TdsReimbursementEvent[]|null  $tdsReimbursementEventList A list of `TDSReimbursementEvent` items.
+     * @param  AdhocDisbursementEvent[]|null  $adhocDisbursementEventList A list of `AdhocDisbursement` events.
+     * @param  TaxWithholdingEvent[]|null  $taxWithholdingEventList A list of `TaxWithholding` events.
+     * @param  ChargeRefundEvent[]|null  $chargeRefundEventList A list of charge refund events.
+     * @param  FailedAdhocDisbursementEvent[]|null  $failedAdhocDisbursementEventList A list of `FailedAdhocDisbursementEvent`s.
+     * @param  ValueAddedServiceChargeEvent[]|null  $valueAddedServiceChargeEventList A list of `ValueAddedServiceCharge` events.
+     * @param  CapacityReservationBillingEvent[]|null  $capacityReservationBillingEventList A list of `CapacityReservationBillingEvent` events.
      */
     public function __construct(
         public readonly ?array $shipmentEventList = null,

@@ -29,7 +29,7 @@ final class RemovalShipmentAdjustmentEvent extends BaseDto
      * Possible values:
      *
      * * WHOLESALE_LIQUIDATION.
-     * @param  RemovalShipmentItemAdjustment[]  $removalShipmentItemAdjustmentList A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
+     * @param  RemovalShipmentItemAdjustment[]|null  $removalShipmentItemAdjustmentList A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
      */
     public function __construct(
         public readonly ?string $postedDate = null,

@@ -21,10 +21,10 @@ final class GetPrepInstructionsResult extends BaseDto
     ];
 
     /**
-     * @param  SkuPrepInstructions[]  $skuPrepInstructionsList A list of SKU labeling requirements and item preparation instructions.
-     * @param  InvalidSku[]  $invalidSkuList A list of invalid SKU values and the reason they are invalid.
-     * @param  AsinPrepInstructions[]  $asinPrepInstructionsList A list of item preparation instructions.
-     * @param  InvalidAsin[]  $invalidAsinList A list of invalid ASIN values and the reasons they are invalid.
+     * @param  SkuPrepInstructions[]|null  $skuPrepInstructionsList A list of SKU labeling requirements and item preparation instructions.
+     * @param  InvalidSku[]|null  $invalidSkuList A list of invalid SKU values and the reason they are invalid.
+     * @param  AsinPrepInstructions[]|null  $asinPrepInstructionsList A list of item preparation instructions.
+     * @param  InvalidAsin[]|null  $invalidAsinList A list of invalid ASIN values and the reasons they are invalid.
      */
     public function __construct(
         public readonly ?array $skuPrepInstructionsList = null,

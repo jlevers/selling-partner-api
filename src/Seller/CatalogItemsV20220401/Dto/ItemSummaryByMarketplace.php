@@ -15,7 +15,7 @@ final class ItemSummaryByMarketplace extends BaseDto
      * @param  ?string  $brand Name of the brand associated with an Amazon catalog item.
      * @param  ?ItemBrowseClassification  $browseClassification Classification (browse node) associated with an Amazon catalog item.
      * @param  ?string  $color Name of the color associated with an Amazon catalog item.
-     * @param  ItemContributor[]  $contributors Individual contributors to the creation of an item, such as the authors or actors.
+     * @param  ItemContributor[]|null  $contributors Individual contributors to the creation of an item, such as the authors or actors.
      * @param  ?string  $itemClassification Classification type associated with the Amazon catalog item.
      * @param  ?string  $itemName Name, or title, associated with an Amazon catalog item.
      * @param  ?string  $manufacturer Name of the manufacturer associated with an Amazon catalog item.

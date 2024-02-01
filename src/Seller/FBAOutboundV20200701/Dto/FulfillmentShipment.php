@@ -19,7 +19,7 @@ final class FulfillmentShipment extends BaseDto
      * @param  ?string  $shippingDate
      * @param  ?string  $estimatedArrivalDate
      * @param  ?string[]  $shippingNotes Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
-     * @param  FulfillmentShipmentPackage[]  $fulfillmentShipmentPackage An array of fulfillment shipment package information.
+     * @param  FulfillmentShipmentPackage[]|null  $fulfillmentShipmentPackage An array of fulfillment shipment package information.
      */
     public function __construct(
         public readonly string $amazonShipmentId,

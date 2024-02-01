@@ -12,7 +12,7 @@ final class CreateUploadDestinationResponse extends BaseResponse
 
     /**
      * @param  ?UploadDestination  $payload Information about an upload destination.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?UploadDestination $payload = null,

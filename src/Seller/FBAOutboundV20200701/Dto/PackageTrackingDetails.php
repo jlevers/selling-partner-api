@@ -24,7 +24,7 @@ final class PackageTrackingDetails extends BaseDto
      * @param  ?string  $currentStatusDescription Description corresponding to the CurrentStatus value.
      * @param  ?string  $signedForBy The name of the person who signed for the package.
      * @param  ?string  $additionalLocationInfo Additional location information.
-     * @param  TrackingEvent[]  $trackingEvents An array of tracking event information.
+     * @param  TrackingEvent[]|null  $trackingEvents An array of tracking event information.
      */
     public function __construct(
         public readonly int $packageNumber,

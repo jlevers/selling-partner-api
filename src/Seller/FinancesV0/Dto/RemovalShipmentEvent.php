@@ -25,7 +25,7 @@ final class RemovalShipmentEvent extends BaseDto
      * Possible values:
      *
      * * WHOLESALE_LIQUIDATION
-     * @param  RemovalShipmentItem[]  $removalShipmentItemList A list of information about removal shipment items.
+     * @param  RemovalShipmentItem[]|null  $removalShipmentItemList A list of information about removal shipment items.
      */
     public function __construct(
         public readonly ?string $postedDate = null,

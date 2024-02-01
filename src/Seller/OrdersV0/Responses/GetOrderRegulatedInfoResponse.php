@@ -12,7 +12,7 @@ final class GetOrderRegulatedInfoResponse extends BaseResponse
 
     /**
      * @param  ?OrderRegulatedInfo  $payload The order's regulated information along with its verification status.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?OrderRegulatedInfo $payload = null,

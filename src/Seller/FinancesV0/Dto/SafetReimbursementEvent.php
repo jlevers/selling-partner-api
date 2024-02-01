@@ -21,7 +21,7 @@ final class SafetReimbursementEvent extends BaseDto
      * @param  ?string  $safetClaimId A SAFE-T claim identifier.
      * @param  ?Currency  $reimbursedAmount A currency type and amount.
      * @param  ?string  $reasonCode Indicates why the seller was reimbursed.
-     * @param  SafetReimbursementItem[]  $safetReimbursementItemList A list of SAFETReimbursementItems.
+     * @param  SafetReimbursementItem[]|null  $safetReimbursementItemList A list of SAFETReimbursementItems.
      */
     public function __construct(
         public readonly ?string $postedDate = null,

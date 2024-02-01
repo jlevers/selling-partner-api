@@ -11,8 +11,8 @@ final class GetPricingResponse extends BaseResponse
     protected static array $complexArrayTypes = ['payload' => [Price::class], 'errors' => [Error::class]];
 
     /**
-     * @param  Price[]  $payload
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Price[]|null  $payload
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?array $payload = null,

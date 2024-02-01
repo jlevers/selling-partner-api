@@ -10,8 +10,8 @@ final class UpdateScheduleRecord extends BaseDto
 
     /**
      * @param  ?AvailabilityRecord  $availability `AvailabilityRecord` to represent the capacity of a resource over a time range.
-     * @param  Warning[]  $warnings A list of warnings returned in the sucessful execution response of an API request.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Warning[]|null  $warnings A list of warnings returned in the sucessful execution response of an API request.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?AvailabilityRecord $availability = null,

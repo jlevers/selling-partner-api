@@ -36,7 +36,7 @@ final class ShippingService extends BaseDto
      * @param  ?string  $latestEstimatedDeliveryDate
      * @param  ?AvailableShippingServiceOptions  $availableShippingServiceOptions The available shipping service options.
      * @param  ?string[]  $availableLabelFormats List of label formats.
-     * @param  LabelFormatOption[]  $availableFormatOptionsForLabel The available label formats.
+     * @param  LabelFormatOption[]|null  $availableFormatOptionsForLabel The available label formats.
      */
     public function __construct(
         public readonly string $shippingServiceName,

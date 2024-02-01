@@ -12,7 +12,7 @@ final class Appointment extends BaseDto
      * @param  ?string  $appointmentId The appointment identifier.
      * @param  ?string  $appointmentStatus The status of the appointment.
      * @param  ?AppointmentTime  $appointmentTime The time of the appointment window.
-     * @param  Technician[]  $assignedTechnicians A list of technicians assigned to the service job.
+     * @param  Technician[]|null  $assignedTechnicians A list of technicians assigned to the service job.
      * @param  ?string  $rescheduledAppointmentId The appointment identifier.
      * @param  ?Poa  $poa Proof of Appointment (POA) details.
      */

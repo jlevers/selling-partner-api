@@ -31,8 +31,8 @@ final class DebtRecoveryEvent extends BaseDto
      * *DebtAdjustment
      * @param  ?Currency  $recoveryAmount A currency type and amount.
      * @param  ?Currency  $overPaymentCredit A currency type and amount.
-     * @param  DebtRecoveryItem[]  $debtRecoveryItemList A list of debt recovery item information.
-     * @param  ChargeInstrument[]  $chargeInstrumentList A list of payment instruments.
+     * @param  DebtRecoveryItem[]|null  $debtRecoveryItemList A list of debt recovery item information.
+     * @param  ChargeInstrument[]|null  $chargeInstrumentList A list of payment instruments.
      */
     public function __construct(
         public readonly ?string $debtRecoveryType = null,

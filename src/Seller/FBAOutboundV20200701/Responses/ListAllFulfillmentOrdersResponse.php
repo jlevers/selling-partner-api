@@ -12,7 +12,7 @@ final class ListAllFulfillmentOrdersResponse extends BaseResponse
 
     /**
      * @param  ?ListAllFulfillmentOrdersResult  $payload
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?ListAllFulfillmentOrdersResult $payload = null,

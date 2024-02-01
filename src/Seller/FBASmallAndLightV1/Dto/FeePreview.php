@@ -11,9 +11,9 @@ final class FeePreview extends BaseDto
     /**
      * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) value used to identify the item.
      * @param  ?MoneyType  $price
-     * @param  FeeLineItem[]  $feeBreakdown A list of the Small and Light fees for the item.
+     * @param  FeeLineItem[]|null  $feeBreakdown A list of the Small and Light fees for the item.
      * @param  ?MoneyType  $totalFees
-     * @param  Error[]  $errors
+     * @param  Error[]|null  $errors
      */
     public function __construct(
         public readonly ?string $asin = null,

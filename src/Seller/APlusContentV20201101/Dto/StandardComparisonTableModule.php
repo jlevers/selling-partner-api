@@ -12,8 +12,8 @@ final class StandardComparisonTableModule extends BaseDto
     ];
 
     /**
-     * @param  StandardComparisonProductBlock[]  $productColumns
-     * @param  PlainTextItem[]  $metricRowLabels
+     * @param  StandardComparisonProductBlock[]|null  $productColumns
+     * @param  PlainTextItem[]|null  $metricRowLabels
      */
     public function __construct(
         public readonly ?array $productColumns = null,

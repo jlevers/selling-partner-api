@@ -23,7 +23,7 @@ final class CreateShipmentRequest extends BaseDto
      * @param  ?string  $shippingServiceOfferId Identifies a shipping service order made by a carrier.
      * @param  ?string  $hazmatType Hazardous materials options for a package. Consult the terms and conditions for each carrier for more information on hazardous materials.
      * @param  ?LabelFormatOptionRequest  $labelFormatOption Whether to include a packing slip.
-     * @param  AdditionalSellerInputs[]  $shipmentLevelSellerInputsList A list of additional seller input pairs required to purchase shipping.
+     * @param  AdditionalSellerInputs[]|null  $shipmentLevelSellerInputsList A list of additional seller input pairs required to purchase shipping.
      */
     public function __construct(
         public readonly ShipmentRequestDetails $shipmentRequestDetails,

@@ -11,7 +11,7 @@ final class GetShipmentItemsResult extends BaseDto
     protected static array $complexArrayTypes = ['itemData' => [InboundShipmentItem::class]];
 
     /**
-     * @param  InboundShipmentItem[]  $itemData A list of inbound shipment item information.
+     * @param  InboundShipmentItem[]|null  $itemData A list of inbound shipment item information.
      * @param  ?string  $nextToken When present and not empty, pass this string token in the next request to return the next response page.
      */
     public function __construct(

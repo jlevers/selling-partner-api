@@ -12,7 +12,7 @@ final class ListFinancialEventsResponse extends BaseResponse
 
     /**
      * @param  ?ListFinancialEventsPayload  $payload The payload for the listFinancialEvents operation.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?ListFinancialEventsPayload $payload = null,

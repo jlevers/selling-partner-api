@@ -73,7 +73,7 @@ final class Order extends BaseDto
      * @param  ?Money  $orderTotal The monetary value of the order.
      * @param  ?int  $numberOfItemsShipped The number of items shipped.
      * @param  ?int  $numberOfItemsUnshipped The number of items unshipped.
-     * @param  PaymentExecutionDetailItem[]  $paymentExecutionDetail A list of payment execution detail items.
+     * @param  PaymentExecutionDetailItem[]|null  $paymentExecutionDetail A list of payment execution detail items.
      * @param  ?string  $paymentMethod The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
      * @param  ?string[]  $paymentMethodDetails A list of payment method detail items.
      * @param  ?string  $marketplaceId The identifier for the marketplace where the order was placed.

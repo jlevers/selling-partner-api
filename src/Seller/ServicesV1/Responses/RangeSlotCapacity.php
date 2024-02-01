@@ -11,7 +11,7 @@ final class RangeSlotCapacity extends BaseResponse
 
     /**
      * @param  ?string  $resourceId Resource Identifier.
-     * @param  RangeCapacity[]  $capacities Array of range capacities where each entry is for a specific capacity type.
+     * @param  RangeCapacity[]|null  $capacities Array of range capacities where each entry is for a specific capacity type.
      * @param  ?string  $nextPageToken Next page token, if there are more pages.
      */
     public function __construct(

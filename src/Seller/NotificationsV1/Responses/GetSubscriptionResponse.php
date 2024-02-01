@@ -12,7 +12,7 @@ final class GetSubscriptionResponse extends BaseResponse
 
     /**
      * @param  ?Subscription  $payload Represents a subscription to receive notifications.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?Subscription $payload = null,

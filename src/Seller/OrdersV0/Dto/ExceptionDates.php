@@ -17,7 +17,7 @@ final class ExceptionDates extends BaseDto
     /**
      * @param  ?string  $exceptionDate Date when the business is closed, in ISO-8601 date format.
      * @param  ?bool  $isOpen Boolean indicating if the business is closed or open on that date.
-     * @param  OpenInterval[]  $openIntervals Time window during the day when the business is open.
+     * @param  OpenInterval[]|null  $openIntervals Time window during the day when the business is open.
      */
     public function __construct(
         public readonly ?string $exceptionDate = null,

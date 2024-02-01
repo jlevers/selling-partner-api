@@ -54,7 +54,7 @@ final class OrderItem extends BaseDto
      * @param  string  $orderItemId An Amazon-defined order item identifier.
      * @param  int  $quantityOrdered The number of items in the order.
      * @param  ?string  $sellerSku The seller stock keeping unit (SKU) of the item.
-     * @param  AssociatedItem[]  $associatedItems A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
+     * @param  AssociatedItem[]|null  $associatedItems A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
      * @param  ?string  $title The name of the item.
      * @param  ?int  $quantityShipped The number of items shipped.
      * @param  ?ProductInfoDetail  $productInfo Product information on the number of items.

@@ -12,7 +12,7 @@ final class CreateShipmentResponse extends BaseResponse
 
     /**
      * @param  ?CreateShipmentResult  $payload The payload schema for the createShipment operation.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?CreateShipmentResult $payload = null,

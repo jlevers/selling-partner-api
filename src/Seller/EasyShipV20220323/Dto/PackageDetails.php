@@ -10,7 +10,7 @@ final class PackageDetails extends BaseDto
 
     /**
      * @param  TimeSlot  $packageTimeSlot A time window to hand over an Easy Ship package to Amazon Logistics.
-     * @param  Item[]  $packageItems A list of items contained in the package.
+     * @param  Item[]|null  $packageItems A list of items contained in the package.
      * @param  ?string  $packageIdentifier Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
      */
     public function __construct(

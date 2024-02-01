@@ -11,7 +11,7 @@ final class MarketplaceTaxInfo extends BaseDto
     protected static array $complexArrayTypes = ['taxClassifications' => [TaxClassification::class]];
 
     /**
-     * @param  TaxClassification[]  $taxClassifications A list of tax classifications that apply to the order.
+     * @param  TaxClassification[]|null  $taxClassifications A list of tax classifications that apply to the order.
      */
     public function __construct(
         public readonly ?array $taxClassifications = null,

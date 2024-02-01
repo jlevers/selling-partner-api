@@ -37,13 +37,13 @@ final class ShipmentItem extends BaseDto
      * @param  ?string  $orderItemId An Amazon-defined order item identifier.
      * @param  ?string  $orderAdjustmentItemId An Amazon-defined order adjustment identifier defined for refunds, guarantee claims, and chargeback events.
      * @param  ?int  $quantityShipped The number of items shipped.
-     * @param  ChargeComponent[]  $itemChargeList A list of charge information on the seller's account.
-     * @param  ChargeComponent[]  $itemChargeAdjustmentList A list of charge information on the seller's account.
-     * @param  FeeComponent[]  $itemFeeList A list of fee component information.
-     * @param  FeeComponent[]  $itemFeeAdjustmentList A list of fee component information.
-     * @param  TaxWithheldComponent[]  $itemTaxWithheldList A list of information about taxes withheld.
-     * @param  Promotion[]  $promotionList A list of promotions.
-     * @param  Promotion[]  $promotionAdjustmentList A list of promotions.
+     * @param  ChargeComponent[]|null  $itemChargeList A list of charge information on the seller's account.
+     * @param  ChargeComponent[]|null  $itemChargeAdjustmentList A list of charge information on the seller's account.
+     * @param  FeeComponent[]|null  $itemFeeList A list of fee component information.
+     * @param  FeeComponent[]|null  $itemFeeAdjustmentList A list of fee component information.
+     * @param  TaxWithheldComponent[]|null  $itemTaxWithheldList A list of information about taxes withheld.
+     * @param  Promotion[]|null  $promotionList A list of promotions.
+     * @param  Promotion[]|null  $promotionAdjustmentList A list of promotions.
      * @param  ?Currency  $costOfPointsGranted A currency type and amount.
      * @param  ?Currency  $costOfPointsReturned A currency type and amount.
      */

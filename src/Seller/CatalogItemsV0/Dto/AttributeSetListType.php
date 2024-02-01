@@ -125,7 +125,7 @@ final class AttributeSetListType extends BaseDto
      * @param  ?string  $cpuManufacturer The CPU manufacturer attribute of the item.
      * @param  ?DecimalWithUnits  $cpuSpeed The decimal value and unit.
      * @param  ?string  $cpuType The CPU type attribute of the item.
-     * @param  CreatorType[]  $creator The creator attributes of the item.
+     * @param  CreatorType[]|null  $creator The creator attributes of the item.
      * @param  ?string  $department The department attribute of the item.
      * @param  ?string[]  $director The director attributes of the item.
      * @param  ?DecimalWithUnits  $displaySize The decimal value and unit.
@@ -152,7 +152,7 @@ final class AttributeSetListType extends BaseDto
      * @param  ?string  $issuesPerYear The issues per year attribute of the item.
      * @param  ?string  $itemPartNumber The item part number attribute of the item.
      * @param  ?string  $label The label attribute of the item.
-     * @param  LanguageType[]  $languages The languages attribute of the item.
+     * @param  LanguageType[]|null  $languages The languages attribute of the item.
      * @param  ?string  $legalDisclaimer The legal disclaimer attribute of the item.
      * @param  ?Price  $listPrice The price attribute of the item.
      * @param  ?string  $manufacturer The manufacturer attribute of the item.

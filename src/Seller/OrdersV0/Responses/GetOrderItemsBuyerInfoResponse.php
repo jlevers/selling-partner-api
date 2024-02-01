@@ -12,7 +12,7 @@ final class GetOrderItemsBuyerInfoResponse extends BaseResponse
 
     /**
      * @param  ?OrderItemsBuyerInfoList  $payload A single order item's buyer information list with the order ID.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?OrderItemsBuyerInfoList $payload = null,

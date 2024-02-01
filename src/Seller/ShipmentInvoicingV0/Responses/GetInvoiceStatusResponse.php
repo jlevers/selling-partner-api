@@ -12,7 +12,7 @@ final class GetInvoiceStatusResponse extends BaseResponse
 
     /**
      * @param  ?ShipmentInvoiceStatusResponse  $payload The shipment invoice status response.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?ShipmentInvoiceStatusResponse $payload = null,

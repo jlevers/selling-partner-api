@@ -31,7 +31,7 @@ final class RetrochargeEvent extends BaseDto
      * @param  ?Currency  $baseTax A currency type and amount.
      * @param  ?Currency  $shippingTax A currency type and amount.
      * @param  ?string  $marketplaceName The name of the marketplace where the retrocharge event occurred.
-     * @param  TaxWithheldComponent[]  $retrochargeTaxWithheldList A list of information about taxes withheld.
+     * @param  TaxWithheldComponent[]|null  $retrochargeTaxWithheldList A list of information about taxes withheld.
      */
     public function __construct(
         public readonly ?string $retrochargeEventType = null,

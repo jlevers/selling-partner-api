@@ -9,7 +9,7 @@ final class AplusResponse extends BaseDto
     protected static array $complexArrayTypes = ['warnings' => [Error::class]];
 
     /**
-     * @param  Error[]  $warnings A set of messages to the user, such as warnings or comments.
+     * @param  Error[]|null  $warnings A set of messages to the user, such as warnings or comments.
      */
     public function __construct(
         public readonly ?array $warnings = null,

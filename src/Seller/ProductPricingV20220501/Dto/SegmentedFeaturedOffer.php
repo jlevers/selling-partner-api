@@ -16,7 +16,7 @@ final class SegmentedFeaturedOffer extends BaseDto
      * @param  string  $condition The condition of the item.
      * @param  string  $fulfillmentType Indicates whether the item is fulfilled by Amazon or by the seller (merchant).
      * @param  FeaturedOfferSegment[]  $featuredOfferSegments The list of segment information in which the offer is featured.
-     * @param  ShippingOption[]  $shippingOptions A list of shipping options associated with this offer
+     * @param  ShippingOption[]|null  $shippingOptions A list of shipping options associated with this offer
      * @param  ?Points  $points
      */
     public function __construct(

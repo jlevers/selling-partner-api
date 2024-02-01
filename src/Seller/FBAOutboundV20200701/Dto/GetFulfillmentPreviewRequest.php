@@ -20,7 +20,7 @@ final class GetFulfillmentPreviewRequest extends BaseDto
      * @param  ?string[]  $shippingSpeedCategories
      * @param  ?bool  $includeCodFulfillmentPreview When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
      * @param  ?bool  $includeDeliveryWindows When true, returns the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
-     * @param  FeatureSettings[]  $featureConstraints A list of features and their fulfillment policies to apply to the order.
+     * @param  FeatureSettings[]|null  $featureConstraints A list of features and their fulfillment policies to apply to the order.
      */
     public function __construct(
         public readonly Address $address,

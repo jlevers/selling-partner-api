@@ -10,7 +10,7 @@ final class ResearchingQuantity extends BaseDto
 
     /**
      * @param  ?int  $totalResearchingQuantity The total number of units currently being researched in Amazon's fulfillment network.
-     * @param  ResearchingQuantityEntry[]  $researchingQuantityBreakdown A list of quantity details for items currently being researched.
+     * @param  ResearchingQuantityEntry[]|null  $researchingQuantityBreakdown A list of quantity details for items currently being researched.
      */
     public function __construct(
         public readonly ?int $totalResearchingQuantity = null,

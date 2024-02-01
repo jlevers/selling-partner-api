@@ -12,8 +12,8 @@ final class SetAppointmentResponse extends BaseResponse
 
     /**
      * @param  ?string  $appointmentId The appointment identifier.
-     * @param  Warning[]  $warnings A list of warnings returned in the sucessful execution response of an API request.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Warning[]|null  $warnings A list of warnings returned in the sucessful execution response of an API request.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?string $appointmentId = null,

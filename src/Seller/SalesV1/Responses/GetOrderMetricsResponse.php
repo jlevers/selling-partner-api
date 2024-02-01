@@ -11,8 +11,8 @@ final class GetOrderMetricsResponse extends BaseResponse
     protected static array $complexArrayTypes = ['payload' => [OrderMetricsInterval::class], 'errors' => [Error::class]];
 
     /**
-     * @param  OrderMetricsInterval[]  $payload A set of order metrics, each scoped to a particular time interval.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  OrderMetricsInterval[]|null  $payload A set of order metrics, each scoped to a particular time interval.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?array $payload = null,

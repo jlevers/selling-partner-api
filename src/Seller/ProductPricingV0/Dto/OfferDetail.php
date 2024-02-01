@@ -34,7 +34,7 @@ final class OfferDetail extends BaseDto
      * @param  ?string  $sellerId The seller identifier for the offer.
      * @param  ?string  $conditionNotes Information about the condition of the item.
      * @param  ?SellerFeedbackType  $sellerFeedbackRating Information about the seller's feedback, including the percentage of positive feedback, and the total number of ratings received.
-     * @param  QuantityDiscountPriceType[]  $quantityDiscountPrices
+     * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices
      * @param  ?Points  $points
      * @param  ?ShipsFromType  $shipsFrom The state and country from where the item is shipped.
      * @param  ?PrimeInformationType  $primeInformation Amazon Prime information.

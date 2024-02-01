@@ -13,8 +13,8 @@ final class ItemSalesRanksByMarketplace extends BaseDto
 
     /**
      * @param  string  $marketplaceId Amazon marketplace identifier.
-     * @param  ItemClassificationSalesRank[]  $classificationRanks Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.
-     * @param  ItemDisplayGroupSalesRank[]  $displayGroupRanks Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.
+     * @param  ItemClassificationSalesRank[]|null  $classificationRanks Sales ranks of an Amazon catalog item for an Amazon marketplace by classification.
+     * @param  ItemDisplayGroupSalesRank[]|null  $displayGroupRanks Sales ranks of an Amazon catalog item for an Amazon marketplace by website display group.
      */
     public function __construct(
         public readonly string $marketplaceId,

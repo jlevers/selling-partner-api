@@ -16,7 +16,7 @@ final class GetRatesRequest extends BaseDto
      * @param  ?Address  $returnTo The address.
      * @param  ?string  $shipDate The ship date and time (the requested pickup). This defaults to the current date and time.
      * @param  ?ValueAddedServiceDetails  $valueAddedServices A collection of supported value-added services.
-     * @param  TaxDetail[]  $taxDetails A list of tax detail information.
+     * @param  TaxDetail[]|null  $taxDetails A list of tax detail information.
      */
     public function __construct(
         public readonly Address $shipFrom,

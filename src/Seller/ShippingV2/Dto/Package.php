@@ -16,7 +16,7 @@ final class Package extends BaseDto
      * @param  Item[]  $items A list of items.
      * @param  ?bool  $isHazmat When true, the package contains hazardous materials. Defaults to false.
      * @param  ?string  $sellerDisplayName The seller name displayed on the label.
-     * @param  ChargeComponent[]  $charges A list of charges based on the shipping service charges applied on a package.
+     * @param  ChargeComponent[]|null  $charges A list of charges based on the shipping service charges applied on a package.
      */
     public function __construct(
         public readonly Dimensions $dimensions,

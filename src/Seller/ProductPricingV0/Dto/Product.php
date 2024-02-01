@@ -22,8 +22,8 @@ final class Product extends BaseDto
      * @param  ?mixed[]  $attributeSets
      * @param  ?mixed[]  $relationships
      * @param  ?CompetitivePricingType  $competitivePricing Competitive pricing information for the item.
-     * @param  SalesRankType[]  $salesRankings A list of sales rank information for the item, by category.
-     * @param  OfferType[]  $offers A list of offers.
+     * @param  SalesRankType[]|null  $salesRankings A list of sales rank information for the item, by category.
+     * @param  OfferType[]|null  $offers A list of offers.
      */
     public function __construct(
         public readonly IdentifierType $identifiers,

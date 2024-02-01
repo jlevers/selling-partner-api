@@ -46,12 +46,12 @@ final class RentalTransactionEvent extends BaseDto
      * * RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item.
      * @param  ?int  $extensionLength The number of days that the buyer extended an already rented item. This value is only returned for RentalCustomerPayment-Extension and RentalCustomerRefund-Extension events.
      * @param  ?string  $postedDate
-     * @param  ChargeComponent[]  $rentalChargeList A list of charge information on the seller's account.
-     * @param  FeeComponent[]  $rentalFeeList A list of fee component information.
+     * @param  ChargeComponent[]|null  $rentalChargeList A list of charge information on the seller's account.
+     * @param  FeeComponent[]|null  $rentalFeeList A list of fee component information.
      * @param  ?string  $marketplaceName The name of the marketplace.
      * @param  ?Currency  $rentalInitialValue A currency type and amount.
      * @param  ?Currency  $rentalReimbursement A currency type and amount.
-     * @param  TaxWithheldComponent[]  $rentalTaxWithheldList A list of information about taxes withheld.
+     * @param  TaxWithheldComponent[]|null  $rentalTaxWithheldList A list of information about taxes withheld.
      */
     public function __construct(
         public readonly ?string $amazonOrderId = null,

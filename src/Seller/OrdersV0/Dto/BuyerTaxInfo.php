@@ -17,7 +17,7 @@ final class BuyerTaxInfo extends BaseDto
     /**
      * @param  ?string  $companyLegalName The legal name of the company.
      * @param  ?string  $taxingRegion The country or region imposing the tax.
-     * @param  TaxClassification[]  $taxClassifications A list of tax classifications that apply to the order.
+     * @param  TaxClassification[]|null  $taxClassifications A list of tax classifications that apply to the order.
      */
     public function __construct(
         public readonly ?string $companyLegalName = null,

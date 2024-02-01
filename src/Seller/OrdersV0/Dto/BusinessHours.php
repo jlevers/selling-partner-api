@@ -12,7 +12,7 @@ final class BusinessHours extends BaseDto
 
     /**
      * @param  ?string  $dayOfWeek Day of the week.
-     * @param  OpenInterval[]  $openIntervals Time window during the day when the business is open.
+     * @param  OpenInterval[]|null  $openIntervals Time window during the day when the business is open.
      */
     public function __construct(
         public readonly ?string $dayOfWeek = null,

@@ -17,7 +17,7 @@ final class MarketplaceTaxInfo extends BaseDto
     /**
      * @param  ?string  $companyLegalName The legal name of the company.
      * @param  ?string  $taxingRegion The country or region imposing the tax.
-     * @param  TaxClassification[]  $taxClassifications The list of tax classifications.
+     * @param  TaxClassification[]|null  $taxClassifications The list of tax classifications.
      */
     public function __construct(
         public readonly ?string $companyLegalName = null,

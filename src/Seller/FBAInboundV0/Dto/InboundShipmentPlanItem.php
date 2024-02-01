@@ -19,7 +19,7 @@ final class InboundShipmentPlanItem extends BaseDto
      * @param  string  $sellerSku The seller SKU of the item.
      * @param  string  $fulfillmentNetworkSku Amazon's fulfillment network SKU of the item.
      * @param  int  $quantity The item quantity.
-     * @param  PrepDetails[]  $prepDetailsList A list of preparation instructions and who is responsible for that preparation.
+     * @param  PrepDetails[]|null  $prepDetailsList A list of preparation instructions and who is responsible for that preparation.
      */
     public function __construct(
         public readonly string $sellerSku,

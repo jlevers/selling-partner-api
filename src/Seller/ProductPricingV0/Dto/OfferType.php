@@ -27,7 +27,7 @@ final class OfferType extends BaseDto
      * @param  string  $sellerSku The seller stock keeping unit (SKU) of the item.
      * @param  ?string  $offerType
      * @param  ?MoneyType  $businessPrice
-     * @param  QuantityDiscountPriceType[]  $quantityDiscountPrices
+     * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices
      */
     public function __construct(
         public readonly PriceType $buyingPrice,

@@ -23,7 +23,7 @@ final class InboundShipmentPlanRequestItem extends BaseDto
      * @param  string  $condition The condition of the item.
      * @param  int  $quantity The item quantity.
      * @param  ?int  $quantityInCase The item quantity.
-     * @param  PrepDetails[]  $prepDetailsList A list of preparation instructions and who is responsible for that preparation.
+     * @param  PrepDetails[]|null  $prepDetailsList A list of preparation instructions and who is responsible for that preparation.
      */
     public function __construct(
         public readonly string $sellerSku,

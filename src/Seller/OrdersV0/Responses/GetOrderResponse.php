@@ -12,7 +12,7 @@ final class GetOrderResponse extends BaseResponse
 
     /**
      * @param  ?Order  $payload Order information.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?Order $payload = null,

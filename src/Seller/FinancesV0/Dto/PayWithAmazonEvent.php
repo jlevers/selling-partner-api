@@ -91,7 +91,7 @@ final class PayWithAmazonEvent extends BaseDto
      * * TCS-IGST - Tax Collected at Source for Integrated Goods and Services Tax (IGST).
      *
      * * TCS-UTGST - Tax Collected at Source for Union Territories Goods and Services Tax (UTGST).
-     * @param  FeeComponent[]  $feeList A list of fee component information.
+     * @param  FeeComponent[]|null  $feeList A list of fee component information.
      * @param  ?string  $paymentAmountType The type of payment.
      *
      * Possible values:

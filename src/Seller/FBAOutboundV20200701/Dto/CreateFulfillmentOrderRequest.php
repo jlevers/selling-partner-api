@@ -27,7 +27,7 @@ final class CreateFulfillmentOrderRequest extends BaseDto
      * @param  ?CodSettings  $codSettings The COD (Cash On Delivery) charges that you associate with a COD fulfillment order.
      * @param  ?string  $shipFromCountryCode The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
      * @param  ?string[]  $notificationEmails A list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller.
-     * @param  FeatureSettings[]  $featureConstraints A list of features and their fulfillment policies to apply to the order.
+     * @param  FeatureSettings[]|null  $featureConstraints A list of features and their fulfillment policies to apply to the order.
      */
     public function __construct(
         public readonly string $sellerFulfillmentOrderId,

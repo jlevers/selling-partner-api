@@ -13,7 +13,7 @@ final class DirectPurchaseRequest extends BaseDto
      * @param  ?Address  $shipTo The address.
      * @param  ?Address  $shipFrom The address.
      * @param  ?Address  $returnTo The address.
-     * @param  Package[]  $packages A list of packages to be shipped through a shipping service offering.
+     * @param  Package[]|null  $packages A list of packages to be shipped through a shipping service offering.
      * @param  ?RequestedDocumentSpecification  $labelSpecifications The document specifications requested. For calls to the purchaseShipment operation, the shipment purchase fails if the specified document specifications are not among those returned in the response to the getRates operation.
      */
     public function __construct(

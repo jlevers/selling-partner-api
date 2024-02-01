@@ -23,7 +23,7 @@ final class Item extends BaseDto
      * @param  ?Weight  $itemWeight The weight.
      * @param  ?string  $itemDescription The description of the item.
      * @param  ?string[]  $transparencyCodeList A list of transparency codes.
-     * @param  AdditionalSellerInputs[]  $itemLevelSellerInputsList A list of additional seller input pairs required to purchase shipping.
+     * @param  AdditionalSellerInputs[]|null  $itemLevelSellerInputsList A list of additional seller input pairs required to purchase shipping.
      */
     public function __construct(
         public readonly string $orderItemId,

@@ -37,7 +37,7 @@ class CreateServiceDocumentUploadDestination extends Request implements HasBody
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            200, 400, 403, 404, 413, 415, 422, 429, 500, 503 => CreateServiceDocumentUploadDestination::class,
+            200, 400, 403, 404, 413, 415, 422, 429, 500, 503 => CreateServiceDocumentUploadDestination1::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

@@ -2,6 +2,7 @@
 
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Requests;
 
+use Crescat\SaloonSdkGenerator\EmptyResponse;
 use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -31,11 +32,12 @@ class UpdateSupplySourceStatus extends Request
         return "/supplySources/2020-07-01/supplySources/{$this->supplySourceId}/status";
     }
 
-    public function createDtoFromResponse(Response $response): ErrorList
+    public function createDtoFromResponse(Response $response): EmptyResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            204, 400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
+            204 => EmptyResponse::class,
+            400, 403, 404, 413, 415, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

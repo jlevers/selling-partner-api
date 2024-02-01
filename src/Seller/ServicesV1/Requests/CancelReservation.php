@@ -2,6 +2,7 @@
 
 namespace SellingPartnerApi\Seller\ServicesV1\Requests;
 
+use Crescat\SaloonSdkGenerator\EmptyResponse;
 use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -35,11 +36,12 @@ class CancelReservation extends Request
         return "/service/v1/reservation/{$this->reservationId}";
     }
 
-    public function createDtoFromResponse(Response $response): CancelReservationResponse
+    public function createDtoFromResponse(Response $response): EmptyResponse|CancelReservationResponse
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            204, 400, 403, 404, 413, 415, 429, 500, 503 => CancelReservationResponse::class,
+            204 => EmptyResponse::class,
+            400, 403, 404, 413, 415, 429, 500, 503 => CancelReservationResponse::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

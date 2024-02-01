@@ -2,13 +2,13 @@
 
 namespace SellingPartnerApi\Seller\ServicesV1\Requests;
 
+use Crescat\SaloonSdkGenerator\EmptyResponse;
 use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use SellingPartnerApi\Seller\ServicesV1\Dto\SetAppointmentFulfillmentDataRequest;
 use SellingPartnerApi\Seller\ServicesV1\Responses\ErrorList;
-use SellingPartnerApi\Seller\ServicesV1\Responses\SetAppointmentFulfillmentData as SetAppointmentFulfillmentData1;
 
 /**
  * setAppointmentFulfillmentData
@@ -34,12 +34,12 @@ class SetAppointmentFulfillmentData extends Request
         return "/service/v1/serviceJobs/{$this->serviceJobId}/appointments/{$this->appointmentId}/fulfillment";
     }
 
-    public function createDtoFromResponse(Response $response): SetAppointmentFulfillmentData1|Errors
+    public function createDtoFromResponse(Response $response): EmptyResponse|ErrorList
     {
         $status = $response->status();
         $responseCls = match ($status) {
-            204 => SetAppointmentFulfillmentData::class,
-            400, 403, 404, 413, 415, 422, 429, 500, 503 => Errors::class,
+            204 => EmptyResponse::class,
+            400, 403, 404, 413, 415, 422, 429, 500, 503 => ErrorList::class,
             default => throw new Exception("Unhandled response status: {$status}")
         };
 

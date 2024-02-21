@@ -1,5 +1,14 @@
 {
   "seller": {
+    "application-management": {
+      "name": "Application Management",
+      "versions": [
+        {
+          "version": "2023-11-30",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/application-management-api-model/application_2023-11-30.json"
+        }
+      ]
+    },
     "a-plus-content": {
       "name": "A Plus Content",
       "versions": [

@@ -35,8 +35,7 @@ If you've found any of our packages useful, please consider [becoming a Sponsor]
 
 ## Features
 
-* Supports all Selling Partner API operations (for Sellers and Vendors) as of 4/11/2023 ([see here](#supported-api-segments) for links to documentation for all calls)
-* Supports applications made with both IAM user and IAM role ARNs ([docs](#setup))
+* Supports all Selling Partner API operations (for Sellers and Vendors) as of 2/10/2024
 * Automatically generates Restricted Data Tokens for all calls that require them -- no extra calls to the Tokens API needed
 * Includes a [`Document` helper class](#uploading-and-downloading-documents) for uploading and downloading feed/report documents
 
@@ -46,15 +45,14 @@ If you've found any of our packages useful, please consider [becoming a Sponsor]
 `composer require jlevers/selling-partner-api`
 
 
-## Table of Contents 
+## Table of Contents
 
 Check out the [Getting Started](#getting-started) section below for a quick overview.
 
 This README is divided into several sections:
 * [Setup](#setup)
     * [Configuration options](#configuration-options)
-* [Examples](#examples)
-* [Debug mode](#debug-mode)
+* [Debugging](#debugging)
 * [Supported API segments](#supported-api-segments)
     * [Seller APIs](#seller-apis)
     * [Vendor APIs](#vendor-apis)
@@ -63,128 +61,90 @@ This README is divided into several sections:
     * [Downloading a report document](#downloading-a-report-document)
     * [Uploading a feed document](#uploading-a-feed-document)
     * [Downloading a feed result document](#downloading-a-feed-result-document)
-* [Working with model classes](#working-with-model-classes)
-* [Response headers](#response-headers)
-* [Custom request authorization](#custom-authorization-signer)
-* [Custom request signing](#custom-request-signer)
+* [Naming conventions](#naming-conventions)
+* [API versions](#api-versions)
+* [Working with DTOs](#working-with-dtos)
 
 ## Getting Started
 
 ### Prerequisites
 
-You need a few things to get started:
-* A Selling Partner API developer account
-* An AWS IAM user or role configured for use with the Selling Partner API
-* A Selling Partner API application
+To get started, you need an approved Selling Partner API developer account, and SP API application credentials, which you can get by creating a new SP API application in Seller Central.
 
-If you're looking for more information on how to set those things up, check out [this blog post](https://highsidelabs.co/blog/selling-partner-api-access/). It provides a detailed walkthrough of the whole setup process.
 
 
 ### Setup
 
-The [`Configuration`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Configuration.php) constructor takes a single argument: an associative array with all the configuration information that's needed to connect to the Selling Partner API:
+The [`SellingPartnerApi`](https://github.com/jlevers/selling-partner-api/blob/main/src/SellingPartnerApi.php) class acts as a factory to generate API connector instances. It takes a set of (optionally) named parameters. Its basic usage looks like this:
 
 ```php
-$config = new SellingPartnerApi\Configuration([
-    "lwaClientId" => "<LWA client ID>",
-    "lwaClientSecret" => "<LWA client secret>",
-    "lwaRefreshToken" => "<LWA refresh token>",
-    "awsAccessKeyId" => "<AWS access key ID>",
-    "awsSecretAccessKey" => "<AWS secret access key>",
-    // If you're not working in the North American marketplace, change
-    // this to another endpoint from lib/Endpoint.php
-    "endpoint" => SellingPartnerApi\Endpoint::NA,
-]);
+use SellingPartnerApi\SellingPartnerApi;
+use SellingPartnerApi\Enums\Endpoint;
+
+$connector = SellingPartnerApi::make(
+    clientId: 'amzn1.application-oa2-client.asdfqwertyuiop...',
+    clientSecret: 'amzn1.oa2-cs.v1.1234567890asdfghjkl...',
+    refreshToken: 'Atzr|IwEBIA...',
+    endpoint: Endpoint::NA,  // Or Endpoint::EU, Endpoint::FE, Endpoint::NA_SANDBOX, etc.
+)->seller();
 ```
 
-If you created your Selling Partner API application using an IAM role ARN instead of a user ARN, pass that role ARN in the configuration array:
+> [!NOTE]
+> Older versions of the Selling Partner API used AWS IAM credentials to authenticate, and so this library had additional AWS configuration options. If you're upgrading from an older version of this library and are confused about what to do with your AWs creds, you can just ignore them. The SP API no longer authenticates via AWSA IAM roles or users.
+
+Now you have a Selling Partner API connector instance, and you can start making calls to the API. The connector instance has methods for each of the API segments (e.g., `sellers`, `orders`, `fba-inbound`), and you can access them like so:
 
 ```php
-$config = new SellingPartnerApi\Configuration([
-    "lwaClientId" => "<LWA client ID>",
-    "lwaClientSecret" => "<LWA client secret>",
-    "lwaRefreshToken" => "<LWA refresh token>",
-    "awsAccessKeyId" => "<AWS access key ID>",
-    "awsSecretAccessKey" => "<AWS secret access key>",
-    // If you're not working in the North American marketplace, change
-    // this to another endpoint from lib/Endpoint.php
-    "endpoint" => SellingPartnerApi\Endpoint::NA,
-    "roleArn" => "<Role ARN>",
-]);
+$ordersApi = $connector->orders();
+$response = $ordersApi->getOrders(
+    createdAfter: new DateTime('2024-01-01'),
+    marketplaceIds: ['ATVPDKIKX0DER'],
+);
 ```
 
-Getter and setter methods exist for the `Configuration` class's `lwaClientId`, `lwaClientSecret`, `lwaRefreshToken`, `awsAccessKeyId`, `awsSecretAccessKey`, and `endpoint` properties. The methods are named in accordance with the name of the property they interact with: `getLwaClientId`, `setLwaClientId`, `getLwaClientSecret`, etc.
+Once you have a response, you can either access the raw JSON response via `$response->json()`, or you can automatically parse the response into a DTO by calling `$response->dto()`. Once the response is turned into a DTO, you can access the data via the DTO's properties. For instance, you can get the first order's purchase date like so:
 
-`$config` can then be passed into the constructor of any `SellingPartnerApi\Api\*Api` class. See the `Example` section for a complete example.
+```php
+$dto = $response->dto();
+$purchaseDate = $dto->payload->orders[0]->purchaseDate;
+```
+
+See the [Working with DTOs](#working-with-dtos) section for more details on how to work with requests and responses.
+
 
 ##### Configuration options
 
-The array passed to the `Configuration` constructor accepts the following keys:
+The `SellingPartnerApi::make()` builder method accepts the following keys:
 
-* `lwaClientId (string)`: Required. The LWA client ID of the SP API application to use to execute API requests.
-* `lwaClientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
-* `lwaRefreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using the `Configuration` instance to call [grantless operations](https://developer-docs.amazon.com/amazon-shipping/docs/grantless-operations).
-* `awsAccessKeyId (string)`: Required. AWS IAM user Access Key ID with SP API ExecuteAPI permissions.
-* `awsSecretAccessKey (string)`: Required. AWS IAM user Secret Access Key with SP API ExecuteAPI permissions.
-* `endpoint (array)`: Required. An array containing a `url` key (the endpoint URL) and a `region` key (the AWS region). There are predefined constants for these arrays in [`lib/Endpoint.php`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Endpoint.php): (`NA`, `EU`, `FE`, and `NA_SANDBOX`, `EU_SANDBOX`, and `FE_SANDBOX`. See [here](https://developer-docs.amazon.com/amazon-shipping/docs/sp-api-endpoints) for more details.
-* `accessToken (string)`: An access token generated from the refresh token.
-* `accessTokenExpiration (int)`: A Unix timestamp corresponding to the time when the `accessToken` expires. If `accessToken` is given, `accessTokenExpiration` is required (and vice versa).
-* `onUpdateCredentials (callable|Closure)`: A callback function to call when a new access token is generated. The function should accept a single argument of type [`SellingPartnerApi\Credentials`](https://github.com/jlevers/selling-partner-api/blob/main/lib/Credentials.php).
-* `roleArn (string)`: If you set up your SP API application with an AWS IAM role ARN instead of a user ARN, pass that ARN here.
-* `authenticationClient (GuzzleHttp\ClientInterface)`: Optional `GuzzleHttp\ClientInterface` object that will be used to generate the access token from the refresh token
-* `tokensApi (SellingPartnerApi\Api\TokensApi)`: Optional `SellingPartnerApi\Api\TokensApi` object that will be used to fetch Restricted Data Tokens (RDTs) when you call a [restricted operation](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide)
-* `authorizationSigner (SellingPartnerApi\Contract\AuthorizationSignerContract)`: Optional `SellingPartnerApi\Contract\AuthorizationSignerContract` implementation. See [Custom Authorization Signer](#custom-authorization-signer) section
-* `requestSigner (SellingPartnerApi\Contract\RequestSignerContract)`: Optional `SellingPartnerApi\Contract\RequestSignerContract` implementation. See [Custom Request Signer](#custom-request-signer) section.
+* `clientId (string)`: Required. The LWA client ID of the SP API application to use to execute API requests.
+* `clientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
+* `refreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using [grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
+* `endpoint`: Required. An instance of the [`SellingPartnerApi\Enums\Endpoint` enum](https://github.com/jlevers/selling-partner-api/blob/main/src/Enums/Endpoint.php). Primary endpoints are `Endpoint::NA`, `Endpoint::EU`, and `Endpoint::FE`. Sandbox endpoints are `Endpoint::NA_SANDBOX`, `Endpoint::EU_SANDBOX`, and `Endpoint::FE_SANDBOX`.
+* `authenticationClient`: Optional `GuzzleHttp\ClientInterface` object that will be used to generate the access token from the refresh token. If not provided, a default Guzzle client will be used.
 
-### Examples
 
-This example assumes you have access to the `Seller Insights` Selling Partner API role, but the general format applies to any Selling Partner API request.
+### Debugging
+
+To get detailed debugging output, you can take advantage of [Saloon's debugging hooks](https://docs.saloon.dev/digging-deeper/debugging). This package is built on top of Saloon, so anything that works in Saloon will work here. For instance, to debug requests:
 
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use SellingPartnerApi\SellingPartnerApi;
 
-use SellingPartnerApi\Api\SellersV1Api as SellersApi;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\Endpoint;
+$connector = SellingPartnerApi::make(
+    clientId: 'amzn1.application-oa2-client.asdfqwertyuiop...',
+    clientSecret: 'amzn1.oa2-cs.v1.1234567890asdfghjkl...',
+    refreshToken: 'Atzr|IwEBIA...',
+    endpoint: Endpoint::NA,
+)->seller();
 
-$config = new Configuration([
-    "lwaClientId" => "amzn1.application-oa2-client.....",
-    "lwaClientSecret" => "abcd....",
-    "lwaRefreshToken" => "Aztr|IwEBI....",
-    "awsAccessKeyId" => "AKIA....",
-    "awsSecretAccessKey" => "ABCD....",
-    // If you're not working in the North American marketplace, change
-    // this to another endpoint from lib/Endpoint.php
-    "endpoint" => Endpoint::NA
-]);
-
-$api = new SellersApi($config);
-try {
-    $result = $api->getMarketplaceParticipations();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
-}
-
-?>
+$connector->debugRequest(
+    function (PendingRequest $pendingRequest, RequestInterface $psrRequest) {
+        dd($pendingRequest->headers()->all(), $psrRequest);
+    }
+);
 ```
 
-### Debug mode
-
-To get debugging output when you make an API request, you can call `$config->setDebug(true)`. By default, debug output goes to `stdout` via `php://output`, but you can redirect it a file with `$config->setDebugFile('<path>')`.
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-use SellingPartnerApi\Configuration;
-
-$config = new Configuration([/* ... */]);
-$config->setDebug(true);
-// To redirect debug info to a file:
-$config->setDebugFile('./debug.log');
-```
+Then make requests with the connector as usual, and you'll hit the closure above every time a request is fired. You can also debug responses in a similar fashion – check out the [Saloon docs](https://docs.saloon.dev/digging-deeper/debugging#debugging-responses) for more details.
 
 
 ## Supported API segments
@@ -199,55 +159,234 @@ use SellingPartnerApi\Model\SellersV1 as Sellers;
 It also means that if a new version of an existing API is introduced, the library can be updated to include that new version without introducing breaking changes.
 
 ### Seller APIs
-* [A+ Content API (2020-11-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AplusContentV20201101Api.md)
-* [Authorization API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/AuthorizationV1Api.md)
-* [Catalog Items API (2022-04-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV20220401Api.md)
-* [Catalog Items API (2021-12-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV20201201Api.md)
-* [Catalog Items API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/CatalogItemsV0Api.md)
-* [EasyShip API (2022-03-23)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/EasyShipV20220323Api.md)
-* [FBA Inbound API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundV0Api.md)
-* [FBA Inbound Eligibility API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInboundEligibilityV1Api.md)
-* [FBA Inventory API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaInventoryV1Api.md)
-* [FBA Outbound API (2020-07-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FbaOutboundV20200701Api.md)
-* [Feeds API (2021-06-30)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsV20210630Api.md)
-* [Fees API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeesV0Api.md)
-* [Finances API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FinancesV0Api.md)
-* [Listings API (2021-08-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsV20210801Api.md)
-* [Listings Restrictions API (2021-08-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ListingsRestrictionsV20210801Api.md)
-* [Merchant Fulfillment API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MerchantFulfillmentV0Api.md)
-* [Messaging API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/MessagingV1Api.md)
-* [Notifications API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/NotificationsV1Api.md)
-* [Orders API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md)
-* [Product Pricing API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductPricingV0Api.md)
-* [Product Pricing API (2022-05-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductPricingV20220501Api.md)
-* [Product Type Definitions API (2020-09-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ProductTypeDefinitionsV20200901Api.md)
-* [Replenishment API (2022-11-07)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReplenishmentV20221107Api.md)
-* [Reports API (2021-06-30)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsV20210630Api.md)
-* [Sales API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SalesV1Api.md)
-* [Sellers API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SellersV1Api.md)
-* [Service API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ServiceV1Api.md)
-* [Shipment Invoicing API (V0)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShipmentInvoicingV0Api.md)
-* [Shipping API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingV1Api.md)
-* [Shipping API (V2)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ShippingV2Api.md)
-* [Small and Light API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SmallAndLightV1Api.md)
-* [Solicitations API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/SolicitationsV1Api.md)
-* [Restricted Data Tokens API (2021-03-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/TokensV20210301Api.md)
-* [Uploads API (2020-11-01)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/UploadsV20201101Api.md)
+
+Seller APIs are accessed via the `SellerConnector` class:
+
+```php
+<?php
+use SellingPartnerApi\SellingPartnerApi;
+
+$sellerConnector = SellingPartnerApi::make(/* ... */)->seller();
+```
+
+* **Application Management API (v2023-11-30)** ([docs](https://developer-docs.amazon.com/sp-api/docs/application-management-api-v2023-11-30-reference))
+    ```php
+    $applicationManagementApi = $sellerConnector->applicationManagement();
+    ```
+* **A+ Content API (v2020-11-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/selling-partner-api-for-a-content-management))
+    ```php
+    $aPlusContentApi = $sellerConnector->aPlusContent();
+    ```
+* **Authorization API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/authorization-api-v1-reference))
+    ```php
+    $authorizationApi = $sellerConnector->authorization();
+    ```
+* **Catalog Items API (v2022-04-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2022-04-01-reference))
+    ```php
+    $catalogItemsApi = $sellerConnector->catalogItems();
+    ```
+    ```
+* **Catalog Items API (v2021-12-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2020-12-01-reference))
+    ```php
+    $catalogItemsApi = $sellerConnector->catalogItemsV20211201();
+    ```
+    ```
+* **Catalog Items API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v0-reference))
+    ```php
+    $catalogItemsApi = $sellerConnector->catalogItemsV0();
+    ```
+* **Data Kiosk API (v2023-11-15)** ([docs](https://developer-docs.amazon.com/sp-api/v0/docs/data-kiosk-api-v2023-11-15-reference))
+    ```php
+    $dataKioskApi = $sellerConnector->dataKiosk();
+    ```
+* **EasyShip API (v2022-03-23)** ([docs](https://developer-docs.amazon.com/sp-api/docs/easy-ship-api-v2022-03-23-reference))
+    ```php
+    $easyShipApi = $sellerConnector->easyShip();
+    ```
+* **FBA Inbound API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/fulfillment-inbound-api-v0-reference))
+    ```php
+    $fbaInboundApi = $sellerConnector->fbaInbound();
+    ```
+* **FBA Inbound Eligibility API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/fbainboundeligibility-api-v1-reference))
+    ```php
+    $fbaInboundEligibility = $sellerConnector->fbaInboundEligibility();
+    ```
+* **FBA Inventory API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/fbainventory-api-v1-reference))
+    ```php
+    $fbaInventoryApi = $sellerConnector->fbaInventory();
+    ```
+* **FBA Outbound API (v2020-07-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/fulfillment-outbound-api-v2020-07-01-reference))
+    ```php
+    $fbaOutboundApi = $sellerConnector->fbaOutbound();
+    ```
+* **FBA Small and Light API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/fbasmallandlight-api-v1-reference))
+    ```php
+    $fbaSmallAndLightApi = $sellerConnector->fbaSmallAndLight();
+    ```
+* **Feeds API (v2021-06-30)** ([docs](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference))
+    ```php
+    $feedsApi = $sellerConnector->feeds();
+    ```
+* **Finances API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/finances-api-reference))
+    ```php
+    $financesApi = $sellerConnector->finances();
+    ```
+* **Listings Items API (v2021-08-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-reference))
+    ```php
+    $listingsItemsApi = $sellerConnector->listingsItems();
+    ```
+* **Listings Items API (v2020-09-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2020-09-01-reference))
+    ```php
+    $listingsItemsApi = $sellerConnector->listingsItemsV20200901();
+    ```
+* **Listings Restrictions API (v2021-08-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/listings-restrictions-api-v2021-08-01-reference))
+    ```php
+    $listingsRestrictionsApi = $sellerConnector->listingsRestrictions();
+    ```
+* **Merchant Fulfillment API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/merchant-fulfillment-api-v0-reference))
+    ```php
+    $merchantFulfillmentApi = $sellerConnector->merchantFulfillment();
+    ```
+* **Messaging API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/merchant-fulfillment-api-v0-reference))
+    ```php
+    $messagingApi = $sellerConnector->messaging();
+    ```
+* **Notifications API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-reference))
+    ```php
+    $notificationsApi = $sellerConnector->notifications();
+    ```
+* **Orders API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/orders-api-v0-reference))
+    ```php
+    $ordersApi = $sellerConnector->orders();
+    ```
+* **Product Fees API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/product-fees-api-v0-reference))
+    ```php
+    $productFeesApi = $sellerConnector->productFees();
+    ```
+* **Product Pricing API (v2022-05-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-reference))
+    ```php
+    $productPricingApi = $sellerConnector->productPricing();
+    ```
+* **Product Pricing API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v0-reference))
+    ```php
+    $productPricingApi = $sellerConnector->productPricingV0();
+    ```
+* **Product Type Definitions API (v2020-09-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api-v2020-09-01-reference))
+    ```php
+    $productTypeDefinitionsApi = $sellerConnector->productTypeDefinitions();
+    ```
+* **Replenishment API (v2022-11-07)** ([docs](https://developer-docs.amazon.com/sp-api/docs/replenishment-api-v2022-11-07-use-case-guide))
+    ```php
+    $replenishmentApi = $sellerConnector->replenishment();
+    ```
+* **Reports API (v2021-06-30)** ([docs](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference))
+    ```php
+    $reportsApi = $sellerConnector->reports();
+    ```
+* **Sales API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/sales-api-v1-reference))
+    ```php
+    $salesApi = $sellerConnector->sales();
+    ```
+* **Sellers API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference))
+    ```php
+    $sellersApi = $sellerConnector->sellers();
+    ```
+* **Services API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/services-api-v1-reference))
+    ```php
+    $servicesApi = $sellerConnector->services();
+    ```
+* **Shipment Invoicing API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/shipment-invoicing-api-v0-reference))
+    ```php
+    $shipmentInvoicingApi = $sellerConnector->shipmentInvoicing();
+    ```
+* **Shipping API (v2)** ([docs](https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference))
+    ```php
+    $shippingApi = $sellerConnector->shipping();
+    ```
+* **Shipping API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/shipping-api-v1-reference))
+    ```php
+    $shippingApi = $sellerConnector->shippingV1();
+    ```
+* **Solicitations API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/solicitations-api-v1-reference))
+    ```php
+    $solicitationsApi = $sellerConnector->solicitations();
+    ```
+* **Supply Sources API (v2020-07-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/supply-sources-api-v2020-07-01-reference))
+    ```php
+    $supplySourcesApi = $sellerConnector->supplySources();
+    ```
+* **Tokens API (v2021-03-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/tokens-api-v2021-03-01-reference))
+    ```php
+    $tokensApi = $sellerConnector->tokens();
+    ```
+* **Uploads API (v2020-11-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference))
+    ```php
+    $uploadsApi = $sellerConnector->uploads();
+    ```
 
 ### Vendor APIs
-* [Direct Fulfillment Inventory API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentInventoryV1Api.md)
-* [Direct Fulfillment Orders API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentOrdersV1Api.md)
-* [Direct Fulfillment Orders API (2021-12-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentOrdersV20211228Api.md)
-* [Direct Fulfillment Payments API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentPaymentsV1Api.md)
-* [Direct Fulfillment Sandbox API (2021-10-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentSandboxV20211028Api.md)
-* [Direct Fulfillment Shipping API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentShippingV1Api.md)
-* [Direct Fulfillment Shipping API (2021-12-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentShippingV20211228Api.md)
-* [Direct Fulfillment Transactions API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentTransactionsV1Api.md)
-* [Direct Fulfillment Transactions API (2021-12-28)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorDirectFulfillmentTransactionsV20211228Api.md)
-* [Invoices API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorInvoicesV1Api.md)
-* [Orders API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorOrdersV1Api.md)
-* [Shipping API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorShippingV1Api.md)
-* [Transaction Status API (V1)](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/VendorTransactionStatusV1Api.md)
+
+Vendor APIs are accessed via the `VendorConnector` class:
+
+```php
+<?php
+use SellingPartnerApi\SellingPartnerApi;
+
+$vendorConnector = SellingPartnerApi::make(/* ... */)->vendor();
+```
+
+* **Direct Fulfillment Inventory API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-inventory-api-v1-reference))
+    ```php
+    $directFulfillmentInventoryApi = $vendorConnector->directFulfillmentInventory();
+    ```
+* **Direct Fulfillment Orders API (v2021-12-28)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-orders-api-2021-12-28-reference))
+    ```php
+    $directFulfillmentOrdersApi = $vendorConnector->directFulfillmentOrders();
+    ``
+* **Direct Fulfillment Orders API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-orders-api-v1-reference))
+    ```php
+    $directFulfillmentOrdersApi = $vendorConnector->directFulfillmentOrdersV1();
+    ```
+* **Direct Fulfillment Payments API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-payments-api-v1-reference))
+    ```php
+    $directFulfillmentPaymentsApi = $vendorConnector->directFulfillmentPayments();
+    ```
+* **Direct Fulfillment Sandbox API (v2021-10-28)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-sandbox-test-data-api-2021-10-28-reference))
+    ```php
+    $directFulfillmentSandboxApi = $vendorConnector->directFulfillmentSandbox();
+    ```
+* **Direct Fulfillment Shipping API (v2021-12-28)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-2021-12-28-reference))
+    ```php
+    $directFulfillmentShippingApi = $vendorConnector->directFulfillmentShipping();
+    ```
+* **Direct Fulfillment Shipping API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-v1-reference))
+    ```php
+    $directFulfillmentShippingApi = $vendorConnector->directFulfillmentShippingV1();
+    ```
+* **Direct Fulfillment Transactions API (v2021-12-28)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-transactions-api-2021-12-28-reference))
+    ```php
+    $directFulfillmentTransactionsApi = $vendorConnector->directFulfillmentTransactions();
+    ```
+* **Direct Fulfillment Transactions API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-transactions-api-v1-reference))
+    ```php
+    $directFulfillmentTransactionsApi = $vendorConnector->directFulfillmentTransactionsV1();
+    ```
+* **Invoices API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-invoices-api-v1-reference))
+    ```php
+    $invoicesApi = $vendorConnector->invoices();
+    ```
+* **Orders API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-orders-api-v1-reference))
+    ```php
+    $ordersApi = $vendorConnector->orders();
+    ```
+* **Shipments API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-shipments-api-v1-reference))
+    ```php
+    $shipmentsApi = $vendorConnector->shipments();
+    ```
+* **Transaction Status API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-transaction-status-api-v1-reference))
+    ```php
+    $transactionStatusApi = $vendorConnector->transactionStatus();
+    ```
 
 
 ## Restricted operations
@@ -354,8 +493,53 @@ $contents = $docToDownload->download();  // The raw report data
 $data = $docToDownload->getData();  // Parsed/formatted report data
 ```
 
+## Naming conventions
 
-## Working with model classes
+Wherever possible, the names of the classes, methods, and properties in this package are identical to the names used in the Selling Partner API documentation. There are limited cases where this is not true, such as where the SP API documentation itself is inconsistent: for instance, there are some cases the SP API docs name properties in `UpperCamelCase` instead of `camelCase`, and in those cases the properties are named in `camelCase` in this package. Methods are named in `camelCase`, and DTOs are named in `UpperCamelCase`.
+
+Instead of maintaining a redundant set of documentation, we link to the official SP API documentation whenever possible. If it's unclear how to use a particular method or DTO, check out the corresponding section of the [official SP API documentation](https://developer-docs.amazon.com/sp-api/docs/welcome).
+
+## API versions
+
+Some Selling Partner API segments have multiple versions. For instance, the Product Pricing API has two versions: `v0` and `v2022-05-01`. The connector method `SellerConnector::productPricing()` points to the newer version (`v2022-05-01`), but you can get an instance of the older version by calling `SellerConnector::productPricingV0()`. Or, if you want to explicitly specify `v2022-05-01` in a way that will not break in a future major release if a new version of the API is introduced, you can call `SellerConnector::productPricingV20220501()`.
+
+More generally, the latest version of a given API segment (at the time when the major version of this library you're using was released) can be accessed with `Connector::apiName()`. Specific versions can be accessed with `Connector::apiNameV<version>()`.
+
+## Working with DTOs
+
+Some methods take DTOs as parameters. For instance, the `confirmShipment` method in the Orders API takes a `ConfirmShipmentRequest` DTO as a parameter. You can call `confirmShipment` like so:
+
+```php
+<?php
+
+use SellingPartnerApi\Seller\OrdersV0\Dto;
+use SellingPartnerApi\SellingPartnerApi;
+
+$confirmShipmentRequest = new Dto\ConfirmShipmentRequest(
+    packageDetail: new Dto\PackageDetail(
+        packageReferenceId: 'PKG123',
+        carrierCode: 'USPS',
+        trackingNumber: 'ASDF1234567890',
+        shipDate: new DateTime('2024-01-01 12:00:00'),
+        orderItems: [
+            new Dto\ConfirmShipmentOrderItem(
+                orderItemId: '1234567890',
+                quantity: 1,
+            ),
+            new Dto\ConfirmShipmentOrderItem(
+                orderItemId: '0987654321',
+                quantity: 2,
+            )
+        ],
+    ),
+    marketplaceId: 'ATVPDKIKX0DER',
+);
+
+$response = $ordersApi->confirmShipment(
+    orderId: '123-4567890-1234567',
+    confirmShipmentRequest: $confirmShipmentRequest,
+)
+```
 
 Most operations have one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or set each attribute after the fact. Here's an example using the Service API's `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/ServiceV1/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/ServiceV1/Buyer.php)).
 
@@ -400,121 +584,4 @@ $serviceJob = new SellingPartnerApi\Model\ServiceV1\Buyer([
 
 $serviceJob->buyer;        // -> [Buyer instance]
 $serviceJob->buyer->name;  // -> "Jane Doe"
-```
-
-
-## Response headers
-Amazon includes some useful headers with each SP API response. If you need those for any reason, you can get an associative array of response headers by calling `getHeaders()` on the response object. For instance:
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-use SellingPartnerApi\Api\SellersV1Api as SellersApi;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\Endpoint;
-
-$config = new Configuration([...]);
-$api = new Api\SellersApi($config);
-try {
-    $result = $api->getMarketplaceParticipations();
-    $headers = $result->headers;
-    print_r($headers);
-} catch (Exception $e) {
-    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-## Custom Authorization Signer
-You may need to do custom operations while signing the API request. You can create a custom authorization signer by creating an implementation of the [AuthorizationSignerContract](lib/Contract/AuthorizationSignerContract.php) interface and passing it into the `Configuration` constructor array.
-
-```php
-// CustomAuthorizationSigner.php
-use Psr\Http\Message\RequestInterface;
-use SellingPartnerApi\Contract\AuthorizationSignerContract;
-
-class CustomAuthorizationSigner implements AuthorizationSignerContract
-{
-    public function sign(RequestInterface $request, Credentials $credentials): RequestInterface
-    {
-        // Calculate request signature and request date.
-        
-        $requestDate = '20220426T202300Z';
-        $signatureHeaderValue = 'some calculated signature value';
-        
-        $signedRequest = $request
-            ->withHeader('Authorization', $signatureHeaderValue)
-            ->withHeader('x-amz-date', $requestDate);
-        
-        return $signedRequest;
-    }
-
-    // ...
-}
-
-// Consumer code
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-use SellingPartnerApi\Api\SellersV1Api as SellersApi;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\Endpoint;
-use CustomAuthorizationSigner;
-
-$config = new Configuration([
-    ..., 
-    'authorizationSigner' => new CustomAuthorizationSigner(),
-]);
-$api = new SellersApi($config);
-try {
-    $result = $api->getMarketplaceParticipations();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-## Custom Request Signer
-You may also need to customize the entire request signing process – for instance, if you need to call an external service in the process of signing the request. You can do so by creating an implementation of the [RequestSignerContract](lib/Contract/RequestSignerContract.php) interface, and passing an instance of it into the `Configuration` constructor array.
-
-```php
-// RemoteRequestSigner.php
-use Psr\Http\Message\RequestInterface;
-use SellingPartnerApi\Contract\RequestSignerContract;
-
-class RemoteRequestSigner implements RequestSignerContract
-{
-    public function signRequest(
-        RequestInterface $request,
-        ?string $scope = null,
-        ?string $restrictedPath = null,
-        ?string $operation = null
-    ): RequestInterface {
-        // Sign request by sending HTTP call
-        // to external/separate service instance.
-        
-        return $signedRequest;
-    }
-}
-
-// Consumer code
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-use SellingPartnerApi\Api\SellersV1Api as SellersApi;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\Endpoint;
-use RemoteRequestSigner;
-
-$config = new Configuration([
-    ..., 
-    'requestSigner' => new RemoteRequestSigner(),
-]);
-$api = new SellersApi($config);
-try {
-    $result = $api->getMarketplaceParticipations();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SellersApi->getMarketplaceParticipations: ', $e->getMessage(), PHP_EOL;
-}
 ```

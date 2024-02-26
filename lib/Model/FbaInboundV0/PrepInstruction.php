@@ -59,6 +59,7 @@ class PrepInstruction
     const CAP_SEALING = 'CapSealing';
     const SET_STICKERING = 'SetStickering';
     const BLANK_STICKERING = 'BlankStickering';
+    const PRODUCT_PACKAGING = 'ShipsInProductPackaging';
     const NO_PREP = 'NoPrep';
     const NONE = 'None';
     
@@ -83,6 +84,7 @@ class PrepInstruction
             self::CAP_SEALING,
             self::SET_STICKERING,
             self::BLANK_STICKERING,
+            self::PRODUCT_PACKAGING,
             self::NO_PREP,
             self::NONE,
         ];

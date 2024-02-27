@@ -10,8 +10,10 @@ use Psr\Http\Message\RequestInterface;
 use Saloon\Contracts\Authenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\PendingRequest;
+use SellingPartnerApi\Authentication\GrantlessAuthenticator;
 use SellingPartnerApi\Authentication\LWAAuthenticator;
 use SellingPartnerApi\Enums\Endpoint;
+use SellingPartnerApi\Enums\GrantlessScope;
 use SellingPartnerApi\Generator\Package;
 use SellingPartnerApi\Seller\SellerConnector;
 use SellingPartnerApi\Vendor\VendorConnector;
@@ -21,18 +23,18 @@ class SellingPartnerApi extends Connector
     protected array $authenticatorArgs;
 
     public function __construct(
-        string $clientId,
-        string $clientSecret,
+        protected readonly string $clientId,
+        protected readonly string $clientSecret,
         string $refreshToken,
         protected readonly Endpoint $endpoint,
-        ?ClientInterface $authenticationClient = null,
+        protected readonly ?ClientInterface $authenticationClient = null,
     ) {
         $this->authenticatorArgs = [
-            $clientId,
-            $clientSecret,
+            $this->clientId,
+            $this->clientSecret,
             $refreshToken,
             $this->endpoint,
-            $authenticationClient,
+            $this->authenticationClient,
         ];
         $authenticator = new LWAAuthenticator(...$this->authenticatorArgs);
         $this->authenticator = $authenticator;
@@ -63,6 +65,17 @@ class SellingPartnerApi extends Connector
     public function resolveBaseUrl(): string
     {
         return $this->endpoint->value;
+    }
+
+    public function grantlessAuth(GrantlessScope $scope): GrantlessAuthenticator
+    {
+        return new GrantlessAuthenticator(
+            $this->clientId,
+            $this->clientSecret,
+            $this->endpoint,
+            $scope,
+            $this->authenticationClient,
+        );
     }
 
     protected function defaultAuth(): Authenticator

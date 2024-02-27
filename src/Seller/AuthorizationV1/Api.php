@@ -4,6 +4,7 @@ namespace SellingPartnerApi\Seller\AuthorizationV1;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
+use SellingPartnerApi\Enums\GrantlessScope;
 use SellingPartnerApi\Seller\AuthorizationV1\Requests\GetAuthorizationCode;
 
 class Api extends BaseResource
@@ -15,6 +16,9 @@ class Api extends BaseResource
      */
     public function getAuthorizationCode(string $sellingPartnerId, string $developerId, string $mwsAuthToken): Response
     {
-        return $this->connector->send(new GetAuthorizationCode($sellingPartnerId, $developerId, $mwsAuthToken));
+        $request = new GetAuthorizationCode($sellingPartnerId, $developerId, $mwsAuthToken);
+        $request->authenticate($this->connector->grantlessAuth(GrantlessScope::TOKEN_MIGRATION));
+
+        return $this->connector->send($request);
     }
 }

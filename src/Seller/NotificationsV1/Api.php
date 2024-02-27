@@ -4,6 +4,7 @@ namespace SellingPartnerApi\Seller\NotificationsV1;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
+use SellingPartnerApi\Enums\GrantlessScope;
 use SellingPartnerApi\Seller\NotificationsV1\Dto\CreateDestinationRequest;
 use SellingPartnerApi\Seller\NotificationsV1\Dto\CreateSubscriptionRequest;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\CreateDestination;
@@ -24,7 +25,9 @@ class Api extends BaseResource
      */
     public function getSubscription(string $notificationType): Response
     {
-        return $this->connector->send(new GetSubscription($notificationType));
+        $request = new GetSubscription($notificationType);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -37,7 +40,9 @@ class Api extends BaseResource
         string $notificationType,
         CreateSubscriptionRequest $createSubscriptionRequest,
     ): Response {
-        return $this->connector->send(new CreateSubscription($notificationType, $createSubscriptionRequest));
+        $request = new CreateSubscription($notificationType, $createSubscriptionRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -48,7 +53,9 @@ class Api extends BaseResource
      */
     public function getSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
-        return $this->connector->send(new GetSubscriptionById($subscriptionId, $notificationType));
+        $request = new GetSubscriptionById($subscriptionId, $notificationType);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -59,12 +66,17 @@ class Api extends BaseResource
      */
     public function deleteSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
-        return $this->connector->send(new DeleteSubscriptionById($subscriptionId, $notificationType));
+        $request = new DeleteSubscriptionById($subscriptionId, $notificationType);
+
+        return $this->connector->send($request);
     }
 
     public function getDestinations(): Response
     {
-        return $this->connector->send(new GetDestinations());
+        $request = new GetDestinations();
+        $request->authenticate($this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS));
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -72,7 +84,10 @@ class Api extends BaseResource
      */
     public function createDestination(CreateDestinationRequest $createDestinationRequest): Response
     {
-        return $this->connector->send(new CreateDestination($createDestinationRequest));
+        $request = new CreateDestination($createDestinationRequest);
+        $request->authenticate($this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS));
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -80,7 +95,9 @@ class Api extends BaseResource
      */
     public function getDestination(string $destinationId): Response
     {
-        return $this->connector->send(new GetDestination($destinationId));
+        $request = new GetDestination($destinationId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -88,6 +105,8 @@ class Api extends BaseResource
      */
     public function deleteDestination(string $destinationId): Response
     {
-        return $this->connector->send(new DeleteDestination($destinationId));
+        $request = new DeleteDestination($destinationId);
+
+        return $this->connector->send($request);
     }
 }

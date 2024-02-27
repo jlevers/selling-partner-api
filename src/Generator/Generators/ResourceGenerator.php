@@ -11,6 +11,8 @@ use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpFile;
 use Saloon\Http\Response;
+use SellingPartnerApi\Authentication\GrantlessAuthenticator;
+use SellingPartnerApi\Enums\GrantlessScope;
 
 class ResourceGenerator extends BaseResourceGenerator
 {
@@ -19,6 +21,8 @@ class ResourceGenerator extends BaseResourceGenerator
      */
     public function generateResourceClass(string $resourceName, array $endpoints): ?PhpFile
     {
+        $grantlessScopes = json_decode(file_get_contents(METADATA_DIR.'/scopes.json'));
+
         $classType = new ClassType('Api');
 
         $baseResourceNs = $this->config->baseResourceNamespace ?? $this->config->namespace;
@@ -93,9 +97,31 @@ class ResourceGenerator extends BaseResourceGenerator
                 $args[] = new Literal(sprintf('$%s', NameHelper::safeVariableName($parameter->name)));
             }
 
-            $method->setBody(
-                new Literal(sprintf('return $this->connector->send(new %s(%s));', $requestClassNameAlias ?? $requestClassName, implode(', ', $args)))
+            $method->addBody(
+                new Literal(sprintf(
+                    '$request = new %s(%s);',
+                    $requestClassNameAlias ?? $requestClassName,
+                    implode(', ', $args)
+                ))
             );
+
+            $path = '/'.implode('/', $endpoint->pathSegments);
+            $httpMethod = strtolower($endpoint->method->value);
+            if (isset($grantlessScopes->{$path}->{$httpMethod})) {
+                $namespace
+                    ->addUse(GrantlessAuthenticator::class)
+                    ->addUse(GrantlessScope::class);
+                $scope = GrantlessScope::from($grantlessScopes->{$path}->{$httpMethod});
+
+                $method->addBody(
+                    new Literal(sprintf(
+                        '$request->authenticate($this->connector->grantlessAuth(GrantlessScope::%s));',
+                        $scope->name
+                    ))
+                );
+            }
+
+            $method->addBody('return $this->connector->send($request);');
         }
 
         $namespace->add($classType);

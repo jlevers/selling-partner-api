@@ -27,7 +27,9 @@ class Api extends BaseResource
         ?string $issueLocale = null,
         ?array $includedData = null,
     ): Response {
-        return $this->connector->send(new GetListingsItem($sellerId, $sku, $marketplaceIds, $issueLocale, $includedData));
+        $request = new GetListingsItem($sellerId, $sku, $marketplaceIds, $issueLocale, $includedData);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -44,7 +46,9 @@ class Api extends BaseResource
         array $marketplaceIds,
         ?string $issueLocale = null,
     ): Response {
-        return $this->connector->send(new PutListingsItem($sellerId, $sku, $listingsItemPutRequest, $marketplaceIds, $issueLocale));
+        $request = new PutListingsItem($sellerId, $sku, $listingsItemPutRequest, $marketplaceIds, $issueLocale);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -59,7 +63,9 @@ class Api extends BaseResource
         array $marketplaceIds,
         ?string $issueLocale = null,
     ): Response {
-        return $this->connector->send(new DeleteListingsItem($sellerId, $sku, $marketplaceIds, $issueLocale));
+        $request = new DeleteListingsItem($sellerId, $sku, $marketplaceIds, $issueLocale);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -76,6 +82,8 @@ class Api extends BaseResource
         array $marketplaceIds,
         ?string $issueLocale = null,
     ): Response {
-        return $this->connector->send(new PatchListingsItem($sellerId, $sku, $listingsItemPatchRequest, $marketplaceIds, $issueLocale));
+        $request = new PatchListingsItem($sellerId, $sku, $listingsItemPatchRequest, $marketplaceIds, $issueLocale);
+
+        return $this->connector->send($request);
     }
 }

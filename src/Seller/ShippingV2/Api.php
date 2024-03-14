@@ -22,7 +22,9 @@ class Api extends BaseResource
      */
     public function getRates(GetRatesRequest $getRatesRequest): Response
     {
-        return $this->connector->send(new GetRates($getRatesRequest));
+        $request = new GetRates($getRatesRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -30,7 +32,9 @@ class Api extends BaseResource
      */
     public function directPurchaseShipment(DirectPurchaseRequest $directPurchaseRequest): Response
     {
-        return $this->connector->send(new DirectPurchaseShipment($directPurchaseRequest));
+        $request = new DirectPurchaseShipment($directPurchaseRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -38,7 +42,9 @@ class Api extends BaseResource
      */
     public function purchaseShipment(PurchaseShipmentRequest $purchaseShipmentRequest): Response
     {
-        return $this->connector->send(new PurchaseShipment($purchaseShipmentRequest));
+        $request = new PurchaseShipment($purchaseShipmentRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -47,7 +53,9 @@ class Api extends BaseResource
      */
     public function getTracking(string $trackingId, string $carrierId): Response
     {
-        return $this->connector->send(new GetTracking($trackingId, $carrierId));
+        $request = new GetTracking($trackingId, $carrierId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -62,7 +70,9 @@ class Api extends BaseResource
         ?string $format = null,
         ?float $dpi = null,
     ): Response {
-        return $this->connector->send(new GetShipmentDocuments($shipmentId, $packageClientReferenceId, $format, $dpi));
+        $request = new GetShipmentDocuments($shipmentId, $packageClientReferenceId, $format, $dpi);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -70,7 +80,9 @@ class Api extends BaseResource
      */
     public function cancelShipment(string $shipmentId): Response
     {
-        return $this->connector->send(new CancelShipment($shipmentId));
+        $request = new CancelShipment($shipmentId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -79,6 +91,8 @@ class Api extends BaseResource
      */
     public function getAdditionalInputs(string $requestToken, string $rateId): Response
     {
-        return $this->connector->send(new GetAdditionalInputs($requestToken, $rateId));
+        $request = new GetAdditionalInputs($requestToken, $rateId);
+
+        return $this->connector->send($request);
     }
 }

@@ -14,6 +14,8 @@ class Api extends BaseResource
      */
     public function submitInvoice(SubmitInvoiceRequest $submitInvoiceRequest): Response
     {
-        return $this->connector->send(new SubmitInvoice($submitInvoiceRequest));
+        $request = new SubmitInvoice($submitInvoiceRequest);
+
+        return $this->connector->send($request);
     }
 }

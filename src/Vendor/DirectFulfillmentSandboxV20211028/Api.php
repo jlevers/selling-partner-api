@@ -15,7 +15,9 @@ class Api extends BaseResource
      */
     public function generateOrderScenarios(GenerateOrderScenarioRequest $generateOrderScenarioRequest): Response
     {
-        return $this->connector->send(new GenerateOrderScenarios($generateOrderScenarioRequest));
+        $request = new GenerateOrderScenarios($generateOrderScenarioRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -23,6 +25,8 @@ class Api extends BaseResource
      */
     public function getOrderScenarios(string $transactionId): Response
     {
-        return $this->connector->send(new GetOrderScenarios($transactionId));
+        $request = new GetOrderScenarios($transactionId);
+
+        return $this->connector->send($request);
     }
 }

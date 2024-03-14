@@ -39,7 +39,9 @@ class Api extends BaseResource
      */
     public function getServiceJobByServiceJobId(string $serviceJobId): Response
     {
-        return $this->connector->send(new GetServiceJobByServiceJobId($serviceJobId));
+        $request = new GetServiceJobByServiceJobId($serviceJobId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -48,7 +50,9 @@ class Api extends BaseResource
      */
     public function cancelServiceJobByServiceJobId(string $serviceJobId, string $cancellationReasonCode): Response
     {
-        return $this->connector->send(new CancelServiceJobByServiceJobId($serviceJobId, $cancellationReasonCode));
+        $request = new CancelServiceJobByServiceJobId($serviceJobId, $cancellationReasonCode);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -56,7 +60,9 @@ class Api extends BaseResource
      */
     public function completeServiceJobByServiceJobId(string $serviceJobId): Response
     {
-        return $this->connector->send(new CompleteServiceJobByServiceJobId($serviceJobId));
+        $request = new CompleteServiceJobByServiceJobId($serviceJobId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -95,7 +101,9 @@ class Api extends BaseResource
         ?array $requiredSkills = null,
         ?array $storeIds = null,
     ): Response {
-        return $this->connector->send(new GetServiceJobs($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds));
+        $request = new GetServiceJobs($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -106,7 +114,9 @@ class Api extends BaseResource
         string $serviceJobId,
         AddAppointmentRequest $addAppointmentRequest,
     ): Response {
-        return $this->connector->send(new AddAppointmentForServiceJobByServiceJobId($serviceJobId, $addAppointmentRequest));
+        $request = new AddAppointmentForServiceJobByServiceJobId($serviceJobId, $addAppointmentRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -119,7 +129,9 @@ class Api extends BaseResource
         string $appointmentId,
         RescheduleAppointmentRequest $rescheduleAppointmentRequest,
     ): Response {
-        return $this->connector->send(new RescheduleAppointmentForServiceJobByServiceJobId($serviceJobId, $appointmentId, $rescheduleAppointmentRequest));
+        $request = new RescheduleAppointmentForServiceJobByServiceJobId($serviceJobId, $appointmentId, $rescheduleAppointmentRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -132,7 +144,9 @@ class Api extends BaseResource
         string $appointmentId,
         AssignAppointmentResourcesRequest $assignAppointmentResourcesRequest,
     ): Response {
-        return $this->connector->send(new AssignAppointmentResources($serviceJobId, $appointmentId, $assignAppointmentResourcesRequest));
+        $request = new AssignAppointmentResources($serviceJobId, $appointmentId, $assignAppointmentResourcesRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -145,7 +159,9 @@ class Api extends BaseResource
         string $appointmentId,
         SetAppointmentFulfillmentDataRequest $setAppointmentFulfillmentDataRequest,
     ): Response {
-        return $this->connector->send(new SetAppointmentFulfillmentData($serviceJobId, $appointmentId, $setAppointmentFulfillmentDataRequest));
+        $request = new SetAppointmentFulfillmentData($serviceJobId, $appointmentId, $setAppointmentFulfillmentDataRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -160,7 +176,9 @@ class Api extends BaseResource
         array $marketplaceIds,
         ?string $nextPageToken = null,
     ): Response {
-        return $this->connector->send(new GetRangeSlotCapacity($resourceId, $rangeSlotCapacityQuery, $marketplaceIds, $nextPageToken));
+        $request = new GetRangeSlotCapacity($resourceId, $rangeSlotCapacityQuery, $marketplaceIds, $nextPageToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -175,7 +193,9 @@ class Api extends BaseResource
         array $marketplaceIds,
         ?string $nextPageToken = null,
     ): Response {
-        return $this->connector->send(new GetFixedSlotCapacity($resourceId, $fixedSlotCapacityQuery, $marketplaceIds, $nextPageToken));
+        $request = new GetFixedSlotCapacity($resourceId, $fixedSlotCapacityQuery, $marketplaceIds, $nextPageToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -188,7 +208,9 @@ class Api extends BaseResource
         UpdateScheduleRequest $updateScheduleRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new UpdateSchedule($resourceId, $updateScheduleRequest, $marketplaceIds));
+        $request = new UpdateSchedule($resourceId, $updateScheduleRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -199,7 +221,9 @@ class Api extends BaseResource
         CreateReservationRequest $createReservationRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateReservation($createReservationRequest, $marketplaceIds));
+        $request = new CreateReservation($createReservationRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -212,7 +236,9 @@ class Api extends BaseResource
         UpdateReservationRequest $updateReservationRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new UpdateReservation($reservationId, $updateReservationRequest, $marketplaceIds));
+        $request = new UpdateReservation($reservationId, $updateReservationRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -221,7 +247,9 @@ class Api extends BaseResource
      */
     public function cancelReservation(string $reservationId, array $marketplaceIds): Response
     {
-        return $this->connector->send(new CancelReservation($reservationId, $marketplaceIds));
+        $request = new CancelReservation($reservationId, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -236,7 +264,9 @@ class Api extends BaseResource
         ?string $startTime = null,
         ?string $endTime = null,
     ): Response {
-        return $this->connector->send(new GetAppointmmentSlotsByJobId($serviceJobId, $marketplaceIds, $startTime, $endTime));
+        $request = new GetAppointmmentSlotsByJobId($serviceJobId, $marketplaceIds, $startTime, $endTime);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -253,7 +283,9 @@ class Api extends BaseResource
         ?string $startTime = null,
         ?string $endTime = null,
     ): Response {
-        return $this->connector->send(new GetAppointmentSlots($asin, $storeId, $marketplaceIds, $startTime, $endTime));
+        $request = new GetAppointmentSlots($asin, $storeId, $marketplaceIds, $startTime, $endTime);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -261,6 +293,8 @@ class Api extends BaseResource
      */
     public function createServiceDocumentUploadDestination(ServiceUploadDocument $serviceUploadDocument): Response
     {
-        return $this->connector->send(new CreateServiceDocumentUploadDestination($serviceUploadDocument));
+        $request = new CreateServiceDocumentUploadDestination($serviceUploadDocument);
+
+        return $this->connector->send($request);
     }
 }

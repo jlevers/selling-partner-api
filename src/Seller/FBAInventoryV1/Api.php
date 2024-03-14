@@ -28,6 +28,8 @@ class Api extends BaseResource
         ?string $sellerSku = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new GetInventorySummaries($granularityType, $granularityId, $marketplaceIds, $details, $startDateTime, $sellerSkus, $sellerSku, $nextToken));
+        $request = new GetInventorySummaries($granularityType, $granularityId, $marketplaceIds, $details, $startDateTime, $sellerSkus, $sellerSku, $nextToken);
+
+        return $this->connector->send($request);
     }
 }

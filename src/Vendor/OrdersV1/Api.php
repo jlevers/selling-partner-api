@@ -40,7 +40,9 @@ class Api extends BaseResource
         ?string $purchaseOrderState = null,
         ?string $orderingVendorCode = null,
     ): Response {
-        return $this->connector->send(new GetPurchaseOrders($limit, $createdAfter, $createdBefore, $sortOrder, $nextToken, $includeDetails, $changedAfter, $changedBefore, $poItemState, $isPoChanged, $purchaseOrderState, $orderingVendorCode));
+        $request = new GetPurchaseOrders($limit, $createdAfter, $createdBefore, $sortOrder, $nextToken, $includeDetails, $changedAfter, $changedBefore, $poItemState, $isPoChanged, $purchaseOrderState, $orderingVendorCode);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -48,7 +50,9 @@ class Api extends BaseResource
      */
     public function getPurchaseOrder(string $purchaseOrderNumber): Response
     {
-        return $this->connector->send(new GetPurchaseOrder($purchaseOrderNumber));
+        $request = new GetPurchaseOrder($purchaseOrderNumber);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -56,7 +60,9 @@ class Api extends BaseResource
      */
     public function submitAcknowledgement(SubmitAcknowledgementRequest $submitAcknowledgementRequest): Response
     {
-        return $this->connector->send(new SubmitAcknowledgement($submitAcknowledgementRequest));
+        $request = new SubmitAcknowledgement($submitAcknowledgementRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -89,6 +95,8 @@ class Api extends BaseResource
         ?string $orderingVendorCode = null,
         ?string $shipToPartyId = null,
     ): Response {
-        return $this->connector->send(new GetPurchaseOrdersStatus($limit, $sortOrder, $nextToken, $createdAfter, $createdBefore, $updatedAfter, $updatedBefore, $purchaseOrderNumber, $purchaseOrderStatus, $itemConfirmationStatus, $itemReceiveStatus, $orderingVendorCode, $shipToPartyId));
+        $request = new GetPurchaseOrdersStatus($limit, $sortOrder, $nextToken, $createdAfter, $createdBefore, $updatedAfter, $updatedBefore, $purchaseOrderNumber, $purchaseOrderStatus, $itemConfirmationStatus, $itemReceiveStatus, $orderingVendorCode, $shipToPartyId);
+
+        return $this->connector->send($request);
     }
 }

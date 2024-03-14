@@ -10,8 +10,10 @@ use Psr\Http\Message\RequestInterface;
 use Saloon\Contracts\Authenticator;
 use Saloon\Http\Connector;
 use Saloon\Http\PendingRequest;
+use Saloon\Traits\Plugins\AlwaysThrowOnErrors;
 use SellingPartnerApi\Authentication\GrantlessAuthenticator;
 use SellingPartnerApi\Authentication\LWAAuthenticator;
+use SellingPartnerApi\Authentication\RestrictedDataTokenAuthenticator;
 use SellingPartnerApi\Enums\Endpoint;
 use SellingPartnerApi\Enums\GrantlessScope;
 use SellingPartnerApi\Generator\Package;
@@ -20,23 +22,26 @@ use SellingPartnerApi\Vendor\VendorConnector;
 
 class SellingPartnerApi extends Connector
 {
+    use AlwaysThrowOnErrors;
+
     protected array $authenticatorArgs;
 
     public function __construct(
-        protected readonly string $clientId,
+        public readonly string $clientId,
         protected readonly string $clientSecret,
-        string $refreshToken,
+        protected readonly string $refreshToken,
         protected readonly Endpoint $endpoint,
+        protected readonly array $dataElements = [],
+        protected readonly ?string $delegate = null,
         protected readonly ?ClientInterface $authenticationClient = null,
     ) {
-        $this->authenticatorArgs = [
+        $authenticator = new LWAAuthenticator(
             $this->clientId,
             $this->clientSecret,
-            $refreshToken,
+            $this->refreshToken,
             $this->endpoint,
-            $this->authenticationClient,
-        ];
-        $authenticator = new LWAAuthenticator(...$this->authenticatorArgs);
+            $this->authenticationClient
+        );
         $this->authenticator = $authenticator;
     }
 
@@ -54,12 +59,28 @@ class SellingPartnerApi extends Connector
 
     public function seller(): SellerConnector
     {
-        return new SellerConnector(...$this->authenticatorArgs);
+        return new SellerConnector(
+            $this->clientId,
+            $this->clientSecret,
+            $this->refreshToken,
+            $this->endpoint,
+            $this->dataElements,
+            $this->delegate,
+            $this->authenticationClient,
+        );
     }
 
     public function vendor(): VendorConnector
     {
-        return new VendorConnector(...$this->authenticatorArgs);
+        return new VendorConnector(
+            $this->clientId,
+            $this->clientSecret,
+            $this->refreshToken,
+            $this->endpoint,
+            $this->dataElements,
+            $this->delegate,
+            $this->authenticationClient,
+        );
     }
 
     public function resolveBaseUrl(): string
@@ -75,6 +96,23 @@ class SellingPartnerApi extends Connector
             $this->endpoint,
             $scope,
             $this->authenticationClient,
+        );
+    }
+
+    public function restrictedAuth(
+        string $path,
+        string $method,
+        array $knownDataElements,
+    ): RestrictedDataTokenAuthenticator {
+        // Only use data elements that are known to be valid for this particular endpoint
+        $dataElements = array_intersect($this->dataElements, $knownDataElements);
+
+        return new RestrictedDataTokenAuthenticator(
+            $this,
+            $path,
+            $method,
+            $dataElements,
+            $this->delegate,
         );
     }
 

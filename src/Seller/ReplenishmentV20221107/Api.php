@@ -18,7 +18,9 @@ class Api extends BaseResource
      */
     public function getSellingPartnerMetrics(GetSellingPartnerMetricsRequest $getSellingPartnerMetricsRequest): Response
     {
-        return $this->connector->send(new GetSellingPartnerMetrics($getSellingPartnerMetricsRequest));
+        $request = new GetSellingPartnerMetrics($getSellingPartnerMetricsRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -26,7 +28,9 @@ class Api extends BaseResource
      */
     public function listOfferMetrics(ListOfferMetricsRequest $listOfferMetricsRequest): Response
     {
-        return $this->connector->send(new ListOfferMetrics($listOfferMetricsRequest));
+        $request = new ListOfferMetrics($listOfferMetricsRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -34,6 +38,8 @@ class Api extends BaseResource
      */
     public function listOffers(ListOffersRequest $listOffersRequest): Response
     {
-        return $this->connector->send(new ListOffers($listOffersRequest));
+        $request = new ListOffers($listOffersRequest);
+
+        return $this->connector->send($request);
     }
 }

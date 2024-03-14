@@ -20,6 +20,8 @@ class Api extends BaseResource
         string $contentMd5,
         ?string $contentType = null,
     ): Response {
-        return $this->connector->send(new CreateUploadDestinationForResource($resource, $marketplaceIds, $contentMd5, $contentType));
+        $request = new CreateUploadDestinationForResource($resource, $marketplaceIds, $contentMd5, $contentType);
+
+        return $this->connector->send($request);
     }
 }

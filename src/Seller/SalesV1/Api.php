@@ -32,6 +32,8 @@ class Api extends BaseResource
         ?string $asin = null,
         ?string $sku = null,
     ): Response {
-        return $this->connector->send(new GetOrderMetrics($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku));
+        $request = new GetOrderMetrics($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku);
+
+        return $this->connector->send($request);
     }
 }

@@ -36,7 +36,11 @@ class Api extends BaseResource
         ?string $createdUntil = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new GetReports($reportTypes, $processingStatuses, $marketplaceIds, $pageSize, $createdSince, $createdUntil, $nextToken));
+        $request = new GetReports($reportTypes, $processingStatuses, $marketplaceIds, $pageSize, $createdSince, $createdUntil, $nextToken);
+        $authenticator = $this->connector->restrictedAuth('/reports/2021-06-30/reports', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -44,7 +48,9 @@ class Api extends BaseResource
      */
     public function createReport(CreateReportSpecification $createReportSpecification): Response
     {
-        return $this->connector->send(new CreateReport($createReportSpecification));
+        $request = new CreateReport($createReportSpecification);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -52,7 +58,11 @@ class Api extends BaseResource
      */
     public function getReport(string $reportId): Response
     {
-        return $this->connector->send(new GetReport($reportId));
+        $request = new GetReport($reportId);
+        $authenticator = $this->connector->restrictedAuth('/reports/2021-06-30/reports/{reportId}', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -60,7 +70,9 @@ class Api extends BaseResource
      */
     public function cancelReport(string $reportId): Response
     {
-        return $this->connector->send(new CancelReport($reportId));
+        $request = new CancelReport($reportId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -68,12 +80,16 @@ class Api extends BaseResource
      */
     public function getReportSchedules(array $reportTypes): Response
     {
-        return $this->connector->send(new GetReportSchedules($reportTypes));
+        $request = new GetReportSchedules($reportTypes);
+
+        return $this->connector->send($request);
     }
 
     public function createReportSchedule(CreateReportScheduleSpecification $createReportScheduleSpecification): Response
     {
-        return $this->connector->send(new CreateReportSchedule($createReportScheduleSpecification));
+        $request = new CreateReportSchedule($createReportScheduleSpecification);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -81,7 +97,9 @@ class Api extends BaseResource
      */
     public function getReportSchedule(string $reportScheduleId): Response
     {
-        return $this->connector->send(new GetReportSchedule($reportScheduleId));
+        $request = new GetReportSchedule($reportScheduleId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -89,7 +107,9 @@ class Api extends BaseResource
      */
     public function cancelReportSchedule(string $reportScheduleId): Response
     {
-        return $this->connector->send(new CancelReportSchedule($reportScheduleId));
+        $request = new CancelReportSchedule($reportScheduleId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -97,6 +117,10 @@ class Api extends BaseResource
      */
     public function getReportDocument(string $reportDocumentId): Response
     {
-        return $this->connector->send(new GetReportDocument($reportDocumentId));
+        $request = new GetReportDocument($reportDocumentId);
+        $authenticator = $this->connector->restrictedAuth($request->resolveEndpoint(), 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 }

@@ -10,6 +10,8 @@ class Api extends BaseResource
 {
     public function rotateApplicationClientSecret(): Response
     {
-        return $this->connector->send(new RotateApplicationClientSecret());
+        $request = new RotateApplicationClientSecret();
+
+        return $this->connector->send($request);
     }
 }

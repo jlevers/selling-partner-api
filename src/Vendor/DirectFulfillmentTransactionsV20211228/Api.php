@@ -13,6 +13,8 @@ class Api extends BaseResource
      */
     public function getTransactionStatus(string $transactionId): Response
     {
-        return $this->connector->send(new GetTransactionStatus($transactionId));
+        $request = new GetTransactionStatus($transactionId);
+
+        return $this->connector->send($request);
     }
 }

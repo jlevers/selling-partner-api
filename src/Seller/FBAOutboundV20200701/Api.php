@@ -30,7 +30,9 @@ class Api extends BaseResource
      */
     public function getFulfillmentPreview(GetFulfillmentPreviewRequest $getFulfillmentPreviewRequest): Response
     {
-        return $this->connector->send(new GetFulfillmentPreview($getFulfillmentPreviewRequest));
+        $request = new GetFulfillmentPreview($getFulfillmentPreviewRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -39,7 +41,9 @@ class Api extends BaseResource
      */
     public function listAllFulfillmentOrders(?string $queryStartDate = null, ?string $nextToken = null): Response
     {
-        return $this->connector->send(new ListAllFulfillmentOrders($queryStartDate, $nextToken));
+        $request = new ListAllFulfillmentOrders($queryStartDate, $nextToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -47,7 +51,9 @@ class Api extends BaseResource
      */
     public function createFulfillmentOrder(CreateFulfillmentOrderRequest $createFulfillmentOrderRequest): Response
     {
-        return $this->connector->send(new CreateFulfillmentOrder($createFulfillmentOrderRequest));
+        $request = new CreateFulfillmentOrder($createFulfillmentOrderRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -55,7 +61,9 @@ class Api extends BaseResource
      */
     public function getPackageTrackingDetails(int $packageNumber): Response
     {
-        return $this->connector->send(new GetPackageTrackingDetails($packageNumber));
+        $request = new GetPackageTrackingDetails($packageNumber);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -70,7 +78,9 @@ class Api extends BaseResource
         ?string $marketplaceId = null,
         ?string $sellerFulfillmentOrderId = null,
     ): Response {
-        return $this->connector->send(new ListReturnReasonCodes($sellerSku, $language, $marketplaceId, $sellerFulfillmentOrderId));
+        $request = new ListReturnReasonCodes($sellerSku, $language, $marketplaceId, $sellerFulfillmentOrderId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -81,7 +91,9 @@ class Api extends BaseResource
         string $sellerFulfillmentOrderId,
         CreateFulfillmentReturnRequest $createFulfillmentReturnRequest,
     ): Response {
-        return $this->connector->send(new CreateFulfillmentReturn($sellerFulfillmentOrderId, $createFulfillmentReturnRequest));
+        $request = new CreateFulfillmentReturn($sellerFulfillmentOrderId, $createFulfillmentReturnRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -89,7 +101,9 @@ class Api extends BaseResource
      */
     public function getFulfillmentOrder(string $sellerFulfillmentOrderId): Response
     {
-        return $this->connector->send(new GetFulfillmentOrder($sellerFulfillmentOrderId));
+        $request = new GetFulfillmentOrder($sellerFulfillmentOrderId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -100,7 +114,9 @@ class Api extends BaseResource
         string $sellerFulfillmentOrderId,
         UpdateFulfillmentOrderRequest $updateFulfillmentOrderRequest,
     ): Response {
-        return $this->connector->send(new UpdateFulfillmentOrder($sellerFulfillmentOrderId, $updateFulfillmentOrderRequest));
+        $request = new UpdateFulfillmentOrder($sellerFulfillmentOrderId, $updateFulfillmentOrderRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -108,7 +124,9 @@ class Api extends BaseResource
      */
     public function cancelFulfillmentOrder(string $sellerFulfillmentOrderId): Response
     {
-        return $this->connector->send(new CancelFulfillmentOrder($sellerFulfillmentOrderId));
+        $request = new CancelFulfillmentOrder($sellerFulfillmentOrderId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -119,7 +137,9 @@ class Api extends BaseResource
         string $sellerFulfillmentOrderId,
         SubmitFulfillmentOrderStatusUpdateRequest $submitFulfillmentOrderStatusUpdateRequest,
     ): Response {
-        return $this->connector->send(new SubmitFulfillmentOrderStatusUpdate($sellerFulfillmentOrderId, $submitFulfillmentOrderStatusUpdateRequest));
+        $request = new SubmitFulfillmentOrderStatusUpdate($sellerFulfillmentOrderId, $submitFulfillmentOrderStatusUpdateRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -127,7 +147,9 @@ class Api extends BaseResource
      */
     public function getFeatures(string $marketplaceId): Response
     {
-        return $this->connector->send(new GetFeatures($marketplaceId));
+        $request = new GetFeatures($marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -137,7 +159,9 @@ class Api extends BaseResource
      */
     public function getFeatureInventory(string $featureName, string $marketplaceId, ?string $nextToken = null): Response
     {
-        return $this->connector->send(new GetFeatureInventory($featureName, $marketplaceId, $nextToken));
+        $request = new GetFeatureInventory($featureName, $marketplaceId, $nextToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -147,6 +171,8 @@ class Api extends BaseResource
      */
     public function getFeatureSku(string $featureName, string $sellerSku, string $marketplaceId): Response
     {
-        return $this->connector->send(new GetFeatureSku($featureName, $sellerSku, $marketplaceId));
+        $request = new GetFeatureSku($featureName, $sellerSku, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 }

@@ -37,12 +37,18 @@ class Api extends BaseResource
         ?string $sortOrder = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new GetShippingLabels($createdAfter, $createdBefore, $shipFromPartyId, $limit, $sortOrder, $nextToken));
+        $request = new GetShippingLabels($createdAfter, $createdBefore, $shipFromPartyId, $limit, $sortOrder, $nextToken);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/2021-12-28/shippingLabels', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     public function submitShippingLabelRequest(SubmitShippingLabelsRequest $submitShippingLabelsRequest): Response
     {
-        return $this->connector->send(new SubmitShippingLabelRequest($submitShippingLabelsRequest));
+        $request = new SubmitShippingLabelRequest($submitShippingLabelsRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -50,7 +56,11 @@ class Api extends BaseResource
      */
     public function getShippingLabel(string $purchaseOrderNumber): Response
     {
-        return $this->connector->send(new GetShippingLabel($purchaseOrderNumber));
+        $request = new GetShippingLabel($purchaseOrderNumber);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -61,19 +71,27 @@ class Api extends BaseResource
         string $purchaseOrderNumber,
         CreateShippingLabelsRequest $createShippingLabelsRequest,
     ): Response {
-        return $this->connector->send(new CreateShippingLabels($purchaseOrderNumber, $createShippingLabelsRequest));
+        $request = new CreateShippingLabels($purchaseOrderNumber, $createShippingLabelsRequest);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}', 'POST', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     public function submitShipmentConfirmations(
         SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,
     ): Response {
-        return $this->connector->send(new SubmitShipmentConfirmations($submitShipmentConfirmationsRequest));
+        $request = new SubmitShipmentConfirmations($submitShipmentConfirmationsRequest);
+
+        return $this->connector->send($request);
     }
 
     public function submitShipmentStatusUpdates(
         SubmitShipmentStatusUpdatesRequest $submitShipmentStatusUpdatesRequest,
     ): Response {
-        return $this->connector->send(new SubmitShipmentStatusUpdates($submitShipmentStatusUpdatesRequest));
+        $request = new SubmitShipmentStatusUpdates($submitShipmentStatusUpdatesRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -92,7 +110,11 @@ class Api extends BaseResource
         ?string $sortOrder = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new GetCustomerInvoices($createdAfter, $createdBefore, $shipFromPartyId, $limit, $sortOrder, $nextToken));
+        $request = new GetCustomerInvoices($createdAfter, $createdBefore, $shipFromPartyId, $limit, $sortOrder, $nextToken);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/2021-12-28/customerInvoices', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -100,7 +122,11 @@ class Api extends BaseResource
      */
     public function getCustomerInvoice(string $purchaseOrderNumber): Response
     {
-        return $this->connector->send(new GetCustomerInvoice($purchaseOrderNumber));
+        $request = new GetCustomerInvoice($purchaseOrderNumber);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/2021-12-28/customerInvoices/{purchaseOrderNumber}', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -119,7 +145,11 @@ class Api extends BaseResource
         ?string $sortOrder = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new GetPackingSlips($createdAfter, $createdBefore, $shipFromPartyId, $limit, $sortOrder, $nextToken));
+        $request = new GetPackingSlips($createdAfter, $createdBefore, $shipFromPartyId, $limit, $sortOrder, $nextToken);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/2021-12-28/packingSlips', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -127,6 +157,10 @@ class Api extends BaseResource
      */
     public function getPackingSlip(string $purchaseOrderNumber): Response
     {
-        return $this->connector->send(new GetPackingSlip($purchaseOrderNumber));
+        $request = new GetPackingSlip($purchaseOrderNumber);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/2021-12-28/packingSlips/{purchaseOrderNumber}', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 }

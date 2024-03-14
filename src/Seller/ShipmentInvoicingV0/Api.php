@@ -16,7 +16,11 @@ class Api extends BaseResource
      */
     public function getShipmentDetails(string $shipmentId): Response
     {
-        return $this->connector->send(new GetShipmentDetails($shipmentId));
+        $request = new GetShipmentDetails($shipmentId);
+        $authenticator = $this->connector->restrictedAuth('/fba/outbound/brazil/v0/shipments/{shipmentId}', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -25,7 +29,9 @@ class Api extends BaseResource
      */
     public function submitInvoice(string $shipmentId, SubmitInvoiceRequest $submitInvoiceRequest): Response
     {
-        return $this->connector->send(new SubmitInvoice($shipmentId, $submitInvoiceRequest));
+        $request = new SubmitInvoice($shipmentId, $submitInvoiceRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -33,6 +39,8 @@ class Api extends BaseResource
      */
     public function getInvoiceStatus(string $shipmentId): Response
     {
-        return $this->connector->send(new GetInvoiceStatus($shipmentId));
+        $request = new GetInvoiceStatus($shipmentId);
+
+        return $this->connector->send($request);
     }
 }

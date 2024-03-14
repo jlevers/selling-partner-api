@@ -22,7 +22,9 @@ class Api extends BaseResource
      */
     public function getSupplySources(?string $nextPageToken = null, ?float $pageSize = null): Response
     {
-        return $this->connector->send(new GetSupplySources($nextPageToken, $pageSize));
+        $request = new GetSupplySources($nextPageToken, $pageSize);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -30,7 +32,9 @@ class Api extends BaseResource
      */
     public function createSupplySource(CreateSupplySourceRequest $createSupplySourceRequest): Response
     {
-        return $this->connector->send(new CreateSupplySource($createSupplySourceRequest));
+        $request = new CreateSupplySource($createSupplySourceRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -38,7 +42,9 @@ class Api extends BaseResource
      */
     public function getSupplySource(string $supplySourceId): Response
     {
-        return $this->connector->send(new GetSupplySource($supplySourceId));
+        $request = new GetSupplySource($supplySourceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -49,7 +55,9 @@ class Api extends BaseResource
         string $supplySourceId,
         UpdateSupplySourceRequest $updateSupplySourceRequest,
     ): Response {
-        return $this->connector->send(new UpdateSupplySource($supplySourceId, $updateSupplySourceRequest));
+        $request = new UpdateSupplySource($supplySourceId, $updateSupplySourceRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -57,7 +65,9 @@ class Api extends BaseResource
      */
     public function archiveSupplySource(string $supplySourceId): Response
     {
-        return $this->connector->send(new ArchiveSupplySource($supplySourceId));
+        $request = new ArchiveSupplySource($supplySourceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -68,6 +78,8 @@ class Api extends BaseResource
         string $supplySourceId,
         UpdateSupplySourceStatusRequest $updateSupplySourceStatusRequest,
     ): Response {
-        return $this->connector->send(new UpdateSupplySourceStatus($supplySourceId, $updateSupplySourceStatusRequest));
+        $request = new UpdateSupplySourceStatus($supplySourceId, $updateSupplySourceStatusRequest);
+
+        return $this->connector->send($request);
     }
 }

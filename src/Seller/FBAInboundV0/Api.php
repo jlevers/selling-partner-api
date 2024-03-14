@@ -37,7 +37,9 @@ class Api extends BaseResource
         ?array $sellerSkuList = null,
         ?array $asinList = null,
     ): Response {
-        return $this->connector->send(new GetInboundGuidance($marketplaceId, $sellerSkuList, $asinList));
+        $request = new GetInboundGuidance($marketplaceId, $sellerSkuList, $asinList);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -46,7 +48,9 @@ class Api extends BaseResource
     public function createInboundShipmentPlan(
         CreateInboundShipmentPlanRequest $createInboundShipmentPlanRequest,
     ): Response {
-        return $this->connector->send(new CreateInboundShipmentPlan($createInboundShipmentPlanRequest));
+        $request = new CreateInboundShipmentPlan($createInboundShipmentPlanRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -55,7 +59,9 @@ class Api extends BaseResource
      */
     public function updateInboundShipment(string $shipmentId, InboundShipmentRequest $inboundShipmentRequest): Response
     {
-        return $this->connector->send(new UpdateInboundShipment($shipmentId, $inboundShipmentRequest));
+        $request = new UpdateInboundShipment($shipmentId, $inboundShipmentRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -64,7 +70,9 @@ class Api extends BaseResource
      */
     public function createInboundShipment(string $shipmentId, InboundShipmentRequest $inboundShipmentRequest): Response
     {
-        return $this->connector->send(new CreateInboundShipment($shipmentId, $inboundShipmentRequest));
+        $request = new CreateInboundShipment($shipmentId, $inboundShipmentRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -73,7 +81,9 @@ class Api extends BaseResource
      */
     public function getPreorderInfo(string $shipmentId, string $marketplaceId): Response
     {
-        return $this->connector->send(new GetPreorderInfo($shipmentId, $marketplaceId));
+        $request = new GetPreorderInfo($shipmentId, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -83,7 +93,9 @@ class Api extends BaseResource
      */
     public function confirmPreorder(string $shipmentId, string $needByDate, string $marketplaceId): Response
     {
-        return $this->connector->send(new ConfirmPreorder($shipmentId, $needByDate, $marketplaceId));
+        $request = new ConfirmPreorder($shipmentId, $needByDate, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -100,7 +112,9 @@ class Api extends BaseResource
         ?array $sellerSkuList = null,
         ?array $asinList = null,
     ): Response {
-        return $this->connector->send(new GetPrepInstructions($shipToCountryCode, $sellerSkuList, $asinList));
+        $request = new GetPrepInstructions($shipToCountryCode, $sellerSkuList, $asinList);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -108,7 +122,9 @@ class Api extends BaseResource
      */
     public function getTransportDetails(string $shipmentId): Response
     {
-        return $this->connector->send(new GetTransportDetails($shipmentId));
+        $request = new GetTransportDetails($shipmentId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -119,7 +135,9 @@ class Api extends BaseResource
         string $shipmentId,
         PutTransportDetailsRequest $putTransportDetailsRequest,
     ): Response {
-        return $this->connector->send(new PutTransportDetails($shipmentId, $putTransportDetailsRequest));
+        $request = new PutTransportDetails($shipmentId, $putTransportDetailsRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -127,7 +145,9 @@ class Api extends BaseResource
      */
     public function voidTransport(string $shipmentId): Response
     {
-        return $this->connector->send(new VoidTransport($shipmentId));
+        $request = new VoidTransport($shipmentId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -135,7 +155,9 @@ class Api extends BaseResource
      */
     public function estimateTransport(string $shipmentId): Response
     {
-        return $this->connector->send(new EstimateTransport($shipmentId));
+        $request = new EstimateTransport($shipmentId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -143,7 +165,9 @@ class Api extends BaseResource
      */
     public function confirmTransport(string $shipmentId): Response
     {
-        return $this->connector->send(new ConfirmTransport($shipmentId));
+        $request = new ConfirmTransport($shipmentId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -168,7 +192,9 @@ class Api extends BaseResource
         ?int $pageSize = null,
         ?int $pageStartIndex = null,
     ): Response {
-        return $this->connector->send(new GetLabels($shipmentId, $pageType, $labelType, $numberOfPackages, $packageLabelsToPrint, $numberOfPallets, $pageSize, $pageStartIndex));
+        $request = new GetLabels($shipmentId, $pageType, $labelType, $numberOfPackages, $packageLabelsToPrint, $numberOfPallets, $pageSize, $pageStartIndex);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -176,7 +202,9 @@ class Api extends BaseResource
      */
     public function getBillOfLading(string $shipmentId): Response
     {
-        return $this->connector->send(new GetBillOfLading($shipmentId));
+        $request = new GetBillOfLading($shipmentId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -197,7 +225,9 @@ class Api extends BaseResource
         ?string $lastUpdatedBefore = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new GetShipments($queryType, $marketplaceId, $shipmentStatusList, $shipmentIdList, $lastUpdatedAfter, $lastUpdatedBefore, $nextToken));
+        $request = new GetShipments($queryType, $marketplaceId, $shipmentStatusList, $shipmentIdList, $lastUpdatedAfter, $lastUpdatedBefore, $nextToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -206,7 +236,9 @@ class Api extends BaseResource
      */
     public function getShipmentItemsByShipmentId(string $shipmentId, string $marketplaceId): Response
     {
-        return $this->connector->send(new GetShipmentItemsByShipmentId($shipmentId, $marketplaceId));
+        $request = new GetShipmentItemsByShipmentId($shipmentId, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -223,6 +255,8 @@ class Api extends BaseResource
         ?string $lastUpdatedBefore = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new GetShipmentItems($queryType, $marketplaceId, $lastUpdatedAfter, $lastUpdatedBefore, $nextToken));
+        $request = new GetShipmentItems($queryType, $marketplaceId, $lastUpdatedAfter, $lastUpdatedBefore, $nextToken);
+
+        return $this->connector->send($request);
     }
 }

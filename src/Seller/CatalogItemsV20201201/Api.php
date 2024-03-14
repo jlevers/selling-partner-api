@@ -31,7 +31,9 @@ class Api extends BaseResource
         ?string $keywordsLocale = null,
         ?string $locale = null,
     ): Response {
-        return $this->connector->send(new SearchCatalogItems($keywords, $marketplaceIds, $includedData, $brandNames, $classificationIds, $pageSize, $pageToken, $keywordsLocale, $locale));
+        $request = new SearchCatalogItems($keywords, $marketplaceIds, $includedData, $brandNames, $classificationIds, $pageSize, $pageToken, $keywordsLocale, $locale);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -46,6 +48,8 @@ class Api extends BaseResource
         ?array $includedData = null,
         ?string $locale = null,
     ): Response {
-        return $this->connector->send(new GetCatalogItem($asin, $marketplaceIds, $includedData, $locale));
+        $request = new GetCatalogItem($asin, $marketplaceIds, $includedData, $locale);
+
+        return $this->connector->send($request);
     }
 }

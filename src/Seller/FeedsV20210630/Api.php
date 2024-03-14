@@ -33,7 +33,9 @@ class Api extends BaseResource
         ?string $createdUntil = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new GetFeeds($feedTypes, $marketplaceIds, $pageSize, $processingStatuses, $createdSince, $createdUntil, $nextToken));
+        $request = new GetFeeds($feedTypes, $marketplaceIds, $pageSize, $processingStatuses, $createdSince, $createdUntil, $nextToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -41,7 +43,9 @@ class Api extends BaseResource
      */
     public function createFeed(CreateFeedSpecification $createFeedSpecification): Response
     {
-        return $this->connector->send(new CreateFeed($createFeedSpecification));
+        $request = new CreateFeed($createFeedSpecification);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -49,7 +53,9 @@ class Api extends BaseResource
      */
     public function getFeed(string $feedId): Response
     {
-        return $this->connector->send(new GetFeed($feedId));
+        $request = new GetFeed($feedId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -57,7 +63,9 @@ class Api extends BaseResource
      */
     public function cancelFeed(string $feedId): Response
     {
-        return $this->connector->send(new CancelFeed($feedId));
+        $request = new CancelFeed($feedId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -65,7 +73,9 @@ class Api extends BaseResource
      */
     public function createFeedDocument(CreateFeedDocumentSpecification $createFeedDocumentSpecification): Response
     {
-        return $this->connector->send(new CreateFeedDocument($createFeedDocumentSpecification));
+        $request = new CreateFeedDocument($createFeedDocumentSpecification);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -73,6 +83,8 @@ class Api extends BaseResource
      */
     public function getFeedDocument(string $feedDocumentId): Response
     {
-        return $this->connector->send(new GetFeedDocument($feedDocumentId));
+        $request = new GetFeedDocument($feedDocumentId);
+
+        return $this->connector->send($request);
     }
 }

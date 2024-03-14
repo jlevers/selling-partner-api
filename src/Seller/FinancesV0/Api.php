@@ -23,7 +23,9 @@ class Api extends BaseResource
         ?string $financialEventGroupStartedAfter = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new ListFinancialEventGroups($maxResultsPerPage, $financialEventGroupStartedBefore, $financialEventGroupStartedAfter, $nextToken));
+        $request = new ListFinancialEventGroups($maxResultsPerPage, $financialEventGroupStartedBefore, $financialEventGroupStartedAfter, $nextToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -40,7 +42,9 @@ class Api extends BaseResource
         ?string $postedBefore = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new ListFinancialEventsByGroupId($eventGroupId, $maxResultsPerPage, $postedAfter, $postedBefore, $nextToken));
+        $request = new ListFinancialEventsByGroupId($eventGroupId, $maxResultsPerPage, $postedAfter, $postedBefore, $nextToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -53,7 +57,9 @@ class Api extends BaseResource
         ?int $maxResultsPerPage = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new ListFinancialEventsByOrderId($orderId, $maxResultsPerPage, $nextToken));
+        $request = new ListFinancialEventsByOrderId($orderId, $maxResultsPerPage, $nextToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -68,6 +74,8 @@ class Api extends BaseResource
         ?string $postedBefore = null,
         ?string $nextToken = null,
     ): Response {
-        return $this->connector->send(new ListFinancialEvents($maxResultsPerPage, $postedAfter, $postedBefore, $nextToken));
+        $request = new ListFinancialEvents($maxResultsPerPage, $postedAfter, $postedBefore, $nextToken);
+
+        return $this->connector->send($request);
     }
 }

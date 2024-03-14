@@ -19,7 +19,9 @@ class Api extends BaseResource
     public function submitShipmentConfirmations(
         SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,
     ): Response {
-        return $this->connector->send(new SubmitShipmentConfirmations($submitShipmentConfirmationsRequest));
+        $request = new SubmitShipmentConfirmations($submitShipmentConfirmationsRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -74,7 +76,9 @@ class Api extends BaseResource
         ?string $buyerWarehouseCode = null,
         ?string $sellerWarehouseCode = null,
     ): Response {
-        return $this->connector->send(new GetShipmentDetails($limit, $sortOrder, $nextToken, $createdAfter, $createdBefore, $shipmentConfirmedBefore, $shipmentConfirmedAfter, $packageLabelCreatedBefore, $packageLabelCreatedAfter, $shippedBefore, $shippedAfter, $estimatedDeliveryBefore, $estimatedDeliveryAfter, $shipmentDeliveryBefore, $shipmentDeliveryAfter, $requestedPickUpBefore, $requestedPickUpAfter, $scheduledPickUpBefore, $scheduledPickUpAfter, $currentShipmentStatus, $vendorShipmentIdentifier, $buyerReferenceNumber, $buyerWarehouseCode, $sellerWarehouseCode));
+        $request = new GetShipmentDetails($limit, $sortOrder, $nextToken, $createdAfter, $createdBefore, $shipmentConfirmedBefore, $shipmentConfirmedAfter, $packageLabelCreatedBefore, $packageLabelCreatedAfter, $shippedBefore, $shippedAfter, $estimatedDeliveryBefore, $estimatedDeliveryAfter, $shipmentDeliveryBefore, $shipmentDeliveryAfter, $requestedPickUpBefore, $requestedPickUpAfter, $scheduledPickUpBefore, $scheduledPickUpAfter, $currentShipmentStatus, $vendorShipmentIdentifier, $buyerReferenceNumber, $buyerWarehouseCode, $sellerWarehouseCode);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -82,7 +86,9 @@ class Api extends BaseResource
      */
     public function submitShipments(SubmitShipments1 $submitShipments): Response
     {
-        return $this->connector->send(new SubmitShipments($submitShipments));
+        $request = new SubmitShipments($submitShipments);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -105,6 +111,8 @@ class Api extends BaseResource
         ?string $vendorShipmentIdentifier = null,
         ?string $sellerWarehouseCode = null,
     ): Response {
-        return $this->connector->send(new GetShipmentLabels($limit, $sortOrder, $nextToken, $labelCreatedAfter, $labelcreatedBefore, $buyerReferenceNumber, $vendorShipmentIdentifier, $sellerWarehouseCode));
+        $request = new GetShipmentLabels($limit, $sortOrder, $nextToken, $labelCreatedAfter, $labelcreatedBefore, $buyerReferenceNumber, $vendorShipmentIdentifier, $sellerWarehouseCode);
+
+        return $this->connector->send($request);
     }
 }

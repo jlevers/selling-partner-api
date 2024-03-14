@@ -19,7 +19,9 @@ class Api extends BaseResource
      */
     public function getSmallAndLightEnrollmentBySellerSku(string $sellerSku, array $marketplaceIds): Response
     {
-        return $this->connector->send(new GetSmallAndLightEnrollmentBySellerSku($sellerSku, $marketplaceIds));
+        $request = new GetSmallAndLightEnrollmentBySellerSku($sellerSku, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -28,7 +30,9 @@ class Api extends BaseResource
      */
     public function putSmallAndLightEnrollmentBySellerSku(string $sellerSku, array $marketplaceIds): Response
     {
-        return $this->connector->send(new PutSmallAndLightEnrollmentBySellerSku($sellerSku, $marketplaceIds));
+        $request = new PutSmallAndLightEnrollmentBySellerSku($sellerSku, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -37,7 +41,9 @@ class Api extends BaseResource
      */
     public function deleteSmallAndLightEnrollmentBySellerSku(string $sellerSku, array $marketplaceIds): Response
     {
-        return $this->connector->send(new DeleteSmallAndLightEnrollmentBySellerSku($sellerSku, $marketplaceIds));
+        $request = new DeleteSmallAndLightEnrollmentBySellerSku($sellerSku, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -46,7 +52,9 @@ class Api extends BaseResource
      */
     public function getSmallAndLightEligibilityBySellerSku(string $sellerSku, array $marketplaceIds): Response
     {
-        return $this->connector->send(new GetSmallAndLightEligibilityBySellerSku($sellerSku, $marketplaceIds));
+        $request = new GetSmallAndLightEligibilityBySellerSku($sellerSku, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -54,6 +62,8 @@ class Api extends BaseResource
      */
     public function getSmallAndLightFeePreview(SmallAndLightFeePreviewRequest $smallAndLightFeePreviewRequest): Response
     {
-        return $this->connector->send(new GetSmallAndLightFeePreview($smallAndLightFeePreviewRequest));
+        $request = new GetSmallAndLightFeePreview($smallAndLightFeePreviewRequest);
+
+        return $this->connector->send($request);
     }
 }

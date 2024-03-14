@@ -25,7 +25,9 @@ class Api extends BaseResource
      */
     public function searchContentDocuments(string $marketplaceId, ?string $pageToken = null): Response
     {
-        return $this->connector->send(new SearchContentDocuments($marketplaceId, $pageToken));
+        $request = new SearchContentDocuments($marketplaceId, $pageToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -35,7 +37,9 @@ class Api extends BaseResource
         PostContentDocumentRequest $postContentDocumentRequest,
         string $marketplaceId,
     ): Response {
-        return $this->connector->send(new CreateContentDocument($postContentDocumentRequest, $marketplaceId));
+        $request = new CreateContentDocument($postContentDocumentRequest, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -48,7 +52,9 @@ class Api extends BaseResource
         string $marketplaceId,
         array $includedDataSet,
     ): Response {
-        return $this->connector->send(new GetContentDocument($contentReferenceKey, $marketplaceId, $includedDataSet));
+        $request = new GetContentDocument($contentReferenceKey, $marketplaceId, $includedDataSet);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -60,7 +66,9 @@ class Api extends BaseResource
         PostContentDocumentRequest $postContentDocumentRequest,
         string $marketplaceId,
     ): Response {
-        return $this->connector->send(new UpdateContentDocument($contentReferenceKey, $postContentDocumentRequest, $marketplaceId));
+        $request = new UpdateContentDocument($contentReferenceKey, $postContentDocumentRequest, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -77,7 +85,9 @@ class Api extends BaseResource
         ?array $asinSet = null,
         ?string $pageToken = null,
     ): Response {
-        return $this->connector->send(new ListContentDocumentAsinRelations($contentReferenceKey, $marketplaceId, $includedDataSet, $asinSet, $pageToken));
+        $request = new ListContentDocumentAsinRelations($contentReferenceKey, $marketplaceId, $includedDataSet, $asinSet, $pageToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -89,7 +99,9 @@ class Api extends BaseResource
         PostContentDocumentAsinRelationsRequest $postContentDocumentAsinRelationsRequest,
         string $marketplaceId,
     ): Response {
-        return $this->connector->send(new PostContentDocumentAsinRelations($contentReferenceKey, $postContentDocumentAsinRelationsRequest, $marketplaceId));
+        $request = new PostContentDocumentAsinRelations($contentReferenceKey, $postContentDocumentAsinRelationsRequest, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -101,7 +113,9 @@ class Api extends BaseResource
         string $marketplaceId,
         ?array $asinSet = null,
     ): Response {
-        return $this->connector->send(new ValidateContentDocumentAsinRelations($postContentDocumentRequest, $marketplaceId, $asinSet));
+        $request = new ValidateContentDocumentAsinRelations($postContentDocumentRequest, $marketplaceId, $asinSet);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -111,7 +125,9 @@ class Api extends BaseResource
      */
     public function searchContentPublishRecords(string $marketplaceId, string $asin, ?string $pageToken = null): Response
     {
-        return $this->connector->send(new SearchContentPublishRecords($marketplaceId, $asin, $pageToken));
+        $request = new SearchContentPublishRecords($marketplaceId, $asin, $pageToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -120,7 +136,9 @@ class Api extends BaseResource
      */
     public function postContentDocumentApprovalSubmission(string $contentReferenceKey, string $marketplaceId): Response
     {
-        return $this->connector->send(new PostContentDocumentApprovalSubmission($contentReferenceKey, $marketplaceId));
+        $request = new PostContentDocumentApprovalSubmission($contentReferenceKey, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -129,6 +147,8 @@ class Api extends BaseResource
      */
     public function postContentDocumentSuspendSubmission(string $contentReferenceKey, string $marketplaceId): Response
     {
-        return $this->connector->send(new PostContentDocumentSuspendSubmission($contentReferenceKey, $marketplaceId));
+        $request = new PostContentDocumentSuspendSubmission($contentReferenceKey, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 }

@@ -15,6 +15,8 @@ class Api extends BaseResource
      */
     public function getItemEligibilityPreview(string $asin, string $program, ?array $marketplaceIds = null): Response
     {
-        return $this->connector->send(new GetItemEligibilityPreview($asin, $program, $marketplaceIds));
+        $request = new GetItemEligibilityPreview($asin, $program, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 }

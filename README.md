@@ -90,7 +90,7 @@ $connector = SellingPartnerApi::make(
 ```
 
 > [!NOTE]
-> Older versions of the Selling Partner API used AWS IAM credentials to authenticate, and so this library had additional AWS configuration options. If you're upgrading from an older version of this library and are confused about what to do with your AWs creds, you can just ignore them. The SP API no longer authenticates via AWSA IAM roles or users.
+> Older versions of the Selling Partner API used AWS IAM credentials to authenticate, and so this library had additional AWS configuration options. If you're upgrading from an older version of this library and are confused about what to do with your AWS creds, you can just ignore them. The SP API no longer authenticates via AWS IAM roles or users.
 
 Now you have a Selling Partner API connector instance, and you can start making calls to the API. The connector instance has methods for each of the API segments (e.g., `sellers`, `orders`, `fba-inbound`), and you can access them like so:
 
@@ -185,11 +185,9 @@ $sellerConnector = SellingPartnerApi::make(/* ... */)->seller();
     ```php
     $catalogItemsApi = $sellerConnector->catalogItems();
     ```
-    ```
 * **Catalog Items API (v2021-12-01)** ([docs](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v2020-12-01-reference))
     ```php
     $catalogItemsApi = $sellerConnector->catalogItemsV20211201();
-    ```
     ```
 * **Catalog Items API (v0)** ([docs](https://developer-docs.amazon.com/sp-api/docs/catalog-items-api-v0-reference))
     ```php
@@ -539,49 +537,4 @@ $response = $ordersApi->confirmShipment(
     orderId: '123-4567890-1234567',
     confirmShipmentRequest: $confirmShipmentRequest,
 )
-```
-
-Most operations have one or more models associated with it. These models are classes that contain the data needed to make a certain kind of request to the API, or contain the data returned by a given request type. All of the models share the same general interface: you can either specify all the model's attributes during initialization, or set each attribute after the fact. Here's an example using the Service API's `Buyer` model ([docs](https://github.com/jlevers/selling-partner-api/blob/main/docs/Model/ServiceV1/Buyer.md), ([source](https://github.com/jlevers/selling-partner-api/blob/main/lib/Model/ServiceV1/Buyer.php)).
-
-The `Buyer` model has four attributes: `buyer_id`, `name`, `phone`, and `is_prime_member`. (If you're wondering how you would figure out which attributes the model has on your own, check out the `docs` link above.) To create an instance of the `Buyer` model with all those attributes set:
-
-```php
-$buyer = new SellingPartnerApi\Model\ServiceV1\Buyer([
-    "buyer_id" => "ABCDEFGHIJKLMNOPQRSTU0123456",
-    "name" => "Jane Doe",
-    "phone" => "+12345678901",
-    "is_prime_member" => true
-]);
-```
-
-Alternatively, you can create an instance of the `Buyer` model and then populate its fields:
-
-```php
-$buyer = new SellingPartnerApi\Model\ServiceV1\Buyer();
-$buyer->buyerId = "ABCDEFGHIJKLMNOPQRSTU0123456";
-$buyer->name = "Jane Doe";
-$buyer->phone = "+12345678901";
-$buyer->isPrimeMember = true;
-```
-
-Each model also has the property accessors you might expect:
-
-```php
-$buyer->buyerId;        // -> "ABCDEFGHIJKLMNOPQRSTU0123456"
-$buyer->name;           // -> "Jane Doe"
-$buyer->phone;          // -> "+12345678901"
-$buyer->isPrimeMember;  // -> true
-```
-
-Models can (and usually do) have other models as attributes:
-
-``` php
-$serviceJob = new SellingPartnerApi\Model\ServiceV1\Buyer([
-    // ...
-    "buyer" => $buyer,
-    // ...
-]);
-
-$serviceJob->buyer;        // -> [Buyer instance]
-$serviceJob->buyer->name;  // -> "Jane Doe"
 ```

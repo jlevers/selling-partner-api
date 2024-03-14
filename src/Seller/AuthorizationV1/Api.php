@@ -17,7 +17,8 @@ class Api extends BaseResource
     public function getAuthorizationCode(string $sellingPartnerId, string $developerId, string $mwsAuthToken): Response
     {
         $request = new GetAuthorizationCode($sellingPartnerId, $developerId, $mwsAuthToken);
-        $request->authenticate($this->connector->grantlessAuth(GrantlessScope::TOKEN_MIGRATION));
+        $authenticator = $this->connector->grantlessAuth(GrantlessScope::TOKEN_MIGRATION);
+        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

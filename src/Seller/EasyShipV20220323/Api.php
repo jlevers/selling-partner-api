@@ -21,7 +21,9 @@ class Api extends BaseResource
      */
     public function listHandoverSlots(ListHandoverSlotsRequest $listHandoverSlotsRequest): Response
     {
-        return $this->connector->send(new ListHandoverSlots($listHandoverSlotsRequest));
+        $request = new ListHandoverSlots($listHandoverSlotsRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -30,7 +32,9 @@ class Api extends BaseResource
      */
     public function getScheduledPackage(string $amazonOrderId, string $marketplaceId): Response
     {
-        return $this->connector->send(new GetScheduledPackage($amazonOrderId, $marketplaceId));
+        $request = new GetScheduledPackage($amazonOrderId, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -38,7 +42,9 @@ class Api extends BaseResource
      */
     public function createScheduledPackage(CreateScheduledPackageRequest $createScheduledPackageRequest): Response
     {
-        return $this->connector->send(new CreateScheduledPackage($createScheduledPackageRequest));
+        $request = new CreateScheduledPackage($createScheduledPackageRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -46,7 +52,9 @@ class Api extends BaseResource
      */
     public function updateScheduledPackages(UpdateScheduledPackagesRequest $updateScheduledPackagesRequest): Response
     {
-        return $this->connector->send(new UpdateScheduledPackages($updateScheduledPackagesRequest));
+        $request = new UpdateScheduledPackages($updateScheduledPackagesRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -54,6 +62,10 @@ class Api extends BaseResource
      */
     public function createScheduledPackageBulk(CreateScheduledPackagesRequest $createScheduledPackagesRequest): Response
     {
-        return $this->connector->send(new CreateScheduledPackageBulk($createScheduledPackagesRequest));
+        $request = new CreateScheduledPackageBulk($createScheduledPackagesRequest);
+        $authenticator = $this->connector->restrictedAuth('/easyShip/2022-03-23/packages/bulk', 'POST', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 }

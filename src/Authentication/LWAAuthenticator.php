@@ -6,6 +6,7 @@ namespace SellingPartnerApi\Authentication;
 
 use DateTime;
 use GuzzleHttp\Client;
+use Illuminate\Support\Arr;
 use Psr\Http\Client\ClientInterface;
 use SellingPartnerApi\Enums\Endpoint;
 
@@ -41,10 +42,8 @@ class LWAAuthenticator extends AbstractAuthenticator
      */
     protected function getAccessToken(): ?string
     {
-        if (
-            ! array_key_exists($this->clientId, static::$accessTokens)
-            || static::$accessTokens[$this->clientId]->expired()
-        ) {
+        $accessToken = Arr::get(static::$accessTokens, $this->clientId);
+        if (! $accessToken || $accessToken->expired()) {
             $jsonData = [
                 'grant_type' => 'refresh_token',
                 'client_id' => $this->clientId,
@@ -59,9 +58,9 @@ class LWAAuthenticator extends AbstractAuthenticator
                 new DateTime("+{$data['expires_in']} seconds")
             );
 
-            static::$accessTokens[$this->clientId] = $accessToken;
+            $accessToken = static::$accessTokens[$this->clientId] = $accessToken;
         }
 
-        return static::$accessTokens[$this->clientId]->token;
+        return $accessToken->token;
     }
 }

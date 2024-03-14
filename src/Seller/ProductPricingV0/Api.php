@@ -31,7 +31,9 @@ class Api extends BaseResource
         ?string $itemCondition = null,
         ?string $offerType = null,
     ): Response {
-        return $this->connector->send(new GetPricing($marketplaceId, $itemType, $asins, $skus, $itemCondition, $offerType));
+        $request = new GetPricing($marketplaceId, $itemType, $asins, $skus, $itemCondition, $offerType);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -48,7 +50,9 @@ class Api extends BaseResource
         ?array $skus = null,
         ?string $customerType = null,
     ): Response {
-        return $this->connector->send(new GetCompetitivePricing($marketplaceId, $itemType, $asins, $skus, $customerType));
+        $request = new GetCompetitivePricing($marketplaceId, $itemType, $asins, $skus, $customerType);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -63,7 +67,9 @@ class Api extends BaseResource
         string $itemCondition,
         ?string $customerType = null,
     ): Response {
-        return $this->connector->send(new GetListingOffers($sellerSku, $marketplaceId, $itemCondition, $customerType));
+        $request = new GetListingOffers($sellerSku, $marketplaceId, $itemCondition, $customerType);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -78,7 +84,9 @@ class Api extends BaseResource
         string $itemCondition,
         ?string $customerType = null,
     ): Response {
-        return $this->connector->send(new GetItemOffers($asin, $marketplaceId, $itemCondition, $customerType));
+        $request = new GetItemOffers($asin, $marketplaceId, $itemCondition, $customerType);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -86,7 +94,9 @@ class Api extends BaseResource
      */
     public function getItemOffersBatch(GetItemOffersBatchRequest $getItemOffersBatchRequest): Response
     {
-        return $this->connector->send(new GetItemOffersBatch($getItemOffersBatchRequest));
+        $request = new GetItemOffersBatch($getItemOffersBatchRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -94,6 +104,8 @@ class Api extends BaseResource
      */
     public function getListingOffersBatch(GetListingOffersBatchRequest $getListingOffersBatchRequest): Response
     {
-        return $this->connector->send(new GetListingOffersBatch($getListingOffersBatchRequest));
+        $request = new GetListingOffersBatch($getListingOffersBatchRequest);
+
+        return $this->connector->send($request);
     }
 }

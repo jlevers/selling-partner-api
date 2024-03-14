@@ -13,6 +13,8 @@ class Api extends BaseResource
      */
     public function getTransaction(string $transactionId): Response
     {
-        return $this->connector->send(new GetTransaction($transactionId));
+        $request = new GetTransaction($transactionId);
+
+        return $this->connector->send($request);
     }
 }

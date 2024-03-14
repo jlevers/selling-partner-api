@@ -17,6 +17,8 @@ class Api extends BaseResource
         string $warehouseId,
         SubmitInventoryUpdateRequest $submitInventoryUpdateRequest,
     ): Response {
-        return $this->connector->send(new SubmitInventoryUpdate($warehouseId, $submitInventoryUpdateRequest));
+        $request = new SubmitInventoryUpdate($warehouseId, $submitInventoryUpdateRequest);
+
+        return $this->connector->send($request);
     }
 }

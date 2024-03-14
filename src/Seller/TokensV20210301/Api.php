@@ -15,6 +15,8 @@ class Api extends BaseResource
     public function createRestrictedDataToken(
         CreateRestrictedDataTokenRequest $createRestrictedDataTokenRequest,
     ): Response {
-        return $this->connector->send(new CreateRestrictedDataToken($createRestrictedDataTokenRequest));
+        $request = new CreateRestrictedDataToken($createRestrictedDataTokenRequest);
+
+        return $this->connector->send($request);
     }
 }

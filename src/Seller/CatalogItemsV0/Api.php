@@ -30,7 +30,9 @@ class Api extends BaseResource
         ?string $isbn = null,
         ?string $jan = null,
     ): Response {
-        return $this->connector->send(new ListCatalogItems($marketplaceId, $query, $queryContextId, $sellerSku, $upc, $ean, $isbn, $jan));
+        $request = new ListCatalogItems($marketplaceId, $query, $queryContextId, $sellerSku, $upc, $ean, $isbn, $jan);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -39,7 +41,9 @@ class Api extends BaseResource
      */
     public function getCatalogItem(string $asin, string $marketplaceId): Response
     {
-        return $this->connector->send(new GetCatalogItem($asin, $marketplaceId));
+        $request = new GetCatalogItem($asin, $marketplaceId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -52,6 +56,8 @@ class Api extends BaseResource
         ?string $asin = null,
         ?string $sellerSku = null,
     ): Response {
-        return $this->connector->send(new ListCatalogCategories($marketplaceId, $asin, $sellerSku));
+        $request = new ListCatalogCategories($marketplaceId, $asin, $sellerSku);
+
+        return $this->connector->send($request);
     }
 }

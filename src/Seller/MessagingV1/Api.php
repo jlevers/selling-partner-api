@@ -36,7 +36,9 @@ class Api extends BaseResource
      */
     public function getMessagingActionsForOrder(string $amazonOrderId, array $marketplaceIds): Response
     {
-        return $this->connector->send(new GetMessagingActionsForOrder($amazonOrderId, $marketplaceIds));
+        $request = new GetMessagingActionsForOrder($amazonOrderId, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -49,7 +51,9 @@ class Api extends BaseResource
         CreateConfirmCustomizationDetailsRequest $createConfirmCustomizationDetailsRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new ConfirmCustomizationDetails($amazonOrderId, $createConfirmCustomizationDetailsRequest, $marketplaceIds));
+        $request = new ConfirmCustomizationDetails($amazonOrderId, $createConfirmCustomizationDetailsRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -62,7 +66,9 @@ class Api extends BaseResource
         CreateConfirmDeliveryDetailsRequest $createConfirmDeliveryDetailsRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateConfirmDeliveryDetails($amazonOrderId, $createConfirmDeliveryDetailsRequest, $marketplaceIds));
+        $request = new CreateConfirmDeliveryDetails($amazonOrderId, $createConfirmDeliveryDetailsRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -75,7 +81,9 @@ class Api extends BaseResource
         CreateLegalDisclosureRequest $createLegalDisclosureRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateLegalDisclosure($amazonOrderId, $createLegalDisclosureRequest, $marketplaceIds));
+        $request = new CreateLegalDisclosure($amazonOrderId, $createLegalDisclosureRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -84,7 +92,9 @@ class Api extends BaseResource
      */
     public function createNegativeFeedbackRemoval(string $amazonOrderId, array $marketplaceIds): Response
     {
-        return $this->connector->send(new CreateNegativeFeedbackRemoval($amazonOrderId, $marketplaceIds));
+        $request = new CreateNegativeFeedbackRemoval($amazonOrderId, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -97,7 +107,9 @@ class Api extends BaseResource
         CreateConfirmOrderDetailsRequest $createConfirmOrderDetailsRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateConfirmOrderDetails($amazonOrderId, $createConfirmOrderDetailsRequest, $marketplaceIds));
+        $request = new CreateConfirmOrderDetails($amazonOrderId, $createConfirmOrderDetailsRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -110,7 +122,9 @@ class Api extends BaseResource
         CreateConfirmServiceDetailsRequest $createConfirmServiceDetailsRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateConfirmServiceDetails($amazonOrderId, $createConfirmServiceDetailsRequest, $marketplaceIds));
+        $request = new CreateConfirmServiceDetails($amazonOrderId, $createConfirmServiceDetailsRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -123,7 +137,9 @@ class Api extends BaseResource
         CreateAmazonMotorsRequest $createAmazonMotorsRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateAmazonMotors($amazonOrderId, $createAmazonMotorsRequest, $marketplaceIds));
+        $request = new CreateAmazonMotors($amazonOrderId, $createAmazonMotorsRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -136,7 +152,9 @@ class Api extends BaseResource
         CreateWarrantyRequest $createWarrantyRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateWarranty($amazonOrderId, $createWarrantyRequest, $marketplaceIds));
+        $request = new CreateWarranty($amazonOrderId, $createWarrantyRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -145,7 +163,9 @@ class Api extends BaseResource
      */
     public function getAttributes(string $amazonOrderId, array $marketplaceIds): Response
     {
-        return $this->connector->send(new GetAttributes($amazonOrderId, $marketplaceIds));
+        $request = new GetAttributes($amazonOrderId, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -158,7 +178,9 @@ class Api extends BaseResource
         CreateDigitalAccessKeyRequest $createDigitalAccessKeyRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateDigitalAccessKey($amazonOrderId, $createDigitalAccessKeyRequest, $marketplaceIds));
+        $request = new CreateDigitalAccessKey($amazonOrderId, $createDigitalAccessKeyRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -171,7 +193,9 @@ class Api extends BaseResource
         CreateUnexpectedProblemRequest $createUnexpectedProblemRequest,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateUnexpectedProblem($amazonOrderId, $createUnexpectedProblemRequest, $marketplaceIds));
+        $request = new CreateUnexpectedProblem($amazonOrderId, $createUnexpectedProblemRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -181,6 +205,8 @@ class Api extends BaseResource
      */
     public function sendInvoice(string $amazonOrderId, InvoiceRequest $invoiceRequest, array $marketplaceIds): Response
     {
-        return $this->connector->send(new SendInvoice($amazonOrderId, $invoiceRequest, $marketplaceIds));
+        $request = new SendInvoice($amazonOrderId, $invoiceRequest, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 }

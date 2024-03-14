@@ -22,6 +22,8 @@ class Api extends BaseResource
         ?string $conditionType = null,
         ?string $reasonLocale = null,
     ): Response {
-        return $this->connector->send(new GetListingsRestrictions($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale));
+        $request = new GetListingsRestrictions($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale);
+
+        return $this->connector->send($request);
     }
 }

@@ -10,6 +10,8 @@ class Api extends BaseResource
 {
     public function getMarketplaceParticipations(): Response
     {
-        return $this->connector->send(new GetMarketplaceParticipations());
+        $request = new GetMarketplaceParticipations();
+
+        return $this->connector->send($request);
     }
 }

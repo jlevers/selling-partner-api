@@ -54,6 +54,8 @@ class Api extends BaseResource
     public function getSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
         $request = new GetSubscriptionById($subscriptionId, $notificationType);
+        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
+        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -67,6 +69,8 @@ class Api extends BaseResource
     public function deleteSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
         $request = new DeleteSubscriptionById($subscriptionId, $notificationType);
+        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
+        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -74,7 +78,8 @@ class Api extends BaseResource
     public function getDestinations(): Response
     {
         $request = new GetDestinations();
-        $request->authenticate($this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS));
+        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
+        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -85,7 +90,8 @@ class Api extends BaseResource
     public function createDestination(CreateDestinationRequest $createDestinationRequest): Response
     {
         $request = new CreateDestination($createDestinationRequest);
-        $request->authenticate($this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS));
+        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
+        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -96,6 +102,8 @@ class Api extends BaseResource
     public function getDestination(string $destinationId): Response
     {
         $request = new GetDestination($destinationId);
+        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
+        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -106,6 +114,8 @@ class Api extends BaseResource
     public function deleteDestination(string $destinationId): Response
     {
         $request = new DeleteDestination($destinationId);
+        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
+        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

@@ -19,7 +19,9 @@ class Api extends BaseResource
         string $sellerSku,
         GetMyFeesEstimateRequest $getMyFeesEstimateRequest,
     ): Response {
-        return $this->connector->send(new GetMyFeesEstimateForSku($sellerSku, $getMyFeesEstimateRequest));
+        $request = new GetMyFeesEstimateForSku($sellerSku, $getMyFeesEstimateRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -28,7 +30,9 @@ class Api extends BaseResource
      */
     public function getMyFeesEstimateForAsin(string $asin, GetMyFeesEstimateRequest $getMyFeesEstimateRequest): Response
     {
-        return $this->connector->send(new GetMyFeesEstimateForAsin($asin, $getMyFeesEstimateRequest));
+        $request = new GetMyFeesEstimateForAsin($asin, $getMyFeesEstimateRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -36,6 +40,8 @@ class Api extends BaseResource
      */
     public function getMyFeesEstimates(array $getMyFeesEstimatesRequest): Response
     {
-        return $this->connector->send(new GetMyFeesEstimates($getMyFeesEstimatesRequest));
+        $request = new GetMyFeesEstimates($getMyFeesEstimatesRequest);
+
+        return $this->connector->send($request);
     }
 }

@@ -17,7 +17,9 @@ class Api extends BaseResource
     public function getFeaturedOfferExpectedPriceBatch(
         GetFeaturedOfferExpectedPriceBatchRequest $getFeaturedOfferExpectedPriceBatchRequest,
     ): Response {
-        return $this->connector->send(new GetFeaturedOfferExpectedPriceBatch($getFeaturedOfferExpectedPriceBatchRequest));
+        $request = new GetFeaturedOfferExpectedPriceBatch($getFeaturedOfferExpectedPriceBatchRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -25,6 +27,8 @@ class Api extends BaseResource
      */
     public function getCompetitiveSummary(CompetitiveSummaryBatchRequest $competitiveSummaryBatchRequest): Response
     {
-        return $this->connector->send(new GetCompetitiveSummary($competitiveSummaryBatchRequest));
+        $request = new GetCompetitiveSummary($competitiveSummaryBatchRequest);
+
+        return $this->connector->send($request);
     }
 }

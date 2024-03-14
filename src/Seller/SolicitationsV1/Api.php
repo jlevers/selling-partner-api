@@ -15,7 +15,9 @@ class Api extends BaseResource
      */
     public function getSolicitationActionsForOrder(string $amazonOrderId, array $marketplaceIds): Response
     {
-        return $this->connector->send(new GetSolicitationActionsForOrder($amazonOrderId, $marketplaceIds));
+        $request = new GetSolicitationActionsForOrder($amazonOrderId, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -26,6 +28,8 @@ class Api extends BaseResource
         string $amazonOrderId,
         array $marketplaceIds,
     ): Response {
-        return $this->connector->send(new CreateProductReviewAndSellerFeedbackSolicitation($amazonOrderId, $marketplaceIds));
+        $request = new CreateProductReviewAndSellerFeedbackSolicitation($amazonOrderId, $marketplaceIds);
+
+        return $this->connector->send($request);
     }
 }

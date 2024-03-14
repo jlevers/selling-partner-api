@@ -23,7 +23,9 @@ class Api extends BaseResource
         ?string $locale = null,
         ?string $searchLocale = null,
     ): Response {
-        return $this->connector->send(new SearchDefinitionsProductTypes($marketplaceIds, $keywords, $itemName, $locale, $searchLocale));
+        $request = new SearchDefinitionsProductTypes($marketplaceIds, $keywords, $itemName, $locale, $searchLocale);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -45,6 +47,8 @@ class Api extends BaseResource
         ?string $requirementsEnforced = null,
         ?string $locale = null,
     ): Response {
-        return $this->connector->send(new GetDefinitionsProductType($productType, $marketplaceIds, $sellerId, $productTypeVersion, $requirements, $requirementsEnforced, $locale));
+        $request = new GetDefinitionsProductType($productType, $marketplaceIds, $sellerId, $productTypeVersion, $requirements, $requirementsEnforced, $locale);
+
+        return $this->connector->send($request);
     }
 }

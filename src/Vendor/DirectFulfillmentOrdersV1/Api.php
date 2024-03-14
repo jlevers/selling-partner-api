@@ -31,7 +31,11 @@ class Api extends BaseResource
         ?string $nextToken = null,
         ?string $includeDetails = null,
     ): Response {
-        return $this->connector->send(new GetOrders($createdAfter, $createdBefore, $shipFromPartyId, $status, $limit, $sortOrder, $nextToken, $includeDetails));
+        $request = new GetOrders($createdAfter, $createdBefore, $shipFromPartyId, $status, $limit, $sortOrder, $nextToken, $includeDetails);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/orders/v1/purchaseOrders', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -39,7 +43,11 @@ class Api extends BaseResource
      */
     public function getOrder(string $purchaseOrderNumber): Response
     {
-        return $this->connector->send(new GetOrder($purchaseOrderNumber));
+        $request = new GetOrder($purchaseOrderNumber);
+        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -47,6 +55,8 @@ class Api extends BaseResource
      */
     public function submitAcknowledgement(SubmitAcknowledgementRequest $submitAcknowledgementRequest): Response
     {
-        return $this->connector->send(new SubmitAcknowledgement($submitAcknowledgementRequest));
+        $request = new SubmitAcknowledgement($submitAcknowledgementRequest);
+
+        return $this->connector->send($request);
     }
 }

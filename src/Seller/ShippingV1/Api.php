@@ -26,17 +26,25 @@ class Api extends BaseResource
      */
     public function createShipment(CreateShipmentRequest $createShipmentRequest): Response
     {
-        return $this->connector->send(new CreateShipment($createShipmentRequest));
+        $request = new CreateShipment($createShipmentRequest);
+
+        return $this->connector->send($request);
     }
 
     public function getShipment(string $shipmentId): Response
     {
-        return $this->connector->send(new GetShipment($shipmentId));
+        $request = new GetShipment($shipmentId);
+        $authenticator = $this->connector->restrictedAuth('/shipping/v1/shipments/{shipmentId}', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     public function cancelShipment(string $shipmentId): Response
     {
-        return $this->connector->send(new CancelShipment($shipmentId));
+        $request = new CancelShipment($shipmentId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -44,7 +52,9 @@ class Api extends BaseResource
      */
     public function purchaseLabels(string $shipmentId, PurchaseLabelsRequest $purchaseLabelsRequest): Response
     {
-        return $this->connector->send(new PurchaseLabels($shipmentId, $purchaseLabelsRequest));
+        $request = new PurchaseLabels($shipmentId, $purchaseLabelsRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -55,7 +65,9 @@ class Api extends BaseResource
         string $trackingId,
         RetrieveShippingLabelRequest $retrieveShippingLabelRequest,
     ): Response {
-        return $this->connector->send(new RetrieveShippingLabel($shipmentId, $trackingId, $retrieveShippingLabelRequest));
+        $request = new RetrieveShippingLabel($shipmentId, $trackingId, $retrieveShippingLabelRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -63,7 +75,9 @@ class Api extends BaseResource
      */
     public function purchaseShipment(PurchaseShipmentRequest $purchaseShipmentRequest): Response
     {
-        return $this->connector->send(new PurchaseShipment($purchaseShipmentRequest));
+        $request = new PurchaseShipment($purchaseShipmentRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -71,16 +85,22 @@ class Api extends BaseResource
      */
     public function getRates(GetRatesRequest $getRatesRequest): Response
     {
-        return $this->connector->send(new GetRates($getRatesRequest));
+        $request = new GetRates($getRatesRequest);
+
+        return $this->connector->send($request);
     }
 
     public function getAccount(): Response
     {
-        return $this->connector->send(new GetAccount());
+        $request = new GetAccount();
+
+        return $this->connector->send($request);
     }
 
     public function getTrackingInformation(string $trackingId): Response
     {
-        return $this->connector->send(new GetTrackingInformation($trackingId));
+        $request = new GetTrackingInformation($trackingId);
+
+        return $this->connector->send($request);
     }
 }

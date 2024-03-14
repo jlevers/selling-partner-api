@@ -24,7 +24,9 @@ class Api extends BaseResource
     public function getEligibleShipmentServicesOld(
         GetEligibleShipmentServicesRequest $getEligibleShipmentServicesRequest,
     ): Response {
-        return $this->connector->send(new GetEligibleShipmentServicesOld($getEligibleShipmentServicesRequest));
+        $request = new GetEligibleShipmentServicesOld($getEligibleShipmentServicesRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -33,7 +35,9 @@ class Api extends BaseResource
     public function getEligibleShipmentServices(
         GetEligibleShipmentServicesRequest $getEligibleShipmentServicesRequest,
     ): Response {
-        return $this->connector->send(new GetEligibleShipmentServices($getEligibleShipmentServicesRequest));
+        $request = new GetEligibleShipmentServices($getEligibleShipmentServicesRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -41,7 +45,11 @@ class Api extends BaseResource
      */
     public function getShipment(string $shipmentId): Response
     {
-        return $this->connector->send(new GetShipment($shipmentId));
+        $request = new GetShipment($shipmentId);
+        $authenticator = $this->connector->restrictedAuth('/mfn/v0/shipments/{shipmentId}', 'GET', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -49,7 +57,11 @@ class Api extends BaseResource
      */
     public function cancelShipment(string $shipmentId): Response
     {
-        return $this->connector->send(new CancelShipment($shipmentId));
+        $request = new CancelShipment($shipmentId);
+        $authenticator = $this->connector->restrictedAuth('/mfn/v0/shipments/{shipmentId}', 'DELETE', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -57,7 +69,11 @@ class Api extends BaseResource
      */
     public function cancelShipmentOld(string $shipmentId): Response
     {
-        return $this->connector->send(new CancelShipmentOld($shipmentId));
+        $request = new CancelShipmentOld($shipmentId);
+        $authenticator = $this->connector->restrictedAuth('/mfn/v0/shipments/{shipmentId}/cancel', 'PUT', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -65,7 +81,11 @@ class Api extends BaseResource
      */
     public function createShipment(CreateShipmentRequest $createShipmentRequest): Response
     {
-        return $this->connector->send(new CreateShipment($createShipmentRequest));
+        $request = new CreateShipment($createShipmentRequest);
+        $authenticator = $this->connector->restrictedAuth('/mfn/v0/shipments', 'POST', []);
+        $request->authenticate($authenticator);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -74,7 +94,9 @@ class Api extends BaseResource
     public function getAdditionalSellerInputsOld(
         GetAdditionalSellerInputsRequest $getAdditionalSellerInputsRequest,
     ): Response {
-        return $this->connector->send(new GetAdditionalSellerInputsOld($getAdditionalSellerInputsRequest));
+        $request = new GetAdditionalSellerInputsOld($getAdditionalSellerInputsRequest);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -83,6 +105,8 @@ class Api extends BaseResource
     public function getAdditionalSellerInputs(
         GetAdditionalSellerInputsRequest $getAdditionalSellerInputsRequest,
     ): Response {
-        return $this->connector->send(new GetAdditionalSellerInputs($getAdditionalSellerInputsRequest));
+        $request = new GetAdditionalSellerInputs($getAdditionalSellerInputsRequest);
+
+        return $this->connector->send($request);
     }
 }

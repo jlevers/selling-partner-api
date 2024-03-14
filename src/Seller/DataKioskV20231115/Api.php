@@ -27,7 +27,9 @@ class Api extends BaseResource
         ?string $createdUntil = null,
         ?string $paginationToken = null,
     ): Response {
-        return $this->connector->send(new GetQueries($processingStatuses, $pageSize, $createdSince, $createdUntil, $paginationToken));
+        $request = new GetQueries($processingStatuses, $pageSize, $createdSince, $createdUntil, $paginationToken);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -35,7 +37,9 @@ class Api extends BaseResource
      */
     public function createQuery(CreateQuerySpecification $createQuerySpecification): Response
     {
-        return $this->connector->send(new CreateQuery($createQuerySpecification));
+        $request = new CreateQuery($createQuerySpecification);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -43,7 +47,9 @@ class Api extends BaseResource
      */
     public function getQuery(string $queryId): Response
     {
-        return $this->connector->send(new GetQuery($queryId));
+        $request = new GetQuery($queryId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -51,7 +57,9 @@ class Api extends BaseResource
      */
     public function cancelQuery(string $queryId): Response
     {
-        return $this->connector->send(new CancelQuery($queryId));
+        $request = new CancelQuery($queryId);
+
+        return $this->connector->send($request);
     }
 
     /**
@@ -59,6 +67,8 @@ class Api extends BaseResource
      */
     public function getDocument(string $documentId): Response
     {
-        return $this->connector->send(new GetDocument($documentId));
+        $request = new GetDocument($documentId);
+
+        return $this->connector->send($request);
     }
 }

@@ -13,13 +13,6 @@ use SellingPartnerApi\Enums\Endpoint;
 class LWAAuthenticator extends AbstractAuthenticator
 {
     /**
-     * The authentication client, if any.
-     *
-     * @var GuzzleHttp\ClientInterface|null
-     */
-    protected ?ClientInterface $authenticationClient;
-
-    /**
      * A map of LWA client IDs to access tokens. Used to cache access tokens
      * for multiple clients in a single spot.
      *

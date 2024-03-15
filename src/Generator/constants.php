@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-const _NAMESPACE = 'SellingPartnerApi';
+const PACKAGE_NAMESPACE = 'SellingPartnerApi';
 
 const ROOT_DIR = __DIR__.'/../..';
 const GENERATED_DIR = ROOT_DIR.'/src';

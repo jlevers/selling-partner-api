@@ -29,24 +29,4 @@ class Generator
             fileHandler: new FileHandler($config),
         );
     }
-
-    /**
-     * Execute a command. If it succeeds, return. Otherwise exit with command's exit code.
-     * Logs the command's output to the log file.
-     *
-     * @param  string  $cmd The command to execute
-     */
-    public static function execAndLog(string $cmd): void
-    {
-        $resultCode = 0;
-        $output = [];
-        exec($cmd, $output, $resultCode);
-
-        file_put_contents(LOGFILE, implode("\n", $output)."\n", FILE_APPEND);
-
-        if ($resultCode > 0) {
-            echo "Error executing command\n";
-            exit($resultCode);
-        }
-    }
 }

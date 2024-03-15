@@ -7,8 +7,8 @@ const _NAMESPACE = 'SellingPartnerApi';
 const ROOT_DIR = __DIR__.'/../..';
 const GENERATED_DIR = ROOT_DIR.'/src';
 const RESOURCE_DIR = ROOT_DIR.'/resources';
-const MODEL_DIR = RESOURCE_DIR.'/schemas/models';
-const METADATA_DIR = RESOURCE_DIR.'/schemas/metadata';
+const MODEL_DIR = RESOURCE_DIR.'/models';
+const METADATA_DIR = RESOURCE_DIR.'/metadata';
 const TEMPLATE_DIR = RESOURCE_DIR.'/templates';
 const DOCS_DIR = ROOT_DIR.'/docs';
 

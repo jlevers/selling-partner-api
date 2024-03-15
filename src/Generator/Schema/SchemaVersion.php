@@ -6,6 +6,7 @@ namespace SellingPartnerApi\Generator\Schema;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Str;
+use InvalidArgumentException;
 use SellingPartnerApi\Generator\Generator;
 use SellingPartnerApi\Generator\Package;
 use SellingPartnerApi\Generator\Schema;
@@ -77,6 +78,8 @@ class SchemaVersion
             $schema->paths->{$path} = $operations;
         }
 
+        $schema = $this->modifySchema($schema);
+
         $path = $this->path();
         $pathDir = dirname($path);
         if (! is_dir($pathDir)) {
@@ -136,5 +139,36 @@ class SchemaVersion
     public function studlyName(): string
     {
         return Str::studly($this->schema->name).'V'.str_replace('-', '', $this->version);
+    }
+
+    protected function modifySchema(stdClass &$schema): stdClass
+    {
+        $modifications = json_decode(file_get_contents(METADATA_DIR.'/modifications.json'));
+
+        foreach ($schema->paths as $path => $_) {
+            if (!isset($modifications->{$path})) continue;
+
+            foreach ($modifications->{$path} as $mod) {
+                $original = data_get($schema, $mod->path);
+                $modified = match ($mod->action) {
+                    'remove' => null,
+                    'replace' => $mod->value,
+                    'merge' => match (true) {
+                        is_array($original) => array_merge($original, $mod->value),
+                        is_object($original) => (object) array_merge((array) $original, (array) $mod->value),
+                        default => throw new InvalidArgumentException('Cannot merge scalar schema values'),
+                    },
+                    default => throw new InvalidArgumentException("Invalid schema modification action '{$mod->action}'"),
+                };
+
+                if ($modified === null) {
+                    data_forget($schema, $mod->path);
+                } else {
+                    data_set($schema, $mod->path, $modified);
+                }
+            }
+        }
+
+        return $schema;
     }
 }

@@ -37,8 +37,6 @@ class Api extends BaseResource
         ?string $nextToken = null,
     ): Response {
         $request = new GetReports($reportTypes, $processingStatuses, $marketplaceIds, $pageSize, $createdSince, $createdUntil, $nextToken);
-        $authenticator = $this->connector->restrictedAuth('/reports/2021-06-30/reports', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -59,8 +57,6 @@ class Api extends BaseResource
     public function getReport(string $reportId): Response
     {
         $request = new GetReport($reportId);
-        $authenticator = $this->connector->restrictedAuth('/reports/2021-06-30/reports/{reportId}', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -114,12 +110,11 @@ class Api extends BaseResource
 
     /**
      * @param  string  $reportDocumentId The identifier for the report document.
+     * @param  string  $reportType The report type of the report document.
      */
-    public function getReportDocument(string $reportDocumentId): Response
+    public function getReportDocument(string $reportDocumentId, string $reportType): Response
     {
-        $request = new GetReportDocument($reportDocumentId);
-        $authenticator = $this->connector->restrictedAuth($request->resolveEndpoint(), 'GET', []);
-        $request->authenticate($authenticator);
+        $request = new GetReportDocument($reportDocumentId, $reportType);
 
         return $this->connector->send($request);
     }

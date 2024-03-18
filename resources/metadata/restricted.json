@@ -66,18 +66,6 @@
       "get": []
     }
   },
-  "/reports/2021-06-30/reports/{reportId}": {
-    "genericPath": true,
-    "operations": {
-      "get": []
-    }
-  },
-  "/reports/2021-06-30/reports": {
-    "genericPath": true,
-    "operations": {
-      "get": []
-    }
-  },
   "/reports/2021-06-30/documents/{reportDocumentId}": {
     "genericPath": false,
     "operations": {

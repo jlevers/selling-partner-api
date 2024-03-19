@@ -19,12 +19,18 @@ use Saloon\Enums\Method as SaloonHttpMethod;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Enums\GrantlessScope;
+use SellingPartnerApi\Middleware\Grantless;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 
 class RequestGenerator extends BaseGenerator
 {
     protected function generateRequestClass(Endpoint $endpoint): PhpFile
     {
         $middleware = json_decode(file_get_contents(METADATA_DIR.'/middleware.json'));
+        $grantlessOperations = json_decode(file_get_contents(METADATA_DIR.'/scopes.json'));
+        $restrictedOperations = json_decode(file_get_contents(METADATA_DIR.'/restricted.json'));
+
         $className = NameHelper::requestClassName($endpoint->name);
         [$classFile, $namespace, $classType] = $this->makeClass($className, $this->config->requestNamespaceSuffix);
 
@@ -51,12 +57,51 @@ class RequestGenerator extends BaseGenerator
                 )
             );
 
-        $this->generateConstructor($endpoint, $classType);
+        $constructor = $this->generateConstructor($endpoint, $classType);
+
+        $path = $this->buildGenericPath($endpoint->pathSegments);
+        $httpMethod = strtolower($endpoint->method->value);
+
+        $isRestricted = isset($restrictedOperations->{$path}->operations->{$httpMethod});
+        $isGrantless = isset($grantlessOperations->{$path}->{$httpMethod});
+        if ($isRestricted || $isGrantless) {
+            if ($isRestricted) {
+                $namespace->addUse(RestrictedDataToken::class);
+                $useGenericPath = $restrictedOperations->{$path}->genericPath;
+                $knownDataElements = $restrictedOperations->{$path}->operations->{$httpMethod};
+                $constructor->addBody(
+                    new Literal(sprintf(
+                        '$rdtMiddleware = new RestrictedDataToken(%s, \'%s\', %s);',
+                        $useGenericPath ? "'$path'" : '$this->resolveEndpoint()',
+                        strtoupper($httpMethod),
+                        '['.implode(', ', array_map(fn ($el) => "'$el'", $knownDataElements)).']'
+                    ))
+                );
+                $constructor->addBody('$this->middleware()->onRequest($rdtMiddleware);');
+            } elseif ($isGrantless) {
+                $namespace
+                    ->addUse(Grantless::class)
+                    ->addUse(GrantlessScope::class);
+                $scope = GrantlessScope::from($grantlessOperations->{$path}->{$httpMethod});
+
+                $constructor->addBody(
+                    new Literal(sprintf(
+                        '$this->middleware()->onRequest(new Grantless(GrantlessScope::%s));',
+                        $scope->name
+                    ))
+                );
+            }
+        }
 
         $requestMiddleware = $middleware->{$path}->{$httpMethod}->request ?? [];
         foreach ($requestMiddleware as $cls) {
             $namespace->addUse(PACKAGE_NAMESPACE."\\Middleware\\$cls");
             $constructor->addBody(new Literal(sprintf('$this->middleware()->onRequest(new %s);', $cls)));
+        }
+
+        // Remove the constructor if it's not being used
+        if (count($constructor->getParameters()) === 0 && $constructor->getBody() === '') {
+            $classType->removeMethod('__construct');
         }
 
         $classType->addMethod('resolveEndpoint')
@@ -151,5 +196,16 @@ class RequestGenerator extends BaseGenerator
             ->add($classType);
 
         return $classFile;
+    }
+
+    /**
+     * @param  array<string>  $segments
+     */
+    private function buildGenericPath(array $segments): string
+    {
+        $path = '/'.implode('/', $segments);
+        $withBraces = preg_replace('/\:([a-zA-Z0-9_]+)(\/|$)/', '{$1}$2', $path);
+
+        return $withBraces;
     }
 }

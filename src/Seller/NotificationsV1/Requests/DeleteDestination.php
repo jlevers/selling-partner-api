@@ -6,6 +6,8 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Enums\GrantlessScope;
+use SellingPartnerApi\Middleware\Grantless;
 use SellingPartnerApi\Seller\NotificationsV1\Responses\DeleteDestinationResponse;
 
 /**
@@ -21,6 +23,7 @@ class DeleteDestination extends Request
     public function __construct(
         protected string $destinationId,
     ) {
+        $this->middleware()->onRequest(new Grantless(GrantlessScope::NOTIFICATIONS));
     }
 
     public function resolveEndpoint(): string

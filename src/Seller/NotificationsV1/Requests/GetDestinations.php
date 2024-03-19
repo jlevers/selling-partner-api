@@ -6,6 +6,8 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Enums\GrantlessScope;
+use SellingPartnerApi\Middleware\Grantless;
 use SellingPartnerApi\Seller\NotificationsV1\Responses\GetDestinationsResponse;
 
 /**
@@ -14,6 +16,11 @@ use SellingPartnerApi\Seller\NotificationsV1\Responses\GetDestinationsResponse;
 class GetDestinations extends Request
 {
     protected Method $method = Method::GET;
+
+    public function __construct()
+    {
+        $this->middleware()->onRequest(new Grantless(GrantlessScope::NOTIFICATIONS));
+    }
 
     public function resolveEndpoint(): string
     {

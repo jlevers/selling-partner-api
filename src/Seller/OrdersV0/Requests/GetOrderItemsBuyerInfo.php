@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Seller\OrdersV0\Responses\GetOrderItemsBuyerInfoResponse;
 
 /**
@@ -23,6 +24,8 @@ class GetOrderItemsBuyerInfo extends Request
         protected string $orderId,
         protected ?string $nextToken = null,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/orders/v0/orders/{orderId}/orderItems/buyerInfo', 'GET', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function defaultQuery(): array

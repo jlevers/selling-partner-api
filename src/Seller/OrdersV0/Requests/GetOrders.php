@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Seller\OrdersV0\Responses\GetOrdersResponse;
 
 /**
@@ -100,6 +101,8 @@ class GetOrders extends Request
         protected ?string $latestDeliveryDateBefore = null,
         protected ?string $latestDeliveryDateAfter = null,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/orders/v0/orders', 'GET', ['buyerInfo', 'shippingAddress']);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function defaultQuery(): array

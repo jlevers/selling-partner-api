@@ -8,6 +8,8 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Enums\GrantlessScope;
+use SellingPartnerApi\Middleware\Grantless;
 use SellingPartnerApi\Seller\NotificationsV1\Dto\CreateDestinationRequest;
 use SellingPartnerApi\Seller\NotificationsV1\Responses\CreateDestinationResponse;
 
@@ -26,6 +28,7 @@ class CreateDestination extends Request implements HasBody
     public function __construct(
         public CreateDestinationRequest $createDestinationRequest,
     ) {
+        $this->middleware()->onRequest(new Grantless(GrantlessScope::NOTIFICATIONS));
     }
 
     public function resolveEndpoint(): string

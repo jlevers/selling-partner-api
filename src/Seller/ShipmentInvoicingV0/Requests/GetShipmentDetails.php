@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Seller\ShipmentInvoicingV0\Responses\GetShipmentDetailsResponse;
 
 /**
@@ -21,6 +22,8 @@ class GetShipmentDetails extends Request
     public function __construct(
         protected string $shipmentId,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/fba/outbound/brazil/v0/shipments/{shipmentId}', 'GET', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

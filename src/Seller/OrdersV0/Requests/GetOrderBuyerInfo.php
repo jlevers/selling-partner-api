@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Seller\OrdersV0\Responses\GetOrderBuyerInfoResponse;
 
 /**
@@ -21,6 +22,8 @@ class GetOrderBuyerInfo extends Request
     public function __construct(
         protected string $orderId,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/orders/v0/orders/{orderId}/buyerInfo', 'GET', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

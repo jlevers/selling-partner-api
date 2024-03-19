@@ -106,8 +106,6 @@ class Api extends BaseResource
         ?string $latestDeliveryDateAfter = null,
     ): Response {
         $request = new GetOrders($marketplaceIds, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $orderStatuses, $fulfillmentChannels, $paymentMethods, $buyerEmail, $sellerOrderId, $maxResultsPerPage, $easyShipShipmentStatuses, $electronicInvoiceStatuses, $nextToken, $amazonOrderIds, $actualFulfillmentSupplySourceId, $isIspu, $storeChainStoreId, $earliestDeliveryDateBefore, $earliestDeliveryDateAfter, $latestDeliveryDateBefore, $latestDeliveryDateAfter);
-        $authenticator = $this->connector->restrictedAuth('/orders/v0/orders', 'GET', ['buyerInfo', 'shippingAddress']);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -118,8 +116,6 @@ class Api extends BaseResource
     public function getOrder(string $orderId): Response
     {
         $request = new GetOrder($orderId);
-        $authenticator = $this->connector->restrictedAuth('/orders/v0/orders/{orderId}', 'GET', ['buyerInfo', 'shippingAddress']);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -130,8 +126,6 @@ class Api extends BaseResource
     public function getOrderBuyerInfo(string $orderId): Response
     {
         $request = new GetOrderBuyerInfo($orderId);
-        $authenticator = $this->connector->restrictedAuth('/orders/v0/orders/{orderId}/buyerInfo', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -142,8 +136,6 @@ class Api extends BaseResource
     public function getOrderAddress(string $orderId): Response
     {
         $request = new GetOrderAddress($orderId);
-        $authenticator = $this->connector->restrictedAuth('/orders/v0/orders/{orderId}/address', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -155,8 +147,6 @@ class Api extends BaseResource
     public function getOrderItems(string $orderId, ?string $nextToken = null): Response
     {
         $request = new GetOrderItems($orderId, $nextToken);
-        $authenticator = $this->connector->restrictedAuth('/orders/v0/orders/{orderId}/orderItems', 'GET', ['buyerInfo']);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -168,8 +158,6 @@ class Api extends BaseResource
     public function getOrderItemsBuyerInfo(string $orderId, ?string $nextToken = null): Response
     {
         $request = new GetOrderItemsBuyerInfo($orderId, $nextToken);
-        $authenticator = $this->connector->restrictedAuth('/orders/v0/orders/{orderId}/orderItems/buyerInfo', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -193,8 +181,6 @@ class Api extends BaseResource
     public function getOrderRegulatedInfo(string $orderId): Response
     {
         $request = new GetOrderRegulatedInfo($orderId);
-        $authenticator = $this->connector->restrictedAuth('/orders/v0/orders/{orderId}/regulatedInfo', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

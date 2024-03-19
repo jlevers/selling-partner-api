@@ -8,6 +8,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Seller\EasyShipV20220323\Dto\CreateScheduledPackagesRequest;
 use SellingPartnerApi\Seller\EasyShipV20220323\Responses\CreateScheduledPackagesResponse;
 use SellingPartnerApi\Seller\EasyShipV20220323\Responses\ErrorList;
@@ -27,6 +28,8 @@ class CreateScheduledPackageBulk extends Request implements HasBody
     public function __construct(
         public CreateScheduledPackagesRequest $createScheduledPackagesRequest,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/easyShip/2022-03-23/packages/bulk', 'POST', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

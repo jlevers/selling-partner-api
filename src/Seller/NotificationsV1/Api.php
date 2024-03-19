@@ -4,7 +4,6 @@ namespace SellingPartnerApi\Seller\NotificationsV1;
 
 use Saloon\Http\Response;
 use SellingPartnerApi\BaseResource;
-use SellingPartnerApi\Enums\GrantlessScope;
 use SellingPartnerApi\Seller\NotificationsV1\Dto\CreateDestinationRequest;
 use SellingPartnerApi\Seller\NotificationsV1\Dto\CreateSubscriptionRequest;
 use SellingPartnerApi\Seller\NotificationsV1\Requests\CreateDestination;
@@ -54,8 +53,6 @@ class Api extends BaseResource
     public function getSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
         $request = new GetSubscriptionById($subscriptionId, $notificationType);
-        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -69,8 +66,6 @@ class Api extends BaseResource
     public function deleteSubscriptionById(string $subscriptionId, string $notificationType): Response
     {
         $request = new DeleteSubscriptionById($subscriptionId, $notificationType);
-        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -78,8 +73,6 @@ class Api extends BaseResource
     public function getDestinations(): Response
     {
         $request = new GetDestinations();
-        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -90,8 +83,6 @@ class Api extends BaseResource
     public function createDestination(CreateDestinationRequest $createDestinationRequest): Response
     {
         $request = new CreateDestination($createDestinationRequest);
-        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -102,8 +93,6 @@ class Api extends BaseResource
     public function getDestination(string $destinationId): Response
     {
         $request = new GetDestination($destinationId);
-        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -114,8 +103,6 @@ class Api extends BaseResource
     public function deleteDestination(string $destinationId): Response
     {
         $request = new DeleteDestination($destinationId);
-        $authenticator = $this->connector->grantlessAuth(GrantlessScope::NOTIFICATIONS);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

@@ -17,8 +17,6 @@ class Api extends BaseResource
     public function getShipmentDetails(string $shipmentId): Response
     {
         $request = new GetShipmentDetails($shipmentId);
-        $authenticator = $this->connector->restrictedAuth('/fba/outbound/brazil/v0/shipments/{shipmentId}', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

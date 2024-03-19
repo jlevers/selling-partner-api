@@ -34,8 +34,6 @@ class Api extends BaseResource
     public function getShipment(string $shipmentId): Response
     {
         $request = new GetShipment($shipmentId);
-        $authenticator = $this->connector->restrictedAuth('/shipping/v1/shipments/{shipmentId}', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

@@ -46,8 +46,6 @@ class Api extends BaseResource
     public function getShipment(string $shipmentId): Response
     {
         $request = new GetShipment($shipmentId);
-        $authenticator = $this->connector->restrictedAuth('/mfn/v0/shipments/{shipmentId}', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -58,8 +56,6 @@ class Api extends BaseResource
     public function cancelShipment(string $shipmentId): Response
     {
         $request = new CancelShipment($shipmentId);
-        $authenticator = $this->connector->restrictedAuth('/mfn/v0/shipments/{shipmentId}', 'DELETE', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -70,8 +66,6 @@ class Api extends BaseResource
     public function cancelShipmentOld(string $shipmentId): Response
     {
         $request = new CancelShipmentOld($shipmentId);
-        $authenticator = $this->connector->restrictedAuth('/mfn/v0/shipments/{shipmentId}/cancel', 'PUT', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -82,8 +76,6 @@ class Api extends BaseResource
     public function createShipment(CreateShipmentRequest $createShipmentRequest): Response
     {
         $request = new CreateShipment($createShipmentRequest);
-        $authenticator = $this->connector->restrictedAuth('/mfn/v0/shipments', 'POST', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

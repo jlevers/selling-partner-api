@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Seller\MerchantFulfillmentV0\Responses\CancelShipmentResponse;
 
 /**
@@ -21,6 +22,8 @@ class CancelShipmentOld extends Request
     public function __construct(
         protected string $shipmentId,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/mfn/v0/shipments/{shipmentId}/cancel', 'PUT', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

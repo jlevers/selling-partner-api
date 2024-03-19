@@ -8,6 +8,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto\CreateShipmentRequest;
 use SellingPartnerApi\Seller\MerchantFulfillmentV0\Responses\CreateShipmentResponse;
 
@@ -26,6 +27,8 @@ class CreateShipment extends Request implements HasBody
     public function __construct(
         public CreateShipmentRequest $createShipmentRequest,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/mfn/v0/shipments', 'POST', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

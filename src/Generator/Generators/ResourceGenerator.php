@@ -11,9 +11,6 @@ use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpFile;
 use Saloon\Http\Response;
-use SellingPartnerApi\Authentication\GrantlessAuthenticator;
-use SellingPartnerApi\Authentication\RestrictedDataTokenAuthenticator;
-use SellingPartnerApi\Enums\GrantlessScope;
 
 class ResourceGenerator extends BaseResourceGenerator
 {
@@ -22,9 +19,6 @@ class ResourceGenerator extends BaseResourceGenerator
      */
     public function generateResourceClass(string $resourceName, array $endpoints): ?PhpFile
     {
-        $grantlessScopes = json_decode(file_get_contents(METADATA_DIR.'/scopes.json'));
-        $restrictedOperations = json_decode(file_get_contents(METADATA_DIR.'/restricted.json'));
-
         $classType = new ClassType('Api');
 
         $baseResourceNs = $this->config->baseResourceNamespace ?? $this->config->namespace;
@@ -107,52 +101,11 @@ class ResourceGenerator extends BaseResourceGenerator
                 ))
             );
 
-            $path = $this->buildGenericPath($endpoint->pathSegments);
-            $httpMethod = strtolower($endpoint->method->value);
-            $isRestricted = isset($restrictedOperations->{$path}->operations->{$httpMethod});
-
-            if ($isRestricted) {
-                $namespace->addUse(RestrictedDataTokenAuthenticator::class);
-
-                $useGenericPath = $restrictedOperations->{$path}->genericPath;
-                $knownDataElements = $restrictedOperations->{$path}->operations->{$httpMethod};
-                $method->addBody(
-                    new Literal(sprintf(
-                        '$authenticator = $this->connector->restrictedAuth(%s, \'%s\', %s);',
-                        $useGenericPath ? "'$path'" : '$request->resolveEndpoint()',
-                        strtoupper($httpMethod),
-                        '['.implode(', ', array_map(fn ($el) => "'$el'", $knownDataElements)).']'
-                    ))
-                );
-                $method->addBody('$request->authenticate($authenticator);');
-            } elseif (isset($grantlessScopes->{$path}->{$httpMethod})) {
-                $namespace
-                    ->addUse(GrantlessAuthenticator::class)
-                    ->addUse(GrantlessScope::class);
-                $scope = GrantlessScope::from($grantlessScopes->{$path}->{$httpMethod});
-
-                $method->addBody(
-                    new Literal(sprintf(
-                        '$authenticator = $this->connector->grantlessAuth(GrantlessScope::%s);',
-                        $scope->name
-                    ))
-                );
-                $method->addBody('$request->authenticate($authenticator);');
-            }
-
             $method->addBody('return $this->connector->send($request);');
         }
 
         $namespace->add($classType);
 
         return $classFile;
-    }
-
-    private function buildGenericPath($segments): string
-    {
-        $path = '/'.implode('/', $segments);
-        $withBraces = preg_replace('/\:([a-zA-Z0-9_]+)(\/|$)/', '{$1}$2', $path);
-
-        return $withBraces;
     }
 }

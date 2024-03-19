@@ -6,6 +6,8 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Enums\GrantlessScope;
+use SellingPartnerApi\Middleware\Grantless;
 use SellingPartnerApi\Seller\NotificationsV1\Responses\DeleteSubscriptionByIdResponse;
 
 /**
@@ -25,6 +27,7 @@ class DeleteSubscriptionById extends Request
         protected string $subscriptionId,
         protected string $notificationType,
     ) {
+        $this->middleware()->onRequest(new Grantless(GrantlessScope::NOTIFICATIONS));
     }
 
     public function resolveEndpoint(): string

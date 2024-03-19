@@ -6,6 +6,8 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Enums\GrantlessScope;
+use SellingPartnerApi\Middleware\Grantless;
 use SellingPartnerApi\Seller\AuthorizationV1\Responses\GetAuthorizationCodeResponse;
 
 /**
@@ -25,6 +27,7 @@ class GetAuthorizationCode extends Request
         protected string $developerId,
         protected string $mwsAuthToken,
     ) {
+        $this->middleware()->onRequest(new Grantless(GrantlessScope::TOKEN_MIGRATION));
     }
 
     public function defaultQuery(): array

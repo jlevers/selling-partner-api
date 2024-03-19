@@ -63,8 +63,6 @@ class Api extends BaseResource
     public function createScheduledPackageBulk(CreateScheduledPackagesRequest $createScheduledPackagesRequest): Response
     {
         $request = new CreateScheduledPackageBulk($createScheduledPackagesRequest);
-        $authenticator = $this->connector->restrictedAuth('/easyShip/2022-03-23/packages/bulk', 'POST', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

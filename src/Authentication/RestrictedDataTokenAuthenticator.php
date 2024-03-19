@@ -26,7 +26,6 @@ class RestrictedDataTokenAuthenticator extends AbstractAuthenticator
         protected string $path,
         protected string $method,
         protected ?array $dataElements,
-        protected ?string $delegate = null,
     ) {
     }
 
@@ -59,7 +58,7 @@ class RestrictedDataTokenAuthenticator extends AbstractAuthenticator
                             $this->dataElements ?: null,
                         ),
                     ],
-                    $this->delegate
+                    $this->connector->delegate
                 )
             )->dto();
 

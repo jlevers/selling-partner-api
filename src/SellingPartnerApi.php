@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SellingPartnerApi;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Query;
 use Psr\Http\Message\RequestInterface;
@@ -24,25 +25,20 @@ class SellingPartnerApi extends Connector
 {
     use AlwaysThrowOnErrors;
 
-    protected array $authenticatorArgs;
-
     public function __construct(
         public readonly string $clientId,
-        protected readonly string $clientSecret,
-        protected readonly string $refreshToken,
-        protected readonly Endpoint $endpoint,
-        protected readonly array $dataElements = [],
-        protected readonly ?string $delegate = null,
-        protected readonly ?ClientInterface $authenticationClient = null,
+        public readonly string $clientSecret,
+        public readonly string $refreshToken,
+        public readonly Endpoint $endpoint,
+        public readonly array $dataElements = [],
+        public readonly ?string $delegate = null,
+        public ?ClientInterface $authenticationClient = null,
     ) {
-        $authenticator = new LWAAuthenticator(
-            $this->clientId,
-            $this->clientSecret,
-            $this->refreshToken,
-            $this->endpoint,
-            $this->authenticationClient
-        );
-        $this->authenticator = $authenticator;
+        if (! $authenticationClient) {
+            $this->authenticationClient = new Client();
+        } else {
+            $this->authenticationClient = $authenticationClient;
+        }
     }
 
     public function handlePsrRequest(RequestInterface $request, PendingRequest $pendingRequest): RequestInterface
@@ -88,15 +84,14 @@ class SellingPartnerApi extends Connector
         return $this->endpoint->value;
     }
 
+    public function lwaAuth(): LWAAuthenticator
+    {
+        return new LWAAuthenticator($this);
+    }
+
     public function grantlessAuth(GrantlessScope $scope): GrantlessAuthenticator
     {
-        return new GrantlessAuthenticator(
-            $this->clientId,
-            $this->clientSecret,
-            $this->endpoint,
-            $scope,
-            $this->authenticationClient,
-        );
+        return new GrantlessAuthenticator($this, $scope);
     }
 
     public function restrictedAuth(
@@ -107,18 +102,12 @@ class SellingPartnerApi extends Connector
         // Only use data elements that are known to be valid for this particular endpoint
         $dataElements = array_intersect($this->dataElements, $knownDataElements);
 
-        return new RestrictedDataTokenAuthenticator(
-            $this,
-            $path,
-            $method,
-            $dataElements,
-            $this->delegate,
-        );
+        return new RestrictedDataTokenAuthenticator($this, $path, $method, $dataElements);
     }
 
     protected function defaultAuth(): Authenticator
     {
-        return $this->authenticator;
+        return $this->lwaAuth();
     }
 
     protected function defaultHeaders(): array

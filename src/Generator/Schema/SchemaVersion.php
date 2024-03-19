@@ -146,7 +146,9 @@ class SchemaVersion
         $modifications = json_decode(file_get_contents(METADATA_DIR.'/modifications.json'));
 
         foreach ($schema->paths as $path => $_) {
-            if (!isset($modifications->{$path})) continue;
+            if (! isset($modifications->{$path})) {
+                continue;
+            }
 
             foreach ($modifications->{$path} as $mod) {
                 $original = data_get($schema, $mod->path);

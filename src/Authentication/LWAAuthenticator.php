@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Authentication;
 
 use DateTime;
-use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
-use Psr\Http\Client\ClientInterface;
-use SellingPartnerApi\Enums\Endpoint;
+use SellingPartnerApi\SellingPartnerApi;
 
 class LWAAuthenticator extends AbstractAuthenticator
 {
@@ -20,14 +18,8 @@ class LWAAuthenticator extends AbstractAuthenticator
      */
     private static array $accessTokens = [];
 
-    public function __construct(
-        protected readonly string $clientId,
-        protected readonly string $clientSecret,
-        protected readonly string $refreshToken,
-        protected readonly Endpoint $endpoint,
-        ?ClientInterface $authenticationClient = null,
-    ) {
-        $this->authenticationClient = $authenticationClient ?? new Client();
+    public function __construct(protected SellingPartnerApi $connector)
+    {
     }
 
     /**
@@ -35,13 +27,13 @@ class LWAAuthenticator extends AbstractAuthenticator
      */
     protected function getAccessToken(): ?string
     {
-        $accessToken = Arr::get(static::$accessTokens, $this->clientId);
+        $accessToken = Arr::get(static::$accessTokens, $this->connector->clientId);
         if (! $accessToken || $accessToken->expired()) {
             $jsonData = [
                 'grant_type' => 'refresh_token',
-                'client_id' => $this->clientId,
-                'client_secret' => $this->clientSecret,
-                'refresh_token' => $this->refreshToken,
+                'client_id' => $this->connector->clientId,
+                'client_secret' => $this->connector->clientSecret,
+                'refresh_token' => $this->connector->refreshToken,
             ];
 
             $data = $this->makeTokenRequest($jsonData);
@@ -51,7 +43,7 @@ class LWAAuthenticator extends AbstractAuthenticator
                 new DateTime("+{$data['expires_in']} seconds")
             );
 
-            $accessToken = static::$accessTokens[$this->clientId] = $accessToken;
+            $accessToken = static::$accessTokens[$this->connector->clientId] = $accessToken;
         }
 
         return $accessToken->token;

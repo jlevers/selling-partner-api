@@ -7,9 +7,9 @@ namespace SellingPartnerApi\Authentication;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\StreamWrapper;
 use GuzzleHttp\Utils;
-use Psr\Http\Client\ClientInterface;
 use Saloon\Contracts\Authenticator;
 use Saloon\Http\PendingRequest;
+use SellingPartnerApi\SellingPartnerApi;
 
 abstract class AbstractAuthenticator implements Authenticator
 {
@@ -18,12 +18,7 @@ abstract class AbstractAuthenticator implements Authenticator
      */
     const LWA_AUTH_URL = 'https://api.amazon.com/auth/o2/token';
 
-    /**
-     * The authentication client, if any.
-     *
-     * @var Psr\Http\Client\ClientInterface|null
-     */
-    protected ?ClientInterface $authenticationClient;
+    protected SellingPartnerApi $connector;
 
     /**
      * Get the OAuth access token
@@ -46,7 +41,7 @@ abstract class AbstractAuthenticator implements Authenticator
             ],
             Utils::jsonEncode($jsonData)
         );
-        $res = $this->authenticationClient->send($lwaTokenRequest);
+        $res = $this->connector->authenticationClient->send($lwaTokenRequest);
 
         $body = stream_get_contents(StreamWrapper::getResource($res->getBody()));
 

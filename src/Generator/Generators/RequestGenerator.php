@@ -24,6 +24,7 @@ class RequestGenerator extends BaseGenerator
 {
     protected function generateRequestClass(Endpoint $endpoint): PhpFile
     {
+        $middleware = json_decode(file_get_contents(METADATA_DIR.'/middleware.json'));
         $className = NameHelper::requestClassName($endpoint->name);
         [$classFile, $namespace, $classType] = $this->makeClass($className, $this->config->requestNamespaceSuffix);
 
@@ -51,6 +52,12 @@ class RequestGenerator extends BaseGenerator
             );
 
         $this->generateConstructor($endpoint, $classType);
+
+        $requestMiddleware = $middleware->{$path}->{$httpMethod}->request ?? [];
+        foreach ($requestMiddleware as $cls) {
+            $namespace->addUse(PACKAGE_NAMESPACE."\\Middleware\\$cls");
+            $constructor->addBody(new Literal(sprintf('$this->middleware()->onRequest(new %s);', $cls)));
+        }
 
         $classType->addMethod('resolveEndpoint')
             ->setPublic()

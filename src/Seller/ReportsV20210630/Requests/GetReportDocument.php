@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedReport;
 use SellingPartnerApi\Seller\ReportsV20210630\Responses\ErrorList;
 use SellingPartnerApi\Seller\ReportsV20210630\Responses\ReportDocument;
 
@@ -18,10 +19,18 @@ class GetReportDocument extends Request
 
     /**
      * @param  string  $reportDocumentId The identifier for the report document.
+     * @param  string  $reportType The report type of the report document.
      */
     public function __construct(
         protected string $reportDocumentId,
+        protected string $reportType,
     ) {
+        $this->middleware()->onRequest(new RestrictedReport);
+    }
+
+    public function defaultQuery(): array
+    {
+        return array_filter(['reportType' => $this->reportType]);
     }
 
     public function resolveEndpoint(): string

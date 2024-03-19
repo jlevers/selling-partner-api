@@ -2357,6 +2357,15 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "reportType",
+                        "in": "query",
+                        "description": "The report type of the report document.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {

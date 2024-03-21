@@ -8,7 +8,6 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Header;
 use GuzzleHttp\Psr7\InflateStream;
-use GuzzleHttp\Psr7\Utils;
 use InvalidArgumentException;
 use OpenSpout\Reader\CSV\Options;
 use OpenSpout\Reader\CSV\Reader as CSVReader;
@@ -26,23 +25,23 @@ trait DownloadsDocument
 
     protected ?string $encoding;
 
-    protected array $reportTypeInfo;
+    protected array $documentTypeInfo;
 
     public function download(
-        ?string $reportType = null,
+        ?string $documentType = null,
         bool $postProcess = true,
         ?string $encoding = null,
     ): array|string|SimpleXMLElement {
-        if (! $reportType && $postProcess) {
+        if (! $documentType && $postProcess) {
             throw new InvalidArgumentException(
-                'Report type is required to parse report data. Either pass $reportType or set $postProcess to false'
+                'Document type is required to parse document data. Either pass $documentType or set $postProcess to false'
             );
         }
 
         $client = new Client();
 
-        if ($reportType) {
-            $this->reportTypeInfo = static::reportTypeInfo($reportType);
+        if ($documentType) {
+            $this->documentTypeInfo = static::documentTypeInfo($documentType);
         }
 
         try {
@@ -50,7 +49,7 @@ trait DownloadsDocument
         } catch (ClientException $e) {
             $response = $e->getResponse();
             if ($response->getStatusCode() === 404) {
-                throw new RuntimeException("Report document not found ({$response->getStatusCode()}): {$response->getBody()}");
+                throw new RuntimeException("Document not found ({$response->getStatusCode()}): {$response->getBody()}");
             } else {
                 throw $e;
             }
@@ -68,11 +67,11 @@ trait DownloadsDocument
         }
 
         $this->encoding = $encoding;
-        $contentType = $this->reportTypeInfo['contentType'];
-        // Document encodings depend on the target marketplace. English-language reports are
+        $contentType = $this->documentTypeInfo['contentType'];
+        // Document encodings depend on the target marketplace. English-language documents are
         // typically ISO-8859-1 encoded, which messes up the data when we read it directly via
         // SimpleXML or as a plain TAB/CSV, but the original encoding is required to parse XLSX
-        // and PDF reports.
+        // and PDF documents.
         if (! ($contentType === ContentType::XLSX || $contentType === ContentType::PDF)) {
             $this->encoding = $this->detectEncoding($contents, $response);
             $contents = mb_convert_encoding(
@@ -88,10 +87,9 @@ trait DownloadsDocument
     /**
      * Downloads the document data as a stream.
      *
-     * @param  string|StreamInterface|null  $output  Optionally copy data stream to the given output.
      * @return StreamInterface  The raw (unencrypted) document stream.
      */
-    public function downloadStream(string|StreamInterface|null $output = null): StreamInterface
+    public function downloadStream(): StreamInterface
     {
         $client = new Client();
         try {
@@ -100,7 +98,7 @@ trait DownloadsDocument
             $response = $e->getResponse();
             if ($response->getStatusCode() === 404) {
                 throw new RuntimeException(
-                    "Report document not found ({$response->getStatusCode()}): {$response->getBody()}"
+                    "Document not found ({$response->getStatusCode()}): {$response->getBody()}"
                 );
             }
             throw $e;
@@ -111,19 +109,12 @@ trait DownloadsDocument
             $stream = new InflateStream($stream);
         }
 
-        if ($output) {
-            $output = Utils::streamFor($output);
-            Utils::copyToStream($stream, $output);
-
-            return $output;
-        }
-
         return $stream;
     }
 
     protected function parseDocument(string $contents): mixed
     {
-        switch ($this->reportTypeInfo['contentType']) {
+        switch ($this->documentTypeInfo['contentType']) {
             case ContentType::JSON:
                 return json_decode($contents, true);
             case ContentType::PDF:
@@ -145,12 +136,12 @@ trait DownloadsDocument
         fwrite($tempFile, $contents);
         fclose($tempFile);
 
-        $options = match ($this->reportTypeInfo['contentType']) {
+        $options = match ($this->documentTypeInfo['contentType']) {
             ContentType::CSV => new Options(),
             ContentType::TAB => new Options(),
             ContentType::XLSX => new XLSXOptions(),
         };
-        if ($this->reportTypeInfo['contentType'] === ContentType::TAB) {
+        if ($this->documentTypeInfo['contentType'] === ContentType::TAB) {
             $options->FIELD_DELIMITER = "\t";
         }
         if ($this->encoding) {
@@ -163,11 +154,11 @@ trait DownloadsDocument
         // Thanks @gregordonsky (https://github.com/gregordonsky) for the idea!
         // There are a couple kinds of reports that use normal double-quote enclosures, so we
         // need to check if this report type is one of them before setting the enclosure char.
-        if (! $this->reportTypeInfo['quoteEnclosure']) {
+        if (! $this->documentTypeInfo['quoteEnclosure']) {
             $options->FIELD_ENCLOSURE = chr(0);
         }
 
-        $reader = match ($this->reportTypeInfo['contentType']) {
+        $reader = match ($this->documentTypeInfo['contentType']) {
             ContentType::CSV, ContentType::TAB => new CSVReader($options),
             ContentType::XLSX => new XLSXReader($options),
         };
@@ -186,26 +177,41 @@ trait DownloadsDocument
                 $data[] = array_combine($header, $row->toArray());
             }
 
-            // There are no multi-sheet reports
+            // There are no multi-sheet documents
             break;
         }
 
         return $data;
     }
 
-    protected static function reportTypeInfo(string $reportType): array
+    protected static function documentTypeInfo(string $documentTypeName): array
     {
-        $reportTypes = json_decode(file_get_contents(RESOURCE_DIR.'/reports.json'), true);
-        $reportTypeInfo = $reportTypes[$reportType];
+        $documentTypeInfo = null;
 
-        if (! $reportTypeInfo) {
-            throw new InvalidArgumentException("Unknown report type '{$reportType}'");
+        // Check feeds first because the file is smaller
+        $feedTypes = json_decode(file_get_contents(RESOURCE_DIR.'/feeds.json'), true);
+        if ($feedTypes[$documentTypeName]) {
+            $documentTypeInfo = [
+                'name' => $documentTypeName,
+                'contentType' => ContentType::from($feedTypes[$documentTypeName]),
+                'quoteEnclosure' => false,
+            ];
         }
 
-        $reportTypeInfo['name'] = $reportType;
-        $reportTypeInfo['contentType'] = ContentType::from($reportTypeInfo['contentType']);
+        if (! $documentTypeInfo) {
+            $reportTypes = json_decode(file_get_contents(RESOURCE_DIR.'/reports.json'), true);
+            if ($reportTypes[$documentTypeName]) {
+                $documentTypeInfo = $reportTypes[$documentTypeName];
+                $documentTypeInfo['name'] = $documentTypeName;
+                $documentTypeInfo['contentType'] = ContentType::from($documentTypeInfo['contentType']);
+            }
+        }
 
-        return $reportTypeInfo;
+        if (! $documentTypeInfo) {
+            throw new InvalidArgumentException("Unknown document type '$documentTypeName'");
+        }
+
+        return $documentTypeInfo;
     }
 
     protected function detectEncoding(string $contents, ResponseInterface $response): string

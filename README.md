@@ -120,6 +120,7 @@ The `SellingPartnerApi::make()` builder method accepts the following keys:
 * `clientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
 * `refreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using [grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
 * `endpoint`: Required. An instance of the [`SellingPartnerApi\Enums\Endpoint` enum](https://github.com/jlevers/selling-partner-api/blob/main/src/Enums/Endpoint.php). Primary endpoints are `Endpoint::NA`, `Endpoint::EU`, and `Endpoint::FE`. Sandbox endpoints are `Endpoint::NA_SANDBOX`, `Endpoint::EU_SANDBOX`, and `Endpoint::FE_SANDBOX`.
+* `dataElements`: Optional. An array of data elements to pass to restricted operations. See the [Restricted operations](#restricted-operations) section for more details.
 * `authenticationClient`: Optional `GuzzleHttp\ClientInterface` object that will be used to generate the access token from the refresh token. If not provided, a default Guzzle client will be used.
 
 
@@ -389,46 +390,48 @@ $vendorConnector = SellingPartnerApi::make(/* ... */)->vendor();
 
 ## Restricted operations
 
-When you call a [restricted operation](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide), a Restricted Data Token (RDT) is automatically generated. If you're calling a restricted operation that accepts a [`data_elements`](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide#restricted-operations) parameter, you can pass `data_elements` values as a parameter to the API call. Check out the [getOrders](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md#getOrders), [getOrder](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md#getOrder), and [getOrderItems](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/OrdersV0Api.md#getOrderItems) documentation to see how to pass `data_elements` values to those calls. (At the time of writing, those are the only restricted operations that accept `data_elements` values.)
+When you call a [restricted operation](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide), a Restricted Data Token (RDT) is automatically generated. If you're calling restricted operations that accept a [`dataElements`](https://developer-docs.amazon.com/sp-api/docs/tokens-api-use-case-guide#restricted-operations) parameter, specify the restricted data elements you want to retrieve in the `dataElements` parameter of `SellingPartnerApi::make()`. Currently, `getOrder`, `getOrders`, and `getOrderItems` are the only restricted operations that take a `dataElements` parameter.
 
-Note that if you want to call a restricted operation on a sandbox endpoint (e.g., `Endpoint::NA_SANDBOX`), you *should not* pass a `data_elements` parameter. RDTs are not necessary for restricted operations.
+Note that if you want to call a restricted operation on a sandbox endpoint (e.g., `Endpoint::NA_SANDBOX`), you *should not* specify any `dataElements`. RDTs are not necessary for restricted operations in the sandbox.
 
 
 ## Uploading and downloading documents
 
-The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. Amazon encrypts all documents they generate, and requires that all uploaded documents be encrypted. The `SellingPartnerApi\Document` class handles all the encryption/decryption, given an instance of one of the `Model\ReportsV20210630\ReportDocument`, `Model\FeedsV20210630\FeedDocument`, or `Model\FeedsV20210630\CreateFeedDocumentResponse` classes. Instances of those classes are in the response returned by Amazon when you make a call to the [`getReportDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/ReportsV20210630.md#getReportDocument), [`getFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsV20210630.md#getFeedDocument), and [`createFeedDocument`](https://github.com/jlevers/selling-partner-api/blob/main/docs/Api/FeedsV20210630.md#createFeedDocument) endpoints, respectively.
+The Feeds and Reports APIs include operations that involve uploading and downloading documents to and from Amazon. This library has integrated supports for uploading and downloading documents on the relevant DTOs: `ReportDocument`, `CreateFeedDocumentResponse`, and `FeedDocument`, which are the result of calling [`getReportDocument`](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-reference#getreportdocument), [`createFeedDocument`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#createfeeddocument), and [`getFeedDocument`](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference#getfeeddocument), respectively.
 
 ### Downloading a report document
 
 ```php
-use SellingPartnerApi\Api\ReportsV20210630Api as ReportsApi;
-use SellingPartnerApi\ReportType;
+use SellingPartnerApi\SellingPartnerApi;
 
-// Assume we've already fetched a report document ID, and that a $config object was defined above
-$documentId = 'foo.1234';
-$reportType = ReportType::GET_FLAT_FILE_OPEN_LISTINGS_DATA;
+$reportType = 'GET_MERCHANT_LISTINGS_DATA';
+// Assume we already got a report document ID from a previous getReport call
+$documentId = '1234567890.asdf';
 
-$reportsApi = new ReportsApi($config);
-$reportDocumentInfo = $reportsApi->getReportDocument($documentId, $reportType['name']);
+$connector = SellingPartnerApi::make(/* ... */)->seller();
+$response = $connector->reports()
+    ->getReportDocument($documentId, $reportType);
 
-$docToDownload = new SellingPartnerApi\Document($reportDocumentInfo, $reportType);
-$contents = $docToDownload->download();  // The raw report text
+$reportDocument = $response->dto();
+
 /*
- * - Array of associative arrays, (each sub array corresponds to a row of the report) if content type is ContentType::TAB or ContentType::CSV
- * - A nested associative array (from json_decode) if content type is ContentType::JSON
- * - The raw report data if content type is ContentType::PLAIN or ContentType::PDF
- * - PHPOffice Spreadsheet object if content type is ContentType::XLSX
- * - SimpleXML object if the content type is ContentType::XML
+ * - Array of arrays, where each sub array corresponds to a row of the report, if this is a TSV, CSV, or XLSX report
+ * - A nested associative array (from json_decode) if this is a JSON report
+ * - The raw report data if this is a TXT or PDF report
+ * - A SimpleXMLElement object if this is an XML report
  */
-$data = $docToDownload->getData();
-// ... do something with report data
+$contents = $reportDocument->download($reportType);
 ```
 
-If you are manipulating huge reports you can use `downloadStream()` to minimize the memory consumption. `downloadStream()` will return a `Psr\Http\Message\StreamInterface`.
+The `download` method has three parameters:
+* `documentType` (string): The report type (or feed type of the feed result document being fetched). This is required if you want the document data parsed for you.
+* `preProcess` (bool): Whether to preprocess the document data. If `true`, the document data will be parsed and formatted into a more usable format. If `false`, the raw document text will be returned. Defaults to `true`.
+* `encoding` (string): The encoding of the document data. Defaults to `UTF-8`.
+
+If you are working with huge documents you can use `downloadStream()` to minimize the memory consumption. `downloadStream()` returns a `Psr\Http\Message\StreamInterface`.
 
 ```php
-// line to replace >>>>$contents = $docToDownload->download();  // The raw report text
-$streamContents = $docToDownload->downloadStream();  // The raw report stream
+$streamContents = $reportDocument->downloadStream();  // The raw report stream
 ```
 
 ### Uploading a feed document
@@ -467,28 +470,22 @@ If you are manipulating huge feed documents you can pass to `upload()` anything 
 
 ## Downloading a feed result document
 
-This works very similarly to downloading a report document:
+This process is very similar to downloading a report document:
 
 ```php
 use SellingPartnerApi\Api\FeedsV20210630Api as FeedsApi;
 use SellingPartnerApi\FeedType;
 
-$feedType = FeedType::POST_PRODUCT_PRICING_DATA;
-$feedsApi = new FeedsApi($config);
+$feedType = 'POST_PRODUCT_PRICING_DATA';
+// Assume we already got a feed result document ID from a previous getFeed call
+$documentId = '1234567890.asdf';
 
-// ...
-// Create and upload a feed document, and wait for it to finish processing
-// ...
+$connector = SellingPartnerApi::make(/* ... */)->seller();
+$response = $connector->feeds()
+    ->getFeedDocument($documentId);
+$feedDocument = $response->dto();
 
-$feedId = '1234567890';  // From the createFeed call
-$feed = $feedsApi->getFeed($feedId);
-
-$feedResultDocumentId = $feed->resultFeedDocumentId;
-$feedResultDocument = $feedsApi->getFeedDocument($feedResultDocumentId);
-
-$docToDownload = new SellingPartnerApi\Document($feedResultDocument, $feedType);
-$contents = $docToDownload->download();  // The raw report data
-$data = $docToDownload->getData();  // Parsed/formatted report data
+$contents = $feedResultDocument->download($feedType);
 ```
 
 ## Naming conventions

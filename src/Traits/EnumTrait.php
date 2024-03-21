@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SellingPartnerApi\Enums;
+namespace SellingPartnerApi\Traits;
 
 trait EnumTrait
 {

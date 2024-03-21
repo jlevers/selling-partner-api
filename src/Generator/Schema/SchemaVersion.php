@@ -30,6 +30,9 @@ class SchemaVersion
      */
     public function generate(): void
     {
+        $schemaVersionCode = $this->id();
+        Generator::$currentlyGenerating = $schemaVersionCode;
+
         $baseNamespace = Package::namespace();
         $categoryNamespace = ucfirst($this->schema->category->value);
         $schemaNamespace = $this->studlyName();
@@ -41,6 +44,8 @@ class SchemaVersion
         ]);
         $result = $generator->run($inputPath);
         $result->dumpFiles();
+
+        Generator::$currentlyGenerating = null;
     }
 
     public function refactor(): void
@@ -139,6 +144,11 @@ class SchemaVersion
     public function studlyName(): string
     {
         return Str::studly($this->schema->name).'V'.str_replace('-', '', $this->version);
+    }
+
+    protected function id(): string
+    {
+        return "{$this->schema->category->value}.{$this->schema->code}.{$this->version}";
     }
 
     protected function modifySchema(stdClass &$schema): stdClass

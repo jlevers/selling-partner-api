@@ -10,9 +10,15 @@ use Crescat\SaloonSdkGenerator\Generators\NullGenerator;
 use SellingPartnerApi\Generator\Generators\BaseResourceGenerator;
 use SellingPartnerApi\Generator\Generators\RequestGenerator;
 use SellingPartnerApi\Generator\Generators\ResourceGenerator;
+use SellingPartnerApi\Generator\Generators\ResponseGenerator;
 
 class Generator
 {
+    /**
+     * The code of the API currently being generated, if any.
+     */
+    public static ?string $currentlyGenerating = null;
+
     /**
      * Create a new code generator instance.
      */
@@ -24,6 +30,7 @@ class Generator
             $config,
             requestGenerator: new RequestGenerator($config),
             resourceGenerator: new ResourceGenerator($config),
+            responseGenerator: new ResponseGenerator($config),
             connectorGenerator: new NullGenerator($config),
             baseResourceGenerator: new BaseResourceGenerator($config),
             fileHandler: new FileHandler($config),

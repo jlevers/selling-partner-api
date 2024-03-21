@@ -3,7 +3,6 @@
 namespace SellingPartnerApi\Seller\ReportsV20210630\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
-use SellingPartnerApi\Seller\ReportsV20210630\Dto\ReportSchedule;
 
 final class ReportScheduleList extends BaseResponse
 {

@@ -3,7 +3,6 @@
 namespace SellingPartnerApi\Seller\FeedsV20210630\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
-use SellingPartnerApi\Seller\FeedsV20210630\Dto\Feed;
 
 final class GetFeedsResponse extends BaseResponse
 {

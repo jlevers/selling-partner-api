@@ -3,7 +3,6 @@
 namespace SellingPartnerApi\Seller\CatalogItemsV20201201\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
-use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\Item;
 use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\Pagination;
 use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\Refinements;
 

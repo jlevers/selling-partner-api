@@ -4,7 +4,6 @@ namespace SellingPartnerApi\Seller\DataKioskV20231115\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
 use SellingPartnerApi\Seller\DataKioskV20231115\Dto\Pagination;
-use SellingPartnerApi\Seller\DataKioskV20231115\Dto\Query;
 
 final class GetQueriesResponse extends BaseResponse
 {

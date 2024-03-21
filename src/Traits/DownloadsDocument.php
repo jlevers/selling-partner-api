@@ -24,7 +24,8 @@ trait DownloadsDocument
 {
     protected const DEFAULT_ENCODING = 'UTF-8';
 
-    protected string|null $encoding;
+    protected ?string $encoding;
+
     protected array $reportTypeInfo;
 
     public function download(
@@ -203,6 +204,7 @@ trait DownloadsDocument
 
         $reportTypeInfo['name'] = $reportType;
         $reportTypeInfo['contentType'] = ContentType::from($reportTypeInfo['contentType']);
+
         return $reportTypeInfo;
     }
 

@@ -3,7 +3,6 @@
 namespace SellingPartnerApi\Seller\EasyShipV20220323\Responses;
 
 use Crescat\SaloonSdkGenerator\BaseResponse;
-use SellingPartnerApi\Seller\EasyShipV20220323\Dto\Package;
 
 final class Packages extends BaseResponse
 {

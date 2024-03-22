@@ -6,6 +6,7 @@ namespace SellingPartnerApi\Middleware;
 
 use Saloon\Contracts\RequestMiddleware;
 use Saloon\Http\PendingRequest;
+use SellingPartnerApi\Enums\Endpoint;
 
 class RestrictedDataToken implements RequestMiddleware
 {
@@ -19,10 +20,12 @@ class RestrictedDataToken implements RequestMiddleware
     public function __invoke(PendingRequest $pendingRequest)
     {
         $connector = $pendingRequest->getConnector();
-        $pendingRequest->authenticate($connector->restrictedAuth(
-            $this->path,
-            $this->method,
-            $this->knownDataElements
-        ));
+        if (! Endpoint::isSandbox($connector->endpoint)) {
+            $pendingRequest->authenticate($connector->restrictedAuth(
+                $this->path,
+                $this->method,
+                $this->knownDataElements
+            ));
+        }
     }
 }

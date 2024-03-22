@@ -31,7 +31,7 @@ class SellingPartnerApi extends Connector
         public readonly string $refreshToken,
         public readonly Endpoint $endpoint,
         public readonly array $dataElements = [],
-        public readonly ?string $delegate = null,
+        public readonly ?string $delegatee = null,
         public ?ClientInterface $authenticationClient = null,
     ) {
         if (! $authenticationClient) {
@@ -61,7 +61,7 @@ class SellingPartnerApi extends Connector
             $this->refreshToken,
             $this->endpoint,
             $this->dataElements,
-            $this->delegate,
+            $this->delegatee,
             $this->authenticationClient,
         );
     }
@@ -74,7 +74,7 @@ class SellingPartnerApi extends Connector
             $this->refreshToken,
             $this->endpoint,
             $this->dataElements,
-            $this->delegate,
+            $this->delegatee,
             $this->authenticationClient,
         );
     }

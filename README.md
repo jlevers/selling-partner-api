@@ -120,7 +120,8 @@ The `SellingPartnerApi::make()` builder method accepts the following keys:
 * `clientSecret (string)`: Required. The LWA client secret of the SP API application to use to execute API requests.
 * `refreshToken (string)`: The LWA refresh token of the SP API application to use to execute API requests. Required, unless you're only using [grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations).
 * `endpoint`: Required. An instance of the [`SellingPartnerApi\Enums\Endpoint` enum](https://github.com/jlevers/selling-partner-api/blob/main/src/Enums/Endpoint.php). Primary endpoints are `Endpoint::NA`, `Endpoint::EU`, and `Endpoint::FE`. Sandbox endpoints are `Endpoint::NA_SANDBOX`, `Endpoint::EU_SANDBOX`, and `Endpoint::FE_SANDBOX`.
-* `dataElements`: Optional. An array of data elements to pass to restricted operations. See the [Restricted operations](#restricted-operations) section for more details.
+* `dataElements (array)`: Optional. An array of data elements to pass to restricted operations. See the [Restricted operations](#restricted-operations) section for more details.
+* `delegatee (string)`: Optional. The application ID of a delegatee application to generate RDTs on behalf of.
 * `authenticationClient`: Optional `GuzzleHttp\ClientInterface` object that will be used to generate the access token from the refresh token. If not provided, a default Guzzle client will be used.
 
 
@@ -341,7 +342,7 @@ $vendorConnector = SellingPartnerApi::make(/* ... */)->vendor();
 * **Direct Fulfillment Orders API (v2021-12-28)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-orders-api-2021-12-28-reference))
     ```php
     $directFulfillmentOrdersApi = $vendorConnector->directFulfillmentOrders();
-    ``
+    ```
 * **Direct Fulfillment Orders API (v1)** ([docs](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-orders-api-v1-reference))
     ```php
     $directFulfillmentOrdersApi = $vendorConnector->directFulfillmentOrdersV1();
@@ -394,6 +395,8 @@ When you call a [restricted operation](https://developer-docs.amazon.com/sp-api/
 
 Note that if you want to call a restricted operation on a sandbox endpoint (e.g., `Endpoint::NA_SANDBOX`), you *should not* specify any `dataElements`. RDTs are not necessary for restricted operations in the sandbox.
 
+If you would like to make calls on behalf of a delegatee application, you can specify the `delegatee` parameter in `SellingPartnerApi::make()`. This will cause the connector to generate a token for the delegatee application instead of the main application.
+
 
 ## Uploading and downloading documents
 
@@ -409,8 +412,7 @@ $reportType = 'GET_MERCHANT_LISTINGS_DATA';
 $documentId = '1234567890.asdf';
 
 $connector = SellingPartnerApi::make(/* ... */)->seller();
-$response = $connector->reports()
-    ->getReportDocument($documentId, $reportType);
+$response = $connector->reports()->getReportDocument($documentId, $reportType);
 
 $reportDocument = $response->dto();
 
@@ -482,8 +484,7 @@ $feedType = 'POST_PRODUCT_PRICING_DATA';
 $documentId = '1234567890.asdf';
 
 $connector = SellingPartnerApi::make(/* ... */)->seller();
-$response = $connector->feeds()
-    ->getFeedDocument($documentId);
+$response = $connector->feeds()->getFeedDocument($documentId);
 $feedDocument = $response->dto();
 
 $contents = $feedResultDocument->download($feedType);

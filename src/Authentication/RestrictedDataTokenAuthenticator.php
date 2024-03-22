@@ -58,7 +58,7 @@ class RestrictedDataTokenAuthenticator extends AbstractAuthenticator
                             $this->dataElements ?: null,
                         ),
                     ],
-                    $this->connector->delegate
+                    $this->connector->delegatee
                 )
             )->dto();
 

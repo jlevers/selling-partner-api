@@ -37,7 +37,7 @@ trait UploadsDocument
      * Create a normalized content-type header.
      * When uploading a document you must use the exact same content-type/charset in createFeedDocument() and upload().
      */
-    protected static function getContentType(string $feedType, ?string $charset = null): string
+    public static function getContentType(string $feedType, ?string $charset = null): string
     {
         $feedTypes = json_decode(file_get_contents(RESOURCE_DIR.'/feeds.json'), true);
         $contentType = $feedTypes[$feedType];

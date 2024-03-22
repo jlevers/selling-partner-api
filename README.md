@@ -437,35 +437,35 @@ $streamContents = $reportDocument->downloadStream();  // The raw report stream
 ### Uploading a feed document
 
 ```php
-use SellingPartnerApi\Api\FeedsV20210630Api as FeedsApi;
-use SellingPartnerApi\FeedType;
-use SellingPartnerApi\Model\FeedsV20210630 as Feeds;
+use SellingPartnerApi\Seller\FeedsV20210630\Requests\CreateFeedDocument;
+use SellingPartnerApi\Seller\FeedsV20210630\Requests\CreateFeed;
+use SellingPartnerApi\Seller\FeedsV20210630\Responses\FeedDocument;
 
-$feedType = FeedType::POST_PRODUCT_PRICING_DATA;
-$feedsApi = new FeedsApi($config);
+$feedType = 'POST_PRODUCT_PRICING_DATA';
+
+$connector = SellingPartnerApi::make(/* ... */)->seller();
+$feedsApi = $connector->feeds();
 
 // Create feed document
-$createFeedDocSpec = new Feeds\CreateFeedDocumentSpecification(['content_type' => $feedType['contentType']]);
-$feedDocumentInfo = $feedsApi->createFeedDocument($createFeedDocSpec);
-$feedDocumentId = $feedDocumentInfo->getFeedDocumentId();
+$createFeedDoc = new CreateFeedDocument(FeedDocument::getContentType($feedType));
+$response = $feedsApi->createFeedDocument($createFeedDoc);
+$feedDocument = $response->dto();
 
 // Upload feed contents to document
-$feedContents = file_get_contents('<your/feed/file.xml>');
-// The Document constructor accepts a custom \GuzzleHttp\Client object as an optional 3rd parameter. If that
-// parameter is passed, your custom Guzzle client will be used when uploading the feed document contents to Amazon.
-$docToUpload = new SellingPartnerApi\Document($feedDocumentInfo, $feedType);
-$docToUpload->upload($feedContents);
+$feedContents = file_get_contents('your/feed/file.xml');
+$feedDocument->upload($feedType, $feedContents);
 
-$createFeedSpec = new Feeds\CreateFeedSpecification();
-$createFeedSpec->setMarketplaceIds(['ATVPDKIKX0DER']);
-$createFeedSpec->setInputFeedDocumentId($feedDocumentId);
-$createFeedSpec->setFeedType($feedType['name']);
-
-$createFeedResult = $feedsApi->createFeed($createFeedSpec);
+// Create feed with the feed document we just uploaded
+$createFeedRequest = new CreateFeed(
+    marketplaceIds: ['ATVPDKIKX0DER'],
+    inputFeedDocumentId: $feedDocument->feedDocumentId,
+    feedType: $feedType,
+);
+$createFeedResponse = $feedsApi->createFeed($createFeedRequest);
 $feedId = $createFeedResult->getFeedId();
 ```
 
-If you are manipulating huge feed documents you can pass to `upload()` anything that Guzzle can turn into a stream.
+If you are working with feed documents that are too large to fit in memory, you can pass anything that Guzzle can turn into a stream into `FeedDocument::upload()` instead of a string.
 
 
 ## Downloading a feed result document
@@ -473,8 +473,7 @@ If you are manipulating huge feed documents you can pass to `upload()` anything 
 This process is very similar to downloading a report document:
 
 ```php
-use SellingPartnerApi\Api\FeedsV20210630Api as FeedsApi;
-use SellingPartnerApi\FeedType;
+use SellingPartnerApi\SellingPartnerApi;
 
 $feedType = 'POST_PRODUCT_PRICING_DATA';
 // Assume we already got a feed result document ID from a previous getFeed call

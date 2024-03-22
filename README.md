@@ -437,9 +437,9 @@ $streamContents = $reportDocument->downloadStream();  // The raw report stream
 ### Uploading a feed document
 
 ```php
-use SellingPartnerApi\Seller\FeedsV20210630\Requests\CreateFeedDocument;
-use SellingPartnerApi\Seller\FeedsV20210630\Requests\CreateFeed;
-use SellingPartnerApi\Seller\FeedsV20210630\Responses\FeedDocument;
+use SellingPartnerApi\Seller\FeedsV20210630\Dto\CreateFeedDocumentSpecification;
+use SellingPartnerApi\Seller\FeedsV20210630\Dto\CreateFeedSpecification;
+use SellingPartnerApi\Seller\FeedsV20210630\Responses\CreateFeedDocumentResponse;
 
 $feedType = 'POST_PRODUCT_PRICING_DATA';
 
@@ -447,22 +447,24 @@ $connector = SellingPartnerApi::make(/* ... */)->seller();
 $feedsApi = $connector->feeds();
 
 // Create feed document
-$createFeedDoc = new CreateFeedDocument(FeedDocument::getContentType($feedType));
-$response = $feedsApi->createFeedDocument($createFeedDoc);
-$feedDocument = $response->dto();
+$contentType = CreateFeedDocumentResponse::getContentType($feedType);
+$createFeedDoc = new CreateFeedDocumentSpecification($contentType);
+$createDocumentResponse = $feedsApi->createFeedDocument($createFeedDoc);
+$feedDocument = $createDocumentResponse->dto();
 
 // Upload feed contents to document
 $feedContents = file_get_contents('your/feed/file.xml');
 $feedDocument->upload($feedType, $feedContents);
 
-// Create feed with the feed document we just uploaded
-$createFeedRequest = new CreateFeed(
+$createFeedSpec = new CreateFeedSpecification(
     marketplaceIds: ['ATVPDKIKX0DER'],
     inputFeedDocumentId: $feedDocument->feedDocumentId,
     feedType: $feedType,
 );
+
+// Create feed with the feed document we just uploaded
 $createFeedResponse = $feedsApi->createFeed($createFeedRequest);
-$feedId = $createFeedResult->getFeedId();
+$feedId = $createFeedResponse->dto()->feedId;
 ```
 
 If you are working with feed documents that are too large to fit in memory, you can pass anything that Guzzle can turn into a stream into `FeedDocument::upload()` instead of a string.

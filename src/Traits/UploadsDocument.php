@@ -20,7 +20,7 @@ trait UploadsDocument
         $client = new Client();
         $response = $client->put($this->url, [
             RequestOptions::HEADERS => [
-                'Content-Type' => static::withContentType($feedType, $charset),
+                'Content-Type' => static::getContentType($feedType, $charset),
                 'Host' => parse_url($this->url, PHP_URL_HOST),
             ],
             RequestOptions::BODY => $data,

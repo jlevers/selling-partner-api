@@ -1,0 +1,17 @@
+{
+  "/authorization/v1/authorizationCode": {
+    "get": "sellingpartnerapi::migration"
+  },
+  "/notifications/v1/subscriptions/{notificationType}/{subscriptionId}": {
+    "get": "sellingpartnerapi::notifications",
+    "delete": "sellingpartnerapi::notifications"
+  },
+  "/notifications/v1/destinations": {
+    "get": "sellingpartnerapi::notifications",
+    "post": "sellingpartnerapi::notifications"
+  },
+  "/notifications/v1/destinations/{destinationId}": {
+    "get": "sellingpartnerapi::notifications",
+    "delete": "sellingpartnerapi::notifications"
+  }
+}

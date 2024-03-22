@@ -1,0 +1,178 @@
+{
+  "/easyShip/2022-03-23/packages/bulk": {
+    "genericPath": true,
+    "operations": {
+      "post": []
+    }
+  },
+  "/mfn/v0/shipments/{shipmentId}": {
+    "genericPath": true,
+    "operations": {
+      "get": [],
+      "delete": []
+    }
+  },
+  "/mfn/v0/shipments/{shipmentId}/cancel": {
+    "genericPath": true,
+    "operations": {
+      "put": []
+    }
+  },
+  "/mfn/v0/shipments": {
+    "genericPath": true,
+    "operations": {
+      "post": []
+    }
+  },
+  "/orders/v0/orders": {
+    "genericPath": true,
+    "operations": {
+      "get": ["buyerInfo", "shippingAddress"]
+    }
+  },
+  "/orders/v0/orders/{orderId}": {
+    "genericPath": true,
+    "operations": {
+      "get": ["buyerInfo", "shippingAddress"]
+    }
+  },
+  "/orders/v0/orders/{orderId}/orderItems": {
+    "genericPath": true,
+    "operations": {
+      "get": ["buyerInfo"]
+    }
+  },
+  "/orders/v0/orders/{orderId}/regulatedInfo": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/orders/v0/orders/{orderId}/address": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/orders/v0/orders/{orderId}/buyerInfo": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/orders/v0/orders/{orderId}/orderItems/buyerInfo": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/reports/2021-06-30/documents/{reportDocumentId}": {
+    "genericPath": false,
+    "operations": {
+      "get": []
+    }
+  },
+  "/fba/outbound/brazil/v0/shipments/{shipmentId}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/shipping/v1/shipments/{shipmentId}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/orders/v1/purchaseOrders": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/orders/2021-12-28/purchaseOrders": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/{purchaseOrderNumber}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/v1/shippingLabels/{purchaseOrderNumber}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/v1/packingSlips/{purchaseOrderNumber}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/v1/packingSlips": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/v1/customerInvoices/{purchaseOrderNumber}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/v1/customerInvoices": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/2021-12-28/shippingLabels": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}": {
+    "genericPath": true,
+    "operations": {
+      "get": [],
+      "post": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/2021-12-28/packingSlips": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/2021-12-28/packingSlips/{purchaseOrderNumber}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/2021-12-28/customerInvoices": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  },
+  "/vendor/directFulfillment/shipping/2021-12-28/customerInvoices/{purchaseOrderNumber}": {
+    "genericPath": true,
+    "operations": {
+      "get": []
+    }
+  }
+}

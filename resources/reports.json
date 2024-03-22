@@ -1,0 +1,814 @@
+{
+  "GET_BRAND_ANALYTICS_MARKET_BASKET_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_BRAND_ANALYTICS_REPEAT_PURCHASE_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_BRAND_ANALYTICS_ALTERNATE_PURCHASE_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_BRAND_ANALYTICS_ITEM_COMPARISON_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VENDOR_SALES_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VENDOR_SALES_DIAGNOSTIC_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VENDOR_TRAFFIC_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VENDOR_INVENTORY_HEALTH_AND_PLANNING_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VENDOR_INVENTORY_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VENDOR_FORECASTING_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VENDOR_DEMAND_FORECAST_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VENDOR_NET_PURE_PRODUCT_MARGIN_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_SALES_AND_TRAFFIC_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_OPEN_LISTINGS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANT_LISTINGS_ALL_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANT_LISTINGS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANT_LISTINGS_INACTIVE_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANT_LISTINGS_DATA_BACK_COMPAT": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANT_LISTINGS_DATA_LITE": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANT_LISTINGS_DATA_LITER": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANT_CANCELLED_LISTINGS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANTS_LISTINGS_FYP_REPORT": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_MERCHANT_LISTINGS_DEFECT_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_PAN_EU_OFFER_STATUS": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_MFN_PAN_EU_OFFER_STATUS": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_GEO_OPPORTUNITIES": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_REFERRAL_FEE_PREVIEW_REPORT": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_ACTIONABLE_ORDER_DATA_SHIPPING": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_ORDER_REPORT_DATA_INVOICING": {
+    "contentType": "text/xml",
+    "restricted": true,
+    "requestable": false,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_ORDER_REPORT_DATA_TAX": {
+    "contentType": "text/xml",
+    "restricted": true,
+    "requestable": false,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_ORDER_REPORT_DATA_SHIPPING": {
+    "contentType": "text/xml",
+    "restricted": true,
+    "requestable": false,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_ORDER_REPORT_DATA_INVOICING": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_ORDER_REPORT_DATA_SHIPPING": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_ORDER_REPORT_DATA_TAX": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_ALL_ORDERS_DATA_BY_LAST_UPDATE_GENERAL": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_ALL_ORDERS_DATA_BY_ORDER_DATE_GENERAL": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_ARCHIVED_ORDERS_DATA_BY_ORDER_DATE": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_XML_ALL_ORDERS_DATA_BY_LAST_UPDATE_GENERAL": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_XML_ALL_ORDERS_DATA_BY_ORDER_DATE_GENERAL": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_PENDING_ORDERS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_PENDING_ORDERS_DATA": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_CONVERGED_FLAT_FILE_PENDING_ORDERS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_XML_RETURNS_DATA_BY_RETURN_DATE": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_RETURNS_DATA_BY_RETURN_DATE": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_XML_MFN_PRIME_RETURNS_REPORT": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_CSV_MFN_PRIME_RETURNS_REPORT": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_XML_MFN_SKU_RETURN_ATTRIBUTES_REPORT": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_MFN_SKU_RETURN_ATTRIBUTES_REPORT": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_SELLER_FEEDBACK_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_V1_SELLER_PERFORMANCE_REPORT": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_V2_SELLER_PERFORMANCE_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_PROMOTION_PERFORMANCE_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_COUPON_PERFORMANCE_REPORT": {
+    "contentType": "application/json",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_V2_SETTLEMENT_REPORT_DATA_FLAT_FILE": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_V2_SETTLEMENT_REPORT_DATA_XML": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_V2_SETTLEMENT_REPORT_DATA_FLAT_FILE_V2": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_AMAZON_FULFILLED_SHIPMENTS_DATA_GENERAL": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_AMAZON_FULFILLED_SHIPMENTS_DATA_INVOICING": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_AMAZON_FULFILLED_SHIPMENTS_DATA_TAX": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_CUSTOMER_SHIPMENT_SALES_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_CUSTOMER_SHIPMENT_PROMOTION_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_CUSTOMER_TAXES_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_REMOTE_FULFILLMENT_ELIGIBILITY": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_AFN_INVENTORY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_AFN_INVENTORY_DATA_BY_COUNTRY": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_LEDGER_SUMMARY_VIEW_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": true
+  },
+  "GET_LEDGER_DETAIL_VIEW_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": true
+  },
+  "GET_FBA_FULFILLMENT_CURRENT_INVENTORY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_MONTHLY_INVENTORY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_INVENTORY_RECEIPTS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_RESERVED_INVENTORY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_INVENTORY_SUMMARY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_INVENTORY_ADJUSTMENTS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_INVENTORY_HEALTH_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_MYI_UNSUPPRESSED_INVENTORY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_MYI_ALL_INVENTORY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_RESTOCK_INVENTORY_RECOMMENDATIONS_REPORT": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_INBOUND_NONCOMPLIANCE_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_STRANDED_INVENTORY_UI_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_STRANDED_INVENTORY_LOADER_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_INVENTORY_AGED_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_EXCESS_INVENTORY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_STORAGE_FEE_CHARGES_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_PRODUCT_EXCHANGE_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_INVENTORY_PLANNING_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_OVERAGE_FEE_CHARGES_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_ESTIMATED_FBA_FEES_TXT_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_REIMBURSEMENTS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_LONGTERM_STORAGE_FEE_CHARGES_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_CUSTOMER_RETURNS_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_CUSTOMER_SHIPMENT_REPLACEMENT_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_RECOMMENDED_REMOVAL_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_REMOVAL_ORDER_DETAIL_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_FULFILLMENT_REMOVAL_SHIPMENT_DETAIL_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FBA_UNO_INVENTORY_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_SALES_TAX_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "SC_VAT_TAX_REPORT": {
+    "contentType": "text/csv",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_VAT_TRANSACTION_DATA": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_GST_MTR_B2B_CUSTOM": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_GST_MTR_B2C_CUSTOM": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_GST_STR_ADHOC": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_VAT_INVOICE_DATA_REPORT": {
+    "contentType": "text/tab-separated-values",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_XML_VAT_INVOICE_DATA_REPORT": {
+    "contentType": "text/xml",
+    "restricted": true,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_XML_BROWSE_TREE_DATA": {
+    "contentType": "text/xml",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_EASYSHIP_DOCUMENTS": {
+    "contentType": "application/pdf",
+    "restricted": true,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_EASYSHIP_PICKEDUP": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_EASYSHIP_WAITING_FOR_PICKUP": {
+    "contentType": "text/tab-separated-values",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "RFQD_BULK_DOWNLOAD": {
+    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "FEE_DISCOUNTS_REPORT": {
+    "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": true,
+    "quoteEnclosure": false
+  },
+  "GET_FLAT_FILE_OFFAMAZONPAYMENTS_SANDBOX_SETTLEMENT_DATA": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": false,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_B2B_PRODUCT_OPPORTUNITIES_RECOMMENDED_FOR_YOU": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_B2B_PRODUCT_OPPORTUNITIES_NOT_YET_ON_AMAZON": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_EPR_MONTHLY_REPORTS": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_EPR_QUARTERLY_REPORTS": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  },
+  "GET_EPR_ANNUAL_REPORTS": {
+    "contentType": "text/csv",
+    "restricted": false,
+    "requestable": true,
+    "schedulable": false,
+    "quoteEnclosure": false
+  }
+}

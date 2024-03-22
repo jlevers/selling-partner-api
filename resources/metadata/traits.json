@@ -1,0 +1,15 @@
+{
+  "seller": {
+    "feeds": {
+      "2021-06-30": {
+        "FeedDocument": ["DownloadsDocument"],
+        "CreateFeedDocumentResponse": ["UploadsDocument"]
+      }
+    },
+    "reports": {
+      "2021-06-30": {
+        "ReportDocument": ["DownloadsDocument"]
+      }
+    }
+  }
+}

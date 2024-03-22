@@ -21,8 +21,8 @@ class GetFeeds extends Request
      * @param  ?array  $marketplaceIds A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
      * @param  ?int  $pageSize The maximum number of feeds to return in a single call.
      * @param  ?array  $processingStatuses A list of processing statuses used to filter feeds.
-     * @param  ?string  $createdSince The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
-     * @param  ?string  $createdUntil The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
+     * @param  ?DateTime  $createdSince The earliest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is 90 days ago. Feeds are retained for a maximum of 90 days.
+     * @param  ?DateTime  $createdUntil The latest feed creation date and time for feeds included in the response, in ISO 8601 format. The default is now.
      * @param  ?string  $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
      */
     public function __construct(
@@ -30,8 +30,8 @@ class GetFeeds extends Request
         protected ?array $marketplaceIds = null,
         protected ?int $pageSize = null,
         protected ?array $processingStatuses = null,
-        protected ?string $createdSince = null,
-        protected ?string $createdUntil = null,
+        protected ?\DateTime $createdSince = null,
+        protected ?\DateTime $createdUntil = null,
         protected ?string $nextToken = null,
     ) {
     }
@@ -43,8 +43,8 @@ class GetFeeds extends Request
             'marketplaceIds' => $this->marketplaceIds,
             'pageSize' => $this->pageSize,
             'processingStatuses' => $this->processingStatuses,
-            'createdSince' => $this->createdSince,
-            'createdUntil' => $this->createdUntil,
+            'createdSince' => $this->createdSince?->format(\DateTime::RFC3339),
+            'createdUntil' => $this->createdUntil?->format(\DateTime::RFC3339),
             'nextToken' => $this->nextToken,
         ]);
     }

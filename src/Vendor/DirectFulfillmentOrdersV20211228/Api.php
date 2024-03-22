@@ -12,8 +12,8 @@ use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Requests\SubmitAck
 class Api extends BaseResource
 {
     /**
-     * @param  string  $createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string  $createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
      * @param  ?string  $status Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
      * @param  ?int  $limit The limit to the number of purchase orders returned.
@@ -22,8 +22,8 @@ class Api extends BaseResource
      * @param  ?string  $includeDetails When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
      */
     public function getOrders(
-        string $createdAfter,
-        string $createdBefore,
+        \DateTime $createdAfter,
+        \DateTime $createdBefore,
         ?string $shipFromPartyId = null,
         ?string $status = null,
         ?int $limit = null,
@@ -32,8 +32,6 @@ class Api extends BaseResource
         ?string $includeDetails = null,
     ): Response {
         $request = new GetOrders($createdAfter, $createdBefore, $shipFromPartyId, $status, $limit, $sortOrder, $nextToken, $includeDetails);
-        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/orders/2021-12-28/purchaseOrders', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -44,8 +42,6 @@ class Api extends BaseResource
     public function getOrder(string $purchaseOrderNumber): Response
     {
         $request = new GetOrder($purchaseOrderNumber);
-        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/{purchaseOrderNumber}', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

@@ -45,7 +45,7 @@ final class ShipmentEvent extends BaseDto
      * @param  FeeComponent[]|null  $orderFeeList A list of fee component information.
      * @param  FeeComponent[]|null  $orderFeeAdjustmentList A list of fee component information.
      * @param  DirectPayment[]|null  $directPaymentList A list of direct payment information.
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      * @param  ShipmentItem[]|null  $shipmentItemList A list of shipment items.
      * @param  ShipmentItem[]|null  $shipmentItemAdjustmentList A list of shipment items.
      */
@@ -60,7 +60,7 @@ final class ShipmentEvent extends BaseDto
         public readonly ?array $orderFeeList = null,
         public readonly ?array $orderFeeAdjustmentList = null,
         public readonly ?array $directPaymentList = null,
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
         public readonly ?array $shipmentItemList = null,
         public readonly ?array $shipmentItemAdjustmentList = null,
     ) {

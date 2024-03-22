@@ -28,22 +28,22 @@ class Api extends BaseResource
      * @param  ?int  $limit The limit to the number of records returned. Default value is 50 records.
      * @param  ?string  $sortOrder Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken Used for pagination when there are more shipments than the specified result size limit.
-     * @param  ?string  $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format.
-     * @param  ?string  $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format.
-     * @param  ?string  $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format.
-     * @param  ?string  $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format.
-     * @param  ?string  $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format.
-     * @param  ?string  $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format.
-     * @param  ?string  $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format.
-     * @param  ?string  $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format.
      * @param  ?string  $currentShipmentStatus Get Shipment Details by passing Current shipment status.
      * @param  ?string  $vendorShipmentIdentifier Get Shipment Details by passing Vendor Shipment ID
      * @param  ?string  $buyerReferenceNumber Get Shipment Details by passing buyer Reference ID
@@ -54,22 +54,22 @@ class Api extends BaseResource
         ?int $limit = null,
         ?string $sortOrder = null,
         ?string $nextToken = null,
-        ?string $createdAfter = null,
-        ?string $createdBefore = null,
-        ?string $shipmentConfirmedBefore = null,
-        ?string $shipmentConfirmedAfter = null,
-        ?string $packageLabelCreatedBefore = null,
-        ?string $packageLabelCreatedAfter = null,
-        ?string $shippedBefore = null,
-        ?string $shippedAfter = null,
-        ?string $estimatedDeliveryBefore = null,
-        ?string $estimatedDeliveryAfter = null,
-        ?string $shipmentDeliveryBefore = null,
-        ?string $shipmentDeliveryAfter = null,
-        ?string $requestedPickUpBefore = null,
-        ?string $requestedPickUpAfter = null,
-        ?string $scheduledPickUpBefore = null,
-        ?string $scheduledPickUpAfter = null,
+        ?\DateTime $createdAfter = null,
+        ?\DateTime $createdBefore = null,
+        ?\DateTime $shipmentConfirmedBefore = null,
+        ?\DateTime $shipmentConfirmedAfter = null,
+        ?\DateTime $packageLabelCreatedBefore = null,
+        ?\DateTime $packageLabelCreatedAfter = null,
+        ?\DateTime $shippedBefore = null,
+        ?\DateTime $shippedAfter = null,
+        ?\DateTime $estimatedDeliveryBefore = null,
+        ?\DateTime $estimatedDeliveryAfter = null,
+        ?\DateTime $shipmentDeliveryBefore = null,
+        ?\DateTime $shipmentDeliveryAfter = null,
+        ?\DateTime $requestedPickUpBefore = null,
+        ?\DateTime $requestedPickUpAfter = null,
+        ?\DateTime $scheduledPickUpBefore = null,
+        ?\DateTime $scheduledPickUpAfter = null,
         ?string $currentShipmentStatus = null,
         ?string $vendorShipmentIdentifier = null,
         ?string $buyerReferenceNumber = null,
@@ -95,8 +95,8 @@ class Api extends BaseResource
      * @param  ?int  $limit The limit to the number of records returned. Default value is 50 records.
      * @param  ?string  $sortOrder Sort in ascending or descending order by transport label creation date.
      * @param  ?string  $nextToken Used for pagination when there are more transport label than the specified result size limit.
-     * @param  ?string  $labelCreatedAfter transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $labelcreatedBefore transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $labelCreatedAfter transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $labelcreatedBefore transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $buyerReferenceNumber Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label.
      * @param  ?string  $vendorShipmentIdentifier Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label.
      * @param  ?string  $sellerWarehouseCode Get Shipping labels based Vendor Warehouse code. This value should be same as 'shipFromParty.partyId' in the Shipment.
@@ -105,8 +105,8 @@ class Api extends BaseResource
         ?int $limit = null,
         ?string $sortOrder = null,
         ?string $nextToken = null,
-        ?string $labelCreatedAfter = null,
-        ?string $labelcreatedBefore = null,
+        ?\DateTime $labelCreatedAfter = null,
+        ?\DateTime $labelcreatedBefore = null,
         ?string $buyerReferenceNumber = null,
         ?string $vendorShipmentIdentifier = null,
         ?string $sellerWarehouseCode = null,

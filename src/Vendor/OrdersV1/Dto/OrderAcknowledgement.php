@@ -10,14 +10,14 @@ final class OrderAcknowledgement extends BaseDto
 
     /**
      * @param  string  $purchaseOrderNumber The purchase order number. Formatting Notes: 8-character alpha-numeric code.
-     * @param  string  $acknowledgementDate The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
+     * @param  DateTime  $acknowledgementDate The date and time when the purchase order is acknowledged, in ISO-8601 date/time format.
      * @param  OrderItem[]  $items A list of items in this purchase order.
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,
         public readonly PartyIdentification $sellingParty,
-        public readonly string $acknowledgementDate,
         public readonly ?array $items = null,
+        public readonly \DateTime $acknowledgementDate,
     ) {
     }
 }

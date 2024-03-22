@@ -18,7 +18,7 @@ final class CouponPaymentEvent extends BaseDto
     ];
 
     /**
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      * @param  ?string  $couponId A coupon identifier.
      * @param  ?string  $sellerCouponDescription The description provided by the seller when they created the coupon.
      * @param  ?int  $clipOrRedemptionCount The number of coupon clips or redemptions.
@@ -92,7 +92,7 @@ final class CouponPaymentEvent extends BaseDto
      * @param  ?Currency  $totalAmount A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
         public readonly ?string $couponId = null,
         public readonly ?string $sellerCouponDescription = null,
         public readonly ?int $clipOrRedemptionCount = null,

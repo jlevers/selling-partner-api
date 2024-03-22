@@ -14,13 +14,13 @@ class Api extends BaseResource
 {
     /**
      * @param  ?int  $limit The limit to the number of records returned. Default value is 100 records.
-     * @param  ?string  $createdAfter Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $createdBefore Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdAfter Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdBefore Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $sortOrder Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call
      * @param  ?string  $includeDetails When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true.
-     * @param  ?string  $changedAfter Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $changedBefore Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $changedAfter Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $changedBefore Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $poItemState Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero.
      * @param  ?string  $isPoChanged When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false.
      * @param  ?string  $purchaseOrderState Filters purchase orders based on the purchase order state.
@@ -28,13 +28,13 @@ class Api extends BaseResource
      */
     public function getPurchaseOrders(
         ?int $limit = null,
-        ?string $createdAfter = null,
-        ?string $createdBefore = null,
+        ?\DateTime $createdAfter = null,
+        ?\DateTime $createdBefore = null,
         ?string $sortOrder = null,
         ?string $nextToken = null,
         ?string $includeDetails = null,
-        ?string $changedAfter = null,
-        ?string $changedBefore = null,
+        ?\DateTime $changedAfter = null,
+        ?\DateTime $changedBefore = null,
         ?string $poItemState = null,
         ?string $isPoChanged = null,
         ?string $purchaseOrderState = null,
@@ -69,10 +69,10 @@ class Api extends BaseResource
      * @param  ?int  $limit The limit to the number of records returned. Default value is 100 records.
      * @param  ?string  $sortOrder Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken Used for pagination when there are more purchase orders than the specified result size limit.
-     * @param  ?string  $createdAfter Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $createdBefore Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $updatedAfter Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $updatedBefore Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdAfter Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdBefore Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $updatedAfter Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $updatedBefore Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $purchaseOrderNumber Provides purchase order status for the specified purchase order number.
      * @param  ?string  $purchaseOrderStatus Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
      * @param  ?string  $itemConfirmationStatus Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
@@ -84,10 +84,10 @@ class Api extends BaseResource
         ?int $limit = null,
         ?string $sortOrder = null,
         ?string $nextToken = null,
-        ?string $createdAfter = null,
-        ?string $createdBefore = null,
-        ?string $updatedAfter = null,
-        ?string $updatedBefore = null,
+        ?\DateTime $createdAfter = null,
+        ?\DateTime $createdBefore = null,
+        ?\DateTime $updatedAfter = null,
+        ?\DateTime $updatedBefore = null,
         ?string $purchaseOrderNumber = null,
         ?string $purchaseOrderStatus = null,
         ?string $itemConfirmationStatus = null,

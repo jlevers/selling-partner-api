@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Responses\CustomerInvoice;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Responses\ErrorList;
 
@@ -22,6 +23,8 @@ class GetCustomerInvoice extends Request
     public function __construct(
         protected string $purchaseOrderNumber,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/vendor/directFulfillment/shipping/2021-12-28/customerInvoices/{purchaseOrderNumber}', 'GET', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

@@ -23,7 +23,7 @@ final class AffordabilityExpenseEvent extends BaseDto
      * @param  Currency  $taxTypeSgst A currency type and amount.
      * @param  Currency  $taxTypeIgst A currency type and amount.
      * @param  ?string  $amazonOrderId An Amazon-defined identifier for an order.
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      * @param  ?string  $marketplaceId An encrypted, Amazon-defined marketplace identifier.
      * @param  ?string  $transactionType Indicates the type of transaction.
      *
@@ -40,7 +40,7 @@ final class AffordabilityExpenseEvent extends BaseDto
         public readonly Currency $taxTypeSgst,
         public readonly Currency $taxTypeIgst,
         public readonly ?string $amazonOrderId = null,
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
         public readonly ?string $marketplaceId = null,
         public readonly ?string $transactionType = null,
         public readonly ?Currency $baseExpense = null,

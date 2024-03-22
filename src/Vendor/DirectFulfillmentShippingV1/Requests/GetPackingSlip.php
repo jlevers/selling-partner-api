@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Responses\GetPackingSlipResponse;
 
 /**
@@ -21,6 +22,8 @@ class GetPackingSlip extends Request
     public function __construct(
         protected string $purchaseOrderNumber,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/vendor/directFulfillment/shipping/v1/packingSlips/{purchaseOrderNumber}', 'GET', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

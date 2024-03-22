@@ -36,10 +36,10 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  ?string  $queryStartDate A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
+     * @param  ?DateTime  $queryStartDate A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
      * @param  ?string  $nextToken A string token returned in the response to your previous request.
      */
-    public function listAllFulfillmentOrders(?string $queryStartDate = null, ?string $nextToken = null): Response
+    public function listAllFulfillmentOrders(?\DateTime $queryStartDate = null, ?string $nextToken = null): Response
     {
         $request = new ListAllFulfillmentOrders($queryStartDate, $nextToken);
 

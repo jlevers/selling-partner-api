@@ -10,18 +10,18 @@ final class FulfillmentPreviewShipment extends BaseDto
 
     /**
      * @param  FulfillmentPreviewItem[]  $fulfillmentPreviewItems An array of fulfillment preview item information.
-     * @param  ?string  $earliestShipDate
-     * @param  ?string  $latestShipDate
-     * @param  ?string  $earliestArrivalDate
-     * @param  ?string  $latestArrivalDate
+     * @param  ?DateTime  $earliestShipDate
+     * @param  ?DateTime  $latestShipDate
+     * @param  ?DateTime  $earliestArrivalDate
+     * @param  ?DateTime  $latestArrivalDate
      * @param  ?string[]  $shippingNotes Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
      */
     public function __construct(
         public readonly array $fulfillmentPreviewItems,
-        public readonly ?string $earliestShipDate = null,
-        public readonly ?string $latestShipDate = null,
-        public readonly ?string $earliestArrivalDate = null,
-        public readonly ?string $latestArrivalDate = null,
+        public readonly ?\DateTime $earliestShipDate = null,
+        public readonly ?\DateTime $latestShipDate = null,
+        public readonly ?\DateTime $earliestArrivalDate = null,
+        public readonly ?\DateTime $latestArrivalDate = null,
         public readonly ?array $shippingNotes = null,
     ) {
     }

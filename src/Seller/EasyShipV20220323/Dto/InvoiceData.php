@@ -8,11 +8,11 @@ final class InvoiceData extends BaseDto
 {
     /**
      * @param  string  $invoiceNumber A string of up to 255 characters.
-     * @param  ?string  $invoiceDate A datetime value in ISO 8601 format.
+     * @param  ?DateTime  $invoiceDate A datetime value in ISO 8601 format.
      */
     public function __construct(
         public readonly string $invoiceNumber,
-        public readonly ?string $invoiceDate = null,
+        public readonly ?\DateTime $invoiceDate = null,
     ) {
     }
 }

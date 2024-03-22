@@ -23,7 +23,7 @@ final class AdditionalSellerInput extends BaseDto
      * @param  ?string  $valueAsString The value when the data type is string.
      * @param  ?bool  $valueAsBoolean The value when the data type is boolean.
      * @param  ?int  $valueAsInteger The value when the data type is integer.
-     * @param  ?string  $valueAsTimestamp
+     * @param  ?DateTime  $valueAsTimestamp
      * @param  ?Address  $valueAsAddress The postal address information.
      * @param  ?Weight  $valueAsWeight The weight.
      * @param  ?Length  $valueAsDimension The length.
@@ -34,7 +34,7 @@ final class AdditionalSellerInput extends BaseDto
         public readonly ?string $valueAsString = null,
         public readonly ?bool $valueAsBoolean = null,
         public readonly ?int $valueAsInteger = null,
-        public readonly ?string $valueAsTimestamp = null,
+        public readonly ?\DateTime $valueAsTimestamp = null,
         public readonly ?Address $valueAsAddress = null,
         public readonly ?Weight $valueAsWeight = null,
         public readonly ?Length $valueAsDimension = null,

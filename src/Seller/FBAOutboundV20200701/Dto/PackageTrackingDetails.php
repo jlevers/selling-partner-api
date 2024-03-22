@@ -17,8 +17,8 @@ final class PackageTrackingDetails extends BaseDto
      * @param  ?string  $carrierCode The name of the carrier.
      * @param  ?string  $carrierPhoneNumber The phone number of the carrier.
      * @param  ?string  $carrierUrl The URL of the carrier's website.
-     * @param  ?string  $shipDate
-     * @param  ?string  $estimatedArrivalDate
+     * @param  ?DateTime  $shipDate
+     * @param  ?DateTime  $estimatedArrivalDate
      * @param  ?TrackingAddress  $shipToAddress Address information for tracking the package.
      * @param  ?string  $currentStatus The current delivery status of the package.
      * @param  ?string  $currentStatusDescription Description corresponding to the CurrentStatus value.
@@ -33,8 +33,8 @@ final class PackageTrackingDetails extends BaseDto
         public readonly ?string $carrierCode = null,
         public readonly ?string $carrierPhoneNumber = null,
         public readonly ?string $carrierUrl = null,
-        public readonly ?string $shipDate = null,
-        public readonly ?string $estimatedArrivalDate = null,
+        public readonly ?\DateTime $shipDate = null,
+        public readonly ?\DateTime $estimatedArrivalDate = null,
         public readonly ?TrackingAddress $shipToAddress = null,
         public readonly ?string $currentStatus = null,
         public readonly ?string $currentStatusDescription = null,

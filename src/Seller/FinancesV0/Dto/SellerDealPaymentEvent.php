@@ -7,7 +7,7 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class SellerDealPaymentEvent extends BaseDto
 {
     /**
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      * @param  ?string  $dealId The unique identifier of the deal.
      * @param  ?string  $dealDescription The internal description of the deal.
      * @param  ?string  $eventType The type of event: SellerDealComplete.
@@ -17,7 +17,7 @@ final class SellerDealPaymentEvent extends BaseDto
      * @param  ?Currency  $totalAmount A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
         public readonly ?string $dealId = null,
         public readonly ?string $dealDescription = null,
         public readonly ?string $eventType = null,

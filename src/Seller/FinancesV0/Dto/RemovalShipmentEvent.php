@@ -17,7 +17,7 @@ final class RemovalShipmentEvent extends BaseDto
     protected static array $complexArrayTypes = ['removalShipmentItemList' => [RemovalShipmentItem::class]];
 
     /**
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      * @param  ?string  $merchantOrderId The merchant removal orderId.
      * @param  ?string  $orderId The identifier for the removal shipment order.
      * @param  ?string  $transactionType The type of removal order.
@@ -28,7 +28,7 @@ final class RemovalShipmentEvent extends BaseDto
      * @param  RemovalShipmentItem[]|null  $removalShipmentItemList A list of information about removal shipment items.
      */
     public function __construct(
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
         public readonly ?string $merchantOrderId = null,
         public readonly ?string $orderId = null,
         public readonly ?string $transactionType = null,

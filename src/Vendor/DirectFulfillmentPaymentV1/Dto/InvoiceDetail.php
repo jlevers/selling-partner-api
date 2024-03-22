@@ -15,7 +15,7 @@ final class InvoiceDetail extends BaseDto
 
     /**
      * @param  string  $invoiceNumber The unique invoice number.
-     * @param  string  $invoiceDate Invoice date.
+     * @param  DateTime  $invoiceDate Invoice date.
      * @param  Money  $invoiceTotal An amount of money, including units in the form of currency.
      * @param  ?string  $referenceNumber An additional unique reference number used for regulatory or other purposes.
      * @param  ?PartyIdentification  $billToParty
@@ -28,7 +28,7 @@ final class InvoiceDetail extends BaseDto
      */
     public function __construct(
         public readonly string $invoiceNumber,
-        public readonly string $invoiceDate,
+        public readonly \DateTime $invoiceDate,
         public readonly PartyIdentification $remitToParty,
         public readonly PartyIdentification $shipFromParty,
         public readonly Money $invoiceTotal,

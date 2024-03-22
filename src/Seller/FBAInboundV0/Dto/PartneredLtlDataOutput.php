@@ -28,8 +28,11 @@ final class PartneredLtlDataOutput extends BaseDto
 
     /**
      * @param  Contact  $contact Contact information for the person in the seller's organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.
+     * @param  DateTime  $freightReadyDate
      * @param  Pallet[]  $palletList A list of pallet information.
      * @param  Weight  $totalWeight The weight of the package.
+     * @param  DateTime  $previewPickupDate
+     * @param  DateTime  $previewDeliveryDate
      * @param  string  $previewFreightClass The freight class of the shipment. For information about determining the freight class, contact the carrier.
      * @param  string  $amazonReferenceId A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
      * @param  bool  $isBillOfLadingAvailable Indicates whether the bill of lading for the shipment is available.
@@ -42,11 +45,11 @@ final class PartneredLtlDataOutput extends BaseDto
     public function __construct(
         public readonly Contact $contact,
         public readonly int $boxCount,
-        public readonly string $freightReadyDate,
+        public readonly \DateTime $freightReadyDate,
         public readonly array $palletList,
         public readonly Weight $totalWeight,
-        public readonly string $previewPickupDate,
-        public readonly string $previewDeliveryDate,
+        public readonly \DateTime $previewPickupDate,
+        public readonly \DateTime $previewDeliveryDate,
         public readonly string $previewFreightClass,
         public readonly string $amazonReferenceId,
         public readonly bool $isBillOfLadingAvailable,

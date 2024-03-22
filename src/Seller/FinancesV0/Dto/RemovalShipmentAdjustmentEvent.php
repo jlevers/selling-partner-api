@@ -20,7 +20,7 @@ final class RemovalShipmentAdjustmentEvent extends BaseDto
     ];
 
     /**
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      * @param  ?string  $adjustmentEventId The unique identifier for the adjustment event.
      * @param  ?string  $merchantOrderId The merchant removal orderId.
      * @param  ?string  $orderId The orderId for shipping inventory.
@@ -32,7 +32,7 @@ final class RemovalShipmentAdjustmentEvent extends BaseDto
      * @param  RemovalShipmentItemAdjustment[]|null  $removalShipmentItemAdjustmentList A comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory.
      */
     public function __construct(
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
         public readonly ?string $adjustmentEventId = null,
         public readonly ?string $merchantOrderId = null,
         public readonly ?string $orderId = null,

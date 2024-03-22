@@ -12,7 +12,7 @@ final class InventorySummary extends BaseDto
      * @param  ?string  $sellerSku The seller SKU of the item.
      * @param  ?string  $condition The condition of the item as described by the seller (for example, New Item).
      * @param  ?InventoryDetails  $inventoryDetails Summarized inventory details. This object will not appear if the details parameter in the request is false.
-     * @param  ?string  $lastUpdatedTime The date and time that any quantity was last updated.
+     * @param  ?DateTime  $lastUpdatedTime The date and time that any quantity was last updated.
      * @param  ?string  $productName The localized language product title of the item within the specific marketplace.
      * @param  ?int  $totalQuantity The total number of units in an inbound shipment or in Amazon fulfillment centers.
      */
@@ -22,7 +22,7 @@ final class InventorySummary extends BaseDto
         public readonly ?string $sellerSku = null,
         public readonly ?string $condition = null,
         public readonly ?InventoryDetails $inventoryDetails = null,
-        public readonly ?string $lastUpdatedTime = null,
+        public readonly ?\DateTime $lastUpdatedTime = null,
         public readonly ?string $productName = null,
         public readonly ?int $totalQuantity = null,
     ) {

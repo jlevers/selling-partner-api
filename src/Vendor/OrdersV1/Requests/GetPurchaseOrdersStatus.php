@@ -19,10 +19,10 @@ class GetPurchaseOrdersStatus extends Request
      * @param  ?int  $limit The limit to the number of records returned. Default value is 100 records.
      * @param  ?string  $sortOrder Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken Used for pagination when there are more purchase orders than the specified result size limit.
-     * @param  ?string  $createdAfter Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $createdBefore Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $updatedAfter Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $updatedBefore Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdAfter Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdBefore Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $updatedAfter Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $updatedBefore Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $purchaseOrderNumber Provides purchase order status for the specified purchase order number.
      * @param  ?string  $purchaseOrderStatus Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
      * @param  ?string  $itemConfirmationStatus Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
@@ -34,10 +34,10 @@ class GetPurchaseOrdersStatus extends Request
         protected ?int $limit = null,
         protected ?string $sortOrder = null,
         protected ?string $nextToken = null,
-        protected ?string $createdAfter = null,
-        protected ?string $createdBefore = null,
-        protected ?string $updatedAfter = null,
-        protected ?string $updatedBefore = null,
+        protected ?\DateTime $createdAfter = null,
+        protected ?\DateTime $createdBefore = null,
+        protected ?\DateTime $updatedAfter = null,
+        protected ?\DateTime $updatedBefore = null,
         protected ?string $purchaseOrderNumber = null,
         protected ?string $purchaseOrderStatus = null,
         protected ?string $itemConfirmationStatus = null,
@@ -53,10 +53,10 @@ class GetPurchaseOrdersStatus extends Request
             'limit' => $this->limit,
             'sortOrder' => $this->sortOrder,
             'nextToken' => $this->nextToken,
-            'createdAfter' => $this->createdAfter,
-            'createdBefore' => $this->createdBefore,
-            'updatedAfter' => $this->updatedAfter,
-            'updatedBefore' => $this->updatedBefore,
+            'createdAfter' => $this->createdAfter?->format(\DateTime::RFC3339),
+            'createdBefore' => $this->createdBefore?->format(\DateTime::RFC3339),
+            'updatedAfter' => $this->updatedAfter?->format(\DateTime::RFC3339),
+            'updatedBefore' => $this->updatedBefore?->format(\DateTime::RFC3339),
             'purchaseOrderNumber' => $this->purchaseOrderNumber,
             'purchaseOrderStatus' => $this->purchaseOrderStatus,
             'itemConfirmationStatus' => $this->itemConfirmationStatus,

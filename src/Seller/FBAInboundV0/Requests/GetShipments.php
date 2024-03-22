@@ -20,8 +20,8 @@ class GetShipments extends Request
      * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
      * @param  ?array  $shipmentStatusList A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify.
      * @param  ?array  $shipmentIdList A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned.
-     * @param  ?string  $lastUpdatedAfter A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
-     * @param  ?string  $lastUpdatedBefore A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
+     * @param  ?DateTime  $lastUpdatedAfter A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller.
+     * @param  ?DateTime  $lastUpdatedBefore A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller.
      * @param  ?string  $nextToken A string token returned in the response to your previous request.
      */
     public function __construct(
@@ -29,8 +29,8 @@ class GetShipments extends Request
         protected string $marketplaceId,
         protected ?array $shipmentStatusList = null,
         protected ?array $shipmentIdList = null,
-        protected ?string $lastUpdatedAfter = null,
-        protected ?string $lastUpdatedBefore = null,
+        protected ?\DateTime $lastUpdatedAfter = null,
+        protected ?\DateTime $lastUpdatedBefore = null,
         protected ?string $nextToken = null,
     ) {
     }
@@ -42,8 +42,8 @@ class GetShipments extends Request
             'MarketplaceId' => $this->marketplaceId,
             'ShipmentStatusList' => $this->shipmentStatusList,
             'ShipmentIdList' => $this->shipmentIdList,
-            'LastUpdatedAfter' => $this->lastUpdatedAfter,
-            'LastUpdatedBefore' => $this->lastUpdatedBefore,
+            'LastUpdatedAfter' => $this->lastUpdatedAfter?->format(\DateTime::RFC3339),
+            'LastUpdatedBefore' => $this->lastUpdatedBefore?->format(\DateTime::RFC3339),
             'NextToken' => $this->nextToken,
         ]);
     }

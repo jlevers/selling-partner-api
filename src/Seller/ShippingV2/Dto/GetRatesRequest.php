@@ -14,7 +14,7 @@ final class GetRatesRequest extends BaseDto
      * @param  ChannelDetails  $channelDetails Shipment source channel related information.
      * @param  ?Address  $shipTo The address.
      * @param  ?Address  $returnTo The address.
-     * @param  ?string  $shipDate The ship date and time (the requested pickup). This defaults to the current date and time.
+     * @param  ?DateTime  $shipDate The ship date and time (the requested pickup). This defaults to the current date and time.
      * @param  ?ValueAddedServiceDetails  $valueAddedServices A collection of supported value-added services.
      * @param  TaxDetail[]|null  $taxDetails A list of tax detail information.
      */
@@ -24,7 +24,7 @@ final class GetRatesRequest extends BaseDto
         public readonly ChannelDetails $channelDetails,
         public readonly ?Address $shipTo = null,
         public readonly ?Address $returnTo = null,
-        public readonly ?string $shipDate = null,
+        public readonly ?\DateTime $shipDate = null,
         public readonly ?ValueAddedServiceDetails $valueAddedServices = null,
         public readonly ?array $taxDetails = null,
     ) {

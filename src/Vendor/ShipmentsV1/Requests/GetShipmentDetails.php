@@ -19,22 +19,22 @@ class GetShipmentDetails extends Request
      * @param  ?int  $limit The limit to the number of records returned. Default value is 50 records.
      * @param  ?string  $sortOrder Sort in ascending or descending order by purchase order creation date.
      * @param  ?string  $nextToken Used for pagination when there are more shipments than the specified result size limit.
-     * @param  ?string  $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format.
-     * @param  ?string  $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format.
-     * @param  ?string  $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format.
-     * @param  ?string  $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format.
-     * @param  ?string  $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format.
-     * @param  ?string  $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format.
-     * @param  ?string  $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format.
-     * @param  ?string  $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format.
      * @param  ?string  $currentShipmentStatus Get Shipment Details by passing Current shipment status.
      * @param  ?string  $vendorShipmentIdentifier Get Shipment Details by passing Vendor Shipment ID
      * @param  ?string  $buyerReferenceNumber Get Shipment Details by passing buyer Reference ID
@@ -45,22 +45,22 @@ class GetShipmentDetails extends Request
         protected ?int $limit = null,
         protected ?string $sortOrder = null,
         protected ?string $nextToken = null,
-        protected ?string $createdAfter = null,
-        protected ?string $createdBefore = null,
-        protected ?string $shipmentConfirmedBefore = null,
-        protected ?string $shipmentConfirmedAfter = null,
-        protected ?string $packageLabelCreatedBefore = null,
-        protected ?string $packageLabelCreatedAfter = null,
-        protected ?string $shippedBefore = null,
-        protected ?string $shippedAfter = null,
-        protected ?string $estimatedDeliveryBefore = null,
-        protected ?string $estimatedDeliveryAfter = null,
-        protected ?string $shipmentDeliveryBefore = null,
-        protected ?string $shipmentDeliveryAfter = null,
-        protected ?string $requestedPickUpBefore = null,
-        protected ?string $requestedPickUpAfter = null,
-        protected ?string $scheduledPickUpBefore = null,
-        protected ?string $scheduledPickUpAfter = null,
+        protected ?\DateTime $createdAfter = null,
+        protected ?\DateTime $createdBefore = null,
+        protected ?\DateTime $shipmentConfirmedBefore = null,
+        protected ?\DateTime $shipmentConfirmedAfter = null,
+        protected ?\DateTime $packageLabelCreatedBefore = null,
+        protected ?\DateTime $packageLabelCreatedAfter = null,
+        protected ?\DateTime $shippedBefore = null,
+        protected ?\DateTime $shippedAfter = null,
+        protected ?\DateTime $estimatedDeliveryBefore = null,
+        protected ?\DateTime $estimatedDeliveryAfter = null,
+        protected ?\DateTime $shipmentDeliveryBefore = null,
+        protected ?\DateTime $shipmentDeliveryAfter = null,
+        protected ?\DateTime $requestedPickUpBefore = null,
+        protected ?\DateTime $requestedPickUpAfter = null,
+        protected ?\DateTime $scheduledPickUpBefore = null,
+        protected ?\DateTime $scheduledPickUpAfter = null,
         protected ?string $currentShipmentStatus = null,
         protected ?string $vendorShipmentIdentifier = null,
         protected ?string $buyerReferenceNumber = null,
@@ -75,22 +75,22 @@ class GetShipmentDetails extends Request
             'limit' => $this->limit,
             'sortOrder' => $this->sortOrder,
             'nextToken' => $this->nextToken,
-            'createdAfter' => $this->createdAfter,
-            'createdBefore' => $this->createdBefore,
-            'shipmentConfirmedBefore' => $this->shipmentConfirmedBefore,
-            'shipmentConfirmedAfter' => $this->shipmentConfirmedAfter,
-            'packageLabelCreatedBefore' => $this->packageLabelCreatedBefore,
-            'packageLabelCreatedAfter' => $this->packageLabelCreatedAfter,
-            'shippedBefore' => $this->shippedBefore,
-            'shippedAfter' => $this->shippedAfter,
-            'estimatedDeliveryBefore' => $this->estimatedDeliveryBefore,
-            'estimatedDeliveryAfter' => $this->estimatedDeliveryAfter,
-            'shipmentDeliveryBefore' => $this->shipmentDeliveryBefore,
-            'shipmentDeliveryAfter' => $this->shipmentDeliveryAfter,
-            'requestedPickUpBefore' => $this->requestedPickUpBefore,
-            'requestedPickUpAfter' => $this->requestedPickUpAfter,
-            'scheduledPickUpBefore' => $this->scheduledPickUpBefore,
-            'scheduledPickUpAfter' => $this->scheduledPickUpAfter,
+            'createdAfter' => $this->createdAfter?->format(\DateTime::RFC3339),
+            'createdBefore' => $this->createdBefore?->format(\DateTime::RFC3339),
+            'shipmentConfirmedBefore' => $this->shipmentConfirmedBefore?->format(\DateTime::RFC3339),
+            'shipmentConfirmedAfter' => $this->shipmentConfirmedAfter?->format(\DateTime::RFC3339),
+            'packageLabelCreatedBefore' => $this->packageLabelCreatedBefore?->format(\DateTime::RFC3339),
+            'packageLabelCreatedAfter' => $this->packageLabelCreatedAfter?->format(\DateTime::RFC3339),
+            'shippedBefore' => $this->shippedBefore?->format(\DateTime::RFC3339),
+            'shippedAfter' => $this->shippedAfter?->format(\DateTime::RFC3339),
+            'estimatedDeliveryBefore' => $this->estimatedDeliveryBefore?->format(\DateTime::RFC3339),
+            'estimatedDeliveryAfter' => $this->estimatedDeliveryAfter?->format(\DateTime::RFC3339),
+            'shipmentDeliveryBefore' => $this->shipmentDeliveryBefore?->format(\DateTime::RFC3339),
+            'shipmentDeliveryAfter' => $this->shipmentDeliveryAfter?->format(\DateTime::RFC3339),
+            'requestedPickUpBefore' => $this->requestedPickUpBefore?->format(\DateTime::RFC3339),
+            'requestedPickUpAfter' => $this->requestedPickUpAfter?->format(\DateTime::RFC3339),
+            'scheduledPickUpBefore' => $this->scheduledPickUpBefore?->format(\DateTime::RFC3339),
+            'scheduledPickUpAfter' => $this->scheduledPickUpAfter?->format(\DateTime::RFC3339),
             'currentShipmentStatus' => $this->currentShipmentStatus,
             'vendorShipmentIdentifier' => $this->vendorShipmentIdentifier,
             'buyerReferenceNumber' => $this->buyerReferenceNumber,

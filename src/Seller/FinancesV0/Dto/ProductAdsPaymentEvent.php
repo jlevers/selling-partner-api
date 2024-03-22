@@ -7,7 +7,7 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ProductAdsPaymentEvent extends BaseDto
 {
     /**
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      * @param  ?string  $transactionType Indicates if the transaction is for a charge or a refund.
      *
      * Possible values:
@@ -21,7 +21,7 @@ final class ProductAdsPaymentEvent extends BaseDto
      * @param  ?Currency  $transactionValue A currency type and amount.
      */
     public function __construct(
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
         public readonly ?string $transactionType = null,
         public readonly ?string $invoiceId = null,
         public readonly ?Currency $baseValue = null,

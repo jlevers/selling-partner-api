@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Responses\ErrorList;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Responses\OrderList;
 
@@ -17,8 +18,8 @@ class GetOrders extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string  $createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdAfter Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdBefore Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses.
      * @param  ?string  $status Returns only the purchase orders that match the specified status. If not specified, the result will contain orders that match any status.
      * @param  ?int  $limit The limit to the number of purchase orders returned.
@@ -27,8 +28,8 @@ class GetOrders extends Request
      * @param  ?string  $includeDetails When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned.
      */
     public function __construct(
-        protected string $createdAfter,
-        protected string $createdBefore,
+        protected \DateTime $createdAfter,
+        protected \DateTime $createdBefore,
         protected ?string $shipFromPartyId = null,
         protected ?string $status = null,
         protected ?int $limit = null,
@@ -36,13 +37,15 @@ class GetOrders extends Request
         protected ?string $nextToken = null,
         protected ?string $includeDetails = null,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/vendor/directFulfillment/orders/2021-12-28/purchaseOrders', 'GET', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function defaultQuery(): array
     {
         return array_filter([
-            'createdAfter' => $this->createdAfter,
-            'createdBefore' => $this->createdBefore,
+            'createdAfter' => $this->createdAfter?->format(\DateTime::RFC3339),
+            'createdBefore' => $this->createdBefore?->format(\DateTime::RFC3339),
             'shipFromPartyId' => $this->shipFromPartyId,
             'status' => $this->status,
             'limit' => $this->limit,

@@ -14,13 +14,13 @@ final class PartneredEstimate extends BaseDto
 
     /**
      * @param  Amount  $amount The monetary value.
-     * @param  ?string  $confirmDeadline
-     * @param  ?string  $voidDeadline
+     * @param  ?DateTime  $confirmDeadline
+     * @param  ?DateTime  $voidDeadline
      */
     public function __construct(
         public readonly Amount $amount,
-        public readonly ?string $confirmDeadline = null,
-        public readonly ?string $voidDeadline = null,
+        public readonly ?\DateTime $confirmDeadline = null,
+        public readonly ?\DateTime $voidDeadline = null,
     ) {
     }
 }

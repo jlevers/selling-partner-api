@@ -20,16 +20,16 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Requests\SubmitShipping
 class Api extends BaseResource
 {
     /**
-     * @param  string  $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string  $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
      * @param  ?int  $limit The limit to the number of records returned.
      * @param  ?string  $sortOrder Sort ASC or DESC by order creation date.
      * @param  ?string  $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getShippingLabels(
-        string $createdAfter,
-        string $createdBefore,
+        \DateTime $createdAfter,
+        \DateTime $createdBefore,
         ?string $shipFromPartyId = null,
         ?int $limit = null,
         ?string $sortOrder = null,
@@ -53,8 +53,6 @@ class Api extends BaseResource
     public function getShippingLabel(string $purchaseOrderNumber): Response
     {
         $request = new GetShippingLabel($purchaseOrderNumber);
-        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/v1/shippingLabels/{purchaseOrderNumber}', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -76,24 +74,22 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string  $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
      * @param  ?int  $limit The limit to the number of records returned
      * @param  ?string  $sortOrder Sort ASC or DESC by order creation date.
      * @param  ?string  $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getCustomerInvoices(
-        string $createdAfter,
-        string $createdBefore,
+        \DateTime $createdAfter,
+        \DateTime $createdBefore,
         ?string $shipFromPartyId = null,
         ?int $limit = null,
         ?string $sortOrder = null,
         ?string $nextToken = null,
     ): Response {
         $request = new GetCustomerInvoices($createdAfter, $createdBefore, $shipFromPartyId, $limit, $sortOrder, $nextToken);
-        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/v1/customerInvoices', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -104,31 +100,27 @@ class Api extends BaseResource
     public function getCustomerInvoice(string $purchaseOrderNumber): Response
     {
         $request = new GetCustomerInvoice($purchaseOrderNumber);
-        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/v1/customerInvoices/{purchaseOrderNumber}', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
 
     /**
-     * @param  string  $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  string  $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
      * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
      * @param  ?int  $limit The limit to the number of records returned
      * @param  ?string  $sortOrder Sort ASC or DESC by packing slip creation date.
      * @param  ?string  $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getPackingSlips(
-        string $createdAfter,
-        string $createdBefore,
+        \DateTime $createdAfter,
+        \DateTime $createdBefore,
         ?string $shipFromPartyId = null,
         ?int $limit = null,
         ?string $sortOrder = null,
         ?string $nextToken = null,
     ): Response {
         $request = new GetPackingSlips($createdAfter, $createdBefore, $shipFromPartyId, $limit, $sortOrder, $nextToken);
-        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/v1/packingSlips', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }
@@ -139,8 +131,6 @@ class Api extends BaseResource
     public function getPackingSlip(string $purchaseOrderNumber): Response
     {
         $request = new GetPackingSlip($purchaseOrderNumber);
-        $authenticator = $this->connector->restrictedAuth('/vendor/directFulfillment/shipping/v1/packingSlips/{purchaseOrderNumber}', 'GET', []);
-        $request->authenticate($authenticator);
 
         return $this->connector->send($request);
     }

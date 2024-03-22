@@ -17,7 +17,7 @@ final class Invoice extends BaseDto
     /**
      * @param  string  $invoiceType Identifies the type of invoice.
      * @param  string  $id Unique number relating to the charges defined in this document. This will be invoice number if the document type is Invoice or CreditNote number if the document type is Credit Note. Failure to provide this reference will result in a rejection.
-     * @param  string  $date Defines a date and time according to ISO8601.
+     * @param  DateTime  $date Defines a date and time according to ISO8601.
      * @param  Money  $invoiceTotal An amount of money, including units in the form of currency.
      * @param  ?string  $referenceNumber An additional unique reference number used for regulatory or other purposes.
      * @param  ?PartyIdentification  $shipToParty
@@ -33,7 +33,7 @@ final class Invoice extends BaseDto
     public function __construct(
         public readonly string $invoiceType,
         public readonly string $id,
-        public readonly string $date,
+        public readonly \DateTime $date,
         public readonly PartyIdentification $remitToParty,
         public readonly Money $invoiceTotal,
         public readonly ?string $referenceNumber = null,

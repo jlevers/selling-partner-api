@@ -27,7 +27,7 @@ final class RetrochargeEvent extends BaseDto
      *
      * * RetrochargeReversal
      * @param  ?string  $amazonOrderId An Amazon-defined identifier for an order.
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      * @param  ?Currency  $baseTax A currency type and amount.
      * @param  ?Currency  $shippingTax A currency type and amount.
      * @param  ?string  $marketplaceName The name of the marketplace where the retrocharge event occurred.
@@ -36,7 +36,7 @@ final class RetrochargeEvent extends BaseDto
     public function __construct(
         public readonly ?string $retrochargeEventType = null,
         public readonly ?string $amazonOrderId = null,
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
         public readonly ?Currency $baseTax = null,
         public readonly ?Currency $shippingTax = null,
         public readonly ?string $marketplaceName = null,

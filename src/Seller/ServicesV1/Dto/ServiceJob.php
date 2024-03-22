@@ -13,7 +13,7 @@ final class ServiceJob extends BaseDto
     ];
 
     /**
-     * @param  ?string  $createTime The date and time of the creation of the job in ISO 8601 format.
+     * @param  ?DateTime  $createTime The date and time of the creation of the job in ISO 8601 format.
      * @param  ?string  $serviceJobId Amazon identifier for the service job.
      * @param  ?string  $serviceJobStatus The status of the service job.
      * @param  ?ScopeOfWork  $scopeOfWork The scope of work for the order.
@@ -29,7 +29,7 @@ final class ServiceJob extends BaseDto
      * @param  ?ServiceLocation  $serviceLocation Information about the location of the service job.
      */
     public function __construct(
-        public readonly ?string $createTime = null,
+        public readonly ?\DateTime $createTime = null,
         public readonly ?string $serviceJobId = null,
         public readonly ?string $serviceJobStatus = null,
         public readonly ?ScopeOfWork $scopeOfWork = null,

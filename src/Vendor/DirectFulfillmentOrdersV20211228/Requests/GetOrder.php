@@ -6,6 +6,7 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Responses\ErrorList;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Responses\Order;
 
@@ -22,6 +23,8 @@ class GetOrder extends Request
     public function __construct(
         protected string $purchaseOrderNumber,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/{purchaseOrderNumber}', 'GET', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

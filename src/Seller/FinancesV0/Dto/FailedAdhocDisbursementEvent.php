@@ -29,7 +29,7 @@ final class FailedAdhocDisbursementEvent extends BaseDto
      *
      * Example `HARD_DECLINED`
      * @param  ?Currency  $transferAmount A currency type and amount.
-     * @param  ?string  $postedDate
+     * @param  ?DateTime  $postedDate
      */
     public function __construct(
         public readonly ?string $fundsTransfersType = null,
@@ -38,7 +38,7 @@ final class FailedAdhocDisbursementEvent extends BaseDto
         public readonly ?string $paymentDisbursementType = null,
         public readonly ?string $status = null,
         public readonly ?Currency $transferAmount = null,
-        public readonly ?string $postedDate = null,
+        public readonly ?\DateTime $postedDate = null,
     ) {
     }
 }

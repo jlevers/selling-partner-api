@@ -12,12 +12,12 @@ final class ConfirmPreorderResult extends BaseDto
     ];
 
     /**
-     * @param  ?string  $confirmedNeedByDate
-     * @param  ?string  $confirmedFulfillableDate
+     * @param  ?DateTime  $confirmedNeedByDate
+     * @param  ?DateTime  $confirmedFulfillableDate
      */
     public function __construct(
-        public readonly ?string $confirmedNeedByDate = null,
-        public readonly ?string $confirmedFulfillableDate = null,
+        public readonly ?\DateTime $confirmedNeedByDate = null,
+        public readonly ?\DateTime $confirmedFulfillableDate = null,
     ) {
     }
 }

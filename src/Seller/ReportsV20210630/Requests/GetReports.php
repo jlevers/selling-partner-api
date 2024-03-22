@@ -21,8 +21,8 @@ class GetReports extends Request
      * @param  ?array  $processingStatuses A list of processing statuses used to filter reports.
      * @param  ?array  $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
      * @param  ?int  $pageSize The maximum number of reports to return in a single call.
-     * @param  ?string  $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
-     * @param  ?string  $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
+     * @param  ?DateTime  $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days.
+     * @param  ?DateTime  $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now.
      * @param  ?string  $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail.
      */
     public function __construct(
@@ -30,8 +30,8 @@ class GetReports extends Request
         protected ?array $processingStatuses = null,
         protected ?array $marketplaceIds = null,
         protected ?int $pageSize = null,
-        protected ?string $createdSince = null,
-        protected ?string $createdUntil = null,
+        protected ?\DateTime $createdSince = null,
+        protected ?\DateTime $createdUntil = null,
         protected ?string $nextToken = null,
     ) {
     }
@@ -43,8 +43,8 @@ class GetReports extends Request
             'processingStatuses' => $this->processingStatuses,
             'marketplaceIds' => $this->marketplaceIds,
             'pageSize' => $this->pageSize,
-            'createdSince' => $this->createdSince,
-            'createdUntil' => $this->createdUntil,
+            'createdSince' => $this->createdSince?->format(\DateTime::RFC3339),
+            'createdUntil' => $this->createdUntil?->format(\DateTime::RFC3339),
             'nextToken' => $this->nextToken,
         ]);
     }

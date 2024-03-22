@@ -29,8 +29,8 @@ final class ShipmentRequestDetails extends BaseDto
      * @param  Weight  $weight The weight.
      * @param  ShippingServiceOptions  $shippingServiceOptions Extra services provided by a carrier.
      * @param  ?string  $sellerOrderId A seller-defined order identifier.
-     * @param  ?string  $mustArriveByDate
-     * @param  ?string  $shipDate
+     * @param  ?DateTime  $mustArriveByDate
+     * @param  ?DateTime  $shipDate
      * @param  ?LabelCustomization  $labelCustomization Custom text for shipping labels.
      */
     public function __construct(
@@ -41,8 +41,8 @@ final class ShipmentRequestDetails extends BaseDto
         public readonly Weight $weight,
         public readonly ShippingServiceOptions $shippingServiceOptions,
         public readonly ?string $sellerOrderId = null,
-        public readonly ?string $mustArriveByDate = null,
-        public readonly ?string $shipDate = null,
+        public readonly ?\DateTime $mustArriveByDate = null,
+        public readonly ?\DateTime $shipDate = null,
         public readonly ?LabelCustomization $labelCustomization = null,
     ) {
     }

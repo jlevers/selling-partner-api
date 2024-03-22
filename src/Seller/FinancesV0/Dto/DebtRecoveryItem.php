@@ -16,14 +16,14 @@ final class DebtRecoveryItem extends BaseDto
     /**
      * @param  ?Currency  $recoveryAmount A currency type and amount.
      * @param  ?Currency  $originalAmount A currency type and amount.
-     * @param  ?string  $groupBeginDate
-     * @param  ?string  $groupEndDate
+     * @param  ?DateTime  $groupBeginDate
+     * @param  ?DateTime  $groupEndDate
      */
     public function __construct(
         public readonly ?Currency $recoveryAmount = null,
         public readonly ?Currency $originalAmount = null,
-        public readonly ?string $groupBeginDate = null,
-        public readonly ?string $groupEndDate = null,
+        public readonly ?\DateTime $groupBeginDate = null,
+        public readonly ?\DateTime $groupEndDate = null,
     ) {
     }
 }

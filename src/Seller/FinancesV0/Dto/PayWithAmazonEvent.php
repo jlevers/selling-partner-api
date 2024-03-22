@@ -23,7 +23,7 @@ final class PayWithAmazonEvent extends BaseDto
 
     /**
      * @param  ?string  $sellerOrderId An order identifier that is specified by the seller.
-     * @param  ?string  $transactionPostedDate
+     * @param  ?DateTime  $transactionPostedDate
      * @param  ?string  $businessObjectType The type of business object.
      * @param  ?string  $salesChannel The sales channel for the transaction.
      * @param  ?ChargeComponent  $charge A charge on the seller's account.
@@ -109,7 +109,7 @@ final class PayWithAmazonEvent extends BaseDto
      */
     public function __construct(
         public readonly ?string $sellerOrderId = null,
-        public readonly ?string $transactionPostedDate = null,
+        public readonly ?\DateTime $transactionPostedDate = null,
         public readonly ?string $businessObjectType = null,
         public readonly ?string $salesChannel = null,
         public readonly ?ChargeComponent $charge = null,

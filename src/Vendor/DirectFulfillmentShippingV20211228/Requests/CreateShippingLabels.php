@@ -8,6 +8,7 @@ use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\CreateShippingLabelsRequest;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Responses\ErrorList;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Responses\ShippingLabel;
@@ -29,6 +30,8 @@ class CreateShippingLabels extends Request implements HasBody
         protected string $purchaseOrderNumber,
         public CreateShippingLabelsRequest $createShippingLabelsRequest,
     ) {
+        $rdtMiddleware = new RestrictedDataToken('/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}', 'POST', []);
+        $this->middleware()->onRequest($rdtMiddleware);
     }
 
     public function resolveEndpoint(): string

@@ -53,7 +53,7 @@ class UpdateVersion extends Command
         $composerConfig['version'] = $newVersion;
         file_put_contents(
             $composerFile,
-            json_encode($composerConfig, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)
+            json_encode($composerConfig, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
         );
 
         $ynCommit = strtolower(readline('Do you want to commit version-related file changes? [Y/n] '));

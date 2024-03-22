@@ -26,7 +26,7 @@ final class InboundShipmentItem extends BaseDto
      * @param  ?string  $fulfillmentNetworkSku Amazon's fulfillment network SKU of the item.
      * @param  ?int  $quantityReceived The item quantity.
      * @param  ?int  $quantityInCase The item quantity.
-     * @param  ?string  $releaseDate
+     * @param  ?DateTime  $releaseDate
      * @param  PrepDetails[]|null  $prepDetailsList A list of preparation instructions and who is responsible for that preparation.
      */
     public function __construct(
@@ -36,7 +36,7 @@ final class InboundShipmentItem extends BaseDto
         public readonly ?string $fulfillmentNetworkSku = null,
         public readonly ?int $quantityReceived = null,
         public readonly ?int $quantityInCase = null,
-        public readonly ?string $releaseDate = null,
+        public readonly ?\DateTime $releaseDate = null,
         public readonly ?array $prepDetailsList = null,
     ) {
     }

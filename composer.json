@@ -1,6 +1,6 @@
 {
     "name": "jlevers/selling-partner-api",
-    "version": "5.9.0",
+    "version": "6.0.0",
     "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",
@@ -40,14 +40,16 @@
     },
     "autoload": {
         "psr-4": {
-          "SellingPartnerApi\\" : "src/"
+            "SellingPartnerApi\\": "src/"
         },
         "files": [
-          "src/Generator/constants.php"
+            "src/Generator/constants.php"
         ]
     },
     "autoload-dev": {
-        "psr-4": { "SellingPartnerApi\\Tests\\" : "test/" }
+        "psr-4": {
+            "SellingPartnerApi\\Tests\\": "test/"
+        }
     },
     "scripts": {
         "test": "vendor/bin/phpunit",

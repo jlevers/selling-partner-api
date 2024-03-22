@@ -32,6 +32,7 @@ class UpdateVersion extends Command
                 $newVersionRaw = readline("Current version is {$currentVersion}. Enter new version: ");
                 $versionParser = new VersionParser();
                 $newVersion = $versionParser->normalize($newVersionRaw);
+                $newVersion = implode('.', array_slice(explode('.', $newVersion), 0, 3));
             } catch (UnexpectedValueException $e) {
                 echo $e->getMessage().". Please try again.\n";
             }
@@ -43,33 +44,26 @@ class UpdateVersion extends Command
             return 0;
         }
 
-        $config['artifactVersion'] = $newVersion;
+        $config = json_decode(file_get_contents(GENERATOR_CONFIG_FILE), true);
+        $config['version'] = $newVersion;
+        file_put_contents(GENERATOR_CONFIG_FILE, json_encode($config, JSON_PRETTY_PRINT));
+
+        $composerFile = ROOT_DIR.'/composer.json';
+        $composerConfig = json_decode(file_get_contents($composerFile), true);
+        $composerConfig['version'] = $newVersion;
         file_put_contents(
-            RESOURCE_DIR.'/generator-config.json',
-            json_encode($config, JSON_PRETTY_PRINT)
+            $composerFile,
+            json_encode($composerConfig, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)
         );
 
-        $regenerate = userBool(readline("Version {$newVersion} has been saved to config.\nDo you want to re-generate versioning-related library files? [Y/n] "));
-        $commit = userBool(readline('Do you want to commit version-related file changes? [Y/n] '));
-
-        if (! $regenerate) {
-            return 0;
-        }
-
-        exec('cd ..');
+        $ynCommit = strtolower(readline('Do you want to commit version-related file changes? [Y/n] '));
+        $commit = $ynCommit === 'y' || $ynCommit === 'yes';
         if ($commit) {
             exec('git stash --include-untracked');
         }
 
-        generateSupportingFiles();
-
-        if (! $commit) {
-            echo "Done regenerating files.\n";
-
-            return 0;
-        }
-
-        exec("cd .. && git add . && git commit -m 'Update package version to $newVersion' && git stash pop");
+        $configFile = GENERATOR_CONFIG_FILE;
+        exec("git add $configFile $composerFile && git commit -m 'Update package version to $newVersion' && git stash pop");
 
         echo "\nVersioning-related changes have been committed.\n";
 

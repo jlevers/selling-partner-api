@@ -9,8 +9,8 @@ final class ItemImagesByMarketplace extends BaseDto
     protected static array $complexArrayTypes = ['images' => [ItemImage::class]];
 
     /**
-     * @param  string  $marketplaceId Amazon marketplace identifier.
-     * @param  ItemImage[]  $images Images for an item in the Amazon catalog for the indicated Amazon marketplace.
+     * @param  string  $marketplaceId  Amazon marketplace identifier.
+     * @param  ItemImage[]  $images  Images for an item in the Amazon catalog for the indicated Amazon marketplace.
      */
     public function __construct(
         public readonly string $marketplaceId,

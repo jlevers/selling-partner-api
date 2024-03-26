@@ -11,8 +11,8 @@ final class GetOrderAddressResponse extends BaseResponse
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?OrderAddress  $payload The shipping address for the order.
-     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  ?OrderAddress  $payload  The shipping address for the order.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?OrderAddress $payload = null,

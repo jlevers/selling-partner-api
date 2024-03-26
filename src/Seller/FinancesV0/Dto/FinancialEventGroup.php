@@ -21,21 +21,21 @@ final class FinancialEventGroup extends BaseDto
     ];
 
     /**
-     * @param  ?string  $financialEventGroupId A unique identifier for the financial event group.
-     * @param  ?string  $processingStatus The processing status of the financial event group indicates whether the balance of the financial event group is settled.
+     * @param  ?string  $financialEventGroupId  A unique identifier for the financial event group.
+     * @param  ?string  $processingStatus  The processing status of the financial event group indicates whether the balance of the financial event group is settled.
      *
      * Possible values:
      *
      * * Open
      *
      * * Closed
-     * @param  ?string  $fundTransferStatus The status of the fund transfer.
-     * @param  ?Currency  $originalTotal A currency type and amount.
-     * @param  ?Currency  $convertedTotal A currency type and amount.
+     * @param  ?string  $fundTransferStatus  The status of the fund transfer.
+     * @param  ?Currency  $originalTotal  A currency type and amount.
+     * @param  ?Currency  $convertedTotal  A currency type and amount.
      * @param  ?DateTime  $fundTransferDate
-     * @param  ?string  $traceId The trace identifier used by sellers to look up transactions externally.
-     * @param  ?string  $accountTail The account tail of the payment instrument.
-     * @param  ?Currency  $beginningBalance A currency type and amount.
+     * @param  ?string  $traceId  The trace identifier used by sellers to look up transactions externally.
+     * @param  ?string  $accountTail  The account tail of the payment instrument.
+     * @param  ?Currency  $beginningBalance  A currency type and amount.
      * @param  ?DateTime  $financialEventGroupStart
      * @param  ?DateTime  $financialEventGroupEnd
      */

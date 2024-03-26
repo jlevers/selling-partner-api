@@ -17,9 +17,9 @@ class UpdateSchedule extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $resourceId Resource (store) Identifier
-     * @param  UpdateScheduleRequest  $updateScheduleRequest Request schema for the `updateSchedule` operation.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
+     * @param  string  $resourceId  Resource (store) Identifier
+     * @param  UpdateScheduleRequest  $updateScheduleRequest  Request schema for the `updateSchedule` operation.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
      */
     public function __construct(
         protected string $resourceId,

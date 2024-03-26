@@ -11,8 +11,8 @@ final class GetTransactionResponse extends BaseResponse
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?TransactionStatus  $payload The payload for the getTransactionStatus operation.
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  ?TransactionStatus  $payload  The payload for the getTransactionStatus operation.
+     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?TransactionStatus $payload = null,

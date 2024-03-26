@@ -7,8 +7,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class Expiry extends BaseDto
 {
     /**
-     * @param  ?DateTime  $manufacturerDate Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
-     * @param  ?DateTime  $expiryDate The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
+     * @param  ?DateTime  $manufacturerDate  Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
+     * @param  ?DateTime  $expiryDate  The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
      * @param  ?Duration  $expiryAfterDuration
      */
     public function __construct(

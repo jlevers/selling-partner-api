@@ -22,7 +22,7 @@ class DirectPurchaseShipment extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  DirectPurchaseRequest  $directPurchaseRequest The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
+     * @param  DirectPurchaseRequest  $directPurchaseRequest  The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
      */
     public function __construct(
         public DirectPurchaseRequest $directPurchaseRequest,

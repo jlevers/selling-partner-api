@@ -27,20 +27,20 @@ final class Shipment extends BaseDto
     protected static array $complexArrayTypes = ['itemList' => [Item::class]];
 
     /**
-     * @param  string  $shipmentId An Amazon-defined shipment identifier.
-     * @param  string  $amazonOrderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  Item[]  $itemList The list of items to be included in a shipment.
-     * @param  Address  $shipFromAddress The postal address information.
-     * @param  Address  $shipToAddress The postal address information.
-     * @param  PackageDimensions  $packageDimensions The dimensions of a package contained in a shipment.
-     * @param  Weight  $weight The weight.
-     * @param  CurrencyAmount  $insurance Currency type and amount.
-     * @param  ShippingService  $shippingService A shipping service offer made by a carrier.
-     * @param  Label  $label Data for creating a shipping label and dimensions for printing the label.
-     * @param  string  $status The shipment status.
+     * @param  string  $shipmentId  An Amazon-defined shipment identifier.
+     * @param  string  $amazonOrderId  An Amazon-defined order identifier, in 3-7-7 format.
+     * @param  Item[]  $itemList  The list of items to be included in a shipment.
+     * @param  Address  $shipFromAddress  The postal address information.
+     * @param  Address  $shipToAddress  The postal address information.
+     * @param  PackageDimensions  $packageDimensions  The dimensions of a package contained in a shipment.
+     * @param  Weight  $weight  The weight.
+     * @param  CurrencyAmount  $insurance  Currency type and amount.
+     * @param  ShippingService  $shippingService  A shipping service offer made by a carrier.
+     * @param  Label  $label  Data for creating a shipping label and dimensions for printing the label.
+     * @param  string  $status  The shipment status.
      * @param  DateTime  $createdDate
-     * @param  ?string  $sellerOrderId A seller-defined order identifier.
-     * @param  ?string  $trackingId The shipment tracking identifier provided by the carrier.
+     * @param  ?string  $sellerOrderId  A seller-defined order identifier.
+     * @param  ?string  $trackingId  The shipment tracking identifier provided by the carrier.
      * @param  ?DateTime  $lastUpdatedDate
      */
     public function __construct(

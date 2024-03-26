@@ -22,7 +22,7 @@ class CreateSupplySource extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateSupplySourceRequest  $createSupplySourceRequest A request to create a supply source.
+     * @param  CreateSupplySourceRequest  $createSupplySourceRequest  A request to create a supply source.
      */
     public function __construct(
         public CreateSupplySourceRequest $createSupplySourceRequest,

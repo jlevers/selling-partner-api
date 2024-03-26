@@ -12,8 +12,8 @@ final class PointsGrantedDetail extends BaseDto
     ];
 
     /**
-     * @param  ?int  $pointsNumber The number of Amazon Points granted with the purchase of an item.
-     * @param  ?Money  $pointsMonetaryValue The monetary value of the order.
+     * @param  ?int  $pointsNumber  The number of Amazon Points granted with the purchase of an item.
+     * @param  ?Money  $pointsMonetaryValue  The monetary value of the order.
      */
     public function __construct(
         public readonly ?int $pointsNumber = null,

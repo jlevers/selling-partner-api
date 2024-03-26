@@ -7,10 +7,10 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class Stop extends BaseDto
 {
     /**
-     * @param  string  $functionCode Provide the function code.
-     * @param  ?Location  $locationIdentification Location identifier.
-     * @param  ?DateTime  $arrivalTime Date and time of the arrival of the cargo.
-     * @param  ?DateTime  $departureTime Date and time of the departure of the cargo.
+     * @param  string  $functionCode  Provide the function code.
+     * @param  ?Location  $locationIdentification  Location identifier.
+     * @param  ?DateTime  $arrivalTime  Date and time of the arrival of the cargo.
+     * @param  ?DateTime  $departureTime  Date and time of the departure of the cargo.
      */
     public function __construct(
         public readonly string $functionCode,

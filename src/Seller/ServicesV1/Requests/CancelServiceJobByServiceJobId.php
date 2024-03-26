@@ -16,8 +16,8 @@ class CancelServiceJobByServiceJobId extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $serviceJobId An Amazon defined service job identifier.
-     * @param  string  $cancellationReasonCode A cancel reason code that specifies the reason for cancelling a service job.
+     * @param  string  $serviceJobId  An Amazon defined service job identifier.
+     * @param  string  $cancellationReasonCode  A cancel reason code that specifies the reason for cancelling a service job.
      */
     public function __construct(
         protected string $serviceJobId,

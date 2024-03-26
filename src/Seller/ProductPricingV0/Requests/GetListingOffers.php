@@ -16,10 +16,10 @@ class GetListingOffers extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $sellerSku Identifies an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @param  string  $itemCondition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @param  ?string  $customerType Indicates whether to request Consumer or Business offers. Default is Consumer.
+     * @param  string  $sellerSku  Identifies an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which prices are returned.
+     * @param  string  $itemCondition  Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+     * @param  ?string  $customerType  Indicates whether to request Consumer or Business offers. Default is Consumer.
      */
     public function __construct(
         protected string $sellerSku,

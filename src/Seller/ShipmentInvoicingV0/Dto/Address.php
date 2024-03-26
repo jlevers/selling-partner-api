@@ -22,18 +22,18 @@ final class Address extends BaseDto
     ];
 
     /**
-     * @param  ?string  $name The name.
-     * @param  ?string  $addressLine1 The street address.
-     * @param  ?string  $addressLine2 Additional street address information, if required.
-     * @param  ?string  $addressLine3 Additional street address information, if required.
-     * @param  ?string  $city The city.
-     * @param  ?string  $county The county.
-     * @param  ?string  $district The district.
-     * @param  ?string  $stateOrRegion The state or region.
-     * @param  ?string  $postalCode The postal code.
-     * @param  ?string  $countryCode The country code.
-     * @param  ?string  $phone The phone number.
-     * @param  ?string  $addressType The shipping address type.
+     * @param  ?string  $name  The name.
+     * @param  ?string  $addressLine1  The street address.
+     * @param  ?string  $addressLine2  Additional street address information, if required.
+     * @param  ?string  $addressLine3  Additional street address information, if required.
+     * @param  ?string  $city  The city.
+     * @param  ?string  $county  The county.
+     * @param  ?string  $district  The district.
+     * @param  ?string  $stateOrRegion  The state or region.
+     * @param  ?string  $postalCode  The postal code.
+     * @param  ?string  $countryCode  The country code.
+     * @param  ?string  $phone  The phone number.
+     * @param  ?string  $addressType  The shipping address type.
      */
     public function __construct(
         public readonly ?string $name = null,

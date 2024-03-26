@@ -20,7 +20,7 @@ final class DebtRecoveryEvent extends BaseDto
     ];
 
     /**
-     * @param  ?string  $debtRecoveryType The debt recovery type.
+     * @param  ?string  $debtRecoveryType  The debt recovery type.
      *
      * Possible values:
      *
@@ -29,10 +29,10 @@ final class DebtRecoveryEvent extends BaseDto
      * * DebtPaymentFailure
      *
      * *DebtAdjustment
-     * @param  ?Currency  $recoveryAmount A currency type and amount.
-     * @param  ?Currency  $overPaymentCredit A currency type and amount.
-     * @param  DebtRecoveryItem[]|null  $debtRecoveryItemList A list of debt recovery item information.
-     * @param  ChargeInstrument[]|null  $chargeInstrumentList A list of payment instruments.
+     * @param  ?Currency  $recoveryAmount  A currency type and amount.
+     * @param  ?Currency  $overPaymentCredit  A currency type and amount.
+     * @param  DebtRecoveryItem[]|null  $debtRecoveryItemList  A list of debt recovery item information.
+     * @param  ChargeInstrument[]|null  $chargeInstrumentList  A list of payment instruments.
      */
     public function __construct(
         public readonly ?string $debtRecoveryType = null,

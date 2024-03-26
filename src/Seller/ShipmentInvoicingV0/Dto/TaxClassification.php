@@ -9,8 +9,8 @@ final class TaxClassification extends BaseDto
     protected static array $attributeMap = ['name' => 'Name', 'value' => 'Value'];
 
     /**
-     * @param  ?string  $name The type of tax.
-     * @param  ?string  $value The entity's tax identifier.
+     * @param  ?string  $name  The type of tax.
+     * @param  ?string  $value  The entity's tax identifier.
      */
     public function __construct(
         public readonly ?string $name = null,

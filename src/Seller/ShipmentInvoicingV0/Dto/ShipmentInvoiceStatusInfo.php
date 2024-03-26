@@ -9,8 +9,8 @@ final class ShipmentInvoiceStatusInfo extends BaseDto
     protected static array $attributeMap = ['amazonShipmentId' => 'AmazonShipmentId', 'invoiceStatus' => 'InvoiceStatus'];
 
     /**
-     * @param  ?string  $amazonShipmentId The Amazon-defined shipment identifier.
-     * @param  ?string  $invoiceStatus The shipment invoice status.
+     * @param  ?string  $amazonShipmentId  The Amazon-defined shipment identifier.
+     * @param  ?string  $invoiceStatus  The shipment invoice status.
      */
     public function __construct(
         public readonly ?string $amazonShipmentId = null,

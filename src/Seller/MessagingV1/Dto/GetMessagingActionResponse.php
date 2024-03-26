@@ -13,8 +13,8 @@ final class GetMessagingActionResponse extends BaseDto
     /**
      * @param  ?Links  $links
      * @param  ?Embedded  $embedded
-     * @param  ?MessagingAction  $payload A simple object containing the name of the template.
-     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  ?MessagingAction  $payload  A simple object containing the name of the template.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?Links $links = null,

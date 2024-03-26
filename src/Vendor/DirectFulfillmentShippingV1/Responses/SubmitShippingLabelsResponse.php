@@ -12,7 +12,7 @@ final class SubmitShippingLabelsResponse extends BaseResponse
 
     /**
      * @param  ?TransactionReference  $payload
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?TransactionReference $payload = null,

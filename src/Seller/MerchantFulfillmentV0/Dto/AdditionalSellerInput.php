@@ -19,15 +19,15 @@ final class AdditionalSellerInput extends BaseDto
     ];
 
     /**
-     * @param  ?string  $dataType The data type of the additional information.
-     * @param  ?string  $valueAsString The value when the data type is string.
-     * @param  ?bool  $valueAsBoolean The value when the data type is boolean.
-     * @param  ?int  $valueAsInteger The value when the data type is integer.
+     * @param  ?string  $dataType  The data type of the additional information.
+     * @param  ?string  $valueAsString  The value when the data type is string.
+     * @param  ?bool  $valueAsBoolean  The value when the data type is boolean.
+     * @param  ?int  $valueAsInteger  The value when the data type is integer.
      * @param  ?DateTime  $valueAsTimestamp
-     * @param  ?Address  $valueAsAddress The postal address information.
-     * @param  ?Weight  $valueAsWeight The weight.
-     * @param  ?Length  $valueAsDimension The length.
-     * @param  ?CurrencyAmount  $valueAsCurrency Currency type and amount.
+     * @param  ?Address  $valueAsAddress  The postal address information.
+     * @param  ?Weight  $valueAsWeight  The weight.
+     * @param  ?Length  $valueAsDimension  The length.
+     * @param  ?CurrencyAmount  $valueAsCurrency  Currency type and amount.
      */
     public function __construct(
         public readonly ?string $dataType = null,

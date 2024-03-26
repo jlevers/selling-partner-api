@@ -22,7 +22,7 @@ class GetRates extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetRatesRequest  $getRatesRequest The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.
+     * @param  GetRatesRequest  $getRatesRequest  The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.
      */
     public function __construct(
         public GetRatesRequest $getRatesRequest,

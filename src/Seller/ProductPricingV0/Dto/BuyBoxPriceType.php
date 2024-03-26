@@ -14,12 +14,12 @@ final class BuyBoxPriceType extends BaseDto
     ];
 
     /**
-     * @param  string  $condition Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
+     * @param  string  $condition  Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
      * @param  ?string  $offerType
-     * @param  ?int  $quantityTier Indicates at what quantity this price becomes active.
+     * @param  ?int  $quantityTier  Indicates at what quantity this price becomes active.
      * @param  ?string  $quantityDiscountType
      * @param  ?Points  $points
-     * @param  ?string  $sellerId The seller identifier for the offer.
+     * @param  ?string  $sellerId  The seller identifier for the offer.
      */
     public function __construct(
         public readonly string $condition,

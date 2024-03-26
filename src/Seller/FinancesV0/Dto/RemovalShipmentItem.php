@@ -18,20 +18,20 @@ final class RemovalShipmentItem extends BaseDto
     ];
 
     /**
-     * @param  ?string  $removalShipmentItemId An identifier for an item in a removal shipment.
-     * @param  ?string  $taxCollectionModel The tax collection model applied to the item.
+     * @param  ?string  $removalShipmentItemId  An identifier for an item in a removal shipment.
+     * @param  ?string  $taxCollectionModel  The tax collection model applied to the item.
      *
      * Possible values:
      *
      * * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.
      *
      * * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
-     * @param  ?string  $fulfillmentNetworkSku The Amazon fulfillment network SKU for the item.
-     * @param  ?int  $quantity The quantity of the item.
-     * @param  ?Currency  $revenue A currency type and amount.
-     * @param  ?Currency  $feeAmount A currency type and amount.
-     * @param  ?Currency  $taxAmount A currency type and amount.
-     * @param  ?Currency  $taxWithheld A currency type and amount.
+     * @param  ?string  $fulfillmentNetworkSku  The Amazon fulfillment network SKU for the item.
+     * @param  ?int  $quantity  The quantity of the item.
+     * @param  ?Currency  $revenue  A currency type and amount.
+     * @param  ?Currency  $feeAmount  A currency type and amount.
+     * @param  ?Currency  $taxAmount  A currency type and amount.
+     * @param  ?Currency  $taxWithheld  A currency type and amount.
      */
     public function __construct(
         public readonly ?string $removalShipmentItemId = null,

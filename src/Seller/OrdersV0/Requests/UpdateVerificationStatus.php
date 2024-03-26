@@ -22,8 +22,8 @@ class UpdateVerificationStatus extends Request implements HasBody
     protected Method $method = Method::PATCH;
 
     /**
-     * @param  string  $orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format.
-     * @param  UpdateVerificationStatusRequest  $updateVerificationStatusRequest The request body for the updateVerificationStatus operation.
+     * @param  string  $orderId  An orderId is an Amazon-defined order identifier, in 3-7-7 format.
+     * @param  UpdateVerificationStatusRequest  $updateVerificationStatusRequest  The request body for the updateVerificationStatus operation.
      */
     public function __construct(
         protected string $orderId,

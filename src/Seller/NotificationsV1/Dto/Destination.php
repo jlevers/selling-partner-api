@@ -7,9 +7,9 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class Destination extends BaseDto
 {
     /**
-     * @param  string  $name The developer-defined name for this destination.
-     * @param  string  $destinationId The destination identifier generated when you created the destination.
-     * @param  DestinationResource  $resource The destination resource types.
+     * @param  string  $name  The developer-defined name for this destination.
+     * @param  string  $destinationId  The destination identifier generated when you created the destination.
+     * @param  DestinationResource  $resource  The destination resource types.
      */
     public function __construct(
         public readonly string $name,

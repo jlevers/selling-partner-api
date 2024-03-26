@@ -16,7 +16,7 @@ class GrantlessAuthenticator extends AbstractAuthenticator
     /**
      * Gets the access token for OAuth
      *
-     * @return string|null  Access token for OAuth
+     * @return string|null Access token for OAuth
      */
     protected function getAccessToken(): ?string
     {

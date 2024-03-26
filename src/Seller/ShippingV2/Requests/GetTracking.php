@@ -17,8 +17,8 @@ class GetTracking extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $trackingId A carrier-generated tracking identifier originally returned by the purchaseShipment operation.
-     * @param  string  $carrierId A carrier identifier originally returned by the getRates operation for the selected rate.
+     * @param  string  $trackingId  A carrier-generated tracking identifier originally returned by the purchaseShipment operation.
+     * @param  string  $carrierId  A carrier identifier originally returned by the getRates operation for the selected rate.
      */
     public function __construct(
         protected string $trackingId,

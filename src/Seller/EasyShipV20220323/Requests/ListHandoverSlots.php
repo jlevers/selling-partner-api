@@ -22,7 +22,7 @@ class ListHandoverSlots extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  ListHandoverSlotsRequest  $listHandoverSlotsRequest The request schema for the `listHandoverSlots` operation.
+     * @param  ListHandoverSlotsRequest  $listHandoverSlotsRequest  The request schema for the `listHandoverSlots` operation.
      */
     public function __construct(
         public ListHandoverSlotsRequest $listHandoverSlotsRequest,

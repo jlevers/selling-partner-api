@@ -22,11 +22,11 @@ final class PayWithAmazonEvent extends BaseDto
     protected static array $complexArrayTypes = ['feeList' => [FeeComponent::class]];
 
     /**
-     * @param  ?string  $sellerOrderId An order identifier that is specified by the seller.
+     * @param  ?string  $sellerOrderId  An order identifier that is specified by the seller.
      * @param  ?DateTime  $transactionPostedDate
-     * @param  ?string  $businessObjectType The type of business object.
-     * @param  ?string  $salesChannel The sales channel for the transaction.
-     * @param  ?ChargeComponent  $charge A charge on the seller's account.
+     * @param  ?string  $businessObjectType  The type of business object.
+     * @param  ?string  $salesChannel  The sales channel for the transaction.
+     * @param  ?ChargeComponent  $charge  A charge on the seller's account.
      *
      * Possible values:
      *
@@ -91,21 +91,21 @@ final class PayWithAmazonEvent extends BaseDto
      * * TCS-IGST - Tax Collected at Source for Integrated Goods and Services Tax (IGST).
      *
      * * TCS-UTGST - Tax Collected at Source for Union Territories Goods and Services Tax (UTGST).
-     * @param  FeeComponent[]|null  $feeList A list of fee component information.
-     * @param  ?string  $paymentAmountType The type of payment.
+     * @param  FeeComponent[]|null  $feeList  A list of fee component information.
+     * @param  ?string  $paymentAmountType  The type of payment.
      *
      * Possible values:
      *
      * * Sales
-     * @param  ?string  $amountDescription A short description of this payment event.
-     * @param  ?string  $fulfillmentChannel The fulfillment channel.
+     * @param  ?string  $amountDescription  A short description of this payment event.
+     * @param  ?string  $fulfillmentChannel  The fulfillment channel.
      *
      * Possible values:
      *
      * * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)
      *
      * * MFN - Merchant Fulfillment Network (self-fulfilled)
-     * @param  ?string  $storeName The store name where the event occurred.
+     * @param  ?string  $storeName  The store name where the event occurred.
      */
     public function __construct(
         public readonly ?string $sellerOrderId = null,

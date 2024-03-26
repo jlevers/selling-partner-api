@@ -17,8 +17,8 @@ use SellingPartnerApi\Seller\SupplySourcesV20200701\Requests\UpdateSupplySourceS
 class Api extends BaseResource
 {
     /**
-     * @param  ?string  $nextPageToken The pagination token to retrieve a specific page of results.
-     * @param  ?float  $pageSize The number of supply sources to return per paginated request.
+     * @param  ?string  $nextPageToken  The pagination token to retrieve a specific page of results.
+     * @param  ?float  $pageSize  The number of supply sources to return per paginated request.
      */
     public function getSupplySources(?string $nextPageToken = null, ?float $pageSize = null): Response
     {
@@ -28,7 +28,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  CreateSupplySourceRequest  $createSupplySourceRequest A request to create a supply source.
+     * @param  CreateSupplySourceRequest  $createSupplySourceRequest  A request to create a supply source.
      */
     public function createSupplySource(CreateSupplySourceRequest $createSupplySourceRequest): Response
     {
@@ -38,7 +38,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $supplySourceId The unique identifier of a supply source.
+     * @param  string  $supplySourceId  The unique identifier of a supply source.
      */
     public function getSupplySource(string $supplySourceId): Response
     {
@@ -48,8 +48,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $supplySourceId The unique identitier of a supply source.
-     * @param  UpdateSupplySourceRequest  $updateSupplySourceRequest A request to update the configuration and capabilities of a supply source.
+     * @param  string  $supplySourceId  The unique identitier of a supply source.
+     * @param  UpdateSupplySourceRequest  $updateSupplySourceRequest  A request to update the configuration and capabilities of a supply source.
      */
     public function updateSupplySource(
         string $supplySourceId,
@@ -61,7 +61,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $supplySourceId The unique identifier of a supply source.
+     * @param  string  $supplySourceId  The unique identifier of a supply source.
      */
     public function archiveSupplySource(string $supplySourceId): Response
     {
@@ -71,8 +71,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $supplySourceId The unique identifier of a supply source.
-     * @param  UpdateSupplySourceStatusRequest  $updateSupplySourceStatusRequest A request to update the status of a supply source.
+     * @param  string  $supplySourceId  The unique identifier of a supply source.
+     * @param  UpdateSupplySourceStatusRequest  $updateSupplySourceStatusRequest  A request to update the status of a supply source.
      */
     public function updateSupplySourceStatus(
         string $supplySourceId,

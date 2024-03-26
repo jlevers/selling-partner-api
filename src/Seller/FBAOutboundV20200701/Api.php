@@ -26,7 +26,7 @@ use SellingPartnerApi\Seller\FBAOutboundV20200701\Requests\UpdateFulfillmentOrde
 class Api extends BaseResource
 {
     /**
-     * @param  GetFulfillmentPreviewRequest  $getFulfillmentPreviewRequest The request body schema for the getFulfillmentPreview operation.
+     * @param  GetFulfillmentPreviewRequest  $getFulfillmentPreviewRequest  The request body schema for the getFulfillmentPreview operation.
      */
     public function getFulfillmentPreview(GetFulfillmentPreviewRequest $getFulfillmentPreviewRequest): Response
     {
@@ -36,8 +36,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  ?DateTime  $queryStartDate A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
-     * @param  ?string  $nextToken A string token returned in the response to your previous request.
+     * @param  ?DateTime  $queryStartDate  A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order.
+     * @param  ?string  $nextToken  A string token returned in the response to your previous request.
      */
     public function listAllFulfillmentOrders(?\DateTime $queryStartDate = null, ?string $nextToken = null): Response
     {
@@ -47,7 +47,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  CreateFulfillmentOrderRequest  $createFulfillmentOrderRequest The request body schema for the createFulfillmentOrder operation.
+     * @param  CreateFulfillmentOrderRequest  $createFulfillmentOrderRequest  The request body schema for the createFulfillmentOrder operation.
      */
     public function createFulfillmentOrder(CreateFulfillmentOrderRequest $createFulfillmentOrderRequest): Response
     {
@@ -57,7 +57,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  int  $packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation.
+     * @param  int  $packageNumber  The unencrypted package identifier returned by the getFulfillmentOrder operation.
      */
     public function getPackageTrackingDetails(int $packageNumber): Response
     {
@@ -67,10 +67,10 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sellerSku The seller SKU for which return reason codes are required.
-     * @param  string  $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
-     * @param  ?string  $marketplaceId The marketplace for which the seller wants return reason codes.
-     * @param  ?string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+     * @param  string  $sellerSku  The seller SKU for which return reason codes are required.
+     * @param  string  $language  The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
+     * @param  ?string  $marketplaceId  The marketplace for which the seller wants return reason codes.
+     * @param  ?string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
      */
     public function listReturnReasonCodes(
         string $sellerSku,
@@ -84,8 +84,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
-     * @param  CreateFulfillmentReturnRequest  $createFulfillmentReturnRequest The createFulfillmentReturn operation creates a fulfillment return for items that were fulfilled using the createFulfillmentOrder operation. For calls to createFulfillmentReturn, you must include ReturnReasonCode values returned by a previous call to the listReturnReasonCodes operation.
+     * @param  string  $sellerFulfillmentOrderId  An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
+     * @param  CreateFulfillmentReturnRequest  $createFulfillmentReturnRequest  The createFulfillmentReturn operation creates a fulfillment return for items that were fulfilled using the createFulfillmentOrder operation. For calls to createFulfillmentReturn, you must include ReturnReasonCode values returned by a previous call to the listReturnReasonCodes operation.
      */
     public function createFulfillmentReturn(
         string $sellerFulfillmentOrderId,
@@ -97,7 +97,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
      */
     public function getFulfillmentOrder(string $sellerFulfillmentOrderId): Response
     {
@@ -107,8 +107,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @param  UpdateFulfillmentOrderRequest  $updateFulfillmentOrderRequest The request body schema for the updateFulfillmentOrder operation.
+     * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @param  UpdateFulfillmentOrderRequest  $updateFulfillmentOrderRequest  The request body schema for the updateFulfillmentOrder operation.
      */
     public function updateFulfillmentOrder(
         string $sellerFulfillmentOrderId,
@@ -120,7 +120,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
      */
     public function cancelFulfillmentOrder(string $sellerFulfillmentOrderId): Response
     {
@@ -130,8 +130,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @param  SubmitFulfillmentOrderStatusUpdateRequest  $submitFulfillmentOrderStatusUpdateRequest The request body schema for the submitFulfillmentOrderStatusUpdate operation.
+     * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @param  SubmitFulfillmentOrderStatusUpdateRequest  $submitFulfillmentOrderStatusUpdateRequest  The request body schema for the submitFulfillmentOrderStatusUpdate operation.
      */
     public function submitFulfillmentOrderStatusUpdate(
         string $sellerFulfillmentOrderId,
@@ -143,7 +143,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $marketplaceId The marketplace for which to return the list of features.
+     * @param  string  $marketplaceId  The marketplace for which to return the list of features.
      */
     public function getFeatures(string $marketplaceId): Response
     {
@@ -153,9 +153,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $featureName The name of the feature for which to return a list of eligible inventory.
-     * @param  string  $marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature.
-     * @param  ?string  $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
+     * @param  string  $featureName  The name of the feature for which to return a list of eligible inventory.
+     * @param  string  $marketplaceId  The marketplace for which to return a list of the inventory that is eligible for the specified feature.
+     * @param  ?string  $nextToken  A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
      */
     public function getFeatureInventory(string $featureName, string $marketplaceId, ?string $nextToken = null): Response
     {
@@ -165,9 +165,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $featureName The name of the feature.
-     * @param  string  $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-     * @param  string  $marketplaceId The marketplace for which to return the count.
+     * @param  string  $featureName  The name of the feature.
+     * @param  string  $sellerSku  Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param  string  $marketplaceId  The marketplace for which to return the count.
      */
     public function getFeatureSku(string $featureName, string $sellerSku, string $marketplaceId): Response
     {

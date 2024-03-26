@@ -18,9 +18,9 @@ class SetAppointmentFulfillmentData extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $serviceJobId An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API.
-     * @param  string  $appointmentId An Amazon-defined identifier of active service job appointment.
-     * @param  SetAppointmentFulfillmentDataRequest  $setAppointmentFulfillmentDataRequest Input for set appointment fulfillment data operation.
+     * @param  string  $serviceJobId  An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API.
+     * @param  string  $appointmentId  An Amazon-defined identifier of active service job appointment.
+     * @param  SetAppointmentFulfillmentDataRequest  $setAppointmentFulfillmentDataRequest  Input for set appointment fulfillment data operation.
      */
     public function __construct(
         protected string $serviceJobId,

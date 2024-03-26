@@ -14,17 +14,17 @@ final class InvoiceDetail extends BaseDto
     ];
 
     /**
-     * @param  string  $invoiceNumber The unique invoice number.
-     * @param  DateTime  $invoiceDate Invoice date.
-     * @param  Money  $invoiceTotal An amount of money, including units in the form of currency.
-     * @param  ?string  $referenceNumber An additional unique reference number used for regulatory or other purposes.
+     * @param  string  $invoiceNumber  The unique invoice number.
+     * @param  DateTime  $invoiceDate  Invoice date.
+     * @param  Money  $invoiceTotal  An amount of money, including units in the form of currency.
+     * @param  ?string  $referenceNumber  An additional unique reference number used for regulatory or other purposes.
      * @param  ?PartyIdentification  $billToParty
-     * @param  ?string  $shipToCountryCode Ship-to country code.
-     * @param  ?string  $paymentTermsCode The payment terms for the invoice.
-     * @param  TaxDetail[]  $taxTotals Individual tax details per line item.
-     * @param  AdditionalDetails[]  $additionalDetails Additional details provided by the selling party, for tax-related or other purposes.
-     * @param  ChargeDetails[]  $chargeDetails Total charge amount details for all line items.
-     * @param  InvoiceItem[]  $items Provides the details of the items in this invoice.
+     * @param  ?string  $shipToCountryCode  Ship-to country code.
+     * @param  ?string  $paymentTermsCode  The payment terms for the invoice.
+     * @param  TaxDetail[]  $taxTotals  Individual tax details per line item.
+     * @param  AdditionalDetails[]  $additionalDetails  Additional details provided by the selling party, for tax-related or other purposes.
+     * @param  ChargeDetails[]  $chargeDetails  Total charge amount details for all line items.
+     * @param  InvoiceItem[]  $items  Provides the details of the items in this invoice.
      */
     public function __construct(
         public readonly string $invoiceNumber,

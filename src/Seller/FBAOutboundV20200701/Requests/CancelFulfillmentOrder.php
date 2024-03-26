@@ -16,7 +16,7 @@ class CancelFulfillmentOrder extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
      */
     public function __construct(
         protected string $sellerFulfillmentOrderId,

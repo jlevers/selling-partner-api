@@ -17,9 +17,9 @@ class GetContentDocument extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param  array  $includedDataSet The set of A+ Content data types to include in the response.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  array  $includedDataSet  The set of A+ Content data types to include in the response.
      */
     public function __construct(
         protected string $contentReferenceKey,

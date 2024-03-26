@@ -21,7 +21,7 @@ class CreateShipment extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateShipmentRequest  $createShipmentRequest The request schema for the createShipment operation.
+     * @param  CreateShipmentRequest  $createShipmentRequest  The request schema for the createShipment operation.
      */
     public function __construct(
         public CreateShipmentRequest $createShipmentRequest,

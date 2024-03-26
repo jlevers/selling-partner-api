@@ -16,10 +16,10 @@ class ListReturnReasonCodes extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $sellerSku The seller SKU for which return reason codes are required.
-     * @param  string  $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
-     * @param  ?string  $marketplaceId The marketplace for which the seller wants return reason codes.
-     * @param  ?string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+     * @param  string  $sellerSku  The seller SKU for which return reason codes are required.
+     * @param  string  $language  The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
+     * @param  ?string  $marketplaceId  The marketplace for which the seller wants return reason codes.
+     * @param  ?string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
      */
     public function __construct(
         protected string $sellerSku,

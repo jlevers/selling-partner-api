@@ -16,12 +16,12 @@ final class OrderBuyerInfo extends BaseDto
     ];
 
     /**
-     * @param  string  $amazonOrderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  ?string  $buyerEmail The anonymized email address of the buyer.
-     * @param  ?string  $buyerName The buyer name or the recipient name.
-     * @param  ?string  $buyerCounty The county of the buyer.
-     * @param  ?BuyerTaxInfo  $buyerTaxInfo Tax information about the buyer.
-     * @param  ?string  $purchaseOrderNumber The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
+     * @param  string  $amazonOrderId  An Amazon-defined order identifier, in 3-7-7 format.
+     * @param  ?string  $buyerEmail  The anonymized email address of the buyer.
+     * @param  ?string  $buyerName  The buyer name or the recipient name.
+     * @param  ?string  $buyerCounty  The county of the buyer.
+     * @param  ?BuyerTaxInfo  $buyerTaxInfo  Tax information about the buyer.
+     * @param  ?string  $purchaseOrderNumber  The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
      */
     public function __construct(
         public readonly string $amazonOrderId,

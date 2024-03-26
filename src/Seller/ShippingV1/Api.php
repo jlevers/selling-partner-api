@@ -22,7 +22,7 @@ use SellingPartnerApi\Seller\ShippingV1\Requests\RetrieveShippingLabel;
 class Api extends BaseResource
 {
     /**
-     * @param  CreateShipmentRequest  $createShipmentRequest The request schema for the createShipment operation.
+     * @param  CreateShipmentRequest  $createShipmentRequest  The request schema for the createShipment operation.
      */
     public function createShipment(CreateShipmentRequest $createShipmentRequest): Response
     {
@@ -46,7 +46,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  PurchaseLabelsRequest  $purchaseLabelsRequest The request schema for the purchaseLabels operation.
+     * @param  PurchaseLabelsRequest  $purchaseLabelsRequest  The request schema for the purchaseLabels operation.
      */
     public function purchaseLabels(string $shipmentId, PurchaseLabelsRequest $purchaseLabelsRequest): Response
     {
@@ -56,7 +56,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  RetrieveShippingLabelRequest  $retrieveShippingLabelRequest The request schema for the retrieveShippingLabel operation.
+     * @param  RetrieveShippingLabelRequest  $retrieveShippingLabelRequest  The request schema for the retrieveShippingLabel operation.
      */
     public function retrieveShippingLabel(
         string $shipmentId,
@@ -69,7 +69,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest The payload schema for the purchaseShipment operation.
+     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest  The payload schema for the purchaseShipment operation.
      */
     public function purchaseShipment(PurchaseShipmentRequest $purchaseShipmentRequest): Response
     {
@@ -79,7 +79,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  GetRatesRequest  $getRatesRequest The payload schema for the getRates operation.
+     * @param  GetRatesRequest  $getRatesRequest  The payload schema for the getRates operation.
      */
     public function getRates(GetRatesRequest $getRatesRequest): Response
     {

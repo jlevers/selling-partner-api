@@ -9,8 +9,8 @@ final class UpdateScheduledPackagesRequest extends BaseDto
     protected static array $complexArrayTypes = ['updatePackageDetailsList' => [UpdatePackageDetails::class]];
 
     /**
-     * @param  string  $marketplaceId A string of up to 255 characters.
-     * @param  UpdatePackageDetails[]  $updatePackageDetailsList A list of package update details.
+     * @param  string  $marketplaceId  A string of up to 255 characters.
+     * @param  UpdatePackageDetails[]  $updatePackageDetailsList  A list of package update details.
      */
     public function __construct(
         public readonly string $marketplaceId,

@@ -9,8 +9,8 @@ final class TextComponent extends BaseDto
     protected static array $complexArrayTypes = ['decoratorSet' => [Decorator::class]];
 
     /**
-     * @param  string  $value The actual plain text.
-     * @param  Decorator[]|null  $decoratorSet A set of content decorators.
+     * @param  string  $value  The actual plain text.
+     * @param  Decorator[]|null  $decoratorSet  A set of content decorators.
      */
     public function __construct(
         public readonly string $value,

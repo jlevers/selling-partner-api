@@ -9,12 +9,12 @@ final class FulfillmentPreviewShipment extends BaseDto
     protected static array $complexArrayTypes = ['fulfillmentPreviewItems' => [FulfillmentPreviewItem::class]];
 
     /**
-     * @param  FulfillmentPreviewItem[]  $fulfillmentPreviewItems An array of fulfillment preview item information.
+     * @param  FulfillmentPreviewItem[]  $fulfillmentPreviewItems  An array of fulfillment preview item information.
      * @param  ?DateTime  $earliestShipDate
      * @param  ?DateTime  $latestShipDate
      * @param  ?DateTime  $earliestArrivalDate
      * @param  ?DateTime  $latestArrivalDate
-     * @param  ?string[]  $shippingNotes Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
+     * @param  ?string[]  $shippingNotes  Provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed.
      */
     public function __construct(
         public readonly array $fulfillmentPreviewItems,

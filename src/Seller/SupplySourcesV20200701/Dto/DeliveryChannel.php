@@ -8,7 +8,7 @@ final class DeliveryChannel extends BaseDto
 {
     /**
      * @param  ?bool  $isSupported
-     * @param  ?OperationalConfiguration  $operationalConfiguration The operational configuration of `supplySources`.
+     * @param  ?OperationalConfiguration  $operationalConfiguration  The operational configuration of `supplySources`.
      */
     public function __construct(
         public readonly ?bool $isSupported = null,

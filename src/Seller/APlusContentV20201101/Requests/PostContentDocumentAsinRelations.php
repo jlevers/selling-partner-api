@@ -22,8 +22,8 @@ class PostContentDocumentAsinRelations extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
      */
     public function __construct(
         protected string $contentReferenceKey,

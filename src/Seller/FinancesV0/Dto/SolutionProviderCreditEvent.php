@@ -20,15 +20,15 @@ final class SolutionProviderCreditEvent extends BaseDto
     ];
 
     /**
-     * @param  ?string  $providerTransactionType The transaction type.
-     * @param  ?string  $sellerOrderId A seller-defined identifier for an order.
-     * @param  ?string  $marketplaceId The identifier of the marketplace where the order was placed.
-     * @param  ?string  $marketplaceCountryCode The two-letter country code of the country associated with the marketplace where the order was placed.
-     * @param  ?string  $sellerId The Amazon-defined identifier of the seller.
-     * @param  ?string  $sellerStoreName The store name where the payment event occurred.
-     * @param  ?string  $providerId The Amazon-defined identifier of the solution provider.
-     * @param  ?string  $providerStoreName The store name where the payment event occurred.
-     * @param  ?Currency  $transactionAmount A currency type and amount.
+     * @param  ?string  $providerTransactionType  The transaction type.
+     * @param  ?string  $sellerOrderId  A seller-defined identifier for an order.
+     * @param  ?string  $marketplaceId  The identifier of the marketplace where the order was placed.
+     * @param  ?string  $marketplaceCountryCode  The two-letter country code of the country associated with the marketplace where the order was placed.
+     * @param  ?string  $sellerId  The Amazon-defined identifier of the seller.
+     * @param  ?string  $sellerStoreName  The store name where the payment event occurred.
+     * @param  ?string  $providerId  The Amazon-defined identifier of the solution provider.
+     * @param  ?string  $providerStoreName  The store name where the payment event occurred.
+     * @param  ?Currency  $transactionAmount  A currency type and amount.
      * @param  ?DateTime  $transactionCreationDate
      */
     public function __construct(

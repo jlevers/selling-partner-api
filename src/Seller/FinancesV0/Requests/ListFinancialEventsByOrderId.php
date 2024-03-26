@@ -16,9 +16,9 @@ class ListFinancialEventsByOrderId extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  ?int  $maxResultsPerPage The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.
-     * @param  ?string  $nextToken A string token returned in the response of your previous request.
+     * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
+     * @param  ?int  $maxResultsPerPage  The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'.
+     * @param  ?string  $nextToken  A string token returned in the response of your previous request.
      */
     public function __construct(
         protected string $orderId,

@@ -21,7 +21,7 @@ class GetFulfillmentPreview extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetFulfillmentPreviewRequest  $getFulfillmentPreviewRequest The request body schema for the getFulfillmentPreview operation.
+     * @param  GetFulfillmentPreviewRequest  $getFulfillmentPreviewRequest  The request body schema for the getFulfillmentPreview operation.
      */
     public function __construct(
         public GetFulfillmentPreviewRequest $getFulfillmentPreviewRequest,

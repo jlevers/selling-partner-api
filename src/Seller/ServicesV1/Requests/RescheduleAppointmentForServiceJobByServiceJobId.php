@@ -21,9 +21,9 @@ class RescheduleAppointmentForServiceJobByServiceJobId extends Request implement
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $serviceJobId An Amazon defined service job identifier.
-     * @param  string  $appointmentId An existing appointment identifier for the Service Job.
-     * @param  RescheduleAppointmentRequest  $rescheduleAppointmentRequest Input for rescheduled appointment operation.
+     * @param  string  $serviceJobId  An Amazon defined service job identifier.
+     * @param  string  $appointmentId  An existing appointment identifier for the Service Job.
+     * @param  RescheduleAppointmentRequest  $rescheduleAppointmentRequest  Input for rescheduled appointment operation.
      */
     public function __construct(
         protected string $serviceJobId,

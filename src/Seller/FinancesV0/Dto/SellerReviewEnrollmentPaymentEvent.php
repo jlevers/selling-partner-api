@@ -17,10 +17,10 @@ final class SellerReviewEnrollmentPaymentEvent extends BaseDto
 
     /**
      * @param  ?DateTime  $postedDate
-     * @param  ?string  $enrollmentId An enrollment identifier.
-     * @param  ?string  $parentAsin The Amazon Standard Identification Number (ASIN) of the item that was enrolled in the Early Reviewer Program.
-     * @param  ?FeeComponent  $feeComponent A fee associated with the event.
-     * @param  ?ChargeComponent  $chargeComponent A charge on the seller's account.
+     * @param  ?string  $enrollmentId  An enrollment identifier.
+     * @param  ?string  $parentAsin  The Amazon Standard Identification Number (ASIN) of the item that was enrolled in the Early Reviewer Program.
+     * @param  ?FeeComponent  $feeComponent  A fee associated with the event.
+     * @param  ?ChargeComponent  $chargeComponent  A charge on the seller's account.
      *
      * Possible values:
      *
@@ -85,7 +85,7 @@ final class SellerReviewEnrollmentPaymentEvent extends BaseDto
      * * TCS-IGST - Tax Collected at Source for Integrated Goods and Services Tax (IGST).
      *
      * * TCS-UTGST - Tax Collected at Source for Union Territories Goods and Services Tax (UTGST).
-     * @param  ?Currency  $totalAmount A currency type and amount.
+     * @param  ?Currency  $totalAmount  A currency type and amount.
      */
     public function __construct(
         public readonly ?\DateTime $postedDate = null,

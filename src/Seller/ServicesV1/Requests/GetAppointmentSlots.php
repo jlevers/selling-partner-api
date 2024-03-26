@@ -16,11 +16,11 @@ class GetAppointmentSlots extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $asin ASIN associated with the service.
-     * @param  string  $storeId Store identifier defining the region scope to retrive appointment slots.
-     * @param  array  $marketplaceIds An identifier for the marketplace for which appointment slots are queried
-     * @param  ?string  $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration.
-     * @param  ?string  $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+     * @param  string  $asin  ASIN associated with the service.
+     * @param  string  $storeId  Store identifier defining the region scope to retrive appointment slots.
+     * @param  array  $marketplaceIds  An identifier for the marketplace for which appointment slots are queried
+     * @param  ?string  $startTime  A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration.
+     * @param  ?string  $endTime  A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
      */
     public function __construct(
         protected string $asin,

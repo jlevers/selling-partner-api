@@ -22,8 +22,8 @@ class ConfirmShipment extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  ConfirmShipmentRequest  $confirmShipmentRequest The request schema for an shipment confirmation.
+     * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
+     * @param  ConfirmShipmentRequest  $confirmShipmentRequest  The request schema for an shipment confirmation.
      */
     public function __construct(
         protected string $orderId,

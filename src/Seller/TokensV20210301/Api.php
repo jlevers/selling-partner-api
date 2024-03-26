@@ -10,7 +10,7 @@ use SellingPartnerApi\Seller\TokensV20210301\Requests\CreateRestrictedDataToken;
 class Api extends BaseResource
 {
     /**
-     * @param  CreateRestrictedDataTokenRequest  $createRestrictedDataTokenRequest The request schema for the createRestrictedDataToken operation.
+     * @param  CreateRestrictedDataTokenRequest  $createRestrictedDataTokenRequest  The request schema for the createRestrictedDataToken operation.
      */
     public function createRestrictedDataToken(
         CreateRestrictedDataTokenRequest $createRestrictedDataTokenRequest,

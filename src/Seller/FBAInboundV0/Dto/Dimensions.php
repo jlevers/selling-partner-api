@@ -14,7 +14,7 @@ final class Dimensions extends BaseDto
     ];
 
     /**
-     * @param  string  $unit Indicates the unit of measurement.
+     * @param  string  $unit  Indicates the unit of measurement.
      */
     public function __construct(
         public readonly float $length,

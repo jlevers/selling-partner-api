@@ -16,12 +16,12 @@ class GetPricing extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @param  string  $itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
-     * @param  ?array  $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
-     * @param  ?array  $skus A list of up to twenty seller SKU values used to identify items in the given marketplace.
-     * @param  ?string  $itemCondition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
-     * @param  ?string  $offerType Indicates whether to request pricing information for the seller's B2C or B2B offers. Default is B2C.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which prices are returned.
+     * @param  string  $itemType  Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter.
+     * @param  ?array  $asins  A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
+     * @param  ?array  $skus  A list of up to twenty seller SKU values used to identify items in the given marketplace.
+     * @param  ?string  $itemCondition  Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club.
+     * @param  ?string  $offerType  Indicates whether to request pricing information for the seller's B2C or B2B offers. Default is B2C.
      */
     public function __construct(
         protected string $marketplaceId,

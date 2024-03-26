@@ -11,8 +11,8 @@ final class ItemLevelFields extends BaseDto
     protected static array $complexArrayTypes = ['additionalInputs' => [AdditionalInputs::class]];
 
     /**
-     * @param  string  $asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  AdditionalInputs[]  $additionalInputs A list of additional inputs.
+     * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  AdditionalInputs[]  $additionalInputs  A list of additional inputs.
      */
     public function __construct(
         public readonly string $asin,

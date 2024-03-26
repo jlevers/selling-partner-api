@@ -12,7 +12,7 @@ final class DirectPayment extends BaseDto
     ];
 
     /**
-     * @param  ?string  $directPaymentType The type of payment.
+     * @param  ?string  $directPaymentType  The type of payment.
      *
      * Possible values:
      *
@@ -27,7 +27,7 @@ final class DirectPayment extends BaseDto
      * * CollectOnDeliveryRevenue - The COD amount that the seller collected directly from the buyer.
      *
      * * CollectOnDeliveryRefund - The amount that Amazon refunds to the buyer if an order paid for by COD is refunded.
-     * @param  ?Currency  $directPaymentAmount A currency type and amount.
+     * @param  ?Currency  $directPaymentAmount  A currency type and amount.
      */
     public function __construct(
         public readonly ?string $directPaymentType = null,

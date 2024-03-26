@@ -17,11 +17,11 @@ class SearchDefinitionsProductTypes extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  array  $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-     * @param  ?array  $keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with `itemName`.
-     * @param  ?string  $itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with `keywords`.
-     * @param  ?string  $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace.
-     * @param  ?string  $searchLocale The locale used for the `keywords` and `itemName` parameters. Defaults to the primary locale of the marketplace.
+     * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers for the request.
+     * @param  ?array  $keywords  A comma-delimited list of keywords to search product types. **Note:** Cannot be used with `itemName`.
+     * @param  ?string  $itemName  The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with `keywords`.
+     * @param  ?string  $locale  The locale for the display names in the response. Defaults to the primary locale of the marketplace.
+     * @param  ?string  $searchLocale  The locale used for the `keywords` and `itemName` parameters. Defaults to the primary locale of the marketplace.
      */
     public function __construct(
         protected array $marketplaceIds,

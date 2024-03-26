@@ -17,8 +17,8 @@ class GetSupplySources extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  ?string  $nextPageToken The pagination token to retrieve a specific page of results.
-     * @param  ?float  $pageSize The number of supply sources to return per paginated request.
+     * @param  ?string  $nextPageToken  The pagination token to retrieve a specific page of results.
+     * @param  ?float  $pageSize  The number of supply sources to return per paginated request.
      */
     public function __construct(
         protected ?string $nextPageToken = null,

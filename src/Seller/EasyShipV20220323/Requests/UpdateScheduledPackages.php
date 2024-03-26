@@ -22,7 +22,7 @@ class UpdateScheduledPackages extends Request implements HasBody
     protected Method $method = Method::PATCH;
 
     /**
-     * @param  UpdateScheduledPackagesRequest  $updateScheduledPackagesRequest The request schema for the `updateScheduledPackages` operation.
+     * @param  UpdateScheduledPackagesRequest  $updateScheduledPackagesRequest  The request schema for the `updateScheduledPackages` operation.
      */
     public function __construct(
         public UpdateScheduledPackagesRequest $updateScheduledPackagesRequest,

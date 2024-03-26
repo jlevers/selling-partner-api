@@ -22,10 +22,10 @@ class GetFixedSlotCapacity extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $resourceId Resource Identifier.
-     * @param  FixedSlotCapacityQuery  $fixedSlotCapacityQuery Request schema for the `getFixedSlotCapacity` operation. This schema is used to define the time range, capacity types and slot duration which are being queried.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
-     * @param  ?string  $nextPageToken Next page token returned in the response of your previous request.
+     * @param  string  $resourceId  Resource Identifier.
+     * @param  FixedSlotCapacityQuery  $fixedSlotCapacityQuery  Request schema for the `getFixedSlotCapacity` operation. This schema is used to define the time range, capacity types and slot duration which are being queried.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
+     * @param  ?string  $nextPageToken  Next page token returned in the response of your previous request.
      */
     public function __construct(
         protected string $resourceId,

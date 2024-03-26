@@ -16,10 +16,10 @@ class GetAppointmmentSlotsByJobId extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $serviceJobId A service job identifier to retrive appointment slots for associated service.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
-     * @param  ?string  $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration.
-     * @param  ?string  $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+     * @param  string  $serviceJobId  A service job identifier to retrive appointment slots for associated service.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
+     * @param  ?string  $startTime  A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration.
+     * @param  ?string  $endTime  A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
      */
     public function __construct(
         protected string $serviceJobId,

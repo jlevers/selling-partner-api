@@ -22,7 +22,7 @@ class CreateQuery extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateQuerySpecification  $createQuerySpecification Information required to create the query.
+     * @param  CreateQuerySpecification  $createQuerySpecification  Information required to create the query.
      */
     public function __construct(
         public CreateQuerySpecification $createQuerySpecification,

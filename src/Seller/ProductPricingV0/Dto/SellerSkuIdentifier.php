@@ -13,9 +13,9 @@ final class SellerSkuIdentifier extends BaseDto
     ];
 
     /**
-     * @param  string  $marketplaceId A marketplace identifier.
-     * @param  string  $sellerId The seller identifier submitted for the operation.
-     * @param  string  $sellerSku The seller stock keeping unit (SKU) of the item.
+     * @param  string  $marketplaceId  A marketplace identifier.
+     * @param  string  $sellerId  The seller identifier submitted for the operation.
+     * @param  string  $sellerSku  The seller stock keeping unit (SKU) of the item.
      */
     public function __construct(
         public readonly string $marketplaceId,

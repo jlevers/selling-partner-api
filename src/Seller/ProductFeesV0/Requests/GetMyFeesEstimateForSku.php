@@ -21,8 +21,8 @@ class GetMyFeesEstimateForSku extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-     * @param  GetMyFeesEstimateRequest  $getMyFeesEstimateRequest Request schema.
+     * @param  string  $sellerSku  Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param  GetMyFeesEstimateRequest  $getMyFeesEstimateRequest  Request schema.
      */
     public function __construct(
         protected string $sellerSku,

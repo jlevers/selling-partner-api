@@ -11,8 +11,8 @@ final class GetFeatureInventoryResponse extends BaseResponse
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?GetFeatureInventoryResult  $payload The payload for the getEligibileInventory operation.
-     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  ?GetFeatureInventoryResult  $payload  The payload for the getEligibileInventory operation.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?GetFeatureInventoryResult $payload = null,

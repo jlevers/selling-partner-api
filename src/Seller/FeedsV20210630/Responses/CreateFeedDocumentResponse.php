@@ -10,8 +10,8 @@ final class CreateFeedDocumentResponse extends BaseResponse
     use UploadsDocument;
 
     /**
-     * @param  string  $feedDocumentId The identifier of the feed document.
-     * @param  string  $url The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
+     * @param  string  $feedDocumentId  The identifier of the feed document.
+     * @param  string  $url  The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
      */
     public function __construct(
         public readonly string $feedDocumentId,

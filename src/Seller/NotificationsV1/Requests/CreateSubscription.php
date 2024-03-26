@@ -21,10 +21,10 @@ class CreateSubscription extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $notificationType The type of notification.
+     * @param  string  $notificationType  The type of notification.
      *
      *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
-     * @param  CreateSubscriptionRequest  $createSubscriptionRequest The request schema for the createSubscription operation.
+     * @param  CreateSubscriptionRequest  $createSubscriptionRequest  The request schema for the createSubscription operation.
      */
     public function __construct(
         protected string $notificationType,

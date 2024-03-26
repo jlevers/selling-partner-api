@@ -18,7 +18,7 @@ class DeleteDestination extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $destinationId The identifier for the destination that you want to delete.
+     * @param  string  $destinationId  The identifier for the destination that you want to delete.
      */
     public function __construct(
         protected string $destinationId,

@@ -18,7 +18,7 @@ class GetTransactionStatus extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $transactionId Previously returned in the response to the POST request of a specific transaction.
+     * @param  string  $transactionId  Previously returned in the response to the POST request of a specific transaction.
      */
     public function __construct(
         protected string $transactionId,

@@ -22,7 +22,7 @@ class CreateRestrictedDataToken extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateRestrictedDataTokenRequest  $createRestrictedDataTokenRequest The request schema for the createRestrictedDataToken operation.
+     * @param  CreateRestrictedDataTokenRequest  $createRestrictedDataTokenRequest  The request schema for the createRestrictedDataToken operation.
      */
     public function __construct(
         public CreateRestrictedDataTokenRequest $createRestrictedDataTokenRequest,

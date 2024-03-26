@@ -18,8 +18,8 @@ class UpdateSupplySourceStatus extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $supplySourceId The unique identifier of a supply source.
-     * @param  UpdateSupplySourceStatusRequest  $updateSupplySourceStatusRequest A request to update the status of a supply source.
+     * @param  string  $supplySourceId  The unique identifier of a supply source.
+     * @param  UpdateSupplySourceStatusRequest  $updateSupplySourceStatusRequest  A request to update the status of a supply source.
      */
     public function __construct(
         protected string $supplySourceId,

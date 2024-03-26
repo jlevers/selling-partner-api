@@ -7,8 +7,8 @@ use Crescat\SaloonSdkGenerator\BaseResponse;
 final class CreateSupplySourceResponse extends BaseResponse
 {
     /**
-     * @param  string  $supplySourceId An Amazon generated unique supply source ID.
-     * @param  string  $supplySourceCode The seller-provided unique supply source code.
+     * @param  string  $supplySourceId  An Amazon generated unique supply source ID.
+     * @param  string  $supplySourceCode  The seller-provided unique supply source code.
      */
     public function __construct(
         public readonly string $supplySourceId,

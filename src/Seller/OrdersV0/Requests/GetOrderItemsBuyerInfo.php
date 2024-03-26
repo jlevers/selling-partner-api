@@ -17,8 +17,8 @@ class GetOrderItemsBuyerInfo extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  ?string  $nextToken A string token returned in the response of your previous request.
+     * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
+     * @param  ?string  $nextToken  A string token returned in the response of your previous request.
      */
     public function __construct(
         protected string $orderId,

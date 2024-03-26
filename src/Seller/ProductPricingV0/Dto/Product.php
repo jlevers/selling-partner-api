@@ -18,12 +18,12 @@ final class Product extends BaseDto
     protected static array $complexArrayTypes = ['salesRankings' => [SalesRankType::class], 'offers' => [OfferType::class]];
 
     /**
-     * @param  IdentifierType  $identifiers Specifies the identifiers used to uniquely identify an item.
+     * @param  IdentifierType  $identifiers  Specifies the identifiers used to uniquely identify an item.
      * @param  ?mixed[]  $attributeSets
      * @param  ?mixed[]  $relationships
-     * @param  ?CompetitivePricingType  $competitivePricing Competitive pricing information for the item.
-     * @param  SalesRankType[]|null  $salesRankings A list of sales rank information for the item, by category.
-     * @param  OfferType[]|null  $offers A list of offers.
+     * @param  ?CompetitivePricingType  $competitivePricing  Competitive pricing information for the item.
+     * @param  SalesRankType[]|null  $salesRankings  A list of sales rank information for the item, by category.
+     * @param  OfferType[]|null  $offers  A list of offers.
      */
     public function __construct(
         public readonly IdentifierType $identifiers,

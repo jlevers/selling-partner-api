@@ -15,9 +15,9 @@ final class InboundShipmentRequest extends BaseDto
     protected static array $complexArrayTypes = ['inboundShipmentItems' => [InboundShipmentItem::class]];
 
     /**
-     * @param  InboundShipmentHeader  $inboundShipmentHeader Inbound shipment information used to create and update inbound shipments.
-     * @param  InboundShipmentItem[]  $inboundShipmentItems A list of inbound shipment item information.
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
+     * @param  InboundShipmentHeader  $inboundShipmentHeader  Inbound shipment information used to create and update inbound shipments.
+     * @param  InboundShipmentItem[]  $inboundShipmentItems  A list of inbound shipment item information.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace where the product would be stored.
      */
     public function __construct(
         public readonly InboundShipmentHeader $inboundShipmentHeader,

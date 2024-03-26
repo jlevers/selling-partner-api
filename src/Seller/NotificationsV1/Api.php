@@ -18,7 +18,7 @@ use SellingPartnerApi\Seller\NotificationsV1\Requests\GetSubscriptionById;
 class Api extends BaseResource
 {
     /**
-     * @param  string  $notificationType The type of notification.
+     * @param  string  $notificationType  The type of notification.
      *
      *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
      */
@@ -30,10 +30,10 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $notificationType The type of notification.
+     * @param  string  $notificationType  The type of notification.
      *
      *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
-     * @param  CreateSubscriptionRequest  $createSubscriptionRequest The request schema for the createSubscription operation.
+     * @param  CreateSubscriptionRequest  $createSubscriptionRequest  The request schema for the createSubscription operation.
      */
     public function createSubscription(
         string $notificationType,
@@ -45,8 +45,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $subscriptionId The identifier for the subscription that you want to get.
-     * @param  string  $notificationType The type of notification.
+     * @param  string  $subscriptionId  The identifier for the subscription that you want to get.
+     * @param  string  $notificationType  The type of notification.
      *
      *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
      */
@@ -58,8 +58,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $subscriptionId The identifier for the subscription that you want to delete.
-     * @param  string  $notificationType The type of notification.
+     * @param  string  $subscriptionId  The identifier for the subscription that you want to delete.
+     * @param  string  $notificationType  The type of notification.
      *
      *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
      */
@@ -78,7 +78,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  CreateDestinationRequest  $createDestinationRequest The request schema for the createDestination operation.
+     * @param  CreateDestinationRequest  $createDestinationRequest  The request schema for the createDestination operation.
      */
     public function createDestination(CreateDestinationRequest $createDestinationRequest): Response
     {
@@ -88,7 +88,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $destinationId The identifier generated when you created the destination.
+     * @param  string  $destinationId  The identifier generated when you created the destination.
      */
     public function getDestination(string $destinationId): Response
     {
@@ -98,7 +98,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $destinationId The identifier for the destination that you want to delete.
+     * @param  string  $destinationId  The identifier for the destination that you want to delete.
      */
     public function deleteDestination(string $destinationId): Response
     {

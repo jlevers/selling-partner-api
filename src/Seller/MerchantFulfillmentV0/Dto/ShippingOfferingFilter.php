@@ -14,10 +14,10 @@ final class ShippingOfferingFilter extends BaseDto
     ];
 
     /**
-     * @param  ?bool  $includePackingSlipWithLabel When true, include a packing slip with the label.
-     * @param  ?bool  $includeComplexShippingOptions When true, include complex shipping options.
-     * @param  ?string  $carrierWillPickUp Carrier will pick up option.
-     * @param  ?string  $deliveryExperience The delivery confirmation level.
+     * @param  ?bool  $includePackingSlipWithLabel  When true, include a packing slip with the label.
+     * @param  ?bool  $includeComplexShippingOptions  When true, include complex shipping options.
+     * @param  ?string  $carrierWillPickUp  Carrier will pick up option.
+     * @param  ?string  $deliveryExperience  The delivery confirmation level.
      */
     public function __construct(
         public readonly ?bool $includePackingSlipWithLabel = null,

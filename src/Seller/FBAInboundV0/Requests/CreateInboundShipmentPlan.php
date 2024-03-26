@@ -21,7 +21,7 @@ class CreateInboundShipmentPlan extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateInboundShipmentPlanRequest  $createInboundShipmentPlanRequest The request schema for the createInboundShipmentPlan operation.
+     * @param  CreateInboundShipmentPlanRequest  $createInboundShipmentPlanRequest  The request schema for the createInboundShipmentPlan operation.
      */
     public function __construct(
         public CreateInboundShipmentPlanRequest $createInboundShipmentPlanRequest,

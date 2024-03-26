@@ -16,7 +16,7 @@ class GetFeatures extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId The marketplace for which to return the list of features.
+     * @param  string  $marketplaceId  The marketplace for which to return the list of features.
      */
     public function __construct(
         protected string $marketplaceId,

@@ -21,7 +21,7 @@ class CreateServiceDocumentUploadDestination extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  ServiceUploadDocument  $serviceUploadDocument Input for to be uploaded document.
+     * @param  ServiceUploadDocument  $serviceUploadDocument  Input for to be uploaded document.
      */
     public function __construct(
         public ServiceUploadDocument $serviceUploadDocument,

@@ -16,8 +16,8 @@ class GetPreorderInfo extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace the shipment is tied to.
+     * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace the shipment is tied to.
      */
     public function __construct(
         protected string $shipmentId,

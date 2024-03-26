@@ -21,8 +21,8 @@ class AddAppointmentForServiceJobByServiceJobId extends Request implements HasBo
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $serviceJobId An Amazon defined service job identifier.
-     * @param  AddAppointmentRequest  $addAppointmentRequest Input for add appointment operation.
+     * @param  string  $serviceJobId  An Amazon defined service job identifier.
+     * @param  AddAppointmentRequest  $addAppointmentRequest  Input for add appointment operation.
      */
     public function __construct(
         protected string $serviceJobId,

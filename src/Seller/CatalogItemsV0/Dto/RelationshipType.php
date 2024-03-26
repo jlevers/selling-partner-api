@@ -34,28 +34,28 @@ final class RelationshipType extends BaseDto
 
     /**
      * @param  ?IdentifierType  $identifiers
-     * @param  ?string  $color The color variation of the item.
-     * @param  ?string  $edition The edition variation of the item.
-     * @param  ?string  $flavor The flavor variation of the item.
-     * @param  ?string[]  $gemType The gem type attributes of the item.
-     * @param  ?string  $golfClubFlex The golf club flex variation of an item.
-     * @param  ?string  $handOrientation The hand orientation variation of an item.
-     * @param  ?string  $hardwarePlatform The hardware platform variation of an item.
-     * @param  ?string[]  $materialType The material type attributes of the item.
-     * @param  ?string  $metalType The metal type variation of an item.
-     * @param  ?string  $model The model variation of an item.
-     * @param  ?string[]  $operatingSystem The operating system attributes of the item.
-     * @param  ?string  $productTypeSubcategory The product type subcategory variation of an item.
-     * @param  ?string  $ringSize The ring size variation of an item.
-     * @param  ?string  $shaftMaterial The shaft material variation of an item.
-     * @param  ?string  $scent The scent variation of an item.
-     * @param  ?string  $size The size variation of an item.
-     * @param  ?string  $sizePerPearl The size per pearl variation of an item.
-     * @param  ?DecimalWithUnits  $golfClubLoft The decimal value and unit.
-     * @param  ?DecimalWithUnits  $totalDiamondWeight The decimal value and unit.
-     * @param  ?DecimalWithUnits  $totalGemWeight The decimal value and unit.
-     * @param  ?int  $packageQuantity The package quantity variation of an item.
-     * @param  ?DimensionType  $itemDimensions The dimension type attribute of an item.
+     * @param  ?string  $color  The color variation of the item.
+     * @param  ?string  $edition  The edition variation of the item.
+     * @param  ?string  $flavor  The flavor variation of the item.
+     * @param  ?string[]  $gemType  The gem type attributes of the item.
+     * @param  ?string  $golfClubFlex  The golf club flex variation of an item.
+     * @param  ?string  $handOrientation  The hand orientation variation of an item.
+     * @param  ?string  $hardwarePlatform  The hardware platform variation of an item.
+     * @param  ?string[]  $materialType  The material type attributes of the item.
+     * @param  ?string  $metalType  The metal type variation of an item.
+     * @param  ?string  $model  The model variation of an item.
+     * @param  ?string[]  $operatingSystem  The operating system attributes of the item.
+     * @param  ?string  $productTypeSubcategory  The product type subcategory variation of an item.
+     * @param  ?string  $ringSize  The ring size variation of an item.
+     * @param  ?string  $shaftMaterial  The shaft material variation of an item.
+     * @param  ?string  $scent  The scent variation of an item.
+     * @param  ?string  $size  The size variation of an item.
+     * @param  ?string  $sizePerPearl  The size per pearl variation of an item.
+     * @param  ?DecimalWithUnits  $golfClubLoft  The decimal value and unit.
+     * @param  ?DecimalWithUnits  $totalDiamondWeight  The decimal value and unit.
+     * @param  ?DecimalWithUnits  $totalGemWeight  The decimal value and unit.
+     * @param  ?int  $packageQuantity  The package quantity variation of an item.
+     * @param  ?DimensionType  $itemDimensions  The dimension type attribute of an item.
      */
     public function __construct(
         public readonly ?IdentifierType $identifiers = null,

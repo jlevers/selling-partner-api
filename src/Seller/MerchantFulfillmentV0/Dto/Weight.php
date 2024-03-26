@@ -9,8 +9,8 @@ final class Weight extends BaseDto
     protected static array $attributeMap = ['value' => 'Value', 'unit' => 'Unit'];
 
     /**
-     * @param  float  $value The weight value.
-     * @param  string  $unit The unit of weight.
+     * @param  float  $value  The weight value.
+     * @param  string  $unit  The unit of weight.
      */
     public function __construct(
         public readonly float $value,

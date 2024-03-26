@@ -22,7 +22,7 @@ class ListOfferMetrics extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  ListOfferMetricsRequest  $listOfferMetricsRequest The request body for the `listOfferMetrics` operation.
+     * @param  ListOfferMetricsRequest  $listOfferMetricsRequest  The request body for the `listOfferMetrics` operation.
      */
     public function __construct(
         public ListOfferMetricsRequest $listOfferMetricsRequest,

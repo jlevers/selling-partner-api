@@ -20,9 +20,9 @@ final class Item extends BaseDto
     ];
 
     /**
-     * @param  AttributeSetListType[]|null  $attributeSets A list of attributes for the item.
-     * @param  RelationshipType[]|null  $relationships A list of variation relationship information, if applicable for the item.
-     * @param  SalesRankType[]|null  $salesRankings A list of sales rank information for the item by category.
+     * @param  AttributeSetListType[]|null  $attributeSets  A list of attributes for the item.
+     * @param  RelationshipType[]|null  $relationships  A list of variation relationship information, if applicable for the item.
+     * @param  SalesRankType[]|null  $salesRankings  A list of sales rank information for the item by category.
      */
     public function __construct(
         public readonly IdentifierType $identifiers,

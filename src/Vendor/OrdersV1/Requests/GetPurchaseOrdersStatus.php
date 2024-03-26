@@ -16,19 +16,19 @@ class GetPurchaseOrdersStatus extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  ?int  $limit The limit to the number of records returned. Default value is 100 records.
-     * @param  ?string  $sortOrder Sort in ascending or descending order by purchase order creation date.
-     * @param  ?string  $nextToken Used for pagination when there are more purchase orders than the specified result size limit.
-     * @param  ?DateTime  $createdAfter Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?DateTime  $createdBefore Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?DateTime  $updatedAfter Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?DateTime  $updatedBefore Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $purchaseOrderNumber Provides purchase order status for the specified purchase order number.
-     * @param  ?string  $purchaseOrderStatus Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
-     * @param  ?string  $itemConfirmationStatus Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
-     * @param  ?string  $itemReceiveStatus Filters purchase orders based on the purchase order's item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
-     * @param  ?string  $orderingVendorCode Filters purchase orders based on the specified ordering vendor code. This value should be same as 'sellingParty.partyId' in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
-     * @param  ?string  $shipToPartyId Filters purchase orders for a specific buyer's Fulfillment Center/warehouse by providing ship to location id here. This value should be same as 'shipToParty.partyId' in the purchase order. If not included in filter, this will return purchase orders for all the buyer's warehouses used for vendor group purchase orders.
+     * @param  ?int  $limit  The limit to the number of records returned. Default value is 100 records.
+     * @param  ?string  $sortOrder  Sort in ascending or descending order by purchase order creation date.
+     * @param  ?string  $nextToken  Used for pagination when there are more purchase orders than the specified result size limit.
+     * @param  ?DateTime  $createdAfter  Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $createdBefore  Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $updatedAfter  Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $updatedBefore  Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $purchaseOrderNumber  Provides purchase order status for the specified purchase order number.
+     * @param  ?string  $purchaseOrderStatus  Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses.
+     * @param  ?string  $itemConfirmationStatus  Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included.
+     * @param  ?string  $itemReceiveStatus  Filters purchase orders based on the purchase order's item receive status. If the item receive status is not included in the filter, purchase orders for all receive statuses are included.
+     * @param  ?string  $orderingVendorCode  Filters purchase orders based on the specified ordering vendor code. This value should be same as 'sellingParty.partyId' in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned.
+     * @param  ?string  $shipToPartyId  Filters purchase orders for a specific buyer's Fulfillment Center/warehouse by providing ship to location id here. This value should be same as 'shipToParty.partyId' in the purchase order. If not included in filter, this will return purchase orders for all the buyer's warehouses used for vendor group purchase orders.
      */
     public function __construct(
         protected ?int $limit = null,

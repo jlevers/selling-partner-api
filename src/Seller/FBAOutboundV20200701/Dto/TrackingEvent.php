@@ -8,9 +8,9 @@ final class TrackingEvent extends BaseDto
 {
     /**
      * @param  DateTime  $eventDate
-     * @param  TrackingAddress  $eventAddress Address information for tracking the package.
-     * @param  string  $eventCode The event code for the delivery event.
-     * @param  string  $eventDescription A description for the corresponding event code.
+     * @param  TrackingAddress  $eventAddress  Address information for tracking the package.
+     * @param  string  $eventCode  The event code for the delivery event.
+     * @param  string  $eventDescription  A description for the corresponding event code.
      */
     public function __construct(
         public readonly \DateTime $eventDate,

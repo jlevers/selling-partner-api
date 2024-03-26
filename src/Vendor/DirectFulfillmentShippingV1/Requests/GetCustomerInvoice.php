@@ -17,7 +17,7 @@ class GetCustomerInvoice extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $purchaseOrderNumber Purchase order number of the shipment for which to return the invoice.
+     * @param  string  $purchaseOrderNumber  Purchase order number of the shipment for which to return the invoice.
      */
     public function __construct(
         protected string $purchaseOrderNumber,

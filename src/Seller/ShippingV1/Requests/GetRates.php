@@ -21,7 +21,7 @@ class GetRates extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetRatesRequest  $getRatesRequest The payload schema for the getRates operation.
+     * @param  GetRatesRequest  $getRatesRequest  The payload schema for the getRates operation.
      */
     public function __construct(
         public GetRatesRequest $getRatesRequest,

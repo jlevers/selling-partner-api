@@ -16,7 +16,7 @@ class GetTransportDetails extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
+     * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.
      */
     public function __construct(
         protected string $shipmentId,

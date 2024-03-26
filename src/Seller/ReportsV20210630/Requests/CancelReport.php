@@ -17,7 +17,7 @@ class CancelReport extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
+     * @param  string  $reportId  The identifier for the report. This identifier is unique only in combination with a seller ID.
      */
     public function __construct(
         protected string $reportId,

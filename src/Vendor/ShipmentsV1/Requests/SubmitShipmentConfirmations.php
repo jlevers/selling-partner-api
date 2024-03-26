@@ -21,7 +21,7 @@ class SubmitShipmentConfirmations extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  SubmitShipmentConfirmationsRequest  $submitShipmentConfirmationsRequest The request schema for the SubmitShipmentConfirmations operation.
+     * @param  SubmitShipmentConfirmationsRequest  $submitShipmentConfirmationsRequest  The request schema for the SubmitShipmentConfirmations operation.
      */
     public function __construct(
         public SubmitShipmentConfirmationsRequest $submitShipmentConfirmationsRequest,

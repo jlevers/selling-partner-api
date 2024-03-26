@@ -16,7 +16,7 @@ final class AdjustmentEvent extends BaseDto
     protected static array $complexArrayTypes = ['adjustmentItemList' => [AdjustmentItem::class]];
 
     /**
-     * @param  ?string  $adjustmentType The type of adjustment.
+     * @param  ?string  $adjustmentType  The type of adjustment.
      *
      * Possible values:
      *
@@ -36,8 +36,8 @@ final class AdjustmentEvent extends BaseDto
      *
      * * SellerRewards - An award credited to a seller's account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace.
      * @param  ?DateTime  $postedDate
-     * @param  ?Currency  $adjustmentAmount A currency type and amount.
-     * @param  AdjustmentItem[]|null  $adjustmentItemList A list of information about items in an adjustment to the seller's account.
+     * @param  ?Currency  $adjustmentAmount  A currency type and amount.
+     * @param  AdjustmentItem[]|null  $adjustmentItemList  A list of information about items in an adjustment to the seller's account.
      */
     public function __construct(
         public readonly ?string $adjustmentType = null,

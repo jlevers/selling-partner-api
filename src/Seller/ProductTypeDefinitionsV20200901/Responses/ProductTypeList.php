@@ -12,7 +12,7 @@ final class ProductTypeList extends BaseResponse
 
     /**
      * @param  ProductType[]  $productTypes
-     * @param  ProductTypeVersion  $productTypeVersion The version details for an Amazon product type.
+     * @param  ProductTypeVersion  $productTypeVersion  The version details for an Amazon product type.
      */
     public function __construct(
         public readonly array $productTypes,

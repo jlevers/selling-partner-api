@@ -17,7 +17,7 @@ class GetDocument extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $documentId The identifier for the Data Kiosk document.
+     * @param  string  $documentId  The identifier for the Data Kiosk document.
      */
     public function __construct(
         protected string $documentId,

@@ -15,7 +15,7 @@ final class IncludedFeeDetail extends BaseDto
     ];
 
     /**
-     * @param  string  $feeType The type of fee charged to a seller.
+     * @param  string  $feeType  The type of fee charged to a seller.
      * @param  ?MoneyType  $feePromotion
      * @param  ?MoneyType  $taxAmount
      */

@@ -18,7 +18,7 @@ class GetDestination extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $destinationId The identifier generated when you created the destination.
+     * @param  string  $destinationId  The identifier generated when you created the destination.
      */
     public function __construct(
         protected string $destinationId,

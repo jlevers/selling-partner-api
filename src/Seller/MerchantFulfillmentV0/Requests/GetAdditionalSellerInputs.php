@@ -21,7 +21,7 @@ class GetAdditionalSellerInputs extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetAdditionalSellerInputsRequest  $getAdditionalSellerInputsRequest Request schema.
+     * @param  GetAdditionalSellerInputsRequest  $getAdditionalSellerInputsRequest  Request schema.
      */
     public function __construct(
         public GetAdditionalSellerInputsRequest $getAdditionalSellerInputsRequest,

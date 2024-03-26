@@ -12,9 +12,9 @@ final class SetAppointmentFulfillmentDataRequest extends BaseDto
     ];
 
     /**
-     * @param  ?FulfillmentTime  $fulfillmentTime Input for fulfillment time details
-     * @param  AppointmentResource[]|null  $appointmentResources List of resources that performs or performed job appointment fulfillment.
-     * @param  FulfillmentDocument[]|null  $fulfillmentDocuments List of documents captured during service appointment fulfillment.
+     * @param  ?FulfillmentTime  $fulfillmentTime  Input for fulfillment time details
+     * @param  AppointmentResource[]|null  $appointmentResources  List of resources that performs or performed job appointment fulfillment.
+     * @param  FulfillmentDocument[]|null  $fulfillmentDocuments  List of documents captured during service appointment fulfillment.
      */
     public function __construct(
         public readonly ?FulfillmentTime $fulfillmentTime = null,

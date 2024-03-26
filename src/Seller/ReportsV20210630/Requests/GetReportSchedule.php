@@ -17,7 +17,7 @@ class GetReportSchedule extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @param  string  $reportScheduleId  The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
      */
     public function __construct(
         protected string $reportScheduleId,

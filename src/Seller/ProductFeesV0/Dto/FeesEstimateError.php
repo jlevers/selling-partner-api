@@ -14,9 +14,9 @@ final class FeesEstimateError extends BaseDto
     ];
 
     /**
-     * @param  string  $type An error type, identifying either the receiver or the sender as the originator of the error.
-     * @param  string  $code An error code that identifies the type of error that occurred.
-     * @param  string  $message A message that describes the error condition.
+     * @param  string  $type  An error type, identifying either the receiver or the sender as the originator of the error.
+     * @param  string  $code  An error code that identifies the type of error that occurred.
+     * @param  string  $message  A message that describes the error condition.
      * @param  mixed[]  $detail
      */
     public function __construct(

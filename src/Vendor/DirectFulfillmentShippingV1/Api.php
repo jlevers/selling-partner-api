@@ -20,12 +20,12 @@ use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Requests\SubmitShipping
 class Api extends BaseResource
 {
     /**
-     * @param  DateTime  $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  DateTime  $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
-     * @param  ?int  $limit The limit to the number of records returned.
-     * @param  ?string  $sortOrder Sort ASC or DESC by order creation date.
-     * @param  ?string  $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
+     * @param  DateTime  $createdAfter  Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdBefore  Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
+     * @param  ?int  $limit  The limit to the number of records returned.
+     * @param  ?string  $sortOrder  Sort ASC or DESC by order creation date.
+     * @param  ?string  $nextToken  Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getShippingLabels(
         \DateTime $createdAfter,
@@ -48,7 +48,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order.
+     * @param  string  $purchaseOrderNumber  The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order.
      */
     public function getShippingLabel(string $purchaseOrderNumber): Response
     {
@@ -74,12 +74,12 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  DateTime  $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  DateTime  $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
-     * @param  ?int  $limit The limit to the number of records returned
-     * @param  ?string  $sortOrder Sort ASC or DESC by order creation date.
-     * @param  ?string  $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
+     * @param  DateTime  $createdAfter  Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdBefore  Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses.
+     * @param  ?int  $limit  The limit to the number of records returned
+     * @param  ?string  $sortOrder  Sort ASC or DESC by order creation date.
+     * @param  ?string  $nextToken  Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getCustomerInvoices(
         \DateTime $createdAfter,
@@ -95,7 +95,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $purchaseOrderNumber Purchase order number of the shipment for which to return the invoice.
+     * @param  string  $purchaseOrderNumber  Purchase order number of the shipment for which to return the invoice.
      */
     public function getCustomerInvoice(string $purchaseOrderNumber): Response
     {
@@ -105,12 +105,12 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  DateTime  $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  DateTime  $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
-     * @param  ?int  $limit The limit to the number of records returned
-     * @param  ?string  $sortOrder Sort ASC or DESC by packing slip creation date.
-     * @param  ?string  $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
+     * @param  DateTime  $createdAfter  Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  DateTime  $createdBefore  Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $shipFromPartyId  The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses.
+     * @param  ?int  $limit  The limit to the number of records returned
+     * @param  ?string  $sortOrder  Sort ASC or DESC by packing slip creation date.
+     * @param  ?string  $nextToken  Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call.
      */
     public function getPackingSlips(
         \DateTime $createdAfter,
@@ -126,7 +126,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $purchaseOrderNumber The purchaseOrderNumber for the packing slip you want.
+     * @param  string  $purchaseOrderNumber  The purchaseOrderNumber for the packing slip you want.
      */
     public function getPackingSlip(string $purchaseOrderNumber): Response
     {

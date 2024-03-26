@@ -17,10 +17,10 @@ class GetCatalogItem extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  array  $marketplaceIds A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
-     * @param  ?array  $includedData A comma-delimited list of data sets to include in the response. Default: `summaries`.
-     * @param  ?string  $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
+     * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces.
+     * @param  ?array  $includedData  A comma-delimited list of data sets to include in the response. Default: `summaries`.
+     * @param  ?string  $locale  Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace.
      */
     public function __construct(
         protected string $asin,

@@ -9,13 +9,13 @@ final class OrderDetails extends BaseDto
     protected static array $complexArrayTypes = ['items' => [OrderItem::class]];
 
     /**
-     * @param  string  $customerOrderNumber The customer order number.
-     * @param  DateTime  $orderDate The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
-     * @param  ShipmentDetails  $shipmentDetails Shipment details required for the shipment.
-     * @param  Address  $shipToParty Address of the party.
-     * @param  ?string  $orderStatus Current status of the order.
+     * @param  string  $customerOrderNumber  The customer order number.
+     * @param  DateTime  $orderDate  The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
+     * @param  ShipmentDetails  $shipmentDetails  Shipment details required for the shipment.
+     * @param  Address  $shipToParty  Address of the party.
+     * @param  ?string  $orderStatus  Current status of the order.
      * @param  ?TaxTotal  $taxTotal
-     * @param  OrderItem[]  $items A list of items in this purchase order.
+     * @param  OrderItem[]  $items  A list of items in this purchase order.
      */
     public function __construct(
         public readonly string $customerOrderNumber,

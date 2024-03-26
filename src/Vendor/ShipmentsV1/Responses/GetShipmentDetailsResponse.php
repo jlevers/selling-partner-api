@@ -12,7 +12,7 @@ final class GetShipmentDetailsResponse extends BaseResponse
 
     /**
      * @param  ?ShipmentDetails  $payload
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?ShipmentDetails $payload = null,

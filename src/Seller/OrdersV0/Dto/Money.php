@@ -9,8 +9,8 @@ final class Money extends BaseDto
     protected static array $attributeMap = ['currencyCode' => 'CurrencyCode', 'amount' => 'Amount'];
 
     /**
-     * @param  ?string  $currencyCode The three-digit currency code. In ISO 4217 format.
-     * @param  ?string  $amount The currency amount.
+     * @param  ?string  $currencyCode  The three-digit currency code. In ISO 4217 format.
+     * @param  ?string  $amount  The currency amount.
      */
     public function __construct(
         public readonly ?string $currencyCode = null,

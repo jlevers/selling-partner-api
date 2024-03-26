@@ -22,7 +22,7 @@ class GetFeaturedOfferExpectedPriceBatch extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetFeaturedOfferExpectedPriceBatchRequest  $getFeaturedOfferExpectedPriceBatchRequest The request body for the `getFeaturedOfferExpectedPriceBatch` operation.
+     * @param  GetFeaturedOfferExpectedPriceBatchRequest  $getFeaturedOfferExpectedPriceBatchRequest  The request body for the `getFeaturedOfferExpectedPriceBatch` operation.
      */
     public function __construct(
         public GetFeaturedOfferExpectedPriceBatchRequest $getFeaturedOfferExpectedPriceBatchRequest,

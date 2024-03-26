@@ -12,7 +12,7 @@ final class GetShipmentLabels extends BaseResponse
 
     /**
      * @param  ?TransportationLabels  $payload
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?TransportationLabels $payload = null,

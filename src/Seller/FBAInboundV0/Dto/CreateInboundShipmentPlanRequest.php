@@ -19,9 +19,9 @@ final class CreateInboundShipmentPlanRequest extends BaseDto
     ];
 
     /**
-     * @param  string  $labelPrepPreference The preference for label preparation for an inbound shipment.
+     * @param  string  $labelPrepPreference  The preference for label preparation for an inbound shipment.
      * @param  InboundShipmentPlanRequestItem[]  $inboundShipmentPlanRequestItems
-     * @param  ?string  $shipToCountryCode The two-character country code for the country where the inbound shipment is to be sent.
+     * @param  ?string  $shipToCountryCode  The two-character country code for the country where the inbound shipment is to be sent.
      *
      * Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error.
      *
@@ -40,7 +40,7 @@ final class CreateInboundShipmentPlanRequest extends BaseDto
      *  * IT – Italy
      *
      * Default: The country code for the seller's home marketplace.
-     * @param  ?string  $shipToCountrySubdivisionCode The two-character country code, followed by a dash and then up to three characters that represent the subdivision of the country where the inbound shipment is to be sent. For example, "IN-MH". In full ISO 3166-2 format.
+     * @param  ?string  $shipToCountrySubdivisionCode  The two-character country code, followed by a dash and then up to three characters that represent the subdivision of the country where the inbound shipment is to be sent. For example, "IN-MH". In full ISO 3166-2 format.
      *
      * Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error.
      */

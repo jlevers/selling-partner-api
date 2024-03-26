@@ -10,7 +10,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentPaymentV1\Requests\SubmitInvoice;
 class Api extends BaseResource
 {
     /**
-     * @param  SubmitInvoiceRequest  $submitInvoiceRequest The request schema for the submitInvoice operation.
+     * @param  SubmitInvoiceRequest  $submitInvoiceRequest  The request schema for the submitInvoice operation.
      */
     public function submitInvoice(SubmitInvoiceRequest $submitInvoiceRequest): Response
     {

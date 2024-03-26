@@ -23,8 +23,8 @@ class CreateShippingLabels extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.
-     * @param  CreateShippingLabelsRequest  $createShippingLabelsRequest The request body for the createShippingLabels operation.
+     * @param  string  $purchaseOrderNumber  The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order.
+     * @param  CreateShippingLabelsRequest  $createShippingLabelsRequest  The request body for the createShippingLabels operation.
      */
     public function __construct(
         protected string $purchaseOrderNumber,

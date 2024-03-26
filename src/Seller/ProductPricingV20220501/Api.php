@@ -12,7 +12,7 @@ use SellingPartnerApi\Seller\ProductPricingV20220501\Requests\GetFeaturedOfferEx
 class Api extends BaseResource
 {
     /**
-     * @param  GetFeaturedOfferExpectedPriceBatchRequest  $getFeaturedOfferExpectedPriceBatchRequest The request body for the `getFeaturedOfferExpectedPriceBatch` operation.
+     * @param  GetFeaturedOfferExpectedPriceBatchRequest  $getFeaturedOfferExpectedPriceBatchRequest  The request body for the `getFeaturedOfferExpectedPriceBatch` operation.
      */
     public function getFeaturedOfferExpectedPriceBatch(
         GetFeaturedOfferExpectedPriceBatchRequest $getFeaturedOfferExpectedPriceBatchRequest,
@@ -23,7 +23,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  CompetitiveSummaryBatchRequest  $competitiveSummaryBatchRequest The `competitiveSummary` batch request data.
+     * @param  CompetitiveSummaryBatchRequest  $competitiveSummaryBatchRequest  The `competitiveSummary` batch request data.
      */
     public function getCompetitiveSummary(CompetitiveSummaryBatchRequest $competitiveSummaryBatchRequest): Response
     {

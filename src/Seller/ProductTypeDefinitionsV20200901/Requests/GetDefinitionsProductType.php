@@ -17,14 +17,14 @@ class GetDefinitionsProductType extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $productType The Amazon product type name.
-     * @param  array  $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request.
-     * Note: This parameter is limited to one marketplaceId at this time.
-     * @param  ?string  $sellerId A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
-     * @param  ?string  $productTypeVersion The version of the Amazon product type to retrieve. Defaults to "LATEST",. Prerelease versions of product type definitions may be retrieved with "RELEASE_CANDIDATE". If no prerelease version is currently available, the "LATEST" live version will be provided.
-     * @param  ?string  $requirements The name of the requirements set to retrieve requirements for.
-     * @param  ?string  $requirementsEnforced Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
-     * @param  ?string  $locale Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
+     * @param  string  $productType  The Amazon product type name.
+     * @param  array  $marketplaceIds  A comma-delimited list of Amazon marketplace identifiers for the request.
+     *                                 Note: This parameter is limited to one marketplaceId at this time.
+     * @param  ?string  $sellerId  A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner.
+     * @param  ?string  $productTypeVersion  The version of the Amazon product type to retrieve. Defaults to "LATEST",. Prerelease versions of product type definitions may be retrieved with "RELEASE_CANDIDATE". If no prerelease version is currently available, the "LATEST" live version will be provided.
+     * @param  ?string  $requirements  The name of the requirements set to retrieve requirements for.
+     * @param  ?string  $requirementsEnforced  Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates).
+     * @param  ?string  $locale  Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request.
      */
     public function __construct(
         protected string $productType,

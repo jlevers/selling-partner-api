@@ -22,7 +22,7 @@ class CreateFeed extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateFeedSpecification  $createFeedSpecification Information required to create the feed.
+     * @param  CreateFeedSpecification  $createFeedSpecification  Information required to create the feed.
      */
     public function __construct(
         public CreateFeedSpecification $createFeedSpecification,

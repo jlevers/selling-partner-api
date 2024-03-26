@@ -17,8 +17,8 @@ class CreateFulfillmentReturn extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
-     * @param  CreateFulfillmentReturnRequest  $createFulfillmentReturnRequest The createFulfillmentReturn operation creates a fulfillment return for items that were fulfilled using the createFulfillmentOrder operation. For calls to createFulfillmentReturn, you must include ReturnReasonCode values returned by a previous call to the listReturnReasonCodes operation.
+     * @param  string  $sellerFulfillmentOrderId  An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
+     * @param  CreateFulfillmentReturnRequest  $createFulfillmentReturnRequest  The createFulfillmentReturn operation creates a fulfillment return for items that were fulfilled using the createFulfillmentOrder operation. For calls to createFulfillmentReturn, you must include ReturnReasonCode values returned by a previous call to the listReturnReasonCodes operation.
      */
     public function __construct(
         protected string $sellerFulfillmentOrderId,

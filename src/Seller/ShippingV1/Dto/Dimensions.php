@@ -7,10 +7,10 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class Dimensions extends BaseDto
 {
     /**
-     * @param  float  $length The length of the container.
-     * @param  float  $width The width of the container.
-     * @param  float  $height The height of the container.
-     * @param  string  $unit The unit of these measurements.
+     * @param  float  $length  The length of the container.
+     * @param  float  $width  The width of the container.
+     * @param  float  $height  The height of the container.
+     * @param  string  $unit  The unit of these measurements.
      */
     public function __construct(
         public readonly float $length,

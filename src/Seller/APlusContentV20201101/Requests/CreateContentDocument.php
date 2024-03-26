@@ -22,7 +22,7 @@ class CreateContentDocument extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
      */
     public function __construct(
         public PostContentDocumentRequest $postContentDocumentRequest,

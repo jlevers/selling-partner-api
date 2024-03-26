@@ -7,8 +7,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ShippingPromiseSet extends BaseDto
 {
     /**
-     * @param  ?TimeRange  $deliveryWindow The time range.
-     * @param  ?TimeRange  $receiveWindow The time range.
+     * @param  ?TimeRange  $deliveryWindow  The time range.
+     * @param  ?TimeRange  $receiveWindow  The time range.
      */
     public function __construct(
         public readonly ?TimeRange $deliveryWindow = null,

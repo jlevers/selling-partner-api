@@ -22,8 +22,8 @@ class UpdateShipmentStatus extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $orderId An Amazon-defined order identifier, in 3-7-7 format.
-     * @param  UpdateShipmentStatusRequest  $updateShipmentStatusRequest The request body for the updateShipmentStatus operation.
+     * @param  string  $orderId  An Amazon-defined order identifier, in 3-7-7 format.
+     * @param  UpdateShipmentStatusRequest  $updateShipmentStatusRequest  The request body for the updateShipmentStatus operation.
      */
     public function __construct(
         protected string $orderId,

@@ -10,8 +10,8 @@ use SellingPartnerApi\Seller\SolicitationsV1\Requests\GetSolicitationActionsForO
 class Api extends BaseResource
 {
     /**
-     * @param  string  $amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
-     * @param  array  $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+     * @param  string  $amazonOrderId  An Amazon order identifier. This specifies the order for which you want a list of available solicitation types.
+     * @param  array  $marketplaceIds  A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
      */
     public function getSolicitationActionsForOrder(string $amazonOrderId, array $marketplaceIds): Response
     {
@@ -21,8 +21,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $amazonOrderId An Amazon order identifier. This specifies the order for which a solicitation is sent.
-     * @param  array  $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+     * @param  string  $amazonOrderId  An Amazon order identifier. This specifies the order for which a solicitation is sent.
+     * @param  array  $marketplaceIds  A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
      */
     public function createProductReviewAndSellerFeedbackSolicitation(
         string $amazonOrderId,

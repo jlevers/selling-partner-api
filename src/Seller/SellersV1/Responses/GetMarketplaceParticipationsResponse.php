@@ -14,8 +14,8 @@ final class GetMarketplaceParticipationsResponse extends BaseResponse
     ];
 
     /**
-     * @param  MarketplaceParticipation[]|null  $payload List of marketplace participations.
-     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  MarketplaceParticipation[]|null  $payload  List of marketplace participations.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?array $payload = null,

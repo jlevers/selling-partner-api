@@ -22,8 +22,8 @@ class ValidateContentDocumentAsinRelations extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param  ?array  $asinSet The set of ASINs.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  ?array  $asinSet  The set of ASINs.
      */
     public function __construct(
         public PostContentDocumentRequest $postContentDocumentRequest,

@@ -26,20 +26,20 @@ final class ShipmentDetail extends BaseDto
     protected static array $complexArrayTypes = ['shipmentItems' => [ShipmentItem::class]];
 
     /**
-     * @param  ?string  $warehouseId The Amazon-defined identifier for the warehouse.
-     * @param  ?string  $amazonOrderId The Amazon-defined identifier for the order.
-     * @param  ?string  $amazonShipmentId The Amazon-defined identifier for the shipment.
-     * @param  ?DateTime  $purchaseDate The date and time when the order was created.
-     * @param  ?Address  $shippingAddress The shipping address details of the shipment.
-     * @param  ?string[]  $paymentMethodDetails The list of payment method details.
-     * @param  ?string  $marketplaceId The identifier for the marketplace where the order was placed.
-     * @param  ?string  $sellerId The seller identifier.
-     * @param  ?string  $buyerName The name of the buyer.
-     * @param  ?string  $buyerCounty The county of the buyer.
-     * @param  ?BuyerTaxInfo  $buyerTaxInfo Tax information about the buyer.
-     * @param  ?MarketplaceTaxInfo  $marketplaceTaxInfo Tax information about the marketplace.
-     * @param  ?string  $sellerDisplayName The seller’s friendly name registered in the marketplace.
-     * @param  ShipmentItem[]|null  $shipmentItems A list of shipment items.
+     * @param  ?string  $warehouseId  The Amazon-defined identifier for the warehouse.
+     * @param  ?string  $amazonOrderId  The Amazon-defined identifier for the order.
+     * @param  ?string  $amazonShipmentId  The Amazon-defined identifier for the shipment.
+     * @param  ?DateTime  $purchaseDate  The date and time when the order was created.
+     * @param  ?Address  $shippingAddress  The shipping address details of the shipment.
+     * @param  ?string[]  $paymentMethodDetails  The list of payment method details.
+     * @param  ?string  $marketplaceId  The identifier for the marketplace where the order was placed.
+     * @param  ?string  $sellerId  The seller identifier.
+     * @param  ?string  $buyerName  The name of the buyer.
+     * @param  ?string  $buyerCounty  The county of the buyer.
+     * @param  ?BuyerTaxInfo  $buyerTaxInfo  Tax information about the buyer.
+     * @param  ?MarketplaceTaxInfo  $marketplaceTaxInfo  Tax information about the marketplace.
+     * @param  ?string  $sellerDisplayName  The seller’s friendly name registered in the marketplace.
+     * @param  ShipmentItem[]|null  $shipmentItems  A list of shipment items.
      */
     public function __construct(
         public readonly ?string $warehouseId = null,

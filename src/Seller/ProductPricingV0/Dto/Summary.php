@@ -28,16 +28,16 @@ final class Summary extends BaseDto
     ];
 
     /**
-     * @param  int  $totalOfferCount The number of unique offers contained in NumberOfOffers.
+     * @param  int  $totalOfferCount  The number of unique offers contained in NumberOfOffers.
      * @param  OfferCountType[]|null  $numberOfOffers
      * @param  LowestPriceType[]|null  $lowestPrices
      * @param  BuyBoxPriceType[]|null  $buyBoxPrices
      * @param  ?MoneyType  $listPrice
      * @param  ?MoneyType  $competitivePriceThreshold
      * @param  ?MoneyType  $suggestedLowerPricePlusShipping
-     * @param  SalesRankType[]|null  $salesRankings A list of sales rank information for the item, by category.
+     * @param  SalesRankType[]|null  $salesRankings  A list of sales rank information for the item, by category.
      * @param  OfferCountType[]|null  $buyBoxEligibleOffers
-     * @param  ?DateTime  $offersAvailableTime When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
+     * @param  ?DateTime  $offersAvailableTime  When the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing.
      */
     public function __construct(
         public readonly int $totalOfferCount,

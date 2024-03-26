@@ -9,7 +9,7 @@ final class GetMyFeesEstimateRequest extends BaseDto
     protected static array $attributeMap = ['feesEstimateRequest' => 'FeesEstimateRequest'];
 
     /**
-     * @param  ?FeesEstimateRequest  $feesEstimateRequest A product, marketplace, and proposed price used to request estimated fees.
+     * @param  ?FeesEstimateRequest  $feesEstimateRequest  A product, marketplace, and proposed price used to request estimated fees.
      */
     public function __construct(
         public readonly ?FeesEstimateRequest $feesEstimateRequest = null,

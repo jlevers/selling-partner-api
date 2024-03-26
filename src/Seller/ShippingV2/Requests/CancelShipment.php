@@ -17,7 +17,7 @@ class CancelShipment extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $shipmentId The shipment identifier originally returned by the purchaseShipment operation.
+     * @param  string  $shipmentId  The shipment identifier originally returned by the purchaseShipment operation.
      */
     public function __construct(
         protected string $shipmentId,

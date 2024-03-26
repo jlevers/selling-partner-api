@@ -11,8 +11,8 @@ final class GetFeatureSkuResponse extends BaseResponse
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?GetFeatureSkuResult  $payload The payload for the getFeatureSKU operation.
-     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  ?GetFeatureSkuResult  $payload  The payload for the getFeatureSKU operation.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?GetFeatureSkuResult $payload = null,

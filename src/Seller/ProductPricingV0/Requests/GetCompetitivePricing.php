@@ -16,11 +16,11 @@ class GetCompetitivePricing extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned.
-     * @param  string  $itemType Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
-     * @param  ?array  $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
-     * @param  ?array  $skus A list of up to twenty seller SKU values used to identify items in the given marketplace.
-     * @param  ?string  $customerType Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for which prices are returned.
+     * @param  string  $itemType  Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku.
+     * @param  ?array  $asins  A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace.
+     * @param  ?array  $skus  A list of up to twenty seller SKU values used to identify items in the given marketplace.
+     * @param  ?string  $customerType  Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer.
      */
     public function __construct(
         protected string $marketplaceId,

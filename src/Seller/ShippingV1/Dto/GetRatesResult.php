@@ -9,7 +9,7 @@ final class GetRatesResult extends BaseDto
     protected static array $complexArrayTypes = ['serviceRates' => [ServiceRate::class]];
 
     /**
-     * @param  ServiceRate[]  $serviceRates A list of service rates.
+     * @param  ServiceRate[]  $serviceRates  A list of service rates.
      */
     public function __construct(
         public readonly array $serviceRates,

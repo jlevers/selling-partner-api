@@ -17,8 +17,8 @@ final class AvailableShippingServiceOptions extends BaseDto
     ];
 
     /**
-     * @param  AvailableCarrierWillPickUpOption[]  $availableCarrierWillPickUpOptions List of available carrier pickup options.
-     * @param  AvailableDeliveryExperienceOption[]  $availableDeliveryExperienceOptions List of available delivery experience options.
+     * @param  AvailableCarrierWillPickUpOption[]  $availableCarrierWillPickUpOptions  List of available carrier pickup options.
+     * @param  AvailableDeliveryExperienceOption[]  $availableDeliveryExperienceOptions  List of available delivery experience options.
      */
     public function __construct(
         public readonly array $availableCarrierWillPickUpOptions,

@@ -9,8 +9,8 @@ final class ChargeRefundTransaction extends BaseDto
     protected static array $attributeMap = ['chargeAmount' => 'ChargeAmount', 'chargeType' => 'ChargeType'];
 
     /**
-     * @param  ?Currency  $chargeAmount A currency type and amount.
-     * @param  ?string  $chargeType The type of charge.
+     * @param  ?Currency  $chargeAmount  A currency type and amount.
+     * @param  ?string  $chargeType  The type of charge.
      */
     public function __construct(
         public readonly ?Currency $chargeAmount = null,

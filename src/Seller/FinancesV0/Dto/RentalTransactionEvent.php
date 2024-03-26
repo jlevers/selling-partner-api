@@ -26,8 +26,8 @@ final class RentalTransactionEvent extends BaseDto
     ];
 
     /**
-     * @param  ?string  $amazonOrderId An Amazon-defined identifier for an order.
-     * @param  ?string  $rentalEventType The type of rental event.
+     * @param  ?string  $amazonOrderId  An Amazon-defined identifier for an order.
+     * @param  ?string  $rentalEventType  The type of rental event.
      *
      * Possible values:
      *
@@ -44,14 +44,14 @@ final class RentalTransactionEvent extends BaseDto
      * * RentalChargeFailureReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a failed charge.
      *
      * * RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item.
-     * @param  ?int  $extensionLength The number of days that the buyer extended an already rented item. This value is only returned for RentalCustomerPayment-Extension and RentalCustomerRefund-Extension events.
+     * @param  ?int  $extensionLength  The number of days that the buyer extended an already rented item. This value is only returned for RentalCustomerPayment-Extension and RentalCustomerRefund-Extension events.
      * @param  ?DateTime  $postedDate
-     * @param  ChargeComponent[]|null  $rentalChargeList A list of charge information on the seller's account.
-     * @param  FeeComponent[]|null  $rentalFeeList A list of fee component information.
-     * @param  ?string  $marketplaceName The name of the marketplace.
-     * @param  ?Currency  $rentalInitialValue A currency type and amount.
-     * @param  ?Currency  $rentalReimbursement A currency type and amount.
-     * @param  TaxWithheldComponent[]|null  $rentalTaxWithheldList A list of information about taxes withheld.
+     * @param  ChargeComponent[]|null  $rentalChargeList  A list of charge information on the seller's account.
+     * @param  FeeComponent[]|null  $rentalFeeList  A list of fee component information.
+     * @param  ?string  $marketplaceName  The name of the marketplace.
+     * @param  ?Currency  $rentalInitialValue  A currency type and amount.
+     * @param  ?Currency  $rentalReimbursement  A currency type and amount.
+     * @param  TaxWithheldComponent[]|null  $rentalTaxWithheldList  A list of information about taxes withheld.
      */
     public function __construct(
         public readonly ?string $amazonOrderId = null,

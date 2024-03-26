@@ -22,7 +22,7 @@ class CreateScheduledPackage extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateScheduledPackageRequest  $createScheduledPackageRequest The request schema for the `createScheduledPackage` operation.
+     * @param  CreateScheduledPackageRequest  $createScheduledPackageRequest  The request schema for the `createScheduledPackage` operation.
      */
     public function __construct(
         public CreateScheduledPackageRequest $createScheduledPackageRequest,

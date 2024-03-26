@@ -17,8 +17,8 @@ class GetSmallAndLightEnrollmentBySellerSku extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $sellerSku The seller SKU that identifies the item.
-     * @param  array  $marketplaceIds The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
+     * @param  string  $sellerSku  The seller SKU that identifies the item.
+     * @param  array  $marketplaceIds  The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only.
      */
     public function __construct(
         protected string $sellerSku,

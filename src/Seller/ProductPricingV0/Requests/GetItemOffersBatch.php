@@ -22,7 +22,7 @@ class GetItemOffersBatch extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetItemOffersBatchRequest  $getItemOffersBatchRequest The request associated with the `getItemOffersBatch` API call.
+     * @param  GetItemOffersBatchRequest  $getItemOffersBatchRequest  The request associated with the `getItemOffersBatch` API call.
      */
     public function __construct(
         public GetItemOffersBatchRequest $getItemOffersBatchRequest,

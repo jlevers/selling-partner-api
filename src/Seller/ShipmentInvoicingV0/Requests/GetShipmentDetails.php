@@ -17,7 +17,7 @@ class GetShipmentDetails extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $shipmentId The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
+     * @param  string  $shipmentId  The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
      */
     public function __construct(
         protected string $shipmentId,

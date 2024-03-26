@@ -16,7 +16,7 @@ class GetPurchaseOrder extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $purchaseOrderNumber The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.
+     * @param  string  $purchaseOrderNumber  The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code.
      */
     public function __construct(
         protected string $purchaseOrderNumber,

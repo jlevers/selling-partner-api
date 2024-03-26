@@ -12,8 +12,8 @@ final class Refinements extends BaseDto
     ];
 
     /**
-     * @param  BrandRefinement[]  $brands Brand search refinements.
-     * @param  ClassificationRefinement[]  $classifications Classification search refinements.
+     * @param  BrandRefinement[]  $brands  Brand search refinements.
+     * @param  ClassificationRefinement[]  $classifications  Classification search refinements.
      */
     public function __construct(
         public readonly array $brands,

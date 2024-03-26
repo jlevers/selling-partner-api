@@ -16,7 +16,7 @@ class GetSubscription extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $notificationType The type of notification.
+     * @param  string  $notificationType  The type of notification.
      *
      *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
      */

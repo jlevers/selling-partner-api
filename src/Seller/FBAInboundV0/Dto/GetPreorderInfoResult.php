@@ -14,8 +14,8 @@ final class GetPreorderInfoResult extends BaseDto
     ];
 
     /**
-     * @param  ?bool  $shipmentContainsPreorderableItems Indicates whether the shipment contains items that have been enabled for pre-order. For more information about enabling items for pre-order, see the Seller Central Help.
-     * @param  ?bool  $shipmentConfirmedForPreorder Indicates whether this shipment has been confirmed for pre-order.
+     * @param  ?bool  $shipmentContainsPreorderableItems  Indicates whether the shipment contains items that have been enabled for pre-order. For more information about enabling items for pre-order, see the Seller Central Help.
+     * @param  ?bool  $shipmentConfirmedForPreorder  Indicates whether this shipment has been confirmed for pre-order.
      * @param  ?DateTime  $needByDate
      * @param  ?DateTime  $confirmedFulfillableDate
      */

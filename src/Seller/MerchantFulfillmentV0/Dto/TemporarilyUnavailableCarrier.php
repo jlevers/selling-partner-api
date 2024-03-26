@@ -9,7 +9,7 @@ final class TemporarilyUnavailableCarrier extends BaseDto
     protected static array $attributeMap = ['carrierName' => 'CarrierName'];
 
     /**
-     * @param  string  $carrierName The name of the carrier.
+     * @param  string  $carrierName  The name of the carrier.
      */
     public function __construct(
         public readonly string $carrierName,

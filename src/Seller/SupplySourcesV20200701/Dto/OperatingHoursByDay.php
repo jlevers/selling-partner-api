@@ -17,13 +17,13 @@ final class OperatingHoursByDay extends BaseDto
     ];
 
     /**
-     * @param  OperatingHour[]|null  $monday A list of Operating Hours.
-     * @param  OperatingHour[]|null  $tuesday A list of Operating Hours.
-     * @param  OperatingHour[]|null  $wednesday A list of Operating Hours.
-     * @param  OperatingHour[]|null  $thursday A list of Operating Hours.
-     * @param  OperatingHour[]|null  $friday A list of Operating Hours.
-     * @param  OperatingHour[]|null  $saturday A list of Operating Hours.
-     * @param  OperatingHour[]|null  $sunday A list of Operating Hours.
+     * @param  OperatingHour[]|null  $monday  A list of Operating Hours.
+     * @param  OperatingHour[]|null  $tuesday  A list of Operating Hours.
+     * @param  OperatingHour[]|null  $wednesday  A list of Operating Hours.
+     * @param  OperatingHour[]|null  $thursday  A list of Operating Hours.
+     * @param  OperatingHour[]|null  $friday  A list of Operating Hours.
+     * @param  OperatingHour[]|null  $saturday  A list of Operating Hours.
+     * @param  OperatingHour[]|null  $sunday  A list of Operating Hours.
      */
     public function __construct(
         public readonly ?array $monday = null,

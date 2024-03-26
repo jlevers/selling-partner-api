@@ -20,7 +20,7 @@ class EstimateTransport extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
+     * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.
      */
     public function __construct(
         protected string $shipmentId,

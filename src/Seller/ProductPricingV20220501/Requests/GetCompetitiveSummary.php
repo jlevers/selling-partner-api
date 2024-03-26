@@ -22,7 +22,7 @@ class GetCompetitiveSummary extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CompetitiveSummaryBatchRequest  $competitiveSummaryBatchRequest The `competitiveSummary` batch request data.
+     * @param  CompetitiveSummaryBatchRequest  $competitiveSummaryBatchRequest  The `competitiveSummary` batch request data.
      */
     public function __construct(
         public CompetitiveSummaryBatchRequest $competitiveSummaryBatchRequest,

@@ -21,8 +21,8 @@ class SubmitInvoice extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $shipmentId The identifier for the shipment.
-     * @param  SubmitInvoiceRequest  $submitInvoiceRequest The request schema for the submitInvoice operation.
+     * @param  string  $shipmentId  The identifier for the shipment.
+     * @param  SubmitInvoiceRequest  $submitInvoiceRequest  The request schema for the submitInvoice operation.
      */
     public function __construct(
         protected string $shipmentId,

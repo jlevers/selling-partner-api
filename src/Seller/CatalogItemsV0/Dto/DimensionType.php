@@ -14,10 +14,10 @@ final class DimensionType extends BaseDto
     ];
 
     /**
-     * @param  ?DecimalWithUnits  $height The decimal value and unit.
-     * @param  ?DecimalWithUnits  $length The decimal value and unit.
-     * @param  ?DecimalWithUnits  $width The decimal value and unit.
-     * @param  ?DecimalWithUnits  $weight The decimal value and unit.
+     * @param  ?DecimalWithUnits  $height  The decimal value and unit.
+     * @param  ?DecimalWithUnits  $length  The decimal value and unit.
+     * @param  ?DecimalWithUnits  $width  The decimal value and unit.
+     * @param  ?DecimalWithUnits  $weight  The decimal value and unit.
      */
     public function __construct(
         public readonly ?DecimalWithUnits $height = null,

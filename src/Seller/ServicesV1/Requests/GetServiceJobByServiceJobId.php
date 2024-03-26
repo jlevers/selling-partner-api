@@ -16,7 +16,7 @@ class GetServiceJobByServiceJobId extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $serviceJobId A service job identifier.
+     * @param  string  $serviceJobId  A service job identifier.
      */
     public function __construct(
         protected string $serviceJobId,

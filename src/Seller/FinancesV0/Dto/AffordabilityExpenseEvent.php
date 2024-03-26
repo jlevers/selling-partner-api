@@ -19,21 +19,21 @@ final class AffordabilityExpenseEvent extends BaseDto
     ];
 
     /**
-     * @param  Currency  $taxTypeCgst A currency type and amount.
-     * @param  Currency  $taxTypeSgst A currency type and amount.
-     * @param  Currency  $taxTypeIgst A currency type and amount.
-     * @param  ?string  $amazonOrderId An Amazon-defined identifier for an order.
+     * @param  Currency  $taxTypeCgst  A currency type and amount.
+     * @param  Currency  $taxTypeSgst  A currency type and amount.
+     * @param  Currency  $taxTypeIgst  A currency type and amount.
+     * @param  ?string  $amazonOrderId  An Amazon-defined identifier for an order.
      * @param  ?DateTime  $postedDate
-     * @param  ?string  $marketplaceId An encrypted, Amazon-defined marketplace identifier.
-     * @param  ?string  $transactionType Indicates the type of transaction.
+     * @param  ?string  $marketplaceId  An encrypted, Amazon-defined marketplace identifier.
+     * @param  ?string  $transactionType  Indicates the type of transaction.
      *
      * Possible values:
      *
      * * Charge - For an affordability promotion expense.
      *
      * * Refund - For an affordability promotion expense reversal.
-     * @param  ?Currency  $baseExpense A currency type and amount.
-     * @param  ?Currency  $totalExpense A currency type and amount.
+     * @param  ?Currency  $baseExpense  A currency type and amount.
+     * @param  ?Currency  $totalExpense  A currency type and amount.
      */
     public function __construct(
         public readonly Currency $taxTypeCgst,

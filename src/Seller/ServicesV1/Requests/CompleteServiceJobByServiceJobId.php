@@ -16,7 +16,7 @@ class CompleteServiceJobByServiceJobId extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $serviceJobId An Amazon defined service job identifier.
+     * @param  string  $serviceJobId  An Amazon defined service job identifier.
      */
     public function __construct(
         protected string $serviceJobId,

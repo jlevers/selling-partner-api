@@ -22,7 +22,7 @@ class GetSmallAndLightFeePreview extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  SmallAndLightFeePreviewRequest  $smallAndLightFeePreviewRequest Request schema for submitting items for which to retrieve fee estimates.
+     * @param  SmallAndLightFeePreviewRequest  $smallAndLightFeePreviewRequest  Request schema for submitting items for which to retrieve fee estimates.
      */
     public function __construct(
         public SmallAndLightFeePreviewRequest $smallAndLightFeePreviewRequest,

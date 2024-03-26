@@ -22,7 +22,7 @@ class CreateReport extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateReportSpecification  $createReportSpecification Information required to create the report.
+     * @param  CreateReportSpecification  $createReportSpecification  Information required to create the report.
      */
     public function __construct(
         public CreateReportSpecification $createReportSpecification,

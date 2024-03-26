@@ -7,9 +7,9 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class Location extends BaseDto
 {
     /**
-     * @param  ?string  $type Type of location identification.
-     * @param  ?string  $locationCode Location code.
-     * @param  ?string  $countryCode The two digit country code. In ISO 3166-1 alpha-2 format.
+     * @param  ?string  $type  Type of location identification.
+     * @param  ?string  $locationCode  Location code.
+     * @param  ?string  $countryCode  The two digit country code. In ISO 3166-1 alpha-2 format.
      */
     public function __construct(
         public readonly ?string $type = null,

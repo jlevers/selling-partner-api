@@ -12,13 +12,13 @@ final class Pallet extends BaseDto
     ];
 
     /**
-     * @param  ContainerIdentification[]  $palletIdentifiers A list of pallet identifiers.
-     * @param  ?int  $tier Number of layers per pallet. Only applicable to container type Pallet.
-     * @param  ?int  $block Number of cartons per layer on the pallet. Only applicable to container type Pallet.
-     * @param  ?Dimensions  $dimensions Physical dimensional measurements of a container.
-     * @param  ?Weight  $weight The weight of the shipment.
+     * @param  ContainerIdentification[]  $palletIdentifiers  A list of pallet identifiers.
+     * @param  ?int  $tier  Number of layers per pallet. Only applicable to container type Pallet.
+     * @param  ?int  $block  Number of cartons per layer on the pallet. Only applicable to container type Pallet.
+     * @param  ?Dimensions  $dimensions  Physical dimensional measurements of a container.
+     * @param  ?Weight  $weight  The weight of the shipment.
      * @param  ?CartonReferenceDetails  $cartonReferenceDetails
-     * @param  PurchaseOrderItems[]  $items A list of the items that are associated to the PO in this transport and their associated details.
+     * @param  PurchaseOrderItems[]  $items  A list of the items that are associated to the PO in this transport and their associated details.
      */
     public function __construct(
         public readonly ?array $palletIdentifiers = null,

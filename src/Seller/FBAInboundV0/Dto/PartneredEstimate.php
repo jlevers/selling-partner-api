@@ -13,7 +13,7 @@ final class PartneredEstimate extends BaseDto
     ];
 
     /**
-     * @param  Amount  $amount The monetary value.
+     * @param  Amount  $amount  The monetary value.
      * @param  ?DateTime  $confirmDeadline
      * @param  ?DateTime  $voidDeadline
      */

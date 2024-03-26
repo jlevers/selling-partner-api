@@ -17,7 +17,7 @@ class GetFeedDocument extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $feedDocumentId The identifier of the feed document.
+     * @param  string  $feedDocumentId  The identifier of the feed document.
      */
     public function __construct(
         protected string $feedDocumentId,

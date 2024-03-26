@@ -17,7 +17,7 @@ class GetSupplySource extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $supplySourceId The unique identifier of a supply source.
+     * @param  string  $supplySourceId  The unique identifier of a supply source.
      */
     public function __construct(
         protected string $supplySourceId,

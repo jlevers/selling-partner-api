@@ -12,7 +12,7 @@ final class GetPurchaseOrdersStatusResponse extends BaseResponse
 
     /**
      * @param  ?OrderListStatus  $payload
-     * @param  Error[]  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?OrderListStatus $payload = null,

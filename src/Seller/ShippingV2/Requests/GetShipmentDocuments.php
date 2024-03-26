@@ -17,10 +17,10 @@ class GetShipmentDocuments extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $shipmentId The shipment identifier originally returned by the purchaseShipment operation.
-     * @param  string  $packageClientReferenceId The package client reference identifier originally provided in the request body parameter for the getRates operation.
-     * @param  ?string  $format The file format of the document. Must be one of the supported formats returned by the getRates operation.
-     * @param  ?float  $dpi The resolution of the document (for example, 300 means 300 dots per inch). Must be one of the supported resolutions returned in the response to the getRates operation.
+     * @param  string  $shipmentId  The shipment identifier originally returned by the purchaseShipment operation.
+     * @param  string  $packageClientReferenceId  The package client reference identifier originally provided in the request body parameter for the getRates operation.
+     * @param  ?string  $format  The file format of the document. Must be one of the supported formats returned by the getRates operation.
+     * @param  ?float  $dpi  The resolution of the document (for example, 300 means 300 dots per inch). Must be one of the supported resolutions returned in the response to the getRates operation.
      */
     public function __construct(
         protected string $shipmentId,

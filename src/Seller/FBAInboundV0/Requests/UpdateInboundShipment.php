@@ -17,8 +17,8 @@ class UpdateInboundShipment extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-     * @param  InboundShipmentRequest  $inboundShipmentRequest The request schema for an inbound shipment.
+     * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.
+     * @param  InboundShipmentRequest  $inboundShipmentRequest  The request schema for an inbound shipment.
      */
     public function __construct(
         protected string $shipmentId,

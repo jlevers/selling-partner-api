@@ -17,7 +17,7 @@ class CancelShipment extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
+     * @param  string  $shipmentId  The Amazon-defined shipment identifier for the shipment to cancel.
      */
     public function __construct(
         protected string $shipmentId,

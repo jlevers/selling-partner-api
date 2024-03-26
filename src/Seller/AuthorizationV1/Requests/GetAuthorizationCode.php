@@ -18,9 +18,9 @@ class GetAuthorizationCode extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $sellingPartnerId The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore.
-     * @param  string  $developerId Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central.
-     * @param  string  $mwsAuthToken The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore.
+     * @param  string  $sellingPartnerId  The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore.
+     * @param  string  $developerId  Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central.
+     * @param  string  $mwsAuthToken  The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore.
      */
     public function __construct(
         protected string $sellingPartnerId,

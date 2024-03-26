@@ -7,11 +7,11 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class StandardFourImageTextModule extends BaseDto
 {
     /**
-     * @param  ?TextComponent  $headline Rich text content.
-     * @param  ?StandardImageTextBlock  $block1 The A+ Content standard image and text box block.
-     * @param  ?StandardImageTextBlock  $block2 The A+ Content standard image and text box block.
-     * @param  ?StandardImageTextBlock  $block3 The A+ Content standard image and text box block.
-     * @param  ?StandardImageTextBlock  $block4 The A+ Content standard image and text box block.
+     * @param  ?TextComponent  $headline  Rich text content.
+     * @param  ?StandardImageTextBlock  $block1  The A+ Content standard image and text box block.
+     * @param  ?StandardImageTextBlock  $block2  The A+ Content standard image and text box block.
+     * @param  ?StandardImageTextBlock  $block3  The A+ Content standard image and text box block.
+     * @param  ?StandardImageTextBlock  $block4  The A+ Content standard image and text box block.
      */
     public function __construct(
         public readonly ?TextComponent $headline = null,

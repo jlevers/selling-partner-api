@@ -21,9 +21,9 @@ class CreateDigitalAccessKey extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent.
-     * @param  CreateDigitalAccessKeyRequest  $createDigitalAccessKeyRequest The request schema for the createDigitalAccessKey operation.
-     * @param  array  $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+     * @param  string  $amazonOrderId  An Amazon order identifier. This specifies the order for which a message is sent.
+     * @param  CreateDigitalAccessKeyRequest  $createDigitalAccessKeyRequest  The request schema for the createDigitalAccessKey operation.
+     * @param  array  $marketplaceIds  A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
      */
     public function __construct(
         protected string $amazonOrderId,

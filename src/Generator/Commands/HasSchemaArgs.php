@@ -52,7 +52,7 @@ trait HasSchemaArgs
     /**
      * Retrieve metadata about the schemas matching the given input options.
      *
-     * @return  array  The filtered categories and names.
+     * @return array The filtered categories and names.
      */
     protected static function filterSchemas(InputInterface $input): array
     {

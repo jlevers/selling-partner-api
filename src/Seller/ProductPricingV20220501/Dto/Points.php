@@ -7,7 +7,7 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class Points extends BaseDto
 {
     /**
-     * @param  ?int  $pointsNumber The number of points.
+     * @param  ?int  $pointsNumber  The number of points.
      * @param  ?MoneyType  $pointsMonetaryValue
      */
     public function __construct(

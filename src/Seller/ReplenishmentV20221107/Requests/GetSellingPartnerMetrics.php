@@ -22,7 +22,7 @@ class GetSellingPartnerMetrics extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetSellingPartnerMetricsRequest  $getSellingPartnerMetricsRequest The request body for the `getSellingPartnerMetrics` operation.
+     * @param  GetSellingPartnerMetricsRequest  $getSellingPartnerMetricsRequest  The request body for the `getSellingPartnerMetrics` operation.
      */
     public function __construct(
         public GetSellingPartnerMetricsRequest $getSellingPartnerMetricsRequest,

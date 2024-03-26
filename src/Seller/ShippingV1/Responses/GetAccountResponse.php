@@ -11,8 +11,8 @@ final class GetAccountResponse extends BaseResponse
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?Account  $payload The account related data.
-     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  ?Account  $payload  The account related data.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?Account $payload = null,

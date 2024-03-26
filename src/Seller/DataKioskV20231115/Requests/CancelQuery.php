@@ -17,7 +17,7 @@ class CancelQuery extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $queryId The identifier for the query. This identifier is unique only in combination with a selling partner account ID.
+     * @param  string  $queryId  The identifier for the query. This identifier is unique only in combination with a selling partner account ID.
      */
     public function __construct(
         protected string $queryId,

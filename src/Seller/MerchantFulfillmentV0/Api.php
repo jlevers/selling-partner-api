@@ -19,7 +19,7 @@ use SellingPartnerApi\Seller\MerchantFulfillmentV0\Requests\GetShipment;
 class Api extends BaseResource
 {
     /**
-     * @param  GetEligibleShipmentServicesRequest  $getEligibleShipmentServicesRequest Request schema.
+     * @param  GetEligibleShipmentServicesRequest  $getEligibleShipmentServicesRequest  Request schema.
      */
     public function getEligibleShipmentServicesOld(
         GetEligibleShipmentServicesRequest $getEligibleShipmentServicesRequest,
@@ -30,7 +30,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  GetEligibleShipmentServicesRequest  $getEligibleShipmentServicesRequest Request schema.
+     * @param  GetEligibleShipmentServicesRequest  $getEligibleShipmentServicesRequest  Request schema.
      */
     public function getEligibleShipmentServices(
         GetEligibleShipmentServicesRequest $getEligibleShipmentServicesRequest,
@@ -41,7 +41,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $shipmentId The Amazon-defined shipment identifier for the shipment.
+     * @param  string  $shipmentId  The Amazon-defined shipment identifier for the shipment.
      */
     public function getShipment(string $shipmentId): Response
     {
@@ -51,7 +51,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
+     * @param  string  $shipmentId  The Amazon-defined shipment identifier for the shipment to cancel.
      */
     public function cancelShipment(string $shipmentId): Response
     {
@@ -61,7 +61,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $shipmentId The Amazon-defined shipment identifier for the shipment to cancel.
+     * @param  string  $shipmentId  The Amazon-defined shipment identifier for the shipment to cancel.
      */
     public function cancelShipmentOld(string $shipmentId): Response
     {
@@ -71,7 +71,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  CreateShipmentRequest  $createShipmentRequest Request schema.
+     * @param  CreateShipmentRequest  $createShipmentRequest  Request schema.
      */
     public function createShipment(CreateShipmentRequest $createShipmentRequest): Response
     {
@@ -81,7 +81,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  GetAdditionalSellerInputsRequest  $getAdditionalSellerInputsRequest Request schema.
+     * @param  GetAdditionalSellerInputsRequest  $getAdditionalSellerInputsRequest  Request schema.
      */
     public function getAdditionalSellerInputsOld(
         GetAdditionalSellerInputsRequest $getAdditionalSellerInputsRequest,
@@ -92,7 +92,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  GetAdditionalSellerInputsRequest  $getAdditionalSellerInputsRequest Request schema.
+     * @param  GetAdditionalSellerInputsRequest  $getAdditionalSellerInputsRequest  Request schema.
      */
     public function getAdditionalSellerInputs(
         GetAdditionalSellerInputsRequest $getAdditionalSellerInputsRequest,

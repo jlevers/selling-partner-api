@@ -21,8 +21,8 @@ class CreateReservation extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateReservationRequest  $createReservationRequest Request schema for the `createReservation` operation.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
+     * @param  CreateReservationRequest  $createReservationRequest  Request schema for the `createReservation` operation.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
      */
     public function __construct(
         public CreateReservationRequest $createReservationRequest,

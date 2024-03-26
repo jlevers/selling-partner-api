@@ -16,7 +16,7 @@ class GetTransaction extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $transactionId The GUID provided by Amazon in the 'transactionId' field in response to the post request of a specific transaction.
+     * @param  string  $transactionId  The GUID provided by Amazon in the 'transactionId' field in response to the post request of a specific transaction.
      */
     public function __construct(
         protected string $transactionId,

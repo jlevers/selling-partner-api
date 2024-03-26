@@ -7,13 +7,13 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class UnfulfillableQuantity extends BaseDto
 {
     /**
-     * @param  ?int  $totalUnfulfillableQuantity The total number of units in Amazon's fulfillment network in unsellable condition.
-     * @param  ?int  $customerDamagedQuantity The number of units in customer damaged disposition.
-     * @param  ?int  $warehouseDamagedQuantity The number of units in warehouse damaged disposition.
-     * @param  ?int  $distributorDamagedQuantity The number of units in distributor damaged disposition.
-     * @param  ?int  $carrierDamagedQuantity The number of units in carrier damaged disposition.
-     * @param  ?int  $defectiveQuantity The number of units in defective disposition.
-     * @param  ?int  $expiredQuantity The number of units in expired disposition.
+     * @param  ?int  $totalUnfulfillableQuantity  The total number of units in Amazon's fulfillment network in unsellable condition.
+     * @param  ?int  $customerDamagedQuantity  The number of units in customer damaged disposition.
+     * @param  ?int  $warehouseDamagedQuantity  The number of units in warehouse damaged disposition.
+     * @param  ?int  $distributorDamagedQuantity  The number of units in distributor damaged disposition.
+     * @param  ?int  $carrierDamagedQuantity  The number of units in carrier damaged disposition.
+     * @param  ?int  $defectiveQuantity  The number of units in defective disposition.
+     * @param  ?int  $expiredQuantity  The number of units in expired disposition.
      */
     public function __construct(
         public readonly ?int $totalUnfulfillableQuantity = null,

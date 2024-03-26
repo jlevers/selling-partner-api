@@ -87,7 +87,7 @@ trait DownloadsDocument
     /**
      * Downloads the document data as a stream.
      *
-     * @return StreamInterface  The raw (unencrypted) document stream.
+     * @return StreamInterface The raw (unencrypted) document stream.
      */
     public function downloadStream(): StreamInterface
     {

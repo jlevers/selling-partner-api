@@ -46,7 +46,7 @@ abstract class AbstractSchemasCommand extends Command
     /**
      * The method that will be called for each schema matching the input options.
      *
-     * @return  int  The exit code for the command for a particular schema.
+     * @return int The exit code for the command for a particular schema.
      */
     abstract protected function handleSchema(Schema $schema): int;
 }

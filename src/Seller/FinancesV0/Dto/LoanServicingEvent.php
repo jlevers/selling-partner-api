@@ -12,8 +12,8 @@ final class LoanServicingEvent extends BaseDto
     ];
 
     /**
-     * @param  ?Currency  $loanAmount A currency type and amount.
-     * @param  ?string  $sourceBusinessEventType The type of event.
+     * @param  ?Currency  $loanAmount  A currency type and amount.
+     * @param  ?string  $sourceBusinessEventType  The type of event.
      *
      * Possible values:
      *

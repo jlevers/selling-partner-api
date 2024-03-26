@@ -21,8 +21,8 @@ class GetMyFeesEstimateForAsin extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  GetMyFeesEstimateRequest  $getMyFeesEstimateRequest Request schema.
+     * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  GetMyFeesEstimateRequest  $getMyFeesEstimateRequest  Request schema.
      */
     public function __construct(
         protected string $asin,

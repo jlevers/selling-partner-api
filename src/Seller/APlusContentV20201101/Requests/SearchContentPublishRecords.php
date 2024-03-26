@@ -17,9 +17,9 @@ class SearchContentPublishRecords extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param  string  $asin The Amazon Standard Identification Number (ASIN).
-     * @param  ?string  $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $asin  The Amazon Standard Identification Number (ASIN).
+     * @param  ?string  $pageToken  A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
      */
     public function __construct(
         protected string $marketplaceId,

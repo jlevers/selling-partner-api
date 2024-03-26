@@ -17,8 +17,8 @@ class GetAdditionalInputs extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $requestToken The request token returned in the response to the getRates operation.
-     * @param  string  $rateId The rate identifier for the shipping offering (rate) returned in the response to the getRates operation.
+     * @param  string  $requestToken  The request token returned in the response to the getRates operation.
+     * @param  string  $rateId  The rate identifier for the shipping offering (rate) returned in the response to the getRates operation.
      */
     public function __construct(
         protected string $requestToken,

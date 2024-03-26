@@ -14,8 +14,8 @@ final class DebtRecoveryItem extends BaseDto
     ];
 
     /**
-     * @param  ?Currency  $recoveryAmount A currency type and amount.
-     * @param  ?Currency  $originalAmount A currency type and amount.
+     * @param  ?Currency  $recoveryAmount  A currency type and amount.
+     * @param  ?Currency  $originalAmount  A currency type and amount.
      * @param  ?DateTime  $groupBeginDate
      * @param  ?DateTime  $groupEndDate
      */

@@ -12,8 +12,8 @@ final class AdditionalSellerInputs extends BaseDto
     ];
 
     /**
-     * @param  string  $additionalInputFieldName The name of the additional input field.
-     * @param  AdditionalSellerInput  $additionalSellerInput Additional information required to purchase shipping.
+     * @param  string  $additionalInputFieldName  The name of the additional input field.
+     * @param  AdditionalSellerInput  $additionalSellerInput  Additional information required to purchase shipping.
      */
     public function __construct(
         public readonly string $additionalInputFieldName,

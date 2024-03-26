@@ -16,8 +16,8 @@ class GetShipmentItemsByShipmentId extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $shipmentId A shipment identifier used for selecting items in a specific inbound shipment.
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored.
+     * @param  string  $shipmentId  A shipment identifier used for selecting items in a specific inbound shipment.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace where the product would be stored.
      */
     public function __construct(
         protected string $shipmentId,

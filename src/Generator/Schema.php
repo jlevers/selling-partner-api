@@ -70,7 +70,7 @@ class Schema
     /**
      * Convert a raw Amazon schema to the schema format we need for generating code.
      *
-     * @return  string  The path to the folder containing each of the converted versions of this schema.
+     * @return string The path to the folder containing each of the converted versions of this schema.
      */
     public function refactor(): string
     {
@@ -118,9 +118,9 @@ class Schema
      *
      * @param  array|null  $categories
      * @param  array|null  $schemas
-     * @return  array<Schema>  All the schemas that match the given filters.
+     * @return array<Schema> All the schemas that match the given filters.
      *
-     * @throws  InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public static function where(array $categories, array $apiCodes): array
     {

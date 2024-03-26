@@ -7,9 +7,9 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class StandardImageTextBlock extends BaseDto
 {
     /**
-     * @param  ?ImageComponent  $image A reference to an image, hosted in the A+ Content media library.
-     * @param  ?TextComponent  $headline Rich text content.
-     * @param  ?ParagraphComponent  $body A list of rich text content, usually presented in a text box.
+     * @param  ?ImageComponent  $image  A reference to an image, hosted in the A+ Content media library.
+     * @param  ?TextComponent  $headline  Rich text content.
+     * @param  ?ParagraphComponent  $body  A list of rich text content, usually presented in a text box.
      */
     public function __construct(
         public readonly ?ImageComponent $image = null,

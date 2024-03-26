@@ -21,8 +21,8 @@ class CreateInboundShipment extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-     * @param  InboundShipmentRequest  $inboundShipmentRequest The request schema for an inbound shipment.
+     * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.
+     * @param  InboundShipmentRequest  $inboundShipmentRequest  The request schema for an inbound shipment.
      */
     public function __construct(
         protected string $shipmentId,

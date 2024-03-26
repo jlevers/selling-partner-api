@@ -17,8 +17,8 @@ class PutSmallAndLightEnrollmentBySellerSku extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $sellerSku The seller SKU that identifies the item.
-     * @param  array  $marketplaceIds The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
+     * @param  string  $sellerSku  The seller SKU that identifies the item.
+     * @param  array  $marketplaceIds  The marketplace in which to enroll the item. Note: Accepts a single marketplace only.
      */
     public function __construct(
         protected string $sellerSku,

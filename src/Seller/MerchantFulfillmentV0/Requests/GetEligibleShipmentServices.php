@@ -21,7 +21,7 @@ class GetEligibleShipmentServices extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  GetEligibleShipmentServicesRequest  $getEligibleShipmentServicesRequest Request schema.
+     * @param  GetEligibleShipmentServicesRequest  $getEligibleShipmentServicesRequest  Request schema.
      */
     public function __construct(
         public GetEligibleShipmentServicesRequest $getEligibleShipmentServicesRequest,

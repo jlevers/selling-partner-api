@@ -16,9 +16,9 @@ class ListCatalogCategories extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace for the item.
-     * @param  ?string  $asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  ?string  $sellerSku Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for the item.
+     * @param  ?string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  ?string  $sellerSku  Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
      */
     public function __construct(
         protected string $marketplaceId,

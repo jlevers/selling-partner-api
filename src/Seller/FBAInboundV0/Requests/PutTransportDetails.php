@@ -17,8 +17,8 @@ class PutTransportDetails extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-     * @param  PutTransportDetailsRequest  $putTransportDetailsRequest The request schema for a putTransportDetails operation.
+     * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.
+     * @param  PutTransportDetailsRequest  $putTransportDetailsRequest  The request schema for a putTransportDetails operation.
      */
     public function __construct(
         protected string $shipmentId,

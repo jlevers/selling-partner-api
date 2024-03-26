@@ -14,10 +14,10 @@ final class CapacityReservationBillingEvent extends BaseDto
     ];
 
     /**
-     * @param  ?string  $transactionType Indicates the type of transaction. For example, FBA Inventory Fee
+     * @param  ?string  $transactionType  Indicates the type of transaction. For example, FBA Inventory Fee
      * @param  ?DateTime  $postedDate
-     * @param  ?string  $description A short description of the capacity reservation billing event.
-     * @param  ?Currency  $transactionAmount A currency type and amount.
+     * @param  ?string  $description  A short description of the capacity reservation billing event.
+     * @param  ?Currency  $transactionAmount  A currency type and amount.
      */
     public function __construct(
         public readonly ?string $transactionType = null,

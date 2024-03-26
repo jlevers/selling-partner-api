@@ -10,7 +10,7 @@ final class GetFeaturedOfferExpectedPriceBatchResponse extends BaseResponse
     protected static array $complexArrayTypes = ['responses' => [FeaturedOfferExpectedPriceResponse::class]];
 
     /**
-     * @param  FeaturedOfferExpectedPriceResponse[]|null  $responses A batched list of featured offer expected price responses.
+     * @param  FeaturedOfferExpectedPriceResponse[]|null  $responses  A batched list of featured offer expected price responses.
      */
     public function __construct(
         public readonly ?array $responses = null,

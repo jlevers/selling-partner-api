@@ -20,8 +20,8 @@ use SellingPartnerApi\Seller\APlusContentV20201101\Requests\ValidateContentDocum
 class Api extends BaseResource
 {
     /**
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param  ?string  $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  ?string  $pageToken  A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
      */
     public function searchContentDocuments(string $marketplaceId, ?string $pageToken = null): Response
     {
@@ -31,7 +31,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
      */
     public function createContentDocument(
         PostContentDocumentRequest $postContentDocumentRequest,
@@ -43,9 +43,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param  array  $includedDataSet The set of A+ Content data types to include in the response.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  array  $includedDataSet  The set of A+ Content data types to include in the response.
      */
     public function getContentDocument(
         string $contentReferenceKey,
@@ -58,8 +58,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
      */
     public function updateContentDocument(
         string $contentReferenceKey,
@@ -72,11 +72,11 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param  ?array  $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
-     * @param  ?array  $asinSet The set of ASINs.
-     * @param  ?string  $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  ?array  $includedDataSet  The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata.
+     * @param  ?array  $asinSet  The set of ASINs.
+     * @param  ?string  $pageToken  A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
      */
     public function listContentDocumentAsinRelations(
         string $contentReferenceKey,
@@ -91,8 +91,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
      */
     public function postContentDocumentAsinRelations(
         string $contentReferenceKey,
@@ -105,8 +105,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param  ?array  $asinSet The set of ASINs.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  ?array  $asinSet  The set of ASINs.
      */
     public function validateContentDocumentAsinRelations(
         PostContentDocumentRequest $postContentDocumentRequest,
@@ -119,9 +119,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
-     * @param  string  $asin The Amazon Standard Identification Number (ASIN).
-     * @param  ?string  $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $asin  The Amazon Standard Identification Number (ASIN).
+     * @param  ?string  $pageToken  A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations.
      */
     public function searchContentPublishRecords(string $marketplaceId, string $asin, ?string $pageToken = null): Response
     {
@@ -131,8 +131,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
      */
     public function postContentDocumentApprovalSubmission(string $contentReferenceKey, string $marketplaceId): Response
     {
@@ -142,8 +142,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     * @param  string  $marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param  string  $contentReferenceKey  The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.
      */
     public function postContentDocumentSuspendSubmission(string $contentReferenceKey, string $marketplaceId): Response
     {

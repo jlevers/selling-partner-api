@@ -10,7 +10,7 @@ use SellingPartnerApi\Vendor\InvoicesV1\Requests\SubmitInvoices;
 class Api extends BaseResource
 {
     /**
-     * @param  SubmitInvoicesRequest  $submitInvoicesRequest The request schema for the submitInvoices operation.
+     * @param  SubmitInvoicesRequest  $submitInvoicesRequest  The request schema for the submitInvoices operation.
      */
     public function submitInvoices(SubmitInvoicesRequest $submitInvoicesRequest): Response
     {

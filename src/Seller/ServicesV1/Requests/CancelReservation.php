@@ -17,8 +17,8 @@ class CancelReservation extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $reservationId Reservation Identifier
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
+     * @param  string  $reservationId  Reservation Identifier
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
      */
     public function __construct(
         protected string $reservationId,

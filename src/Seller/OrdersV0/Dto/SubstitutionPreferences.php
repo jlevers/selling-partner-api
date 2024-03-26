@@ -14,8 +14,8 @@ final class SubstitutionPreferences extends BaseDto
     protected static array $complexArrayTypes = ['substitutionOptions' => [SubstitutionOption::class]];
 
     /**
-     * @param  string  $substitutionType The type of substitution that these preferences represent.
-     * @param  SubstitutionOption[]|null  $substitutionOptions A collection of substitution options.
+     * @param  string  $substitutionType  The type of substitution that these preferences represent.
+     * @param  SubstitutionOption[]|null  $substitutionOptions  A collection of substitution options.
      */
     public function __construct(
         public readonly string $substitutionType,

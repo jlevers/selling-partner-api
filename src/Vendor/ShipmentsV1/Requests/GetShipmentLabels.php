@@ -16,14 +16,14 @@ class GetShipmentLabels extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  ?int  $limit The limit to the number of records returned. Default value is 50 records.
-     * @param  ?string  $sortOrder Sort in ascending or descending order by transport label creation date.
-     * @param  ?string  $nextToken Used for pagination when there are more transport label than the specified result size limit.
-     * @param  ?DateTime  $labelCreatedAfter transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?DateTime  $labelcreatedBefore transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
-     * @param  ?string  $buyerReferenceNumber Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label.
-     * @param  ?string  $vendorShipmentIdentifier Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label.
-     * @param  ?string  $sellerWarehouseCode Get Shipping labels based Vendor Warehouse code. This value should be same as 'shipFromParty.partyId' in the Shipment.
+     * @param  ?int  $limit  The limit to the number of records returned. Default value is 50 records.
+     * @param  ?string  $sortOrder  Sort in ascending or descending order by transport label creation date.
+     * @param  ?string  $nextToken  Used for pagination when there are more transport label than the specified result size limit.
+     * @param  ?DateTime  $labelCreatedAfter  transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?DateTime  $labelcreatedBefore  transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format.
+     * @param  ?string  $buyerReferenceNumber  Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label.
+     * @param  ?string  $vendorShipmentIdentifier  Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label.
+     * @param  ?string  $sellerWarehouseCode  Get Shipping labels based Vendor Warehouse code. This value should be same as 'shipFromParty.partyId' in the Shipment.
      */
     public function __construct(
         protected ?int $limit = null,

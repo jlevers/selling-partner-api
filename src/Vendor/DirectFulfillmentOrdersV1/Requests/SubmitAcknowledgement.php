@@ -21,7 +21,7 @@ class SubmitAcknowledgement extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  SubmitAcknowledgementRequest  $submitAcknowledgementRequest The request schema for the submitAcknowledgement operation.
+     * @param  SubmitAcknowledgementRequest  $submitAcknowledgementRequest  The request schema for the submitAcknowledgement operation.
      */
     public function __construct(
         public SubmitAcknowledgementRequest $submitAcknowledgementRequest,

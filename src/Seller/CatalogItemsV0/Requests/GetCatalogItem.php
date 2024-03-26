@@ -16,8 +16,8 @@ class GetCatalogItem extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $asin The Amazon Standard Identification Number (ASIN) of the item.
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace for the item.
+     * @param  string  $asin  The Amazon Standard Identification Number (ASIN) of the item.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace for the item.
      */
     public function __construct(
         protected string $asin,

@@ -14,7 +14,7 @@ use SellingPartnerApi\Seller\ReplenishmentV20221107\Requests\ListOffers;
 class Api extends BaseResource
 {
     /**
-     * @param  GetSellingPartnerMetricsRequest  $getSellingPartnerMetricsRequest The request body for the `getSellingPartnerMetrics` operation.
+     * @param  GetSellingPartnerMetricsRequest  $getSellingPartnerMetricsRequest  The request body for the `getSellingPartnerMetrics` operation.
      */
     public function getSellingPartnerMetrics(GetSellingPartnerMetricsRequest $getSellingPartnerMetricsRequest): Response
     {
@@ -24,7 +24,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  ListOfferMetricsRequest  $listOfferMetricsRequest The request body for the `listOfferMetrics` operation.
+     * @param  ListOfferMetricsRequest  $listOfferMetricsRequest  The request body for the `listOfferMetrics` operation.
      */
     public function listOfferMetrics(ListOfferMetricsRequest $listOfferMetricsRequest): Response
     {
@@ -34,7 +34,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  ListOffersRequest  $listOffersRequest The request body for the `listOffers` operation.
+     * @param  ListOffersRequest  $listOffersRequest  The request body for the `listOffers` operation.
      */
     public function listOffers(ListOffersRequest $listOffersRequest): Response
     {

@@ -17,8 +17,8 @@ class GetScheduledPackage extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $amazonOrderId An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @param  string  $marketplaceId An identifier for the marketplace in which the seller is selling.
+     * @param  string  $amazonOrderId  An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
+     * @param  string  $marketplaceId  An identifier for the marketplace in which the seller is selling.
      */
     public function __construct(
         protected string $amazonOrderId,

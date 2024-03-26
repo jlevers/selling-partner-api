@@ -22,10 +22,10 @@ class GetRangeSlotCapacity extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $resourceId Resource Identifier.
-     * @param  RangeSlotCapacityQuery  $rangeSlotCapacityQuery Request schema for the `getRangeSlotCapacity` operation. This schema is used to define the time range and capacity types that are being queried.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
-     * @param  ?string  $nextPageToken Next page token returned in the response of your previous request.
+     * @param  string  $resourceId  Resource Identifier.
+     * @param  RangeSlotCapacityQuery  $rangeSlotCapacityQuery  Request schema for the `getRangeSlotCapacity` operation. This schema is used to define the time range and capacity types that are being queried.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
+     * @param  ?string  $nextPageToken  Next page token returned in the response of your previous request.
      */
     public function __construct(
         protected string $resourceId,

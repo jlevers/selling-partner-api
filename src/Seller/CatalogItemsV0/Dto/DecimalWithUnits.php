@@ -9,8 +9,8 @@ final class DecimalWithUnits extends BaseDto
     protected static array $attributeMap = ['units' => 'Units'];
 
     /**
-     * @param  ?float  $value The decimal value.
-     * @param  ?string  $units The unit of the decimal value.
+     * @param  ?float  $value  The decimal value.
+     * @param  ?string  $units  The unit of the decimal value.
      */
     public function __construct(
         public readonly ?float $value = null,

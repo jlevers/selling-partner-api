@@ -18,14 +18,14 @@ final class RemovalShipmentEvent extends BaseDto
 
     /**
      * @param  ?DateTime  $postedDate
-     * @param  ?string  $merchantOrderId The merchant removal orderId.
-     * @param  ?string  $orderId The identifier for the removal shipment order.
-     * @param  ?string  $transactionType The type of removal order.
+     * @param  ?string  $merchantOrderId  The merchant removal orderId.
+     * @param  ?string  $orderId  The identifier for the removal shipment order.
+     * @param  ?string  $transactionType  The type of removal order.
      *
      * Possible values:
      *
      * * WHOLESALE_LIQUIDATION
-     * @param  RemovalShipmentItem[]|null  $removalShipmentItemList A list of information about removal shipment items.
+     * @param  RemovalShipmentItem[]|null  $removalShipmentItemList  A list of information about removal shipment items.
      */
     public function __construct(
         public readonly ?\DateTime $postedDate = null,

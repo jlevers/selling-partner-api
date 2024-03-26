@@ -17,9 +17,9 @@ class UpdateReservation extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $reservationId Reservation Identifier
-     * @param  UpdateReservationRequest  $updateReservationRequest Request schema for the `updateReservation` operation.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
+     * @param  string  $reservationId  Reservation Identifier
+     * @param  UpdateReservationRequest  $updateReservationRequest  Request schema for the `updateReservation` operation.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
      */
     public function __construct(
         protected string $reservationId,

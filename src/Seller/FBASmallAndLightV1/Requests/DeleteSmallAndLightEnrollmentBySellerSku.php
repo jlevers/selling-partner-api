@@ -17,8 +17,8 @@ class DeleteSmallAndLightEnrollmentBySellerSku extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $sellerSku The seller SKU that identifies the item.
-     * @param  array  $marketplaceIds The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
+     * @param  string  $sellerSku  The seller SKU that identifies the item.
+     * @param  array  $marketplaceIds  The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only.
      */
     public function __construct(
         protected string $sellerSku,

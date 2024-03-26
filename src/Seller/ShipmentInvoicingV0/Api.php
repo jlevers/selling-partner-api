@@ -12,7 +12,7 @@ use SellingPartnerApi\Seller\ShipmentInvoicingV0\Requests\SubmitInvoice;
 class Api extends BaseResource
 {
     /**
-     * @param  string  $shipmentId The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
+     * @param  string  $shipmentId  The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
      */
     public function getShipmentDetails(string $shipmentId): Response
     {
@@ -22,8 +22,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $shipmentId The identifier for the shipment.
-     * @param  SubmitInvoiceRequest  $submitInvoiceRequest The request schema for the submitInvoice operation.
+     * @param  string  $shipmentId  The identifier for the shipment.
+     * @param  SubmitInvoiceRequest  $submitInvoiceRequest  The request schema for the submitInvoice operation.
      */
     public function submitInvoice(string $shipmentId, SubmitInvoiceRequest $submitInvoiceRequest): Response
     {
@@ -33,7 +33,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $shipmentId The shipment identifier for the shipment.
+     * @param  string  $shipmentId  The shipment identifier for the shipment.
      */
     public function getInvoiceStatus(string $shipmentId): Response
     {

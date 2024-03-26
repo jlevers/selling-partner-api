@@ -12,8 +12,8 @@ final class SellerFeedbackType extends BaseDto
     ];
 
     /**
-     * @param  int  $feedbackCount The number of ratings received about the seller.
-     * @param  ?float  $sellerPositiveFeedbackRating The percentage of positive feedback for the seller in the past 365 days.
+     * @param  int  $feedbackCount  The number of ratings received about the seller.
+     * @param  ?float  $sellerPositiveFeedbackRating  The percentage of positive feedback for the seller in the past 365 days.
      */
     public function __construct(
         public readonly int $feedbackCount,

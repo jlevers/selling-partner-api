@@ -11,9 +11,9 @@ final class ShippingLabel extends BaseResponse
     protected static array $complexArrayTypes = ['labelData' => [LabelData::class]];
 
     /**
-     * @param  string  $purchaseOrderNumber This field will contain the Purchase Order Number for this order.
-     * @param  string  $labelFormat Format of the label.
-     * @param  LabelData[]  $labelData Provides the details of the packages in this shipment.
+     * @param  string  $purchaseOrderNumber  This field will contain the Purchase Order Number for this order.
+     * @param  string  $labelFormat  Format of the label.
+     * @param  LabelData[]  $labelData  Provides the details of the packages in this shipment.
      */
     public function __construct(
         public readonly string $purchaseOrderNumber,

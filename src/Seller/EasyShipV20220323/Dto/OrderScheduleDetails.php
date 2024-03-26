@@ -7,8 +7,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class OrderScheduleDetails extends BaseDto
 {
     /**
-     * @param  string  $amazonOrderId An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
-     * @param  ?PackageDetails  $packageDetails Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`.
+     * @param  string  $amazonOrderId  An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship.
+     * @param  ?PackageDetails  $packageDetails  Package details. Includes `packageItems`, `packageTimeSlot`, and `packageIdentifier`.
      */
     public function __construct(
         public readonly string $amazonOrderId,

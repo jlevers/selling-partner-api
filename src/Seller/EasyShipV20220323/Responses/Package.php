@@ -16,15 +16,15 @@ final class Package extends BaseResponse
     protected static array $complexArrayTypes = ['packageItems' => [Item::class]];
 
     /**
-     * @param  ScheduledPackageId  $scheduledPackageId Identifies the scheduled package to be updated.
-     * @param  Dimensions  $packageDimensions The dimensions of the scheduled package.
-     * @param  Weight  $packageWeight The weight of the scheduled package
-     * @param  TimeSlot  $packageTimeSlot A time window to hand over an Easy Ship package to Amazon Logistics.
-     * @param  Item[]|null  $packageItems A list of items contained in the package.
-     * @param  ?string  $packageIdentifier Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
-     * @param  ?InvoiceData  $invoice Invoice number and date.
-     * @param  ?string  $packageStatus The status of the package.
-     * @param  ?TrackingDetails  $trackingDetails Representation of tracking metadata.
+     * @param  ScheduledPackageId  $scheduledPackageId  Identifies the scheduled package to be updated.
+     * @param  Dimensions  $packageDimensions  The dimensions of the scheduled package.
+     * @param  Weight  $packageWeight  The weight of the scheduled package
+     * @param  TimeSlot  $packageTimeSlot  A time window to hand over an Easy Ship package to Amazon Logistics.
+     * @param  Item[]|null  $packageItems  A list of items contained in the package.
+     * @param  ?string  $packageIdentifier  Optional seller-created identifier that is printed on the shipping label to help the seller identify the package.
+     * @param  ?InvoiceData  $invoice  Invoice number and date.
+     * @param  ?string  $packageStatus  The status of the package.
+     * @param  ?TrackingDetails  $trackingDetails  Representation of tracking metadata.
      */
     public function __construct(
         public readonly ScheduledPackageId $scheduledPackageId,

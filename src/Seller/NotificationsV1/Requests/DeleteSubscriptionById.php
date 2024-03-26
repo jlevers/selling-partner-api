@@ -18,8 +18,8 @@ class DeleteSubscriptionById extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $subscriptionId The identifier for the subscription that you want to delete.
-     * @param  string  $notificationType The type of notification.
+     * @param  string  $subscriptionId  The identifier for the subscription that you want to delete.
+     * @param  string  $notificationType  The type of notification.
      *
      *  For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide).
      */

@@ -23,7 +23,7 @@ class CreateScheduledPackageBulk extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateScheduledPackagesRequest  $createScheduledPackagesRequest The request body for the POST /easyShip/2022-03-23/packages/bulk API.
+     * @param  CreateScheduledPackagesRequest  $createScheduledPackagesRequest  The request body for the POST /easyShip/2022-03-23/packages/bulk API.
      */
     public function __construct(
         public CreateScheduledPackagesRequest $createScheduledPackagesRequest,

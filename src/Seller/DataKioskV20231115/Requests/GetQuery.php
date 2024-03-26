@@ -17,7 +17,7 @@ class GetQuery extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $queryId The query identifier.
+     * @param  string  $queryId  The query identifier.
      */
     public function __construct(
         protected string $queryId,

@@ -16,9 +16,9 @@ class GetFeatureInventory extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $featureName The name of the feature for which to return a list of eligible inventory.
-     * @param  string  $marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature.
-     * @param  ?string  $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
+     * @param  string  $featureName  The name of the feature for which to return a list of eligible inventory.
+     * @param  string  $marketplaceId  The marketplace for which to return a list of the inventory that is eligible for the specified feature.
+     * @param  ?string  $nextToken  A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page.
      */
     public function __construct(
         protected string $featureName,

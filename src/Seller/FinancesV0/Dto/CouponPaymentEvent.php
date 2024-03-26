@@ -19,12 +19,12 @@ final class CouponPaymentEvent extends BaseDto
 
     /**
      * @param  ?DateTime  $postedDate
-     * @param  ?string  $couponId A coupon identifier.
-     * @param  ?string  $sellerCouponDescription The description provided by the seller when they created the coupon.
-     * @param  ?int  $clipOrRedemptionCount The number of coupon clips or redemptions.
-     * @param  ?string  $paymentEventId A payment event identifier.
-     * @param  ?FeeComponent  $feeComponent A fee associated with the event.
-     * @param  ?ChargeComponent  $chargeComponent A charge on the seller's account.
+     * @param  ?string  $couponId  A coupon identifier.
+     * @param  ?string  $sellerCouponDescription  The description provided by the seller when they created the coupon.
+     * @param  ?int  $clipOrRedemptionCount  The number of coupon clips or redemptions.
+     * @param  ?string  $paymentEventId  A payment event identifier.
+     * @param  ?FeeComponent  $feeComponent  A fee associated with the event.
+     * @param  ?ChargeComponent  $chargeComponent  A charge on the seller's account.
      *
      * Possible values:
      *
@@ -89,7 +89,7 @@ final class CouponPaymentEvent extends BaseDto
      * * TCS-IGST - Tax Collected at Source for Integrated Goods and Services Tax (IGST).
      *
      * * TCS-UTGST - Tax Collected at Source for Union Territories Goods and Services Tax (UTGST).
-     * @param  ?Currency  $totalAmount A currency type and amount.
+     * @param  ?Currency  $totalAmount  A currency type and amount.
      */
     public function __construct(
         public readonly ?\DateTime $postedDate = null,

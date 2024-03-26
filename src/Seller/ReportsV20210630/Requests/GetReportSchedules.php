@@ -17,7 +17,7 @@ class GetReportSchedules extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  array  $reportTypes A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
+     * @param  array  $reportTypes  A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      */
     public function __construct(
         protected array $reportTypes,

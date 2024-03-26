@@ -35,7 +35,7 @@ use SellingPartnerApi\Seller\ServicesV1\Requests\UpdateSchedule;
 class Api extends BaseResource
 {
     /**
-     * @param  string  $serviceJobId A service job identifier.
+     * @param  string  $serviceJobId  A service job identifier.
      */
     public function getServiceJobByServiceJobId(string $serviceJobId): Response
     {
@@ -45,8 +45,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $serviceJobId An Amazon defined service job identifier.
-     * @param  string  $cancellationReasonCode A cancel reason code that specifies the reason for cancelling a service job.
+     * @param  string  $serviceJobId  An Amazon defined service job identifier.
+     * @param  string  $cancellationReasonCode  A cancel reason code that specifies the reason for cancelling a service job.
      */
     public function cancelServiceJobByServiceJobId(string $serviceJobId, string $cancellationReasonCode): Response
     {
@@ -56,7 +56,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $serviceJobId An Amazon defined service job identifier.
+     * @param  string  $serviceJobId  An Amazon defined service job identifier.
      */
     public function completeServiceJobByServiceJobId(string $serviceJobId): Response
     {
@@ -66,22 +66,22 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  array  $marketplaceIds Used to select jobs that were placed in the specified marketplaces.
-     * @param  ?array  $serviceOrderIds List of service order ids for the query you want to perform.Max values supported 20.
-     * @param  ?array  $serviceJobStatus A list of one or more job status by which to filter the list of jobs.
-     * @param  ?string  $pageToken String returned in the response of your previous request.
-     * @param  ?int  $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
-     * @param  ?string  $sortField Sort fields on which you want to sort the output.
-     * @param  ?string  $sortOrder Sort order for the query you want to perform.
-     * @param  ?string  $createdAfter A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error.
-     * @param  ?string  $createdBefore A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
-     * @param  ?string  $lastUpdatedAfter A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error.
-     * @param  ?string  $lastUpdatedBefore A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format.
-     * @param  ?string  $scheduleStartDate A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
-     * @param  ?string  $scheduleEndDate A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
-     * @param  ?array  $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
-     * @param  ?array  $requiredSkills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
-     * @param  ?array  $storeIds List of Amazon-defined identifiers for the region scope. Max values supported is 50.
+     * @param  array  $marketplaceIds  Used to select jobs that were placed in the specified marketplaces.
+     * @param  ?array  $serviceOrderIds  List of service order ids for the query you want to perform.Max values supported 20.
+     * @param  ?array  $serviceJobStatus  A list of one or more job status by which to filter the list of jobs.
+     * @param  ?string  $pageToken  String returned in the response of your previous request.
+     * @param  ?int  $pageSize  A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20.
+     * @param  ?string  $sortField  Sort fields on which you want to sort the output.
+     * @param  ?string  $sortOrder  Sort order for the query you want to perform.
+     * @param  ?string  $createdAfter  A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if `LastUpdatedAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error.
+     * @param  ?string  $createdBefore  A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format.
+     * @param  ?string  $lastUpdatedAfter  A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if `createdAfter` is not specified. Specifying both `CreatedAfter` and `LastUpdatedAfter` returns an error.
+     * @param  ?string  $lastUpdatedBefore  A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format.
+     * @param  ?string  $scheduleStartDate  A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
+     * @param  ?string  $scheduleEndDate  A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date.
+     * @param  ?array  $asins  List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20.
+     * @param  ?array  $requiredSkills  A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20.
+     * @param  ?array  $storeIds  List of Amazon-defined identifiers for the region scope. Max values supported is 50.
      */
     public function getServiceJobs(
         array $marketplaceIds,
@@ -107,8 +107,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $serviceJobId An Amazon defined service job identifier.
-     * @param  AddAppointmentRequest  $addAppointmentRequest Input for add appointment operation.
+     * @param  string  $serviceJobId  An Amazon defined service job identifier.
+     * @param  AddAppointmentRequest  $addAppointmentRequest  Input for add appointment operation.
      */
     public function addAppointmentForServiceJobByServiceJobId(
         string $serviceJobId,
@@ -120,9 +120,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $serviceJobId An Amazon defined service job identifier.
-     * @param  string  $appointmentId An existing appointment identifier for the Service Job.
-     * @param  RescheduleAppointmentRequest  $rescheduleAppointmentRequest Input for rescheduled appointment operation.
+     * @param  string  $serviceJobId  An Amazon defined service job identifier.
+     * @param  string  $appointmentId  An existing appointment identifier for the Service Job.
+     * @param  RescheduleAppointmentRequest  $rescheduleAppointmentRequest  Input for rescheduled appointment operation.
      */
     public function rescheduleAppointmentForServiceJobByServiceJobId(
         string $serviceJobId,
@@ -135,9 +135,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $serviceJobId An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API.
-     * @param  string  $appointmentId An Amazon-defined identifier of active service job appointment.
-     * @param  AssignAppointmentResourcesRequest  $assignAppointmentResourcesRequest Request schema for the `assignAppointmentResources` operation.
+     * @param  string  $serviceJobId  An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API.
+     * @param  string  $appointmentId  An Amazon-defined identifier of active service job appointment.
+     * @param  AssignAppointmentResourcesRequest  $assignAppointmentResourcesRequest  Request schema for the `assignAppointmentResources` operation.
      */
     public function assignAppointmentResources(
         string $serviceJobId,
@@ -150,9 +150,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $serviceJobId An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API.
-     * @param  string  $appointmentId An Amazon-defined identifier of active service job appointment.
-     * @param  SetAppointmentFulfillmentDataRequest  $setAppointmentFulfillmentDataRequest Input for set appointment fulfillment data operation.
+     * @param  string  $serviceJobId  An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API.
+     * @param  string  $appointmentId  An Amazon-defined identifier of active service job appointment.
+     * @param  SetAppointmentFulfillmentDataRequest  $setAppointmentFulfillmentDataRequest  Input for set appointment fulfillment data operation.
      */
     public function setAppointmentFulfillmentData(
         string $serviceJobId,
@@ -165,10 +165,10 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $resourceId Resource Identifier.
-     * @param  RangeSlotCapacityQuery  $rangeSlotCapacityQuery Request schema for the `getRangeSlotCapacity` operation. This schema is used to define the time range and capacity types that are being queried.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
-     * @param  ?string  $nextPageToken Next page token returned in the response of your previous request.
+     * @param  string  $resourceId  Resource Identifier.
+     * @param  RangeSlotCapacityQuery  $rangeSlotCapacityQuery  Request schema for the `getRangeSlotCapacity` operation. This schema is used to define the time range and capacity types that are being queried.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
+     * @param  ?string  $nextPageToken  Next page token returned in the response of your previous request.
      */
     public function getRangeSlotCapacity(
         string $resourceId,
@@ -182,10 +182,10 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $resourceId Resource Identifier.
-     * @param  FixedSlotCapacityQuery  $fixedSlotCapacityQuery Request schema for the `getFixedSlotCapacity` operation. This schema is used to define the time range, capacity types and slot duration which are being queried.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
-     * @param  ?string  $nextPageToken Next page token returned in the response of your previous request.
+     * @param  string  $resourceId  Resource Identifier.
+     * @param  FixedSlotCapacityQuery  $fixedSlotCapacityQuery  Request schema for the `getFixedSlotCapacity` operation. This schema is used to define the time range, capacity types and slot duration which are being queried.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
+     * @param  ?string  $nextPageToken  Next page token returned in the response of your previous request.
      */
     public function getFixedSlotCapacity(
         string $resourceId,
@@ -199,9 +199,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $resourceId Resource (store) Identifier
-     * @param  UpdateScheduleRequest  $updateScheduleRequest Request schema for the `updateSchedule` operation.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
+     * @param  string  $resourceId  Resource (store) Identifier
+     * @param  UpdateScheduleRequest  $updateScheduleRequest  Request schema for the `updateSchedule` operation.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
      */
     public function updateSchedule(
         string $resourceId,
@@ -214,8 +214,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  CreateReservationRequest  $createReservationRequest Request schema for the `createReservation` operation.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
+     * @param  CreateReservationRequest  $createReservationRequest  Request schema for the `createReservation` operation.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
      */
     public function createReservation(
         CreateReservationRequest $createReservationRequest,
@@ -227,9 +227,9 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $reservationId Reservation Identifier
-     * @param  UpdateReservationRequest  $updateReservationRequest Request schema for the `updateReservation` operation.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
+     * @param  string  $reservationId  Reservation Identifier
+     * @param  UpdateReservationRequest  $updateReservationRequest  Request schema for the `updateReservation` operation.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
      */
     public function updateReservation(
         string $reservationId,
@@ -242,8 +242,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $reservationId Reservation Identifier
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
+     * @param  string  $reservationId  Reservation Identifier
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
      */
     public function cancelReservation(string $reservationId, array $marketplaceIds): Response
     {
@@ -253,10 +253,10 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $serviceJobId A service job identifier to retrive appointment slots for associated service.
-     * @param  array  $marketplaceIds An identifier for the marketplace in which the resource operates.
-     * @param  ?string  $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration.
-     * @param  ?string  $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+     * @param  string  $serviceJobId  A service job identifier to retrive appointment slots for associated service.
+     * @param  array  $marketplaceIds  An identifier for the marketplace in which the resource operates.
+     * @param  ?string  $startTime  A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration.
+     * @param  ?string  $endTime  A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
      */
     public function getAppointmmentSlotsByJobId(
         string $serviceJobId,
@@ -270,11 +270,11 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $asin ASIN associated with the service.
-     * @param  string  $storeId Store identifier defining the region scope to retrive appointment slots.
-     * @param  array  $marketplaceIds An identifier for the marketplace for which appointment slots are queried
-     * @param  ?string  $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration.
-     * @param  ?string  $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
+     * @param  string  $asin  ASIN associated with the service.
+     * @param  string  $storeId  Store identifier defining the region scope to retrive appointment slots.
+     * @param  array  $marketplaceIds  An identifier for the marketplace for which appointment slots are queried
+     * @param  ?string  $startTime  A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `startTime` is provided, `endTime` should also be provided. Default value is as per business configuration.
+     * @param  ?string  $endTime  A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If `endTime` is provided, `startTime` should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days.
      */
     public function getAppointmentSlots(
         string $asin,
@@ -289,7 +289,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  ServiceUploadDocument  $serviceUploadDocument Input for to be uploaded document.
+     * @param  ServiceUploadDocument  $serviceUploadDocument  Input for to be uploaded document.
      */
     public function createServiceDocumentUploadDestination(ServiceUploadDocument $serviceUploadDocument): Response
     {

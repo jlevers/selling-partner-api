@@ -12,7 +12,7 @@ final class ConfirmPreorderResponse extends BaseResponse
 
     /**
      * @param  ?ConfirmPreorderResult  $payload
-     * @param  Error[]|null  $errors A list of error responses returned when a request is unsuccessful.
+     * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(
         public readonly ?ConfirmPreorderResult $payload = null,

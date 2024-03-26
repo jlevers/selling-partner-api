@@ -18,7 +18,7 @@ use SellingPartnerApi\Seller\ShippingV2\Requests\PurchaseShipment;
 class Api extends BaseResource
 {
     /**
-     * @param  GetRatesRequest  $getRatesRequest The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.
+     * @param  GetRatesRequest  $getRatesRequest  The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.
      */
     public function getRates(GetRatesRequest $getRatesRequest): Response
     {
@@ -28,7 +28,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  DirectPurchaseRequest  $directPurchaseRequest The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
+     * @param  DirectPurchaseRequest  $directPurchaseRequest  The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
      */
     public function directPurchaseShipment(DirectPurchaseRequest $directPurchaseRequest): Response
     {
@@ -38,7 +38,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest The request schema for the purchaseShipment operation.
+     * @param  PurchaseShipmentRequest  $purchaseShipmentRequest  The request schema for the purchaseShipment operation.
      */
     public function purchaseShipment(PurchaseShipmentRequest $purchaseShipmentRequest): Response
     {
@@ -48,8 +48,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $trackingId A carrier-generated tracking identifier originally returned by the purchaseShipment operation.
-     * @param  string  $carrierId A carrier identifier originally returned by the getRates operation for the selected rate.
+     * @param  string  $trackingId  A carrier-generated tracking identifier originally returned by the purchaseShipment operation.
+     * @param  string  $carrierId  A carrier identifier originally returned by the getRates operation for the selected rate.
      */
     public function getTracking(string $trackingId, string $carrierId): Response
     {
@@ -59,10 +59,10 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $shipmentId The shipment identifier originally returned by the purchaseShipment operation.
-     * @param  string  $packageClientReferenceId The package client reference identifier originally provided in the request body parameter for the getRates operation.
-     * @param  ?string  $format The file format of the document. Must be one of the supported formats returned by the getRates operation.
-     * @param  ?float  $dpi The resolution of the document (for example, 300 means 300 dots per inch). Must be one of the supported resolutions returned in the response to the getRates operation.
+     * @param  string  $shipmentId  The shipment identifier originally returned by the purchaseShipment operation.
+     * @param  string  $packageClientReferenceId  The package client reference identifier originally provided in the request body parameter for the getRates operation.
+     * @param  ?string  $format  The file format of the document. Must be one of the supported formats returned by the getRates operation.
+     * @param  ?float  $dpi  The resolution of the document (for example, 300 means 300 dots per inch). Must be one of the supported resolutions returned in the response to the getRates operation.
      */
     public function getShipmentDocuments(
         string $shipmentId,
@@ -76,7 +76,7 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $shipmentId The shipment identifier originally returned by the purchaseShipment operation.
+     * @param  string  $shipmentId  The shipment identifier originally returned by the purchaseShipment operation.
      */
     public function cancelShipment(string $shipmentId): Response
     {
@@ -86,8 +86,8 @@ class Api extends BaseResource
     }
 
     /**
-     * @param  string  $requestToken The request token returned in the response to the getRates operation.
-     * @param  string  $rateId The rate identifier for the shipping offering (rate) returned in the response to the getRates operation.
+     * @param  string  $requestToken  The request token returned in the response to the getRates operation.
+     * @param  string  $rateId  The rate identifier for the shipping offering (rate) returned in the response to the getRates operation.
      */
     public function getAdditionalInputs(string $requestToken, string $rateId): Response
     {

@@ -18,13 +18,13 @@ final class OfferType extends BaseDto
     protected static array $complexArrayTypes = ['quantityDiscountPrices' => [QuantityDiscountPriceType::class]];
 
     /**
-     * @param  string  $fulfillmentChannel The fulfillment channel for the offer listing. Possible values:
+     * @param  string  $fulfillmentChannel  The fulfillment channel for the offer listing. Possible values:
      *
      * * Amazon - Fulfilled by Amazon.
      * * Merchant - Fulfilled by the seller.
-     * @param  string  $itemCondition The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
-     * @param  string  $itemSubCondition The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-     * @param  string  $sellerSku The seller stock keeping unit (SKU) of the item.
+     * @param  string  $itemCondition  The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
+     * @param  string  $itemSubCondition  The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
+     * @param  string  $sellerSku  The seller stock keeping unit (SKU) of the item.
      * @param  ?string  $offerType
      * @param  ?MoneyType  $businessPrice
      * @param  QuantityDiscountPriceType[]|null  $quantityDiscountPrices

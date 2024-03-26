@@ -17,13 +17,13 @@ final class ChargeRefundEvent extends BaseDto
 
     /**
      * @param  ?DateTime  $postedDate
-     * @param  ?string  $reasonCode The reason given for a charge refund.
+     * @param  ?string  $reasonCode  The reason given for a charge refund.
      *
      * Example: `SubscriptionFeeCorrection`
-     * @param  ?string  $reasonCodeDescription A description of the Reason Code.
+     * @param  ?string  $reasonCodeDescription  A description of the Reason Code.
      *
      * Example: `SubscriptionFeeCorrection`
-     * @param  ChargeRefundTransaction[]|null  $chargeRefundTransactions A list of `ChargeRefund` transactions.
+     * @param  ChargeRefundTransaction[]|null  $chargeRefundTransactions  A list of `ChargeRefund` transactions.
      */
     public function __construct(
         public readonly ?\DateTime $postedDate = null,

@@ -9,8 +9,8 @@ final class OfferListingCountType extends BaseDto
     protected static array $attributeMap = ['count' => 'Count'];
 
     /**
-     * @param  int  $count The number of offer listings.
-     * @param  string  $condition The condition of the item.
+     * @param  int  $count  The number of offer listings.
+     * @param  string  $condition  The condition of the item.
      */
     public function __construct(
         public readonly int $count,

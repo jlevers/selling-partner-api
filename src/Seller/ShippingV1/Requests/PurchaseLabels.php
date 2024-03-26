@@ -21,7 +21,7 @@ class PurchaseLabels extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  PurchaseLabelsRequest  $purchaseLabelsRequest The request schema for the purchaseLabels operation.
+     * @param  PurchaseLabelsRequest  $purchaseLabelsRequest  The request schema for the purchaseLabels operation.
      */
     public function __construct(
         protected string $shipmentId,

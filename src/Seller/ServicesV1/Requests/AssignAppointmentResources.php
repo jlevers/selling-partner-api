@@ -17,9 +17,9 @@ class AssignAppointmentResources extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $serviceJobId An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API.
-     * @param  string  $appointmentId An Amazon-defined identifier of active service job appointment.
-     * @param  AssignAppointmentResourcesRequest  $assignAppointmentResourcesRequest Request schema for the `assignAppointmentResources` operation.
+     * @param  string  $serviceJobId  An Amazon-defined service job identifier. Get this value by calling the `getServiceJobs` operation of the Services API.
+     * @param  string  $appointmentId  An Amazon-defined identifier of active service job appointment.
+     * @param  AssignAppointmentResourcesRequest  $assignAppointmentResourcesRequest  Request schema for the `assignAppointmentResources` operation.
      */
     public function __construct(
         protected string $serviceJobId,

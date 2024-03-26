@@ -16,9 +16,9 @@ class ConfirmPreorder extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation.
-     * @param  DateTime  $needByDate Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value.
-     * @param  string  $marketplaceId A marketplace identifier. Specifies the marketplace the shipment is tied to.
+     * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.
+     * @param  DateTime  $needByDate  Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value.
+     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace the shipment is tied to.
      */
     public function __construct(
         protected string $shipmentId,

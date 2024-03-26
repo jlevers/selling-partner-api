@@ -22,7 +22,7 @@ class CreateFeedDocument extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  CreateFeedDocumentSpecification  $createFeedDocumentSpecification Specifies the content type for the createFeedDocument operation.
+     * @param  CreateFeedDocumentSpecification  $createFeedDocumentSpecification  Specifies the content type for the createFeedDocument operation.
      */
     public function __construct(
         public CreateFeedDocumentSpecification $createFeedDocumentSpecification,

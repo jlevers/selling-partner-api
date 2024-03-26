@@ -17,7 +17,7 @@ class ArchiveSupplySource extends Request
     protected Method $method = Method::DELETE;
 
     /**
-     * @param  string  $supplySourceId The unique identifier of a supply source.
+     * @param  string  $supplySourceId  The unique identifier of a supply source.
      */
     public function __construct(
         protected string $supplySourceId,

@@ -9,7 +9,7 @@ final class ShipmentInvoiceStatusResponse extends BaseDto
     protected static array $attributeMap = ['shipments' => 'Shipments'];
 
     /**
-     * @param  ?ShipmentInvoiceStatusInfo  $shipments The shipment invoice status information.
+     * @param  ?ShipmentInvoiceStatusInfo  $shipments  The shipment invoice status information.
      */
     public function __construct(
         public readonly ?ShipmentInvoiceStatusInfo $shipments = null,

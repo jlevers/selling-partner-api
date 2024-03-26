@@ -9,9 +9,9 @@ final class Image extends BaseDto
     protected static array $attributeMap = ['url' => 'URL', 'height' => 'Height', 'width' => 'Width'];
 
     /**
-     * @param  ?string  $url The image URL attribute of the item.
-     * @param  ?DecimalWithUnits  $height The decimal value and unit.
-     * @param  ?DecimalWithUnits  $width The decimal value and unit.
+     * @param  ?string  $url  The image URL attribute of the item.
+     * @param  ?DecimalWithUnits  $height  The decimal value and unit.
+     * @param  ?DecimalWithUnits  $width  The decimal value and unit.
      */
     public function __construct(
         public readonly ?string $url = null,

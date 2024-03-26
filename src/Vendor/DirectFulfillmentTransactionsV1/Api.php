@@ -9,7 +9,7 @@ use SellingPartnerApi\Vendor\DirectFulfillmentTransactionsV1\Requests\GetTransac
 class Api extends BaseResource
 {
     /**
-     * @param  string  $transactionId Previously returned in the response to the POST request of a specific transaction.
+     * @param  string  $transactionId  Previously returned in the response to the POST request of a specific transaction.
      */
     public function getTransactionStatus(string $transactionId): Response
     {

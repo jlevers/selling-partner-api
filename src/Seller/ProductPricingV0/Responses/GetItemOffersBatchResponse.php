@@ -10,7 +10,7 @@ final class GetItemOffersBatchResponse extends BaseResponse
     protected static array $complexArrayTypes = ['responses' => [ItemOffersResponse::class]];
 
     /**
-     * @param  ItemOffersResponse[]|null  $responses A list of `getItemOffers` batched responses.
+     * @param  ItemOffersResponse[]|null  $responses  A list of `getItemOffers` batched responses.
      */
     public function __construct(
         public readonly ?array $responses = null,

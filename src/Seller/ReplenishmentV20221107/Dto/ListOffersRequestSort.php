@@ -7,8 +7,8 @@ use Crescat\SaloonSdkGenerator\BaseDto;
 final class ListOffersRequestSort extends BaseDto
 {
     /**
-     * @param  string  $order The sort order.
-     * @param  string  $key The attribute to use to sort the results.
+     * @param  string  $order  The sort order.
+     * @param  string  $key  The attribute to use to sort the results.
      */
     public function __construct(
         public readonly string $order,

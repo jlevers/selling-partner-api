@@ -17,7 +17,7 @@ class GetShipment extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $shipmentId The Amazon-defined shipment identifier for the shipment.
+     * @param  string  $shipmentId  The Amazon-defined shipment identifier for the shipment.
      */
     public function __construct(
         protected string $shipmentId,

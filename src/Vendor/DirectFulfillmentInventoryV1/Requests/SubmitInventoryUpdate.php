@@ -21,8 +21,8 @@ class SubmitInventoryUpdate extends Request implements HasBody
     protected Method $method = Method::POST;
 
     /**
-     * @param  string  $warehouseId Identifier for the warehouse for which to update inventory.
-     * @param  SubmitInventoryUpdateRequest  $submitInventoryUpdateRequest The request body for the submitInventoryUpdate operation.
+     * @param  string  $warehouseId  Identifier for the warehouse for which to update inventory.
+     * @param  SubmitInventoryUpdateRequest  $submitInventoryUpdateRequest  The request body for the submitInventoryUpdate operation.
      */
     public function __construct(
         protected string $warehouseId,

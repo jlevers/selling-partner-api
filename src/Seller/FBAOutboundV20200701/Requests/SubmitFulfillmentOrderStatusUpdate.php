@@ -17,8 +17,8 @@ class SubmitFulfillmentOrderStatusUpdate extends Request
     protected Method $method = Method::PUT;
 
     /**
-     * @param  string  $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created.
-     * @param  SubmitFulfillmentOrderStatusUpdateRequest  $submitFulfillmentOrderStatusUpdateRequest The request body schema for the submitFulfillmentOrderStatusUpdate operation.
+     * @param  string  $sellerFulfillmentOrderId  The identifier assigned to the item by the seller when the fulfillment order was created.
+     * @param  SubmitFulfillmentOrderStatusUpdateRequest  $submitFulfillmentOrderStatusUpdateRequest  The request body schema for the submitFulfillmentOrderStatusUpdate operation.
      */
     public function __construct(
         protected string $sellerFulfillmentOrderId,

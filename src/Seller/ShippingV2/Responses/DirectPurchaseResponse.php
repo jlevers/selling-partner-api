@@ -8,7 +8,7 @@ use SellingPartnerApi\Seller\ShippingV2\Dto\DirectPurchaseResult;
 final class DirectPurchaseResponse extends BaseResponse
 {
     /**
-     * @param  ?DirectPurchaseResult  $payload The payload for the directPurchaseShipment operation.
+     * @param  ?DirectPurchaseResult  $payload  The payload for the directPurchaseShipment operation.
      */
     public function __construct(
         public readonly ?DirectPurchaseResult $payload = null,

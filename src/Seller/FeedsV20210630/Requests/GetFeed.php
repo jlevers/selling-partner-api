@@ -17,7 +17,7 @@ class GetFeed extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $feedId The identifier for the feed. This identifier is unique only in combination with a seller ID.
+     * @param  string  $feedId  The identifier for the feed. This identifier is unique only in combination with a seller ID.
      */
     public function __construct(
         protected string $feedId,

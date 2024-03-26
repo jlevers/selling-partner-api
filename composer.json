@@ -25,14 +25,15 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
+        "composer/semver": "^3.4",
         "guzzlehttp/guzzle": "^6.0|^7.0",
         "highsidelabs/saloon-sdk-generator": "^1.0",
         "saloonphp/saloon": "^3.4",
-        "openspout/openspout": "^4.23"
+        "openspout/openspout": "^4.23",
+        "illuminate/support": "^10.48"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0 || ^9.0",
-        "composer/semver": "^3.4",
         "symfony/console": "^6.3",
         "psy/psysh": "^0.11.22",
         "voku/simple_html_dom": "^4.8",

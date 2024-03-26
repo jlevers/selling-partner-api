@@ -20,19 +20,13 @@
             "homepage": "https://jesseevers.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/highsidelabs/saloon-sdk-generator"
-        }
-    ],
     "require": {
         "php": ">=8.1",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.0|^7.0",
-        "highsidelabs/saloon-sdk-generator": "dev-master",
+        "highsidelabs/saloon-sdk-generator": "^1.0",
         "saloonphp/saloon": "^3.4",
         "openspout/openspout": "^4.23"
     },
@@ -61,6 +55,5 @@
         "test": "vendor/bin/phpunit",
         "clean": "rm -rf docs src/models/*/* src/apis/*/*/*",
         "format": "php vendor/bin/pint"
-    },
-    "minimum-stability": "dev"
+    }
 }

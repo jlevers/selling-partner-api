@@ -4022,9 +4022,6 @@
                 "description": "The shipping address for the order."
             },
             "Address": {
-                "required": [
-                    "Name"
-                ],
                 "type": "object",
                 "properties": {
                     "Name": {

@@ -154,30 +154,25 @@ class SchemaVersion
     protected function modifySchema(stdClass &$schema): stdClass
     {
         $modifications = json_decode(file_get_contents(METADATA_DIR.'/modifications.json'));
+        $schemaMods = data_get($modifications, $this->id(), []);
 
-        foreach ($schema->paths as $path => $_) {
-            if (! isset($modifications->{$path})) {
-                continue;
-            }
+        foreach ($schemaMods as $mod) {
+            $original = data_get($schema, $mod->path);
+            $modified = match ($mod->action) {
+                'delete' => null,
+                'replace' => $mod->value,
+                'merge' => match (true) {
+                    is_array($original) => array_merge($original, $mod->value),
+                    is_object($original) => (object) array_merge((array) $original, (array) $mod->value),
+                    default => throw new InvalidArgumentException('Cannot merge scalar schema values'),
+                },
+                default => throw new InvalidArgumentException("Invalid schema modification action '{$mod->action}'"),
+            };
 
-            foreach ($modifications->{$path} as $mod) {
-                $original = data_get($schema, $mod->path);
-                $modified = match ($mod->action) {
-                    'remove' => null,
-                    'replace' => $mod->value,
-                    'merge' => match (true) {
-                        is_array($original) => array_merge($original, $mod->value),
-                        is_object($original) => (object) array_merge((array) $original, (array) $mod->value),
-                        default => throw new InvalidArgumentException('Cannot merge scalar schema values'),
-                    },
-                    default => throw new InvalidArgumentException("Invalid schema modification action '{$mod->action}'"),
-                };
-
-                if ($modified === null) {
-                    data_forget($schema, $mod->path);
-                } else {
-                    data_set($schema, $mod->path, $modified);
-                }
+            if ($modified === null) {
+                data_forget($schema, $mod->path);
+            } else {
+                data_set($schema, $mod->path, $modified);
             }
         }
 

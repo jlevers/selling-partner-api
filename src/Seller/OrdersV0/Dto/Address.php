@@ -23,7 +23,7 @@ final class Address extends BaseDto
     ];
 
     /**
-     * @param  string  $name  The name.
+     * @param  ?string  $name  The name.
      * @param  ?string  $addressLine1  The street address.
      * @param  ?string  $addressLine2  Additional street address information, if required.
      * @param  ?string  $addressLine3  Additional street address information, if required.
@@ -38,7 +38,7 @@ final class Address extends BaseDto
      * @param  ?string  $addressType  The address type of the shipping address.
      */
     public function __construct(
-        public readonly string $name,
+        public readonly ?string $name = null,
         public readonly ?string $addressLine1 = null,
         public readonly ?string $addressLine2 = null,
         public readonly ?string $addressLine3 = null,

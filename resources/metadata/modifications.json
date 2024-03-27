@@ -1,19 +1,31 @@
 {
-  "/reports/2021-06-30/documents/{reportDocumentId}": [
-    {
-      "action": "merge",
-      "path": "paths./reports/2021-06-30/documents/{reportDocumentId}.get.parameters",
-      "value": [
+  "seller": {
+    "orders": {
+      "0": [
         {
-          "name": "reportType",
-          "in": "query",
-          "description": "The report type of the report document.",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
+          "action": "delete",
+          "path": "components.schemas.Address.required"
+        }
+      ]
+    },
+    "reports": {
+      "2021-06-30": [
+        {
+          "action": "merge",
+          "path": "paths./reports/2021-06-30/documents/{reportDocumentId}.get.parameters",
+          "value": [
+            {
+              "name": "reportType",
+              "in": "query",
+              "description": "The report type of the report document.",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ]
         }
       ]
     }
-  ]
+  }
 }

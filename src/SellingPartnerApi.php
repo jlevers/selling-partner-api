@@ -6,7 +6,6 @@ namespace SellingPartnerApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Query;
 use Psr\Http\Message\RequestInterface;
 use Saloon\Contracts\Authenticator;
 use Saloon\Http\Connector;
@@ -46,8 +45,23 @@ class SellingPartnerApi extends Connector
         // Saloon's default query string builder (which is Guzzle) encodes arrays like key[0]=value0&key[1]=value1,
         // but Amazon expects key=value0,value1
         $query = $pendingRequest->query()->all();
-        $uri = $request->getUri();
-        $uri = $uri->withQuery(Query::build($query));
+
+        $csvQuery = [];
+        foreach ($query as $key => $value) {
+            if (is_array($value)) {
+                $stringified = array_map(fn ($v) => urlencode((string) $v), $value);
+                $csvQuery[$key] = implode(',', $stringified);
+            } else {
+                $csvQuery[$key] = urlencode($value);
+            }
+        }
+        $implodeableQuery = [];
+        foreach ($csvQuery as $key => $value) {
+            $implodeableQuery[] = "$key=$value";
+        }
+        $implodedQuery = implode('&', $implodeableQuery);
+
+        $uri = $request->getUri()->withQuery($implodedQuery);
         $request = $request->withUri($uri);
 
         return $request;

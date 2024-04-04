@@ -13,6 +13,9 @@
 ## Selling Partner API for PHP
 A PHP library for connecting to Amazon's [Selling Partner API](https://github.com/amzn/selling-partner-api-docs/).
 
+> [!NOTE]
+> If you're looking for the documentation for v5 of this package, you can find it [here](https://github.com/jlevers/selling-partner-api/tree/v5.10.2).
+
 ### Related packages
 
 * [`highsidelabs/laravel-spapi`](https://github.com/highsidelabs/laravel-spapi): A [Laravel](https://laravel.com) wrapper for this package that makes SP API integration in Laravel projects quick and easy.

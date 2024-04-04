@@ -52,7 +52,7 @@ class SellingPartnerApi extends Connector
                 $stringified = array_map(fn ($v) => urlencode((string) $v), $value);
                 $csvQuery[$key] = implode(',', $stringified);
             } else {
-                $csvQuery[$key] = urlencode($value);
+                $csvQuery[$key] = urlencode((string) $value);
             }
         }
         $implodeableQuery = [];

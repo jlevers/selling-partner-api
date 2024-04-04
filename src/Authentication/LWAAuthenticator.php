@@ -11,8 +11,8 @@ use SellingPartnerApi\SellingPartnerApi;
 class LWAAuthenticator extends AbstractAuthenticator
 {
     /**
-     * A map of LWA client IDs to access tokens. Used to cache access tokens
-     * for multiple clients in a single spot.
+     * A map of refresh tokens to access tokens. Used to cache access tokens
+     * for multiple sets of credentials.
      *
      * @var array[string => AccessToken]
      */
@@ -27,7 +27,8 @@ class LWAAuthenticator extends AbstractAuthenticator
      */
     protected function getAccessToken(): ?string
     {
-        $accessToken = Arr::get(static::$accessTokens, $this->connector->clientId);
+        $refreshToken = $this->connector->refreshToken;
+        $accessToken = Arr::get(static::$accessTokens, $refreshToken);
         if (! $accessToken || $accessToken->expired()) {
             $jsonData = [
                 'grant_type' => 'refresh_token',
@@ -43,7 +44,7 @@ class LWAAuthenticator extends AbstractAuthenticator
                 new DateTime("+{$data['expires_in']} seconds")
             );
 
-            $accessToken = static::$accessTokens[$this->connector->clientId] = $accessToken;
+            $accessToken = static::$accessTokens[$refreshToken] = $accessToken;
         }
 
         return $accessToken->token;

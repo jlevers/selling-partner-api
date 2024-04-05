@@ -468,7 +468,7 @@ $createFeedSpec = new CreateFeedSpecification(
 );
 
 // Create feed with the feed document we just uploaded
-$createFeedResponse = $feedsApi->createFeed($createFeedRequest);
+$createFeedResponse = $feedsApi->createFeed($createFeedSpec);
 $feedId = $createFeedResponse->dto()->feedId;
 ```
 

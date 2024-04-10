@@ -19,15 +19,18 @@ class GetReportDocument extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  string  $reportDocumentId  The identifier for the report document.
-     * @param  string  $reportType  The report type of the report document.
+     * @param string $reportDocumentId The identifier for the report document.
+     * @param string $reportType The report type of the report document.
      */
     public function __construct(
         protected string $reportDocumentId,
         protected string $reportType,
     ) {
-        $rdtMiddleware = new RestrictedDataToken($this->resolveEndpoint(), 'GET', []);
-        $this->middleware()->onRequest($rdtMiddleware);
+        $reports = json_decode(file_get_contents(RESOURCE_DIR . '/reports.json'), true);
+        if (true === ($reports[$reportType]['restricted'] ?? true)) {
+            $rdtMiddleware = new RestrictedDataToken($this->resolveEndpoint(), 'GET', []);
+            $this->middleware()->onRequest($rdtMiddleware);
+        }
         $this->middleware()->onRequest(new RestrictedReport);
     }
 

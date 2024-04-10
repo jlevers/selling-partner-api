@@ -23,7 +23,7 @@ class RestrictedReport implements RequestMiddleware
         $connector = $pendingRequest->getConnector();
         if (
             ! $reports[$reportType]['restricted']
-            || Endpoint::isSandbox(Endpoint::tryFrom($connector->endpoint))
+            || Endpoint::isSandbox($connector->endpoint)
         ) {
             $pendingRequest->authenticate($connector->lwaAuth());
         }

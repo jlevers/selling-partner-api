@@ -19,8 +19,8 @@ class GetReportDocument extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param string $reportDocumentId The identifier for the report document.
-     * @param string $reportType The report type of the report document.
+     * @param  string  $reportDocumentId  The identifier for the report document.
+     * @param  string  $reportType  The report type of the report document.
      */
     public function __construct(
         protected string $reportDocumentId,

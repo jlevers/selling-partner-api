@@ -36,8 +36,10 @@
         "symfony/console": "^6.3",
         "psy/psysh": "^0.11.22",
         "voku/simple_html_dom": "^4.8",
-        "laravel/pint": "^1.13"
+        "laravel/pint": "^1.13",
+        "phpcompatibility/php-compatibility": "dev-develop"
     },
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "SellingPartnerApi\\": "src/"
@@ -52,6 +54,19 @@
         }
     },
     "scripts": {
-        "format": "php vendor/bin/pint"
+        "lint": [
+          "@pint",
+          "@php-compatibility-check"
+        ],
+        "pint": "php vendor/bin/pint",
+        "php-compatibility-check": "./vendor/bin/phpcs -p ./src ./bin --standard=PHPCompatibility --runtime-set testVersion 8.1-",
+
+        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+        "post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

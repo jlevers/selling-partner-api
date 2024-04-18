@@ -21,7 +21,7 @@ use SimpleXMLElement;
 
 trait DownloadsDocument
 {
-    protected const DEFAULT_ENCODING = 'UTF-8';
+    protected static string $defaultEncoding = 'UTF-8';
 
     protected ?string $encoding;
 
@@ -76,7 +76,7 @@ trait DownloadsDocument
             $this->encoding = $this->detectEncoding($contents, $response);
             $contents = mb_convert_encoding(
                 $contents,
-                static::DEFAULT_ENCODING,
+                static::$defaultEncoding,
                 $this->encoding ?? mb_internal_encoding()
             );
         }
@@ -218,10 +218,10 @@ trait DownloadsDocument
     {
         // If the encoding is not supported, default to system default encoding
         if ($this->encoding && ! in_array(strtoupper($this->encoding), mb_list_encodings(), true)) {
-            $encoding = static::DEFAULT_ENCODING;
+            $encoding = static::$defaultEncoding;
         } elseif (! $this->encoding) {
             // If encoding is not provided try to automatically detect the encoding from the HTTP response
-            $encodings = [static::DEFAULT_ENCODING];
+            $encodings = [static::$defaultEncoding];
             if ($response->hasHeader('Content-Type')) {
                 $parsed = Header::parse($response->getHeader('Content-Type'));
 

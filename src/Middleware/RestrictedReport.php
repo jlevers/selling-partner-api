@@ -22,10 +22,15 @@ class RestrictedReport implements RequestMiddleware
 
         $connector = $pendingRequest->getConnector();
         if (
-            ! $reports[$reportType]['restricted']
-            || Endpoint::isSandbox($connector->endpoint)
+            $reports[$reportType]['restricted']
+            && ! Endpoint::isSandbox($connector->endpoint)
         ) {
-            $pendingRequest->authenticate($connector->lwaAuth());
+            $rdtMiddleware = new RestrictedDataToken(
+                $pendingRequest->getRequest()->resolveEndpoint(),
+                $pendingRequest->getMethod()->value,
+                []
+            );
+            $rdtMiddleware($pendingRequest);
         }
 
         // The reportType key is not part of the actual API request. We added it to make it

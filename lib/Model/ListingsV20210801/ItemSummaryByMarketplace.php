@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\ListingsV20210801;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ItemSummaryByMarketplace Class Doc Comment
@@ -42,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSerializable
+class ItemSummaryByMarketplace extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -91,25 +90,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'main_image' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -136,7 +117,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-                'marketplace_id' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'asin' => 'setAsin',
         'product_type' => 'setProductType',
         'condition_type' => 'setConditionType',
@@ -166,46 +147,9 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         'main_image' => 'getMainImage'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const CONDITION_TYPE_NEW_NEW = 'new_new';
+    const CONDITION_TYPE_NEW_NEW = 'new_new';
     const CONDITION_TYPE_NEW_OPEN_BOX = 'new_open_box';
     const CONDITION_TYPE_NEW_OEM = 'new_oem';
     const CONDITION_TYPE_REFURBISHED_REFURBISHED = 'refurbished_refurbished';
@@ -218,6 +162,8 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     const CONDITION_TYPE_COLLECTIBLE_GOOD = 'collectible_good';
     const CONDITION_TYPE_COLLECTIBLE_ACCEPTABLE = 'collectible_acceptable';
     const CONDITION_TYPE_CLUB_CLUB = 'club_club';
+    
+
     const STATUS_BUYABLE = 'BUYABLE';
     const STATUS_DISCOVERABLE = 'DISCOVERABLE';
     
@@ -230,7 +176,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getConditionTypeAllowableValues()
     {
-        return [
+        $baseVals = [
             self::CONDITION_TYPE_NEW_NEW,
             self::CONDITION_TYPE_NEW_OPEN_BOX,
             self::CONDITION_TYPE_NEW_OEM,
@@ -245,6 +191,10 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
             self::CONDITION_TYPE_COLLECTIBLE_ACCEPTABLE,
             self::CONDITION_TYPE_CLUB_CLUB,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
 
@@ -255,10 +205,14 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function getStatusAllowableValues()
     {
-        return [
+        $baseVals = [
             self::STATUS_BUYABLE,
             self::STATUS_DISCOVERABLE,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -296,7 +250,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
             $invalidProperties[] = "'marketplace_id' can't be null";
         }
@@ -307,7 +260,10 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "'product_type' can't be null";
         }
         $allowedValues = $this->getConditionTypeAllowableValues();
-        if (!is_null($this->container['condition_type']) && !in_array($this->container['condition_type'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['condition_type']) &&
+            !in_array(strtoupper($this->container['condition_type']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'condition_type', must be one of '%s'",
                 $this->container['condition_type'],
@@ -328,17 +284,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
             $invalidProperties[] = "'last_updated_date' can't be null";
         }
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -431,7 +376,7 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
     public function setConditionType($condition_type)
     {
         $allowedValues = $this->getConditionTypeAllowableValues();
-        if (!is_null($condition_type) && !in_array($condition_type, $allowedValues, true)) {
+        if (!is_null($condition_type) &&!in_array(strtoupper($condition_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'condition_type', must be one of '%s'",
@@ -590,99 +535,6 @@ class ItemSummaryByMarketplace implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['main_image'] = $main_image;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

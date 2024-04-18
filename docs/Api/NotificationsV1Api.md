@@ -20,7 +20,7 @@ createDestination($body): \SellingPartnerApi\Model\NotificationsV1\CreateDestina
 
 
 
-Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -28,7 +28,7 @@ Creates a destination resource to receive notifications. The createDestination A
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -92,7 +92,7 @@ Creates a subscription for the specified notification type to be delivered to th
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -113,7 +113,7 @@ $config = new SellingPartnerApi\Configuration([
 $apiInstance = new SellingPartnerApi\Api\NotificationsV1Api($config);
 $notification_type = 'notification_type_example'; // string | The type of notification.
 
- For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
+// For more information about notification types, see [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
 $body = new \SellingPartnerApi\Model\NotificationsV1\CreateSubscriptionRequest(); // \SellingPartnerApi\Model\NotificationsV1\CreateSubscriptionRequest
 
 try {
@@ -154,7 +154,7 @@ deleteDestination($destination_id): \SellingPartnerApi\Model\NotificationsV1\Del
 
 
 
-Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -162,7 +162,7 @@ Deletes the destination that you specify. The deleteDestination API is grantless
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -218,7 +218,7 @@ deleteSubscriptionById($subscription_id, $notification_type): \SellingPartnerApi
 
 
 
-Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -226,7 +226,7 @@ Deletes the subscription indicated by the subscription identifier and notificati
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -288,7 +288,7 @@ getDestination($destination_id): \SellingPartnerApi\Model\NotificationsV1\GetDes
 
 
 
-Returns information about the destination that you specify. The getDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+Returns information about the destination that you specify. The getDestination API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -296,7 +296,7 @@ Returns information about the destination that you specify. The getDestination A
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -352,7 +352,7 @@ getDestinations(): \SellingPartnerApi\Model\NotificationsV1\GetDestinationsRespo
 
 
 
-Returns information about all destinations. The getDestinations API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+Returns information about all destinations. The getDestinations API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -360,7 +360,7 @@ Returns information about all destinations. The getDestinations API is grantless
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -421,7 +421,7 @@ Returns information about subscriptions of the specified notification type. You 
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -481,7 +481,7 @@ getSubscriptionById($subscription_id, $notification_type): \SellingPartnerApi\Mo
 
 
 
-Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.
+Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see [Grantless operations](https://developer-docs.amazon.com/sp-api/docs/grantless-operations) in the Selling Partner API Developer Guide.
 
 **Usage Plan:**
 
@@ -489,7 +489,7 @@ Returns information about a subscription for the specified notification type. Th
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 

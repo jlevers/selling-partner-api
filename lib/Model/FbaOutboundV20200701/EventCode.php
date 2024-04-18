@@ -26,8 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\FbaOutboundV20200701;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * EventCode Class Doc Comment
@@ -39,6 +40,8 @@ use \SellingPartnerApi\Model\ModelInterface;
  */
 class EventCode
 {
+    public $value;
+
     /**
      * Possible values of this enum
      */
@@ -50,6 +53,7 @@ class EventCode
     const _204 = 'EVENT_204';
     const _205 = 'EVENT_205';
     const _206 = 'EVENT_206';
+    const _212 = 'EVENT_212';
     const _301 = 'EVENT_301';
     const _302 = 'EVENT_302';
     const _304 = 'EVENT_304';
@@ -76,6 +80,8 @@ class EventCode
     const _417 = 'EVENT_417';
     const _418 = 'EVENT_418';
     const _419 = 'EVENT_419';
+    const _636 = 'EVENT_636';
+    const _637 = 'EVENT_637';
     
     /**
      * Gets allowable values of the enum
@@ -83,7 +89,7 @@ class EventCode
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::_101,
             self::_102,
             self::_201,
@@ -92,6 +98,7 @@ class EventCode
             self::_204,
             self::_205,
             self::_206,
+            self::_212,
             self::_301,
             self::_302,
             self::_304,
@@ -118,7 +125,32 @@ class EventCode
             self::_417,
             self::_418,
             self::_419,
+            self::_636,
+            self::_637,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
+    }
+
+    public function __construct($value)
+    {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
+            throw new \InvalidArgumentException(sprintf("Invalid value %s for enum 'EventCode', must be one of '%s'", $value, implode("', '", self::getAllowableEnumValues())));
+        }
+
+        $this->value = $value;
+    }
+
+    /**
+     * Convert the enum value to a string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->value;
     }
 }
 

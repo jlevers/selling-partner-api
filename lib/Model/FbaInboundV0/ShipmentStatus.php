@@ -26,8 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\FbaInboundV0;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShipmentStatus Class Doc Comment
@@ -39,6 +40,8 @@ use \SellingPartnerApi\Model\ModelInterface;
  */
 class ShipmentStatus
 {
+    public $value;
+
     /**
      * Possible values of this enum
      */
@@ -54,6 +57,7 @@ class ShipmentStatus
     const CHECKED_IN = 'CHECKED_IN';
     const READY_TO_SHIP = 'READY_TO_SHIP';
     const CREATED = 'CREATED';
+    const CREATING = 'CREATING';
     const ABANDONED = 'ABANDONED';
     
     /**
@@ -62,7 +66,7 @@ class ShipmentStatus
      */
     public static function getAllowableEnumValues()
     {
-        return [
+        $baseVals = [
             self::WORKING,
             self::SHIPPED,
             self::RECEIVING,
@@ -75,8 +79,32 @@ class ShipmentStatus
             self::CHECKED_IN,
             self::READY_TO_SHIP,
             self::CREATED,
+            self::CREATING,
             self::ABANDONED,
         ];
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        $ucVals = array_map(function ($val) { return strtoupper($val); }, $baseVals);
+        return array_merge($baseVals, $ucVals);
+    }
+
+    public function __construct($value)
+    {
+        if (is_null($value) || !in_array($value, self::getAllowableEnumValues(), true)) {
+            throw new \InvalidArgumentException(sprintf("Invalid value %s for enum 'ShipmentStatus', must be one of '%s'", $value, implode("', '", self::getAllowableEnumValues())));
+        }
+
+        $this->value = $value;
+    }
+
+    /**
+     * Convert the enum value to a string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->value;
     }
 }
 

@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\VendorShippingV1;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ItemDetails Class Doc Comment
@@ -42,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
+class ItemDetails extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -81,25 +80,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'handling_code' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -121,7 +102,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'purchase_order_number' => 'setPurchaseOrderNumber',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
         'lot_number' => 'setLotNumber',
         'expiry' => 'setExpiry',
         'maximum_retail_price' => 'setMaximumRetailPrice',
@@ -141,46 +122,9 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'handling_code' => 'getHandlingCode'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const HANDLING_CODE_OVERSIZED = 'Oversized';
+    const HANDLING_CODE_OVERSIZED = 'Oversized';
     const HANDLING_CODE_FRAGILE = 'Fragile';
     const HANDLING_CODE_FOOD = 'Food';
     const HANDLING_CODE_HANDLE_WITH_CARE = 'HandleWithCare';
@@ -194,12 +138,16 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getHandlingCodeAllowableValues()
     {
-        return [
+        $baseVals = [
             self::HANDLING_CODE_OVERSIZED,
             self::HANDLING_CODE_FRAGILE,
             self::HANDLING_CODE_FOOD,
             self::HANDLING_CODE_HANDLE_WITH_CARE,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -232,9 +180,11 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         $allowedValues = $this->getHandlingCodeAllowableValues();
-        if (!is_null($this->container['handling_code']) && !in_array($this->container['handling_code'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['handling_code']) &&
+            !in_array(strtoupper($this->container['handling_code']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'handling_code', must be one of '%s'",
                 $this->container['handling_code'],
@@ -243,17 +193,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -270,7 +209,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchase_order_number
      *
-     * @param string|null $purchase_order_number The Amazon purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
+     * @param string|null $purchase_order_number The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
      *
      * @return self
      */
@@ -369,7 +308,7 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHandlingCode($handling_code)
     {
         $allowedValues = $this->getHandlingCodeAllowableValues();
-        if (!is_null($handling_code) && !in_array($handling_code, $allowedValues, true)) {
+        if (!is_null($handling_code) &&!in_array(strtoupper($handling_code), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'handling_code', must be one of '%s'",
@@ -381,99 +320,6 @@ class ItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['handling_code'] = $handling_code;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

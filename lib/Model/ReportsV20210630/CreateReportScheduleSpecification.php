@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\ReportsV20210630;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * CreateReportScheduleSpecification Class Doc Comment
@@ -41,7 +40,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateReportScheduleSpecification extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -80,25 +79,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
         'next_report_creation_time' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -120,7 +101,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-                'report_type' => 'setReportType',
+        'report_type' => 'setReportType',
         'marketplace_ids' => 'setMarketplaceIds',
         'report_options' => 'setReportOptions',
         'period' => 'setPeriod',
@@ -140,46 +121,9 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
         'next_report_creation_time' => 'getNextReportCreationTime'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const PERIOD_PT5_M = 'PT5M';
+    const PERIOD_PT5_M = 'PT5M';
     const PERIOD_PT15_M = 'PT15M';
     const PERIOD_PT30_M = 'PT30M';
     const PERIOD_PT1_H = 'PT1H';
@@ -207,7 +151,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
      */
     public function getPeriodAllowableValues()
     {
-        return [
+        $baseVals = [
             self::PERIOD_PT5_M,
             self::PERIOD_PT15_M,
             self::PERIOD_PT30_M,
@@ -227,6 +171,10 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
             self::PERIOD_P30_D,
             self::PERIOD_P1_M,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -259,7 +207,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['report_type'] === null) {
             $invalidProperties[] = "'report_type' can't be null";
         }
@@ -278,7 +225,10 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
             $invalidProperties[] = "'period' can't be null";
         }
         $allowedValues = $this->getPeriodAllowableValues();
-        if (!is_null($this->container['period']) && !in_array($this->container['period'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['period']) &&
+            !in_array(strtoupper($this->container['period']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'period', must be one of '%s'",
                 $this->container['period'],
@@ -287,17 +237,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -314,7 +253,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
     /**
      * Sets report_type
      *
-     * @param string $report_type The report type.
+     * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      *
      * @return self
      */
@@ -397,7 +336,7 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
     public function setPeriod($period)
     {
         $allowedValues = $this->getPeriodAllowableValues();
-        if (!in_array($period, $allowedValues, true)) {
+        if (!in_array(strtoupper($period), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'period', must be one of '%s'",
@@ -432,99 +371,6 @@ class CreateReportScheduleSpecification implements ModelInterface, ArrayAccess, 
         $this->container['next_report_creation_time'] = $next_report_creation_time;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

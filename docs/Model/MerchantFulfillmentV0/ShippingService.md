@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shipping_service_name** | **string** | A plain text representation of a carrier&#39;s shipping service. For example, \&quot;UPS Ground\&quot; or \&quot;FedEx Standard Overnight\&quot;. |
+**shipping_service_name** | **string** | A plain text representation of a carrier's shipping service. For example, \"UPS Ground\" or \"FedEx Standard Overnight\". |
 **carrier_name** | **string** | The name of the carrier. |
 **shipping_service_id** | **string** | An Amazon-defined shipping service identifier. |
 **shipping_service_offer_id** | **string** | An Amazon-defined shipping service offer identifier. |

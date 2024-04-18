@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentShippingV1;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ShipmentDetails Class Doc Comment
@@ -42,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
+class ShipmentDetails extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -81,25 +80,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'estimated_delivery_date' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -121,7 +102,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'shipped_date' => 'setShippedDate',
+        'shipped_date' => 'setShippedDate',
         'shipment_status' => 'setShipmentStatus',
         'is_priority_shipment' => 'setIsPriorityShipment',
         'vendor_order_number' => 'setVendorOrderNumber',
@@ -141,46 +122,9 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'estimated_delivery_date' => 'getEstimatedDeliveryDate'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
+    const SHIPMENT_STATUS_SHIPPED = 'SHIPPED';
     const SHIPMENT_STATUS_FLOOR_DENIAL = 'FLOOR_DENIAL';
     
     
@@ -192,10 +136,14 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getShipmentStatusAllowableValues()
     {
-        return [
+        $baseVals = [
             self::SHIPMENT_STATUS_SHIPPED,
             self::SHIPMENT_STATUS_FLOOR_DENIAL,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -228,7 +176,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['shipped_date'] === null) {
             $invalidProperties[] = "'shipped_date' can't be null";
         }
@@ -236,7 +183,10 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "'shipment_status' can't be null";
         }
         $allowedValues = $this->getShipmentStatusAllowableValues();
-        if (!is_null($this->container['shipment_status']) && !in_array($this->container['shipment_status'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['shipment_status']) &&
+            !in_array(strtoupper($this->container['shipment_status']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'shipment_status', must be one of '%s'",
                 $this->container['shipment_status'],
@@ -245,17 +195,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -302,7 +241,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShipmentStatus($shipment_status)
     {
         $allowedValues = $this->getShipmentStatusAllowableValues();
-        if (!in_array($shipment_status, $allowedValues, true)) {
+        if (!in_array(strtoupper($shipment_status), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'shipment_status', must be one of '%s'",
@@ -383,99 +322,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

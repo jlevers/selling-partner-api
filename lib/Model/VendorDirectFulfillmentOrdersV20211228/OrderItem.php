@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrderItem Class Doc Comment
@@ -41,7 +40,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
+class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -67,7 +66,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_details' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\GiftDetails',
         'net_price' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\Money',
         'tax_details' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\TaxItemDetails',
-        'total_price' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\Money'
+        'total_price' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\Money',
+        'buyer_customized_info' => '\SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\BuyerCustomizedInfoDetail'
     ];
 
     /**
@@ -87,28 +87,11 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_details' => null,
         'net_price' => null,
         'tax_details' => null,
-        'total_price' => null
+        'total_price' => null,
+        'buyer_customized_info' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -126,7 +109,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_details' => 'giftDetails',
         'net_price' => 'netPrice',
         'tax_details' => 'taxDetails',
-        'total_price' => 'totalPrice'
+        'total_price' => 'totalPrice',
+        'buyer_customized_info' => 'buyerCustomizedInfo'
     ];
 
     /**
@@ -135,7 +119,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'item_sequence_number' => 'setItemSequenceNumber',
+        'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'title' => 'setTitle',
@@ -144,7 +128,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_details' => 'setGiftDetails',
         'net_price' => 'setNetPrice',
         'tax_details' => 'setTaxDetails',
-        'total_price' => 'setTotalPrice'
+        'total_price' => 'setTotalPrice',
+        'buyer_customized_info' => 'setBuyerCustomizedInfo'
     ];
 
     /**
@@ -162,49 +147,11 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'gift_details' => 'getGiftDetails',
         'net_price' => 'getNetPrice',
         'tax_details' => 'getTaxDetails',
-        'total_price' => 'getTotalPrice'
+        'total_price' => 'getTotalPrice',
+        'buyer_customized_info' => 'getBuyerCustomizedInfo'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }
     
     /**
      * Associative array for storing property values
@@ -231,6 +178,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['net_price'] = $data['net_price'] ?? null;
         $this->container['tax_details'] = $data['tax_details'] ?? null;
         $this->container['total_price'] = $data['total_price'] ?? null;
+        $this->container['buyer_customized_info'] = $data['buyer_customized_info'] ?? null;
     }
 
     /**
@@ -241,7 +189,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['item_sequence_number'] === null) {
             $invalidProperties[] = "'item_sequence_number' can't be null";
         }
@@ -252,17 +199,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "'net_price' can't be null";
         }
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -496,98 +432,28 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
-     * Returns true if offset exists. False otherwise.
+     * Gets buyer_customized_info
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @return \SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\BuyerCustomizedInfoDetail|null
      */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
+    public function getBuyerCustomizedInfo()
     {
-        return isset($this->container[$offset]);
+        return $this->container['buyer_customized_info'];
     }
 
     /**
-     * Gets offset.
+     * Sets buyer_customized_info
      *
-     * @param integer $offset Offset
+     * @param \SellingPartnerApi\Model\VendorDirectFulfillmentOrdersV20211228\BuyerCustomizedInfoDetail|null $buyer_customized_info buyer_customized_info
      *
-     * @return mixed|null
+     * @return self
      */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function setBuyerCustomizedInfo($buyer_customized_info)
     {
-        return $this->container[$offset] ?? null;
-    }
+        $this->container['buyer_customized_info'] = $buyer_customized_info;
 
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return $this;
     }
 }
 

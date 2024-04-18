@@ -2,6 +2,8 @@
 
 namespace SellingPartnerApi;
 
+use InvalidArgumentException;
+
 /***************************/
 /** Region/endpoint pairs **/
 /***************************/
@@ -44,13 +46,14 @@ class Endpoint
      * @param string $marketplace_id The identifier for the marketplace. (required)
      * @param bool $sandbox Whether to return the sandbox endpoint for the region. (optional, default to false)
      *
+     * @throws InvalidArgumentException
      * @return array of the endpoint details
      *
-     * @throws \InvalidArgumentException
      *
      * @link https://docs.developer.amazonservices.com/en_US/dev_guide/DG_Endpoints.html
      */
-    public static function getByMarketplaceId(string $marketplace_id, bool $sandbox = false) {
+    public static function getByMarketplaceId(string $marketplace_id, bool $sandbox = false)
+    {
         $map = [
             // North America.
             // Brazil.
@@ -64,6 +67,8 @@ class Endpoint
             // Europe.
             // United Arab Emirates (U.A.E.).
             'A2VIGQ35RCS4UG' => 'EU',
+            // Belgium.
+            'AMEN7PMS3EDWL' => 'EU',
             // Germany.
             'A1PA6795UKMFR9' => 'EU',
             // Egypt.
@@ -97,7 +102,7 @@ class Endpoint
             'A1VC38T7YXB528' => 'FE',
         ];
         if (!isset($map[$marketplace_id])) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 'Unknown marketplace ID "%s".',
                 $marketplace_id
             ));
@@ -109,5 +114,30 @@ class Endpoint
         }
 
         return constant("\SellingPartnerApi\Endpoint::$region");
+    }
+
+    /**
+     * Checks if the given endpoint is valid. If the given endpoint is an array, checks
+     * the value of the `url` key. If it's a string, checks if it's a sandbox URL.
+     *
+     * @param array|string $endpoint The endpoint to check
+     * @return bool
+     */
+    public static function isSandbox($endpoint)
+    {
+        $sandboxHosts = [
+            self::NA_SANDBOX['url'],
+            self::EU_SANDBOX['url'],
+            self::FE_SANDBOX['url'],
+        ];
+        if (is_array($endpoint)) {
+            return in_array($endpoint['url'], $sandboxHosts, true);
+        } else if (is_string($endpoint)) {
+            return in_array($endpoint, $sandboxHosts, true);
+        } else {
+            throw new InvalidArgumentException(
+                'Invalid endpoint type ' . gettype($endpoint) . '. Must be array or string.'
+            );
+        }
     }
 }

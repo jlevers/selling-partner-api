@@ -10,7 +10,7 @@
 /**
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more. For more information, see the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide)
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more. For more information, see the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  * 
@@ -26,15 +26,10 @@
 
 namespace SellingPartnerApi\Api;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
 use SellingPartnerApi\ApiException;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\HeaderSelector;
 use SellingPartnerApi\ObjectSerializer;
 
 /**
@@ -43,74 +38,8 @@ use SellingPartnerApi\ObjectSerializer;
  * @category Class
  * @package  SellingPartnerApi
  */
-class NotificationsV1Api
+class NotificationsV1Api extends BaseApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-
-    /**
-     * @var Configuration
-     */
-    protected $config;
-
-    /**
-     * @var HeaderSelector
-     */
-    protected $headerSelector;
-
-    /**
-     * @var int Host index
-     */
-    protected $hostIndex;
-
-    /**
-     * @param Configuration   $config
-     * @param ClientInterface $client
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
-     */
-    public function __construct(
-        Configuration $config,
-        ClientInterface $client = null,
-        HeaderSelector $selector = null,
-        $hostIndex = 0
-    ) {
-        $this->client = $client ?: new Client();
-        $this->config = $config;
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Set the host index
-     *
-     * @param int $hostIndex Host index (required)
-     */
-    public function setHostIndex($hostIndex)
-    {
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Get the host index
-     *
-     * @return int Host index
-     */
-    public function getHostIndex()
-    {
-        return $this->hostIndex;
-    }
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
     /**
      * Operation createDestination
      *
@@ -374,7 +303,7 @@ class NotificationsV1Api
      */
     public function createDestinationAsync($body)
     {
-        return $this->createDestinationAsyncWithHttpInfo($body);;
+        return $this->createDestinationAsyncWithHttpInfo($body);
     }
 
     /**
@@ -499,7 +428,6 @@ class NotificationsV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -786,7 +714,7 @@ class NotificationsV1Api
      */
     public function createSubscriptionAsync($notification_type, $body)
     {
-        return $this->createSubscriptionAsyncWithHttpInfo($notification_type, $body);;
+        return $this->createSubscriptionAsyncWithHttpInfo($notification_type, $body);
     }
 
     /**
@@ -926,7 +854,6 @@ class NotificationsV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1211,7 +1138,7 @@ class NotificationsV1Api
      */
     public function deleteDestinationAsync($destination_id)
     {
-        return $this->deleteDestinationAsyncWithHttpInfo($destination_id);;
+        return $this->deleteDestinationAsyncWithHttpInfo($destination_id);
     }
 
     /**
@@ -1339,7 +1266,6 @@ class NotificationsV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1627,7 +1553,7 @@ class NotificationsV1Api
      */
     public function deleteSubscriptionByIdAsync($subscription_id, $notification_type)
     {
-        return $this->deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);;
+        return $this->deleteSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);
     }
 
     /**
@@ -1772,7 +1698,6 @@ class NotificationsV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2057,7 +1982,7 @@ class NotificationsV1Api
      */
     public function getDestinationAsync($destination_id)
     {
-        return $this->getDestinationAsyncWithHttpInfo($destination_id);;
+        return $this->getDestinationAsyncWithHttpInfo($destination_id);
     }
 
     /**
@@ -2185,7 +2110,6 @@ class NotificationsV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2467,7 +2391,7 @@ class NotificationsV1Api
      */
     public function getDestinationsAsync()
     {
-        return $this->getDestinationsAsyncWithHttpInfo();;
+        return $this->getDestinationsAsyncWithHttpInfo();
     }
 
     /**
@@ -2578,7 +2502,6 @@ class NotificationsV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2846,7 +2769,7 @@ class NotificationsV1Api
      */
     public function getSubscriptionAsync($notification_type)
     {
-        return $this->getSubscriptionAsyncWithHttpInfo($notification_type);;
+        return $this->getSubscriptionAsyncWithHttpInfo($notification_type);
     }
 
     /**
@@ -2972,7 +2895,6 @@ class NotificationsV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3260,7 +3182,7 @@ class NotificationsV1Api
      */
     public function getSubscriptionByIdAsync($subscription_id, $notification_type)
     {
-        return $this->getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);;
+        return $this->getSubscriptionByIdAsyncWithHttpInfo($subscription_id, $notification_type);
     }
 
     /**
@@ -3406,7 +3328,6 @@ class NotificationsV1Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -3427,35 +3348,4 @@ class NotificationsV1Api
         );
     }
 
-    /**
-     * Create http client option
-     *
-     * @throws \RuntimeException on file opening failure
-     * @return array of http client options
-     */
-    protected function createHttpClientOption()
-    {
-        $options = [];
-        if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
-            }
-        }
-
-        return $options;
-    }
-
-    /**
-     * Writes to the debug log file
-     *
-     * @param any $data
-     * @return void
-     */
-    private function writeDebug($data)
-    {
-        if ($this->config->getDebug()) {
-            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
-        }
-    }
 }

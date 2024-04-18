@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API only supports orders that are less than two years old. Orders more than two years old will not show in the API response.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\OrdersV0;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Order Class Doc Comment
@@ -42,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Order implements ModelInterface, ArrayAccess, \JsonSerializable
+class Order extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -76,7 +75,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_method_details' => 'string[]',
         'marketplace_id' => 'string',
         'shipment_service_level_category' => 'string',
-        'easy_ship_shipment_status' => 'string',
+        'easy_ship_shipment_status' => '\SellingPartnerApi\Model\OrdersV0\EasyShipShipmentStatus',
         'cba_displayable_shipping_label' => 'string',
         'order_type' => 'string',
         'earliest_ship_date' => 'string',
@@ -98,12 +97,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => '\SellingPartnerApi\Model\OrdersV0\BuyerTaxInformation',
         'fulfillment_instruction' => '\SellingPartnerApi\Model\OrdersV0\FulfillmentInstruction',
         'is_ispu' => 'bool',
+        'is_access_point_order' => 'bool',
         'marketplace_tax_info' => '\SellingPartnerApi\Model\OrdersV0\MarketplaceTaxInfo',
         'seller_display_name' => 'string',
         'shipping_address' => '\SellingPartnerApi\Model\OrdersV0\Address',
         'buyer_info' => '\SellingPartnerApi\Model\OrdersV0\BuyerInfo',
         'automated_shipping_settings' => '\SellingPartnerApi\Model\OrdersV0\AutomatedShippingSettings',
-        'has_regulated_items' => 'bool'
+        'has_regulated_items' => 'bool',
+        'electronic_invoice_status' => '\SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus'
     ];
 
     /**
@@ -153,33 +154,17 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => null,
         'fulfillment_instruction' => null,
         'is_ispu' => null,
+        'is_access_point_order' => null,
         'marketplace_tax_info' => null,
         'seller_display_name' => null,
         'shipping_address' => null,
         'buyer_info' => null,
         'automated_shipping_settings' => null,
-        'has_regulated_items' => null
+        'has_regulated_items' => null,
+        'electronic_invoice_status' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -227,12 +212,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => 'BuyerTaxInformation',
         'fulfillment_instruction' => 'FulfillmentInstruction',
         'is_ispu' => 'IsISPU',
+        'is_access_point_order' => 'IsAccessPointOrder',
         'marketplace_tax_info' => 'MarketplaceTaxInfo',
         'seller_display_name' => 'SellerDisplayName',
         'shipping_address' => 'ShippingAddress',
         'buyer_info' => 'BuyerInfo',
         'automated_shipping_settings' => 'AutomatedShippingSettings',
-        'has_regulated_items' => 'HasRegulatedItems'
+        'has_regulated_items' => 'HasRegulatedItems',
+        'electronic_invoice_status' => 'ElectronicInvoiceStatus'
     ];
 
     /**
@@ -241,7 +228,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'amazon_order_id' => 'setAmazonOrderId',
+        'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
         'purchase_date' => 'setPurchaseDate',
         'last_update_date' => 'setLastUpdateDate',
@@ -280,12 +267,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => 'setBuyerTaxInformation',
         'fulfillment_instruction' => 'setFulfillmentInstruction',
         'is_ispu' => 'setIsIspu',
+        'is_access_point_order' => 'setIsAccessPointOrder',
         'marketplace_tax_info' => 'setMarketplaceTaxInfo',
         'seller_display_name' => 'setSellerDisplayName',
         'shipping_address' => 'setShippingAddress',
         'buyer_info' => 'setBuyerInfo',
         'automated_shipping_settings' => 'setAutomatedShippingSettings',
-        'has_regulated_items' => 'setHasRegulatedItems'
+        'has_regulated_items' => 'setHasRegulatedItems',
+        'electronic_invoice_status' => 'setElectronicInvoiceStatus'
     ];
 
     /**
@@ -333,54 +322,19 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer_tax_information' => 'getBuyerTaxInformation',
         'fulfillment_instruction' => 'getFulfillmentInstruction',
         'is_ispu' => 'getIsIspu',
+        'is_access_point_order' => 'getIsAccessPointOrder',
         'marketplace_tax_info' => 'getMarketplaceTaxInfo',
         'seller_display_name' => 'getSellerDisplayName',
         'shipping_address' => 'getShippingAddress',
         'buyer_info' => 'getBuyerInfo',
         'automated_shipping_settings' => 'getAutomatedShippingSettings',
-        'has_regulated_items' => 'getHasRegulatedItems'
+        'has_regulated_items' => 'getHasRegulatedItems',
+        'electronic_invoice_status' => 'getElectronicInvoiceStatus'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const ORDER_STATUS_PENDING = 'Pending';
+    const ORDER_STATUS_PENDING = 'Pending';
     const ORDER_STATUS_UNSHIPPED = 'Unshipped';
     const ORDER_STATUS_PARTIALLY_SHIPPED = 'PartiallyShipped';
     const ORDER_STATUS_SHIPPED = 'Shipped';
@@ -388,16 +342,24 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     const ORDER_STATUS_UNFULFILLABLE = 'Unfulfillable';
     const ORDER_STATUS_INVOICE_UNCONFIRMED = 'InvoiceUnconfirmed';
     const ORDER_STATUS_PENDING_AVAILABILITY = 'PendingAvailability';
+    
+
     const FULFILLMENT_CHANNEL_MFN = 'MFN';
     const FULFILLMENT_CHANNEL_AFN = 'AFN';
+    
+
     const PAYMENT_METHOD_COD = 'COD';
     const PAYMENT_METHOD_CVS = 'CVS';
     const PAYMENT_METHOD_OTHER = 'Other';
+    
+
     const ORDER_TYPE_STANDARD_ORDER = 'StandardOrder';
     const ORDER_TYPE_LONG_LEAD_TIME_ORDER = 'LongLeadTimeOrder';
     const ORDER_TYPE_PREORDER = 'Preorder';
     const ORDER_TYPE_BACK_ORDER = 'BackOrder';
     const ORDER_TYPE_SOURCING_ON_DEMAND_ORDER = 'SourcingOnDemandOrder';
+    
+
     const BUYER_INVOICE_PREFERENCE_INDIVIDUAL = 'INDIVIDUAL';
     const BUYER_INVOICE_PREFERENCE_BUSINESS = 'BUSINESS';
     
@@ -410,7 +372,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getOrderStatusAllowableValues()
     {
-        return [
+        $baseVals = [
             self::ORDER_STATUS_PENDING,
             self::ORDER_STATUS_UNSHIPPED,
             self::ORDER_STATUS_PARTIALLY_SHIPPED,
@@ -420,6 +382,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
             self::ORDER_STATUS_INVOICE_UNCONFIRMED,
             self::ORDER_STATUS_PENDING_AVAILABILITY,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
 
@@ -430,10 +396,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getFulfillmentChannelAllowableValues()
     {
-        return [
+        $baseVals = [
             self::FULFILLMENT_CHANNEL_MFN,
             self::FULFILLMENT_CHANNEL_AFN,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
 
@@ -444,11 +414,15 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getPaymentMethodAllowableValues()
     {
-        return [
+        $baseVals = [
             self::PAYMENT_METHOD_COD,
             self::PAYMENT_METHOD_CVS,
             self::PAYMENT_METHOD_OTHER,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
 
@@ -459,13 +433,17 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getOrderTypeAllowableValues()
     {
-        return [
+        $baseVals = [
             self::ORDER_TYPE_STANDARD_ORDER,
             self::ORDER_TYPE_LONG_LEAD_TIME_ORDER,
             self::ORDER_TYPE_PREORDER,
             self::ORDER_TYPE_BACK_ORDER,
             self::ORDER_TYPE_SOURCING_ON_DEMAND_ORDER,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
 
@@ -476,10 +454,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getBuyerInvoicePreferenceAllowableValues()
     {
-        return [
+        $baseVals = [
             self::BUYER_INVOICE_PREFERENCE_INDIVIDUAL,
             self::BUYER_INVOICE_PREFERENCE_BUSINESS,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -536,12 +518,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['buyer_tax_information'] = $data['buyer_tax_information'] ?? null;
         $this->container['fulfillment_instruction'] = $data['fulfillment_instruction'] ?? null;
         $this->container['is_ispu'] = $data['is_ispu'] ?? null;
+        $this->container['is_access_point_order'] = $data['is_access_point_order'] ?? null;
         $this->container['marketplace_tax_info'] = $data['marketplace_tax_info'] ?? null;
         $this->container['seller_display_name'] = $data['seller_display_name'] ?? null;
         $this->container['shipping_address'] = $data['shipping_address'] ?? null;
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['automated_shipping_settings'] = $data['automated_shipping_settings'] ?? null;
         $this->container['has_regulated_items'] = $data['has_regulated_items'] ?? null;
+        $this->container['electronic_invoice_status'] = $data['electronic_invoice_status'] ?? null;
     }
 
     /**
@@ -552,7 +536,6 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['amazon_order_id'] === null) {
             $invalidProperties[] = "'amazon_order_id' can't be null";
         }
@@ -566,7 +549,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "'order_status' can't be null";
         }
         $allowedValues = $this->getOrderStatusAllowableValues();
-        if (!is_null($this->container['order_status']) && !in_array($this->container['order_status'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['order_status']) &&
+            !in_array(strtoupper($this->container['order_status']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'order_status', must be one of '%s'",
                 $this->container['order_status'],
@@ -575,7 +561,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $allowedValues = $this->getFulfillmentChannelAllowableValues();
-        if (!is_null($this->container['fulfillment_channel']) && !in_array($this->container['fulfillment_channel'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['fulfillment_channel']) &&
+            !in_array(strtoupper($this->container['fulfillment_channel']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'fulfillment_channel', must be one of '%s'",
                 $this->container['fulfillment_channel'],
@@ -584,7 +573,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $allowedValues = $this->getPaymentMethodAllowableValues();
-        if (!is_null($this->container['payment_method']) && !in_array($this->container['payment_method'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['payment_method']) &&
+            !in_array(strtoupper($this->container['payment_method']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'payment_method', must be one of '%s'",
                 $this->container['payment_method'],
@@ -593,7 +585,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $allowedValues = $this->getOrderTypeAllowableValues();
-        if (!is_null($this->container['order_type']) && !in_array($this->container['order_type'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['order_type']) &&
+            !in_array(strtoupper($this->container['order_type']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'order_type', must be one of '%s'",
                 $this->container['order_type'],
@@ -602,7 +597,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $allowedValues = $this->getBuyerInvoicePreferenceAllowableValues();
-        if (!is_null($this->container['buyer_invoice_preference']) && !in_array($this->container['buyer_invoice_preference'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['buyer_invoice_preference']) &&
+            !in_array(strtoupper($this->container['buyer_invoice_preference']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'buyer_invoice_preference', must be one of '%s'",
                 $this->container['buyer_invoice_preference'],
@@ -611,17 +609,6 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -707,7 +694,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets last_update_date
      *
-     * @param string $last_update_date The date when the order was last updated. Note: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     * @param string $last_update_date The date when the order was last updated.
+     *   __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
      *
      * @return self
      */
@@ -737,7 +725,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOrderStatus($order_status)
     {
         $allowedValues = $this->getOrderStatusAllowableValues();
-        if (!in_array($order_status, $allowedValues, true)) {
+        if (!in_array(strtoupper($order_status), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'order_status', must be one of '%s'",
@@ -770,7 +758,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFulfillmentChannel($fulfillment_channel)
     {
         $allowedValues = $this->getFulfillmentChannelAllowableValues();
-        if (!is_null($fulfillment_channel) && !in_array($fulfillment_channel, $allowedValues, true)) {
+        if (!is_null($fulfillment_channel) &&!in_array(strtoupper($fulfillment_channel), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'fulfillment_channel', must be one of '%s'",
@@ -964,7 +952,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPaymentMethod($payment_method)
     {
         $allowedValues = $this->getPaymentMethodAllowableValues();
-        if (!is_null($payment_method) && !in_array($payment_method, $allowedValues, true)) {
+        if (!is_null($payment_method) &&!in_array(strtoupper($payment_method), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'payment_method', must be one of '%s'",
@@ -1036,7 +1024,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_service_level_category
      *
-     * @param string|null $shipment_service_level_category The shipment service level category of the order. Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+     * @param string|null $shipment_service_level_category The shipment service level category of the order.
+     *   Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
      *
      * @return self
      */
@@ -1049,7 +1038,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets easy_ship_shipment_status
      *
-     * @return string|null
+     * @return \SellingPartnerApi\Model\OrdersV0\EasyShipShipmentStatus|null
      */
     public function getEasyShipShipmentStatus()
     {
@@ -1059,7 +1048,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets easy_ship_shipment_status
      *
-     * @param string|null $easy_ship_shipment_status The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders. Possible values: PendingPickUp, LabelCanceled, PickedUp, OutForDelivery, Damaged, Delivered, RejectedByBuyer, Undeliverable, ReturnedToSeller, ReturningToSeller.
+     * @param \SellingPartnerApi\Model\OrdersV0\EasyShipShipmentStatus|null $easy_ship_shipment_status easy_ship_shipment_status
      *
      * @return self
      */
@@ -1112,7 +1101,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOrderType($order_type)
     {
         $allowedValues = $this->getOrderTypeAllowableValues();
-        if (!is_null($order_type) && !in_array($order_type, $allowedValues, true)) {
+        if (!is_null($order_type) &&!in_array(strtoupper($order_type), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'order_type', must be one of '%s'",
@@ -1138,7 +1127,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets earliest_ship_date
      *
-     * @param string|null $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. Note: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param string|null $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+     *   __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
      *
      * @return self
      */
@@ -1161,7 +1151,8 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets latest_ship_date
      *
-     * @param string|null $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders. Note: LatestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param string|null $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+     *   __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
      *
      * @return self
      */
@@ -1490,7 +1481,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBuyerInvoicePreference($buyer_invoice_preference)
     {
         $allowedValues = $this->getBuyerInvoicePreferenceAllowableValues();
-        if (!is_null($buyer_invoice_preference) && !in_array($buyer_invoice_preference, $allowedValues, true)) {
+        if (!is_null($buyer_invoice_preference) &&!in_array(strtoupper($buyer_invoice_preference), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'buyer_invoice_preference', must be one of '%s'",
@@ -1569,6 +1560,29 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsIspu($is_ispu)
     {
         $this->container['is_ispu'] = $is_ispu;
+
+        return $this;
+    }
+    /**
+     * Gets is_access_point_order
+     *
+     * @return bool|null
+     */
+    public function getIsAccessPointOrder()
+    {
+        return $this->container['is_access_point_order'];
+    }
+
+    /**
+     * Sets is_access_point_order
+     *
+     * @param bool|null $is_access_point_order When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
+     *
+     * @return self
+     */
+    public function setIsAccessPointOrder($is_access_point_order)
+    {
+        $this->container['is_access_point_order'] = $is_access_point_order;
 
         return $this;
     }
@@ -1710,98 +1724,28 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
-     * Returns true if offset exists. False otherwise.
+     * Gets electronic_invoice_status
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @return \SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus|null
      */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
+    public function getElectronicInvoiceStatus()
     {
-        return isset($this->container[$offset]);
+        return $this->container['electronic_invoice_status'];
     }
 
     /**
-     * Gets offset.
+     * Sets electronic_invoice_status
      *
-     * @param integer $offset Offset
+     * @param \SellingPartnerApi\Model\OrdersV0\ElectronicInvoiceStatus|null $electronic_invoice_status electronic_invoice_status
      *
-     * @return mixed|null
+     * @return self
      */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function setElectronicInvoiceStatus($electronic_invoice_status)
     {
-        return $this->container[$offset] ?? null;
-    }
+        $this->container['electronic_invoice_status'] = $electronic_invoice_status;
 
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return $this;
     }
 }
 

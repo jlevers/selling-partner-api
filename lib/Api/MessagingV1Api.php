@@ -26,15 +26,10 @@
 
 namespace SellingPartnerApi\Api;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
 use SellingPartnerApi\ApiException;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\HeaderSelector;
 use SellingPartnerApi\ObjectSerializer;
 
 /**
@@ -43,74 +38,8 @@ use SellingPartnerApi\ObjectSerializer;
  * @category Class
  * @package  SellingPartnerApi
  */
-class MessagingV1Api
+class MessagingV1Api extends BaseApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-
-    /**
-     * @var Configuration
-     */
-    protected $config;
-
-    /**
-     * @var HeaderSelector
-     */
-    protected $headerSelector;
-
-    /**
-     * @var int Host index
-     */
-    protected $hostIndex;
-
-    /**
-     * @param Configuration   $config
-     * @param ClientInterface $client
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
-     */
-    public function __construct(
-        Configuration $config,
-        ClientInterface $client = null,
-        HeaderSelector $selector = null,
-        $hostIndex = 0
-    ) {
-        $this->client = $client ?: new Client();
-        $this->config = $config;
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Set the host index
-     *
-     * @param int $hostIndex Host index (required)
-     */
-    public function setHostIndex($hostIndex)
-    {
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Get the host index
-     *
-     * @return int Host index
-     */
-    public function getHostIndex()
-    {
-        return $this->hostIndex;
-    }
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
     /**
      * Operation confirmCustomizationDetails
      *
@@ -363,7 +292,7 @@ class MessagingV1Api
      */
     public function confirmCustomizationDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->confirmCustomizationDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->confirmCustomizationDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -523,7 +452,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -797,7 +725,7 @@ class MessagingV1Api
      */
     public function createAmazonMotorsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createAmazonMotorsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createAmazonMotorsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -957,7 +885,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1231,7 +1158,7 @@ class MessagingV1Api
      */
     public function createConfirmDeliveryDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmDeliveryDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createConfirmDeliveryDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -1391,7 +1318,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1665,7 +1591,7 @@ class MessagingV1Api
      */
     public function createConfirmOrderDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmOrderDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createConfirmOrderDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -1825,7 +1751,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2099,7 +2024,7 @@ class MessagingV1Api
      */
     public function createConfirmServiceDetailsAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createConfirmServiceDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createConfirmServiceDetailsAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -2259,7 +2184,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2533,7 +2457,7 @@ class MessagingV1Api
      */
     public function createDigitalAccessKeyAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createDigitalAccessKeyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createDigitalAccessKeyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -2693,7 +2617,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2967,7 +2890,7 @@ class MessagingV1Api
      */
     public function createLegalDisclosureAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createLegalDisclosureAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createLegalDisclosureAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -3127,7 +3050,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3398,7 +3320,7 @@ class MessagingV1Api
      */
     public function createNegativeFeedbackRemovalAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->createNegativeFeedbackRemovalAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
+        return $this->createNegativeFeedbackRemovalAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);
     }
 
     /**
@@ -3544,7 +3466,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3818,7 +3739,7 @@ class MessagingV1Api
      */
     public function createUnexpectedProblemAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createUnexpectedProblemAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createUnexpectedProblemAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -3978,7 +3899,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4252,7 +4172,7 @@ class MessagingV1Api
      */
     public function createWarrantyAsync($amazon_order_id, $marketplace_ids, $body)
     {
-        return $this->createWarrantyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);;
+        return $this->createWarrantyAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
     }
 
     /**
@@ -4412,7 +4332,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -4683,7 +4602,7 @@ class MessagingV1Api
      */
     public function getAttributesAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->getAttributesAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
+        return $this->getAttributesAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);
     }
 
     /**
@@ -4829,7 +4748,6 @@ class MessagingV1Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -5100,7 +5018,7 @@ class MessagingV1Api
      */
     public function getMessagingActionsForOrderAsync($amazon_order_id, $marketplace_ids)
     {
-        return $this->getMessagingActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);;
+        return $this->getMessagingActionsForOrderAsyncWithHttpInfo($amazon_order_id, $marketplace_ids);
     }
 
     /**
@@ -5247,7 +5165,6 @@ class MessagingV1Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -5269,34 +5186,436 @@ class MessagingV1Api
     }
 
     /**
-     * Create http client option
+     * Operation sendInvoice
      *
-     * @throws \RuntimeException on file opening failure
-     * @return array of http client options
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body body (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SellingPartnerApi\Model\MessagingV1\InvoiceResponse
      */
-    protected function createHttpClientOption()
+    public function sendInvoice($amazon_order_id, $marketplace_ids, $body)
     {
-        $options = [];
-        if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
-            }
-        }
-
-        return $options;
+        $response = $this->sendInvoiceWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+        return $response;
     }
 
     /**
-     * Writes to the debug log file
+     * Operation sendInvoiceWithHttpInfo
      *
-     * @param any $data
-     * @return void
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body (required)
+     *
+     * @throws \SellingPartnerApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SellingPartnerApi\Model\MessagingV1\InvoiceResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    private function writeDebug($data)
+    public function sendInvoiceWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
     {
-        if ($this->config->getDebug()) {
-            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        $request = $this->sendInvoiceRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($signedRequest, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : [],
+                    $body
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $signedRequest->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()->getContents()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 201:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 400:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 403:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 404:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 413:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 415:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 429:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 500:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+                case 503:
+                    if ('\SellingPartnerApi\Model\MessagingV1\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse', $response->getHeaders());
+            }
+
+            $returnType = '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            $this->writeDebug($e);
+            throw $e;
         }
     }
+
+    /**
+     * Operation sendInvoiceAsync
+     *
+     * 
+     *
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sendInvoiceAsync($amazon_order_id, $marketplace_ids, $body)
+    {
+        return $this->sendInvoiceAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body);
+    }
+
+    /**
+     * Operation sendInvoiceAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sendInvoiceAsyncWithHttpInfo($amazon_order_id, $marketplace_ids, $body)
+    {
+        $returnType = '\SellingPartnerApi\Model\MessagingV1\InvoiceResponse';
+        $request = $this->sendInvoiceRequest($amazon_order_id, $marketplace_ids, $body);
+        $signedRequest = $this->config->signRequest(
+            $request
+        );
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
+
+        return $this->client
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $hasResponse ? $response->getHeaders() : [],
+                        $body
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sendInvoice'
+     *
+     * @param  string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \SellingPartnerApi\Model\MessagingV1\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function sendInvoiceRequest($amazon_order_id, $marketplace_ids, $body)
+    {
+        // verify the required parameter 'amazon_order_id' is set
+        if ($amazon_order_id === null || (is_array($amazon_order_id) && count($amazon_order_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $amazon_order_id when calling sendInvoice'
+            );
+        }
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (is_array($marketplace_ids) && count($marketplace_ids) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling sendInvoice'
+            );
+        }
+        if (count($marketplace_ids) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplace_ids" when calling MessagingV1Api.sendInvoice, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling sendInvoice'
+            );
+        }
+
+        $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/invoice';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+
+        // path params
+        if ($amazon_order_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'amazonOrderId' . '}',
+                ObjectSerializer::toPathValue($amazon_order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/hal+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/hal+json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
 }

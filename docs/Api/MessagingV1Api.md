@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**createWarranty()**](MessagingV1Api.md#createWarranty) | **POST** /messaging/v1/orders/{amazonOrderId}/messages/warranty | 
 [**getAttributes()**](MessagingV1Api.md#getAttributes) | **GET** /messaging/v1/orders/{amazonOrderId}/attributes | 
 [**getMessagingActionsForOrder()**](MessagingV1Api.md#getMessagingActionsForOrder) | **GET** /messaging/v1/orders/{amazonOrderId} | 
+[**sendInvoice()**](MessagingV1Api.md#sendInvoice) | **POST** /messaging/v1/orders/{amazonOrderId}/messages/invoice | 
 
 
 ## `confirmCustomizationDetails()`
@@ -32,7 +33,7 @@ Sends a message asking a buyer to provide or verify customization details such a
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -100,7 +101,7 @@ Sends a message to a buyer to provide details about an Amazon Motors order. This
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -168,7 +169,7 @@ Sends a message to a buyer to arrange a delivery or to confirm contact informati
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -236,7 +237,7 @@ Sends a message to ask a buyer an order-related question prior to shipping their
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -304,7 +305,7 @@ Sends a message to contact a Home Service customer to arrange a service call or 
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -372,7 +373,7 @@ Sends a message to a buyer to share a digital access key needed to utilize digit
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -440,7 +441,7 @@ Sends a critical message that contains documents that a seller is legally obliga
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -508,7 +509,7 @@ Sends a non-critical message that asks a buyer to remove their negative feedback
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -574,7 +575,7 @@ Sends a critical message to a buyer that an unexpected problem was encountered a
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -642,7 +643,7 @@ Sends a message to a buyer to provide details about warranty information on a pu
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -774,7 +775,7 @@ Returns a list of message types that are available for an order that you specify
 | ---- | ---- |
 | 1 | 5 |
 
-For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
 
 ### Example
 
@@ -818,6 +819,66 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/hal+json`
+
+[[Top]](#) [[API list]](../)
+[[MessagingV1 Model list]](../Model/MessagingV1)
+[[README]](../../README.md)
+
+## `sendInvoice()`
+
+```php
+sendInvoice($amazon_order_id, $marketplace_ids, $body): \SellingPartnerApi\Model\MessagingV1\InvoiceResponse
+```
+
+
+
+Sends a message providing the buyer an invoice
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// See README for more information on the Configuration object's options
+$config = new SellingPartnerApi\Configuration([
+    "lwaClientId" => "<LWA client ID>",
+    "lwaClientSecret" => "<LWA client secret>",
+    "lwaRefreshToken" => "<LWA refresh token>",
+    "awsAccessKeyId" => "<AWS access key ID>",
+    "awsSecretAccessKey" => "<AWS secret access key>",
+    "endpoint" => SellingPartnerApi\Endpoint::NA  // or another endpoint from lib/Endpoints.php
+]);
+
+$apiInstance = new SellingPartnerApi\Api\MessagingV1Api($config);
+$amazon_order_id = 'amazon_order_id_example'; // string | An Amazon order identifier. This specifies the order for which a message is sent.
+$marketplace_ids = array('marketplace_ids_example'); // string[] | A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified.
+$body = new \SellingPartnerApi\Model\MessagingV1\InvoiceRequest(); // \SellingPartnerApi\Model\MessagingV1\InvoiceRequest
+
+try {
+    $result = $apiInstance->sendInvoice($amazon_order_id, $marketplace_ids, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MessagingV1Api->sendInvoice: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **amazon_order_id** | **string**| An Amazon order identifier. This specifies the order for which a message is sent. |
+ **marketplace_ids** | [**string[]**](../Model/MessagingV1/string.md)| A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. |
+ **body** | [**\SellingPartnerApi\Model\MessagingV1\InvoiceRequest**](../Model/MessagingV1/InvoiceRequest.md)|  |
+
+### Return type
+
+[**\SellingPartnerApi\Model\MessagingV1\InvoiceResponse**](../Model/MessagingV1/InvoiceResponse.md)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/hal+json`
 
 [[Top]](#) [[API list]](../)

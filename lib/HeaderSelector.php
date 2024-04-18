@@ -1,7 +1,7 @@
 <?php
 /**
  * ApiException
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -14,9 +14,6 @@
  */
 
 namespace SellingPartnerApi;
-
-use SellingPartnerApi\Authentication;
-use \Exception;
 
 /**
  * ApiException Class Doc Comment

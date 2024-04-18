@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API only supports orders that are less than two years old. Orders more than two years old will not show in the API response.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\OrdersV0;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * OrderItem Class Doc Comment
@@ -42,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
+class OrderItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -92,7 +91,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_chain_store_id' => 'string',
         'deemed_reseller_category' => 'string',
         'buyer_info' => '\SellingPartnerApi\Model\OrdersV0\ItemBuyerInfo',
-        'buyer_requested_cancel' => '\SellingPartnerApi\Model\OrdersV0\BuyerRequestedCancel'
+        'buyer_requested_cancel' => '\SellingPartnerApi\Model\OrdersV0\BuyerRequestedCancel',
+        'serial_numbers' => 'string[]'
     ];
 
     /**
@@ -136,28 +136,11 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_chain_store_id' => null,
         'deemed_reseller_category' => null,
         'buyer_info' => null,
-        'buyer_requested_cancel' => null
+        'buyer_requested_cancel' => null,
+        'serial_numbers' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,7 +182,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_chain_store_id' => 'StoreChainStoreId',
         'deemed_reseller_category' => 'DeemedResellerCategory',
         'buyer_info' => 'BuyerInfo',
-        'buyer_requested_cancel' => 'BuyerRequestedCancel'
+        'buyer_requested_cancel' => 'BuyerRequestedCancel',
+        'serial_numbers' => 'SerialNumbers'
     ];
 
     /**
@@ -208,7 +192,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'asin' => 'setAsin',
+        'asin' => 'setAsin',
         'seller_sku' => 'setSellerSku',
         'order_item_id' => 'setOrderItemId',
         'title' => 'setTitle',
@@ -241,7 +225,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_chain_store_id' => 'setStoreChainStoreId',
         'deemed_reseller_category' => 'setDeemedResellerCategory',
         'buyer_info' => 'setBuyerInfo',
-        'buyer_requested_cancel' => 'setBuyerRequestedCancel'
+        'buyer_requested_cancel' => 'setBuyerRequestedCancel',
+        'serial_numbers' => 'setSerialNumbers'
     ];
 
     /**
@@ -283,53 +268,22 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_chain_store_id' => 'getStoreChainStoreId',
         'deemed_reseller_category' => 'getDeemedResellerCategory',
         'buyer_info' => 'getBuyerInfo',
-        'buyer_requested_cancel' => 'getBuyerRequestedCancel'
+        'buyer_requested_cancel' => 'getBuyerRequestedCancel',
+        'serial_numbers' => 'getSerialNumbers'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
+    const DEEMED_RESELLER_CATEGORY_IOSS = 'IOSS';
     const DEEMED_RESELLER_CATEGORY_UOSS = 'UOSS';
+    const DEEMED_RESELLER_CATEGORY_SG_VOEC = 'SG_VOEC';
     const DEEMED_RESELLER_CATEGORY_GB_VOEC = 'GB_VOEC';
     const DEEMED_RESELLER_CATEGORY_NO_VOEC = 'NO_VOEC';
     const DEEMED_RESELLER_CATEGORY_CA_MPF = 'CA_MPF';
+    const DEEMED_RESELLER_CATEGORY_AU_VOEC = 'AU_VOEC';
+    const DEEMED_RESELLER_CATEGORY_NZ_VOEC = 'NZ_VOEC';
+    const DEEMED_RESELLER_CATEGORY_JE_VOEC = 'JE_VOEC';
+    const DEEMED_RESELLER_CATEGORY_CH_SUPPLIER_IMPORT = 'CH_SUPPLIER_IMPORT';
     
     
 
@@ -340,13 +294,22 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getDeemedResellerCategoryAllowableValues()
     {
-        return [
+        $baseVals = [
             self::DEEMED_RESELLER_CATEGORY_IOSS,
             self::DEEMED_RESELLER_CATEGORY_UOSS,
+            self::DEEMED_RESELLER_CATEGORY_SG_VOEC,
             self::DEEMED_RESELLER_CATEGORY_GB_VOEC,
             self::DEEMED_RESELLER_CATEGORY_NO_VOEC,
             self::DEEMED_RESELLER_CATEGORY_CA_MPF,
+            self::DEEMED_RESELLER_CATEGORY_AU_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_NZ_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_JE_VOEC,
+            self::DEEMED_RESELLER_CATEGORY_CH_SUPPLIER_IMPORT,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -398,6 +361,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['buyer_requested_cancel'] = $data['buyer_requested_cancel'] ?? null;
+        $this->container['serial_numbers'] = $data['serial_numbers'] ?? null;
     }
 
     /**
@@ -408,7 +372,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['asin'] === null) {
             $invalidProperties[] = "'asin' can't be null";
         }
@@ -419,7 +382,10 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "'quantity_ordered' can't be null";
         }
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
-        if (!is_null($this->container['deemed_reseller_category']) && !in_array($this->container['deemed_reseller_category'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['deemed_reseller_category']) &&
+            !in_array(strtoupper($this->container['deemed_reseller_category']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
                 $this->container['deemed_reseller_category'],
@@ -428,17 +394,6 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -938,7 +893,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets condition_id
      *
-     * @param string|null $condition_id The condition of the item. Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
+     * @param string|null $condition_id The condition of the item.
+     *   Possible values: New, Used, Collectible, Refurbished, Preorder, Club.
      *
      * @return self
      */
@@ -961,7 +917,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets condition_subtype_id
      *
-     * @param string|null $condition_subtype_id The subcondition of the item. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
+     * @param string|null $condition_subtype_id The subcondition of the item.
+     *   Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, Any, Other.
      *
      * @return self
      */
@@ -1030,7 +987,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_designation
      *
-     * @param string|null $price_designation Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business).  Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
+     * @param string|null $price_designation Indicates that the selling price is a special price that is available only for Amazon Business orders. For more information about the Amazon Business Seller Program, see the [Amazon Business website](https://www.amazon.com/b2b/info/amazon-business). 
+     *   Possible values: BusinessPrice - A special price that is available only for Amazon Business orders.
      *
      * @return self
      */
@@ -1076,7 +1034,8 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets serial_number_required
      *
-     * @param bool|null $serial_number_required When true, the product type for this item has a serial number. Returned only for Amazon Easy Ship orders.
+     * @param bool|null $serial_number_required When true, the product type for this item has a serial number.
+     *   Returned only for Amazon Easy Ship orders.
      *
      * @return self
      */
@@ -1175,7 +1134,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDeemedResellerCategory($deemed_reseller_category)
     {
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
-        if (!is_null($deemed_reseller_category) && !in_array($deemed_reseller_category, $allowedValues, true)) {
+        if (!is_null($deemed_reseller_category) &&!in_array(strtoupper($deemed_reseller_category), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'deemed_reseller_category', must be one of '%s'",
@@ -1234,98 +1193,28 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
-     * Returns true if offset exists. False otherwise.
+     * Gets serial_numbers
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @return string[]|null
      */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
+    public function getSerialNumbers()
     {
-        return isset($this->container[$offset]);
+        return $this->container['serial_numbers'];
     }
 
     /**
-     * Gets offset.
+     * Sets serial_numbers
      *
-     * @param integer $offset Offset
+     * @param string[]|null $serial_numbers A list of serial numbers for electronic products that are shipped to customers. Returned for FBA orders only.
      *
-     * @return mixed|null
+     * @return self
      */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function setSerialNumbers($serial_numbers)
     {
-        return $this->container[$offset] ?? null;
-    }
+        $this->container['serial_numbers'] = $serial_numbers;
 
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return $this;
     }
 }
 

@@ -26,15 +26,10 @@
 
 namespace SellingPartnerApi\Api;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
 use SellingPartnerApi\ApiException;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\HeaderSelector;
 use SellingPartnerApi\ObjectSerializer;
 
 /**
@@ -43,74 +38,8 @@ use SellingPartnerApi\ObjectSerializer;
  * @category Class
  * @package  SellingPartnerApi
  */
-class CatalogItemsV0Api
+class CatalogItemsV0Api extends BaseApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-
-    /**
-     * @var Configuration
-     */
-    protected $config;
-
-    /**
-     * @var HeaderSelector
-     */
-    protected $headerSelector;
-
-    /**
-     * @var int Host index
-     */
-    protected $hostIndex;
-
-    /**
-     * @param Configuration   $config
-     * @param ClientInterface $client
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
-     */
-    public function __construct(
-        Configuration $config,
-        ClientInterface $client = null,
-        HeaderSelector $selector = null,
-        $hostIndex = 0
-    ) {
-        $this->client = $client ?: new Client();
-        $this->config = $config;
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Set the host index
-     *
-     * @param int $hostIndex Host index (required)
-     */
-    public function setHostIndex($hostIndex)
-    {
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Get the host index
-     *
-     * @return int Host index
-     */
-    public function getHostIndex()
-    {
-        return $this->hostIndex;
-    }
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
     /**
      * Operation getCatalogItem
      *
@@ -344,7 +273,7 @@ class CatalogItemsV0Api
      */
     public function getCatalogItemAsync($marketplace_id, $asin)
     {
-        return $this->getCatalogItemAsyncWithHttpInfo($marketplace_id, $asin);;
+        return $this->getCatalogItemAsyncWithHttpInfo($marketplace_id, $asin);
     }
 
     /**
@@ -487,7 +416,6 @@ class CatalogItemsV0Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -513,7 +441,7 @@ class CatalogItemsV0Api
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -530,7 +458,7 @@ class CatalogItemsV0Api
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -737,14 +665,14 @@ class CatalogItemsV0Api
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function listCatalogCategoriesAsync($marketplace_id, $asin = null, $seller_sku = null)
     {
-        return $this->listCatalogCategoriesAsyncWithHttpInfo($marketplace_id, $asin, $seller_sku);;
+        return $this->listCatalogCategoriesAsyncWithHttpInfo($marketplace_id, $asin, $seller_sku);
     }
 
     /**
@@ -754,7 +682,7 @@ class CatalogItemsV0Api
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -809,7 +737,7 @@ class CatalogItemsV0Api
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -890,7 +818,6 @@ class CatalogItemsV0Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -915,9 +842,9 @@ class CatalogItemsV0Api
      * Operation listCatalogItems
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'. (optional)
      * @param  string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      * @param  string $upc A 12-digit bar code used for retail packaging. (optional)
      * @param  string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
      * @param  string $isbn The unique commercial book identifier used to identify books internationally. (optional)
@@ -937,9 +864,9 @@ class CatalogItemsV0Api
      * Operation listCatalogItemsWithHttpInfo
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'. (optional)
      * @param  string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      * @param  string $upc A 12-digit bar code used for retail packaging. (optional)
      * @param  string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
      * @param  string $isbn The unique commercial book identifier used to identify books internationally. (optional)
@@ -1149,9 +1076,9 @@ class CatalogItemsV0Api
      * 
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'. (optional)
      * @param  string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      * @param  string $upc A 12-digit bar code used for retail packaging. (optional)
      * @param  string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
      * @param  string $isbn The unique commercial book identifier used to identify books internationally. (optional)
@@ -1162,7 +1089,7 @@ class CatalogItemsV0Api
      */
     public function listCatalogItemsAsync($marketplace_id, $query = null, $query_context_id = null, $seller_sku = null, $upc = null, $ean = null, $isbn = null, $jan = null)
     {
-        return $this->listCatalogItemsAsyncWithHttpInfo($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);;
+        return $this->listCatalogItemsAsyncWithHttpInfo($marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
     }
 
     /**
@@ -1171,9 +1098,9 @@ class CatalogItemsV0Api
      * 
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'. (optional)
      * @param  string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      * @param  string $upc A 12-digit bar code used for retail packaging. (optional)
      * @param  string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
      * @param  string $isbn The unique commercial book identifier used to identify books internationally. (optional)
@@ -1231,9 +1158,9 @@ class CatalogItemsV0Api
      * Create request for operation 'listCatalogItems'
      *
      * @param  string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param  string $query Keyword(s) to use to search for items in the catalog. Example: 'harry potter books'. (optional)
      * @param  string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param  string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit. (optional)
      * @param  string $upc A 12-digit bar code used for retail packaging. (optional)
      * @param  string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
      * @param  string $isbn The unique commercial book identifier used to identify books internationally. (optional)
@@ -1358,7 +1285,6 @@ class CatalogItemsV0Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -1379,35 +1305,4 @@ class CatalogItemsV0Api
         );
     }
 
-    /**
-     * Create http client option
-     *
-     * @throws \RuntimeException on file opening failure
-     * @return array of http client options
-     */
-    protected function createHttpClientOption()
-    {
-        $options = [];
-        if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
-            }
-        }
-
-        return $options;
-    }
-
-    /**
-     * Writes to the debug log file
-     *
-     * @param any $data
-     * @return void
-     */
-    private function writeDebug($data)
-    {
-        if ($this->config->getDebug()) {
-            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
-        }
-    }
 }

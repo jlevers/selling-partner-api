@@ -26,15 +26,10 @@
 
 namespace SellingPartnerApi\Api;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
 use SellingPartnerApi\ApiException;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\HeaderSelector;
 use SellingPartnerApi\ObjectSerializer;
 
 /**
@@ -43,74 +38,8 @@ use SellingPartnerApi\ObjectSerializer;
  * @category Class
  * @package  SellingPartnerApi
  */
-class ReportsV20210630Api
+class ReportsV20210630Api extends BaseApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-
-    /**
-     * @var Configuration
-     */
-    protected $config;
-
-    /**
-     * @var HeaderSelector
-     */
-    protected $headerSelector;
-
-    /**
-     * @var int Host index
-     */
-    protected $hostIndex;
-
-    /**
-     * @param Configuration   $config
-     * @param ClientInterface $client
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
-     */
-    public function __construct(
-        Configuration $config,
-        ClientInterface $client = null,
-        HeaderSelector $selector = null,
-        $hostIndex = 0
-    ) {
-        $this->client = $client ?: new Client();
-        $this->config = $config;
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Set the host index
-     *
-     * @param int $hostIndex Host index (required)
-     */
-    public function setHostIndex($hostIndex)
-    {
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Get the host index
-     *
-     * @return int Host index
-     */
-    public function getHostIndex()
-    {
-        return $this->hostIndex;
-    }
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
     /**
      * Operation cancelReport
      *
@@ -264,7 +193,7 @@ class ReportsV20210630Api
      */
     public function cancelReportAsync($report_id)
     {
-        return $this->cancelReportAsyncWithHttpInfo($report_id);;
+        return $this->cancelReportAsyncWithHttpInfo($report_id);
     }
 
     /**
@@ -383,7 +312,6 @@ class ReportsV20210630Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -558,7 +486,7 @@ class ReportsV20210630Api
      */
     public function cancelReportScheduleAsync($report_schedule_id)
     {
-        return $this->cancelReportScheduleAsyncWithHttpInfo($report_schedule_id);;
+        return $this->cancelReportScheduleAsyncWithHttpInfo($report_schedule_id);
     }
 
     /**
@@ -677,7 +605,6 @@ class ReportsV20210630Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -945,7 +872,7 @@ class ReportsV20210630Api
      */
     public function createReportAsync($body)
     {
-        return $this->createReportAsyncWithHttpInfo($body);;
+        return $this->createReportAsyncWithHttpInfo($body);
     }
 
     /**
@@ -1068,7 +995,6 @@ class ReportsV20210630Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1336,7 +1262,7 @@ class ReportsV20210630Api
      */
     public function createReportScheduleAsync($body)
     {
-        return $this->createReportScheduleAsyncWithHttpInfo($body);;
+        return $this->createReportScheduleAsyncWithHttpInfo($body);
     }
 
     /**
@@ -1459,7 +1385,6 @@ class ReportsV20210630Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1727,7 +1652,7 @@ class ReportsV20210630Api
      */
     public function getReportAsync($report_id)
     {
-        return $this->getReportAsyncWithHttpInfo($report_id);;
+        return $this->getReportAsyncWithHttpInfo($report_id);
     }
 
     /**
@@ -1854,7 +1779,6 @@ class ReportsV20210630Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -1879,7 +1803,7 @@ class ReportsV20210630Api
      * Operation getReportDocument
      *
      * @param  string $report_document_id The identifier for the report document. (required)
-     * @param  string $report_type The name of the document&#39;s report type. (optional)
+     * @param  string $report_type The name of the document's report type. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1895,7 +1819,7 @@ class ReportsV20210630Api
      * Operation getReportDocumentWithHttpInfo
      *
      * @param  string $report_document_id The identifier for the report document. (required)
-     * @param  string $report_type The name of the document&#39;s report type. (optional)
+     * @param  string $report_type The name of the document's report type. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2120,14 +2044,14 @@ class ReportsV20210630Api
      * 
      *
      * @param  string $report_document_id The identifier for the report document. (required)
-     * @param  string $report_type The name of the document&#39;s report type. (optional)
+     * @param  string $report_type The name of the document's report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getReportDocumentAsync($report_document_id, $report_type = null)
     {
-        return $this->getReportDocumentAsyncWithHttpInfo($report_document_id, $report_type);;
+        return $this->getReportDocumentAsyncWithHttpInfo($report_document_id, $report_type);
     }
 
     /**
@@ -2136,7 +2060,7 @@ class ReportsV20210630Api
      * 
      *
      * @param  string $report_document_id The identifier for the report document. (required)
-     * @param  string $report_type The name of the document&#39;s report type. (optional)
+     * @param  string $report_type The name of the document's report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2193,7 +2117,7 @@ class ReportsV20210630Api
      * Create request for operation 'getReportDocument'
      *
      * @param  string $report_document_id The identifier for the report document. (required)
-     * @param  string $report_type The name of the document&#39;s report type. (optional)
+     * @param  string $report_type The name of the document's report type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2266,7 +2190,6 @@ class ReportsV20210630Api
                 $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
-
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2534,7 +2457,7 @@ class ReportsV20210630Api
      */
     public function getReportScheduleAsync($report_schedule_id)
     {
-        return $this->getReportScheduleAsyncWithHttpInfo($report_schedule_id);;
+        return $this->getReportScheduleAsyncWithHttpInfo($report_schedule_id);
     }
 
     /**
@@ -2661,7 +2584,6 @@ class ReportsV20210630Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -2685,7 +2607,7 @@ class ReportsV20210630Api
     /**
      * Operation getReportSchedules
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2700,7 +2622,7 @@ class ReportsV20210630Api
     /**
      * Operation getReportSchedulesWithHttpInfo
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2921,14 +2843,14 @@ class ReportsV20210630Api
      *
      * 
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getReportSchedulesAsync($report_types)
     {
-        return $this->getReportSchedulesAsyncWithHttpInfo($report_types);;
+        return $this->getReportSchedulesAsyncWithHttpInfo($report_types);
     }
 
     /**
@@ -2936,7 +2858,7 @@ class ReportsV20210630Api
      *
      * 
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2989,7 +2911,7 @@ class ReportsV20210630Api
     /**
      * Create request for operation 'getReportSchedules'
      *
-     * @param  string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param  string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3061,7 +2983,6 @@ class ReportsV20210630Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -3085,7 +3006,7 @@ class ReportsV20210630Api
     /**
      * Operation getReports
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3106,7 +3027,7 @@ class ReportsV20210630Api
     /**
      * Operation getReportsWithHttpInfo
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3333,7 +3254,7 @@ class ReportsV20210630Api
      *
      * 
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3346,7 +3267,7 @@ class ReportsV20210630Api
      */
     public function getReportsAsync($report_types = null, $processing_statuses = null, $marketplace_ids = null, $page_size = 10, $created_since = null, $created_until = null, $next_token = null)
     {
-        return $this->getReportsAsyncWithHttpInfo($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);;
+        return $this->getReportsAsyncWithHttpInfo($report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
     }
 
     /**
@@ -3354,7 +3275,7 @@ class ReportsV20210630Api
      *
      * 
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3413,7 +3334,7 @@ class ReportsV20210630Api
     /**
      * Create request for operation 'getReports'
      *
-     * @param  string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -3551,7 +3472,6 @@ class ReportsV20210630Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -3572,35 +3492,4 @@ class ReportsV20210630Api
         );
     }
 
-    /**
-     * Create http client option
-     *
-     * @throws \RuntimeException on file opening failure
-     * @return array of http client options
-     */
-    protected function createHttpClientOption()
-    {
-        $options = [];
-        if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
-            }
-        }
-
-        return $options;
-    }
-
-    /**
-     * Writes to the debug log file
-     *
-     * @param any $data
-     * @return void
-     */
-    private function writeDebug($data)
-    {
-        if ($this->config->getDebug()) {
-            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
-        }
-    }
 }

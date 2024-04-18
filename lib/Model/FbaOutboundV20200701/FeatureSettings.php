@@ -26,23 +26,22 @@
  */
 
 namespace SellingPartnerApi\Model\FbaOutboundV20200701;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FeatureSettings Class Doc Comment
  *
  * @category Class
- * @description FeatureSettings allows users to apply fulfillment features to an order. To block an order from being shipped using Amazon Logistics (AMZL) and an AMZL tracking number, use featureName as BLOCK_AMZL and featureFulfillmentPolicy as Required. Blocking AMZL will incur an additional fee surcharge on your MCF orders and increase the risk of some of your orders being unfulfilled or delivered late if there are no alternative carriers available. Using BLOCK_AMZL in an order request will take precedence over your Seller Central account setting.
+ * @description FeatureSettings allows users to apply fulfillment features to an order. To block an order from being shipped using Amazon Logistics (AMZL) and an AMZL tracking number, use featureName as BLOCK_AMZL and featureFulfillmentPolicy as Required. Blocking AMZL will incur an additional fee surcharge on your MCF orders and increase the risk of some of your orders being unfulfilled or delivered late if there are no alternative carriers available. Using BLOCK_AMZL in an order request will take precedence over your Seller Central account setting. To ship in non-Amazon branded packaging (blank boxes), use featureName BLANK_BOX.
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
+class FeatureSettings extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -75,25 +74,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         'feature_fulfillment_policy' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,7 +93,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'feature_name' => 'setFeatureName',
+        'feature_name' => 'setFeatureName',
         'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy'
     ];
 
@@ -126,46 +107,9 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         'feature_fulfillment_policy' => 'getFeatureFulfillmentPolicy'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const FEATURE_FULFILLMENT_POLICY_REQUIRED = 'Required';
+    const FEATURE_FULFILLMENT_POLICY_REQUIRED = 'Required';
     const FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED = 'NotRequired';
     
     
@@ -177,10 +121,14 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getFeatureFulfillmentPolicyAllowableValues()
     {
-        return [
+        $baseVals = [
             self::FEATURE_FULFILLMENT_POLICY_REQUIRED,
             self::FEATURE_FULFILLMENT_POLICY_NOT_REQUIRED,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -210,9 +158,11 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
-        if (!is_null($this->container['feature_fulfillment_policy']) && !in_array($this->container['feature_fulfillment_policy'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['feature_fulfillment_policy']) &&
+            !in_array(strtoupper($this->container['feature_fulfillment_policy']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'feature_fulfillment_policy', must be one of '%s'",
                 $this->container['feature_fulfillment_policy'],
@@ -221,17 +171,6 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -278,7 +217,7 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFeatureFulfillmentPolicy($feature_fulfillment_policy)
     {
         $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
-        if (!is_null($feature_fulfillment_policy) && !in_array($feature_fulfillment_policy, $allowedValues, true)) {
+        if (!is_null($feature_fulfillment_policy) &&!in_array(strtoupper($feature_fulfillment_policy), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'feature_fulfillment_policy', must be one of '%s'",
@@ -290,99 +229,6 @@ class FeatureSettings implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['feature_fulfillment_policy'] = $feature_fulfillment_policy;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

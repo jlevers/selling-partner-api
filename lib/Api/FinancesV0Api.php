@@ -26,15 +26,10 @@
 
 namespace SellingPartnerApi\Api;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
 use SellingPartnerApi\ApiException;
-use SellingPartnerApi\Configuration;
-use SellingPartnerApi\HeaderSelector;
 use SellingPartnerApi\ObjectSerializer;
 
 /**
@@ -43,78 +38,12 @@ use SellingPartnerApi\ObjectSerializer;
  * @category Class
  * @package  SellingPartnerApi
  */
-class FinancesV0Api
+class FinancesV0Api extends BaseApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-
-    /**
-     * @var Configuration
-     */
-    protected $config;
-
-    /**
-     * @var HeaderSelector
-     */
-    protected $headerSelector;
-
-    /**
-     * @var int Host index
-     */
-    protected $hostIndex;
-
-    /**
-     * @param Configuration   $config
-     * @param ClientInterface $client
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
-     */
-    public function __construct(
-        Configuration $config,
-        ClientInterface $client = null,
-        HeaderSelector $selector = null,
-        $hostIndex = 0
-    ) {
-        $this->client = $client ?: new Client();
-        $this->config = $config;
-        $this->headerSelector = $selector ?: new HeaderSelector($this->config);
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Set the host index
-     *
-     * @param int $hostIndex Host index (required)
-     */
-    public function setHostIndex($hostIndex)
-    {
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Get the host index
-     *
-     * @return int Host index
-     */
-    public function getHostIndex()
-    {
-        return $this->hostIndex;
-    }
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
     /**
      * Operation listFinancialEventGroups
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
      * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -132,7 +61,7 @@ class FinancesV0Api
     /**
      * Operation listFinancialEventGroupsWithHttpInfo
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
      * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -324,7 +253,7 @@ class FinancesV0Api
      *
      * 
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
      * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -334,7 +263,7 @@ class FinancesV0Api
      */
     public function listFinancialEventGroupsAsync($max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null)
     {
-        return $this->listFinancialEventGroupsAsyncWithHttpInfo($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);;
+        return $this->listFinancialEventGroupsAsyncWithHttpInfo($max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
     }
 
     /**
@@ -342,7 +271,7 @@ class FinancesV0Api
      *
      * 
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
      * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -398,7 +327,7 @@ class FinancesV0Api
     /**
      * Create request for operation 'listFinancialEventGroups'
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
      * @param  string $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -491,7 +420,6 @@ class FinancesV0Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -515,7 +443,7 @@ class FinancesV0Api
     /**
      * Operation listFinancialEvents
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -533,7 +461,7 @@ class FinancesV0Api
     /**
      * Operation listFinancialEventsWithHttpInfo
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -725,7 +653,7 @@ class FinancesV0Api
      *
      * 
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -735,7 +663,7 @@ class FinancesV0Api
      */
     public function listFinancialEventsAsync($max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null)
     {
-        return $this->listFinancialEventsAsyncWithHttpInfo($max_results_per_page, $posted_after, $posted_before, $next_token);;
+        return $this->listFinancialEventsAsyncWithHttpInfo($max_results_per_page, $posted_after, $posted_before, $next_token);
     }
 
     /**
@@ -743,7 +671,7 @@ class FinancesV0Api
      *
      * 
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -799,7 +727,7 @@ class FinancesV0Api
     /**
      * Create request for operation 'listFinancialEvents'
      *
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
@@ -892,7 +820,6 @@ class FinancesV0Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -917,16 +844,18 @@ class FinancesV0Api
      * Operation listFinancialEventsByGroupId
      *
      * @param  string $event_group_id The identifier of the financial event group to which the events belong. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than `PostedAfter` and no later than two minutes before the request was submitted, in ISO 8601 date time format. If `PostedAfter` and `PostedBefore` are more than 180 days apart, no financial events are returned. You must specify the `PostedAfter` parameter if you specify the `PostedBefore` parameter. Default: Now minus two minutes. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SellingPartnerApi\Model\FinancesV0\ListFinancialEventsResponse
      */
-    public function listFinancialEventsByGroupId($event_group_id, $max_results_per_page = 100, $next_token = null)
+    public function listFinancialEventsByGroupId($event_group_id, $max_results_per_page = 100, $next_token = null, $posted_after = null, $posted_before = null)
     {
-        $response = $this->listFinancialEventsByGroupIdWithHttpInfo($event_group_id, $max_results_per_page, $next_token);
+        $response = $this->listFinancialEventsByGroupIdWithHttpInfo($event_group_id, $max_results_per_page, $next_token, $posted_after, $posted_before);
         return $response;
     }
 
@@ -934,16 +863,18 @@ class FinancesV0Api
      * Operation listFinancialEventsByGroupIdWithHttpInfo
      *
      * @param  string $event_group_id The identifier of the financial event group to which the events belong. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than `PostedAfter` and no later than two minutes before the request was submitted, in ISO 8601 date time format. If `PostedAfter` and `PostedBefore` are more than 180 days apart, no financial events are returned. You must specify the `PostedAfter` parameter if you specify the `PostedBefore` parameter. Default: Now minus two minutes. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SellingPartnerApi\Model\FinancesV0\ListFinancialEventsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listFinancialEventsByGroupIdWithHttpInfo($event_group_id, $max_results_per_page = 100, $next_token = null)
+    public function listFinancialEventsByGroupIdWithHttpInfo($event_group_id, $max_results_per_page = 100, $next_token = null, $posted_after = null, $posted_before = null)
     {
-        $request = $this->listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page, $next_token);
+        $request = $this->listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page, $next_token, $posted_after, $posted_before);
         $signedRequest = $this->config->signRequest(
             $request
         );
@@ -1125,15 +1056,17 @@ class FinancesV0Api
      * 
      *
      * @param  string $event_group_id The identifier of the financial event group to which the events belong. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than `PostedAfter` and no later than two minutes before the request was submitted, in ISO 8601 date time format. If `PostedAfter` and `PostedBefore` are more than 180 days apart, no financial events are returned. You must specify the `PostedAfter` parameter if you specify the `PostedBefore` parameter. Default: Now minus two minutes. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listFinancialEventsByGroupIdAsync($event_group_id, $max_results_per_page = 100, $next_token = null)
+    public function listFinancialEventsByGroupIdAsync($event_group_id, $max_results_per_page = 100, $next_token = null, $posted_after = null, $posted_before = null)
     {
-        return $this->listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page, $next_token);;
+        return $this->listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page, $next_token, $posted_after, $posted_before);
     }
 
     /**
@@ -1142,16 +1075,18 @@ class FinancesV0Api
      * 
      *
      * @param  string $event_group_id The identifier of the financial event group to which the events belong. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than `PostedAfter` and no later than two minutes before the request was submitted, in ISO 8601 date time format. If `PostedAfter` and `PostedBefore` are more than 180 days apart, no financial events are returned. You must specify the `PostedAfter` parameter if you specify the `PostedBefore` parameter. Default: Now minus two minutes. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page = 100, $next_token = null)
+    public function listFinancialEventsByGroupIdAsyncWithHttpInfo($event_group_id, $max_results_per_page = 100, $next_token = null, $posted_after = null, $posted_before = null)
     {
         $returnType = '\SellingPartnerApi\Model\FinancesV0\ListFinancialEventsResponse';
-        $request = $this->listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page, $next_token);
+        $request = $this->listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page, $next_token, $posted_after, $posted_before);
         $signedRequest = $this->config->signRequest(
             $request
         );
@@ -1197,13 +1132,15 @@ class FinancesV0Api
      * Create request for operation 'listFinancialEventsByGroupId'
      *
      * @param  string $event_group_id The identifier of the financial event group to which the events belong. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
+     * @param  string $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time **must** be more than two minutes before the time of the request, in ISO 8601 date time format. (optional)
+     * @param  string $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than `PostedAfter` and no later than two minutes before the request was submitted, in ISO 8601 date time format. If `PostedAfter` and `PostedBefore` are more than 180 days apart, no financial events are returned. You must specify the `PostedAfter` parameter if you specify the `PostedBefore` parameter. Default: Now minus two minutes. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page = 100, $next_token = null)
+    public function listFinancialEventsByGroupIdRequest($event_group_id, $max_results_per_page = 100, $next_token = null, $posted_after = null, $posted_before = null)
     {
         // verify the required parameter 'event_group_id' is set
         if ($event_group_id === null || (is_array($event_group_id) && count($event_group_id) === 0)) {
@@ -1240,6 +1177,22 @@ class FinancesV0Api
         }
         if ($next_token !== null) {
             $queryParams['NextToken'] = $next_token;
+        }
+
+        // query params
+        if (is_array($posted_after)) {
+            $posted_after = ObjectSerializer::serializeCollection($posted_after, '', true);
+        }
+        if ($posted_after !== null) {
+            $queryParams['PostedAfter'] = $posted_after;
+        }
+
+        // query params
+        if (is_array($posted_before)) {
+            $posted_before = ObjectSerializer::serializeCollection($posted_before, '', true);
+        }
+        if ($posted_before !== null) {
+            $queryParams['PostedBefore'] = $posted_before;
         }
 
         // path params
@@ -1287,7 +1240,6 @@ class FinancesV0Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -1312,7 +1264,7 @@ class FinancesV0Api
      * Operation listFinancialEventsByOrderId
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -1329,7 +1281,7 @@ class FinancesV0Api
      * Operation listFinancialEventsByOrderIdWithHttpInfo
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \SellingPartnerApi\ApiException on non-2xx response
@@ -1520,7 +1472,7 @@ class FinancesV0Api
      * 
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1528,7 +1480,7 @@ class FinancesV0Api
      */
     public function listFinancialEventsByOrderIdAsync($order_id, $max_results_per_page = 100, $next_token = null)
     {
-        return $this->listFinancialEventsByOrderIdAsyncWithHttpInfo($order_id, $max_results_per_page, $next_token);;
+        return $this->listFinancialEventsByOrderIdAsyncWithHttpInfo($order_id, $max_results_per_page, $next_token);
     }
 
     /**
@@ -1537,7 +1489,7 @@ class FinancesV0Api
      * 
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1592,7 +1544,7 @@ class FinancesV0Api
      * Create request for operation 'listFinancialEventsByOrderId'
      *
      * @param  string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param  int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
+     * @param  int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with 'InvalidInput'. (optional, default to 100)
      * @param  string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1682,7 +1634,6 @@ class FinancesV0Api
             }
         }
 
-
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
@@ -1703,35 +1654,4 @@ class FinancesV0Api
         );
     }
 
-    /**
-     * Create http client option
-     *
-     * @throws \RuntimeException on file opening failure
-     * @return array of http client options
-     */
-    protected function createHttpClientOption()
-    {
-        $options = [];
-        if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
-            }
-        }
-
-        return $options;
-    }
-
-    /**
-     * Writes to the debug log file
-     *
-     * @param any $data
-     * @return void
-     */
-    private function writeDebug($data)
-    {
-        if ($this->config->getDebug()) {
-            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
-        }
-    }
 }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**create_time** | **string** | The date and time of the creation of the job, in ISO 8601 format. | [optional]
+**create_time** | **string** | The date and time of the creation of the job in ISO 8601 format. | [optional]
 **service_job_id** | **string** | Amazon identifier for the service job. | [optional]
 **service_job_status** | **string** | The status of the service job. | [optional]
 **scope_of_work** | [**\SellingPartnerApi\Model\ServiceV1\ScopeOfWork**](ScopeOfWork.md) |  | [optional]
@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **appointments** | [**\SellingPartnerApi\Model\ServiceV1\Appointment[]**](Appointment.md) | A list of appointments. | [optional]
 **service_order_id** | **string** | The Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format. | [optional]
 **marketplace_id** | **string** | The marketplace identifier. | [optional]
+**store_id** | **string** | The Amazon-defined identifier for the region scope. | [optional]
 **buyer** | [**\SellingPartnerApi\Model\ServiceV1\Buyer**](Buyer.md) |  | [optional]
 **associated_items** | [**\SellingPartnerApi\Model\ServiceV1\AssociatedItem[]**](AssociatedItem.md) | A list of items associated with the service job. | [optional]
 **service_location** | [**\SellingPartnerApi\Model\ServiceV1\ServiceLocation**](ServiceLocation.md) |  | [optional]

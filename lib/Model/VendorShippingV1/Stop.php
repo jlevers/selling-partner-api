@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\VendorShippingV1;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * Stop Class Doc Comment
@@ -42,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
+class Stop extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -79,25 +78,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         'departure_time' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -118,7 +99,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'function_code' => 'setFunctionCode',
+        'function_code' => 'setFunctionCode',
         'location_identification' => 'setLocationIdentification',
         'arrival_time' => 'setArrivalTime',
         'departure_time' => 'setDepartureTime'
@@ -136,46 +117,9 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         'departure_time' => 'getDepartureTime'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
 
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const FUNCTION_CODE_PORT_OF_DISCHARGE = 'PortOfDischarge';
+    const FUNCTION_CODE_PORT_OF_DISCHARGE = 'PortOfDischarge';
     const FUNCTION_CODE_FREIGHT_PAYABLE_AT = 'FreightPayableAt';
     const FUNCTION_CODE_PORT_OF_LOADING = 'PortOfLoading';
     
@@ -188,11 +132,15 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function getFunctionCodeAllowableValues()
     {
-        return [
+        $baseVals = [
             self::FUNCTION_CODE_PORT_OF_DISCHARGE,
             self::FUNCTION_CODE_FREIGHT_PAYABLE_AT,
             self::FUNCTION_CODE_PORT_OF_LOADING,
         ];
+
+        // This is necessary because Amazon does not consistently capitalize their
+        // enum values, so we do case-insensitive enum value validation in ObjectSerializer
+        return array_map(function ($val) { return strtoupper($val); }, $baseVals);
     }
     
     /**
@@ -224,12 +172,14 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['function_code'] === null) {
             $invalidProperties[] = "'function_code' can't be null";
         }
         $allowedValues = $this->getFunctionCodeAllowableValues();
-        if (!is_null($this->container['function_code']) && !in_array($this->container['function_code'], $allowedValues, true)) {
+        if (
+            !is_null($this->container['function_code']) &&
+            !in_array(strtoupper($this->container['function_code']), $allowedValues, true)
+        ) {
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'function_code', must be one of '%s'",
                 $this->container['function_code'],
@@ -238,17 +188,6 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -272,7 +211,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFunctionCode($function_code)
     {
         $allowedValues = $this->getFunctionCodeAllowableValues();
-        if (!in_array($function_code, $allowedValues, true)) {
+        if (!in_array(strtoupper($function_code), $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'function_code', must be one of '%s'",
@@ -321,7 +260,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets arrival_time
      *
-     * @param string|null $arrival_time Date and time of the arrival of the cargo, in ISO 8601 format.
+     * @param string|null $arrival_time Date and time of the arrival of the cargo.
      *
      * @return self
      */
@@ -344,7 +283,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets departure_time
      *
-     * @param string|null $departure_time Date and time of the departure of the cargo, in ISO 8601 format.
+     * @param string|null $departure_time Date and time of the departure of the cargo.
      *
      * @return self
      */
@@ -353,99 +292,6 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['departure_time'] = $departure_time;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

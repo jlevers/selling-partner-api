@@ -11,7 +11,7 @@
 /**
  * Selling Partner API for Orders
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API only supports orders that are less than two years old. Orders more than two years old will not show in the API response.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\OrdersV0;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * RegulatedOrderVerificationStatus Class Doc Comment
@@ -42,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \JsonSerializable
+class RegulatedOrderVerificationStatus extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -59,7 +58,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'string',
+        'status' => '\SellingPartnerApi\Model\OrdersV0\VerificationStatus',
         'requires_merchant_action' => 'bool',
         'valid_rejection_reasons' => '\SellingPartnerApi\Model\OrdersV0\RejectionReason[]',
         'rejection_reason' => '\SellingPartnerApi\Model\OrdersV0\RejectionReason',
@@ -83,25 +82,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
         'external_reviewer_id' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -124,7 +105,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-                'status' => 'setStatus',
+        'status' => 'setStatus',
         'requires_merchant_action' => 'setRequiresMerchantAction',
         'valid_rejection_reasons' => 'setValidRejectionReasons',
         'rejection_reason' => 'setRejectionReason',
@@ -146,68 +127,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
         'external_reviewer_id' => 'getExternalReviewerId'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }const STATUS_PENDING = 'Pending';
-    const STATUS_APPROVED = 'Approved';
-    const STATUS_REJECTED = 'Rejected';
-    const STATUS_EXPIRED = 'Expired';
-    const STATUS_CANCELLED = 'Cancelled';
-    
-    
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_PENDING,
-            self::STATUS_APPROVED,
-            self::STATUS_REJECTED,
-            self::STATUS_EXPIRED,
-            self::STATUS_CANCELLED,
-        ];
-    }
     
     /**
      * Associative array for storing property values
@@ -240,19 +160,9 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                implode("', '", $allowedValues)
-            );
-        }
-
         if ($this->container['requires_merchant_action'] === null) {
             $invalidProperties[] = "'requires_merchant_action' can't be null";
         }
@@ -262,22 +172,11 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
         return $invalidProperties;
     }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
-    }
-
 
     /**
      * Gets status
      *
-     * @return string
+     * @return \SellingPartnerApi\Model\OrdersV0\VerificationStatus
      */
     public function getStatus()
     {
@@ -287,22 +186,12 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
     /**
      * Sets status
      *
-     * @param string $status The verification status of the order.
+     * @param \SellingPartnerApi\Model\OrdersV0\VerificationStatus $status status
      *
      * @return self
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
@@ -320,7 +209,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
     /**
      * Sets requires_merchant_action
      *
-     * @param bool $requires_merchant_action Whether the regulated information provided in the order requires a review by the merchant.
+     * @param bool $requires_merchant_action When true, the regulated information provided in the order requires a review by the merchant.
      *
      * @return self
      */
@@ -421,99 +310,6 @@ class RegulatedOrderVerificationStatus implements ModelInterface, ArrayAccess, \
         $this->container['external_reviewer_id'] = $external_reviewer_id;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * Configuration
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -19,10 +19,11 @@ use Exception;
 use GuzzleHttp\Psr7\Request;
 use InvalidArgumentException;
 use RuntimeException;
+use SellingPartnerApi\Contract\RequestSignerContract;
 
 /**
  * Configuration Class Doc Comment
- * PHP version 7.2
+ * PHP version 7.3
  *
  * @category Class
  * @package  SellingPartnerApi
@@ -55,7 +56,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'jlevers/selling-partner-api/5.0.0 (Language=PHP)';
+    protected $userAgent = 'jlevers/selling-partner-api/5.10.2 (Language=PHP)';
 
     /**
      * Debug switch (default set to false)
@@ -77,6 +78,11 @@ class Configuration
      * @var string
      */
     protected static $tempFolderPath = null;
+
+    /**
+     * @var RequestSignerContract
+     */
+    protected $requestSigner;
 
     /**
      * Constructor
@@ -115,6 +121,18 @@ class Configuration
 
         $this->endpoint = $options["endpoint"];
         $this->auth = new Authentication($options);
+
+        $this->setRequestSigner($options["requestSigner"] ?? $this->auth);
+    }
+
+    public function getRequestSigner(): RequestSignerContract
+    {
+        return $this->requestSigner;
+    }
+
+    public function setRequestSigner(RequestSignerContract $requestSigner): void
+    {
+        $this->requestSigner = $requestSigner;
     }
 
     /**
@@ -370,8 +388,8 @@ class Configuration
      * Set SP API endpoint. $endpoint should be one of the constants from Endpoint.php.
      * 
      * @param array $endpoint
-     * @return void
      * @throws RuntimeException
+     * @return void
      */
     public function setEndpoint(array $endpoint): void
     {
@@ -393,7 +411,7 @@ class Configuration
      */
     public function signRequest($request, $scope = null, $restrictedPath = null, $operation = null)
     {
-        return $this->auth->signRequest($request, $scope, $restrictedPath, $operation);
+        return $this->requestSigner->signRequest($request, $scope, $restrictedPath, $operation);
     }
 
     /**
@@ -411,7 +429,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2020-11-01' . PHP_EOL;
-        $report .= '    SDK Package Version: 5.0.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 5.10.2' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . $tempFolderPath . PHP_EOL;
 
         return $report;

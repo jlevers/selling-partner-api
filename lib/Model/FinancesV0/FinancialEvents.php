@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\FinancesV0;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * FinancialEvents Class Doc Comment
@@ -42,7 +41,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
+class FinancialEvents extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -60,6 +59,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'shipment_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
+        'shipment_settle_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
         'refund_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
         'guarantee_claim_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
         'chargeback_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
@@ -81,11 +81,16 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'network_commingling_transaction_event_list' => '\SellingPartnerApi\Model\FinancesV0\NetworkComminglingTransactionEvent[]',
         'affordability_expense_event_list' => '\SellingPartnerApi\Model\FinancesV0\AffordabilityExpenseEvent[]',
         'affordability_expense_reversal_event_list' => '\SellingPartnerApi\Model\FinancesV0\AffordabilityExpenseEvent[]',
-        'trial_shipment_event_list' => '\SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]',
-        'shipment_settle_event_list' => '\SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]',
-        'tax_withholding_event_list' => '\SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]',
         'removal_shipment_event_list' => '\SellingPartnerApi\Model\FinancesV0\RemovalShipmentEvent[]',
-        'removal_shipment_adjustment_event_list' => '\SellingPartnerApi\Model\FinancesV0\RemovalShipmentAdjustmentEvent[]'
+        'removal_shipment_adjustment_event_list' => '\SellingPartnerApi\Model\FinancesV0\RemovalShipmentAdjustmentEvent[]',
+        'trial_shipment_event_list' => '\SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]',
+        'tds_reimbursement_event_list' => '\SellingPartnerApi\Model\FinancesV0\TDSReimbursementEvent[]',
+        'adhoc_disbursement_event_list' => '\SellingPartnerApi\Model\FinancesV0\AdhocDisbursementEvent[]',
+        'tax_withholding_event_list' => '\SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]',
+        'charge_refund_event_list' => '\SellingPartnerApi\Model\FinancesV0\ChargeRefundEvent[]',
+        'failed_adhoc_disbursement_event_list' => '\SellingPartnerApi\Model\FinancesV0\FailedAdhocDisbursementEventList',
+        'value_added_service_charge_event_list' => '\SellingPartnerApi\Model\FinancesV0\ValueAddedServiceChargeEventList',
+        'capacity_reservation_billing_event_list' => '\SellingPartnerApi\Model\FinancesV0\CapacityReservationBillingEvent[]'
     ];
 
     /**
@@ -97,6 +102,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'shipment_event_list' => null,
+        'shipment_settle_event_list' => null,
         'refund_event_list' => null,
         'guarantee_claim_event_list' => null,
         'chargeback_event_list' => null,
@@ -118,32 +124,19 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'network_commingling_transaction_event_list' => null,
         'affordability_expense_event_list' => null,
         'affordability_expense_reversal_event_list' => null,
-        'trial_shipment_event_list' => null,
-        'shipment_settle_event_list' => null,
-        'tax_withholding_event_list' => null,
         'removal_shipment_event_list' => null,
-        'removal_shipment_adjustment_event_list' => null
+        'removal_shipment_adjustment_event_list' => null,
+        'trial_shipment_event_list' => null,
+        'tds_reimbursement_event_list' => null,
+        'adhoc_disbursement_event_list' => null,
+        'tax_withholding_event_list' => null,
+        'charge_refund_event_list' => null,
+        'failed_adhoc_disbursement_event_list' => null,
+        'value_added_service_charge_event_list' => null,
+        'capacity_reservation_billing_event_list' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -153,6 +146,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'shipment_event_list' => 'ShipmentEventList',
+        'shipment_settle_event_list' => 'ShipmentSettleEventList',
         'refund_event_list' => 'RefundEventList',
         'guarantee_claim_event_list' => 'GuaranteeClaimEventList',
         'chargeback_event_list' => 'ChargebackEventList',
@@ -174,11 +168,16 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'network_commingling_transaction_event_list' => 'NetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'AffordabilityExpenseEventList',
         'affordability_expense_reversal_event_list' => 'AffordabilityExpenseReversalEventList',
-        'trial_shipment_event_list' => 'TrialShipmentEventList',
-        'shipment_settle_event_list' => 'ShipmentSettleEventList',
-        'tax_withholding_event_list' => 'TaxWithholdingEventList',
         'removal_shipment_event_list' => 'RemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'RemovalShipmentAdjustmentEventList'
+        'removal_shipment_adjustment_event_list' => 'RemovalShipmentAdjustmentEventList',
+        'trial_shipment_event_list' => 'TrialShipmentEventList',
+        'tds_reimbursement_event_list' => 'TDSReimbursementEventList',
+        'adhoc_disbursement_event_list' => 'AdhocDisbursementEventList',
+        'tax_withholding_event_list' => 'TaxWithholdingEventList',
+        'charge_refund_event_list' => 'ChargeRefundEventList',
+        'failed_adhoc_disbursement_event_list' => 'FailedAdhocDisbursementEventList',
+        'value_added_service_charge_event_list' => 'ValueAddedServiceChargeEventList',
+        'capacity_reservation_billing_event_list' => 'CapacityReservationBillingEventList'
     ];
 
     /**
@@ -187,7 +186,8 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'shipment_event_list' => 'setShipmentEventList',
+        'shipment_event_list' => 'setShipmentEventList',
+        'shipment_settle_event_list' => 'setShipmentSettleEventList',
         'refund_event_list' => 'setRefundEventList',
         'guarantee_claim_event_list' => 'setGuaranteeClaimEventList',
         'chargeback_event_list' => 'setChargebackEventList',
@@ -209,11 +209,16 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'network_commingling_transaction_event_list' => 'setNetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'setAffordabilityExpenseEventList',
         'affordability_expense_reversal_event_list' => 'setAffordabilityExpenseReversalEventList',
-        'trial_shipment_event_list' => 'setTrialShipmentEventList',
-        'shipment_settle_event_list' => 'setShipmentSettleEventList',
-        'tax_withholding_event_list' => 'setTaxWithholdingEventList',
         'removal_shipment_event_list' => 'setRemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList'
+        'removal_shipment_adjustment_event_list' => 'setRemovalShipmentAdjustmentEventList',
+        'trial_shipment_event_list' => 'setTrialShipmentEventList',
+        'tds_reimbursement_event_list' => 'setTdsReimbursementEventList',
+        'adhoc_disbursement_event_list' => 'setAdhocDisbursementEventList',
+        'tax_withholding_event_list' => 'setTaxWithholdingEventList',
+        'charge_refund_event_list' => 'setChargeRefundEventList',
+        'failed_adhoc_disbursement_event_list' => 'setFailedAdhocDisbursementEventList',
+        'value_added_service_charge_event_list' => 'setValueAddedServiceChargeEventList',
+        'capacity_reservation_billing_event_list' => 'setCapacityReservationBillingEventList'
     ];
 
     /**
@@ -223,6 +228,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'shipment_event_list' => 'getShipmentEventList',
+        'shipment_settle_event_list' => 'getShipmentSettleEventList',
         'refund_event_list' => 'getRefundEventList',
         'guarantee_claim_event_list' => 'getGuaranteeClaimEventList',
         'chargeback_event_list' => 'getChargebackEventList',
@@ -244,53 +250,19 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         'network_commingling_transaction_event_list' => 'getNetworkComminglingTransactionEventList',
         'affordability_expense_event_list' => 'getAffordabilityExpenseEventList',
         'affordability_expense_reversal_event_list' => 'getAffordabilityExpenseReversalEventList',
-        'trial_shipment_event_list' => 'getTrialShipmentEventList',
-        'shipment_settle_event_list' => 'getShipmentSettleEventList',
-        'tax_withholding_event_list' => 'getTaxWithholdingEventList',
         'removal_shipment_event_list' => 'getRemovalShipmentEventList',
-        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList'
+        'removal_shipment_adjustment_event_list' => 'getRemovalShipmentAdjustmentEventList',
+        'trial_shipment_event_list' => 'getTrialShipmentEventList',
+        'tds_reimbursement_event_list' => 'getTdsReimbursementEventList',
+        'adhoc_disbursement_event_list' => 'getAdhocDisbursementEventList',
+        'tax_withholding_event_list' => 'getTaxWithholdingEventList',
+        'charge_refund_event_list' => 'getChargeRefundEventList',
+        'failed_adhoc_disbursement_event_list' => 'getFailedAdhocDisbursementEventList',
+        'value_added_service_charge_event_list' => 'getValueAddedServiceChargeEventList',
+        'capacity_reservation_billing_event_list' => 'getCapacityReservationBillingEventList'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }
     
     /**
      * Associative array for storing property values
@@ -308,6 +280,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['shipment_event_list'] = $data['shipment_event_list'] ?? null;
+        $this->container['shipment_settle_event_list'] = $data['shipment_settle_event_list'] ?? null;
         $this->container['refund_event_list'] = $data['refund_event_list'] ?? null;
         $this->container['guarantee_claim_event_list'] = $data['guarantee_claim_event_list'] ?? null;
         $this->container['chargeback_event_list'] = $data['chargeback_event_list'] ?? null;
@@ -329,11 +302,16 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['network_commingling_transaction_event_list'] = $data['network_commingling_transaction_event_list'] ?? null;
         $this->container['affordability_expense_event_list'] = $data['affordability_expense_event_list'] ?? null;
         $this->container['affordability_expense_reversal_event_list'] = $data['affordability_expense_reversal_event_list'] ?? null;
-        $this->container['trial_shipment_event_list'] = $data['trial_shipment_event_list'] ?? null;
-        $this->container['shipment_settle_event_list'] = $data['shipment_settle_event_list'] ?? null;
-        $this->container['tax_withholding_event_list'] = $data['tax_withholding_event_list'] ?? null;
         $this->container['removal_shipment_event_list'] = $data['removal_shipment_event_list'] ?? null;
         $this->container['removal_shipment_adjustment_event_list'] = $data['removal_shipment_adjustment_event_list'] ?? null;
+        $this->container['trial_shipment_event_list'] = $data['trial_shipment_event_list'] ?? null;
+        $this->container['tds_reimbursement_event_list'] = $data['tds_reimbursement_event_list'] ?? null;
+        $this->container['adhoc_disbursement_event_list'] = $data['adhoc_disbursement_event_list'] ?? null;
+        $this->container['tax_withholding_event_list'] = $data['tax_withholding_event_list'] ?? null;
+        $this->container['charge_refund_event_list'] = $data['charge_refund_event_list'] ?? null;
+        $this->container['failed_adhoc_disbursement_event_list'] = $data['failed_adhoc_disbursement_event_list'] ?? null;
+        $this->container['value_added_service_charge_event_list'] = $data['value_added_service_charge_event_list'] ?? null;
+        $this->container['capacity_reservation_billing_event_list'] = $data['capacity_reservation_billing_event_list'] ?? null;
     }
 
     /**
@@ -344,19 +322,7 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -380,6 +346,29 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShipmentEventList($shipment_event_list)
     {
         $this->container['shipment_event_list'] = $shipment_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets shipment_settle_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]|null
+     */
+    public function getShipmentSettleEventList()
+    {
+        return $this->container['shipment_settle_event_list'];
+    }
+
+    /**
+     * Sets shipment_settle_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]|null $shipment_settle_event_list A list of `ShipmentEvent` items.
+     *
+     * @return self
+     */
+    public function setShipmentSettleEventList($shipment_settle_event_list)
+    {
+        $this->container['shipment_settle_event_list'] = $shipment_settle_event_list;
 
         return $this;
     }
@@ -867,75 +856,6 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
         return $this;
     }
     /**
-     * Gets trial_shipment_event_list
-     *
-     * @return \SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]|null
-     */
-    public function getTrialShipmentEventList()
-    {
-        return $this->container['trial_shipment_event_list'];
-    }
-
-    /**
-     * Sets trial_shipment_event_list
-     *
-     * @param \SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]|null $trial_shipment_event_list A list of information about trial shipment financial events.
-     *
-     * @return self
-     */
-    public function setTrialShipmentEventList($trial_shipment_event_list)
-    {
-        $this->container['trial_shipment_event_list'] = $trial_shipment_event_list;
-
-        return $this;
-    }
-    /**
-     * Gets shipment_settle_event_list
-     *
-     * @return \SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]|null
-     */
-    public function getShipmentSettleEventList()
-    {
-        return $this->container['shipment_settle_event_list'];
-    }
-
-    /**
-     * Sets shipment_settle_event_list
-     *
-     * @param \SellingPartnerApi\Model\FinancesV0\ShipmentEvent[]|null $shipment_settle_event_list A list of information about shipment settle financial events.
-     *
-     * @return self
-     */
-    public function setShipmentSettleEventList($shipment_settle_event_list)
-    {
-        $this->container['shipment_settle_event_list'] = $shipment_settle_event_list;
-
-        return $this;
-    }
-    /**
-     * Gets tax_withholding_event_list
-     *
-     * @return \SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]|null
-     */
-    public function getTaxWithholdingEventList()
-    {
-        return $this->container['tax_withholding_event_list'];
-    }
-
-    /**
-     * Sets tax_withholding_event_list
-     *
-     * @param \SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]|null $tax_withholding_event_list List of TaxWithholding events.
-     *
-     * @return self
-     */
-    public function setTaxWithholdingEventList($tax_withholding_event_list)
-    {
-        $this->container['tax_withholding_event_list'] = $tax_withholding_event_list;
-
-        return $this;
-    }
-    /**
      * Gets removal_shipment_event_list
      *
      * @return \SellingPartnerApi\Model\FinancesV0\RemovalShipmentEvent[]|null
@@ -981,98 +901,189 @@ class FinancialEvents implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
-     * Returns true if offset exists. False otherwise.
+     * Gets trial_shipment_event_list
      *
-     * @param integer $offset Offset
-     *
-     * @return boolean
+     * @return \SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]|null
      */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
+    public function getTrialShipmentEventList()
     {
-        return isset($this->container[$offset]);
+        return $this->container['trial_shipment_event_list'];
     }
 
     /**
-     * Gets offset.
+     * Sets trial_shipment_event_list
      *
-     * @param integer $offset Offset
+     * @param \SellingPartnerApi\Model\FinancesV0\TrialShipmentEvent[]|null $trial_shipment_event_list A list of information about trial shipment financial events.
      *
-     * @return mixed|null
+     * @return self
      */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function setTrialShipmentEventList($trial_shipment_event_list)
     {
-        return $this->container[$offset] ?? null;
+        $this->container['trial_shipment_event_list'] = $trial_shipment_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets tds_reimbursement_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\TDSReimbursementEvent[]|null
+     */
+    public function getTdsReimbursementEventList()
+    {
+        return $this->container['tds_reimbursement_event_list'];
     }
 
     /**
-     * Sets value based on offset.
+     * Sets tds_reimbursement_event_list
      *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
+     * @param \SellingPartnerApi\Model\FinancesV0\TDSReimbursementEvent[]|null $tds_reimbursement_event_list A list of `TDSReimbursementEvent` items.
      *
-     * @return void
+     * @return self
      */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
+    public function setTdsReimbursementEventList($tds_reimbursement_event_list)
     {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
+        $this->container['tds_reimbursement_event_list'] = $tds_reimbursement_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets adhoc_disbursement_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\AdhocDisbursementEvent[]|null
+     */
+    public function getAdhocDisbursementEventList()
+    {
+        return $this->container['adhoc_disbursement_event_list'];
     }
 
     /**
-     * Unsets offset.
+     * Sets adhoc_disbursement_event_list
      *
-     * @param integer $offset Offset
+     * @param \SellingPartnerApi\Model\FinancesV0\AdhocDisbursementEvent[]|null $adhoc_disbursement_event_list A list of `AdhocDisbursement` events.
      *
-     * @return void
+     * @return self
      */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
+    public function setAdhocDisbursementEventList($adhoc_disbursement_event_list)
     {
-        unset($this->container[$offset]);
+        $this->container['adhoc_disbursement_event_list'] = $adhoc_disbursement_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets tax_withholding_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]|null
+     */
+    public function getTaxWithholdingEventList()
+    {
+        return $this->container['tax_withholding_event_list'];
     }
 
     /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
+     * Sets tax_withholding_event_list
      *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
+     * @param \SellingPartnerApi\Model\FinancesV0\TaxWithholdingEvent[]|null $tax_withholding_event_list A list of `TaxWithholding` events.
+     *
+     * @return self
      */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
+    public function setTaxWithholdingEventList($tax_withholding_event_list)
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        $this->container['tax_withholding_event_list'] = $tax_withholding_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets charge_refund_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\ChargeRefundEvent[]|null
+     */
+    public function getChargeRefundEventList()
+    {
+        return $this->container['charge_refund_event_list'];
     }
 
     /**
-     * Gets the string presentation of the object
+     * Sets charge_refund_event_list
      *
-     * @return string
+     * @param \SellingPartnerApi\Model\FinancesV0\ChargeRefundEvent[]|null $charge_refund_event_list A list of charge refund events.
+     *
+     * @return self
      */
-    public function __toString()
+    public function setChargeRefundEventList($charge_refund_event_list)
     {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
+        $this->container['charge_refund_event_list'] = $charge_refund_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets failed_adhoc_disbursement_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\FailedAdhocDisbursementEventList|null
+     */
+    public function getFailedAdhocDisbursementEventList()
+    {
+        return $this->container['failed_adhoc_disbursement_event_list'];
     }
 
     /**
-     * Gets a header-safe presentation of the object
+     * Sets failed_adhoc_disbursement_event_list
      *
-     * @return string
+     * @param \SellingPartnerApi\Model\FinancesV0\FailedAdhocDisbursementEventList|null $failed_adhoc_disbursement_event_list failed_adhoc_disbursement_event_list
+     *
+     * @return self
      */
-    public function toHeaderValue()
+    public function setFailedAdhocDisbursementEventList($failed_adhoc_disbursement_event_list)
     {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        $this->container['failed_adhoc_disbursement_event_list'] = $failed_adhoc_disbursement_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets value_added_service_charge_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\ValueAddedServiceChargeEventList|null
+     */
+    public function getValueAddedServiceChargeEventList()
+    {
+        return $this->container['value_added_service_charge_event_list'];
+    }
+
+    /**
+     * Sets value_added_service_charge_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\ValueAddedServiceChargeEventList|null $value_added_service_charge_event_list value_added_service_charge_event_list
+     *
+     * @return self
+     */
+    public function setValueAddedServiceChargeEventList($value_added_service_charge_event_list)
+    {
+        $this->container['value_added_service_charge_event_list'] = $value_added_service_charge_event_list;
+
+        return $this;
+    }
+    /**
+     * Gets capacity_reservation_billing_event_list
+     *
+     * @return \SellingPartnerApi\Model\FinancesV0\CapacityReservationBillingEvent[]|null
+     */
+    public function getCapacityReservationBillingEventList()
+    {
+        return $this->container['capacity_reservation_billing_event_list'];
+    }
+
+    /**
+     * Sets capacity_reservation_billing_event_list
+     *
+     * @param \SellingPartnerApi\Model\FinancesV0\CapacityReservationBillingEvent[]|null $capacity_reservation_billing_event_list A list of `CapacityReservationBillingEvent` events.
+     *
+     * @return self
+     */
+    public function setCapacityReservationBillingEventList($capacity_reservation_billing_event_list)
+    {
+        $this->container['capacity_reservation_billing_event_list'] = $capacity_reservation_billing_event_list;
+
+        return $this;
     }
 }
 

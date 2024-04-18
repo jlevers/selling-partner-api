@@ -16,6 +16,7 @@
 
 namespace SellingPartnerApi;
 
+use DateTime;
 use SellingPartnerApi\Model\ModelInterface;
 
 /**
@@ -27,7 +28,7 @@ use SellingPartnerApi\Model\ModelInterface;
 class ObjectSerializer
 {
     /** @var string */
-    private static $dateTimeFormat = \DateTime::ATOM;
+    private static $dateTimeFormat = DateTime::ATOM;
 
     /**
      * Change the date format
@@ -54,7 +55,7 @@ class ObjectSerializer
             return $data;
         }
 
-        if ($data instanceof \DateTime) {
+        if ($data instanceof DateTime) {
             return ($format === 'date') ? $data->format('Y-m-d') : $data->format(self::$dateTimeFormat);
         }
 
@@ -72,21 +73,20 @@ class ObjectSerializer
                 foreach ($data::openAPITypes() as $property => $openAPIType) {
                     $getter = $data::getters()[$property];
                     $value = $data->$getter();
-                    if ($value !== null && !in_array($openAPIType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
-                        $callable = [$openAPIType, 'getAllowableEnumValues'];
-                        if (is_callable($callable)) {
-                            /** array $callable */
-                            $allowedEnumTypes = $callable();
-                            if (!in_array($value, $allowedEnumTypes, true)) {
-                                $imploded = implode("', '", $allowedEnumTypes);
-                                throw new \InvalidArgumentException("Invalid value for enum '$openAPIType', must be one of: '$imploded'");
-                            }
-                        }
-                    }
                     if ($value !== null) {
                         $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
                     }
                 }
+            } else if (is_callable([$data, 'getAllowableEnumValues'])) {
+                $callable = [$data, 'getAllowableEnumValues'];
+                $allowedEnumTypes = $callable();
+                $enumVal = strtoupper((string)$data->value);
+                if (!in_array($enumVal, $allowedEnumTypes, true)) {
+                    $imploded = implode("', '", $allowedEnumTypes);
+                    throw new \InvalidArgumentException("Invalid value for enum '$type', must be one of: '$imploded'");
+                }
+
+                return self::sanitizeForSerialization($data->value);
             } else {
                 foreach($data as $property => $value) {
                     $values[$property] = self::sanitizeForSerialization($value);
@@ -139,7 +139,7 @@ class ObjectSerializer
      * If it's a string, pass through unchanged. It will be url-encoded
      * later.
      *
-     * @param string[]|string|\DateTime $object an object to be serialized to a string
+     * @param string[]|string|DateTime $object an object to be serialized to a string
      *
      * @return string the serialized object
      */
@@ -195,13 +195,13 @@ class ObjectSerializer
      * If it's a datetime object, format it in ISO8601
      * If it's a boolean, convert it to "true" or "false".
      *
-     * @param string|bool|\DateTime $value the value of the parameter
+     * @param string|bool|DateTime $value the value of the parameter
      *
      * @return string the header string
      */
     public static function toString($value)
     {
-        if ($value instanceof \DateTime) { // datetime in ISO8601 format
+        if ($value instanceof DateTime) { // datetime in ISO8601 format
             return $value->format(self::$dateTimeFormat);
         } elseif (is_bool($value)) {
             return $value ? 'true' : 'false';
@@ -264,8 +264,8 @@ class ObjectSerializer
         }
 
         if (strcasecmp(substr($class, -2), '[]') === 0) {
-            $data = is_string($data) ? json_decode($data, true) : $data;
-            
+            $data = is_string($data) ? json_decode($data) : $data;
+
             if (!is_array($data)) {
                 throw new \InvalidArgumentException("Invalid array '$class'");
             }
@@ -279,7 +279,7 @@ class ObjectSerializer
         }
 
         if (substr($class, 0, 4) === 'map[') { // for associative array e.g. map[string,int]
-            $data = is_string($data) ? json_decode($data) : $data;
+            $data = is_string($data) ? json_decode($data, true) : $data;
             settype($data, 'array');
             $inner = substr($class, 4, -1);
             $deserialized = [];
@@ -307,13 +307,13 @@ class ObjectSerializer
             // this graceful.
             if (!empty($data)) {
                 try {
-                    return new \DateTime($data);
+                    return new DateTime($data);
                 } catch (\Exception $exception) {
                     // Some API's return a date-time with too high nanosecond
                     // precision for php's DateTime to handle. This conversion
                     // (string -> unix timestamp -> DateTime) is a workaround
                     // for the problem.
-                    return (new \DateTime())->setTimestamp(strtotime($data));
+                    return (new DateTime())->setTimestamp(strtotime($data));
                 }
             } else {
                 return null;
@@ -359,7 +359,7 @@ class ObjectSerializer
                 $imploded = implode("', '", $class::getAllowableEnumValues());
                 throw new \InvalidArgumentException("Invalid value for enum '$class', must be one of: '$imploded'");
             }
-            return $data;
+            return new $class($data);
         } else {
             $data = is_string($data) ? json_decode($data) : $data;
             // If a discriminator is defined and points to a valid subclass, use it.

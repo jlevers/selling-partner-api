@@ -26,23 +26,22 @@
  */
 
 namespace SellingPartnerApi\Model\FinancesV0;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * ChargeComponent Class Doc Comment
  *
  * @category Class
- * @description A charge on the seller&#39;s account. Possible values: * Principal - The selling price of the order item, equal to the selling price of the item multiplied by the quantity ordered. * Tax - The tax collected by the seller on the Principal. * MarketplaceFacilitatorTax-Principal - The tax withheld on the Principal. * MarketplaceFacilitatorTax-Shipping - The tax withheld on the ShippingCharge. * MarketplaceFacilitatorTax-Giftwrap - The tax withheld on the Giftwrap charge. * MarketplaceFacilitatorTax-Other - The tax withheld on other miscellaneous charges. * Discount - The promotional discount for an order item. * TaxDiscount - The tax amount deducted for promotional rebates. * CODItemCharge - The COD charge for an order item. * CODItemTaxCharge - The tax collected by the seller on a CODItemCharge. * CODOrderCharge - The COD charge for an order. * CODOrderTaxCharge - The tax collected by the seller on a CODOrderCharge. * CODShippingCharge - Shipping charges for a COD order. * CODShippingTaxCharge - The tax collected by the seller on a CODShippingCharge. * ShippingCharge - The shipping charge. * ShippingTax - The tax collected by the seller on a ShippingCharge. * Goodwill - The amount given to a buyer as a gesture of goodwill or to compensate for pain and suffering in the buying experience. * Giftwrap - The gift wrap charge. * GiftwrapTax - The tax collected by the seller on a Giftwrap charge. * RestockingFee - The charge applied to the buyer when returning a product in certain categories. * ReturnShipping - The amount given to the buyer to compensate for shipping the item back in the event we are at fault. * PointsFee - The value of Amazon Points deducted from the refund if the buyer does not have enough Amazon Points to cover the deduction. * GenericDeduction - A generic bad debt deduction. * FreeReplacementReturnShipping - The compensation for return shipping when a buyer receives the wrong item, requests a free replacement, and returns the incorrect item. * PaymentMethodFee - The fee collected for certain payment methods in certain marketplaces. * ExportCharge - The export duty that is charged when an item is shipped to an international destination as part of the Amazon Global program. * SAFE-TReimbursement - The SAFE-T claim amount for the item. * TCS-CGST - Tax Collected at Source (TCS) for Central Goods and Services Tax (CGST). * TCS-SGST - Tax Collected at Source for State Goods and Services Tax (SGST). * TCS-IGST - Tax Collected at Source for Integrated Goods and Services Tax (IGST). * TCS-UTGST - Tax Collected at Source for Union Territories Goods and Services Tax (UTGST).
+ * @description A charge on the seller's account. Possible values: * Principal - The selling price of the order item, equal to the selling price of the item multiplied by the quantity ordered. * Tax - The tax collected by the seller on the Principal. * MarketplaceFacilitatorTax-Principal - The tax withheld on the Principal. * MarketplaceFacilitatorTax-Shipping - The tax withheld on the ShippingCharge. * MarketplaceFacilitatorTax-Giftwrap - The tax withheld on the Giftwrap charge. * MarketplaceFacilitatorTax-Other - The tax withheld on other miscellaneous charges. * Discount - The promotional discount for an order item. * TaxDiscount - The tax amount deducted for promotional rebates. * CODItemCharge - The COD charge for an order item. * CODItemTaxCharge - The tax collected by the seller on a CODItemCharge. * CODOrderCharge - The COD charge for an order. * CODOrderTaxCharge - The tax collected by the seller on a CODOrderCharge. * CODShippingCharge - Shipping charges for a COD order. * CODShippingTaxCharge - The tax collected by the seller on a CODShippingCharge. * ShippingCharge - The shipping charge. * ShippingTax - The tax collected by the seller on a ShippingCharge. * Goodwill - The amount given to a buyer as a gesture of goodwill or to compensate for pain and suffering in the buying experience. * Giftwrap - The gift wrap charge. * GiftwrapTax - The tax collected by the seller on a Giftwrap charge. * RestockingFee - The charge applied to the buyer when returning a product in certain categories. * ReturnShipping - The amount given to the buyer to compensate for shipping the item back in the event we are at fault. * PointsFee - The value of Amazon Points deducted from the refund if the buyer does not have enough Amazon Points to cover the deduction. * GenericDeduction - A generic bad debt deduction. * FreeReplacementReturnShipping - The compensation for return shipping when a buyer receives the wrong item, requests a free replacement, and returns the incorrect item. * PaymentMethodFee - The fee collected for certain payment methods in certain marketplaces. * ExportCharge - The export duty that is charged when an item is shipped to an international destination as part of the Amazon Global program. * SAFE-TReimbursement - The SAFE-T claim amount for the item. * TCS-CGST - Tax Collected at Source (TCS) for Central Goods and Services Tax (CGST). * TCS-SGST - Tax Collected at Source for State Goods and Services Tax (SGST). * TCS-IGST - Tax Collected at Source for Integrated Goods and Services Tax (IGST). * TCS-UTGST - Tax Collected at Source for Union Territories Goods and Services Tax (UTGST).
  * @package  SellingPartnerApi
  * @group 
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ChargeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
+class ChargeComponent extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -75,25 +74,7 @@ class ChargeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
         'charge_amount' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -112,7 +93,7 @@ class ChargeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'charge_type' => 'setChargeType',
+        'charge_type' => 'setChargeType',
         'charge_amount' => 'setChargeAmount'
     ];
 
@@ -126,46 +107,7 @@ class ChargeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
         'charge_amount' => 'getChargeAmount'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }
     
     /**
      * Associative array for storing property values
@@ -194,19 +136,7 @@ class ChargeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -255,99 +185,6 @@ class ChargeComponent implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['charge_amount'] = $charge_amount;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

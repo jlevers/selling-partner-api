@@ -26,10 +26,9 @@
  */
 
 namespace SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228;
-
-use \ArrayAccess;
-use \SellingPartnerApi\ObjectSerializer;
-use \SellingPartnerApi\Model\ModelInterface;
+use ArrayAccess;
+use SellingPartnerApi\Model\BaseModel;
+use SellingPartnerApi\Model\ModelInterface;
 
 /**
  * PackedItem Class Doc Comment
@@ -41,7 +40,7 @@ use \SellingPartnerApi\Model\ModelInterface;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
+class PackedItem extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable, \IteratorAggregate
 {
     public const DISCRIMINATOR = null;
 
@@ -60,6 +59,7 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'item_sequence_number' => 'int',
         'buyer_product_identifier' => 'string',
+        'piece_number' => 'int',
         'vendor_product_identifier' => 'string',
         'packed_quantity' => '\SellingPartnerApi\Model\VendorDirectFulfillmentShippingV20211228\ItemQuantity'
     ];
@@ -74,29 +74,12 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'item_sequence_number' => null,
         'buyer_product_identifier' => null,
+        'piece_number' => null,
         'vendor_product_identifier' => null,
         'packed_quantity' => null
     ];
 
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes;
-    }
 
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats;
-    }
 
     /**
      * Array of attributes where the key is the local name,
@@ -107,6 +90,7 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'item_sequence_number' => 'itemSequenceNumber',
         'buyer_product_identifier' => 'buyerProductIdentifier',
+        'piece_number' => 'pieceNumber',
         'vendor_product_identifier' => 'vendorProductIdentifier',
         'packed_quantity' => 'packedQuantity'
     ];
@@ -117,8 +101,9 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-                'item_sequence_number' => 'setItemSequenceNumber',
+        'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
+        'piece_number' => 'setPieceNumber',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'packed_quantity' => 'setPackedQuantity'
     ];
@@ -131,50 +116,12 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'item_sequence_number' => 'getItemSequenceNumber',
         'buyer_product_identifier' => 'getBuyerProductIdentifier',
+        'piece_number' => 'getPieceNumber',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
         'packed_quantity' => 'getPackedQuantity'
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
 
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }
     
     /**
      * Associative array for storing property values
@@ -193,6 +140,7 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['item_sequence_number'] = $data['item_sequence_number'] ?? null;
         $this->container['buyer_product_identifier'] = $data['buyer_product_identifier'] ?? null;
+        $this->container['piece_number'] = $data['piece_number'] ?? null;
         $this->container['vendor_product_identifier'] = $data['vendor_product_identifier'] ?? null;
         $this->container['packed_quantity'] = $data['packed_quantity'] ?? null;
     }
@@ -205,7 +153,6 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         if ($this->container['item_sequence_number'] === null) {
             $invalidProperties[] = "'item_sequence_number' can't be null";
         }
@@ -213,17 +160,6 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "'packed_quantity' can't be null";
         }
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
     }
 
 
@@ -274,6 +210,29 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         return $this;
     }
     /**
+     * Gets piece_number
+     *
+     * @return int|null
+     */
+    public function getPieceNumber()
+    {
+        return $this->container['piece_number'];
+    }
+
+    /**
+     * Sets piece_number
+     *
+     * @param int|null $piece_number The piece number of the item in this container. This is required when the item is split across different containers.
+     *
+     * @return self
+     */
+    public function setPieceNumber($piece_number)
+    {
+        $this->container['piece_number'] = $piece_number;
+
+        return $this;
+    }
+    /**
      * Gets vendor_product_identifier
      *
      * @return string|null
@@ -318,99 +277,6 @@ class PackedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['packed_quantity'] = $packed_quantity;
 
         return $this;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     * @link https://www.php.net/manual/en/jsonserializable.jsonserialize.php
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

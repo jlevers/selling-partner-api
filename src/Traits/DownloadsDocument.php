@@ -8,7 +8,6 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Header;
 use GuzzleHttp\Psr7\InflateStream;
-use Illuminate\Support\Arr;
 use InvalidArgumentException;
 use OpenSpout\Reader\CSV\Options;
 use OpenSpout\Reader\CSV\Reader as CSVReader;
@@ -191,7 +190,7 @@ trait DownloadsDocument
 
         // Check feeds first because the file is smaller
         $feedTypes = json_decode(file_get_contents(RESOURCE_DIR.'/feeds.json'), true);
-        if (Arr::get($feedTypes, $documentTypeName)) {
+        if (isset($feedTypes[$documentTypeName])) {
             $documentTypeInfo = [
                 'name' => $documentTypeName,
                 'contentType' => ContentType::from($feedTypes[$documentTypeName]),
@@ -201,7 +200,7 @@ trait DownloadsDocument
 
         if (! $documentTypeInfo) {
             $reportTypes = json_decode(file_get_contents(RESOURCE_DIR.'/reports.json'), true);
-            if (Arr::get($reportTypes, $documentTypeName)) {
+            if (isset($reportTypes[$documentTypeName])) {
                 $documentTypeInfo = $reportTypes[$documentTypeName];
                 $documentTypeInfo['name'] = $documentTypeName;
                 $documentTypeInfo['contentType'] = ContentType::from($documentTypeInfo['contentType']);

@@ -64,39 +64,41 @@ class RequestGenerator extends BaseGenerator
 
         $isRestricted = isset($restrictedOperations->{$path}->operations->{$httpMethod});
         $isGrantless = isset($grantlessOperations->{$path}->{$httpMethod});
-        if ($isRestricted || $isGrantless) {
-            if ($isRestricted) {
-                $namespace->addUse(RestrictedDataToken::class);
-                $useGenericPath = $restrictedOperations->{$path}->genericPath;
-                $knownDataElements = $restrictedOperations->{$path}->operations->{$httpMethod};
-                $constructor->addBody(
-                    new Literal(sprintf(
-                        '$rdtMiddleware = new RestrictedDataToken(%s, \'%s\', %s);',
-                        $useGenericPath ? "'$path'" : '$this->resolveEndpoint()',
-                        strtoupper($httpMethod),
-                        '['.implode(', ', array_map(fn ($el) => "'$el'", $knownDataElements)).']'
-                    ))
-                );
-                $constructor->addBody('$this->middleware()->onRequest($rdtMiddleware);');
-            } elseif ($isGrantless) {
-                $namespace
-                    ->addUse(Grantless::class)
-                    ->addUse(GrantlessScope::class);
-                $scope = GrantlessScope::from($grantlessOperations->{$path}->{$httpMethod});
-
-                $constructor->addBody(
-                    new Literal(sprintf(
-                        '$this->middleware()->onRequest(new Grantless(GrantlessScope::%s));',
-                        $scope->name
-                    ))
-                );
-            }
-        }
 
         $requestMiddleware = $middleware->{$path}->{$httpMethod}->request ?? [];
-        foreach ($requestMiddleware as $cls) {
-            $namespace->addUse(PACKAGE_NAMESPACE."\\Middleware\\$cls");
-            $constructor->addBody(new Literal(sprintf('$this->middleware()->onRequest(new %s);', $cls)));
+        if ($requestMiddleware) {
+            // If there is request middleware besides the RDT or Grantless middlewares applied to a request
+            // that also is grantless or uses an RDT, the other middleware needs to invoke the RDT and/or
+            // Grantless middleware, otherwise it will not be applied
+            foreach ($requestMiddleware as $cls) {
+                $namespace->addUse(PACKAGE_NAMESPACE."\\Middleware\\$cls");
+                $constructor->addBody(new Literal(sprintf('$this->middleware()->onRequest(new %s);', $cls)));
+            }
+        } elseif ($isRestricted) {
+            $namespace->addUse(RestrictedDataToken::class);
+            $useGenericPath = $restrictedOperations->{$path}->genericPath;
+            $knownDataElements = $restrictedOperations->{$path}->operations->{$httpMethod};
+            $constructor->addBody(
+                new Literal(sprintf(
+                    '$rdtMiddleware = new RestrictedDataToken(%s, \'%s\', %s);',
+                    $useGenericPath ? "'$path'" : '$this->resolveEndpoint()',
+                    strtoupper($httpMethod),
+                    '['.implode(', ', array_map(fn ($el) => "'$el'", $knownDataElements)).']'
+                ))
+            );
+            $constructor->addBody('$this->middleware()->onRequest($rdtMiddleware);');
+        } elseif ($isGrantless) {
+            $namespace
+                ->addUse(Grantless::class)
+                ->addUse(GrantlessScope::class);
+            $scope = GrantlessScope::from($grantlessOperations->{$path}->{$httpMethod});
+
+            $constructor->addBody(
+                new Literal(sprintf(
+                    '$this->middleware()->onRequest(new Grantless(GrantlessScope::%s));',
+                    $scope->name
+                ))
+            );
         }
 
         // Remove the constructor if it's not being used

@@ -190,7 +190,7 @@ trait DownloadsDocument
 
         // Check feeds first because the file is smaller
         $feedTypes = json_decode(file_get_contents(RESOURCE_DIR.'/feeds.json'), true);
-        if ($feedTypes[$documentTypeName]) {
+        if (isset($feedTypes[$documentTypeName])) {
             $documentTypeInfo = [
                 'name' => $documentTypeName,
                 'contentType' => ContentType::from($feedTypes[$documentTypeName]),
@@ -200,7 +200,7 @@ trait DownloadsDocument
 
         if (! $documentTypeInfo) {
             $reportTypes = json_decode(file_get_contents(RESOURCE_DIR.'/reports.json'), true);
-            if ($reportTypes[$documentTypeName]) {
+            if (isset($reportTypes[$documentTypeName])) {
                 $documentTypeInfo = $reportTypes[$documentTypeName];
                 $documentTypeInfo['name'] = $documentTypeName;
                 $documentTypeInfo['contentType'] = ContentType::from($documentTypeInfo['contentType']);

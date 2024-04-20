@@ -6,7 +6,6 @@ use Exception;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 use Saloon\Http\Response;
-use SellingPartnerApi\Middleware\RestrictedDataToken;
 use SellingPartnerApi\Middleware\RestrictedReport;
 use SellingPartnerApi\Seller\ReportsV20210630\Responses\ErrorList;
 use SellingPartnerApi\Seller\ReportsV20210630\Responses\ReportDocument;
@@ -26,8 +25,6 @@ class GetReportDocument extends Request
         protected string $reportDocumentId,
         protected string $reportType,
     ) {
-        $rdtMiddleware = new RestrictedDataToken($this->resolveEndpoint(), 'GET', []);
-        $this->middleware()->onRequest($rdtMiddleware);
         $this->middleware()->onRequest(new RestrictedReport);
     }
 

@@ -1,6 +1,6 @@
 {
     "name": "jlevers/selling-partner-api",
-    "version": "6.0.4",
+    "version": "6.0.5",
     "description": "PHP client for Amazon's Selling Partner API",
     "keywords": [
         "api",
@@ -55,14 +55,13 @@
     },
     "scripts": {
         "lint": [
-          "@pint",
-          "@php-compatibility-check"
+            "@pint",
+            "@php-compatibility-check"
         ],
         "pint": "php vendor/bin/pint",
         "php-compatibility-check": "./vendor/bin/phpcs -p ./src ./bin --standard=PHPCompatibility --runtime-set testVersion 8.1-",
-
         "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
-        "post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
     },
     "config": {
         "allow-plugins": {

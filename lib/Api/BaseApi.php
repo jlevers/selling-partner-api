@@ -87,9 +87,18 @@ abstract class BaseApi
     protected function writeDebug($data)
     {
         if ($this->config->getDebug()) {
+            if ($data instanceof Throwable) {
+                $data = "$data";
+            } else if ($data instanceof GuzzleHttp\Psr7\Request) {
+                $data = "{$data->getMethod()} {$data->getUri()}\n" . implode("\n", $data->getHeaders());
+            } else if ($data instanceof GuzzleHttp\Psr7\Response) {
+                $data = "{$data->getStatusCode()} {$data->getReasonPhrase()}\n" . implode("\n", $data->getHeaders());
+            } else {
+                $data = print_r($data, true);
+            }
             file_put_contents(
                 $this->config->getDebugFile(),
-                '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n",
+                '[' . date('Y-m-d H:i:s') . ']: ' . $data . "\n",
                 FILE_APPEND
             );
         }

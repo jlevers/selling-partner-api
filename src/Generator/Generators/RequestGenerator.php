@@ -3,9 +3,8 @@
 namespace SellingPartnerApi\Generator\Generators;
 
 use Crescat\SaloonSdkGenerator\Data\Generator\Endpoint;
-use Crescat\SaloonSdkGenerator\EmptyResponse;
 use Crescat\SaloonSdkGenerator\Enums\SimpleType;
-use Crescat\SaloonSdkGenerator\Generators\RequestGenerator as BaseGenerator;
+use Crescat\SaloonSdkGenerator\Generators\RequestGenerator as SDKGenerator;
 use Crescat\SaloonSdkGenerator\Helpers\NameHelper;
 use Crescat\SaloonSdkGenerator\Helpers\Utils;
 use Exception;
@@ -23,18 +22,19 @@ use SellingPartnerApi\Enums\GrantlessScope;
 use SellingPartnerApi\Middleware\Grantless;
 use SellingPartnerApi\Middleware\RestrictedDataToken;
 
-class RequestGenerator extends BaseGenerator
+class RequestGenerator extends SDKGenerator
 {
-    protected function generateRequestClass(Endpoint $endpoint): PhpFile
+    protected function generateRequestClass(Endpoint $endpoint): PhpFile|array
     {
         $middleware = json_decode(file_get_contents(METADATA_DIR.'/middleware.json'));
         $grantlessOperations = json_decode(file_get_contents(METADATA_DIR.'/scopes.json'));
         $restrictedOperations = json_decode(file_get_contents(METADATA_DIR.'/restricted.json'));
 
         $className = NameHelper::requestClassName($endpoint->name);
-        [$classFile, $namespace, $classType] = $this->makeClass($className, $this->config->requestNamespaceSuffix);
+        [$classFile, $namespace, $classType] = $this->makeClass($className, $this->config->namespaceSuffixes['request']);
 
-        $classType->setExtends(Request::class)
+        $baseRequestClass = $this->baseClassFqn();
+        $classType->setExtends($baseRequestClass)
             ->setComment($endpoint->name);
 
         // TODO: We assume JSON body if post/patch, make these assumptions configurable in the future.
@@ -118,15 +118,14 @@ class RequestGenerator extends BaseGenerator
                     ->pipe(fn (Collection $segments) => new Literal(sprintf('return "/%s";', $segments->implode('/'))))
             );
 
-        $responseSuffix = NameHelper::optionalNamespaceSuffix($this->config->responseNamespaceSuffix);
-        $responseNamespace = "{$this->config->namespace}{$responseSuffix}";
+        $responseNamespace = $this->config->responseNamespace();
 
         $codesByResponseType = collect($endpoint->responses)
             // TODO: We assume JSON is the only response content type for each HTTP status code.
             // We should support multiple response types in the future
             ->mapWithKeys(function (array $response, int $httpCode) use ($namespace, $responseNamespace) {
                 if (count($response) === 0) {
-                    $cls = EmptyResponse::class;
+                    $cls = "{$this->config->baseFilesNamespace()}\\EmptyResponse";
                 } else {
                     $className = NameHelper::responseClassName($response[array_key_first($response)]->name);
                     $cls = "{$responseNamespace}\\{$className}";
@@ -146,6 +145,7 @@ class RequestGenerator extends BaseGenerator
             }, collect());
 
         $namespace
+            ->addUse($baseRequestClass)
             ->addUse(Exception::class)
             ->addUse(Response::class);
 

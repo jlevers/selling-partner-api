@@ -3,7 +3,7 @@
 namespace SellingPartnerApi\Generator\Generators;
 
 use Crescat\SaloonSdkGenerator\Enums\SimpleType;
-use Crescat\SaloonSdkGenerator\Generators\ResourceGenerator as BaseResourceGenerator;
+use Crescat\SaloonSdkGenerator\Generators\ResourceGenerator as SDKGenerator;
 use Crescat\SaloonSdkGenerator\Helpers\MethodGeneratorHelper;
 use Crescat\SaloonSdkGenerator\Helpers\NameHelper;
 use Nette\InvalidStateException;
@@ -12,23 +12,22 @@ use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpFile;
 use Saloon\Http\Response;
 
-class ResourceGenerator extends BaseResourceGenerator
+class ResourceGenerator extends SDKGenerator
 {
     /**
      * @param  array|Endpoint[]  $endpoints
      */
     public function generateResourceClass(string $resourceName, array $endpoints): ?PhpFile
     {
+        $baseResourceFqn = $this->baseClassFqn();
+
         $classType = new ClassType('Api');
-
-        $baseResourceNs = $this->config->baseResourceNamespace ?? $this->config->namespace;
-        $classType->setExtends("{$baseResourceNs}\\BaseResource");
-
         $classFile = new PhpFile;
-        $resourceNamespaceSuffix = NameHelper::optionalNamespaceSuffix($this->config->resourceNamespaceSuffix);
         $namespace = $classFile
-            ->addNamespace("{$this->config->namespace}{$resourceNamespaceSuffix}")
-            ->addUse("{$baseResourceNs}\\BaseResource");
+            ->addNamespace($this->config->resourceNamespace())
+            ->addUse($baseResourceFqn);
+
+        $classType->setExtends($baseResourceFqn);
 
         $duplicateCounter = 1;
 
@@ -36,8 +35,7 @@ class ResourceGenerator extends BaseResourceGenerator
             $requestClassName = NameHelper::resourceClassName($endpoint->name);
             $methodName = NameHelper::safeVariableName($requestClassName);
             $requestClassNameAlias = $requestClassName == $resourceName ? "{$requestClassName}Request" : null;
-            $requestNamespaceSuffix = NameHelper::optionalNamespaceSuffix($this->config->requestNamespaceSuffix);
-            $requestClassFQN = "{$this->config->namespace}{$requestNamespaceSuffix}\\{$requestClassName}";
+            $requestClassFQN = "{$this->config->requestNamespace()}\\{$requestClassName}";
 
             $namespace
                 ->addUse(Response::class)
@@ -71,8 +69,7 @@ class ResourceGenerator extends BaseResourceGenerator
             }
 
             if ($endpoint->bodySchema) {
-                $dtoNamespaceSuffix = NameHelper::optionalNamespaceSuffix($this->config->dtoNamespaceSuffix);
-                $dtoNamespace = "{$this->config->namespace}{$dtoNamespaceSuffix}";
+                $dtoNamespace = $this->config->dtoNamespace();
 
                 // Don't need to import the DTO if the body is an array
                 if (SimpleType::tryFrom($endpoint->bodySchema->type) !== SimpleType::ARRAY) {

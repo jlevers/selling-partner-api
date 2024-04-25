@@ -5,6 +5,8 @@
     "force": true,
     "connectorName": "SellingPartnerApi",
     "namespace": "SellingPartnerApi",
-    "baseResourceNamespace": "SellingPartnerApi",
-    "resourceNamespaceSuffix": null
+    "baseFilesNamespace": "SellingPartnerApi",
+    "namespaceSuffixes": {
+        "resource": null
+    }
 }

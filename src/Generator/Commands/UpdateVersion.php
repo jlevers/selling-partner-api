@@ -25,12 +25,15 @@ class UpdateVersion extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $currentVersion = Package::version();
+        $rawVersion = Package::version();
+        $versionParser = new VersionParser();
+        // This will throw an exception if the version is invalid
+        $currentVersion = $versionParser->normalize($rawVersion);
+
         $newVersion = null;
         do {
             try {
                 $newVersionRaw = readline("Current version is {$currentVersion}. Enter new version: ");
-                $versionParser = new VersionParser();
                 $newVersion = $versionParser->normalize($newVersionRaw);
                 $newVersion = implode('.', array_slice(explode('.', $newVersion), 0, 3));
             } catch (UnexpectedValueException $e) {

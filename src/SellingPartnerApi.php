@@ -119,6 +119,13 @@ class SellingPartnerApi extends Connector
         return new RestrictedDataTokenAuthenticator($this, $path, $method, $dataElements);
     }
 
+    public function getUserAgent(): string
+    {
+        $version = Package::version();
+
+        return "jlevers/selling-partner-api/v$version/php";
+    }
+
     protected function defaultAuth(): Authenticator
     {
         return $this->lwaAuth();
@@ -132,7 +139,7 @@ class SellingPartnerApi extends Connector
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
             'X-AMZ-Date' => gmdate('Ymd\THis\Z'),
-            'User-Agent' => "jlevers/selling-partner-api/v$version/php",
+            'User-Agent' => $this->getUserAgent(),
             'Host' => Endpoint::host($this->endpoint),
         ];
     }

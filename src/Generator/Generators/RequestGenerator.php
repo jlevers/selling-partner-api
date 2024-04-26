@@ -24,7 +24,7 @@ use SellingPartnerApi\Middleware\RestrictedDataToken;
 
 class RequestGenerator extends SDKGenerator
 {
-    protected function generateRequestClass(Endpoint $endpoint): PhpFile|array
+    protected function generateRequestClass(Endpoint $endpoint): PhpFile
     {
         $middleware = json_decode(file_get_contents(METADATA_DIR.'/middleware.json'));
         $grantlessOperations = json_decode(file_get_contents(METADATA_DIR.'/scopes.json'));

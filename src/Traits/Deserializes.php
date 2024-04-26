@@ -72,7 +72,7 @@ trait Deserializes
     {
         if (is_string($type)) {
             // Not using SimpleType enum to avoid needing to import the enum in the generated code
-            $value = match ($type) {
+            $_value = match ($type) {
                 'int' => (int) $value,
                 'float' => (float) $value,
                 'bool' => (bool) $value,
@@ -83,8 +83,8 @@ trait Deserializes
                 default => 0x0,
             };
 
-            if ($value !== 0x0) {
-                return $value;
+            if ($_value !== 0x0) {
+                return $_value;
             }
 
             if (! class_exists($type)) {

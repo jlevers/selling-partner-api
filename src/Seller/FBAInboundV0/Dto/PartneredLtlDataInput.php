@@ -22,9 +22,9 @@ final class PartneredLtlDataInput extends Dto
 
     /**
      * @param  ?Contact  $contact  Contact information for the person in the seller's organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.
-     * @param  ?int  $boxCount
+     * @param  ?int  $boxCount  Contains an unsigned integer
      * @param  ?string  $sellerFreightClass  The freight class of the shipment. For information about determining the freight class, contact the carrier.
-     * @param  ?DateTime  $freightReadyDate
+     * @param  ?DateTime  $freightReadyDate  Type containing date in string format
      * @param  Pallet[]|null  $palletList  A list of pallet information.
      * @param  ?Weight  $totalWeight  The weight of the package.
      * @param  ?Amount  $sellerDeclaredValue  The monetary value.

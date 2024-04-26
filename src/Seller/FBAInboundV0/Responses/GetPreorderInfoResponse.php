@@ -13,7 +13,7 @@ final class GetPreorderInfoResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?GetPreorderInfoResult  $payload
+     * @param  ?GetPreorderInfoResult  $payload  Result for the get preorder info operation
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

@@ -78,6 +78,10 @@
         {
           "version": 0,
           "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-inbound-api-model/fulfillmentInboundV0.json"
+        },
+        {
+          "version": "2024-03-20",
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-inbound-api-model/fulfillmentInboundv2024-03-20.json"
         }
       ]
     },

@@ -13,7 +13,7 @@ final class GetTransportDetailsResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?GetTransportDetailsResult  $payload
+     * @param  ?GetTransportDetailsResult  $payload  Result for the get transport details operation
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

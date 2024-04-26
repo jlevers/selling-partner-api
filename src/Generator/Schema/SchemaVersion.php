@@ -92,7 +92,7 @@ class SchemaVersion
         }
         file_put_contents(
             $path,
-            json_encode($schema, JSON_PRETTY_PRINT)
+            json_encode($schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
         );
     }
 

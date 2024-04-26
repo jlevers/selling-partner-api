@@ -16,6 +16,9 @@ final class Dimensions extends Dto
     ];
 
     /**
+     * @param  float  $length  Number format that supports decimal.
+     * @param  float  $width  Number format that supports decimal.
+     * @param  float  $height  Number format that supports decimal.
      * @param  string  $unit  Indicates the unit of measurement.
      */
     public function __construct(

@@ -20,6 +20,7 @@ final class InboundShipmentHeader extends Dto
 
     /**
      * @param  string  $shipmentName  The name for the shipment. Use a naming convention that helps distinguish between shipments over time, such as the date the shipment was created.
+     * @param  Address  $shipFromAddress  Specific details to identify a place.
      * @param  string  $destinationFulfillmentCenterId  The identifier for the fulfillment center to which the shipment will be shipped. Get this value from the InboundShipmentPlan object in the response returned by the createInboundShipmentPlan operation.
      * @param  string  $shipmentStatus  Indicates the status of the inbound shipment. When used with the createInboundShipment operation, WORKING is the only valid value. When used with the updateInboundShipment operation, possible values are WORKING, SHIPPED or CANCELLED.
      * @param  string  $labelPrepPreference  The preference for label preparation for an inbound shipment.

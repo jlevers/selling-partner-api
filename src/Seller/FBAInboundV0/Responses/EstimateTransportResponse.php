@@ -13,7 +13,7 @@ final class EstimateTransportResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?CommonTransportResult  $payload
+     * @param  ?CommonTransportResult  $payload  Common container for transport result
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

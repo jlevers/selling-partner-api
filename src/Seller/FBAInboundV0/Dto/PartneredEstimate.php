@@ -16,8 +16,8 @@ final class PartneredEstimate extends Dto
 
     /**
      * @param  Amount  $amount  The monetary value.
-     * @param  ?DateTime  $confirmDeadline
-     * @param  ?DateTime  $voidDeadline
+     * @param  ?DateTime  $confirmDeadline  Timestamp in ISO 8601 format.
+     * @param  ?DateTime  $voidDeadline  Timestamp in ISO 8601 format.
      */
     public function __construct(
         public readonly Amount $amount,

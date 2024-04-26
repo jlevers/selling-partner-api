@@ -18,8 +18,8 @@ final class GetPreorderInfoResult extends Dto
     /**
      * @param  ?bool  $shipmentContainsPreorderableItems  Indicates whether the shipment contains items that have been enabled for pre-order. For more information about enabling items for pre-order, see the Seller Central Help.
      * @param  ?bool  $shipmentConfirmedForPreorder  Indicates whether this shipment has been confirmed for pre-order.
-     * @param  ?DateTime  $needByDate
-     * @param  ?DateTime  $confirmedFulfillableDate
+     * @param  ?DateTime  $needByDate  Type containing date in string format
+     * @param  ?DateTime  $confirmedFulfillableDate  Type containing date in string format
      */
     public function __construct(
         public readonly ?bool $shipmentContainsPreorderableItems = null,

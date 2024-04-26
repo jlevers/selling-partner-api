@@ -13,7 +13,7 @@ final class InboundShipmentResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?InboundShipmentResult  $payload
+     * @param  ?InboundShipmentResult  $payload  Result of an inbound shipment operation
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

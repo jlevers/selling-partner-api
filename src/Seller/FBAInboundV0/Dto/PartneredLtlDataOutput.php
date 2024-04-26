@@ -30,11 +30,12 @@ final class PartneredLtlDataOutput extends Dto
 
     /**
      * @param  Contact  $contact  Contact information for the person in the seller's organization who is responsible for a Less Than Truckload/Full Truckload (LTL/FTL) shipment.
-     * @param  DateTime  $freightReadyDate
+     * @param  int  $boxCount  Contains an unsigned integer
+     * @param  DateTime  $freightReadyDate  Type containing date in string format
      * @param  Pallet[]  $palletList  A list of pallet information.
      * @param  Weight  $totalWeight  The weight of the package.
-     * @param  DateTime  $previewPickupDate
-     * @param  DateTime  $previewDeliveryDate
+     * @param  DateTime  $previewPickupDate  Type containing date in string format
+     * @param  DateTime  $previewDeliveryDate  Type containing date in string format
      * @param  string  $previewFreightClass  The freight class of the shipment. For information about determining the freight class, contact the carrier.
      * @param  string  $amazonReferenceId  A unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment.
      * @param  bool  $isBillOfLadingAvailable  Indicates whether the bill of lading for the shipment is available.

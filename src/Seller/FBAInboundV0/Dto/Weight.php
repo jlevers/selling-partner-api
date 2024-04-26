@@ -11,6 +11,7 @@ final class Weight extends Dto
     protected static array $attributeMap = ['value' => 'Value', 'unit' => 'Unit'];
 
     /**
+     * @param  float  $value  Number format that supports decimal.
      * @param  string  $unit  Indicates the unit of weight.
      */
     public function __construct(

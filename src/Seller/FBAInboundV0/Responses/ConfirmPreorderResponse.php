@@ -13,7 +13,7 @@ final class ConfirmPreorderResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?ConfirmPreorderResult  $payload
+     * @param  ?ConfirmPreorderResult  $payload  Result for confirm preorder operation
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

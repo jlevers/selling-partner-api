@@ -13,7 +13,6 @@ use SellingPartnerApi\Seller\FBAInboundV0\Requests\CreateInboundShipment;
 use SellingPartnerApi\Seller\FBAInboundV0\Requests\CreateInboundShipmentPlan;
 use SellingPartnerApi\Seller\FBAInboundV0\Requests\EstimateTransport;
 use SellingPartnerApi\Seller\FBAInboundV0\Requests\GetBillOfLading;
-use SellingPartnerApi\Seller\FBAInboundV0\Requests\GetInboundGuidance;
 use SellingPartnerApi\Seller\FBAInboundV0\Requests\GetLabels;
 use SellingPartnerApi\Seller\FBAInboundV0\Requests\GetPreorderInfo;
 use SellingPartnerApi\Seller\FBAInboundV0\Requests\GetPrepInstructions;
@@ -27,21 +26,6 @@ use SellingPartnerApi\Seller\FBAInboundV0\Requests\VoidTransport;
 
 class Api extends BaseResource
 {
-    /**
-     * @param  string  $marketplaceId  A marketplace identifier. Specifies the marketplace where the product would be stored.
-     * @param  ?array  $sellerSkuList  A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon's fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold.
-     * @param  ?array  $asinList  A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon's fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold.
-     */
-    public function getInboundGuidance(
-        string $marketplaceId,
-        ?array $sellerSkuList = null,
-        ?array $asinList = null,
-    ): Response {
-        $request = new GetInboundGuidance($marketplaceId, $sellerSkuList, $asinList);
-
-        return $this->connector->send($request);
-    }
-
     /**
      * @param  CreateInboundShipmentPlanRequest  $createInboundShipmentPlanRequest  The request schema for the createInboundShipmentPlan operation.
      */

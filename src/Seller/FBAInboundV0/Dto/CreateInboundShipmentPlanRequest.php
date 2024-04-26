@@ -21,8 +21,9 @@ final class CreateInboundShipmentPlanRequest extends Dto
     ];
 
     /**
+     * @param  Address  $shipFromAddress  Specific details to identify a place.
      * @param  string  $labelPrepPreference  The preference for label preparation for an inbound shipment.
-     * @param  InboundShipmentPlanRequestItem[]  $inboundShipmentPlanRequestItems
+     * @param  InboundShipmentPlanRequestItem[]  $inboundShipmentPlanRequestItems  List of inbound shipment plan requests
      * @param  ?string  $shipToCountryCode  The two-character country code for the country where the inbound shipment is to be sent.
      *
      * Note: Not required. Specifying both ShipToCountryCode and ShipToCountrySubdivisionCode returns an error.

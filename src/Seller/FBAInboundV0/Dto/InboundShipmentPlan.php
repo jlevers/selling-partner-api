@@ -22,6 +22,7 @@ final class InboundShipmentPlan extends Dto
     /**
      * @param  string  $shipmentId  A shipment identifier originally returned by the createInboundShipmentPlan operation.
      * @param  string  $destinationFulfillmentCenterId  An Amazon fulfillment center identifier created by Amazon.
+     * @param  Address  $shipToAddress  Specific details to identify a place.
      * @param  string  $labelPrepType  The type of label preparation that is required for the inbound shipment.
      * @param  InboundShipmentPlanItem[]  $items  A list of inbound shipment plan item information.
      * @param  ?BoxContentsFeeDetails  $estimatedBoxContentsFee  The manual processing fee per unit and total fee for a shipment.

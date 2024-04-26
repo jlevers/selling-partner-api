@@ -13,7 +13,7 @@ final class CreateInboundShipmentPlanResponse extends Response
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 
     /**
-     * @param  ?CreateInboundShipmentPlanResult  $payload
+     * @param  ?CreateInboundShipmentPlanResult  $payload  Result for the create inbound shipment operation
      * @param  Error[]|null  $errors  A list of error responses returned when a request is unsuccessful.
      */
     public function __construct(

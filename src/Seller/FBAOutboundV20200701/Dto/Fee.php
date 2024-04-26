@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Fee extends BaseDto
+final class Fee extends Dto
 {
     /**
      * @param  string  $name  The type of fee.

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FeedsV20210630\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 
-final class GetFeedsResponse extends BaseResponse
+final class GetFeedsResponse extends Response
 {
     protected static array $complexArrayTypes = ['feeds' => [Feed::class]];
 

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductTypeDefinitionsV20200901\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ProductTypeVersion extends BaseDto
+final class ProductTypeVersion extends Dto
 {
     /**
      * @param  string  $version  Version identifier.

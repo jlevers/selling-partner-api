@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ServiceRate extends BaseDto
+final class ServiceRate extends Dto
 {
     /**
      * @param  Currency  $totalCharge  The total value of all items in the container.

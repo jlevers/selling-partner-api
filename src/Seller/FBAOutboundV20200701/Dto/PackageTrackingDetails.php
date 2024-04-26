@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PackageTrackingDetails extends BaseDto
+final class PackageTrackingDetails extends Dto
 {
     protected static array $attributeMap = ['carrierUrl' => 'carrierURL'];
 

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ServicesCapability extends BaseDto
+final class ServicesCapability extends Dto
 {
     /**
      * @param  ?bool  $isSupported  When true, `SupplySource` supports the Service capability.

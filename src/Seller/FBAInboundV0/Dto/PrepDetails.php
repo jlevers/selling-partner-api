@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInboundV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PrepDetails extends BaseDto
+final class PrepDetails extends Dto
 {
     protected static array $attributeMap = ['prepInstruction' => 'PrepInstruction', 'prepOwner' => 'PrepOwner'];
 

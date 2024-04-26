@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TransportLabel extends BaseDto
+final class TransportLabel extends Dto
 {
     protected static array $complexArrayTypes = ['labelData' => [LabelData::class]];
 

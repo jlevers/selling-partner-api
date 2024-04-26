@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ServiceLocation extends BaseDto
+final class ServiceLocation extends Dto
 {
     /**
      * @param  ?string  $serviceLocationType  The location of the service job.

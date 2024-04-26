@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductTypeDefinitionsV20200901\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\ProductTypeDefinitionsV20200901\Dto\ProductType;
 use SellingPartnerApi\Seller\ProductTypeDefinitionsV20200901\Dto\ProductTypeVersion;
 
-final class ProductTypeList extends BaseResponse
+final class ProductTypeList extends Response
 {
     protected static array $complexArrayTypes = ['productTypes' => [ProductType::class]];
 

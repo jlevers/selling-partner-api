@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ValueAddedService extends BaseDto
+final class ValueAddedService extends Dto
 {
     /**
      * @param  string  $id  The identifier for the value-added service.

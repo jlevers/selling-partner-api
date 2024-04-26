@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Weight extends BaseDto
+final class Weight extends Dto
 {
     /**
      * @param  string  $unitOfMeasure  The unit of measurement.

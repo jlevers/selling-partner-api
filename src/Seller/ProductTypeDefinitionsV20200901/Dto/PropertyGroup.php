@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductTypeDefinitionsV20200901\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PropertyGroup extends BaseDto
+final class PropertyGroup extends Dto
 {
     /**
      * @param  ?string  $title  The display label of the property group.

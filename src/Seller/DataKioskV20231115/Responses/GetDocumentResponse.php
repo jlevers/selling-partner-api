@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\DataKioskV20231115\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 
-final class GetDocumentResponse extends BaseResponse
+final class GetDocumentResponse extends Response
 {
     /**
      * @param  string  $documentId  The identifier for the Data Kiosk document. This identifier is unique only in combination with a selling partner account ID.

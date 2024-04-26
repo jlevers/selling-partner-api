@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInboundV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TransportDetailOutput extends BaseDto
+final class TransportDetailOutput extends Dto
 {
     protected static array $attributeMap = [
         'partneredSmallParcelData' => 'PartneredSmallParcelData',

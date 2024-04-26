@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FeedsV20210630\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CreateFeedDocumentSpecification extends BaseDto
+final class CreateFeedDocumentSpecification extends Dto
 {
     /**
      * @param  string  $contentType  The content type of the feed.

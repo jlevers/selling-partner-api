@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\OrdersV0\Requests;
 
-use Crescat\SaloonSdkGenerator\EmptyResponse;
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\EmptyResponse;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\OrdersV0\Dto\ConfirmShipmentRequest;
 use SellingPartnerApi\Seller\OrdersV0\Responses\ConfirmShipmentErrorResponse;
 

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ImageComponent extends BaseDto
+final class ImageComponent extends Dto
 {
     /**
      * @param  string  $uploadDestinationId  This identifier is provided by the Selling Partner API for Uploads.

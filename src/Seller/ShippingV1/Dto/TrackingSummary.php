@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TrackingSummary extends BaseDto
+final class TrackingSummary extends Dto
 {
     /**
      * @param  ?string  $status  The derived status based on the events in the eventHistory.

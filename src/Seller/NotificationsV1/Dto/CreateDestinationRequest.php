@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\NotificationsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CreateDestinationRequest extends BaseDto
+final class CreateDestinationRequest extends Dto
 {
     /**
      * @param  DestinationResourceSpecification  $resourceSpecification  The information required to create a destination resource. Applications should use one resource type (sqs or eventBridge) per destination.

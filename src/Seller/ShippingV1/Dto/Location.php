@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Location extends BaseDto
+final class Location extends Dto
 {
     /**
      * @param  ?string  $stateOrRegion  The state or region where the person, business or institution is located.

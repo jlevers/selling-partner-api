@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\OrdersV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class UpdateShipmentStatusRequest extends BaseDto
+final class UpdateShipmentStatusRequest extends Dto
 {
     /**
      * @param  string  $marketplaceId  The unobfuscated marketplace identifier.

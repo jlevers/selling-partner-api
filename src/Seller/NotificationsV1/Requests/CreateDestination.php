@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\NotificationsV1\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Enums\GrantlessScope;
 use SellingPartnerApi\Middleware\Grantless;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\NotificationsV1\Dto\CreateDestinationRequest;
 use SellingPartnerApi\Seller\NotificationsV1\Responses\CreateDestinationResponse;
 

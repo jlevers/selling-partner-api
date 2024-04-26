@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Pagination extends BaseDto
+final class Pagination extends Dto
 {
     /**
      * @param  ?string  $nextToken

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class StandardSingleImageSpecsDetailModule extends BaseDto
+final class StandardSingleImageSpecsDetailModule extends Dto
 {
     /**
      * @param  ?TextComponent  $headline  Rich text content.

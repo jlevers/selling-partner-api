@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Summary extends BaseDto
+final class Summary extends Dto
 {
     protected static array $attributeMap = [
         'totalOfferCount' => 'TotalOfferCount',

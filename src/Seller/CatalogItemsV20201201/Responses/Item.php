@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20201201\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\ItemIdentifiersByMarketplace;
 use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\ItemImagesByMarketplace;
 use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\ItemProductTypeByMarketplace;
@@ -11,7 +13,7 @@ use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\ItemSummaryByMarketplace;
 use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\ItemVariationsByMarketplace;
 use SellingPartnerApi\Seller\CatalogItemsV20201201\Dto\ItemVendorDetailsByMarketplace;
 
-final class Item extends BaseResponse
+final class Item extends Response
 {
     protected static array $complexArrayTypes = [
         'identifiers' => [ItemIdentifiersByMarketplace::class],

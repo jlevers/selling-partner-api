@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBASmallAndLightV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class FeeLineItem extends BaseDto
+final class FeeLineItem extends Dto
 {
     /**
      * @param  string  $feeType  The type of fee charged to the seller.

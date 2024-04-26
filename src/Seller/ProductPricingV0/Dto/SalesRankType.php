@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class SalesRankType extends BaseDto
+final class SalesRankType extends Dto
 {
     protected static array $attributeMap = ['productCategoryId' => 'ProductCategoryId', 'rank' => 'Rank'];
 

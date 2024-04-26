@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Money extends BaseDto
+final class Money extends Dto
 {
     /**
      * @param  ?string  $currencyCode  Three digit currency code in ISO 4217 format. String of length 3.

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Buyer extends BaseDto
+final class Buyer extends Dto
 {
     /**
      * @param  ?string  $buyerId  The identifier of the buyer.

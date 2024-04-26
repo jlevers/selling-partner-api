@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class GetShipmentDocumentsResult extends BaseDto
+final class GetShipmentDocumentsResult extends Dto
 {
     /**
      * @param  string  $shipmentId  The unique shipment identifier provided by a shipping service.

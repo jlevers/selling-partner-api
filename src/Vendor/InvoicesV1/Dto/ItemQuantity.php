@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\InvoicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemQuantity extends BaseDto
+final class ItemQuantity extends Dto
 {
     /**
      * @param  int  $amount  Quantity of an item. This value should not be zero.

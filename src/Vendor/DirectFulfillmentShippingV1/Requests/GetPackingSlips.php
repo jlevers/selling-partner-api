@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Requests;
 
 use Exception;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use SellingPartnerApi\Middleware\RestrictedDataToken;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Responses\GetPackingSlipListResponse;
 
 /**

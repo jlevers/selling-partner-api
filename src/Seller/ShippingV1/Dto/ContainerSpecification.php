@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ContainerSpecification extends BaseDto
+final class ContainerSpecification extends Dto
 {
     /**
      * @param  Dimensions  $dimensions  A set of measurements for a three-dimensional object.

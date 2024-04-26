@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInventoryV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Granularity extends BaseDto
+final class Granularity extends Dto
 {
     /**
      * @param  ?string  $granularityType  The granularity type for the inventory aggregation level.

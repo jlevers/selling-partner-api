@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class OfferListingCountType extends BaseDto
+final class OfferListingCountType extends Dto
 {
     protected static array $attributeMap = ['count' => 'Count'];
 

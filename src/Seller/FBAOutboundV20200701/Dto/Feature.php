@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Feature extends BaseDto
+final class Feature extends Dto
 {
     /**
      * @param  string  $featureName  The feature name.

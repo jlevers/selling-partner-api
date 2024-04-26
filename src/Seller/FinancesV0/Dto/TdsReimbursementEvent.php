@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FinancesV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TdsReimbursementEvent extends BaseDto
+final class TdsReimbursementEvent extends Dto
 {
     protected static array $attributeMap = [
         'postedDate' => 'PostedDate',

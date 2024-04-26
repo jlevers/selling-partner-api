@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FinancesV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ChargeComponent extends BaseDto
+final class ChargeComponent extends Dto
 {
     protected static array $attributeMap = ['chargeType' => 'ChargeType', 'chargeAmount' => 'ChargeAmount'];
 

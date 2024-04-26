@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReplenishmentV20221107\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class GetSellingPartnerMetricsResponseMetric extends BaseDto
+final class GetSellingPartnerMetricsResponseMetric extends Dto
 {
     protected static array $attributeMap = ['notDeliveredDueToOos' => 'notDeliveredDueToOOS'];
 

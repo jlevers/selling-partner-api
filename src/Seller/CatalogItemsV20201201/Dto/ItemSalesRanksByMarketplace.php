@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20201201\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemSalesRanksByMarketplace extends BaseDto
+final class ItemSalesRanksByMarketplace extends Dto
 {
     protected static array $complexArrayTypes = ['ranks' => [ItemSalesRank::class]];
 

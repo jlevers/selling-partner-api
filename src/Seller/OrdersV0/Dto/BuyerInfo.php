@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\OrdersV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class BuyerInfo extends BaseDto
+final class BuyerInfo extends Dto
 {
     protected static array $attributeMap = [
         'buyerEmail' => 'BuyerEmail',

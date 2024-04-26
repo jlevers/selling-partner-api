@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Requests;
 
 use Exception;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ServicesV1\Responses\GetAppointmentSlotsResponse;
 
 /**

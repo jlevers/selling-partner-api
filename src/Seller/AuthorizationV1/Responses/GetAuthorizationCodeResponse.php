@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\AuthorizationV1\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\AuthorizationV1\Dto\AuthorizationCode;
 use SellingPartnerApi\Seller\AuthorizationV1\Dto\Error;
 
-final class GetAuthorizationCodeResponse extends BaseResponse
+final class GetAuthorizationCodeResponse extends Response
 {
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 

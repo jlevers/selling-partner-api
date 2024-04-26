@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class StandardImageTextBlock extends BaseDto
+final class StandardImageTextBlock extends Dto
 {
     /**
      * @param  ?ImageComponent  $image  A reference to an image, hosted in the A+ Content media library.

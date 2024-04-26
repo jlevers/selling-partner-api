@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SalesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Error extends BaseDto
+final class Error extends Dto
 {
     /**
      * @param  string  $code  An error code that identifies the type of error that occured.

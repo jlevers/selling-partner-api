@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReplenishmentV20221107\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TimeInterval extends BaseDto
+final class TimeInterval extends Dto
 {
     /**
      * @param  DateTime  $startDate  When this object is used as a request parameter, the specified startDate is adjusted based on the aggregation frequency.

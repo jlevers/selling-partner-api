@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInventoryV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ResearchingQuantityEntry extends BaseDto
+final class ResearchingQuantityEntry extends Dto
 {
     /**
      * @param  string  $name  The duration of the research.

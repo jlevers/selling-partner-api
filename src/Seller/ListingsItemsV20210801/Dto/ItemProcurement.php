@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ListingsItemsV20210801\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemProcurement extends BaseDto
+final class ItemProcurement extends Dto
 {
     /**
      * @param  Money  $costPrice  The currency type and the amount.

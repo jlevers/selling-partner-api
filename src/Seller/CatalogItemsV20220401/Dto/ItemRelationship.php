@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemRelationship extends BaseDto
+final class ItemRelationship extends Dto
 {
     /**
      * @param  string  $type  Type of relationship.

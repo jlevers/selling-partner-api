@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 use SellingPartnerApi\Seller\ProductPricingV0\Responses\GetOffersResponse;
 
-final class ListingOffersResponse extends BaseDto
+final class ListingOffersResponse extends Dto
 {
     /**
      * @param  GetOffersResponse  $body  The response schema for the `getListingOffers` and `getItemOffers` operations.

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class BatchRequest extends BaseDto
+final class BatchRequest extends Dto
 {
     /**
      * @param  string  $uri  The resource path of the operation you are calling in batch without any query parameters.

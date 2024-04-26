@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ChannelDetails extends BaseDto
+final class ChannelDetails extends Dto
 {
     /**
      * @param  string  $channelType  The shipment source channel type.

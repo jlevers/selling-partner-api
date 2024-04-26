@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SellersV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Marketplace extends BaseDto
+final class Marketplace extends Dto
 {
     /**
      * @param  string  $id  The encrypted marketplace value.

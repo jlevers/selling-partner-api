@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PurchaseLabelsRequest extends BaseDto
+final class PurchaseLabelsRequest extends Dto
 {
     /**
      * @param  string  $rateId  An identifier for the rating.

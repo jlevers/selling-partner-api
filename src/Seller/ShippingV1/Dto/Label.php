@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Label extends BaseDto
+final class Label extends Dto
 {
     /**
      * @param  ?string  $labelStream  Contains binary image data encoded as a base-64 string.

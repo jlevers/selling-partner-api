@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentInventoryV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemDetails extends BaseDto
+final class ItemDetails extends Dto
 {
     /**
      * @param  ItemQuantity  $availableQuantity  Details of item quantity.

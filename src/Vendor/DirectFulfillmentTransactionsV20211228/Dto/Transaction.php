@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentTransactionsV20211228\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 use SellingPartnerApi\Vendor\DirectFulfillmentTransactionsV20211228\Responses\ErrorList;
 
-final class Transaction extends BaseDto
+final class Transaction extends Dto
 {
     /**
      * @param  string  $transactionId  The unique identifier sent in the 'transactionId' field in response to the post request of a specific transaction.

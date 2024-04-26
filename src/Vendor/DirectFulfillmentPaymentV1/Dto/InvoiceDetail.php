@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentPaymentV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class InvoiceDetail extends BaseDto
+final class InvoiceDetail extends Dto
 {
     protected static array $complexArrayTypes = [
         'taxTotals' => [TaxDetail::class],

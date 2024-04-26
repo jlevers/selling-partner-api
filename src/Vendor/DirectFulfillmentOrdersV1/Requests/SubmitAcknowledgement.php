@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Dto\SubmitAcknowledgementRequest;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Responses\SubmitAcknowledgementResponse;
 

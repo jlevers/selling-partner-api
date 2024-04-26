@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemVendorDetailsCategory extends BaseDto
+final class ItemVendorDetailsCategory extends Dto
 {
     /**
      * @param  ?string  $displayName  Display name of the product category or subcategory

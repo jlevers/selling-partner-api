@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
-use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Dto\Order;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Dto\Pagination;
 
-final class OrderList extends BaseResponse
+final class OrderList extends Response
 {
     protected static array $complexArrayTypes = ['orders' => [Order::class]];
 

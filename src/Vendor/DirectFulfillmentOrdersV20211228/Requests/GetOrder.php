@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Requests;
 
 use Exception;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use SellingPartnerApi\Middleware\RestrictedDataToken;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Responses\ErrorList;
 use SellingPartnerApi\Vendor\DirectFulfillmentOrdersV20211228\Responses\Order;
 

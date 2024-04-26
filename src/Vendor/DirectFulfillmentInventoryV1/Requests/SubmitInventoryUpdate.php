@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentInventoryV1\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Vendor\DirectFulfillmentInventoryV1\Dto\SubmitInventoryUpdateRequest;
 use SellingPartnerApi\Vendor\DirectFulfillmentInventoryV1\Responses\SubmitInventoryUpdateResponse;
 

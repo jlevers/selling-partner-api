@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentTransactionsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Transaction extends BaseDto
+final class Transaction extends Dto
 {
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 

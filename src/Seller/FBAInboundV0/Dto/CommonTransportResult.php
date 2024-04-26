@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInboundV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CommonTransportResult extends BaseDto
+final class CommonTransportResult extends Dto
 {
     protected static array $attributeMap = ['transportResult' => 'TransportResult'];
 

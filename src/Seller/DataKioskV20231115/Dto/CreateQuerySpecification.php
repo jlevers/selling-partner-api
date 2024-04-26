@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\DataKioskV20231115\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CreateQuerySpecification extends BaseDto
+final class CreateQuerySpecification extends Dto
 {
     /**
      * @param  string  $query  The GraphQL query to submit. A query must be at most 8000 characters after unnecessary whitespace is removed.

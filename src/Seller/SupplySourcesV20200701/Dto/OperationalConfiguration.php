@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class OperationalConfiguration extends BaseDto
+final class OperationalConfiguration extends Dto
 {
     /**
      * @param  ?ContactDetails  $contactDetails  The contact details

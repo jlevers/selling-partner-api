@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ContentDocument extends BaseDto
+final class ContentDocument extends Dto
 {
     protected static array $complexArrayTypes = ['contentModuleList' => [ContentModule::class]];
 

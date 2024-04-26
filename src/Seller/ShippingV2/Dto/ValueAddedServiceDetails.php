@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ValueAddedServiceDetails extends BaseDto
+final class ValueAddedServiceDetails extends Dto
 {
     /**
      * @param  ?CollectOnDelivery  $collectOnDelivery  The amount to collect on delivery.

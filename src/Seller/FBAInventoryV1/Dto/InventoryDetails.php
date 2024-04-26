@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInventoryV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class InventoryDetails extends BaseDto
+final class InventoryDetails extends Dto
 {
     /**
      * @param  ?int  $fulfillableQuantity  The item quantity that can be picked, packed, and shipped.

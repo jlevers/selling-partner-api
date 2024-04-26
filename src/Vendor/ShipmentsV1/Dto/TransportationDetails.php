@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TransportationDetails extends BaseDto
+final class TransportationDetails extends Dto
 {
     /**
      * @param  ?string  $shipMode  The type of shipment.

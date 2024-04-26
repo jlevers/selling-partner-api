@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class SupportedDocumentSpecification extends BaseDto
+final class SupportedDocumentSpecification extends Dto
 {
     protected static array $complexArrayTypes = ['printOptions' => [PrintOption::class]];
 

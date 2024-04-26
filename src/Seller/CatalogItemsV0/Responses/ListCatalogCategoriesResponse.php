@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV0\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\CatalogItemsV0\Dto\Categories;
 use SellingPartnerApi\Seller\CatalogItemsV0\Dto\Error;
 
-final class ListCatalogCategoriesResponse extends BaseResponse
+final class ListCatalogCategoriesResponse extends Response
 {
     protected static array $complexArrayTypes = ['payload' => [Categories::class], 'errors' => [Error::class]];
 

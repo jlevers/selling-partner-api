@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Requests;
 
 use Exception;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Responses\ErrorList;
 use SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Responses\TransactionStatus;
 

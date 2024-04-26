@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\NotificationsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class OrderChangeTypeFilter extends BaseDto
+final class OrderChangeTypeFilter extends Dto
 {
     /**
      * @param  ?string[]  $orderChangeTypes  A list of order change types to subscribe to (e.g. BuyerRequestedChange). To receive notifications of all change types, do not provide this list.

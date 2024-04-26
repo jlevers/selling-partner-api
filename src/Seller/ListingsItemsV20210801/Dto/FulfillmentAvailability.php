@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ListingsItemsV20210801\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class FulfillmentAvailability extends BaseDto
+final class FulfillmentAvailability extends Dto
 {
     /**
      * @param  string  $fulfillmentChannelCode  Designates which fulfillment network will be used.

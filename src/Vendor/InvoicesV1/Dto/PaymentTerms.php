@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\InvoicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PaymentTerms extends BaseDto
+final class PaymentTerms extends Dto
 {
     /**
      * @param  ?string  $type  The payment term type for the invoice.

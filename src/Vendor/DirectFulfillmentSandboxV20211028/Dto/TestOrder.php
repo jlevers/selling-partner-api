@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TestOrder extends BaseDto
+final class TestOrder extends Dto
 {
     /**
      * @param  string  $orderId  An error code that identifies the type of error that occurred.

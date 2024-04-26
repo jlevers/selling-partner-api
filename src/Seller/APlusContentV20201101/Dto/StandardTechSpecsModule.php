@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class StandardTechSpecsModule extends BaseDto
+final class StandardTechSpecsModule extends Dto
 {
     protected static array $complexArrayTypes = ['specificationList' => [StandardTextPairBlock::class]];
 

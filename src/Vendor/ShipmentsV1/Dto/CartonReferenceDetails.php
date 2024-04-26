@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CartonReferenceDetails extends BaseDto
+final class CartonReferenceDetails extends Dto
 {
     /**
      * @param  ?int  $cartonCount  Pallet level carton count is mandatory for single item pallet and optional for mixed item pallet.

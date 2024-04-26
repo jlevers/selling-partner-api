@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\NotificationsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Subscription extends BaseDto
+final class Subscription extends Dto
 {
     /**
      * @param  string  $subscriptionId  The subscription identifier generated when the subscription is created.

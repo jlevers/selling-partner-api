@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInboundV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class LabelDownloadUrl extends BaseDto
+final class LabelDownloadUrl extends Dto
 {
     protected static array $attributeMap = ['downloadUrl' => 'DownloadURL'];
 

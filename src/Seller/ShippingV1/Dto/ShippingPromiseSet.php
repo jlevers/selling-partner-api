@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ShippingPromiseSet extends BaseDto
+final class ShippingPromiseSet extends Dto
 {
     /**
      * @param  ?TimeRange  $deliveryWindow  The time range.

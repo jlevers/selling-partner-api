@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\TokensV20210301\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\TokensV20210301\Dto\CreateRestrictedDataTokenRequest;
 use SellingPartnerApi\Seller\TokensV20210301\Responses\CreateRestrictedDataTokenResponse;
 use SellingPartnerApi\Seller\TokensV20210301\Responses\ErrorList;

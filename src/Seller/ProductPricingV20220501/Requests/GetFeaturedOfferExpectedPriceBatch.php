@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV20220501\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ProductPricingV20220501\Dto\GetFeaturedOfferExpectedPriceBatchRequest;
 use SellingPartnerApi\Seller\ProductPricingV20220501\Responses\Errors;
 use SellingPartnerApi\Seller\ProductPricingV20220501\Responses\GetFeaturedOfferExpectedPriceBatchResponse;

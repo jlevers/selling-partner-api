@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemDisplayGroupSalesRank extends BaseDto
+final class ItemDisplayGroupSalesRank extends Dto
 {
     /**
      * @param  string  $websiteDisplayGroup  Name of the website display group associated with the sales rank

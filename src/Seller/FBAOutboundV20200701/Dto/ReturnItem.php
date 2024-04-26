@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ReturnItem extends BaseDto
+final class ReturnItem extends Dto
 {
     /**
      * @param  string  $sellerReturnItemId  An identifier assigned by the seller to the return item.

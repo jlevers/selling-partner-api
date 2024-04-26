@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReplenishmentV20221107\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ListOfferMetricsRequest extends BaseDto
+final class ListOfferMetricsRequest extends Dto
 {
     /**
      * @param  ListOfferMetricsRequestPagination  $pagination  Use these parameters to paginate through the response.

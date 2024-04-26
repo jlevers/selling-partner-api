@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\EasyShipV20220323\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Item extends BaseDto
+final class Item extends Dto
 {
     /**
      * @param  ?string  $orderItemId  The Amazon-defined order item identifier.

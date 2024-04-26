@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShipmentInvoicingV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class BuyerTaxInfo extends BaseDto
+final class BuyerTaxInfo extends Dto
 {
     protected static array $attributeMap = [
         'companyLegalName' => 'CompanyLegalName',

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ShipmentMeasurements extends BaseDto
+final class ShipmentMeasurements extends Dto
 {
     /**
      * @param  ?Weight  $grossShipmentWeight  The weight of the shipment.

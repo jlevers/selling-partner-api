@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Dimensions extends BaseDto
+final class Dimensions extends Dto
 {
     /**
      * @param  ?Dimension  $height  Individual dimension value of an Amazon catalog item or item package.

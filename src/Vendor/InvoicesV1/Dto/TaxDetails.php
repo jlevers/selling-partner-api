@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\InvoicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TaxDetails extends BaseDto
+final class TaxDetails extends Dto
 {
     /**
      * @param  string  $taxType  Type of the tax applied.

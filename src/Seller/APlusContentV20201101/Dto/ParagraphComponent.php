@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ParagraphComponent extends BaseDto
+final class ParagraphComponent extends Dto
 {
     protected static array $complexArrayTypes = ['textList' => [TextItem::class]];
 

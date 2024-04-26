@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV20220501\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class FeaturedOffer extends BaseDto
+final class FeaturedOffer extends Dto
 {
     /**
      * @param  OfferIdentifier  $offerIdentifier  Identifies an offer from a particular seller on an ASIN.

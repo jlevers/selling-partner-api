@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PurchaseShipmentRequest extends BaseDto
+final class PurchaseShipmentRequest extends Dto
 {
     protected static array $complexArrayTypes = ['containers' => [Container::class]];
 

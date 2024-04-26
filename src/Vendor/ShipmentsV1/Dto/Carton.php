@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Carton extends BaseDto
+final class Carton extends Dto
 {
     protected static array $complexArrayTypes = [
         'cartonIdentifiers' => [ContainerIdentification::class],

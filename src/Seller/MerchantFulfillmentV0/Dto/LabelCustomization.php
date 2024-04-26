@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class LabelCustomization extends BaseDto
+final class LabelCustomization extends Dto
 {
     protected static array $attributeMap = [
         'customTextForLabel' => 'CustomTextForLabel',

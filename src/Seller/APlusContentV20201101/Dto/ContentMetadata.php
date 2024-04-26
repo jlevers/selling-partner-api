@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ContentMetadata extends BaseDto
+final class ContentMetadata extends Dto
 {
     /**
      * @param  string  $name  The A+ Content document name.

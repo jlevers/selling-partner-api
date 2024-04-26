@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemVariationTheme extends BaseDto
+final class ItemVariationTheme extends Dto
 {
     /**
      * @param  ?string[]  $attributes  Names of the Amazon catalog item attributes associated with the variation theme.

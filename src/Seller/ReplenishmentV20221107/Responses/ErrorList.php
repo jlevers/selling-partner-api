@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReplenishmentV20221107\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\Error;
 
-final class ErrorList extends BaseResponse
+final class ErrorList extends Response
 {
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 

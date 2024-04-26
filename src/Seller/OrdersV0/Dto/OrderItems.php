@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\OrdersV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class OrderItems extends BaseDto
+final class OrderItems extends Dto
 {
     /**
      * @param  ?string  $orderItemId  The unique identifier of the order item.

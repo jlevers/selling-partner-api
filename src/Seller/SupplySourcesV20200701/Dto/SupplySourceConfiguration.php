@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class SupplySourceConfiguration extends BaseDto
+final class SupplySourceConfiguration extends Dto
 {
     /**
      * @param  ?OperationalConfiguration  $operationalConfiguration  The operational configuration of `supplySources`.

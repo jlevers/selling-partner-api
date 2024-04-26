@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInboundV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class GetInboundGuidanceResult extends BaseDto
+final class GetInboundGuidanceResult extends Dto
 {
     protected static array $attributeMap = [
         'skuInboundGuidanceList' => 'SKUInboundGuidanceList',

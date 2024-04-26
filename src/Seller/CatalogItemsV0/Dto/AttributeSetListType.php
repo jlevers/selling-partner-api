@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class AttributeSetListType extends BaseDto
+final class AttributeSetListType extends Dto
 {
     protected static array $attributeMap = [
         'actor' => 'Actor',

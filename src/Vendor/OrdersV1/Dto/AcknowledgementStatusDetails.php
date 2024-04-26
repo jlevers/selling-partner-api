@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\OrdersV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class AcknowledgementStatusDetails extends BaseDto
+final class AcknowledgementStatusDetails extends Dto
 {
     /**
      * @param  ?DateTime  $acknowledgementDate  The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.

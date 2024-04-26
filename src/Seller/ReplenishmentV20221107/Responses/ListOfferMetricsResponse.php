@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReplenishmentV20221107\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\ListOfferMetricsResponseOffer;
 use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\PaginationResponse;
 
-final class ListOfferMetricsResponse extends BaseResponse
+final class ListOfferMetricsResponse extends Response
 {
     protected static array $complexArrayTypes = ['offers' => [ListOfferMetricsResponseOffer::class]];
 

@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\EasyShipV20220323\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Middleware\RestrictedDataToken;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\EasyShipV20220323\Dto\CreateScheduledPackagesRequest;
 use SellingPartnerApi\Seller\EasyShipV20220323\Responses\CreateScheduledPackagesResponse;
 use SellingPartnerApi\Seller\EasyShipV20220323\Responses\ErrorList;

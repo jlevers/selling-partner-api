@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class IneligibilityReason extends BaseDto
+final class IneligibilityReason extends Dto
 {
     /**
      * @param  string  $code  Reasons that make a shipment service offering ineligible.

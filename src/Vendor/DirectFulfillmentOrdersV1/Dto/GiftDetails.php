@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class GiftDetails extends BaseDto
+final class GiftDetails extends Dto
 {
     /**
      * @param  ?string  $giftMessage  Gift message to be printed in shipment.

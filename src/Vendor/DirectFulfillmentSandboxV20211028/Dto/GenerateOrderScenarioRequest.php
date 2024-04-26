@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class GenerateOrderScenarioRequest extends BaseDto
+final class GenerateOrderScenarioRequest extends Dto
 {
     protected static array $complexArrayTypes = ['orders' => [OrderScenarioRequest::class]];
 

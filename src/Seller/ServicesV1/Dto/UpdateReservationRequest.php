@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class UpdateReservationRequest extends BaseDto
+final class UpdateReservationRequest extends Dto
 {
     /**
      * @param  string  $resourceId  Resource (store) identifier.

@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ListingsItemsV20210801\Requests;
 
 use Exception;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Responses\ErrorList;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Responses\ListingsItemSubmissionResponse;
 

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class SupplySourceList extends BaseDto
+final class SupplySourceList extends Dto
 {
     /**
      * @param  ?string  $alias  The custom alias for this supply source

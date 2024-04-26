@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReplenishmentV20221107\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ReplenishmentV20221107\Dto\ListOfferMetricsRequest;
 use SellingPartnerApi\Seller\ReplenishmentV20221107\Responses\ErrorList;
 use SellingPartnerApi\Seller\ReplenishmentV20221107\Responses\ListOfferMetricsResponse;

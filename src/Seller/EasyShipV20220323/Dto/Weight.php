@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\EasyShipV20220323\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Weight extends BaseDto
+final class Weight extends Dto
 {
     /**
      * @param  ?float  $value  The weight of the package.

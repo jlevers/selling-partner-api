@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class RejectedShippingService extends BaseDto
+final class RejectedShippingService extends Dto
 {
     protected static array $attributeMap = [
         'carrierName' => 'CarrierName',

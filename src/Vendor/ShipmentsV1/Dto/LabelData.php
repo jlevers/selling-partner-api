@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class LabelData extends BaseDto
+final class LabelData extends Dto
 {
     /**
      * @param  ?int  $labelSequenceNumber  Label list sequence number

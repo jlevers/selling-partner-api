@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20201201\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemImagesByMarketplace extends BaseDto
+final class ItemImagesByMarketplace extends Dto
 {
     protected static array $complexArrayTypes = ['images' => [ItemImage::class]];
 

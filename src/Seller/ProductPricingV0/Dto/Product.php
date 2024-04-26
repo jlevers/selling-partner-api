@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Product extends BaseDto
+final class Product extends Dto
 {
     protected static array $attributeMap = [
         'identifiers' => 'Identifiers',

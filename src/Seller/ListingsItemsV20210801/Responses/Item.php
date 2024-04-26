@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ListingsItemsV20210801\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\FulfillmentAvailability;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\Issue;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemOfferByMarketplace;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemProcurement;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\ItemSummaryByMarketplace;
 
-final class Item extends BaseResponse
+final class Item extends Response
 {
     protected static array $complexArrayTypes = [
         'summaries' => [ItemSummaryByMarketplace::class],

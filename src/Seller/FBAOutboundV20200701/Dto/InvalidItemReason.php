@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class InvalidItemReason extends BaseDto
+final class InvalidItemReason extends Dto
 {
     /**
      * @param  string  $invalidItemReasonCode  A code for why the item is invalid for return.

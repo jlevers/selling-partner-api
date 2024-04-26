@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class LabelData extends BaseDto
+final class LabelData extends Dto
 {
     /**
      * @param  string  $content  This field will contain the Base64encoded string of the shipment label content.

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class GetFeatureInventoryResult extends BaseDto
+final class GetFeatureInventoryResult extends Dto
 {
     protected static array $complexArrayTypes = ['featureSkus' => [FeatureSku::class]];
 

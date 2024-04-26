@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV20220501\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class SegmentedFeaturedOffer extends BaseDto
+final class SegmentedFeaturedOffer extends Dto
 {
     protected static array $complexArrayTypes = [
         'featuredOfferSegments' => [FeaturedOfferSegment::class],

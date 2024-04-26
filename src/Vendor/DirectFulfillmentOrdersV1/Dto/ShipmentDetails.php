@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentOrdersV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ShipmentDetails extends BaseDto
+final class ShipmentDetails extends Dto
 {
     /**
      * @param  bool  $isPriorityShipment  When true, this is a priority shipment.

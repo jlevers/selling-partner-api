@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV0\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\Error;
 use SellingPartnerApi\Seller\ProductPricingV0\Dto\Price;
 
-final class GetPricingResponse extends BaseResponse
+final class GetPricingResponse extends Response
 {
     protected static array $complexArrayTypes = ['payload' => [Price::class], 'errors' => [Error::class]];
 

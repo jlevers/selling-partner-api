@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\OrdersV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class SubstitutionOption extends BaseDto
+final class SubstitutionOption extends Dto
 {
     protected static array $attributeMap = [
         'asin' => 'ASIN',

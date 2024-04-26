@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInboundV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CreateInboundShipmentPlanResult extends BaseDto
+final class CreateInboundShipmentPlanResult extends Dto
 {
     protected static array $attributeMap = ['inboundShipmentPlans' => 'InboundShipmentPlans'];
 

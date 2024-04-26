@@ -1,17 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SellersV1\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\SellersV1\Dto\Error;
 use SellingPartnerApi\Seller\SellersV1\Dto\MarketplaceParticipation;
 
-final class GetMarketplaceParticipationsResponse extends BaseResponse
+final class GetMarketplaceParticipationsResponse extends Response
 {
-    protected static array $complexArrayTypes = [
-        'payload' => [MarketplaceParticipation::class],
-        'errors' => [Error::class],
-    ];
+    protected static array $complexArrayTypes = ['payload' => [MarketplaceParticipation::class], 'errors' => [Error::class]];
 
     /**
      * @param  MarketplaceParticipation[]|null  $payload  List of marketplace participations.

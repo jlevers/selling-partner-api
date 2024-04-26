@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ListingsRestrictionsV20210801\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Reason extends BaseDto
+final class Reason extends Dto
 {
     protected static array $complexArrayTypes = ['links' => [Link::class]];
 

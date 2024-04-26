@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class SupportedDocumentDetail extends BaseDto
+final class SupportedDocumentDetail extends Dto
 {
     /**
      * @param  string  $name  The type of shipping document.

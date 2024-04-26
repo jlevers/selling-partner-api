@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PublishRecord extends BaseDto
+final class PublishRecord extends Dto
 {
     /**
      * @param  string  $marketplaceId  The identifier for the marketplace where the A+ Content is published.

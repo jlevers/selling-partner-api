@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
-use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\PackingSlip;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Dto\Pagination;
 
-final class PackingSlipList extends BaseResponse
+final class PackingSlipList extends Response
 {
     protected static array $complexArrayTypes = ['packingSlips' => [PackingSlip::class]];
 

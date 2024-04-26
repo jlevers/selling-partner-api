@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\OrdersV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Order extends BaseDto
+final class Order extends Dto
 {
     protected static array $attributeMap = [
         'amazonOrderId' => 'AmazonOrderId',

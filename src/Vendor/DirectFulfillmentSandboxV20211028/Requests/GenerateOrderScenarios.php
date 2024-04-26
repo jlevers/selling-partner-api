@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Dto\GenerateOrderScenarioRequest;
 use SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Responses\ErrorList;
 use SellingPartnerApi\Vendor\DirectFulfillmentSandboxV20211028\Responses\TransactionReference;

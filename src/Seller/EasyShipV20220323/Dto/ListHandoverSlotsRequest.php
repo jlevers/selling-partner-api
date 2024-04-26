@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\EasyShipV20220323\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ListHandoverSlotsRequest extends BaseDto
+final class ListHandoverSlotsRequest extends Dto
 {
     /**
      * @param  string  $marketplaceId  A string of up to 255 characters.

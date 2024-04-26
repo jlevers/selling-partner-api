@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\ShippingV2\Dto\DirectPurchaseResult;
 
-final class DirectPurchaseResponse extends BaseResponse
+final class DirectPurchaseResponse extends Response
 {
     /**
      * @param  ?DirectPurchaseResult  $payload  The payload for the directPurchaseShipment operation.

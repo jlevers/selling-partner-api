@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class RangeSlotCapacityQuery extends BaseDto
+final class RangeSlotCapacityQuery extends Dto
 {
     /**
      * @param  DateTime  $startDateTime  Start date time from which the capacity slots are being requested in ISO 8601 format.

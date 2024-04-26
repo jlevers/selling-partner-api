@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ReturnLocation extends BaseDto
+final class ReturnLocation extends Dto
 {
     /**
      * @param  ?string  $supplySourceId  The Amazon provided `supplySourceId` where orders can be returned to.

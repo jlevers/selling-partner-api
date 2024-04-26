@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Container extends BaseDto
+final class Container extends Dto
 {
     protected static array $complexArrayTypes = ['items' => [ContainerItem::class]];
 

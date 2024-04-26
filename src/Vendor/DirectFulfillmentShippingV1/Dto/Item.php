@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Item extends BaseDto
+final class Item extends Dto
 {
     /**
      * @param  int  $itemSequenceNumber  Item Sequence Number for the item. This must be the same value as sent in order for a given item.

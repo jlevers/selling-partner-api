@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\MessagingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CreateLegalDisclosureRequest extends BaseDto
+final class CreateLegalDisclosureRequest extends Dto
 {
     protected static array $complexArrayTypes = ['attachments' => [Attachment::class]];
 

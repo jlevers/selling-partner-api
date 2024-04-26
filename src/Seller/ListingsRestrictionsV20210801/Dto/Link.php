@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ListingsRestrictionsV20210801\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Link extends BaseDto
+final class Link extends Dto
 {
     /**
      * @param  string  $resource  The URI of the related resource.

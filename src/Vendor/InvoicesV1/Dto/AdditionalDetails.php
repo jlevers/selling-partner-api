@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\InvoicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class AdditionalDetails extends BaseDto
+final class AdditionalDetails extends Dto
 {
     /**
      * @param  string  $type  The type of the additional information provided by the selling party.

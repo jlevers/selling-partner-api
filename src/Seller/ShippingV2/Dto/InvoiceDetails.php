@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class InvoiceDetails extends BaseDto
+final class InvoiceDetails extends Dto
 {
     /**
      * @param  ?string  $invoiceNumber  The invoice number of the item.

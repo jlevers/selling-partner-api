@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class StandardTextPairBlock extends BaseDto
+final class StandardTextPairBlock extends Dto
 {
     /**
      * @param  ?TextComponent  $label  Rich text content.

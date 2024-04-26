@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemClassificationSalesRank extends BaseDto
+final class ItemClassificationSalesRank extends Dto
 {
     /**
      * @param  string  $classificationId  Identifier of the classification associated with the sales rank.

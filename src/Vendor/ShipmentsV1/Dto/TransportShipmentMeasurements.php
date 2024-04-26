@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class TransportShipmentMeasurements extends BaseDto
+final class TransportShipmentMeasurements extends Dto
 {
     /**
      * @param  ?int  $totalCartonCount  Total number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\NotificationsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class SqsResource extends BaseDto
+final class SqsResource extends Dto
 {
     /**
      * @param  string  $arn  The Amazon Resource Name (ARN) associated with the SQS queue.

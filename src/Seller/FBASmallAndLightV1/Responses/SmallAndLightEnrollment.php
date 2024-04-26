@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBASmallAndLightV1\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 
-final class SmallAndLightEnrollment extends BaseResponse
+final class SmallAndLightEnrollment extends Response
 {
     protected static array $attributeMap = ['sellerSku' => 'sellerSKU'];
 

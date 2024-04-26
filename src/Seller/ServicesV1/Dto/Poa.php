@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Poa extends BaseDto
+final class Poa extends Dto
 {
     protected static array $complexArrayTypes = ['technicians' => [Technician::class]];
 

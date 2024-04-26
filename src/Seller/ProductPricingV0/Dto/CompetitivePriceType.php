@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CompetitivePriceType extends BaseDto
+final class CompetitivePriceType extends Dto
 {
     protected static array $attributeMap = ['competitivePriceId' => 'CompetitivePriceId', 'price' => 'Price'];
 

@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\APlusContentV20201101\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\APlusContentV20201101\Dto\AsinMetadata;
 use SellingPartnerApi\Seller\APlusContentV20201101\Dto\Error;
 
-final class ListContentDocumentAsinRelationsResponse extends BaseResponse
+final class ListContentDocumentAsinRelationsResponse extends Response
 {
     protected static array $complexArrayTypes = ['asinMetadataSet' => [AsinMetadata::class], 'warnings' => [Error::class]];
 

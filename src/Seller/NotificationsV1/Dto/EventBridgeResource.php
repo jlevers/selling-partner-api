@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\NotificationsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class EventBridgeResource extends BaseDto
+final class EventBridgeResource extends Dto
 {
     /**
      * @param  string  $name  The name of the partner event source associated with the destination.

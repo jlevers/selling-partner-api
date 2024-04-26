@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\NotificationsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class EventBridgeResourceSpecification extends BaseDto
+final class EventBridgeResourceSpecification extends Dto
 {
     /**
      * @param  string  $region  The AWS region in which you will be receiving the notifications.

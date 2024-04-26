@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Technician extends BaseDto
+final class Technician extends Dto
 {
     /**
      * @param  ?string  $technicianId  The technician identifier.

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PurchaseOrderItemDetails extends BaseDto
+final class PurchaseOrderItemDetails extends Dto
 {
     /**
      * @param  ?Money  $maximumRetailPrice  An amount of money, including units in the form of currency.

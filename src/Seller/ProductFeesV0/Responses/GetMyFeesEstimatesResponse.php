@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductFeesV0\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\ProductFeesV0\Dto\FeesEstimateResult;
 
-final class GetMyFeesEstimatesResponse extends BaseResponse
+final class GetMyFeesEstimatesResponse extends Response
 {
     protected static array $complexArrayTypes = ['getMyFeesEstimatesResponse' => [FeesEstimateResult::class]];
 

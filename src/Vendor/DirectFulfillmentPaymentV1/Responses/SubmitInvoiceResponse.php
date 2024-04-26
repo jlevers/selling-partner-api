@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentPaymentV1\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Vendor\DirectFulfillmentPaymentV1\Dto\Error;
 use SellingPartnerApi\Vendor\DirectFulfillmentPaymentV1\Dto\TransactionReference;
 
-final class SubmitInvoiceResponse extends BaseResponse
+final class SubmitInvoiceResponse extends Response
 {
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 

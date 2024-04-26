@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ShipmentStatusDetails extends BaseDto
+final class ShipmentStatusDetails extends Dto
 {
     /**
      * @param  ?string  $shipmentStatus  Current status of the shipment on whether it is picked up or scheduled.

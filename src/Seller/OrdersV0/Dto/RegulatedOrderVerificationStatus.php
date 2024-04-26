@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\OrdersV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class RegulatedOrderVerificationStatus extends BaseDto
+final class RegulatedOrderVerificationStatus extends Dto
 {
     protected static array $attributeMap = [
         'status' => 'Status',

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\OrdersV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class UpdateVerificationStatusRequestBody extends BaseDto
+final class UpdateVerificationStatusRequestBody extends Dto
 {
     /**
      * @param  string  $status  The verification status of the order.

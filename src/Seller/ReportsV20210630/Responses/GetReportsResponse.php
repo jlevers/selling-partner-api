@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReportsV20210630\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 
-final class GetReportsResponse extends BaseResponse
+final class GetReportsResponse extends Response
 {
     protected static array $complexArrayTypes = ['reports' => [Report::class]];
 

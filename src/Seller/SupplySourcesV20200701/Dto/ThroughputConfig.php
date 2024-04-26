@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ThroughputConfig extends BaseDto
+final class ThroughputConfig extends Dto
 {
     /**
      * @param  string  $throughputUnit  The throughput unit

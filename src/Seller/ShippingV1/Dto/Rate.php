@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Rate extends BaseDto
+final class Rate extends Dto
 {
     /**
      * @param  ?string  $rateId  An identifier for the rate.

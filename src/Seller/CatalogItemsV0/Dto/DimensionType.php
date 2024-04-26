@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class DimensionType extends BaseDto
+final class DimensionType extends Dto
 {
     protected static array $attributeMap = [
         'height' => 'Height',

@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\Pagination;
 use SellingPartnerApi\Seller\CatalogItemsV20220401\Dto\Refinements;
 
-final class ItemSearchResults extends BaseResponse
+final class ItemSearchResults extends Response
 {
     protected static array $complexArrayTypes = ['items' => [Item::class]];
 

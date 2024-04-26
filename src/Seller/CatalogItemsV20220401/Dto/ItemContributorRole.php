@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV20220401\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ItemContributorRole extends BaseDto
+final class ItemContributorRole extends Dto
 {
     /**
      * @param  string  $value  Role value for the Amazon catalog item, such as author or actor.

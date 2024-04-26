@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReportsV20210630\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ReportsV20210630\Dto\CreateReportScheduleSpecification;
 use SellingPartnerApi\Seller\ReportsV20210630\Responses\CreateReportScheduleResponse;
 use SellingPartnerApi\Seller\ReportsV20210630\Responses\ErrorList;

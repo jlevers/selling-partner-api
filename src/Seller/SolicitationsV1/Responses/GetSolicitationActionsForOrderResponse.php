@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SolicitationsV1\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\SolicitationsV1\Dto\Embedded;
 use SellingPartnerApi\Seller\SolicitationsV1\Dto\Error;
 use SellingPartnerApi\Seller\SolicitationsV1\Dto\Links;
 
-final class GetSolicitationActionsForOrderResponse extends BaseResponse
+final class GetSolicitationActionsForOrderResponse extends Response
 {
     protected static array $attributeMap = ['links' => '_links', 'embedded' => '_embedded'];
 

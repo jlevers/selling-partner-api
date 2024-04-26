@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInboundEligibilityV1\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\FBAInboundEligibilityV1\Dto\Error;
 use SellingPartnerApi\Seller\FBAInboundEligibilityV1\Dto\ItemEligibilityPreview;
 
-final class GetItemEligibilityPreviewResponse extends BaseResponse
+final class GetItemEligibilityPreviewResponse extends Response
 {
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class AppointmentSlot extends BaseDto
+final class AppointmentSlot extends Dto
 {
     /**
      * @param  ?DateTime  $startTime  Time window start time in ISO 8601 format.

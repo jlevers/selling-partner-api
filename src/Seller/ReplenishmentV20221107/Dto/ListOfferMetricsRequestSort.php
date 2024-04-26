@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ReplenishmentV20221107\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ListOfferMetricsRequestSort extends BaseDto
+final class ListOfferMetricsRequestSort extends Dto
 {
     /**
      * @param  string  $order  The sort order.

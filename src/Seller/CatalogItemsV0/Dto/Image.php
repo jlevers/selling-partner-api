@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Image extends BaseDto
+final class Image extends Dto
 {
     protected static array $attributeMap = ['url' => 'URL', 'height' => 'Height', 'width' => 'Width'];
 

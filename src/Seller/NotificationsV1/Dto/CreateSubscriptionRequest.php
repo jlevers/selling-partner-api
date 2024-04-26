@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\NotificationsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CreateSubscriptionRequest extends BaseDto
+final class CreateSubscriptionRequest extends Dto
 {
     /**
      * @param  ?string  $payloadVersion  The version of the payload object to be used in the notification.

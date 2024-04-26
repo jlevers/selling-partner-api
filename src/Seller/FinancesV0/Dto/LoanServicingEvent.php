@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FinancesV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class LoanServicingEvent extends BaseDto
+final class LoanServicingEvent extends Dto
 {
     protected static array $attributeMap = [
         'loanAmount' => 'LoanAmount',

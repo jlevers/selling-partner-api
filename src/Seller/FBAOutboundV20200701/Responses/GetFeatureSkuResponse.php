@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\Error;
 use SellingPartnerApi\Seller\FBAOutboundV20200701\Dto\GetFeatureSkuResult;
 
-final class GetFeatureSkuResponse extends BaseResponse
+final class GetFeatureSkuResponse extends Response
 {
     protected static array $complexArrayTypes = ['errors' => [Error::class]];
 

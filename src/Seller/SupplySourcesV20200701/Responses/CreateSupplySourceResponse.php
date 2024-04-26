@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SupplySourcesV20200701\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 
-final class CreateSupplySourceResponse extends BaseResponse
+final class CreateSupplySourceResponse extends Response
 {
     /**
      * @param  string  $supplySourceId  An Amazon generated unique supply source ID.

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentInventoryV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PartyIdentification extends BaseDto
+final class PartyIdentification extends Dto
 {
     /**
      * @param  string  $partyId  Assigned identification for the party.

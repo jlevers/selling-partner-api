@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\DirectFulfillmentShippingV20211228\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 
-final class PackingSlip extends BaseResponse
+final class PackingSlip extends Response
 {
     /**
      * @param  string  $purchaseOrderNumber  Purchase order number of the shipment that the packing slip is for.

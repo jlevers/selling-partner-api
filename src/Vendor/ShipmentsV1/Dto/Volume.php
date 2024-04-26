@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Volume extends BaseDto
+final class Volume extends Dto
 {
     /**
      * @param  string  $unitOfMeasure  The unit of measurement.

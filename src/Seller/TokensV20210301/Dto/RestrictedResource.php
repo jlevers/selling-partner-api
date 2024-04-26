@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\TokensV20210301\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class RestrictedResource extends BaseDto
+final class RestrictedResource extends Dto
 {
     /**
      * @param  string  $method  The HTTP method in the restricted resource.

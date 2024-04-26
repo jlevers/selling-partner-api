@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FeedsV20210630\Requests;
 
-use Crescat\SaloonSdkGenerator\EmptyResponse;
 use Exception;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
+use SellingPartnerApi\EmptyResponse;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FeedsV20210630\Responses\ErrorList;
 
 /**

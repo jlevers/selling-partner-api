@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class FulfillmentShipmentItem extends BaseDto
+final class FulfillmentShipmentItem extends Dto
 {
     /**
      * @param  string  $sellerSku  The seller SKU of the item.

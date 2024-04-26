@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAInboundV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Weight extends BaseDto
+final class Weight extends Dto
 {
     protected static array $attributeMap = ['value' => 'Value', 'unit' => 'Unit'];
 

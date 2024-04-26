@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 
-final class CancelShipmentResponse extends BaseResponse
+final class CancelShipmentResponse extends Response
 {
     /**
      * @param  ?array[]  $payload  The payload for the cancelShipment operation.

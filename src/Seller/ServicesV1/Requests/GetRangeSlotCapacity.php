@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\ServicesV1\Dto\RangeSlotCapacityQuery;
 use SellingPartnerApi\Seller\ServicesV1\Responses\RangeSlotCapacity;
 use SellingPartnerApi\Seller\ServicesV1\Responses\RangeSlotCapacityErrors;

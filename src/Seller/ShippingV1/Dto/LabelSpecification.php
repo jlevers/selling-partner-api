@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class LabelSpecification extends BaseDto
+final class LabelSpecification extends Dto
 {
     /**
      * @param  string  $labelFormat  The format of the label. Enum of PNG only for now.

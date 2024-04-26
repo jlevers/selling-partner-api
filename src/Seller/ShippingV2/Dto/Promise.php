@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class Promise extends BaseDto
+final class Promise extends Dto
 {
     /**
      * @param  ?TimeWindow  $deliveryWindow  The start and end time that specifies the time interval of an event.

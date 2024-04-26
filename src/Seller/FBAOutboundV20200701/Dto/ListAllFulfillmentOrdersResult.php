@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\FBAOutboundV20200701\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ListAllFulfillmentOrdersResult extends BaseDto
+final class ListAllFulfillmentOrdersResult extends Dto
 {
     protected static array $complexArrayTypes = ['fulfillmentOrders' => [FulfillmentOrder::class]];
 

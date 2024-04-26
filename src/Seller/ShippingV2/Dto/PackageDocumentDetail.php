@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class PackageDocumentDetail extends BaseDto
+final class PackageDocumentDetail extends Dto
 {
     protected static array $complexArrayTypes = ['packageDocuments' => [PackageDocument::class]];
 

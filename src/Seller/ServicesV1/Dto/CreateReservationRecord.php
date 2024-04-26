@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class CreateReservationRecord extends BaseDto
+final class CreateReservationRecord extends Dto
 {
     protected static array $complexArrayTypes = ['warnings' => [Warning::class], 'errors' => [Error::class]];
 

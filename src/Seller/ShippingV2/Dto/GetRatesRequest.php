@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ShippingV2\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class GetRatesRequest extends BaseDto
+final class GetRatesRequest extends Dto
 {
     protected static array $complexArrayTypes = ['packages' => [Package::class], 'taxDetails' => [TaxDetail::class]];
 

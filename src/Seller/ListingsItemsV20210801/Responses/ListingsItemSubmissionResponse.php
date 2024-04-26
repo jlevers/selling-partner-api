@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ListingsItemsV20210801\Responses;
 
-use Crescat\SaloonSdkGenerator\BaseResponse;
+use SellingPartnerApi\Response;
 use SellingPartnerApi\Seller\ListingsItemsV20210801\Dto\Issue;
 
-final class ListingsItemSubmissionResponse extends BaseResponse
+final class ListingsItemSubmissionResponse extends Response
 {
     protected static array $complexArrayTypes = ['issues' => [Issue::class]];
 

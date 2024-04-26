@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\MerchantFulfillmentV0\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Middleware\RestrictedDataToken;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\MerchantFulfillmentV0\Dto\CreateShipmentRequest;
 use SellingPartnerApi\Seller\MerchantFulfillmentV0\Responses\CreateShipmentResponse;
 

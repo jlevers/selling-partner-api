@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\SolicitationsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class LinkObject extends BaseDto
+final class LinkObject extends Dto
 {
     /**
      * @param  string  $href  A URI for this object.

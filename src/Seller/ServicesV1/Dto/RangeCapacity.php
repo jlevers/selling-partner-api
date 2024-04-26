@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ServicesV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class RangeCapacity extends BaseDto
+final class RangeCapacity extends Dto
 {
     protected static array $complexArrayTypes = ['slots' => [RangeSlot::class]];
 

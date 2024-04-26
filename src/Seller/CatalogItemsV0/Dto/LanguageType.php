@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\CatalogItemsV0\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class LanguageType extends BaseDto
+final class LanguageType extends Dto
 {
     protected static array $attributeMap = ['name' => 'Name', 'type' => 'Type', 'audioFormat' => 'AudioFormat'];
 

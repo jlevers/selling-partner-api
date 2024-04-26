@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\DataKioskV20231115\Requests;
 
 use Exception;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
-use Saloon\Http\Request;
 use Saloon\Http\Response;
 use Saloon\Traits\Body\HasJsonBody;
+use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\DataKioskV20231115\Dto\CreateQuerySpecification;
 use SellingPartnerApi\Seller\DataKioskV20231115\Responses\CreateQueryResponse;
 use SellingPartnerApi\Seller\DataKioskV20231115\Responses\ErrorList;

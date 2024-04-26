@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Vendor\ShipmentsV1\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class ContainerIdentification extends BaseDto
+final class ContainerIdentification extends Dto
 {
     /**
      * @param  string  $containerIdentificationType  The container identification type.

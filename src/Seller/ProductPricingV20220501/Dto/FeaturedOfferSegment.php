@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SellingPartnerApi\Seller\ProductPricingV20220501\Dto;
 
-use Crescat\SaloonSdkGenerator\BaseDto;
+use SellingPartnerApi\Dto;
 
-final class FeaturedOfferSegment extends BaseDto
+final class FeaturedOfferSegment extends Dto
 {
     /**
      * @param  string  $customerMembership  The customer membership type that make up this segment

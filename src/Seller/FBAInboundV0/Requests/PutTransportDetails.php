@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace SellingPartnerApi\Seller\FBAInboundV0\Requests;
 
 use Exception;
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Response;
+use Saloon\Traits\Body\HasJsonBody;
 use SellingPartnerApi\Request;
 use SellingPartnerApi\Seller\FBAInboundV0\Dto\PutTransportDetailsRequest;
 use SellingPartnerApi\Seller\FBAInboundV0\Responses\PutTransportDetailsResponse;
@@ -14,8 +16,10 @@ use SellingPartnerApi\Seller\FBAInboundV0\Responses\PutTransportDetailsResponse;
 /**
  * putTransportDetails
  */
-class PutTransportDetails extends Request
+class PutTransportDetails extends Request implements HasBody
 {
+    use HasJsonBody;
+    
     protected Method $method = Method::PUT;
 
     /**

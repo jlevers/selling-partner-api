@@ -80,10 +80,10 @@ trait Deserializes
                 'date', 'datetime' => DateTime::createFromFormat(DateTime::RFC3339, $value),
                 'array', 'mixed' => $value,
                 'null' => null,
-                default => 0x0,
+                default => chr(0),
             };
 
-            if ($_value !== 0x0) {
+            if ($_value !== chr(0)) {
                 return $_value;
             }
 

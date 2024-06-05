@@ -24,7 +24,7 @@ final class RegulatedOrderVerificationStatus extends Dto
      * @param  bool  $requiresMerchantAction  When true, the regulated information provided in the order requires a review by the merchant.
      * @param  RejectionReason[]  $validRejectionReasons  A list of valid rejection reasons that may be used to reject the order's regulated information.
      * @param  ?RejectionReason  $rejectionReason  The reason for rejecting the order's regulated information. Not present if the order isn't rejected.
-     * @param  ?string  $reviewDate  The date the order was reviewed. In ISO 8601 date time format.
+     * @param  ?string  $reviewDate  The date the order was reviewed. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      * @param  ?string  $externalReviewerId  The identifier for the order's regulated information reviewer.
      */
     public function __construct(

@@ -5,6 +5,20 @@
         {
           "action": "delete",
           "path": "components.schemas.Address.required"
+        },
+        {
+          "action": "merge",
+          "path": "components.schemas.AutomatedShippingSettings.properties",
+          "value": {
+            "AutomatedShipMethodName": {
+              "type": "string",
+              "description": "The name of the automated shipping method."
+            },
+            "AutomatedCarrierName": {
+              "type": "string",
+              "description": "The name of the automated carrier."
+            }
+          }
         }
       ]
     },

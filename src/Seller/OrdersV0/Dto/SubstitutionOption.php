@@ -21,7 +21,7 @@ final class SubstitutionOption extends Dto
      * @param  ?int  $quantityOrdered  The number of items to be picked for this substitution option.
      * @param  ?string  $sellerSku  The seller stock keeping unit (SKU) of the item.
      * @param  ?string  $title  The title of the item.
-     * @param  ?Measurement  $measurement
+     * @param  ?Measurement  $measurement  Measurement information for an order item.
      */
     public function __construct(
         public readonly ?string $asin = null,

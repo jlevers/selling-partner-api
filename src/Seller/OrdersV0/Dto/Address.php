@@ -10,6 +10,7 @@ final class Address extends Dto
 {
     protected static array $attributeMap = [
         'name' => 'Name',
+        'companyName' => 'CompanyName',
         'addressLine1' => 'AddressLine1',
         'addressLine2' => 'AddressLine2',
         'addressLine3' => 'AddressLine3',
@@ -21,26 +22,38 @@ final class Address extends Dto
         'postalCode' => 'PostalCode',
         'countryCode' => 'CountryCode',
         'phone' => 'Phone',
+        'extendedFields' => 'ExtendedFields',
         'addressType' => 'AddressType',
     ];
 
     /**
      * @param  ?string  $name  The name.
+     * @param  ?string  $companyName  The company name of the recipient.
+     *
+     * **Note**: This attribute is only available for shipping address.
      * @param  ?string  $addressLine1  The street address.
      * @param  ?string  $addressLine2  Additional street address information, if required.
      * @param  ?string  $addressLine3  Additional street address information, if required.
-     * @param  ?string  $city  The city
+     * @param  ?string  $city  The city.
      * @param  ?string  $county  The county.
      * @param  ?string  $district  The district.
      * @param  ?string  $stateOrRegion  The state or region.
      * @param  ?string  $municipality  The municipality.
      * @param  ?string  $postalCode  The postal code.
      * @param  ?string  $countryCode  The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
-     * @param  ?string  $phone  The phone number. Not returned for Fulfillment by Amazon (FBA) orders.
+     * @param  ?string  $phone  The phone number of the buyer.
+     *
+     * **Note**:
+     * 1. This attribute is only available for shipping address.
+     * 2. The buyer `Phone` number is suppressed in some cases, including but not limited to
+     * a. `Phone` is suppressed for all Fulfillment by Amazon (FBA) orders.
+     * b. `Phone` is suppressed for the shipped MFN(Fulfilled by the seller) order when current date is past Latest Delivery Date.
+     * @param  ?AddressExtendedFields  $extendedFields  The container of extended address fields. For example, street name, street number. Only available with Brazil shipping addresses as of now.
      * @param  ?string  $addressType  The address type of the shipping address.
      */
     public function __construct(
         public readonly ?string $name = null,
+        public readonly ?string $companyName = null,
         public readonly ?string $addressLine1 = null,
         public readonly ?string $addressLine2 = null,
         public readonly ?string $addressLine3 = null,
@@ -52,6 +65,7 @@ final class Address extends Dto
         public readonly ?string $postalCode = null,
         public readonly ?string $countryCode = null,
         public readonly ?string $phone = null,
+        public readonly ?AddressExtendedFields $extendedFields = null,
         public readonly ?string $addressType = null,
     ) {
     }

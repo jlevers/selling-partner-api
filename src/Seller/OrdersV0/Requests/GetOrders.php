@@ -19,13 +19,21 @@ class GetOrders extends Request
     protected Method $method = Method::GET;
 
     /**
-     * @param  array  $marketplaceIds  A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.
+     * @param  array  $marketplaceIds  A list of `MarketplaceId` values. Used to select orders that were placed in the specified marketplaces.
      *
-     * Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values.
-     * @param  ?string  $createdAfter  A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format.
-     * @param  ?string  $createdBefore  A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
-     * @param  ?string  $lastUpdatedAfter  A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
-     * @param  ?string  $lastUpdatedBefore  A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format.
+     * Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of `MarketplaceId` values.
+     * @param  ?string  $createdAfter  A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     *
+     * **Note**: Either the `CreatedAfter` parameter or the `LastUpdatedAfter` parameter is required. You could specify `CreatedBefore` but not provide `LastUpdatedAfter` or `LastUpdatedBefore` when `CreatedAfter` is specified.
+     * @param  ?string  $createdBefore  A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     *
+     * **Note**: `CreatedBefore` is optional when `CreatedAfter` is specified. But if specified, `CreatedBefore` should be equal to or after the `CreatedAfter` date and at least 2 minutes before the current time.
+     * @param  ?string  $lastUpdatedAfter  A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     *
+     * **Note**: `LastUpdatedBefore` is optional when `LastUpdatedAfter` is specified. But if specified, `LastUpdatedBefore` should be equal to or after the `LastUpdatedAfter` date and at least 2 minutes before current time.
+     * @param  ?string  $lastUpdatedBefore  A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     *
+     * **Note**: LastUpdatedBefore is optional when LastUpdatedAfter is set. But if specified, LastUpdatedBefore should be equal to or after the LastUpdatedAfter date and at least 2 minutes before current time.
      * @param  ?array  $orderStatuses  A list of `OrderStatus` values used to filter the results.
      *
      * **Possible values:**
@@ -37,8 +45,12 @@ class GetOrders extends Request
      * - `InvoiceUnconfirmed` (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.)
      * - `Canceled` (The order has been canceled.)
      * - `Unfulfillable` (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.)
-     * @param  ?array  $fulfillmentChannels  A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: AFN (Fulfillment by Amazon); MFN (Fulfilled by the seller).
-     * @param  ?array  $paymentMethods  A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS).
+     * @param  ?array  $fulfillmentChannels  A list that indicates how an order was fulfilled. Filters the results by fulfillment channel.
+     *
+     * **Possible values**: `AFN` (Fulfillment by Amazon); `MFN` (Fulfilled by the seller).
+     * @param  ?array  $paymentMethods  A list of payment method values. Used to select orders paid using the specified payment methods.
+     *
+     * **Possible values**: `COD` (Cash on delivery); `CVS` (Convenience store payment); `Other` (Any payment method other than `COD` or `CVS`).
      * @param  ?string  $buyerEmail  The email address of a buyer. Used to select orders that contain the specified email address.
      * @param  ?string  $sellerOrderId  An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified.
      * @param  ?int  $maxResultsPerPage  A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100.
@@ -74,10 +86,10 @@ class GetOrders extends Request
      * @param  ?string  $actualFulfillmentSupplySourceId  Denotes the recommended sourceId where the order should be fulfilled from.
      * @param  ?bool  $isIspu  When true, this order is marked to be picked up from a store rather than delivered.
      * @param  ?string  $storeChainStoreId  The store chain store identifier. Linked to a specific store in a store chain.
-     * @param  ?string  $earliestDeliveryDateBefore  A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
-     * @param  ?string  $earliestDeliveryDateAfter  A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
-     * @param  ?string  $latestDeliveryDateBefore  A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format.
-     * @param  ?string  $latestDeliveryDateAfter  A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format.
+     * @param  ?string  $earliestDeliveryDateBefore  A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param  ?string  $earliestDeliveryDateAfter  A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param  ?string  $latestDeliveryDateBefore  A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param  ?string  $latestDeliveryDateAfter  A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      */
     public function __construct(
         protected array $marketplaceIds,

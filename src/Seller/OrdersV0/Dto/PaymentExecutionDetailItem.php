@@ -14,7 +14,7 @@ final class PaymentExecutionDetailItem extends Dto
      * @param  Money  $payment  The monetary value of the order.
      * @param  string  $paymentMethod  A sub-payment method for a COD order.
      *
-     * Possible values:
+     * **Possible values**:
      * * `COD`: Cash On Delivery.
      * * `GC`: Gift Card.
      * * `PointsAccount`: Amazon Points.

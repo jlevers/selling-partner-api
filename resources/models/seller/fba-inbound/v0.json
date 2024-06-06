@@ -5530,7 +5530,6 @@
             },
             "InboundShipmentInfo": {
                 "required": [
-                    "AreCasesRequired",
                     "ShipFromAddress"
                 ],
                 "type": "object",

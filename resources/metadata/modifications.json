@@ -6,6 +6,14 @@
           "comment": "Responses from Amazon have been missing one or more required Address parts",
           "action": "delete",
           "path": "components.schemas.Address.required"
+        },
+        {
+          "comment": "Responses from Amazon do not have the AreCasesRequired value",
+          "action": "replace",
+          "path": "components.schemas.InboundShipmentInfo.required",
+          "value": [
+            "ShipFromAddress"
+          ]
         }
       ]
     },

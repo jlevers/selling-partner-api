@@ -18,16 +18,6 @@
         }
       ]
     },
-    "authorization": {
-      "name": "Authorization",
-      "versions": [
-        {
-          "version": 1,
-          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/authorization-api-model/authorization.json",
-          "deprecated": true
-        }
-      ]
-    },
     "catalog-items": {
       "name": "Catalog Items",
       "versions": [
@@ -81,7 +71,7 @@
         },
         {
           "version": "2024-03-20",
-          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-inbound-api-model/fulfillmentInboundv2024-03-20.json"
+          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-inbound-api-model/fulfillmentInbound_2024-03-20.json"
         }
       ]
     },
@@ -100,16 +90,6 @@
         {
           "version": "2020-07-01",
           "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-outbound-api-model/fulfillmentOutbound_2020-07-01.json"
-        }
-      ]
-    },
-    "fba-small-and-light": {
-      "name": "FBA Small and Light",
-      "versions": [
-        {
-          "version": 1,
-          "url": "https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fba-small-and-light-api-model/fbaSmallandLight.json",
-          "deprecated": true
         }
       ]
     },

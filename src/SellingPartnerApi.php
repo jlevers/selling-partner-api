@@ -51,6 +51,8 @@ class SellingPartnerApi extends Connector
             if (is_array($value)) {
                 $stringified = array_map(fn ($v) => urlencode((string) $v), $value);
                 $csvQuery[$key] = implode(',', $stringified);
+            } elseif (is_bool($value)) {
+                $csvQuery[$key] = $value ? 'true' : 'false';
             } else {
                 $csvQuery[$key] = urlencode((string) $value);
             }
